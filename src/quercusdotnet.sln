@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.26124.0
 MinimumVisualStudioVersion = 15.0.26124.0
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "quercusdotnet", "quercusdotnet.csproj", "{9B9A7599-C041-4401-A76B-E1A67F4FF5C3}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuercusDotNet", "QuercusDotNet.csproj", "{9B9A7599-C041-4401-A76B-E1A67F4FF5C3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
