@@ -53,38 +53,32 @@ abstract public class CompiledClosure extends Closure {
     return call(env, argValues).copyReturn();
   }
 
-  @Override
-  public Value callRef(Env env)
+  public override Value callRef(Env env)
   {
     return call(env).copyReturn();
   }
 
-  @Override
-  public Value callRef(Env env, Value a1)
+  public override Value callRef(Env env, Value a1)
   {
     return call(env, a1).copyReturn();
   }
 
-  @Override
-  public Value callRef(Env env, Value a1, Value a2)
+  public override Value callRef(Env env, Value a1, Value a2)
   {
     return call(env, a1, a2).copyReturn();
   }
 
-  @Override
-  public Value callRef(Env env, Value a1, Value a2, Value a3)
+  public override Value callRef(Env env, Value a1, Value a2, Value a3)
   {
     return call(env, a1, a2, a3).copyReturn();
   }
 
-  @Override
-  public Value callRef(Env env, Value a1, Value a2, Value a3, Value a4)
+  public override Value callRef(Env env, Value a1, Value a2, Value a3, Value a4)
   {
     return call(env, a1, a2, a3, a4).copyReturn();
   }
 
-  @Override
-  public Value callRef(Env env, Value a1, Value a2,
+  public override Value callRef(Env env, Value a1, Value a2,
                        Value a3, Value a4, Value a5)
   {
     return call(env, a1, a2, a3, a4, a5).copyReturn();
@@ -96,8 +90,7 @@ abstract public class CompiledClosure extends Closure {
       super(name, qThis);
     }
 
-    @Override
-    public Value call(Env env, Value []argValues)
+    public override Value call(Env env, Value []argValues)
     {
       return call(env);
     }
@@ -115,8 +108,7 @@ abstract public class CompiledClosure extends Closure {
       _default0 = default0;
     }
 
-    @Override
-    public Value call(Env env, Value []argValues)
+    public override Value call(Env env, Value []argValues)
     {
       switch (argValues.length) {
         case 0:
@@ -129,8 +121,7 @@ abstract public class CompiledClosure extends Closure {
       }
     }
 
-    @Override
-    public Value call(Env env)
+    public override Value call(Env env)
     {
       return call(env, _default0.eval(env));
     }
@@ -151,8 +142,7 @@ abstract public class CompiledClosure extends Closure {
       _default1 = default1;
     }
 
-    @Override
-    public Value call(Env env, Value []argValues)
+    public override Value call(Env env, Value []argValues)
     {
       switch (argValues.length) {
         case 0:
@@ -171,14 +161,12 @@ abstract public class CompiledClosure extends Closure {
       }
     }
 
-    @Override
-    public Value call(Env env)
+    public override Value call(Env env)
     {
       return call(env, _default0.eval(env), _default1.eval(env));
     }
 
-    @Override
-    public Value call(Env env, Value a1)
+    public override Value call(Env env, Value a1)
     {
       return call(env, a1, _default1.eval(env));
     }
@@ -201,8 +189,7 @@ abstract public class CompiledClosure extends Closure {
       _default2 = default2;
     }
 
-    @Override
-    public Value call(Env env, Value []argValues)
+    public override Value call(Env env, Value []argValues)
     {
       switch (argValues.length) {
         case 0:
@@ -229,8 +216,7 @@ abstract public class CompiledClosure extends Closure {
       }
     }
 
-    @Override
-    public Value call(Env env)
+    public override Value call(Env env)
     {
       return call(env,
                   _default0.eval(env),
@@ -238,8 +224,7 @@ abstract public class CompiledClosure extends Closure {
                   _default2.eval(env));
     }
 
-    @Override
-    public Value call(Env env, Value a1)
+    public override Value call(Env env, Value a1)
     {
       return call(env,
                   a1,
@@ -247,8 +232,7 @@ abstract public class CompiledClosure extends Closure {
                   _default2.eval(env));
     }
 
-    @Override
-    public Value call(Env env, Value a1, Value a2)
+    public override Value call(Env env, Value a1, Value a2)
     {
       return call(env,
                   a1,
@@ -277,8 +261,7 @@ abstract public class CompiledClosure extends Closure {
       _default3 = default3;
     }
 
-    @Override
-    public Value call(Env env, Value []argValues)
+    public override Value call(Env env, Value []argValues)
     {
       switch (argValues.length) {
         case 0:
@@ -315,8 +298,7 @@ abstract public class CompiledClosure extends Closure {
       }
     }
 
-    @Override
-    public Value call(Env env)
+    public override Value call(Env env)
     {
       return call(env,
                   _default0.eval(env),
@@ -325,8 +307,7 @@ abstract public class CompiledClosure extends Closure {
                   _default3.eval(env));
     }
 
-    @Override
-    public Value call(Env env, Value a1)
+    public override Value call(Env env, Value a1)
     {
       return call(env,
                   a1,
@@ -335,8 +316,7 @@ abstract public class CompiledClosure extends Closure {
                   _default3.eval(env));
     }
 
-    @Override
-    public Value call(Env env, Value a1, Value a2)
+    public override Value call(Env env, Value a1, Value a2)
     {
       return call(env,
                   a1,
@@ -345,8 +325,7 @@ abstract public class CompiledClosure extends Closure {
                   _default3.eval(env));
     }
 
-    @Override
-    public Value call(Env env, Value a1, Value a2, Value a3)
+    public override Value call(Env env, Value a1, Value a2, Value a3)
     {
       return call(env,
                   a1,
@@ -379,8 +358,7 @@ abstract public class CompiledClosure extends Closure {
       _default4 = default4;
     }
 
-    @Override
-    public Value call(Env env, Value []argValues)
+    public override Value call(Env env, Value []argValues)
     {
       switch (argValues.length) {
         case 0:
@@ -429,8 +407,7 @@ abstract public class CompiledClosure extends Closure {
       }
     }
 
-    @Override
-    public Value call(Env env)
+    public override Value call(Env env)
     {
       return call(env,
                   _default0.eval(env),
@@ -440,8 +417,7 @@ abstract public class CompiledClosure extends Closure {
                   _default4.eval(env));
     }
 
-    @Override
-    public Value call(Env env, Value a1)
+    public override Value call(Env env, Value a1)
     {
       return call(env,
                   a1,
@@ -451,8 +427,7 @@ abstract public class CompiledClosure extends Closure {
                   _default4.eval(env));
     }
 
-    @Override
-    public Value call(Env env, Value a1, Value a2)
+    public override Value call(Env env, Value a1, Value a2)
     {
       return call(env,
                   a1,
@@ -462,8 +437,7 @@ abstract public class CompiledClosure extends Closure {
                   _default4.eval(env));
     }
 
-    @Override
-    public Value call(Env env, Value a1, Value a2, Value a3)
+    public override Value call(Env env, Value a1, Value a2, Value a3)
     {
       return call(env,
                   a1,
@@ -473,8 +447,7 @@ abstract public class CompiledClosure extends Closure {
                   _default4.eval(env));
     }
 
-    @Override
-    public Value call(Env env, Value a1, Value a2, Value a3, Value a4)
+    public override Value call(Env env, Value a1, Value a2, Value a3, Value a4)
     {
       return call(env,
                   a1,
@@ -511,8 +484,7 @@ abstract public class CompiledClosure extends Closure {
       _requiredArgs = requiredArgs;
     }
 
-    @Override
-    public final Value call(Env env, Value []argValues)
+    public override final Value call(Env env, Value []argValues)
     {
       if (argValues.length < _requiredArgs) {
         env.warning("required argument missing");

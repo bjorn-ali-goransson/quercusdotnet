@@ -2232,8 +2232,7 @@ public class RegexpModule
       text.getChars(0, length, _text, 0);
     }
 
-    @Override
-    StringValue eval(Env env,
+    StringValue override eval(Env env,
                      StringValue sb,
                      RegexpState regexpState)
     {
@@ -2266,8 +2265,7 @@ public class RegexpModule
       _group = group;
     }
 
-    @Override
-    StringValue eval(Env env,
+    StringValue override eval(Env env,
                      StringValue sb,
                      RegexpState regexpState)
     {
@@ -2293,8 +2291,7 @@ public class RegexpModule
       _group = group;
     }
 
-    @Override
-    StringValue eval(Env env,
+    StringValue override eval(Env env,
                      StringValue sb,
                      RegexpState regexpState)
     {

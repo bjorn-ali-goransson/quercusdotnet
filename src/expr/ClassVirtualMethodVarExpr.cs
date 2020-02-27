@@ -106,8 +106,7 @@ public class ClassVirtualMethodVarExpr extends Expr {
    * Returns the copy of the value.
    * @param location
    */
-  @Override
-  public Expr createCopy(ExprFactory factory)
+  public override Expr createCopy(ExprFactory factory)
   {
     return factory.createCopy(this);
   }
@@ -119,8 +118,7 @@ public class ClassVirtualMethodVarExpr extends Expr {
    *
    * @return the expression value.
    */
-  @Override
-  public Value eval(Env env)
+  public override Value eval(Env env)
   {
     Value qThis = env.getThis();
 

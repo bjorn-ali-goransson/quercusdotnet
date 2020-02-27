@@ -82,8 +82,7 @@ public class EnumMarshal extends Marshal {
     return _enumClass;
   }
 
-  @Override
-  public int getMarshalingCostImpl(Value value)
+  public override int getMarshalingCostImpl(Value value)
   {
     // php/0cs1
     // returning a cost greater than all the other marshallings

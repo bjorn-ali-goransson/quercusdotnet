@@ -62,8 +62,7 @@ public class ShortObjectMarshal extends Marshal
       return LongValue.create(((Number) value).longValue());
   }
   
-  @Override
-  protected int getMarshalingCostImpl(Value argValue)
+  protected override int getMarshalingCostImpl(Value argValue)
   {
     if (argValue instanceof LongValue)
       return Marshal.ONE;
@@ -75,8 +74,7 @@ public class ShortObjectMarshal extends Marshal
       return Marshal.FOUR;
   }
   
-  @Override
-  public Class getExpectedClass()
+  public override Class getExpectedClass()
   {
     return Short.class;
   }

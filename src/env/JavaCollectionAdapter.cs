@@ -63,8 +63,7 @@ public class JavaCollectionAdapter extends JavaAdapter
   /**
    * Copy for assignment.
    */
-  @Override
-  public Value copy()
+  public override Value copy()
   {
     return new JavaCollectionAdapter(_collection, getClassDef());
   }
@@ -72,8 +71,7 @@ public class JavaCollectionAdapter extends JavaAdapter
   /**
    * Copy for serialization
    */
-  @Override
-  public Value copy(Env env, IdentityHashMap<Value,Value> map)
+  public override Value copy(Env env, IdentityHashMap<Value,Value> map)
   {
     return new JavaCollectionAdapter(_collection, getClassDef());
   }
@@ -81,8 +79,7 @@ public class JavaCollectionAdapter extends JavaAdapter
   /**
    * Returns the size.
    */
-  @Override
-  public int getSize()
+  public override int getSize()
   {
     return _collection.size();
   }
@@ -90,14 +87,12 @@ public class JavaCollectionAdapter extends JavaAdapter
   /**
    * Creatse a tail index.
    */
-  @Override
-  public Value createTailKey()
+  public override Value createTailKey()
   {
     return LongValue.create(getSize());
   }
 
-  @Override
-  public Value putImpl(Value key, Value value)
+  public override Value putImpl(Value key, Value value)
   {
     if (key.toInt() != getSize())
       throw new UnsupportedOperationException(
@@ -111,8 +106,7 @@ public class JavaCollectionAdapter extends JavaAdapter
   /**
    * Gets a new value.
    */
-  @Override
-  public Value get(Value key)
+  public override Value get(Value key)
   {
     int pos = key.toInt();
 
@@ -132,8 +126,7 @@ public class JavaCollectionAdapter extends JavaAdapter
   /**
    * Removes a value.
    */
-  @Override
-  public Value remove(Value key)
+  public override Value remove(Value key)
   {
     int pos = key.toInt();
 
@@ -156,8 +149,7 @@ public class JavaCollectionAdapter extends JavaAdapter
   /**
    * Returns a set of all the of the entries.
    */
-  @Override
-  public Set<Map.Entry<Value,Value>> entrySet()
+  public override Set<Map.Entry<Value,Value>> entrySet()
   {
     return new CollectionValueSet();
   }
@@ -165,8 +157,7 @@ public class JavaCollectionAdapter extends JavaAdapter
   /**
    * Returns a collection of the values.
    */
-  @Override
-  public Set<Map.Entry<Object,Object>> objectEntrySet()
+  public override Set<Map.Entry<Object,Object>> objectEntrySet()
   {
     return new CollectionSet();
   }
@@ -174,26 +165,22 @@ public class JavaCollectionAdapter extends JavaAdapter
   /**
    * Returns a collection of the values.
    */
-  @Override
-  public Collection<Value> values()
+  public override Collection<Value> values()
   {
     return new ValueCollection();
   }
 
-  @Override
-  public Iterator<Map.Entry<Value, Value>> getIterator(Env env)
+  public override Iterator<Map.Entry<Value, Value>> getIterator(Env env)
   {
     return new CollectionValueIterator();
   }
 
-  @Override
-  public Iterator<Value> getKeyIterator(Env env)
+  public override Iterator<Value> getKeyIterator(Env env)
   {
     return new KeyIterator();
   }
 
-  @Override
-  public Iterator<Value> getValueIterator(Env env)
+  public override Iterator<Value> getValueIterator(Env env)
   {
     return new ValueIterator();
   }
@@ -205,14 +192,12 @@ public class JavaCollectionAdapter extends JavaAdapter
     {
     }
 
-    @Override
-    public int size()
+    public override int size()
     {
       return getSize();
     }
 
-    @Override
-    public Iterator<Map.Entry<Object,Object>> iterator()
+    public override Iterator<Map.Entry<Object,Object>> iterator()
     {
       return new CollectionIterator();
     }
@@ -285,14 +270,12 @@ public class JavaCollectionAdapter extends JavaAdapter
     {
     }
 
-    @Override
-    public int size()
+    public override int size()
     {
       return getSize();
     }
 
-    @Override
-    public Iterator<Map.Entry<Value,Value>> iterator()
+    public override Iterator<Map.Entry<Value,Value>> iterator()
     {
       return new CollectionValueIterator();
     }
@@ -335,14 +318,12 @@ public class JavaCollectionAdapter extends JavaAdapter
     {
     }
 
-    @Override
-    public int size()
+    public override int size()
     {
       return getSize();
     }
 
-    @Override
-    public Iterator<Value> iterator()
+    public override Iterator<Value> iterator()
     {
       return new ValueIterator();
     }

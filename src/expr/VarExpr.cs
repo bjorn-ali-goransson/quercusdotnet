@@ -110,8 +110,7 @@ public class VarExpr
   /**
    * Creates the assignment.
    */
-  @Override
-  public void assign(QuercusParser parser)
+  public override void assign(QuercusParser parser)
   {
     // _var.setAssigned();
   }
@@ -119,8 +118,7 @@ public class VarExpr
   /**
    * Creates the assignment.
    */
-  @Override
-  public Expr createAssignRef(QuercusParser parser,
+  public override Expr createAssignRef(QuercusParser parser,
                               Expr value)
   {
     // _var.setAssigned();
@@ -134,8 +132,7 @@ public class VarExpr
    * @param env the calling environment.
    * @return the expression value.
    */
-  @Override
-  public Value eval(Env env)
+  public override Value eval(Env env)
   {
     return env.getValue(_name, false, true);
   }
@@ -146,8 +143,7 @@ public class VarExpr
    * @param env the calling environment.
    * @return the expression value.
    */
-  @Override
-  public Value evalTop(Env env)
+  public override Value evalTop(Env env)
   {
     return env.getValue(_name, false, false);
   }
@@ -174,8 +170,7 @@ public class VarExpr
    * @param env the calling environment.
    * @return the expression value.
    */
-  @Override
-  public Value evalCopy(Env env)
+  public override Value evalCopy(Env env)
   {
     return eval(env).copy();
   }
@@ -186,8 +181,7 @@ public class VarExpr
    * @param env the calling environment.
    * @return the expression value.
    */
-  @Override
-  public Value evalArray(Env env)
+  public override Value evalArray(Env env)
   {
     Value value = env.getVar(_name);
 
@@ -247,8 +241,7 @@ public class VarExpr
    * @param env the calling environment.
    * @return the expression value.
    */
-  @Override
-  public Value evalArg(Env env, boolean isTop)
+  public override Value evalArg(Env env, boolean isTop)
   {
     // php/043k
     // php/0443
@@ -261,8 +254,7 @@ public class VarExpr
    *
    * @param env the calling environment.
    */
-  @Override
-  public Value evalAssignValue(Env env, Value value)
+  public override Value evalAssignValue(Env env, Value value)
   {
     // php/0232
     env.setValue(_name, value);
@@ -275,8 +267,7 @@ public class VarExpr
    *
    * @param env the calling environment.
    */
-  @Override
-  public Value evalAssignRef(Env env, Value value)
+  public override Value evalAssignRef(Env env, Value value)
   {
     env.setRef(_name, value);
 
@@ -288,8 +279,7 @@ public class VarExpr
    *
    * @param env the calling environment.
    */
-  @Override
-  public void evalUnset(Env env)
+  public override void evalUnset(Env env)
   {
     // php/023b
     /*

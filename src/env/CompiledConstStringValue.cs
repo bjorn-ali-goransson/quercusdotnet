@@ -158,14 +158,12 @@ public final class CompiledConstStringValue
   /**
    * Converts to a double.
    */
-  @Override
-  public double toDouble()
+  public override double toDouble()
   {
     return toDoubleValue().toDouble();
   }
 
-  @Override
-  public final int hashCode()
+  public override final int hashCode()
   {
     return _compiledHashCode;
   }

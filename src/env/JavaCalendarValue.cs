@@ -61,8 +61,7 @@ public class JavaCalendarValue extends JavaValue {
   /**
    * Converts to a Java Calendar.
    */
-  @Override
-  public Calendar toJavaCalendar()
+  public override Calendar toJavaCalendar()
   {
     return _calendar;
   }

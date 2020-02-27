@@ -62,8 +62,7 @@ public class FloatObjectMarshal extends Marshal
       return new DoubleValue(((Number) value).doubleValue());
   }
 
-  @Override
-  protected int getMarshalingCostImpl(Value argValue)
+  protected override int getMarshalingCostImpl(Value argValue)
   {
     return argValue.toFloatMarshalCost() + 3;
 
@@ -79,8 +78,7 @@ public class FloatObjectMarshal extends Marshal
     */
   }
 
-  @Override
-  public Class getExpectedClass()
+  public override Class getExpectedClass()
   {
     return Float.class;
   }

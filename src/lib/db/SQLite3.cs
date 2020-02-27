@@ -91,14 +91,12 @@ public class SQLite3 extends JdbcConnectionResource
     }
   }
 
-  @Override
-  protected String getDriverName()
+  protected override String getDriverName()
   {
     return "sqlite";
   }
 
-  @Override
-  protected boolean isSeekable()
+  protected override boolean isSeekable()
   {
     return false;
   }

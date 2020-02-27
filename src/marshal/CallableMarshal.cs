@@ -57,8 +57,7 @@ public class CallableMarshal extends Marshal
     return marshal(env, expr.eval(env), expectedClass);
   }
 
-  @Override
-  protected Object marshalImpl(Env env, Value value, Class<?> expectedClass)
+  protected override Object marshalImpl(Env env, Value value, Class<?> expectedClass)
   {
     Callable callable = value.toCallable(env, _isOptional);
 
@@ -70,8 +69,7 @@ public class CallableMarshal extends Marshal
     throw new UnsupportedOperationException();
   }
 
-  @Override
-  protected int getMarshalingCostImpl(Value argValue)
+  protected override int getMarshalingCostImpl(Value argValue)
   {
     if (argValue instanceof Callable) {
       return Marshal.ZERO;
@@ -84,8 +82,7 @@ public class CallableMarshal extends Marshal
     }
   }
 
-  @Override
-  public Class getExpectedClass()
+  public override Class getExpectedClass()
   {
     return Callable.class;
   }

@@ -53,8 +53,7 @@ public class JavaArrayMarshal extends Marshal
     return marshal(env, expr.eval(env), expectedClass);
   }
 
-  @Override
-  public Object marshal(Env env, Value value, Class expectedClass)
+  public override Object marshal(Env env, Value value, Class expectedClass)
   {
     /*
     if (! value.isset()) {
@@ -81,14 +80,12 @@ public class JavaArrayMarshal extends Marshal
     return array;
   }
 
-  @Override
-  public Value unmarshal(Env env, Object value)
+  public override Value unmarshal(Env env, Object value)
   {
     return env.wrapJava(value);
   }
 
-  @Override
-  protected int getMarshalingCostImpl(Value argValue)
+  protected override int getMarshalingCostImpl(Value argValue)
   {
     if (argValue.isArray()) {
       if (Value[].class.equals(_expectedClass)
@@ -101,8 +98,7 @@ public class JavaArrayMarshal extends Marshal
       return Marshal.FOUR;
   }
 
-  @Override
-  public Class getExpectedClass()
+  public override Class getExpectedClass()
   {
     return _expectedClass;
   }

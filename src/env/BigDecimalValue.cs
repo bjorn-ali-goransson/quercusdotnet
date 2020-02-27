@@ -62,8 +62,7 @@ public class BigDecimalValue extends JavaValue {
   /**
    * Converts to a double.
    */
-  @Override
-  public double toDouble()
+  public override double toDouble()
   {
     return _val.doubleValue();
   }
@@ -71,8 +70,7 @@ public class BigDecimalValue extends JavaValue {
   /**
    * Converts to a Java BigDecimal.
    */
-  @Override
-  public BigDecimal toBigDecimal()
+  public override BigDecimal toBigDecimal()
   {
     return _val;
   }
@@ -80,8 +78,7 @@ public class BigDecimalValue extends JavaValue {
   /**
    * Converts to a Java BigDecimal.
    */
-  @Override
-  public BigInteger toBigInteger()
+  public override BigInteger toBigInteger()
   {
     return new BigInteger(toString());
   }
@@ -89,8 +86,7 @@ public class BigDecimalValue extends JavaValue {
   /**
    * Returns true for a double-value.
    */
-  @Override
-  public boolean isDoubleConvertible()
+  public override boolean isDoubleConvertible()
   {
     return true;
   }
@@ -98,8 +94,7 @@ public class BigDecimalValue extends JavaValue {
   /**
    * Returns true for a long-value.
    */
-  @Override
-  public boolean isLongConvertible()
+  public override boolean isLongConvertible()
   {
     return _val.longValue() == _val.doubleValue();
   }

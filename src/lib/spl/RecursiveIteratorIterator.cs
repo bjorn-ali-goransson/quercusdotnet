@@ -77,26 +77,22 @@ public class RecursiveIteratorIterator
   // Iterator
   //
 
-  @Override
-  public boolean valid(Env env)
+  public override boolean valid(Env env)
   {
     return getInnerIterator().valid(env);
   }
 
-  @Override
-  public Value current(Env env)
+  public override Value current(Env env)
   {
     return getInnerIterator().current(env);
   }
 
-  @Override
-  public Value key(Env env)
+  public override Value key(Env env)
   {
     return getInnerIterator().key(env);
   }
 
-  @Override
-  public void next(Env env)
+  public override void next(Env env)
   {
     RecursiveIterator currentIter = getInnerIterator();
 
@@ -117,8 +113,7 @@ public class RecursiveIteratorIterator
     }
   }
 
-  @Override
-  public void rewind(Env env)
+  public override void rewind(Env env)
   {
     for (int i = _iterStack.size() - 1; i > 0; i--) {
       _iterStack.remove(i);
@@ -127,8 +122,7 @@ public class RecursiveIteratorIterator
     _iterStack.get(0).rewind(env);
   }
 
-  @Override
-  public String toString()
+  public override String toString()
   {
     return getClass().getSimpleName() + "[" + _iterStack + "]";
   }
@@ -174,46 +168,39 @@ public class RecursiveIteratorIterator
       }
     }
 
-    @Override
-    public boolean hasChildren(Env env)
+    public override boolean hasChildren(Env env)
     {
       return _obj.callMethod(env, HAS_CHILDREN).toBoolean();
     }
 
-    @Override
-    public RecursiveIterator getChildren(Env env)
+    public override RecursiveIterator getChildren(Env env)
     {
       Value result = _obj.callMethod(env, GET_CHILDREN);
 
       return create(result);
     }
 
-    @Override
-    public boolean valid(Env env)
+    public override boolean valid(Env env)
     {
       return _obj.callMethod(env, VALID).toBoolean();
     }
 
-    @Override
-    public Value current(Env env)
+    public override Value current(Env env)
     {
       return _obj.callMethod(env, CURRENT);
     }
 
-    @Override
-    public Value key(Env env)
+    public override Value key(Env env)
     {
       return _obj.callMethod(env, KEY);
     }
 
-    @Override
-    public void next(Env env)
+    public override void next(Env env)
     {
       _obj.callMethod(env, NEXT);
     }
 
-    @Override
-    public void rewind(Env env)
+    public override void rewind(Env env)
     {
       _obj.callMethod(env, REWIND);
     }

@@ -77,22 +77,19 @@ public class ValueMarshal extends Marshal
     return (Value) value;
   }
 
-  @Override
-  protected int getMarshalingCostImpl(Value argValue)
+  protected override int getMarshalingCostImpl(Value argValue)
   {
     return Marshal.COST_VALUE;
   }
 
   /*
-  @Override
-  public int getMarshalingCost(Expr expr)
+  public override int getMarshalingCost(Expr expr)
   {
     return Marshal.FOUR;
   }
   */
 
-  @Override
-  public Class getExpectedClass()
+  public override Class getExpectedClass()
   {
     return Value.class;
   }

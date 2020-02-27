@@ -359,14 +359,12 @@ public class SimpleXMLElement extends SimpleXMLNode
       _iter = iter;
     }
 
-    @Override
-    public boolean hasNext()
+    public override boolean hasNext()
     {
       return _iter.hasNext();
     }
 
-    @Override
-    public Map.Entry<Value,SimpleXMLElement> next()
+    public override Map.Entry<Value,SimpleXMLElement> next()
     {
       Map.Entry<IteratorIndex,SimpleView> entry = _iter.next();
 
@@ -378,8 +376,7 @@ public class SimpleXMLElement extends SimpleXMLNode
       return new SimpleEntry<Value,SimpleXMLElement>(index, e);
     }
 
-    @Override
-    public void remove()
+    public override void remove()
     {
       throw new UnsupportedOperationException();
     }
@@ -394,8 +391,7 @@ public class SimpleXMLElement extends SimpleXMLNode
 
     }
 
-    @Override
-    public boolean hasNext()
+    public override boolean hasNext()
     {
       Node node = _node;
 
@@ -410,8 +406,7 @@ public class SimpleXMLElement extends SimpleXMLNode
       return false;
     }
 
-    @Override
-    public ElementEntry next()
+    public override ElementEntry next()
     {
       Node node = _node;
 
@@ -428,8 +423,7 @@ public class SimpleXMLElement extends SimpleXMLNode
       return null;
     }
 
-    @Override
-    public void remove()
+    public override void remove()
     {
     }
   }
@@ -442,16 +436,14 @@ public class SimpleXMLElement extends SimpleXMLNode
       _node = node;
     }
 
-    @Override
-    public Value getKey()
+    public override Value getKey()
     {
       Env env = Env.getInstance();
 
       return env.createString(_node.getNodeName());
     }
 
-    @Override
-    public Value getValue()
+    public override Value getValue()
     {
       Env env = Env.getInstance();
 
@@ -469,8 +461,7 @@ public class SimpleXMLElement extends SimpleXMLNode
       }
     }
 
-    @Override
-    public Value setValue(Value value)
+    public override Value setValue(Value value)
     {
       throw new UnsupportedOperationException();
     }

@@ -73,8 +73,7 @@ public class UnicodeValueMarshal extends Marshal
       return env.createString(String.valueOf(value));
   }
   
-  @Override
-  protected int getMarshalingCostImpl(Value argValue)
+  protected override int getMarshalingCostImpl(Value argValue)
   {
     return argValue.toUnicodeValueMarshalCost();
 
@@ -90,8 +89,7 @@ public class UnicodeValueMarshal extends Marshal
     */
   }
   
-  @Override
-  public Class getExpectedClass()
+  public override Class getExpectedClass()
   {
     return UnicodeValue.class;
   }

@@ -61,8 +61,7 @@ public class JavaSqlDriverWrapper implements javax.sql.DataSource
     return _driver.connect(_url, props);
   }
 
-  @Override
-  public Connection getConnection(String user, String password)
+  public override Connection getConnection(String user, String password)
     
   {
     Properties props = new Properties();
@@ -80,39 +79,33 @@ public class JavaSqlDriverWrapper implements javax.sql.DataSource
     return _driver.connect(_url, props);
   }
 
-  @Override
-  public int getLoginTimeout()
+  public override int getLoginTimeout()
   {
     throw new UnsupportedOperationException();
   }
 
-  @Override
-  public PrintWriter getLogWriter()
+  public override PrintWriter getLogWriter()
   {
     throw new UnsupportedOperationException();
   }
 
-  @Override
-  public void setLoginTimeout(int seconds)
+  public override void setLoginTimeout(int seconds)
   {
     throw new UnsupportedOperationException();
   }
 
-  @Override
-  public void setLogWriter(PrintWriter out)
+  public override void setLogWriter(PrintWriter out)
   {
     throw new UnsupportedOperationException();
   }
 
-  @Override
-  public <T> T unwrap(Class<T> iface)
+  public override <T> T unwrap(Class<T> iface)
     
   {
     throw new UnsupportedOperationException();
   }
 
-  @Override
-  public boolean isWrapperFor(Class<?> iface)
+  public override boolean isWrapperFor(Class<?> iface)
     
   {
     throw new UnsupportedOperationException();

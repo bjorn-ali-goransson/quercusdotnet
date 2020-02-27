@@ -69,8 +69,7 @@ public class JavaMarshal extends Marshal {
     return marshal(env, value, argClass);
   }
 
-  @Override
-  public Object marshal(Env env, Value value, Class argClass)
+  public override Object marshal(Env env, Value value, Class argClass)
   {
     if (! value.isset()) {
       if (_isNotNull) {
@@ -98,14 +97,12 @@ public class JavaMarshal extends Marshal {
     return obj;
   }
 
-  @Override
-  public Value unmarshal(Env env, Object value)
+  public override Value unmarshal(Env env, Object value)
   {
     return env.wrapJava(value, _def, _isUnmarshalNullAsFalse);
   }
 
-  @Override
-  protected int getMarshalingCostImpl(Value argValue)
+  protected override int getMarshalingCostImpl(Value argValue)
   {
     Class type = _def.getType();
 
@@ -116,8 +113,7 @@ public class JavaMarshal extends Marshal {
       return Marshal.FOUR;
   }
 
-  @Override
-  public final Class getExpectedClass()
+  public override final Class getExpectedClass()
   {
     return _def.getType();
   }

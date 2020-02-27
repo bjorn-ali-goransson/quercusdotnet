@@ -57,50 +57,42 @@ public class AttributeView extends SimpleView
     return _attr.getNodeName();
   }
 
-  @Override
-  public String getNodeValue()
+  public override String getNodeValue()
   {
     return _attr.getNodeValue();
   }
 
-  @Override
-  public SimpleView getIndex(Env env, Value indexV)
+  public override SimpleView getIndex(Env env, Value indexV)
   {
     throw new UnsupportedOperationException();
   }
 
-  @Override
-  public SimpleView setIndex(Env env, Value indexV, Value value)
+  public override SimpleView setIndex(Env env, Value indexV, Value value)
   {
     throw new UnsupportedOperationException();
   }
 
-  @Override
-  public SimpleView getField(Env env, Value indexV)
+  public override SimpleView getField(Env env, Value indexV)
   {
     throw new UnsupportedOperationException();
   }
 
-  @Override
-  public SimpleView setField(Env env, Value indexV, Value value)
+  public override SimpleView setField(Env env, Value indexV, Value value)
   {
     throw new UnsupportedOperationException();
   }
 
-  @Override
-  public String toString(Env env)
+  public override String toString(Env env)
   {
     return _attr.getNodeValue();
   }
 
-  @Override
-  public Set<Map.Entry<Value,Value>> getEntrySet(Env env, QuercusClass cls)
+  public override Set<Map.Entry<Value,Value>> getEntrySet(Env env, QuercusClass cls)
   {
     throw new UnsupportedOperationException();
   }
 
-  @Override
-  public boolean toXml(Env env, StringBuilder sb)
+  public override boolean toXml(Env env, StringBuilder sb)
   {
     sb.append(' ');
     sb.append(_attr.getNodeName());
@@ -114,8 +106,7 @@ public class AttributeView extends SimpleView
     return true;
   }
 
-  @Override
-  public Value toDumpValue(Env env, QuercusClass cls, boolean isChildren)
+  public override Value toDumpValue(Env env, QuercusClass cls, boolean isChildren)
   {
     ObjectValue obj = env.createObject();
     obj.setClassName(cls.getName());
@@ -127,8 +118,7 @@ public class AttributeView extends SimpleView
     return obj;
   }
 
-  @Override
-  public String toString()
+  public override String toString()
   {
     return getClass().getSimpleName() + "[" + _attr + "]";
   }

@@ -68,8 +68,7 @@ public class ArgGetValue extends ArgValue
    * Returns the arg object for a field reference, e.g.
    * foo($a[0]->x)
    */
-  @Override
-  public Value getFieldArg(Env env, StringValue index, boolean isTop)
+  public override Value getFieldArg(Env env, StringValue index, boolean isTop)
   {
     return new ArgGetFieldValue(env, this, index); // php/3d2p
   }
@@ -77,16 +76,14 @@ public class ArgGetValue extends ArgValue
   /**
    * Converts to a reference variable.
    */
-  @Override
-  public Var toLocalVarDeclAsRef()
+  public override Var toLocalVarDeclAsRef()
   {
     // php/3d55, php/3d49, php/3921
 
     return _obj.toAutoArray().getVar(_index).toLocalVarDeclAsRef();
   }
 
-  @Override
-  public Value toAutoArray()
+  public override Value toAutoArray()
   {
     Value parent = _obj.toAutoArray();
     Value value = parent.get(_index);
@@ -102,8 +99,7 @@ public class ArgGetValue extends ArgValue
     return value;
   }
 
-  @Override
-  public Value toAutoObject(Env env)
+  public override Value toAutoObject(Env env)
   {
     Value array = _obj.toAutoArray();
     Value value = array.get(_index);
@@ -129,8 +125,7 @@ public class ArgGetValue extends ArgValue
   /**
    * Converts to a read-only value.
    */
-  @Override
-  public Value toLocalValueReadOnly()
+  public override Value toLocalValueReadOnly()
   {
     return _obj.get(_index);
   }
@@ -138,8 +133,7 @@ public class ArgGetValue extends ArgValue
   /**
    * Converts to a value.
    */
-  @Override
-  public Value toLocalValue()
+  public override Value toLocalValue()
   {
     return _obj.get(_index).copy();
   }
@@ -147,8 +141,7 @@ public class ArgGetValue extends ArgValue
   /**
    * Converts to a value.
    */
-  @Override
-  public Value toLocalRef()
+  public override Value toLocalRef()
   {
     return _obj.get(_index).copy(); // php/0d14, php/04b4
   }

@@ -46,26 +46,22 @@ public class StringMarshal extends Marshal {
     return true;
   }
 
-  @Override
-  public boolean isReadOnly()
+  public override boolean isReadOnly()
   {
     return true;
   }
 
-  @Override
-  public Object marshal(Env env, Expr expr, Class expectedClass)
+  public override Object marshal(Env env, Expr expr, Class expectedClass)
   {
     return expr.evalString(env);
   }
 
-  @Override
-  public Object marshal(Env env, Value value, Class expectedClass)
+  public override Object marshal(Env env, Value value, Class expectedClass)
   {
     return value.toJavaString();
   }
 
-  @Override
-  public Value unmarshal(Env env, Object value)
+  public override Value unmarshal(Env env, Object value)
   {
     if (value == null)
       return NullValue.NULL;
@@ -73,8 +69,7 @@ public class StringMarshal extends Marshal {
       return env.createString((String) value);
   }
 
-  @Override
-  protected int getMarshalingCostImpl(Value argValue)
+  protected override int getMarshalingCostImpl(Value argValue)
   {
     return argValue.toStringMarshalCost();
     /*
@@ -93,8 +88,7 @@ public class StringMarshal extends Marshal {
     */
   }
 
-  @Override
-  public int getMarshalingCost(Expr expr)
+  public override int getMarshalingCost(Expr expr)
   {
     if (expr.isString())
       return Marshal.ZERO;
@@ -102,8 +96,7 @@ public class StringMarshal extends Marshal {
       return Marshal.FOUR;
   }
 
-  @Override
-  public Class getExpectedClass()
+  public override Class getExpectedClass()
   {
     return String.class;
   }

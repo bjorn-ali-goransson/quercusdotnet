@@ -130,8 +130,7 @@ public class ClassMarshal extends Marshal {
       return Marshal.FOUR;
   }
 
-  @Override
-  public Class getExpectedClass()
+  public override Class getExpectedClass()
   {
     return Class.class;
   }

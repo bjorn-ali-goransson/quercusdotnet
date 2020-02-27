@@ -75,8 +75,7 @@ public class JavaConstructor extends JavaInvoker {
     return getName();
   }
 
-  @Override
-  public Class<?> getJavaDeclaringClass()
+  public override Class<?> getJavaDeclaringClass()
   {
     return _constructor.getDeclaringClass();
   }
@@ -102,8 +101,7 @@ public class JavaConstructor extends JavaInvoker {
     return name;
   }
 
-  @Override
-  public boolean isConstructor()
+  public override boolean isConstructor()
   {
     return true;
   }

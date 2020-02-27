@@ -73,8 +73,7 @@ public class DoubleValueMarshal
       return null;
   }
 
-  @Override
-  protected int getMarshalingCostImpl(Value argValue)
+  protected override int getMarshalingCostImpl(Value argValue)
   {
     if (argValue instanceof DoubleValue)
       return Marshal.ZERO;
@@ -86,8 +85,7 @@ public class DoubleValueMarshal
       return Marshal.FOUR;
   }
 
-  @Override
-  public Class getExpectedClass()
+  public override Class getExpectedClass()
   {
     return DoubleValue.class;
   }

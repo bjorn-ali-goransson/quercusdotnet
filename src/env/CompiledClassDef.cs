@@ -132,16 +132,14 @@ public class CompiledClassDef extends ClassDef {
   /**
    * Initialize the quercus class fields.
    */
-  @Override
-  public void initClassFields(QuercusClass cl, String bindingClassName)
+  public override void initClassFields(QuercusClass cl, String bindingClassName)
   {
   }
 
   /**
    * Returns true for a final class.
    */
-  @Override
-  public boolean isFinal()
+  public override boolean isFinal()
   {
     return _isFinal;
   }
@@ -171,8 +169,7 @@ public class CompiledClassDef extends ClassDef {
     _fieldNames.add(name);
   }
 
-  @Override
-  public ClassField getField(StringValue name)
+  public override ClassField getField(StringValue name)
   {
     return _fieldMap.get(name);
   }
@@ -180,8 +177,7 @@ public class CompiledClassDef extends ClassDef {
   /**
    * Returns the constructor
    */
-  @Override
-  public AbstractFunction findConstructor()
+  public override AbstractFunction findConstructor()
   {
     return null;
   }
@@ -189,8 +185,7 @@ public class CompiledClassDef extends ClassDef {
   /**
    * Creates a new instance.
    */
-  @Override
-  public void initInstance(Env env, Value value, boolean isInitFieldValues)
+  public override void initInstance(Env env, Value value, boolean isInitFieldValues)
   {
   }
 
@@ -388,8 +383,7 @@ public class CompiledClassDef extends ClassDef {
   /**
    * Eval new
    */
-  @Override
-  public Value callNew(Env env, Expr []args)
+  public override Value callNew(Env env, Expr []args)
   {
     return null;
   }
@@ -397,8 +391,7 @@ public class CompiledClassDef extends ClassDef {
   /**
    * Eval new
    */
-  @Override
-  public Value callNew(Env env, Value []args)
+  public override Value callNew(Env env, Value []args)
   {
     return null;
   }

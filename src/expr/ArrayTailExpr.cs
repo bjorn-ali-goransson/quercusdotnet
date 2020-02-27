@@ -155,8 +155,7 @@ public class ArrayTailExpr extends AbstractVarExpr {
    *
    * @return the expression value.
    */
-  @Override
-  public Value evalAssignValue(Env env, Value value)
+  public override Value evalAssignValue(Env env, Value value)
   {
     /*
     Value array = _expr.evalVar(env);
@@ -181,8 +180,7 @@ public class ArrayTailExpr extends AbstractVarExpr {
    *
    * @return the expression value.
    */
-  @Override
-  public Value evalAssignRef(Env env, Value value)
+  public override Value evalAssignRef(Env env, Value value)
   {
     Value array = _expr.evalArray(env);
 

@@ -217,8 +217,7 @@ public class JdbcPreparedStatementResource
     return true;
   }
 
-  @Override
-  protected boolean executeImpl(Env env)
+  protected override boolean executeImpl(Env env)
     
   {
     if (_preparedStmt != null) {

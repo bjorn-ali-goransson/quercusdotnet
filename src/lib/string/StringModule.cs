@@ -5416,8 +5416,7 @@ public class StringModule extends AbstractQuercusModule {
                                    env.getLocaleInfo().getNumeric());
     }
 
-    @Override
-    public boolean apply(Env env, StringValue sb, Value []args)
+    public override boolean apply(Env env, StringValue sb, Value []args)
     {
       long value;
 
@@ -5484,8 +5483,7 @@ public class StringModule extends AbstractQuercusModule {
       return new HexPrintfSegment(index, min, pad, isUpper);
     }
 
-    @Override
-    public boolean apply(Env env, StringValue sb, Value []args)
+    public override boolean apply(Env env, StringValue sb, Value []args)
     {
       long value;
 
@@ -5573,8 +5571,7 @@ public class StringModule extends AbstractQuercusModule {
       return new UnsignedPrintfSegment(index, min, pad);
     }
 
-    @Override
-    public boolean apply(Env env, StringValue sb, Value []args)
+    public override boolean apply(Env env, StringValue sb, Value []args)
     {
       long value;
 
@@ -5671,8 +5668,7 @@ public class StringModule extends AbstractQuercusModule {
       return new BinaryPrintfSegment(index, min, pad);
     }
 
-    @Override
-    public boolean apply(Env env, StringValue sb, Value []args)
+    public override boolean apply(Env env, StringValue sb, Value []args)
     {
       long value;
 
@@ -5732,8 +5728,7 @@ public class StringModule extends AbstractQuercusModule {
       _locale = locale;
     }
 
-    @Override
-    public boolean apply(Env env, StringValue sb, Value []args)
+    public override boolean apply(Env env, StringValue sb, Value []args)
     {
       double value;
 
@@ -5835,8 +5830,7 @@ public class StringModule extends AbstractQuercusModule {
       return args[_index].toStringValue(env);
     }
 
-    @Override
-    public boolean apply(Env env, StringValue sb, Value []args)
+    public override boolean apply(Env env, StringValue sb, Value []args)
     {
       sb.append(_prefix, 0, _prefix.length);
 
@@ -5889,8 +5883,7 @@ public class StringModule extends AbstractQuercusModule {
       super(prefix, isLeft, pad, isUpper, width, format, index);
     }
 
-    @Override
-    protected StringValue toValue(Env env, Value []args)
+    protected override StringValue toValue(Env env, Value []args)
     {
       if (args.length <= _index)
         return env.getEmptyString();
@@ -5984,14 +5977,12 @@ public class StringModule extends AbstractQuercusModule {
       _strlen = string.length();
     }
 
-    @Override
-    public boolean isAssigned()
+    public override boolean isAssigned()
     {
       return false;
     }
 
-    @Override
-    public int apply(StringValue string,
+    public override int apply(StringValue string,
                      int strlen,
                      int sIndex,
                      Value var,
@@ -6020,14 +6011,12 @@ public class StringModule extends AbstractQuercusModule {
 
     }
 
-    @Override
-    public boolean isAssigned()
+    public override boolean isAssigned()
     {
       return false;
     }
 
-    @Override
-    public int apply(StringValue string,
+    public override int apply(StringValue string,
                      int strlen,
                      int sIndex,
                      Value var,
@@ -6049,14 +6038,12 @@ public class StringModule extends AbstractQuercusModule {
     {
     }
 
-    @Override
-    public boolean isAssigned()
+    public override boolean isAssigned()
     {
       return true;
     }
 
-    @Override
-    public int apply(StringValue string,
+    public override int apply(StringValue string,
                      int strlen,
                      int sIndex,
                      Value var,
@@ -6076,14 +6063,12 @@ public class StringModule extends AbstractQuercusModule {
       _set = set;
     }
 
-    @Override
-    public boolean isAssigned()
+    public override boolean isAssigned()
     {
       return true;
     }
 
-    @Override
-    public int apply(StringValue string,
+    public override int apply(StringValue string,
                      int strlen,
                      int sIndex,
                      Value var,
@@ -6119,14 +6104,12 @@ public class StringModule extends AbstractQuercusModule {
       _set = set;
     }
 
-    @Override
-    public boolean isAssigned()
+    public override boolean isAssigned()
     {
       return true;
     }
 
-    @Override
-    public int apply(StringValue string,
+    public override int apply(StringValue string,
                      int strlen,
                      int sIndex,
                      Value var,
@@ -6165,14 +6148,12 @@ public class StringModule extends AbstractQuercusModule {
       _maxLen  = maxLen;
     }
 
-    @Override
-    public boolean isAssigned()
+    public override boolean isAssigned()
     {
       return true;
     }
 
-    @Override
-    public int apply(StringValue s,
+    public override int apply(StringValue s,
                      int strlen,
                      int i,
                      Value var,
@@ -6258,14 +6239,12 @@ public class StringModule extends AbstractQuercusModule {
       _maxLen = maxLen;
     }
 
-    @Override
-    public boolean isAssigned()
+    public override boolean isAssigned()
     {
       return true;
     }
 
-    @Override
-    public int apply(StringValue string,
+    public override int apply(StringValue string,
                      int strlen,
                      int sIndex,
                      Value var,
@@ -6344,14 +6323,12 @@ public class StringModule extends AbstractQuercusModule {
       _isUnsigned = isUnsigned;
     }
 
-    @Override
-    public boolean isAssigned()
+    public override boolean isAssigned()
     {
       return true;
     }
 
-    @Override
-    public int apply(StringValue string,
+    public override int apply(StringValue string,
                      int strlen,
                      int sIndex,
                      Value var,
@@ -6431,14 +6408,12 @@ public class StringModule extends AbstractQuercusModule {
       _maxLen = maxLen;
     }
 
-    @Override
-    public boolean isAssigned()
+    public override boolean isAssigned()
     {
       return true;
     }
 
-    @Override
-    public int apply(StringValue string,
+    public override int apply(StringValue string,
                      int strlen,
                      int sIndex,
                      Value var,
@@ -6583,8 +6558,7 @@ public class StringModule extends AbstractQuercusModule {
       _maxLen = maxLen;
     }
 
-    @Override
-    public boolean isAssigned()
+    public override boolean isAssigned()
     {
       return true;
     }
@@ -6592,8 +6566,7 @@ public class StringModule extends AbstractQuercusModule {
     /**
      * Scans a string with a given length.
      */
-    @Override
-    public int apply(StringValue string,
+    public override int apply(StringValue string,
                      int strlen,
                      int sIndex,
                      Value var,

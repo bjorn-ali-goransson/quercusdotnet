@@ -101,15 +101,13 @@ public class CallVarExpr extends Expr {
   }
   
   
-  @Override
-  public Value evalRef(Env env)
+  public override Value evalRef(Env env)
   {
     return evalImpl(env, true, false);
   }
   
   
-  @Override
-  public Value evalCopy(Env env)
+  public override Value evalCopy(Env env)
   {
     return evalImpl(env, false, true);
   }

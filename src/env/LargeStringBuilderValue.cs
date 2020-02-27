@@ -102,8 +102,7 @@ public class LargeStringBuilderValue
   /**
    * Returns the ValueType.
    */
-  @Override
-  public ValueType getValueType()
+  public override ValueType getValueType()
   {
     return StringBuilderValue.getValueType(_bufferList[0], 0, _length);
   }
@@ -111,8 +110,7 @@ public class LargeStringBuilderValue
   /**
    * Returns true for a long
    */
-  @Override
-  public boolean isLongConvertible()
+  public override boolean isLongConvertible()
   {
     return false;
   }
@@ -128,8 +126,7 @@ public class LargeStringBuilderValue
   /**
    * Returns true for a number
    */
-  @Override
-  public boolean isNumber()
+  public override boolean isNumber()
   {
     return false;
   }
@@ -137,8 +134,7 @@ public class LargeStringBuilderValue
   /**
    * Returns true for a scalar
    */
-  @Override
-  public boolean isScalar()
+  public override boolean isScalar()
   {
     return true;
   }
@@ -146,8 +142,7 @@ public class LargeStringBuilderValue
   /**
    * Converts to a boolean.
    */
-  @Override
-  public boolean toBoolean()
+  public override boolean toBoolean()
   {
     if (_length == 0)
       return false;
@@ -160,8 +155,7 @@ public class LargeStringBuilderValue
   /**
    * Converts to a long.
    */
-  @Override
-  public long toLong()
+  public override long toLong()
   {
     return parseLong(_bufferList[0], 0, _length);
   }
@@ -169,8 +163,7 @@ public class LargeStringBuilderValue
   /**
    * Converts to a double.
    */
-  @Override
-  public double toDouble()
+  public override double toDouble()
   {
     return StringBuilderValue.toDouble(_bufferList[0], 0, _length);
   }
@@ -178,8 +171,7 @@ public class LargeStringBuilderValue
   /**
    * Convert to an input stream.
    */
-  @Override
-  public InputStream toInputStream()
+  public override InputStream toInputStream()
   {
     return new BuilderInputStream();
   }
@@ -187,8 +179,7 @@ public class LargeStringBuilderValue
   /**
    * Converts to a string.
    */
-  @Override
-  public String toString()
+  public override String toString()
   {
     char []buffer = new char[_length];
 
@@ -203,8 +194,7 @@ public class LargeStringBuilderValue
   /**
    * Converts to an object.
    */
-  @Override
-  public Object toJavaObject()
+  public override Object toJavaObject()
   {
     return toString();
   }
@@ -212,8 +202,7 @@ public class LargeStringBuilderValue
   /**
    * Converts to a string builder
    */
-  @Override
-  public StringValue toStringBuilder()
+  public override StringValue toStringBuilder()
   {
     // XXX: can this just return this, or does it need to return a copy?
 
@@ -223,8 +212,7 @@ public class LargeStringBuilderValue
   /**
    * Converts to a BinaryValue.
    */
-  @Override
-  public StringValue toBinaryValue(Env env)
+  public override StringValue toBinaryValue(Env env)
   {
     return this;
   }
@@ -232,8 +220,7 @@ public class LargeStringBuilderValue
   /**
    * Converts to a BinaryValue in desired charset.
    */
-  @Override
-  public StringValue toBinaryValue(String charset)
+  public override StringValue toBinaryValue(String charset)
   {
     return this;
   }
@@ -257,8 +244,7 @@ public class LargeStringBuilderValue
   /**
    * Converts to a key.
    */
-  @Override
-  public Value toKey()
+  public override Value toKey()
   {
     if (getValueType().isLongAdd())
       return LongValue.create(toLong());
@@ -298,8 +284,7 @@ public class LargeStringBuilderValue
   /**
    * Returns the character at an index
    */
-  @Override
-  public Value charValueAt(long index)
+  public override Value charValueAt(long index)
   {
     int len = _length;
 
@@ -312,8 +297,7 @@ public class LargeStringBuilderValue
     }
   }
 
-  @Override
-  public final void setLength(int len)
+  public override final void setLength(int len)
   {
     _length = len;
   }
@@ -325,8 +309,7 @@ public class LargeStringBuilderValue
   /**
    * Returns the length of the string.
    */
-  @Override
-  public int length()
+  public override int length()
   {
     return _length;
   }
@@ -334,8 +317,7 @@ public class LargeStringBuilderValue
   /**
    * Returns the character at a particular location
    */
-  @Override
-  public char charAt(int index)
+  public override char charAt(int index)
   {
     int len = _length;
 
@@ -351,8 +333,7 @@ public class LargeStringBuilderValue
   /**
    * Returns a subsequence
    */
-  @Override
-  public CharSequence subSequence(int start, int end)
+  public override CharSequence subSequence(int start, int end)
   {
     if (end <= start)
       return StringBuilderValue.EMPTY;
@@ -392,8 +373,7 @@ public class LargeStringBuilderValue
   /**
    * Convert to lower case.
    */
-  @Override
-  public StringValue toLowerCase(Locale locale)
+  public override StringValue toLowerCase(Locale locale)
   {
     int length = _length;
 
@@ -416,8 +396,7 @@ public class LargeStringBuilderValue
   /**
    * Convert to lower case.
    */
-  @Override
-  public StringValue toUpperCase()
+  public override StringValue toUpperCase()
   {
     int length = _length;
 
@@ -444,8 +423,7 @@ public class LargeStringBuilderValue
   /**
    * Creates a string builder of the same type.
    */
-  @Override
-  public StringValue createStringBuilder()
+  public override StringValue createStringBuilder()
   {
     return new StringBuilderValue();
   }
@@ -453,8 +431,7 @@ public class LargeStringBuilderValue
   /**
    * Creates a string builder of the same type.
    */
-  @Override
-  public StringValue createStringBuilder(int length)
+  public override StringValue createStringBuilder(int length)
   {
     return new StringBuilderValue(length);
   }
@@ -462,8 +439,7 @@ public class LargeStringBuilderValue
   /**
    * Converts to a string builder
    */
-  @Override
-  public StringValue toStringBuilder(Env env)
+  public override StringValue toStringBuilder(Env env)
   {
     return new LargeStringBuilderValue(_bufferList, _length);
   }
@@ -471,8 +447,7 @@ public class LargeStringBuilderValue
   /**
    * Append a Java buffer to the value.
    */
-  @Override
-  public final StringValue appendUnicode(char []buf, int offset, int length)
+  public override final StringValue appendUnicode(char []buf, int offset, int length)
   {
     return append(buf, offset, length);
   }
@@ -480,8 +455,7 @@ public class LargeStringBuilderValue
   /**
    * Append a Java string to the value.
    */
-  @Override
-  public StringValue append(String s)
+  public override StringValue append(String s)
   {
     int len = s.length();
 
@@ -517,8 +491,7 @@ public class LargeStringBuilderValue
   /**
    * Append a Java buffer to the value.
    */
-  @Override
-  public final StringValue append(char []buf, int offset, int length)
+  public override final StringValue append(char []buf, int offset, int length)
   {
     ensureCapacity(_length + length);
 
@@ -567,8 +540,7 @@ public class LargeStringBuilderValue
   /**
    * Append a Java byte to the value without conversions.
    */
-  @Override
-  public final StringValue append(char v)
+  public override final StringValue append(char v)
   {
     if (_length % SIZE == 0)
       ensureCapacity(_length + 1);
@@ -598,8 +570,7 @@ public class LargeStringBuilderValue
   /**
    * Append a Java boolean to the value.
    */
-  @Override
-  public final StringValue append(boolean v)
+  public override final StringValue append(boolean v)
   {
     return append(v ? "true" : "false");
   }
@@ -607,8 +578,7 @@ public class LargeStringBuilderValue
   /**
    * Append a Java long to the value.
    */
-  @Override
-  public StringValue append(long v)
+  public override StringValue append(long v)
   {
     // XXX: this probably is frequent enough to special-case
 
@@ -618,8 +588,7 @@ public class LargeStringBuilderValue
   /**
    * Append a Java double to the value.
    */
-  @Override
-  public StringValue append(double v)
+  public override StringValue append(double v)
   {
     return append(String.valueOf(v));
   }
@@ -627,8 +596,7 @@ public class LargeStringBuilderValue
   /**
    * Append a Java value to the value.
    */
-  @Override
-  public final StringValue append(Value v)
+  public override final StringValue append(Value v)
   {
     v.appendTo(this);
 
@@ -801,8 +769,7 @@ public class LargeStringBuilderValue
   /**
    * Returns the hash code.
    */
-  @Override
-  public int hashCode()
+  public override int hashCode()
   {
     if (_hashCode != 0)
       return _hashCode;
@@ -821,8 +788,7 @@ public class LargeStringBuilderValue
     return hash;
   }
 
-  @Override
-  public String toDebugString()
+  public override String toDebugString()
   {
     StringBuilder sb = new StringBuilder();
 
@@ -845,8 +811,7 @@ public class LargeStringBuilderValue
     return sb.toString();
   }
 
-  @Override
-  public void varDumpImpl(Env env,
+  public override void varDumpImpl(Env env,
                           WriteStream out,
                           int depth,
                           IdentityHashMap<Value, String> valueSet)
@@ -908,8 +873,7 @@ public class LargeStringBuilderValue
     /**
      * Reads the next byte.
      */
-    @Override
-    public int read()
+    public override int read()
     {
       if (_index < _length)
         return charAt(_index++);
@@ -920,8 +884,7 @@ public class LargeStringBuilderValue
     /**
      * Reads into a buffer.
      */
-    @Override
-    public int read(byte []buffer, int offset, int length)
+    public override int read(byte []buffer, int offset, int length)
     {
       int sublen = _length - _index;
 
@@ -944,8 +907,7 @@ public class LargeStringBuilderValue
     /**
      * Writes the next byte.
      */
-    @Override
-    public void write(int ch)
+    public override void write(int ch)
     {
       append(ch);
     }
@@ -953,8 +915,7 @@ public class LargeStringBuilderValue
     /**
      * Reads into a buffer.
      */
-    @Override
-    public void write(byte []buffer, int offset, int length)
+    public override void write(byte []buffer, int offset, int length)
     {
       append(buffer, offset, length);
     }

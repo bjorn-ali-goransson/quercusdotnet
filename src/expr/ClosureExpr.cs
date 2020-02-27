@@ -88,8 +88,7 @@ public class ClosureExpr extends Expr {
    * Returns the reference of the value.
    * @param location
    */
-  @Override
-  public Expr createRef(QuercusParser parser)
+  public override Expr createRef(QuercusParser parser)
   {
     return parser.getFactory().createRef(this);
   }
@@ -98,8 +97,7 @@ public class ClosureExpr extends Expr {
    * Returns the copy of the value.
    * @param location
    */
-  @Override
-  public Expr createCopy(ExprFactory factory)
+  public override Expr createCopy(ExprFactory factory)
   {
     return this;
   }
@@ -111,8 +109,7 @@ public class ClosureExpr extends Expr {
    *
    * @return the expression value.
    */
-  @Override
-  public Value eval(Env env)
+  public override Value eval(Env env)
   {
     return evalImpl(env);
   }
@@ -124,8 +121,7 @@ public class ClosureExpr extends Expr {
    *
    * @return the expression value.
    */
-  @Override
-  public Value evalCopy(Env env)
+  public override Value evalCopy(Env env)
   {
     return evalImpl(env);
   }

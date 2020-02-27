@@ -1071,8 +1071,7 @@ public class QuercusClass extends NullValue {
     return env.getStaticValue(staticName);
   }
 
-  @Override
-  public Var getStaticFieldVar(Env env, StringValue name)
+  public override Var getStaticFieldVar(Env env, StringValue name)
   {
     StringValue staticName = _staticFieldNameMap.get(name);
 
@@ -1086,8 +1085,7 @@ public class QuercusClass extends NullValue {
     return env.getStaticVar(staticName);
   }
 
-  @Override
-  public Value setStaticFieldRef(Env env, StringValue name, Value value)
+  public override Value setStaticFieldRef(Env env, StringValue name, Value value)
   {
     StringValue staticName = _staticFieldNameMap.get(name);
 
@@ -1334,8 +1332,7 @@ public class QuercusClass extends NullValue {
   /**
    * Returns true for an implementation of a class
    */
-  @Override
-  public boolean isA(Env env, String name)
+  public override boolean isA(Env env, String name)
   {
     if (name.startsWith("\\")) {
       name = name.substring(1);
@@ -1504,8 +1501,7 @@ public class QuercusClass extends NullValue {
     return false;
   }
 
-  @Override
-  public boolean issetField(Env env, StringValue name) {
+  public override boolean issetField(Env env, StringValue name) {
     if(_fieldMap.containsKey(name)) {
       return true;
     }
@@ -1513,8 +1509,7 @@ public class QuercusClass extends NullValue {
     return false;
   }
 
-  @Override
-  public void unsetField(StringValue name) {
+  public override void unsetField(StringValue name) {
     if(_fieldMap.containsKey(name))
       _fieldMap.remove(name);
   }
@@ -2375,8 +2370,7 @@ public class QuercusClass extends NullValue {
   /**
    * calls the function.
    */
-  @Override
-  public Value callMethod(Env env,
+  public override Value callMethod(Env env,
                           StringValue methodName, int hash,
                           Value []args)
   {
@@ -2386,8 +2380,7 @@ public class QuercusClass extends NullValue {
   /**
    * calls the function.
    */
-  @Override
-  public Value callMethod(Env env,
+  public override Value callMethod(Env env,
                           StringValue methodName, int hash)
   {
     return callMethod(env, this, methodName, hash);
@@ -2396,8 +2389,7 @@ public class QuercusClass extends NullValue {
   /**
    * calls the function.
    */
-  @Override
-  public Value callMethod(Env env,
+  public override Value callMethod(Env env,
                           StringValue methodName, int hash,
                           Value a1)
   {
@@ -2408,8 +2400,7 @@ public class QuercusClass extends NullValue {
   /**
    * calls the function.
    */
-  @Override
-  public Value callMethod(Env env,
+  public override Value callMethod(Env env,
                           StringValue methodName, int hash,
                           Value a1, Value a2)
   {
@@ -2420,8 +2411,7 @@ public class QuercusClass extends NullValue {
   /**
    * calls the function.
    */
-  @Override
-  public Value callMethod(Env env,
+  public override Value callMethod(Env env,
                           StringValue methodName, int hash,
                           Value a1, Value a2, Value a3)
   {
@@ -2432,8 +2422,7 @@ public class QuercusClass extends NullValue {
   /**
    * calls the function.
    */
-  @Override
-  public Value callMethod(Env env,
+  public override Value callMethod(Env env,
                           StringValue methodName, int hash,
                           Value a1, Value a2, Value a3, Value a4)
   {
@@ -2444,8 +2433,7 @@ public class QuercusClass extends NullValue {
   /**
    * calls the function.
    */
-  @Override
-  public Value callMethod(Env env,
+  public override Value callMethod(Env env,
                           StringValue methodName, int hash,
                           Value a1, Value a2, Value a3, Value a4,
                           Value a5)
@@ -2457,8 +2445,7 @@ public class QuercusClass extends NullValue {
   /**
    * calls the function.
    */
-  @Override
-  public Value callMethodRef(Env env,
+  public override Value callMethodRef(Env env,
                              StringValue methodName, int hash,
                              Value []args)
   {
@@ -2468,8 +2455,7 @@ public class QuercusClass extends NullValue {
   /**
    * calls the function.
    */
-  @Override
-  public Value callMethodRef(Env env,
+  public override Value callMethodRef(Env env,
                              StringValue methodName, int hash)
   {
     return callMethodRef(env, this, methodName, hash);
@@ -2478,8 +2464,7 @@ public class QuercusClass extends NullValue {
   /**
    * calls the function.
    */
-  @Override
-  public Value callMethodRef(Env env,
+  public override Value callMethodRef(Env env,
                              StringValue methodName, int hash,
                              Value a1)
   {
@@ -2490,8 +2475,7 @@ public class QuercusClass extends NullValue {
   /**
    * calls the function.
    */
-  @Override
-  public Value callMethodRef(Env env,
+  public override Value callMethodRef(Env env,
                              StringValue methodName, int hash,
                              Value a1, Value a2)
   {
@@ -2502,8 +2486,7 @@ public class QuercusClass extends NullValue {
   /**
    * calls the function.
    */
-  @Override
-  public Value callMethodRef(Env env,
+  public override Value callMethodRef(Env env,
                              StringValue methodName, int hash,
                              Value a1, Value a2, Value a3)
   {
@@ -2514,8 +2497,7 @@ public class QuercusClass extends NullValue {
   /**
    * calls the function.
    */
-  @Override
-  public Value callMethodRef(Env env,
+  public override Value callMethodRef(Env env,
                              StringValue methodName, int hash,
                              Value a1, Value a2, Value a3, Value a4)
   {
@@ -2526,8 +2508,7 @@ public class QuercusClass extends NullValue {
   /**
    * calls the function.
    */
-  @Override
-  public Value callMethodRef(Env env,
+  public override Value callMethodRef(Env env,
                              StringValue methodName, int hash,
                              Value a1, Value a2, Value a3, Value a4,
                              Value a5)
@@ -2622,8 +2603,7 @@ public class QuercusClass extends NullValue {
   // Value methods
   //
 
-  @Override
-  public boolean isNull()
+  public override boolean isNull()
   {
     return false;
   }
@@ -2631,20 +2611,17 @@ public class QuercusClass extends NullValue {
   /**
    * Returns the value's class name.
    */
-  @Override
-  public String getClassName()
+  public override String getClassName()
   {
     return getName();
   }
 
-  @Override
-  public QuercusClass getQuercusClass()
+  public override QuercusClass getQuercusClass()
   {
     return this;
   }
 
-  @Override
-  public QuercusClass findQuercusClass(Env env)
+  public override QuercusClass findQuercusClass(Env env)
   {
     return this;
   }

@@ -83,8 +83,7 @@ public class JavaArrayClassDef extends JavaClassDef {
     return true;
   }
 
-  @Override
-  public Value wrap(Env env, Object obj)
+  public override Value wrap(Env env, Object obj)
   {
     if (! _isInit)
       init();

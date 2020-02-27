@@ -147,26 +147,22 @@ public class ArrayObject
       ArrayModule.natsort(_env, _value);
   }
 
-  @Override
-  public boolean offsetExists(Env env, Value offset)
+  public override boolean offsetExists(Env env, Value offset)
   {
     return _value.get(offset).isset();
   }
 
-  @Override
-  public Value offsetGet(Env env, Value offset)
+  public override Value offsetGet(Env env, Value offset)
   {
     return _value.get(offset);
   }
 
-  @Override
-  public Value offsetSet(Env env, Value offset, Value value)
+  public override Value offsetSet(Env env, Value offset, Value value)
   {
     return _value.put(offset, value);
   }
 
-  @Override
-  public Value offsetUnset(Env env, Value offset)
+  public override Value offsetUnset(Env env, Value offset)
   {
     return _value.remove(offset);
   }

@@ -64,8 +64,7 @@ public class DefaultValue extends NullValue {
   /**
    * Converts to a boolean.
    */
-  @Override
-  public boolean toBoolean()
+  public override boolean toBoolean()
   {
     return false;
   }
@@ -73,8 +72,7 @@ public class DefaultValue extends NullValue {
   /**
    * Converts to a long.
    */
-  @Override
-  public long toLong()
+  public override long toLong()
   {
     return 0;
   }
@@ -82,8 +80,7 @@ public class DefaultValue extends NullValue {
   /**
    * Converts to a double.
    */
-  @Override
-  public double toDouble()
+  public override double toDouble()
   {
     return 0;
   }
@@ -99,8 +96,7 @@ public class DefaultValue extends NullValue {
   /**
    * Converts to a callable
    */
-  @Override
-  public Callable toCallable(Env env, boolean isOptional)
+  public override Callable toCallable(Env env, boolean isOptional)
   {
     return null;
   }
@@ -109,8 +105,7 @@ public class DefaultValue extends NullValue {
    * Prints the value.
    * @param env
    */
-  @Override
-  public void print(Env env)
+  public override void print(Env env)
   {
   }
 
@@ -118,8 +113,7 @@ public class DefaultValue extends NullValue {
    * Converts to a string.
    * @param env
    */
-  @Override
-  public String toString()
+  public override String toString()
   {
     return "";
   }
@@ -129,8 +123,7 @@ public class DefaultValue extends NullValue {
    *
    * @param out the writer to the Java source code.
    */
-  @Override
-  public void generate(PrintWriter out)
+  public override void generate(PrintWriter out)
     
   {
     out.print("DefaultValue.DEFAULT");

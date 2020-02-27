@@ -93,8 +93,7 @@ abstract public class JavaAdapter extends ArrayValue
   /**
    * Converts to a Java object.
    */
-  @Override
-  public Object toJavaObject()
+  public override Object toJavaObject()
   {
     return _object;
   }
@@ -102,8 +101,7 @@ abstract public class JavaAdapter extends ArrayValue
   /**
    * Converts to a java object.
    */
-  @Override
-  public Object toJavaObjectNotNull(Env env, Class type)
+  public override Object toJavaObjectNotNull(Env env, Class type)
   {
     if (type.isAssignableFrom(_object.getClass())) {
       return _object;
@@ -123,8 +121,7 @@ abstract public class JavaAdapter extends ArrayValue
   /**
    * Converts to an object.
    */
-  @Override
-  public Value toObject(Env env)
+  public override Value toObject(Env env)
   {
     Value obj = env.createObject();
 
@@ -143,8 +140,7 @@ abstract public class JavaAdapter extends ArrayValue
   /**
    * Converts to a java List object.
    */
-  @Override
-  public Collection toJavaCollection(Env env, Class type)
+  public override Collection toJavaCollection(Env env, Class type)
   {
     Collection coll = null;
 
@@ -176,8 +172,7 @@ abstract public class JavaAdapter extends ArrayValue
   /**
    * Converts to a java List object.
    */
-  @Override
-  public List toJavaList(Env env, Class type)
+  public override List toJavaList(Env env, Class type)
   {
     List list = null;
 
@@ -212,8 +207,7 @@ abstract public class JavaAdapter extends ArrayValue
   /**
    * Converts to a java object.
    */
-  @Override
-  public Map toJavaMap(Env env, Class type)
+  public override Map toJavaMap(Env env, Class type)
   {
     Map map = null;
 
@@ -246,32 +240,27 @@ abstract public class JavaAdapter extends ArrayValue
   /**
    * Copy for assignment.
    */
-  @Override
-  abstract public Value copy();
+  abstract override public Value copy();
 
   /**
    * Copy for serialization
    */
-  @Override
-  abstract public Value copy(Env env, IdentityHashMap<Value,Value> map);
+  abstract override public Value copy(Env env, IdentityHashMap<Value,Value> map);
 
   /**
    * Returns the size.
    */
-  @Override
-  abstract public int getSize();
+  abstract override public int getSize();
 
   /**
    * Clears the array
    */
-  @Override
-  abstract public void clear();
+  abstract override public void clear();
 
   /**
    * Adds a new value.
    */
-  @Override
-  public final Value put(Value value)
+  public override final Value put(Value value)
   {
     return put(createTailKey(), value);
   }
@@ -279,8 +268,7 @@ abstract public class JavaAdapter extends ArrayValue
   /**
    * Adds a new value.
    */
-  @Override
-  public final Value put(Value key, Value value)
+  public override final Value put(Value key, Value value)
   {
     return putImpl(key, value);
   }
@@ -293,8 +281,7 @@ abstract public class JavaAdapter extends ArrayValue
   /**
    * Add to front.
    */
-  @Override
-  public ArrayValue unshift(Value value)
+  public override ArrayValue unshift(Value value)
   {
     throw new UnsupportedOperationException();
   }
@@ -302,8 +289,7 @@ abstract public class JavaAdapter extends ArrayValue
   /**
    * Splices.
    */
-  @Override
-  public ArrayValue splice(int begin, int end, ArrayValue replace)
+  public override ArrayValue splice(int begin, int end, ArrayValue replace)
   {
     throw new UnsupportedOperationException();
   }
@@ -311,8 +297,7 @@ abstract public class JavaAdapter extends ArrayValue
   /**
    * Returns the value as an argument which may be a reference.
    */
-  @Override
-  public Value getArg(Value index, boolean isTop)
+  public override Value getArg(Value index, boolean isTop)
   {
     return get(index);
   }
@@ -320,8 +305,7 @@ abstract public class JavaAdapter extends ArrayValue
   /**
    * Sets the array ref.
    */
-  @Override
-  public Var putVar()
+  public override Var putVar()
   {
     throw new UnsupportedOperationException();
   }
@@ -329,8 +313,7 @@ abstract public class JavaAdapter extends ArrayValue
   /**
    * Creatse a tail index.
    */
-  @Override
-  abstract public Value createTailKey();
+  abstract override public Value createTailKey();
 
   /**
    * Returns the field values.
@@ -343,20 +326,17 @@ abstract public class JavaAdapter extends ArrayValue
   /**
    * Gets a new value.
    */
-  @Override
-  abstract public Value get(Value key);
+  abstract override public Value get(Value key);
 
   /**
    * Removes a value.
    */
-  @Override
-  abstract public Value remove(Value key);
+  abstract override public Value remove(Value key);
 
   /**
    * Returns the array ref.
    */
-  @Override
-  public Var getVar(Value index)
+  public override Var getVar(Value index)
   {
     // php/0ceg - Since Java does not support references, the adapter
     // just creates a new Var, but modifying the var will not modify
@@ -370,8 +350,7 @@ abstract public class JavaAdapter extends ArrayValue
   /**
    * Returns an iterator of the entries.
    */
-  @Override
-  public Set<Value> keySet()
+  public override Set<Value> keySet()
   {
     return new KeySet(getEnv());
   }
@@ -379,8 +358,7 @@ abstract public class JavaAdapter extends ArrayValue
   /**
    * Returns a set of all the entries.
    */
-  @Override
-  abstract public Set<Map.Entry<Value,Value>> entrySet();
+  abstract override public Set<Map.Entry<Value,Value>> entrySet();
 
   /**
    * Returns a java object set of all the entries.
@@ -390,8 +368,7 @@ abstract public class JavaAdapter extends ArrayValue
   /**
    * Returns a collection of the values.
    */
-  @Override
-  public Collection<Value> values()
+  public override Collection<Value> values()
   {
     throw new UnimplementedException();
   }
@@ -401,8 +378,7 @@ abstract public class JavaAdapter extends ArrayValue
    *
    * XXX: change name to appendArg
    */
-  @Override
-  public ArrayValue append(Value key, Value value)
+  public override ArrayValue append(Value key, Value value)
   {
     put(key, value);
 
@@ -413,8 +389,7 @@ abstract public class JavaAdapter extends ArrayValue
   /**
    * Pops the top value.
    */
-  @Override
-  public Value pop(Env env)
+  public override Value pop(Env env)
   {
     throw new UnsupportedOperationException();
   }
@@ -422,8 +397,7 @@ abstract public class JavaAdapter extends ArrayValue
   /**
    * Shuffles the array
    */
-  @Override
-  public Value shuffle()
+  public override Value shuffle()
   {
     throw new UnsupportedOperationException();
   }
@@ -431,8 +405,7 @@ abstract public class JavaAdapter extends ArrayValue
   /**
    * Returns the head.
    */
-  @Override
-  public Entry getHead()
+  public override Entry getHead()
   {
     throw new UnsupportedOperationException();
   }
@@ -440,8 +413,7 @@ abstract public class JavaAdapter extends ArrayValue
   /**
    * Returns the tail.
    */
-  @Override
-  protected Entry getTail()
+  protected override Entry getTail()
   {
     throw new UnsupportedOperationException();
   }
@@ -449,8 +421,7 @@ abstract public class JavaAdapter extends ArrayValue
   /**
    * Returns the current value.
    */
-  @Override
-  public Value current()
+  public override Value current()
   {
     throw new UnsupportedOperationException();
   }
@@ -458,8 +429,7 @@ abstract public class JavaAdapter extends ArrayValue
   /**
    * Returns the current key
    */
-  @Override
-  public Value key()
+  public override Value key()
   {
     throw new UnsupportedOperationException();
   }
@@ -467,8 +437,7 @@ abstract public class JavaAdapter extends ArrayValue
   /**
    * Returns true if there are more elements.
    */
-  @Override
-  public boolean hasCurrent()
+  public override boolean hasCurrent()
   {
     throw new UnsupportedOperationException();
   }
@@ -476,8 +445,7 @@ abstract public class JavaAdapter extends ArrayValue
   /**
    * Returns the next value.
    */
-  @Override
-  public Value next()
+  public override Value next()
   {
     throw new UnsupportedOperationException();
   }
@@ -485,8 +453,7 @@ abstract public class JavaAdapter extends ArrayValue
   /**
    * Returns the previous value.
    */
-  @Override
-  public Value prev()
+  public override Value prev()
   {
     throw new UnsupportedOperationException();
   }
@@ -494,8 +461,7 @@ abstract public class JavaAdapter extends ArrayValue
   /**
    * The each iterator
    */
-  @Override
-  public Value each()
+  public override Value each()
   {
     throw new UnsupportedOperationException();
   }
@@ -503,8 +469,7 @@ abstract public class JavaAdapter extends ArrayValue
   /**
    * Returns the first value.
    */
-  @Override
-  public Value reset()
+  public override Value reset()
   {
     return BooleanValue.FALSE;
   }
@@ -512,8 +477,7 @@ abstract public class JavaAdapter extends ArrayValue
   /**
    * Returns the last value.
    */
-  @Override
-  public Value end()
+  public override Value end()
   {
     return BooleanValue.FALSE;
   }
@@ -527,8 +491,7 @@ abstract public class JavaAdapter extends ArrayValue
    *
    * 
    */
-  @Override
-  public Value contains(Value value)
+  public override Value contains(Value value)
   {
     for (Map.Entry<Value,Value> entry : entrySet()) {
       if (entry.getValue().equals(value))
@@ -545,8 +508,7 @@ abstract public class JavaAdapter extends ArrayValue
    *
    * @return the key if it is found in the array, NULL otherwise
    */
-  @Override
-  public Value containsStrict(Value value)
+  public override Value containsStrict(Value value)
   {
     for (Map.Entry<Value,Value> entry : entrySet()) {
       if (entry.getValue().eql(value))
@@ -563,8 +525,7 @@ abstract public class JavaAdapter extends ArrayValue
    *
    * @return the value if it is found in the array, NULL otherwise
    */
-  @Override
-  public Value containsKey(Value key)
+  public override Value containsKey(Value key)
   {
     throw new UnsupportedOperationException(getClass().getName());
   }
@@ -575,8 +536,7 @@ abstract public class JavaAdapter extends ArrayValue
    *
    * @return an object array of this array
    */
-  @Override
-  public Map.Entry<Value, Value>[] toEntryArray()
+  public override Map.Entry<Value, Value>[] toEntryArray()
   {
     throw new UnsupportedOperationException();
   }
@@ -588,8 +548,7 @@ abstract public class JavaAdapter extends ArrayValue
    * @param resetKeys  true if the keys should not be preserved
    * @param strict  true if alphabetic keys should not be preserved
    */
-  @Override
-  public void sort(Comparator<Map.Entry<Value, Value>> comparator,
+  public override void sort(Comparator<Map.Entry<Value, Value>> comparator,
                    boolean resetKeys, boolean strict)
   {
     Map.Entry<Value,Value>[] entries = new Map.Entry[getSize()];
@@ -621,8 +580,7 @@ abstract public class JavaAdapter extends ArrayValue
   /**
    * Serializes the value.
    */
-  @Override
-  public void serialize(Env env, StringBuilder sb)
+  public override void serialize(Env env, StringBuilder sb)
   {
     throw new UnsupportedOperationException();
   }
@@ -630,8 +588,7 @@ abstract public class JavaAdapter extends ArrayValue
   /**
    * Exports the value.
    */
-  @Override
-  protected void varExportImpl(StringValue sb, int level)
+  protected override void varExportImpl(StringValue sb, int level)
   {
     throw new UnsupportedOperationException();
   }
@@ -642,8 +599,7 @@ abstract public class JavaAdapter extends ArrayValue
    * @param base  the initial index
    * @param strict  if true, string keys are also reset
    */
-  @Override
-  public boolean keyReset(long base, boolean strict)
+  public override boolean keyReset(long base, boolean strict)
   {
     throw new UnsupportedOperationException();
   }
@@ -651,8 +607,7 @@ abstract public class JavaAdapter extends ArrayValue
   /**
    * Takes the values of this array and puts them in a java array
    */
-  @Override
-  public Value[] valuesToArray()
+  public override Value[] valuesToArray()
   {
     Value[] values = new Value[getSize()];
 
@@ -669,8 +624,7 @@ abstract public class JavaAdapter extends ArrayValue
    * Takes the values of this array, unmarshalls them to objects of type
    * <i>elementType</i>, and puts them in a java array.
    */
-  @Override
-  public Object valuesToArray(Env env, Class elementType)
+  public override Object valuesToArray(Env env, Class elementType)
   {
     int size = getSize();
 
@@ -690,14 +644,12 @@ abstract public class JavaAdapter extends ArrayValue
     return array;
   }
 
-  @Override
-  public Value getField(Env env, StringValue name)
+  public override Value getField(Env env, StringValue name)
   {
     return _classDef.getField(env, this, name);
   }
 
-  @Override
-  public Value putField(Env env,
+  public override Value putField(Env env,
                         StringValue name,
                         Value value)
   {
@@ -712,8 +664,7 @@ abstract public class JavaAdapter extends ArrayValue
     return _classDef.getName();
   }
 
-  @Override
-  public boolean isA(Env env, String name)
+  public override boolean isA(Env env, String name)
   {
     return _classDef.isA(env, name);
   }
@@ -721,8 +672,7 @@ abstract public class JavaAdapter extends ArrayValue
   /**
    * Returns the method.
    */
-  @Override
-  public AbstractFunction findFunction(StringValue methodName)
+  public override AbstractFunction findFunction(StringValue methodName)
   {
     return _classDef.findFunction(methodName);
   }
@@ -730,8 +680,7 @@ abstract public class JavaAdapter extends ArrayValue
   /**
    * Evaluates a method.
    */
-  @Override
-  public Value callMethod(Env env, StringValue methodName, int hash,
+  public override Value callMethod(Env env, StringValue methodName, int hash,
                           Value []args)
   {
     return _classDef.callMethod(env, this,
@@ -742,8 +691,7 @@ abstract public class JavaAdapter extends ArrayValue
   /**
    * Evaluates a method.
    */
-  @Override
-  public Value callMethod(Env env, StringValue methodName, int hash)
+  public override Value callMethod(Env env, StringValue methodName, int hash)
   {
     return _classDef.callMethod(env, this, methodName, hash);
   }
@@ -751,8 +699,7 @@ abstract public class JavaAdapter extends ArrayValue
   /**
    * Evaluates a method.
    */
-  @Override
-  public Value callMethod(Env env, StringValue methodName, int hash,
+  public override Value callMethod(Env env, StringValue methodName, int hash,
                           Value a1)
   {
     return _classDef.callMethod(env, this, methodName, hash,
@@ -762,8 +709,7 @@ abstract public class JavaAdapter extends ArrayValue
   /**
    * Evaluates a method.
    */
-  @Override
-  public Value callMethod(Env env, StringValue methodName, int hash,
+  public override Value callMethod(Env env, StringValue methodName, int hash,
                           Value a1, Value a2)
   {
     return _classDef.callMethod(env, this, methodName, hash,
@@ -773,8 +719,7 @@ abstract public class JavaAdapter extends ArrayValue
   /**
    * Evaluates a method.
    */
-  @Override
-  public Value callMethod(Env env, StringValue methodName, int hash,
+  public override Value callMethod(Env env, StringValue methodName, int hash,
                           Value a1, Value a2, Value a3)
   {
     return _classDef.callMethod(env, this, methodName, hash,
@@ -784,8 +729,7 @@ abstract public class JavaAdapter extends ArrayValue
   /**
    * Evaluates a method.
    */
-  @Override
-  public Value callMethod(Env env, StringValue methodName, int hash,
+  public override Value callMethod(Env env, StringValue methodName, int hash,
                           Value a1, Value a2, Value a3, Value a4)
   {
     return _classDef.callMethod(env, this, methodName, hash,
@@ -795,8 +739,7 @@ abstract public class JavaAdapter extends ArrayValue
   /**
    * Evaluates a method.
    */
-  @Override
-  public Value callMethod(Env env, StringValue methodName, int hash,
+  public override Value callMethod(Env env, StringValue methodName, int hash,
                           Value a1, Value a2, Value a3, Value a4, Value a5)
   {
     return _classDef.callMethod(env, this, methodName, hash,
@@ -806,8 +749,7 @@ abstract public class JavaAdapter extends ArrayValue
   /**
    * Evaluates a method.
    */
-  @Override
-  public Value callMethodRef(Env env,
+  public override Value callMethodRef(Env env,
                              StringValue methodName, int hash,
                              Value []args)
   {
@@ -817,8 +759,7 @@ abstract public class JavaAdapter extends ArrayValue
   /**
    * Evaluates a method.
    */
-  @Override
-  public Value callMethodRef(Env env, StringValue methodName, int hash)
+  public override Value callMethodRef(Env env, StringValue methodName, int hash)
   {
     return _classDef.callMethod(env, this, methodName, hash);
   }
@@ -826,8 +767,7 @@ abstract public class JavaAdapter extends ArrayValue
   /**
    * Evaluates a method.
    */
-  @Override
-  public Value callMethodRef(Env env,
+  public override Value callMethodRef(Env env,
                              StringValue methodName, int hash,
                              Value a1)
   {
@@ -839,8 +779,7 @@ abstract public class JavaAdapter extends ArrayValue
   /**
    * Evaluates a method.
    */
-  @Override
-  public Value callMethodRef(Env env, StringValue methodName, int hash,
+  public override Value callMethodRef(Env env, StringValue methodName, int hash,
                              Value a1, Value a2)
   {
     return _classDef.callMethod(env, this, methodName, hash,
@@ -850,8 +789,7 @@ abstract public class JavaAdapter extends ArrayValue
   /**
    * Evaluates a method.
    */
-  @Override
-  public Value callMethodRef(Env env, StringValue methodName, int hash,
+  public override Value callMethodRef(Env env, StringValue methodName, int hash,
                              Value a1, Value a2, Value a3)
   {
     return _classDef.callMethod(env, this, methodName, hash,
@@ -861,8 +799,7 @@ abstract public class JavaAdapter extends ArrayValue
   /**
    * Evaluates a method.
    */
-  @Override
-  public Value callMethodRef(Env env, StringValue methodName, int hash,
+  public override Value callMethodRef(Env env, StringValue methodName, int hash,
                              Value a1, Value a2, Value a3, Value a4)
   {
     return _classDef.callMethod(env, this, methodName, hash,
@@ -872,16 +809,14 @@ abstract public class JavaAdapter extends ArrayValue
   /**
    * Evaluates a method.
    */
-  @Override
-  public Value callMethodRef(Env env, StringValue methodName, int hash,
+  public override Value callMethodRef(Env env, StringValue methodName, int hash,
                              Value a1, Value a2, Value a3, Value a4, Value a5)
   {
     return _classDef.callMethod(env, this, methodName, hash,
                                 a1, a2, a3, a4, a5);
   }
 
-  @Override
-  public void varDumpImpl(Env env,
+  public override void varDumpImpl(Env env,
                           WriteStream out,
                           int depth,
                           IdentityHashMap<Value, String> valueSet)
@@ -916,8 +851,7 @@ abstract public class JavaAdapter extends ArrayValue
     out.print("}");
   }
 
-  @Override
-  protected void printRImpl(Env env,
+  protected override void printRImpl(Env env,
                             WriteStream out,
                             int depth,
                             IdentityHashMap<Value, String> valueSet)
@@ -981,14 +915,12 @@ abstract public class JavaAdapter extends ArrayValue
       _env = env;
     }
 
-    @Override
-    public int size()
+    public override int size()
     {
       return getSize();
     }
 
-    @Override
-    public Iterator<Value> iterator()
+    public override Iterator<Value> iterator()
     {
       return getKeyIterator(_env);
     }

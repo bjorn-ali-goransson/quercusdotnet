@@ -127,8 +127,7 @@ abstract public class CompiledMethodRef_5 extends CompiledMethodRef {
   /**
    * Evaluates the method with the given variable arguments.
    */
-  @Override
-  public Value callMethodRef(Env env, QuercusClass qClass, Value qThis,
+  public override Value callMethodRef(Env env, QuercusClass qClass, Value qThis,
 			     Value a1)
   {
     return callMethodRef(env, qClass, qThis,
@@ -142,8 +141,7 @@ abstract public class CompiledMethodRef_5 extends CompiledMethodRef {
   /**
    * Evaluates the method with the given variable arguments.
    */
-  @Override
-  public Value callMethodRef(Env env, QuercusClass qClass, Value qThis,
+  public override Value callMethodRef(Env env, QuercusClass qClass, Value qThis,
 			     Value a1,
 			     Value a2)
   {
@@ -158,8 +156,7 @@ abstract public class CompiledMethodRef_5 extends CompiledMethodRef {
   /**
    * Evaluates the method with the given variable arguments.
    */
-  @Override
-  public Value callMethodRef(Env env, QuercusClass qClass, Value qThis,
+  public override Value callMethodRef(Env env, QuercusClass qClass, Value qThis,
 			     Value a1,
 			     Value a2,
 			     Value a3)
@@ -175,8 +172,7 @@ abstract public class CompiledMethodRef_5 extends CompiledMethodRef {
   /**
    * Evaluates the method with the given variable arguments.
    */
-  @Override
-  public Value callMethodRef(Env env, QuercusClass qClass, Value qThis,
+  public override Value callMethodRef(Env env, QuercusClass qClass, Value qThis,
                              Value a1,
                              Value a2,
                              Value a3,
@@ -190,8 +186,7 @@ abstract public class CompiledMethodRef_5 extends CompiledMethodRef {
                          _args[4].eval(env));
   }
 
-  @Override
-  abstract public Value callMethodRef(Env env, QuercusClass qClass, Value qThis,
+  abstract override public Value callMethodRef(Env env, QuercusClass qClass, Value qThis,
                                       Value a1,
                                       Value a2,
                                       Value a3,

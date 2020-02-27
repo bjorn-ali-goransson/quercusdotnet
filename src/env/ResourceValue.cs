@@ -69,8 +69,7 @@ public class ResourceValue extends Value
   /**
    * Converts to a key.
    */
-  @Override
-  public Value toKey()
+  public override Value toKey()
   {
     return new LongValue(System.identityHashCode(this));
   }
@@ -78,8 +77,7 @@ public class ResourceValue extends Value
   /**
    * Serializes the value.
    */
-  @Override
-  public void serialize(Env env, StringBuilder sb)
+  public override void serialize(Env env, StringBuilder sb)
   {
     sb.append("i:0;");
   }
@@ -87,8 +85,7 @@ public class ResourceValue extends Value
   /**
    * Converts to a string.
    */
-  @Override
-  public String toString()
+  public override String toString()
   {
     if (ResourceValue.class.equals(getClass())) {
       return ResourceValue.class.getSimpleName() + "[]";
@@ -99,8 +96,7 @@ public class ResourceValue extends Value
     }
   }
 
-  @Override
-  protected void varDumpImpl(Env env,
+  protected override void varDumpImpl(Env env,
                              WriteStream out,
                              int depth,
                              IdentityHashMap<Value, String> valueSet)
@@ -109,8 +105,7 @@ public class ResourceValue extends Value
     out.print("resource(" + toString(env) + ")");
   }
 
-  @Override
-  protected void printRImpl(Env env,
+  protected override void printRImpl(Env env,
                             WriteStream out,
                             int depth,
                             IdentityHashMap<Value, String> valueSet)

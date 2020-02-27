@@ -79,8 +79,7 @@ public class CharacterMarshal extends Marshal
     */
   }
 
-  @Override
-  public Class getExpectedClass()
+  public override Class getExpectedClass()
   {
     return char.class;
   }

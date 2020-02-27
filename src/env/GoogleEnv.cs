@@ -72,8 +72,7 @@ public class GoogleEnv extends Env {
     super.checkTimeout();
   }
 
-  @Override
-  public void resetTimeout()
+  public override void resetTimeout()
   {
     super.resetTimeout();
 

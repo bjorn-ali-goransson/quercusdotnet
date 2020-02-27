@@ -56,8 +56,7 @@ public class JavaMapValue extends JavaValue {
     return _env.wrapJava(_map.get(name.toJavaObject()));
   }
 
-  @Override
-  public Value put(Value index, Value value)
+  public override Value put(Value index, Value value)
   {
     return _env.wrapJava(_map.put(index.toJavaObject(), value.toJavaObject()));
   }

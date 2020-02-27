@@ -89,8 +89,7 @@ public class ObjectFieldExpr extends AbstractVarExpr {
    *
    * @return the expression value.
    */
-  @Override
-  public Value eval(Env env)
+  public override Value eval(Env env)
   {
     Value obj = _objExpr.eval(env);
     return obj.getField(env, _name);
@@ -103,8 +102,7 @@ public class ObjectFieldExpr extends AbstractVarExpr {
    *
    * @return the expression value.
    */
-  @Override
-  public Var evalVar(Env env)
+  public override Var evalVar(Env env)
   {
     Value obj = _objExpr.evalObject(env);
 
@@ -118,16 +116,14 @@ public class ObjectFieldExpr extends AbstractVarExpr {
    *
    * @return the expression value.
    */
-  @Override
-  public Value evalArg(Env env, boolean isTop)
+  public override Value evalArg(Env env, boolean isTop)
   {
     Value value = _objExpr.evalArg(env, false);
 
     return value.getFieldArg(env, _name, isTop);
   }
 
-  @Override
-  public Value evalDirty(Env env)
+  public override Value evalDirty(Env env)
   {
     // php/0228
     Value obj = _objExpr.eval(env);
@@ -142,8 +138,7 @@ public class ObjectFieldExpr extends AbstractVarExpr {
    *
    * @return the expression value.
    */
-  @Override
-  public Value evalAssignRef(Env env, Value value)
+  public override Value evalAssignRef(Env env, Value value)
   {
     Value obj = _objExpr.evalObject(env);
 
@@ -155,8 +150,7 @@ public class ObjectFieldExpr extends AbstractVarExpr {
   /**
    * Handles post increments.
    */
-  @Override
-  public Value evalPostIncrement(Env env, int incr)
+  public override Value evalPostIncrement(Env env, int incr)
   {
     // php/09kp
 
@@ -172,8 +166,7 @@ public class ObjectFieldExpr extends AbstractVarExpr {
   /**
    * Handles post increments.
    */
-  @Override
-  public Value evalPreIncrement(Env env, int incr)
+  public override Value evalPreIncrement(Env env, int incr)
   {
     // php/09kq
 
@@ -193,8 +186,7 @@ public class ObjectFieldExpr extends AbstractVarExpr {
    *
    * @return the expression value.
    */
-  @Override
-  public Value evalArray(Env env)
+  public override Value evalArray(Env env)
   {
     Value obj = _objExpr.evalObject(env);
 
@@ -208,8 +200,7 @@ public class ObjectFieldExpr extends AbstractVarExpr {
    *
    * @return the expression value.
    */
-  @Override
-  public Value evalObject(Env env)
+  public override Value evalObject(Env env)
   {
     Value obj = _objExpr.evalObject(env);
 
@@ -224,8 +215,7 @@ public class ObjectFieldExpr extends AbstractVarExpr {
    *
    * @return the expression value.
    */
-  @Override
-  public void evalUnset(Env env)
+  public override void evalUnset(Env env)
   {
     Value obj = _objExpr.eval(env);
     obj.unsetField(_name);
@@ -234,8 +224,7 @@ public class ObjectFieldExpr extends AbstractVarExpr {
   /**
    * Evaluates the expression as an array index unset
    */
-  @Override
-  public void evalUnsetArray(Env env, Expr indexExpr)
+  public override void evalUnsetArray(Env env, Expr indexExpr)
   {
     Value obj = _objExpr.eval(env);
     Value index = indexExpr.eval(env);
@@ -243,14 +232,12 @@ public class ObjectFieldExpr extends AbstractVarExpr {
     obj.unsetArray(env, _name, index);
   }
 
-  @Override
-  public String toString()
+  public override String toString()
   {
     return _objExpr + "->" + _name;
   }
 
-  @Override
-  public boolean evalIsset(Env env)
+  public override boolean evalIsset(Env env)
   {
     Value object = _objExpr.eval(env);
 

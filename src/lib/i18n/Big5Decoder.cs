@@ -94,8 +94,7 @@ public class Big5Decoder
       return false;
   }
 
-  @Override
-  protected boolean fill(UnicodeBuilderValue sb, ByteBuffer in,
+  protected override boolean fill(UnicodeBuilderValue sb, ByteBuffer in,
                          CharBuffer out, CoderResult coder)
   {
     int len = out.position();

@@ -77,8 +77,7 @@ public class GoogleQuercusServletImpl extends QuercusServletImpl
     return _quercus;
   }
 
-  @Override
-  protected void handleThrowable(HttpServletResponse response, Throwable e)
+  protected override void handleThrowable(HttpServletResponse response, Throwable e)
     
   {
     log.log(Level.WARNING, e.toString(), e);

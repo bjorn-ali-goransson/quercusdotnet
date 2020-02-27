@@ -335,8 +335,7 @@ public class ArrayValueImpl extends ArrayValue
   /**
    * Copy for return.
    */
-  @Override
-  public Value copyReturn()
+  public override Value copyReturn()
   {
     return new ArrayValueImpl(this);
   }
@@ -357,8 +356,7 @@ public class ArrayValueImpl extends ArrayValue
   /**
    * Copy for serialization
    */
-  @Override
-  public Value copyTree(Env env, CopyRoot root)
+  public override Value copyTree(Env env, CopyRoot root)
   {
     // php/420d
 
@@ -381,8 +379,7 @@ public class ArrayValueImpl extends ArrayValue
   /**
    * Convert to an argument value.
    */
-  @Override
-  public Value toLocalValue()
+  public override Value toLocalValue()
   {
     // php/1708
 
@@ -395,8 +392,7 @@ public class ArrayValueImpl extends ArrayValue
   /**
    * Convert to an argument value.
    */
-  @Override
-  public Value toLocalRef()
+  public override Value toLocalRef()
   {
     // php/1708
 
@@ -409,8 +405,7 @@ public class ArrayValueImpl extends ArrayValue
   /**
    * Convert to an argument declared as a reference
    */
-  @Override
-  public Value toRefValue()
+  public override Value toRefValue()
   {
     return this;
   }
@@ -607,8 +602,7 @@ public class ArrayValueImpl extends ArrayValue
   /**
    * Slices.
    */
-  @Override
-  public ArrayValue slice(Env env, int start, int end, boolean isPreserveKeys)
+  public override ArrayValue slice(Env env, int start, int end, boolean isPreserveKeys)
   {
     ArrayValueImpl array = new ArrayValueImpl();
 
@@ -632,8 +626,7 @@ public class ArrayValueImpl extends ArrayValue
   /**
    * Returns the value as an argument which may be a reference.
    */
-  @Override
-  public Value getArg(Value index, boolean isTop)
+  public override Value getArg(Value index, boolean isTop)
   {
     if (_isDirty) // XXX: needed?
       copyOnWrite();
@@ -665,8 +658,7 @@ public class ArrayValueImpl extends ArrayValue
   /**
    * Returns the field value, creating an object if it's unset.
    */
-  @Override
-  public Value getObject(Env env, Value fieldName)
+  public override Value getObject(Env env, Value fieldName)
   {
     Value value = get(fieldName);
 
@@ -682,8 +674,7 @@ public class ArrayValueImpl extends ArrayValue
   /**
    * Returns the value as an array.
    */
-  @Override
-  public Value getArray(Value index)
+  public override Value getArray(Value index)
   {
     // php/3482, php/3483
 
@@ -740,8 +731,7 @@ public class ArrayValueImpl extends ArrayValue
   /**
    * Sets the array ref.
    */
-  @Override
-  public Var putVar()
+  public override Var putVar()
   {
     if (_isDirty)
       copyOnWrite();
@@ -755,8 +745,7 @@ public class ArrayValueImpl extends ArrayValue
   /**
    * Sets the array tail, returning a reference to the tail.
    */
-  @Override
-  public Value getArgTail(Env env, boolean isTop)
+  public override Value getArgTail(Env env, boolean isTop)
   {
     if (_isDirty) {
       copyOnWrite();
@@ -781,8 +770,7 @@ public class ArrayValueImpl extends ArrayValue
   /**
    * Gets a new value.
    */
-  @Override
-  public Value get(Value key)
+  public override Value get(Value key)
   {
     key = key.toKey();
 
@@ -820,8 +808,7 @@ public class ArrayValueImpl extends ArrayValue
    * Returns the value in the array as-is.
    * (i.e. without calling toValue() on it).
    */
-  @Override
-  public Value getRaw(Value key)
+  public override Value getRaw(Value key)
   {
     key = key.toKey();
 
@@ -860,8 +847,7 @@ public class ArrayValueImpl extends ArrayValue
    *
    * @return the key if it is found in the array, NULL otherwise
    */
-  @Override
-  public Value contains(Value value)
+  public override Value contains(Value value)
   {
     for (Entry entry = getHead(); entry != null; entry = entry.getNext()) {
       if (entry.getValue().eq(value))
@@ -878,8 +864,7 @@ public class ArrayValueImpl extends ArrayValue
    *
    * @return the key if it is found in the array, NULL otherwise
    */
-  @Override
-  public Value containsStrict(Value value)
+  public override Value containsStrict(Value value)
   {
     for (Entry entry = getHead(); entry != null; entry = entry.getNext()) {
       if (entry.getValue().eql(value))
@@ -896,8 +881,7 @@ public class ArrayValueImpl extends ArrayValue
    *
    * @return the value if it is found in the array, NULL otherwise
    */
-  @Override
-  public Value containsKey(Value key)
+  public override Value containsKey(Value key)
   {
     Entry entry = getEntry(key);
 
@@ -938,8 +922,7 @@ public class ArrayValueImpl extends ArrayValue
   /**
    * Removes a value.
    */
-  @Override
-  public Value remove(Value key)
+  public override Value remove(Value key)
   {
     if (_isDirty)
       copyOnWrite();
@@ -1013,8 +996,7 @@ public class ArrayValueImpl extends ArrayValue
   /**
    * Returns the array ref.
    */
-  @Override
-  public Var getVar(Value index)
+  public override Var getVar(Value index)
   {
     if (_isDirty)
       copyOnWrite();
@@ -1028,8 +1010,7 @@ public class ArrayValueImpl extends ArrayValue
   /**
    * Returns the array ref.
    */
-  @Override
-  public Var getRef(Value index)
+  public override Var getRef(Value index)
   {
     if (_isDirty)
       copyOnWrite();
@@ -1220,8 +1201,7 @@ public class ArrayValueImpl extends ArrayValue
   /**
    * Pops the top value.
    */
-  @Override
-  public Value pop(Env env)
+  public override Value pop(Env env)
   {
     if (_isDirty)
       copyOnWrite();
@@ -1290,8 +1270,7 @@ public class ArrayValueImpl extends ArrayValue
   /**
    * Returns the array keys.
    */
-  @Override
-  public Value getKeys()
+  public override Value getKeys()
   {
     if (_constSource != null)
       return _constSource.getKeys();
@@ -1302,8 +1281,7 @@ public class ArrayValueImpl extends ArrayValue
   /**
    * Returns the array keys.
    */
-  @Override
-  public Value getValues()
+  public override Value getValues()
   {
     if (_constSource != null)
       return _constSource.getValues();

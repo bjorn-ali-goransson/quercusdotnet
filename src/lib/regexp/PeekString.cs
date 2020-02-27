@@ -79,8 +79,7 @@ class PeekString extends PeekStream {
     return "/" + _string + "/";
   }
 
-  @Override
-  int getPosition()
+  int override getPosition()
   {
     return _index;
   }

@@ -61,8 +61,7 @@ public class ArgRef extends Value
   /**
    * Returns true for an implementation of a class
    */
-  @Override
-  public boolean isA(Env env, String name)
+  public override boolean isA(Env env, String name)
   {
     return _var.isA(env, name);
   }
@@ -70,8 +69,7 @@ public class ArgRef extends Value
   /**
    * True for a long
    */
-  @Override
-  public boolean isLongConvertible()
+  public override boolean isLongConvertible()
   {
     return _var.isLongConvertible();
   }
@@ -79,8 +77,7 @@ public class ArgRef extends Value
   /**
    * True to a double.
    */
-  @Override
-  public boolean isDoubleConvertible()
+  public override boolean isDoubleConvertible()
   {
     return _var.isDoubleConvertible();
   }
@@ -88,8 +85,7 @@ public class ArgRef extends Value
   /**
    * True for a number
    */
-  @Override
-  public boolean isNumberConvertible()
+  public override boolean isNumberConvertible()
   {
     return _var.isNumberConvertible();
   }
@@ -110,8 +106,7 @@ public class ArgRef extends Value
     return _var.isDouble();
   }
 
-  @Override
-  public ArrayValue toArrayValue(Env env)
+  public override ArrayValue toArrayValue(Env env)
   {
     // php/3co1
     return _var.toArrayValue(env);
@@ -120,8 +115,7 @@ public class ArgRef extends Value
   /**
    * Converts to a boolean.
    */
-  @Override
-  public boolean toBoolean()
+  public override boolean toBoolean()
   {
     return _var.toBoolean();
   }
@@ -129,8 +123,7 @@ public class ArgRef extends Value
   /**
    * Converts to a long.
    */
-  @Override
-  public long toLong()
+  public override long toLong()
   {
     return _var.toLong();
   }
@@ -138,8 +131,7 @@ public class ArgRef extends Value
   /**
    * Converts to a double.
    */
-  @Override
-  public double toDouble()
+  public override double toDouble()
   {
     return _var.toDouble();
   }
@@ -148,8 +140,7 @@ public class ArgRef extends Value
    * Converts to a string.
    * @param env
    */
-  @Override
-  public StringValue toString(Env env)
+  public override StringValue toString(Env env)
   {
     return _var.toString(env);
   }
@@ -157,8 +148,7 @@ public class ArgRef extends Value
   /**
    * Converts to an object.
    */
-  @Override
-  public Value toObject(Env env)
+  public override Value toObject(Env env)
   {
     return _var.toObject(env);
   }
@@ -166,8 +156,7 @@ public class ArgRef extends Value
   /**
    * Converts to an object.
    */
-  @Override
-  public Object toJavaObject()
+  public override Object toJavaObject()
   {
     return _var.toJavaObject();
   }
@@ -175,8 +164,7 @@ public class ArgRef extends Value
   /**
    * Converts to a raw value.
    */
-  @Override
-  public Value toValue()
+  public override Value toValue()
   {
     return _var.toValue();
   }
@@ -184,8 +172,7 @@ public class ArgRef extends Value
   /**
    * Returns true for an object.
    */
-  @Override
-  public boolean isObject()
+  public override boolean isObject()
   {
     return _var.isObject();
   }
@@ -193,8 +180,7 @@ public class ArgRef extends Value
   /**
    * Returns true for an array.
    */
-  @Override
-  public boolean isArray()
+  public override boolean isArray()
   {
     return _var.isArray();
   }
@@ -202,8 +188,7 @@ public class ArgRef extends Value
   /**
    * Copy the value.
    */
-  @Override
-  public Value copy()
+  public override Value copy()
   {
     // quercus/0d05
     return this;
@@ -212,8 +197,7 @@ public class ArgRef extends Value
   /**
    * Converts to an argument value.
    */
-  @Override
-  public Value toLocalValueReadOnly()
+  public override Value toLocalValueReadOnly()
   {
     return _var;
   }
@@ -221,8 +205,7 @@ public class ArgRef extends Value
   /**
    * Converts to an argument value.
    */
-  @Override
-  public Value toLocalValue()
+  public override Value toLocalValue()
   {
     // php/0471, php/3d4a
     return _var.toLocalValue();
@@ -231,8 +214,7 @@ public class ArgRef extends Value
   /**
    * Converts to an argument value.
    */
-  @Override
-  public Value toLocalRef()
+  public override Value toLocalRef()
   {
     return _var;
   }
@@ -240,8 +222,7 @@ public class ArgRef extends Value
   /**
    * Converts to an argument value.
    */
-  @Override
-  public Var toLocalVar()
+  public override Var toLocalVar()
   {
     return _var;
   }
@@ -249,8 +230,7 @@ public class ArgRef extends Value
   /**
    * Converts to an argument value.
    */
-  @Override
-  public Value toRefValue()
+  public override Value toRefValue()
   {
     return _var;
   }
@@ -258,8 +238,7 @@ public class ArgRef extends Value
   /**
    * Converts to a variable
    */
-  @Override
-  public Var toVar()
+  public override Var toVar()
   {
     return _var;
   }
@@ -267,116 +246,97 @@ public class ArgRef extends Value
   /**
    * Converts to a reference variable
    */
-  @Override
-  public Var toLocalVarDeclAsRef()
+  public override Var toLocalVarDeclAsRef()
   {
     return _var;
   }
 
-  @Override
-  public StringValue toStringValue()
+  public override StringValue toStringValue()
   {
     return _var.toStringValue();
   }
 
-  @Override
-  public StringValue toBinaryValue(Env env)
+  public override StringValue toBinaryValue(Env env)
   {
     return _var.toBinaryValue(env);
   }
 
-  @Override
-  public StringValue toUnicodeValue(Env env)
+  public override StringValue toUnicodeValue(Env env)
   {
     return _var.toUnicodeValue(env);
   }
 
-  @Override
-  public StringValue toStringBuilder()
+  public override StringValue toStringBuilder()
   {
     return _var.toStringBuilder();
   }
 
-  @Override
-  public StringValue toStringBuilder(Env env)
+  public override StringValue toStringBuilder(Env env)
   {
     return _var.toStringBuilder(env);
   }
 
-  @Override
-  public java.io.InputStream toInputStream()
+  public override java.io.InputStream toInputStream()
   {
     return _var.toInputStream();
   }
 
-  @Override
-  public Value append(Value index, Value value)
+  public override Value append(Value index, Value value)
   {
     return _var.append(index, value);
   }
 
-  @Override
-  public Value containsKey(Value key)
+  public override Value containsKey(Value key)
   {
     return _var.containsKey(key);
   }
 
-  @Override
-  public Value copyArrayItem()
+  public override Value copyArrayItem()
   {
     return _var.copyArrayItem();
   }
 
-  @Override
-  public Value current()
+  public override Value current()
   {
     return _var.current();
   }
 
-  @Override
-  public Value getArray()
+  public override Value getArray()
   {
     return _var.getArray();
   }
 
-  @Override
-  public Value getArray(Value index)
+  public override Value getArray(Value index)
   {
     return _var.getArray(index);
   }
 
-  @Override
-  public int getCount(Env env)
+  public override int getCount(Env env)
   {
     return _var.getCount(env);
   }
 
-  @Override
-  public Value[] getKeyArray(Env env)
+  public override Value[] getKeyArray(Env env)
   {
     return _var.getKeyArray(env);
   }
 
-  @Override
-  public Value key()
+  public override Value key()
   {
     return _var.key();
   }
 
-  @Override
-  public Value next()
+  public override Value next()
   {
     return _var.next();
   }
 
-  @Override
-  public ArrayValue toArray()
+  public override ArrayValue toArray()
   {
     return _var.toArray();
   }
 
-  @Override
-  public Value toAutoArray()
+  public override Value toAutoArray()
   {
     return _var.toAutoArray();
   }
@@ -384,8 +344,7 @@ public class ArgRef extends Value
   /**
    * Negates the value.
    */
-  @Override
-  public Value neg()
+  public override Value neg()
   {
     return _var.neg();
   }
@@ -393,8 +352,7 @@ public class ArgRef extends Value
   /**
    * Adds to the following value.
    */
-  @Override
-  public Value add(Value rValue)
+  public override Value add(Value rValue)
   {
     return _var.add(rValue);
   }
@@ -402,8 +360,7 @@ public class ArgRef extends Value
   /**
    * Adds to the following value.
    */
-  @Override
-  public Value add(long rValue)
+  public override Value add(long rValue)
   {
     return _var.add(rValue);
   }
@@ -411,8 +368,7 @@ public class ArgRef extends Value
   /**
    * Pre-increment the following value.
    */
-  @Override
-  public Value preincr(int incr)
+  public override Value preincr(int incr)
   {
     return _var.preincr(incr);
   }
@@ -420,8 +376,7 @@ public class ArgRef extends Value
   /**
    * Post-increment the following value.
    */
-  @Override
-  public Value postincr(int incr)
+  public override Value postincr(int incr)
   {
     return _var.postincr(incr);
   }
@@ -429,8 +384,7 @@ public class ArgRef extends Value
   /**
    * Increment the following value.
    */
-  @Override
-  public Value increment(int incr)
+  public override Value increment(int incr)
   {
     return _var.increment(incr);
   }
@@ -438,8 +392,7 @@ public class ArgRef extends Value
   /**
    * Subtracts to the following value.
    */
-  @Override
-  public Value sub(Value rValue)
+  public override Value sub(Value rValue)
   {
     return _var.sub(rValue);
   }
@@ -447,8 +400,7 @@ public class ArgRef extends Value
   /**
    * Subtracts to the following value.
    */
-  @Override
-  public Value sub(long rValue)
+  public override Value sub(long rValue)
   {
     return _var.sub(rValue);
   }
@@ -456,8 +408,7 @@ public class ArgRef extends Value
   /**
    * Multiplies to the following value.
    */
-  @Override
-  public Value mul(Value rValue)
+  public override Value mul(Value rValue)
   {
     return _var.mul(rValue);
   }
@@ -465,8 +416,7 @@ public class ArgRef extends Value
   /**
    * Multiplies to the following value.
    */
-  @Override
-  public Value mul(long lValue)
+  public override Value mul(long lValue)
   {
     return _var.mul(lValue);
   }
@@ -474,8 +424,7 @@ public class ArgRef extends Value
   /**
    * Divides the following value.
    */
-  @Override
-  public Value div(Value rValue)
+  public override Value div(Value rValue)
   {
     return _var.div(rValue);
   }
@@ -483,8 +432,7 @@ public class ArgRef extends Value
   /**
    * Shifts left by the value.
    */
-  @Override
-  public Value lshift(Value rValue)
+  public override Value lshift(Value rValue)
   {
     return _var.lshift(rValue);
   }
@@ -492,8 +440,7 @@ public class ArgRef extends Value
   /**
    * Shifts right by the value.
    */
-  @Override
-  public Value rshift(Value rValue)
+  public override Value rshift(Value rValue)
   {
     return _var.rshift(rValue);
   }
@@ -509,8 +456,7 @@ public class ArgRef extends Value
   /**
    * Returns true for equality
    */
-  @Override
-  public boolean eql(Value rValue)
+  public override boolean eql(Value rValue)
   {
     return _var.eql(rValue);
   }
@@ -518,26 +464,22 @@ public class ArgRef extends Value
   /**
    * Returns the array/object size
    */
-  @Override
-  public int getSize()
+  public override int getSize()
   {
     return _var.getSize();
   }
 
-  @Override
-  public Iterator<Map.Entry<Value, Value>> getIterator(Env env)
+  public override Iterator<Map.Entry<Value, Value>> getIterator(Env env)
   {
     return _var.getIterator(env);
   }
 
-  @Override
-  public Iterator<Value> getKeyIterator(Env env)
+  public override Iterator<Value> getKeyIterator(Env env)
   {
     return _var.getKeyIterator(env);
   }
 
-  @Override
-  public Iterator<Value> getValueIterator(Env env)
+  public override Iterator<Value> getValueIterator(Env env)
   {
     return _var.getValueIterator(env);
   }
@@ -545,8 +487,7 @@ public class ArgRef extends Value
   /**
    * Returns the array ref.
    */
-  @Override
-  public Value get(Value index)
+  public override Value get(Value index)
   {
     return _var.get(index);
   }
@@ -554,8 +495,7 @@ public class ArgRef extends Value
   /**
    * Returns the array ref.
    */
-  @Override
-  public Var getVar(Value index)
+  public override Var getVar(Value index)
   {
     return _var.getVar(index);
   }
@@ -563,8 +503,7 @@ public class ArgRef extends Value
   /**
    * Returns the array ref.
    */
-  @Override
-  public Value put(Value index, Value value)
+  public override Value put(Value index, Value value)
   {
     return _var.put(index, value);
   }
@@ -572,8 +511,7 @@ public class ArgRef extends Value
   /**
    * Returns the array ref.
    */
-  @Override
-  public Value put(Value value)
+  public override Value put(Value value)
   {
     return _var.put(value);
   }
@@ -591,8 +529,7 @@ public class ArgRef extends Value
   /**
    * Evaluates a method.
    */
-  @Override
-  public Value callMethod(Env env,
+  public override Value callMethod(Env env,
                           StringValue methodName, int hash,
                           Value []args)
   {
@@ -602,8 +539,7 @@ public class ArgRef extends Value
   /**
    * Evaluates a method.
    */
-  @Override
-  public Value callMethod(Env env, StringValue methodName, int hash)
+  public override Value callMethod(Env env, StringValue methodName, int hash)
   {
     return _var.callMethod(env, methodName, hash);
   }
@@ -611,8 +547,7 @@ public class ArgRef extends Value
   /**
    * Evaluates a method.
    */
-  @Override
-  public Value callMethod(Env env,
+  public override Value callMethod(Env env,
                           StringValue methodName, int hash,
                           Value a1)
   {
@@ -622,8 +557,7 @@ public class ArgRef extends Value
   /**
    * Evaluates a method.
    */
-  @Override
-  public Value callMethod(Env env, StringValue methodName, int hash,
+  public override Value callMethod(Env env, StringValue methodName, int hash,
                           Value a1, Value a2)
   {
     return _var.callMethod(env, methodName, hash, a1, a2);
@@ -632,8 +566,7 @@ public class ArgRef extends Value
   /**
    * Evaluates a method with 3 args.
    */
-  @Override
-  public Value callMethod(Env env, StringValue methodName, int hash,
+  public override Value callMethod(Env env, StringValue methodName, int hash,
                           Value a1, Value a2, Value a3)
   {
     return _var.callMethod(env, methodName, hash,
@@ -643,8 +576,7 @@ public class ArgRef extends Value
   /**
    * Evaluates a method with 4 args.
    */
-  @Override
-  public Value callMethod(Env env, StringValue methodName, int hash,
+  public override Value callMethod(Env env, StringValue methodName, int hash,
                           Value a1, Value a2, Value a3, Value a4)
   {
     return _var.callMethod(env, methodName, hash,
@@ -654,8 +586,7 @@ public class ArgRef extends Value
   /**
    * Evaluates a method with 5 args.
    */
-  @Override
-  public Value callMethod(Env env, StringValue methodName, int hash,
+  public override Value callMethod(Env env, StringValue methodName, int hash,
                           Value a1, Value a2, Value a3, Value a4, Value a5)
   {
     return _var.callMethod(env, methodName, hash,
@@ -665,8 +596,7 @@ public class ArgRef extends Value
   /**
    * Evaluates a method.
    */
-  @Override
-  public Value callMethodRef(Env env,
+  public override Value callMethodRef(Env env,
                              StringValue methodName, int hash,
                              Value []args)
   {
@@ -676,8 +606,7 @@ public class ArgRef extends Value
   /**
    * Evaluates a method.
    */
-  @Override
-  public Value callMethodRef(Env env, StringValue methodName, int hash)
+  public override Value callMethodRef(Env env, StringValue methodName, int hash)
   {
     return _var.callMethodRef(env, methodName, hash);
   }
@@ -685,8 +614,7 @@ public class ArgRef extends Value
   /**
    * Evaluates a method.
    */
-  @Override
-  public Value callMethodRef(Env env,
+  public override Value callMethodRef(Env env,
                              StringValue methodName, int hash,
                              Value a1)
   {
@@ -696,8 +624,7 @@ public class ArgRef extends Value
   /**
    * Evaluates a method.
    */
-  @Override
-  public Value callMethodRef(Env env, StringValue methodName, int hash,
+  public override Value callMethodRef(Env env, StringValue methodName, int hash,
                              Value a1, Value a2)
   {
     return _var.callMethodRef(env, methodName, hash,
@@ -707,8 +634,7 @@ public class ArgRef extends Value
   /**
    * Evaluates a method with 3 args.
    */
-  @Override
-  public Value callMethodRef(Env env, StringValue methodName, int hash,
+  public override Value callMethodRef(Env env, StringValue methodName, int hash,
                              Value a1, Value a2, Value a3)
   {
     return _var.callMethodRef(env, methodName, hash, a1, a2, a3);
@@ -717,8 +643,7 @@ public class ArgRef extends Value
   /**
    * Evaluates a method with 4 args.
    */
-  @Override
-  public Value callMethodRef(Env env, StringValue methodName, int hash,
+  public override Value callMethodRef(Env env, StringValue methodName, int hash,
                              Value a1, Value a2, Value a3, Value a4)
   {
     return _var.callMethodRef(env, methodName, hash,
@@ -728,8 +653,7 @@ public class ArgRef extends Value
   /**
    * Evaluates a method with 5 args.
    */
-  @Override
-  public Value callMethodRef(Env env,
+  public override Value callMethodRef(Env env,
                              StringValue methodName, int hash,
                              Value a1, Value a2, Value a3, Value a4, Value a5)
   {
@@ -741,8 +665,7 @@ public class ArgRef extends Value
    * Evaluates a method.
    */
   /*
-  @Override
-  public Value callClassMethod(Env env, AbstractFunction fun, Value []args)
+  public override Value callClassMethod(Env env, AbstractFunction fun, Value []args)
   {
     return _var.callClassMethod(env, fun, args);
   }
@@ -771,14 +694,12 @@ public class ArgRef extends Value
    * Prints the value.
    * @param env
    */
-  @Override
-  public void print(Env env)
+  public override void print(Env env)
   {
     _var.print(env);
   }
 
-  @Override
-  public void varDumpImpl(Env env,
+  public override void varDumpImpl(Env env,
                           WriteStream out,
                           int depth,
                           IdentityHashMap<Value,String> valueSet)
@@ -788,8 +709,7 @@ public class ArgRef extends Value
     toValue().varDumpImpl(env, out, depth, valueSet);
   }
 
-  @Override
-  protected void printRImpl(Env env,
+  protected override void printRImpl(Env env,
                             WriteStream out,
                             int depth,
                             IdentityHashMap<Value, String> valueSet)

@@ -80,8 +80,7 @@ abstract public class ObjectValue extends Callback {
     return _quercusClass;
   }
 
-  @Override
-  public QuercusClass findQuercusClass(Env env)
+  public override QuercusClass findQuercusClass(Env env)
   {
     return _quercusClass;
   }
@@ -169,8 +168,7 @@ abstract public class ObjectValue extends Callback {
   /**
    * Returns true for an object.
    */
-  @Override
-  public boolean isObject()
+  public override boolean isObject()
   {
     return true;
   }
@@ -178,8 +176,7 @@ abstract public class ObjectValue extends Callback {
   /**
    * Returns the type.
    */
-  @Override
-  public String getType()
+  public override String getType()
   {
     return "object";
   }
@@ -187,8 +184,7 @@ abstract public class ObjectValue extends Callback {
   /**
    * Returns the unique object hash.
    */
-  @Override
-  public StringValue getObjectHash(Env env)
+  public override StringValue getObjectHash(Env env)
   {
     StringValue sb = env.createStringBuilder();
 
@@ -207,8 +203,7 @@ abstract public class ObjectValue extends Callback {
   /**
    * The object is callable if it has an __invoke method
    */
-  @Override
-  public boolean isCallable(Env env, boolean isCheckSyntaxOnly, Value nameRef)
+  public override boolean isCallable(Env env, boolean isCheckSyntaxOnly, Value nameRef)
   {
     // php/127c, isCheckSyntaxOnly is not used
 
@@ -232,8 +227,7 @@ abstract public class ObjectValue extends Callback {
     return true;
   }
 
-  @Override
-  public Callable toCallable(Env env, boolean isOptional)
+  public override Callable toCallable(Env env, boolean isOptional)
   {
     if (_quercusClass.getInvoke() != null) {
       return this;
@@ -243,50 +237,42 @@ abstract public class ObjectValue extends Callback {
     }
   }
 
-  @Override
-  public boolean isValid(Env env)
+  public override boolean isValid(Env env)
   {
     return _quercusClass.getInvoke() != null;
   }
 
-  @Override
-  public String getCallbackName()
+  public override String getCallbackName()
   {
     throw new UnsupportedOperationException();
   }
 
-  @Override
-  public String getDeclFileName(Env env)
+  public override String getDeclFileName(Env env)
   {
     return null;
   }
 
-  @Override
-  public int getDeclStartLine(Env env)
+  public override int getDeclStartLine(Env env)
   {
     return -1;
   }
 
-  @Override
-  public int getDeclEndLine(Env env)
+  public override int getDeclEndLine(Env env)
   {
     return -1;
   }
 
-  @Override
-  public String getDeclComment(Env env)
+  public override String getDeclComment(Env env)
   {
     return null;
   }
 
-  @Override
-  public boolean isReturnsReference(Env env)
+  public override boolean isReturnsReference(Env env)
   {
     return false;
   }
 
-  @Override
-  public Arg []getArgs(Env env)
+  public override Arg []getArgs(Env env)
   {
     AbstractFunction fun = _quercusClass.getInvoke();
 
@@ -297,8 +283,7 @@ abstract public class ObjectValue extends Callback {
     return fun.getArgs(env);
   }
 
-  @Override
-  public boolean isInternal(Env env)
+  public override boolean isInternal(Env env)
   {
     return false;
   }
@@ -306,8 +291,7 @@ abstract public class ObjectValue extends Callback {
   /**
    * Converts to a boolean.
    */
-  @Override
-  public boolean toBoolean()
+  public override boolean toBoolean()
   {
     return true;
   }
@@ -315,8 +299,7 @@ abstract public class ObjectValue extends Callback {
   /**
    * Returns true for an implementation of a class
    */
-  @Override
-  public boolean isA(Env env, String name)
+  public override boolean isA(Env env, String name)
   {
     return _quercusClass.isA(env, name);
   }
@@ -324,8 +307,7 @@ abstract public class ObjectValue extends Callback {
   /**
    * Converts to a long.
    */
-  @Override
-  public long toLong()
+  public override long toLong()
   {
     return 1;
   }
@@ -333,8 +315,7 @@ abstract public class ObjectValue extends Callback {
   /**
    * Converts to a double.
    */
-  @Override
-  public double toDouble()
+  public override double toDouble()
   {
     return toLong();
   }
@@ -342,8 +323,7 @@ abstract public class ObjectValue extends Callback {
   /**
    * Converts to a Java Enum.
    */
-  @Override
-  public Enum toJavaEnum(Env env, Class cls)
+  public override Enum toJavaEnum(Env env, Class cls)
   {
     Object obj = toJavaObject();
 
@@ -359,8 +339,7 @@ abstract public class ObjectValue extends Callback {
   // array delegate methods
   //
 
-  @Override
-  public Value toAutoArray()
+  public override Value toAutoArray()
   {
     return this;
   }
@@ -368,8 +347,7 @@ abstract public class ObjectValue extends Callback {
   /**
    * Append to a string builder.
    */
-  @Override
-  public StringValue appendTo(UnicodeBuilderValue sb)
+  public override StringValue appendTo(UnicodeBuilderValue sb)
   {
     return sb.append(toString(Env.getInstance()));
   }
@@ -377,8 +355,7 @@ abstract public class ObjectValue extends Callback {
   /**
    * Append to a binary builder.
    */
-  @Override
-  public StringValue appendTo(StringBuilderValue sb)
+  public override StringValue appendTo(StringBuilderValue sb)
   {
     return sb.append(toString(Env.getInstance()));
   }
@@ -386,8 +363,7 @@ abstract public class ObjectValue extends Callback {
   /**
    * Append to a binary builder.
    */
-  @Override
-  public StringValue appendTo(BinaryBuilderValue sb)
+  public override StringValue appendTo(BinaryBuilderValue sb)
   {
     return sb.appendBytes(toString(Env.getInstance()));
   }
@@ -395,8 +371,7 @@ abstract public class ObjectValue extends Callback {
   /**
    * Append to a binary builder.
    */
-  @Override
-  public StringValue appendTo(LargeStringBuilderValue sb)
+  public override StringValue appendTo(LargeStringBuilderValue sb)
   {
     return sb.append(toString(Env.getInstance()));
   }
@@ -404,8 +379,7 @@ abstract public class ObjectValue extends Callback {
   /**
    * Returns the array value with the given key.
    */
-  @Override
-  public Value get(Value key)
+  public override Value get(Value key)
   {
     Env env = Env.getInstance();
 
@@ -425,8 +399,7 @@ abstract public class ObjectValue extends Callback {
   /**
    * Sets the array value with the given key.
    */
-  @Override
-  public Value put(Value key, Value value)
+  public override Value put(Value key, Value value)
   {
     Env env = Env.getInstance();
 
@@ -448,8 +421,7 @@ abstract public class ObjectValue extends Callback {
   /**
    * Appends a new array value
    */
-  @Override
-  public Value put(Value value)
+  public override Value put(Value value)
   {
     Env env = Env.getInstance();
 
@@ -482,8 +454,7 @@ abstract public class ObjectValue extends Callback {
   /**
    * Return true if set
    */
-  @Override
-  public boolean isset(Value key)
+  public override boolean isset(Value key)
   {
     ArrayDelegate delegate = _quercusClass.getArrayDelegate();
 
@@ -500,8 +471,7 @@ abstract public class ObjectValue extends Callback {
   /**
    * Return true if empty.
    */
-  @Override
-  public boolean isEmpty(Env env, Value key)
+  public override boolean isEmpty(Env env, Value key)
   {
     ArrayDelegate delegate = _quercusClass.getArrayDelegate();
 
@@ -516,8 +486,7 @@ abstract public class ObjectValue extends Callback {
   /**
    * Unsets the array value
    */
-  @Override
-  public Value remove(Value key)
+  public override Value remove(Value key)
   {
     ArrayDelegate delegate = _quercusClass.getArrayDelegate();
 
@@ -537,8 +506,7 @@ abstract public class ObjectValue extends Callback {
   /**
    * Returns an iterator for the key => value pairs.
    */
-  @Override
-  public Iterator<Map.Entry<Value, Value>> getIterator(Env env)
+  public override Iterator<Map.Entry<Value, Value>> getIterator(Env env)
   {
     TraversableDelegate delegate = _quercusClass.getTraversableDelegate();
 
@@ -551,8 +519,7 @@ abstract public class ObjectValue extends Callback {
   /**
    * Returns an iterator for the keys.
    */
-  @Override
-  public Iterator<Value> getKeyIterator(Env env)
+  public override Iterator<Value> getKeyIterator(Env env)
   {
     TraversableDelegate delegate = _quercusClass.getTraversableDelegate();
 
@@ -565,8 +532,7 @@ abstract public class ObjectValue extends Callback {
   /**
    * Returns an iterator for the values.
    */
-  @Override
-  public Iterator<Value> getValueIterator(Env env)
+  public override Iterator<Value> getValueIterator(Env env)
   {
     TraversableDelegate delegate = _quercusClass.getTraversableDelegate();
 
@@ -583,8 +549,7 @@ abstract public class ObjectValue extends Callback {
   /**
    * Returns the count value with the given key.
    */
-  @Override
-  public int getCount(Env env)
+  public override int getCount(Env env)
   {
     CountDelegate delegate = _quercusClass.getCountDelegate();
 
@@ -650,8 +615,7 @@ abstract public class ObjectValue extends Callback {
   /**
    * Initializes a new field, does not call __set if it is defined.
    */
-  @Override
-  public void initField(Env env,
+  public override void initField(Env env,
                         StringValue name,
                         StringValue canonicalName,
                         Value value)
@@ -659,8 +623,7 @@ abstract public class ObjectValue extends Callback {
     putThisField(env, canonicalName, value);
   }
 
-  @Override
-  public void initIncompleteField(Env env,
+  public override void initIncompleteField(Env env,
                                   StringValue name,
                                   Value value,
                                   FieldVisibility visibility)
@@ -682,8 +645,7 @@ abstract public class ObjectValue extends Callback {
   /**
    * Returns the static field.
    */
-  @Override
-  public Value getStaticFieldValue(Env env, StringValue name)
+  public override Value getStaticFieldValue(Env env, StringValue name)
   {
     return getQuercusClass().getStaticFieldValue(env, name);
   }
@@ -691,8 +653,7 @@ abstract public class ObjectValue extends Callback {
   /**
   * Returns the static field reference.
   */
-  @Override
-  public Var getStaticFieldVar(Env env, StringValue name)
+  public override Var getStaticFieldVar(Env env, StringValue name)
   {
     return getQuercusClass().getStaticFieldVar(env, name);
   }
@@ -700,8 +661,7 @@ abstract public class ObjectValue extends Callback {
   /**
    * Sets the static field.
    */
-  @Override
-  public Value setStaticFieldRef(Env env, StringValue name, Value value)
+  public override Value setStaticFieldRef(Env env, StringValue name, Value value)
   {
     return getQuercusClass().setStaticFieldRef(env, name, value);
   }
@@ -709,8 +669,7 @@ abstract public class ObjectValue extends Callback {
   /**
    * Returns true for equality
    */
-  @Override
-  public boolean eq(Value rValue)
+  public override boolean eq(Value rValue)
   {
     if (rValue.isObject()) {
       rValue = rValue.toValue();
@@ -783,8 +742,7 @@ abstract public class ObjectValue extends Callback {
   /**
    * Finds the method name.
    */
-  @Override
-  public final AbstractFunction findFunction(StringValue methodName)
+  public override final AbstractFunction findFunction(StringValue methodName)
   {
     return _quercusClass.findFunction(methodName);
   }
@@ -792,8 +750,7 @@ abstract public class ObjectValue extends Callback {
   /**
    * Call for callable.
    */
-  @Override
-  public Value call(Env env, Value []args)
+  public override Value call(Env env, Value []args)
   {
     AbstractFunction fun = _quercusClass.getInvoke();
 
@@ -872,8 +829,7 @@ abstract public class ObjectValue extends Callback {
   /**
    * Encodes the value in JSON.
    */
-  @Override
-  public void jsonEncode(Env env, JsonEncodeContext context, StringValue sb)
+  public override void jsonEncode(Env env, JsonEncodeContext context, StringValue sb)
   {
     if (isA(env, "JsonSerializable")) {
       AbstractFunction fun = getMethod(env.createString("jsonSerialize"));

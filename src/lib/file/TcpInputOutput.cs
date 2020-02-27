@@ -178,16 +178,14 @@ public class TcpInputOutput
     }
   }
 
-  @Override
-  public void write(int ch)
+  public override void write(int ch)
     
   {
     super.write(ch);
     flush();
   }
 
-  @Override
-  public void write(byte []buffer, int offset, int length)
+  public override void write(byte []buffer, int offset, int length)
     
   {
     super.write(buffer, offset, length);
@@ -198,8 +196,7 @@ public class TcpInputOutput
    * Read length bytes of data from the InputStream
    * argument and write them to this output stream.
    */
-  @Override
-  public int write(InputStream is, int length)
+  public override int write(InputStream is, int length)
     
   {
     int writeLength = super.write(is, length);

@@ -109,8 +109,7 @@ public class GoogleStaticFileServlet extends GenericServlet {
                             getClass().getSimpleName(), _gsBucket, _pwd.getUserPath()));
   }
 
-  @Override
-  public void service(ServletRequest request, ServletResponse response)
+  public override void service(ServletRequest request, ServletResponse response)
     
   {
     QuercusHttpServletRequest req

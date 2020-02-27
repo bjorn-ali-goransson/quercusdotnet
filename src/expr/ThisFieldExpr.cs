@@ -141,8 +141,7 @@ public class ThisFieldExpr extends AbstractVarExpr {
    *
    * @return the expression value.
    */
-  @Override
-  public Var evalVar(Env env)
+  public override Var evalVar(Env env)
   {
     init();
 
@@ -164,8 +163,7 @@ public class ThisFieldExpr extends AbstractVarExpr {
    *
    * @return the expression value.
    */
-  @Override
-  public Value evalArg(Env env, boolean isTop)
+  public override Value evalArg(Env env, boolean isTop)
   {
     init();
 
@@ -185,8 +183,7 @@ public class ThisFieldExpr extends AbstractVarExpr {
    *
    * @return the expression value.
    */
-  @Override
-  public Value evalAssignValue(Env env, Value value)
+  public override Value evalAssignValue(Env env, Value value)
   {
     init();
 
@@ -208,8 +205,7 @@ public class ThisFieldExpr extends AbstractVarExpr {
    *
    * @return the expression value.
    */
-  @Override
-  public Value evalAssignRef(Env env, Value value)
+  public override Value evalAssignRef(Env env, Value value)
   {
     init();
 
@@ -227,8 +223,7 @@ public class ThisFieldExpr extends AbstractVarExpr {
   /**
    * Evaluates as an array index assign ($a[index] = value).
    */
-  @Override
-  public Value evalArrayAssign(Env env, Expr indexExpr, Expr valueExpr)
+  public override Value evalArrayAssign(Env env, Expr indexExpr, Expr valueExpr)
   {
     init();
 
@@ -250,8 +245,7 @@ public class ThisFieldExpr extends AbstractVarExpr {
   /**
    * Evaluates as an array index assign ($a[index] = value).
    */
-  @Override
-  public Value evalArrayAssignRef(Env env, Expr indexExpr, Expr valueExpr)
+  public override Value evalArrayAssignRef(Env env, Expr indexExpr, Expr valueExpr)
   {
     init();
 

@@ -120,8 +120,7 @@ abstract public class AbstractJavaMethod extends AbstractFunction
     return true;
   }
 
-  @Override
-  abstract public Value callMethod(Env env,
+  abstract override public Value callMethod(Env env,
                                    QuercusClass qClass,
                                    Value qThis,
                                    Value []args);
@@ -129,76 +128,65 @@ abstract public class AbstractJavaMethod extends AbstractFunction
   /**
    * Evaluates the function, returning a copy
    */
-  @Override
-  public Value callCopy(Env env, Value []args)
+  public override Value callCopy(Env env, Value []args)
   {
     return call(env, args);
   }
 
-  @Override
-  public Value call(Env env, Value []args)
+  public override Value call(Env env, Value []args)
   {
     return callMethod(env, getQuercusClass(), (Value) null, args);
   }
 
-  @Override
-  public Value call(Env env)
+  public override Value call(Env env)
   {
     return callMethod(env, getQuercusClass(), (Value) null,
                       new Value[0]);
   }
 
-  @Override
-  public Value call(Env env, Value a1)
+  public override Value call(Env env, Value a1)
   {
     return callMethod(env, getQuercusClass(), (Value) null,
                       new Value[] {a1});
   }
 
-  @Override
-  public Value call(Env env, Value a1, Value a2)
+  public override Value call(Env env, Value a1, Value a2)
   {
     return callMethod(env, getQuercusClass(), (Value) null,
                       new Value[] {a1, a2});
   }
 
-  @Override
-  public Value call(Env env, Value a1, Value a2, Value a3)
+  public override Value call(Env env, Value a1, Value a2, Value a3)
   {
     return callMethod(env, getQuercusClass(), (Value) null,
                       new Value[] {a1, a2, a3});
   }
 
-  @Override
-  public Value call(Env env,
+  public override Value call(Env env,
                     Value a1, Value a2, Value a3, Value a4)
   {
     return callMethod(env, getQuercusClass(), (Value) null,
                       new Value[] {a1, a2, a3, a4});
   }
 
-  @Override
-  public Value call(Env env,
+  public override Value call(Env env,
                     Value a1, Value a2, Value a3, Value a4, Value a5)
   {
     return callMethod(env, getQuercusClass(), (Value) null,
                       new Value[] {a1, a2, a3, a4, a5});
   }
 
-  @Override
-  public Value callMethod(Env env, QuercusClass qClass, Value qThis)
+  public override Value callMethod(Env env, QuercusClass qClass, Value qThis)
   {
     return callMethod(env, qClass, qThis, new Value[0]);
   }
 
-  @Override
-  public Value callMethod(Env env, QuercusClass qClass, Value qThis, Value a1)
+  public override Value callMethod(Env env, QuercusClass qClass, Value qThis, Value a1)
   {
     return callMethod(env, qClass, qThis, new Value[] {a1});
   }
 
-  @Override
-  public Value callMethod(Env env,
+  public override Value callMethod(Env env,
                           QuercusClass qClass,
                           Value qThis,
                           Value a1,
@@ -207,8 +195,7 @@ abstract public class AbstractJavaMethod extends AbstractFunction
     return callMethod(env, qClass, qThis, new Value[] {a1, a2});
   }
 
-  @Override
-  public Value callMethod(Env env,
+  public override Value callMethod(Env env,
                           QuercusClass qClass,
                           Value qThis,
                           Value a1,
@@ -218,15 +205,13 @@ abstract public class AbstractJavaMethod extends AbstractFunction
     return callMethod(env, qClass, qThis, new Value[] {a1, a2, a3});
   }
 
-  @Override
-  public Value callMethod(Env env, QuercusClass qClass, Value qThis,
+  public override Value callMethod(Env env, QuercusClass qClass, Value qThis,
                           Value a1, Value a2, Value a3, Value a4)
   {
     return callMethod(env, qClass, qThis, new Value[] {a1, a2, a3, a4});
   }
 
-  @Override
-  public Value callMethod(Env env, QuercusClass qClass, Value qThis,
+  public override Value callMethod(Env env, QuercusClass qClass, Value qThis,
                           Value a1, Value a2, Value a3, Value a4, Value a5)
   {
     return callMethod(env, qClass, qThis,

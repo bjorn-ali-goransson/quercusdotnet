@@ -83,8 +83,7 @@ public class PDFFileImage extends PDFObject {
   /**
    * Writes the object to the stream
    */
-  @Override
-  public void writeObject(PDFWriter out)
+  public override void writeObject(PDFWriter out)
     
   {
     out.println("<< /Type /XObject");

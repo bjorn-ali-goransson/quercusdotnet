@@ -104,8 +104,7 @@ public class ConstExpr extends Expr {
   /**
    * Creates a class field Foo::$bar
    */
-  @Override
-  public Expr createClassConst(QuercusParser parser, Expr name)
+  public override Expr createClassConst(QuercusParser parser, Expr name)
   {
     ExprFactory factory = parser.getExprFactory();
 
@@ -133,8 +132,7 @@ public class ConstExpr extends Expr {
   /**
    * Creates a class field Foo::$bar
    */
-  @Override
-  public Expr createClassField(QuercusParser parser, StringValue name)
+  public override Expr createClassField(QuercusParser parser, StringValue name)
   {
     ExprFactory factory = parser.getExprFactory();
 
@@ -167,8 +165,7 @@ public class ConstExpr extends Expr {
   /**
    * Creates a class field Foo::${bar}
    */
-  @Override
-  public Expr createClassField(QuercusParser parser, Expr name)
+  public override Expr createClassField(QuercusParser parser, Expr name)
   {
     ExprFactory factory = parser.getExprFactory();
 
@@ -227,8 +224,7 @@ public class ConstExpr extends Expr {
     return env.getConstant(_var);
   }
 
-  @Override
-  public QuercusClass evalQuercusClass(Env env)
+  public override QuercusClass evalQuercusClass(Env env)
   {
     String className = evalString(env);
 

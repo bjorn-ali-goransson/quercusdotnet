@@ -57,8 +57,7 @@ abstract public class CompiledMethod extends CompiledAbstractFunction {
     throw new IllegalStateException(getClass().getName());
   }
 
-  @Override
-  public Value callMethodRef(Env env,
+  public override Value callMethodRef(Env env,
                              QuercusClass qClass,
                              Value qThis,
                              Value []args)
@@ -66,8 +65,7 @@ abstract public class CompiledMethod extends CompiledAbstractFunction {
     return callMethod(env, qClass, qThis, args).copyReturn();
   }
 
-  @Override
-  public Value callMethodRef(Env env,
+  public override Value callMethodRef(Env env,
                              QuercusClass qClass,
                              Value qThis)
   {
@@ -75,8 +73,7 @@ abstract public class CompiledMethod extends CompiledAbstractFunction {
     return callMethod(env, qClass, qThis).copyReturn();
   }
 
-  @Override
-  public Value callMethodRef(Env env,
+  public override Value callMethodRef(Env env,
                              QuercusClass qClass,
                              Value qThis,
                              Value a1)
@@ -84,8 +81,7 @@ abstract public class CompiledMethod extends CompiledAbstractFunction {
     return callMethod(env, qClass, qThis, a1).copyReturn();
   }
 
-  @Override
-  public Value callMethodRef(Env env,
+  public override Value callMethodRef(Env env,
                              QuercusClass qClass,
                              Value qThis,
                              Value a1, Value a2)
@@ -93,8 +89,7 @@ abstract public class CompiledMethod extends CompiledAbstractFunction {
     return callMethod(env, qClass, qThis, a1, a2).copyReturn();
   }
 
-  @Override
-  public Value callMethodRef(Env env,
+  public override Value callMethodRef(Env env,
                              QuercusClass qClass,
                              Value qThis,
                              Value a1, Value a2, Value a3)
@@ -102,8 +97,7 @@ abstract public class CompiledMethod extends CompiledAbstractFunction {
     return callMethod(env, qClass, qThis, a1, a2, a3).copyReturn();
   }
 
-  @Override
-  public Value callMethodRef(Env env,
+  public override Value callMethodRef(Env env,
                              QuercusClass qClass,
                              Value qThis,
                              Value a1, Value a2, Value a3, Value a4)
@@ -111,8 +105,7 @@ abstract public class CompiledMethod extends CompiledAbstractFunction {
     return callMethod(env, qClass, qThis, a1, a2, a3, a4).copyReturn();
   }
 
-  @Override
-  public Value callMethodRef(Env env,
+  public override Value callMethodRef(Env env,
                              QuercusClass qClass,
                              Value qThis,
                              Value a1, Value a2, Value a3, Value a4, Value a5)

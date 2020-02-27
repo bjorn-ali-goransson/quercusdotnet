@@ -134,34 +134,29 @@ public class DirectoryIterator
     return ".".equals(fileName) || "..".equals(fileName);
   }
 
-  @Override
-  public Value key(Env env)
+  public override Value key(Env env)
   {
     return LongValue.create(_index);
   }
 
-  @Override
-  public void next(Env env)
+  public override void next(Env env)
   {
     _index++;
 
     _current = null;
   }
 
-  @Override
-  public void rewind(Env env)
+  public override void rewind(Env env)
   {
     _index = 0;
   }
 
-  @Override
-  public boolean valid(Env env)
+  public override boolean valid(Env env)
   {
     return _index < _list.length;
   }
 
-  @Override
-  public void seek(Env env, int index)
+  public override void seek(Env env, int index)
   {
     _index = index;
   }
@@ -170,152 +165,127 @@ public class DirectoryIterator
   // SplFileInfo
   //
   /*
-  @Override
-  public long getATime(Env env)
+  public override long getATime(Env env)
   {
     return getCurrent(env).getATime(env);
   }
 
-  @Override
-  public String getBasename(Env env, @Optional String suffix)
+  public override String getBasename(Env env, @Optional String suffix)
   {
     return getCurrent(env).getBasename(env, suffix);
   }
 
-  @Override
-  public long getCTime(Env env)
+  public override long getCTime(Env env)
   {
     return getCurrent(env).getCTime(env);
   }
 
-  @Override
-  public String getExtension(Env env)
+  public override String getExtension(Env env)
   {
     return getCurrent(env).getExtension(env);
   }
 
-  @Override
-  public SplFileInfo getFileInfo(Env env, @Optional String className)
+  public override SplFileInfo getFileInfo(Env env, @Optional String className)
   {
     return getCurrent(env).getFileInfo(env, className);
   }
 
-  @Override
-  public String getFilename(Env env)
+  public override String getFilename(Env env)
   {
     return getCurrent(env).getFilename(env);
   }
 
-  @Override
-  public int getGroup(Env env)
+  public override int getGroup(Env env)
   {
     return getCurrent(env).getGroup(env);
   }
 
-  @Override
-  public long getInode(Env env)
+  public override long getInode(Env env)
   {
     return getCurrent(env).getInode(env);
   }
 
-  @Override
-  public String getLinkTarget(Env env)
+  public override String getLinkTarget(Env env)
   {
     return getCurrent(env).getLinkTarget(env);
   }
 
-  @Override
-  public long getMTime(Env env)
+  public override long getMTime(Env env)
   {
     return getCurrent(env).getMTime(env);
   }
 
-  @Override
-  public int getOwner(Env env)
+  public override int getOwner(Env env)
   {
     return getCurrent(env).getOwner(env);
   }
 
-  @Override
-  public String getPath(Env env)
+  public override String getPath(Env env)
   {
     return getCurrent(env).getPath(env);
   }
 
-  @Override
-  public SplFileInfo getPathInfo(Env env, @Optional String className)
+  public override SplFileInfo getPathInfo(Env env, @Optional String className)
   {
     return getCurrent(env).getPathInfo(env, className);
   }
 
-  @Override
-  public String getPathname(Env env)
+  public override String getPathname(Env env)
   {
     return getCurrent(env).getPathname(env);
   }
 
-  @Override
-  public int getPerms(Env env)
+  public override int getPerms(Env env)
   {
     return getCurrent(env).getPerms(env);
   }
 
-  @Override
-  public String getRealPath(Env env)
+  public override String getRealPath(Env env)
   {
     return getCurrent(env).getRealPath(env);
   }
 
-  @Override
-  public long getSize(Env env)
+  public override long getSize(Env env)
   {
     return getCurrent(env).getSize(env);
   }
 
-  @Override
-  public String getType(Env env)
+  public override String getType(Env env)
   {
     return getCurrent(env).getType(env);
   }
 
-  @Override
-  public boolean isDir(Env env)
+  public override boolean isDir(Env env)
   {
     return getCurrent(env).isDir(env);
   }
 
-  @Override
-  public boolean isExecutable(Env env)
+  public override boolean isExecutable(Env env)
   {
     return getCurrent(env).isExecutable(env);
   }
 
-  @Override
-  public boolean isFile(Env env)
+  public override boolean isFile(Env env)
   {
     return getCurrent(env).isFile(env);
   }
 
-  @Override
-  public boolean isLink(Env env)
+  public override boolean isLink(Env env)
   {
     return getCurrent(env).isLink(env);
   }
 
-  @Override
-  public boolean isReadable(Env env)
+  public override boolean isReadable(Env env)
   {
     return getCurrent(env).isReadable(env);
   }
 
-  @Override
-  public boolean isWritable(Env env)
+  public override boolean isWritable(Env env)
   {
     return getCurrent(env).isWritable(env);
   }
 
-  @Override
-  public SplFileObject openFile(Env env,
+  public override SplFileObject openFile(Env env,
                                 @Optional("r") String mode,
                                 @Optional boolean isUseIncludePath,
                                 @Optional Value context)
@@ -323,8 +293,7 @@ public class DirectoryIterator
     return getCurrent(env).openFile(env, mode, isUseIncludePath, context);
   }
 
-  @Override
-  public String __toString(Env env)
+  public override String __toString(Env env)
   {
     return getCurrent(env).__toString(env);
   }

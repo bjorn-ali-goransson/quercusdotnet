@@ -70,8 +70,7 @@ public class ReturnRefStatement extends Statement {
   /**
    * Returns true if control can go past the statement.
    */
-  @Override
-  public int fallThrough()
+  public override int fallThrough()
   {
     return RETURN;
   }

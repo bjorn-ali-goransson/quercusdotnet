@@ -79,8 +79,7 @@ abstract public class CompiledMethodRef_2 extends CompiledMethodRef {
   /**
    * Evaluates the method with the given variable arguments.
    */
-  @Override
-  public Value callMethodRef(Env env, QuercusClass qClass, Value qThis)
+  public override Value callMethodRef(Env env, QuercusClass qClass, Value qThis)
   {
     return callMethodRef(env, qClass, qThis,
                          _args[0].eval(env),
@@ -90,8 +89,7 @@ abstract public class CompiledMethodRef_2 extends CompiledMethodRef {
   /**
    * Evaluates the method with the given variable arguments.
    */
-  @Override
-  public Value callMethodRef(Env env, QuercusClass qClass, Value qThis,
+  public override Value callMethodRef(Env env, QuercusClass qClass, Value qThis,
 			     Value a1)
   {
     return callMethodRef(env, qClass, qThis,
@@ -99,8 +97,7 @@ abstract public class CompiledMethodRef_2 extends CompiledMethodRef {
                          _args[1].eval(env));
   }
 
-  @Override
-  abstract public Value callMethodRef(Env env, QuercusClass qClass, Value qThis,
+  abstract override public Value callMethodRef(Env env, QuercusClass qClass, Value qThis,
                                       Value a1, Value a2);
 }
 

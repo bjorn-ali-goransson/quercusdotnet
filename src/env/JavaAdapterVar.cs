@@ -81,8 +81,7 @@ public class JavaAdapterVar extends Value
   /**
    * Returns the type.
    */
-  @Override
-  public String getType()
+  public override String getType()
   {
     return getValue().getType();
   }
@@ -90,8 +89,7 @@ public class JavaAdapterVar extends Value
   /**
    * Returns the type of the resource.
    */
-  @Override
-  public String getResourceType()
+  public override String getResourceType()
   {
     return getValue().getResourceType();
   }
@@ -99,8 +97,7 @@ public class JavaAdapterVar extends Value
   /**
    * Returns the ValueType.
    */
-  @Override
-  public ValueType getValueType()
+  public override ValueType getValueType()
   {
     return getValue().getValueType();
   }
@@ -108,8 +105,7 @@ public class JavaAdapterVar extends Value
   /**
    * Returns the class name.
    */
-  @Override
-  public String getClassName()
+  public override String getClassName()
   {
     return getValue().getClassName();
   }
@@ -117,8 +113,7 @@ public class JavaAdapterVar extends Value
   /**
    * Returns true for an object.
    */
-  @Override
-  public boolean isObject()
+  public override boolean isObject()
   {
     return getValue().isObject();
   }
@@ -126,8 +121,7 @@ public class JavaAdapterVar extends Value
   /**
    * Returns true for an object.
    */
-  @Override
-  public boolean isResource()
+  public override boolean isResource()
   {
     return getValue().isResource();
   }
@@ -135,8 +129,7 @@ public class JavaAdapterVar extends Value
   /**
    * Returns true for a set type.
    */
-  @Override
-  public boolean isset()
+  public override boolean isset()
   {
     return getValue().isset();
   }
@@ -144,8 +137,7 @@ public class JavaAdapterVar extends Value
   /**
    * Returns true for an implementation of a class
    */
-  @Override
-  public boolean isA(Env env, String name)
+  public override boolean isA(Env env, String name)
   {
     return getValue().isA(env, name);
   }
@@ -153,8 +145,7 @@ public class JavaAdapterVar extends Value
   /**
    * True for a number
    */
-  @Override
-  public boolean isNull()
+  public override boolean isNull()
   {
     return getValue().isNull();
   }
@@ -162,8 +153,7 @@ public class JavaAdapterVar extends Value
   /**
    * True for a long
    */
-  @Override
-  public boolean isLongConvertible()
+  public override boolean isLongConvertible()
   {
     return getValue().isLongConvertible();
   }
@@ -171,8 +161,7 @@ public class JavaAdapterVar extends Value
   /**
    * True to a double.
    */
-  @Override
-  public boolean isDoubleConvertible()
+  public override boolean isDoubleConvertible()
   {
     return getValue().isDoubleConvertible();
   }
@@ -180,8 +169,7 @@ public class JavaAdapterVar extends Value
   /**
    * True for a number
    */
-  @Override
-  public boolean isNumberConvertible()
+  public override boolean isNumberConvertible()
   {
     return getValue().isNumberConvertible();
   }
@@ -205,8 +193,7 @@ public class JavaAdapterVar extends Value
   /**
    * Returns true for is_numeric
    */
-  @Override
-  public boolean isNumeric()
+  public override boolean isNumeric()
   {
     return getValue().isNumeric();
   }
@@ -224,8 +211,7 @@ public class JavaAdapterVar extends Value
   /**
    * Returns true for a StringValue.
    */
-  @Override
-  public boolean isString()
+  public override boolean isString()
   {
     return getValue().isString();
   }
@@ -233,8 +219,7 @@ public class JavaAdapterVar extends Value
   /**
    * Returns true for a BinaryValue.
    */
-  @Override
-  public boolean isBinary()
+  public override boolean isBinary()
   {
     return getValue().isBinary();
   }
@@ -242,8 +227,7 @@ public class JavaAdapterVar extends Value
   /**
    * Returns true for a UnicodeValue.
    */
-  @Override
-  public boolean isUnicode()
+  public override boolean isUnicode()
   {
     return getValue().isUnicode();
   }
@@ -251,8 +235,7 @@ public class JavaAdapterVar extends Value
   /**
    * Returns true for a BooleanValue
    */
-  @Override
-  public boolean isBoolean()
+  public override boolean isBoolean()
   {
     return getValue().isBoolean();
   }
@@ -260,8 +243,7 @@ public class JavaAdapterVar extends Value
   /**
    * Returns true for a DefaultValue
    */
-  @Override
-  public boolean isDefault()
+  public override boolean isDefault()
   {
     return getValue().isDefault();
   }
@@ -270,8 +252,7 @@ public class JavaAdapterVar extends Value
   // Conversions
   //
 
-  @Override
-  public String toString()
+  public override String toString()
   {
     return getValue().toString();
   }
@@ -279,8 +260,7 @@ public class JavaAdapterVar extends Value
   /**
    * Converts to a boolean.
    */
-  @Override
-  public boolean toBoolean()
+  public override boolean toBoolean()
   {
     return getValue().toBoolean();
   }
@@ -288,8 +268,7 @@ public class JavaAdapterVar extends Value
   /**
    * Converts to a long.
    */
-  @Override
-  public long toLong()
+  public override long toLong()
   {
     return getValue().toLong();
   }
@@ -297,8 +276,7 @@ public class JavaAdapterVar extends Value
   /**
    * Converts to a double.
    */
-  @Override
-  public double toDouble()
+  public override double toDouble()
   {
     return getValue().toDouble();
   }
@@ -307,8 +285,7 @@ public class JavaAdapterVar extends Value
    * Converts to a string.
    * @param env
    */
-  @Override
-  public StringValue toString(Env env)
+  public override StringValue toString(Env env)
   {
     return getValue().toString(env);
   }
@@ -316,8 +293,7 @@ public class JavaAdapterVar extends Value
   /**
    * Converts to an object.
    */
-  @Override
-  public Object toJavaObject()
+  public override Object toJavaObject()
   {
     return getValue().toJavaObject();
   }
@@ -325,8 +301,7 @@ public class JavaAdapterVar extends Value
   /**
    * Converts to an object.
    */
-  @Override
-  public Object toJavaObject(Env env, Class type)
+  public override Object toJavaObject(Env env, Class type)
   {
     return getValue().toJavaObject(env, type);
   }
@@ -334,8 +309,7 @@ public class JavaAdapterVar extends Value
   /**
    * Converts to an object.
    */
-  @Override
-  public Object toJavaObjectNotNull(Env env, Class type)
+  public override Object toJavaObjectNotNull(Env env, Class type)
   {
     return getValue().toJavaObjectNotNull(env, type);
   }
@@ -343,8 +317,7 @@ public class JavaAdapterVar extends Value
   /**
    * Converts to a java Collection object.
    */
-  @Override
-  public Collection toJavaCollection(Env env, Class type)
+  public override Collection toJavaCollection(Env env, Class type)
   {
     return getValue().toJavaCollection(env, type);
   }
@@ -352,8 +325,7 @@ public class JavaAdapterVar extends Value
   /**
    * Converts to a java List object.
    */
-  @Override
-  public List toJavaList(Env env, Class type)
+  public override List toJavaList(Env env, Class type)
   {
     return getValue().toJavaList(env, type);
   }
@@ -361,8 +333,7 @@ public class JavaAdapterVar extends Value
   /**
    * Converts to a java Map object.
    */
-  @Override
-  public Map toJavaMap(Env env, Class type)
+  public override Map toJavaMap(Env env, Class type)
   {
     return getValue().toJavaMap(env, type);
   }
@@ -371,8 +342,7 @@ public class JavaAdapterVar extends Value
   /**
    * Converts to an array
    */
-  @Override
-  public ArrayValue toArray()
+  public override ArrayValue toArray()
   {
     return getValue().toArray();
   }
@@ -380,8 +350,7 @@ public class JavaAdapterVar extends Value
   /**
    * Converts to an array
    */
-  @Override
-  public ArrayValue toArrayValue(Env env)
+  public override ArrayValue toArrayValue(Env env)
   {
     return getValue().toArrayValue(env);
   }
@@ -389,8 +358,7 @@ public class JavaAdapterVar extends Value
   /**
    * Converts to an array
    */
-  @Override
-  public Value toAutoArray()
+  public override Value toAutoArray()
   {
     setRaw(getValue());
 
@@ -404,8 +372,7 @@ public class JavaAdapterVar extends Value
   /**
    * Converts to an object.
    */
-  @Override
-  public Value toObject(Env env)
+  public override Value toObject(Env env)
   {
     return getValue().toObject(env);
   }
@@ -413,8 +380,7 @@ public class JavaAdapterVar extends Value
   /**
    * Converts to a Java Calendar.
    */
-  @Override
-  public Calendar toJavaCalendar()
+  public override Calendar toJavaCalendar()
   {
     return getValue().toJavaCalendar();
   }
@@ -422,8 +388,7 @@ public class JavaAdapterVar extends Value
   /**
    * Converts to a Java Date.
    */
-  @Override
-  public Date toJavaDate()
+  public override Date toJavaDate()
   {
     return getValue().toJavaDate();
   }
@@ -431,8 +396,7 @@ public class JavaAdapterVar extends Value
   /**
    * Converts to a Java URL.
    */
-  @Override
-  public URL toJavaURL(Env env)
+  public override URL toJavaURL(Env env)
   {
     return getValue().toJavaURL(env);
   }
@@ -456,8 +420,7 @@ public class JavaAdapterVar extends Value
   /**
    * Append to a string builder.
    */
-  @Override
-  public StringValue appendTo(UnicodeBuilderValue sb)
+  public override StringValue appendTo(UnicodeBuilderValue sb)
   {
     return getValue().appendTo(sb);
   }
@@ -465,8 +428,7 @@ public class JavaAdapterVar extends Value
   /**
    * Append to a string builder.
    */
-  @Override
-  public StringValue appendTo(BinaryBuilderValue sb)
+  public override StringValue appendTo(BinaryBuilderValue sb)
   {
     return getValue().appendTo(sb);
   }
@@ -474,8 +436,7 @@ public class JavaAdapterVar extends Value
   /**
    * Append to a string builder.
    */
-  @Override
-  public StringValue appendTo(StringBuilderValue sb)
+  public override StringValue appendTo(StringBuilderValue sb)
   {
     return getValue().appendTo(sb);
   }
@@ -483,8 +444,7 @@ public class JavaAdapterVar extends Value
   /**
    * Append to a string builder.
    */
-  @Override
-  public StringValue appendTo(LargeStringBuilderValue sb)
+  public override StringValue appendTo(LargeStringBuilderValue sb)
   {
     return getValue().appendTo(sb);
   }
@@ -492,8 +452,7 @@ public class JavaAdapterVar extends Value
   /**
    * Converts to a raw value.
    */
-  @Override
-  public Value toValue()
+  public override Value toValue()
   {
     return getValue();
   }
@@ -501,8 +460,7 @@ public class JavaAdapterVar extends Value
   /**
    * Converts to a function argument value that is never assigned or modified.
    */
-  @Override
-  public Value toLocalValueReadOnly()
+  public override Value toLocalValueReadOnly()
   {
     return getValue();
   }
@@ -510,8 +468,7 @@ public class JavaAdapterVar extends Value
   /**
    * Converts to a raw value.
    */
-  @Override
-  public Value toLocalValue()
+  public override Value toLocalValue()
   {
     return getValue().toLocalValue();
   }
@@ -520,8 +477,7 @@ public class JavaAdapterVar extends Value
    * Converts to a function argument ref value, i.e. an argument
    * declared as a reference, but not assigned
    */
-  @Override
-  public Value toRefValue()
+  public override Value toRefValue()
   {
     setRaw(getValue());
 
@@ -535,8 +491,7 @@ public class JavaAdapterVar extends Value
   /**
    * Converts to a variable
    */
-  @Override
-  public Var toVar()
+  public override Var toVar()
   {
     setRaw(getValue());
 
@@ -550,32 +505,27 @@ public class JavaAdapterVar extends Value
   /**
    * Converts to a key.
    */
-  @Override
-  public Value toKey()
+  public override Value toKey()
   {
     return getValue().toKey();
   }
 
-  @Override
-  public StringValue toStringValue()
+  public override StringValue toStringValue()
   {
     return getValue().toStringValue();
   }
 
-  @Override
-  public StringValue toBinaryValue(Env env)
+  public override StringValue toBinaryValue(Env env)
   {
     return getValue().toBinaryValue(env);
   }
 
-  @Override
-  public StringValue toUnicodeValue(Env env)
+  public override StringValue toUnicodeValue(Env env)
   {
     return getValue().toUnicodeValue(env);
   }
 
-  @Override
-  public StringValue toStringBuilder()
+  public override StringValue toStringBuilder()
   {
     return getValue().toStringBuilder();
   }
@@ -583,8 +533,7 @@ public class JavaAdapterVar extends Value
   /**
    * Converts to a string builder
    */
-  @Override
-  public StringValue toStringBuilder(Env env)
+  public override StringValue toStringBuilder(Env env)
   {
     return getValue().toStringBuilder(env);
   }
@@ -596,8 +545,7 @@ public class JavaAdapterVar extends Value
   /**
    * Copy the value.
    */
-  @Override
-  public Value copy()
+  public override Value copy()
   {
     setRaw(getValue());
 
@@ -611,8 +559,7 @@ public class JavaAdapterVar extends Value
   /**
    * Copy the value as a return value.
    */
-  @Override
-  public Value copyReturn()
+  public override Value copyReturn()
   {
     setRaw(getValue());
 
@@ -626,8 +573,7 @@ public class JavaAdapterVar extends Value
   /**
    * Converts to a variable reference (for function  arguments)
    */
-  @Override
-  public Value toRef()
+  public override Value toRef()
   {
     setRaw(getValue());
 
@@ -641,8 +587,7 @@ public class JavaAdapterVar extends Value
   /**
    * Returns true for an array.
    */
-  @Override
-  public boolean isArray()
+  public override boolean isArray()
   {
     return getValue().isArray();
   }
@@ -650,8 +595,7 @@ public class JavaAdapterVar extends Value
   /**
    * Negates the value.
    */
-  @Override
-  public Value neg()
+  public override Value neg()
   {
     return getValue().neg();
   }
@@ -659,8 +603,7 @@ public class JavaAdapterVar extends Value
   /**
    * Adds to the following value.
    */
-  @Override
-  public Value add(Value rValue)
+  public override Value add(Value rValue)
   {
     return getValue().add(rValue);
   }
@@ -668,8 +611,7 @@ public class JavaAdapterVar extends Value
   /**
    * Adds to the following value.
    */
-  @Override
-  public Value add(long rValue)
+  public override Value add(long rValue)
   {
     return getValue().add(rValue);
   }
@@ -677,8 +619,7 @@ public class JavaAdapterVar extends Value
   /**
    * Pre-increment the following value.
    */
-  @Override
-  public Value preincr(int incr)
+  public override Value preincr(int incr)
   {
     setRaw(getValue());
 
@@ -692,8 +633,7 @@ public class JavaAdapterVar extends Value
   /**
    * Post-increment the following value.
    */
-  @Override
-  public Value postincr(int incr)
+  public override Value postincr(int incr)
   {
     setRaw(getValue());
 
@@ -707,8 +647,7 @@ public class JavaAdapterVar extends Value
   /**
    * Subtracts to the following value.
    */
-  @Override
-  public Value sub(Value rValue)
+  public override Value sub(Value rValue)
   {
     return getValue().sub(rValue);
   }
@@ -716,8 +655,7 @@ public class JavaAdapterVar extends Value
   /**
    * Subtracts to the following value.
    */
-  @Override
-  public Value sub(long rValue)
+  public override Value sub(long rValue)
   {
     return getValue().sub(rValue);
   }
@@ -725,8 +663,7 @@ public class JavaAdapterVar extends Value
   /**
    * Multiplies to the following value.
    */
-  @Override
-  public Value mul(Value rValue)
+  public override Value mul(Value rValue)
   {
     return getValue().mul(rValue);
   }
@@ -734,8 +671,7 @@ public class JavaAdapterVar extends Value
   /**
    * Multiplies to the following value.
    */
-  @Override
-  public Value mul(long lValue)
+  public override Value mul(long lValue)
   {
     return getValue().mul(lValue);
   }
@@ -743,8 +679,7 @@ public class JavaAdapterVar extends Value
   /**
    * Divides the following value.
    */
-  @Override
-  public Value div(Value rValue)
+  public override Value div(Value rValue)
   {
     return getValue().div(rValue);
   }
@@ -752,8 +687,7 @@ public class JavaAdapterVar extends Value
   /**
    * Shifts left by the value.
    */
-  @Override
-  public Value lshift(Value rValue)
+  public override Value lshift(Value rValue)
   {
     return getValue().lshift(rValue);
   }
@@ -761,8 +695,7 @@ public class JavaAdapterVar extends Value
   /**
    * Shifts right by the value.
    */
-  @Override
-  public Value rshift(Value rValue)
+  public override Value rshift(Value rValue)
   {
     return getValue().rshift(rValue);
   }
@@ -786,8 +719,7 @@ public class JavaAdapterVar extends Value
   /**
    * Binary xor.
    */
-  @Override
-  public Value bitXor(Value rValue)
+  public override Value bitXor(Value rValue)
   {
     return getValue().bitXor(rValue);
   }
@@ -803,8 +735,7 @@ public class JavaAdapterVar extends Value
   /**
    * Returns true for equality
    */
-  @Override
-  public boolean eq(Value rValue)
+  public override boolean eq(Value rValue)
   {
     return getValue().eq(rValue);
   }
@@ -812,8 +743,7 @@ public class JavaAdapterVar extends Value
   /**
    * Returns true for equality
    */
-  @Override
-  public boolean eql(Value rValue)
+  public override boolean eql(Value rValue)
   {
     return getValue().eql(rValue);
   }
@@ -821,8 +751,7 @@ public class JavaAdapterVar extends Value
   /**
    * Compares the two values
    */
-  @Override
-  public int cmp(Value rValue)
+  public override int cmp(Value rValue)
   {
     return getValue().cmp(rValue);
   }
@@ -830,8 +759,7 @@ public class JavaAdapterVar extends Value
   /**
    * Returns the length as a string.
    */
-  @Override
-  public int length()
+  public override int length()
   {
     return getValue().length();
   }
@@ -839,26 +767,22 @@ public class JavaAdapterVar extends Value
   /**
    * Returns the array/object size
    */
-  @Override
-  public int getSize()
+  public override int getSize()
   {
     return getValue().getSize();
   }
 
-  @Override
-  public Iterator<Map.Entry<Value, Value>> getIterator(Env env)
+  public override Iterator<Map.Entry<Value, Value>> getIterator(Env env)
   {
     return getValue().getIterator(env);
   }
 
-  @Override
-  public Iterator<Value> getKeyIterator(Env env)
+  public override Iterator<Value> getKeyIterator(Env env)
   {
     return getValue().getKeyIterator(env);
   }
 
-  @Override
-  public Iterator<Value> getValueIterator(Env env)
+  public override Iterator<Value> getValueIterator(Env env)
   {
     return getValue().getValueIterator(env);
   }
@@ -866,8 +790,7 @@ public class JavaAdapterVar extends Value
   /**
    * Returns the array ref.
    */
-  @Override
-  public Value getArray()
+  public override Value getArray()
   {
     setRaw(getValue());
 
@@ -881,8 +804,7 @@ public class JavaAdapterVar extends Value
   /**
    * Returns the value, creating an object if unset.
    */
-  @Override
-  public Value getObject(Env env)
+  public override Value getObject(Env env)
   {
     setRaw(getValue());
 
@@ -896,8 +818,7 @@ public class JavaAdapterVar extends Value
   /**
    * Returns the array ref.
    */
-  @Override
-  public Value get(Value index)
+  public override Value get(Value index)
   {
     return getValue().get(index);
   }
@@ -905,8 +826,7 @@ public class JavaAdapterVar extends Value
   /**
    * Returns the array ref.
    */
-  @Override
-  public Var getVar(Value index)
+  public override Var getVar(Value index)
   {
     setRaw(getValue());
 
@@ -920,8 +840,7 @@ public class JavaAdapterVar extends Value
   /**
    * Returns the array ref.
    */
-  @Override
-  public Value getArg(Value index, boolean isTop)
+  public override Value getArg(Value index, boolean isTop)
   {
     setRaw(getValue());
 
@@ -935,8 +854,7 @@ public class JavaAdapterVar extends Value
   /**
    * Returns the value, creating an object if unset.
    */
-  @Override
-  public Value getArray(Value index)
+  public override Value getArray(Value index)
   {
     setRaw(getValue());
 
@@ -950,8 +868,7 @@ public class JavaAdapterVar extends Value
   /**
    * Returns the value, doing a copy-on-write if needed.
    */
-  @Override
-  public Value getDirty(Value index)
+  public override Value getDirty(Value index)
   {
     return getValue().getDirty(index);
   }
@@ -959,8 +876,7 @@ public class JavaAdapterVar extends Value
   /**
    * Returns the value, creating an object if unset.
    */
-  @Override
-  public Value getObject(Env env, Value index)
+  public override Value getObject(Env env, Value index)
   {
     setRaw(getValue());
 
@@ -974,8 +890,7 @@ public class JavaAdapterVar extends Value
   /**
    * Returns the array ref.
    */
-  @Override
-  public Value put(Value index, Value value)
+  public override Value put(Value index, Value value)
   {
     setRaw(getValue());
 
@@ -989,8 +904,7 @@ public class JavaAdapterVar extends Value
   /**
    * Returns the array ref.
    */
-  @Override
-  public Value put(Value value)
+  public override Value put(Value value)
   {
     setRaw(getValue());
 
@@ -1004,8 +918,7 @@ public class JavaAdapterVar extends Value
   /**
    * Returns the array ref.
    */
-  @Override
-  public Var putVar()
+  public override Var putVar()
   {
     setRaw(getValue());
 
@@ -1020,8 +933,7 @@ public class JavaAdapterVar extends Value
    * Sets the array value, returning the new array, e.g. to handle
    * string update ($a[0] = 'A').
    */
-  @Override
-  public Value append(Value index, Value value)
+  public override Value append(Value index, Value value)
   {
     setRaw(getValue());
 
@@ -1035,8 +947,7 @@ public class JavaAdapterVar extends Value
   /**
    * Return unset the value.
    */
-  @Override
-  public Value remove(Value index)
+  public override Value remove(Value index)
   {
     return getValue().remove(index);
   }
@@ -1044,8 +955,7 @@ public class JavaAdapterVar extends Value
   /**
    * Returns the field ref.
    */
-  @Override
-  public Value getField(Env env, StringValue index)
+  public override Value getField(Env env, StringValue index)
   {
     return getValue().getField(env, index);
   }
@@ -1053,8 +963,7 @@ public class JavaAdapterVar extends Value
   /**
    * Returns the field ref.
    */
-  @Override
-  public Var getFieldVar(Env env, StringValue index)
+  public override Var getFieldVar(Env env, StringValue index)
   {
     setRaw(getValue());
 
@@ -1068,8 +977,7 @@ public class JavaAdapterVar extends Value
   /**
    * Returns the array ref.
    */
-  @Override
-  public Value getFieldArg(Env env, StringValue index, boolean isTop)
+  public override Value getFieldArg(Env env, StringValue index, boolean isTop)
   {
     setRaw(getValue());
 
@@ -1083,8 +991,7 @@ public class JavaAdapterVar extends Value
   /**
    * Returns the field value as an array
    */
-  @Override
-  public Value getFieldArray(Env env, StringValue index)
+  public override Value getFieldArray(Env env, StringValue index)
   {
     setRaw(getValue());
 
@@ -1098,8 +1005,7 @@ public class JavaAdapterVar extends Value
   /**
    * Returns the field value as an object
    */
-  @Override
-  public Value getFieldObject(Env env, StringValue index)
+  public override Value getFieldObject(Env env, StringValue index)
   {
     setRaw(getValue());
 
@@ -1113,8 +1019,7 @@ public class JavaAdapterVar extends Value
   /**
    * Sets the field.
    */
-  @Override
-  public Value putField(Env env, StringValue index, Value value)
+  public override Value putField(Env env, StringValue index, Value value)
   {
     setRaw(getValue());
 
@@ -1128,8 +1033,7 @@ public class JavaAdapterVar extends Value
   /**
    * Initializes a new field, does not call __set if it is defined.
    */
-  @Override
-  public void initField(Env env,
+  public override void initField(Env env,
                         StringValue name,
                         StringValue canonicalName,
                         Value value)
@@ -1144,8 +1048,7 @@ public class JavaAdapterVar extends Value
   /**
    * Sets the field.
    */
-  @Override
-  public Value putThisField(Env env, StringValue index, Value value)
+  public override Value putThisField(Env env, StringValue index, Value value)
   {
     setRaw(getValue());
 
@@ -1159,8 +1062,7 @@ public class JavaAdapterVar extends Value
   /**
    * Unsets the field.
    */
-  @Override
-  public void unsetField(StringValue index)
+  public override void unsetField(StringValue index)
   {
     getValue().unsetField(index);
   }
@@ -1169,8 +1071,7 @@ public class JavaAdapterVar extends Value
    * Takes the values of this array, unmarshalls them to objects of type
    * <i>elementType</i>, and puts them in a java array.
    */
-  @Override
-  public Object valuesToArray(Env env, Class elementType)
+  public override Object valuesToArray(Env env, Class elementType)
   {
     return getValue().valuesToArray(env, elementType);
   }
@@ -1178,8 +1079,7 @@ public class JavaAdapterVar extends Value
   /**
    * Returns the character at an index
    */
-  @Override
-  public Value charValueAt(long index)
+  public override Value charValueAt(long index)
   {
     return getValue().charValueAt(index);
   }
@@ -1187,8 +1087,7 @@ public class JavaAdapterVar extends Value
   /**
    * Sets the character at an index
    */
-  @Override
-  public Value setCharValueAt(long index, Value value)
+  public override Value setCharValueAt(long index, Value value)
   {
     return getValue().setCharValueAt(index, value);
   }
@@ -1196,8 +1095,7 @@ public class JavaAdapterVar extends Value
   /**
    * Returns true if there are more elements.
    */
-  @Override
-  public boolean hasCurrent()
+  public override boolean hasCurrent()
   {
     return getValue().hasCurrent();
   }
@@ -1205,8 +1103,7 @@ public class JavaAdapterVar extends Value
   /**
    * Returns the current key
    */
-  @Override
-  public Value key()
+  public override Value key()
   {
     return getValue().key();
   }
@@ -1214,8 +1111,7 @@ public class JavaAdapterVar extends Value
   /**
    * Returns the current value
    */
-  @Override
-  public Value current()
+  public override Value current()
   {
     return getValue().current();
   }
@@ -1223,8 +1119,7 @@ public class JavaAdapterVar extends Value
   /**
    * Returns the current value
    */
-  @Override
-  public Value next()
+  public override Value next()
   {
     return getValue().next();
   }
@@ -1232,8 +1127,7 @@ public class JavaAdapterVar extends Value
   /**
    * Returns the previous value
    */
-  @Override
-  public Value prev()
+  public override Value prev()
   {
     return getValue().prev();
   }
@@ -1241,8 +1135,7 @@ public class JavaAdapterVar extends Value
   /**
    * Returns the end value.
    */
-  @Override
-  public Value end()
+  public override Value end()
   {
     return getValue().end();
   }
@@ -1250,8 +1143,7 @@ public class JavaAdapterVar extends Value
   /**
    * Returns the array pointer.
    */
-  @Override
-  public Value reset()
+  public override Value reset()
   {
     return getValue().reset();
   }
@@ -1259,8 +1151,7 @@ public class JavaAdapterVar extends Value
   /**
    * Shuffles the array.
    */
-  @Override
-  public Value shuffle()
+  public override Value shuffle()
   {
     return getValue().shuffle();
   }
@@ -1268,8 +1159,7 @@ public class JavaAdapterVar extends Value
   /**
    * Pops the top array element.
    */
-  @Override
-  public Value pop(Env env)
+  public override Value pop(Env env)
   {
     return getValue().pop(env);
   }
@@ -1277,8 +1167,7 @@ public class JavaAdapterVar extends Value
   /**
    * Evaluates a method.
    */
-  @Override
-  public Value callMethod(Env env, StringValue methodName, int hash,
+  public override Value callMethod(Env env, StringValue methodName, int hash,
                           Value []args)
   {
     return getValue().callMethod(env, methodName, hash, args);
@@ -1287,8 +1176,7 @@ public class JavaAdapterVar extends Value
   /**
    * Evaluates a method.
    */
-  @Override
-  public Value callMethod(Env env, StringValue methodName, int hash)
+  public override Value callMethod(Env env, StringValue methodName, int hash)
   {
     return getValue().callMethod(env, methodName, hash);
   }
@@ -1296,8 +1184,7 @@ public class JavaAdapterVar extends Value
   /**
    * Evaluates a method.
    */
-  @Override
-  public Value callMethod(Env env, StringValue methodName, int hash,
+  public override Value callMethod(Env env, StringValue methodName, int hash,
                           Value a0)
   {
     return getValue().callMethod(env, methodName, hash, a0);
@@ -1306,8 +1193,7 @@ public class JavaAdapterVar extends Value
   /**
    * Evaluates a method.
    */
-  @Override
-  public Value callMethod(Env env, StringValue methodName, int hash,
+  public override Value callMethod(Env env, StringValue methodName, int hash,
                           Value a0, Value a1)
   {
     return getValue().callMethod(env, methodName, hash, a0, a1);
@@ -1316,8 +1202,7 @@ public class JavaAdapterVar extends Value
   /**
    * Evaluates a method with 3 args.
    */
-  @Override
-  public Value callMethod(Env env, StringValue methodName, int hash,
+  public override Value callMethod(Env env, StringValue methodName, int hash,
                           Value a0, Value a1, Value a2)
   {
     return getValue().callMethod(env, methodName, hash, a0, a1, a2);
@@ -1326,8 +1211,7 @@ public class JavaAdapterVar extends Value
   /**
    * Evaluates a method with 4 args.
    */
-  @Override
-  public Value callMethod(Env env, StringValue methodName, int hash,
+  public override Value callMethod(Env env, StringValue methodName, int hash,
                           Value a0, Value a1, Value a2, Value a3)
   {
     return getValue().callMethod(env, methodName, hash,
@@ -1337,8 +1221,7 @@ public class JavaAdapterVar extends Value
   /**
    * Evaluates a method with 5 args.
    */
-  @Override
-  public Value callMethod(Env env, StringValue methodName, int hash,
+  public override Value callMethod(Env env, StringValue methodName, int hash,
                           Value a0, Value a1, Value a2, Value a3, Value a4)
   {
     return getValue().callMethod(env, methodName, hash,
@@ -1348,8 +1231,7 @@ public class JavaAdapterVar extends Value
   /**
    * Evaluates a method.
    */
-  @Override
-  public Value callMethodRef(Env env,
+  public override Value callMethodRef(Env env,
                              StringValue methodName, int hash,
                              Value []args)
   {
@@ -1359,8 +1241,7 @@ public class JavaAdapterVar extends Value
   /**
    * Evaluates a method.
    */
-  @Override
-  public Value callMethodRef(Env env, StringValue methodName, int hash)
+  public override Value callMethodRef(Env env, StringValue methodName, int hash)
   {
     return getValue().callMethodRef(env, methodName, hash);
   }
@@ -1368,8 +1249,7 @@ public class JavaAdapterVar extends Value
   /**
    * Evaluates a method.
    */
-  @Override
-  public Value callMethodRef(Env env, StringValue methodName, int hash,
+  public override Value callMethodRef(Env env, StringValue methodName, int hash,
                              Value a0)
   {
     return getValue().callMethodRef(env, methodName, hash, a0);
@@ -1378,8 +1258,7 @@ public class JavaAdapterVar extends Value
   /**
    * Evaluates a method.
    */
-  @Override
-  public Value callMethodRef(Env env, StringValue methodName, int hash,
+  public override Value callMethodRef(Env env, StringValue methodName, int hash,
                              Value a0, Value a1)
   {
     return getValue().callMethodRef(env, methodName, hash,
@@ -1389,8 +1268,7 @@ public class JavaAdapterVar extends Value
   /**
    * Evaluates a method with 3 args.
    */
-  @Override
-  public Value callMethodRef(Env env, StringValue methodName, int hash,
+  public override Value callMethodRef(Env env, StringValue methodName, int hash,
                              Value a0, Value a1, Value a2)
   {
     return getValue().callMethodRef(env, methodName, hash,
@@ -1400,8 +1278,7 @@ public class JavaAdapterVar extends Value
   /**
    * Evaluates a method with 4 args.
    */
-  @Override
-  public Value callMethodRef(Env env, StringValue methodName, int hash,
+  public override Value callMethodRef(Env env, StringValue methodName, int hash,
                              Value a0, Value a1, Value a2, Value a3)
   {
     return getValue().callMethodRef(env, methodName, hash,
@@ -1411,8 +1288,7 @@ public class JavaAdapterVar extends Value
   /**
    * Evaluates a method with 5 args.
    */
-  @Override
-  public Value callMethodRef(Env env, StringValue methodName, int hash,
+  public override Value callMethodRef(Env env, StringValue methodName, int hash,
                              Value a0, Value a1, Value a2, Value a3, Value a4)
   {
     return getValue().callMethodRef(env, methodName, hash,
@@ -1423,8 +1299,7 @@ public class JavaAdapterVar extends Value
    * Evaluates a method.
    */
   /*
-  @Override
-  public Value callClassMethod(Env env, AbstractFunction fun, Value []args)
+  public override Value callClassMethod(Env env, AbstractFunction fun, Value []args)
   {
     return getValue().callClassMethod(env, fun, args);
   }
@@ -1433,8 +1308,7 @@ public class JavaAdapterVar extends Value
   /**
    * Prints the value.
    */
-  @Override
-  public void print(Env env)
+  public override void print(Env env)
   {
     getValue().print(env);
   }
@@ -1442,14 +1316,12 @@ public class JavaAdapterVar extends Value
   /**
    * Serializes the value.
    */
-  @Override
-  public void serialize(Env env, StringBuilder sb, SerializeMap map)
+  public override void serialize(Env env, StringBuilder sb, SerializeMap map)
   {
     getValue().serialize(env, sb, map);
   }
 
-  @Override
-  public void varDumpImpl(Env env,
+  public override void varDumpImpl(Env env,
                           WriteStream out,
                           int depth,
                           IdentityHashMap<Value, String> valueSet)

@@ -93,8 +93,7 @@ public class ClassConstExpr extends Expr {
    *
    * @return the expression value.
    */
-  @Override
-  public Value eval(Env env)
+  public override Value eval(Env env)
   {
     return env.getClass(_className).getConstant(env, _name);
   }

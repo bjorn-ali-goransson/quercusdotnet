@@ -65,8 +65,7 @@ public class InterpretedPage extends QuercusPage
   /**
    * Returns any profile page.
    */
-  @Override
-  public QuercusPage getProfilePage()
+  public override QuercusPage getProfilePage()
   {
     return _program.getProfilePage();
   }
@@ -74,8 +73,7 @@ public class InterpretedPage extends QuercusPage
   /**
    * Returns any profile page.
    */
-  @Override
-  public QuercusPage getCompiledPage()
+  public override QuercusPage getCompiledPage()
   {
     return _program.getCompiledPage();
   }
@@ -98,8 +96,7 @@ public class InterpretedPage extends QuercusPage
   /**
    * Returns the pwd according to the source page.
    */
-  @Override
-  public Path getPwd(Env env)
+  public override Path getPwd(Env env)
   {
     return getSelfPath(env).getParent();
   }
@@ -131,8 +128,7 @@ public class InterpretedPage extends QuercusPage
   /**
    * Finds the function
    */
-  @Override
-  public AbstractFunction findFunction(StringValue name)
+  public override AbstractFunction findFunction(StringValue name)
   {
     return _program.findFunction(name);
   }
@@ -158,8 +154,7 @@ public class InterpretedPage extends QuercusPage
   /**
    * Sets a runtime function array after an env.
    */
-  @Override
-  public boolean setRuntimeFunction(AbstractFunction []funList)
+  public override boolean setRuntimeFunction(AbstractFunction []funList)
   {
     return _program.setRuntimeFunction(funList);
   }

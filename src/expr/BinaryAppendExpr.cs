@@ -96,8 +96,7 @@ public class BinaryAppendExpr extends Expr
     return sb;
   }
 
-  @Override
-  public String evalString(Env env)
+  public override String evalString(Env env)
   {
     Value value = _value.eval(env);
 
@@ -113,8 +112,7 @@ public class BinaryAppendExpr extends Expr
   /**
    * Returns the first constant string, or null.
    */
-  @Override
-  public Value evalConstantPrefix()
+  public override Value evalConstantPrefix()
   {
     return _value.evalConstantPrefix();
   }
@@ -122,8 +120,7 @@ public class BinaryAppendExpr extends Expr
   /**
    * Returns the tail constant string, or null.
    */
-  @Override
-  public Value evalConstantSuffix()
+  public override Value evalConstantSuffix()
   {
     if (_next != null)
       return _next.evalConstantSuffix();

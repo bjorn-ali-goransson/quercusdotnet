@@ -91,8 +91,7 @@ public class WrappedDirectory extends Directory {
   /**
    * Rewinds the directory
    */
-  @Override
-  public void rewind(Env env)
+  public override void rewind(Env env)
   {
     if (env.isUnicodeSemantics())
       _wrapper.callMethod(env, DIR_REWINDDIR_U);
@@ -103,8 +102,7 @@ public class WrappedDirectory extends Directory {
   /**
    * Closes the directory
    */
-  @Override
-  public void close(Env env)
+  public override void close(Env env)
   {
     if (env.isUnicodeSemantics())
       _wrapper.callMethod(env, DIR_CLOSEDIR_U);

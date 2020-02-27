@@ -66,8 +66,7 @@ public class AttributeListView extends SimpleView
     }
   }
 
-  @Override
-  public SimpleView getIndex(Env env, Value indexV)
+  public override SimpleView getIndex(Env env, Value indexV)
   {
     if (indexV.isString()) {
       String nodeName = indexV.toString();
@@ -92,14 +91,12 @@ public class AttributeListView extends SimpleView
     }
   }
 
-  @Override
-  public SimpleView setIndex(Env env, Value indexV, Value value)
+  public override SimpleView setIndex(Env env, Value indexV, Value value)
   {
     throw new UnsupportedOperationException();
   }
 
-  @Override
-  public SimpleView getField(Env env, Value indexV)
+  public override SimpleView getField(Env env, Value indexV)
   {
     String name = indexV.toString();
     
@@ -112,20 +109,17 @@ public class AttributeListView extends SimpleView
     return null;
   }
 
-  @Override
-  public SimpleView setField(Env env, Value indexV, Value value)
+  public override SimpleView setField(Env env, Value indexV, Value value)
   {
     throw new UnsupportedOperationException();
   }
 
-  @Override
-  public String toString(Env env)
+  public override String toString(Env env)
   {
     return _attrList.get(0).toString(env);
   }
   
-  @Override
-  public boolean issetField(Env env, String name)
+  public override boolean issetField(Env env, String name)
   {
     for (SimpleView view : _attrList) {
       if (view.getNodeName().equals(name)) {
@@ -136,8 +130,7 @@ public class AttributeListView extends SimpleView
     return false;
   }
 
-  @Override
-  public Iterator<Map.Entry<IteratorIndex,SimpleView>> getIterator()
+  public override Iterator<Map.Entry<IteratorIndex,SimpleView>> getIterator()
   {
     LinkedHashMap<IteratorIndex,SimpleView> map
       = new LinkedHashMap<IteratorIndex,SimpleView>();
@@ -151,8 +144,7 @@ public class AttributeListView extends SimpleView
     return map.entrySet().iterator();
   }
 
-  @Override
-  public Set<Map.Entry<Value,Value>> getEntrySet(Env env, QuercusClass cls)
+  public override Set<Map.Entry<Value,Value>> getEntrySet(Env env, QuercusClass cls)
   {
     LinkedHashMap<Value,Value> map
       = new LinkedHashMap<Value,Value>();
@@ -174,8 +166,7 @@ public class AttributeListView extends SimpleView
     return map.entrySet();
   }
 
-  @Override
-  public boolean toXml(Env env, StringBuilder sb)
+  public override boolean toXml(Env env, StringBuilder sb)
   {
     if (_attrList.size() > 0) {
       SimpleView attr = _attrList.get(0);
@@ -189,8 +180,7 @@ public class AttributeListView extends SimpleView
     }
   }
 
-  @Override
-  public Value toDumpValue(Env env, QuercusClass cls, boolean isChildren)
+  public override Value toDumpValue(Env env, QuercusClass cls, boolean isChildren)
   {
     ObjectValue obj = env.createObject();
     obj.setClassName(cls.getName());
@@ -204,8 +194,7 @@ public class AttributeListView extends SimpleView
     return obj;
   }
 
-  @Override
-  public String toString()
+  public override String toString()
   {
     return getClass().getSimpleName() + "[" + _attrList + "]";
   }

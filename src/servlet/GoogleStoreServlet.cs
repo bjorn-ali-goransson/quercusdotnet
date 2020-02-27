@@ -67,8 +67,7 @@ public class GoogleStoreServlet extends GenericServlet
     }
   }
 
-  @Override
-  public void service(ServletRequest request, ServletResponse response)
+  public override void service(ServletRequest request, ServletResponse response)
     
   {
     HttpServletRequest req = (HttpServletRequest) request;

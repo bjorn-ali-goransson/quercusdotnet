@@ -70,8 +70,7 @@ public abstract class IteratorIndex
       _index = index;
     }
 
-    @Override
-    public Value toValue(Env env, String encoding)
+    public override Value toValue(Env env, String encoding)
     {
       return env.createString(_index);
     }

@@ -83,8 +83,7 @@ public class BooleanValue extends Value
   /**
    * Returns the ValueType.
    */
-  @Override
-  public ValueType getValueType()
+  public override ValueType getValueType()
   {
     return ValueType.BOOLEAN;
   }
@@ -92,8 +91,7 @@ public class BooleanValue extends Value
   /**
    * Returns true for a BooleanValue
    */
-  @Override
-  public boolean isBoolean()
+  public override boolean isBoolean()
   {
     return true;
   }
@@ -109,8 +107,7 @@ public class BooleanValue extends Value
   /**
    * Converts to a boolean.
    */
-  @Override
-  public final boolean toBoolean()
+  public override final boolean toBoolean()
   {
     return this == TRUE;
   }
@@ -118,8 +115,7 @@ public class BooleanValue extends Value
   /**
    * Returns true if the value is empty
    */
-  @Override
-  public boolean isEmpty()
+  public override boolean isEmpty()
   {
     return ! _value;
   }
@@ -131,8 +127,7 @@ public class BooleanValue extends Value
   /**
    * Cost to convert to a boolean
    */
-  @Override
-  public int toBooleanMarshalCost()
+  public override int toBooleanMarshalCost()
   {
     return Marshal.COST_EQUAL;
   }
@@ -144,8 +139,7 @@ public class BooleanValue extends Value
   /**
    * Converts to a long.
    */
-  @Override
-  public long toLong()
+  public override long toLong()
   {
     return _value ? 1 : 0;
   }
@@ -153,8 +147,7 @@ public class BooleanValue extends Value
   /**
    * Converts to a double.
    */
-  @Override
-  public double toDouble()
+  public override double toDouble()
   {
     return _value ? 1 : 0;
   }
@@ -162,8 +155,7 @@ public class BooleanValue extends Value
   /**
    * Converts to a string.
    */
-  @Override
-  public String toString()
+  public override String toString()
   {
     return _value ? "1" : "";
   }
@@ -171,8 +163,7 @@ public class BooleanValue extends Value
   /**
    * Converts to a string builder
    */
-  @Override
-  public StringValue toStringBuilder(Env env)
+  public override StringValue toStringBuilder(Env env)
   {
     StringValue sb = env.createUnicodeBuilder();
 
@@ -193,8 +184,7 @@ public class BooleanValue extends Value
   /**
    * Converts to a java object.
    */
-  @Override
-  public Object toJavaObject()
+  public override Object toJavaObject()
   {
     return _value ? Boolean.TRUE : Boolean.FALSE;
   }
@@ -202,8 +192,7 @@ public class BooleanValue extends Value
   /**
    * Converts to an array if null.
    */
-  @Override
-  public Value toAutoArray()
+  public override Value toAutoArray()
   {
     if (! _value)
       return new ArrayValueImpl();
@@ -214,8 +203,7 @@ public class BooleanValue extends Value
   /**
    * Converts to an object if null.
    */
-  @Override
-  public Value toAutoObject(Env env)
+  public override Value toAutoObject(Env env)
   {
     if (! _value)
       return env.createObject();
@@ -228,8 +216,7 @@ public class BooleanValue extends Value
    * string update ($a[0] = 'A').  Creates an array automatically if
    * necessary.
    */
-  @Override
-  public Value append(Value index, Value value)
+  public override Value append(Value index, Value value)
   {
     if (_value)
       return super.append(index, value);
@@ -240,8 +227,7 @@ public class BooleanValue extends Value
   /**
    * Converts to a key.
    */
-  @Override
-  public Value toKey()
+  public override Value toKey()
   {
     return _value ? LongValue.ONE : LongValue.ZERO;
   }
@@ -249,8 +235,7 @@ public class BooleanValue extends Value
   /**
    * Returns true for equality
    */
-  @Override
-  public boolean eq(Value rValue)
+  public override boolean eq(Value rValue)
   {
     return _value == rValue.toBoolean();
   }
@@ -258,8 +243,7 @@ public class BooleanValue extends Value
   /**
    * Returns true for equality
    */
-  @Override
-  public int cmp(Value rValue)
+  public override int cmp(Value rValue)
   {
     boolean rBool = rValue.toBoolean();
 
@@ -274,8 +258,7 @@ public class BooleanValue extends Value
   /**
    * Return the length as a string.
    */
-  @Override
-  public int length()
+  public override int length()
   {
     return _value ? 1 : 0;
   }
@@ -284,8 +267,7 @@ public class BooleanValue extends Value
    * Prints the value.
    * @param env
    */
-  @Override
-  public void print(Env env)
+  public override void print(Env env)
   {
     env.print(_value ? "1" : "");
   }
@@ -299,8 +281,7 @@ public class BooleanValue extends Value
    *
    * @param out the writer to the Java source code.
    */
-  @Override
-  public void generate(PrintWriter out)
+  public override void generate(PrintWriter out)
     
   {
     if (_value)
@@ -326,8 +307,7 @@ public class BooleanValue extends Value
   /**
    * Serializes the value.
    */
-  @Override
-  public void serialize(Env env, StringBuilder sb)
+  public override void serialize(Env env, StringBuilder sb)
   {
     sb.append("b:");
     sb.append(_value ? 1 : 0);
@@ -337,8 +317,7 @@ public class BooleanValue extends Value
   /**
    * Encodes the value in JSON.
    */
-  @Override
-  public void jsonEncode(Env env, JsonEncodeContext context, StringValue sb)
+  public override void jsonEncode(Env env, JsonEncodeContext context, StringValue sb)
   {
     if (_value)
       sb.append("true");
@@ -349,8 +328,7 @@ public class BooleanValue extends Value
   /**
    * Exports the value.
    */
-  @Override
-  protected void varExportImpl(StringValue sb, int level)
+  protected override void varExportImpl(StringValue sb, int level)
   {
     sb.append(_value ? "true" : "false");
   }
@@ -358,8 +336,7 @@ public class BooleanValue extends Value
   /**
    * Returns the hash code
    */
-  @Override
-  public int hashCode()
+  public override int hashCode()
   {
     return _value ? 17 : 37;
   }
@@ -367,8 +344,7 @@ public class BooleanValue extends Value
   /**
    * Compare for equality.
    */
-  @Override
-  public boolean equals(Object o)
+  public override boolean equals(Object o)
   {
     if (this == o)
       return true;
@@ -380,8 +356,7 @@ public class BooleanValue extends Value
     return _value == value._value;
   }
 
-  @Override
-  public String toDebugString()
+  public override String toDebugString()
   {
     if (toBoolean())
       return "true";
@@ -389,8 +364,7 @@ public class BooleanValue extends Value
       return "false";
   }
 
-  @Override
-  public void varDumpImpl(Env env,
+  public override void varDumpImpl(Env env,
                           WriteStream out,
                           int depth,
                           IdentityHashMap<Value,String> valueSet)

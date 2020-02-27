@@ -77,8 +77,7 @@ public class NullValue extends Value
   /**
    * Returns the ValueType.
    */
-  @Override
-  public ValueType getValueType()
+  public override ValueType getValueType()
   {
     return ValueType.NULL;
   }
@@ -86,8 +85,7 @@ public class NullValue extends Value
   /**
    * Returns true for a set type.
    */
-  @Override
-  public boolean isset()
+  public override boolean isset()
   {
     return false;
   }
@@ -95,8 +93,7 @@ public class NullValue extends Value
   /**
    * Returns true if the value is empty
    */
-  @Override
-  public boolean isEmpty()
+  public override boolean isEmpty()
   {
     return true;
   }
@@ -108,8 +105,7 @@ public class NullValue extends Value
   /**
    * Cost to convert to a double
    */
-  @Override
-  public int toDoubleMarshalCost()
+  public override int toDoubleMarshalCost()
   {
     return Marshal.COST_FROM_NULL;
   }
@@ -117,8 +113,7 @@ public class NullValue extends Value
   /**
    * Cost to convert to a long
    */
-  @Override
-  public int toLongMarshalCost()
+  public override int toLongMarshalCost()
   {
     return Marshal.COST_FROM_NULL;
   }
@@ -126,8 +121,7 @@ public class NullValue extends Value
   /**
    * Cost to convert to an integer
    */
-  @Override
-  public int toIntegerMarshalCost()
+  public override int toIntegerMarshalCost()
   {
     return Marshal.COST_FROM_NULL;
   }
@@ -135,8 +129,7 @@ public class NullValue extends Value
   /**
    * Cost to convert to a short
    */
-  @Override
-  public int toShortMarshalCost()
+  public override int toShortMarshalCost()
   {
     return Marshal.COST_FROM_NULL;
   }
@@ -144,8 +137,7 @@ public class NullValue extends Value
   /**
    * Cost to convert to a byte
    */
-  @Override
-  public int toByteMarshalCost()
+  public override int toByteMarshalCost()
   {
     return Marshal.COST_FROM_NULL;
   }
@@ -153,8 +145,7 @@ public class NullValue extends Value
   /**
    * Cost to convert to a boolean
    */
-  @Override
-  public int toBooleanMarshalCost()
+  public override int toBooleanMarshalCost()
   {
     return Marshal.COST_FROM_NULL;
   }
@@ -162,8 +153,7 @@ public class NullValue extends Value
   /**
    * Converts to a boolean.
    */
-  @Override
-  public boolean toBoolean()
+  public override boolean toBoolean()
   {
     return false;
   }
@@ -171,8 +161,7 @@ public class NullValue extends Value
   /**
    * Returns true for a null.
    */
-  @Override
-  public boolean isNull()
+  public override boolean isNull()
   {
     return true;
   }
@@ -180,8 +169,7 @@ public class NullValue extends Value
   /**
    * Converts to a long.
    */
-  @Override
-  public long toLong()
+  public override long toLong()
   {
     return 0;
   }
@@ -189,8 +177,7 @@ public class NullValue extends Value
   /**
    * Converts to a double.
    */
-  @Override
-  public double toDouble()
+  public override double toDouble()
   {
     return 0;
   }
@@ -199,8 +186,7 @@ public class NullValue extends Value
    * Converts to a string.
    * @param env
    */
-  @Override
-  public String toString()
+  public override String toString()
   {
     return "";
   }
@@ -208,8 +194,7 @@ public class NullValue extends Value
   /**
    * Converts to a string builder
    */
-  @Override
-  public StringValue toStringBuilder(Env env)
+  public override StringValue toStringBuilder(Env env)
   {
     return env.createUnicodeBuilder();
   }
@@ -217,8 +202,7 @@ public class NullValue extends Value
   /**
    * Converts to an object.
    */
-  @Override
-  public Object toJavaObject()
+  public override Object toJavaObject()
   {
     return null;
   }
@@ -226,8 +210,7 @@ public class NullValue extends Value
   /**
    * Converts to a java object.
    */
-  @Override
-  public Object toJavaObject(Env env, Class type)
+  public override Object toJavaObject(Env env, Class type)
   {
     return null;
   }
@@ -235,8 +218,7 @@ public class NullValue extends Value
   /**
    * Converts to a java object.
    */
-  @Override
-  public Object toJavaObjectNotNull(Env env, Class type)
+  public override Object toJavaObjectNotNull(Env env, Class type)
   {
     env.warning(L.l("null is an unexpected argument; expected '{0}'",
                     type.getName()));
@@ -247,8 +229,7 @@ public class NullValue extends Value
   /**
    * Converts to a java boolean object.
    */
-  @Override
-  public Boolean toJavaBoolean()
+  public override Boolean toJavaBoolean()
   {
     return null;
   }
@@ -256,8 +237,7 @@ public class NullValue extends Value
   /**
    * Converts to a java Byte object.
    */
-  @Override
-  public Byte toJavaByte()
+  public override Byte toJavaByte()
   {
     return null;
   }
@@ -265,8 +245,7 @@ public class NullValue extends Value
   /**
    * Converts to a java Short object.
    */
-  @Override
-  public Short toJavaShort()
+  public override Short toJavaShort()
   {
     return null;
   }
@@ -274,8 +253,7 @@ public class NullValue extends Value
   /**
    * Converts to a java Integer object.
    */
-  @Override
-  public Integer toJavaInteger()
+  public override Integer toJavaInteger()
   {
     return null;
   }
@@ -283,8 +261,7 @@ public class NullValue extends Value
   /**
    * Converts to a java Long object.
    */
-  @Override
-  public Long toJavaLong()
+  public override Long toJavaLong()
   {
     return null;
   }
@@ -292,8 +269,7 @@ public class NullValue extends Value
   /**
    * Converts to a java Float object.
    */
-  @Override
-  public Float toJavaFloat()
+  public override Float toJavaFloat()
   {
     return null;
   }
@@ -301,8 +277,7 @@ public class NullValue extends Value
   /**
    * Converts to a java Double object.
    */
-  @Override
-  public Double toJavaDouble()
+  public override Double toJavaDouble()
   {
     return null;
   }
@@ -310,8 +285,7 @@ public class NullValue extends Value
   /**
    * Converts to a java Character object.
    */
-  @Override
-  public Character toJavaCharacter()
+  public override Character toJavaCharacter()
   {
     return null;
   }
@@ -319,8 +293,7 @@ public class NullValue extends Value
   /**
    * Converts to a java String object.
    */
-  @Override
-  public String toJavaString()
+  public override String toJavaString()
   {
     return null;
   }
@@ -328,8 +301,7 @@ public class NullValue extends Value
   /**
    * Converts to a java object.
    */
-  @Override
-  public Collection toJavaCollection(Env env, Class type)
+  public override Collection toJavaCollection(Env env, Class type)
   {
     return null;
   }
@@ -337,8 +309,7 @@ public class NullValue extends Value
   /**
    * Converts to a java object.
    */
-  @Override
-  public List toJavaList(Env env, Class type)
+  public override List toJavaList(Env env, Class type)
   {
     return null;
   }
@@ -346,8 +317,7 @@ public class NullValue extends Value
   /**
    * Converts to a java object.
    */
-  @Override
-  public Map toJavaMap(Env env, Class type)
+  public override Map toJavaMap(Env env, Class type)
   {
     return null;
   }
@@ -355,8 +325,7 @@ public class NullValue extends Value
   /**
    * Converts to a Java Calendar.
    */
-  @Override
-  public Calendar toJavaCalendar()
+  public override Calendar toJavaCalendar()
   {
     return null;
   }
@@ -364,8 +333,7 @@ public class NullValue extends Value
   /**
    * Converts to a Java Date.
    */
-  @Override
-  public Date toJavaDate()
+  public override Date toJavaDate()
   {
     return null;
   }
@@ -373,8 +341,7 @@ public class NullValue extends Value
   /**
    * Converts to a Java URL.
    */
-  @Override
-  public URL toJavaURL(Env env)
+  public override URL toJavaURL(Env env)
   {
     return null;
   }
@@ -382,8 +349,7 @@ public class NullValue extends Value
   /**
    * Converts to a Java Enum.
    */
-  @Override
-  public Enum toJavaEnum(Env env, Class cls)
+  public override Enum toJavaEnum(Env env, Class cls)
   {
     return null;
   }
@@ -391,8 +357,7 @@ public class NullValue extends Value
   /**
    * Converts to a Java BigDecimal.
    */
-  @Override
-  public BigDecimal toBigDecimal()
+  public override BigDecimal toBigDecimal()
   {
     return BigDecimal.ZERO;
   }
@@ -400,8 +365,7 @@ public class NullValue extends Value
   /**
    * Converts to a Java BigInteger.
    */
-  @Override
-  public BigInteger toBigInteger()
+  public override BigInteger toBigInteger()
   {
     return BigInteger.ZERO;
   }
@@ -410,8 +374,7 @@ public class NullValue extends Value
    * Takes the values of this array, unmarshalls them to objects of type
    * <i>elementType</i>, and puts them in a java array.
    */
-  @Override
-  public Object valuesToArray(Env env, Class elementType)
+  public override Object valuesToArray(Env env, Class elementType)
   {
     return null;
   }
@@ -419,8 +382,7 @@ public class NullValue extends Value
   /**
    * Converts to an object.
    */
-  @Override
-  public Value toObject(Env env)
+  public override Value toObject(Env env)
   {
     return NullValue.NULL;
   }
@@ -428,8 +390,7 @@ public class NullValue extends Value
   /**
    * Converts to an array
    */
-  @Override
-  public ArrayValue toArray()
+  public override ArrayValue toArray()
   {
     return new ArrayValueImpl();
   }
@@ -437,8 +398,7 @@ public class NullValue extends Value
   /**
    * Converts to an array if null.
    */
-  @Override
-  public Value toAutoArray()
+  public override Value toAutoArray()
   {
     return new ArrayValueImpl();
   }
@@ -456,8 +416,7 @@ public class NullValue extends Value
   /**
    * Casts to an array.
    */
-  @Override
-  public ArrayValue toArrayValue(Env env)
+  public override ArrayValue toArrayValue(Env env)
   {
     return null;
   }
@@ -475,8 +434,7 @@ public class NullValue extends Value
       return StringBuilderValue.EMPTY;
   }
 
-  @Override
-  public int getCount(Env env)
+  public override int getCount(Env env)
   {
     return 0;
   }
@@ -484,8 +442,7 @@ public class NullValue extends Value
   /**
    * Returns the array size.
    */
-  @Override
-  public int getSize()
+  public override int getSize()
   {
     return 0;
   }
@@ -493,8 +450,7 @@ public class NullValue extends Value
   /**
    * Converts to an object if null.
    */
-  @Override
-  public Value toAutoObject(Env env)
+  public override Value toAutoObject(Env env)
   {
     return env.createObject();
   }
@@ -502,8 +458,7 @@ public class NullValue extends Value
   /**
    * Converts to a reference variable
    */
-  @Override
-  public Value toArgRef()
+  public override Value toArgRef()
   {
     return this;
   }
@@ -511,8 +466,7 @@ public class NullValue extends Value
   /**
    * Converts to a key.
    */
-  @Override
-  public Value toKey()
+  public override Value toKey()
   {
     return StringValue.EMPTY;
   }
@@ -520,8 +474,7 @@ public class NullValue extends Value
   /**
    * Returns true for equality
    */
-  @Override
-  public boolean eql(Value rValue)
+  public override boolean eql(Value rValue)
   {
     return rValue.isNull();
   }
@@ -529,8 +482,7 @@ public class NullValue extends Value
   /**
    * Adds to the following value.
    */
-  @Override
-  public Value add(long lLong)
+  public override Value add(long lLong)
   {
     return LongValue.create(lLong);
   }
@@ -538,8 +490,7 @@ public class NullValue extends Value
   /**
    * Subtracts the following value.
    */
-  @Override
-  public Value sub(long rLong)
+  public override Value sub(long rLong)
   {
     return LongValue.create(-rLong);
   }
@@ -547,8 +498,7 @@ public class NullValue extends Value
   /**
    * Returns true for equality
    */
-  @Override
-  public boolean eq(Value rValue)
+  public override boolean eq(Value rValue)
   {
     if (rValue.isString())
       return toString().equals(rValue.toString());
@@ -559,8 +509,7 @@ public class NullValue extends Value
   /**
    * Returns true for equality
    */
-  @Override
-  public int cmp(Value rValue)
+  public override int cmp(Value rValue)
   {
     rValue = rValue.toValue();
 
@@ -589,16 +538,14 @@ public class NullValue extends Value
    * Prints the value.
    * @param env
    */
-  @Override
-  public void print(Env env)
+  public override void print(Env env)
   {
   }
 
   /**
    * Serializes the value.
    */
-  @Override
-  public void serialize(Env env, StringBuilder sb)
+  public override void serialize(Env env, StringBuilder sb)
   {
     sb.append("N;");
   }
@@ -606,8 +553,7 @@ public class NullValue extends Value
   /**
    * Exports the value.
    */
-  @Override
-  protected void varExportImpl(StringValue sb, int level)
+  protected override void varExportImpl(StringValue sb, int level)
   {
     sb.append("NULL");
   }
@@ -615,8 +561,7 @@ public class NullValue extends Value
   /**
    * Encodes the value in JSON.
    */
-  @Override
-  public void jsonEncode(Env env, JsonEncodeContext context, StringValue sb)
+  public override void jsonEncode(Env env, JsonEncodeContext context, StringValue sb)
   {
     sb.append("null");
   }
@@ -624,8 +569,7 @@ public class NullValue extends Value
   /**
    * Returns a new array.
    */
-  @Override
-  public Value getArray()
+  public override Value getArray()
   {
     return new ArrayValueImpl();
   }
@@ -633,8 +577,7 @@ public class NullValue extends Value
   /**
    * Append to a binary builder.
    */
-  @Override
-  public StringValue appendTo(BinaryBuilderValue sb)
+  public override StringValue appendTo(BinaryBuilderValue sb)
   {
     return sb;
   }
@@ -642,8 +585,7 @@ public class NullValue extends Value
   /**
    * Append to a unicode builder.
    */
-  @Override
-  public StringValue appendTo(UnicodeBuilderValue sb)
+  public override StringValue appendTo(UnicodeBuilderValue sb)
   {
     return sb;
   }
@@ -651,8 +593,7 @@ public class NullValue extends Value
   /**
    * Append to a string builder.
    */
-  @Override
-  public StringValue appendTo(StringBuilderValue sb)
+  public override StringValue appendTo(StringBuilderValue sb)
   {
     return sb;
   }
@@ -660,8 +601,7 @@ public class NullValue extends Value
   /**
    * Append to a string builder.
    */
-  @Override
-  public StringValue appendTo(LargeStringBuilderValue sb)
+  public override StringValue appendTo(LargeStringBuilderValue sb)
   {
     return sb;
   }
@@ -675,8 +615,7 @@ public class NullValue extends Value
    *
    * @param out the writer to the Java source code.
    */
-  @Override
-  public void generate(PrintWriter out)
+  public override void generate(PrintWriter out)
     
   {
     out.print("NullValue.NULL");
@@ -685,20 +624,17 @@ public class NullValue extends Value
   /**
    * Returns a new object.
    */
-  @Override
-  public Value getObject(Env env)
+  public override Value getObject(Env env)
   {
     return env.createObject();
   }
 
-  @Override
-  public String toDebugString()
+  public override String toDebugString()
   {
     return "null";
   }
 
-  @Override
-  public void varDumpImpl(Env env,
+  public override void varDumpImpl(Env env,
                           WriteStream out,
                           int depth,
                           IdentityHashMap<Value, String> valueSet)
@@ -716,8 +652,7 @@ public class NullValue extends Value
     return NULL;
   }
 
-  @Override
-  public int hashCode()
+  public override int hashCode()
   {
     return 17;
   }

@@ -84,8 +84,7 @@ public class ElementView extends SimpleView
     return name;
   }
 
-  @Override
-  public ChildrenView getChildren(String namespace, String prefix)
+  public override ChildrenView getChildren(String namespace, String prefix)
   {
     ArrayList<SimpleView> childList = new ArrayList<SimpleView>();
 
@@ -121,8 +120,7 @@ public class ElementView extends SimpleView
     return new ChildrenView(this, childList, attrList);
   }
 
-  @Override
-  public AttributeListView getAttributes(String namespace)
+  public override AttributeListView getAttributes(String namespace)
   {
     ArrayList<AttributeView> attrList = new ArrayList<AttributeView>();
     NamedNodeMap attrMap = _node.getAttributes();
@@ -183,8 +181,7 @@ public class ElementView extends SimpleView
     return null;
   }
 
-  @Override
-  public SimpleView addChild(Env env,
+  public override SimpleView addChild(Env env,
                              String name,
                              String value,
                              String namespace)
@@ -238,8 +235,7 @@ public class ElementView extends SimpleView
     return view;
   }
 
-  @Override
-  public void addAttribute(Env env,
+  public override void addAttribute(Env env,
                            String name,
                            String value,
                            String namespace)
@@ -275,8 +271,7 @@ public class ElementView extends SimpleView
     attrMap.setNamedItem(attr);
   }
 
-  @Override
-  public HashMap<String,String> getNamespaces(boolean isRecursive,
+  public override HashMap<String,String> getNamespaces(boolean isRecursive,
                                               boolean isFromRoot,
                                               boolean isCheckUsage)
   {
@@ -352,8 +347,7 @@ public class ElementView extends SimpleView
     }
   }
 
-  @Override
-  public List<SimpleView> xpath(Env env,
+  public override List<SimpleView> xpath(Env env,
                                 SimpleNamespaceContext context,
                                 String expression)
   {
@@ -368,14 +362,12 @@ public class ElementView extends SimpleView
     }
   }
 
-  @Override
-  protected Node getNode()
+  protected override Node getNode()
   {
     return _node;
   }
 
-  @Override
-  public SimpleView getIndex(Env env, Value indexV)
+  public override SimpleView getIndex(Env env, Value indexV)
   {
     if (indexV.isString()) {
       String name = indexV.toString();
@@ -418,8 +410,7 @@ public class ElementView extends SimpleView
     }
   }
 
-  @Override
-  public SimpleView setIndex(Env env, Value indexV, Value value)
+  public override SimpleView setIndex(Env env, Value indexV, Value value)
   {
     String str = value.toString();
 
@@ -441,8 +432,7 @@ public class ElementView extends SimpleView
     return this;
   }
 
-  @Override
-  public SimpleView getField(Env env, Value indexV)
+  public override SimpleView getField(Env env, Value indexV)
   {
     String nodeName = indexV.toStringValue(env).toString();
 
@@ -496,8 +486,7 @@ public class ElementView extends SimpleView
     return attr;
   }
 
-  @Override
-  public SimpleView setField(Env env, Value indexV, Value value)
+  public override SimpleView setField(Env env, Value indexV, Value value)
   {
     String name = indexV.toString();
 
@@ -518,8 +507,7 @@ public class ElementView extends SimpleView
     return this;
   }
 
-  @Override
-  public int getCount()
+  public override int getCount()
   {
     int count = 0;
 
@@ -536,8 +524,7 @@ public class ElementView extends SimpleView
     return count;
   }
   
-  @Override
-  public boolean issetField(Env env, String name)
+  public override boolean issetField(Env env, String name)
   {    
     Node child = _node.getFirstChild();
     
@@ -552,8 +539,7 @@ public class ElementView extends SimpleView
     return false;
   }
 
-  @Override
-  public String toString(Env env)
+  public override String toString(Env env)
   {
     StringBuilder sb = new StringBuilder();
 
@@ -584,16 +570,14 @@ public class ElementView extends SimpleView
     return sb.toString();
   }
 
-  @Override
-  public Iterator<Map.Entry<IteratorIndex,SimpleView>> getIterator()
+  public override Iterator<Map.Entry<IteratorIndex,SimpleView>> getIterator()
   {
     ChildrenView view = getChildren(null, null);
 
     return view.getIterator();
   }
 
-  @Override
-  public Set<Map.Entry<Value,Value>> getEntrySet(Env env, QuercusClass cls)
+  public override Set<Map.Entry<Value,Value>> getEntrySet(Env env, QuercusClass cls)
   {
     LinkedHashMap<Value,Value> map
       = new LinkedHashMap<Value,Value>();
@@ -675,16 +659,14 @@ public class ElementView extends SimpleView
     return map.entrySet();
   }
 
-  @Override
-  public boolean toXml(Env env, StringBuilder sb)
+  public override boolean toXml(Env env, StringBuilder sb)
   {
     SimpleUtil.toXml(env, sb, _node);
 
     return true;
   }
 
-  @Override
-  public Value toDumpValue(Env env, QuercusClass cls, boolean isChildren)
+  public override Value toDumpValue(Env env, QuercusClass cls, boolean isChildren)
   {
     ArrayList<ElementView> elementList = new ArrayList<ElementView>();
     ArrayList<AttributeView> attrList = new ArrayList<AttributeView>();
@@ -776,8 +758,7 @@ public class ElementView extends SimpleView
     }
   }
 
-  @Override
-  public String toString()
+  public override String toString()
   {
     StringBuilder sb = new StringBuilder();
 

@@ -73,14 +73,12 @@ public class SimpleNamespaceContext implements NamespaceContext
     return uri;
   }
 
-  @Override
-  public String getPrefix(String namespaceURI)
+  public override String getPrefix(String namespaceURI)
   {
     return null;
   }
 
-  @Override
-  public Iterator getPrefixes(String namespaceURI)
+  public override Iterator getPrefixes(String namespaceURI)
   {
     return null;
   }

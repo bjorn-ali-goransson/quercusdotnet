@@ -162,8 +162,7 @@ public class DateTime implements DateTimeInterface, Cloneable
     return new DateTime(qDate, dateTimeZone);
   }
 
-  @Override
-  public StringValue format(Env env, StringValue format)
+  public override StringValue format(Env env, StringValue format)
   {
     long time = _qDate.getGMTTime() / 1000;
 
@@ -179,8 +178,7 @@ public class DateTime implements DateTimeInterface, Cloneable
     parser.parse();
   }
   
-  @Override
-  public long getTimestamp()
+  public override long getTimestamp()
   {
     return getTime() / 1000;
   }
@@ -192,8 +190,7 @@ public class DateTime implements DateTimeInterface, Cloneable
     return this;
   }
 
-  @Override
-  public DateTimeZone getTimeZone()
+  public override DateTimeZone getTimeZone()
   {
     return _dateTimeZone;
   }
@@ -210,8 +207,7 @@ public class DateTime implements DateTimeInterface, Cloneable
     return this;
   }
 
-  @Override
-  public long getOffset()
+  public override long getOffset()
   {
     return _qDate.getZoneOffset() / 1000;
   }
@@ -237,8 +233,7 @@ public class DateTime implements DateTimeInterface, Cloneable
     throw new UnimplementedException("DateTime::setISODate()");
   }
 
-  @Override
-  public DateInterval diff(Env env,
+  public override DateInterval diff(Env env,
                            DateTimeInterface dateTime2,
                            @Optional boolean isAbsolute)
   {
@@ -328,8 +323,7 @@ public class DateTime implements DateTimeInterface, Cloneable
     _qDate.setGMTTime(time);
   }
 
-  @Override
-  public String toString()
+  public override String toString()
   {
     Env env = Env.getInstance();
 

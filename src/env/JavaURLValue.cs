@@ -61,8 +61,7 @@ public class JavaURLValue extends JavaValue {
   /**
    * Converts to a Java InputStream.
    */
-  @Override
-  public InputStream toInputStream()
+  public override InputStream toInputStream()
   {
     try {
       return _url.openStream();

@@ -55,20 +55,17 @@ public class ExtValueMarshal extends Marshal
   /**
    * Return true if is a Value.
    */
-  @Override
-  public boolean isValue()
+  public override boolean isValue()
   {
     return true;
   }
 
-  @Override
-  public Object marshal(Env env, Expr expr, Class expectedClass)
+  public override Object marshal(Env env, Expr expr, Class expectedClass)
   {
     return marshal(env, expr.eval(env), expectedClass);
   }
 
-  @Override
-  public Object marshal(Env env, Value value, Class expectedClass)
+  public override Object marshal(Env env, Value value, Class expectedClass)
   {
     if (value == null || ! value.isset())
       return null;
@@ -86,14 +83,12 @@ public class ExtValueMarshal extends Marshal
     }
   }
 
-  @Override
-  public Value unmarshal(Env env, Object value)
+  public override Value unmarshal(Env env, Object value)
   {
     return (Value) value;
   }
 
-  @Override
-  protected int getMarshalingCostImpl(Value argValue)
+  protected override int getMarshalingCostImpl(Value argValue)
   {
     if (_expectedClass.isAssignableFrom(argValue.getClass()))
       return Marshal.ONE;
@@ -101,8 +96,7 @@ public class ExtValueMarshal extends Marshal
       return Marshal.FOUR;
   }
 
-  @Override
-  public Class getExpectedClass()
+  public override Class getExpectedClass()
   {
     return _expectedClass;
   }

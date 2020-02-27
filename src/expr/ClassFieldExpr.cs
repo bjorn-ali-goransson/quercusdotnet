@@ -81,8 +81,7 @@ public class ClassFieldExpr extends AbstractVarExpr {
    *
    * @return the expression value.
    */
-  @Override
-  public Value eval(Env env)
+  public override Value eval(Env env)
   {
     return env.getClass(_className).getStaticFieldValue(env, _varName);
   }
@@ -94,8 +93,7 @@ public class ClassFieldExpr extends AbstractVarExpr {
    *
    * @return the expression value.
    */
-  @Override
-  public Var evalVar(Env env)
+  public override Var evalVar(Env env)
   {
     return env.getClass(_className).getStaticFieldVar(env, _varName);
   }
@@ -107,8 +105,7 @@ public class ClassFieldExpr extends AbstractVarExpr {
    *
    * @return the expression value.
    */
-  @Override
-  public Value evalAssignRef(Env env, Value value)
+  public override Value evalAssignRef(Env env, Value value)
   {
     env.getClass(_className).setStaticFieldRef(env, _varName, value);
 
@@ -122,8 +119,7 @@ public class ClassFieldExpr extends AbstractVarExpr {
    *
    * @return the expression value.
    */
-  @Override
-  public void evalUnset(Env env)
+  public override void evalUnset(Env env)
   {
     env.error(L.l("{0}::${1}: Cannot unset static variables.",
                   _className, _varName),

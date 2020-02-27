@@ -69,8 +69,7 @@ public class UnicodeEregiMarshal extends StringMarshal {
       return Marshal.MAX;
   }
   
-  @Override
-  public Class getExpectedClass()
+  public override Class getExpectedClass()
   {
     return UnicodeEregi.class;
   }

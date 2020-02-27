@@ -83,8 +83,7 @@ public class LongMarshal extends Marshal
     */
   }
 
-  @Override
-  public Class getExpectedClass()
+  public override Class getExpectedClass()
   {
     return long.class;
   }

@@ -84,8 +84,7 @@ public class ClassVarVarConstExpr extends Expr
     return cls.getConstant(env, _name.evalStringValue(env));
   }
 
-  @Override
-  public String toString()
+  public override String toString()
   {
     return _className + "::{" + _name + "}";
   }

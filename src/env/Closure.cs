@@ -70,44 +70,37 @@ abstract public class Closure extends Callback
     return _qThis;
   }
 
-  @Override
-  public Callable toCallable(Env env, boolean isOptional)
+  public override Callable toCallable(Env env, boolean isOptional)
   {
     return this;
   }
 
-  @Override
-  public boolean isObject()
+  public override boolean isObject()
   {
     return true;
   }
 
-  @Override
-  public String getType()
+  public override String getType()
   {
     return "object";
   }
 
-  @Override
-  public String getCallbackName()
+  public override String getCallbackName()
   {
     return _name;
   }
 
-  @Override
-  public boolean isInternal(Env env)
+  public override boolean isInternal(Env env)
   {
     return false;
   }
 
-  @Override
-  public boolean isValid(Env env)
+  public override boolean isValid(Env env)
   {
     return true;
   }
 
-  @Override
-  public boolean isA(Env env, String name)
+  public override boolean isA(Env env, String name)
   {
     return "Closure".equalsIgnoreCase(name);
   }
@@ -140,8 +133,7 @@ abstract public class Closure extends Callback
   // special methods
   //
 
-  @Override
-  public Value callMethod(Env env,
+  public override Value callMethod(Env env,
                           StringValue methodName, int hash,
                           Value []args)
   {
@@ -161,8 +153,7 @@ abstract public class Closure extends Callback
    */
   abstract public Value call(Env env, Value []args);
 
-  @Override
-  public String toString()
+  public override String toString()
   {
     return getClass().getSimpleName() + "[" + _name + "]";
   }

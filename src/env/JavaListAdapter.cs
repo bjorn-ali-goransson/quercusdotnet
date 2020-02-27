@@ -242,8 +242,7 @@ public class JavaListAdapter
   /**
    * Copy for assignment.
    */
-  @Override
-  public Value copy()
+  public override Value copy()
   {
     return new JavaListAdapter(_list, getClassDef());
   }
@@ -251,8 +250,7 @@ public class JavaListAdapter
   /**
    * Copy for serialization
    */
-  @Override
-  public Value copy(Env env, IdentityHashMap<Value,Value> map)
+  public override Value copy(Env env, IdentityHashMap<Value,Value> map)
   {
     return new JavaListAdapter(_list, getClassDef());
   }

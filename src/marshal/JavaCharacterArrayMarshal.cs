@@ -49,8 +49,7 @@ public class JavaCharacterArrayMarshal extends JavaArrayMarshal
       return NullValue.NULL;
   }
 
-  @Override
-  protected int getMarshalingCostImpl(Value argValue)
+  protected override int getMarshalingCostImpl(Value argValue)
   {
     return argValue.toCharArrayMarshalCost();
 
@@ -70,8 +69,7 @@ public class JavaCharacterArrayMarshal extends JavaArrayMarshal
     */
   }
 
-  @Override
-  public Class getExpectedClass()
+  public override Class getExpectedClass()
   {
     return char[].class;
   }

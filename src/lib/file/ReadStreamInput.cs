@@ -96,8 +96,7 @@ public class ReadStreamInput extends InputStream implements BinaryInput {
   /**
    * Opens a copy.
    */
-  @Override
-  public BinaryInput openCopy()
+  public override BinaryInput openCopy()
     
   {
     return new ReadStreamInput(_env, _lineReader, _is.getPath().openRead());
@@ -113,16 +112,14 @@ public class ReadStreamInput extends InputStream implements BinaryInput {
   /**
    *
    */
-  @Override
-  public void unread()
+  public override void unread()
     
   {
     if (_is != null)
       _is.unread();
   }
 
-  @Override
-  public int getAvailable()
+  public override int getAvailable()
     
   {
     if (_is != null)
@@ -134,8 +131,7 @@ public class ReadStreamInput extends InputStream implements BinaryInput {
   /**
    * Reads a character from a file, returning -1 on EOF.
    */
-  @Override
-  public int read()
+  public override int read()
     
   {
     if (_is != null)
@@ -147,8 +143,7 @@ public class ReadStreamInput extends InputStream implements BinaryInput {
   /**
    * Reads a buffer from a file, returning -1 on EOF.
    */
-  @Override
-  public int read(byte []buffer, int offset, int length)
+  public override int read(byte []buffer, int offset, int length)
     
   {
     ReadStream is = _is;
@@ -188,8 +183,7 @@ public class ReadStreamInput extends InputStream implements BinaryInput {
   /**
    * Reads into a binary builder.
    */
-  @Override
-  public StringValue read(int length)
+  public override StringValue read(int length)
     
     {
       if (_is == null)
@@ -205,8 +199,7 @@ public class ReadStreamInput extends InputStream implements BinaryInput {
   /**
    * Reads the optional linefeed character from a \r\n
    */
-  @Override
-  public boolean readOptionalLinefeed()
+  public override boolean readOptionalLinefeed()
     
   {
     if (_is == null)
@@ -234,8 +227,7 @@ public class ReadStreamInput extends InputStream implements BinaryInput {
   /**
    * Appends to a string builder.
    */
-  @Override
-  public StringValue appendTo(StringValue builder)
+  public override StringValue appendTo(StringValue builder)
   {
     if (_is != null)
       return builder.append(_is);
@@ -246,8 +238,7 @@ public class ReadStreamInput extends InputStream implements BinaryInput {
   /**
    * Reads a line from a file, returning null on EOF.
    */
-  @Override
-  public StringValue readLine(long length)
+  public override StringValue readLine(long length)
     
   {
     return getLineReader().readLine(_env, this, length);
@@ -256,8 +247,7 @@ public class ReadStreamInput extends InputStream implements BinaryInput {
   /**
    * Returns true on the EOF.
    */
-  @Override
-  public boolean isEOF()
+  public override boolean isEOF()
   {
     if (_is == null)
       return true;
@@ -276,8 +266,7 @@ public class ReadStreamInput extends InputStream implements BinaryInput {
   /**
    * Returns the current location in the file.
    */
-  @Override
-  public long getPosition()
+  public override long getPosition()
   {
     if (_is == null)
       return -1;
@@ -288,8 +277,7 @@ public class ReadStreamInput extends InputStream implements BinaryInput {
   /**
    * Returns the current location in the file.
    */
-  @Override
-  public boolean setPosition(long offset)
+  public override boolean setPosition(long offset)
   {
     if (_is == null)
       return false;
@@ -301,8 +289,7 @@ public class ReadStreamInput extends InputStream implements BinaryInput {
     }
   }
 
-  @Override
-  public long seek(long offset, int whence)
+  public override long seek(long offset, int whence)
   {
     long position;
 
@@ -326,8 +313,7 @@ public class ReadStreamInput extends InputStream implements BinaryInput {
       return position;
   }
 
-  @Override
-  public Value stat()
+  public override Value stat()
   {
     return BooleanValue.FALSE;
   }
@@ -343,8 +329,7 @@ public class ReadStreamInput extends InputStream implements BinaryInput {
   /**
    * Closes the stream for reading.
    */
-  @Override
-  public void closeRead()
+  public override void closeRead()
   {
     close();
   }
@@ -352,8 +337,7 @@ public class ReadStreamInput extends InputStream implements BinaryInput {
   /**
    * Closes the file.
    */
-  @Override
-  public void close()
+  public override void close()
   {
     ReadStream is = _is;
     _is = null;
@@ -375,8 +359,7 @@ public class ReadStreamInput extends InputStream implements BinaryInput {
   /**
    * Converts to a string.
    */
-  @Override
-  public String toString()
+  public override String toString()
   {
     return getClass().getSimpleName() + "[" + _is.getPath() + "]";
   }

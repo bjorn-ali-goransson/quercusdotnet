@@ -328,8 +328,7 @@ abstract public class JavaInvoker
   /**
    * Returns the minimally required number of arguments.
    */
-  @Override
-  public int getMinArgLength()
+  public override int getMinArgLength()
   {
     if (! _isInit)
       init();
@@ -340,8 +339,7 @@ abstract public class JavaInvoker
   /**
    * Returns the maximum number of arguments allowed.
    */
-  @Override
-  public int getMaxArgLength()
+  public override int getMaxArgLength()
   {
     if (! _isInit)
       init();
@@ -349,8 +347,7 @@ abstract public class JavaInvoker
     return _maxArgumentLength;
   }
 
-  @Override
-  public Class<?> getJavaDeclaringClass()
+  public override Class<?> getJavaDeclaringClass()
   {
     if (_method != null) {
       return _method.getDeclaringClass();
@@ -407,8 +404,7 @@ abstract public class JavaInvoker
   /**
    * Returns true if the call uses variable arguments.
    */
-  @Override
-  public boolean isCallUsesVariableArgs()
+  public override boolean isCallUsesVariableArgs()
   {
     if (! _isInit)
       init();
@@ -419,8 +415,7 @@ abstract public class JavaInvoker
   /**
    * Returns true if the call uses the symbol table
    */
-  @Override
-  public boolean isCallUsesSymbolTable()
+  public override boolean isCallUsesSymbolTable()
   {
     if (! _isInit)
       init();
@@ -532,8 +527,7 @@ abstract public class JavaInvoker
   /**
    * Evaluates a function's argument, handling ref vs non-ref
    */
-  @Override
-  public Value []evalArguments(Env env, Expr fun, Expr []args)
+  public override Value []evalArguments(Env env, Expr fun, Expr []args)
   {
     if (! _isInit)
       init();
@@ -570,8 +564,7 @@ abstract public class JavaInvoker
   /**
    * Returns the cost of marshaling for this method.
    */
-  @Override
-  public int getMarshalingCost(Value []args)
+  public override int getMarshalingCost(Value []args)
   {
     if (! _isInit)
       init();
@@ -618,8 +611,7 @@ abstract public class JavaInvoker
     return cost;
   }
 
-  @Override
-  public int getMarshalingCost(Expr []args)
+  public override int getMarshalingCost(Expr []args)
   {
     if (! _isInit)
       init();
@@ -665,14 +657,12 @@ abstract public class JavaInvoker
     return cost;
   }
 
-  @Override
-  public Value call(Env env, Value []args)
+  public override Value call(Env env, Value []args)
   {
     return callMethod(env, (QuercusClass) null, (Value) null, args);
   }
 
-  @Override
-  public Value callMethodRef(Env env,
+  public override Value callMethodRef(Env env,
                              QuercusClass qClass,
                              Value qThis,
                              Value []args)
@@ -681,8 +671,7 @@ abstract public class JavaInvoker
     return callMethod(env, qClass, qThis, args);
   }
 
-  @Override
-  public Value callMethod(Env env,
+  public override Value callMethod(Env env,
                           QuercusClass qClass,
                           Value qThis,
                           Value []args)
@@ -707,8 +696,7 @@ abstract public class JavaInvoker
     return value;
   }
 
-  @Override
-  public Value callNew(Env env,
+  public override Value callNew(Env env,
                        QuercusClass qClass,
                        Value qThis,
                        Value []args)

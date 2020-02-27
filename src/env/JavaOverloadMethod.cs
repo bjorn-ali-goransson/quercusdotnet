@@ -56,14 +56,12 @@ public class JavaOverloadMethod extends AbstractJavaMethod {
     throw new UnsupportedOperationException();
   }
 
-  @Override
-  public int getMinArgLength()
+  public override int getMinArgLength()
   {
     throw new UnsupportedOperationException();
   }
 
-  @Override
-  public boolean getHasRestArgs()
+  public override boolean getHasRestArgs()
   {
     throw new UnsupportedOperationException();
   }
@@ -137,8 +135,7 @@ public class JavaOverloadMethod extends AbstractJavaMethod {
   /**
    * Returns the actual function
    */
-  @Override
-  public AbstractFunction getActualFunction(Expr []args)
+  public override AbstractFunction getActualFunction(Expr []args)
   {
     if (args.length < _methodTable.length) {
       AbstractJavaMethod []methods = _methodTable[args.length];
@@ -167,8 +164,7 @@ public class JavaOverloadMethod extends AbstractJavaMethod {
   /**
    * Evaluates the function.
    */
-  @Override
-  public Value callMethod(Env env, QuercusClass qClass, Value qThis,
+  public override Value callMethod(Env env, QuercusClass qClass, Value qThis,
                           Value []args)
   {
     if (args.length < _methodTable.length) {
@@ -359,8 +355,7 @@ public class JavaOverloadMethod extends AbstractJavaMethod {
     */
   }
 
-  @Override
-  public String getName()
+  public override String getName()
   {
     AbstractJavaMethod method;
 

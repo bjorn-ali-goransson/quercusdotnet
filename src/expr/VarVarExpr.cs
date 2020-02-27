@@ -105,8 +105,7 @@ public class VarVarExpr extends AbstractVarExpr {
    *
    * @return the expression value.
    */
-  @Override
-  public void evalUnset(Env env)
+  public override void evalUnset(Env env)
   {
     StringValue varName = _var.evalStringValue(env);
 
@@ -120,8 +119,7 @@ public class VarVarExpr extends AbstractVarExpr {
    *
    * @return the expression value.
    */
-  @Override
-  public Var evalVar(Env env)
+  public override Var evalVar(Env env)
   {
     StringValue varName = _var.evalStringValue(env);
 
@@ -135,8 +133,7 @@ public class VarVarExpr extends AbstractVarExpr {
    *
    * @return the expression value.
    */
-  @Override
-  public Value evalArg(Env env, boolean isTop)
+  public override Value evalArg(Env env, boolean isTop)
   {
     StringValue varName = _var.evalStringValue(env);
 
@@ -155,8 +152,7 @@ public class VarVarExpr extends AbstractVarExpr {
    *
    * @return the expression value.
    */
-  @Override
-  public Value evalArray(Env env)
+  public override Value evalArray(Env env)
   {
     StringValue varName = _var.evalStringValue(env);
 

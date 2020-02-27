@@ -56,7 +56,6 @@ abstract public class CompiledMethodRef_0 extends CompiledMethodRef {
     return callMethodRef(env, qClass, qThis);
   }
 
-  @Override
-  abstract public Value callMethodRef(Env env, QuercusClass qClass, Value qThis);
+  abstract override public Value callMethodRef(Env env, QuercusClass qClass, Value qThis);
 }
 

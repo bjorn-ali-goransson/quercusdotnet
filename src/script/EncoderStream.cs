@@ -67,8 +67,7 @@ public class EncoderStream extends StreamImpl
     throw new UnsupportedOperationException();
   }
 
-  @Override
-  public boolean canRead()
+  public override boolean canRead()
   {
     return true;
   }
@@ -109,8 +108,7 @@ public class EncoderStream extends StreamImpl
     return len;
   }
 
-  @Override
-  public int getAvailable()
+  public override int getAvailable()
     
   {
     throw new UnsupportedOperationException();

@@ -73,8 +73,7 @@ public class LongValueMarshal
       return null;
   }
 
-  @Override
-  protected int getMarshalingCostImpl(Value argValue)
+  protected override int getMarshalingCostImpl(Value argValue)
   {
     if (argValue instanceof LongValue)
       return Marshal.ZERO;
@@ -86,8 +85,7 @@ public class LongValueMarshal
       return Marshal.FOUR;
   }
 
-  @Override
-  public Class getExpectedClass()
+  public override Class getExpectedClass()
   {
     return LongValue.class;
   }

@@ -447,8 +447,7 @@ public class IniDefinition {
      super("#null", IniDefinition.Type.STRING, NullValue.NULL, PHP_INI_ALL);
     }
 
-    @Override
-    public void set(HashMap<String, Value> map,
+    public override void set(HashMap<String, Value> map,
                     int scope,
                     Value value)
     {
@@ -471,8 +470,7 @@ public class IniDefinition {
             IniDefinition.PHP_INI_ALL);
     }
 
-    @Override
-    public boolean isRuntimeDefinition()
+    public override boolean isRuntimeDefinition()
     {
       return true;
     }

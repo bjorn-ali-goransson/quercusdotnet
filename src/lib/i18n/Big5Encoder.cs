@@ -59,8 +59,7 @@ public class Big5Encoder
     return false;
   }
 
-  @Override
-  protected boolean fill(StringValue sb, CharBuffer in,
+  protected override boolean fill(StringValue sb, CharBuffer in,
                          ByteBuffer out, CoderResult coder)
   {
     int len = out.position();

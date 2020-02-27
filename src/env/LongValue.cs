@@ -86,8 +86,7 @@ public class LongValue extends NumberValue
   /**
    * Returns the ValueType.
    */
-  @Override
-  public ValueType getValueType()
+  public override ValueType getValueType()
   {
     return ValueType.LONG;
   }
@@ -95,8 +94,7 @@ public class LongValue extends NumberValue
   /**
    * Returns true for a long.
    */
-  @Override
-  public boolean isLongConvertible()
+  public override boolean isLongConvertible()
   {
     return true;
   }
@@ -104,8 +102,7 @@ public class LongValue extends NumberValue
   /**
    * Returns true for is_numeric
    */
-  @Override
-  public boolean isNumeric()
+  public override boolean isNumeric()
   {
     return true;
   }
@@ -113,8 +110,7 @@ public class LongValue extends NumberValue
   /**
    * Returns true for a long-value.
    */
-  @Override
-  public boolean isLong()
+  public override boolean isLong()
   {
     return true;
   }
@@ -122,8 +118,7 @@ public class LongValue extends NumberValue
   /**
    * Returns true for a double-value.
    */
-  @Override
-  public boolean isDouble()
+  public override boolean isDouble()
   {
     return false;
   }
@@ -139,8 +134,7 @@ public class LongValue extends NumberValue
   /**
    * Returns true if the value is empty
    */
-  @Override
-  public boolean isEmpty()
+  public override boolean isEmpty()
   {
     return _value == 0;
   }
@@ -152,8 +146,7 @@ public class LongValue extends NumberValue
   /**
    * Cost to convert to a double
    */
-  @Override
-  public int toDoubleMarshalCost()
+  public override int toDoubleMarshalCost()
   {
     return Marshal.COST_NUMERIC_LOSSLESS;
   }
@@ -161,8 +154,7 @@ public class LongValue extends NumberValue
   /**
    * Cost to convert to a long
    */
-  @Override
-  public int toLongMarshalCost()
+  public override int toLongMarshalCost()
   {
     return Marshal.COST_EQUAL;
   }
@@ -170,8 +162,7 @@ public class LongValue extends NumberValue
   /**
    * Cost to convert to an integer
    */
-  @Override
-  public int toIntegerMarshalCost()
+  public override int toIntegerMarshalCost()
   {
     return Marshal.COST_EQUAL + 1;
   }
@@ -179,8 +170,7 @@ public class LongValue extends NumberValue
   /**
    * Cost to convert to a short
    */
-  @Override
-  public int toShortMarshalCost()
+  public override int toShortMarshalCost()
   {
     return Marshal.COST_NUMERIC_LOSSY;
   }
@@ -188,8 +178,7 @@ public class LongValue extends NumberValue
   /**
    * Cost to convert to a byte
    */
-  @Override
-  public int toByteMarshalCost()
+  public override int toByteMarshalCost()
   {
     return Marshal.COST_NUMERIC_LOSSY;
   }
@@ -197,8 +186,7 @@ public class LongValue extends NumberValue
   /**
    * Converts to a boolean.
    */
-  @Override
-  public boolean toBoolean()
+  public override boolean toBoolean()
   {
     return _value != 0;
   }
@@ -206,8 +194,7 @@ public class LongValue extends NumberValue
   /**
    * Converts to a long.
    */
-  @Override
-  public long toLong()
+  public override long toLong()
   {
     return _value;
   }
@@ -215,8 +202,7 @@ public class LongValue extends NumberValue
   /**
    * Converts to a double.
    */
-  @Override
-  public double toDouble()
+  public override double toDouble()
   {
     return _value;
   }
@@ -224,8 +210,7 @@ public class LongValue extends NumberValue
   /**
    * Converts to a string.
    */
-  @Override
-  public String toString()
+  public override String toString()
   {
     return String.valueOf(_value);
   }
@@ -233,8 +218,7 @@ public class LongValue extends NumberValue
   /**
    * Converts to a string builder
    */
-  @Override
-  public StringValue toStringBuilder(Env env)
+  public override StringValue toStringBuilder(Env env)
   {
     return env.createUnicodeBuilder().append(_value);
   }
@@ -242,8 +226,7 @@ public class LongValue extends NumberValue
   /**
    * Converts to a long value
    */
-  @Override
-  public LongValue toLongValue()
+  public override LongValue toLongValue()
   {
     return this;
   }
@@ -251,8 +234,7 @@ public class LongValue extends NumberValue
   /**
    * Converts to a key.
    */
-  @Override
-  public Value toKey()
+  public override Value toKey()
   {
     return this;
   }
@@ -268,15 +250,13 @@ public class LongValue extends NumberValue
   /**
    * Converts to a java object.
    */
-  @Override
-  public Object toJavaObject()
+  public override Object toJavaObject()
   {
     return new Long(_value);
   }
 
   /*
-  @Override
-  public Value toAutoArray()
+  public override Value toAutoArray()
   {
     if (_value == 0)
       return new ArrayValueImpl();
@@ -288,8 +268,7 @@ public class LongValue extends NumberValue
   /**
    * Negates the value.
    */
-  @Override
-  public Value neg()
+  public override Value neg()
   {
     return LongValue.create(- _value);
   }
@@ -297,8 +276,7 @@ public class LongValue extends NumberValue
   /**
    * Negates the value.
    */
-  @Override
-  public Value pos()
+  public override Value pos()
   {
     return this;
   }
@@ -306,8 +284,7 @@ public class LongValue extends NumberValue
   /**
    * The next integer
    */
-  @Override
-  public Value addOne()
+  public override Value addOne()
   {
     long newValue = _value + 1;
 
@@ -317,8 +294,7 @@ public class LongValue extends NumberValue
   /**
    * The previous integer
    */
-  @Override
-  public Value subOne()
+  public override Value subOne()
   {
     long newValue = _value - 1;
 
@@ -328,8 +304,7 @@ public class LongValue extends NumberValue
   /**
    * Pre-increment the following value.
    */
-  @Override
-  public Value preincr()
+  public override Value preincr()
   {
     long newValue = _value + 1;
 
@@ -339,8 +314,7 @@ public class LongValue extends NumberValue
   /**
    * Pre-increment the following value.
    */
-  @Override
-  public Value predecr()
+  public override Value predecr()
   {
     long newValue = _value - 1;
 
@@ -350,8 +324,7 @@ public class LongValue extends NumberValue
   /**
    * Post-increment the following value.
    */
-  @Override
-  public Value postincr()
+  public override Value postincr()
   {
     long newValue = _value + 1;
 
@@ -361,8 +334,7 @@ public class LongValue extends NumberValue
   /**
    * Post-decrement the following value.
    */
-  @Override
-  public Value postdecr()
+  public override Value postdecr()
   {
     long newValue = _value - 1;
 
@@ -372,8 +344,7 @@ public class LongValue extends NumberValue
   /**
    * Post-increment the following value.
    */
-  @Override
-  public Value increment(int incr)
+  public override Value increment(int incr)
   {
     long newValue = _value + incr;
 
@@ -383,8 +354,7 @@ public class LongValue extends NumberValue
   /**
    * Adds to the following value.
    */
-  @Override
-  public Value add(Value value)
+  public override Value add(Value value)
   {
     return value.add(_value);
   }
@@ -392,8 +362,7 @@ public class LongValue extends NumberValue
   /**
    * Adds to the following value.
    */
-  @Override
-  public Value add(long lLong)
+  public override Value add(long lLong)
   {
     return LongValue.create(lLong + _value);
   }
@@ -401,8 +370,7 @@ public class LongValue extends NumberValue
   /**
    * Subtracts to the following value.
    */
-  @Override
-  public Value sub(Value rValue)
+  public override Value sub(Value rValue)
   {
     if (rValue.isLongConvertible())
       return LongValue.create(_value - rValue.toLong());
@@ -413,8 +381,7 @@ public class LongValue extends NumberValue
   /**
    * Subtracts the following value.
    */
-  @Override
-  public Value sub(long rLong)
+  public override Value sub(long rLong)
   {
     return LongValue.create(_value - rLong);
   }
@@ -422,8 +389,7 @@ public class LongValue extends NumberValue
   /**
    * Absolute value.
    */
-  @Override
-  public Value abs()
+  public override Value abs()
   {
     if (_value >= 0)
       return this;
@@ -434,8 +400,7 @@ public class LongValue extends NumberValue
   /**
    * Returns true for equality
    */
-  @Override
-  public boolean eql(Value rValue)
+  public override boolean eql(Value rValue)
   {
     rValue = rValue.toValue();
 
@@ -449,8 +414,7 @@ public class LongValue extends NumberValue
   /**
    * Returns true for equality
    */
-  @Override
-  public int cmp(Value rValue)
+  public override int cmp(Value rValue)
   {
     if (rValue.isBoolean()) {
       boolean lBool = toBoolean();
@@ -478,8 +442,7 @@ public class LongValue extends NumberValue
   /**
    * Returns the next array index based on this value.
    */
-  @Override
-  public long nextIndex(long oldIndex)
+  public override long nextIndex(long oldIndex)
   {
     if (oldIndex <= _value)
       return _value + 1;
@@ -490,8 +453,7 @@ public class LongValue extends NumberValue
   /**
    * Encodes the value in JSON.
    */
-  @Override
-  public void jsonEncode(Env env, JsonEncodeContext context, StringValue sb)
+  public override void jsonEncode(Env env, JsonEncodeContext context, StringValue sb)
   {
     if (_value > Integer.MAX_VALUE && context.isBigIntAsString()) {
       toStringValue(env).jsonEncode(env, context, sb);
@@ -505,8 +467,7 @@ public class LongValue extends NumberValue
    * Prints the value.
    * @param env
    */
-  @Override
-  public void print(Env env)
+  public override void print(Env env)
   {
     env.print(_value);
   }
@@ -514,8 +475,7 @@ public class LongValue extends NumberValue
   /**
    * Append to a unicode builder.
    */
-  @Override
-  public StringValue appendTo(UnicodeBuilderValue sb)
+  public override StringValue appendTo(UnicodeBuilderValue sb)
   {
     return sb.append(_value);
   }
@@ -523,8 +483,7 @@ public class LongValue extends NumberValue
   /**
    * Append to a binary builder.
    */
-  @Override
-  public StringValue appendTo(BinaryBuilderValue sb)
+  public override StringValue appendTo(BinaryBuilderValue sb)
   {
     return sb.append(_value);
   }
@@ -532,8 +491,7 @@ public class LongValue extends NumberValue
   /**
    * Append to a string builder.
    */
-  @Override
-  public StringValue appendTo(StringBuilderValue sb)
+  public override StringValue appendTo(StringBuilderValue sb)
   {
     return sb.append(_value);
   }
@@ -541,8 +499,7 @@ public class LongValue extends NumberValue
   /**
    * Append to a string builder.
    */
-  @Override
-  public StringValue appendTo(LargeStringBuilderValue sb)
+  public override StringValue appendTo(LargeStringBuilderValue sb)
   {
     return sb.append(_value);
   }
@@ -550,8 +507,7 @@ public class LongValue extends NumberValue
   /**
    * Serializes the value.
    */
-  @Override
-  public void serialize(Env env, StringBuilder sb)
+  public override void serialize(Env env, StringBuilder sb)
   {
     sb.append("i:");
     sb.append(_value);
@@ -561,8 +517,7 @@ public class LongValue extends NumberValue
   /**
    * Exports the value.
    */
-  @Override
-  protected void varExportImpl(StringValue sb, int level)
+  protected override void varExportImpl(StringValue sb, int level)
   {
     sb.append(_value);
   }
@@ -576,8 +531,7 @@ public class LongValue extends NumberValue
    *
    * @param out the writer to the Java source code.
    */
-  @Override
-  public void generate(PrintWriter out)
+  public override void generate(PrintWriter out)
     
   {
     if (_value == 0)
@@ -595,8 +549,7 @@ public class LongValue extends NumberValue
   /**
    * Returns the hash code
    */
-  @Override
-  public final int hashCode()
+  public override final int hashCode()
   {
     long v = _value;
 
@@ -606,8 +559,7 @@ public class LongValue extends NumberValue
   /**
    * Compare for equality.
    */
-  @Override
-  public boolean equals(Object o)
+  public override boolean equals(Object o)
   {
     if (this == o)
       return true;
@@ -619,8 +571,7 @@ public class LongValue extends NumberValue
     return _value == value._value;
   }
 
-  @Override
-  public void varDumpImpl(Env env,
+  public override void varDumpImpl(Env env,
                           WriteStream out,
                           int depth,
                           IdentityHashMap<Value,String> valueSet)

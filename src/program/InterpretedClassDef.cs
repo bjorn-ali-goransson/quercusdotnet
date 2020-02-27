@@ -159,8 +159,7 @@ public class InterpretedClassDef extends ClassDef
   /**
    * True for an interface class.
    */
-  @Override
-  public boolean isInterface()
+  public override boolean isInterface()
   {
     return _isInterface;
   }
@@ -176,8 +175,7 @@ public class InterpretedClassDef extends ClassDef
   /**
    * True for an trait class.
    */
-  @Override
-  public boolean isTrait()
+  public override boolean isTrait()
   {
     return _isTrait;
   }
@@ -261,8 +259,7 @@ public class InterpretedClassDef extends ClassDef
   /**
    * Initialize the quercus class methods.
    */
-  @Override
-  public void initClassMethods(QuercusClass cl, String bindingClassName)
+  public override void initClassMethods(QuercusClass cl, String bindingClassName)
   {
     cl.addInitializer(this);
 
@@ -328,8 +325,7 @@ public class InterpretedClassDef extends ClassDef
   /**
    * Initialize the quercus class fields.
    */
-  @Override
-  public void initClassFields(QuercusClass cl, String declaringClassName)
+  public override void initClassFields(QuercusClass cl, String declaringClassName)
   {
     if (isTrait()) {
       for (Map.Entry<StringValue,ClassField> entry : _fieldMap.entrySet()) {
@@ -376,26 +372,22 @@ public class InterpretedClassDef extends ClassDef
     _constructor = fun;
   }
 
-  @Override
-  public AbstractFunction getCall()
+  public override AbstractFunction getCall()
   {
     return _call;
   }
 
-  @Override
-  public AbstractFunction getCallStatic()
+  public override AbstractFunction getCallStatic()
   {
     return _callStatic;
   }
 
-  @Override
-  public AbstractFunction getSerialize()
+  public override AbstractFunction getSerialize()
   {
     return _serializeFun;
   }
 
-  @Override
-  public AbstractFunction getUnserialize()
+  public override AbstractFunction getUnserialize()
   {
     return _unserializeFun;
   }
@@ -549,8 +541,7 @@ public class InterpretedClassDef extends ClassDef
   /**
    * Initialize the fields
    */
-  @Override
-  public void initInstance(Env env, Value obj, boolean isInitFieldValues)
+  public override void initInstance(Env env, Value obj, boolean isInitFieldValues)
   {
     ObjectValue object = (ObjectValue) obj;
 
@@ -584,8 +575,7 @@ public class InterpretedClassDef extends ClassDef
   /**
    * Returns the documentation for this class.
    */
-  @Override
-  public String getComment()
+  public override String getComment()
   {
     return _comment;
   }
@@ -593,8 +583,7 @@ public class InterpretedClassDef extends ClassDef
   /**
    * Returns the comment for the specified field.
    */
-  @Override
-  public String getFieldComment(StringValue name)
+  public override String getFieldComment(StringValue name)
   {
     ClassField field = _fieldMap.get(name);
 
@@ -607,8 +596,7 @@ public class InterpretedClassDef extends ClassDef
   /**
    * Returns the comment for the specified field.
    */
-  @Override
-  public String getStaticFieldComment(StringValue name)
+  public override String getStaticFieldComment(StringValue name)
   {
     StaticFieldEntry field = _staticFieldMap.get(name);
 
@@ -618,26 +606,22 @@ public class InterpretedClassDef extends ClassDef
       return null;
   }
 
-  @Override
-  public Set<Map.Entry<StringValue,ClassField>> fieldSet()
+  public override Set<Map.Entry<StringValue,ClassField>> fieldSet()
   {
     return _fieldMap.entrySet();
   }
 
-  @Override
-  public ClassField getField(StringValue name)
+  public override ClassField getField(StringValue name)
   {
     return _fieldMap.get(name);
   }
 
-  @Override
-  public Set<Map.Entry<StringValue, StaticFieldEntry>> staticFieldSet()
+  public override Set<Map.Entry<StringValue, StaticFieldEntry>> staticFieldSet()
   {
     return _staticFieldMap.entrySet();
   }
 
-  @Override
-  public Set<Map.Entry<StringValue, AbstractFunction>> functionSet()
+  public override Set<Map.Entry<StringValue, AbstractFunction>> functionSet()
   {
     return _functionMap.entrySet();
   }

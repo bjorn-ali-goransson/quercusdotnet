@@ -63,8 +63,7 @@ public class GenericDecoder
     super.reset();
   }
 
-  @Override
-  public boolean isDecodable(Env env, StringValue str)
+  public override boolean isDecodable(Env env, StringValue str)
   {
     if (str.isUnicode())
       return true;
@@ -93,8 +92,7 @@ public class GenericDecoder
     return true;
   }
 
-  @Override
-  public void decodeUnicode(StringValue str, UnicodeBuilderValue sb)
+  public override void decodeUnicode(StringValue str, UnicodeBuilderValue sb)
   {
     ByteBuffer in = ByteBuffer.wrap(str.toBytes());
 

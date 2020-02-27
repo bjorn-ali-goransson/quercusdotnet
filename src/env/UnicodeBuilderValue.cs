@@ -213,8 +213,7 @@ public class UnicodeBuilderValue
   /**
    * Returns true for UnicodeValue
    */
-  @Override
-  public final boolean isUnicode()
+  public override final boolean isUnicode()
   {
     return true;
   }
@@ -238,8 +237,7 @@ public class UnicodeBuilderValue
   /**
    * Returns the ValueType.
    */
-  @Override
-  public ValueType getValueType()
+  public override ValueType getValueType()
   {
     return getValueType(_buffer, 0, _length);
   }
@@ -247,8 +245,7 @@ public class UnicodeBuilderValue
   /**
    * Converts to a string builder
    */
-  @Override
-  public StringValue toStringBuilder()
+  public override StringValue toStringBuilder()
   {
     return new UnicodeBuilderValue(this);
   }
@@ -256,8 +253,7 @@ public class UnicodeBuilderValue
   /**
    * Converts to a string builder
    */
-  @Override
-  public StringValue toStringBuilder(Env env)
+  public override StringValue toStringBuilder(Env env)
   {
     return new UnicodeBuilderValue(this);
   }
@@ -265,8 +261,7 @@ public class UnicodeBuilderValue
   /**
    * Converts to a string builder
    */
-  @Override
-  public StringValue toStringBuilder(Env env, Value value)
+  public override StringValue toStringBuilder(Env env, Value value)
   {
     UnicodeBuilderValue v = new UnicodeBuilderValue(this);
 
@@ -278,8 +273,7 @@ public class UnicodeBuilderValue
   /**
    * Converts to a string builder
    */
-  @Override
-  public StringValue copyStringBuilder()
+  public override StringValue copyStringBuilder()
   {
     return new UnicodeBuilderValue(this);
   }
@@ -287,8 +281,7 @@ public class UnicodeBuilderValue
   /**
    * Converts to a UnicodeValue.
    */
-  @Override
-  public final StringValue toUnicodeValue()
+  public override final StringValue toUnicodeValue()
   {
     return this;
   }
@@ -296,8 +289,7 @@ public class UnicodeBuilderValue
   /**
    * Converts to a UnicodeValue.
    */
-  @Override
-  public final StringValue toUnicodeValue(Env env)
+  public override final StringValue toUnicodeValue(Env env)
   {
     return this;
   }
@@ -305,8 +297,7 @@ public class UnicodeBuilderValue
   /**
    * Converts to a UnicodeValue in desired charset.
    */
-  @Override
-  public final StringValue toUnicodeValue(Env env, String charset)
+  public override final StringValue toUnicodeValue(Env env, String charset)
   {
     return this;
   }
@@ -469,8 +460,7 @@ public class UnicodeBuilderValue
    * @param str should be a Unicode string
    * @param charset to decode string from
    */
-  @Override
-  public StringValue append(Env env, StringValue unicodeStr, String charset)
+  public override StringValue append(Env env, StringValue unicodeStr, String charset)
   {
     return append(unicodeStr);
   }
@@ -478,16 +468,14 @@ public class UnicodeBuilderValue
   /**
    * Append to a string builder.
    */
-  @Override
-  public StringValue appendTo(UnicodeBuilderValue sb)
+  public override StringValue appendTo(UnicodeBuilderValue sb)
   {
     sb.append(_buffer, 0, _length);
 
     return sb;
   }
 
-  @Override
-  public StringValue append(Reader reader, long length)
+  public override StringValue append(Reader reader, long length)
     
   {
     // php/4407 - oracle clob callback passes very long length
@@ -531,8 +519,7 @@ public class UnicodeBuilderValue
   /**
    * Returns true if the value is empty.
    */
-  @Override
-  public final boolean isEmpty()
+  public override final boolean isEmpty()
   {
     return _length == 0 || _length == 1 && _buffer[0] == '0';
   }
@@ -540,8 +527,7 @@ public class UnicodeBuilderValue
   /**
    * Converts to a key.
    */
-  @Override
-  public Value toKey()
+  public override Value toKey()
   {
     char []buffer = _buffer;
     int len = _length;
@@ -605,8 +591,7 @@ public class UnicodeBuilderValue
   /**
    * Sets the array ref.
    */
-  @Override
-  public Value put(Value index, Value value)
+  public override Value put(Value index, Value value)
   {
     setCharValueAt(index.toLong(), value);
 
@@ -616,8 +601,7 @@ public class UnicodeBuilderValue
   /**
    * Sets the array ref.
    */
-  @Override
-  public Value append(Value index, Value value)
+  public override Value append(Value index, Value value)
   {
     if (_length > 0)
       return setCharValueAt(index.toLong(), value);
@@ -636,8 +620,7 @@ public class UnicodeBuilderValue
   /**
    * Sets the length.
    */
-  @Override
-  public final void setLength(int length)
+  public override final void setLength(int length)
   {
     _length = length;
   }
@@ -653,8 +636,7 @@ public class UnicodeBuilderValue
   /**
    * Converts to a BinaryValue.
    */
-  @Override
-  public StringValue toBinaryValue()
+  public override StringValue toBinaryValue()
   {
     return toBinaryValue(Env.getInstance());
   }
@@ -662,8 +644,7 @@ public class UnicodeBuilderValue
   /**
    * Converts to a BinaryValue.
    */
-  @Override
-  public StringValue toBinaryValue(Env env)
+  public override StringValue toBinaryValue(Env env)
   {
     return toBinaryValue(env.getRuntimeEncoding());
   }
@@ -674,8 +655,7 @@ public class UnicodeBuilderValue
    * @param env
    * @param charset
    */
-  @Override
-  public StringValue toBinaryValue(String charset)
+  public override StringValue toBinaryValue(String charset)
   {
     try {
       BinaryBuilderValue result = new BinaryBuilderValue();
@@ -698,8 +678,7 @@ public class UnicodeBuilderValue
   /**
    * Returns the character at an index
    */
-  @Override
-  public Value charValueAt(long index)
+  public override Value charValueAt(long index)
   {
     int len = _length;
 
@@ -718,8 +697,7 @@ public class UnicodeBuilderValue
   /**
    * sets the character at an index
    */
-  @Override
-  public Value setCharValueAt(long indexL, Value value)
+  public override Value setCharValueAt(long indexL, Value value)
   {
     int len = _length;
 
@@ -787,8 +765,7 @@ public class UnicodeBuilderValue
   /**
    * Returns a subsequence
    */
-  @Override
-  public CharSequence subSequence(int start, int end)
+  public override CharSequence subSequence(int start, int end)
   {
     int len = end - start;
 
@@ -809,8 +786,7 @@ public class UnicodeBuilderValue
   /**
    * Convert to lower case.
    */
-  @Override
-  public StringValue toLowerCase(Locale locale)
+  public override StringValue toLowerCase(Locale locale)
   {
     int length = _length;
 
@@ -840,8 +816,7 @@ public class UnicodeBuilderValue
   /**
    * Convert to lower case.
    */
-  @Override
-  public StringValue toUpperCase()
+  public override StringValue toUpperCase()
   {
     int length = _length;
 
@@ -871,8 +846,7 @@ public class UnicodeBuilderValue
   /**
    * Returns a character array
    */
-  @Override
-  public char []toCharArray()
+  public override char []toCharArray()
   {
     char[] dest = new char[_length];
 
@@ -884,8 +858,7 @@ public class UnicodeBuilderValue
   /**
    * Return the underlying buffer.
    */
-  @Override
-  public char []getRawCharArray()
+  public override char []getRawCharArray()
   {
     return _buffer;
   }
@@ -918,8 +891,7 @@ public class UnicodeBuilderValue
   /**
    * Creates a string builder of the same type.
    */
-  @Override
-  public StringValue createStringBuilder()
+  public override StringValue createStringBuilder()
   {
     return new UnicodeBuilderValue();
   }
@@ -927,8 +899,7 @@ public class UnicodeBuilderValue
   /**
    * Creates a string builder of the same type.
    */
-  @Override
-  public StringValue createStringBuilder(int length)
+  public override StringValue createStringBuilder(int length)
   {
     return new UnicodeBuilderValue(length);
   }
@@ -1055,8 +1026,7 @@ public class UnicodeBuilderValue
   /**
    * Converts to a boolean.
    */
-  @Override
-  public final boolean toBoolean()
+  public override final boolean toBoolean()
   {
     if (_length == 0)
       return false;
@@ -1069,8 +1039,7 @@ public class UnicodeBuilderValue
   /**
    * Converts to a long.
    */
-  @Override
-  public long toLong()
+  public override long toLong()
   {
     return parseLong(_buffer, 0, _length);
   }
@@ -1086,8 +1055,7 @@ public class UnicodeBuilderValue
   /**
    * Converts to a double.
    */
-  @Override
-  public double toDouble()
+  public override double toDouble()
   {
     return toDouble(_buffer, 0, _length);
   }
@@ -1192,8 +1160,7 @@ public class UnicodeBuilderValue
   /**
    * Returns the hash code.
    */
-  @Override
-  public int hashCode()
+  public override int hashCode()
   {
     int hash = _hashCode;
 
@@ -1231,8 +1198,7 @@ public class UnicodeBuilderValue
   /**
    * Returns true for equality
    */
-  @Override
-  public boolean eq(Value rValue)
+  public override boolean eq(Value rValue)
   {
     rValue = rValue.toValue();
 
@@ -1315,8 +1281,7 @@ public class UnicodeBuilderValue
     }
   }
 
-  @Override
-  public boolean equals(Object o)
+  public override boolean equals(Object o)
   {
     if (o == this) {
       return true;
@@ -1372,8 +1337,7 @@ public class UnicodeBuilderValue
     }
   }
 
-  @Override
-  public boolean eql(Value o)
+  public override boolean eql(Value o)
   {
     o = o.toValue();
 

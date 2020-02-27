@@ -68,8 +68,7 @@ public class Utf8Decoder
     return true;
   }
 
-  @Override
-  public void decodeUnicode(StringValue str, UnicodeBuilderValue sb)
+  public override void decodeUnicode(StringValue str, UnicodeBuilderValue sb)
   {
     int len = str.length();
     for (int i = 0; i < len; i++) {

@@ -53,8 +53,7 @@ public class JavaByteObjectArrayMarshal extends JavaArrayMarshal
     return env.createBinaryBuilder(data);
   }
 
-  @Override
-  protected int getMarshalingCostImpl(Value argValue)
+  protected override int getMarshalingCostImpl(Value argValue)
   {
     return Marshal.COST_INCOMPATIBLE;
     /*
@@ -73,8 +72,7 @@ public class JavaByteObjectArrayMarshal extends JavaArrayMarshal
     */
   }
 
-  @Override
-  public Class getExpectedClass()
+  public override Class getExpectedClass()
   {
     return Byte[].class;
   }

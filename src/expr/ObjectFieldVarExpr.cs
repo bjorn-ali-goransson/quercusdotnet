@@ -88,8 +88,7 @@ public class ObjectFieldVarExpr extends AbstractVarExpr {
    *
    * @return the expression value.
    */
-  @Override
-  public Value evalArg(Env env, boolean isTop)
+  public override Value evalArg(Env env, boolean isTop)
   {
     Value value = _objExpr.evalArg(env, false);
 
@@ -134,8 +133,7 @@ public class ObjectFieldVarExpr extends AbstractVarExpr {
    *
    * @return the expression value.
    */
-  @Override
-  public Value evalAssignValue(Env env, Value value)
+  public override Value evalAssignValue(Env env, Value value)
   {
     Value obj = _objExpr.evalObject(env);
 
@@ -151,8 +149,7 @@ public class ObjectFieldVarExpr extends AbstractVarExpr {
    *
    * @return the expression value.
    */
-  @Override
-  public Value evalAssignRef(Env env, Value value)
+  public override Value evalAssignRef(Env env, Value value)
   {
     Value obj = _objExpr.evalObject(env);
 
@@ -208,8 +205,7 @@ public class ObjectFieldVarExpr extends AbstractVarExpr {
     return _objExpr + "->{" + _nameExpr + "}";
   }
 
-  @Override
-  public boolean evalIsset(Env env)
+  public override boolean evalIsset(Env env)
   {
       Value object = _objExpr.eval(env);
       return object.issetField(env, _nameExpr.evalStringValue(env));

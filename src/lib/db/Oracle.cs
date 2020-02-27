@@ -73,8 +73,7 @@ public class Oracle extends JdbcConnectionResource {
   /**
    * Connects to the underlying database.
    */
-  @Override
-  protected ConnectionEntry connectImpl(Env env,
+  protected override ConnectionEntry connectImpl(Env env,
                                         String host,
                                         String userName,
                                         String password,
@@ -143,8 +142,7 @@ public class Oracle extends JdbcConnectionResource {
   /**
    * returns a prepared statement
    */
-  @Override
-  public OracleStatement prepare(Env env, String query)
+  public override OracleStatement prepare(Env env, String query)
   {
     OracleStatement stmt = new OracleStatement((Oracle) validateConnection(env));
 
@@ -153,8 +151,7 @@ public class Oracle extends JdbcConnectionResource {
     return stmt;
   }
   
-  @Override
-  protected OracleStatement createStatementResource(Env env)
+  protected override OracleStatement createStatementResource(Env env)
   {
     OracleStatement stmt = new OracleStatement(this);
     
@@ -164,8 +161,7 @@ public class Oracle extends JdbcConnectionResource {
   /**
    * Creates a database-specific result.
    */
-  @Override
-  protected JdbcResultResource createResult(Statement stmt,
+  protected override JdbcResultResource createResult(Statement stmt,
                                             ResultSet rs)
   {
     return new OracleResult(rs, this);

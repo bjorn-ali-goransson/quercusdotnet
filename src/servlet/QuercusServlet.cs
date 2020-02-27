@@ -598,8 +598,7 @@ public class QuercusServlet
   /**
    * Service.
    */
-  @Override
-  public void service(HttpServletRequest request,
+  public override void service(HttpServletRequest request,
                       HttpServletResponse response)
     
   {

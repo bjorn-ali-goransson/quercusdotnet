@@ -64,14 +64,12 @@ public class UserBody extends PostBody
     return "application/x-www-form-urlencoded";
   }
 
-  @Override
-  public long getContentLength()
+  public override long getContentLength()
   {
     return (long) _length;
   }
 
-  @Override
-  public boolean isChunked()
+  public override boolean isChunked()
   {
     return _length < 0;
   }

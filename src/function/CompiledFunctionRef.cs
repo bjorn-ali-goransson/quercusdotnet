@@ -56,38 +56,32 @@ abstract public class CompiledFunctionRef extends CompiledAbstractFunction {
     return callRef(env, argValues).copy();
   }
 
-  @Override
-  public Value call(Env env)
+  public override Value call(Env env)
   {
     return callRef(env).copy();
   }
 
-  @Override
-  public Value call(Env env, Value arg)
+  public override Value call(Env env, Value arg)
   {
     return callRef(env, arg).copy();
   }
 
-  @Override
-  public Value call(Env env, Value a1, Value a2)
+  public override Value call(Env env, Value a1, Value a2)
   {
     return callRef(env, a1, a2).copy();
   }
 
-  @Override
-  public Value call(Env env, Value a1, Value a2, Value a3)
+  public override Value call(Env env, Value a1, Value a2, Value a3)
   {
     return callRef(env, a1, a2, a3).copy();
   }
 
-  @Override
-  public Value call(Env env, Value a1, Value a2, Value a3, Value a4)
+  public override Value call(Env env, Value a1, Value a2, Value a3, Value a4)
   {
     return callRef(env, a1, a2, a3, a4).copy();
   }
 
-  @Override
-  public Value call(Env env, Value a1, Value a2, Value a3, Value a4, Value a5)
+  public override Value call(Env env, Value a1, Value a2, Value a3, Value a4, Value a5)
   {
     return callRef(env, a1, a2, a3, a4, a5).copy();
   }

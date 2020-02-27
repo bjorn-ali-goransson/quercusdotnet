@@ -62,8 +62,7 @@ public class ByteArrayBinaryStream extends AbstractBinaryInputOutput
     return _pos;
   }
 
-  @Override
-  public boolean setPosition(long pos)
+  public override boolean setPosition(long pos)
   {
     if (_length < pos) {
       return false;
@@ -74,8 +73,7 @@ public class ByteArrayBinaryStream extends AbstractBinaryInputOutput
     return true;
   }
 
-  @Override
-  public void unread()
+  public override void unread()
     
   {
     if (_pos == 0) {
@@ -85,8 +83,7 @@ public class ByteArrayBinaryStream extends AbstractBinaryInputOutput
     _pos--;
   }
 
-  @Override
-  public boolean isEOF()
+  public override boolean isEOF()
   {
     // php/167i
 
@@ -99,8 +96,7 @@ public class ByteArrayBinaryStream extends AbstractBinaryInputOutput
     {
     }
 
-    @Override
-    public int read(byte[] buffer, int offset, int length)
+    public override int read(byte[] buffer, int offset, int length)
     {
       int len = Math.min(_length - _pos, length);
 
@@ -111,8 +107,7 @@ public class ByteArrayBinaryStream extends AbstractBinaryInputOutput
       return len;
     }
 
-    @Override
-    public int read()
+    public override int read()
     {
       if (_pos < _length) {
         return _buffer[_pos++] & 0xff;
@@ -129,8 +124,7 @@ public class ByteArrayBinaryStream extends AbstractBinaryInputOutput
     {
     }
 
-    @Override
-    public void write(byte[] buffer, int offset, int length)
+    public override void write(byte[] buffer, int offset, int length)
     {
       ensureCapacity(_pos + length);
 
@@ -143,8 +137,7 @@ public class ByteArrayBinaryStream extends AbstractBinaryInputOutput
       }
     }
 
-    @Override
-    public void write(int ch)
+    public override void write(int ch)
     {
       ensureCapacity(_pos + 1);
 

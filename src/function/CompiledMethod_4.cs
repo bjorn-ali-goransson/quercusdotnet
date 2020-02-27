@@ -93,8 +93,7 @@ abstract public class CompiledMethod_4 extends CompiledMethod {
     }
   }
 
-  @Override
-  public Value callMethod(Env env, QuercusClass qClass, Value qThis)
+  public override Value callMethod(Env env, QuercusClass qClass, Value qThis)
   {
     return callMethod(env, qClass, qThis,
                       _args[0].eval(env),
@@ -103,8 +102,7 @@ abstract public class CompiledMethod_4 extends CompiledMethod {
                       _args[3].eval(env));
   }
 
-  @Override
-  public Value callMethod(Env env, QuercusClass qClass, Value qThis,
+  public override Value callMethod(Env env, QuercusClass qClass, Value qThis,
                           Value a1)
   {
     return callMethod(env, qClass, qThis,
@@ -114,8 +112,7 @@ abstract public class CompiledMethod_4 extends CompiledMethod {
                       _args[3].eval(env));
   }
 
-  @Override
-  public Value callMethod(Env env, QuercusClass qClass, Value qThis,
+  public override Value callMethod(Env env, QuercusClass qClass, Value qThis,
                           Value a1, Value a2)
   {
     return callMethod(env, qClass, qThis,
@@ -125,8 +122,7 @@ abstract public class CompiledMethod_4 extends CompiledMethod {
                       _args[3].eval(env));
   }
 
-  @Override
-  public Value callMethod(Env env, QuercusClass qClass, Value qThis,
+  public override Value callMethod(Env env, QuercusClass qClass, Value qThis,
                           Value a1, Value a2, Value a3)
   {
     return callMethod(env, qClass, qThis,
@@ -136,8 +132,7 @@ abstract public class CompiledMethod_4 extends CompiledMethod {
                       _args[3].eval(env));
   }
 
-  @Override
-  abstract public Value callMethod(Env env, QuercusClass qClass, Value qThis,
+  abstract override public Value callMethod(Env env, QuercusClass qClass, Value qThis,
                                    Value a1,
                                    Value a2,
                                    Value a3,

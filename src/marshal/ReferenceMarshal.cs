@@ -64,14 +64,12 @@ public class ReferenceMarshal extends Marshal
     throw new UnsupportedOperationException();
   }
 
-  @Override
-  protected int getMarshalingCostImpl(Value argValue)
+  protected override int getMarshalingCostImpl(Value argValue)
   {
     return Marshal.ZERO;
   }
   
-  @Override
-  public Class getExpectedClass()
+  public override Class getExpectedClass()
   {
     return Value.class;
   }

@@ -68,8 +68,7 @@ public class BooleanObjectMarshal extends Marshal
         : BooleanValue.FALSE;
   }
 
-  @Override
-  protected int getMarshalingCostImpl(Value argValue)
+  protected override int getMarshalingCostImpl(Value argValue)
   {
     return argValue.toBooleanMarshalCost() + 1;
     /*
@@ -80,8 +79,7 @@ public class BooleanObjectMarshal extends Marshal
     */
   }
 
-  @Override
-  public Class getExpectedClass()
+  public override Class getExpectedClass()
   {
     return Boolean.class;
   }

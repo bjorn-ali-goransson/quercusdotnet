@@ -76,26 +76,22 @@ public class WriteStreamOutput extends OutputStream implements BinaryOutput {
     _os.write(ch);
   }
 
-  @Override
-  public void write(byte []buffer, int offset, int length)
+  public override void write(byte []buffer, int offset, int length)
   {
     _os.write(buffer, offset, length);
   }
 
-  @Override
-  public void closeWrite()
+  public override void closeWrite()
   {
     close();
   }
 
-  @Override
-  public void print(char ch)
+  public override void print(char ch)
   {
     _os.write(ch);
   }
 
-  @Override
-  public void print(String s)
+  public override void print(String s)
   {
     int len = s.length();
     
@@ -103,8 +99,7 @@ public class WriteStreamOutput extends OutputStream implements BinaryOutput {
       _os.write(s.charAt(i));
   }
 
-  @Override
-  public int write(InputStream is, int length)
+  public override int write(InputStream is, int length)
   {
     TempBuffer tempBuffer = TempBuffer.allocate();
     byte []buffer = tempBuffer.getBuffer();
@@ -132,38 +127,32 @@ public class WriteStreamOutput extends OutputStream implements BinaryOutput {
     return writeLength;
   }
 
-  @Override
-  public long getPosition()
+  public override long getPosition()
   {
     return 0;
   }
 
-  @Override
-  public boolean isEOF()
+  public override boolean isEOF()
   {
     return false;
   }
 
-  @Override
-  public long seek(long offset, int whence)
+  public override long seek(long offset, int whence)
   {
     return 0;
   }
 
-  @Override
-  public boolean setPosition(long offset)
+  public override boolean setPosition(long offset)
   {
     return false;
   }
 
-  @Override
-  public Value stat()
+  public override Value stat()
   {
     return null;
   }
 
-  @Override
-  public void flush()
+  public override void flush()
   {
     OutputStream os = _os;
     _os = null;
@@ -177,8 +166,7 @@ public class WriteStreamOutput extends OutputStream implements BinaryOutput {
     }
   }
 
-  @Override
-  public void close()
+  public override void close()
   {
     OutputStream os = _os;
     _os = null;

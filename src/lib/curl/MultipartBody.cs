@@ -117,8 +117,7 @@ public class MultipartBody extends PostBody
     return "multipart/form-data; boundary=\"" + _boundary + "\"";
   }
 
-  @Override
-  public long getContentLength()
+  public override long getContentLength()
   {
     return _length;
   }

@@ -79,8 +79,7 @@ public class ShortMarshal extends Marshal
       return Marshal.FOUR;
   }
   
-  @Override
-  public Class getExpectedClass()
+  public override Class getExpectedClass()
   {
     return short.class;
   }

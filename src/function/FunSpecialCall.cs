@@ -64,8 +64,7 @@ public class FunSpecialCall extends AbstractFunction {
   /**
    * Evaluates the function.
    */
-  @Override
-  public Value callMethod(Env env,
+  public override Value callMethod(Env env,
                           QuercusClass qClass,
                           Value qThis,
                           Value []args)
@@ -79,8 +78,7 @@ public class FunSpecialCall extends AbstractFunction {
   /**
    * Evaluates the function.
    */
-  @Override
-  public Value callMethodRef(Env env,
+  public override Value callMethodRef(Env env,
                              QuercusClass qClass,
                              Value qThis,
                              Value []args)
@@ -91,8 +89,7 @@ public class FunSpecialCall extends AbstractFunction {
                                _name, arrayArgs);
   }
 
-  @Override
-  public String toString()
+  public override String toString()
   {
     return getClass().getSimpleName() + "[" + getName() + "]";
   }

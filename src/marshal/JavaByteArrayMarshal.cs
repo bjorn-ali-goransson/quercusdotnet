@@ -43,8 +43,7 @@ public class JavaByteArrayMarshal extends JavaArrayMarshal
     return env.createBinaryBuilder((byte[]) value);
   }
 
-  @Override
-  protected int getMarshalingCostImpl(Value argValue)
+  protected override int getMarshalingCostImpl(Value argValue)
   {
     return argValue.toByteArrayMarshalCost();
 
@@ -64,8 +63,7 @@ public class JavaByteArrayMarshal extends JavaArrayMarshal
     */
   }
 
-  @Override
-  public Class getExpectedClass()
+  public override Class getExpectedClass()
   {
     return byte[].class;
   }

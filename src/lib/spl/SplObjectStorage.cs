@@ -159,16 +159,14 @@ public class SplObjectStorage
   // ArrayAccess
   //
 
-  @Override
-  public boolean offsetExists(Env env, Value offset)
+  public override boolean offsetExists(Env env, Value offset)
   {
     StringValue hash = offset.toObject(env).getObjectHash(env);
 
     return _objMap.containsKey(hash);
   }
 
-  @Override
-  public Value offsetSet(Env env, Value obj, Value value)
+  public override Value offsetSet(Env env, Value obj, Value value)
   {
     // XXX: value is optional
 
@@ -177,8 +175,7 @@ public class SplObjectStorage
     return NullValue.NULL;
   }
 
-  @Override
-  public Value offsetGet(Env env, Value obj)
+  public override Value offsetGet(Env env, Value obj)
   {
     StringValue hash = getHash(env, obj);
 
@@ -193,8 +190,7 @@ public class SplObjectStorage
     return entry.getValue();
   }
 
-  @Override
-  public Value offsetUnset(Env env, Value obj)
+  public override Value offsetUnset(Env env, Value obj)
   {
     detach(env, obj);
 
@@ -205,8 +201,7 @@ public class SplObjectStorage
   // Iterator
   //
 
-  @Override
-  public Value current(Env env)
+  public override Value current(Env env)
   {
     if (_current == null) {
       return NullValue.NULL;
@@ -215,14 +210,12 @@ public class SplObjectStorage
     return _current.getObject();
   }
 
-  @Override
-  public Value key(Env env)
+  public override Value key(Env env)
   {
     return LongValue.create(_iterCount);
   }
 
-  @Override
-  public void next(Env env)
+  public override void next(Env env)
   {
     if (_current != null) {
       _current = _current.getNext();
@@ -231,16 +224,14 @@ public class SplObjectStorage
     }
   }
 
-  @Override
-  public void rewind(Env env)
+  public override void rewind(Env env)
   {
     _current = _head;
 
     _iterCount = 0;
   }
 
-  @Override
-  public boolean valid(Env env)
+  public override boolean valid(Env env)
   {
     return _current != null;
   }
@@ -296,8 +287,7 @@ public class SplObjectStorage
     }
   }
 
-  @Override
-  public StringValue serialize(Env env)
+  public override StringValue serialize(Env env)
   {
     ArrayValue array = new ArrayValueImpl();
 
@@ -322,8 +312,7 @@ public class SplObjectStorage
     return env.createString(str);
   }
 
-  @Override
-  public void unserialize(Env env, StringValue str)
+  public override void unserialize(Env env, StringValue str)
   {
     Value unserializedValue = VariableModule.unserialize(env, str);
 

@@ -60,8 +60,7 @@ public class CliQuercus extends Quercus
   /**
    * Hard-coded to true for CLI according to php.net.
    */
-  @Override
-  public boolean isRegisterArgv() {
+  public override boolean isRegisterArgv() {
     return true;
   }
 }

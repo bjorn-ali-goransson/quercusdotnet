@@ -84,16 +84,14 @@ public class ClassVarNameConstExpr extends Expr {
    *
    * @return the expression value.
    */
-  @Override
-  public Value eval(Env env)
+  public override Value eval(Env env)
   {
     StringValue name = _name.evalStringValue(env);
 
     return env.getClass(_className).getConstant(env, name);
   }
 
-  @Override
-  public String toString()
+  public override String toString()
   {
     return _className + "::{" + _name + "}";
   }

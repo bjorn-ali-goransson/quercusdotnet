@@ -82,8 +82,7 @@ public class ClassVarFieldVarExpr extends AbstractVarExpr {
    *
    * @return the expression value.
    */
-  @Override
-  public Value eval(Env env)
+  public override Value eval(Env env)
   {
     String className = _className.evalString(env);
 
@@ -101,8 +100,7 @@ public class ClassVarFieldVarExpr extends AbstractVarExpr {
    *
    * @return the expression value.
    */
-  @Override
-  public Var evalVar(Env env)
+  public override Var evalVar(Env env)
   {
     String className = _className.evalString(env);
 
@@ -120,8 +118,7 @@ public class ClassVarFieldVarExpr extends AbstractVarExpr {
    *
    * @return the expression value.
    */
-  @Override
-  public Value evalAssignRef(Env env, Value value)
+  public override Value evalAssignRef(Env env, Value value)
   {
     String className = _className.evalString(env);
 

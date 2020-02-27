@@ -123,8 +123,7 @@ public class Function extends AbstractFunction {
   /**
    * Returns the declaring class name
    */
-  @Override
-  public String getDeclaringClassName()
+  public override String getDeclaringClassName()
   {
     ClassDef declaringClass = _info.getDeclaringClass();
 
@@ -137,8 +136,7 @@ public class Function extends AbstractFunction {
   /**
    * Returns the args.
    */
-  @Override
-  public Arg []getArgs(Env env)
+  public override Arg []getArgs(Env env)
   {
     return _args;
   }
@@ -146,8 +144,7 @@ public class Function extends AbstractFunction {
   /**
    * Returns the args.
    */
-  @Override
-  public Arg []getClosureUseArgs()
+  public override Arg []getClosureUseArgs()
   {
     return _closureUseArgs;
   }
@@ -155,8 +152,7 @@ public class Function extends AbstractFunction {
   /**
    * Returns the args.
    */
-  @Override
-  public void setClosureUseArgs(Arg []useArgs)
+  public override void setClosureUseArgs(Arg []useArgs)
   {
     _closureUseArgs = useArgs;
   }
@@ -169,8 +165,7 @@ public class Function extends AbstractFunction {
   /**
    * True for a returns reference.
    */
-  @Override
-  public boolean isReturnsReference(Env env)
+  public override boolean isReturnsReference(Env env)
   {
     return _isReturnsReference;
   }
@@ -186,8 +181,7 @@ public class Function extends AbstractFunction {
   /**
    * Returns the documentation for this function.
    */
-  @Override
-  public String getComment()
+  public override String getComment()
   {
     return _comment;
   }
@@ -200,8 +194,7 @@ public class Function extends AbstractFunction {
   /**
    * Evaluates a function's argument, handling ref vs non-ref
    */
-  @Override
-  public Value []evalArguments(Env env, Expr fun, Expr []args)
+  public override Value []evalArguments(Env env, Expr fun, Expr []args)
   {
     Value []values = new Value[args.length];
 
@@ -321,26 +314,22 @@ public class Function extends AbstractFunction {
     }
   }
 
-  @Override
-  public Value call(Env env, Value []args)
+  public override Value call(Env env, Value []args)
   {
     return callImpl(env, args, false, null, null);
   }
 
-  @Override
-  public Value callCopy(Env env, Value []args)
+  public override Value callCopy(Env env, Value []args)
   {
     return callImpl(env, args, false, null, null).copy();
   }
 
-  @Override
-  public Value callRef(Env env, Value []args)
+  public override Value callRef(Env env, Value []args)
   {
     return callImpl(env, args, true, null, null);
   }
 
-  @Override
-  public Value callClosure(Env env, Value []args, Value []useArgs)
+  public override Value callClosure(Env env, Value []args, Value []useArgs)
   {
     return callImpl(env, args, false, getClosureUseArgs(), useArgs).copy();
   }
@@ -440,8 +429,7 @@ public class Function extends AbstractFunction {
   // method
   //
 
-  @Override
-  public Value callMethod(Env env,
+  public override Value callMethod(Env env,
                           QuercusClass qClass,
                           Value qThis,
                           Value[] args)
@@ -460,8 +448,7 @@ public class Function extends AbstractFunction {
     }
   }
 
-  @Override
-  public Value callMethodRef(Env env,
+  public override Value callMethodRef(Env env,
                              QuercusClass qClass,
                              Value qThis,
                              Value[] args)

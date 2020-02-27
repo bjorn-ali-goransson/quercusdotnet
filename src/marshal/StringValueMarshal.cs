@@ -74,8 +74,7 @@ public class StringValueMarshal extends Marshal
       return null;
   }
 
-  @Override
-  protected int getMarshalingCostImpl(Value argValue)
+  protected override int getMarshalingCostImpl(Value argValue)
   {
     return argValue.toStringValueMarshalCost();
 
@@ -103,8 +102,7 @@ public class StringValueMarshal extends Marshal
       return Marshal.FOUR;
   }
 
-  @Override
-  public Class getExpectedClass()
+  public override Class getExpectedClass()
   {
     return StringValue.class;
   }

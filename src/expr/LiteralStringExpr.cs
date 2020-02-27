@@ -96,8 +96,7 @@ public class LiteralStringExpr extends Expr {
   /**
    * Creates a class field $class::foo
    */
-  @Override
-  public Expr createClassConst(QuercusParser parser, Expr name)
+  public override Expr createClassConst(QuercusParser parser, Expr name)
   {
     ExprFactory factory = parser.getExprFactory();
 
@@ -150,14 +149,12 @@ public class LiteralStringExpr extends Expr {
    *
    * @return the expression value.
    */
-  @Override
-  public StringValue evalStringValue(Env env)
+  public override StringValue evalStringValue(Env env)
   {
     return _value;
   }
 
-  @Override
-  public String toString()
+  public override String toString()
   {
     return "\"" + _value + "\"";
   }

@@ -58,16 +58,14 @@ public class CgiEnv
     return serverEnv.get(createString("QUERY_STRING")).toString();
   }
 
-  @Override
-  protected String getContentType()
+  protected override String getContentType()
   {
     Value serverEnv = getGlobalValue("_SERVER");
 
     return serverEnv.get(createString("CONTENT_TYPE")).toString();
   }
 
-  @Override
-  protected ArrayValue getCookies()
+  protected override ArrayValue getCookies()
   {
     ArrayValue array = new ArrayValueImpl();
     boolean isMagicQuotes = getIniBoolean("magic_quotes_gpc");
@@ -290,8 +288,7 @@ public class CgiEnv
   }
   */
 
-  @Override
-  protected void fillPost(ArrayValue postArray,
+  protected override void fillPost(ArrayValue postArray,
                           ArrayValue files,
                           QuercusHttpServletRequest request,
                           boolean isMagicQuotes)

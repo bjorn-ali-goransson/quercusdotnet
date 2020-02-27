@@ -220,8 +220,7 @@ public class HttpInputOutput extends AbstractBinaryOutput
     return _is;
   }
 
-  @Override
-  public int getAvailable()
+  public override int getAvailable()
     
   {
     return _is.available();
@@ -309,8 +308,7 @@ public class HttpInputOutput extends AbstractBinaryOutput
   /**
    * Reads a line from the buffer.
    */
-  @Override
-  public StringValue readLine(long length)
+  public override StringValue readLine(long length)
     
   {
     return _lineReader.readLine(_env, this, length);
@@ -369,22 +367,19 @@ public class HttpInputOutput extends AbstractBinaryOutput
   /**
    * Unread a character.
    */
-  @Override
-  public void unread()
+  public override void unread()
     
   {
     if (_is != null)
       _is.unread();
   }
 
-  @Override
-  public boolean lock(boolean shared, boolean block)
+  public override boolean lock(boolean shared, boolean block)
   {
     return false;
   }
 
-  @Override
-  public boolean unlock()
+  public override boolean unlock()
   {
     return false;
   }
@@ -407,8 +402,7 @@ public class HttpInputOutput extends AbstractBinaryOutput
     cleanup();
   }
 
-  @Override
-  public void cleanup()
+  public override void cleanup()
   {
     try {
       ReadStream is = _is;

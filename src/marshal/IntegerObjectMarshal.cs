@@ -74,8 +74,7 @@ public class IntegerObjectMarshal extends Marshal
       return Marshal.FOUR;
   }
   
-  @Override
-  public Class getExpectedClass()
+  public override Class getExpectedClass()
   {
     return Integer.class;
   }

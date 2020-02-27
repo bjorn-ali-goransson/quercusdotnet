@@ -123,8 +123,7 @@ public class ObjectExtValue extends ObjectValue
   /**
    * Initializes the incomplete class.
    */
-  @Override
-  public void initObject(Env env, QuercusClass cls)
+  public override void initObject(Env env, QuercusClass cls)
   {
     setQuercusClass(cls);
     _incompleteObjectName = null;
@@ -158,8 +157,7 @@ public class ObjectExtValue extends ObjectValue
   /**
    * Returns the number of entries.
    */
-  @Override
-  public int getSize()
+  public override int getSize()
   {
     return _fieldMap.size();
   }
@@ -167,8 +165,7 @@ public class ObjectExtValue extends ObjectValue
   /**
    * Gets a field value.
    */
-  @Override
-  public final Value getField(Env env, StringValue name)
+  public override final Value getField(Env env, StringValue name)
   {
     Value returnValue = getFieldExt(env, name);
 
@@ -188,8 +185,7 @@ public class ObjectExtValue extends ObjectValue
   /**
    * Gets a field value.
    */
-  @Override
-  public Value getThisField(Env env, StringValue name)
+  public override Value getThisField(Env env, StringValue name)
   {
     Entry entry = getThisEntry(name);
 
@@ -219,8 +215,7 @@ public class ObjectExtValue extends ObjectValue
   /**
    * Returns the array ref.
    */
-  @Override
-  public Var getFieldVar(Env env, StringValue name)
+  public override Var getFieldVar(Env env, StringValue name)
   {
     Entry entry = getEntry(env, name);
 
@@ -263,8 +258,7 @@ public class ObjectExtValue extends ObjectValue
   /**
    * Returns the array ref.
    */
-  @Override
-  public Var getThisFieldVar(Env env, StringValue name)
+  public override Var getThisFieldVar(Env env, StringValue name)
   {
     Entry entry = getThisEntry(name);
 
@@ -307,8 +301,7 @@ public class ObjectExtValue extends ObjectValue
   /**
    * Returns the value as an argument which may be a reference.
    */
-  @Override
-  public Value getFieldArg(Env env, StringValue name, boolean isTop)
+  public override Value getFieldArg(Env env, StringValue name, boolean isTop)
   {
     Entry entry = getEntry(env, name);
 
@@ -332,8 +325,7 @@ public class ObjectExtValue extends ObjectValue
   /**
    * Returns the value as an argument which may be a reference.
    */
-  @Override
-  public Value getThisFieldArg(Env env, StringValue name)
+  public override Value getThisFieldArg(Env env, StringValue name)
   {
     Entry entry = getThisEntry(name);
 
@@ -351,8 +343,7 @@ public class ObjectExtValue extends ObjectValue
   /**
    * Returns the value as an argument which may be a reference.
    */
-  @Override
-  public Value getFieldArgRef(Env env, StringValue name)
+  public override Value getFieldArgRef(Env env, StringValue name)
   {
     Entry entry = getEntry(env, name);
 
@@ -370,8 +361,7 @@ public class ObjectExtValue extends ObjectValue
   /**
    * Returns the value as an argument which may be a reference.
    */
-  @Override
-  public Value getThisFieldArgRef(Env env, StringValue name)
+  public override Value getThisFieldArgRef(Env env, StringValue name)
   {
     Entry entry = getThisEntry(name);
 
@@ -389,8 +379,7 @@ public class ObjectExtValue extends ObjectValue
   /**
    * Adds a new value.
    */
-  @Override
-  public Value putField(Env env, StringValue name, Value value)
+  public override Value putField(Env env, StringValue name, Value value)
   {
     Entry entry = getEntry(env, name);
 
@@ -439,8 +428,7 @@ public class ObjectExtValue extends ObjectValue
   /**
    * Sets/adds field to this object.
    */
-  @Override
-  public Value putThisField(Env env, StringValue name, Value value)
+  public override Value putThisField(Env env, StringValue name, Value value)
   {
     Entry entry = getThisEntry(name);
     
@@ -500,8 +488,7 @@ public class ObjectExtValue extends ObjectValue
     return null;
   }
 
-  @Override
-  public void setFieldInit(boolean isInit)
+  public override void setFieldInit(boolean isInit)
   {
     _isFieldInit = isInit;
   }
@@ -510,8 +497,7 @@ public class ObjectExtValue extends ObjectValue
    * Returns true if the object is in a __set() method call.
    * Prevents infinite recursion.
    */
-  @Override
-  public boolean isFieldInit()
+  public override boolean isFieldInit()
   {
     return _isFieldInit;
   }
@@ -519,8 +505,7 @@ public class ObjectExtValue extends ObjectValue
   /**
    * Adds a new value to the object.
    */
-  @Override
-  public void initField(Env env,
+  public override void initField(Env env,
                         StringValue name,
                         StringValue canonicalName,
                         Value value)
@@ -535,8 +520,7 @@ public class ObjectExtValue extends ObjectValue
   /**
    * Removes a value.
    */
-  @Override
-  public void unsetField(StringValue name)
+  public override void unsetField(StringValue name)
   {
     Value returnValue = _quercusClass.unsetField(Env.getCurrent(),this,name);
     if(returnValue == UnsetValue.UNSET || returnValue == NullValue.NULL) {
@@ -553,8 +537,7 @@ public class ObjectExtValue extends ObjectValue
   /**
    * Removes the field array ref.
    */
-  @Override
-  public void unsetArray(Env env, StringValue name, Value index)
+  public override void unsetArray(Env env, StringValue name, Value index)
   {
     // php/022b
     if (_quercusClass.getFieldGet() != null)
@@ -699,8 +682,7 @@ public class ObjectExtValue extends ObjectValue
   /**
    * Returns an iterator for the key => value pairs.
    */
-  @Override
-  public Iterator<Map.Entry<Value, Value>> getIterator(Env env)
+  public override Iterator<Map.Entry<Value, Value>> getIterator(Env env)
   {
     TraversableDelegate delegate = _quercusClass.getTraversableDelegate();
 
@@ -713,8 +695,7 @@ public class ObjectExtValue extends ObjectValue
   /**
    * Returns an iterator for the key => value pairs.
    */
-  @Override
-  public Iterator<Map.Entry<Value, Value>> getBaseIterator(Env env)
+  public override Iterator<Map.Entry<Value, Value>> getBaseIterator(Env env)
   {
     return new KeyValueIterator(_fieldMap.values().iterator());
   }
@@ -722,8 +703,7 @@ public class ObjectExtValue extends ObjectValue
   /**
    * Returns an iterator for the keys.
    */
-  @Override
-  public Iterator<Value> getKeyIterator(Env env)
+  public override Iterator<Value> getKeyIterator(Env env)
   {
     TraversableDelegate delegate = _quercusClass.getTraversableDelegate();
 
@@ -736,8 +716,7 @@ public class ObjectExtValue extends ObjectValue
   /**
    * Returns an iterator for the values.
    */
-  @Override
-  public Iterator<Value> getValueIterator(Env env)
+  public override Iterator<Value> getValueIterator(Env env)
   {
     TraversableDelegate delegate = _quercusClass.getTraversableDelegate();
 
@@ -754,8 +733,7 @@ public class ObjectExtValue extends ObjectValue
   /**
    * Evaluates a method.
    */
-  @Override
-  public Value callMethod(Env env, StringValue methodName, int hash,
+  public override Value callMethod(Env env, StringValue methodName, int hash,
                           Value []args)
   {
     AbstractFunction fun = _methodMap.get(methodName, hash);
@@ -766,8 +744,7 @@ public class ObjectExtValue extends ObjectValue
   /**
    * Evaluates a method.
    */
-  @Override
-  public Value callMethod(Env env, StringValue methodName, int hash)
+  public override Value callMethod(Env env, StringValue methodName, int hash)
   {
     AbstractFunction fun = _methodMap.get(methodName, hash);
 
@@ -777,8 +754,7 @@ public class ObjectExtValue extends ObjectValue
   /**
    * Evaluates a method.
    */
-  @Override
-  public Value callMethod(Env env, StringValue methodName, int hash,
+  public override Value callMethod(Env env, StringValue methodName, int hash,
                           Value a1)
   {
     AbstractFunction fun = _methodMap.get(methodName, hash);
@@ -789,8 +765,7 @@ public class ObjectExtValue extends ObjectValue
   /**
    * Evaluates a method.
    */
-  @Override
-  public Value callMethod(Env env, StringValue methodName, int hash,
+  public override Value callMethod(Env env, StringValue methodName, int hash,
                           Value a1, Value a2)
   {
     AbstractFunction fun = _methodMap.get(methodName, hash);
@@ -801,8 +776,7 @@ public class ObjectExtValue extends ObjectValue
   /**
    * calls the function.
    */
-  @Override
-  public Value callMethod(Env env,
+  public override Value callMethod(Env env,
                           StringValue methodName, int hash,
                           Value a1, Value a2, Value a3)
   {
@@ -814,8 +788,7 @@ public class ObjectExtValue extends ObjectValue
   /**
    * calls the function.
    */
-  @Override
-  public Value callMethod(Env env,
+  public override Value callMethod(Env env,
                           StringValue methodName, int hash,
                           Value a1, Value a2, Value a3, Value a4)
   {
@@ -827,8 +800,7 @@ public class ObjectExtValue extends ObjectValue
   /**
    * calls the function.
    */
-  @Override
-  public Value callMethod(Env env,
+  public override Value callMethod(Env env,
                           StringValue methodName, int hash,
                           Value a1, Value a2, Value a3, Value a4, Value a5)
   {
@@ -840,8 +812,7 @@ public class ObjectExtValue extends ObjectValue
   /**
    * Evaluates a method.
    */
-  @Override
-  public Value callMethodRef(Env env, StringValue methodName, int hash,
+  public override Value callMethodRef(Env env, StringValue methodName, int hash,
                              Value []args)
   {
     AbstractFunction fun = _methodMap.get(methodName, hash);
@@ -852,8 +823,7 @@ public class ObjectExtValue extends ObjectValue
   /**
    * Evaluates a method.
    */
-  @Override
-  public Value callMethodRef(Env env, StringValue methodName, int hash)
+  public override Value callMethodRef(Env env, StringValue methodName, int hash)
   {
     AbstractFunction fun = _methodMap.get(methodName, hash);
 
@@ -863,8 +833,7 @@ public class ObjectExtValue extends ObjectValue
   /**
    * Evaluates a method.
    */
-  @Override
-  public Value callMethodRef(Env env, StringValue methodName, int hash,
+  public override Value callMethodRef(Env env, StringValue methodName, int hash,
                              Value a1)
   {
     AbstractFunction fun = _methodMap.get(methodName, hash);
@@ -875,8 +844,7 @@ public class ObjectExtValue extends ObjectValue
   /**
    * Evaluates a method.
    */
-  @Override
-  public Value callMethodRef(Env env, StringValue methodName, int hash,
+  public override Value callMethodRef(Env env, StringValue methodName, int hash,
                              Value a1, Value a2)
   {
     AbstractFunction fun = _methodMap.get(methodName, hash);
@@ -887,8 +855,7 @@ public class ObjectExtValue extends ObjectValue
   /**
    * Evaluates a method.
    */
-  @Override
-  public Value callMethodRef(Env env, StringValue methodName, int hash,
+  public override Value callMethodRef(Env env, StringValue methodName, int hash,
                              Value a1, Value a2, Value a3)
   {
     AbstractFunction fun = _methodMap.get(methodName, hash);
@@ -899,8 +866,7 @@ public class ObjectExtValue extends ObjectValue
   /**
    * Evaluates a method.
    */
-  @Override
-  public Value callMethodRef(Env env, StringValue methodName, int hash,
+  public override Value callMethodRef(Env env, StringValue methodName, int hash,
                              Value a1, Value a2, Value a3, Value a4)
   {
     AbstractFunction fun = _methodMap.get(methodName, hash);
@@ -911,8 +877,7 @@ public class ObjectExtValue extends ObjectValue
   /**
    * Evaluates a method.
    */
-  @Override
-  public Value callMethodRef(Env env, StringValue methodName, int hash,
+  public override Value callMethodRef(Env env, StringValue methodName, int hash,
                              Value a1, Value a2, Value a3, Value a4, Value a5)
   {
     AbstractFunction fun = _methodMap.get(methodName, hash);
@@ -924,8 +889,7 @@ public class ObjectExtValue extends ObjectValue
    * Evaluates a method.
    */
   /*
-  @Override
-  public Value callClassMethod(Env env, AbstractFunction fun, Value []args)
+  public override Value callClassMethod(Env env, AbstractFunction fun, Value []args)
   {
     return fun.callMethod(env, this, args);
   }
@@ -935,15 +899,13 @@ public class ObjectExtValue extends ObjectValue
    * Returns the value for the variable, creating an object if the var
    * is unset.
    */
-  @Override
-  public Value getObject(Env env)
+  public override Value getObject(Env env)
   {
     return this;
   }
 
   /*
-  @Override
-  public Value getObject(Env env, Value index)
+  public override Value getObject(Env env, Value index)
   {
     // php/3d92
 
@@ -956,8 +918,7 @@ public class ObjectExtValue extends ObjectValue
   /**
    * Copy for assignment.
    */
-  @Override
-  public Value copy()
+  public override Value copy()
   {
     return this;
   }
@@ -965,8 +926,7 @@ public class ObjectExtValue extends ObjectValue
   /**
    * Copy for serialization
    */
-  @Override
-  public Value copy(Env env, IdentityHashMap<Value,Value> map)
+  public override Value copy(Env env, IdentityHashMap<Value,Value> map)
   {
     Value oldValue = map.get(this);
 
@@ -981,8 +941,7 @@ public class ObjectExtValue extends ObjectValue
   /**
    * Copy for serialization
    */
-  @Override
-  public Value copyTree(Env env, CopyRoot root)
+  public override Value copyTree(Env env, CopyRoot root)
   {
     // php/420c
 
@@ -997,8 +956,7 @@ public class ObjectExtValue extends ObjectValue
   /**
    * Clone the object
    */
-  @Override
-  public Value clone(Env env)
+  public override Value clone(Env env)
   {
     ObjectExtValue newObject = new ObjectExtValue(env, _quercusClass);
 
@@ -1030,8 +988,7 @@ public class ObjectExtValue extends ObjectValue
    * @param sb holds result of serialization
    * @param serializeMap holds reference indexes
    */
-  @Override
-  public void serialize(Env env,
+  public override void serialize(Env env,
                         StringBuilder sb,
                         SerializeMap serializeMap)
   {
@@ -1111,8 +1068,7 @@ public class ObjectExtValue extends ObjectValue
   /**
    * Exports the value.
    */
-  @Override
-  protected void varExportImpl(StringValue sb, int level)
+  protected override void varExportImpl(StringValue sb, int level)
   {
     if (level != 0) {
       sb.append('\n');
@@ -1153,8 +1109,7 @@ public class ObjectExtValue extends ObjectValue
   /**
    * Converts to a string builder
    */
-  @Override
-  public StringValue toStringBuilder(Env env)
+  public override StringValue toStringBuilder(Env env)
   {
     return toString(env).toStringBuilder(env);
   }
@@ -1171,8 +1126,7 @@ public class ObjectExtValue extends ObjectValue
    * Converts to a string.
    * @param env
    */
-  @Override
-  public StringValue toString(Env env)
+  public override StringValue toString(Env env)
   {
     AbstractFunction toString = _quercusClass.getToString();
 
@@ -1186,8 +1140,7 @@ public class ObjectExtValue extends ObjectValue
    * Converts to a string.
    * @param env
    */
-  @Override
-  public void print(Env env)
+  public override void print(Env env)
   {
     env.print(toString(env));
   }
@@ -1195,8 +1148,7 @@ public class ObjectExtValue extends ObjectValue
   /**
    * Converts to an array.
    */
-  @Override
-  public ArrayValue toArray()
+  public override ArrayValue toArray()
   {
     ArrayValue array = new ArrayValueImpl();
 
@@ -1210,8 +1162,7 @@ public class ObjectExtValue extends ObjectValue
   /**
    * Converts to an object.
    */
-  @Override
-  public Value toObject(Env env)
+  public override Value toObject(Env env)
   {
     return this;
   }
@@ -1219,14 +1170,12 @@ public class ObjectExtValue extends ObjectValue
   /**
    * Converts to an object.
    */
-  @Override
-  public Object toJavaObject()
+  public override Object toJavaObject()
   {
     return this;
   }
 
-  @Override
-  public Set<? extends Map.Entry<Value,Value>> entrySet()
+  public override Set<? extends Map.Entry<Value,Value>> entrySet()
   {
     return new EntrySet();
   }
@@ -1273,8 +1222,7 @@ public class ObjectExtValue extends ObjectValue
     out.print("}");
   }
 
-  @Override
-  protected void printRImpl(Env env,
+  protected override void printRImpl(Env env,
                             WriteStream out,
                             int depth,
                             IdentityHashMap<Value, String> valueSet)
@@ -1316,8 +1264,7 @@ public class ObjectExtValue extends ObjectValue
   /**
    * Encodes the value in JSON.
    */
-  @Override
-  public void jsonEncode(Env env, JsonEncodeContext context, StringValue sb)
+  public override void jsonEncode(Env env, JsonEncodeContext context, StringValue sb)
   {
     if (true) {
       super.jsonEncode(env, context, sb);
@@ -1381,8 +1328,7 @@ public class ObjectExtValue extends ObjectValue
     }
   }
 
-  @Override
-  public boolean issetField(Env env, StringValue name)
+  public override boolean issetField(Env env, StringValue name)
   {
     Entry entry = getThisEntry(name);
 
@@ -1395,16 +1341,14 @@ public class ObjectExtValue extends ObjectValue
     return result;
   }
 
-  @Override
-  public boolean isFieldExists(Env env, StringValue name)
+  public override boolean isFieldExists(Env env, StringValue name)
   {
     Entry entry = getThisEntry(name);
 
     return entry != null;
   }
 
-  @Override
-  public String toString()
+  public override String toString()
   {
     if (CurrentTime.isTest())
       return getClass().getSimpleName() +  "[" + _className + "]";
@@ -1419,14 +1363,12 @@ public class ObjectExtValue extends ObjectValue
     {
     }
 
-    @Override
-    public int size()
+    public override int size()
     {
       return ObjectExtValue.this.getSize();
     }
 
-    @Override
-    public Iterator<Map.Entry<Value,Value>> iterator()
+    public override Iterator<Map.Entry<Value,Value>> iterator()
     {
       return new KeyValueIterator(_fieldMap.values().iterator());
     }
@@ -1739,8 +1681,7 @@ public class ObjectExtValue extends ObjectValue
         out.print(' ');
     }
 
-    @Override
-    public String toString()
+    public override String toString()
     {
       return "ObjectExtValue.Entry[" + getKey() + "]";
     }

@@ -81,8 +81,7 @@ public class ClassScope extends Scope
   /**
    * Adds a function defined in a conditional block.
    */
-  @Override
-  public void addConditionalFunction(StringValue name, Function function)
+  public override void addConditionalFunction(StringValue name, Function function)
   {
     //addFunction(name, function);
   }
@@ -117,8 +116,7 @@ public class ClassScope extends Scope
   /**
    * Adds a class
    */
-  @Override
-  public InterpretedClassDef addClass(Location location, String name,
+  public override InterpretedClassDef addClass(Location location, String name,
                                       String parentName,
                                       ArrayList<String> ifaceList,
                                       int index,

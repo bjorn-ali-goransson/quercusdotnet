@@ -70,8 +70,7 @@ public class ThisExpr extends AbstractVarExpr {
   /**
    * Creates a field ref
    */
-  @Override
-  public Expr createFieldGet(ExprFactory factory,
+  public override Expr createFieldGet(ExprFactory factory,
                              Location location,
                              Expr name)
   {
@@ -97,8 +96,7 @@ public class ThisExpr extends AbstractVarExpr {
    *
    * @return the expression value.
    */
-  @Override
-  public Value evalArg(Env env, boolean isTop)
+  public override Value evalArg(Env env, boolean isTop)
   {
     return env.getThis();
   }
@@ -110,8 +108,7 @@ public class ThisExpr extends AbstractVarExpr {
    *
    * @return the expression value.
    */
-  @Override
-  public Var evalVar(Env env)
+  public override Var evalVar(Env env)
   {
     return env.getThis().toVar();
   }
@@ -123,8 +120,7 @@ public class ThisExpr extends AbstractVarExpr {
    *
    * @return the expression value.
    */
-  @Override
-  public Value evalAssignValue(Env env, Value value)
+  public override Value evalAssignValue(Env env, Value value)
   {
     env.error(L.l("can't assign $this"), getLocation());
 
@@ -138,8 +134,7 @@ public class ThisExpr extends AbstractVarExpr {
    *
    * @return the expression value.
    */
-  @Override
-  public Value evalAssignRef(Env env, Value value)
+  public override Value evalAssignRef(Env env, Value value)
   {
     env.error(L.l("can't assign $this"), getLocation());
 

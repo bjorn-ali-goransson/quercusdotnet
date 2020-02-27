@@ -61,20 +61,17 @@ public class DocumentView extends SimpleView
     return _element.getNodeName();
   }
 
-  @Override
-  public ChildrenView getChildren(String namespace, String prefix)
+  public override ChildrenView getChildren(String namespace, String prefix)
   {
     return _element.getChildren(namespace, prefix);
   }
 
-  @Override
-  public AttributeListView getAttributes(String namespace)
+  public override AttributeListView getAttributes(String namespace)
   {
     return _element.getAttributes(namespace);
   }
 
-  @Override
-  public SimpleView addChild(Env env,
+  public override SimpleView addChild(Env env,
                              String name,
                              String value,
                              String namespace)
@@ -82,8 +79,7 @@ public class DocumentView extends SimpleView
     return _element.addChild(env, name, value, namespace);
   }
 
-  @Override
-  public void addAttribute(Env env,
+  public override void addAttribute(Env env,
                            String name,
                            String value,
                            String namespace)
@@ -91,92 +87,78 @@ public class DocumentView extends SimpleView
     _element.addAttribute(env, name, value, namespace);
   }
 
-  @Override
-  public SimpleView getIndex(Env env, Value indexV)
+  public override SimpleView getIndex(Env env, Value indexV)
   {
     return _element.getIndex(env, indexV);
   }
 
-  @Override
-  public SimpleView setIndex(Env env, Value indexV, Value value)
+  public override SimpleView setIndex(Env env, Value indexV, Value value)
   {
     return _element.setIndex(env, indexV, value);
   }
 
-  @Override
-  public SimpleView getField(Env env, Value indexV)
+  public override SimpleView getField(Env env, Value indexV)
   {
     return _element.getField(env, indexV);
   }
 
-  @Override
-  public SimpleView setField(Env env, Value indexV, Value value)
+  public override SimpleView setField(Env env, Value indexV, Value value)
   {
     return _element.setField(env, indexV, value);
   }
 
-  @Override
-  public List<SimpleView> xpath(Env env,
+  public override List<SimpleView> xpath(Env env,
                                 SimpleNamespaceContext context,
                                 String expression)
   {
     return _element.xpath(env, context, expression);
   }
 
-  @Override
-  public int getCount()
+  public override int getCount()
   {
     return _element.getCount();
   }
   
-  @Override
-  public boolean issetField(Env env, String name)
+  public override boolean issetField(Env env, String name)
   {
     return _element.issetField(env, name);
   }
 
-  @Override
-  public HashMap<String,String> getNamespaces(boolean isRecursive,
+  public override HashMap<String,String> getNamespaces(boolean isRecursive,
                                               boolean isFromRoot,
                                               boolean isCheckUsage)
   {
     return _element.getNamespaces(isRecursive, isFromRoot, isCheckUsage);
   }
 
-  @Override
-  public String toString(Env env)
+  public override String toString(Env env)
   {
     return _element.toString(env);
   }
 
-  @Override
-  public Iterator<Map.Entry<IteratorIndex,SimpleView>> getIterator()
+  public override Iterator<Map.Entry<IteratorIndex,SimpleView>> getIterator()
   {
     return _element.getIterator();
   }
 
-  @Override
-  public Set<Map.Entry<Value,Value>> getEntrySet(Env env, QuercusClass cls)
+  public override Set<Map.Entry<Value,Value>> getEntrySet(Env env, QuercusClass cls)
   {
     return _element.getEntrySet(env, cls);
   }
 
-  @Override
-  public boolean toXml(Env env, StringBuilder sb)
+  public override boolean toXml(Env env, StringBuilder sb)
   {
     SimpleUtil.toXml(env, sb, getOwnerDocument());
 
     return true;
   }
 
-  @Override
-  public Value toDumpValue(Env env, QuercusClass cls, boolean isChildren)
+  public override Value toDumpValue(Env env, QuercusClass cls, boolean isChildren)
   {
     return _element.toDumpValue(env, cls, true);
   }
 
-  @Override
-  public String toString()
+  public override String toString()
   {
     return getClass().getSimpleName() + "[" + _element + "]";
   }

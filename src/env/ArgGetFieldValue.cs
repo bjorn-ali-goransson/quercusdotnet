@@ -57,8 +57,7 @@ public class ArgGetFieldValue extends ArgValue {
   /**
    * Creates an argument which may create the given field.
    */
-  @Override
-  public Value getFieldArg(Env env, StringValue name, boolean isTop)
+  public override Value getFieldArg(Env env, StringValue name, boolean isTop)
   {
     // php/3d2q
     return new ArgGetFieldValue(env, this, name);
@@ -67,8 +66,7 @@ public class ArgGetFieldValue extends ArgValue {
   /**
    * Converts to a reference variable.
    */
-  @Override
-  public Var toLocalVarDeclAsRef()
+  public override Var toLocalVarDeclAsRef()
   {
     // php/3d2t
     return _obj.toAutoObject(_env).getFieldVar(_env, _name).toLocalVarDeclAsRef();
@@ -77,8 +75,7 @@ public class ArgGetFieldValue extends ArgValue {
   /**
    * Converts to a value.
    */
-  @Override
-  public Value toValue()
+  public override Value toValue()
   {
     return _obj.getField(_env, _name);
   }
@@ -86,8 +83,7 @@ public class ArgGetFieldValue extends ArgValue {
   /**
    * Converts to a read-only function argument.
    */
-  @Override
-  public Value toLocalValueReadOnly()
+  public override Value toLocalValueReadOnly()
   {
     return toValue();
   }
@@ -95,8 +91,7 @@ public class ArgGetFieldValue extends ArgValue {
   /**
    * Converts to a function argument.
    */
-  @Override
-  public Value toLocalValue()
+  public override Value toLocalValue()
   {
     return toValue();
   }
@@ -104,14 +99,12 @@ public class ArgGetFieldValue extends ArgValue {
   /**
    * Converts to a reference variable.
    */
-  @Override
-  public Value toLocalRef()
+  public override Value toLocalRef()
   {
     return _obj.getField(_env, _name);
   }
 
-  @Override
-  public Value toAutoArray()
+  public override Value toAutoArray()
   {
     Value parent = _obj.toAutoObject(_env);
     Value value = parent.getField(_env, _name);
@@ -127,8 +120,7 @@ public class ArgGetFieldValue extends ArgValue {
     return value;
   }
 
-  @Override
-  public Value toAutoObject(Env env)
+  public override Value toAutoObject(Env env)
   {
     Value parent = _obj.toAutoObject(env);
     Value value = parent.getField(env, _name);
@@ -154,8 +146,7 @@ public class ArgGetFieldValue extends ArgValue {
   /**
    * Converts to a reference variable.
    */
-  @Override
-  public Value toRefValue()
+  public override Value toRefValue()
   {
     return _obj.getFieldVar(_env, _name);
   }
@@ -171,8 +162,7 @@ public class ArgGetFieldValue extends ArgValue {
   /**
    * Converts to a reference variable.
    */
-  @Override
-  public Var getVar(Value index)
+  public override Var getVar(Value index)
   {
     return _obj.getFieldArray(_env, _name).getVar(index);
   }
@@ -180,21 +170,18 @@ public class ArgGetFieldValue extends ArgValue {
   /**
    * Converts to a reference variable.
    */
-  @Override
-  public Var getFieldVar(Env env, StringValue name)
+  public override Var getFieldVar(Env env, StringValue name)
   {
     // php/3d2q
     return _obj.getFieldObject(_env, _name).getFieldVar(_env, name);
   }
 
-  @Override
-  public StringValue toStringValue()
+  public override StringValue toStringValue()
   {
     return toValue().toStringValue();
   }
 
-  @Override
-  public String toJavaString()
+  public override String toJavaString()
   {
     return toValue().toJavaString();
   }

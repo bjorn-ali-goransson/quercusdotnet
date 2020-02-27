@@ -94,14 +94,12 @@ abstract public class AbstractFunction extends Callback {
     return getName();
   }
 
-  @Override
-  public boolean isInternal(Env env)
+  public override boolean isInternal(Env env)
   {
     return false;
   }
 
-  @Override
-  public boolean isValid(Env env)
+  public override boolean isValid(Env env)
   {
     return true;
   }
@@ -109,8 +107,7 @@ abstract public class AbstractFunction extends Callback {
   /**
    * Returns the name of the file where this is defined in.
    */
-  @Override
-  public String getDeclFileName(Env env)
+  public override String getDeclFileName(Env env)
   {
     return _location.getFileName();
   }
@@ -118,8 +115,7 @@ abstract public class AbstractFunction extends Callback {
   /**
    * Returns the start line in the file where this is defined in.
    */
-  @Override
-  public int getDeclStartLine(Env env)
+  public override int getDeclStartLine(Env env)
   {
     return _location.getLineNumber();
   }
@@ -127,8 +123,7 @@ abstract public class AbstractFunction extends Callback {
   /**
    * Returns the end line in the file where this is defined in.
    */
-  @Override
-  public int getDeclEndLine(Env env)
+  public override int getDeclEndLine(Env env)
   {
     return _location.getLineNumber();
   }
@@ -136,8 +131,7 @@ abstract public class AbstractFunction extends Callback {
   /**
    * Returns the comment in the file where this is defined in.
    */
-  @Override
-  public String getDeclComment(Env env)
+  public override String getDeclComment(Env env)
   {
     return getComment();
   }
@@ -145,14 +139,12 @@ abstract public class AbstractFunction extends Callback {
   /**
    * Returns true if this returns a reference.
    */
-  @Override
-  public boolean isReturnsReference(Env env)
+  public override boolean isReturnsReference(Env env)
   {
     return true;
   }
 
-  @Override
-  public Arg []getArgs(Env env)
+  public override Arg []getArgs(Env env)
   {
     return NULL_ARGS;
   }
@@ -469,14 +461,12 @@ abstract public class AbstractFunction extends Callback {
   /**
    * Returns true for an object
    */
-  @Override
-  public boolean isObject()
+  public override boolean isObject()
   {
     return true;
   }
 
-  @Override
-  public String getType()
+  public override String getType()
   {
     return "object";
   }
@@ -484,8 +474,7 @@ abstract public class AbstractFunction extends Callback {
   /**
    * The object is callable if it has an __invoke method
    */
-  @Override
-  public boolean isCallable(Env env, boolean isCheckSyntaxOnly, Value nameRef)
+  public override boolean isCallable(Env env, boolean isCheckSyntaxOnly, Value nameRef)
   {
     throw new UnimplementedException();
   }
@@ -493,14 +482,12 @@ abstract public class AbstractFunction extends Callback {
   /**
    * Evaluates the function.
    */
-  @Override
-  abstract public Value call(Env env, Value []args);
+  abstract override public Value call(Env env, Value []args);
 
   /**
    * Evaluates the function, returning a reference.
    */
-  @Override
-  public Value callRef(Env env, Value []args)
+  public override Value callRef(Env env, Value []args)
   {
     return call(env, args);
   }
@@ -508,8 +495,7 @@ abstract public class AbstractFunction extends Callback {
   /**
    * Evaluates the function, returning a copy
    */
-  @Override
-  public Value callCopy(Env env, Value []args)
+  public override Value callCopy(Env env, Value []args)
   {
     return call(env, args).copyReturn();
   }
@@ -525,8 +511,7 @@ abstract public class AbstractFunction extends Callback {
   /**
    * Evaluates the function.
    */
-  @Override
-  public Value call(Env env)
+  public override Value call(Env env)
   {
     return call(env, NULL_ARG_VALUES);
   }
@@ -534,8 +519,7 @@ abstract public class AbstractFunction extends Callback {
   /**
    * Evaluates the function with an argument .
    */
-  @Override
-  public Value call(Env env, Value a1)
+  public override Value call(Env env, Value a1)
   {
     return call(env, new Value[] { a1 });
   }
@@ -543,8 +527,7 @@ abstract public class AbstractFunction extends Callback {
   /**
    * Evaluates the function with arguments
    */
-  @Override
-  public Value call(Env env, Value a1, Value a2)
+  public override Value call(Env env, Value a1, Value a2)
   {
     return call(env, new Value[] { a1, a2 });
   }
@@ -552,8 +535,7 @@ abstract public class AbstractFunction extends Callback {
   /**
    * Evaluates the function with arguments
    */
-  @Override
-  public Value call(Env env, Value a1, Value a2, Value a3)
+  public override Value call(Env env, Value a1, Value a2, Value a3)
   {
     return call(env, new Value[] { a1, a2, a3 });
   }
@@ -561,8 +543,7 @@ abstract public class AbstractFunction extends Callback {
   /**
    * Evaluates the function with arguments
    */
-  @Override
-  public Value call(Env env, Value a1, Value a2, Value a3, Value a4)
+  public override Value call(Env env, Value a1, Value a2, Value a3, Value a4)
   {
     return call(env, new Value[] { a1, a2, a3, a4 });
   }
@@ -570,8 +551,7 @@ abstract public class AbstractFunction extends Callback {
   /**
    * Evaluates the function with arguments
    */
-  @Override
-  public Value call(Env env, Value a1, Value a2, Value a3, Value a4, Value a5)
+  public override Value call(Env env, Value a1, Value a2, Value a3, Value a4, Value a5)
   {
     return call(env, new Value[] { a1, a2, a3, a4, a5 });
   }
@@ -579,8 +559,7 @@ abstract public class AbstractFunction extends Callback {
   /**
    * Evaluates the function.
    */
-  @Override
-  public Value callRef(Env env)
+  public override Value callRef(Env env)
   {
     return callRef(env, NULL_ARG_VALUES);
   }
@@ -588,8 +567,7 @@ abstract public class AbstractFunction extends Callback {
   /**
    * Evaluates the function with an argument .
    */
-  @Override
-  public Value callRef(Env env, Value a1)
+  public override Value callRef(Env env, Value a1)
   {
     return callRef(env, new Value[] { a1 });
   }
@@ -597,8 +575,7 @@ abstract public class AbstractFunction extends Callback {
   /**
    * Evaluates the function with arguments
    */
-  @Override
-  public Value callRef(Env env, Value a1, Value a2)
+  public override Value callRef(Env env, Value a1, Value a2)
   {
     return callRef(env, new Value[] { a1, a2 });
   }
@@ -606,8 +583,7 @@ abstract public class AbstractFunction extends Callback {
   /**
    * Evaluates the function with arguments
    */
-  @Override
-  public Value callRef(Env env, Value a1, Value a2, Value a3)
+  public override Value callRef(Env env, Value a1, Value a2, Value a3)
   {
     return callRef(env, new Value[] { a1, a2, a3 });
   }
@@ -615,8 +591,7 @@ abstract public class AbstractFunction extends Callback {
   /**
    * Evaluates the function with arguments
    */
-  @Override
-  public Value callRef(Env env, Value a1, Value a2, Value a3, Value a4)
+  public override Value callRef(Env env, Value a1, Value a2, Value a3, Value a4)
   {
     return callRef(env, new Value[] { a1, a2, a3, a4 });
   }
@@ -624,8 +599,7 @@ abstract public class AbstractFunction extends Callback {
   /**
    * Evaluates the function with arguments
    */
-  @Override
-  public Value callRef(Env env,
+  public override Value callRef(Env env,
                        Value a1, Value a2, Value a3, Value a4, Value a5)
   {
     return callRef(env, new Value[] { a1, a2, a3, a4, a5 });
@@ -893,8 +867,7 @@ abstract public class AbstractFunction extends Callback {
       oldThis != null ? oldThis.getClassName() : null));
   }
 
-  @Override
-  public String toString()
+  public override String toString()
   {
     return getClass().getSimpleName() + "[" + getName() + "]";
   }

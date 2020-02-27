@@ -57,8 +57,7 @@ public class ArgObjectGetValue extends Value {
   /**
    * Converts to a ref var.
    */
-  @Override
-  public Var toLocalVarDeclAsRef()
+  public override Var toLocalVarDeclAsRef()
   {
     // quercus/3d2t
     return _obj.getVar(_index).toLocalVarDeclAsRef();

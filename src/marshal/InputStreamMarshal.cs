@@ -72,8 +72,7 @@ public class InputStreamMarshal extends Marshal
       return Marshal.FOUR;
   }
 
-  @Override
-  public Class getExpectedClass()
+  public override Class getExpectedClass()
   {
     return InputStream.class;
   }

@@ -139,62 +139,52 @@ public class LazyMethod extends AbstractFunction
     }
   }
 
-  @Override
-  public boolean isStatic()
+  public override boolean isStatic()
   {
     return getFun().isStatic();
   }
 
-  @Override
-  public boolean isFinal()
+  public override boolean isFinal()
   {
     return getFun().isFinal();
   }
 
-  @Override
-  public boolean isPublic()
+  public override boolean isPublic()
   {
     return getFun().isPublic();
   }
 
-  @Override
-  public boolean isProtected()
+  public override boolean isProtected()
   {
     return getFun().isProtected();
   }
 
-  @Override
-  public boolean isPrivate()
+  public override boolean isPrivate()
   {
     return getFun().isPrivate();
   }
 
-  @Override
-  public boolean isAbstract()
+  public override boolean isAbstract()
   {
     return getFun().isAbstract();
   }
 
-  @Override
-  public boolean isTraitMethod()
+  public override boolean isTraitMethod()
   {
     return getFun().isTraitMethod();
   }
 
-  @Override
-  public String getComment()
+  public override String getComment()
   {
     return getFun().getComment();
   }
 
-  @Override
-  public String getDeclaringClassName()
+  public override String getDeclaringClassName()
   {
     return getFun().getDeclaringClassName();
   }
 
-  @Override
-  public Arg []getArgs(Env env)
+  public override Arg []getArgs(Env env)
   {
     return getFun().getArgs(env);
   }
@@ -203,8 +193,7 @@ public class LazyMethod extends AbstractFunction
   // method
   //
 
-  @Override
-  public Value callMethod(Env env,
+  public override Value callMethod(Env env,
                           QuercusClass qClass,
                           Value qThis,
                           Value []args)
@@ -212,16 +201,14 @@ public class LazyMethod extends AbstractFunction
     return getFun().callMethod(env, qClass, qThis, args);
   }
 
-  @Override
-  public Value callMethod(Env env,
+  public override Value callMethod(Env env,
                           QuercusClass qClass,
                           Value qThis)
   {
     return getFun().callMethod(env, qClass, qThis);
   }
 
-  @Override
-  public Value callMethod(Env env,
+  public override Value callMethod(Env env,
                           QuercusClass qClass,
                           Value qThis,
                           Value a1)
@@ -229,8 +216,7 @@ public class LazyMethod extends AbstractFunction
     return getFun().callMethod(env, qClass, qThis, a1);
   }
 
-  @Override
-  public Value callMethod(Env env,
+  public override Value callMethod(Env env,
                           QuercusClass qClass,
                           Value qThis,
                           Value a1, Value a2)
@@ -238,8 +224,7 @@ public class LazyMethod extends AbstractFunction
     return getFun().callMethod(env, qClass, qThis, a1, a2);
   }
 
-  @Override
-  public Value callMethod(Env env,
+  public override Value callMethod(Env env,
                           QuercusClass qClass,
                           Value qThis,
                           Value a1, Value a2, Value a3)
@@ -247,8 +232,7 @@ public class LazyMethod extends AbstractFunction
     return getFun().callMethod(env, qClass, qThis, a1, a2, a3);
   }
 
-  @Override
-  public Value callMethod(Env env,
+  public override Value callMethod(Env env,
                           QuercusClass qClass,
                           Value qThis,
                           Value a1, Value a2, Value a3, Value a4)
@@ -256,8 +240,7 @@ public class LazyMethod extends AbstractFunction
     return getFun().callMethod(env, qClass, qThis, a1, a2, a3, a4);
   }
 
-  @Override
-  public Value callMethod(Env env, QuercusClass qClass, Value qThis,
+  public override Value callMethod(Env env, QuercusClass qClass, Value qThis,
                           Value a1, Value a2, Value a3, Value a4, Value a5)
   {
     return getFun().callMethod(env, qClass, qThis, a1, a2, a3, a4, a5);
@@ -267,8 +250,7 @@ public class LazyMethod extends AbstractFunction
   // methodRef
   //
 
-  @Override
-  public Value callMethodRef(Env env,
+  public override Value callMethodRef(Env env,
                              QuercusClass qClass,
                              Value qThis,
                              Value []args)
@@ -276,55 +258,47 @@ public class LazyMethod extends AbstractFunction
     return getFun().callMethodRef(env, qClass, qThis, args);
   }
 
-  @Override
-  public Value callMethodRef(Env env, QuercusClass qClass, Value qThis)
+  public override Value callMethodRef(Env env, QuercusClass qClass, Value qThis)
   {
     return getFun().callMethodRef(env, qClass, qThis);
   }
 
-  @Override
-  public Value callMethodRef(Env env, QuercusClass qClass, Value qThis,
+  public override Value callMethodRef(Env env, QuercusClass qClass, Value qThis,
                              Value a1)
   {
     return getFun().callMethodRef(env, qClass, qThis, a1);
   }
 
-  @Override
-  public Value callMethodRef(Env env, QuercusClass qClass, Value qThis,
+  public override Value callMethodRef(Env env, QuercusClass qClass, Value qThis,
                              Value a1, Value a2)
   {
     return getFun().callMethodRef(env, qClass, qThis, a1, a2);
   }
 
-  @Override
-  public Value callMethodRef(Env env, QuercusClass qClass, Value qThis,
+  public override Value callMethodRef(Env env, QuercusClass qClass, Value qThis,
                              Value a1, Value a2, Value a3)
   {
     return getFun().callMethodRef(env, qClass, qThis, a1, a2, a3);
   }
 
-  @Override
-  public Value callMethodRef(Env env, QuercusClass qClass, Value qThis,
+  public override Value callMethodRef(Env env, QuercusClass qClass, Value qThis,
                              Value a1, Value a2, Value a3, Value a4)
   {
     return getFun().callMethodRef(env, qClass, qThis, a1, a2, a3, a4);
   }
 
-  @Override
-  public Value callMethodRef(Env env, QuercusClass qClass, Value qThis,
+  public override Value callMethodRef(Env env, QuercusClass qClass, Value qThis,
                              Value a1, Value a2, Value a3, Value a4, Value a5)
   {
     return getFun().callMethodRef(env, qClass, qThis, a1, a2, a3, a4, a5);
   }
 
-  @Override
-  public Value call(Env env, Value[] args)
+  public override Value call(Env env, Value[] args)
   {
     throw new UnsupportedOperationException(getClass().getName());
   }
 
-  @Override
-  public String toString()
+  public override String toString()
   {
     return getClass().getSimpleName() + "[" + _name + "]";
   }

@@ -94,8 +94,7 @@ public class GoogleQuercus extends QuercusContext
     jdbcDriverContext.setProtocol("google:rdbms", driver);
   }
 
-  @Override
-  public Env createEnv(QuercusPage page,
+  public override Env createEnv(QuercusPage page,
                        WriteStream out,
                        QuercusHttpServletRequest request,
                        QuercusHttpServletResponse response)

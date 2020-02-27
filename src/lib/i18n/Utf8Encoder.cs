@@ -45,8 +45,7 @@ public class Utf8Encoder
     return true;
   }
 
-  @Override
-  public boolean isEncodable(StringValue str, int start, int end)
+  public override boolean isEncodable(StringValue str, int start, int end)
   {
     for (int i = start; i < end; i++) {
       char ch = str.charAt(i);
@@ -69,8 +68,7 @@ public class Utf8Encoder
     return true;
   }
 
-  @Override
-  public StringValue encode(StringValue sb, CharSequence str,
+  public override StringValue encode(StringValue sb, CharSequence str,
                             int start, int end)
   {
     for (int i = start; i < end; i++) {

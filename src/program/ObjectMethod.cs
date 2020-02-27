@@ -65,14 +65,12 @@ public class ObjectMethod extends Function {
     return _quercusClass.getName();
   }
 
-  @Override
-  public ClassDef getDeclaringClass()
+  public override ClassDef getDeclaringClass()
   {
     return _quercusClass;
   }
 
-  @Override
-  public boolean isObjectMethod()
+  public override boolean isObjectMethod()
   {
     return true;
   }

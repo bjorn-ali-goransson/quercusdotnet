@@ -189,8 +189,7 @@ public class ConstStringValue
   /**
    * Converts to a double vaule
    */
-  @Override
-  public DoubleValue toDoubleValue()
+  public override DoubleValue toDoubleValue()
   {
     if (_doubleValue == null)
       _doubleValue = new DoubleValue(super.toDouble());
@@ -201,8 +200,7 @@ public class ConstStringValue
   /**
    * Converts to a long.
    */
-  @Override
-  public long toLong()
+  public override long toLong()
   {
     return toLongValue().toLong();
   }
@@ -210,8 +208,7 @@ public class ConstStringValue
   /**
    * Converts to a double.
    */
-  @Override
-  public double toDouble()
+  public override double toDouble()
   {
     return toDoubleValue().toDouble();
   }
@@ -219,8 +216,7 @@ public class ConstStringValue
   /**
    * Returns the ValueType.
    */
-  @Override
-  public ValueType getValueType()
+  public override ValueType getValueType()
   {
     if (_valueType == null) {
       _valueType = super.getValueType();
@@ -232,8 +228,7 @@ public class ConstStringValue
   /**
    * Converts to a key.
    */
-  @Override
-  public Value toKey()
+  public override Value toKey()
   {
     if (_key == null) {
       _key = super.toKey();
@@ -242,8 +237,7 @@ public class ConstStringValue
     return _key;
   }
 
-  @Override
-  public StringValue toLowerCase(Locale locale)
+  public override StringValue toLowerCase(Locale locale)
   {
     if (_lowerCase == null) {
       _lowerCase = super.toLowerCase(locale);
@@ -255,8 +249,7 @@ public class ConstStringValue
   /**
    * Serializes the value.
    */
-  @Override
-  public void serialize(Env env, StringBuilder sb)
+  public override void serialize(Env env, StringBuilder sb)
   {
     if (_serializeValue == null) {
       StringBuilder s = new StringBuilder();

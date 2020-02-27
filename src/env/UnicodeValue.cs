@@ -72,8 +72,7 @@ abstract public class UnicodeValue extends StringValue {
     return sb.toString();
   }
 
-  @Override
-  public void varDumpImpl(Env env,
+  public override void varDumpImpl(Env env,
                           WriteStream out,
                           int depth,
                           IdentityHashMap<Value, String> valueSet)
@@ -97,8 +96,7 @@ abstract public class UnicodeValue extends StringValue {
   /**
    * Convert to a unicode value.
    */
-  @Override
-  public StringValue toUnicodeValue()
+  public override StringValue toUnicodeValue()
   {
     return this;
   }
@@ -106,8 +104,7 @@ abstract public class UnicodeValue extends StringValue {
   /**
    * Convert to a unicode value.
    */
-  @Override
-  public StringValue toUnicodeValue(Env env)
+  public override StringValue toUnicodeValue(Env env)
   {
     return this;
   }
@@ -118,8 +115,7 @@ abstract public class UnicodeValue extends StringValue {
    * @param env
    * @param charset
    */
-  @Override
-  public StringValue toUnicodeValue(Env env, String charset)
+  public override StringValue toUnicodeValue(Env env, String charset)
   {
     return this;
   }
@@ -127,8 +123,7 @@ abstract public class UnicodeValue extends StringValue {
   /**
    * Converts to a string builder
    */
-  @Override
-  public StringValue toStringBuilder()
+  public override StringValue toStringBuilder()
   {
     UnicodeBuilderValue sb = new UnicodeBuilderValue();
 
@@ -140,8 +135,7 @@ abstract public class UnicodeValue extends StringValue {
   /**
    * Returns true for UnicodeValue
    */
-  @Override
-  public boolean isUnicode()
+  public override boolean isUnicode()
   {
     return true;
   }
@@ -154,8 +148,7 @@ abstract public class UnicodeValue extends StringValue {
     return Marshal.COST_IDENTICAL;
   }
   
-  @Override
-  public InputStream toInputStream()
+  public override InputStream toInputStream()
   {    
     try {
       //XXX: refactor so that env is passed in
@@ -168,14 +161,12 @@ abstract public class UnicodeValue extends StringValue {
     }
   }
   
-  @Override
-  public Reader toReader(String charset)
+  public override Reader toReader(String charset)
   {
     return toSimpleReader();
   }
   
-  @Override
-  public String toString(String charset)
+  public override String toString(String charset)
   {
     return toString();
   }
@@ -184,8 +175,7 @@ abstract public class UnicodeValue extends StringValue {
    * Returns true for equality
    */
   /*
-  @Override
-  public boolean eq(Value rValue)
+  public override boolean eq(Value rValue)
   {
     rValue = rValue.toValue();
     

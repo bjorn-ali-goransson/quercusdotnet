@@ -90,8 +90,7 @@ public class ClassVirtualFieldVarExpr extends AbstractVarExpr {
    *
    * @return the expression value.
    */
-  @Override
-  public Value eval(Env env)
+  public override Value eval(Env env)
   {
     String className = env.getThis().getQuercusClass().getName();
     StringValue varName = _varName.evalStringValue(env);
@@ -111,8 +110,7 @@ public class ClassVirtualFieldVarExpr extends AbstractVarExpr {
    *
    * @return the expression value.
    */
-  @Override
-  public Var evalVar(Env env)
+  public override Var evalVar(Env env)
   {
     String className = env.getThis().getQuercusClass().getName();
     StringValue varName = _varName.evalStringValue(env);
@@ -132,8 +130,7 @@ public class ClassVirtualFieldVarExpr extends AbstractVarExpr {
    *
    * @return the expression value.
    */
-  @Override
-  public Value evalAssignRef(Env env, Value value)
+  public override Value evalAssignRef(Env env, Value value)
   {
     String className = env.getThis().getQuercusClass().getName();
     StringValue varName = _varName.evalStringValue(env);

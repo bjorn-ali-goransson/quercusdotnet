@@ -64,8 +64,7 @@ abstract public class AbstractMethodExpr extends Expr {
    *
    * @return the expression value.
    */
-  @Override
-  public Value evalArg(Env env, boolean isTop)
+  public override Value evalArg(Env env, boolean isTop)
   {
     return eval(env).copy();
   }

@@ -539,8 +539,7 @@ public class Mysqli extends JdbcConnectionResource
     return version;
   }
 
-  @Override
-  protected String getClientInfo(Env env)
+  protected override String getClientInfo(Env env)
   {
     return getClientInfoStatic(env);
   }
@@ -1013,8 +1012,7 @@ public class Mysqli extends JdbcConnectionResource
    * to handle any special cases.
    */
 
-  @Override
-  protected Value realQuery(Env env, String sql)
+  protected override Value realQuery(Env env, String sql)
   {
     clearErrors();
 
@@ -1128,8 +1126,7 @@ public class Mysqli extends JdbcConnectionResource
   /**
    * returns a prepared statement or null on error.
    */
-  @Override
-  public MysqliStatement prepare(Env env, String query)
+  public override MysqliStatement prepare(Env env, String query)
   {
     MysqliStatement stmt = new MysqliStatement((Mysqli) validateConnection(env));
 
@@ -1143,8 +1140,7 @@ public class Mysqli extends JdbcConnectionResource
     return stmt;
   }
   
-  @Override
-  protected JdbcStatementResource createStatementResource(Env env)
+  protected override JdbcStatementResource createStatementResource(Env env)
   {
     MysqliStatement stmt = new MysqliStatement(this);
     
@@ -1252,8 +1248,7 @@ public class Mysqli extends JdbcConnectionResource
       return "HY" + errno;
   }
 
-  @Override
-  protected String getDriverName()
+  protected override String getDriverName()
   {
     return "mysql";
   }
@@ -1357,8 +1352,7 @@ public class Mysqli extends JdbcConnectionResource
     }
   }
 
-  @Override
-  protected Value getServerStat(Env env)
+  protected override Value getServerStat(Env env)
   {
     return stat(env);
   }
@@ -1631,8 +1625,7 @@ public class Mysqli extends JdbcConnectionResource
   /**
    * Creates a database-specific result.
    */
-  @Override
-  protected JdbcResultResource createResult(Statement stmt,
+  protected override JdbcResultResource createResult(Statement stmt,
                                             ResultSet rs)
   {
     return new MysqliResult(stmt, rs, this);

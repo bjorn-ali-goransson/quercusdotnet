@@ -70,8 +70,7 @@ abstract public class AbstractVarExpr extends Expr {
   /**
    * Creates the assignment.
    */
-  @Override
-  public Expr createAssign(QuercusParser parser, Expr value)
+  public override Expr createAssign(QuercusParser parser, Expr value)
   {
     return value.createAssignFrom(parser, this);
   }
@@ -79,8 +78,7 @@ abstract public class AbstractVarExpr extends Expr {
   /**
    * Creates the assignment.
    */
-  @Override
-  public Expr createAssignRef(QuercusParser parser,
+  public override Expr createAssignRef(QuercusParser parser,
                               Expr value)
   {
     return parser.getExprFactory().createAssignRef(this, value);
@@ -90,8 +88,7 @@ abstract public class AbstractVarExpr extends Expr {
    * Creates the reference
    * @param location
    */
-  @Override
-  public Expr createRef(QuercusParser parser)
+  public override Expr createRef(QuercusParser parser)
   {
     return parser.getExprFactory().createRef(this);
   }
@@ -100,8 +97,7 @@ abstract public class AbstractVarExpr extends Expr {
    * Creates the copy.
    * @param location
    */
-  @Override
-  public Expr createCopy(ExprFactory factory)
+  public override Expr createCopy(ExprFactory factory)
   {
     return factory.createCopy(this);
   }
@@ -109,8 +105,7 @@ abstract public class AbstractVarExpr extends Expr {
   /**
    * Creates the assignment.
    */
-  @Override
-  public Statement createUnset(ExprFactory factory, Location location)
+  public override Statement createUnset(ExprFactory factory, Location location)
   {
     return factory.createExpr(location, factory.createUnsetVar(this));
   }
@@ -122,8 +117,7 @@ abstract public class AbstractVarExpr extends Expr {
    *
    * @return the expression value.
    */
-  @Override
-  abstract public Value eval(Env env);
+  abstract override public Value eval(Env env);
 
   /**
    * Evaluates the expression as a reference (by RefExpr).
@@ -132,8 +126,7 @@ abstract public class AbstractVarExpr extends Expr {
    *
    * @return the expression value.
    */
-  @Override
-  abstract public Var evalVar(Env env);
+  abstract override public Var evalVar(Env env);
 
   /**
    * Evaluates the expression as a reference when possible.
@@ -142,8 +135,7 @@ abstract public class AbstractVarExpr extends Expr {
    *
    * @return the expression value.
    */
-  @Override
-  public Value evalRef(Env env)
+  public override Value evalRef(Env env)
   {
     return evalVar(env);
   }
@@ -155,8 +147,7 @@ abstract public class AbstractVarExpr extends Expr {
    *
    * @return the expression value.
    */
-  @Override
-  public Value evalArg(Env env, boolean isTop)
+  public override Value evalArg(Env env, boolean isTop)
   {
     return evalVar(env);
   }
@@ -168,8 +159,7 @@ abstract public class AbstractVarExpr extends Expr {
    *
    * @return the expression value.
    */
-  @Override
-  public Value evalCopy(Env env)
+  public override Value evalCopy(Env env)
   {
     return eval(env).copy();
   }
@@ -181,8 +171,7 @@ abstract public class AbstractVarExpr extends Expr {
    *
    * @return the expression value.
    */
-  @Override
-  public Value evalArray(Env env)
+  public override Value evalArray(Env env)
   {
     return evalVar(env).toAutoArray();
   }
@@ -194,8 +183,7 @@ abstract public class AbstractVarExpr extends Expr {
    *
    * @return the expression value.
    */
-  @Override
-  public Value evalObject(Env env)
+  public override Value evalObject(Env env)
   {
     return evalVar(env).toObject(env);
   }
@@ -216,8 +204,7 @@ abstract public class AbstractVarExpr extends Expr {
    *
    * @return the expression value.
    */
-  @Override
-  public Value evalAssignValue(Env env, Value value)
+  public override Value evalAssignValue(Env env, Value value)
   {
     return evalAssignRef(env, value);
   }

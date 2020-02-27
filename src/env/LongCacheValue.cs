@@ -64,8 +64,7 @@ public class LongCacheValue extends LongValue
   /**
    * Returns the previous integer
    */
-  @Override
-  public Value subOne()
+  public override Value subOne()
   {
     return _prev;
   }
@@ -73,8 +72,7 @@ public class LongCacheValue extends LongValue
   /**
    * Pre-increment the following value.
    */
-  @Override
-  public Value preincr()
+  public override Value preincr()
   {
     return _next;
   }
@@ -82,8 +80,7 @@ public class LongCacheValue extends LongValue
   /**
    * Pre-increment the following value.
    */
-  @Override
-  public Value predecr()
+  public override Value predecr()
   {
     return _prev;
   }
@@ -91,8 +88,7 @@ public class LongCacheValue extends LongValue
   /**
    * Post-increment the following value.
    */
-  @Override
-  public Value postincr()
+  public override Value postincr()
   {
     return _next;
   }
@@ -100,8 +96,7 @@ public class LongCacheValue extends LongValue
   /**
    * Post-decrement the following value.
    */
-  @Override
-  public Value postdecr()
+  public override Value postdecr()
   {
     return _prev;
   }
@@ -109,8 +104,7 @@ public class LongCacheValue extends LongValue
   /**
    * Converts to a StringValue.
    */
-  @Override
-  public StringValue toStringValue(Env env)
+  public override StringValue toStringValue(Env env)
   {
     if (_strValue == null) {
       _strValue = env.createString(toLong());

@@ -91,8 +91,7 @@ public class FunctionArrayDelegate implements ArrayDelegate {
   /**
    * Sets the value for the spoecified key.
    */
-  @Override
-  public Value put(Env env, ObjectValue qThis, Value key, Value value)
+  public override Value put(Env env, ObjectValue qThis, Value key, Value value)
   {
     if (_arrayPut != null)
       return _arrayPut.callMethod(env,
@@ -105,8 +104,7 @@ public class FunctionArrayDelegate implements ArrayDelegate {
   /**
    * Appends a value.
    */
-  @Override
-  public Value put(Env env, ObjectValue qThis, Value value)
+  public override Value put(Env env, ObjectValue qThis, Value value)
   {
     if (_arrayPut != null)
       return _arrayPut.callMethod(env,
@@ -119,14 +117,12 @@ public class FunctionArrayDelegate implements ArrayDelegate {
   /**
    * Returns true if the value is set
    */
-  @Override
-  public boolean isset(Env env, ObjectValue qThis, Value key)
+  public override boolean isset(Env env, ObjectValue qThis, Value key)
   {
     return get(env, qThis, key).isset();
   }
 
-  @Override
-  public boolean isEmpty(Env env, ObjectValue qThis, Value key)
+  public override boolean isEmpty(Env env, ObjectValue qThis, Value key)
   {
     return get(env, qThis, key).isEmpty();
   }
@@ -134,8 +130,7 @@ public class FunctionArrayDelegate implements ArrayDelegate {
   /**
    * Removes the value at the speified key.
    */
-  @Override
-  public Value unset(Env env, ObjectValue qThis, Value key)
+  public override Value unset(Env env, ObjectValue qThis, Value key)
   {
     return UnsetValue.UNSET;
   }
@@ -143,8 +138,7 @@ public class FunctionArrayDelegate implements ArrayDelegate {
   /**
    * Returns the value for the specified key.
    */
-  @Override
-  public long count(Env env, ObjectValue qThis)
+  public override long count(Env env, ObjectValue qThis)
   {
     if (_arrayCount!= null) {
       return _arrayCount .callMethod(env,

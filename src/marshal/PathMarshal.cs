@@ -76,8 +76,7 @@ public class PathMarshal extends Marshal
       return Marshal.FOUR;
   }
   
-  @Override
-  public Class getExpectedClass()
+  public override Class getExpectedClass()
   {
     return Path.class;
   }

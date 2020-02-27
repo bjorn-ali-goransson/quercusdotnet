@@ -50,8 +50,7 @@ public class UnsetStringValue
   /**
    * Returns the character at an index
    */
-  @Override
-  public Value charValueAt(long index)
+  public override Value charValueAt(long index)
   {
     return this;
   }

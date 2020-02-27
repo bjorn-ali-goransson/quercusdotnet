@@ -1258,8 +1258,7 @@ public class MiscModule extends AbstractQuercusModule {
       return i;
     }
 
-    @Override
-    public int unpack(Env env, ArrayValue result,
+    public override int unpack(Env env, ArrayValue result,
                       StringValue s, int offset, int strLen)
     {
       if (strLen - offset < _length)
@@ -1307,8 +1306,7 @@ public class MiscModule extends AbstractQuercusModule {
       _pad = pad;
     }
 
-    @Override
-    public int pack(Env env, StringValue bb, int i, Value []args)
+    public override int pack(Env env, StringValue bb, int i, Value []args)
       
     {
       Value arg;
@@ -1330,8 +1328,7 @@ public class MiscModule extends AbstractQuercusModule {
       return i;
     }
 
-    @Override
-    public int unpack(Env env, ArrayValue result,
+    public override int unpack(Env env, ArrayValue result,
                       StringValue s, int offset, int strLen)
     {
       StringValue bb = env.createBinaryBuilder();
@@ -1381,8 +1378,7 @@ public class MiscModule extends AbstractQuercusModule {
       _length = length;
     }
 
-    @Override
-    public int pack(Env env, StringValue bb, int i, Value []args)
+    public override int pack(Env env, StringValue bb, int i, Value []args)
       
     {
       Value arg;
@@ -1435,8 +1431,7 @@ public class MiscModule extends AbstractQuercusModule {
       return i;
     }
 
-    @Override
-    public int unpack(Env env, ArrayValue result,
+    public override int unpack(Env env, ArrayValue result,
                       StringValue s, int offset, int strLen)
     {
       int len = _length;
@@ -1486,8 +1481,7 @@ public class MiscModule extends AbstractQuercusModule {
       _length = length;
     }
 
-    @Override
-    public int pack(Env env, StringValue bb, int i, Value []args)
+    public override int pack(Env env, StringValue bb, int i, Value []args)
       
     {
       Value arg;
@@ -1540,8 +1534,7 @@ public class MiscModule extends AbstractQuercusModule {
       return i;
     }
 
-    @Override
-    public int unpack(Env env, ArrayValue result,
+    public override int unpack(Env env, ArrayValue result,
                       StringValue s, int offset, int strLen)
     {
       if (offset + (long) (_length / 2 - 1) >= strLen)
@@ -1583,8 +1576,7 @@ public class MiscModule extends AbstractQuercusModule {
       _isSigned = isSigned;
     }
 
-    @Override
-    public int pack(Env env, StringValue bb, int i, Value []args)
+    public override int pack(Env env, StringValue bb, int i, Value []args)
       
     {
       for (int j = 0; j < _length; j++) {
@@ -1612,8 +1604,7 @@ public class MiscModule extends AbstractQuercusModule {
       return i;
     }
 
-    @Override
-    public int unpack(Env env, ArrayValue result,
+    public override int unpack(Env env, ArrayValue result,
                       StringValue s, int offset, int strLen)
     {
       outer:
@@ -1687,8 +1678,7 @@ public class MiscModule extends AbstractQuercusModule {
       _bytes = bytes;
     }
 
-    @Override
-    public int pack(Env env, StringValue bb, int i, Value []args)
+    public override int pack(Env env, StringValue bb, int i, Value []args)
       
     {
       for (int j = 0; j < _length; j++) {
@@ -1716,8 +1706,7 @@ public class MiscModule extends AbstractQuercusModule {
       return i;
     }
 
-    @Override
-    public int unpack(Env env, ArrayValue result,
+    public override int unpack(Env env, ArrayValue result,
                       StringValue s, int offset, int strLen)
     {
       outer:
@@ -1771,8 +1760,7 @@ public class MiscModule extends AbstractQuercusModule {
       _length = length;
     }
 
-    @Override
-    public int pack(Env env, StringValue bb, int i, Value []args)
+    public override int pack(Env env, StringValue bb, int i, Value []args)
       
     {
       for (int j = 0; j < _length; j++) {
@@ -1801,8 +1789,7 @@ public class MiscModule extends AbstractQuercusModule {
       return i;
     }
 
-    @Override
-    public int unpack(Env env, ArrayValue result,
+    public override int unpack(Env env, ArrayValue result,
                       StringValue s, int offset, int strLen)
     {
       outer:
@@ -1856,8 +1843,7 @@ public class MiscModule extends AbstractQuercusModule {
       _length = length;
     }
 
-    @Override
-    public int pack(Env env, StringValue bb, int i, Value []args)
+    public override int pack(Env env, StringValue bb, int i, Value []args)
       
     {
       for (int j = 0; j < _length; j++) {
@@ -1886,8 +1872,7 @@ public class MiscModule extends AbstractQuercusModule {
       return i;
     }
 
-    @Override
-    public int unpack(Env env, ArrayValue result,
+    public override int unpack(Env env, ArrayValue result,
                       StringValue s, int offset, int strLen)
     {
       outer:
@@ -1945,8 +1930,7 @@ public class MiscModule extends AbstractQuercusModule {
       _length = length;
     }
 
-    @Override
-    public int pack(Env env, StringValue bb, int i, Value []args)
+    public override int pack(Env env, StringValue bb, int i, Value []args)
       
     {
       for (int j = 0; j < _length; j++) {
@@ -1956,8 +1940,7 @@ public class MiscModule extends AbstractQuercusModule {
       return i;
     }
 
-    @Override
-    public int unpack(Env env, ArrayValue result,
+    public override int unpack(Env env, ArrayValue result,
                       StringValue s, int offset, int strLen)
     {
       return (int) Math.min(offset + (long) _length, strLen);
@@ -1980,8 +1963,7 @@ public class MiscModule extends AbstractQuercusModule {
       _length = length;
     }
 
-    @Override
-    public int pack(Env env, StringValue bb, int i, Value []args)
+    public override int pack(Env env, StringValue bb, int i, Value []args)
       
     {
       while (bb.length() < _length) {
@@ -1991,8 +1973,7 @@ public class MiscModule extends AbstractQuercusModule {
       return i;
     }
 
-    @Override
-    public int unpack(Env env, ArrayValue result,
+    public override int unpack(Env env, ArrayValue result,
                       StringValue s, int offset, int strLen)
     {
       throw new UnsupportedOperationException("'@' skip to position");

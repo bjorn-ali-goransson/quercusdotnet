@@ -138,8 +138,7 @@ public class QuercusServletImpl extends HttpServlet
   /**
    * Service.
    */
-  @Override
-  public final void service(HttpServletRequest request,
+  public override final void service(HttpServletRequest request,
                             HttpServletResponse response)
     
   {

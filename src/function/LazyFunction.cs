@@ -69,8 +69,7 @@ public class LazyFunction extends AbstractFunction
     return _name;
   }
 
-  @Override
-  public Arg []getArgs(Env env)
+  public override Arg []getArgs(Env env)
   {
     return getFun(env).getArgs(env);
   }
@@ -109,8 +108,7 @@ public class LazyFunction extends AbstractFunction
     }
   }
 
-  @Override
-  public String getComment()
+  public override String getComment()
   {
     if (_fun != null)
       return _fun.getComment();
@@ -122,38 +120,32 @@ public class LazyFunction extends AbstractFunction
   // call
   //
 
-  @Override
-  public Value call(Env env, Value []argValues)
+  public override Value call(Env env, Value []argValues)
   {
     return getFun(env).call(env, argValues);
   }
 
-  @Override
-  public Value call(Env env, Value arg)
+  public override Value call(Env env, Value arg)
   {
     return getFun(env).call(env, arg);
   }
 
-  @Override
-  public Value call(Env env, Value a1, Value a2)
+  public override Value call(Env env, Value a1, Value a2)
   {
     return getFun(env).call(env, a1, a2);
   }
 
-  @Override
-  public Value call(Env env, Value a1, Value a2, Value a3)
+  public override Value call(Env env, Value a1, Value a2, Value a3)
   {
     return getFun(env).call(env, a1, a2, a3);
   }
 
-  @Override
-  public Value call(Env env, Value a1, Value a2, Value a3, Value a4)
+  public override Value call(Env env, Value a1, Value a2, Value a3, Value a4)
   {
     return getFun(env).call(env, a1, a2, a3, a4);
   }
 
-  @Override
-  public Value call(Env env, Value a1, Value a2,
+  public override Value call(Env env, Value a1, Value a2,
                     Value a3, Value a4, Value a5)
   {
     return getFun(env).call(env, a1, a2, a3, a4, a5);
@@ -163,38 +155,32 @@ public class LazyFunction extends AbstractFunction
   // call ref
   //
 
-  @Override
-  public Value callRef(Env env, Value []argValues)
+  public override Value callRef(Env env, Value []argValues)
   {
     return getFun(env).callRef(env, argValues);
   }
 
-  @Override
-  public Value callRef(Env env, Value arg)
+  public override Value callRef(Env env, Value arg)
   {
     return getFun(env).callRef(env, arg);
   }
 
-  @Override
-  public Value callRef(Env env, Value a1, Value a2)
+  public override Value callRef(Env env, Value a1, Value a2)
   {
     return getFun(env).callRef(env, a1, a2);
   }
 
-  @Override
-  public Value callRef(Env env, Value a1, Value a2, Value a3)
+  public override Value callRef(Env env, Value a1, Value a2, Value a3)
   {
     return getFun(env).callRef(env, a1, a2, a3);
   }
 
-  @Override
-  public Value callRef(Env env, Value a1, Value a2, Value a3, Value a4)
+  public override Value callRef(Env env, Value a1, Value a2, Value a3, Value a4)
   {
     return getFun(env).callRef(env, a1, a2, a3, a4);
   }
 
-  @Override
-  public Value callRef(Env env, Value a1, Value a2,
+  public override Value callRef(Env env, Value a1, Value a2,
                        Value a3, Value a4, Value a5)
   {
     return getFun(env).callRef(env, a1, a2, a3, a4, a5);
@@ -204,8 +190,7 @@ public class LazyFunction extends AbstractFunction
   // call copy
   //
 
-  @Override
-  public Value callCopy(Env env, Value []argValues)
+  public override Value callCopy(Env env, Value []argValues)
   {
     return getFun(env).callCopy(env, argValues);
   }

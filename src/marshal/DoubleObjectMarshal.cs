@@ -78,8 +78,7 @@ public class DoubleObjectMarshal extends Marshal
     */
   }
 
-  @Override
-  public Class getExpectedClass()
+  public override Class getExpectedClass()
   {
     return Double.class;
   }

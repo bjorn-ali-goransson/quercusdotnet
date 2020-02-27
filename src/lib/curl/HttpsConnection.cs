@@ -104,8 +104,7 @@ public class HttpsConnection
    * Connects to the server.
    */
   /*
-  @Override
-  public void connect(CurlResource curl)
+  public override void connect(CurlResource curl)
     
             IOException
   {

@@ -122,8 +122,7 @@ public class IteratorDelegate implements TraversableDelegate
       super(env, obj);
     }
 
-    @Override
-    protected Value getCurrent()
+    protected override Value getCurrent()
     {
       return getCurrentKey();
     }
@@ -137,8 +136,7 @@ public class IteratorDelegate implements TraversableDelegate
       super(env, obj);
     }
 
-    @Override
-    protected Value getCurrent()
+    protected override Value getCurrent()
     {
       return getCurrentValue();
     }

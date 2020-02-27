@@ -86,20 +86,17 @@ public class JavaMethod extends JavaInvoker {
     return _method.getDeclaringClass().getSimpleName();
   }
 
-  @Override
-  public Class<?> []getJavaParameterTypes()
+  public override Class<?> []getJavaParameterTypes()
   {
     return _method.getParameterTypes();
   }
 
-  @Override
-  public Class<?> getJavaDeclaringClass()
+  public override Class<?> getJavaDeclaringClass()
   {
     return _method.getDeclaringClass();
   }
 
-  @Override
-  public Object invoke(Object obj, Object []args)
+  public override Object invoke(Object obj, Object []args)
   {
     try {
       return _method.invoke(obj, args);
@@ -126,8 +123,7 @@ public class JavaMethod extends JavaInvoker {
     }
   }
 
-  @Override
-  public String toString()
+  public override String toString()
   {
     return "JavaMethod[" + _method + "]";
   }

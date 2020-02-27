@@ -63,8 +63,7 @@ public class LiteralExpr extends Expr {
   /**
    * Returns true if a static true value.
    */
-  @Override
-  public boolean isTrue()
+  public override boolean isTrue()
   {
     if (_value == BooleanValue.TRUE)
       return true;
@@ -77,8 +76,7 @@ public class LiteralExpr extends Expr {
   /**
    * Returns true if a static true value.
    */
-  @Override
-  public boolean isFalse()
+  public override boolean isFalse()
   {
     if (_value == BooleanValue.FALSE)
       return true;
@@ -129,14 +127,12 @@ public class LiteralExpr extends Expr {
    *
    * @return the expression value.
    */
-  @Override
-  public Value eval(Env env)
+  public override Value eval(Env env)
   {
     return _value;
   }
 
-  @Override
-  public QuercusClass evalQuercusClass(Env env)
+  public override QuercusClass evalQuercusClass(Env env)
   {
     String className = evalString(env);
 

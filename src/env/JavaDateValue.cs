@@ -59,15 +59,13 @@ public class JavaDateValue extends JavaValue {
   /**
    * Converts to a Java Date.
    */
-  @Override
-  public Date toJavaDate()
+  public override Date toJavaDate()
   {
     return _date;
   }
 
   /*
-  @Override
-  public StringValue toString(Env env)
+  public override StringValue toString(Env env)
   {
     return env.createString(toLong());
   }

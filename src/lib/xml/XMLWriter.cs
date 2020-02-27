@@ -794,32 +794,28 @@ public class XMLWriter {
       _v = v;
     }
     
-    @Override
-    XMLWriterStream append(char v)
+    XMLWriterStream override append(char v)
     {
       _v.append(v);
 
       return this;
     }
     
-    @Override
-      XMLWriterStream append(Env env, StringValue v)
+    XMLWriterStream override append(Env env, StringValue v)
     {
       _v.append(v);
 
       return this;
     }
     
-    @Override
-    XMLWriterStream append(String text)
+    XMLWriterStream override append(String text)
     {
       _v.append(text);
 
       return this;
     }
 
-    @Override
-    Value flush()
+    Value override flush()
     {
       return _v;
     }
@@ -833,8 +829,7 @@ public class XMLWriter {
       _out = out;
     }
     
-    @Override
-    XMLWriterStream append(char v)
+    XMLWriterStream override append(char v)
     {
       try {
         _out.print(v);
@@ -845,16 +840,14 @@ public class XMLWriter {
       return this;
     }
 
-    @Override
-    XMLWriterStream append(Env env, StringValue v)
+    XMLWriterStream override append(Env env, StringValue v)
     {
       v.print(env, _out);
 
       return this;
     }
     
-    @Override
-    XMLWriterStream append(String text)
+    XMLWriterStream override append(String text)
     {
       try {
         _out.print(text);
@@ -865,8 +858,7 @@ public class XMLWriter {
       return this;
     }
 
-    @Override
-    Value flush()
+    Value override flush()
     {
       try {
         _out.close();

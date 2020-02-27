@@ -80,8 +80,7 @@ public class ClassVirtualFieldExpr extends AbstractVarExpr {
    *
    * @return the expression value.
    */
-  @Override
-  public Value eval(Env env)
+  public override Value eval(Env env)
   {
     Value qThis = env.getThis();
 
@@ -95,8 +94,7 @@ public class ClassVirtualFieldExpr extends AbstractVarExpr {
    *
    * @return the expression value.
    */
-  @Override
-  public Var evalVar(Env env)
+  public override Var evalVar(Env env)
   {
     Value qThis = env.getThis();
 
@@ -110,8 +108,7 @@ public class ClassVirtualFieldExpr extends AbstractVarExpr {
    *
    * @return the expression value.
    */
-  @Override
-  public Value evalAssignRef(Env env, Value value)
+  public override Value evalAssignRef(Env env, Value value)
   {
     Value qThis = env.getThis();
 

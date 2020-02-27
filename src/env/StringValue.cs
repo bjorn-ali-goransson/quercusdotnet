@@ -198,8 +198,7 @@ abstract public class StringValue
   /**
    * Returns true for is_numeric
    */
-  @Override
-  public boolean isNumeric()
+  public override boolean isNumeric()
   {
     // php/120y
 
@@ -217,8 +216,7 @@ abstract public class StringValue
   /**
    * Returns true for StringValue
    */
-  @Override
-  public final boolean isString()
+  public override final boolean isString()
   {
     return true;
   }
@@ -226,14 +224,12 @@ abstract public class StringValue
   /**
    * Returns true if the value is empty
    */
-  @Override
-  public boolean isEmpty()
+  public override boolean isEmpty()
   {
     return length() == 0 || length() == 1 && charAt(0) == '0';
   }
 
-  @Override
-  public boolean isCallable(Env env, boolean isCheckSyntaxOnly, Value nameRef) {
+  public override boolean isCallable(Env env, boolean isCheckSyntaxOnly, Value nameRef) {
     if (nameRef != null) {
       nameRef.set(this);
     }
@@ -252,8 +248,7 @@ abstract public class StringValue
   /**
    * Cost to convert to a double
    */
-  @Override
-  public int toDoubleMarshalCost()
+  public override int toDoubleMarshalCost()
   {
     ValueType valueType = getValueType();
 
@@ -268,8 +263,7 @@ abstract public class StringValue
   /**
    * Cost to convert to a float
    */
-  @Override
-  public int toFloatMarshalCost()
+  public override int toFloatMarshalCost()
   {
     ValueType valueType = getValueType();
 
@@ -284,8 +278,7 @@ abstract public class StringValue
   /**
    * Cost to convert to a long
    */
-  @Override
-  public int toLongMarshalCost()
+  public override int toLongMarshalCost()
   {
     ValueType valueType = getValueType();
 
@@ -300,8 +293,7 @@ abstract public class StringValue
   /**
    * Cost to convert to an integer
    */
-  @Override
-  public int toIntegerMarshalCost()
+  public override int toIntegerMarshalCost()
   {
     ValueType valueType = getValueType();
 
@@ -316,8 +308,7 @@ abstract public class StringValue
   /**
    * Cost to convert to a short
    */
-  @Override
-  public int toShortMarshalCost()
+  public override int toShortMarshalCost()
   {
     ValueType valueType = getValueType();
 
@@ -332,8 +323,7 @@ abstract public class StringValue
   /**
    * Cost to convert to a byte
    */
-  @Override
-  public int toByteMarshalCost()
+  public override int toByteMarshalCost()
   {
     ValueType valueType = getValueType();
 
@@ -348,8 +338,7 @@ abstract public class StringValue
   /**
    * Cost to convert to a character
    */
-  @Override
-  public int toCharMarshalCost()
+  public override int toCharMarshalCost()
   {
     return Marshal.COST_STRING_TO_CHAR;
   }
@@ -357,8 +346,7 @@ abstract public class StringValue
   /**
    * Cost to convert to a String
    */
-  @Override
-  public int toStringMarshalCost()
+  public override int toStringMarshalCost()
   {
     return Marshal.COST_EQUAL;
   }
@@ -366,8 +354,7 @@ abstract public class StringValue
   /**
    * Cost to convert to a char[]
    */
-  @Override
-  public int toCharArrayMarshalCost()
+  public override int toCharArrayMarshalCost()
   {
     return Marshal.COST_STRING_TO_CHAR_ARRAY;
   }
@@ -383,8 +370,7 @@ abstract public class StringValue
   /**
    * Cost to convert to a binary value
    */
-  @Override
-  public int toBinaryValueMarshalCost()
+  public override int toBinaryValueMarshalCost()
   {
     return Marshal.COST_STRING_TO_BINARY;
   }
@@ -430,8 +416,7 @@ abstract public class StringValue
   /**
    * Returns true for equality
    */
-  @Override
-  public boolean eq(Value rValue)
+  public override boolean eq(Value rValue)
   {
     ValueType typeA = getValueType();
     ValueType typeB = rValue.getValueType();
@@ -472,8 +457,7 @@ abstract public class StringValue
   /**
    * Converts to a string value.
    */
-  @Override
-  public StringValue toStringValue()
+  public override StringValue toStringValue()
   {
     return this;
   }
@@ -481,8 +465,7 @@ abstract public class StringValue
   /**
    * Converts to a string value.
    */
-  @Override
-  public StringValue toStringValue(Env env)
+  public override StringValue toStringValue(Env env)
   {
     return this;
   }
@@ -845,8 +828,7 @@ abstract public class StringValue
   /**
    * Converts to an object.
    */
-  @Override
-  final public Value toAutoObject(Env env)
+  final override public Value toAutoObject(Env env)
   {
     return env.createObject();
   }
@@ -854,8 +836,7 @@ abstract public class StringValue
   /**
    * Converts to an array if null.
    */
-  @Override
-  public Value toAutoArray()
+  public override Value toAutoArray()
   {
     if (length() == 0)
       return new ArrayValueImpl();
@@ -875,8 +856,7 @@ abstract public class StringValue
    * Takes the values of this array, unmarshalls them to objects of type
    * <i>elementType</i>, and puts them in a java array.
    */
-  @Override
-  public Object valuesToArray(Env env, Class elementType)
+  public override Object valuesToArray(Env env, Class elementType)
   {
     if (char.class.equals(elementType)) {
       return toUnicode(env).toCharArray();
@@ -922,8 +902,7 @@ abstract public class StringValue
   /**
    * Converts to a callable object
    */
-  @Override
-  public Callable toCallable(Env env, boolean isOptional)
+  public override Callable toCallable(Env env, boolean isOptional)
   {
     // php/1h0o
     if (isEmpty()) {
@@ -955,8 +934,7 @@ abstract public class StringValue
    * string update ($a[0] = 'A').  Creates an array automatically if
    * necessary.
    */
-  @Override
-  public Value append(Value index, Value value)
+  public override Value append(Value index, Value value)
   {
     if (length() == 0)
       return new ArrayValueImpl().append(index, value);
@@ -967,8 +945,7 @@ abstract public class StringValue
   /**
    * Appends a value to an array that is a field of an object.
    */
-  @Override
-  public Value putThisFieldArray(Env env,
+  public override Value putThisFieldArray(Env env,
                                  Value obj,
                                  StringValue fieldName,
                                  Value index,
@@ -1007,8 +984,7 @@ abstract public class StringValue
   /**
    * Returns the character at an index
    */
-  @Override
-  public Value charValueAt(long index)
+  public override Value charValueAt(long index)
   {
     int len = length();
 
@@ -1022,8 +998,7 @@ abstract public class StringValue
   /**
    * sets the character at an index
    */
-  @Override
-  public Value setCharValueAt(long index, Value value)
+  public override Value setCharValueAt(long index, Value value)
   {
     //XXX: need to double-check this for non-string values
 
@@ -1042,8 +1017,7 @@ abstract public class StringValue
   /**
    * Increment the following value.
    */
-  @Override
-  public Value increment(int incr)
+  public override Value increment(int incr)
   {
     // php/03i6
     if (length() == 0) {
@@ -1123,8 +1097,7 @@ abstract public class StringValue
   /*
    * Bit and.
    */
-  @Override
-  public Value bitAnd(Value rValue)
+  public override Value bitAnd(Value rValue)
   {
     if (rValue.isString()) {
       StringValue rStr = (StringValue) rValue;
@@ -1148,8 +1121,7 @@ abstract public class StringValue
   /*
    * Bit or.
    */
-  @Override
-  public Value bitOr(Value rValue)
+  public override Value bitOr(Value rValue)
   {
     if (rValue.isString()) {
       StringValue rStr = (StringValue) rValue;
@@ -1178,8 +1150,7 @@ abstract public class StringValue
   /*
    * Bit xor.
    */
-  @Override
-  public Value bitXor(Value rValue)
+  public override Value bitXor(Value rValue)
   {
     if (rValue.isString()) {
       StringValue rStr = rValue.toStringValue();
@@ -1203,8 +1174,7 @@ abstract public class StringValue
   /**
    * Serializes the value.
    */
-  @Override
-  public void serialize(Env env, StringBuilder sb)
+  public override void serialize(Env env, StringBuilder sb)
   {
     sb.append("s:");
     sb.append(length());
@@ -1216,8 +1186,7 @@ abstract public class StringValue
   /**
    * Encodes the value in JSON.
    */
-  @Override
-  public void jsonEncode(Env env, JsonEncodeContext context, StringValue sb)
+  public override void jsonEncode(Env env, JsonEncodeContext context, StringValue sb)
   {
     if (context.isCheckNumeric()) {
       if (isLongConvertible()) {
@@ -1599,8 +1568,7 @@ abstract public class StringValue
   /**
    * Append to a string builder.
    */
-  @Override
-  public StringValue appendTo(UnicodeBuilderValue sb)
+  public override StringValue appendTo(UnicodeBuilderValue sb)
   {
     int length = length();
 
@@ -1982,8 +1950,7 @@ abstract public class StringValue
   /**
    * Exports the value.
    */
-  @Override
-  protected void varExportImpl(StringValue sb, int level)
+  protected override void varExportImpl(StringValue sb, int level)
   {
     sb.append("'");
 
@@ -2465,8 +2432,7 @@ abstract public class StringValue
   /**
    * Converts to a unicode value.
    */
-  @Override
-  public StringValue toUnicode(Env env)
+  public override StringValue toUnicode(Env env)
   {
     return this;
   }
@@ -2507,8 +2473,7 @@ abstract public class StringValue
   /**
    * Converts to a string builder
    */
-  @Override
-  public StringValue toStringBuilder(Env env)
+  public override StringValue toStringBuilder(Env env)
   {
     return createStringBuilder().append(this);
   }
@@ -2624,8 +2589,7 @@ abstract public class StringValue
   /**
    * Test for equality
    */
-  @Override
-  public boolean equals(Object o)
+  public override boolean equals(Object o)
   {
     if (this == o) {
       return true;
@@ -2762,8 +2726,7 @@ abstract public class StringValue
    *
    * @param out the writer to the Java source code.
    */
-  @Override
-  public void generate(PrintWriter out)
+  public override void generate(PrintWriter out)
     
   {
     // max JVM constant string length
@@ -2798,11 +2761,9 @@ abstract public class StringValue
     }
   }
 
-  @Override
-  abstract public String toDebugString();
+  abstract override public String toDebugString();
 
-  @Override
-  abstract public void varDumpImpl(Env env,
+  abstract override public void varDumpImpl(Env env,
                                    WriteStream out,
                                    int depth,
                                    IdentityHashMap<Value, String> valueSet)

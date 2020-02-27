@@ -62,8 +62,7 @@ public class ByteObjectMarshal extends Marshal
       return LongValue.create(((Number) value).longValue());
   }
 
-  @Override
-  protected int getMarshalingCostImpl(Value argValue)
+  protected override int getMarshalingCostImpl(Value argValue)
   {
     return argValue.toByteMarshalCost() + 1;
     /*
@@ -76,8 +75,7 @@ public class ByteObjectMarshal extends Marshal
     */
   }
 
-  @Override
-  public Class getExpectedClass()
+  public override Class getExpectedClass()
   {
     return Byte.class;
   }

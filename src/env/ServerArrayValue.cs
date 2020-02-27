@@ -312,14 +312,12 @@ public class ServerArrayValue extends ArrayValueImpl
   /**
    * Returns true if the value is isset().
    */
-  @Override
-  public boolean isset(Value key)
+  public override boolean isset(Value key)
   {
     return get(key).isset();
   }
 
-  @Override
-  public void varDumpImpl(Env env,
+  public override void varDumpImpl(Env env,
                           WriteStream out,
                           int depth,
                           IdentityHashMap<Value, String> valueSet)
@@ -331,8 +329,7 @@ public class ServerArrayValue extends ArrayValueImpl
     super.varDumpImpl(env, out, depth, valueSet);
   }
 
-  @Override
-  protected void printRImpl(Env env,
+  protected override void printRImpl(Env env,
                             WriteStream out,
                             int depth,
                             IdentityHashMap<Value, String> valueSet)

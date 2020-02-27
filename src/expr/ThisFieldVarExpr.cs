@@ -93,8 +93,7 @@ public class ThisFieldVarExpr extends AbstractVarExpr {
    *
    * @return the expression value.
    */
-  @Override
-  public Value evalArg(Env env, boolean isTop)
+  public override Value evalArg(Env env, boolean isTop)
   {
     Value value = env.getThis();
 
@@ -108,8 +107,7 @@ public class ThisFieldVarExpr extends AbstractVarExpr {
    *
    * @return the expression value.
    */
-  @Override
-  public Var evalVar(Env env)
+  public override Var evalVar(Env env)
   {
     // quercus/0d1k
     Value value = env.getThis();
@@ -124,8 +122,7 @@ public class ThisFieldVarExpr extends AbstractVarExpr {
    *
    * @return the expression value.
    */
-  @Override
-  public Value eval(Env env)
+  public override Value eval(Env env)
   {
     Value obj = env.getThis();
 
@@ -139,8 +136,7 @@ public class ThisFieldVarExpr extends AbstractVarExpr {
    *
    * @return the expression value.
    */
-  @Override
-  public Value evalAssignValue(Env env, Value value)
+  public override Value evalAssignValue(Env env, Value value)
   {
     Value obj = env.getThis();
 
@@ -156,8 +152,7 @@ public class ThisFieldVarExpr extends AbstractVarExpr {
    *
    * @return the expression value.
    */
-  @Override
-  public Value evalAssignRef(Env env, Value value)
+  public override Value evalAssignRef(Env env, Value value)
   {
     Value obj = env.getThis();
 
@@ -169,8 +164,7 @@ public class ThisFieldVarExpr extends AbstractVarExpr {
   /**
    * Evaluates as an array index assign ($a[index] = value).
    */
-  @Override
-  public Value evalArrayAssign(Env env, Expr indexExpr, Expr valueExpr)
+  public override Value evalArrayAssign(Env env, Expr indexExpr, Expr valueExpr)
   {
     Value obj = env.getThis();
 
@@ -188,8 +182,7 @@ public class ThisFieldVarExpr extends AbstractVarExpr {
   /**
    * Evaluates as an array index assign ($a[index] = &value).
    */
-  @Override
-  public Value evalArrayAssignRef(Env env, Expr indexExpr, Expr valueExpr)
+  public override Value evalArrayAssignRef(Env env, Expr indexExpr, Expr valueExpr)
   {
     Value obj = env.getThis();
 

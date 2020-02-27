@@ -100,8 +100,7 @@ public class ArrayIterator
     return _value.getCount(env);
   }
 
-  @Override
-  public Value current(Env env)
+  public override Value current(Env env)
   {
     return _current == null ? UnsetValue.UNSET : _current.getValue();
   }
@@ -116,8 +115,7 @@ public class ArrayIterator
     return _flags;
   }
 
-  @Override
-  public Value key(Env env)
+  public override Value key(Env env)
   {
     return _current == null ? UnsetValue.UNSET : _current.getKey();
   }
@@ -151,26 +149,22 @@ public class ArrayIterator
       _current = null;
   }
 
-  @Override
-  public boolean offsetExists(Env env, Value offset)
+  public override boolean offsetExists(Env env, Value offset)
   {
     return _value.get(offset).isset();
   }
 
-  @Override
-  public Value offsetGet(Env env, Value offset)
+  public override Value offsetGet(Env env, Value offset)
   {
     return _value.get(offset);
   }
 
-  @Override
-  public Value offsetSet(Env env, Value offset, Value value)
+  public override Value offsetSet(Env env, Value offset, Value value)
   {
     return _value.put(offset, value);
   }
 
-  @Override
-  public Value offsetUnset(Env env, Value offset)
+  public override Value offsetUnset(Env env, Value offset)
   {
     return _value.remove(offset);
   }
@@ -185,8 +179,7 @@ public class ArrayIterator
     }
   }
 
-  @Override
-  public void rewind(Env env)
+  public override void rewind(Env env)
   {
     // php/4as8
     _iterator = _value.getBaseIterator(_env);
@@ -228,8 +221,7 @@ public class ArrayIterator
       ArrayModule.uksort(_env, (ArrayValue) _value, func, sortFlag);
   }
 
-  @Override
-  public boolean valid(Env env)
+  public override boolean valid(Env env)
   {
     if (_iterator == null)
       rewind(env);

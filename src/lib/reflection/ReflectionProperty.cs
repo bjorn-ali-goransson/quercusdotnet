@@ -309,41 +309,35 @@ public class ReflectionProperty
       return true;
     }
 
-    @Override
-    public boolean isPublic()
+    public override boolean isPublic()
     {
       /// XXX: return actual visibility
       return true;
     }
 
-    @Override
-    public boolean isProtected()
+    public override boolean isProtected()
     {
       /// XXX: return actual visibility
       return false;
     }
 
-    @Override
-    public boolean isPrivate()
+    public override boolean isPrivate()
     {
       /// XXX: return actual visibility
       return false;
     }
 
-    @Override
-    public Value getValue(Env env, ObjectValue obj)
+    public override Value getValue(Env env, ObjectValue obj)
     {
       return _cls.getStaticFieldValue(env, _name);
     }
 
-    @Override
-    public void setValue(Env env, Value obj, Value value)
+    public override void setValue(Env env, Value obj, Value value)
     {
       _cls.getStaticFieldVar(env, _name).set(obj);
     }
 
-    @Override
-    protected QuercusClass getDeclaringClassImpl(Env env, QuercusClass cls)
+    protected override QuercusClass getDeclaringClassImpl(Env env, QuercusClass cls)
     {
       if (cls == null)
         return null;
@@ -358,8 +352,7 @@ public class ReflectionProperty
       return null;
     }
 
-    @Override
-    public String getComment(Env env)
+    public override String getComment(Env env)
     {
       QuercusClass cls = getDeclaringClass(env, _cls);
 
@@ -368,8 +361,7 @@ public class ReflectionProperty
       return def.getStaticFieldComment(_name);
     }
 
-    @Override
-    public String toString()
+    public override String toString()
     {
       if (_cls.getName() != null)
         return _cls.getName() + "::" + _name;

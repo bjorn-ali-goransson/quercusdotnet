@@ -103,8 +103,7 @@ public class CallbackFunction extends Callback {
    *
    * @param env the calling environment
    */
-  @Override
-  public Value call(Env env)
+  public override Value call(Env env)
   {
     return getFunction(env).call(env);
   }
@@ -114,8 +113,7 @@ public class CallbackFunction extends Callback {
    *
    * @param env the calling environment
    */
-  @Override
-  public Value call(Env env, Value a1)
+  public override Value call(Env env, Value a1)
   {
     return getFunction(env).call(env, a1);
   }
@@ -125,8 +123,7 @@ public class CallbackFunction extends Callback {
    *
    * @param env the calling environment
    */
-  @Override
-  public Value call(Env env, Value a1, Value a2)
+  public override Value call(Env env, Value a1, Value a2)
   {
     return getFunction(env).call(env, a1, a2);
   }
@@ -136,8 +133,7 @@ public class CallbackFunction extends Callback {
    *
    * @param env the calling environment
    */
-  @Override
-  public Value call(Env env, Value a1, Value a2, Value a3)
+  public override Value call(Env env, Value a1, Value a2, Value a3)
   {
     return getFunction(env).call(env, a1, a2, a3);
   }
@@ -147,8 +143,7 @@ public class CallbackFunction extends Callback {
    *
    * @param env the calling environment
    */
-  @Override
-  public Value call(Env env, Value a1, Value a2, Value a3,
+  public override Value call(Env env, Value a1, Value a2, Value a3,
                     Value a4)
   {
     return getFunction(env).call(env, a1, a2, a3, a4);
@@ -159,15 +154,13 @@ public class CallbackFunction extends Callback {
    *
    * @param env the calling environment
    */
-  @Override
-  public Value call(Env env, Value a1, Value a2, Value a3,
+  public override Value call(Env env, Value a1, Value a2, Value a3,
                     Value a4, Value a5)
   {
     return getFunction(env).call(env, a1, a2, a3, a4, a5);
   }
 
-  @Override
-  public Value call(Env env, Value []args)
+  public override Value call(Env env, Value []args)
   {
     return getFunction(env).call(env, args);
   }
@@ -186,44 +179,37 @@ public class CallbackFunction extends Callback {
     return _fun;
   }
 
-  @Override
-  public boolean isInternal(Env env)
+  public override boolean isInternal(Env env)
   {
     return getFunction(env) instanceof JavaInvoker;
   }
 
-  @Override
-  public String getDeclFileName(Env env)
+  public override String getDeclFileName(Env env)
   {
     return getFunction(env).getDeclFileName(env);
   }
 
-  @Override
-  public int getDeclStartLine(Env env)
+  public override int getDeclStartLine(Env env)
   {
     return getFunction(env).getDeclStartLine(env);
   }
 
-  @Override
-  public int getDeclEndLine(Env env)
+  public override int getDeclEndLine(Env env)
   {
     return getFunction(env).getDeclEndLine(env);
   }
 
-  @Override
-  public String getDeclComment(Env env)
+  public override String getDeclComment(Env env)
   {
     return getFunction(env).getDeclComment(env);
   }
 
-  @Override
-  public boolean isReturnsReference(Env env)
+  public override boolean isReturnsReference(Env env)
   {
     return getFunction(env).isReturnsReference(env);
   }
 
-  @Override
-  public Arg []getArgs(Env env)
+  public override Arg []getArgs(Env env)
   {
     return getFunction(env).getArgs(env);
   }
@@ -231,8 +217,7 @@ public class CallbackFunction extends Callback {
   /**
    * Exports the value.
    */
-  @Override
-  protected void varExportImpl(StringValue sb, int level)
+  protected override void varExportImpl(StringValue sb, int level)
   {
     sb.append("'' . \"\\0\" . '" + _funName.substring(1) + "'");
   }

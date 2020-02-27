@@ -80,8 +80,7 @@ public class ByteMarshal extends Marshal
     */
   }
 
-  @Override
-  public Class getExpectedClass()
+  public override Class getExpectedClass()
   {
     return byte.class;
   }

@@ -87,8 +87,7 @@ public class GlobalArrayValue extends ArrayValueImpl {
   /**
    * Returns the array ref.
    */
-  @Override
-  public Var getVar(Value key)
+  public override Var getVar(Value key)
   {
     // return _env.getGlobalRef(key.toStringValue());
 
@@ -98,8 +97,7 @@ public class GlobalArrayValue extends ArrayValueImpl {
   /**
    * Returns the value as an argument which may be a reference.
    */
-  @Override
-  public Value getArg(Value index, boolean isTop)
+  public override Value getArg(Value index, boolean isTop)
   {
     return getVar(index);
   }
@@ -117,14 +115,12 @@ public class GlobalArrayValue extends ArrayValueImpl {
   /**
    * Unsets a value.
    */
-  @Override
-  public Value remove(Value key)
+  public override Value remove(Value key)
   {
     return _env.unsetGlobalVar(key.toStringValue());
   }
   
-  @Override
-  public void clear()
+  public override void clear()
   {
   }
   
@@ -160,8 +156,7 @@ public class GlobalArrayValue extends ArrayValueImpl {
   /**
    * Returns true if the index isset().
    */
-  @Override
-  public boolean isset(Value key)
+  public override boolean isset(Value key)
   {
     return get(key).isset();
   }
@@ -188,8 +183,7 @@ public class GlobalArrayValue extends ArrayValueImpl {
   /**
    * Returns the array keys.
    */
-  @Override
-  public Value getKeys()
+  public override Value getKeys()
   {
     return createAndFillArray().getKeys();
   }
@@ -202,20 +196,17 @@ public class GlobalArrayValue extends ArrayValueImpl {
     return createAndFillArray().entrySet();
   }
   
-  @Override
-  public Iterator<Map.Entry<Value, Value>> getIterator(Env env)
+  public override Iterator<Map.Entry<Value, Value>> getIterator(Env env)
   {
     return createAndFillArray().getIterator(env);
   }
 
-  @Override
-  public Iterator<Value> getKeyIterator(Env env)
+  public override Iterator<Value> getKeyIterator(Env env)
   {
     return createAndFillArray().getKeyIterator(env);
   }
 
-  @Override
-  public Iterator<Value> getValueIterator(Env env)
+  public override Iterator<Value> getValueIterator(Env env)
   {
     return createAndFillArray().getValueIterator(env);
   }

@@ -74,8 +74,7 @@ abstract public class CompiledMethod_0 extends CompiledMethod {
     return callMethod(env, qClass, qThis);
   }
 
-  @Override
-  abstract public Value callMethod(Env env,
+  abstract override public Value callMethod(Env env,
                                    QuercusClass qClass,
                                    Value qThis);
 

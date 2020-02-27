@@ -145,8 +145,7 @@ public class ArrayCopyValueImpl extends ArrayValueImpl
   /**
    * Removes a value.
    */
-  @Override
-  public Value remove(Value key)
+  public override Value remove(Value key)
   {
     _root.setModified();
 
@@ -166,8 +165,7 @@ public class ArrayCopyValueImpl extends ArrayValueImpl
   /**
    * Shuffles the array
    */
-  @Override
-  public Value shuffle()
+  public override Value shuffle()
   {
     _root.setModified();
 
@@ -185,8 +183,7 @@ public class ArrayCopyValueImpl extends ArrayValueImpl
   /**
    * Convert to an argument value.
    */
-  @Override
-  public Value toLocalRef()
+  public override Value toLocalRef()
   {
     return copy();
   }
@@ -194,8 +191,7 @@ public class ArrayCopyValueImpl extends ArrayValueImpl
   /**
    * Copy for return.
    */
-  @Override
-  public Value copyReturn()
+  public override Value copyReturn()
   {
     return copy();
   }

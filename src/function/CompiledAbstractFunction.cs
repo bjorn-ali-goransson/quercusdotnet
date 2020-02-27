@@ -52,8 +52,7 @@ public abstract class CompiledAbstractFunction extends AbstractFunction
     return _name;
   }
 
-  @Override
-  public final Arg []getArgs(Env env)
+  public override final Arg []getArgs(Env env)
   {
     return _args;
   }

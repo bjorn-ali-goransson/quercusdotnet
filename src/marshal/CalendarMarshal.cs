@@ -69,8 +69,7 @@ public class CalendarMarshal extends Marshal
       return Marshal.FOUR;
   }
   
-  @Override
-  public Class getExpectedClass()
+  public override Class getExpectedClass()
   {
     return Calendar.class;
   }

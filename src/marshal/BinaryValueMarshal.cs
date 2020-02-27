@@ -84,8 +84,7 @@ public class BinaryValueMarshal extends Marshal
     }
   }
 
-  @Override
-  protected int getMarshalingCostImpl(Value argValue)
+  protected override int getMarshalingCostImpl(Value argValue)
   {
     return argValue.toBinaryValueMarshalCost();
 
@@ -105,8 +104,7 @@ public class BinaryValueMarshal extends Marshal
     */
   }
 
-  @Override
-  public Class getExpectedClass()
+  public override Class getExpectedClass()
   {
     return BinaryValue.class;
   }

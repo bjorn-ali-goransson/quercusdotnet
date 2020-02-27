@@ -74,8 +74,7 @@ public class CallbackObjectMethod extends Callback {
    *
    * @param env the calling environment
    */
-  @Override
-  public Value call(Env env, Value a1)
+  public override Value call(Env env, Value a1)
   {
     return _obj.callMethod(env, _methodName, _hash,
                            a1);
@@ -86,8 +85,7 @@ public class CallbackObjectMethod extends Callback {
    *
    * @param env the calling environment
    */
-  @Override
-  public Value call(Env env, Value a1, Value a2)
+  public override Value call(Env env, Value a1, Value a2)
   {
     return _obj.callMethod(env, _methodName, _hash,
                            a1, a2);
@@ -98,8 +96,7 @@ public class CallbackObjectMethod extends Callback {
    *
    * @param env the calling environment
    */
-  @Override
-  public Value call(Env env, Value a1, Value a2, Value a3)
+  public override Value call(Env env, Value a1, Value a2, Value a3)
   {
     return _obj.callMethod(env, _methodName, _hash,
                            a1, a2, a3);
@@ -110,8 +107,7 @@ public class CallbackObjectMethod extends Callback {
    *
    * @param env the calling environment
    */
-  @Override
-  public Value call(Env env, Value a1, Value a2, Value a3,
+  public override Value call(Env env, Value a1, Value a2, Value a3,
                              Value a4)
   {
     return _obj.callMethod(env, _methodName, _hash,
@@ -123,22 +119,19 @@ public class CallbackObjectMethod extends Callback {
    *
    * @param env the calling environment
    */
-  @Override
-  public Value call(Env env, Value a1, Value a2, Value a3,
+  public override Value call(Env env, Value a1, Value a2, Value a3,
                     Value a4, Value a5)
   {
     return _obj.callMethod(env, _methodName, _hash,
                            a1, a2, a3, a4, a5);
   }
 
-  @Override
-  public Value call(Env env, Value []args)
+  public override Value call(Env env, Value []args)
   {
     return _obj.callMethod(env, _methodName, _hash, args);
   }
 
-  @Override
-  public void varDumpImpl(Env env,
+  public override void varDumpImpl(Env env,
                           WriteStream out,
                           int depth,
                           IdentityHashMap<Value, String> valueSet)
@@ -150,57 +143,48 @@ public class CallbackObjectMethod extends Callback {
     out.print(']');
   }
 
-  @Override
-  public boolean isValid(Env env)
+  public override boolean isValid(Env env)
   {
     return true;
   }
 
-  @Override
-  public String getCallbackName()
+  public override String getCallbackName()
   {
     return _methodName.toString();
   }
 
-  @Override
-  public boolean isInternal(Env env)
+  public override boolean isInternal(Env env)
   {
     // return _fun instanceof JavaInvoker;
     return false;
   }
 
-  @Override
-  public String getDeclFileName(Env env)
+  public override String getDeclFileName(Env env)
   {
     return getMethod().getDeclFileName(env);
   }
 
-  @Override
-  public int getDeclStartLine(Env env)
+  public override int getDeclStartLine(Env env)
   {
     return getMethod().getDeclStartLine(env);
   }
 
-  @Override
-  public int getDeclEndLine(Env env)
+  public override int getDeclEndLine(Env env)
   {
     return getMethod().getDeclEndLine(env);
   }
 
-  @Override
-  public String getDeclComment(Env env)
+  public override String getDeclComment(Env env)
   {
     return getMethod().getDeclComment(env);
   }
 
-  @Override
-  public boolean isReturnsReference(Env env)
+  public override boolean isReturnsReference(Env env)
   {
     return getMethod().isReturnsReference(env);
   }
 
-  @Override
-  public Arg []getArgs(Env env)
+  public override Arg []getArgs(Env env)
   {
     return getMethod().getArgs(env);
   }
@@ -218,8 +202,7 @@ public class CallbackObjectMethod extends Callback {
     return NullValue.NULL;
   }
 
-  @Override
-  public String toString()
+  public override String toString()
   {
     return getClass().getSimpleName() + "[" + _obj.getClassName()
                                       + "::" + _methodName + "]";

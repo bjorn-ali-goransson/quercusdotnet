@@ -55,14 +55,12 @@ public class BinaryOutputMarshal extends Marshal
     return (BinaryOutput) MARSHAL.marshal(env, value, MARSHAL.getExpectedClass());
   }
 
-  @Override
-  public Object marshal(Env env, Expr expr, Class expectedClass)
+  public override Object marshal(Env env, Expr expr, Class expectedClass)
   {
     return marshal(env, expr.eval(env), expectedClass);
   }
 
-  @Override
-  public Object marshal(Env env, Value value, Class expectedClass)
+  public override Object marshal(Env env, Value value, Class expectedClass)
   {
     if (value == null) {
       return null;
@@ -89,14 +87,12 @@ public class BinaryOutputMarshal extends Marshal
     }
   }
 
-  @Override
-  public Value unmarshal(Env env, Object value)
+  public override Value unmarshal(Env env, Object value)
   {
     return (Value) value;
   }
 
-  @Override
-  protected int getMarshalingCostImpl(Value argValue)
+  protected override int getMarshalingCostImpl(Value argValue)
   {
     if (argValue instanceof JavaValue
         && OutputStream.class.isAssignableFrom(
@@ -106,8 +102,7 @@ public class BinaryOutputMarshal extends Marshal
       return Marshal.FOUR;
   }
 
-  @Override
-  public Class getExpectedClass()
+  public override Class getExpectedClass()
   {
     return BinaryOutput.class;
   }

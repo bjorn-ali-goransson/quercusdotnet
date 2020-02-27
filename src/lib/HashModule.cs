@@ -598,14 +598,12 @@ public class HashModule extends AbstractQuercusModule {
       _adler.update(b);
     }
 
-    @Override
-    public void engineUpdate(byte[] bytes, int offset, int length)
+    public override void engineUpdate(byte[] bytes, int offset, int length)
     {
       _adler.update(bytes, offset, length);
     }
 
-    @Override
-    protected byte[] engineDigest()
+    protected override byte[] engineDigest()
     {
       long value = _adler.getValue();
 
@@ -619,8 +617,7 @@ public class HashModule extends AbstractQuercusModule {
       return bytes;
     }
 
-    @Override
-    protected void engineReset()
+    protected override void engineReset()
     {
       _adler.reset();
     }

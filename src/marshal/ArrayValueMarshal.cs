@@ -79,8 +79,7 @@ public class ArrayValueMarshal extends Marshal
       return NullValue.NULL;
   }
   
-  @Override
-  protected int getMarshalingCostImpl(Value argValue)
+  protected override int getMarshalingCostImpl(Value argValue)
   {
     if (argValue.isArray()) {
       if (argValue instanceof JavaAdapter)
@@ -92,8 +91,7 @@ public class ArrayValueMarshal extends Marshal
       return Marshal.FOUR;
   }
   
-  @Override
-  public Class getExpectedClass()
+  public override Class getExpectedClass()
   {
     return ArrayValue.class;
   }

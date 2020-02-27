@@ -76,8 +76,7 @@ public class CopyObjectExtValue extends ObjectExtValue
   /**
    * Returns the array ref.
    */
-  @Override
-  public Var getThisFieldVar(Env env, StringValue name)
+  public override Var getThisFieldVar(Env env, StringValue name)
   {
     _root.setModified();
 
@@ -87,8 +86,7 @@ public class CopyObjectExtValue extends ObjectExtValue
   /**
    * Returns the value as an argument which may be a reference.
    */
-  @Override
-    public Value getFieldArg(Env env, StringValue name, boolean isTop)
+  public override Value getFieldArg(Env env, StringValue name, boolean isTop)
   {
     _root.setModified();
 
@@ -98,8 +96,7 @@ public class CopyObjectExtValue extends ObjectExtValue
   /**
    * Returns the value as an argument which may be a reference.
    */
-  @Override
-  public Value getThisFieldArg(Env env, StringValue name)
+  public override Value getThisFieldArg(Env env, StringValue name)
   {
     _root.setModified();
 
@@ -109,8 +106,7 @@ public class CopyObjectExtValue extends ObjectExtValue
   /**
    * Returns the value as an argument which may be a reference.
    */
-  @Override
-  public Value getFieldArgRef(Env env, StringValue name)
+  public override Value getFieldArgRef(Env env, StringValue name)
   {
     _root.setModified();
 
@@ -120,8 +116,7 @@ public class CopyObjectExtValue extends ObjectExtValue
   /**
    * Returns the value as an argument which may be a reference.
    */
-  @Override
-  public Value getThisFieldArgRef(Env env, StringValue name)
+  public override Value getThisFieldArgRef(Env env, StringValue name)
   {
     _root.setModified();
 
@@ -131,8 +126,7 @@ public class CopyObjectExtValue extends ObjectExtValue
   /**
    * Adds a new value.
    */
-  @Override
-  public Value putField(Env env, StringValue name, Value value)
+  public override Value putField(Env env, StringValue name, Value value)
   {
     _root.setModified();
 
@@ -142,8 +136,7 @@ public class CopyObjectExtValue extends ObjectExtValue
   /**
    * Sets/adds field to this object.
    */
-  @Override
-  public Value putThisField(Env env, StringValue name, Value value)
+  public override Value putThisField(Env env, StringValue name, Value value)
   {
     _root.setModified();
 
@@ -158,8 +151,7 @@ public class CopyObjectExtValue extends ObjectExtValue
   /**
    * Adds a new value to the object.
    */
-  @Override
-  public void initField(Env env, StringValue name,
+  public override void initField(Env env, StringValue name,
                         StringValue canonicalName, Value value)
   {
     _root.setModified();
@@ -170,8 +162,7 @@ public class CopyObjectExtValue extends ObjectExtValue
   /**
    * Removes a value.
    */
-  @Override
-  public void unsetField(StringValue name)
+  public override void unsetField(StringValue name)
   {
     _root.setModified();
 
@@ -181,8 +172,7 @@ public class CopyObjectExtValue extends ObjectExtValue
   /**
    * Removes the field ref.
    */
-  @Override
-  public void unsetArray(Env env, StringValue name, Value index)
+  public override void unsetArray(Env env, StringValue name, Value index)
   {
     _root.setModified();
 
@@ -202,8 +192,7 @@ public class CopyObjectExtValue extends ObjectExtValue
   /**
    * Sets the array value with the given key.
    */
-  @Override
-  public Value put(Value key, Value value)
+  public override Value put(Value key, Value value)
   {
     _root.setModified();
 
@@ -213,8 +202,7 @@ public class CopyObjectExtValue extends ObjectExtValue
   /**
    * Appends a new array value
    */
-  @Override
-  public Value put(Value value)
+  public override Value put(Value value)
   {
     _root.setModified();
 
@@ -224,8 +212,7 @@ public class CopyObjectExtValue extends ObjectExtValue
   /**
    * Unsets the array value
    */
-  @Override
-  public Value remove(Value key)
+  public override Value remove(Value key)
   {
     _root.setModified();
 

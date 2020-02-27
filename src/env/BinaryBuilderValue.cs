@@ -147,8 +147,7 @@ public class BinaryBuilderValue
   /**
    * Cost to convert to a byte
    */
-  @Override
-  public int toByteMarshalCost()
+  public override int toByteMarshalCost()
   {
     if (isLongConvertible())
       return Marshal.COST_NUMERIC_LOSSLESS;
@@ -161,8 +160,7 @@ public class BinaryBuilderValue
   /**
    * Cost to convert to a String
    */
-  @Override
-  public int toStringMarshalCost()
+  public override int toStringMarshalCost()
   {
     return Marshal.COST_BINARY_TO_STRING;
   }
@@ -170,8 +168,7 @@ public class BinaryBuilderValue
   /**
    * Cost to convert to a char[]
    */
-  @Override
-  public int toCharArrayMarshalCost()
+  public override int toCharArrayMarshalCost()
   {
     return Marshal.COST_BINARY_TO_STRING + 5;
   }
@@ -179,8 +176,7 @@ public class BinaryBuilderValue
   /**
    * Cost to convert to a byte[]
    */
-  @Override
-  public int toByteArrayMarshalCost()
+  public override int toByteArrayMarshalCost()
   {
     return Marshal.COST_EQUAL;
   }
@@ -188,8 +184,7 @@ public class BinaryBuilderValue
   /**
    * Cost to convert to a binary value
    */
-  @Override
-  public int toBinaryValueMarshalCost()
+  public override int toBinaryValueMarshalCost()
   {
     return Marshal.COST_IDENTICAL;
   }
@@ -197,8 +192,7 @@ public class BinaryBuilderValue
   /**
    * Cost to convert to a string value
    */
-  @Override
-  public int toStringValueMarshalCost()
+  public override int toStringValueMarshalCost()
   {
     return Marshal.COST_IDENTICAL + 1;
   }
@@ -206,8 +200,7 @@ public class BinaryBuilderValue
   /**
    * Converts to a Unicode, 16-bit string.
    */
-  @Override
-  public StringValue toUnicode(Env env)
+  public override StringValue toUnicode(Env env)
   {
     return new UnicodeBuilderValue(this);
   }
@@ -215,8 +208,7 @@ public class BinaryBuilderValue
   /**
    * Converts to a UnicodeValue.
    */
-  @Override
-  public StringValue toUnicodeValue()
+  public override StringValue toUnicodeValue()
   {
     return new UnicodeBuilderValue(this);
   }
@@ -224,8 +216,7 @@ public class BinaryBuilderValue
   /**
    * Converts to a UnicodeValue.
    */
-  @Override
-  public StringValue toUnicodeValue(Env env)
+  public override StringValue toUnicodeValue(Env env)
   {
     return new UnicodeBuilderValue(this);
   }
@@ -233,8 +224,7 @@ public class BinaryBuilderValue
   /**
    * Converts to a UnicodeValue in desired charset.
    */
-  @Override
-  public StringValue toUnicodeValue(Env env, String charset)
+  public override StringValue toUnicodeValue(Env env, String charset)
   {
     return toUnicodeValue(env);
   }
@@ -242,8 +232,7 @@ public class BinaryBuilderValue
   /**
    * Converts to a string builder
    */
-  @Override
-  public StringValue toStringBuilder()
+  public override StringValue toStringBuilder()
   {
     // XXX: can this just return this, or does it need to return a copy?
     return new BinaryBuilderValue(this);
@@ -252,8 +241,7 @@ public class BinaryBuilderValue
   /**
    * Returns the character at an index
    */
-  @Override
-  public Value charValueAt(long index)
+  public override Value charValueAt(long index)
   {
     int len = length();
 
@@ -266,8 +254,7 @@ public class BinaryBuilderValue
   /**
    * Returns a subsequence
    */
-  @Override
-  public CharSequence subSequence(int start, int end)
+  public override CharSequence subSequence(int start, int end)
   {
     if (end <= start)
       return EMPTY;
@@ -278,8 +265,7 @@ public class BinaryBuilderValue
   /**
    * Convert to lower case.
    */
-  @Override
-  public StringValue toLowerCase(Locale locale)
+  public override StringValue toLowerCase(Locale locale)
   {
     int length = length();
 
@@ -305,8 +291,7 @@ public class BinaryBuilderValue
   /**
    * Convert to lower case.
    */
-  @Override
-  public StringValue toUpperCase()
+  public override StringValue toUpperCase()
   {
     int length = length();
 
@@ -336,8 +321,7 @@ public class BinaryBuilderValue
   /**
    * Creates a string builder of the same type.
    */
-  @Override
-  public BinaryBuilderValue createStringBuilder()
+  public override BinaryBuilderValue createStringBuilder()
   {
     return new BinaryBuilderValue();
   }
@@ -345,8 +329,7 @@ public class BinaryBuilderValue
   /**
    * Creates a string builder of the same type.
    */
-  @Override
-  public BinaryBuilderValue createStringBuilder(int length)
+  public override BinaryBuilderValue createStringBuilder(int length)
   {
     return new BinaryBuilderValue(length);
   }
@@ -354,8 +337,7 @@ public class BinaryBuilderValue
   /**
    * Creates a string builder of the same type.
    */
-  @Override
-  public BinaryBuilderValue
+  public override BinaryBuilderValue
     createStringBuilder(byte []buffer, int offset, int length)
   {
     return new BinaryBuilderValue(length);
@@ -364,8 +346,7 @@ public class BinaryBuilderValue
   /**
    * Converts to a string builder
    */
-  @Override
-  public StringValue toStringBuilder(Env env)
+  public override StringValue toStringBuilder(Env env)
   {
     return new BinaryBuilderValue(getBuffer(), 0, length());
   }
@@ -373,8 +354,7 @@ public class BinaryBuilderValue
   /**
    * Converts to a string builder
    */
-  @Override
-  public StringValue toStringBuilder(Env env, Value value)
+  public override StringValue toStringBuilder(Env env, Value value)
   {
     if (value.isUnicode()) {
       UnicodeBuilderValue sb = new UnicodeBuilderValue(this);
@@ -439,8 +419,7 @@ public class BinaryBuilderValue
   /**
    * Append a Java buffer to the value.
    */
-  @Override
-  public final StringValue appendUnicode(char []buf, int offset, int length)
+  public override final StringValue appendUnicode(char []buf, int offset, int length)
   {
     UnicodeBuilderValue sb = new UnicodeBuilderValue();
 
@@ -453,8 +432,7 @@ public class BinaryBuilderValue
   /**
    * Append a Java string to the value.
    */
-  @Override
-  public final StringValue appendUnicode(String s)
+  public override final StringValue appendUnicode(String s)
   {
     UnicodeBuilderValue sb = new UnicodeBuilderValue();
 
@@ -467,8 +445,7 @@ public class BinaryBuilderValue
   /**
    * Append a Java string to the value.
    */
-  @Override
-  public final StringValue appendUnicode(String s, int start, int end)
+  public override final StringValue appendUnicode(String s, int start, int end)
   {
     UnicodeBuilderValue sb = new UnicodeBuilderValue();
 
@@ -481,8 +458,7 @@ public class BinaryBuilderValue
   /**
    * Append a value to the value.
    */
-  @Override
-  public final StringValue appendUnicode(Value value)
+  public override final StringValue appendUnicode(Value value)
   {
     value = value.toValue();
 
@@ -506,8 +482,7 @@ public class BinaryBuilderValue
   /**
    * Append a Java char to the value.
    */
-  @Override
-  public final StringValue appendUnicode(char ch)
+  public override final StringValue appendUnicode(char ch)
   {
     UnicodeBuilderValue sb = new UnicodeBuilderValue();
 
@@ -520,8 +495,7 @@ public class BinaryBuilderValue
   /**
    * Append a Java boolean to the value.
    */
-  @Override
-  public final StringValue appendUnicode(boolean v)
+  public override final StringValue appendUnicode(boolean v)
   {
     return append(v ? "true" : "false");
   }
@@ -529,8 +503,7 @@ public class BinaryBuilderValue
   /**
    * Append a Java long to the value.
    */
-  @Override
-  public StringValue appendUnicode(long v)
+  public override StringValue appendUnicode(long v)
   {
     // XXX: this probably is frequent enough to special-case
 
@@ -540,8 +513,7 @@ public class BinaryBuilderValue
   /**
    * Append a Java double to the value.
    */
-  @Override
-  public StringValue appendUnicode(double v)
+  public override StringValue appendUnicode(double v)
   {
     return append(String.valueOf(v));
   }
@@ -549,8 +521,7 @@ public class BinaryBuilderValue
   /**
    * Append a Java object to the value.
    */
-  @Override
-  public StringValue appendUnicode(Object v)
+  public override StringValue appendUnicode(Object v)
   {
     if (v instanceof String)
       return appendUnicode(v.toString());
@@ -583,8 +554,7 @@ public class BinaryBuilderValue
     }
   }
 
-  @Override
-  public String toDebugString()
+  public override String toDebugString()
   {
     StringBuilder sb = new StringBuilder();
 
@@ -607,8 +577,7 @@ public class BinaryBuilderValue
     return sb.toString();
   }
 
-  @Override
-  public void varDumpImpl(Env env,
+  public override void varDumpImpl(Env env,
                           WriteStream out,
                           int depth,
                           IdentityHashMap<Value, String> valueSet)

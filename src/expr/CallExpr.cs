@@ -122,8 +122,7 @@ public class CallExpr extends Expr {
    * Returns the copy of the value.
    * @param location
    */
-  @Override
-  public Expr createCopy(ExprFactory factory)
+  public override Expr createCopy(ExprFactory factory)
   {
     return this;
   }
@@ -135,8 +134,7 @@ public class CallExpr extends Expr {
    *
    * @return the expression value.
    */
-  @Override
-  public Value eval(Env env)
+  public override Value eval(Env env)
   {
     return evalImpl(env, false, false);
   }
@@ -148,8 +146,7 @@ public class CallExpr extends Expr {
    *
    * @return the expression value.
    */
-  @Override
-  public Value evalCopy(Env env)
+  public override Value evalCopy(Env env)
   {
     return evalImpl(env, false, true);
   }
@@ -161,8 +158,7 @@ public class CallExpr extends Expr {
    *
    * @return the expression value.
    */
-  @Override
-  public Value evalRef(Env env)
+  public override Value evalRef(Env env)
   {
     return evalImpl(env, true, true);
   }

@@ -90,8 +90,7 @@ public class FileInput extends ReadStreamInput
     return getPath().getLength();
   }
 
-  @Override
-  public long seek(long offset, int whence)
+  public override long seek(long offset, int whence)
   {
     long position;
 
@@ -117,8 +116,7 @@ public class FileInput extends ReadStreamInput
   /**
    * Lock the shared advisory lock.
    */
-  @Override
-  public boolean lock(boolean shared, boolean block)
+  public override boolean lock(boolean shared, boolean block)
   {
     return _is.lock(shared, block);
   }
@@ -126,20 +124,17 @@ public class FileInput extends ReadStreamInput
   /**
    * Unlock the advisory lock.
    */
-  @Override
-  public boolean unlock()
+  public override boolean unlock()
   {
     return _is.unlock();
   }
 
-  @Override
-  public Value stat()
+  public override Value stat()
   {
     return FileModule.statImpl(_env, getPath());
   }
 
-  @Override
-  public void close()
+  public override void close()
   {
     _env.removeCleanup(this);
 
@@ -149,8 +144,7 @@ public class FileInput extends ReadStreamInput
   /**
    * Implements the EnvCleanup interface.
    */
-  @Override
-  public void cleanup()
+  public override void cleanup()
   {
     super.close();
   }
@@ -158,8 +152,7 @@ public class FileInput extends ReadStreamInput
   /**
    * Converts to a string.
    */
-  @Override
-  public String toString()
+  public override String toString()
   {
     return getClass().getSimpleName() + "[" + getPath() + "]";
   }

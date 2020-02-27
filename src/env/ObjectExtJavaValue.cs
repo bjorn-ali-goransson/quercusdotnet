@@ -110,8 +110,7 @@ public class ObjectExtJavaValue extends ObjectExtValue
   /**
    * Returns the java object.
    */
-  @Override
-  public Object toJavaObject()
+  public override Object toJavaObject()
   {
     if (_object == null) {
       _object = createJavaObject(Env.getInstance());
@@ -123,8 +122,7 @@ public class ObjectExtJavaValue extends ObjectExtValue
   /**
    * Binds a Java object to this object.
    */
-  @Override
-  public void setJavaObject(Object obj)
+  public override void setJavaObject(Object obj)
   {
     _object = obj;
   }
@@ -152,8 +150,7 @@ public class ObjectExtJavaValue extends ObjectExtValue
       super.varDumpImpl(env, out, depth, valueSet);
   }
 
-  @Override
-  protected void printRImpl(Env env,
+  protected override void printRImpl(Env env,
                             WriteStream out,
                             int depth,
                             IdentityHashMap<Value, String> valueSet)
@@ -170,8 +167,7 @@ public class ObjectExtJavaValue extends ObjectExtValue
    * Converts to a string.
    * @param env
    */
-  @Override
-  public StringValue toString(Env env)
+  public override StringValue toString(Env env)
   {
     AbstractFunction toString = _quercusClass.getToString();
 
@@ -191,8 +187,7 @@ public class ObjectExtJavaValue extends ObjectExtValue
   /**
    * Clone the object
    */
-  @Override
-  public Value clone(Env env)
+  public override Value clone(Env env)
   {
     Object obj = null;
 

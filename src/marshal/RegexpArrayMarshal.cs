@@ -47,8 +47,7 @@ public class RegexpArrayMarshal extends StringMarshal {
     return marshal(env, expr.eval(env), expectedClass);
   }
 
-  @Override
-  public Object marshal(Env env, Value value, Class expectedClass)
+  public override Object marshal(Env env, Value value, Class expectedClass)
   {
     // php/154g
     value = value.toValue();
@@ -56,14 +55,12 @@ public class RegexpArrayMarshal extends StringMarshal {
     return RegexpModule.createRegexpArray(value);
   }
 
-  @Override
-  public Value unmarshal(Env env, Object value)
+  public override Value unmarshal(Env env, Object value)
   {
     throw new UnsupportedOperationException(getClass().getName());
   }
 
-  @Override
-  protected int getMarshalingCostImpl(Value argValue)
+  protected override int getMarshalingCostImpl(Value argValue)
   {
     if (argValue.isArray())
       return Marshal.ZERO;
@@ -73,8 +70,7 @@ public class RegexpArrayMarshal extends StringMarshal {
       return Marshal.MAX;
   }
 
-  @Override
-  public int getMarshalingCost(Expr expr)
+  public override int getMarshalingCost(Expr expr)
   {
     if (expr.isArray())
       return Marshal.ZERO;
@@ -82,8 +78,7 @@ public class RegexpArrayMarshal extends StringMarshal {
       return Marshal.ONE;
   }
 
-  @Override
-  public Class getExpectedClass()
+  public override Class getExpectedClass()
   {
     return Regexp[].class;
   }

@@ -84,8 +84,7 @@ public class JavaMapAdapter
   /**
    * Converts to a java object.
    */
-  @Override
-  public Object toJavaObject(Env env, Class type)
+  public override Object toJavaObject(Env env, Class type)
   {
     if (type.isAssignableFrom(_map.getClass())) {
       return _map;
@@ -101,8 +100,7 @@ public class JavaMapAdapter
   /**
    * Copy for assignment.
    */
-  @Override
-  public Value copy()
+  public override Value copy()
   {
     try {
       return new JavaMapAdapter(_map, getClassDef());
@@ -115,8 +113,7 @@ public class JavaMapAdapter
   /**
    * Copy for serialization
    */
-  @Override
-  public Value copy(Env env, IdentityHashMap<Value,Value> map)
+  public override Value copy(Env env, IdentityHashMap<Value,Value> map)
   {
     return new JavaMapAdapter(_map, getClassDef());
   }
@@ -124,8 +121,7 @@ public class JavaMapAdapter
   /**
    * Returns the size.
    */
-  @Override
-  public int getSize()
+  public override int getSize()
   {
     return size();
   }
@@ -133,8 +129,7 @@ public class JavaMapAdapter
   /**
    * Gets a new value.
    */
-  @Override
-  public Value get(Value key)
+  public override Value get(Value key)
   {
     Object obj = _map.get(key.toJavaObject());
     
@@ -147,8 +142,7 @@ public class JavaMapAdapter
   /**
    * Removes a value.
    */
-  @Override
-  public Value remove(Value key)
+  public override Value remove(Value key)
   {
     updateNextAvailableIndex();
 
@@ -178,8 +172,7 @@ public class JavaMapAdapter
   /**
    * Creatse a tail index.
    */
-  @Override
-  public Value createTailKey()
+  public override Value createTailKey()
   {
     updateNextAvailableIndex();
     return LongValue.create(_nextAvailableIndex);
@@ -188,8 +181,7 @@ public class JavaMapAdapter
   /**
    * Adds a new value.
    */
-  @Override
-  public Value putImpl(Value key, Value value)
+  public override Value putImpl(Value key, Value value)
   {
     Object keyObject;
     
@@ -219,20 +211,17 @@ public class JavaMapAdapter
     return BooleanValue.create(_map.containsKey(key.toJavaObject()));
   }
   
-  @Override
-  public Iterator<Value> getKeyIterator(Env env)
+  public override Iterator<Value> getKeyIterator(Env env)
   {
     return new KeyIterator();
   }
 
-  @Override
-  public Iterator<Value> getValueIterator(Env env)
+  public override Iterator<Value> getValueIterator(Env env)
   {
     return new ValueIterator();
   }
   
-  @Override
-  public Iterator<Map.Entry<Value, Value>> getIterator(Env env)
+  public override Iterator<Map.Entry<Value, Value>> getIterator(Env env)
   {
     return new MapIterator();
   }
@@ -240,8 +229,7 @@ public class JavaMapAdapter
   /**
    * Returns a set of all the of the entries.
    */
-  @Override
-  public Set<Map.Entry<Value,Value>> entrySet()
+  public override Set<Map.Entry<Value,Value>> entrySet()
   {
     return new MapSet();
   }
@@ -249,8 +237,7 @@ public class JavaMapAdapter
   /**
    * Returns a collection of the values.
    */
-  @Override
-  public Set<Map.Entry<Object, Object>> objectEntrySet()
+  public override Set<Map.Entry<Object, Object>> objectEntrySet()
   {
     return _map.entrySet();
   }
@@ -258,8 +245,7 @@ public class JavaMapAdapter
   /**
    * Returns a collection of the values.
    */
-  @Override
-  public Collection<Value> values()
+  public override Collection<Value> values()
   {
     return new ValueCollection();
   }
@@ -296,14 +282,12 @@ public class JavaMapAdapter
     {
     }
 
-    @Override
-    public int size()
+    public override int size()
     {
       return getSize();
     }
 
-    @Override
-    public Iterator<Map.Entry<Value,Value>> iterator()
+    public override Iterator<Map.Entry<Value,Value>> iterator()
     {
       return new MapIterator();
     }
@@ -347,14 +331,12 @@ public class JavaMapAdapter
     {
     }
 
-    @Override
-    public int size()
+    public override int size()
     {
       return getSize();
     }
 
-    @Override
-    public Iterator<Value> iterator()
+    public override Iterator<Value> iterator()
     {
       return new ValueIterator();
     }

@@ -51,8 +51,7 @@ abstract public class Callback extends Value implements Callable {
    * @param key index of a1 in the array
    * @param a1 need to make a reference to this variable
    */
-  @Override
-  final public Value callArray(Env env,
+  final override public Value callArray(Env env,
                                ArrayValue array,
                                Value key,
                                Value a1)
@@ -90,8 +89,7 @@ abstract public class Callback extends Value implements Callable {
    * @param key index of a1 in the array
    * @param a1 need to make a reference to this variable
    */
-  @Override
-  final public Value callArray(Env env,
+  final override public Value callArray(Env env,
                                ArrayValue array,
                                Value key,
                                Value a1,
@@ -130,8 +128,7 @@ abstract public class Callback extends Value implements Callable {
    * @param key index of a1 in the array
    * @param a1 need to make a reference to this variable
    */
-  @Override
-  final public Value callArray(Env env,
+  final override public Value callArray(Env env,
                                ArrayValue array,
                                Value key,
                                Value a1,
@@ -172,8 +169,7 @@ abstract public class Callback extends Value implements Callable {
    *
    * @return true if this is an invalid callback reference
    */
-  @Override
-  abstract public boolean isValid(Env env);
+  abstract override public boolean isValid(Env env);
 
   /**
    * Returns the name of the callback.

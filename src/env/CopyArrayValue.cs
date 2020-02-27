@@ -165,8 +165,7 @@ public class CopyArrayValue extends ArrayValue {
   /**
    * Returns the value as an argument which may be a reference.
    */
-  @Override
-  public Value getArg(Value index, boolean isTop)
+  public override Value getArg(Value index, boolean isTop)
   {
     return getCopyArray().getArg(index, isTop);
   }
@@ -174,8 +173,7 @@ public class CopyArrayValue extends ArrayValue {
   /**
    * Convert to an argument value.
    */
-  @Override
-  public Value toLocalValue()
+  public override Value toLocalValue()
   {
     return getCopyArray().toLocalValue();
   }
@@ -183,8 +181,7 @@ public class CopyArrayValue extends ArrayValue {
   /**
    * Returns the field value, creating an object if it's unset.
    */
-  @Override
-  public Value getObject(Env env, Value fieldName)
+  public override Value getObject(Env env, Value fieldName)
   {
     return getCopyArray().getObject(env, fieldName);
   }
@@ -288,8 +285,7 @@ public class CopyArrayValue extends ArrayValue {
   /**
    * Pops the top value.
    */
-  @Override
-  public Value pop(Env env)
+  public override Value pop(Env env)
   {
     return getCopyArray().pop(env);
   }
@@ -334,8 +330,7 @@ public class CopyArrayValue extends ArrayValue {
     return _copyArray;
   }
   
-  @Override
-  public int cmp(Value rValue)
+  public override int cmp(Value rValue)
   {
     if (_copyArray != null)
       return _copyArray.cmp(rValue);
@@ -343,8 +338,7 @@ public class CopyArrayValue extends ArrayValue {
       return _constArray.cmp(rValue);
   }
   
-  @Override
-  public boolean eq(Value rValue)
+  public override boolean eq(Value rValue)
   {
     if (_copyArray != null)
       return _copyArray.eq(rValue);
@@ -352,8 +346,7 @@ public class CopyArrayValue extends ArrayValue {
       return _constArray.eq(rValue);
   }
   
-  @Override
-  public boolean eql(Value rValue)
+  public override boolean eql(Value rValue)
   {
     if (_copyArray != null)
       return _copyArray.eql(rValue);
@@ -361,8 +354,7 @@ public class CopyArrayValue extends ArrayValue {
       return _constArray.eql(rValue);
   }
 
-  @Override
-  public int hashCode()
+  public override int hashCode()
   {
     if (_copyArray != null)
       return _copyArray.hashCode();
@@ -370,8 +362,7 @@ public class CopyArrayValue extends ArrayValue {
       return _constArray.hashCode();
   }
   
-  @Override
-  public Value toValue()
+  public override Value toValue()
   {
     /*
     if (_copyArray != null)
@@ -383,8 +374,7 @@ public class CopyArrayValue extends ArrayValue {
     return this;
   }
   
-  @Override
-  public boolean equals(Object o)
+  public override boolean equals(Object o)
   {
     if (_copyArray != null)
       return _copyArray.equals(o);

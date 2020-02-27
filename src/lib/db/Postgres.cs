@@ -89,8 +89,7 @@ public class Postgres extends JdbcConnectionResource
   /**
    * Connects to the underlying database.
    */
-  @Override
-  protected ConnectionEntry connectImpl(Env env,
+  protected override ConnectionEntry connectImpl(Env env,
                                         String host,
                                         String userName,
                                         String password,
@@ -155,8 +154,7 @@ public class Postgres extends JdbcConnectionResource
   /**
    * returns a prepared statement
    */
-  @Override
-  public PostgresStatement prepare(Env env, String query)
+  public override PostgresStatement prepare(Env env, String query)
   {
     PostgresStatement stmt
       = new PostgresStatement((Postgres) validateConnection(env));
@@ -166,8 +164,7 @@ public class Postgres extends JdbcConnectionResource
     return stmt;
   }
 
-  @Override
-  protected PostgresStatement createStatementResource(Env env)
+  protected override PostgresStatement createStatementResource(Env env)
   {
     PostgresStatement stmt = new PostgresStatement(this);
     
@@ -218,8 +215,7 @@ public class Postgres extends JdbcConnectionResource
   /**
    * Creates a database-specific result.
    */
-  @Override
-  protected JdbcResultResource createResult(Statement stmt, ResultSet rs)
+  protected override JdbcResultResource createResult(Statement stmt, ResultSet rs)
   {
     return new PostgresResult(this, stmt, rs);
   }
@@ -263,8 +259,7 @@ public class Postgres extends JdbcConnectionResource
    * This function is overriden in Postgres to keep
    * result set references for php/430a (see also php/1f33)
    */
-  @Override
-  protected void keepResourceValues(Statement stmt)
+  protected override void keepResourceValues(Statement stmt)
   {
     setResultResource(createResult(stmt, null));
   }
@@ -273,8 +268,7 @@ public class Postgres extends JdbcConnectionResource
    * This function is overriden in Postgres to keep
    * statement references for php/430a
    */
-  @Override
-  protected boolean keepStatementOpen()
+  protected override boolean keepStatementOpen()
   {
     return true;
   }

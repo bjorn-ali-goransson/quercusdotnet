@@ -86,8 +86,7 @@ public class OracleResult extends JdbcResultResource {
     return env.wrapJava(ociLob);
   }
 
-  @Override
-  protected Value getClobValue(Env env,
+  protected override Value getClobValue(Env env,
                                ResultSet rs,
                                ResultSetMetaData metaData,
                                int column)

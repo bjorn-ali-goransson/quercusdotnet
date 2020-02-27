@@ -75,8 +75,7 @@ public class ChildrenView extends SimpleView
     }
   }
 
-  @Override
-  public ChildrenView getChildren(String namespace, String prefix)
+  public override ChildrenView getChildren(String namespace, String prefix)
   {
     if (_childList.size() > 0) {
       return _childList.get(0).getChildren(namespace, prefix);
@@ -86,8 +85,7 @@ public class ChildrenView extends SimpleView
     }
   }
 
-  @Override
-  public AttributeListView getAttributes(String namespace)
+  public override AttributeListView getAttributes(String namespace)
   {
     if (_childList.size() > 0) {
       return _childList.get(0).getAttributes(namespace);
@@ -97,8 +95,7 @@ public class ChildrenView extends SimpleView
     }
   }
 
-  @Override
-  public SimpleView addChild(Env env,
+  public override SimpleView addChild(Env env,
                              String name,
                              String value,
                              String namespace)
@@ -111,8 +108,7 @@ public class ChildrenView extends SimpleView
     }
   }
 
-  @Override
-  public HashMap<String,String> getNamespaces(boolean isRecursive,
+  public override HashMap<String,String> getNamespaces(boolean isRecursive,
                                               boolean isFromRoot,
                                               boolean isCheckUsage)
   {
@@ -124,8 +120,7 @@ public class ChildrenView extends SimpleView
     }
   }
 
-  @Override
-  public SimpleView getIndex(Env env, Value indexV)
+  public override SimpleView getIndex(Env env, Value indexV)
   {
     if (indexV.isString()) {
       if (_childList.size() > 0) {
@@ -147,14 +142,12 @@ public class ChildrenView extends SimpleView
     }
   }
 
-  @Override
-  public SimpleView setIndex(Env env, Value indexV, Value value)
+  public override SimpleView setIndex(Env env, Value indexV, Value value)
   {
     throw new UnsupportedOperationException();
   }
 
-  @Override
-  public SimpleView getField(Env env, Value indexV)
+  public override SimpleView getField(Env env, Value indexV)
   {
     String nodeName = indexV.toStringValue(env).toString();
 
@@ -176,8 +169,7 @@ public class ChildrenView extends SimpleView
     return view;
   }
 
-  @Override
-  public SimpleView setField(Env env, Value indexV, Value value)
+  public override SimpleView setField(Env env, Value indexV, Value value)
   {
     if (_childList.size() > 0) {
       SimpleView firstChild = _childList.get(0);
@@ -189,14 +181,12 @@ public class ChildrenView extends SimpleView
     }
   }
 
-  @Override
-  public int getCount()
+  public override int getCount()
   {
     return _childList.size();
   }
   
-  @Override
-  public boolean issetField(Env env, String name)
+  public override boolean issetField(Env env, String name)
   {
     for (SimpleView child : _childList) {
       if (child.getNodeName().equals(name)) {
@@ -207,8 +197,7 @@ public class ChildrenView extends SimpleView
     return false;
   }
 
-  @Override
-  public List<SimpleView> xpath(Env env,
+  public override List<SimpleView> xpath(Env env,
                                 SimpleNamespaceContext context,
                                 String expression)
   {
@@ -222,8 +211,7 @@ public class ChildrenView extends SimpleView
     }
   }
 
-  @Override
-  public String toString(Env env)
+  public override String toString(Env env)
   {
     if (_childList.size() > 0) {
       SimpleView firstChild = _childList.get(0);
@@ -235,8 +223,7 @@ public class ChildrenView extends SimpleView
     }
   }
 
-  @Override
-  public Iterator<Map.Entry<IteratorIndex,SimpleView>> getIterator()
+  public override Iterator<Map.Entry<IteratorIndex,SimpleView>> getIterator()
   {
     LinkedHashMap<IteratorIndex,SimpleView> map
       = new LinkedHashMap<IteratorIndex,SimpleView>();
@@ -250,14 +237,12 @@ public class ChildrenView extends SimpleView
     return map.entrySet().iterator();
   }
 
-  @Override
-  public Set<Map.Entry<Value,Value>> getEntrySet(Env env, QuercusClass cls)
+  public override Set<Map.Entry<Value,Value>> getEntrySet(Env env, QuercusClass cls)
   {
     throw new UnsupportedOperationException();
   }
 
-  @Override
-  public boolean toXml(Env env, StringBuilder sb)
+  public override boolean toXml(Env env, StringBuilder sb)
   {
     if (_childList.size() > 0) {
       SimpleView firstChild = _childList.get(0);
@@ -271,8 +256,7 @@ public class ChildrenView extends SimpleView
     }
   }
 
-  @Override
-  public Value toDumpValue(Env env, QuercusClass cls, boolean isChildren)
+  public override Value toDumpValue(Env env, QuercusClass cls, boolean isChildren)
   {
     int childSize = _childList.size();
 
@@ -325,8 +309,7 @@ public class ChildrenView extends SimpleView
     return obj;
   }
 
-  @Override
-  public String toString()
+  public override String toString()
   {
     int size = _childList.size();
     SimpleView firstChild = null;

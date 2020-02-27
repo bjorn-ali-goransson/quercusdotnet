@@ -50,80 +50,67 @@ abstract public class ArgValue extends Value
     return toLocalValue();
   }
 
-  @Override
-  public ArrayValue toArrayValue(Env env)
+  public override ArrayValue toArrayValue(Env env)
   {
     return toLocalValue().toArrayValue(env);
   }
 
-  @Override
-  public StringValue toStringValue()
+  public override StringValue toStringValue()
   {
     return toLocalValue().toStringValue();
   }
 
-  @Override
-  public StringValue toStringValue(Env env)
+  public override StringValue toStringValue(Env env)
   {
     return toLocalValue().toStringValue(env);
   }
 
-  @Override
-  public char toChar()
+  public override char toChar()
   {
     return toLocalValue().toChar();
   }
 
-  @Override
-  public String toJavaString()
+  public override String toJavaString()
   {
     return toLocalValue().toJavaString();
   }
 
-  @Override
-  public Object toJavaObject()
+  public override Object toJavaObject()
   {
     return toLocalValue().toJavaObject();
   }
 
-  @Override
-  public boolean toBoolean()
+  public override boolean toBoolean()
   {
     return toLocalValue().toBoolean();
   }
 
-  @Override
-  public double toDouble()
+  public override double toDouble()
   {
     return toLocalValue().toDouble();
   }
 
-  @Override
-  public long toLong()
+  public override long toLong()
   {
     return toLocalValue().toLong();
   }
 
-  @Override
-  public ArrayValue toArray()
+  public override ArrayValue toArray()
   {
     return toLocalValue().toArray();
   }
 
-  @Override
-  public Value toAutoObject(Env env)
+  public override Value toAutoObject(Env env)
   {
     return toLocalValue().toObject(env);
   }
 
-  @Override
-  public InputStream toInputStream()
+  public override InputStream toInputStream()
   {
     return toLocalValue().toInputStream();
   }
 
-  @Override
-  protected void varDumpImpl(Env env,
+  protected override void varDumpImpl(Env env,
                              WriteStream out,
                              int depth,
                              IdentityHashMap<Value, String> valueSet)
@@ -132,8 +119,7 @@ abstract public class ArgValue extends Value
     toLocalValue().varDumpImpl(env, out, depth, valueSet);
   }
 
-  @Override
-  protected void printRImpl(Env env,
+  protected override void printRImpl(Env env,
                             WriteStream out,
                             int depth,
                             IdentityHashMap<Value, String> valueSet)

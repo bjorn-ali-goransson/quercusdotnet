@@ -18,14 +18,12 @@ public enum ExprType
       return LONG;
     }
     
-    @Override
-    public ExprType withDouble()
+    public override ExprType withDouble()
     {
       return DOUBLE;
     }
     
-    @Override
-    public ExprType withType(ExprType type)
+    public override ExprType withType(ExprType type)
     {
       if (type == INIT)
 	return VALUE;
@@ -40,32 +38,27 @@ public enum ExprType
   },
     
   LONG {
-    @Override
-    public boolean isLong()
+    public override boolean isLong()
     {
       return true;
     }
     
-    @Override
-    public boolean isDouble()
+    public override boolean isDouble()
     {
       return true;
     }
     
-    @Override
-    public ExprType withLong()
+    public override ExprType withLong()
     {
       return LONG;
     }
     
-    @Override
-    public ExprType withDouble()
+    public override ExprType withDouble()
     {
       return DOUBLE;
     }
     
-    @Override
-    public ExprType withType(ExprType type)
+    public override ExprType withType(ExprType type)
     {
       if (type == LONG)
         return LONG;
@@ -82,26 +75,22 @@ public enum ExprType
   },
     
   DOUBLE {
-    @Override
-    public boolean isDouble()
+    public override boolean isDouble()
     {
       return true;
     }
     
-    @Override
-    public ExprType withLong()
+    public override ExprType withLong()
     {
       return DOUBLE;
     }
     
-    @Override
-    public ExprType withDouble()
+    public override ExprType withDouble()
     {
       return DOUBLE;
     }
     
-    @Override
-    public ExprType withType(ExprType type)
+    public override ExprType withType(ExprType type)
     {
       if (type == LONG || type == DOUBLE)
 	return DOUBLE;
@@ -116,20 +105,17 @@ public enum ExprType
   },
   
   BOOLEAN {
-    @Override
-    public boolean isBoolean()
+    public override boolean isBoolean()
     {
       return true;
     }
     
-    @Override
-    public ExprType withBoolean()
+    public override ExprType withBoolean()
     {
       return BOOLEAN;
     }
     
-    @Override
-    public ExprType withType(ExprType type)
+    public override ExprType withType(ExprType type)
     {
       if (type == BOOLEAN)
         return BOOLEAN;
@@ -144,20 +130,17 @@ public enum ExprType
   },
     
   STRING {
-    @Override
-    public boolean isString()
+    public override boolean isString()
     {
       return true;
     }
     
-    @Override
-    public ExprType withString()
+    public override ExprType withString()
     {
       return STRING;
     }
     
-    @Override
-    public ExprType withType(ExprType type)
+    public override ExprType withType(ExprType type)
     {
       if (type == STRING)
         return STRING;

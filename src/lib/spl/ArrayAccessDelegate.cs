@@ -53,26 +53,22 @@ public class ArrayAccessDelegate implements ArrayDelegate
     return qThis.callMethod(env, OFFSET_GET, index);
   }
 
-  @Override
-  public Value put(Env env, ObjectValue qThis, Value index, Value value)
+  public override Value put(Env env, ObjectValue qThis, Value index, Value value)
   {
     return qThis.callMethod(env, OFFSET_SET, index, value);
   }
 
-  @Override
-  public Value put(Env env, ObjectValue qThis, Value index)
+  public override Value put(Env env, ObjectValue qThis, Value index)
   {
     return qThis.callMethod(env, OFFSET_SET, UnsetValue.UNSET, index);
   }
 
-  @Override
-  public boolean isset(Env env, ObjectValue qThis, Value index)
+  public override boolean isset(Env env, ObjectValue qThis, Value index)
   {
     return qThis.callMethod(env, OFFSET_EXISTS, index).toBoolean();
   }
 
-  @Override
-  public boolean isEmpty(Env env, ObjectValue qThis, Value index)
+  public override boolean isEmpty(Env env, ObjectValue qThis, Value index)
   {
     boolean isExists = qThis.callMethod(env, OFFSET_EXISTS, index).toBoolean();
 
@@ -85,14 +81,12 @@ public class ArrayAccessDelegate implements ArrayDelegate
     return value.isEmpty();
   }
 
-  @Override
-  public Value unset(Env env, ObjectValue qThis, Value index)
+  public override Value unset(Env env, ObjectValue qThis, Value index)
   {
     return qThis.callMethod(env, OFFSET_UNSET, index);
   }
 
-  @Override
-  public long count(Env env, ObjectValue qThis)
+  public override long count(Env env, ObjectValue qThis)
   {
     return 1;
   }

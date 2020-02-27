@@ -93,36 +93,31 @@ public class QuercusDataSource implements DataSource {
     return _ds.getLoginTimeout();
   }
 
-  @Override
-  public PrintWriter getLogWriter()
+  public override PrintWriter getLogWriter()
     
   {
     return _ds.getLogWriter();
   }
 
-  @Override
-  public void setLoginTimeout(int seconds)
+  public override void setLoginTimeout(int seconds)
     
   {
     _ds.setLoginTimeout(seconds);
   }
 
-  @Override
-  public void setLogWriter(PrintWriter out)
+  public override void setLogWriter(PrintWriter out)
     
   {
     _ds.setLogWriter(out);
   }
 
-  @Override
-  public boolean isWrapperFor(Class<?> iface)
+  public override boolean isWrapperFor(Class<?> iface)
     
   {
     return _ds.isWrapperFor(iface);
   }
 
-  @Override
-  public <T> T unwrap(Class<T> iface)
+  public override <T> T unwrap(Class<T> iface)
     
   {
     return _ds.unwrap(iface);
@@ -136,8 +131,7 @@ public class QuercusDataSource implements DataSource {
     throw new UnsupportedOperationException();
   }
 
-  @Override
-  public String toString() {
+  public override String toString() {
     return getClass().getSimpleName() + "[" + _ds
                                       + "," + _user + "]";
   }

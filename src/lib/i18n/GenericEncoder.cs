@@ -64,8 +64,7 @@ public class GenericEncoder
     return false;
   }
 
-  @Override
-  public StringValue encode(StringValue sb, CharSequence str,
+  public override StringValue encode(StringValue sb, CharSequence str,
                             int start, int end)
   {
     CharBuffer in = CharBuffer.wrap(str, start, end);

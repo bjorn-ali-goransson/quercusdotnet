@@ -67,8 +67,7 @@ public class EregMarshal extends StringMarshal {
       return Marshal.MAX;
   }
   
-  @Override
-  public Class getExpectedClass()
+  public override Class getExpectedClass()
   {
     return Ereg.class;
   }

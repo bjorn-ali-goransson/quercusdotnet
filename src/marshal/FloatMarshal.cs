@@ -83,8 +83,7 @@ public class FloatMarshal extends Marshal
     */
   }
 
-  @Override
-  public Class getExpectedClass()
+  public override Class getExpectedClass()
   {
     return float.class;
   }

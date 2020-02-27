@@ -51,44 +51,37 @@ public class QuercusCookieImpl implements QuercusCookie
     return _cookie.getName();
   }
 
-  @Override
-  public String getValue()
+  public override String getValue()
   {
     return _cookie.getValue();
   }
 
-  @Override
-  public void setVersion(int version)
+  public override void setVersion(int version)
   {
     _cookie.setVersion(version);
   }
 
-  @Override
-  public void setPath(String path)
+  public override void setPath(String path)
   {
     _cookie.setPath(path);
   }
 
-  @Override
-  public void setMaxAge(int maxAge)
+  public override void setMaxAge(int maxAge)
   {
     _cookie.setMaxAge(maxAge);
   }
 
-  @Override
-  public void setDomain(String domain)
+  public override void setDomain(String domain)
   {
     _cookie.setDomain(domain);
   }
 
-  @Override
-  public void setSecure(boolean isSecure)
+  public override void setSecure(boolean isSecure)
   {
     _cookie.setSecure(isSecure);
   }
 
-  @Override
-  public void setHttpOnly(boolean isHttpOnly)
+  public override void setHttpOnly(boolean isHttpOnly)
   {
     _cookie.setHttpOnly(isHttpOnly);
   }

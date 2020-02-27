@@ -52,38 +52,32 @@ abstract public class CompiledFunction extends CompiledAbstractFunction {
     return call(env, argValues).copyReturn();
   }
 
-  @Override
-  public Value callRef(Env env)
+  public override Value callRef(Env env)
   {
     return call(env).copyReturn();
   }
 
-  @Override
-  public Value callRef(Env env, Value a1)
+  public override Value callRef(Env env, Value a1)
   {
     return call(env, a1).copyReturn();
   }
 
-  @Override
-  public Value callRef(Env env, Value a1, Value a2)
+  public override Value callRef(Env env, Value a1, Value a2)
   {
     return call(env, a1, a2).copyReturn();
   }
 
-  @Override
-  public Value callRef(Env env, Value a1, Value a2, Value a3)
+  public override Value callRef(Env env, Value a1, Value a2, Value a3)
   {
     return call(env, a1, a2, a3).copyReturn();
   }
 
-  @Override
-  public Value callRef(Env env, Value a1, Value a2, Value a3, Value a4)
+  public override Value callRef(Env env, Value a1, Value a2, Value a3, Value a4)
   {
     return call(env, a1, a2, a3, a4).copyReturn();
   }
 
-  @Override
-  public Value callRef(Env env, Value a1, Value a2,
+  public override Value callRef(Env env, Value a1, Value a2,
                        Value a3, Value a4, Value a5)
   {
     return call(env, a1, a2, a3, a4, a5).copyReturn();
@@ -94,8 +88,7 @@ abstract public class CompiledFunction extends CompiledAbstractFunction {
   // special methods
   //
 
-  @Override
-  public Value callMethod(Env env,
+  public override Value callMethod(Env env,
                           StringValue methodName, int hash,
                           Value []args)
   {

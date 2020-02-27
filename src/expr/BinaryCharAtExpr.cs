@@ -79,8 +79,7 @@ public class BinaryCharAtExpr extends AbstractVarExpr {
    *
    * @return the expression value.
    */
-  @Override
-  public Var evalVar(Env env)
+  public override Var evalVar(Env env)
   {
     return eval(env).toVar();
   }
@@ -92,8 +91,7 @@ public class BinaryCharAtExpr extends AbstractVarExpr {
    *
    * @return the expression value.
    */
-  @Override
-  public Value evalArg(Env env, boolean isTop)
+  public override Value evalArg(Env env, boolean isTop)
   {
     return eval(env);
   }

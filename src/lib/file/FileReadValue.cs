@@ -140,8 +140,7 @@ public class FileReadValue extends FileValue {
   /**
    * Reads a line from a file, returning null on EOF.
    */
-  @Override
-  public StringValue readLine(Env env)
+  public override StringValue readLine(Env env)
     
   {
     // XXX: offset messed up

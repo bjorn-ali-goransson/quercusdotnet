@@ -337,20 +337,17 @@ class RegexpNode {
    * A node with exactly one character matches.
    */
   static class AbstractCharNode extends RegexpNode {
-    @Override
-    RegexpNode createLoop(Regcomp parser, int min, int max)
+    RegexpNode override createLoop(Regcomp parser, int min, int max)
     {
       return new CharLoop(this, min, max);
     }
 
-    @Override
-    RegexpNode createLoopUngreedy(Regcomp parser, int min, int max)
+    RegexpNode override createLoopUngreedy(Regcomp parser, int min, int max)
     {
       return new CharUngreedyLoop(this, min, max);
     }
 
-    @Override
-    int minLength()
+    int override minLength()
     {
       return 1;
     }
@@ -364,14 +361,12 @@ class RegexpNode {
       _ch = ch;
     }
 
-    @Override
-    int firstChar()
+    int override firstChar()
     {
       return _ch;
     }
 
-    @Override
-    boolean []firstSet(boolean []firstSet)
+    boolean override []firstSet(boolean []firstSet)
     {
       if (firstSet != null && _ch < firstSet.length) {
         firstSet[_ch] = true;
@@ -382,8 +377,7 @@ class RegexpNode {
         return null;
     }
 
-    @Override
-    int match(StringValue string, int length, int offset, RegexpState state)
+    int override match(StringValue string, int length, int offset, RegexpState state)
     {
       if (offset < length && string.charAt(offset) == _ch)
         return offset + 1;
@@ -405,14 +399,12 @@ class RegexpNode {
     = new AnchorEndOrNewline();
 
   static class AnchorBegin extends NullableNode {
-    @Override
-    boolean isAnchorBegin()
+    boolean override isAnchorBegin()
     {
       return true;
     }
 
-    @Override
-    int match(StringValue string, int length, int offset, RegexpState state)
+    int override match(StringValue string, int length, int offset, RegexpState state)
     {
       if (offset == 0)
         return offset;
@@ -422,8 +414,7 @@ class RegexpNode {
   }
 
   private static class AnchorBeginOrNewline extends NullableNode {
-    @Override
-    int match(StringValue string, int strlen, int offset, RegexpState state)
+    int override match(StringValue string, int strlen, int offset, RegexpState state)
     {
       if (offset == 0 || string.charAt(offset - 1) == '\n')
         return offset;
@@ -433,8 +424,7 @@ class RegexpNode {
   }
 
   static class AnchorBeginRelative extends NullableNode {
-    @Override
-    int match(StringValue string, int strlen, int offset, RegexpState state)
+    int override match(StringValue string, int strlen, int offset, RegexpState state)
     {
       if (offset == state._start)
         return offset;
@@ -444,8 +434,7 @@ class RegexpNode {
   }
 
   private static class AnchorEnd extends NullableNode {
-    @Override
-    int match(StringValue string, int strlen, int offset, RegexpState state)
+    int override match(StringValue string, int strlen, int offset, RegexpState state)
     {
       if (offset == strlen
           || offset + 1 == strlen && string.charAt(offset) == '\n')
@@ -456,8 +445,7 @@ class RegexpNode {
   }
 
   private static class AnchorEndOnly extends NullableNode {
-    @Override
-    int match(StringValue string, int length, int offset, RegexpState state)
+    int override match(StringValue string, int length, int offset, RegexpState state)
     {
       if (offset == length)
         return offset;
@@ -467,8 +455,7 @@ class RegexpNode {
   }
 
   private static class AnchorEndOrNewline extends NullableNode {
-    @Override
-    int match(StringValue string, int length, int offset, RegexpState state)
+    int override match(StringValue string, int length, int offset, RegexpState state)
     {
       if (offset == length || string.charAt(offset) == '\n')
         return offset;
@@ -502,8 +489,7 @@ class RegexpNode {
       _set = set;
     }
 
-    @Override
-    boolean []firstSet(boolean []firstSet)
+    boolean override []firstSet(boolean []firstSet)
     {
       if (firstSet == null)
         return null;
@@ -526,8 +512,7 @@ class RegexpNode {
       _set[ch] = false;
     }
 
-    @Override
-    int match(StringValue string, int length, int offset, RegexpState state)
+    int override match(StringValue string, int length, int offset, RegexpState state)
     {
       if (length <= offset)
         return -1;
@@ -564,8 +549,7 @@ class RegexpNode {
       _set[ch] = false;
     }
 
-    @Override
-    int match(StringValue string, int length, int offset, RegexpState state)
+    int override match(StringValue string, int length, int offset, RegexpState state)
     {
       if (length <= offset) {
         return -1;
@@ -605,8 +589,7 @@ class RegexpNode {
         throw new IllegalStateException();
     }
 
-    @Override
-    RegexpNode copyImpl(HashMap<RegexpNode,RegexpNode> state)
+    RegexpNode override copyImpl(HashMap<RegexpNode,RegexpNode> state)
     {
       RegexpNode next = _next.copy(state);
       RegexpNode node = _node.copy(state);
@@ -617,8 +600,7 @@ class RegexpNode {
       return copy;
     }
 
-    @Override
-    RegexpNode concat(RegexpNode next)
+    RegexpNode override concat(RegexpNode next)
     {
       if (next == null)
         throw new NullPointerException();
@@ -631,8 +613,7 @@ class RegexpNode {
       return this;
     }
 
-    @Override
-    RegexpNode createLoop(Regcomp parser, int min, int max)
+    RegexpNode override createLoop(Regcomp parser, int min, int max)
     {
       if (min == 0 && max == 1) {
         _min = 0;
@@ -643,14 +624,12 @@ class RegexpNode {
         return new LoopHead(parser, this, min, max);
     }
 
-    @Override
-    int minLength()
+    int override minLength()
     {
       return _min;
     }
 
-    @Override
-    boolean []firstSet(boolean []firstSet)
+    boolean override []firstSet(boolean []firstSet)
     {
       firstSet = _node.firstSet(firstSet);
 
@@ -666,8 +645,7 @@ class RegexpNode {
     // match functions
     //
 
-    @Override
-    int match(StringValue string, int length, int offset, RegexpState state)
+    int override match(StringValue string, int length, int offset, RegexpState state)
     {
       RegexpNode next = _next;
       RegexpNode node = _node;
@@ -700,8 +678,7 @@ class RegexpNode {
       return -1;
     }
 
-    @Override
-    protected void toString(StringBuilder sb, Map<RegexpNode,Integer> map)
+    protected override void toString(StringBuilder sb, Map<RegexpNode,Integer> map)
     {
       if (toStringAdd(sb, map))
         return;
@@ -733,8 +710,7 @@ class RegexpNode {
         throw new IllegalStateException();
     }
 
-    @Override
-    RegexpNode copyImpl(HashMap<RegexpNode,RegexpNode> state)
+    RegexpNode override copyImpl(HashMap<RegexpNode,RegexpNode> state)
     {
       RegexpNode next = _next.copy(state);
       RegexpNode node = _node.copy(state);
@@ -745,8 +721,7 @@ class RegexpNode {
       return copy;
     }
 
-    @Override
-    RegexpNode concat(RegexpNode next)
+    RegexpNode override concat(RegexpNode next)
     {
       if (next == null)
         throw new NullPointerException();
@@ -759,8 +734,7 @@ class RegexpNode {
       return this;
     }
 
-    @Override
-    RegexpNode createLoop(Regcomp parser, int min, int max)
+    RegexpNode override createLoop(Regcomp parser, int min, int max)
     {
       if (min == 0 && max == 1) {
         _min = 0;
@@ -771,14 +745,12 @@ class RegexpNode {
         return new LoopHead(parser, this, min, max);
     }
 
-    @Override
-    int minLength()
+    int override minLength()
     {
       return _min;
     }
 
-    @Override
-    boolean []firstSet(boolean []firstSet)
+    boolean override []firstSet(boolean []firstSet)
     {
       firstSet = _node.firstSet(firstSet);
 
@@ -794,8 +766,7 @@ class RegexpNode {
     // match functions
     //
 
-    @Override
-    int match(StringValue string, int length, int offset, RegexpState state)
+    int override match(StringValue string, int length, int offset, RegexpState state)
     {
       RegexpNode next = _next;
       RegexpNode node = _node;
@@ -826,8 +797,7 @@ class RegexpNode {
       return -1;
     }
 
-    @Override
-    public String toString()
+    public override String toString()
     {
       return "CharUngreedyLoop[" + _min + ", "
           + _max + ", " + _node + ", " + _next + "]";
@@ -847,8 +817,7 @@ class RegexpNode {
       _next = next;
     }
 
-    @Override
-    RegexpNode copyImpl(HashMap<RegexpNode,RegexpNode> state)
+    RegexpNode override copyImpl(HashMap<RegexpNode,RegexpNode> state)
     {
       RegexpNode head = _head.copy(state);
       RegexpNode next = _next.copy(state);
@@ -856,8 +825,7 @@ class RegexpNode {
       return new Concat(head, next);
     }
 
-    @Override
-    RegexpNode concat(RegexpNode next)
+    RegexpNode override concat(RegexpNode next)
     {
       _next = _next.concat(next);
 
@@ -868,20 +836,17 @@ class RegexpNode {
     // optim functions
     //
 
-    @Override
-    int minLength()
+    int override minLength()
     {
       return _head.minLength() + _next.minLength();
     }
 
-    @Override
-    int firstChar()
+    int override firstChar()
     {
       return _head.firstChar();
     }
 
-    @Override
-    boolean []firstSet(boolean []firstSet)
+    boolean override []firstSet(boolean []firstSet)
     {
       firstSet = _head.firstSet(firstSet);
 
@@ -891,14 +856,12 @@ class RegexpNode {
       return firstSet;
     }
 
-    @Override
-    String prefix()
+    String override prefix()
     {
       return _head.prefix();
     }
 
-    @Override
-    boolean isAnchorBegin()
+    boolean override isAnchorBegin()
     {
       return _head.isAnchorBegin();
     }
@@ -913,8 +876,7 @@ class RegexpNode {
       return _next;
     }
 
-    @Override
-    int match(StringValue string, int length, int offset, RegexpState state)
+    int override match(StringValue string, int length, int offset, RegexpState state)
     {
       offset = _head.match(string, length, offset, state);
 
@@ -924,8 +886,7 @@ class RegexpNode {
         return _next.match(string, length, offset, state);
     }
 
-    @Override
-    protected void toString(StringBuilder sb, Map<RegexpNode,Integer> map)
+    protected override void toString(StringBuilder sb, Map<RegexpNode,Integer> map)
     {
       if (toStringAdd(sb, map))
         return;
@@ -959,22 +920,19 @@ class RegexpNode {
       _tail = tail;
     }
 
-    @Override
-    RegexpNode getTail()
+    RegexpNode override getTail()
     {
       return _tail;
     }
 
-    @Override
-    RegexpNode concat(RegexpNode next)
+    RegexpNode override concat(RegexpNode next)
     {
       _tail.concat(next);
 
       return this;
     }
 
-    @Override
-    RegexpNode createLoop(Regcomp parser, int min, int max)
+    RegexpNode override createLoop(Regcomp parser, int min, int max)
     {
       return _tail.createLoop(parser, min, max);
     }
@@ -982,8 +940,7 @@ class RegexpNode {
     /**
      * Create an or expression
      */
-    @Override
-    RegexpNode createOr(RegexpNode node)
+    RegexpNode override createOr(RegexpNode node)
     {
       return _tail.createOr(node);
     }
@@ -997,8 +954,7 @@ class RegexpNode {
       _conditional = conditional;
     }
 
-    @Override
-    RegexpNode copyImpl(HashMap<RegexpNode,RegexpNode> state)
+    RegexpNode override copyImpl(HashMap<RegexpNode,RegexpNode> state)
     {
       RegexpNode conditional = _conditional.copy(state);
 
@@ -1012,8 +968,7 @@ class RegexpNode {
       return copy;
     }
 
-    @Override
-    int match(StringValue string, int length, int offset, RegexpState state)
+    int override match(StringValue string, int length, int offset, RegexpState state)
     {
       if (_conditional.match(string, length, offset, state) >= 0) {
         int match = _first.match(string, length, offset, state);
@@ -1025,8 +980,7 @@ class RegexpNode {
         return _tail.match(string, length, offset, state);
     }
 
-    @Override
-    public String toString()
+    public override String toString()
     {
       return getClass().getSimpleName() + "[" + _conditional
                                         + "," + _first
@@ -1043,8 +997,7 @@ class RegexpNode {
       _group = group;
     }
 
-    @Override
-    RegexpNode copyImpl(HashMap<RegexpNode,RegexpNode> state)
+    RegexpNode override copyImpl(HashMap<RegexpNode,RegexpNode> state)
     {
       GroupConditionalHead copy = new GroupConditionalHead(_group);
       state.put(this, copy);
@@ -1056,8 +1009,7 @@ class RegexpNode {
       return copy;
     }
 
-    @Override
-    int match(StringValue string, int length, int offset, RegexpState state)
+    int override match(StringValue string, int length, int offset, RegexpState state)
     {
       int begin = state.getBegin(_group);
       int end = state.getEnd(_group);
@@ -1072,8 +1024,7 @@ class RegexpNode {
         return _tail.match(string, length, offset, state);
     }
 
-    @Override
-    public String toString()
+    public override String toString()
     {
       return getClass().getSimpleName() + "[" + _group
                                         + "," + _first
@@ -1097,14 +1048,12 @@ class RegexpNode {
       head.setTail(this);
     }
 
-    @Override
-    RegexpNode getHead()
+    RegexpNode override getHead()
     {
       return _head;
     }
 
-    @Override
-    RegexpNode copyImpl(HashMap<RegexpNode,RegexpNode> state)
+    RegexpNode override copyImpl(HashMap<RegexpNode,RegexpNode> state)
     {
       ConditionalTail copy = new ConditionalTail();
       state.put(this, copy);
@@ -1115,8 +1064,7 @@ class RegexpNode {
       return copy;
     }
 
-    @Override
-    RegexpNode concat(RegexpNode next)
+    RegexpNode override concat(RegexpNode next)
     {
       if (_next != null)
         _next = _next.concat(next);
@@ -1126,8 +1074,7 @@ class RegexpNode {
       return _head;
     }
 
-    @Override
-    RegexpNode createLoop(Regcomp parser, int min, int max)
+    RegexpNode override createLoop(Regcomp parser, int min, int max)
     {
       LoopHead head = new LoopHead(parser, _head, min, max);
 
@@ -1136,8 +1083,7 @@ class RegexpNode {
       return head;
     }
 
-    @Override
-    RegexpNode createLoopUngreedy(Regcomp parser, int min, int max)
+    RegexpNode override createLoopUngreedy(Regcomp parser, int min, int max)
     {
       LoopHeadUngreedy head = new LoopHeadUngreedy(parser, _head, min, max);
 
@@ -1149,16 +1095,14 @@ class RegexpNode {
     /**
      * Create an or expression
      */
-    @Override
-    RegexpNode createOr(RegexpNode node)
+    RegexpNode override createOr(RegexpNode node)
     {
       _next = _next.createOr(node);
 
       return getHead();
     }
 
-    @Override
-    int match(StringValue string, int length, int offset, RegexpState state)
+    int override match(StringValue string, int length, int offset, RegexpState state)
     {
       return _next.match(string, length, offset, state);
     }
@@ -1177,22 +1121,19 @@ class RegexpNode {
     }
 
 
-    @Override
-    int match(StringValue string, int length, int offset, RegexpState state)
+    int override match(StringValue string, int length, int offset, RegexpState state)
     {
       return offset;
     }
   }
 
   static class End extends RegexpNode {
-    @Override
-    RegexpNode concat(RegexpNode next)
+    RegexpNode override concat(RegexpNode next)
     {
       return next;
     }
 
-    @Override
-    int match(StringValue string, int length, int offset, RegexpState state)
+    int override match(StringValue string, int length, int offset, RegexpState state)
     {
       return offset;
     }
@@ -1208,8 +1149,7 @@ class RegexpNode {
       _group = group;
     }
 
-    @Override
-    int match(StringValue string, int length, int offset, RegexpState state)
+    int override match(StringValue string, int length, int offset, RegexpState state)
     {
       int oldBegin = state.getBegin(_group);
 
@@ -1253,8 +1193,7 @@ class RegexpNode {
         _node = _tail;
     }
 
-    @Override
-    RegexpNode getTail()
+    RegexpNode override getTail()
     {
       return _tail;
     }
@@ -1264,8 +1203,7 @@ class RegexpNode {
       return _node;
     }
 
-    @Override
-    RegexpNode copyImpl(HashMap<RegexpNode,RegexpNode> state)
+    RegexpNode override copyImpl(HashMap<RegexpNode,RegexpNode> state)
     {
       GroupHead copy = new GroupHead();
       state.put(this, copy);
@@ -1286,58 +1224,49 @@ class RegexpNode {
       return copy;
     }
 
-    @Override
-    RegexpNode concat(RegexpNode next)
+    RegexpNode override concat(RegexpNode next)
     {
       _tail.concat(next);
 
       return this;
     }
 
-    @Override
-    RegexpNode createLoop(Regcomp parser, int min, int max)
+    RegexpNode override createLoop(Regcomp parser, int min, int max)
     {
       return _tail.createLoop(parser, min, max);
     }
 
-    @Override
-    RegexpNode createLoopUngreedy(Regcomp parser, int min, int max)
+    RegexpNode override createLoopUngreedy(Regcomp parser, int min, int max)
     {
       return _tail.createLoopUngreedy(parser, min, max);
     }
 
-    @Override
-    int minLength()
+    int override minLength()
     {
       return _node.minLength();
     }
 
-    @Override
-    int firstChar()
+    int override firstChar()
     {
       return _node.firstChar();
     }
 
-    @Override
-    boolean []firstSet(boolean []firstSet)
+    boolean override []firstSet(boolean []firstSet)
     {
       return _node.firstSet(firstSet);
     }
 
-    @Override
-    String prefix()
+    String override prefix()
     {
       return _node.prefix();
     }
 
-    @Override
-    boolean isAnchorBegin()
+    boolean override isAnchorBegin()
     {
       return _node.isAnchorBegin();
     }
 
-    @Override
-    int match(StringValue string, int length, int offset, RegexpState state)
+    int override match(StringValue string, int length, int offset, RegexpState state)
     {
       int oldBegin = state.getBegin(_group);
       state.setBegin(_group, offset);
@@ -1353,8 +1282,7 @@ class RegexpNode {
       }
     }
 
-    @Override
-    protected void toString(StringBuilder sb, Map<RegexpNode,Integer> map)
+    protected override void toString(StringBuilder sb, Map<RegexpNode,Integer> map)
     {
       if (toStringAdd(sb, map))
         return;
@@ -1385,14 +1313,12 @@ class RegexpNode {
       _group = group;
     }
 
-    @Override
-    RegexpNode getHead()
+    RegexpNode override getHead()
     {
       return _head;
     }
 
-    @Override
-    RegexpNode copyImpl(HashMap<RegexpNode,RegexpNode> state)
+    RegexpNode override copyImpl(HashMap<RegexpNode,RegexpNode> state)
     {
       GroupTail tail = new GroupTail(_group);
       state.put(this, tail);
@@ -1405,8 +1331,7 @@ class RegexpNode {
       return tail;
     }
 
-    @Override
-    RegexpNode concat(RegexpNode next)
+    RegexpNode override concat(RegexpNode next)
     {
       if (_next != null) {
         _next = _next.concat(next);
@@ -1418,8 +1343,7 @@ class RegexpNode {
       return _head;
     }
 
-    @Override
-    RegexpNode createLoop(Regcomp parser, int min, int max)
+    RegexpNode override createLoop(Regcomp parser, int min, int max)
     {
       LoopHead head = new LoopHead(parser, _head, min, max);
 
@@ -1428,8 +1352,7 @@ class RegexpNode {
       return head;
     }
 
-    @Override
-    RegexpNode createLoopUngreedy(Regcomp parser, int min, int max)
+    RegexpNode override createLoopUngreedy(Regcomp parser, int min, int max)
     {
       LoopHeadUngreedy head = new LoopHeadUngreedy(parser, _head, min, max);
 
@@ -1443,8 +1366,7 @@ class RegexpNode {
      */
     // php/4e6b
     /*
-    @Override
-    RegexpNode createOr(RegexpNode node)
+    RegexpNode override createOr(RegexpNode node)
     {
       _next = _next.createOr(node);
 
@@ -1452,14 +1374,12 @@ class RegexpNode {
     }
     */
 
-    @Override
-    int minLength()
+    int override minLength()
     {
       return _next.minLength();
     }
 
-    @Override
-    int match(StringValue string, int length, int offset, RegexpState state)
+    int override match(StringValue string, int length, int offset, RegexpState state)
     {
       if (state.isFinalized(_group)) {
         return _next.match(string, length, offset, state);
@@ -1488,8 +1408,7 @@ class RegexpNode {
       }
     }
 
-    @Override
-    protected void toString(StringBuilder sb, Map<RegexpNode,Integer> map)
+    protected override void toString(StringBuilder sb, Map<RegexpNode,Integer> map)
     {
       if (toStringAdd(sb, map))
         return;
@@ -1511,8 +1430,7 @@ class RegexpNode {
       _group = group;
     }
 
-    @Override
-    int match(StringValue string, int length, int offset, RegexpState state)
+    int override match(StringValue string, int length, int offset, RegexpState state)
     {
       if (state.getLength() < _group)
         return -1;
@@ -1536,8 +1454,7 @@ class RegexpNode {
       _head = head;
     }
 
-    @Override
-    int match(StringValue string, int length, int offset, RegexpState state)
+    int override match(StringValue string, int length, int offset, RegexpState state)
     {
       if (_head.match(string, length, offset, state) >= 0)
         return offset;
@@ -1554,8 +1471,7 @@ class RegexpNode {
       _head = head;
     }
 
-    @Override
-    int match(StringValue string, int length, int offset, RegexpState state)
+    int override match(StringValue string, int length, int offset, RegexpState state)
     {
       if (_head.match(string, length, offset, state) < 0)
         return offset;
@@ -1572,8 +1488,7 @@ class RegexpNode {
       _head = head.getHead();
     }
 
-    @Override
-    int match(StringValue string, int strlen, int offset, RegexpState state)
+    int override match(StringValue string, int strlen, int offset, RegexpState state)
     {
       int length = _head.minLength();
 
@@ -1594,8 +1509,7 @@ class RegexpNode {
       _head = head;
     }
 
-    @Override
-    int match(StringValue string, int strlen, int offset, RegexpState state)
+    int override match(StringValue string, int strlen, int offset, RegexpState state)
     {
       int length = _head.minLength();
 
@@ -1612,8 +1526,7 @@ class RegexpNode {
    * A nullable node can match an empty string.
    */
   abstract static class NullableNode extends RegexpNode {
-    @Override
-    boolean isNullable()
+    boolean override isNullable()
     {
       return true;
     }
@@ -1644,14 +1557,12 @@ class RegexpNode {
       _max = max;
     }
 
-    @Override
-    RegexpNode getTail()
+    RegexpNode override getTail()
     {
       return _tail;
     }
 
-    @Override
-    RegexpNode copyImpl(HashMap<RegexpNode,RegexpNode> state)
+    RegexpNode override copyImpl(HashMap<RegexpNode,RegexpNode> state)
     {
       LoopHead head = new LoopHead(_index, _min, _max);
       state.put(this, head);
@@ -1665,16 +1576,14 @@ class RegexpNode {
       return head;
     }
 
-    @Override
-    RegexpNode concat(RegexpNode next)
+    RegexpNode override concat(RegexpNode next)
     {
       _tail.concat(next);
 
       return this;
     }
 
-    @Override
-    RegexpNode createLoop(Regcomp parser, int min, int max)
+    RegexpNode override createLoop(Regcomp parser, int min, int max)
     {
       if (min == 0 && max == 1) {
         _min = 0;
@@ -1685,14 +1594,12 @@ class RegexpNode {
         return new LoopHead(parser, this, min, max);
     }
 
-    @Override
-    int minLength()
+    int override minLength()
     {
       return _min * _node.minLength() + _tail.minLength();
     }
 
-    @Override
-    boolean []firstSet(boolean []firstSet)
+    boolean override []firstSet(boolean []firstSet)
     {
       firstSet = _node.firstSet(firstSet);
 
@@ -1708,8 +1615,7 @@ class RegexpNode {
     // match functions
     //
 
-    @Override
-    int match(StringValue string, int strlen, int offset, RegexpState state)
+    int override match(StringValue string, int strlen, int offset, RegexpState state)
     {
       state._loopCount[_index] = 0;
 
@@ -1740,8 +1646,7 @@ class RegexpNode {
       }
     }
 
-    @Override
-    public String toString()
+    public override String toString()
     {
       return "LoopHead[" + _min + ", " + _max + ", " + _node + "]";
     }
@@ -1765,14 +1670,12 @@ class RegexpNode {
       _next = N_END;
     }
 
-    @Override
-    RegexpNode getHead()
+    RegexpNode override getHead()
     {
       return _head;
     }
 
-    @Override
-    RegexpNode copyImpl(HashMap<RegexpNode,RegexpNode> state)
+    RegexpNode override copyImpl(HashMap<RegexpNode,RegexpNode> state)
     {
       LoopTail tail = new LoopTail(_index);
       state.put(this, tail);
@@ -1786,8 +1689,7 @@ class RegexpNode {
       return tail;
     }
 
-    @Override
-    RegexpNode concat(RegexpNode next)
+    RegexpNode override concat(RegexpNode next)
     {
       if (_next != null)
         _next = _next.concat(next);
@@ -1804,8 +1706,7 @@ class RegexpNode {
     // match functions
     //
 
-    @Override
-    int match(StringValue string, int strlen, int offset, RegexpState state)
+    int override match(StringValue string, int strlen, int offset, RegexpState state)
     {
       int oldCount = state._loopCount[_index];
 
@@ -1835,8 +1736,7 @@ class RegexpNode {
       return match;
     }
 
-    @Override
-    public String toString()
+    public override String toString()
     {
       return "LoopTail[" + _next + "]";
     }
@@ -1869,14 +1769,12 @@ class RegexpNode {
       _node = node.getTail().concat(_tail).getHead();
     }
 
-    @Override
-    RegexpNode getTail()
+    RegexpNode override getTail()
     {
       return _tail;
     }
 
-    @Override
-    RegexpNode copyImpl(HashMap<RegexpNode,RegexpNode> state)
+    RegexpNode override copyImpl(HashMap<RegexpNode,RegexpNode> state)
     {
       LoopHeadUngreedy copy = new LoopHeadUngreedy(_index, _min, _max);
       state.put(this, copy);
@@ -1890,16 +1788,14 @@ class RegexpNode {
       return copy;
     }
 
-    @Override
-    RegexpNode concat(RegexpNode next)
+    RegexpNode override concat(RegexpNode next)
     {
       _tail.concat(next);
 
       return this;
     }
 
-    @Override
-    RegexpNode createLoop(Regcomp parser, int min, int max)
+    RegexpNode override createLoop(Regcomp parser, int min, int max)
     {
       if (min == 0 && max == 1) {
         _min = 0;
@@ -1910,8 +1806,7 @@ class RegexpNode {
         return new LoopHead(parser, this, min, max);
     }
 
-    @Override
-    int minLength()
+    int override minLength()
     {
       return _min * _node.minLength() + _tail.minLength();
     }
@@ -1920,8 +1815,7 @@ class RegexpNode {
     // match functions
     //
 
-    @Override
-    int match(StringValue string, int strlen, int offset, RegexpState state)
+    int override match(StringValue string, int strlen, int offset, RegexpState state)
     {
       state._loopCount[_index] = 0;
 
@@ -1952,8 +1846,7 @@ class RegexpNode {
         return -1;
     }
 
-    @Override
-    public String toString()
+    public override String toString()
     {
       return "LoopHeadUngreedy[" + _min + ", " + _max + ", " + _node + "]";
     }
@@ -1977,14 +1870,12 @@ class RegexpNode {
       _next = N_END;
     }
 
-    @Override
-    RegexpNode getHead()
+    RegexpNode override getHead()
     {
       return _head;
     }
 
-    @Override
-    RegexpNode copyImpl(HashMap<RegexpNode,RegexpNode> state)
+    RegexpNode override copyImpl(HashMap<RegexpNode,RegexpNode> state)
     {
       LoopTailUngreedy copy = new LoopTailUngreedy(_index);
       state.put(this, copy);
@@ -1998,8 +1889,7 @@ class RegexpNode {
       return copy;
     }
 
-    @Override
-    RegexpNode concat(RegexpNode next)
+    RegexpNode override concat(RegexpNode next)
     {
       if (_next != null)
         _next = _next.concat(next);
@@ -2016,8 +1906,7 @@ class RegexpNode {
     // match functions
     //
 
-    @Override
-    int match(StringValue string, int strlen, int offset, RegexpState state)
+    int override match(StringValue string, int strlen, int offset, RegexpState state)
     {
       int i = state._loopCount[_index];
       int oldOffset = state._loopOffset[_index];
@@ -2047,8 +1936,7 @@ class RegexpNode {
         return -1;
     }
 
-    @Override
-    public String toString()
+    public override String toString()
     {
       return "LoopTailUngreedy[" + _next + "]";
     }
@@ -2067,8 +1955,7 @@ class RegexpNode {
       return new Not(node);
     }
 
-    @Override
-    int match(StringValue string, int strlen, int offset, RegexpState state)
+    int override match(StringValue string, int strlen, int offset, RegexpState state)
     {
       int result = _node.match(string, strlen, offset, state);
 
@@ -2111,8 +1998,7 @@ class RegexpNode {
       return this;
     }
 
-    @Override
-    RegexpNode copyImpl(HashMap<RegexpNode,RegexpNode> state)
+    RegexpNode override copyImpl(HashMap<RegexpNode,RegexpNode> state)
     {
       RegexpNode left = _left.copy(state);
       RegexpNode right = null;
@@ -2126,8 +2012,7 @@ class RegexpNode {
       return copy;
     }
 
-    @Override
-    int minLength()
+    int override minLength()
     {
       if (_right != null)
         return Math.min(_left.minLength(), _right.minLength());
@@ -2135,8 +2020,7 @@ class RegexpNode {
         return _left.minLength();
     }
 
-    @Override
-    int firstChar()
+    int override firstChar()
     {
       if (_right == null)
         return _left.firstChar();
@@ -2150,8 +2034,7 @@ class RegexpNode {
         return -1;
     }
 
-    @Override
-    boolean []firstSet(boolean []firstSet)
+    boolean override []firstSet(boolean []firstSet)
     {
       if (_right == null)
         return _left.firstSet(firstSet);
@@ -2162,14 +2045,12 @@ class RegexpNode {
       return firstSet;
     }
 
-    @Override
-    boolean isAnchorBegin()
+    boolean override isAnchorBegin()
     {
       return _left.isAnchorBegin() && _right != null && _right.isAnchorBegin();
     }
 
-    @Override
-    int match(StringValue string, int strlen, int offset, RegexpState state)
+    int override match(StringValue string, int strlen, int offset, RegexpState state)
     {
       for (Or ptr = this; ptr != null; ptr = ptr._right) {
         int value = ptr._left.match(string, strlen, offset, state);
@@ -2181,8 +2062,7 @@ class RegexpNode {
       return -1;
     }
 
-    @Override
-    protected void toString(StringBuilder sb, Map<RegexpNode,Integer> map)
+    protected override void toString(StringBuilder sb, Map<RegexpNode,Integer> map)
     {
       if (toStringAdd(sb, map))
         return;
@@ -2199,8 +2079,7 @@ class RegexpNode {
       sb.append("]");
     }
 
-    @Override
-    public String toString()
+    public override String toString()
     {
       StringBuilder sb = new StringBuilder();
       sb.append("Or[");
@@ -2236,8 +2115,7 @@ class RegexpNode {
       _max = max;
     }
 
-    @Override
-    RegexpNode copyImpl(HashMap<RegexpNode,RegexpNode> state)
+    RegexpNode override copyImpl(HashMap<RegexpNode,RegexpNode> state)
     {
       PossessiveLoop copy = new PossessiveLoop(_min, _max);
       state.put(this, copy);
@@ -2251,8 +2129,7 @@ class RegexpNode {
       return copy;
     }
 
-    @Override
-    RegexpNode concat(RegexpNode next)
+    RegexpNode override concat(RegexpNode next)
     {
       if (next == null)
         throw new NullPointerException();
@@ -2265,8 +2142,7 @@ class RegexpNode {
       return this;
     }
 
-    @Override
-    RegexpNode createLoop(Regcomp parser, int min, int max)
+    RegexpNode override createLoop(Regcomp parser, int min, int max)
     {
       if (min == 0 && max == 1) {
         _min = 0;
@@ -2281,8 +2157,7 @@ class RegexpNode {
     // match functions
     //
 
-    @Override
-    int match(StringValue string, int strlen, int offset, RegexpState state)
+    int override match(StringValue string, int strlen, int offset, RegexpState state)
     {
       RegexpNode node = _node;
 
@@ -2310,8 +2185,7 @@ class RegexpNode {
       return _next.match(string, strlen, offset, state);
     }
 
-    @Override
-    public String toString()
+    public override String toString()
     {
       return "PossessiveLoop[" + _min + ", "
           + _max + ", " + _node + ", " + _next + "]";
@@ -2443,8 +2317,7 @@ class RegexpNode {
       _category = category;
     }
 
-    @Override
-    int match(StringValue string, int strlen, int offset, RegexpState state)
+    int override match(StringValue string, int strlen, int offset, RegexpState state)
     {
       if (offset < strlen) {
         char ch = string.charAt(offset);
@@ -2465,8 +2338,7 @@ class RegexpNode {
       _category = category;
     }
 
-    @Override
-    int match(StringValue string, int strlen, int offset, RegexpState state)
+    int override match(StringValue string, int strlen, int offset, RegexpState state)
     {
       if (offset < strlen) {
         char ch = string.charAt(offset);
@@ -2480,8 +2352,7 @@ class RegexpNode {
   }
 
   static class PropC extends AbstractCharNode {
-    @Override
-    int match(StringValue string, int strlen, int offset, RegexpState state)
+    int override match(StringValue string, int strlen, int offset, RegexpState state)
     {
       if (offset < strlen) {
         char ch = string.charAt(offset);
@@ -2502,8 +2373,7 @@ class RegexpNode {
   }
 
   static class PropNotC extends AbstractCharNode {
-    @Override
-    int match(StringValue string, int strlen, int offset, RegexpState state)
+    int override match(StringValue string, int strlen, int offset, RegexpState state)
     {
       if (offset < strlen) {
         char ch = string.charAt(offset);
@@ -2524,8 +2394,7 @@ class RegexpNode {
   }
 
   static class PropL extends AbstractCharNode {
-    @Override
-    int match(StringValue string, int strlen, int offset, RegexpState state)
+    int override match(StringValue string, int strlen, int offset, RegexpState state)
     {
       if (offset < strlen) {
         char ch = string.charAt(offset);
@@ -2546,8 +2415,7 @@ class RegexpNode {
   }
 
   static class PropNotL extends AbstractCharNode {
-    @Override
-    int match(StringValue string, int strlen, int offset, RegexpState state)
+    int override match(StringValue string, int strlen, int offset, RegexpState state)
     {
       if (offset < strlen) {
         char ch = string.charAt(offset);
@@ -2568,8 +2436,7 @@ class RegexpNode {
   }
 
   static class PropM extends AbstractCharNode {
-    @Override
-    int match(StringValue string, int strlen, int offset, RegexpState state)
+    int override match(StringValue string, int strlen, int offset, RegexpState state)
     {
       if (offset < strlen) {
         char ch = string.charAt(offset);
@@ -2588,8 +2455,7 @@ class RegexpNode {
   }
 
   static class PropNotM extends AbstractCharNode {
-    @Override
-    int match(StringValue string, int strlen, int offset, RegexpState state)
+    int override match(StringValue string, int strlen, int offset, RegexpState state)
     {
       if (offset < strlen) {
         char ch = string.charAt(offset);
@@ -2608,8 +2474,7 @@ class RegexpNode {
   }
 
   static class PropN extends AbstractCharNode {
-    @Override
-    int match(StringValue string, int strlen, int offset, RegexpState state)
+    int override match(StringValue string, int strlen, int offset, RegexpState state)
     {
       if (offset < strlen) {
         char ch = string.charAt(offset);
@@ -2628,8 +2493,7 @@ class RegexpNode {
   }
 
   static class PropNotN extends AbstractCharNode {
-    @Override
-    int match(StringValue string, int strlen, int offset, RegexpState state)
+    int override match(StringValue string, int strlen, int offset, RegexpState state)
     {
       if (offset < strlen) {
         char ch = string.charAt(offset);
@@ -2649,8 +2513,7 @@ class RegexpNode {
   }
 
   static class PropP extends AbstractCharNode {
-    @Override
-    int match(StringValue string, int strlen, int offset, RegexpState state)
+    int override match(StringValue string, int strlen, int offset, RegexpState state)
     {
       if (offset < strlen) {
         char ch = string.charAt(offset);
@@ -2674,8 +2537,7 @@ class RegexpNode {
   }
 
   static class PropNotP extends AbstractCharNode {
-    @Override
-    int match(StringValue string, int strlen, int offset, RegexpState state)
+    int override match(StringValue string, int strlen, int offset, RegexpState state)
     {
       if (offset < strlen) {
         char ch = string.charAt(offset);
@@ -2698,8 +2560,7 @@ class RegexpNode {
   }
 
   static class PropS extends AbstractCharNode {
-    @Override
-    int match(StringValue string, int strlen, int offset, RegexpState state)
+    int override match(StringValue string, int strlen, int offset, RegexpState state)
     {
       if (offset < strlen) {
         char ch = string.charAt(offset);
@@ -2719,8 +2580,7 @@ class RegexpNode {
   }
 
   static class PropNotS extends AbstractCharNode {
-    @Override
-    int match(StringValue string, int strlen, int offset, RegexpState state)
+    int override match(StringValue string, int strlen, int offset, RegexpState state)
     {
       if (offset < strlen) {
         char ch = string.charAt(offset);
@@ -2740,8 +2600,7 @@ class RegexpNode {
   }
 
   static class PropZ extends AbstractCharNode {
-    @Override
-    int match(StringValue string, int strlen, int offset, RegexpState state)
+    int override match(StringValue string, int strlen, int offset, RegexpState state)
     {
       if (offset < strlen) {
         char ch = string.charAt(offset);
@@ -2760,8 +2619,7 @@ class RegexpNode {
   }
 
   static class PropNotZ extends AbstractCharNode {
-    @Override
-    int match(StringValue string, int strlen, int offset, RegexpState state)
+    int override match(StringValue string, int strlen, int offset, RegexpState state)
     {
       if (offset < strlen) {
         char ch = string.charAt(offset);
@@ -2793,8 +2651,7 @@ class RegexpNode {
       _top = top;
     }
 
-    @Override
-    int match(StringValue string, int length, int offset, RegexpState state)
+    int override match(StringValue string, int length, int offset, RegexpState state)
     {
       int oldBegin = state.getBegin(_group);
 
@@ -2832,8 +2689,7 @@ class RegexpNode {
       _top = top;
     }
 
-    @Override
-    int match(StringValue string, int length, int offset, RegexpState state)
+    int override match(StringValue string, int length, int offset, RegexpState state)
     {
       int match = _top.match(string, length, offset, state);
 
@@ -2860,8 +2716,7 @@ class RegexpNode {
       _top = top;
     }
 
-    @Override
-    int match(StringValue string, int length, int offset, RegexpState state)
+    int override match(StringValue string, int length, int offset, RegexpState state)
     {
       int match = _top.match(string, length, offset, state);
 
@@ -2879,8 +2734,7 @@ class RegexpNode {
       _node = node;
     }
 
-    @Override
-    int match(StringValue string, int length, int offset, RegexpState state)
+    int override match(StringValue string, int length, int offset, RegexpState state)
     {
       state.setFinalized(_group, true);
 
@@ -2900,8 +2754,7 @@ class RegexpNode {
       _range = range;
     }
 
-    @Override
-    int match(StringValue string, int strlen, int offset, RegexpState state)
+    int override match(StringValue string, int strlen, int offset, RegexpState state)
     {
       if (strlen <= offset)
         return -1;
@@ -2936,8 +2789,7 @@ class RegexpNode {
       _range = range;
     }
 
-    @Override
-    int match(StringValue string, int strlen, int offset, RegexpState state)
+    int override match(StringValue string, int strlen, int offset, RegexpState state)
     {
       if (strlen <= offset)
         return -1;
@@ -2982,8 +2834,7 @@ class RegexpNode {
       _buffer[0] = ch;
     }
 
-    @Override
-    RegexpNode createLoop(Regcomp parser, int min, int max)
+    RegexpNode override createLoop(Regcomp parser, int min, int max)
     {
       if (_length == 1)
         return new CharLoop(this, min, max);
@@ -2996,8 +2847,7 @@ class RegexpNode {
       }
     }
 
-    @Override
-    RegexpNode createLoopUngreedy(Regcomp parser, int min, int max)
+    RegexpNode override createLoopUngreedy(Regcomp parser, int min, int max)
     {
       if (_length == 1)
         return new CharUngreedyLoop(this, min, max);
@@ -3011,8 +2861,7 @@ class RegexpNode {
       }
     }
 
-    @Override
-    RegexpNode createPossessiveLoop(int min, int max)
+    RegexpNode override createPossessiveLoop(int min, int max)
     {
       if (_length == 1)
         return super.createPossessiveLoop(min, max);
@@ -3029,14 +2878,12 @@ class RegexpNode {
     // optim functions
     //
 
-    @Override
-    int minLength()
+    int override minLength()
     {
       return _length;
     }
 
-    @Override
-    int firstChar()
+    int override firstChar()
     {
       if (_length > 0)
         return _buffer[0];
@@ -3044,8 +2891,7 @@ class RegexpNode {
         return -1;
     }
 
-    @Override
-    boolean []firstSet(boolean []firstSet)
+    boolean override []firstSet(boolean []firstSet)
     {
       if (firstSet != null && _length > 0 && _buffer[0] < firstSet.length) {
         firstSet[_buffer[0]] = true;
@@ -3056,8 +2902,7 @@ class RegexpNode {
         return null;
     }
 
-    @Override
-    String prefix()
+    String override prefix()
     {
       return new String(_buffer, 0, _length);
     }
@@ -3066,8 +2911,7 @@ class RegexpNode {
     // match function
     //
 
-    @Override
-    final int match(StringValue string,
+    final override int match(StringValue string,
                     int strlen,
                     int offset,
                     RegexpState state)
@@ -3078,8 +2922,7 @@ class RegexpNode {
         return -1;
     }
 
-    @Override
-    protected void toString(StringBuilder sb, Map<RegexpNode,Integer> map)
+    protected override void toString(StringBuilder sb, Map<RegexpNode,Integer> map)
     {
       sb.append(toStringName());
       sb.append("[");
@@ -3119,8 +2962,7 @@ class RegexpNode {
       _buffer[0] = ch;
     }
 
-    @Override
-    RegexpNode createLoop(Regcomp parser, int min, int max)
+    RegexpNode override createLoop(Regcomp parser, int min, int max)
     {
       if (_length == 1)
         return new CharLoop(this, min, max);
@@ -3134,8 +2976,7 @@ class RegexpNode {
       }
     }
 
-    @Override
-    RegexpNode createLoopUngreedy(Regcomp parser, int min, int max)
+    RegexpNode override createLoopUngreedy(Regcomp parser, int min, int max)
     {
       if (_length == 1)
         return new CharUngreedyLoop(this, min, max);
@@ -3149,8 +2990,7 @@ class RegexpNode {
       }
     }
 
-    @Override
-    RegexpNode createPossessiveLoop(int min, int max)
+    RegexpNode override createPossessiveLoop(int min, int max)
     {
       if (_length == 1)
         return super.createPossessiveLoop(min, max);
@@ -3168,14 +3008,12 @@ class RegexpNode {
     // optim functions
     //
 
-    @Override
-    int minLength()
+    int override minLength()
     {
       return _length;
     }
 
-    @Override
-    int firstChar()
+    int override firstChar()
     {
       if (_length > 0
           && (Character.toLowerCase(_buffer[0])
@@ -3185,8 +3023,7 @@ class RegexpNode {
         return -1;
     }
 
-    @Override
-    boolean []firstSet(boolean []firstSet)
+    boolean override []firstSet(boolean []firstSet)
     {
       if (_length > 0 && firstSet != null) {
         char lower = Character.toLowerCase(_buffer[0]);
@@ -3203,8 +3040,7 @@ class RegexpNode {
       return null;
     }
 
-    @Override
-    String prefix()
+    String override prefix()
     {
       return new String(_buffer, 0, _length);
     }
@@ -3213,8 +3049,7 @@ class RegexpNode {
     // match function
     //
 
-    @Override
-    int match(StringValue string, int strlen, int offset, RegexpState state)
+    int override match(StringValue string, int strlen, int offset, RegexpState state)
     {
       if (string.regionMatchesIgnoreCase(offset, _buffer, 0, _length))
         return offset + _length;
@@ -3229,8 +3064,7 @@ class RegexpNode {
   static final StringNewline STRING_NEWLINE = new StringNewline();
 
   private static class StringBegin extends RegexpNode {
-    @Override
-    int match(StringValue string, int strlen, int offset, RegexpState state)
+    int override match(StringValue string, int strlen, int offset, RegexpState state)
     {
       if (offset == state._start)
           return offset;
@@ -3240,8 +3074,7 @@ class RegexpNode {
   }
 
   private static class StringEnd extends RegexpNode {
-    @Override
-    int match(StringValue string, int strlen, int offset, RegexpState state)
+    int override match(StringValue string, int strlen, int offset, RegexpState state)
     {
       if (offset == strlen)
           return offset;
@@ -3251,8 +3084,7 @@ class RegexpNode {
   }
 
   private static class StringFirst extends RegexpNode {
-    @Override
-    int match(StringValue string, int strlen, int offset, RegexpState state)
+    int override match(StringValue string, int strlen, int offset, RegexpState state)
     {
       if (offset == state._first)
           return offset;
@@ -3262,8 +3094,7 @@ class RegexpNode {
   }
 
   private static class StringNewline extends RegexpNode {
-    @Override
-    int match(StringValue string, int strlen, int offset, RegexpState state)
+    int override match(StringValue string, int strlen, int offset, RegexpState state)
     {
       if (offset == strlen
           || string.charAt(offset) == '\n' && offset + 1 == string.length())
@@ -3277,8 +3108,7 @@ class RegexpNode {
   static final NotWord NOT_WORD = new NotWord();
 
   private static class Word extends RegexpNode {
-    @Override
-    int match(StringValue string, int strlen, int offset, RegexpState state)
+    int override match(StringValue string, int strlen, int offset, RegexpState state)
     {
       if ((state._start < offset
            && RegexpSet.WORD.match(string.charAt(offset - 1)))
@@ -3291,8 +3121,7 @@ class RegexpNode {
   }
 
   private static class NotWord extends RegexpNode {
-    @Override
-    int match(StringValue string, int strlen, int offset, RegexpState state)
+    int override match(StringValue string, int strlen, int offset, RegexpState state)
     {
       if ((state._start < offset
            && RegexpSet.WORD.match(string.charAt(offset - 1)))

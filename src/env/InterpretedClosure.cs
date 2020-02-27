@@ -71,44 +71,37 @@ public class InterpretedClosure extends Closure
     return _fun.getDeclFileName(env);
   }
 
-  @Override
-  public int getDeclStartLine(Env env)
+  public override int getDeclStartLine(Env env)
   {
     return _fun.getDeclStartLine(env);
   }
 
-  @Override
-  public int getDeclEndLine(Env env)
+  public override int getDeclEndLine(Env env)
   {
     return _fun.getDeclEndLine(env);
   }
 
-  @Override
-  public String getDeclComment(Env env)
+  public override String getDeclComment(Env env)
   {
     return _fun.getDeclComment(env);
   }
 
-  @Override
-  public boolean isReturnsReference(Env env)
+  public override boolean isReturnsReference(Env env)
   {
     return _fun.isReturnsReference(env);
   }
 
-  @Override
-  public Arg []getArgs(Env env)
+  public override Arg []getArgs(Env env)
   {
     return _fun.getArgs(env);
   }
 
-  @Override
-  public boolean isInternal(Env env)
+  public override boolean isInternal(Env env)
   {
     return _fun.isInternal(env);
   }
 
-  @Override
-  public Value call(Env env, Value []args)
+  public override Value call(Env env, Value []args)
   {
     Value oldThis = env.setThis(getThis());
     Closure oldClosure = env.setClosure(this);

@@ -273,14 +273,12 @@ public class JavaClassDef extends ClassDef implements InstanceInitializer {
   /**
    * Returns the name of the extension that this class is part of.
    */
-  @Override
-  public String getExtension()
+  public override String getExtension()
   {
     return _extension;
   }
 
-  @Override
-  public boolean isA(Env env, String name)
+  public override boolean isA(Env env, String name)
   {
     if (_instanceOfSet == null) {
       _instanceOfSet = new HashSet<String>();
@@ -296,8 +294,7 @@ public class JavaClassDef extends ClassDef implements InstanceInitializer {
   /**
    * Adds the interfaces to the set
    */
-  @Override
-  public void addInterfaces(HashSet<String> interfaceSet)
+  public override void addInterfaces(HashSet<String> interfaceSet)
   {
     addInterfaces(interfaceSet, _type, true);
   }
@@ -339,8 +336,7 @@ public class JavaClassDef extends ClassDef implements InstanceInitializer {
     return false;
   }
 
-  @Override
-  public boolean isAbstract()
+  public override boolean isAbstract()
   {
     return _isAbstract;
   }
@@ -350,8 +346,7 @@ public class JavaClassDef extends ClassDef implements InstanceInitializer {
     return false;
   }
 
-  @Override
-  public boolean isInterface()
+  public override boolean isInterface()
   {
     return _isInterface;
   }
@@ -592,8 +587,7 @@ public class JavaClassDef extends ClassDef implements InstanceInitializer {
   /**
    * Eval new
    */
-  @Override
-  public Value callNew(Env env, Value []args)
+  public override Value callNew(Env env, Value []args)
   {    
     if (_cons != null) {
       if (__construct != null) {
@@ -615,26 +609,22 @@ public class JavaClassDef extends ClassDef implements InstanceInitializer {
     }
   }
 
-  @Override
-  public AbstractFunction getCall()
+  public override AbstractFunction getCall()
   {
     return __call;
   }
 
-  @Override
-  public AbstractFunction getCallStatic()
+  public override AbstractFunction getCallStatic()
   {
     return __callStatic;
   }
 
-  @Override
-  public AbstractFunction getSerialize()
+  public override AbstractFunction getSerialize()
   {
     return _serializeFun;
   }
 
-  @Override
-  public AbstractFunction getUnserialize()
+  public override AbstractFunction getUnserialize()
   {
     return _unserializeFun;
   }
@@ -746,8 +736,7 @@ public class JavaClassDef extends ClassDef implements InstanceInitializer {
   /**
    * Initialize the quercus class methods.
    */
-  @Override
-  public void initClassMethods(QuercusClass cl, String bindingClassName)
+  public override void initClassMethods(QuercusClass cl, String bindingClassName)
   {
     init();
 
@@ -815,8 +804,7 @@ public class JavaClassDef extends ClassDef implements InstanceInitializer {
   /**
    * Initialize the quercus class fields.
    */
-  @Override
-  public void initClassFields(QuercusClass cl, String bindingClassName)
+  public override void initClassFields(QuercusClass cl, String bindingClassName)
   {
     for (Map.Entry<String,Value> entry : _constMap.entrySet()) {
       cl.addConstant(_moduleContext.createString(entry.getKey()),
@@ -840,8 +828,7 @@ public class JavaClassDef extends ClassDef implements InstanceInitializer {
   /**
    * Creates a new instance.
    */
-  @Override
-  public void initInstance(Env env, Value value, boolean isInitFieldValues)
+  public override void initInstance(Env env, Value value, boolean isInitFieldValues)
   {
     if (value instanceof ObjectValue) {
       ObjectValue object = (ObjectValue) value;
@@ -869,14 +856,12 @@ public class JavaClassDef extends ClassDef implements InstanceInitializer {
   /**
    * Returns the constructor
    */
-  @Override
-  public AbstractFunction findConstructor()
+  public override AbstractFunction findConstructor()
   {
     return null;
   }
 
-  @Override
-  public final void init()
+  public override final void init()
   {
     if (_isInit)
       return;
@@ -1781,8 +1766,7 @@ public class JavaClassDef extends ClassDef implements InstanceInitializer {
       super(module, "Long", Long.class);
     }
 
-    @Override
-    public Value wrap(Env env, Object obj)
+    public override Value wrap(Env env, Object obj)
     {
       return LongValue.create(((Number) obj).longValue());
     }
@@ -1794,8 +1778,7 @@ public class JavaClassDef extends ClassDef implements InstanceInitializer {
       super(module, "Double", Double.class);
     }
 
-    @Override
-    public Value wrap(Env env, Object obj)
+    public override Value wrap(Env env, Object obj)
     {
       return new DoubleValue(((Number) obj).doubleValue());
     }
@@ -1807,8 +1790,7 @@ public class JavaClassDef extends ClassDef implements InstanceInitializer {
       super(module, "BigInteger", BigInteger.class);
     }
 
-    @Override
-    public Value wrap(Env env, Object obj)
+    public override Value wrap(Env env, Object obj)
     {
       return new BigIntegerValue(env, (BigInteger) obj, this);
     }
@@ -1820,8 +1802,7 @@ public class JavaClassDef extends ClassDef implements InstanceInitializer {
       super(module, "BigDecimal", BigDecimal.class);
     }
 
-    @Override
-    public Value wrap(Env env, Object obj)
+    public override Value wrap(Env env, Object obj)
     {
       return new BigDecimalValue(env, (BigDecimal) obj, this);
     }
@@ -1833,8 +1814,7 @@ public class JavaClassDef extends ClassDef implements InstanceInitializer {
       super(module, "String", String.class);
     }
 
-    @Override
-    public Value wrap(Env env, Object obj)
+    public override Value wrap(Env env, Object obj)
     {
       return env.createString((String) obj);
     }
@@ -1846,8 +1826,7 @@ public class JavaClassDef extends ClassDef implements InstanceInitializer {
       super(module, "Boolean", Boolean.class);
     }
 
-    @Override
-    public Value wrap(Env env, Object obj)
+    public override Value wrap(Env env, Object obj)
     {
       if (Boolean.TRUE.equals(obj))
         return BooleanValue.TRUE;
@@ -1862,8 +1841,7 @@ public class JavaClassDef extends ClassDef implements InstanceInitializer {
       super(module, "Calendar", Calendar.class);
     }
 
-    @Override
-    public Value wrap(Env env, Object obj)
+    public override Value wrap(Env env, Object obj)
     {
       return new JavaCalendarValue(env, (Calendar)obj, this);
     }
@@ -1875,8 +1853,7 @@ public class JavaClassDef extends ClassDef implements InstanceInitializer {
       super(module, type.getSimpleName(), type);
     }
 
-    @Override
-    public Value wrap(Env env, Object obj)
+    public override Value wrap(Env env, Object obj)
     {
       return new JavaDateValue(env, (Date) obj, this);
     }
@@ -1888,8 +1865,7 @@ public class JavaClassDef extends ClassDef implements InstanceInitializer {
       super(module, "URL", URL.class);
     }
 
-    @Override
-    public Value wrap(Env env, Object obj)
+    public override Value wrap(Env env, Object obj)
     {
       return new JavaURLValue(env, (URL)obj, this);
     }

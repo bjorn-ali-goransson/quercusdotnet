@@ -154,8 +154,7 @@ public class MysqliStatement extends JdbcPreparedStatementResource {
    * @param env the PHP executing environment
    * @return true on success or false on failure
    */
-  @Override
-  public boolean close()
+  public override boolean close()
   {
     return super.close();
   }
@@ -248,8 +247,7 @@ public class MysqliStatement extends JdbcPreparedStatementResource {
     return getResultSet();
   }
 
-  @Override
-  protected JdbcResultResource createResultSet(ResultSet rs)
+  protected override JdbcResultResource createResultSet(ResultSet rs)
   {
     return new MysqliResult(getPreparedStatement(), rs, (Mysqli) getConnection());
   }
@@ -304,8 +302,7 @@ public class MysqliStatement extends JdbcPreparedStatementResource {
    * @param query SQL query
    * @return true on success or false on failure
    */
-  @Override
-  public boolean prepare(Env env, String query)
+  public override boolean prepare(Env env, String query)
   {
     return super.prepare(env, query);
   }

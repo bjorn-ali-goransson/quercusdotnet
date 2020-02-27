@@ -68,8 +68,7 @@ public class QuercusMimeMessage extends MimeMessage {
     return _messageId;
   }
 
-  @Override
-  protected void updateHeaders()
+  protected override void updateHeaders()
     
   {
     super.updateHeaders();

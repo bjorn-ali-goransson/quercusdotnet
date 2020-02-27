@@ -51,20 +51,17 @@ public class RegexpMarshal extends StringMarshal {
     return RegexpModule.createRegexp(expr.evalStringValue(env));
   }
 
-  @Override
-  public Object marshal(Env env, Value value, Class expectedClass)
+  public override Object marshal(Env env, Value value, Class expectedClass)
   {
     return RegexpModule.createRegexp(value.toStringValue(env));
   }
 
-  @Override
-  public Value unmarshal(Env env, Object value)
+  public override Value unmarshal(Env env, Object value)
   {
     throw new UnsupportedOperationException(getClass().getName());
   }
 
-  @Override
-  protected int getMarshalingCostImpl(Value argValue)
+  protected override int getMarshalingCostImpl(Value argValue)
   {
     if (argValue.isString())
       return Marshal.ZERO;
@@ -72,8 +69,7 @@ public class RegexpMarshal extends StringMarshal {
       return Marshal.MAX;
   }
 
-  @Override
-  public int getMarshalingCost(Expr expr)
+  public override int getMarshalingCost(Expr expr)
   {
     if (expr.isString())
       return Marshal.ZERO;
@@ -81,8 +77,7 @@ public class RegexpMarshal extends StringMarshal {
       return Marshal.MAX;
   }
 
-  @Override
-  public Class getExpectedClass()
+  public override Class getExpectedClass()
   {
     return Regexp.class;
   }

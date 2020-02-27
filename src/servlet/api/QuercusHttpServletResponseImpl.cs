@@ -50,50 +50,42 @@ public class QuercusHttpServletResponseImpl implements QuercusHttpServletRespons
     _response.setContentType(type);
   }
 
-  @Override
-  public void addHeader(String name, String value)
+  public override void addHeader(String name, String value)
   {
     _response.addHeader(name, value);
   }
 
-  @Override
-  public void setHeader(String name, String value)
+  public override void setHeader(String name, String value)
   {
     _response.setHeader(name, value);
   }
 
-  @Override
-  public void setStatus(int code, String status)
+  public override void setStatus(int code, String status)
   {
     _response.setStatus(code, status);
   }
 
-  @Override
-  public String getCharacterEncoding()
+  public override String getCharacterEncoding()
   {
     return _response.getCharacterEncoding();
   }
 
-  @Override
-  public void setCharacterEncoding(String encoding)
+  public override void setCharacterEncoding(String encoding)
   {
     _response.setCharacterEncoding(encoding);
   }
 
-  @Override
-  public void addCookie(QuercusCookie cookie)
+  public override void addCookie(QuercusCookie cookie)
   {
     _response.addCookie(cookie.toCookie(Cookie.class));
   }
 
-  @Override
-  public boolean isCommitted()
+  public override boolean isCommitted()
   {
     return _response.isCommitted();
   }
 
-  @Override
-  public OutputStream getOutputStream()
+  public override OutputStream getOutputStream()
     
   {
     return _response.getOutputStream();

@@ -106,8 +106,7 @@ public class DoubleValue extends NumberValue
   /**
    * Returns true for a long-value.
    */
-  @Override
-  public boolean isLong()
+  public override boolean isLong()
   {
     return false;
   }
@@ -115,8 +114,7 @@ public class DoubleValue extends NumberValue
   /**
    * Returns true for a double-value.
    */
-  @Override
-  public boolean isDouble()
+  public override boolean isDouble()
   {
     return true;
   }
@@ -124,8 +122,7 @@ public class DoubleValue extends NumberValue
   /**
    * Returns true for is_numeric
    */
-  @Override
-  public boolean isNumeric()
+  public override boolean isNumeric()
   {
     return true;
   }
@@ -145,8 +142,7 @@ public class DoubleValue extends NumberValue
   /**
    * Cost to convert to a double
    */
-  @Override
-  public int toDoubleMarshalCost()
+  public override int toDoubleMarshalCost()
   {
     return Marshal.COST_EQUAL;
   }
@@ -154,8 +150,7 @@ public class DoubleValue extends NumberValue
   /**
    * Cost to convert to a long
    */
-  @Override
-  public int toLongMarshalCost()
+  public override int toLongMarshalCost()
   {
     return Marshal.COST_NUMERIC_LOSSY;
   }
@@ -163,8 +158,7 @@ public class DoubleValue extends NumberValue
   /**
    * Cost to convert to an integer
    */
-  @Override
-  public int toIntegerMarshalCost()
+  public override int toIntegerMarshalCost()
   {
     return Marshal.COST_NUMERIC_LOSSY;
   }
@@ -172,8 +166,7 @@ public class DoubleValue extends NumberValue
   /**
    * Cost to convert to a short
    */
-  @Override
-  public int toShortMarshalCost()
+  public override int toShortMarshalCost()
   {
     return Marshal.COST_NUMERIC_LOSSY;
   }
@@ -181,8 +174,7 @@ public class DoubleValue extends NumberValue
   /**
    * Cost to convert to a byte
    */
-  @Override
-  public int toByteMarshalCost()
+  public override int toByteMarshalCost()
   {
     return Marshal.COST_NUMERIC_LOSSY;
   }
@@ -231,8 +223,7 @@ public class DoubleValue extends NumberValue
   /**
    * Converts to a string builder
    */
-  @Override
-  public StringValue toStringBuilder(Env env)
+  public override StringValue toStringBuilder(Env env)
   {
     return env.createUnicodeBuilder().append(toString());
   }
@@ -288,8 +279,7 @@ public class DoubleValue extends NumberValue
   /**
    * Increment the following value.
    */
-  @Override
-  public Value addOne()
+  public override Value addOne()
   {
     return new DoubleValue(_value + 1);
   }
@@ -297,8 +287,7 @@ public class DoubleValue extends NumberValue
   /**
    * Increment the following value.
    */
-  @Override
-  public Value subOne()
+  public override Value subOne()
   {
     double next = _value - 1;
 
@@ -313,8 +302,7 @@ public class DoubleValue extends NumberValue
   /**
    * Increment the following value.
    */
-  @Override
-  public Value preincr()
+  public override Value preincr()
   {
     return new DoubleValue(_value + 1);
   }
@@ -322,8 +310,7 @@ public class DoubleValue extends NumberValue
   /**
    * Increment the following value.
    */
-  @Override
-  public Value predecr()
+  public override Value predecr()
   {
     return new DoubleValue(_value - 1);
   }
@@ -331,8 +318,7 @@ public class DoubleValue extends NumberValue
   /**
    * Increment the following value.
    */
-  @Override
-  public Value postincr()
+  public override Value postincr()
   {
     return new DoubleValue(_value + 1);
   }
@@ -340,8 +326,7 @@ public class DoubleValue extends NumberValue
   /**
    * Increment the following value.
    */
-  @Override
-  public Value postdecr()
+  public override Value postdecr()
   {
     return new DoubleValue(_value - 1);
   }
@@ -399,8 +384,7 @@ public class DoubleValue extends NumberValue
   /**
    * Converts to a string.
    */
-  @Override
-  public String toString()
+  public override String toString()
   {
     // XXX: pass in Env
     Env env = Env.getInstance();
@@ -512,8 +496,7 @@ public class DoubleValue extends NumberValue
   /**
    * Exports the value.
    */
-  @Override
-  protected void varExportImpl(StringValue sb, int level)
+  protected override void varExportImpl(StringValue sb, int level)
   {
     sb.append(toString());
   }
@@ -527,8 +510,7 @@ public class DoubleValue extends NumberValue
    *
    * @param out the writer to the Java source code.
    */
-  @Override
-  public void generate(PrintWriter out)
+  public override void generate(PrintWriter out)
     
   {
     if (_value == 0)
@@ -544,8 +526,7 @@ public class DoubleValue extends NumberValue
   /**
    * Returns the hash code
    */
-  @Override
-  public int hashCode()
+  public override int hashCode()
   {
     return (int) (37 + 65521 * _value);
   }
@@ -553,8 +534,7 @@ public class DoubleValue extends NumberValue
   /**
    * Compare for equality.
    */
-  @Override
-  public boolean equals(Object o)
+  public override boolean equals(Object o)
   {
     if (this == o)
       return true;
@@ -566,8 +546,7 @@ public class DoubleValue extends NumberValue
     return _value == value._value;
   }
 
-  @Override
-  public void varDumpImpl(Env env,
+  public override void varDumpImpl(Env env,
                           WriteStream out,
                           int depth,
                           IdentityHashMap<Value, String> valueSet)

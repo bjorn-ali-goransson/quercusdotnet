@@ -70,8 +70,7 @@ public class ConstArrayValue
   /**
    * Shuffles the array
    */
-  @Override
-  public Value shuffle()
+  public override Value shuffle()
   {
     throw new IllegalStateException();
   }
@@ -103,8 +102,7 @@ public class ConstArrayValue
   /**
    * Returns the array keys.
    */
-  @Override
-  public Value getKeys()
+  public override Value getKeys()
   {
     if (_keys == null)
       _keys = new ConstArrayValue((ArrayValueImpl) super.getKeys());
@@ -115,8 +113,7 @@ public class ConstArrayValue
   /**
    * Returns the array keys.
    */
-  @Override
-  public Value getValues()
+  public override Value getValues()
   {
     if (_values == null)
       _values = new ConstArrayValue((ArrayValueImpl) super.getValues());

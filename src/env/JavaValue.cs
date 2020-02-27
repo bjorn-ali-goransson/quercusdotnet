@@ -152,8 +152,7 @@ public class JavaValue extends ObjectValue
       return Double.parseDouble(s);
   }
 
-  @Override
-  public StringValue toString(Env env)
+  public override StringValue toString(Env env)
   {
     StringValue value = _classDef.toString(env, this);
 
@@ -167,8 +166,7 @@ public class JavaValue extends ObjectValue
   /**
    * Converts to an array.
    */
-  @Override
-  public ArrayValue toArray()
+  public override ArrayValue toArray()
   {
     ArrayValue array = new ArrayValueImpl();
 
@@ -179,8 +177,7 @@ public class JavaValue extends ObjectValue
     return array;
   }
 
-  @Override
-  protected void printRImpl(Env env,
+  protected override void printRImpl(Env env,
                             WriteStream out,
                             int depth,
                             IdentityHashMap<Value, String> valueSet)
@@ -215,8 +212,7 @@ public class JavaValue extends ObjectValue
     out.println(")");
   }
 
-  @Override
-  protected void varDumpImpl(Env env,
+  protected override void varDumpImpl(Env env,
                             WriteStream out,
                             int depth,
                             IdentityHashMap<Value, String> valueSet)
@@ -240,8 +236,7 @@ public class JavaValue extends ObjectValue
   /**
    * Returns the field value.
    */
-  @Override
-  public Value getField(Env env, StringValue name)
+  public override Value getField(Env env, StringValue name)
   {
     Value value = _classDef.getField(env, this, name);
 
@@ -254,8 +249,7 @@ public class JavaValue extends ObjectValue
   /**
    * Sets the field value.
    */
-  @Override
-  public Value putField(Env env, StringValue name, Value value)
+  public override Value putField(Env env, StringValue name, Value value)
   {
     Value oldValue = _classDef.putField(env, this, name, value);
 
@@ -268,8 +262,7 @@ public class JavaValue extends ObjectValue
   /**
    * Returns true if the field is set
    */
-  @Override
-  public boolean issetField(Env env, StringValue name)
+  public override boolean issetField(Env env, StringValue name)
   {
     return _classDef.issetField(env, _object, name);
   }
@@ -282,14 +275,12 @@ public class JavaValue extends ObjectValue
   /**
    * Converts to a key.
    */
-  @Override
-  public Value toKey()
+  public override Value toKey()
   {
     return new LongValue(System.identityHashCode(this));
   }
 
-  @Override
-  public int cmpObject(ObjectValue rValue)
+  public override int cmpObject(ObjectValue rValue)
   {
     // php/172z
 
@@ -309,8 +300,7 @@ public class JavaValue extends ObjectValue
   /**
    * Returns true for an object.
    */
-  @Override
-  public boolean isObject()
+  public override boolean isObject()
   {
     return true;
   }
@@ -318,8 +308,7 @@ public class JavaValue extends ObjectValue
   /**
    * Returns true for a resource.
    */
-  @Override
-  public boolean isResource()
+  public override boolean isResource()
   {
     return false;
   }
@@ -327,8 +316,7 @@ public class JavaValue extends ObjectValue
   /**
    * Returns the type.
    */
-  @Override
-  public String getType()
+  public override String getType()
   {
     return "object";
   }
@@ -337,8 +325,7 @@ public class JavaValue extends ObjectValue
    * Returns the method.
    */
   /*
-  @Override
-  public AbstractFunction findFunction(String methodName)
+  public override AbstractFunction findFunction(String methodName)
   {
     return _classDef.findFunction(methodName);
   }
@@ -347,8 +334,7 @@ public class JavaValue extends ObjectValue
   /**
    * Evaluates a method.
    */
-  @Override
-  public Value callMethod(Env env,
+  public override Value callMethod(Env env,
                           StringValue methodName, int hash,
                           Value []args)
   {
@@ -358,8 +344,7 @@ public class JavaValue extends ObjectValue
   /**
    * Evaluates a method.
    */
-  @Override
-  public Value callMethod(Env env, StringValue methodName, int hash)
+  public override Value callMethod(Env env, StringValue methodName, int hash)
   {
     return _classDef.callMethod(env, this, methodName, hash);
   }
@@ -367,8 +352,7 @@ public class JavaValue extends ObjectValue
   /**
    * Evaluates a method.
    */
-  @Override
-  public Value callMethod(Env env, StringValue methodName, int hash,
+  public override Value callMethod(Env env, StringValue methodName, int hash,
                           Value a1)
   {
     return _classDef.callMethod(env, this, methodName, hash, a1);
@@ -377,8 +361,7 @@ public class JavaValue extends ObjectValue
   /**
    * Evaluates a method.
    */
-  @Override
-  public Value callMethod(Env env, StringValue methodName, int hash,
+  public override Value callMethod(Env env, StringValue methodName, int hash,
                           Value a1, Value a2)
   {
     return _classDef.callMethod(env, this, methodName, hash, a1, a2);
@@ -387,8 +370,7 @@ public class JavaValue extends ObjectValue
   /**
    * Evaluates a method.
    */
-  @Override
-  public Value callMethod(Env env, StringValue methodName, int hash,
+  public override Value callMethod(Env env, StringValue methodName, int hash,
                           Value a1, Value a2, Value a3)
   {
     return _classDef.callMethod(env, this, methodName, hash, a1, a2, a3);
@@ -397,8 +379,7 @@ public class JavaValue extends ObjectValue
   /**
    * Evaluates a method.
    */
-  @Override
-  public Value callMethod(Env env, StringValue methodName, int hash,
+  public override Value callMethod(Env env, StringValue methodName, int hash,
                           Value a1, Value a2, Value a3, Value a4)
   {
     return _classDef.callMethod(env, this, methodName, hash,
@@ -408,8 +389,7 @@ public class JavaValue extends ObjectValue
   /**
    * Evaluates a method.
    */
-  @Override
-  public Value callMethod(Env env, StringValue methodName, int hash,
+  public override Value callMethod(Env env, StringValue methodName, int hash,
                           Value a1, Value a2, Value a3, Value a4, Value a5)
   {
     return _classDef.callMethod(env, this, methodName, hash,
@@ -419,8 +399,7 @@ public class JavaValue extends ObjectValue
   /**
    * Evaluates a method.
    */
-  @Override
-  public Value callMethodRef(Env env, StringValue methodName, int hash,
+  public override Value callMethodRef(Env env, StringValue methodName, int hash,
                              Value []args)
   {
     return _classDef.callMethod(env, this, methodName, hash, args);
@@ -429,8 +408,7 @@ public class JavaValue extends ObjectValue
   /**
    * Evaluates a method.
    */
-  @Override
-  public Value callMethodRef(Env env, StringValue methodName, int hash)
+  public override Value callMethodRef(Env env, StringValue methodName, int hash)
   {
     Value value = _classDef.callMethod(env, this, methodName, hash);
 
@@ -440,8 +418,7 @@ public class JavaValue extends ObjectValue
   /**
    * Evaluates a method.
    */
-  @Override
-  public Value callMethodRef(Env env, StringValue methodName, int hash,
+  public override Value callMethodRef(Env env, StringValue methodName, int hash,
                              Value a1)
   {
     return _classDef.callMethod(env, this, methodName, hash, a1);
@@ -450,8 +427,7 @@ public class JavaValue extends ObjectValue
   /**
    * Evaluates a method.
    */
-  @Override
-  public Value callMethodRef(Env env, StringValue methodName, int hash,
+  public override Value callMethodRef(Env env, StringValue methodName, int hash,
                              Value a1, Value a2)
   {
     return _classDef.callMethod(env, this, methodName, hash, a1, a2);
@@ -460,8 +436,7 @@ public class JavaValue extends ObjectValue
   /**
    * Evaluates a method.
    */
-  @Override
-  public Value callMethodRef(Env env, StringValue methodName, int hash,
+  public override Value callMethodRef(Env env, StringValue methodName, int hash,
                              Value a1, Value a2, Value a3)
   {
     return _classDef.callMethod(env, this, methodName, hash, a1, a2, a3);
@@ -470,8 +445,7 @@ public class JavaValue extends ObjectValue
   /**
    * Evaluates a method.
    */
-  @Override
-  public Value callMethodRef(Env env, StringValue methodName, int hash,
+  public override Value callMethodRef(Env env, StringValue methodName, int hash,
                              Value a1, Value a2, Value a3, Value a4)
   {
     return _classDef.callMethod(env, this, methodName, hash,
@@ -481,16 +455,14 @@ public class JavaValue extends ObjectValue
   /**
    * Evaluates a method.
    */
-  @Override
-  public Value callMethodRef(Env env, StringValue methodName, int hash,
+  public override Value callMethodRef(Env env, StringValue methodName, int hash,
                              Value a1, Value a2, Value a3, Value a4, Value a5)
   {
     return _classDef.callMethod(env, this, methodName, hash,
                                 a1, a2, a3, a4, a5);
   }
 
-  @Override
-  public Value clone(Env env)
+  public override Value clone(Env env)
   {
     Object obj = null;
 
@@ -525,8 +497,7 @@ public class JavaValue extends ObjectValue
   /**
    * Serializes the value.
    */
-  @Override
-  public void serialize(Env env, StringBuilder sb, SerializeMap map)
+  public override void serialize(Env env, StringBuilder sb, SerializeMap map)
   {
     String name = _classDef.getSimpleName();
 
@@ -557,8 +528,7 @@ public class JavaValue extends ObjectValue
   /**
    * Encodes the value in JSON.
    */
-  @Override
-  public void jsonEncode(Env env, JsonEncodeContext context, StringValue sb)
+  public override void jsonEncode(Env env, JsonEncodeContext context, StringValue sb)
   {
     if (_classDef.jsonEncode(env, _object, context, sb))
       return;
@@ -583,8 +553,7 @@ public class JavaValue extends ObjectValue
   /**
    * Converts to an object.
    */
-  @Override
-  public Object toJavaObject()
+  public override Object toJavaObject()
   {
     return _object;
   }
@@ -592,8 +561,7 @@ public class JavaValue extends ObjectValue
   /**
    * Converts to a java object.
    */
-  @Override
-  public final Object toJavaObject(Env env, Class<?> type)
+  public override final Object toJavaObject(Env env, Class<?> type)
   {
     final Object object = _object;
     final Class<?> objectClass = _object.getClass();
@@ -611,8 +579,7 @@ public class JavaValue extends ObjectValue
   /**
    * Converts to a java object.
    */
-  @Override
-  public Object toJavaObjectNotNull(Env env, Class<?> type)
+  public override Object toJavaObjectNotNull(Env env, Class<?> type)
   {
     Class<?> objClass = _object.getClass();
 
@@ -629,8 +596,7 @@ public class JavaValue extends ObjectValue
   /**
    * Converts to a java object.
    */
-  @Override
-  public Map<?,?> toJavaMap(Env env, Class<?> type)
+  public override Map<?,?> toJavaMap(Env env, Class<?> type)
   {
     if (type.isAssignableFrom(_object.getClass())) {
       return (Map<?,?>) _object;
@@ -645,8 +611,7 @@ public class JavaValue extends ObjectValue
   /**
    * Converts to an object.
    */
-  @Override
-  public InputStream toInputStream()
+  public override InputStream toInputStream()
   {
     if (_object instanceof InputStream)
       return (InputStream) _object;
