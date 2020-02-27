@@ -1115,9 +1115,9 @@ public class ObjectExtValue extends ObjectValue
   }
 
   /**
-   * Converts to a java String object.
+   * Converts to a java string object.
    */
-  public String toJavaString()
+  public string toJavaString()
   {
     return toString(Env.getInstance()).toString();
   }
@@ -1302,7 +1302,7 @@ public class ObjectExtValue extends ObjectValue
     
   {
     Env env = Env.getInstance();
-    String name = (String) in.readObject();
+    string name = (String) in.readObject();
 
     QuercusClass cl = env.findClass(name);
 
@@ -1348,7 +1348,7 @@ public class ObjectExtValue extends ObjectValue
     return entry != null;
   }
 
-  public override String toString()
+  public override string toString()
   {
     if (CurrentTime.isTest())
       return getClass().getSimpleName() +  "[" + _className + "]";
@@ -1631,7 +1631,7 @@ public class ObjectExtValue extends ObjectValue
       
     {
       StringValue name = ClassField.getOrdinaryName(getKey());
-      String suffix = "";
+      string suffix = "";
 
       if (isProtected()) {
         suffix = ":protected";
@@ -1657,7 +1657,7 @@ public class ObjectExtValue extends ObjectValue
       
     {
       StringValue name = ClassField.getOrdinaryName(getKey());
-      String suffix = "";
+      string suffix = "";
 
       if (isProtected()) {
         suffix = ":protected";
@@ -1681,7 +1681,7 @@ public class ObjectExtValue extends ObjectValue
         out.print(' ');
     }
 
-    public override String toString()
+    public override string toString()
     {
       return "ObjectExtValue.Entry[" + getKey() + "]";
     }

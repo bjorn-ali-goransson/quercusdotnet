@@ -53,7 +53,7 @@ public class JavaModule extends AbstractQuercusModule {
    * If constructor is not available, then return static class definition.
    */
   public static Object java(Env env,
-                            String className,
+                            string className,
                             Value []args)
   {
     try {
@@ -83,7 +83,7 @@ public class JavaModule extends AbstractQuercusModule {
    * Returns the static class definition of a Java class.
    */
   public static Object java_class(Env env,
-                                  String className)
+                                  string className)
   {
     try {
       JavaClassDef def = env.getJavaClassDefinition(className);
@@ -105,7 +105,7 @@ public class JavaModule extends AbstractQuercusModule {
   /**
    * Returns the name of the java class.
    */
-  public static String get_java_class_name(Env env, Value value)
+  public static string get_java_class_name(Env env, Value value)
   {
     if (value instanceof JavaValue)  {
       Object obj =  value.toJavaObject();

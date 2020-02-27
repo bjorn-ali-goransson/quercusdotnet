@@ -71,7 +71,7 @@ public class BinaryBitAndExpr extends AbstractBinaryExpr {
     return lValue.bitAnd(rValue);
   }
 
-  public String toString()
+  public string toString()
   {
     return "(" + _left + " & " + _right + ")";
   }

@@ -70,23 +70,23 @@ public abstract class JdbcConnectionResource
   private JdbcResultResource _rs;
   private int _affectedRows;
 
-  private String _errorMessage = null;
+  private string _errorMessage = null;
   private int _errorCode;
   private SQLWarning _warnings;
   private SQLException _exception;
 
-  protected String _host;
+  protected string _host;
   protected int _port;
-  private String _userName;
-  private String _password;
-  protected String _driver;
-  protected String _url;
+  private string _userName;
+  private string _password;
+  protected string _driver;
+  protected string _url;
   protected int _flags;
-  protected String _socket;
+  protected string _socket;
 
   protected boolean _isEmulatePrepares;
 
-  private String _catalog;
+  private string _catalog;
   private boolean _isCatalogOptimEnabled = false;
 
   private boolean _isUsed;
@@ -98,7 +98,7 @@ public abstract class JdbcConnectionResource
     env.addCleanup(this);
   }
   
-  protected JdbcPreparedStatementResource prepare(Env env, String query)
+  protected JdbcPreparedStatementResource prepare(Env env, string query)
   {
     JdbcPreparedStatementResource stmt = new JdbcPreparedStatementResource(this);
     
@@ -127,7 +127,7 @@ public abstract class JdbcConnectionResource
     return stmt;
   }
 
-  protected String getDriverName()
+  protected string getDriverName()
   {
     return "mysql";
   }
@@ -156,22 +156,22 @@ public abstract class JdbcConnectionResource
     return _conn != null;
   }
 
-  public String getHost()
+  public string getHost()
   {
     return _host;
   }
 
-  public String getUserName()
+  public string getUserName()
   {
     return _userName;
   }
 
-  public String getPassword()
+  public string getPassword()
   {
     return _password;
   }
 
-  public String getDbName()
+  public string getDbName()
   {
     return _catalog;
   }
@@ -181,12 +181,12 @@ public abstract class JdbcConnectionResource
     return _port;
   }
 
-  public String getDriver()
+  public string getDriver()
   {
     return _driver;
   }
 
-  public String getUrl()
+  public string getUrl()
   {
     return _url;
   }
@@ -206,15 +206,15 @@ public abstract class JdbcConnectionResource
    * @param dbname database name
    */
   final protected boolean connectInternal(Env env,
-                                          String host,
-                                          String userName,
-                                          String password,
-                                          String dbname,
+                                          string host,
+                                          string userName,
+                                          string password,
+                                          string dbname,
                                           int port,
-                                          String socket,
+                                          string socket,
                                           int flags,
-                                          String driver,
-                                          String url,
+                                          string driver,
+                                          string url,
                                           boolean isNewLink,
                                           boolean isEmulatePrepares)
   {
@@ -257,15 +257,15 @@ public abstract class JdbcConnectionResource
    * Connects to the underlying database.
    */
   protected abstract ConnectionEntry connectImpl(Env env,
-                                                 String host,
-                                                 String userName,
-                                                 String password,
-                                                 String dbname,
+                                                 string host,
+                                                 string userName,
+                                                 string password,
+                                                 string dbname,
                                                  int port,
-                                                 String socket,
+                                                 string socket,
                                                  int flags,
-                                                 String driver,
-                                                 String url,
+                                                 string driver,
+                                                 string url,
                                                  boolean isNewLink,
                                                  boolean isEmulatePrepares);
 
@@ -374,7 +374,7 @@ public abstract class JdbcConnectionResource
     }
   }
 
-  protected String getCatalog()
+  protected string getCatalog()
   {
     return _catalog;
   }
@@ -385,7 +385,7 @@ public abstract class JdbcConnectionResource
    * XXX: stubbed out. has to be revised once we
    * figure out what to do with character encoding
    */
-  public String getCharacterSetName()
+  public string getCharacterSetName()
   {
     return "latin1";
   }
@@ -393,7 +393,7 @@ public abstract class JdbcConnectionResource
   /**
    * Alias for getCharacterSetName
    */
-  public String getClientEncoding()
+  public string getClientEncoding()
   {
     return getCharacterSetName();
   }
@@ -408,7 +408,7 @@ public abstract class JdbcConnectionResource
     return true;
   }
 
-  protected String getClientInfo(Env env)
+  protected string getClientInfo(Env env)
   {
     throw new UnimplementedException();
   }
@@ -417,7 +417,7 @@ public abstract class JdbcConnectionResource
    * Returns the client version
    * @deprecated
    */
-  public String getClientInfo()
+  public string getClientInfo()
   {
     try {
       if (_dmd == null)
@@ -473,7 +473,7 @@ public abstract class JdbcConnectionResource
   /**
    * Returns the data source.
    */
-  protected String getURL()
+  protected string getURL()
   {
     // return getJavaConnection().getURL();
     return _url;
@@ -490,7 +490,7 @@ public abstract class JdbcConnectionResource
   /**
    * Returns the last error message.
    */
-  protected String getErrorMessage()
+  protected string getErrorMessage()
   {
     return _errorMessage;
   }
@@ -506,7 +506,7 @@ public abstract class JdbcConnectionResource
    * IE: jdbc:mysql://localhost:3306/test
    * XXX: PHP returns Localhost via UNIX socket
    */
-  public String getHostInfo()
+  public string getHostInfo()
     
   {
     if (_dmd == null)
@@ -518,7 +518,7 @@ public abstract class JdbcConnectionResource
   /**
    * returns the server version
    */
-  protected String getServerInfo()
+  protected string getServerInfo()
     
   {
     return getMetaData().getDatabaseProductVersion();
@@ -528,9 +528,9 @@ public abstract class JdbcConnectionResource
    * Returns the table metadata.
    */
   public JdbcTableMetaData getTableMetaData(Env env,
-                                            String catalog,
-                                            String schema,
-                                            String table)
+                                            string catalog,
+                                            string schema,
+                                            string table)
     
   {
     try {
@@ -658,7 +658,7 @@ public abstract class JdbcConnectionResource
   /**
    * Execute a single query.
    */
-  protected Value realQuery(Env env, String sql)
+  protected Value realQuery(Env env, string sql)
   {
     clearErrors();
 
@@ -787,7 +787,7 @@ public abstract class JdbcConnectionResource
     return stmt;
   }
 
-  private boolean checkSql(Env env, ConnectionEntry connEntry, String sql)
+  private boolean checkSql(Env env, ConnectionEntry connEntry, string sql)
   {
     SqlParseToken tok = parseSqlToken(sql, null);
 
@@ -816,7 +816,7 @@ public abstract class JdbcConnectionResource
             tok = parseSqlToken(sql, tok);
 
             if (tok != null) {
-              String dbname = tok.toUnquotedString();
+              string dbname = tok.toUnquotedString();
 
               if (dbname.equals(_catalog)) {
                 try {
@@ -1005,7 +1005,7 @@ public abstract class JdbcConnectionResource
   /**
    * Sets the catalog
    */
-  public void setCatalog(Env env, String name)
+  public void setCatalog(Env env, string name)
     
   {
     if (_catalog != null && _catalog.equals(name))
@@ -1049,7 +1049,7 @@ public abstract class JdbcConnectionResource
   /**
    * Converts to a string.
    */
-  public String toString()
+  public string toString()
   {
     if (_conn != null)
       return getClass().getSimpleName() + "[" + _conn.getConnection() + "]";
@@ -1157,12 +1157,12 @@ public abstract class JdbcConnectionResource
   }
 
   static class TableKey {
-    private final String _url;
-    private final String _catalog;
-    private final String _schema;
-    private final String _table;
+    private final string _url;
+    private final string _catalog;
+    private final string _schema;
+    private final string _table;
 
-    TableKey(String url, String catalog, String schema, String table)
+    TableKey(String url, string catalog, string schema, string table)
     {
       _url = url;
       _catalog = catalog;

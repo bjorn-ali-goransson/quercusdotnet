@@ -71,7 +71,7 @@ public class BinaryBitXorExpr extends AbstractBinaryExpr {
     return lValue.bitXor(rValue);
   }
 
-  public String toString()
+  public string toString()
   {
     return "(" + _left + " ^ " + _right + ")";
   }

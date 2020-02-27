@@ -41,15 +41,15 @@
 
 public class GaeUserServiceModule extends AbstractQuercusModule {
   @Override
-  public String []getLoadedExtensions()
+  public string []getLoadedExtensions()
   {
     return new String[] { "gae_users" };
   }
 
-  public static String gae_users_create_login_url(Env env,
-                                                  String destinationUrl,
-                                                  @Optional String authDomain,
-                                                  @Optional String federatedIdentity,
+  public static string gae_users_create_login_url(Env env,
+                                                  string destinationUrl,
+                                                  @Optional string authDomain,
+                                                  @Optional string federatedIdentity,
                                                   @Optional Value attributesRequest ) {
     Set<String> attributeSet = null;
 
@@ -69,9 +69,9 @@ public class GaeUserServiceModule extends AbstractQuercusModule {
                                          attributeSet);
   }
 
-  public static String gae_users_create_logout_url(Env env,
-                                                   String destinationUrl,
-                                                   @Optional String authDomain) {
+  public static string gae_users_create_logout_url(Env env,
+                                                   string destinationUrl,
+                                                   @Optional string authDomain) {
     return GaeUserService.createLogoutURL(destinationUrl, authDomain);
   }
 

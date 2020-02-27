@@ -124,13 +124,13 @@ public class MhashModule extends AbstractQuercusModule {
     addAlgorithm(MHASH_MD2, "MD2",  "MD2");
   }
 
-  public String []getLoadedExtensions()
+  public string []getLoadedExtensions()
   {
     return new String[] {  "mhash" };
   }
 
 
-  private void addAlgorithm(int ordinal, String name, String javaName)
+  private void addAlgorithm(int ordinal, string name, string javaName)
   {
     MhashAlgorithm algorithm = new MhashAlgorithm(name, javaName, null);
 
@@ -140,7 +140,7 @@ public class MhashModule extends AbstractQuercusModule {
       _highestOrdinal = ordinal;
   }
 
-  public Value mhash(Env env, int hash, StringValue data, @Optional String key)
+  public Value mhash(Env env, int hash, StringValue data, @Optional string key)
   {
     if (key != null) {
       throw new UnsupportedOperationException("key");
@@ -193,16 +193,16 @@ public class MhashModule extends AbstractQuercusModule {
       return env.createString(algorithm.getName());
   }
 
-  // XXX: public String mhash_keygen_s2k(
-  // int hash, String password, String salt, int bytes)
+  // XXX: public string mhash_keygen_s2k(
+  // int hash, string password, string salt, int bytes)
 
   public static class MhashAlgorithm
   {
-    private String _name;
-    private String _javaName;
-    private String _javaProvider;
+    private string _name;
+    private string _javaName;
+    private string _javaProvider;
 
-    MhashAlgorithm(String name, String javaName, String javaProvider)
+    MhashAlgorithm(String name, string javaName, string javaProvider)
     {
       _name = name;
       _javaName = javaName;
@@ -221,7 +221,7 @@ public class MhashModule extends AbstractQuercusModule {
       _name = name;
     }
 
-    public String getName()
+    public string getName()
     {
       return _name;
     }
@@ -236,7 +236,7 @@ public class MhashModule extends AbstractQuercusModule {
       _javaName = javaName;
     }
 
-    public String getJavaName()
+    public string getJavaName()
     {
       return _javaName;
     }
@@ -252,7 +252,7 @@ public class MhashModule extends AbstractQuercusModule {
       _javaProvider = javaProvider;
     }
 
-    public String getJavaProvider()
+    public string getJavaProvider()
     {
       return _javaProvider;
     }
@@ -293,7 +293,7 @@ public class MhashModule extends AbstractQuercusModule {
       }
     }
 
-    public String toString()
+    public string toString()
     {
       return
         "MhashAlgorithm[name=" + _name

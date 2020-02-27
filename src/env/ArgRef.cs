@@ -61,7 +61,7 @@ public class ArgRef extends Value
   /**
    * Returns true for an implementation of a class
    */
-  public override boolean isA(Env env, String name)
+  public override boolean isA(Env env, string name)
   {
     return _var.isA(env, name);
   }

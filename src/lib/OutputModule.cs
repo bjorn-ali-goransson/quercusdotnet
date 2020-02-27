@@ -308,7 +308,7 @@ public class OutputModule extends AbstractQuercusModule
       type = LongValue.ZERO;
       */
 
-    String name;
+    string name;
 
     if (callback != null)
       name = callback.getCallbackName();
@@ -475,7 +475,7 @@ public class OutputModule extends AbstractQuercusModule
    * Adds a variable to the list for rewritten URLs.
    */
   public static boolean output_add_rewrite_var(Env env,
-                                               String name, String value)
+                                               string name, string value)
   {
     UrlRewriterCallback rewriter = pushUrlRewriter(env);
 
@@ -509,7 +509,7 @@ public class OutputModule extends AbstractQuercusModule
     Encoding encoding = Encoding.NONE;
     Value _SERVER = env.getGlobalVar("_SERVER");
 
-    String [] acceptedList
+    string [] acceptedList
       = _SERVER.get(env.createString("HTTP_ACCEPT_ENCODING")).toString().split(",");
 
     for (String accepted : acceptedList) {

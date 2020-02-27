@@ -59,7 +59,7 @@ public class MysqlCharset
     return _charsetEntryMap.get(charset);
   }
 
-  public static String getDefaultCollation(String charset)
+  public static string getDefaultCollation(String charset)
   {
     CharsetEntry entry = _charsetEntryMap.get(charset);
 
@@ -71,7 +71,7 @@ public class MysqlCharset
     }
   }
 
-  public static String getDescription(String charset)
+  public static string getDescription(String charset)
   {
     CharsetEntry entry = _charsetEntryMap.get(charset);
 
@@ -97,13 +97,13 @@ public class MysqlCharset
 
   static class CharsetEntry
   {
-    private final String _name;
-    private final String _defaultCollation;
-    private final String _description;
+    private final string _name;
+    private final string _defaultCollation;
+    private final string _description;
     private final int _maxBytes;
 
-    public CharsetEntry(String name, String defaultCollation,
-                        String description, int maxBytes)
+    public CharsetEntry(String name, string defaultCollation,
+                        string description, int maxBytes)
     {
       _name = name;
       _defaultCollation = defaultCollation;
@@ -111,17 +111,17 @@ public class MysqlCharset
       _maxBytes = maxBytes;
     }
 
-    public String getName()
+    public string getName()
     {
       return _name;
     }
 
-    public String getDefaultCollation()
+    public string getDefaultCollation()
     {
       return _defaultCollation;
     }
 
-    public String getDescription()
+    public string getDescription()
     {
       return _description;
     }

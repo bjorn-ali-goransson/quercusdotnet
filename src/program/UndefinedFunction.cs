@@ -42,17 +42,17 @@ public class UndefinedFunction extends AbstractFunction {
   private static final L10N L = new L10N(UndefinedFunction.class);
 
   private final int _id;
-  private final String _name;
+  private final string _name;
   private final int _globalId;
 
-  public UndefinedFunction(int id, String name, int globalId)
+  public UndefinedFunction(int id, string name, int globalId)
   {
     _id = id;
     _name = name;
     _globalId = globalId;
   }
 
-  public String getName()
+  public string getName()
   {
     return _name;
   }
@@ -72,7 +72,7 @@ public class UndefinedFunction extends AbstractFunction {
     return env.error(L.l("'{0}' is an unknown function.", _name));
   }
 
-  public String toString()
+  public string toString()
   {
     return "UndefinedFunction[" + _name + "]";
   }

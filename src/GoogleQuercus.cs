@@ -55,13 +55,13 @@ public class GoogleQuercus extends QuercusContext
   @Override
   public void init()
   {
-    String mode
+    string mode
       = System.getProperty("com.google.appengine.tools.development.ApplicationPreparationMode");
 
     boolean isGsDisabled = "true".equals(mode);
 
     if (! isGsDisabled) {
-      String gsBucket = getIniString("google.cloud_storage_bucket");
+      string gsBucket = getIniString("google.cloud_storage_bucket");
 
       if (gsBucket != null) {
         Path stdPwd = getPwd();
@@ -81,7 +81,7 @@ public class GoogleQuercus extends QuercusContext
 
     JdbcDriverContext jdbcDriverContext = getJdbcDriverContext();
 
-    String driver = getIniString("google.jdbc_driver");
+    string driver = getIniString("google.jdbc_driver");
 
     if (driver == null) {
       driver = "com.google.appengine.api.rdbms.AppEngineDriver";

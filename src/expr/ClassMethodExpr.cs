@@ -44,7 +44,7 @@
 public class ClassMethodExpr extends AbstractMethodExpr {
   private static final L10N L = new L10N(ClassMethodExpr.class);
 
-  protected final String _className;
+  protected final string _className;
   protected final StringValue _methodName;
 
   protected final int _hash;
@@ -52,7 +52,7 @@ public class ClassMethodExpr extends AbstractMethodExpr {
 
   protected boolean _isMethod;
 
-  public ClassMethodExpr(Location location, String className,
+  public ClassMethodExpr(Location location, string className,
                          StringValue methodName,
                          ArrayList<Expr> args)
   {
@@ -67,7 +67,7 @@ public class ClassMethodExpr extends AbstractMethodExpr {
     args.toArray(_args);
   }
 
-  public ClassMethodExpr(Location location, String className,
+  public ClassMethodExpr(Location location, string className,
                          StringValue methodName, Expr []args)
   {
     super(location);
@@ -128,7 +128,7 @@ public class ClassMethodExpr extends AbstractMethodExpr {
     }
   }
 
-  public String toString()
+  public string toString()
   {
     return _className + "::" + _methodName + "()";
   }

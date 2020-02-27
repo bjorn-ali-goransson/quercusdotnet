@@ -56,7 +56,7 @@ public class DOMCharacterData<T extends CharacterData>
     }
   }
 
-  public String getData()
+  public string getData()
     
   {
     try {
@@ -72,7 +72,7 @@ public class DOMCharacterData<T extends CharacterData>
     return _delegate.getLength();
   }
 
-  public void insertData(int offset, String arg)
+  public void insertData(int offset, string arg)
     
   {
     try {
@@ -83,7 +83,7 @@ public class DOMCharacterData<T extends CharacterData>
     }
   }
 
-  public void replaceData(int offset, int count, String arg)
+  public void replaceData(int offset, int count, string arg)
     
   {
     try {
@@ -105,7 +105,7 @@ public class DOMCharacterData<T extends CharacterData>
     }
   }
 
-  public String substringData(int offset, int count)
+  public string substringData(int offset, int count)
     
   {
     try {

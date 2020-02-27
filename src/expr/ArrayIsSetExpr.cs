@@ -87,7 +87,7 @@ public class ArrayIsSetExpr extends Expr {
     return array.get(index) != UnsetValue.UNSET;
   }
 
-  public String toString()
+  public string toString()
   {
     return "isset(" + _expr + "[" + _index + "])";
   }

@@ -61,7 +61,7 @@ public class FileInputOutput extends AbstractBinaryOutput
   private boolean _doUnread = false;
 
   private Reader _readEncoding;
-  private String _readEncodingName;
+  private string _readEncodingName;
 
   private boolean _temporary;
 
@@ -152,7 +152,7 @@ public class FileInputOutput extends AbstractBinaryOutput
   public void setEncoding(String encoding)
     
   {
-    String mimeName = Encoding.getMimeName(encoding);
+    string mimeName = Encoding.getMimeName(encoding);
 
     if (mimeName != null && mimeName.equals(_readEncodingName))
       return;
@@ -481,7 +481,7 @@ public class FileInputOutput extends AbstractBinaryOutput
    * Converts to a string.
    * @param env
    */
-  public String toString()
+  public string toString()
   {
     return "FileInputOutput[" + getPath() + "]";
   }

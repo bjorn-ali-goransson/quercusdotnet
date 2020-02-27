@@ -133,7 +133,7 @@ public class ClassVarFieldExpr extends AbstractVarExpr {
               getLocation());
   }
 
-  public String toString()
+  public string toString()
   {
     return _className + "::$" + _varName;
   }

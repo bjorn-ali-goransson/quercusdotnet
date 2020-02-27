@@ -477,7 +477,7 @@ public class RegexpState {
   }
 
   @Override
-  public String toString()
+  public string toString()
   {
     return getClass().getSimpleName() + "[" + _regexp + "]";
   }

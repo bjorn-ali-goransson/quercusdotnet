@@ -47,7 +47,7 @@ public class EnumMarshal extends Marshal {
 
   public Object marshal(Env env, Expr expr, Class argClass)
   {
-    String name = expr.evalString(env);
+    string name = expr.evalString(env);
 
     if (name == null) {
       return null;

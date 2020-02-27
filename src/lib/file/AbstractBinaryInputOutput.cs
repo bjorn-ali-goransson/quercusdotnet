@@ -430,7 +430,7 @@ abstract public class AbstractBinaryInputOutput
   {
   }
 
-  public String getResourceType()
+  public string getResourceType()
   {
     return "stream";
   }
@@ -443,7 +443,7 @@ abstract public class AbstractBinaryInputOutput
   /**
    * Converts to a string.
    */
-  public String toString()
+  public string toString()
   {
     if (_is != null)
       return getClass().getSimpleName() + "[]";

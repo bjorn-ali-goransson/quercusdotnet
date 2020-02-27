@@ -50,7 +50,7 @@ public class XMLWriterModule extends AbstractQuercusModule {
     = Logger.getLogger(XMLWriterModule.class.getName());
   private static final L10N L = new L10N(XMLWriterModule.class);
 
-  public String []getLoadedExtensions()
+  public string []getLoadedExtensions()
   {
     return new String[] { "XMLWriter" };
   }

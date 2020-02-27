@@ -45,7 +45,7 @@ public class FunctionInfo
   private final QuercusContext _quercus;
 
   private final ClassDef _classDef;
-  private final String _name;
+  private final string _name;
 
   private final HashMap<StringValue,VarInfo> _varMap
     = new HashMap<StringValue,VarInfo>();
@@ -74,7 +74,7 @@ public class FunctionInfo
 
   private boolean _isReadOnly = true;
 
-  public FunctionInfo(QuercusContext quercus, ClassDef classDef, String name)
+  public FunctionInfo(QuercusContext quercus, ClassDef classDef, string name)
   {
     _quercus = quercus;
     _classDef = classDef;
@@ -117,7 +117,7 @@ public class FunctionInfo
     return _quercus;
   }
 
-  public String getName()
+  public string getName()
   {
     return _name;
   }
@@ -436,16 +436,16 @@ public class FunctionInfo
     return _tempVarList.size();
   }
 
-  public String createTempVar()
+  public string createTempVar()
   {
-    String name = "q_temp_" + getTempIndex();
+    string name = "q_temp_" + getTempIndex();
 
     _tempVarList.add(name);
 
     return name;
   }
 
-  public String toString()
+  public string toString()
   {
     return "FunctionInfo[" + _name + "]";
   }

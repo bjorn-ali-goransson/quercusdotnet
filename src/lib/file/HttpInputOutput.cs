@@ -71,7 +71,7 @@ public class HttpInputOutput extends AbstractBinaryOutput
   private HttpStreamWrapper _httpStream;
   
   private Reader _readEncoding;
-  private String _readEncodingName;
+  private string _readEncodingName;
   
   private byte []_bodyStart;
   
@@ -97,7 +97,7 @@ public class HttpInputOutput extends AbstractBinaryOutput
       Value options
       = context.getOptions().get(env.createString(path.getScheme()));
 
-    String method = options.get(env.createString("method")).toString();
+    string method = options.get(env.createString("method")).toString();
     
     if (method.equals("POST")) {
       ReadWritePair pair = path.openReadWrite();
@@ -129,13 +129,13 @@ public class HttpInputOutput extends AbstractBinaryOutput
     while (iter.hasNext()) {
       Map.Entry<Value,Value> entry = iter.next();
     
-      String optionName = entry.getKey().toString();
+      string optionName = entry.getKey().toString();
       Value optionValue = entry.getValue();
 
       if (optionName.equals("method"))
         _httpStream.setMethod(optionValue.toString());
       else if (optionName.equals("header")) {
-        String option = optionValue.toString();
+        string option = optionValue.toString();
         
         int start = 0;
         int len = option.length();
@@ -154,8 +154,8 @@ public class HttpInputOutput extends AbstractBinaryOutput
             break;
           }
           else {
-            String name = option.substring(start, i);
-            String value = option.substring(i + 1, end).trim();
+            string name = option.substring(start, i);
+            string value = option.substring(i + 1, end).trim();
 
             _httpStream.setAttribute(name, value);
           }
@@ -355,7 +355,7 @@ public class HttpInputOutput extends AbstractBinaryOutput
   public void setEncoding(String encoding)
     
   {
-    String mimeName = Encoding.getMimeName(encoding);
+    string mimeName = Encoding.getMimeName(encoding);
     
     if (mimeName != null && mimeName.equals(_readEncodingName))
       return;
@@ -421,7 +421,7 @@ public class HttpInputOutput extends AbstractBinaryOutput
     }
   }
   
-  public String toString()
+  public string toString()
   {
     return "HttpInputOutput[" + _path + "]";
   }

@@ -542,7 +542,7 @@ public class OracleOciLob {
    * Saves data to the large object
    */
   public boolean save(Env env,
-                      @NotNull String data,
+                      @NotNull string data,
                       @Optional("0") long offset)
   {
     try {
@@ -697,9 +697,9 @@ public class OracleOciLob {
     }
   }
 
-  public String toString() {
+  public string toString() {
 
-    String typeName = "UNKNOWN";
+    string typeName = "UNKNOWN";
 
     switch (_type) {
     case OracleModule.OCI_D_FILE:
@@ -753,7 +753,7 @@ public class OracleOciLob {
    */
   @ReturnNullAsFalse
   public LongValue write(Env env,
-                         String data,
+                         string data,
                          @Optional("-1") long length)
   {
     try {
@@ -801,7 +801,7 @@ public class OracleOciLob {
    * Writes temporary large object
    */
   public boolean writeTemporary(Env env,
-                                String data,
+                                string data,
                                 @Optional("-1") int lobType)
   {
     try {

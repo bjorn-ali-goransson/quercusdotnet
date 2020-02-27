@@ -51,7 +51,7 @@ public class MysqlResultSetMetaData
 
   private ResultSetMetaData _resultSetMetaData;
 
-  private String []_columnEncodings;
+  private string []_columnEncodings;
 
   protected MysqlResultSetMetaData(ResultSetMetaData metaData)
   {
@@ -64,9 +64,9 @@ public class MysqlResultSetMetaData
     }
   }
 
-  public String getColumnCharacterEncoding(int column)
+  public string getColumnCharacterEncoding(int column)
   {
-    String encoding = _columnEncodings[column - 1];
+    string encoding = _columnEncodings[column - 1];
 
     if (encoding == null) {
       encoding = getColumnCharacterEncodingImpl(column);
@@ -77,7 +77,7 @@ public class MysqlResultSetMetaData
     return encoding;
   }
 
-  private String getColumnCharacterEncodingImpl(int column)
+  private string getColumnCharacterEncodingImpl(int column)
   {
     Class<?> cls = _resultSetMetaData.getClass();
 

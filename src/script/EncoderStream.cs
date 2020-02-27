@@ -53,7 +53,7 @@ public class EncoderStream extends StreamImpl
     _inputSb = new StringBuilder();
   }
 
-  public static ReadStream open(Reader reader, String charset)
+  public static ReadStream open(Reader reader, string charset)
   {
     Encoder encoder = Encoder.create(charset);
 

@@ -92,12 +92,12 @@ public class InterpretedClassDef extends ClassDef
 
   protected int _parseIndex;
 
-  protected String _comment;
+  protected string _comment;
 
   public InterpretedClassDef(Location location,
-                             String name,
-                             String parentName,
-                             String []ifaceList,
+                             string name,
+                             string parentName,
+                             string []ifaceList,
                              int index)
   {
     this(location,
@@ -105,10 +105,10 @@ public class InterpretedClassDef extends ClassDef
   }
 
   public InterpretedClassDef(Location location,
-                             String name,
-                             String parentName,
-                             String []ifaceList,
-                             String []traitList,
+                             string name,
+                             string parentName,
+                             string []ifaceList,
+                             string []traitList,
                              int index)
   {
     super(location, name, parentName, ifaceList, traitList);
@@ -117,16 +117,16 @@ public class InterpretedClassDef extends ClassDef
   }
 
   public InterpretedClassDef(String name,
-                             String parentName,
-                             String []ifaceList,
-                             String []traitList)
+                             string parentName,
+                             string []ifaceList,
+                             string []traitList)
   {
     this(null, name, parentName, ifaceList, traitList, 0);
   }
 
   public InterpretedClassDef(String name,
-                             String parentName,
-                             String []ifaceList)
+                             string parentName,
+                             string []ifaceList)
   {
     this(null, name, parentName, ifaceList, ClassDef.NULL_STRING_ARRAY, 0);
   }
@@ -239,9 +239,9 @@ public class InterpretedClassDef extends ClassDef
   /**
    * Unique name to use for compilation.
    */
-  public String getCompilationName()
+  public string getCompilationName()
   {
-    String name = getName();
+    string name = getName();
     name = name.replace("__", "___");
     name = name.replace("\\", "__");
 
@@ -251,7 +251,7 @@ public class InterpretedClassDef extends ClassDef
   /**
    * Unique instance name for the compiled class.
    */
-  public String getCompilationInstanceName()
+  public string getCompilationInstanceName()
   {
     return "q_cl_" + getCompilationName();
   }
@@ -259,7 +259,7 @@ public class InterpretedClassDef extends ClassDef
   /**
    * Initialize the quercus class methods.
    */
-  public override void initClassMethods(QuercusClass cl, String bindingClassName)
+  public override void initClassMethods(QuercusClass cl, string bindingClassName)
   {
     cl.addInitializer(this);
 
@@ -325,7 +325,7 @@ public class InterpretedClassDef extends ClassDef
   /**
    * Initialize the quercus class fields.
    */
-  public override void initClassFields(QuercusClass cl, String declaringClassName)
+  public override void initClassFields(QuercusClass cl, string declaringClassName)
   {
     if (isTrait()) {
       for (Map.Entry<StringValue,ClassField> entry : _fieldMap.entrySet()) {
@@ -351,7 +351,7 @@ public class InterpretedClassDef extends ClassDef
       }
     }
     else {
-      String className = getName();
+      string className = getName();
       for (Map.Entry<StringValue, StaticFieldEntry> entry : _staticFieldMap.entrySet()) {
         StaticFieldEntry field = entry.getValue();
 
@@ -463,7 +463,7 @@ public class InterpretedClassDef extends ClassDef
   /**
    * Adds a static value.
    */
-  public void addStaticValue(Value name, Expr value, String comment)
+  public void addStaticValue(Value name, Expr value, string comment)
   {
     _staticFieldMap.put(name.toStringValue(), new StaticFieldEntry(value, comment));
   }
@@ -490,7 +490,7 @@ public class InterpretedClassDef extends ClassDef
   public void addClassField(StringValue name,
                             Expr value,
                             FieldVisibility visibility,
-                            String comment)
+                            string comment)
   {
     ClassField field = new ClassField(name,
                                       getName(),
@@ -575,7 +575,7 @@ public class InterpretedClassDef extends ClassDef
   /**
    * Returns the documentation for this class.
    */
-  public override String getComment()
+  public override string getComment()
   {
     return _comment;
   }
@@ -583,7 +583,7 @@ public class InterpretedClassDef extends ClassDef
   /**
    * Returns the comment for the specified field.
    */
-  public override String getFieldComment(StringValue name)
+  public override string getFieldComment(StringValue name)
   {
     ClassField field = _fieldMap.get(name);
 
@@ -596,7 +596,7 @@ public class InterpretedClassDef extends ClassDef
   /**
    * Returns the comment for the specified field.
    */
-  public override String getStaticFieldComment(StringValue name)
+  public override string getStaticFieldComment(StringValue name)
   {
     StaticFieldEntry field = _staticFieldMap.get(name);
 

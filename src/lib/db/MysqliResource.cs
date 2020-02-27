@@ -49,7 +49,7 @@ public class MysqliResource extends Mysqli {
                         @Optional("localhost") StringValue host,
                         @Optional StringValue user,
                         @Optional StringValue password,
-                        @Optional String db,
+                        @Optional string db,
                         @Optional("3306") int port,
                         @Optional StringValue socket)
   {
@@ -59,19 +59,19 @@ public class MysqliResource extends Mysqli {
   /**
    * This constructor can only be invoked by other method
    * implementations in the mysql and mysqli modules. It
-   * accepts String arguments and supports additional
+   * accepts string arguments and supports additional
    * arguments not available in the mysqli constructor.
    */
   MysqliResource(Env env,
-                 String host,
-                 String user,
-                 String password,
-                 String db,
+                 string host,
+                 string user,
+                 string password,
+                 string db,
                  int port,
-                 String socket,
+                 string socket,
                  int flags,
-                 String driver,
-                 String url,
+                 string driver,
+                 string url,
                  boolean isNewLink)
   {
     super(env,

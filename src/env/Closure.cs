@@ -37,7 +37,7 @@
 @SuppressWarnings("serial")
 abstract public class Closure extends Callback
 {
-  private final String _name;
+  private final string _name;
   private Value _qThis;
 
   private HashMap<StringValue,Var> _staticVarMap;
@@ -80,12 +80,12 @@ abstract public class Closure extends Callback
     return true;
   }
 
-  public override String getType()
+  public override string getType()
   {
     return "object";
   }
 
-  public override String getCallbackName()
+  public override string getCallbackName()
   {
     return _name;
   }
@@ -100,7 +100,7 @@ abstract public class Closure extends Callback
     return true;
   }
 
-  public override boolean isA(Env env, String name)
+  public override boolean isA(Env env, string name)
   {
     return "Closure".equalsIgnoreCase(name);
   }
@@ -153,7 +153,7 @@ abstract public class Closure extends Callback
    */
   abstract public Value call(Env env, Value []args);
 
-  public override String toString()
+  public override string toString()
   {
     return getClass().getSimpleName() + "[" + _name + "]";
   }

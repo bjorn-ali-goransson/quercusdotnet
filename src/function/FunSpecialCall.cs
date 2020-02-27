@@ -89,7 +89,7 @@ public class FunSpecialCall extends AbstractFunction {
                                _name, arrayArgs);
   }
 
-  public override String toString()
+  public override string toString()
   {
     return getClass().getSimpleName() + "[" + getName() + "]";
   }

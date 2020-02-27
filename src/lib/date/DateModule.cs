@@ -56,20 +56,20 @@ public class DateModule extends AbstractQuercusModule {
   public static final int CAL_GREGORIAN = 0;
   public static final int CAL_JULIAN = 1;
 
-  private static final String []_shortDayOfWeek = {
+  private static final string []_shortDayOfWeek = {
     "Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"
   };
 
-  private static final String []_fullDayOfWeek = {
+  private static final string []_fullDayOfWeek = {
     "Sunday", "Monday", "Tuesday", "Wednesday",
     "Thursday", "Friday", "Saturday"
   };
 
-  private static final String []_shortMonth = {
+  private static final string []_shortMonth = {
     "Jan", "Feb", "Mar", "Apr", "May", "Jun",
     "Jul", "Aug", "Sep", "Oct", "Nov", "Dec",
   };
-  private static final String []_fullMonth = {
+  private static final string []_fullMonth = {
     "January", "February", "March", "April", "May", "June",
     "July", "August", "September", "October", "November", "December",
   };
@@ -81,7 +81,7 @@ public class DateModule extends AbstractQuercusModule {
   /**
    * Returns true for the date extension.
    */
-  public String []getLoadedExtensions()
+  public string []getLoadedExtensions()
   {
     return new String[] { "date" };
   }
@@ -349,8 +349,8 @@ public class DateModule extends AbstractQuercusModule {
   /**
    * Returns the formatted date.
    */
-  public String gmstrftime(Env env,
-                           String format,
+  public string gmstrftime(Env env,
+                           string format,
                            @Optional("-1") long phpTime)
   {
     long time;
@@ -1009,8 +1009,8 @@ public class DateModule extends AbstractQuercusModule {
   /**
    * Returns the formatted date.
    */
-  public static String strftime(Env env,
-                                String format,
+  public static string strftime(Env env,
+                                string format,
                                 @Optional("-1") long phpTime)
   {
     long time;
@@ -1057,7 +1057,7 @@ public class DateModule extends AbstractQuercusModule {
    * Parses the time
    */
   public static Value strtotime(Env env,
-                                String timeString,
+                                string timeString,
                                 @Optional("-1") long now)
   {
     try {
@@ -1159,14 +1159,14 @@ public class DateModule extends AbstractQuercusModule {
     dateTime.setDate(year, month, day);
   }
 
-  public static String date_default_timezone_get(Env env)
+  public static string date_default_timezone_get(Env env)
   {
     TimeZone timeZone = env.getDefaultTimeZone();
 
     return timeZone.getID();
   }
 
-  public static boolean date_default_timezone_set(Env env, String id)
+  public static boolean date_default_timezone_set(Env env, string id)
   {
     env.setDefaultTimeZone(id);
 
@@ -1350,7 +1350,7 @@ public class DateModule extends AbstractQuercusModule {
       return DateTimeZone.findTimeZone(abbr, gmtOffset, isDST);
   }
 
-  public static String timezone_name_get(DateTimeZone dateTimeZone)
+  public static string timezone_name_get(DateTimeZone dateTimeZone)
   {
     return dateTimeZone.getName();
   }

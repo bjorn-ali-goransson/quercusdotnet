@@ -51,14 +51,14 @@ public class CgiEnv
   }
 
   @Override
-  protected String getQueryString()
+  protected string getQueryString()
   {
     Value serverEnv = getGlobalValue("_SERVER");
 
     return serverEnv.get(createString("QUERY_STRING")).toString();
   }
 
-  protected override String getContentType()
+  protected override string getContentType()
   {
     Value serverEnv = getGlobalValue("_SERVER");
 
@@ -71,7 +71,7 @@ public class CgiEnv
     boolean isMagicQuotes = getIniBoolean("magic_quotes_gpc");
 
     Value serverEnv = getGlobalValue("_SERVER");
-    String cookies = serverEnv.get(createString("HTTP_COOKIE")).toString();
+    string cookies = serverEnv.get(createString("HTTP_COOKIE")).toString();
 
     int i = 0;
     int j = 0;
@@ -96,15 +96,15 @@ public class CgiEnv
   }
 
   private void addCookie(ArrayValue array,
-                         String cookies,
+                         string cookies,
                          int start,
                          int end,
                          boolean isMagicQuotes)
   {
     int eqIndex = cookies.indexOf('=', start);
 
-    String name = "";
-    String value = "";
+    string name = "";
+    string value = "";
 
     StringValue valueV;
 
@@ -297,8 +297,8 @@ public class CgiEnv
 
     Value serverEnv = getGlobalValue("_SERVER");
 
-    String method = serverEnv.get(createString("REQUEST_METHOD")).toString();
-    String contentType
+    string method = serverEnv.get(createString("REQUEST_METHOD")).toString();
+    string contentType
       = serverEnv.get(createString("CONTENT_TYPE")).toString();
 
     int contentLength = Integer.MAX_VALUE;

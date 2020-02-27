@@ -40,7 +40,7 @@
  * Represents an introspected Java class.
  */
 public class JavaListClassDef extends JavaClassDef {
-  JavaListClassDef(ModuleContext moduleContext, String name, Class type)
+  JavaListClassDef(ModuleContext moduleContext, string name, Class type)
   {
     super(moduleContext, name, type);
   }

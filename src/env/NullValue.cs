@@ -69,7 +69,7 @@ public class NullValue extends Value
    * Returns the type.
    */
   @Override
-  public String getType()
+  public string getType()
   {
     return "NULL";
   }
@@ -186,7 +186,7 @@ public class NullValue extends Value
    * Converts to a string.
    * @param env
    */
-  public override String toString()
+  public override string toString()
   {
     return "";
   }
@@ -291,9 +291,9 @@ public class NullValue extends Value
   }
 
   /**
-   * Converts to a java String object.
+   * Converts to a java string object.
    */
-  public override String toJavaString()
+  public override string toJavaString()
   {
     return null;
   }
@@ -629,7 +629,7 @@ public class NullValue extends Value
     return env.createObject();
   }
 
-  public override String toDebugString()
+  public override string toDebugString()
   {
     return "null";
   }

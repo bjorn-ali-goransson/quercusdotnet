@@ -75,7 +75,7 @@ public class BinaryLtExpr extends AbstractBinaryExpr {
     return lValue.lt(rValue);
   }
 
-  public String toString()
+  public string toString()
   {
     return "(" + _left + " < " + _right + ")";
   }

@@ -234,7 +234,7 @@ public class FileOutput extends AbstractBinaryOutput
    * Converts to a string.
    * @param env
    */
-  public String toString()
+  public string toString()
   {
     return "FileOutput[" + getPath() + "]";
   }

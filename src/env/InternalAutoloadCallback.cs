@@ -44,7 +44,7 @@
  */
 public class InternalAutoloadCallback
 {
-  private final String _prefix;
+  private final string _prefix;
 
   public InternalAutoloadCallback(String prefix)
   {
@@ -59,7 +59,7 @@ public class InternalAutoloadCallback
    *
    * @param env the calling environment
    */
-  public QuercusClass loadClass(Env env, String name)
+  public QuercusClass loadClass(Env env, string name)
   {
     ClassLoader loader = Thread.currentThread().getContextClassLoader();
     URL url = loader.getResource(_prefix + name + ".php");
@@ -68,7 +68,7 @@ public class InternalAutoloadCallback
       return null;
     }
 
-    String urlStr = url.toString();
+    string urlStr = url.toString();
 
     // for JBoss, #5606
     // XXX: use this for resin and no-resin?

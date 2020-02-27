@@ -39,7 +39,7 @@ public class DOMAttr
   extends DOMNode<Attr>
 {
   public static DOMAttr __construct(
-      Env env, String name, @Optional String value)
+      Env env, string name, @Optional string value)
   {
     DOMAttr attr = getImpl(env).createAttr(name);
 
@@ -54,7 +54,7 @@ public class DOMAttr
     super(impl, delegate);
   }
 
-  public String getName()
+  public string getName()
   {
     return _delegate.getName();
   }
@@ -74,7 +74,7 @@ public class DOMAttr
     return _delegate.getSpecified();
   }
 
-  public String getValue()
+  public string getValue()
   {
     return _delegate.getValue();
   }

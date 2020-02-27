@@ -38,9 +38,9 @@
  * For portability of compiled code.
  */
 public class ConstDirExpr extends Expr {
-  protected final String _dirName;
+  protected final string _dirName;
 
-  public ConstDirExpr(Location location, String dirName)
+  public ConstDirExpr(Location location, string dirName)
   {
     super(location);
 
@@ -64,7 +64,7 @@ public class ConstDirExpr extends Expr {
     return env.createString(_dirName);
   }
 
-  public String toString()
+  public string toString()
   {
     return _dirName;
   }

@@ -38,7 +38,7 @@ public class UnexpectedValue extends NullValue
     _value = value;
   }
   
-  public String getType()
+  public string getType()
   {
     return _value.getType();
   }

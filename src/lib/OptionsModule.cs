@@ -63,10 +63,10 @@ public class OptionsModule extends AbstractQuercusModule {
     = Logger.getLogger(OptionsModule.class.getName());
 
   // php/1a0q (phpMyAdmin)
-  public static final String PHP_OS
+  public static final string PHP_OS
     = System.getProperty("os.name").toUpperCase(Locale.ENGLISH);
 
-  public static final String PHP_EOL
+  public static final string PHP_EOL
     = System.getProperty("line.separator");
 
   public static final int ASSERT_ACTIVE = 1;
@@ -246,7 +246,7 @@ public class OptionsModule extends AbstractQuercusModule {
   /**
    * Stubs the dl.
    */
-  public static boolean dl(Env env, String dl)
+  public static boolean dl(Env env, string dl)
   {
     env.stub("dl is stubbed for dl(" + dl + ")");
 
@@ -256,7 +256,7 @@ public class OptionsModule extends AbstractQuercusModule {
   /**
    * Returns true if the given extension is loaded
    */
-  public static boolean extension_loaded(Env env, String ext)
+  public static boolean extension_loaded(Env env, string ext)
   {
     return env.isExtensionLoaded(ext);
   }
@@ -264,7 +264,7 @@ public class OptionsModule extends AbstractQuercusModule {
   /**
    * Returns the configuration value of a configuration.
    */
-  public static Value get_cfg_var(Env env, String name)
+  public static Value get_cfg_var(Env env, string name)
   {
     Value value = env.getConfigVar(name);
 
@@ -277,7 +277,7 @@ public class OptionsModule extends AbstractQuercusModule {
   /**
    * Returns the owner of the current script.
    */
-  public static String get_current_user(Env env)
+  public static string get_current_user(Env env)
   {
     env.stub("get_current_user");
 
@@ -296,7 +296,7 @@ public class OptionsModule extends AbstractQuercusModule {
   /**
    * Returns extension function with a given name.
    */
-  public static Value get_extension_funcs(Env env, String name)
+  public static Value get_extension_funcs(Env env, string name)
   {
     return env.getExtensionFuncs(name);
   }
@@ -376,7 +376,7 @@ public class OptionsModule extends AbstractQuercusModule {
    */
   public static Value getlastmod(Env env)
   {
-    String path = env.getSelfPath().getNativePath();
+    string path = env.getSelfPath().getNativePath();
 
     return FileModule.filemtime(env, env.createString(path));
   }
@@ -402,7 +402,7 @@ public class OptionsModule extends AbstractQuercusModule {
    */
   public static Value getmyuid(Env env)
   {
-    String str = env.getSelfPath().getFullPath();
+    string str = env.getSelfPath().getFullPath();
 
     return FileModule.fileowner(env, env.createString(str));
   }
@@ -459,7 +459,7 @@ public class OptionsModule extends AbstractQuercusModule {
   /**
    * Sets an initialization value.
    */
-  public static Value ini_alter(Env env, String varName, StringValue value)
+  public static Value ini_alter(Env env, string varName, StringValue value)
   {
     return ini_set(env, varName, value);
   }
@@ -467,7 +467,7 @@ public class OptionsModule extends AbstractQuercusModule {
   /**
    * Returns an initialization value.
    */
-  public static StringValue ini_get(Env env, String varName)
+  public static StringValue ini_get(Env env, string varName)
   {
     StringValue v = env.getIni(varName);
 
@@ -484,7 +484,7 @@ public class OptionsModule extends AbstractQuercusModule {
    * @param extension assumes ini values are prefixed by extension names.
    */
   public static Value ini_get_all(Env env,
-                                  @Optional String extension,
+                                  @Optional string extension,
                                   @Optional("true") boolean isShowDetails)
   {
     if (extension == null) {
@@ -502,7 +502,7 @@ public class OptionsModule extends AbstractQuercusModule {
     return getAllDirectives(env, extension);
   }
 
-  private static Value getAllDirectives(Env env, String prefix)
+  private static Value getAllDirectives(Env env, string prefix)
   {
     ArrayValue directives = new ArrayValueImpl();
 
@@ -540,7 +540,7 @@ public class OptionsModule extends AbstractQuercusModule {
   /**
    * Restore the initial configuration value
    */
-  public static Value ini_restore(Env env, String name)
+  public static Value ini_restore(Env env, string name)
   {
     Value value = env.getConfigVar(name);
 
@@ -553,7 +553,7 @@ public class OptionsModule extends AbstractQuercusModule {
   /**
    * Sets an initialization value.
    */
-  public static StringValue ini_set(Env env, String varName, StringValue value)
+  public static StringValue ini_set(Env env, string varName, StringValue value)
   {
     StringValue oldValue = env.setIni(varName, value);
 
@@ -612,9 +612,9 @@ public class OptionsModule extends AbstractQuercusModule {
   /**
    * Returns the sapi type.
    */
-  public static String php_sapi_name(Env env)
+  public static string php_sapi_name(Env env)
   {
-    String name = env.getIniString("quercus.sapi_name");
+    string name = env.getIniString("quercus.sapi_name");
 
     if (name != null && name.length() > 0) {
       return name;
@@ -627,7 +627,7 @@ public class OptionsModule extends AbstractQuercusModule {
   /**
    * Returns system information
    */
-  public static String php_uname(@Optional("'a'") String mode)
+  public static string php_uname(@Optional("'a'") string mode)
   {
     // XXX: stubbed
 
@@ -671,8 +671,8 @@ public class OptionsModule extends AbstractQuercusModule {
   public static void phpinfo(Env env, @Optional("INFO_ALL") int what)
   {
     if (hasRequest(env)) {
-      String quercusName = env.getQuercus().getName();
-      String css = getPhpinfoCss();
+      string quercusName = env.getQuercus().getName();
+      string css = getPhpinfoCss();
 
       env.println("<!DOCTYPE html>\n<html><head><title>" + quercusName + "</title>");
       env.println("<style type=\"text/css\">");
@@ -691,7 +691,7 @@ public class OptionsModule extends AbstractQuercusModule {
       env.println("</body></html>");
   }
 
-  private static String getPhpinfoCss()
+  private static string getPhpinfoCss()
   {
     ClassLoader loader = Thread.currentThread().getContextClassLoader();
 
@@ -734,7 +734,7 @@ public class OptionsModule extends AbstractQuercusModule {
 
   private static void phpinfoGeneral(Env env)
   {
-    String quercusName = env.getQuercus().getName();
+    string quercusName = env.getQuercus().getName();
 
     if (hasRequest(env))
       env.println("<h1>" + quercusName + "</h1>");
@@ -796,7 +796,7 @@ public class OptionsModule extends AbstractQuercusModule {
     env.println();
   }
 
-  private static void phpinfoVariable(Env env, String name, Value value)
+  private static void phpinfoVariable(Env env, string name, Value value)
   {
     if (value.isArray()) {
       ArrayValue array = value.toArrayValue(env);
@@ -850,7 +850,7 @@ public class OptionsModule extends AbstractQuercusModule {
   /**
    * Returns the quercus version.
    */
-  public static String phpversion(Env env, @Optional StringValue module)
+  public static string phpversion(Env env, @Optional StringValue module)
   {
     return env.getQuercus().getPhpVersion();
   }
@@ -886,7 +886,7 @@ public class OptionsModule extends AbstractQuercusModule {
   /**
    * Sets the include path
    */
-  public static String set_include_path(Env env, String includePath)
+  public static string set_include_path(Env env, string includePath)
   {
     return env.setIncludePath(includePath);
   }
@@ -914,7 +914,7 @@ public class OptionsModule extends AbstractQuercusModule {
   /*
    * Returns the directory used for temp files like uploads.
    */
-  public static String sys_get_temp_dir(Env env)
+  public static string sys_get_temp_dir(Env env)
   {
     Path tmp = env.getTempDirectory();
 
@@ -927,7 +927,7 @@ public class OptionsModule extends AbstractQuercusModule {
   public static Value version_compare(Env env,
                                       StringValue version1,
                                       StringValue version2,
-                                      @Optional("cmp") String op)
+                                      @Optional("cmp") string op)
   {
     ArrayList<Value> expanded1 = expandVersion(env, version1);
     ArrayList<Value> expanded2 = expandVersion(env, version2);
@@ -959,7 +959,7 @@ public class OptionsModule extends AbstractQuercusModule {
   // XXX: zend_logo_guid
   // XXX: zend_thread_id
 
-  public static String zend_version()
+  public static string zend_version()
   {
     return "2.0.4";
   }
@@ -1006,7 +1006,7 @@ public class OptionsModule extends AbstractQuercusModule {
           sb.append((char) ch);
         }
 
-        String s = sb.toString();
+        string s = sb.toString();
 
         if (s.equals("dev"))
           s = "a";

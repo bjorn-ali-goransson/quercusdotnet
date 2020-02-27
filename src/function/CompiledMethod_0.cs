@@ -78,7 +78,7 @@ abstract public class CompiledMethod_0 extends CompiledMethod {
                                    QuercusClass qClass,
                                    Value qThis);
 
-  public String toString()
+  public string toString()
   {
     return "CompiledMethod_0[" + _name + "]";
   }

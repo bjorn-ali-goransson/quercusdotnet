@@ -96,7 +96,7 @@ public class BinaryAppendExpr extends Expr
     return sb;
   }
 
-  public override String evalString(Env env)
+  public override string evalString(Env env)
   {
     Value value = _value.eval(env);
 
@@ -128,7 +128,7 @@ public class BinaryAppendExpr extends Expr
       return null;
   }
 
-  public String toString()
+  public string toString()
   {
     if (_next != null)
       return "(" + _value + " . " + _next + ")";

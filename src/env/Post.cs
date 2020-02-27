@@ -64,8 +64,8 @@ public class Post
     InputStream is = null;
 
     try {
-      String encoding = request.getCharacterEncoding();
-      String contentType = request.getHeader("Content-Type");
+      string encoding = request.getCharacterEncoding();
+      string contentType = request.getHeader("Content-Type");
 
       is = request.getInputStream();
 
@@ -103,8 +103,8 @@ public class Post
                        ArrayValue postArray,
                        ArrayValue files,
                        InputStream is,
-                       String contentType,
-                       String encoding,
+                       string contentType,
+                       string encoding,
                        int contentLength,
                        boolean addSlashesToValues,
                        boolean isAllowUploads)
@@ -118,7 +118,7 @@ public class Post
       if (contentType != null
           && contentType.startsWith("multipart/form-data")) {
 
-        String boundary = getBoundary(contentType);
+        string boundary = getBoundary(contentType);
 
         ReadStream rs = new ReadStream(new VfsStream(is, null));
 
@@ -185,15 +185,15 @@ public class Post
     ReadStream is;
 
     while ((is = ms.openRead()) != null) {
-      String attr = (String) ms.getAttribute("content-disposition");
+      string attr = (String) ms.getAttribute("content-disposition");
 
       if (attr == null || ! attr.startsWith("form-data")) {
         // XXX: is this an error?
         continue;
       }
 
-      String name = getAttribute(attr, "name", addSlashesToValues);
-      String filename = getAttribute(attr, "filename", addSlashesToValues);
+      string name = getAttribute(attr, "name", addSlashesToValues);
+      string filename = getAttribute(attr, "filename", addSlashesToValues);
 
       if (filename != null) {
         int slashIndex = filename.lastIndexOf('/');
@@ -230,7 +230,7 @@ public class Post
           continue;
         }
 
-        String tmpName = "";
+        string tmpName = "";
         long tmpLength = 0;
 
         // A POST file upload with an empty string as the filename does not
@@ -257,7 +257,7 @@ public class Post
         // A header like "Content-Type: image/gif" indicates the mime type
         // for an uploaded file.
 
-        String mimeType = getAttribute(attr, "mime-type", addSlashesToValues);
+        string mimeType = getAttribute(attr, "mime-type", addSlashesToValues);
         if (mimeType == null) {
           mimeType = (String) ms.getAttribute("content-type");
 
@@ -294,9 +294,9 @@ public class Post
 
   private static void addFormFile(Env env,
                                   ArrayValue files,
-                                  String fileName,
-                                  String tmpName,
-                                  String mimeType,
+                                  string fileName,
+                                  string tmpName,
+                                  string mimeType,
                                   long fileLength,
                                   boolean addSlashesToValues,
                                   long maxFileSize)
@@ -356,16 +356,16 @@ public class Post
 
   private static void addFormFile(Env env,
                                   ArrayValue files,
-                                  String name,
-                                  String fileName,
-                                  String tmpName,
-                                  String mimeType,
+                                  string name,
+                                  string fileName,
+                                  string tmpName,
+                                  string mimeType,
                                   long fileLength,
                                   boolean addSlashesToValues,
                                   long maxFileSize)
   {
     int p = name.indexOf('[');
-    String index = "";
+    string index = "";
     if (p >= 0) {
       index = name.substring(p);
       name = name.substring(0, p);
@@ -438,13 +438,13 @@ public class Post
 
   public static void addFormValue(Env env,
                                   ArrayValue array,
-                                  String key,
-                                  String []formValueList,
+                                  string key,
+                                  string []formValueList,
                                   boolean addSlashesToValues,
                                   boolean isReplaceSpacesWithUnderscores)
   {
     // php/081b
-    String formValue = formValueList[formValueList.length - 1];
+    string formValue = formValueList[formValueList.length - 1];
     Value value;
 
     if (formValue != null)
@@ -461,9 +461,9 @@ public class Post
 
   public static void addFormValue(Env env,
                                   ArrayValue array,
-                                  String key,
+                                  string key,
                                   Value formValue,
-                                  String []formValueList,
+                                  string []formValueList,
                                   boolean addSlashesToValues,
                                   boolean isReplaceSpacesWithUnderscores)
   {
@@ -485,7 +485,7 @@ public class Post
       int keyEnd = p;
 
       while (p > 0 && p < q) {
-        String currentKey = key.substring(keyStart, keyEnd);
+        string currentKey = key.substring(keyStart, keyEnd);
 
         if (keyStart == 0) {
           // php/081p
@@ -591,7 +591,7 @@ public class Post
       array.put(key, value);
   }
 
-  private static String getBoundary(String contentType)
+  private static string getBoundary(String contentType)
   {
     int i = contentType.indexOf("boundary=");
     if (i < 0)
@@ -643,8 +643,8 @@ public class Post
     }
   }
 
-  private static String getAttribute(String attr,
-                                     String name,
+  private static string getAttribute(String attr,
+                                     string name,
                                      boolean addSlashesToValues)
   {
     if (attr == null)
@@ -727,18 +727,18 @@ public class Post
 
     if (isAllowUploads) {
       for (Map.Entry<String,String[]> entry : map.entrySet()) {
-        String key = entry.getKey();
+        string key = entry.getKey();
 
         int len = key.length();
 
         if (len < 10 || ! key.endsWith(".filename"))
           continue;
 
-        String name = key.substring(0, len - 9);
+        string name = key.substring(0, len - 9);
 
-        String []fileNames = request.getParameterValues(name + ".filename");
-        String []tmpNames = request.getParameterValues(name + ".file");
-        String []mimeTypes
+        string []fileNames = request.getParameterValues(name + ".filename");
+        string []tmpNames = request.getParameterValues(name + ".file");
+        string []mimeTypes
           = request.getParameterValues(name + ".content-type");
 
         for (int i = 0; i < fileNames.length; i++) {
@@ -760,7 +760,7 @@ public class Post
     Collections.sort(keys);
 
     for (String key : keys) {
-      String []value = request.getParameterValues(key);
+      string []value = request.getParameterValues(key);
 
       Post.addFormValue(env, post, key, value, addSlashesToValues, true);
     }

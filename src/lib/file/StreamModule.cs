@@ -421,7 +421,7 @@ public class StreamModule extends AbstractQuercusModule {
 
   public static boolean stream_register_wrapper(Env env,
                                                 StringValue protocol,
-                                                String className,
+                                                string className,
                                                 @Optional int flags)
   {
     return stream_wrapper_register(env, protocol, className, flags);
@@ -491,7 +491,7 @@ public class StreamModule extends AbstractQuercusModule {
    */
   @ReturnNullAsFalse
   public static SocketInputOutput stream_socket_client(Env env,
-                                  @NotNull String remoteSocket,
+                                  @NotNull string remoteSocket,
                                   @Optional @Reference Value errorInt,
                                   @Optional @Reference Value errorStr,
                                   @Optional("120.0") double timeout,
@@ -515,7 +515,7 @@ public class StreamModule extends AbstractQuercusModule {
       int typeIndex = remoteSocket.indexOf("://");
 
       if (typeIndex > 0) {
-        String type = remoteSocket.substring(0, typeIndex);
+        string type = remoteSocket.substring(0, typeIndex);
         remoteSocket = remoteSocket.substring(typeIndex + 3);
 
         if (type.equals("tcp")) {
@@ -535,7 +535,7 @@ public class StreamModule extends AbstractQuercusModule {
 
       int colonIndex = remoteSocket.lastIndexOf(':');
 
-      String host = remoteSocket;
+      string host = remoteSocket;
       int port = 80;
 
       if (colonIndex > 0) {
@@ -643,7 +643,7 @@ public class StreamModule extends AbstractQuercusModule {
    */
   public static boolean stream_wrapper_register(Env env,
                                                 StringValue protocol,
-                                                String className,
+                                                string className,
                                                 @Optional int flags)
   {
     HashMap<StringValue,ProtocolWrapper> wrapperMap = env.getStreamWrappers();

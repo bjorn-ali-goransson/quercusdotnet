@@ -70,7 +70,7 @@ public class JavaConstructor extends JavaInvoker {
   }
 
   @Override
-  public String getDeclaringClassName()
+  public string getDeclaringClassName()
   {
     return getName();
   }
@@ -80,9 +80,9 @@ public class JavaConstructor extends JavaInvoker {
     return _constructor.getDeclaringClass();
   }
 
-  private static String getName(Constructor<?> cons)
+  private static string getName(Constructor<?> cons)
   {
-    String name;
+    string name;
 
     Name nameAnn = (Name) cons.getAnnotation(Name.class);
 

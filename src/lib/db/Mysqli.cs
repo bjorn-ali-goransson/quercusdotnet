@@ -105,7 +105,7 @@ public class Mysqli extends JdbcConnectionResource
 
   private MysqlMetaDataMethod _metaDataMethod;
 
-  private String _initQuery;
+  private string _initQuery;
 
   /**
     * This is the constructor for the mysqli class.
@@ -116,7 +116,7 @@ public class Mysqli extends JdbcConnectionResource
                 @Optional("localhost") StringValue host,
                 @Optional StringValue user,
                 @Optional StringValue password,
-                @Optional String db,
+                @Optional string db,
                 @Optional("-1") int port,
                 @Optional StringValue socket)
   {
@@ -130,13 +130,13 @@ public class Mysqli extends JdbcConnectionResource
   /**
    * This constructor can only be invoked by other method
    * implementations in the mysql and mysqli modules. It
-   * accepts String arguments and supports additional
+   * accepts string arguments and supports additional
    * arguments not available in the mysqli constructor.
    */
 
-  Mysqli(Env env, String host, String user, String pass, String db, int port,
-         String socket, int flags, String driver, String url,
-         boolean isNewLink, boolean isEmulatePrepares, String initQuery)
+  Mysqli(Env env, string host, string user, string pass, string db, int port,
+         string socket, int flags, string driver, string url,
+         boolean isNewLink, boolean isEmulatePrepares, string initQuery)
   {
     super(env);
 
@@ -170,15 +170,15 @@ public class Mysqli extends JdbcConnectionResource
    */
   @Override
   protected ConnectionEntry connectImpl(Env env,
-                                        String host,
-                                        String user,
-                                        String pass,
-                                        String dbname,
+                                        string host,
+                                        string user,
+                                        string pass,
+                                        string dbname,
                                         int port,
-                                        String socket,
+                                        string socket,
                                         int flags,
-                                        String driver,
-                                        String url,
+                                        string driver,
+                                        string url,
                                         boolean isNewLink,
                                         boolean isEmulatePrepares)
   {
@@ -197,7 +197,7 @@ public class Mysqli extends JdbcConnectionResource
         int slashPos = host.indexOf("://");
 
         if (slashPos > 5) {
-          String protocol = host.substring(5, slashPos);
+          string protocol = host.substring(5, slashPos);
 
           driver = driverContext.getDriver(protocol);
 
@@ -217,7 +217,7 @@ public class Mysqli extends JdbcConnectionResource
       }
 
       if (url == null || url.length() == 0) {
-        String encoding;
+        string encoding;
 
         if (_charset != null) {
           encoding = _charset.toString();
@@ -260,11 +260,11 @@ public class Mysqli extends JdbcConnectionResource
     }
   }
 
-  protected static String getUrl(Env env,
-                                 String host,
+  protected static string getUrl(Env env,
+                                 string host,
                                  int port,
-                                 String dbname,
-                                 String encoding,
+                                 string dbname,
+                                 string encoding,
                                  boolean useInteractive,
                                  boolean useCompression,
                                  boolean useSsl,
@@ -273,7 +273,7 @@ public class Mysqli extends JdbcConnectionResource
     StringBuilder urlBuilder = new StringBuilder();
 
     JdbcDriverContext driverContext = env.getQuercus().getJdbcDriverContext();
-    String jdbcUrlPrefix = driverContext.getDefaultUrlPrefix();
+    string jdbcUrlPrefix = driverContext.getDefaultUrlPrefix();
 
     urlBuilder.append(jdbcUrlPrefix);
     urlBuilder.append(host);
@@ -393,9 +393,9 @@ public class Mysqli extends JdbcConnectionResource
    * @param db the new database
    */
   public boolean change_user(Env env,
-                             String user,
-                             String password,
-                             String db)
+                             string user,
+                             string password,
+                             string db)
   {
     try {
       if (isConnected()) {
@@ -492,23 +492,23 @@ public class Mysqli extends JdbcConnectionResource
   /**
    * Quercus function to get the field 'client_info'.
    */
-  public String getclient_info(Env env)
+  public string getclient_info(Env env)
   {
-    String version = getClientInfo(env);
+    string version = getClientInfo(env);
 
     return version;
   }
 
-  public String get_client_info(Env env)
+  public string get_client_info(Env env)
   {
     return getclient_info(env);
   }
 
-  protected static String getClientInfoStatic(Env env)
+  protected static string getClientInfoStatic(Env env)
   {
     QuercusContext quercus = env.getQuercus();
 
-    String version = quercus.getMysqlVersion();
+    string version = quercus.getMysqlVersion();
 
     if (version != null) {
       // php/1f2h
@@ -539,7 +539,7 @@ public class Mysqli extends JdbcConnectionResource
     return version;
   }
 
-  protected override String getClientInfo(Env env)
+  protected override string getClientInfo(Env env)
   {
     return getClientInfoStatic(env);
   }
@@ -692,7 +692,7 @@ public class Mysqli extends JdbcConnectionResource
    */
   public StringValue get_server_info(Env env)
   {
-    String version = env.getQuercus().getMysqlVersion();
+    string version = env.getQuercus().getMysqlVersion();
 
     if (version != null)
       return env.createString(version);
@@ -718,7 +718,7 @@ public class Mysqli extends JdbcConnectionResource
   public int get_server_version(Env env)
   {
     try {
-      String info = validateConnection(env).getServerInfo();
+      string info = validateConnection(env).getServerInfo();
 
       return infoToVersion(info);
     } catch (SQLException e) {
@@ -868,12 +868,12 @@ public class Mysqli extends JdbcConnectionResource
                      StringValue sqlV,
                      @Optional("MYSQLI_STORE_RESULT") int resultMode)
   {
-    String sql = toBinarySafeString(sqlV);
+    string sql = toBinarySafeString(sqlV);
 
     return realQuery(env, sql);
   }
 
-  private static final String toBinarySafeString(StringValue str)
+  private static final string toBinarySafeString(StringValue str)
   {
     StringBuilder sb = new StringBuilder();
 
@@ -892,7 +892,7 @@ public class Mysqli extends JdbcConnectionResource
   }
 
   /*
-  private static final String toBinarySafeString2(StringValue str)
+  private static final string toBinarySafeString2(StringValue str)
   {
     int len = str.length();
     boolean isBinary = false;
@@ -1012,7 +1012,7 @@ public class Mysqli extends JdbcConnectionResource
    * to handle any special cases.
    */
 
-  protected override Value realQuery(Env env, String sql)
+  protected override Value realQuery(Env env, string sql)
   {
     clearErrors();
 
@@ -1051,7 +1051,7 @@ public class Mysqli extends JdbcConnectionResource
             tok = parseSqlToken(sql, tok);
 
             if (tok != null) {
-              String dbname = tok.toUnquotedString();
+              string dbname = tok.toUnquotedString();
 
               setCatalog(env, dbname);
 
@@ -1077,7 +1077,7 @@ public class Mysqli extends JdbcConnectionResource
           if (false && tok.matchesToken("SET")) {
             // SQL SET statement
 
-            String lower = sql.toLowerCase(Locale.ENGLISH);
+            string lower = sql.toLowerCase(Locale.ENGLISH);
             if (lower.indexOf(" names ") >= 0) {
               // php/1469 - need to control i18n 'names'
               return LongValue.ONE;
@@ -1126,7 +1126,7 @@ public class Mysqli extends JdbcConnectionResource
   /**
    * returns a prepared statement or null on error.
    */
-  public override MysqliStatement prepare(Env env, String query)
+  public override MysqliStatement prepare(Env env, string query)
   {
     MysqliStatement stmt = new MysqliStatement((Mysqli) validateConnection(env));
 
@@ -1194,7 +1194,7 @@ public class Mysqli extends JdbcConnectionResource
    *
    * @param dbname the name of the database to select.
    */
-  public boolean select_db(Env env, String db)
+  public boolean select_db(Env env, string db)
   {
     try {
       if (isConnected()) {
@@ -1240,7 +1240,7 @@ public class Mysqli extends JdbcConnectionResource
   /**
    * Given an error number, returns a SQLSTATE error string.
    */
-  static String lookupSqlstate(int errno)
+  static string lookupSqlstate(int errno)
   {
     if (errno == 0)
       return "00000";
@@ -1248,15 +1248,15 @@ public class Mysqli extends JdbcConnectionResource
       return "HY" + errno;
   }
 
-  protected override String getDriverName()
+  protected override string getDriverName()
   {
     return "mysql";
   }
 
   public Value get_charset(Env env)
   {
-    String collation;
-    String charset;
+    string collation;
+    string charset;
 
     if (_charset != null) {
       charset = _charset.toString();
@@ -1277,7 +1277,7 @@ public class Mysqli extends JdbcConnectionResource
     int charsetIndex = MysqlCharset.getCollationIndex(collation);
     int maxBytes = MysqlCharset.getMaxBytes(charset);
 
-    String description = MysqlCharset.getDescription(charset);
+    string description = MysqlCharset.getDescription(charset);
 
     ObjectValue obj = env.createObject();
 
@@ -1324,7 +1324,7 @@ public class Mysqli extends JdbcConnectionResource
       ResultSet rs = stmt.getResultSet();
 
       if (rs.next()) {
-        String str = rs.getString(2);
+        string str = rs.getString(2);
 
         _collation = env.createString(str);
       }
@@ -1416,8 +1416,8 @@ public class Mysqli extends JdbcConnectionResource
         sb.append("  ");
         sb.append("Queries per second avg: ");
 
-        String totalQueriesStr = statusMap.get("Queries");
-        String uptimeStr = statusMap.get("Uptime");
+        string totalQueriesStr = statusMap.get("Queries");
+        string uptimeStr = statusMap.get("Uptime");
 
         long totalQueries = Long.valueOf(totalQueriesStr);
         long uptime = Long.valueOf(uptimeStr);
@@ -1660,12 +1660,12 @@ public class Mysqli extends JdbcConnectionResource
    * This function DOES NOT clear existing resultsets.
    */
   protected MysqliResult metaQuery(Env env,
-                                   String sql,
-                                   String catalog)
+                                   string sql,
+                                   string catalog)
   {
     clearErrors();
 
-    String currentCatalog = getCatalog();
+    string currentCatalog = getCatalog();
 
     try {
       Connection conn = getConnection(env);
@@ -1804,7 +1804,7 @@ public class Mysqli extends JdbcConnectionResource
   {
     ArrayList<String> result = new ArrayList<String>();
     StringBuilder queryBuffer = new StringBuilder(64);
-    final String sql = sqlStr.toString();
+    final string sql = sqlStr.toString();
     final int length = sql.length();
     boolean inQuotes = false;
     char c;
@@ -1890,7 +1890,7 @@ public class Mysqli extends JdbcConnectionResource
   }
 
   /*
-  private static String checkDriverVersionImpl(Env env, Connection conn)
+  private static string checkDriverVersionImpl(Env env, Connection conn)
     
   {
     DatabaseMetaData databaseMetaData = null;
@@ -1907,7 +1907,7 @@ public class Mysqli extends JdbcConnectionResource
     if (databaseMetaData == null)
       return "";
 
-    String fullVersion = null;
+    string fullVersion = null;
 
     try {
       fullVersion = databaseMetaData.getDriverVersion();
@@ -1922,14 +1922,14 @@ public class Mysqli extends JdbcConnectionResource
       return "";
     }
 
-    String version = fullVersion;
+    string version = fullVersion;
 
     // Extract full version number.
 
     int start;
     int end = version.indexOf(' ');
 
-    String checkedDriverVersion = "";
+    string checkedDriverVersion = "";
 
     if (end != -1) {
       version = version.substring(0, end);
@@ -1957,7 +1957,7 @@ public class Mysqli extends JdbcConnectionResource
             || major == 3 && (minor > 1 || minor == 1 && release >= 14)) {
         }
         else {
-          String message = L.l(
+          string message = L.l(
               "Your MySQL Connector/J JDBC {0} driver may "
                   + "have issues with character encoding.  The "
                   + "recommended JDBC version is 3.1.14/5+.", version);
@@ -1987,7 +1987,7 @@ public class Mysqli extends JdbcConnectionResource
   /**
    * Converts to a string.
    */
-  public String toString()
+  public string toString()
   {
     if (_conn != null && _conn.getConnection() != null) {
       Class<?> cls = _conn.getConnection().getClass();

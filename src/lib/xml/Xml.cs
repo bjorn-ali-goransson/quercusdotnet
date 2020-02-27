@@ -79,7 +79,7 @@ public class Xml {
    */
   private boolean _xmlOptionCaseFolding = true;
 
-  private String _outputEncoding;
+  private string _outputEncoding;
 
   /**
    *  XML_OPTION_SKIP_TAGSTART specifies how many chars
@@ -99,10 +99,10 @@ public class Xml {
    *  Possibly should report error if user wants to use
    *  anything other than ":"
    */
-  private String _separator;
+  private string _separator;
 
   private int _errorCode = XmlModule.XML_ERROR_NONE;
-  private String _errorString;
+  private string _errorString;
 
   private Callable _startElementHandler;
   private Callable _endElementHandler;
@@ -123,8 +123,8 @@ public class Xml {
   private XmlHandler _xmlHandler;
 
   public Xml(Env env,
-             String outputEncoding,
-             String separator)
+             string outputEncoding,
+             string separator)
   {
     _outputEncoding = outputEncoding;
     _parser = env.wrapJava(this);
@@ -157,7 +157,7 @@ public class Xml {
     return _errorCode;
   }
 
-  public String getErrorString()
+  public string getErrorString()
   {
     return _errorString;
   }
@@ -558,7 +558,7 @@ public class Xml {
     }
   }
 
-  public String toString()
+  public string toString()
   {
     return "Xml[]";
   }
@@ -633,7 +633,7 @@ public class Xml {
 
       // turn attrs into an array of name, value pairs
       for (int i = 0; i < attrs.getLength(); i++) {
-        String aName = attrs.getLocalName(i); // Attr name
+        string aName = attrs.getLocalName(i); // Attr name
         if ("".equals(aName)) {
           aName = attrs.getQName(i);
         }
@@ -658,14 +658,14 @@ public class Xml {
     }
 
     public void startElement(String namespaceURI,
-                             String lName,
-                             String qName,
+                             string lName,
+                             string qName,
                              Attributes attrs)
       
     {
       Value elementArray = new ArrayValueImpl();
 
-      String eName = lName; // element name
+      string eName = lName; // element name
       if ("".equals(eName)) eName = qName;
       if (_xmlOptionCaseFolding) eName = eName.toUpperCase(Locale.ENGLISH);
 
@@ -690,8 +690,8 @@ public class Xml {
     }
 
     public void endElement(String namespaceURI,
-                           String sName,
-                           String qName)
+                           string sName,
+                           string qName)
       
     {
       Value elementArray;
@@ -705,7 +705,7 @@ public class Xml {
                          _env.createString("complete"));
       } else {
         elementArray = new ArrayValueImpl();
-        String eName = sName; // element name
+        string eName = sName; // element name
         if ("".equals(sName)) eName = qName;
         if (_xmlOptionCaseFolding) eName = eName.toUpperCase(Locale.ENGLISH);
         elementArray.put(_env.createString("tag"), _env.createString(eName));
@@ -824,8 +824,8 @@ public class Xml {
      * 
      */
     public void startElement(String namespaceURI,
-                             String lName,
-                             String qName,
+                             string lName,
+                             string qName,
                              Attributes attrs)
       
     {
@@ -842,7 +842,7 @@ public class Xml {
 
       args[0] = _parser;
 
-      String eName = lName; // element name
+      string eName = lName; // element name
       if (eName.length() == 0)
         eName = qName;
 
@@ -853,7 +853,7 @@ public class Xml {
         sb.append(eName);
 
         for (int i = 0; i < attrs.getLength(); i++) {
-          String aName = attrs.getLocalName(i); // Attr name
+          string aName = attrs.getLocalName(i); // Attr name
 
           if (aName.length() == 0) {
             aName = attrs.getQName(i);
@@ -882,7 +882,7 @@ public class Xml {
       // turn attrs into an array of name, value pairs
       args[2] = new ArrayValueImpl();
       for (int i = 0; i < attrs.getLength(); i++) {
-        String aName = attrs.getLocalName(i); // Attr name
+        string aName = attrs.getLocalName(i); // Attr name
 
         if ("".equals(aName))
           aName = attrs.getQName(i);
@@ -917,12 +917,12 @@ public class Xml {
      * 
      */
     public void endElement(String namespaceURI,
-                           String sName,
-                           String qName)
+                           string sName,
+                           string qName)
       
     {
       try {
-        String eName = sName; // element name
+        string eName = sName; // element name
 
         if (eName.length() == 0)
           eName = qName;
@@ -972,12 +972,12 @@ public class Xml {
         value = _env.createString(buf, start, length);
       }
       else {
-        String encoding = _outputEncoding;
+        string encoding = _outputEncoding;
 
         if (encoding == null)
           encoding = "UTF-8";
 
-        String s = new String(buf, start, length);
+        string s = new String(buf, start, length);
 
         byte[] bytes;
 
@@ -1014,7 +1014,7 @@ public class Xml {
      * 
      */
     public void processingInstruction(String target,
-                                      String data)
+                                      string data)
       
     {
       try {
@@ -1040,7 +1040,7 @@ public class Xml {
      * 
      */
     public void startPrefixMapping (String prefix,
-                                    String uri)
+                                    string uri)
       
     {
       try {
@@ -1082,8 +1082,8 @@ public class Xml {
     }
 
     public void notationDecl(String name,
-                             String publicId,
-                             String systemId)
+                             string publicId,
+                             string systemId)
       
     {
       try {
@@ -1106,9 +1106,9 @@ public class Xml {
 
     @Override
     public void unparsedEntityDecl(String name,
-                                   String publicId,
-                                   String systemId,
-                                   String notationName)
+                                   string publicId,
+                                   string systemId,
+                                   string notationName)
       
     {
       /**

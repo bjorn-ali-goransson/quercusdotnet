@@ -59,7 +59,7 @@ public class ToObjectExpr extends AbstractUnaryExpr {
     return _expr.eval(env).toObject(env);
   }
 
-  public String toString()
+  public string toString()
   {
     return "((object) " + _expr + ")";
   }

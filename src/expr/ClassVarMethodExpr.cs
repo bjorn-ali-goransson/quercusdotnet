@@ -120,7 +120,7 @@ public class ClassVarMethodExpr extends Expr {
                          evalArgs(env, _args));
   }
 
-  public String toString()
+  public string toString()
   {
     return _className + "::" + _methodName + "()";
   }

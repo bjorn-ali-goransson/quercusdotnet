@@ -74,7 +74,7 @@ abstract public class Expr {
   /**
    * Returns the filename.
    */
-  public String getFileName()
+  public string getFileName()
   {
     if (_location != Location.UNKNOWN)
       return _location.getFileName();
@@ -93,7 +93,7 @@ abstract public class Expr {
   /**
    * Returns the function name.
    */
-  public String getFunctionLocation()
+  public string getFunctionLocation()
   {
     return "";
   }
@@ -101,7 +101,7 @@ abstract public class Expr {
   /**
    * Returns the file name and line number, if location is known.
    */
-  public String getLocationLine()
+  public string getLocationLine()
   {
     if (_location != Location.UNKNOWN)
       return _location.getFileName() + ":" + getLine() + ": ";
@@ -228,7 +228,7 @@ abstract public class Expr {
   public Expr createAssign(QuercusParser parser, Expr value)
     
   {
-    String msg = (L.l("{0} is an invalid left-hand side of an assignment.",
+    string msg = (L.l("{0} is an invalid left-hand side of an assignment.",
                       this));
 
     if (parser != null)
@@ -254,7 +254,7 @@ abstract public class Expr {
   public void assign(QuercusParser parser)
     
   {
-    String msg = L.l("{0} is an invalid left-hand side of an assignment.",
+    string msg = L.l("{0} is an invalid left-hand side of an assignment.",
                      this);
 
     if (parser != null)
@@ -267,7 +267,7 @@ abstract public class Expr {
     
   {
     // XXX: need real exception
-    String msg = L.l("{0} is an invalid left-hand side of an assignment.",
+    string msg = L.l("{0} is an invalid left-hand side of an assignment.",
                      this);
 
     if (parser != null)
@@ -726,7 +726,7 @@ abstract public class Expr {
    *
    * @return the expression value.
    */
-  public String evalString(Env env)
+  public string evalString(Env env)
   {
     Value value = eval(env);
 
@@ -883,7 +883,7 @@ abstract public class Expr {
     return evalConstant().equals(expr.evalConstant());
   }
 
-  public String toString()
+  public string toString()
   {
     return "Expr[]";
   }

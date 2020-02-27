@@ -53,7 +53,7 @@ public enum StatementType
       i++;
     }
 
-    String token = query.substring(start, i);
+    string token = query.substring(start, i);
 
     if ("SELECT".equalsIgnoreCase(token)) {
       return SELECT;

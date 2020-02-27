@@ -54,7 +54,7 @@ public class PhpStdout extends AbstractBinaryOutput {
     System.out.write(b);
   }
 
-  public String toString()
+  public string toString()
   {
     return getClass().getSimpleName() + "[]";
   }

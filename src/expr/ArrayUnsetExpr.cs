@@ -68,7 +68,7 @@ public class ArrayUnsetExpr extends Expr {
     return array.remove(index);
   }
 
-  public String toString()
+  public string toString()
   {
     return "unset(" + _expr + "[" + _index + "])";
   }

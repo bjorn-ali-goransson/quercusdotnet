@@ -39,7 +39,7 @@
 abstract class GettextParser
 {
   PluralExpr _pluralExpr;
-  String _charset;
+  string _charset;
 
   PluralExpr getPluralExpr()
   {
@@ -49,7 +49,7 @@ abstract class GettextParser
   /*
    * Returns the charset defined in the PO/MO file.
    */
-  public String getCharset()
+  public string getCharset()
   {
     return _charset;
   }
@@ -57,9 +57,9 @@ abstract class GettextParser
   /**
    * Extracts the charset from the gettext metadata.
    */
-  protected static String getCharset(StringValue metadata)
+  protected static string getCharset(StringValue metadata)
   {
-    String header = "charset=";
+    string header = "charset=";
     int i = metadata.indexOf(header);
 
     if (i < 0)

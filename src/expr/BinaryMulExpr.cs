@@ -86,7 +86,7 @@ public class BinaryMulExpr extends AbstractBinaryExpr {
     return lValue.mul(rValue);
   }
 
-  public String toString()
+  public string toString()
   {
     return "(" + _left + " * " + _right + ")";
   }

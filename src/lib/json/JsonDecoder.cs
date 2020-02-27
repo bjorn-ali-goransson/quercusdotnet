@@ -285,7 +285,7 @@ class JsonDecoder {
     }
 
     if (isDouble) {
-      String strValue
+      string strValue
         = _str.stringSubstring(startOffset, _offset);
 
       return DoubleValue.create(Double.parseDouble(strValue));
@@ -546,11 +546,11 @@ class JsonDecoder {
     return errorReturn(env, null);
   }
 
-  private Value errorReturn(Env env, String message)
+  private Value errorReturn(Env env, string message)
   {
     int end = Math.min(_len, _offset + 1);
 
-    String token = _str.substring(_offset, end).toString();
+    string token = _str.substring(_offset, end).toString();
 
     if (message != null) {
       log.fine(L.l("error parsing '{0}': {1}\n  [{2}]",
@@ -566,7 +566,7 @@ class JsonDecoder {
     return NullValue.NULL;
   }
 
-  private String currentLine()
+  private string currentLine()
   {
     StringValue s = _str;
     int len = s.length();

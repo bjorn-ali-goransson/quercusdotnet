@@ -41,7 +41,7 @@ public class PhpClassConfig {
   private static final L10N L = new L10N(PhpClassConfig.class);
   
   private Class _type;
-  private String _name;
+  private string _name;
 
   /**
    * Sets the class to add.
@@ -70,7 +70,7 @@ public class PhpClassConfig {
   /**
    * Sets the PHP name for the class
    */
-  public String getName()
+  public string getName()
   {
     return _name;
   }
@@ -86,7 +86,7 @@ public class PhpClassConfig {
       throw new ConfigException(L.l("<class> requires a type."));
 
     if (_name == null) {
-      String name = _type.getName();
+      string name = _type.getName();
 
       int p = name.lastIndexOf('.');
 

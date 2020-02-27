@@ -265,7 +265,7 @@ public class HtmlModule extends AbstractQuercusModule {
   public static Value htmlspecialchars(Env env,
                                        StringValue string,
                                        @Optional("ENT_COMPAT") int quoteStyle,
-                                       @Optional String charset,
+                                       @Optional string charset,
                                        @Optional("true") boolean isDoubleEncode)
   {
     int len = string.length();
@@ -333,7 +333,7 @@ public class HtmlModule extends AbstractQuercusModule {
   public static Value htmlentities(Env env,
                                    StringValue string,
                                    @Optional("ENT_COMPAT") int quoteStyle,
-                                   @Optional String charset)
+                                   @Optional string charset)
   {
     if (charset == null || charset.length() == 0) {
       // php 5.4.0
@@ -415,7 +415,7 @@ public class HtmlModule extends AbstractQuercusModule {
   public static StringValue html_entity_decode(Env env,
                                                StringValue string,
                                                @Optional int quoteStyle,
-                                               @Optional String charset)
+                                               @Optional string charset)
   {
     if (string.length() == 0)
       return env.getEmptyString();
@@ -532,7 +532,7 @@ public class HtmlModule extends AbstractQuercusModule {
   }
 
   private static void entity(ArrayValue array, StringValue []map,
-                             ArrayValue revMap, int ch, String entity)
+                             ArrayValue revMap, int ch, string entity)
   {
     // XXX: i18n and optimize static variables usage
     array.put("" + (char) ch, entity);

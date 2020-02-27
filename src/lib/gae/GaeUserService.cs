@@ -45,9 +45,9 @@ public class GaeUserService
     return USER_SERVICE;
   }
 
-  public static String createLoginURL(String destinationUrl,
-                                      @Optional String authDomain,
-                                      @Optional String federatedIdentity,
+  public static string createLoginURL(String destinationUrl,
+                                      @Optional string authDomain,
+                                      @Optional string federatedIdentity,
                                       @Optional Set<String> attributesRequest)
   {
     return getUserService().createLoginURL(destinationUrl,
@@ -56,8 +56,8 @@ public class GaeUserService
                                            attributesRequest);
   }
 
-  public static String createLogoutURL(String destinationUrl,
-                                       @Optional String authDomain)
+  public static string createLogoutURL(String destinationUrl,
+                                       @Optional string authDomain)
   {
     return getUserService().createLogoutURL(destinationUrl, authDomain);
   }

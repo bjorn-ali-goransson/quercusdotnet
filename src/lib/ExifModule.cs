@@ -57,7 +57,7 @@ public class ExifModule extends AbstractQuercusModule {
    *  Reads the EXIF headers from JPEG or TIFF
    */
   public static Value exif_read_data(Env env, Path file,
-                                     @Optional String sections,
+                                     @Optional string sections,
                                      @Optional boolean arrays,
                                      @Optional boolean thumbs)
   {
@@ -68,7 +68,7 @@ public class ExifModule extends AbstractQuercusModule {
    *  Alias of exif_read_data()
    */
   public static Value read_exif_data(Env env, Path file,
-                                     @Optional String sections,
+                                     @Optional string sections,
                                      @Optional boolean arrays,
                                      @Optional boolean thumbs)
   {
@@ -94,7 +94,7 @@ public class ExifModule extends AbstractQuercusModule {
   /**
    *  Get the header name for an index
    */
-  public static String exif_tagname(String index)
+  public static string exif_tagname(String index)
   {
     return null;
   }
@@ -112,7 +112,7 @@ public class ExifModule extends AbstractQuercusModule {
       if (it.hasNext())
         throw new QuercusException("ImageIO returned two ImageReaders:\n  "
             + imageReader + "\n  " + it.next());
-      String formatName = imageReader.getFormatName();
+      string formatName = imageReader.getFormatName();
       if (formatName.equals("jpeg") || formatName.equals("jpg"))
         return LongValue.create(ImageModule.IMAGETYPE_JPG);
       if (formatName.equals("gif"))

@@ -79,7 +79,7 @@ public class DateTimeZone implements Cloneable
   {
     ArrayValue array = new ArrayValueImpl();
 
-    String []ids = TimeZone.getAvailableIDs();
+    string []ids = TimeZone.getAvailableIDs();
 
     for (int i = 0; i < ids.length; i++) {
       TimeZone tz = TimeZone.getTimeZone(ids[i]);
@@ -109,7 +109,7 @@ public class DateTimeZone implements Cloneable
     zone.put("offset", offset);
     zone.put("timezone_id", tz.getID());
 
-    String name = tz.getDisplayName(isDST, TimeZone.SHORT);
+    string name = tz.getDisplayName(isDST, TimeZone.SHORT);
     Value nameV = StringValue.create(name.toLowerCase(Locale.ENGLISH));
 
     Value zones = array.get(nameV);
@@ -127,7 +127,7 @@ public class DateTimeZone implements Cloneable
   {
     ArrayValue array = new ArrayValueImpl();
 
-    String []ids = TimeZone.getAvailableIDs();
+    string []ids = TimeZone.getAvailableIDs();
 
     java.util.Arrays.sort(ids);
 
@@ -138,7 +138,7 @@ public class DateTimeZone implements Cloneable
     return array;
   }
 
-  public String getName()
+  public string getName()
   {
     return _timeZone.getID();
   }
@@ -199,7 +199,7 @@ public class DateTimeZone implements Cloneable
   protected static Value findTimeZone(int offset,
                                       boolean isDST)
   {
-    String []zoneIDs = TimeZone.getAvailableIDs(offset * 1000);
+    string []zoneIDs = TimeZone.getAvailableIDs(offset * 1000);
 
     for (int i = 0; i < zoneIDs.length; i++) {
       TimeZone zone = TimeZone.getTimeZone(zoneIDs[i]);
@@ -216,7 +216,7 @@ public class DateTimeZone implements Cloneable
     return this;
   }
 
-  public String toString()
+  public string toString()
   {
     return _timeZone.getID();
   }

@@ -72,7 +72,7 @@ public class ClassMarshal extends Marshal {
       ClassLoader loader = thread.getContextClassLoader();
 
       try {
-        String className = value.toJavaString();
+        string className = value.toJavaString();
 
         if (className == null)
           return null;

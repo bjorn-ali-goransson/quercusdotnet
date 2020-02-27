@@ -97,7 +97,7 @@ public class ObjectNewStaticExpr extends Expr {
     }
   }
 
-  public String toString()
+  public string toString()
   {
     return "new static()";
   }

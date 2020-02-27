@@ -70,7 +70,7 @@ abstract public class ArgValue extends Value
     return toLocalValue().toChar();
   }
 
-  public override String toJavaString()
+  public override string toJavaString()
   {
     return toLocalValue().toJavaString();
   }

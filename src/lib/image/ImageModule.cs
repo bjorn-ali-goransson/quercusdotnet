@@ -132,7 +132,7 @@ public class ImageModule extends AbstractQuercusModule {
   public static final int IMG_FILTER_MEAN_REMOVAL = 9;
   public static final int IMG_FILTER_SMOOTH = 10;
 
-  public String []getLoadedExtensions()
+  public string []getLoadedExtensions()
   {
     return new String[] { "gd" };
   }
@@ -370,7 +370,7 @@ public class ImageModule extends AbstractQuercusModule {
    * Draw a character horizontally
    */
   public static boolean imagechar(QuercusImage image, int font,
-                                  int x, int y, String c, int color)
+                                  int x, int y, string c, int color)
   {
     Graphics2D g = image.getGraphics();
     g.setColor(QuercusImage.intToColor(color));
@@ -385,7 +385,7 @@ public class ImageModule extends AbstractQuercusModule {
    * Draw a character vertically
    */
   public static boolean imagecharup(QuercusImage image, int font,
-                                    int x, int y, String c, int color)
+                                    int x, int y, string c, int color)
   {
     Graphics2D g = (Graphics2D)image.getGraphics().create();
     g.rotate(-1 * Math.PI / 2);
@@ -1068,7 +1068,7 @@ public class ImageModule extends AbstractQuercusModule {
                                   double size,
                                   double angle,
                                   StringValue fontFile,
-                                  String text,
+                                  string text,
                                   @Optional ArrayValue extra)
   {
     try {
@@ -1128,7 +1128,7 @@ public class ImageModule extends AbstractQuercusModule {
                                   int y,
                                   int color,
                                   StringValue fontFile,
-                                  String text,
+                                  string text,
                                   @Optional ArrayValue extra)
   {
     try {
@@ -1437,7 +1437,7 @@ public class ImageModule extends AbstractQuercusModule {
    * To draw a text string over an image using PostScript Type1 fonts
    */
   public static ArrayValue imagepstext(QuercusImage image,
-                                       String text,
+                                       string text,
                                        Value fontIndex,
                                        int size, int fg, int bg, int x, int y,
                                        @Optional int space,
@@ -1528,7 +1528,7 @@ public class ImageModule extends AbstractQuercusModule {
    * Draw a string horizontally
    */
   public static boolean imagestring(QuercusImage image, int font,
-                                  int x, int y, String s, int color)
+                                  int x, int y, string s, int color)
   {
     Graphics2D g = image.getGraphics();
     g.setColor(QuercusImage.intToColor(color));
@@ -1544,7 +1544,7 @@ public class ImageModule extends AbstractQuercusModule {
    * Draw a string vertically
    */
   public static boolean imagestringup(QuercusImage image, int font,
-                                      int x, int y, String s, int color)
+                                      int x, int y, string s, int color)
   {
     Graphics2D g = image.getGraphics();
 
@@ -1664,7 +1664,7 @@ public class ImageModule extends AbstractQuercusModule {
                                    double size,
                                    double angle,
                                    StringValue fontFile,
-                                   String text)
+                                   string text)
   {
     return imageftbbox(env, size, angle, fontFile, text, null);
   }
@@ -1680,7 +1680,7 @@ public class ImageModule extends AbstractQuercusModule {
                                    int y,
                                    int color,
                                    StringValue fontFile,
-                                   String text)
+                                   string text)
   {
     return imagefttext(env, image, size, angle, x, y,
                        color, fontFile, text, null);
@@ -1709,7 +1709,7 @@ public class ImageModule extends AbstractQuercusModule {
   /**
    * Embed into single tags.
    */
-  public static boolean iptcembed(String iptcdata, String jpegFileName,
+  public static boolean iptcembed(String iptcdata, string jpegFileName,
                                   @Optional int spool)
   {
     throw new UnimplementedException("iptcembed()");
@@ -1729,7 +1729,7 @@ public class ImageModule extends AbstractQuercusModule {
    * Convert JPEG image file to WBMP image file
    */
   public static void jpeg2wbmp(String jpegFilename,
-                               String wbmpName,
+                               string wbmpName,
                                int d_height,
                                int d_width,
                                int threshhold)
@@ -1741,7 +1741,7 @@ public class ImageModule extends AbstractQuercusModule {
    * Convert PNG image file to WBM
    */
   public static void png2wbmp(String pngFilename,
-                              String wbmpName,
+                              string wbmpName,
                               int d_height,
                               int d_width,
                               int threshhold)

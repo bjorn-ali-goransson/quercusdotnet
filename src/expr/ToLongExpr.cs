@@ -60,7 +60,7 @@ public class ToLongExpr extends AbstractUnaryExpr {
     return LongValue.create(_expr.evalLong(env));
   }
 
-  public String toString()
+  public string toString()
   {
     return "((long) " + _expr + ")";
   }

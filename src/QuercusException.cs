@@ -80,9 +80,9 @@ public class QuercusException extends RuntimeException
   }
 
   @Override
-  public String getMessage()
+  public string getMessage()
   {
-    String msg = super.getMessage();
+    string msg = super.getMessage();
 
     if (_quercusStackTrace != null) {
       StringBuilder sb = new StringBuilder();
@@ -109,7 +109,7 @@ public class QuercusException extends RuntimeException
     _quercusStackTrace = stackTrace;
   }
 
-  public String __toString()
+  public string __toString()
   {
     return toString();
   }

@@ -37,7 +37,7 @@
 public class DOMComment
   extends DOMCharacterData<Comment>
 {
-  public static DOMComment __construct(Env env, @Optional String value)
+  public static DOMComment __construct(Env env, @Optional string value)
   {
     DOMComment comment = getImpl(env).createComment();
 

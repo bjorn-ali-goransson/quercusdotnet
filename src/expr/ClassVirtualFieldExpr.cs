@@ -128,7 +128,7 @@ public class ClassVirtualFieldExpr extends AbstractVarExpr {
                       env.getCallingClass().getName(), _varName), getLocation());
   }
 
-  public String toString()
+  public string toString()
   {
     return "static::$" + _varName;
   }

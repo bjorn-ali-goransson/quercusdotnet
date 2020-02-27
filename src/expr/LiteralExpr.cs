@@ -134,12 +134,12 @@ public class LiteralExpr extends Expr {
 
   public override QuercusClass evalQuercusClass(Env env)
   {
-    String className = evalString(env);
+    string className = evalString(env);
 
     return env.getClass(className);
   }
 
-  public String toString()
+  public string toString()
   {
     return _value.toString();
   }

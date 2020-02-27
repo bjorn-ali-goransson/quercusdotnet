@@ -57,7 +57,7 @@ public class UdpInputOutput
 
   private byte _unread;
 
-  public UdpInputOutput(Env env, String host, int port, Domain domain)
+  public UdpInputOutput(Env env, string host, int port, Domain domain)
     
   {
     super(env);
@@ -171,7 +171,7 @@ public class UdpInputOutput
       s.close();
   }
 
-  public String toString()
+  public string toString()
   {
     if (_socket != null)
       return "UdpInputOutput["

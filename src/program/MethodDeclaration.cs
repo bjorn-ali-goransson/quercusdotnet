@@ -54,7 +54,7 @@ public class MethodDeclaration extends Function
   public MethodDeclaration(ExprFactory exprFactory,
                            Location location,
                            ClassDef qClass,
-                           String name,
+                           string name,
                            FunctionInfo info,
                            Arg []argList)
   {
@@ -94,7 +94,7 @@ public class MethodDeclaration extends Function
     throw new UnsupportedOperationException();
   }
 
-  public String toString()
+  public string toString()
   {
     return getClass().getSimpleName() + "[" + getName() + "]";
   }

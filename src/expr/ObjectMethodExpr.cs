@@ -61,7 +61,7 @@ public class ObjectMethodExpr extends AbstractMethodExpr {
     args.toArray(_args);
   }
 
-  public String getName()
+  public string getName()
   {
     return _methodName.toString();
   }
@@ -85,7 +85,7 @@ public class ObjectMethodExpr extends AbstractMethodExpr {
     return eval(env, obj, methodName, hash, _args);
   }
 
-  public String toString()
+  public string toString()
   {
     return _objExpr + "->" + _methodName + "()";
   }

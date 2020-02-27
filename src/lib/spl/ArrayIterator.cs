@@ -244,7 +244,7 @@ public class ArrayIterator
                           IdentityHashMap<Value, String> valueSet)
     
   {
-    String name = "ArrayIterator";
+    string name = "ArrayIterator";
 
     if (obj != null)
       name = obj.getClassName();

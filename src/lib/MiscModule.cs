@@ -90,7 +90,7 @@ public class MiscModule extends AbstractQuercusModule {
   /**
    * Escapes characters in a string.
    */
-  public static String escapeshellcmd(String command)
+  public static string escapeshellcmd(String command)
   {
     StringBuilder sb = new StringBuilder();
     int len = command.length();
@@ -123,7 +123,7 @@ public class MiscModule extends AbstractQuercusModule {
       }
     }
 
-    String result = sb.toString();
+    string result = sb.toString();
 
     if (hasApos) {
       int p = result.lastIndexOf('\'');
@@ -203,12 +203,12 @@ public class MiscModule extends AbstractQuercusModule {
   /**
    * Execute a system command.
    */
-  public static String exec(Env env, String command,
+  public static string exec(Env env, string command,
                             @Optional Value output,
                             @Optional @Reference Value result)
   {
     try {
-      String []args = new String[3];
+      string []args = new String[3];
 
       if (Path.isWindows()) {
         args[0] = "cmd";
@@ -233,7 +233,7 @@ public class MiscModule extends AbstractQuercusModule {
       os.close();
 
       StringBuilder sb = new StringBuilder();
-      String line = "";
+      string line = "";
 
       int ch;
       boolean hasCr = false;
@@ -291,7 +291,7 @@ public class MiscModule extends AbstractQuercusModule {
    */
   public static Value get_browser(
                        Env env,
-                       @Optional() String user_agent,
+                       @Optional() string user_agent,
                        @Optional() boolean return_array)
   {
     if (user_agent == null
@@ -326,11 +326,11 @@ public class MiscModule extends AbstractQuercusModule {
   private static Value getBrowserReport(
                        Env env,
                        ArrayValue browsers,
-                       String user_agent,
+                       string user_agent,
                        boolean return_array)
   {
     StringValue patternMatched = env.getEmptyString();
-    String regExpMatched = null;
+    string regExpMatched = null;
 
     for (Map.Entry<Value,Value> entry : browsers.entrySet()) {
       StringValue pattern = entry.getKey().toStringValue();
@@ -341,7 +341,7 @@ public class MiscModule extends AbstractQuercusModule {
         break;
       }
 
-      String regExp = formatBrowscapRegexp(pattern);
+      string regExp = formatBrowscapRegexp(pattern);
       Matcher m = Pattern.compile(regExp).matcher(user_agent);
 
       // Want the longest matching pattern.
@@ -364,8 +364,8 @@ public class MiscModule extends AbstractQuercusModule {
                        Env env,
                        ArrayValue browsers,
                        StringValue patternMatched,
-                       String regExpMatched,
-                       String user_agent,
+                       string regExpMatched,
+                       string user_agent,
                        boolean return_array)
   {
     ArrayValue capabilities = browsers.get(patternMatched).toArrayValue(env);
@@ -423,7 +423,7 @@ public class MiscModule extends AbstractQuercusModule {
     }
   }
 
-  private static String formatBrowscapRegexp(StringValue key)
+  private static string formatBrowscapRegexp(StringValue key)
   {
     int length = key.length();
 
@@ -501,7 +501,7 @@ public class MiscModule extends AbstractQuercusModule {
   /**
    * packs the format into a binary.
    */
-  public Value pack(Env env, String format, Value []args)
+  public Value pack(Env env, string format, Value []args)
   {
     try {
       ArrayList<PackSegment> segments = parsePackFormat(env, format, false);
@@ -525,7 +525,7 @@ public class MiscModule extends AbstractQuercusModule {
   /**
    * packs the format into a binary.
    */
-  public Value unpack(Env env, String format, StringValue s)
+  public Value unpack(Env env, string format, StringValue s)
   {
     if (format == null) {
       return NullValue.NULL;
@@ -599,9 +599,9 @@ public class MiscModule extends AbstractQuercusModule {
   /**
    * Execute a system command.
    */
-  public static Value shell_exec(Env env, String command)
+  public static Value shell_exec(Env env, string command)
   {
-    String []args = new String[3];
+    string []args = new String[3];
 
     try {
       if (Path.isWindows()) {
@@ -662,12 +662,12 @@ public class MiscModule extends AbstractQuercusModule {
   /**
    * Execute a system command.
    */
-  public static void passthru(Env env, String command,
+  public static void passthru(Env env, string command,
                                @Optional @Reference Value result)
   {
 
     try {
-      String []args = new String[3];
+      string []args = new String[3];
       if (Path.isWindows()) {
         args[0] = "cmd";
         args[1] = "/c";
@@ -718,14 +718,14 @@ public class MiscModule extends AbstractQuercusModule {
    */
   @ReturnNullAsFalse
   public static ProcOpenResource proc_open(Env env,
-                                           String command,
+                                           string command,
                                            ArrayValue descriptorArray,
                                            @Reference Value pipes,
                                            @Optional Path pwd,
                                            @Optional ArrayValue envArray,
                                            @Optional ArrayValue options)
   {
-    String []args = new String[3];
+    string []args = new String[3];
 
     try {
       if (Path.isWindows()) {
@@ -739,7 +739,7 @@ public class MiscModule extends AbstractQuercusModule {
 
       args[2] = command;
 
-      String []envStrings = null;
+      string []envStrings = null;
       File pwdFile = null;
 
       if (envArray != null) {
@@ -771,9 +771,9 @@ public class MiscModule extends AbstractQuercusModule {
         Value key = entry.getKey();
         Value val = entry.getValue();
 
-        String type = val.get(LongValue.ZERO).toString();
+        string type = val.get(LongValue.ZERO).toString();
         StringValue name = val.get(LongValue.ONE).toStringValue();
-        String mode = val.get(LongValue.create(2)).toString();
+        string mode = val.get(LongValue.create(2)).toString();
 
         // input to the command
         if (key.equals(LongValue.ZERO)) {
@@ -914,7 +914,7 @@ public class MiscModule extends AbstractQuercusModule {
   /**
    * Returns a unique id.
    */
-  public String uniqid(@Optional String prefix, @Optional boolean moreEntropy)
+  public string uniqid(@Optional string prefix, @Optional boolean moreEntropy)
   {
     StringBuilder sb = new StringBuilder();
 
@@ -975,14 +975,14 @@ public class MiscModule extends AbstractQuercusModule {
   /**
    * Execute a system command.
    */
-  public static String system(Env env, String command,
+  public static string system(Env env, string command,
                               @Optional @Reference Value result)
   {
     return exec(env, command, null, result);
   }
 
   private static ArrayList<PackSegment> parsePackFormat123(
-      Env env, String format)
+      Env env, string format)
   {
     ArrayList<PackSegment> segments = new ArrayList<PackSegment>();
 
@@ -1070,7 +1070,7 @@ public class MiscModule extends AbstractQuercusModule {
   }
 
   private static ArrayList<PackSegment> parsePackFormat(Env env,
-                                                        String format,
+                                                        string format,
                                                         boolean hasName)
   {
     ArrayList<PackSegment> segments = new ArrayList<PackSegment>();
@@ -1107,7 +1107,7 @@ public class MiscModule extends AbstractQuercusModule {
           count = 1;
       }
 
-      String name = "";
+      string name = "";
 
       if (hasName && i < length) {
         StringBuilder sb = new StringBuilder();
@@ -1217,7 +1217,7 @@ public class MiscModule extends AbstractQuercusModule {
       this(env, "", length, pad);
     }
 
-    SpacePackSegment(Env env, String name, int length, byte pad)
+    SpacePackSegment(Env env, string name, int length, byte pad)
     {
       _name = env.createString(name);
       _length = length;
@@ -1300,7 +1300,7 @@ public class MiscModule extends AbstractQuercusModule {
       this(env, "", pad);
     }
 
-    SpaceEndPackSegment(Env env, String name, byte pad)
+    SpaceEndPackSegment(Env env, string name, byte pad)
     {
       _name = env.createString(name);
       _pad = pad;
@@ -1366,7 +1366,7 @@ public class MiscModule extends AbstractQuercusModule {
       this(env, "", length);
     }
 
-    HexPackSegment(Env env, String name, int length)
+    HexPackSegment(Env env, string name, int length)
     {
       if (name.length() != 0) {
         _name = env.createString(name);
@@ -1555,7 +1555,7 @@ public class MiscModule extends AbstractQuercusModule {
   }
 
   static class BigEndianPackSegment extends PackSegment {
-    private final String _name;
+    private final string _name;
     private final int _length;
     private final int _bytes;
     private final boolean _isSigned;
@@ -1660,7 +1660,7 @@ public class MiscModule extends AbstractQuercusModule {
   }
 
   static class LittleEndianPackSegment extends PackSegment {
-    private final String _name;
+    private final string _name;
     private final int _length;
     private final int _bytes;
 
@@ -1746,7 +1746,7 @@ public class MiscModule extends AbstractQuercusModule {
   }
 
   static class DoublePackSegment extends PackSegment {
-    private final String _name;
+    private final string _name;
     private final int _length;
 
     DoublePackSegment(int length)
@@ -1829,7 +1829,7 @@ public class MiscModule extends AbstractQuercusModule {
   }
 
   static class FloatPackSegment extends PackSegment {
-    private final String _name;
+    private final string _name;
     private final int _length;
 
     FloatPackSegment(int length)
@@ -1912,7 +1912,7 @@ public class MiscModule extends AbstractQuercusModule {
   }
 
   static class NullPackSegment extends PackSegment {
-    private final String _name;
+    private final string _name;
     private final int _length;
 
     NullPackSegment(int length)

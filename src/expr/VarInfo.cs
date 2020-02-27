@@ -63,7 +63,7 @@ public class VarInfo {
   }
 
   @Override
-  public String toString()
+  public string toString()
   {
     return getClass().getSimpleName() + "[" + _name + "]";
   }

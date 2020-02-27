@@ -41,9 +41,9 @@
 public class Directory
 {
   public Directory handle;
-  public String path;
+  public string path;
 
-  private String []_list;
+  private string []_list;
   private int _index;
 
   protected Directory()
@@ -87,7 +87,7 @@ public class Directory
     close(Env.getInstance());
   }
 
-  public String toString()
+  public string toString()
   {
     return getClass().getSimpleName() + "[" + path + "]";
   }

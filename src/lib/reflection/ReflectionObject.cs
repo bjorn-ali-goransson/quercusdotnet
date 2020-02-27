@@ -56,14 +56,14 @@ public class ReflectionObject extends ReflectionClass
     return new ReflectionObject(obj.getQuercusClass());
   }
 
-  public static String export(Env env,
+  public static string export(Env env,
                               Value object,
                               @Optional boolean isReturn)
   {
     return null;
   }
 
-  public String toString()
+  public string toString()
   {
     return getClass().getSimpleName() + "[" + getName() + "]";
   }

@@ -65,7 +65,7 @@ public class ChildrenView extends SimpleView
   }
 
   @Override
-  public String getNodeName()
+  public string getNodeName()
   {
     if (_childList.size() > 0) {
       return _childList.get(0).getNodeName();
@@ -75,7 +75,7 @@ public class ChildrenView extends SimpleView
     }
   }
 
-  public override ChildrenView getChildren(String namespace, String prefix)
+  public override ChildrenView getChildren(String namespace, string prefix)
   {
     if (_childList.size() > 0) {
       return _childList.get(0).getChildren(namespace, prefix);
@@ -96,9 +96,9 @@ public class ChildrenView extends SimpleView
   }
 
   public override SimpleView addChild(Env env,
-                             String name,
-                             String value,
-                             String namespace)
+                             string name,
+                             string value,
+                             string namespace)
   {
     if (_childList.size() > 0) {
       return _childList.get(0).addChild(env, name, value, namespace);
@@ -149,12 +149,12 @@ public class ChildrenView extends SimpleView
 
   public override SimpleView getField(Env env, Value indexV)
   {
-    String nodeName = indexV.toStringValue(env).toString();
+    string nodeName = indexV.toStringValue(env).toString();
 
     ArrayList<SimpleView> childList = new ArrayList<SimpleView>();
 
     for (SimpleView view : _childList) {
-      String childName = view.getNodeName();
+      string childName = view.getNodeName();
 
       if (nodeName.equals(childName)) {
         childList.add(view);
@@ -186,7 +186,7 @@ public class ChildrenView extends SimpleView
     return _childList.size();
   }
   
-  public override boolean issetField(Env env, String name)
+  public override boolean issetField(Env env, string name)
   {
     for (SimpleView child : _childList) {
       if (child.getNodeName().equals(name)) {
@@ -199,7 +199,7 @@ public class ChildrenView extends SimpleView
 
   public override List<SimpleView> xpath(Env env,
                                 SimpleNamespaceContext context,
-                                String expression)
+                                string expression)
   {
     if (_childList.size() > 0) {
       SimpleView firstChild = _childList.get(0);
@@ -211,7 +211,7 @@ public class ChildrenView extends SimpleView
     }
   }
 
-  public override String toString(Env env)
+  public override string toString(Env env)
   {
     if (_childList.size() > 0) {
       SimpleView firstChild = _childList.get(0);
@@ -309,7 +309,7 @@ public class ChildrenView extends SimpleView
     return obj;
   }
 
-  public override String toString()
+  public override string toString()
   {
     int size = _childList.size();
     SimpleView firstChild = null;

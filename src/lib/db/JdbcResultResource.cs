@@ -67,16 +67,16 @@ public class JdbcResultResource
   public static final int FETCH_NUM = 0x2;
   public static final int FETCH_BOTH = FETCH_ASSOC | FETCH_NUM;
 
-  public static final String INTEGER = "int";
-  public static final String BLOB = "blob";
-  public static final String STRING = "string";
-  public static final String DATE = "date";
-  public static final String DATETIME = "datetime";
-  public static final String REAL = "real";
-  public static final String TIME = "time";
-  public static final String TIMESTAMP = "timestamp";
-  public static final String UNKNOWN = "unknown";
-  public static final String YEAR = "year";
+  public static final string INTEGER = "int";
+  public static final string BLOB = "blob";
+  public static final string STRING = "string";
+  public static final string DATE = "date";
+  public static final string DATETIME = "datetime";
+  public static final string REAL = "real";
+  public static final string TIME = "time";
+  public static final string TIMESTAMP = "timestamp";
+  public static final string UNKNOWN = "unknown";
+  public static final string YEAR = "year";
 
   protected static final int COLUMN_CASE_NATURAL = 0;
   protected static final int COLUMN_CASE_UPPER = 1;
@@ -187,7 +187,7 @@ public class JdbcResultResource
           _columnNames = new Value[count];
 
           for (int i = 0; i < count; i++) {
-            String columnName = getColumnLabel(md, i + 1);
+            string columnName = getColumnLabel(md, i + 1);
 
             _columnNames[i] = env.createString(columnName);
           }
@@ -265,8 +265,8 @@ public class JdbcResultResource
    */
   public Value fetchField(Env env,
                           int maxLength,
-                          String tableName,
-                          String type)
+                          string tableName,
+                          string type)
   {
     if (_rs == null) {
       return BooleanValue.FALSE;
@@ -336,7 +336,7 @@ public class JdbcResultResource
    * @param env the PHP executing environment
    * @return an object representing the current fetched row
    */
-  protected Value fetchObject(Env env, String className, Value[] args)
+  protected Value fetchObject(Env env, string className, Value[] args)
   {
     if (_rs == null) {
       return NullValue.NULL;
@@ -366,7 +366,7 @@ public class JdbcResultResource
         int count = md.getColumnCount();
 
         for (int i = 0; i < count; i++) {
-          String name = getColumnLabel(md, i + 1);
+          string name = getColumnLabel(md, i + 1);
           Value value = getColumnValue(env, i + 1);
 
           result.putField(env, name, value);
@@ -545,10 +545,10 @@ public class JdbcResultResource
 
       case Types.BIT:
         {
-          String typeName = getMetaData().getColumnTypeName(column);
+          string typeName = getMetaData().getColumnTypeName(column);
           // Postgres matches BIT for BOOL columns
           if (! typeName.equals("bool")) {
-            String value = rs.getString(column);
+            string value = rs.getString(column);
 
             if (rs.wasNull())
               return NullValue.NULL;
@@ -666,7 +666,7 @@ public class JdbcResultResource
           return bb;
         }
         else {
-          String strValue = rs.getString(column);
+          string strValue = rs.getString(column);
 
           if (strValue == null) {
             return NullValue.NULL;
@@ -687,7 +687,7 @@ public class JdbcResultResource
 
       default:
         {
-          String strValue = rs.getString(column);
+          string strValue = rs.getString(column);
 
           if (strValue == null) // || rs.wasNull())
             return NullValue.NULL;
@@ -798,7 +798,7 @@ public class JdbcResultResource
       if (timestamp == null)
         return NullValue.NULL;
       else {
-        String time = String.valueOf(timestamp);
+        string time = String.valueOf(timestamp);
 
         // the .0 nanoseconds at the end may not matter, but strip it out
         // anyways to match php (postgresql)
@@ -875,15 +875,15 @@ public class JdbcResultResource
   }
 
   /**
-   * Return true if the String result at the
+   * Return true if the string result at the
    * given index of the ResultSet contains
    * the substring.
    */
 
-  protected boolean isInResultString(int columnIndex, String substring)
+  protected boolean isInResultString(int columnIndex, string substring)
     
   {
-    String resultString = _rs.getString(columnIndex);
+    string resultString = _rs.getString(columnIndex);
 
     if (resultString == null)
       return false;
@@ -1046,7 +1046,7 @@ public class JdbcResultResource
         return BooleanValue.FALSE;
       }
       else {
-        String tableName = md.getTableName(fieldOffset + 1);
+        string tableName = md.getTableName(fieldOffset + 1);
 
         if (tableName == null || tableName.equals(""))
           return BooleanValue.FALSE;
@@ -1076,7 +1076,7 @@ public class JdbcResultResource
         return BooleanValue.FALSE;
       }
       else {
-        String tableName = md.getSchemaName(fieldOffset + 1);
+        string tableName = md.getSchemaName(fieldOffset + 1);
 
         if (tableName == null || tableName.equals(""))
           return BooleanValue.FALSE;
@@ -1122,7 +1122,7 @@ public class JdbcResultResource
    * return a PHP type string.
    */
 
-  protected String getFieldType(int fieldOffset, int jdbcType)
+  protected string getFieldType(int fieldOffset, int jdbcType)
   {
     switch (jdbcType) {
       case Types.BIGINT:
@@ -1350,16 +1350,16 @@ public class JdbcResultResource
     }
   }
 
-  protected String getColumnLabel(int index)
+  protected string getColumnLabel(int index)
     
   {
     return getColumnLabel(_rs.getMetaData(), index);
   }
 
-  private String getColumnLabel(ResultSetMetaData md, int index)
+  private string getColumnLabel(ResultSetMetaData md, int index)
     
   {
-    String name = md.getColumnLabel(index);
+    string name = md.getColumnLabel(index);
 
     switch (_columnCase) {
       case COLUMN_CASE_LOWER:
@@ -1463,7 +1463,7 @@ public class JdbcResultResource
    *
    * @return a string representation for this object
    */
-  public String toString()
+  public string toString()
   {
     if (_rs != null)
       return getClass()

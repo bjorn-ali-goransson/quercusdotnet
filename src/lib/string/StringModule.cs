@@ -129,7 +129,7 @@ public class StringModule extends AbstractQuercusModule {
    */
   public static StringValue addcslashes(Env env,
                                         StringValue source,
-                                        String characters)
+                                        string characters)
   {
     if (characters == null) {
       characters = "";
@@ -197,7 +197,7 @@ public class StringModule extends AbstractQuercusModule {
    * @param charset the bitmap string
    * @return  the actual bitmap
    */
-  private static boolean []parseCharsetBitmap(Env env, String charset)
+  private static boolean []parseCharsetBitmap(Env env, string charset)
   {
     boolean []bitmap = new boolean[256];
 
@@ -313,7 +313,7 @@ public class StringModule extends AbstractQuercusModule {
    */
   public static StringValue chop(Env env,
                                  StringValue str,
-                                 @Optional String charset)
+                                 @Optional string charset)
   {
     return rtrim(env, str, charset);
   }
@@ -344,9 +344,9 @@ public class StringModule extends AbstractQuercusModule {
    * @param chunkLen the optional chunk length, defaults to 76
    * @param end the optional end value, defaults to "\r\n"
    */
-  public static String chunk_split(String body,
+  public static string chunk_split(String body,
                                    @Optional("76") int chunkLen,
-                                   @Optional("\"\\r\\n\"") String end)
+                                   @Optional("\"\\r\\n\"") string end)
   {
     if (body == null)
       body = "";
@@ -380,10 +380,10 @@ public class StringModule extends AbstractQuercusModule {
    * This implementation does nothing, because quercus stores strings as
    * 16 bit unicode.
    */
-  public static String convert_cyr_string(Env env,
-                                          String str,
-                                          String from,
-                                          String to)
+  public static string convert_cyr_string(Env env,
+                                          string str,
+                                          string from,
+                                          string to)
   {
     env.stub("convert_cyr_string");
 
@@ -573,7 +573,7 @@ public class StringModule extends AbstractQuercusModule {
     return str.getCrc32Value();
   }
 
-  public static String crypt(String string, @Optional String salt)
+  public static string crypt(String string, @Optional string salt)
   {
     if (string == null)
       string = "";
@@ -821,7 +821,7 @@ public class StringModule extends AbstractQuercusModule {
    */
   public static StringValue ltrim(Env env,
                                   StringValue string,
-                                  @Optional String characters)
+                                  @Optional string characters)
   {
     if (characters == null)
       characters = "";
@@ -977,7 +977,7 @@ public class StringModule extends AbstractQuercusModule {
    * This implementation produces identical results to the php version,
    * which does contain some bugs.
    */
-  public static String metaphone(String string)
+  public static string metaphone(String string)
   {
     if (string == null)
       string = "";
@@ -1341,7 +1341,7 @@ public class StringModule extends AbstractQuercusModule {
    *
    * @return a string of formatted values
    */
-  public static String money_format(Env env, String format, double value)
+  public static string money_format(Env env, string format, double value)
   {
     QuercusLocale monetary = env.getLocaleInfo().getMonetary();
 
@@ -1363,7 +1363,7 @@ public class StringModule extends AbstractQuercusModule {
    *
    * @return a string of the formatted number
    */
-  public static String number_format(Env env,
+  public static string number_format(Env env,
                                      double value,
                                      @Optional int decimals,
                                      @Optional Value pointValue,
@@ -1377,12 +1377,12 @@ public class StringModule extends AbstractQuercusModule {
       return null;
     }
 
-    String pattern;
+    string pattern;
 
     char point = '.';
 
     if (! pointValue.isNull()) {
-      String pointString = pointValue.toString();
+      string pointString = pointValue.toString();
 
       point =  (pointString.length() == 0) ? 0 : pointString.charAt(0);
     }
@@ -1390,7 +1390,7 @@ public class StringModule extends AbstractQuercusModule {
     char group = ',';
 
     if (! groupValue.isNull()) {
-      String groupString = groupValue.toString();
+      string groupString = groupValue.toString();
 
       group = (groupString.length() == 0) ? 0 : groupString.charAt(0);
     }
@@ -1422,7 +1422,7 @@ public class StringModule extends AbstractQuercusModule {
 
     DecimalFormat format = new DecimalFormat(pattern, decimalFormatSymbols);
 
-    String result = format.format(value);
+    string result = format.format(value);
 
     if (point == 0 && decimals > 0) {
       // no way to get DecimalFormat to output nothing for the point,
@@ -1520,7 +1520,7 @@ public class StringModule extends AbstractQuercusModule {
    * Converts a RFC2045 quoted printable string to a string.
    */
   // XXX: i18n
-  public static String quoted_printable_decode(String str)
+  public static string quoted_printable_decode(String str)
   {
     if (str == null)
       str = "";
@@ -1612,7 +1612,7 @@ public class StringModule extends AbstractQuercusModule {
    */
   public static StringValue rtrim(Env env,
                                   StringValue string,
-                                  @Optional String characters)
+                                  @Optional string characters)
   {
     if (characters == null)
       characters = "";
@@ -1684,7 +1684,7 @@ public class StringModule extends AbstractQuercusModule {
    */
   private static QuercusLocale setLocale(LocaleInfo localeInfo,
                                          int category,
-                                         String localeName)
+                                         string localeName)
   {
     QuercusLocale locale = findLocale(localeName);
 
@@ -1724,10 +1724,10 @@ public class StringModule extends AbstractQuercusModule {
    */
   private static QuercusLocale findLocale(String localeName)
   {
-    String language;
-    String country;
-    String charset = null;
-    String variant = null;
+    string language;
+    string country;
+    string charset = null;
+    string variant = null;
 
     CharBuffer sb = CharBuffer.allocate();
 
@@ -3060,7 +3060,7 @@ public class StringModule extends AbstractQuercusModule {
    */
   public static StringValue str_pad(StringValue string,
                                     int length,
-                                    @Optional("' '") String pad,
+                                    @Optional("' '") string pad,
                                     @Optional("STR_PAD_RIGHT") int type)
   {
     int strLen = string.length();
@@ -3406,7 +3406,7 @@ public class StringModule extends AbstractQuercusModule {
   /**
    * shuffles a string
    */
-  public static String str_shuffle(String string)
+  public static string str_shuffle(String string)
   {
     if (string == null)
       string = "";
@@ -3465,7 +3465,7 @@ public class StringModule extends AbstractQuercusModule {
 
   public static Value str_word_count(StringValue string,
                                      @Optional int format,
-                                     @Optional String additionalWordCharacters)
+                                     @Optional string additionalWordCharacters)
   {
     if (format < 0 || format > 2)
       return NullValue.NULL;
@@ -3626,7 +3626,7 @@ public class StringModule extends AbstractQuercusModule {
    * @param b right value
    * @return -1, 0, or 1
    */
-  public static Value strcoll(String a, String b)
+  public static Value strcoll(String a, string b)
   {
     if (a == null)
       a = "";
@@ -3785,7 +3785,7 @@ public class StringModule extends AbstractQuercusModule {
    * @param source the string to clean
    * @see #addcslashes
    */
-  public static String stripcslashes(String source)
+  public static string stripcslashes(String source)
   {
     if (source == null)
       source = "";
@@ -4287,14 +4287,14 @@ public class StringModule extends AbstractQuercusModule {
    * @param offsetV the optional offset to start searching
    */
   public static Value strripos(Env env,
-                               String haystack,
+                               string haystack,
                                Value needleV,
                                @Optional Value offsetV)
   {
     if (haystack == null)
       haystack = "";
 
-    String needle;
+    string needle;
 
     if (needleV.isString())
       needle = needleV.toString();
@@ -4447,7 +4447,7 @@ public class StringModule extends AbstractQuercusModule {
     if (haystackV == null)
       haystackV = env.getEmptyString();
 
-    String needle;
+    string needle;
 
     if (needleV.isString()) {
       needle = needleV.toString();
@@ -4826,9 +4826,9 @@ public class StringModule extends AbstractQuercusModule {
                                    @Optional int offset,
                                    @Optional("-1") int length)
   {
-    String haystack = haystackV.toString();
+    string haystack = haystackV.toString();
 
-    String needle = needleV.toString();
+    string needle = needleV.toString();
 
     if (needle.length() == 0) {
       env.warning(L.l("empty substr"));
@@ -4974,7 +4974,7 @@ public class StringModule extends AbstractQuercusModule {
    */
   public static Value trim(Env env,
                            StringValue string,
-                           @Optional String characters)
+                           @Optional string characters)
   {
     boolean []trim;
 
@@ -5038,7 +5038,7 @@ public class StringModule extends AbstractQuercusModule {
    *
    * @param string the input string
    */
-  public static String ucwords(String string)
+  public static string ucwords(String string)
   {
     if (string == null)
       string = "";
@@ -5150,7 +5150,7 @@ public class StringModule extends AbstractQuercusModule {
     else
       width = widthV.toInt();
 
-    String string = value.toString();
+    string string = value.toString();
 
     if (cutV instanceof UnexpectedValue) {
       env.warning(L.l("cut must be a boolean, but {0} given",
@@ -5173,7 +5173,7 @@ public class StringModule extends AbstractQuercusModule {
       return NullValue.NULL;
     }
 
-    String breakString = "\n";
+    string breakString = "\n";
 
     if (! breakV.isDefault())
       breakString = breakV.toString();
@@ -5323,7 +5323,7 @@ public class StringModule extends AbstractQuercusModule {
       return value - 1;
     }
 
-    static String getIndexFormat(String format)
+    static string getIndexFormat(String format)
     {
       int p = format.indexOf('$');
 
@@ -5351,7 +5351,7 @@ public class StringModule extends AbstractQuercusModule {
   }
 
   static class LongPrintfSegment extends PrintfSegment {
-    private final String _format;
+    private final string _format;
     private final int _index;
     private final QuercusLocale _locale;
 
@@ -5362,7 +5362,7 @@ public class StringModule extends AbstractQuercusModule {
       _locale = locale;
     }
 
-    static PrintfSegment create(Env env, String format, int index)
+    static PrintfSegment create(Env env, string format, int index)
     {
       if (hasIndex(format)) {
         index = getIndex(format);
@@ -5704,7 +5704,7 @@ public class StringModule extends AbstractQuercusModule {
   }
 
   static class DoublePrintfSegment extends PrintfSegment {
-    private final String _format;
+    private final string _format;
     private final boolean _isLeftZero;
     private final int _index;
     private final QuercusLocale _locale;
@@ -5740,7 +5740,7 @@ public class StringModule extends AbstractQuercusModule {
         return false;
       }
 
-      String s;
+      string s;
       if (_locale == null)
         s = String.format(_format, value);
       else
@@ -5779,7 +5779,7 @@ public class StringModule extends AbstractQuercusModule {
     StringPrintfSegment(StringBuilder prefix,
                         boolean isLeft, int pad, boolean isUpper,
                         int width,
-                        String format, int index)
+                        string format, int index)
     {
       _prefix = new char[prefix.length()];
 
@@ -5878,7 +5878,7 @@ public class StringModule extends AbstractQuercusModule {
     CharPrintfSegment(StringBuilder prefix,
                       boolean isLeft, int pad, boolean isUpper,
                       int width,
-                      String format, int index)
+                      string format, int index)
     {
       super(prefix, isLeft, pad, isUpper, width, format, index);
     }
@@ -5968,7 +5968,7 @@ public class StringModule extends AbstractQuercusModule {
   }
 
   static class ScanfConstant extends ScanfSegment {
-    private final String _string;
+    private final string _string;
     private final int _strlen;
 
     private ScanfConstant(String string)
@@ -5989,7 +5989,7 @@ public class StringModule extends AbstractQuercusModule {
                      boolean isReturnArray)
     {
       int fStrlen = _strlen;
-      String fString = _string;
+      string fString = _string;
 
       if (strlen - sIndex < fStrlen)
         return -1;

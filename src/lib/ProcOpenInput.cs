@@ -109,7 +109,7 @@ public class ProcOpenInput extends ReadStreamInput
   /**
    * Converts to a string.
    */
-  public String toString()
+  public string toString()
   {
     if (_out != null)
       return "ProcOpenInput[" + _out + "]";

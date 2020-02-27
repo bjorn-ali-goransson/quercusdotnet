@@ -74,21 +74,21 @@ public abstract class SimpleView
     return _doc;
   }
 
-  public String getNodeName()
+  public string getNodeName()
   {
     throw new UnsupportedOperationException();
   }
 
-  public String getNodeValue()
+  public string getNodeValue()
   {
     throw new UnsupportedOperationException(getClass().getSimpleName());
   }
 
-  public final String getEncoding()
+  public final string getEncoding()
   {
     Document doc = _doc;
 
-    String encoding = doc.getInputEncoding();
+    string encoding = doc.getInputEncoding();
 
     if (encoding == null) {
       encoding = doc.getXmlEncoding();
@@ -101,7 +101,7 @@ public abstract class SimpleView
     return encoding;
   }
 
-  public ChildrenView getChildren(String namespace, String prefix)
+  public ChildrenView getChildren(String namespace, string prefix)
   {
     throw new UnsupportedOperationException(getClass().getSimpleName());
   }
@@ -112,24 +112,24 @@ public abstract class SimpleView
   }
 
   public SimpleView addChild(Env env,
-                             String name,
-                             String value,
-                             String namespace)
+                             string name,
+                             string value,
+                             string namespace)
   {
     throw new UnsupportedOperationException(getClass().getSimpleName());
   }
 
   public void addAttribute(Env env,
-                           String name,
-                           String value,
-                           String namespace)
+                           string name,
+                           string value,
+                           string namespace)
   {
     throw new UnsupportedOperationException(getClass().getSimpleName());
   }
 
   public List<SimpleView> xpath(Env env,
                                 SimpleNamespaceContext context,
-                                String expression)
+                                string expression)
   {
     throw new UnsupportedOperationException(getClass().getSimpleName());
   }
@@ -162,7 +162,7 @@ public abstract class SimpleView
     throw new UnsupportedOperationException(getClass().getSimpleName());
   }
 
-  public abstract String toString(Env env);
+  public abstract string toString(Env env);
 
   public abstract boolean toXml(Env env, StringBuilder sb);
 
@@ -207,7 +207,7 @@ public abstract class SimpleView
     throw new UnsupportedOperationException(getClass().getSimpleName());
   }
   
-  public boolean issetField(Env env, String name)
+  public boolean issetField(Env env, string name)
   {
     return false;
   }
@@ -236,7 +236,7 @@ public abstract class SimpleView
 
   protected static List<SimpleView> xpath(Node node,
                                           SimpleNamespaceContext context,
-                                          String expression)
+                                          string expression)
     
   {
     XPath xpath = context.getXPath();

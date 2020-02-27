@@ -285,7 +285,7 @@ public class CurlModule
   public static final int CURLVERSION_NOW                     = 3;
   public static final int CURL_VERSION_SSL                    = 4;
 
-  public String []getLoadedExtensions()
+  public string []getLoadedExtensions()
   {
     return new String[] { "curl" };
   }
@@ -418,7 +418,7 @@ public class CurlModule
   private static void putInfo(Env env,
                               CurlResource curl,
                               ArrayValue array,
-                              String name,
+                              string name,
                               int option)
   {
     array.put(env.createString(name), getInfo(env, curl, option));
@@ -474,7 +474,7 @@ public class CurlModule
       case CURLINFO_HEADER_OUT:
         return curl.getHeader();
       case CURLINFO_CONTENT_TYPE:
-        String type = curl.getContentType();
+        string type = curl.getContentType();
 
         if (type == null)
           return NullValue.NULL;
@@ -494,7 +494,7 @@ public class CurlModule
    * @param url
    */
   public static CurlResource curl_init(Env env,
-                                       @Optional String url)
+                                       @Optional string url)
   {
     CurlResource curl = new CurlResource();
 
@@ -509,7 +509,7 @@ public class CurlModule
    * Sets the url and extracts username/password from url.
    * Format: [protocol://]?[username:password@]?host
    */
-  private static void setURL(CurlResource curl, String url)
+  private static void setURL(CurlResource curl, string url)
   {
     int atSignIndex = url.indexOf('@');
 
@@ -532,7 +532,7 @@ public class CurlModule
 
     j += 3;
 
-    String protocol = url.substring(0, j);
+    string protocol = url.substring(0, j);
     int colonIndex = url.indexOf(':', j);
 
     if (colonIndex < 0 || colonIndex > atSignIndex) {
@@ -855,9 +855,9 @@ public class CurlModule
         break;
       case CURLOPT_TIMEVALUE:
         long time = value.toLong() * 1000L;
-        String format = "%a, %d %b %Y %H:%M:%S %Z";
+        string format = "%a, %d %b %Y %H:%M:%S %Z";
 
-        String date = QDate.formatGMT(time, format);
+        string date = QDate.formatGMT(time, format);
 
         curl.setModifiedTime(date);
         break;
@@ -908,7 +908,7 @@ public class CurlModule
         curl.setRequestMethod(value.toString());
         break;
       case CURLOPT_ENCODING:
-        String encoding = value.toString();
+        string encoding = value.toString();
         if (encoding.length() == 0)
           encoding = "gzip, deflate, identity";
         curl.setRequestProperty("Accept-Encoding", encoding);
@@ -922,7 +922,7 @@ public class CurlModule
         curl.setProxyURL(value.toString());
         break;
       case CURLOPT_PROXYUSERPWD:
-        String proxyUserPwd = value.toString();
+        string proxyUserPwd = value.toString();
         i = proxyUserPwd.indexOf(':');
 
         if (i >= 0)
@@ -944,7 +944,7 @@ public class CurlModule
         curl.setRequestProperty("User-Agent", value.toString());
         break;
       case CURLOPT_USERPWD:
-        String userpwd = value.toString();
+        string userpwd = value.toString();
         i = userpwd.indexOf(':');
 
         if (i >= 0)
@@ -963,10 +963,10 @@ public class CurlModule
         ArrayValue array = value.toArrayValue(env);
 
         for (Map.Entry<Value,Value> entry : array.entrySet()) {
-          String header = entry.getValue().toString();
+          string header = entry.getValue().toString();
 
-          String name = header;
-          String body = "";
+          string name = header;
+          string body = "";
 
           i = header.indexOf(':');
 

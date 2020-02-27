@@ -57,19 +57,19 @@ public class Function extends AbstractFunction {
   protected final FunctionInfo _info;
   protected final boolean _isReturnsReference;
 
-  protected final String _name;
+  protected final string _name;
   protected final Arg []_args;
   protected final Statement _statement;
 
   protected boolean _hasReturn;
 
-  protected String _comment;
+  protected string _comment;
 
   protected Arg []_closureUseArgs;
 
   public Function(ExprFactory exprFactory,
                   Location location,
-                  String name,
+                  string name,
                   FunctionInfo info,
                   Arg []args,
                   Statement []statements)
@@ -96,7 +96,7 @@ public class Function extends AbstractFunction {
   /**
    * Returns the name.
    */
-  public String getName()
+  public string getName()
   {
     return _name;
   }
@@ -123,7 +123,7 @@ public class Function extends AbstractFunction {
   /**
    * Returns the declaring class name
    */
-  public override String getDeclaringClassName()
+  public override string getDeclaringClassName()
   {
     ClassDef declaringClass = _info.getDeclaringClass();
 
@@ -181,7 +181,7 @@ public class Function extends AbstractFunction {
   /**
    * Returns the documentation for this function.
    */
-  public override String getComment()
+  public override string getComment()
   {
     return _comment;
   }
@@ -477,7 +477,7 @@ public class Function extends AbstractFunction {
     return _info.isUsesSymbolTable() || _info.isVariableVar();
   }
 
-  public String toString()
+  public string toString()
   {
     return getClass().getSimpleName() + "[" + _name + "]";
   }

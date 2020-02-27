@@ -63,7 +63,7 @@ public class ConditionalShortExpr extends Expr {
       return _falseExpr.evalCopy(env); // php/03cl
   }
 
-  public String toString()
+  public string toString()
   {
     return "(" + _test + " ?: " + _falseExpr + ")";
   }

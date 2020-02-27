@@ -44,15 +44,15 @@ public class LazyMethod extends AbstractFunction
   private final QuercusClass _quercusClass;
   private final LazyMethod _parent;
 
-  private final String _name;
+  private final string _name;
   private final Class<?> _pageClass;
-  private final String _className;
+  private final string _className;
 
   private AbstractFunction _fun;
 
   public LazyMethod(Class<?> pageClass,
-                    String name,
-                    String className)
+                    string name,
+                    string className)
   {
     _parent = null;
     _quercusClass = null;
@@ -64,8 +64,8 @@ public class LazyMethod extends AbstractFunction
   private LazyMethod(LazyMethod parent,
                      QuercusClass quercusClass,
                      Class<?> pageClass,
-                     String name,
-                     String className)
+                     string name,
+                     string className)
   {
     if (parent == null)
       _parent = null;
@@ -81,7 +81,7 @@ public class LazyMethod extends AbstractFunction
   }
 
   @Override
-  public String getName()
+  public string getName()
   {
     return _name;
   }
@@ -107,7 +107,7 @@ public class LazyMethod extends AbstractFunction
     try {
       ClassLoader loader = _pageClass.getClassLoader();
 
-      String className = _pageClass.getName() + "$" + _className;
+      string className = _pageClass.getName() + "$" + _className;
 
       Class<?> cl = Class.forName(className, false, loader);
 
@@ -174,12 +174,12 @@ public class LazyMethod extends AbstractFunction
     return getFun().isTraitMethod();
   }
 
-  public override String getComment()
+  public override string getComment()
   {
     return getFun().getComment();
   }
 
-  public override String getDeclaringClassName()
+  public override string getDeclaringClassName()
   {
     return getFun().getDeclaringClassName();
   }
@@ -298,7 +298,7 @@ public class LazyMethod extends AbstractFunction
     throw new UnsupportedOperationException(getClass().getName());
   }
 
-  public override String toString()
+  public override string toString()
   {
     return getClass().getSimpleName() + "[" + _name + "]";
   }

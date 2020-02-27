@@ -260,7 +260,7 @@ public class ZlibOutputStream extends AbstractBinaryOutput {
     }
   }
 
-  public String toString()
+  public string toString()
   {
     return "ZlibOutputStream[]";
   }

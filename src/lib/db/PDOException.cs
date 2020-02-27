@@ -36,12 +36,12 @@
 public class PDOException
   extends QuercusLanguageException
 {
-  private final String _code;
-  private final String _message;
+  private final string _code;
+  private final string _message;
 
   private Location _location;
 
-  public PDOException(Env env, String code, String message)
+  public PDOException(Env env, string code, string message)
   {
     super(env);
 
@@ -51,7 +51,7 @@ public class PDOException
     _location = env.getLocation();
   }
 
-  public String getCode()
+  public string getCode()
   {
     return _code;
   }
@@ -62,12 +62,12 @@ public class PDOException
     return _location;
   }
 
-  public String getMessage()
+  public string getMessage()
   {
     return _message;
   }
 
-  public String getMessage(Env env)
+  public string getMessage(Env env)
   {
     return getMessage();
   }

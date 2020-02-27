@@ -104,8 +104,8 @@ public class GlobalScope extends Scope {
    * Adds a class
    */
   public InterpretedClassDef addClass(Location location,
-                                      String name,
-                                      String parentName,
+                                      string name,
+                                      string parentName,
                                       ArrayList<String> ifaceList,
                                       int index,
                                       boolean isTop)
@@ -116,7 +116,7 @@ public class GlobalScope extends Scope {
       cl = _classMap.get(name);
 
     if (cl == null) {
-      String []ifaces = new String[ifaceList.size()];
+      string []ifaces = new String[ifaceList.size()];
       ifaceList.toArray(ifaces);
 
       cl = _exprFactory.createClassDef(location,

@@ -249,7 +249,7 @@ public class ArrayGetExpr extends AbstractVarExpr {
     return array.isEmpty(env, index);
   }
 
-  public override String toString()
+  public override string toString()
   {
     return _expr + "[" + _index + "]";
   }

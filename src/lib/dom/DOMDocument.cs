@@ -69,7 +69,7 @@ public class DOMDocument
   private final static Logger log
     = Logger.getLogger(DOMDocument.class.getName());
 
-  private String _encoding;
+  private string _encoding;
 
   DOMDocument(DOMImplementation impl, Document document)
   {
@@ -77,8 +77,8 @@ public class DOMDocument
   }
 
   public static DOMDocument __construct(Env env,
-                                        @Optional("'1.0'") String version,
-                                        @Optional String encoding)
+                                        @Optional("'1.0'") string version,
+                                        @Optional string encoding)
   {
     DOMDocument document = getImpl(env).createDocument();
 
@@ -96,7 +96,7 @@ public class DOMDocument
     _delegate.setXmlVersion(version);
   }
 
-  public String getEncoding()
+  public string getEncoding()
   {
     return _encoding;
   }
@@ -123,7 +123,7 @@ public class DOMDocument
     }
   }
 
-  public DOMAttr createAttributeNS(String namespaceURI, String qualifiedName)
+  public DOMAttr createAttributeNS(String namespaceURI, string qualifiedName)
     
   {
     try {
@@ -160,7 +160,7 @@ public class DOMDocument
     }
   }
 
-  public DOMElement createElement(String tagName, String textContent)
+  public DOMElement createElement(String tagName, string textContent)
     
   {
     try {
@@ -175,7 +175,7 @@ public class DOMDocument
     }
   }
 
-  public DOMElement createElementNS(String namespaceURI, String tagName)
+  public DOMElement createElementNS(String namespaceURI, string tagName)
     
   {
     try {
@@ -187,8 +187,8 @@ public class DOMDocument
   }
 
   public DOMElement createElementNS(String namespaceURI,
-                                    String tagName,
-                                    String textContent)
+                                    string tagName,
+                                    string textContent)
     
   {
     try {
@@ -226,7 +226,7 @@ public class DOMDocument
   }
 
   public DOMProcessingInstruction createProcessingInstruction(String target,
-                                                              String data)
+                                                              string data)
     
   {
     try {
@@ -257,7 +257,7 @@ public class DOMDocument
     return wrap(_delegate.getDocumentElement());
   }
 
-  public String getDocumentURI()
+  public string getDocumentURI()
   {
     return _delegate.getDocumentURI();
   }
@@ -277,7 +277,7 @@ public class DOMDocument
     return wrap(_delegate.getElementsByTagName(name));
   }
 
-  public DOMNodeList getElementsByTagNameNS(String uri, String name)
+  public DOMNodeList getElementsByTagNameNS(String uri, string name)
   {
     return wrap(_delegate.getElementsByTagNameNS(uri, name));
   }
@@ -292,7 +292,7 @@ public class DOMDocument
     return getImpl();
   }
 
-  public String getInputEncoding()
+  public string getInputEncoding()
   {
     return _delegate.getInputEncoding();
   }
@@ -327,12 +327,12 @@ public class DOMDocument
     throw new UnimplementedException();
   }
 
-  public String getVersion()
+  public string getVersion()
   {
     return _delegate.getXmlVersion();
   }
 
-  public String getXmlEncoding()
+  public string getXmlEncoding()
   {
     return _delegate.getXmlEncoding();
   }
@@ -342,7 +342,7 @@ public class DOMDocument
     return _delegate.getXmlStandalone();
   }
 
-  public String getXmlVersion()
+  public string getXmlVersion()
   {
     return _delegate.getXmlVersion();
   }
@@ -401,7 +401,7 @@ public class DOMDocument
    * @param source A string containing the HTML
    */
   // XXX: also can be called statically, returns a DOMDocument in that case
-  public boolean loadHTML(Env env, String source)
+  public boolean loadHTML(Env env, string source)
   {
     ReadStream is = StringStream.open(source);
 
@@ -522,8 +522,8 @@ public class DOMDocument
   }
 
   public DOMNode renameNode(DOMNode node,
-                            String namespaceURI,
-                            String qualifiedName)
+                            string namespaceURI,
+                            string qualifiedName)
     
   {
     try {
@@ -670,7 +670,7 @@ public class DOMDocument
     return saveToString(env, this, false);
   }
 
-  public boolean schemaValidate(Env env, String schemaFilename)
+  public boolean schemaValidate(Env env, string schemaFilename)
   {
     File file = new File(schemaFilename);
 
@@ -679,7 +679,7 @@ public class DOMDocument
     return validate(env, source);
   }
 
-  public boolean schemaValidateSource(Env env, String schemaSource)
+  public boolean schemaValidateSource(Env env, string schemaSource)
   {
     Source source = new StreamSource(new StringReader(schemaSource));
 
@@ -688,7 +688,7 @@ public class DOMDocument
 
   private boolean validate(Env env, Source source)
   {
-    String language = XMLConstants.W3C_XML_SCHEMA_NS_URI;
+    string language = XMLConstants.W3C_XML_SCHEMA_NS_URI;
     SchemaFactory factory = SchemaFactory.newInstance(language);
 
     try {

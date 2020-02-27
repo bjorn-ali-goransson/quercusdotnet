@@ -169,7 +169,7 @@ public class InterpretedPage extends QuercusPage
     return _program == page._program;
   }
 
-  public String toString()
+  public string toString()
   {
     return getClass().getSimpleName() + "[" +  _program.getSourcePath() + "]";
   }

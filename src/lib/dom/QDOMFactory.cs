@@ -66,8 +66,8 @@ public class QDOMFactory
   }
 
   public DocumentType createDocumentType(String qualifiedName,
-                                         String publicId,
-                                         String systemId)
+                                         string publicId,
+                                         string systemId)
   {
     return new QDocumentType(qualifiedName, publicId, systemId);
   }
@@ -77,7 +77,7 @@ public class QDOMFactory
     return new QElement(name);
   }
 
-  public Element createElement(String name, String namespace)
+  public Element createElement(String name, string namespace)
   {
     return new QElement(name, namespace);
   }
@@ -102,14 +102,14 @@ public class QDOMFactory
     return new QDOMImplementation();
   }
 
-  public void parseXMLDocument(Document document, InputStream is, String path)
+  public void parseXMLDocument(Document document, InputStream is, string path)
     
   {
     Xml xml = new Xml();
     xml.parseDocument((QDocument) document, is, path);
   }
 
-  public void parseHTMLDocument(Document document, InputStream is, String path)
+  public void parseHTMLDocument(Document document, InputStream is, string path)
     
   {
     Html html = new Html();

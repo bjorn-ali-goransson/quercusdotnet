@@ -66,7 +66,7 @@ public class ZlibModule extends AbstractQuercusModule {
   public static final int FORCE_GZIP = 0x1;
   public static final int FORCE_DEFLATE = 0x2;
 
-  public String []getLoadedExtensions()
+  public string []getLoadedExtensions()
   {
     return new String[] { "zlib" };
   }
@@ -82,10 +82,10 @@ public class ZlibModule extends AbstractQuercusModule {
   @ReturnNullAsFalse
   public static BinaryStream gzopen(Env env,
                                     StringValue fileName,
-                                    String mode,
+                                    string mode,
                                     @Optional("false") boolean useIncludePath)
   {
-    String filemode = getFileMode(mode);
+    string filemode = getFileMode(mode);
     int compressionLevel = getCompressionLevel(mode);
     int compressionStrategy = getCompressionStrategy(mode);
 
@@ -393,7 +393,7 @@ public class ZlibModule extends AbstractQuercusModule {
    */
   public Value zlib_get_coding_type(Env env)
   {
-    String ini = env.getIniString("zlib.output_compression");
+    string ini = env.getIniString("zlib.output_compression");
 
     if (ini == null || ini == "")
       return BooleanValue.FALSE;
@@ -412,7 +412,7 @@ public class ZlibModule extends AbstractQuercusModule {
     if (!val.isset())
       return BooleanValue.FALSE;
 
-    String s = val.toString();
+    string s = val.toString();
     if (s.contains("gzip"))
       return env.createString("gzip");
     else if (s.contains("deflate"))
@@ -730,10 +730,10 @@ public class ZlibModule extends AbstractQuercusModule {
    *    (gzip cannot be open for both reading and writing at the same time)
    *
    */
-  private static String getFileMode(String input)
+  private static string getFileMode(String input)
   {
-    String modifier = "";
-    String filemode = input.substring(0, 1);
+    string modifier = "";
+    string filemode = input.substring(0, 1);
 
     for (int i = 1; i < input.length(); i++)
     {

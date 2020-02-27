@@ -63,7 +63,7 @@ public class ToBinaryExpr extends ToStringExpr {
       return value.toString(env).toBinaryValue(env);
   }
 
-  public String toString()
+  public string toString()
   {
     return "((binary) " + _expr + ")";
   }

@@ -85,7 +85,7 @@ public class ObjectNewVarExpr extends Expr {
    */
   public Value eval(Env env)
   {
-    String name = _name.evalString(env).intern();
+    string name = _name.evalString(env).intern();
     QuercusClass cl = env.findAbstractClass(name);
 
     _fullArgs = _args;
@@ -107,7 +107,7 @@ public class ObjectNewVarExpr extends Expr {
     }
   }
   
-  public String toString()
+  public string toString()
   {
     return _name + "()";
   }

@@ -125,7 +125,7 @@ public class NetworkModule extends AbstractQuercusModule {
    * Opens a socket
    */
   public static SocketInputOutput fsockopen(Env env,
-                                            String host,
+                                            string host,
                                             @Optional int port,
                                             @Optional @Reference Value errno,
                                             @Optional @Reference Value errstr,
@@ -135,7 +135,7 @@ public class NetworkModule extends AbstractQuercusModule {
       if (host == null)
         return null;
 
-      String protocol = null;
+      string protocol = null;
       int p = host.indexOf("://");
       if (p > 0) {
         protocol = host.substring(0, p);
@@ -146,7 +146,7 @@ public class NetworkModule extends AbstractQuercusModule {
       int q = host.lastIndexOf(']');
 
       if (p > 0 && q < p) {
-        String portStr = host.substring(p + 1);
+        string portStr = host.substring(p + 1);
         host = host.substring(0, p);
 
         if (port == 0)
@@ -188,7 +188,7 @@ public class NetworkModule extends AbstractQuercusModule {
    * Persistent version of fsockopen.
    */
   public static SocketInputOutput pfsockopen(Env env,
-                                             String host,
+                                             string host,
                                              @Optional int port,
                                              @Optional @Reference Value errno,
                                              @Optional @Reference Value errstr,
@@ -265,7 +265,7 @@ public class NetworkModule extends AbstractQuercusModule {
    * @return the IP for the given host name or, if the IP cannot be obtained,
    *         the provided host name
    */
-  public static String gethostbyname(String hostname)
+  public static string gethostbyname(String hostname)
   {
     // php/1m01
 
@@ -295,7 +295,7 @@ public class NetworkModule extends AbstractQuercusModule {
    * @return the IPs for the given host name or, if the IPs cannot be obtained,
    *         the provided host name
    */
-  public static Value gethostbynamel(Env env, String hostname)
+  public static Value gethostbynamel(Env env, string hostname)
   {
     // php/1m02
 
@@ -313,7 +313,7 @@ public class NetworkModule extends AbstractQuercusModule {
     ArrayValue ipArray = new ArrayValueImpl();
 
     for (int k = 0; k < ip.length; k++) {
-      String currentIPString = ip[k].getHostAddress();
+      string currentIPString = ip[k].getHostAddress();
 
       StringValue currentIP = env.createString((currentIPString));
 
@@ -331,7 +331,7 @@ public class NetworkModule extends AbstractQuercusModule {
    *         the provided host name
    */
   @ReturnNullAsFalse
-  public static String gethostbyaddr(Env env, String ip)
+  public static string gethostbyaddr(Env env, string ip)
   {
     // php/1m03
 
@@ -341,7 +341,7 @@ public class NetworkModule extends AbstractQuercusModule {
       return null;
     }
 
-    String formIPv4 = "(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\."
+    string formIPv4 = "(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\."
         + "(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\."
         + "(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\."
         + "(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)";
@@ -354,7 +354,7 @@ public class NetworkModule extends AbstractQuercusModule {
       return null;
     }
 
-    String []splitIP = null;
+    string []splitIP = null;
 
     try {
       splitIP = ip.split("\\.");
@@ -392,7 +392,7 @@ public class NetworkModule extends AbstractQuercusModule {
   public static Value gethostname(Env env)
   {
     try {
-      String name = InetAddress.getLocalHost().getHostName();
+      string name = InetAddress.getLocalHost().getHostName();
 
       return env.createString(name);
     }
@@ -424,7 +424,7 @@ public class NetworkModule extends AbstractQuercusModule {
    * Returns the protocol name associated with the given protocol number.
    */
   @ReturnNullAsFalse
-  public static String getprotobynumber(int protoNumber)
+  public static string getprotobynumber(int protoNumber)
   {
     // php/1m05
 
@@ -444,7 +444,7 @@ public class NetworkModule extends AbstractQuercusModule {
    *
    * @return the number associated with the given protocol and service name
    */
-  public static Value getservbyname(String service, String protocol)
+  public static Value getservbyname(String service, string protocol)
   {
     // php/1m06
 
@@ -469,7 +469,7 @@ public class NetworkModule extends AbstractQuercusModule {
    * @return the service name
    */
   @ReturnNullAsFalse
-  public static String getservbyport(int port, String protocol)
+  public static string getservbyport(int port, string protocol)
   {
     // php/1m07
 
@@ -485,7 +485,7 @@ public class NetworkModule extends AbstractQuercusModule {
   }
 
   public static boolean getmxrr(Env env,
-                                @NotNull String hostname,
+                                @NotNull string hostname,
                                 @Reference Value mxhosts,
                                 @Optional @Reference Value weight)
   {
@@ -493,8 +493,8 @@ public class NetworkModule extends AbstractQuercusModule {
   }
 
   private static boolean dns_get(Env env,
-                                 String hostname,
-                                 String type,
+                                 string hostname,
+                                 string type,
                                  Value hostsRef,
                                  Value weightRef)
   {
@@ -526,12 +526,12 @@ public class NetworkModule extends AbstractQuercusModule {
       while (list.hasMore()) {
         Attribute record = (Attribute) list.next();
 
-        String id = record.getID();
+        string id = record.getID();
 
         NamingEnumeration attrList = record.getAll();
 
         while (attrList.hasMore()) {
-          String target = String.valueOf(attrList.next());
+          string target = String.valueOf(attrList.next());
 
           if (target.endsWith("."))
             target = target.substring(0, target.length() - 1);
@@ -541,8 +541,8 @@ public class NetworkModule extends AbstractQuercusModule {
           if ("MX".equals(id)) {
             int space = target.indexOf(" ");
             if (space > -1) {
-              String priorityPart = target.substring(0, space);
-              String hostPart = target.substring(space + 1);
+              string priorityPart = target.substring(0, space);
+              string hostPart = target.substring(space + 1);
 
               target = hostPart;
 
@@ -588,7 +588,7 @@ public class NetworkModule extends AbstractQuercusModule {
    * @return true if records are found, false otherwise
    */
   public static boolean dns_get_mx(Env env,
-                                   @NotNull String hostname,
+                                   @NotNull string hostname,
                                    @Reference Value mxhosts,
                                    @Optional @Reference Value weight)
   {
@@ -597,8 +597,8 @@ public class NetworkModule extends AbstractQuercusModule {
   }
 
   public static boolean checkdnsrr(Env env,
-                                   @NotNull String hostname,
-                                   @Optional("MX") String type)
+                                   @NotNull string hostname,
+                                   @Optional("MX") string type)
   {
     return dns_get(env, hostname, type, null, null);
   }
@@ -613,14 +613,14 @@ public class NetworkModule extends AbstractQuercusModule {
    * @return true if records are found, false otherwise
    */
   public static boolean dns_check_record(Env env,
-                                         @NotNull String hostname,
-                                         @Optional("MX") String type)
+                                         @NotNull string hostname,
+                                         @Optional("MX") string type)
   {
     return dns_get(env, hostname, type, null, null);
   }
 
   public ArrayValue dns_get_record(Env env,
-                                   @NotNull String hostname,
+                                   @NotNull string hostname,
                                    @Optional("-1") int type,
                                    @Optional @Reference Value authnsRef,
                                    @Optional @Reference Value addtlRef)
@@ -649,7 +649,7 @@ public class NetworkModule extends AbstractQuercusModule {
     if (type == -1)
      type = DNS_ANY;
 
-    String typeName;
+    string typeName;
 
     switch (type) {
       case DNS_A: typeName = "A"; break;
@@ -683,14 +683,14 @@ public class NetworkModule extends AbstractQuercusModule {
       while (list.hasMore()) {
         Attribute record = (Attribute) list.next();
 
-        String id = record.getID();
+        string id = record.getID();
 
         NamingEnumeration attrList = record.getAll();
 
         while (attrList.hasMore()) {
-          String attr = String.valueOf(attrList.next());
+          string attr = String.valueOf(attrList.next());
 
-          String target = attr;
+          string target = attr;
 
           if (target.endsWith("."))
             target = target.substring(0, target.length() - 1);
@@ -702,8 +702,8 @@ public class NetworkModule extends AbstractQuercusModule {
           if ("MX".equals(id)) {
             int space = target.indexOf(" ");
             if (space > -1) {
-              String priorityPart = target.substring(0, space);
-              String hostPart = target.substring(space + 1);
+              string priorityPart = target.substring(0, space);
+              string hostPart = target.substring(space + 1);
 
               try {
                 recordValue.put("pri", Integer.valueOf(priorityPart));
@@ -754,7 +754,7 @@ public class NetworkModule extends AbstractQuercusModule {
   /**
    * Opens syslog.
    */
-  public static boolean openlog(Env env, String ident, int option, int facility)
+  public static boolean openlog(Env env, string ident, int option, int facility)
   {
     return true;
   }
@@ -770,7 +770,7 @@ public class NetworkModule extends AbstractQuercusModule {
   /**
    * syslog
    */
-  public static boolean syslog(Env env, int priority, String message)
+  public static boolean syslog(Env env, int priority, string message)
   {
     Level level = Level.OFF;
 

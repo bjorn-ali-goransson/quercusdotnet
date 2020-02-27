@@ -56,12 +56,12 @@ public class DocumentView extends SimpleView
   }
 
   @Override
-  public String getNodeName()
+  public string getNodeName()
   {
     return _element.getNodeName();
   }
 
-  public override ChildrenView getChildren(String namespace, String prefix)
+  public override ChildrenView getChildren(String namespace, string prefix)
   {
     return _element.getChildren(namespace, prefix);
   }
@@ -72,17 +72,17 @@ public class DocumentView extends SimpleView
   }
 
   public override SimpleView addChild(Env env,
-                             String name,
-                             String value,
-                             String namespace)
+                             string name,
+                             string value,
+                             string namespace)
   {
     return _element.addChild(env, name, value, namespace);
   }
 
   public override void addAttribute(Env env,
-                           String name,
-                           String value,
-                           String namespace)
+                           string name,
+                           string value,
+                           string namespace)
   {
     _element.addAttribute(env, name, value, namespace);
   }
@@ -109,7 +109,7 @@ public class DocumentView extends SimpleView
 
   public override List<SimpleView> xpath(Env env,
                                 SimpleNamespaceContext context,
-                                String expression)
+                                string expression)
   {
     return _element.xpath(env, context, expression);
   }
@@ -119,7 +119,7 @@ public class DocumentView extends SimpleView
     return _element.getCount();
   }
   
-  public override boolean issetField(Env env, String name)
+  public override boolean issetField(Env env, string name)
   {
     return _element.issetField(env, name);
   }
@@ -131,7 +131,7 @@ public class DocumentView extends SimpleView
     return _element.getNamespaces(isRecursive, isFromRoot, isCheckUsage);
   }
 
-  public override String toString(Env env)
+  public override string toString(Env env)
   {
     return _element.toString(env);
   }
@@ -158,7 +158,7 @@ public class DocumentView extends SimpleView
     return _element.toDumpValue(env, cls, true);
   }
 
-  public override String toString()
+  public override string toString()
   {
     return getClass().getSimpleName() + "[" + _element + "]";
   }

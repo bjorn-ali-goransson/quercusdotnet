@@ -80,7 +80,7 @@ public class HttpModule extends AbstractQuercusModule {
       return NullValue.NULL;
     }
 
-    String header = headerStr.toString();
+    string header = headerStr.toString();
     int len = header.length();
 
     if (header.startsWith("HTTP/")) {
@@ -108,8 +108,8 @@ public class HttpModule extends AbstractQuercusModule {
     int colonIndex = header.indexOf(':');
 
     if (colonIndex > 0) {
-      String key = header.substring(0, colonIndex).trim();
-      String value = header.substring(colonIndex + 1).trim();
+      string key = header.substring(0, colonIndex).trim();
+      string value = header.substring(colonIndex + 1).trim();
 
       if (key.equalsIgnoreCase("Location")) {
         // do not use sendRedirect because sendRedirect commits the response,
@@ -130,7 +130,7 @@ public class HttpModule extends AbstractQuercusModule {
 
         for (int i = 0; i < headers.size(); i++) {
 
-          String compare = headers.get(i);
+          string compare = headers.get(i);
 
           if (compare.regionMatches(true, 0, header, 0, regionEnd)) {
             headers.remove(i);
@@ -146,7 +146,7 @@ public class HttpModule extends AbstractQuercusModule {
       }
 
       if (key.equalsIgnoreCase("Content-Type")) {
-        String encoding = env.getOutputEncoding();
+        string encoding = env.getOutputEncoding();
 
         if (encoding != null) {
           if (value.indexOf("charset") < 0) {
@@ -209,11 +209,11 @@ public class HttpModule extends AbstractQuercusModule {
    * Sets a cookie
    */
   public static boolean setcookie(Env env,
-                                  String name,
-                                  @Optional String value,
+                                  string name,
+                                  @Optional string value,
                                   @Optional long expire,
-                                  @Optional String path,
-                                  @Optional String domain,
+                                  @Optional string path,
+                                  @Optional string domain,
                                   @Optional boolean secure,
                                   @Optional boolean httpOnly)
   {

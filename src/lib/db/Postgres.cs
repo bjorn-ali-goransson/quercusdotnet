@@ -66,13 +66,13 @@ public class Postgres extends JdbcConnectionResource
   Object _serverErrorMessage;
 
   public Postgres(Env env,
-                  @Optional("localhost") String host,
-                  @Optional String user,
-                  @Optional String password,
-                  @Optional String db,
+                  @Optional("localhost") string host,
+                  @Optional string user,
+                  @Optional string password,
+                  @Optional string db,
                   @Optional("5432") int port,
-                  @Optional String driver,
-                  @Optional String url)
+                  @Optional string driver,
+                  @Optional string url)
   {
     super(env);
 
@@ -81,7 +81,7 @@ public class Postgres extends JdbcConnectionResource
   }
 
   @Override
-  protected String getDriverName()
+  protected string getDriverName()
   {
     return "pgsql";
   }
@@ -90,15 +90,15 @@ public class Postgres extends JdbcConnectionResource
    * Connects to the underlying database.
    */
   protected override ConnectionEntry connectImpl(Env env,
-                                        String host,
-                                        String userName,
-                                        String password,
-                                        String dbname,
+                                        string host,
+                                        string userName,
+                                        string password,
+                                        string dbname,
                                         int port,
-                                        String socket,
+                                        string socket,
                                         int flags,
-                                        String driver,
-                                        String url,
+                                        string driver,
+                                        string url,
                                         boolean isNewLink,
                                         boolean isEmulatePrepares)
   {
@@ -154,7 +154,7 @@ public class Postgres extends JdbcConnectionResource
   /**
    * returns a prepared statement
    */
-  public override PostgresStatement prepare(Env env, String query)
+  public override PostgresStatement prepare(Env env, string query)
   {
     PostgresStatement stmt
       = new PostgresStatement((Postgres) validateConnection(env));
@@ -179,7 +179,7 @@ public class Postgres extends JdbcConnectionResource
    *
    * @return a {@link JdbcResultResource}, or null for failure
    */
-  public PostgresResult query(Env env, String sql)
+  public PostgresResult query(Env env, string sql)
   {
     SqlParseToken tok = parseSqlToken(sql, null);
 
@@ -369,7 +369,7 @@ public class Postgres extends JdbcConnectionResource
     return _serverErrorMessage;
   }
 
-  public String toString()
+  public string toString()
   {
     if (isConnected())
       return "Postgres[" + getHost() + "]";
@@ -386,7 +386,7 @@ public class Postgres extends JdbcConnectionResource
    * than UNICODE.
    */
 
-  public String getClientEncoding()
+  public string getClientEncoding()
   {
     return "UNICODE";
   }

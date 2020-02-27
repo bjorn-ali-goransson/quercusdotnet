@@ -36,7 +36,7 @@ public class UnimplementedException
 {
   private final static L10N L = new L10N(UnimplementedException.class);
 
-  private static final String MESSAGE
+  private static final string MESSAGE
     = "{0} has not been implemented. "
       + "A more recent version of Quercus may be available "
       + "at http://www.caucho.com/download "
@@ -63,7 +63,7 @@ public class UnimplementedException
     super(createMessage(null), cause);
   }
 
-  private static String createMessage(String functionality)
+  private static string createMessage(String functionality)
   {
     if (functionality == null)
       functionality = "This functionality";

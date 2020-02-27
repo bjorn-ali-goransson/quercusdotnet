@@ -42,12 +42,12 @@ public class PDOError
   private final static L10N L = new L10N(PDOError.class);
   private final static Logger log = Logger.getLogger(PDOError.class.getName());
 
-  private static final String ERR_NONE = PDO.ERR_NONE;
-  private static final String ERR_GENERAL = "HY000";
+  private static final string ERR_NONE = PDO.ERR_NONE;
+  private static final string ERR_GENERAL = "HY000";
 
   private int _errmode;
   private boolean _isError;
-  private String _errorCode = ERR_NONE;
+  private string _errorCode = ERR_NONE;
   private ArrayValue _errorInfo;
 
   public PDOError()
@@ -65,9 +65,9 @@ public class PDOError
   }
 
   private void error(Env env,
-                     String errorCode,
+                     string errorCode,
                      int driverError,
-                     String errorMessage)
+                     string errorMessage)
   {
     _isError = true;
 
@@ -97,8 +97,8 @@ public class PDOError
   {
     log.log(Level.FINE, exception.toString(), exception);
 
-    String errorCode;
-    String errorMessage;
+    string errorCode;
+    string errorMessage;
     int driverError;
 
     if (exception instanceof SQLException) {
@@ -116,7 +116,7 @@ public class PDOError
     error(env, errorCode, driverError, errorMessage);
   }
 
-  public String getErrorCode()
+  public string getErrorCode()
   {
     return _errorCode;
   }
@@ -145,7 +145,7 @@ public class PDOError
    * Show a notice and return a "HY000" general error for subsequent calls to
    * {@link #errorCode} and {@link #errorInfo}.
    */
-  public void notice(Env env, String message)
+  public void notice(Env env, string message)
   {
     _isError = true;
 
@@ -189,7 +189,7 @@ public class PDOError
    * Show a warning and return a "HY000" general error for subsequent calls to
    * {@link #errorCode} and {@link #errorInfo}.
    */
-  public void warning(Env env, String message)
+  public void warning(Env env, string message)
   {
     _isError = true;
 

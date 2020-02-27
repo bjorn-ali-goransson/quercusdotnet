@@ -43,12 +43,12 @@ public class Arg {
   private final Expr _default;
 
   private final boolean _isReference;
-  private final String _expectedClass;
+  private final string _expectedClass;
 
   public Arg(StringValue name,
              Expr defaultExpr,
              boolean isReference,
-             String expectedClass)
+             string expectedClass)
   {
     _name = name;
     _default = defaultExpr;
@@ -103,12 +103,12 @@ public class Arg {
   /**
    * Returns the expected classname
    */
-  public String getExpectedClass()
+  public string getExpectedClass()
   {
     return _expectedClass;
   }
 
-  public String toString()
+  public string toString()
   {
     return "Arg[" + _expectedClass + " $" + _name + "]";
   }

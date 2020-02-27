@@ -63,7 +63,7 @@ public class QuercusClass extends NullValue {
 
   private final JavaClassDef _javaClassDef;
   private final ClassDef _classDef;
-  private final String _className;
+  private final string _className;
 
   private QuercusClass _parent;
 
@@ -380,7 +380,7 @@ public class QuercusClass extends NullValue {
   /**
    * Returns the name.
    */
-  public String getName()
+  public string getName()
   {
     return _className;
   }
@@ -396,7 +396,7 @@ public class QuercusClass extends NullValue {
   /**
    * Returns the parent context for the trait.
    */
-  public QuercusClass getTraitParent(Env env, String traitName)
+  public QuercusClass getTraitParent(Env env, string traitName)
   {
     if (_classDef.hasTrait(traitName)) {
       return _parent;
@@ -428,7 +428,7 @@ public class QuercusClass extends NullValue {
   /*
    * Returns the name of the extension that this class is part of.
    */
-  public String getExtension()
+  public string getExtension()
   {
     return _classDef.getExtension();
   }
@@ -871,8 +871,8 @@ public class QuercusClass extends NullValue {
 
   private static final void traitCollisionError(String className,
                                                 StringValue funName,
-                                                String traitName,
-                                                String existingTraitName)
+                                                string traitName,
+                                                string existingTraitName)
   {
     Env.getInstance().error(L.l("cannot add trait method {0}::{1}() to class {2}"
                                 + " because it collides with trait method {3}::{1}() ",
@@ -991,7 +991,7 @@ public class QuercusClass extends NullValue {
   /**
    * Returns the name of the class that included this trait.
    */
-  public String getTraitMethodBindingClassName(StringValue traitMethodName)
+  public string getTraitMethodBindingClassName(StringValue traitMethodName)
   {
     return _traitMethodBindingClassMap.get(traitMethodName);
   }
@@ -1324,7 +1324,7 @@ public class QuercusClass extends NullValue {
   /**
    * Returns the parent class.
    */
-  public String getParentName()
+  public string getParentName()
   {
     return _classDefList[0].getParentName();
   }
@@ -1332,7 +1332,7 @@ public class QuercusClass extends NullValue {
   /**
    * Returns true for an implementation of a class
    */
-  public override boolean isA(Env env, String name)
+  public override boolean isA(Env env, string name)
   {
     if (name.startsWith("\\")) {
       name = name.substring(1);
@@ -1379,12 +1379,12 @@ public class QuercusClass extends NullValue {
       ClassDef def = defList[i];
 
       if (! isTop && def.isInterface()) {
-        String name = def.getName();
+        string name = def.getName();
 
         array.put(name, name);
       }
 
-      String []defNames = def.getInterfaces();
+      string []defNames = def.getInterfaces();
 
       for (int j = 0; j < defNames.length; j++) {
         QuercusClass cls = env.findClass(defNames[j]);
@@ -1400,7 +1400,7 @@ public class QuercusClass extends NullValue {
   /**
    * Returns true if this class or its parents implements specified interface.
    */
-  public boolean implementsInterface(Env env, String name)
+  public boolean implementsInterface(Env env, string name)
   {
     ClassDef [] defList = _classDefList;
 
@@ -1410,7 +1410,7 @@ public class QuercusClass extends NullValue {
       if (def.isInterface() && def.getName().equals(name))
         return true;
 
-      String []defNames = def.getInterfaces();
+      string []defNames = def.getInterfaces();
 
       for (int j = 0; j < defNames.length; j++) {
         QuercusClass cls = env.findClass(defNames[j]);
@@ -2517,7 +2517,7 @@ public class QuercusClass extends NullValue {
                          a1, a2, a3, a4, a5);
   }
 
-  private String toMethod(char []key, int keyLength)
+  private string toMethod(char []key, int keyLength)
   {
     return new String(key, 0, keyLength);
   }
@@ -2611,7 +2611,7 @@ public class QuercusClass extends NullValue {
   /**
    * Returns the value's class name.
    */
-  public override String getClassName()
+  public override string getClassName()
   {
     return getName();
   }
@@ -2673,7 +2673,7 @@ public class QuercusClass extends NullValue {
     return _unset;
   }
 
-  public String toString()
+  public string toString()
   {
     return getClass().getSimpleName() + "[" + getName() + "]";
   }

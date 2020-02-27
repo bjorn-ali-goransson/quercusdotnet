@@ -85,7 +85,7 @@ public class ExceptionClass
   }
 
   /**
-   * Returns a String representation of this Exception.
+   * Returns a string representation of this Exception.
    */
   public static Value __toString(Env env, @This ObjectValue value)
   {

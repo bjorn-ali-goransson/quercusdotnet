@@ -47,7 +47,7 @@ public class ListHeadExpr extends Expr {
   protected final Expr []_varList;
   protected final Value []_keyList;
 
-  private String _varName;
+  private string _varName;
 
   public ListHeadExpr(ArrayList<Expr> varList)
   {

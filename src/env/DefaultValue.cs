@@ -113,7 +113,7 @@ public class DefaultValue extends NullValue {
    * Converts to a string.
    * @param env
    */
-  public override String toString()
+  public override string toString()
   {
     return "";
   }

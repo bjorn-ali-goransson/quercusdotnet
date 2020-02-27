@@ -63,7 +63,7 @@ public class PluralExpr
    */
   public static PluralExpr getPluralExpr(StringValue metaData)
   {
-    String pluralForms = "Plural-Forms:";
+    string pluralForms = "Plural-Forms:";
     int i = metaData.indexOf(pluralForms);
 
     if (i < 0)

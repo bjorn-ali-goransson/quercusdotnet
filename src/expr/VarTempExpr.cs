@@ -48,12 +48,12 @@ public class VarTempExpr extends VarExpr {
   /**
    * Returns the java variable name.
    */
-  public String getJavaVar()
+  public string getJavaVar()
   {
     return getName().toString();
   }
 
-  public String toString()
+  public string toString()
   {
     return "$quercus_" + getName();
   }

@@ -72,7 +72,7 @@ public class StaticFunction extends JavaInvoker {
     return true;
   }
 
-  public override String getDeclaringClassName()
+  public override string getDeclaringClassName()
   {
     return _method.getDeclaringClass().getSimpleName();
   }
@@ -131,7 +131,7 @@ public class StaticFunction extends JavaInvoker {
     }
   }
 
-  private String toString(Method method, Object []javaArgs)
+  private string toString(Method method, Object []javaArgs)
   {
     StringBuilder sb = new StringBuilder();
 
@@ -152,7 +152,7 @@ public class StaticFunction extends JavaInvoker {
     return sb.toString();
   }
 
-  public override String toString()
+  public override string toString()
   {
     return getClass().getSimpleName() + "[" + _method + "]";
   }

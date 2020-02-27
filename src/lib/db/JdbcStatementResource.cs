@@ -52,14 +52,14 @@ public class JdbcStatementResource
 
   private JdbcConnectionResource _conn;
   private JdbcResultResource _rs;
-  private String _query;
+  private string _query;
 
   private Statement _stmt;
 
   private Value[] _results;
 
   private SQLException _e;
-  private String _errorMessage = "";
+  private string _errorMessage = "";
   private int _errorCode;
 
   private StatementType _stmtType;
@@ -69,7 +69,7 @@ public class JdbcStatementResource
     _conn = conn;
   }
 
-  protected String getQuery()
+  protected string getQuery()
   {
     return _query;
   }
@@ -208,7 +208,7 @@ public class JdbcStatementResource
    *
    * @return the error message
    */
-  protected String getErrorMessage()
+  protected string getErrorMessage()
   {
     return _errorMessage;
   }
@@ -363,7 +363,7 @@ public class JdbcStatementResource
     return _rs.getFieldCount();
   }
 
-  protected String lastInsertId(Env env)
+  protected string lastInsertId(Env env)
     
   {
     Statement stmt = _stmt;
@@ -372,7 +372,7 @@ public class JdbcStatementResource
       return null;
     }
 
-    String lastInsertId = null;
+    string lastInsertId = null;
     ResultSet resultSet = null;
 
     try {
@@ -431,7 +431,7 @@ public class JdbcStatementResource
     return true;
   }
 
-  public String toString()
+  public string toString()
   {
     return getClass().getName() + "[" + _conn + "]";
   }

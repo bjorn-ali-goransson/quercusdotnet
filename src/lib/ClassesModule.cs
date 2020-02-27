@@ -87,7 +87,7 @@ public class ClassesModule extends AbstractQuercusModule {
    * bool class_alias ( string $original , string $alias [, bool $autoload = TRUE ] )
    */
   public boolean class_alias(Env env,
-                             String original, String alias,
+                             string original, string alias,
                              @Optional("true") boolean isAutoLoad)
   {
     QuercusClass aliasCls = env.findClass(alias, -1, false, true, true);
@@ -115,7 +115,7 @@ public class ClassesModule extends AbstractQuercusModule {
    * returns true if the class exists.
    */
   public static boolean class_exists(Env env,
-                                     String className,
+                                     string className,
                                      @Optional("true") boolean useAutoload)
   {
     if (className == null)
@@ -153,7 +153,7 @@ public class ClassesModule extends AbstractQuercusModule {
    * Returns the calling class name.
    */
   @ReturnNullAsFalse
-  public static String get_called_class(Env env)
+  public static string get_called_class(Env env)
   {
     Value qThis = env.getThis();
 
@@ -287,18 +287,18 @@ public class ClassesModule extends AbstractQuercusModule {
     if (value instanceof ObjectValue) {
       ObjectValue obj = (ObjectValue) value;
 
-      String parent = obj.getParentClassName();
+      string parent = obj.getParentClassName();
 
       if (parent != null)
         return env.createString(parent);
     }
     else if (value.isString()) {
-      String className = value.toString();
+      string className = value.toString();
 
       QuercusClass cl = env.findClass(className);
 
       if (cl != null) {
-        String parent = cl.getParentName();
+        string parent = cl.getParentName();
 
         if (parent != null)
           return env.createString(parent);
@@ -312,7 +312,7 @@ public class ClassesModule extends AbstractQuercusModule {
    * Returns true if the class exists.
    */
   public boolean interface_exists(Env env,
-                                  String interfaceName,
+                                  string interfaceName,
                                   @Optional("true") boolean useAutoload)
   {
     QuercusClass cl =  env.findClass(interfaceName, -1, useAutoload, true, true);
@@ -324,7 +324,7 @@ public class ClassesModule extends AbstractQuercusModule {
   /**
    * Returns true if the object implements the given class.
    */
-  public static boolean is_a(Env env, @ReadOnly Value value, String name)
+  public static boolean is_a(Env env, @ReadOnly Value value, string name)
   {
     return value.isA(env, name);
   }
@@ -342,7 +342,7 @@ public class ClassesModule extends AbstractQuercusModule {
    */
   public static boolean is_subclass_of(Env env,
                                        @ReadOnly Value value,
-                                       String name)
+                                       string name)
   {
     if (value.isString()) {
       QuercusClass cl = env.findClass(value.toString());

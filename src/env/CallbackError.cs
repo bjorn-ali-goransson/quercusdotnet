@@ -36,7 +36,7 @@
  */
 @SuppressWarnings("serial")
 public class CallbackError extends Callback {
-  private final String _errorString;
+  private final string _errorString;
 
   public CallbackError(String errorString)
   {
@@ -59,7 +59,7 @@ public class CallbackError extends Callback {
     return false;
   }
 
-  public override String getDeclFileName(Env env)
+  public override string getDeclFileName(Env env)
   {
     return null;
   }
@@ -74,7 +74,7 @@ public class CallbackError extends Callback {
     return -1;
   }
 
-  public override String getDeclComment(Env env)
+  public override string getDeclComment(Env env)
   {
     return null;
   }
@@ -89,7 +89,7 @@ public class CallbackError extends Callback {
     return null;
   }
 
-  public override String getCallbackName()
+  public override string getCallbackName()
   {
     return _errorString;
   }

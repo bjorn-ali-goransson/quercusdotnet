@@ -72,7 +72,7 @@ public class FunDieExpr extends Expr {
   public Value eval(Env env)
   {
     if (_value != null) {
-      String msg = _value.evalString(env);
+      string msg = _value.evalString(env);
       
       return env.die(msg);
     }

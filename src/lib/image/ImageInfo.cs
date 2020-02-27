@@ -37,9 +37,9 @@ public class ImageInfo
 
   private int _bits;
 
-  private String _mimeType;
+  private string _mimeType;
 
-  public ImageInfo(int width, int height, int type, int bits, String mimeType)
+  public ImageInfo(int width, int height, int type, int bits, string mimeType)
   {
     _width = width;
     _height = height;
@@ -93,7 +93,7 @@ public class ImageInfo
     _bits = bits;
   }
 
-  public String getMimeType()
+  public string getMimeType()
   {
     return _mimeType;
   }

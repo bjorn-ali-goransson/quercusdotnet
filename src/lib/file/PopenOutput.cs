@@ -175,7 +175,7 @@ public class PopenOutput extends AbstractBinaryOutput
    * Converts to a string.
    * @param env
    */
-  public String toString()
+  public string toString()
   {
     return "PopenOutput[" + _process + "]";
   }

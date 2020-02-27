@@ -47,7 +47,7 @@ public class ClassMethodVarExpr extends AbstractMethodExpr
 {
   private static final L10N L = new L10N(ClassMethodVarExpr.class);
 
-  protected final String _className;
+  protected final string _className;
   protected final Expr _nameExpr;
   protected final Expr []_args;
 
@@ -57,7 +57,7 @@ public class ClassMethodVarExpr extends AbstractMethodExpr
   protected boolean _isMethod;
 
   public ClassMethodVarExpr(Location location,
-                            String className,
+                            string className,
                             Expr nameExpr,
                             ArrayList<Expr> args)
   {
@@ -71,7 +71,7 @@ public class ClassMethodVarExpr extends AbstractMethodExpr
   }
 
   public ClassMethodVarExpr(Location location,
-                            String className,
+                            string className,
                             Expr nameExpr,
                             Expr []args)
   {
@@ -140,7 +140,7 @@ public class ClassMethodVarExpr extends AbstractMethodExpr
     return cl.callStaticMethod(env, qThis, methodName, hash, args);
   }
 
-  public String toString()
+  public string toString()
   {
     return _nameExpr + "()";
   }

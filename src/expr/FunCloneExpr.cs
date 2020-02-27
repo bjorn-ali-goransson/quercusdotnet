@@ -59,7 +59,7 @@ public class FunCloneExpr extends AbstractUnaryExpr {
     return _expr.eval(env).clone(env);
   }
 
-  public String toString()
+  public string toString()
   {
     return "clone " + _expr.toString();
   }

@@ -110,7 +110,7 @@ public class ClassVirtualMethodExpr extends Expr {
     }
   }
 
-  public String toString()
+  public string toString()
   {
     return "static::" + _methodName + "()";
   }

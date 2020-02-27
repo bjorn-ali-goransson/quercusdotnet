@@ -141,7 +141,7 @@ public class CallVarExpr extends Expr {
     }
   }
   
-  public String toString()
+  public string toString()
   {
     return _name + "()";
   }

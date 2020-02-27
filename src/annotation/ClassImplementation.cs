@@ -46,6 +46,6 @@
 @Target({ElementType.TYPE })
 @Retention(RetentionPolicy.RUNTIME)
 public interface ClassImplementation {
-  public String parent() default "";
-  public String iface() default "";
+  public string parent() default "";
+  public string iface() default "";
 }

@@ -45,10 +45,10 @@
 public class ClassConstExpr extends Expr {
   private static final L10N L = new L10N(ClassMethodExpr.class);
 
-  protected final String _className;
+  protected final string _className;
   protected final StringValue _name;
 
-  public ClassConstExpr(Location location, String className, StringValue name)
+  public ClassConstExpr(Location location, string className, StringValue name)
   {
     super(location);
 
@@ -98,7 +98,7 @@ public class ClassConstExpr extends Expr {
     return env.getClass(_className).getConstant(env, _name);
   }
 
-  public String toString()
+  public string toString()
   {
     return _className + "::" + _name;
   }

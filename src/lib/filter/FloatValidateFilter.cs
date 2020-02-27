@@ -56,8 +56,8 @@ public class FloatValidateFilter
       return value.toDoubleValue();
     }
     else {
-      String originalStr = value.toStringValue(env).toString();
-      String str = originalStr;
+      string originalStr = value.toStringValue(env).toString();
+      string str = originalStr;
 
       if ((flags & FilterModule.FILTER_FLAG_ALLOW_THOUSAND) > 0) {
         str = str.replace(",", "");

@@ -36,8 +36,8 @@ abstract public class Encoder
 {
   protected static final int ERROR_CHARACTER = 0xFFFE;
 
-  protected String _charset;
-  protected String _replacement;
+  protected string _charset;
+  protected string _replacement;
   protected boolean _isIgnore;
   protected boolean _isReplaceUnicode = false;
 

@@ -54,7 +54,7 @@ public class PDFModule extends AbstractQuercusModule {
   /**
    * Returns true for the mysql extension.
    */
-  public String []getLoadedExtensions()
+  public string []getLoadedExtensions()
   {
     return new String[] { "pdf" };
   }
@@ -102,7 +102,7 @@ public class PDFModule extends AbstractQuercusModule {
                                            double lly,
                                            double urx,
                                            double ury,
-                                           String filename)
+                                           string filename)
   {
     env.stub("pdf_add_launchlink");
 
@@ -119,7 +119,7 @@ public class PDFModule extends AbstractQuercusModule {
                                           double urx,
                                           double ury,
                                           int page,
-                                          String dest)
+                                          string dest)
   {
     env.stub("pdf_add_locallink");
 
@@ -131,8 +131,8 @@ public class PDFModule extends AbstractQuercusModule {
    */
   public static boolean pdf_add_nameddest(Env env,
                                           @NotNull PDF pdf,
-                                          String name,
-                                          @Optional String optlist)
+                                          string name,
+                                          @Optional string optlist)
   {
     env.stub("pdf_add_nameddest");
 
@@ -148,9 +148,9 @@ public class PDFModule extends AbstractQuercusModule {
                                      double lly,
                                      double urx,
                                      double ury,
-                                     String contents,
-                                     String title,
-                                     String icon,
+                                     string contents,
+                                     string title,
+                                     string icon,
                                      int open)
   {
     env.stub("pdf_add_note");
@@ -163,8 +163,8 @@ public class PDFModule extends AbstractQuercusModule {
    */
   public static boolean pdf_add_outline(Env env,
                                         @NotNull PDF pdf,
-                                        String name,
-                                        @Optional String optlist)
+                                        string name,
+                                        @Optional string optlist)
   {
     env.stub("pdf_add_outline");
 
@@ -180,9 +180,9 @@ public class PDFModule extends AbstractQuercusModule {
                                         double lly,
                                         double urx,
                                         double ury,
-                                        String filename,
+                                        string filename,
                                         int page,
-                                        String dest)
+                                        string dest)
   {
     env.stub("pdf_add_pdflink");
 
@@ -210,7 +210,7 @@ public class PDFModule extends AbstractQuercusModule {
                                         double lly,
                                         double urx,
                                         double ury,
-                                        String url)
+                                        string url)
   {
     env.stub("pdf_add_weblink");
 
@@ -252,11 +252,11 @@ public class PDFModule extends AbstractQuercusModule {
                                         double lly,
                                         double urx,
                                         double ury,
-                                        String filename,
-                                        String description,
-                                        String author,
-                                        String mimetype,
-                                        String icon)
+                                        string filename,
+                                        string description,
+                                        string author,
+                                        string mimetype,
+                                        string icon)
   {
     env.stub("pdf_attach_file");
     
@@ -267,8 +267,8 @@ public class PDFModule extends AbstractQuercusModule {
    * Starts the document.
    */
   public static boolean pdf_begin_document(@NotNull PDF pdf,
-                                           @Optional String fileName,
-                                           @Optional String optList)
+                                           @Optional string fileName,
+                                           @Optional string optList)
   {
     try {
       if (pdf == null)
@@ -285,14 +285,14 @@ public class PDFModule extends AbstractQuercusModule {
    */
   public static boolean pdf_begin_font(Env env,
                                        @NotNull PDF pdf,
-                                       String fileName,
+                                       string fileName,
                                        double a,
                                        double b,
                                        double c,
                                        double d,
                                        double e,
                                        double f,
-                                       @Optional String optList)
+                                       @Optional string optList)
   {
     env.stub("pdf_begin_font");
     
@@ -304,7 +304,7 @@ public class PDFModule extends AbstractQuercusModule {
    */
   public static boolean pdf_begin_glyph(Env env,
                                         @NotNull PDF pdf,
-                                        String glyphname,
+                                        string glyphname,
                                         double wx,
                                         double llx,
                                         double lly,
@@ -321,8 +321,8 @@ public class PDFModule extends AbstractQuercusModule {
    */
   public static boolean pdf_begin_item(Env env,
                                        @NotNull PDF pdf,
-                                       String tag,
-                                       String optlist)
+                                       string tag,
+                                       string optlist)
   {
     env.stub("pdf_begin_item");
     
@@ -346,7 +346,7 @@ public class PDFModule extends AbstractQuercusModule {
    */
   public static boolean pdf_begin_page_ext(@NotNull PDF pdf,
                                            double w, double h,
-                                           @Optional String optlist)
+                                           @Optional string optlist)
   {
     try {
       if (pdf == null)
@@ -533,7 +533,7 @@ public class PDFModule extends AbstractQuercusModule {
    * Continues text at the next line.
    */
   public static boolean pdf_continue_text(@NotNull PDF pdf,
-                                          String text)
+                                          string text)
   {
     if (pdf == null)
       return false;
@@ -546,8 +546,8 @@ public class PDFModule extends AbstractQuercusModule {
    */
   public static boolean pdf_create_action(Env env,
                                           @NotNull PDF pdf,
-                                          String type,
-                                          @Optional String optList)
+                                          string type,
+                                          @Optional string optList)
   {
     env.stub("pdf_create_action");
     
@@ -563,8 +563,8 @@ public class PDFModule extends AbstractQuercusModule {
                                               double lly,
                                               double urx,
                                               double ury,
-                                              String type,
-                                              @Optional String optList)
+                                              string type,
+                                              @Optional string optList)
   {
     env.stub("pdf_create_annotation");
     
@@ -576,8 +576,8 @@ public class PDFModule extends AbstractQuercusModule {
    */
   public static boolean pdf_create_bookmark(Env env,
                                             @NotNull PDF pdf,
-                                            String text,
-                                            @Optional String optList)
+                                            string text,
+                                            @Optional string optList)
   {
     env.stub("pdf_create_bookmark");
     
@@ -593,9 +593,9 @@ public class PDFModule extends AbstractQuercusModule {
                                          double lly,
                                          double urx,
                                          double ury,
-                                         String name,
-                                         String type,
-                                         @Optional String optList)
+                                         string name,
+                                         string type,
+                                         @Optional string optList)
   {
     env.stub("pdf_create_field");
     
@@ -607,8 +607,8 @@ public class PDFModule extends AbstractQuercusModule {
    */
   public static boolean pdf_create_fieldgroup(Env env,
                                               @NotNull PDF pdf,
-                                              String name,
-                                              @Optional String optList)
+                                              string name,
+                                              @Optional string optList)
   {
     env.stub("pdf_create_fieldgroup");
     
@@ -620,7 +620,7 @@ public class PDFModule extends AbstractQuercusModule {
    */
   public static boolean pdf_create_gstate(Env env,
                                           @NotNull PDF pdf,
-                                          @Optional String optList)
+                                          @Optional string optList)
   {
     env.stub("pdf_create_gstate");
     
@@ -632,9 +632,9 @@ public class PDFModule extends AbstractQuercusModule {
    */
   public static boolean pdf_create_pvf(Env env,
                                        @NotNull PDF pdf,
-                                       String filename,
-                                       String data,
-                                       @Optional String optList)
+                                       string filename,
+                                       string data,
+                                       @Optional string optList)
   {
     env.stub("pdf_create_pvf");
     
@@ -646,8 +646,8 @@ public class PDFModule extends AbstractQuercusModule {
    */
   public static boolean pdf_create_textflow(Env env,
                                             @NotNull PDF pdf,
-                                            String text,
-                                            @Optional String optList)
+                                            string text,
+                                            @Optional string optList)
   {
     env.stub("pdf_create_textflow");
     
@@ -676,8 +676,8 @@ public class PDFModule extends AbstractQuercusModule {
    */
   public static boolean pdf_define_layer(Env env,
                                          @NotNull PDF pdf,
-                                         String name,
-                                         @Optional String optList)
+                                         string name,
+                                         @Optional string optList)
   {
     env.stub("pdf_define_layer");
     
@@ -689,7 +689,7 @@ public class PDFModule extends AbstractQuercusModule {
    */
   public static boolean pdf_delete_pvf(Env env,
                                        @NotNull PDF pdf,
-                                       String name)
+                                       string name)
   {
     env.stub("pdf_delete_pvf");
     
@@ -728,9 +728,9 @@ public class PDFModule extends AbstractQuercusModule {
    */
   public static boolean pdf_encoding_set_char(Env env,
                                               @NotNull PDF pdf,
-                                              String encoding,
+                                              string encoding,
                                               int slow,
-                                              String glyphname,
+                                              string glyphname,
                                               int uv)
   {
     env.stub("pdf_encoding_set_char");
@@ -742,7 +742,7 @@ public class PDFModule extends AbstractQuercusModule {
    * Completes the document.
    */
   public static boolean pdf_end_document(@NotNull PDF pdf,
-                                         @Optional String optlist)
+                                         @Optional string optlist)
   {
     try {
       if (pdf == null)
@@ -803,7 +803,7 @@ public class PDFModule extends AbstractQuercusModule {
    * Completes a page
    */
   public static boolean pdf_end_page_ext(@NotNull PDF pdf,
-                                         @Optional String optlist)
+                                         @Optional string optlist)
   {
     if (pdf == null)
       return false;
@@ -861,9 +861,9 @@ public class PDFModule extends AbstractQuercusModule {
   public static boolean pdf_fill_imageblock(Env env,
                                             @NotNull PDF pdf,
                                             int page,
-                                            String blockname,
+                                            string blockname,
                                             int image,
-                                            @Optional String optlist)
+                                            @Optional string optlist)
   {
     env.stub("pdf_fill_imageblock");
     
@@ -876,9 +876,9 @@ public class PDFModule extends AbstractQuercusModule {
   public static boolean pdf_fill_pdfblock(Env env,
                                           @NotNull PDF pdf,
                                           int page,
-                                          String blockname,
+                                          string blockname,
                                           int contents,
-                                            @Optional String optlist)
+                                            @Optional string optlist)
   {
     env.stub("pdf_fill_pdfblock");
     
@@ -902,9 +902,9 @@ public class PDFModule extends AbstractQuercusModule {
   public static boolean pdf_fill_textblock(Env env,
                                            @NotNull PDF pdf,
                                            int page,
-                                           String block,
-                                           String text,
-                                           @Optional String optlist)
+                                           string block,
+                                           string text,
+                                           @Optional string optlist)
   {
     env.stub("pdf_fill_textblock");
 
@@ -927,8 +927,8 @@ public class PDFModule extends AbstractQuercusModule {
    */
   public static boolean pdf_findfont(Env env,
                                      @NotNull PDF pdf,
-                                     String fontname,
-                                     String encoding,
+                                     string fontname,
+                                     string encoding,
                                      int embed)
   {
     env.stub("pdf_findfont");
@@ -943,7 +943,7 @@ public class PDFModule extends AbstractQuercusModule {
                                       @NotNull PDFImage image,
                                       double x,
                                       double y,
-                                      @Optional String optlist)
+                                      @Optional string optlist)
   {
     if (pdf == null)
       return false;
@@ -959,7 +959,7 @@ public class PDFModule extends AbstractQuercusModule {
                                          int page,
                                          double x,
                                          double y,
-                                         @Optional String optlist)
+                                         @Optional string optlist)
   {
     env.stub("pdf_fit_pdi_page");
 
@@ -976,7 +976,7 @@ public class PDFModule extends AbstractQuercusModule {
                                          double lly,
                                          double urx,
                                          double ury,
-                                         @Optional String optlist)
+                                         @Optional string optlist)
   {
     env.stub("pdf_fit_textflow");
 
@@ -988,10 +988,10 @@ public class PDFModule extends AbstractQuercusModule {
    */
   public static boolean pdf_fit_textline(Env env,
                                          @NotNull PDF pdf,
-                                         String text,
+                                         string text,
                                          double x,
                                          double y,
-                                         @Optional String optlist)
+                                         @Optional string optlist)
   {
     env.stub("pdf_fit_textline");
 
@@ -1001,7 +1001,7 @@ public class PDFModule extends AbstractQuercusModule {
   /**
    * Returns the name of the last failing function.
    */
-  public static String pdf_get_apiname(Env env,
+  public static string pdf_get_apiname(Env env,
                                         @NotNull PDF pdf)
   {
     env.stub("pdf_get_apiname");
@@ -1024,7 +1024,7 @@ public class PDFModule extends AbstractQuercusModule {
   /**
    * Returns the last error message
    */
-  public static String pdf_get_errmsg(PDF pdf)
+  public static string pdf_get_errmsg(PDF pdf)
   {
     if (pdf != null)
       return pdf.get_errmsg();
@@ -1081,8 +1081,8 @@ public class PDFModule extends AbstractQuercusModule {
   /**
    * Returns the named parameter.
    */
-  public static String pdf_get_parameter(@NotNull PDF pdf,
-                                        String key,
+  public static string pdf_get_parameter(@NotNull PDF pdf,
+                                        string key,
                                         @Optional double modifier)
   {
     if (pdf != null)
@@ -1094,9 +1094,9 @@ public class PDFModule extends AbstractQuercusModule {
   /**
    * Returns the named pdi parameter.
    */
-  public static String pdf_get_pdi_parameter(Env env,
+  public static string pdf_get_pdi_parameter(Env env,
                                              @NotNull PDF pdf,
-                                             String key,
+                                             string key,
                                              int doc,
                                              int page,
                                              int reserved)
@@ -1111,7 +1111,7 @@ public class PDFModule extends AbstractQuercusModule {
    */
   public static double pdf_get_pdi_value(Env env,
                                              @NotNull PDF pdf,
-                                             String key,
+                                             string key,
                                              int doc,
                                              int page,
                                              int reserved)
@@ -1125,7 +1125,7 @@ public class PDFModule extends AbstractQuercusModule {
    * Returns the named parameter.
    */
   public static double pdf_get_value(@NotNull PDF pdf,
-                                     String key,
+                                     string key,
                                      @Optional double modifier)
   {
     if (pdf != null)
@@ -1140,7 +1140,7 @@ public class PDFModule extends AbstractQuercusModule {
   public static double pdf_info_textflow(Env env,
                                          @NotNull PDF pdf,
                                          int textflow,
-                                         String key)
+                                         string key)
   {
     env.stub("pdf_info_textflow");
 
@@ -1176,9 +1176,9 @@ public class PDFModule extends AbstractQuercusModule {
    * Search for a font.
    */
   public static PDFFont pdf_load_font(@NotNull PDF pdf,
-                                      String fontname,
-                                      String encoding,
-                                      @Optional String optlist)
+                                      string fontname,
+                                      string encoding,
+                                      @Optional string optlist)
   {
     try {
       if (pdf == null)
@@ -1195,8 +1195,8 @@ public class PDFModule extends AbstractQuercusModule {
    */
   public static boolean pdf_load_iccprofile(Env env,
                                             @NotNull PDF pdf,
-                                            String profileName,
-                                            @Optional String optlist)
+                                            string profileName,
+                                            @Optional string optlist)
   {
     env.stub("pdf_load_iccprofile");
 
@@ -1207,9 +1207,9 @@ public class PDFModule extends AbstractQuercusModule {
    * Loads an image
    */
   public static PDFImage pdf_load_image(@NotNull PDF pdf,
-                                        String imageType,
+                                        string imageType,
                                         Path path,
-                                        @Optional String optlist)
+                                        @Optional string optlist)
   {
     try {
       if (pdf == null)
@@ -1226,7 +1226,7 @@ public class PDFModule extends AbstractQuercusModule {
    */
   public static boolean pdf_makespotcolor(Env env,
                                           @NotNull PDF pdf,
-                                          String spotname)
+                                          string spotname)
   {
     env.stub("pdf_makespotcolor");
 
@@ -1258,7 +1258,7 @@ public class PDFModule extends AbstractQuercusModule {
    * Opens a file.
    */
   public static boolean pdf_open_file(@NotNull PDF pdf,
-                                      String filename)
+                                      string filename)
   {
     return pdf_begin_document(pdf, filename, "");
   }
@@ -1267,9 +1267,9 @@ public class PDFModule extends AbstractQuercusModule {
    * Opens an image.
    */
   public static PDFImage pdf_open_image_file(@NotNull PDF pdf,
-                                             String imagetype,
+                                             string imagetype,
                                              Path filename,
-                                             String stringparam,
+                                             string stringparam,
                                              int intparam)
   {
     return pdf_load_image(pdf, imagetype, filename, "");
@@ -1280,15 +1280,15 @@ public class PDFModule extends AbstractQuercusModule {
    */
   public static boolean pdf_open_image_data(Env env,
                                              @NotNull PDF pdf,
-                                             String imagetype,
-                                             String source,
-                                             String data,
+                                             string imagetype,
+                                             string source,
+                                             string data,
                                              long length,
                                              long width,
                                              long height,
                                              int components,
                                              int bpc,
-                                             String params)
+                                             string params)
   {
     env.stub("pdf_open_image_data");
     
@@ -1302,7 +1302,7 @@ public class PDFModule extends AbstractQuercusModule {
                                           @NotNull PDF pdf,
                                           int doc,
                                           int pagenumber,
-                                          @Optional String optlist)
+                                          @Optional string optlist)
   {
     env.stub("pdf_open_pdi_page");
 
@@ -1314,8 +1314,8 @@ public class PDFModule extends AbstractQuercusModule {
    */
   public static boolean pdf_open_pdi(Env env,
                                      @NotNull PDF pdf,
-                                     String filename,
-                                     @Optional String optlist)
+                                     string filename,
+                                     @Optional string optlist)
   {
     env.stub("pdf_open_pdi");
 
@@ -1355,7 +1355,7 @@ public class PDFModule extends AbstractQuercusModule {
                                         @NotNull PDF pdf,
                                         int doc,
                                         int page,
-                                        @Optional String optlist)
+                                        @Optional string optlist)
   {
     env.stub("pdf_process_pdi");
     
@@ -1454,7 +1454,7 @@ public class PDFModule extends AbstractQuercusModule {
    */
   public static boolean pdf_set_border_style(Env env,
                                             @NotNull PDF pdf,
-                                            String style,
+                                            string style,
                                             double width)
   {
     env.stub("pdf_set_border_style");
@@ -1478,8 +1478,8 @@ public class PDFModule extends AbstractQuercusModule {
    * Sets document info.
    */
   public static boolean pdf_set_info(@NotNull PDF pdf,
-                                     String key,
-                                     String value)
+                                     string key,
+                                     string value)
   {
     if (pdf == null)
       return false;
@@ -1492,8 +1492,8 @@ public class PDFModule extends AbstractQuercusModule {
    */
   public static boolean pdf_set_layer_dependency(Env env,
                                                  @NotNull PDF pdf,
-                                                 String type,
-                                                 @Optional String optlist)
+                                                 string type,
+                                                 @Optional string optlist)
   {
     env.stub("pdf_set_layer_dependency");
     
@@ -1504,8 +1504,8 @@ public class PDFModule extends AbstractQuercusModule {
    * Sets a string parameter.
    */
   public static boolean pdf_set_parameter(@NotNull PDF pdf,
-                                          String key,
-                                          String value)
+                                          string key,
+                                          string value)
   {
     if (pdf != null)
       return false;
@@ -1530,7 +1530,7 @@ public class PDFModule extends AbstractQuercusModule {
    * Sets a double parameter.
    */
   public static boolean pdf_set_value(@NotNull PDF pdf,
-                                      String key,
+                                      string key,
                                       double value)
   {
     if (pdf == null)
@@ -1543,8 +1543,8 @@ public class PDFModule extends AbstractQuercusModule {
    * Sets the colorspace and color
    */
   public static boolean pdf_setcolor(@NotNull PDF pdf,
-                                     String type,
-                                     String colorspace,
+                                     string type,
+                                     string colorspace,
                                      double c1,
                                      @Optional double c2,
                                      @Optional double c3,
@@ -1574,7 +1574,7 @@ public class PDFModule extends AbstractQuercusModule {
    */
   public static boolean pdf_setdashpattern(Env env,
                                            @NotNull PDF pdf,
-                                           String optlist)
+                                           string optlist)
   {
     if (pdf == null)
       return false;
@@ -1765,7 +1765,7 @@ public class PDFModule extends AbstractQuercusModule {
   public static boolean pdf_shading_pattern(Env env,
                                             @NotNull PDF pdf,
                                             int shading,
-                                            @Optional String optlist)
+                                            @Optional string optlist)
   {
     if (pdf == null)
       return false;
@@ -1778,7 +1778,7 @@ public class PDFModule extends AbstractQuercusModule {
    */
   public static int pdf_shading(Env env,
                                 @NotNull PDF pdf,
-                                String type,
+                                string type,
                                 double x1,
                                 double y1,
                                 double x2,
@@ -1787,7 +1787,7 @@ public class PDFModule extends AbstractQuercusModule {
                                 double c2,
                                 double c3,
                                 double c4,
-                                @Optional String optlist)
+                                @Optional string optlist)
   {
     if (pdf == null)
       return 0;
@@ -1813,13 +1813,13 @@ public class PDFModule extends AbstractQuercusModule {
    */
   public static boolean pdf_show_boxed(Env env,
                                        @NotNull PDF pdf,
-                                       String text,
+                                       string text,
                                        double x,
                                        double y,
                                        double width,
                                        double height,
-                                       String mode,
-                                       @Optional String feature)
+                                       string mode,
+                                       @Optional string feature)
   {
     if (pdf == null)
       return false;
@@ -1832,7 +1832,7 @@ public class PDFModule extends AbstractQuercusModule {
    */
   public static boolean pdf_show_xy(Env env,
                                     @NotNull PDF pdf,
-                                    String text,
+                                    string text,
                                     double x,
                                     double y)
   {
@@ -1847,7 +1847,7 @@ public class PDFModule extends AbstractQuercusModule {
    */
   public static boolean pdf_show(Env env,
                                  @NotNull PDF pdf,
-                                 String text)
+                                 string text)
   {
     if (pdf == null)
       return false;
@@ -1872,7 +1872,7 @@ public class PDFModule extends AbstractQuercusModule {
    * Returns the width of text in the font.
    */
   public static double pdf_stringwidth(@NotNull PDF pdf,
-                                       String text,
+                                       string text,
                                        @NotNull PDFFont font,
                                        double size)
   {
@@ -1898,7 +1898,7 @@ public class PDFModule extends AbstractQuercusModule {
    */
   public static boolean pdf_suspend_page(Env env,
                                          @NotNull PDF pdf,
-                                         @Optional String optlist)
+                                         @Optional string optlist)
   {
     env.stub("pdf_suspend_page");
     
@@ -1921,9 +1921,9 @@ public class PDFModule extends AbstractQuercusModule {
   /**
    * Convert from utf16 to utf8
    */
-  public static String pdf_utf16_to_utf8(Env env,
+  public static string pdf_utf16_to_utf8(Env env,
                                           @NotNull PDF pdf,
-                                          String utf16string)
+                                          string utf16string)
   {
     env.stub("pdf_utf16_to_utf8");
     
@@ -1933,9 +1933,9 @@ public class PDFModule extends AbstractQuercusModule {
   /**
    * Convert from utf8 to utf16
    */
-  public static String pdf_utf8_to_utf16(Env env,
+  public static string pdf_utf8_to_utf16(Env env,
                                          @NotNull PDF pdf,
-                                          String utf8string)
+                                          string utf8string)
   {
     env.stub("pdf_utf16_to_utf8");
     

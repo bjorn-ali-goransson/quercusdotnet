@@ -34,16 +34,16 @@
 public class Location {
   public static final Location UNKNOWN = new Location();
 
-  private final String _fileName;
-  private final String _userPath;
+  private final string _fileName;
+  private final string _userPath;
 
   private final int _lineNumber;
-  private final String _className;
-  private final String _functionName;
+  private final string _className;
+  private final string _functionName;
 
   public Location(String fileName,
-                  int lineNumber, String className,
-                  String functionName)
+                  int lineNumber, string className,
+                  string functionName)
   {
     _fileName = fileName;
     _userPath = fileName;
@@ -53,9 +53,9 @@ public class Location {
     _functionName = functionName;
   }
 
-  public Location(String fileName, String userPath,
-                  int lineNumber, String className,
-                  String functionName)
+  public Location(String fileName, string userPath,
+                  int lineNumber, string className,
+                  string functionName)
   {
     _fileName = fileName;
     _userPath = userPath;
@@ -75,12 +75,12 @@ public class Location {
     _functionName = null;
   }
 
-  public String getFileName()
+  public string getFileName()
   {
     return _fileName;
   }
 
-  public String getUserPath()
+  public string getUserPath()
   {
     return _userPath;
   }
@@ -90,12 +90,12 @@ public class Location {
     return _lineNumber;
   }
 
-  public String getClassName()
+  public string getClassName()
   {
     return _className;
   }
 
-  public String getFunctionName()
+  public string getFunctionName()
   {
     return _functionName;
   }
@@ -104,7 +104,7 @@ public class Location {
    * Returns a prefix of the form "filename:linenumber: ", or the empty string
    * if the filename is not known.
    */
-  public String getMessagePrefix()
+  public string getMessagePrefix()
   {
     if (_fileName == null)
       return "";
@@ -117,7 +117,7 @@ public class Location {
     return _fileName == null || _lineNumber <= 0;
   }
 
-  public String toString()
+  public string toString()
   {
     return "Location[" + _fileName + ":" + _lineNumber + "]";
   }

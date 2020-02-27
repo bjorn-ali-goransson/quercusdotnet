@@ -121,8 +121,8 @@ public class FunctionModule extends AbstractQuercusModule {
    * Creates an anonymous function
    */
   public static Value create_function(Env env,
-                                      String args,
-                                      String code)
+                                      string args,
+                                      string code)
   {
     try {
       AbstractFunction fun = env.createAnonymousFunction(args, code);

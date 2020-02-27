@@ -287,7 +287,7 @@ public class ArrayValueImpl extends ArrayValue
   /**
    * Returns the type.
    */
-  public String getType()
+  public string getType()
   {
     return "array";
   }

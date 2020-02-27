@@ -44,7 +44,7 @@ public class ConstStringValue
 
   private LongValue _longValue;
   private DoubleValue _doubleValue;
-  private String _string;
+  private string _string;
 
   private Value _key;
   private ValueType _valueType;
@@ -330,7 +330,7 @@ public class ConstStringValue
     }
   }
 
-  public String toString()
+  public string toString()
   {
     if (_string == null)
       _string = super.toString();

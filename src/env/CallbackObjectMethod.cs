@@ -148,7 +148,7 @@ public class CallbackObjectMethod extends Callback {
     return true;
   }
 
-  public override String getCallbackName()
+  public override string getCallbackName()
   {
     return _methodName.toString();
   }
@@ -159,7 +159,7 @@ public class CallbackObjectMethod extends Callback {
     return false;
   }
 
-  public override String getDeclFileName(Env env)
+  public override string getDeclFileName(Env env)
   {
     return getMethod().getDeclFileName(env);
   }
@@ -174,7 +174,7 @@ public class CallbackObjectMethod extends Callback {
     return getMethod().getDeclEndLine(env);
   }
 
-  public override String getDeclComment(Env env)
+  public override string getDeclComment(Env env)
   {
     return getMethod().getDeclComment(env);
   }
@@ -202,7 +202,7 @@ public class CallbackObjectMethod extends Callback {
     return NullValue.NULL;
   }
 
-  public override String toString()
+  public override string toString()
   {
     return getClass().getSimpleName() + "[" + _obj.getClassName()
                                       + "::" + _methodName + "]";

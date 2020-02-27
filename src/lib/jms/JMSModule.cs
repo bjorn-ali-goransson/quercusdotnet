@@ -65,7 +65,7 @@ public class JMSModule extends AbstractQuercusModule
     return _iniDefinitions;
   }
 
-  static JMSQueue message_get_queue(Env env, String queueName,
+  static JMSQueue message_get_queue(Env env, string queueName,
                                     ConnectionFactory connectionFactory)
   {
     if (connectionFactory == null)

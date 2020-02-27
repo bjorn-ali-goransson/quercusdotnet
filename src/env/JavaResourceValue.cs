@@ -65,7 +65,7 @@ public class JavaResourceValue extends JavaValue
   /**
    * Returns the type.
    */
-  public override String getType()
+  public override string getType()
   {
     return "resource";
   }
@@ -73,7 +73,7 @@ public class JavaResourceValue extends JavaValue
   /*
    * Returns the resource type.
    */
-  public override String getResourceType()
+  public override string getResourceType()
   {
     return getJavaClassDef().getResourceType();
   }

@@ -66,9 +66,9 @@ public class JavaMethod extends JavaInvoker {
     _isStatic = Modifier.isStatic(method.getModifiers());
   }
 
-  private static String getName(Method method)
+  private static string getName(Method method)
   {
-    String name;
+    string name;
 
     Name nameAnn = method.getAnnotation(Name.class);
 
@@ -81,7 +81,7 @@ public class JavaMethod extends JavaInvoker {
   }
 
   @Override
-  public String getDeclaringClassName()
+  public string getDeclaringClassName()
   {
     return _method.getDeclaringClass().getSimpleName();
   }
@@ -111,19 +111,19 @@ public class JavaMethod extends JavaInvoker {
       if (cause instanceof QuercusException)
         throw (QuercusException) cause;
 
-      String methodName = (_method.getDeclaringClass().getName() + "."
+      string methodName = (_method.getDeclaringClass().getName() + "."
                            + _method.getName());
 
       throw new QuercusException(methodName + ": " + cause.getMessage(), cause);
     } catch (Exception e) {
-      String methodName = (_method.getDeclaringClass().getName() + "."
+      string methodName = (_method.getDeclaringClass().getName() + "."
                            + _method.getName());
 
       throw new QuercusException(methodName + ": " + e.getMessage(), e);
     }
   }
 
-  public override String toString()
+  public override string toString()
   {
     return "JavaMethod[" + _method + "]";
   }

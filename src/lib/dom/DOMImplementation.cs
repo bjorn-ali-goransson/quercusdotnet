@@ -72,14 +72,14 @@ public class DOMImplementation
     _delegate = _factory.getImplementation();
   }
 
-  static public boolean hasFeature(Env env, String feature, String version)
+  static public boolean hasFeature(Env env, string feature, string version)
   {
     return get(env)._delegate.hasFeature(feature, version);
   }
 
   static public DOMDocument createDocument(Env env,
-                                           @Optional String namespaceURI,
-                                           @Optional String name,
+                                           @Optional string namespaceURI,
+                                           @Optional string name,
                                            @Optional DOMDocumentType docType)
   {
     DOMDocument doc;
@@ -106,9 +106,9 @@ public class DOMImplementation
   @ReturnNullAsFalse
   static public DOMDocumentType createDocumentType(
       Env env,
-      @NotNull String qualifiedName,
-      @Optional String publicId,
-      @Optional String systemId) {
+      @NotNull string qualifiedName,
+      @Optional string publicId,
+      @Optional string systemId) {
     if (qualifiedName == null)
       return null;
 
@@ -312,7 +312,7 @@ public class DOMImplementation
     return wrapper;
   }
 
-  public String toString()
+  public string toString()
   {
     return getClass().getSimpleName();
   }
@@ -343,8 +343,8 @@ public class DOMImplementation
   }
 
   public DOMDocumentType createDocumentType(String qualifiedName,
-                                            String publicId,
-                                            String systemId)
+                                            string publicId,
+                                            string systemId)
   {
     return createWrapper(_factory.createDocumentType(qualifiedName,
                                                      publicId,
@@ -356,7 +356,7 @@ public class DOMImplementation
     return createWrapper(_factory.createElement(name));
   }
 
-  public DOMElement createElement(String name, String namespace)
+  public DOMElement createElement(String name, string namespace)
   {
     return createWrapper(_factory.createElement(name, namespace));
   }
@@ -376,13 +376,13 @@ public class DOMImplementation
     return createWrapper(_factory.createText());
   }
 
-  public void parseHTMLDocument(Document document, ReadStream is, String path)
+  public void parseHTMLDocument(Document document, ReadStream is, string path)
     
   {
     _factory.parseHTMLDocument(document, is, path);
   }
 
-  public void parseXMLDocument(Document document, ReadStream is, String path)
+  public void parseXMLDocument(Document document, ReadStream is, string path)
     
   {
     _factory.parseXMLDocument(document, is, path);

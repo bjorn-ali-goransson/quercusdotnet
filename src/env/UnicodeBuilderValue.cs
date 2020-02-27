@@ -194,7 +194,7 @@ public class UnicodeBuilderValue
    * @param charset to decode string from
    */
   @Override
-  public StringValue create(Env env, StringValue str, String charset)
+  public StringValue create(Env env, StringValue str, string charset)
   {
     return str;
   }
@@ -205,7 +205,7 @@ public class UnicodeBuilderValue
    * @param env
    * @param charset
    */
-  public final StringValue convertToUnicode(Env env, String charset)
+  public final StringValue convertToUnicode(Env env, string charset)
   {
     return this;
   }
@@ -221,7 +221,7 @@ public class UnicodeBuilderValue
   /**
    * Returns the value.
    */
-  public final String getValue()
+  public final string getValue()
   {
     return toString();
   }
@@ -229,7 +229,7 @@ public class UnicodeBuilderValue
   /**
    * Returns the type.
    */
-  public String getType()
+  public string getType()
   {
     return "string";
   }
@@ -297,7 +297,7 @@ public class UnicodeBuilderValue
   /**
    * Converts to a UnicodeValue in desired charset.
    */
-  public override final StringValue toUnicodeValue(Env env, String charset)
+  public override final StringValue toUnicodeValue(Env env, string charset)
   {
     return this;
   }
@@ -312,7 +312,7 @@ public class UnicodeBuilderValue
 
     /*
     Env env = Env.getInstance();
-    String charset = (env != null
+    string charset = (env != null
                       ? env.getRuntimeEncoding().toString()
                       : null);
     */
@@ -460,7 +460,7 @@ public class UnicodeBuilderValue
    * @param str should be a Unicode string
    * @param charset to decode string from
    */
-  public override StringValue append(Env env, StringValue unicodeStr, String charset)
+  public override StringValue append(Env env, StringValue unicodeStr, string charset)
   {
     return append(unicodeStr);
   }
@@ -1265,7 +1265,7 @@ public class UnicodeBuilderValue
       return super.eq(rValue);
     }
     else {
-      String rString = rValue.toString();
+      string rString = rValue.toString();
 
       int len = rString.length();
 
@@ -1400,7 +1400,7 @@ public class UnicodeBuilderValue
     }
   }
 
-  public String toString()
+  public string toString()
   {
     return String.valueOf(_buffer, 0, _length);
   }

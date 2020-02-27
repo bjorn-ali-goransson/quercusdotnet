@@ -85,7 +85,7 @@ public class BinaryRightShiftExpr extends AbstractBinaryExpr {
     return lValue.toLong() >> rValue.toLong();
   }
 
-  public String toString()
+  public string toString()
   {
     return "(" + _left + " >> " + _right + ")";
   }

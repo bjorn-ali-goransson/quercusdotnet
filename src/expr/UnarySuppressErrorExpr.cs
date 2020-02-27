@@ -119,7 +119,7 @@ public class UnarySuppressErrorExpr extends AbstractUnaryExpr {
    *
    * @return the expression value.
    */
-  public String evalString(Env env)
+  public string evalString(Env env)
   {
     int oldErrorMask = env.setErrorMask(0);
 
@@ -148,7 +148,7 @@ public class UnarySuppressErrorExpr extends AbstractUnaryExpr {
     }
   }
 
-  public String toString()
+  public string toString()
   {
     return "@" + _expr;
   }

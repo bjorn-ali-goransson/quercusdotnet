@@ -31,7 +31,7 @@
 
 public interface QuercusServletContext
 {
-  public String getMimeType(String name);
+  public string getMimeType(String name);
 
   public <T> T toServletContext(Class<T> cls);
 }

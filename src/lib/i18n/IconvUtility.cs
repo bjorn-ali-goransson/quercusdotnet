@@ -46,8 +46,8 @@ public class IconvUtility {
 
   public static StringValue decodeEncode(Env env,
                                         StringValue str,
-                                        String inCharset,
-                                        String outCharset)
+                                        string inCharset,
+                                        string outCharset)
     
   {
     return decodeEncode(env, str, inCharset, outCharset, 0, Integer.MAX_VALUE);
@@ -55,8 +55,8 @@ public class IconvUtility {
 
   public static StringValue decodeEncode(Env env,
                                          StringValue str,
-                                         String inCharset,
-                                         String outCharset,
+                                         string inCharset,
+                                         string outCharset,
                                          int offset)
     
   {
@@ -69,8 +69,8 @@ public class IconvUtility {
    */
   public static StringValue decodeEncode(Env env,
                                          StringValue str,
-                                         String inCharset,
-                                         String outCharset,
+                                         string inCharset,
+                                         string outCharset,
                                          int offset,
                                          int length)
     
@@ -139,7 +139,7 @@ public class IconvUtility {
    */
   public static StringValue decodeMime(Env env,
                               CharSequence word,
-                              String charset)
+                              string charset)
     
   {
     StringValue str = env.createString(
@@ -151,9 +151,9 @@ public class IconvUtility {
   public static Value encodeMime(Env env,
                               StringValue name,
                               StringValue value,
-                              String inCharset,
-                              String outCharset,
-                              String scheme)
+                              string inCharset,
+                              string outCharset,
+                              string scheme)
     
   {
     return encodeMime(env,
@@ -181,10 +181,10 @@ public class IconvUtility {
   public static StringValue encodeMime(Env env,
                               StringValue name,
                               StringValue value,
-                              String inCharset,
-                              String outCharset,
-                              String scheme,
-                              String lineBreakChars,
+                              string inCharset,
+                              string outCharset,
+                              string scheme,
+                              string lineBreakChars,
                               int lineLength)
     
   {
@@ -196,7 +196,7 @@ public class IconvUtility {
     sb.append(':');
     sb.append(' ');
 
-    String word = encodeMimeWord(
+    string word = encodeMimeWord(
             value.toString(), outCharset, scheme, lineBreakChars, lineLength);
 
     sb.append(MimeUtility.fold(sb.length(), word));
@@ -204,10 +204,10 @@ public class IconvUtility {
     return sb;
   }
 
-  public static String encodeMimeWord(String value,
-                              String charset,
-                              String scheme,
-                              String lineBreakChars,
+  public static string encodeMimeWord(String value,
+                              string charset,
+                              string scheme,
+                              string lineBreakChars,
                               int lineLength)
     
   {

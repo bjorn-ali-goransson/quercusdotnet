@@ -201,7 +201,7 @@ public class ArrayTailExpr extends AbstractVarExpr {
     throw new UnsupportedOperationException();
   }
 
-  public String toString()
+  public string toString()
   {
     return _expr + "[]";
   }

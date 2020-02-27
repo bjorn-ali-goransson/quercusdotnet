@@ -52,9 +52,9 @@ public class PDFWriter {
 
   private int _lastObject;
 
-  private String _creator = "Quercus PDF";
-  private String _author;
-  private String _title;
+  private string _creator = "Quercus PDF";
+  private string _author;
+  private string _title;
 
   private ArrayList<PDFObject> _pendingObjects
     = new ArrayList<PDFObject>();
@@ -359,7 +359,7 @@ public class PDFWriter {
       println(String.valueOf(v));
   }
 
-  public String toString()
+  public string toString()
   {
     return "PDF[]";
   }

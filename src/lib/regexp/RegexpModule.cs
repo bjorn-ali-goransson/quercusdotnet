@@ -75,7 +75,7 @@ public class RegexpModule
   public static final int PREG_RECURSION_LIMIT_ERROR = 3;
   public static final int PREG_BAD_UTF8_ERROR = 4;
   public static final int PREG_BAD_UTF8_OFFSET_ERROR = 5;
-  public static final String PCRE_VERSION = "7.0 18-Dec-2006";
+  public static final string PCRE_VERSION = "7.0 18-Dec-2006";
 
   // #2526, possible JIT/OS problem with max comparison
   private static final long LONG_MAX = Long.MAX_VALUE - 1;
@@ -101,7 +101,7 @@ public class RegexpModule
     = new LruCache<StringValue, ArrayList<Replacement>>(1024);
 
   @Override
-  public String []getLoadedExtensions()
+  public string []getLoadedExtensions()
   {
     return new String[] { "ereg", "pcre" };
   }
@@ -413,7 +413,7 @@ public class RegexpModule
 
   public static UnicodeEreg createUnicodeEreg(Env env,
                                               StringValue pattern,
-                                              String encoding)
+                                              string encoding)
   {
     try {
       UnicodeEregKey key = new UnicodeEregKey(pattern, encoding);
@@ -447,7 +447,7 @@ public class RegexpModule
 
   public static UnicodeEregi createUnicodeEregi(Env env,
                                                StringValue pattern,
-                                               String encoding)
+                                               string encoding)
   {
     try {
       UnicodeEregKey key = new UnicodeEregKey(pattern, encoding);
@@ -1893,8 +1893,8 @@ public class RegexpModule
 
   private static StringValue addDelimiters(Env env,
                                            StringValue str,
-                                           String startDelim,
-                                           String endDelim)
+                                           string startDelim,
+                                           string endDelim)
   {
     StringValue sb = str.createStringBuilder();
 
@@ -2212,7 +2212,7 @@ public class RegexpModule
                   StringValue sb,
                   RegexpState regexpState);
 
-    public String toString()
+    public string toString()
     {
       return getClass().getSimpleName() + "[]";
     }
@@ -2239,7 +2239,7 @@ public class RegexpModule
       return sb.appendBytes(_text, 0, _text.length);
     }
 
-    public String toString()
+    public string toString()
     {
       StringBuilder sb = new StringBuilder();
       sb.append(getClass().getSimpleName());
@@ -2275,7 +2275,7 @@ public class RegexpModule
       return sb;
     }
 
-    public String toString()
+    public string toString()
     {
       return getClass().getSimpleName() + "[" + _group + "]";
     }
@@ -2329,7 +2329,7 @@ public class RegexpModule
       return sb;
     }
 
-    public String toString()
+    public string toString()
     {
       return getClass().getSimpleName() + "[" + _group + "]";
     }
@@ -2427,9 +2427,9 @@ public class RegexpModule
   static class UnicodeEregKey
   {
     StringValue _regexpValue;
-    String _encoding;
+    string _encoding;
 
-    UnicodeEregKey(StringValue regexpValue, String encoding)
+    UnicodeEregKey(StringValue regexpValue, string encoding)
     {
       _regexpValue = regexpValue;
       _encoding = encoding;

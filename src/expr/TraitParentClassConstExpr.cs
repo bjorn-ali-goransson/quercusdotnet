@@ -43,11 +43,11 @@
  * Represents a PHP parent::FOO constant call expression.
  */
 public class TraitParentClassConstExpr extends Expr {
-  protected final String _traitName;
+  protected final string _traitName;
   protected final StringValue _name;
 
   public TraitParentClassConstExpr(Location location,
-                                   String traitName, StringValue name)
+                                   string traitName, StringValue name)
   {
     super(location);;
 
@@ -95,7 +95,7 @@ public class TraitParentClassConstExpr extends Expr {
     return parent.getConstant(env, _name);
   }
 
-  public String toString()
+  public string toString()
   {
     return "parent::" + _name;
   }

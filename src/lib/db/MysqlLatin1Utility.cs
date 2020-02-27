@@ -68,7 +68,7 @@ public class MysqlLatin1Utility
       return (char) ch;
   }
   
-  public static String decode(byte []bytes)
+  public static string decode(byte []bytes)
   {
     StringBuilder sb = new StringBuilder();
     

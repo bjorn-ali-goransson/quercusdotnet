@@ -337,9 +337,9 @@ public class QuercusSessionManager
    * @param now the current date
    *
    */
-  public SessionArrayValue createSession(Env env, String oldId, long now)
+  public SessionArrayValue createSession(Env env, string oldId, long now)
   {
-    String id = oldId;
+    string id = oldId;
 
     if (id == null || id.length() < 4)
       id = createSessionId(env);
@@ -361,9 +361,9 @@ public class QuercusSessionManager
    * group matches, then use it because different applications on the
    * same matchine should use the same cookie.
    */
-  public String createSessionId(Env env)
+  public string createSessionId(Env env)
   {
-    String id;
+    string id;
 
     do {
       CharBuffer sb = new CharBuffer();
@@ -392,7 +392,7 @@ public class QuercusSessionManager
    * @return the cached session.
    * 
    */
-  public SessionArrayValue getSession(Env env, String key, long now)
+  public SessionArrayValue getSession(Env env, string key, long now)
   {
     SessionArrayValue session;
     boolean isNew = false;
@@ -450,7 +450,7 @@ public class QuercusSessionManager
    * Creates a session.  It's already been established that the
    * key does not currently have a session.
    */
-  protected SessionArrayValue create(Env env, String key, long now)
+  protected SessionArrayValue create(Env env, string key, long now)
   {
     SessionArrayValue session
       = createSessionValue(key, now, _sessionTimeout);
@@ -496,7 +496,7 @@ public class QuercusSessionManager
       }
 
       if (_persistentStore != null) {
-        String encoded = (String) _persistentStore.get(session.getId());
+        string encoded = (String) _persistentStore.get(session.getId());
 
         if (encoded != null) {
           session.decode(env, new StringBuilderValue(encoded));

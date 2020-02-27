@@ -44,9 +44,9 @@ public class JdbcTableMetaData {
   private static final Logger log
     = Logger.getLogger(JdbcTableMetaData.class.getName());
 
-  private final String _catalog;
-  private final String _schema;
-  private final String _name;
+  private final string _catalog;
+  private final string _schema;
+  private final string _name;
 
   private final long _lastModified;
 
@@ -56,9 +56,9 @@ public class JdbcTableMetaData {
     = new HashMap<String,JdbcColumnMetaData>();
 
   public JdbcTableMetaData(Env env,
-                           String catalog,
-                           String schema,
-                           String name,
+                           string catalog,
+                           string schema,
+                           string name,
                            DatabaseMetaData md)
     
   {
@@ -71,7 +71,7 @@ public class JdbcTableMetaData {
     try {
       while (rs.next()) {
         // COLUMN_NAME
-        String columnName = rs.getString(4);
+        string columnName = rs.getString(4);
 
         JdbcColumnMetaData column = new JdbcColumnMetaData(this, rs);
 
@@ -84,7 +84,7 @@ public class JdbcTableMetaData {
         rs = md.getPrimaryKeys(_catalog, _schema, _name);
         while (rs.next()) {
           // COLUMN_NAME
-          String columnName = rs.getString(4);
+          string columnName = rs.getString(4);
 
           JdbcColumnMetaData column = _columnMap.get(columnName);
 
@@ -99,7 +99,7 @@ public class JdbcTableMetaData {
       rs = md.getIndexInfo(_catalog, _schema, _name, false, true);
       while (rs.next()) {
         // COLUMN_NAME
-        String columnName = rs.getString(9);
+        string columnName = rs.getString(9);
 
         JdbcColumnMetaData column = _columnMap.get(columnName);
 
@@ -115,7 +115,7 @@ public class JdbcTableMetaData {
   /**
    * Returns the table's name.
    */
-  public String getName()
+  public string getName()
   {
     return _name;
   }
@@ -123,7 +123,7 @@ public class JdbcTableMetaData {
   /**
    * Returns the table's catalog
    */
-  public String getCatalog()
+  public string getCatalog()
   {
     return _catalog;
   }
@@ -141,7 +141,7 @@ public class JdbcTableMetaData {
     return env.getCurrentTime() - _lastModified <= _maxIdleTime;
   }
 
-  public String toString()
+  public string toString()
   {
     return "JdbcTableMetaData[" + getName() + "]";
   }

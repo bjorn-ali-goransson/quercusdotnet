@@ -62,24 +62,24 @@ public class McryptModule extends AbstractQuercusModule {
   public static final int MCRYPT_ENCRYPT = 0;
   public static final int MCRYPT_DECRYPT = 1;
 
-  public static final String MCRYPT_MODE_ECB = "ecb";
-  public static final String MCRYPT_MODE_CBC = "cbc";
-  public static final String MCRYPT_MODE_CFB = "cfb";
-  public static final String MCRYPT_MODE_OFB = "ofb";
-  public static final String MCRYPT_MODE_NOFB = "nofb";
-  public static final String MCRYPT_MODE_STREAM = "stream";
+  public static final string MCRYPT_MODE_ECB = "ecb";
+  public static final string MCRYPT_MODE_CBC = "cbc";
+  public static final string MCRYPT_MODE_CFB = "cfb";
+  public static final string MCRYPT_MODE_OFB = "ofb";
+  public static final string MCRYPT_MODE_NOFB = "nofb";
+  public static final string MCRYPT_MODE_STREAM = "stream";
 
-  public static final String MCRYPT_ARCFOUR = "arcfour";
-  public static final String MCRYPT_BLOWFISH = "blowfish";
-  public static final String MCRYPT_DES = "des";
-  public static final String MCRYPT_3DES = "tripledes";
-  public static final String MCRYPT_TRIPLEDES = "tripledes";
-  public static final String MCRYPT_RC4 = "RC4";
-  public static final String MCRYPT_RIJNDAEL_128 = "rijndael-128";
-  public static final String MCRYPT_RIJNDAEL_192 = "rijndael-192";
-  public static final String MCRYPT_RIJNDAEL_256 = "rijndael-256";
+  public static final string MCRYPT_ARCFOUR = "arcfour";
+  public static final string MCRYPT_BLOWFISH = "blowfish";
+  public static final string MCRYPT_DES = "des";
+  public static final string MCRYPT_3DES = "tripledes";
+  public static final string MCRYPT_TRIPLEDES = "tripledes";
+  public static final string MCRYPT_RC4 = "RC4";
+  public static final string MCRYPT_RIJNDAEL_128 = "rijndael-128";
+  public static final string MCRYPT_RIJNDAEL_192 = "rijndael-192";
+  public static final string MCRYPT_RIJNDAEL_256 = "rijndael-256";
 
-  public String []getLoadedExtensions()
+  public string []getLoadedExtensions()
   {
     return new String[] {  "mcrypt" };
   }
@@ -88,7 +88,7 @@ public class McryptModule extends AbstractQuercusModule {
    * Encrypt with cbc
    */
   public static StringValue mcrypt_cbc(Env env,
-                                       String cipher,
+                                       string cipher,
                                        byte []key,
                                        byte []data,
                                        int mode,
@@ -116,7 +116,7 @@ public class McryptModule extends AbstractQuercusModule {
    * Encrypt with cfb
    */
   public static StringValue mcrypt_cfb(Env env,
-                                       String cipher,
+                                       string cipher,
                                        byte []key,
                                        byte []data,
                                        int mode,
@@ -159,10 +159,10 @@ public class McryptModule extends AbstractQuercusModule {
    * Decrypt
    */
   public static StringValue mcrypt_decrypt(Env env,
-                                           String cipher,
+                                           string cipher,
                                            byte []key,
                                            byte []data,
-                                           String mode,
+                                           string mode,
                                            @Optional byte []iv)
   {
     try {
@@ -182,7 +182,7 @@ public class McryptModule extends AbstractQuercusModule {
    * Encrypt with cfb
    */
   public static StringValue mcrypt_ecb(Env env,
-                                       String cipher,
+                                       string cipher,
                                        byte []key,
                                        byte []data,
                                        int mode,
@@ -209,7 +209,7 @@ public class McryptModule extends AbstractQuercusModule {
   /**
    * Returns the algorithms name
    */
-  public static String mcrypt_enc_get_algorithms_name(Mcrypt mcrypt)
+  public static string mcrypt_enc_get_algorithms_name(Mcrypt mcrypt)
   {
     if (mcrypt != null)
       return mcrypt.get_algorithms_name();
@@ -253,7 +253,7 @@ public class McryptModule extends AbstractQuercusModule {
   /**
    * Returns the mode name
    */
-  public static String mcrypt_enc_get_modes_name(Mcrypt mcrypt)
+  public static string mcrypt_enc_get_modes_name(Mcrypt mcrypt)
   {
     if (mcrypt != null)
       return mcrypt.get_modes_name();
@@ -320,10 +320,10 @@ public class McryptModule extends AbstractQuercusModule {
    * Encrypt
    */
   public static StringValue mcrypt_encrypt(Env env,
-                                           String cipher,
+                                           string cipher,
                                            byte []key,
                                            byte []data,
-                                           String mode,
+                                           string mode,
                                            @Optional byte []iv)
   {
     try {
@@ -390,8 +390,8 @@ public class McryptModule extends AbstractQuercusModule {
    * Returns the IV size.
    */
   public static Value mcrypt_get_block_size(Env env,
-                                            String cipher,
-                                            String mode)
+                                            string cipher,
+                                            string mode)
   {
     try {
       Mcrypt mcrypt = new Mcrypt(env, cipher, mode);
@@ -408,7 +408,7 @@ public class McryptModule extends AbstractQuercusModule {
    * Returns the cipher name.
    */
   @ReturnNullAsFalse
-  public static String mcrypt_get_cipher_name(Env env, String cipher)
+  public static string mcrypt_get_cipher_name(Env env, string cipher)
   {
     try {
       Mcrypt mcrypt = new Mcrypt(env, cipher, "cbc");
@@ -424,7 +424,7 @@ public class McryptModule extends AbstractQuercusModule {
   /*
    * Returns the IV size.
    */
-  public static Value mcrypt_get_iv_size(Env env, String cipher, String mode)
+  public static Value mcrypt_get_iv_size(Env env, string cipher, string mode)
   {
     try {
       Mcrypt mcrypt = new Mcrypt(env, cipher, mode);
@@ -440,7 +440,7 @@ public class McryptModule extends AbstractQuercusModule {
   /*
    * Returns the key size.
    */
-  public static Value mcrypt_get_key_size(Env env, String cipher, String mode)
+  public static Value mcrypt_get_key_size(Env env, string cipher, string mode)
   {
     try {
       Mcrypt mcrypt = new Mcrypt(env, cipher, mode);
@@ -453,7 +453,7 @@ public class McryptModule extends AbstractQuercusModule {
     }
   }
   
-  private static final String []ALGORITHMS = {
+  private static final string []ALGORITHMS = {
     MCRYPT_ARCFOUR, MCRYPT_BLOWFISH,  MCRYPT_DES, MCRYPT_3DES,
     MCRYPT_RC4, MCRYPT_RIJNDAEL_128, MCRYPT_RIJNDAEL_192,
     MCRYPT_RIJNDAEL_256
@@ -513,8 +513,8 @@ public class McryptModule extends AbstractQuercusModule {
    * Returns the block size for an algorithm.
    */
   public static int mcrypt_module_get_algo_block_size(Env env,
-                                                      String cipher,
-                                                      @Optional String libDir)
+                                                      string cipher,
+                                                      @Optional string libDir)
   {
     try {
       Mcrypt mcrypt = new Mcrypt(env, cipher, "cbc");
@@ -531,8 +531,8 @@ public class McryptModule extends AbstractQuercusModule {
    * Returns the key size for an algorithm.
    */
   public static int mcrypt_module_get_algo_key_size(Env env,
-                                                    String cipher,
-                                                    @Optional String libDir)
+                                                    string cipher,
+                                                    @Optional string libDir)
   {
     try {
       // use ofb because it exists for most ciphers
@@ -551,8 +551,8 @@ public class McryptModule extends AbstractQuercusModule {
    */
   public static Value mcrypt_module_get_supported_key_sizes(
       Env env,
-      String cipher,
-      @Optional String libDir) {
+      string cipher,
+      @Optional string libDir) {
     try {
       // use ofb because it exists for most ciphers
       Mcrypt mcrypt = new Mcrypt(env, cipher, "ofb");
@@ -570,8 +570,8 @@ public class McryptModule extends AbstractQuercusModule {
    */
   public static boolean mcrypt_module_is_block_algorithm(
       Env env,
-      String cipher,
-      @Optional String libDir) {
+      string cipher,
+      @Optional string libDir) {
     try {
       // use ofb because it exists for most ciphers
       Mcrypt mcrypt = new Mcrypt(env, cipher, "ofb");
@@ -589,8 +589,8 @@ public class McryptModule extends AbstractQuercusModule {
    */
   public static boolean mcrypt_module_is_block_algorithm_mode(
       Env env,
-      String mode,
-      @Optional String libDir) {
+      string mode,
+      @Optional string libDir) {
     try {
       Mcrypt mcrypt = new Mcrypt(env, "des", mode);
 
@@ -606,8 +606,8 @@ public class McryptModule extends AbstractQuercusModule {
    * Returns true for block modes
    */
   public static boolean mcrypt_module_is_block_mode(Env env,
-                                                    String mode,
-                                                    @Optional String libDir)
+                                                    string mode,
+                                                    @Optional string libDir)
   {
     try {
       Mcrypt mcrypt = new Mcrypt(env, "des", mode);
@@ -624,7 +624,7 @@ public class McryptModule extends AbstractQuercusModule {
    * Returns true for block modes
    */
   public static boolean mcrypt_module_self_test(Env env,
-                                                String algorithm,
+                                                string algorithm,
                                                 Path libDir)
   {
     try {
@@ -642,9 +642,9 @@ public class McryptModule extends AbstractQuercusModule {
    * Open a new mcrypt object.
    */
   public static Value mcrypt_module_open(Env env,
-                                         String algorithm,
+                                         string algorithm,
                                          Path algorithm_directory,
-                                         String mode,
+                                         string mode,
                                          Path mode_directory)
   {
     try {
@@ -660,7 +660,7 @@ public class McryptModule extends AbstractQuercusModule {
    * Encrypt with ofb
    */
   public static StringValue mcrypt_ofb(Env env,
-                                  String cipher,
+                                  string cipher,
                                   byte []key,
                                   byte []data,
                                   int mode,

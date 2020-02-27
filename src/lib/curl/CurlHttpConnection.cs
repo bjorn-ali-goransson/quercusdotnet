@@ -50,24 +50,24 @@ public class CurlHttpConnection
   private HttpURLConnection _httpConn;
 
   private URL _url;
-  private String _username;
-  private String _password;
+  private string _username;
+  private string _password;
 
   private URL _proxyURL;
-  private String _proxyUsername;
-  private String _proxyPassword;
-  private String _proxyType;
+  private string _proxyUsername;
+  private string _proxyPassword;
+  private string _proxyType;
 
   private int _responseCode;
   private boolean _hadSentAuthorization = false;
   private boolean _hadSentProxyAuthorization = false;
 
-  private String _authorization;
-  private String _proxyAuthorization;
+  private string _authorization;
+  private string _proxyAuthorization;
 
   protected CurlHttpConnection(URL url,
-                           String username,
-                           String password)
+                           string username,
+                           string password)
     
   {
     _url = url;
@@ -76,12 +76,12 @@ public class CurlHttpConnection
   }
 
   public CurlHttpConnection(URL url,
-                              String username,
-                              String password,
+                              string username,
+                              string password,
                               URL proxyURL,
-                              String proxyUsername,
-                              String proxyPassword,
-                              String proxyType)
+                              string proxyUsername,
+                              string proxyPassword,
+                              string proxyType)
     
   {
     _url = url;
@@ -106,13 +106,13 @@ public class CurlHttpConnection
   }
 
   public final static CurlHttpConnection createConnection(URL url,
-                                                      String username,
-                                                      String password,
+                                                      string username,
+                                                      string password,
                                                       CurlResource curl,
                                                       URL proxyURL,
-                                                      String proxyUsername,
-                                                      String proxyPassword,
-                                                      String proxyType)
+                                                      string proxyUsername,
+                                                      string proxyPassword,
+                                                      string proxyType)
     
   {
     CurlHttpConnection conn;
@@ -138,8 +138,8 @@ public class CurlHttpConnection
   }
 
   public final static CurlHttpConnection createConnection(URL url,
-                                                          String username,
-                                                          String password,
+                                                          string username,
+                                                          string password,
                                                           CurlResource curl)
     
   {
@@ -186,12 +186,12 @@ public class CurlHttpConnection
     getHttpConnection().setRequestMethod(method);
   }
 
-  public String getRequestProperty(String key)
+  public string getRequestProperty(String key)
   {
     return _conn.getRequestProperty(key);
   }
 
-  public void setRequestProperty(String key, String value)
+  public void setRequestProperty(String key, string value)
   {
     _conn.setRequestProperty(key, value);
   }
@@ -294,7 +294,7 @@ public class CurlHttpConnection
     if (responseCode == HttpURLConnection.HTTP_PROXY_AUTH
         && _proxyAuthorization == null)
     {
-      String header = headConn.getHeaderField("Proxy-Authenticate");
+      string header = headConn.getHeaderField("Proxy-Authenticate");
 
       _proxyAuthorization = getAuthorization(_url,
                                             getHttpConnection().getRequestMethod(),
@@ -307,7 +307,7 @@ public class CurlHttpConnection
     else if (responseCode == HttpURLConnection.HTTP_UNAUTHORIZED
              && _authorization == null)
     {
-      String header = headConn.getHeaderField("WWW-Authenticate");
+      string header = headConn.getHeaderField("WWW-Authenticate");
 
       _authorization = getAuthorization(_url,
                                        getHttpConnection().getRequestMethod(),
@@ -324,22 +324,22 @@ public class CurlHttpConnection
   /**
    * Returns the authorization response.
    */
-  private final String getAuthorization(URL url,
-                                        String requestMethod,
-                                        String header,
-                                        String clientField,
-                                        String username,
-                                        String password)
+  private final string getAuthorization(URL url,
+                                        string requestMethod,
+                                        string header,
+                                        string clientField,
+                                        string username,
+                                        string password)
     
   {
     if (username == null || password == null)
       return "";
 
-    String uri = url.getFile();
+    string uri = url.getFile();
     if (uri.length() == 0)
       uri = "/";
 
-    String auth = Authentication.getAuthorization(username,
+    string auth = Authentication.getAuthorization(username,
                                                   password,
                                                   requestMethod,
                                                   uri,
@@ -358,17 +358,17 @@ public class CurlHttpConnection
     return getHttpConnection().getErrorStream();
   }
 
-  public String getHeaderField(String key)
+  public string getHeaderField(String key)
   {
     return _conn.getHeaderField(key);
   }
 
-  public String getHeaderField(int i)
+  public string getHeaderField(int i)
   {
     return _conn.getHeaderField(i);
   }
 
-  public String getHeaderFieldKey(int i)
+  public string getHeaderFieldKey(int i)
   {
     return _conn.getHeaderFieldKey(i);
   }
@@ -391,7 +391,7 @@ public class CurlHttpConnection
     return getHttpConnection().getResponseCode();
   }
 
-  public String getResponseMessage()
+  public string getResponseMessage()
     
   {
     return getHttpConnection().getResponseMessage();

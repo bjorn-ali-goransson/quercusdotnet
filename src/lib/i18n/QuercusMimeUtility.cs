@@ -57,7 +57,7 @@ public class QuercusMimeUtility
    */
   public static Value decodeMimeHeaders(Env env,
                                         StringValue encodedHeaders,
-                                        String charset)
+                                        string charset)
     
   {
     ArrayValue headers = new ArrayValueImpl();
@@ -108,10 +108,10 @@ public class QuercusMimeUtility
    */
   public static StringValue decodeMime(Env env,
                               CharSequence word,
-                              String charset)
+                              string charset)
     
   {
-    String decodedStr = MimeUtility.decodeText(word.toString());
+    string decodedStr = MimeUtility.decodeText(word.toString());
 
     StringValue str
       = env.createString(MimeUtility.unfold(decodedStr));
@@ -122,9 +122,9 @@ public class QuercusMimeUtility
   public static Value encodeMime(Env env,
                               StringValue name,
                               StringValue value,
-                              String inCharset,
-                              String outCharset,
-                              String scheme)
+                              string inCharset,
+                              string outCharset,
+                              string scheme)
     
   {
     return encodeMime(env,
@@ -150,10 +150,10 @@ public class QuercusMimeUtility
   public static StringValue encodeMime(Env env,
                                        StringValue name,
                                        StringValue value,
-                                       String inCharset,
-                                       String outCharset,
-                                       String scheme,
-                                       String lineBreakChars,
+                                       string inCharset,
+                                       string outCharset,
+                                       string scheme,
+                                       string lineBreakChars,
                                        int lineLength)
     
   {
@@ -162,14 +162,14 @@ public class QuercusMimeUtility
     CharSequence nameUnicode = decoder.decode(env, name);
 
     decoder.reset();
-    String valueUnicode = decoder.decode(env, value).toString();
+    string valueUnicode = decoder.decode(env, value).toString();
 
     StringValue sb = env.createUnicodeBuilder();
     sb.append(UnicodeUtility.encode(env, nameUnicode, outCharset));
     sb.append(':');
     sb.append(' ');
 
-    String word = encodeMimeWord(valueUnicode.toString(),
+    string word = encodeMimeWord(valueUnicode.toString(),
                                  outCharset,
                                  scheme,
                                  lineBreakChars,
@@ -180,10 +180,10 @@ public class QuercusMimeUtility
     return sb;
   }
 
-  public static String encodeMimeWord(String value,
-                                      String charset,
-                                      String scheme,
-                                      String lineBreakChars,
+  public static string encodeMimeWord(String value,
+                                      string charset,
+                                      string scheme,
+                                      string lineBreakChars,
                                       int lineLength)
     
   {
@@ -196,7 +196,7 @@ public class QuercusMimeUtility
       for (int i = 0; i < lineBreakChars.length(); i++) {
         char ch = lineBreakChars.charAt(i);
 
-        String hex = Integer.toHexString(ch);
+        string hex = Integer.toHexString(ch);
 
         sb.append("0x");
         sb.append(hex);

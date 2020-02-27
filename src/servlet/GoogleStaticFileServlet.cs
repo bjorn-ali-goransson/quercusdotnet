@@ -60,7 +60,7 @@ public class GoogleStaticFileServlet extends GenericServlet {
   private static final Logger log
     = Logger.getLogger(GoogleStaticFileServlet.class.getName());
 
-  private String _gsBucket;
+  private string _gsBucket;
   private Path _pwd;
 
   private ServletContext _context;
@@ -81,16 +81,16 @@ public class GoogleStaticFileServlet extends GenericServlet {
 
     _pwd = new FilePath(_context.getRealPath("/"));
 
-    String mode
+    string mode
       = System.getProperty("com.google.appengine.tools.development.ApplicationPreparationMode");
 
     boolean isGsDisabled = "true".equals(mode);
 
     if (! isGsDisabled) {
-      String iniPath = getInitParameter("ini-file");
+      string iniPath = getInitParameter("ini-file");
 
       if (iniPath != null) {
-        String realPath = _context.getRealPath(iniPath);
+        string realPath = _context.getRealPath(iniPath);
 
         // don't call Quercus.init() as that will load all the modules for calling
         // from PHP code, which we don't use nor want
@@ -116,15 +116,15 @@ public class GoogleStaticFileServlet extends GenericServlet {
       = new QuercusHttpServletRequestImpl((HttpServletRequest) request);
     HttpServletResponse res = (HttpServletResponse) response;
 
-    String uri = QuercusRequestAdapter.getPageURI(req);
+    string uri = QuercusRequestAdapter.getPageURI(req);
 
     CacheEntry entry = _cache.get(uri);
 
     if (entry == null) {
       Path path = getPath(req);
-      String relPath = path.getUserPath();
+      string relPath = path.getUserPath();
 
-      String mimeType = _context.getMimeType(uri);
+      string mimeType = _context.getMimeType(uri);
 
       entry = new CacheEntry(path, relPath, mimeType);
       _cache.put(uri, entry);
@@ -137,8 +137,8 @@ public class GoogleStaticFileServlet extends GenericServlet {
       _cache.put(uri, entry);
     }
 
-    String ifMatch = req.getHeader("If-None-Match");
-    String etag = entry.getEtag();
+    string ifMatch = req.getHeader("If-None-Match");
+    string etag = entry.getEtag();
 
     if (ifMatch != null && ifMatch.equals(etag)) {
       res.addHeader("ETag", etag);
@@ -146,10 +146,10 @@ public class GoogleStaticFileServlet extends GenericServlet {
       return;
     }
 
-    String lastModified = entry.getLastModifiedString();
+    string lastModified = entry.getLastModifiedString();
 
     if (ifMatch == null) {
-      String ifModified = req.getHeader("If-Modified-Since");
+      string ifModified = req.getHeader("If-Modified-Since");
 
       boolean isModified = true;
 
@@ -190,14 +190,14 @@ public class GoogleStaticFileServlet extends GenericServlet {
     res.addHeader("ETag", etag);
     res.addHeader("Last-Modified", lastModified);
 
-    String mime = entry.getMimeType();
+    string mime = entry.getMimeType();
     if (mime != null) {
       res.setContentType(mime);
     }
 
     res.setContentLength((int) entry.getLength());
 
-    String method = req.getMethod();
+    string method = req.getMethod();
     if (method.equalsIgnoreCase("HEAD")) {
       return;
     }
@@ -226,7 +226,7 @@ public class GoogleStaticFileServlet extends GenericServlet {
     Path pwd = _pwd.copy();
 
     StringBuilder sb = new StringBuilder();
-    String servletPath = QuercusRequestAdapter.getPageServletPath(req);
+    string servletPath = QuercusRequestAdapter.getPageServletPath(req);
 
     if (servletPath.startsWith("/")) {
       sb.append(servletPath, 1, servletPath.length());
@@ -235,13 +235,13 @@ public class GoogleStaticFileServlet extends GenericServlet {
       sb.append(servletPath);
     }
 
-    String pathInfo = QuercusRequestAdapter.getPagePathInfo(req);
+    string pathInfo = QuercusRequestAdapter.getPagePathInfo(req);
 
     if (pathInfo != null) {
       sb.append(pathInfo);
     }
 
-    String scriptPath = sb.toString();
+    string scriptPath = sb.toString();
 
     Path path = pwd.lookupChild(scriptPath);
 
@@ -254,12 +254,12 @@ public class GoogleStaticFileServlet extends GenericServlet {
     private boolean _canRead;
     private long _length;
     private long _lastModified = 0xdeadbabe1ee7d00dL;
-    private String _relPath;
-    private String _etag;
-    private String _lastModifiedString;
-    private String _mimeType;
+    private string _relPath;
+    private string _etag;
+    private string _lastModifiedString;
+    private string _mimeType;
 
-    CacheEntry(Path path, String relPath, String mimeType)
+    CacheEntry(Path path, string relPath, string mimeType)
     {
       _path = path;
       _relPath = relPath;
@@ -288,12 +288,12 @@ public class GoogleStaticFileServlet extends GenericServlet {
       return _length;
     }
 
-    String getRelPath()
+    string getRelPath()
     {
       return _relPath;
     }
 
-    String getEtag()
+    string getEtag()
     {
       return _etag;
     }
@@ -303,12 +303,12 @@ public class GoogleStaticFileServlet extends GenericServlet {
       return _lastModified;
     }
 
-    String getLastModifiedString()
+    string getLastModifiedString()
     {
       return _lastModifiedString;
     }
 
-    String getMimeType()
+    string getMimeType()
     {
       return _mimeType;
     }

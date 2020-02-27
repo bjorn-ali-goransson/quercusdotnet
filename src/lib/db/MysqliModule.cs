@@ -143,7 +143,7 @@ public class MysqliModule extends AbstractQuercusModule {
   /**
    * Returns true for the mysql extension.
    */
-  public String []getLoadedExtensions()
+  public string []getLoadedExtensions()
   {
     return new String[] { "mysqli" };
   }
@@ -242,7 +242,7 @@ public class MysqliModule extends AbstractQuercusModule {
                                       @Optional("localhost") StringValue host,
                                       @Optional StringValue userName,
                                       @Optional StringValue password,
-                                      @Optional String dbname,
+                                      @Optional string dbname,
                                       @Optional("3306") int port,
                                       @Optional StringValue socket)
     
@@ -611,7 +611,7 @@ public class MysqliModule extends AbstractQuercusModule {
    */
   public static Value mysqli_fetch_object(Env env,
                                           @NotNull MysqliResult result,
-                                          @Optional String className,
+                                          @Optional string className,
                                           @Optional Value[] args)
   {
     if (result == null) {
@@ -624,7 +624,7 @@ public class MysqliModule extends AbstractQuercusModule {
   /**
    * Returns the MySQL client version.
    */
-  public static String mysqli_get_client_info(Env env)
+  public static string mysqli_get_client_info(Env env)
   {
     return Mysqli.getClientInfoStatic(env);
   }
@@ -786,7 +786,7 @@ public class MysqliModule extends AbstractQuercusModule {
    */
   public static boolean mysqli_stmt_prepare(Env env,
                                             @NotNull MysqliStatement stmt,
-                                            String query)
+                                            string query)
   {
     if (stmt == null)
       return false;
@@ -1096,7 +1096,7 @@ public class MysqliModule extends AbstractQuercusModule {
   /**
    * Select the database for a connection.
    */
-  public static boolean mysqli_select_db(Env env, Mysqli conn, String dbName)
+  public static boolean mysqli_select_db(Env env, Mysqli conn, string dbName)
   {
     if (conn == null) {
       return false;
@@ -1292,9 +1292,9 @@ public class MysqliModule extends AbstractQuercusModule {
    */
   public static boolean mysqli_change_user(Env env,
                                            @NotNull Mysqli mysqli,
-                                           String user,
-                                           String password,
-                                           String db)
+                                           string user,
+                                           string password,
+                                           string db)
   {
     if (mysqli == null) {
       return false;
@@ -1335,7 +1335,7 @@ public class MysqliModule extends AbstractQuercusModule {
   @ReturnNullAsFalse
   public static MysqliStatement mysqli_prepare(Env env,
                                                @NotNull Mysqli conn,
-                                               String query)
+                                               string query)
   {
     if (conn == null) {
       return null;

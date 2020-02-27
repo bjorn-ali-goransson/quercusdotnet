@@ -57,7 +57,7 @@ public class BcmathModule extends AbstractQuercusModule {
 
   private static final IniDefinitions _iniDefinitions = new IniDefinitions();
 
-  public String []getLoadedExtensions()
+  public string []getLoadedExtensions()
   {
     return new String[] {  "bcmath" };
   }
@@ -112,7 +112,7 @@ public class BcmathModule extends AbstractQuercusModule {
    * the result, the default is the value of a previous call to {@link #bcscale}
    * or the value of the ini variable "bcmath.scale".
    */
-  public static String bcadd(Env env,
+  public static string bcadd(Env env,
                              Value value1,
                              Value value2, @Optional("-1") int scale)
   {
@@ -160,7 +160,7 @@ public class BcmathModule extends AbstractQuercusModule {
    * the result, the default is the value of a previous call to {@link #bcscale}
    * or the value of the ini variable "bcmath.scale".
    */
-  public static String bcdiv(Env env, Value value1,
+  public static string bcdiv(Env env, Value value1,
                              Value value2, @Optional("-1") int scale)
   {
     scale = getScale(env, scale);
@@ -194,7 +194,7 @@ public class BcmathModule extends AbstractQuercusModule {
    * A modulus of 0 results in a division by zero warning message and a
    * return value of null.
    */
-  public static String bcmod(Env env, Value value, Value modulus)
+  public static string bcmod(Env env, Value value, Value modulus)
   {
     BigDecimal base = toBigDecimal(value).setScale(0, RoundingMode.DOWN);
     BigDecimal mod = toBigDecimal(modulus).setScale(0, RoundingMode.DOWN);
@@ -222,7 +222,7 @@ public class BcmathModule extends AbstractQuercusModule {
    * the result, the default is the value of a previous call to {@link #bcscale}
    * or the value of the ini variable "bcmath.scale".
    */
-  public static String bcmul(Env env, Value value1,
+  public static string bcmul(Env env, Value value1,
                              Value value2, @Optional("-1") int scale)
   {
     scale = getScale(env, scale);
@@ -255,7 +255,7 @@ public class BcmathModule extends AbstractQuercusModule {
    * the result, the default is the value of a previous call to {@link #bcscale}
    * or the value of the ini variable "bcmath.scale".
    */
-  public static String bcpow(Env env, Value base, Value exp,
+  public static string bcpow(Env env, Value base, Value exp,
                              @Optional("-1") int scale)
   {
     scale = getScale(env, scale);
@@ -321,7 +321,7 @@ public class BcmathModule extends AbstractQuercusModule {
    * of a previous call to {@link #bcscale}
    * or the value of the ini variable "bcmath.scale".
    */
-  public static String bcpowmod(Env env,
+  public static string bcpowmod(Env env,
                                 BigDecimal base,
                                 BigDecimal exp,
                                 BigDecimal modulus,
@@ -374,7 +374,7 @@ public class BcmathModule extends AbstractQuercusModule {
    * the result, the default is the value of a previous call to {@link #bcscale}
    * or the value of the ini variable "bcmath.scale".
    */
-  public static String bcsqrt(Env env, Value operand, @Optional("-1") int scale)
+  public static string bcsqrt(Env env, Value operand, @Optional("-1") int scale)
   {
     scale = getScale(env, scale);
 
@@ -453,7 +453,7 @@ public class BcmathModule extends AbstractQuercusModule {
    * the result, the default is the value of a previous call to {@link #bcscale}
    * or the value of the ini variable "bcmath.scale".
    */
-  public static String bcsub(Env env, Value value1,
+  public static string bcsub(Env env, Value value1,
                              Value value2, @Optional("-1") int scale)
   {
     scale = getScale(env, scale);

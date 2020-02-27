@@ -224,7 +224,7 @@ public class PDFStream {
   public static int FILL = 2;
   public static int BOTH = 3;
 
-  public boolean setcolor(String fstype, String colorspace,
+  public boolean setcolor(String fstype, string colorspace,
                           double c1, double c2, double c3, double c4)
   {
     flushToGraph();
@@ -436,7 +436,7 @@ public class PDFStream {
     _tempStream.destroy();
   }
   
-  public static String pdfEscapeText(String text)
+  public static string pdfEscapeText(String text)
   {
     CharBuffer cb = new CharBuffer();
     

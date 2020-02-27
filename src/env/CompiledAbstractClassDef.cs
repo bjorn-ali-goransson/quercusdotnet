@@ -35,8 +35,8 @@ public class CompiledAbstractClassDef
   extends CompiledClassDef
 {
   public CompiledAbstractClassDef(Location location,
-                                  String name,
-                                  String parent,
+                                  string name,
+                                  string parent,
                                   String[] ifaceList,
                                   String[] traitList)
   {

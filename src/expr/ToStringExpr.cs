@@ -69,7 +69,7 @@ public class ToStringExpr extends AbstractUnaryExpr {
     return _expr.eval(env).toString(env);
   }
 
-  public String toString()
+  public string toString()
   {
     return "((string) " + _expr + ")";
   }

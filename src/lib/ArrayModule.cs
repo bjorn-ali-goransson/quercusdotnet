@@ -148,7 +148,7 @@ public class ArrayModule
   private static final CompareNatural CNA_VALUE_NORMAL_INSENSITIVE
     = new CompareNatural(ArrayValue.GET_VALUE, SORT_NORMAL, CASE_INSENSITIVE);
 
-  public String []getLoadedExtensions()
+  public string []getLoadedExtensions()
   {
     return new String[] { "standard" };
   }
@@ -169,7 +169,7 @@ public class ArrayModule
       Value keyValue = entry.getKey();
 
       if (keyValue instanceof StringValue) {
-        String key = keyValue.toString();
+        string key = keyValue.toString();
 
         if (toCase == CASE_UPPER)
           key = key.toUpperCase(Locale.ENGLISH);
@@ -294,7 +294,7 @@ public class ArrayModule
 
     for (Value value : array.values()) {
       if (! (value.isLongConvertible()) && ! (value instanceof StringValue))
-        env.warning("Can only count STRING and INTEGER values!");
+        env.warning("Can only count string and INTEGER values!");
       else {
         Value count = result.get(value);
 
@@ -2861,7 +2861,7 @@ public class ArrayModule
       return NullValue.NULL;
     }
 
-    String prefix = "";
+    string prefix = "";
 
     if (valuePrefix instanceof StringValue)
       prefix = valuePrefix.toString() + "_";
@@ -3450,8 +3450,8 @@ public class ArrayModule
     public int compare(Map.Entry<Value, Value> aEntry,
                        Map.Entry<Value, Value> bEntry)
     {
-      String aElement = _getter.get(aEntry).toString();
-      String bElement = _getter.get(bEntry).toString();
+      string aElement = _getter.get(aEntry).toString();
+      string bElement = _getter.get(bEntry).toString();
 
       return aElement.compareTo(bElement) * _order;
     }
@@ -3512,8 +3512,8 @@ public class ArrayModule
     public int compare(Map.Entry<Value, Value> aEntry,
                        Map.Entry<Value, Value> bEntry)
     {
-      String aElement = _getter.get(aEntry).toString();
-      String bElement = _getter.get(bEntry).toString();
+      string aElement = _getter.get(aEntry).toString();
+      string bElement = _getter.get(bEntry).toString();
 
       return _collator.compare(aElement, bElement) * _order;
     }
@@ -3568,8 +3568,8 @@ public class ArrayModule
                        Map.Entry<Value, Value> bEntry)
     {
       try {
-        String aElement = _getter.get(aEntry).toString();
-        String bElement = _getter.get(bEntry).toString();
+        string aElement = _getter.get(aEntry).toString();
+        string bElement = _getter.get(bEntry).toString();
 
         if (! _isCaseSensitive) {
           aElement = aElement.toLowerCase(Locale.ENGLISH);
@@ -3580,8 +3580,8 @@ public class ArrayModule
         StringParser bParser = new StringParser(bElement);
 
         while (aParser.hasNext() && bParser.hasNext()) {
-          String aPart = aParser.next();
-          String bPart = bParser.next();
+          string aPart = aParser.next();
+          string bPart = bParser.next();
 
           int comparison;
 
@@ -3743,7 +3743,7 @@ public class ArrayModule
     private int _current;
     private int _length;
 
-    private String _string;
+    private string _string;
 
     private static final int SYMBOL = 1;
     private static final int LETTER = 2;
@@ -3761,7 +3761,7 @@ public class ArrayModule
       return _current < _length;
     }
 
-    public String next()
+    public string next()
     {
       int start;
       int type;

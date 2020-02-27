@@ -127,7 +127,7 @@ abstract public class CompiledFunction_3 extends CompiledFunction {
    */
   abstract public Value call(Env env, Value a1, Value a2, Value a3);
 
-  public String toString()
+  public string toString()
   {
     return "CompiledFunction_3[" + _name + "]";
   }

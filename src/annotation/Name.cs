@@ -37,5 +37,5 @@
  */
 @Retention(RetentionPolicy.RUNTIME)
 public interface Name {
-  String value();
+  string value();
 }

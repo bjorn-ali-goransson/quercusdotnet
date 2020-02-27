@@ -165,7 +165,7 @@ public class CallbackFunction extends Callback {
     return getFunction(env).call(env, args);
   }
 
-  public String getCallbackName()
+  public string getCallbackName()
   {
     return _funName.toString();
   }
@@ -184,7 +184,7 @@ public class CallbackFunction extends Callback {
     return getFunction(env) instanceof JavaInvoker;
   }
 
-  public override String getDeclFileName(Env env)
+  public override string getDeclFileName(Env env)
   {
     return getFunction(env).getDeclFileName(env);
   }
@@ -199,7 +199,7 @@ public class CallbackFunction extends Callback {
     return getFunction(env).getDeclEndLine(env);
   }
 
-  public override String getDeclComment(Env env)
+  public override string getDeclComment(Env env)
   {
     return getFunction(env).getDeclComment(env);
   }
@@ -222,7 +222,7 @@ public class CallbackFunction extends Callback {
     sb.append("'' . \"\\0\" . '" + _funName.substring(1) + "'");
   }
 
-  public String toString()
+  public string toString()
   {
     return getClass().getName() + '[' + _funName + ']';
   }

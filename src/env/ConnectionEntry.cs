@@ -43,8 +43,8 @@ public class ConnectionEntry implements EnvCleanup
   private Env _env;
 
   private DataSource _ds;
-  private String _user;
-  private String _password;
+  private string _user;
+  private string _password;
   private Connection _conn;
   private boolean _isReuse;
 
@@ -53,7 +53,7 @@ public class ConnectionEntry implements EnvCleanup
     _env = env;
   }
 
-  public void init(DataSource ds, String user, String password)
+  public void init(DataSource ds, string user, string password)
   {
     _ds = ds;
     _user = user;
@@ -158,7 +158,7 @@ public class ConnectionEntry implements EnvCleanup
       conn.close();
   }
 
-  public String toString()
+  public string toString()
   {
     return getClass().getSimpleName() + "[ds=" + _ds + ", user=" + _user + "]";
   }

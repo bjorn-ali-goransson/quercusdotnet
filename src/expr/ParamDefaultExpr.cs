@@ -62,7 +62,7 @@ public class ParamDefaultExpr extends Expr {
     return DefaultValue.DEFAULT;
   }
 
-  public String toString()
+  public string toString()
   {
     return "default";
   }

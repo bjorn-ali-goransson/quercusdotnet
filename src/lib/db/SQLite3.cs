@@ -39,7 +39,7 @@
  */
 public class SQLite3 extends JdbcConnectionResource
 {
-  public SQLite3(Env env, String jdbcUrl)
+  public SQLite3(Env env, string jdbcUrl)
   {
     super(env);
 
@@ -49,15 +49,15 @@ public class SQLite3 extends JdbcConnectionResource
 
   @Override
   protected ConnectionEntry connectImpl(Env env,
-                                        String host,
-                                        String userName,
-                                        String password,
-                                        String dbname,
+                                        string host,
+                                        string userName,
+                                        string password,
+                                        string dbname,
                                         int port,
-                                        String socket,
+                                        string socket,
                                         int flags,
-                                        String driver,
-                                        String url,
+                                        string driver,
+                                        string url,
                                         boolean isNewLink,
                                         boolean isEmulatePrepares)
   {
@@ -91,7 +91,7 @@ public class SQLite3 extends JdbcConnectionResource
     }
   }
 
-  protected override String getDriverName()
+  protected override string getDriverName()
   {
     return "sqlite";
   }

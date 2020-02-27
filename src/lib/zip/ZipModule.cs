@@ -55,7 +55,7 @@ public class ZipModule extends AbstractQuercusModule {
     = Logger.getLogger(ZipModule.class.getName());
   private static final L10N L = new L10N(ZipModule.class);
 
-  public String []getLoadedExtensions()
+  public string []getLoadedExtensions()
   {
     return new String[] { "zip" };
   }
@@ -147,7 +147,7 @@ public class ZipModule extends AbstractQuercusModule {
   public boolean zip_entry_open(Env env,
                                 @NotNull ZipDirectory directory,
                                 @NotNull QuercusZipEntry entry,
-                                @Optional String mode)
+                                @Optional string mode)
   {
     if ((directory == null) || (entry == null))
       return false;
@@ -198,7 +198,7 @@ public class ZipModule extends AbstractQuercusModule {
    *
    * @return empty string, stored or deflated
    */
-  public String zip_entry_compressionmethod(@NotNull QuercusZipEntry entry)
+  public string zip_entry_compressionmethod(@NotNull QuercusZipEntry entry)
   {
     if (entry == null)
       return "";

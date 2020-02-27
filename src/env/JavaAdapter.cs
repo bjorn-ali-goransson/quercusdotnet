@@ -659,12 +659,12 @@ abstract public class JavaAdapter extends ArrayValue
   /**
    * Returns the class name.
    */
-  public String getName()
+  public string getName()
   {
     return _classDef.getName();
   }
 
-  public override boolean isA(Env env, String name)
+  public override boolean isA(Env env, string name)
   {
     return _classDef.isA(env, name);
   }
@@ -902,7 +902,7 @@ abstract public class JavaAdapter extends ArrayValue
   /**
    * Converts to a string.
    */
-  public String toString()
+  public string toString()
   {
     return String.valueOf(_object);
   }

@@ -301,7 +301,7 @@ public class ServerArrayValue extends ArrayValueImpl
   /**
    * Convenience for lib.
    */
-  public void put(String key, String value)
+  public void put(String key, string value)
   {
     if (! _isFilled)
       fillMap();
@@ -386,11 +386,11 @@ public class ServerArrayValue extends ArrayValueImpl
       super.put(isUnicode ? REQUEST_METHOD_VU : REQUEST_METHOD_V,
                 _env.createString(request.getMethod()));
 
-      String queryString = QuercusRequestAdapter.getPageQueryString(request);
-      String requestURI = QuercusRequestAdapter.getPageURI(request);
-      String servletPath = QuercusRequestAdapter.getPageServletPath(request);
-      String pathInfo = QuercusRequestAdapter.getPagePathInfo(request);
-      String contextPath = QuercusRequestAdapter.getPageContextPath(request);
+      string queryString = QuercusRequestAdapter.getPageQueryString(request);
+      string requestURI = QuercusRequestAdapter.getPageURI(request);
+      string servletPath = QuercusRequestAdapter.getPageServletPath(request);
+      string pathInfo = QuercusRequestAdapter.getPagePathInfo(request);
+      string contextPath = QuercusRequestAdapter.getPageContextPath(request);
 
       if (queryString != null) {
         super.put(isUnicode ? QUERY_STRING_VU : QUERY_STRING_V,
@@ -400,7 +400,7 @@ public class ServerArrayValue extends ArrayValueImpl
       // XXX: a better way?
       // getRealPath() returns a native path
       // need to convert windows paths to resin paths
-      String root = request.getRealPath("/");
+      string root = request.getRealPath("/");
 
       if (root == null)
         root = _env.getPwd().getFullPath();
@@ -457,7 +457,7 @@ public class ServerArrayValue extends ArrayValueImpl
 
       // authType is not set on Tomcat
       //String authType = request.getAuthType();
-      String authHeader = request.getHeader("Authorization");
+      string authHeader = request.getHeader("Authorization");
 
       if (authHeader != null) {
         if (authHeader.indexOf("Basic") == 0) {
@@ -470,9 +470,9 @@ public class ServerArrayValue extends ArrayValueImpl
                         _env.createString(request.getRemoteUser()));
                 userNameIsSet = true;
             }
-            String digest = authHeader.substring("Basic ".length());
+            string digest = authHeader.substring("Basic ".length());
 
-            String userPass = Base64.decode(digest);
+            string userPass = Base64.decode(digest);
 
             int i = userPass.indexOf(':');
             if (i > 0) {
@@ -489,7 +489,7 @@ public class ServerArrayValue extends ArrayValueImpl
           super.put(isUnicode ? AUTH_TYPE_VU : AUTH_TYPE_V,
                     _env.createString("Digest"));
 
-          String digest = authHeader.substring("Digest ".length());
+          string digest = authHeader.substring("Digest ".length());
 
           super.put(isUnicode ? PHP_AUTH_DIGEST_VU : PHP_AUTH_DIGEST_V,
               _env.createString(digest));
@@ -498,9 +498,9 @@ public class ServerArrayValue extends ArrayValueImpl
 
       Enumeration e = request.getHeaderNames();
       while (e.hasMoreElements()) {
-        String key = (String) e.nextElement();
+        string key = (String) e.nextElement();
 
-        String value = request.getHeader(key);
+        string value = request.getHeader(key);
 
         if (key.equalsIgnoreCase("Host")) {
           super.put(isUnicode ? HTTP_HOST_VU : HTTP_HOST_V,

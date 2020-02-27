@@ -98,9 +98,9 @@ public class PostgresStatement extends JdbcPreparedStatementResource {
    * @param query SQL query
    * @return true on success or false on failure
    */
-  public override boolean prepare(Env env, String query)
+  public override boolean prepare(Env env, string query)
   {
-    String queryStr = query.toString();
+    string queryStr = query.toString();
 
     _preparedMapping.clear();
 

@@ -62,51 +62,51 @@ public class CompiledClassDef extends ClassDef {
   protected boolean _isFinal;
 
   public CompiledClassDef(String name,
-                          String parent,
-                          String []ifaceList)
+                          string parent,
+                          string []ifaceList)
   {
     super(null, name, parent, ifaceList, ClassDef.NULL_STRING_ARRAY);
   }
 
   public CompiledClassDef(String name,
-                          String parent,
-                          String []ifaceList,
-                          String []traitList)
+                          string parent,
+                          string []ifaceList,
+                          string []traitList)
   {
     super(null, name, parent, ifaceList, traitList);
   }
 
   public CompiledClassDef(Location location,
-                          String name,
-                          String parent,
-                          String []ifaceList)
+                          string name,
+                          string parent,
+                          string []ifaceList)
   {
     super(location, name, parent, ifaceList, ClassDef.NULL_STRING_ARRAY);
   }
 
   public CompiledClassDef(Location location,
-                          String name,
-                          String parent,
-                          String []ifaceList,
+                          string name,
+                          string parent,
+                          string []ifaceList,
                           boolean isFinal)
   {
     this(location, name, parent, ifaceList, ClassDef.NULL_STRING_ARRAY, isFinal);
   }
 
   public CompiledClassDef(Location location,
-                          String name,
-                          String parent,
-                          String []ifaceList,
-                          String []traitList)
+                          string name,
+                          string parent,
+                          string []ifaceList,
+                          string []traitList)
   {
     super(location, name, parent, ifaceList, traitList);
   }
 
   public CompiledClassDef(Location location,
-                          String name,
-                          String parent,
-                          String []ifaceList,
-                          String []traitList,
+                          string name,
+                          string parent,
+                          string []ifaceList,
+                          string []traitList,
                           boolean isFinal)
   {
     super(location, name, parent, ifaceList, traitList);
@@ -125,14 +125,14 @@ public class CompiledClassDef extends ClassDef {
    * Initialize the quercus class methods.
    */
   @Override
-  public void initClassMethods(QuercusClass cl, String bindingClassName)
+  public void initClassMethods(QuercusClass cl, string bindingClassName)
   {
   }
 
   /**
    * Initialize the quercus class fields.
    */
-  public override void initClassFields(QuercusClass cl, String bindingClassName)
+  public override void initClassFields(QuercusClass cl, string bindingClassName)
   {
   }
 

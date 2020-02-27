@@ -65,7 +65,7 @@ public class QuercusParser {
   private final static int M_TRAIT = 0x80;
 
   private final static int IDENTIFIER = 256;
-  private final static int STRING = 257;
+  private final static int string = 257;
   private final static int LONG = 258;
   private final static int DOUBLE = 259;
   private final static int LSHIFT = 260;
@@ -201,7 +201,7 @@ public class QuercusParser {
   private ReadStream _is;
   private Reader _reader;
 
-  private String _scriptEncoding = "utf-8";
+  private string _scriptEncoding = "utf-8";
 
   private StringValue _sb;
 
@@ -211,7 +211,7 @@ public class QuercusParser {
 
   private int _peekToken = -1;
   private StringValue _lexeme;
-  private String _heredocEnd = null;
+  private string _heredocEnd = null;
 
   private GlobalScope _globalScope;
 
@@ -233,14 +233,14 @@ public class QuercusParser {
   private ArrayList<String> _loopLabelList = new ArrayList<String>();
   private int _labelsCreated;
 
-  private String _comment;
+  private string _comment;
 
   public QuercusParser(QuercusContext quercus)
   {
     this(quercus, quercus != null ? quercus.getScriptEncoding() : "utf-8");
   }
 
-  public QuercusParser(QuercusContext quercus, String scriptEncoding)
+  public QuercusParser(QuercusContext quercus, string scriptEncoding)
   {
     _quercus = quercus;
 
@@ -326,7 +326,7 @@ public class QuercusParser {
 
   public static QuercusProgram parse(QuercusContext quercus,
                                      Path path,
-                                     String encoding)
+                                     string encoding)
     
   {
     ReadStream is = path.openRead();
@@ -347,8 +347,8 @@ public class QuercusParser {
 
   public static QuercusProgram parse(QuercusContext quercus,
                                      Path path,
-                                     String encoding,
-                                     String fileName,
+                                     string encoding,
+                                     string fileName,
                                      int line)
     
   {
@@ -441,9 +441,9 @@ public class QuercusParser {
   }
 
   public static AbstractFunction parseFunction(QuercusContext quercus,
-                                               String name,
-                                               String args,
-                                               String code)
+                                               string name,
+                                               string args,
+                                               string code)
     
   {
     Path argPath = new StringPath(args);
@@ -468,7 +468,7 @@ public class QuercusParser {
     return _quercus != null && _quercus.getIniBoolean("short_open_tag");
   }
 
-  public static Expr parse(QuercusContext quercus, String str)
+  public static Expr parse(QuercusContext quercus, string str)
     
   {
       Path path = new StringPath(str);
@@ -487,7 +487,7 @@ public class QuercusParser {
     }
   }
 
-  public static Expr parseDefault(ExprFactory factory, String str)
+  public static Expr parseDefault(ExprFactory factory, string str)
   {
     try {
       Path path = new StringPath(str);
@@ -505,7 +505,7 @@ public class QuercusParser {
   /**
    * Returns the current filename.
    */
-  public String getFileName()
+  public string getFileName()
   {
     if (_sourceFile == null)
       return null;
@@ -516,7 +516,7 @@ public class QuercusParser {
   /**
    * Returns the current class name
    */
-  public String getClassName()
+  public string getClassName()
   {
     if (_classDef != null)
       return _classDef.getName();
@@ -1344,7 +1344,7 @@ public class QuercusParser {
     boolean oldTop = _isTop;
     _isTop = false;
 
-    String label = pushSwitchLabel();
+    string label = pushSwitchLabel();
 
     try {
       expect('(');
@@ -1467,7 +1467,7 @@ public class QuercusParser {
     boolean oldTop = _isTop;
     _isTop = false;
 
-    String label = pushWhileLabel();
+    string label = pushWhileLabel();
 
     try {
       Location location = getLocation();
@@ -1512,7 +1512,7 @@ public class QuercusParser {
     boolean oldTop = _isTop;
     _isTop = false;
 
-    String label = pushDoLabel();
+    string label = pushDoLabel();
 
     try {
       Location location = getLocation();
@@ -1545,7 +1545,7 @@ public class QuercusParser {
     boolean oldTop = _isTop;
     _isTop = false;
 
-    String label = pushForLabel();
+    string label = pushForLabel();
 
     try {
       Location location = getLocation();
@@ -1615,7 +1615,7 @@ public class QuercusParser {
     boolean oldTop = _isTop;
     _isTop = false;
 
-    String label = pushForeachLabel();
+    string label = pushForeachLabel();
 
     try {
       Location location = getLocation();
@@ -1762,7 +1762,7 @@ public class QuercusParser {
 
       int token = parseToken();
 
-      String comment = _comment;
+      string comment = _comment;
       _comment = null;
 
       if (token == '&')
@@ -1801,7 +1801,7 @@ public class QuercusParser {
         isConstructor = true;
       }
 
-      String name = nameV.toString();
+      string name = nameV.toString();
 
       _function = getFactory().createFunctionInfo(_quercus, _classDef, name);
       _function.setPageStatic(oldTop);
@@ -1909,7 +1909,7 @@ public class QuercusParser {
 
       int token = parseToken();
 
-      String comment = null;
+      string comment = null;
 
       if (token == '&') {
         _returnsReference = true;
@@ -1918,7 +1918,7 @@ public class QuercusParser {
         _peekToken = token;
       }
 
-      String name = "__quercus_closure_" + _functionsParsed;
+      string name = "__quercus_closure_" + _functionsParsed;
 
       ClassDef classDef = _classDef;
       _function = getFactory().createFunctionInfo(_quercus, classDef, name);
@@ -2009,7 +2009,7 @@ public class QuercusParser {
 
       // php/076b, php/1c02
       // XXX: save arg type for type checking upon function call
-      String expectedClass = null;
+      string expectedClass = null;
       if (token != ')'
           && token != '&'
           && token != '$'
@@ -2193,11 +2193,11 @@ public class QuercusParser {
     StringValue nameV = parseIdentifier();
     nameV = resolveIdentifier(nameV);
 
-    String name = nameV.toString();
+    string name = nameV.toString();
 
-    String comment = _comment;
+    string comment = _comment;
 
-    String parentName = null;
+    string parentName = null;
 
     ArrayList<String> ifaceList = new ArrayList<String>();
 
@@ -2358,7 +2358,7 @@ public class QuercusParser {
     do {
       expect('$');
 
-      String comment = _comment;
+      string comment = _comment;
 
       StringValue name = parseIdentifier();
 
@@ -2500,7 +2500,7 @@ public class QuercusParser {
         }
 
         if (token == INSTEADOF) {
-          String insteadofTraitName = parseNamespaceIdentifier().toString();
+          string insteadofTraitName = parseNamespaceIdentifier().toString();
 
           _classDef.addTraitInsteadOf(funName, traitNameV.toString(), insteadofTraitName);
         }
@@ -3020,7 +3020,7 @@ public class QuercusParser {
       Expr classNameExpr = parseShiftExpr();
 
       if (classNameExpr instanceof ConstExpr) {
-        String className = classNameExpr.evalConstant().toString();
+        string className = classNameExpr.evalConstant().toString();
 
         if (className.equals("self")) {
           className = getSelfClassName();
@@ -3265,7 +3265,7 @@ public class QuercusParser {
         Expr classNameExpr = parseShiftExpr();
 
         if (classNameExpr instanceof ConstExpr) {
-          String className = classNameExpr.evalConstant().toString();
+          string className = classNameExpr.evalConstant().toString();
 
           if (className.equals("self")) {
             className = getSelfClassName();
@@ -3744,7 +3744,7 @@ public class QuercusParser {
         expect(')');
 
         if (expr instanceof ConstExpr) {
-          String type = ((ConstExpr) expr).getVar();
+          string type = ((ConstExpr) expr).getVar();
 
           int ns = type.lastIndexOf('\\');
           if (ns >= 0)
@@ -4083,7 +4083,7 @@ public class QuercusParser {
     return args;
   }
 
-  public String getSelfClassName()
+  public string getSelfClassName()
   {
     if (_classDef == null)
       throw error(L.l("'self' is not valid because there is no active class."));
@@ -4095,7 +4095,7 @@ public class QuercusParser {
     return _classDef;
   }
 
-  public String getParentClassName()
+  public string getParentClassName()
   {
     if (_classDef == null)
       throw error(L.l(
@@ -4110,7 +4110,7 @@ public class QuercusParser {
   private Expr parseNew()
     
   {
-    String name = null;
+    string name = null;
     Expr nameExpr = null;
 
     boolean isNewExpr = _isNewExpr;
@@ -4448,7 +4448,7 @@ public class QuercusParser {
 
       case '"':
       {
-        String heredocEnd = _heredocEnd;
+        string heredocEnd = _heredocEnd;
         _heredocEnd = null;
 
         int result = parseEscapedString('"');
@@ -4938,7 +4938,7 @@ public class QuercusParser {
       return IDENTIFIER;
     }
 
-    String name = _lexeme.toString();
+    string name = _lexeme.toString();
 
     int reserved = _reserved.get(name);
 
@@ -5119,7 +5119,7 @@ public class QuercusParser {
     }
   }
 
-  private boolean parseTextMatch(StringValue sb, String text)
+  private boolean parseTextMatch(StringValue sb, string text)
     
   {
     int len = text.length();
@@ -5252,7 +5252,7 @@ public class QuercusParser {
       throw expect(L.l("nowdoc newline"), ch);
     }
 
-    String nowdocName = _sb.toString();
+    string nowdocName = _sb.toString();
     _sb.setLength(0);
 
     while ((ch = read()) >= 0) {
@@ -6162,7 +6162,7 @@ public class QuercusParser {
     int lines = 5;
     int first = lines / 2;
 
-    String []sourceLines = Env.getSourceLine(_sourceFile,
+    string []sourceLines = Env.getSourceLine(_sourceFile,
                                              lineNumber - first + _sourceOffset,
                                              lines);
 
@@ -6170,7 +6170,7 @@ public class QuercusParser {
         && sourceLines.length > 0) {
       StringBuilder sb = new StringBuilder();
 
-      String shortFile = _parserLocation.getFileName();
+      string shortFile = _parserLocation.getFileName();
       int p = shortFile.lastIndexOf('/');
       if (p > 0)
         shortFile = shortFile.substring(p + 1);
@@ -6200,7 +6200,7 @@ public class QuercusParser {
   /**
    * Returns the token name.
    */
-  private String tokenName(int token)
+  private string tokenName(int token)
   {
     switch (token) {
     case -1:
@@ -6329,39 +6329,39 @@ public class QuercusParser {
     return _parserLocation.getLocation();
   }
 
-  private String pushWhileLabel()
+  private string pushWhileLabel()
   {
     return pushLoopLabel(createWhileLabel());
   }
 
-  private String pushDoLabel()
+  private string pushDoLabel()
   {
     return pushLoopLabel(createDoLabel());
   }
 
-  private String pushForLabel()
+  private string pushForLabel()
   {
     return pushLoopLabel(createForLabel());
   }
 
-  private String pushForeachLabel()
+  private string pushForeachLabel()
   {
     return pushLoopLabel(createForeachLabel());
   }
 
-  private String pushSwitchLabel()
+  private string pushSwitchLabel()
   {
     return pushLoopLabel(createSwitchLabel());
   }
 
-  private String pushLoopLabel(String label)
+  private string pushLoopLabel(String label)
   {
     _loopLabelList.add(label);
 
     return label;
   }
 
-  private String popLoopLabel()
+  private string popLoopLabel()
   {
     int size = _loopLabelList.size();
 
@@ -6371,27 +6371,27 @@ public class QuercusParser {
       return _loopLabelList.remove(size - 1);
   }
 
-  private String createWhileLabel()
+  private string createWhileLabel()
   {
     return "while_" + _labelsCreated++;
   }
 
-  private String createDoLabel()
+  private string createDoLabel()
   {
     return "do_" + _labelsCreated++;
   }
 
-  private String createForLabel()
+  private string createForLabel()
   {
     return "for_" + _labelsCreated++;
   }
 
-  private String createForeachLabel()
+  private string createForeachLabel()
   {
     return "foreach_" + _labelsCreated++;
   }
 
-  private String createSwitchLabel()
+  private string createSwitchLabel()
   {
     return "switch_" + _labelsCreated++;
   }
@@ -6431,11 +6431,11 @@ public class QuercusParser {
 
   private class ParserLocation {
     private int _lineNumber = 1;
-    private String _fileName;
-    private String _userPath;
+    private string _fileName;
+    private string _userPath;
 
-    private String _lastClassName;
-    private String _lastFunctionName;
+    private string _lastClassName;
+    private string _lastFunctionName;
 
     private Location _location;
 
@@ -6456,7 +6456,7 @@ public class QuercusParser {
       _location = null;
     }
 
-    public String getFileName()
+    public string getFileName()
     {
       return _fileName;
     }
@@ -6477,20 +6477,20 @@ public class QuercusParser {
       _userPath = path.getUserPath();
     }
 
-    public String getUserPath()
+    public string getUserPath()
     {
       return _userPath;
     }
 
     public Location getLocation()
     {
-      String currentFunctionName = null;
+      string currentFunctionName = null;
 
       if (_function != null && ! _function.isPageMain()) {
         currentFunctionName = _function.getName();
       }
 
-      String currentClassName = _classDef == null ? null : _classDef.getName();
+      string currentClassName = _classDef == null ? null : _classDef.getName();
 
       if (_location != null) {
         if (!equals(currentFunctionName, _lastFunctionName))
@@ -6510,13 +6510,13 @@ public class QuercusParser {
       return _location;
     }
 
-    private boolean equals(String s1, String s2)
+    private boolean equals(String s1, string s2)
     {
       return (s1 == null || s2 == null) ?  s1 == s2 : s1.equals(s2);
     }
 
     @Override
-    public String toString()
+    public string toString()
     {
       return _fileName + ":" + _lineNumber + ": ";
     }

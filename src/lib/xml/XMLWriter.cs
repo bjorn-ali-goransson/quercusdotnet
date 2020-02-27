@@ -760,7 +760,7 @@ public class XMLWriter {
   }
 
   @Override
-  public String toString()
+  public string toString()
   {
     return getClass().getSimpleName() + "[]";
   }

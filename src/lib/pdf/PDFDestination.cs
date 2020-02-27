@@ -38,14 +38,14 @@ public class PDFDestination
 {
   private int _id;
   private int _pageId;
-  private String _title;
+  private string _title;
   private double _pos;
   private int _parentId;
   private List<PDFDestination> _children = 
     new ArrayList<PDFDestination>();
 
   PDFDestination(int id, 
-                 String title, 
+                 string title, 
                  int pageId,
                  double pos)
   {
@@ -60,7 +60,7 @@ public class PDFDestination
     return _id;
   }
 
-  public String getTitle()
+  public string getTitle()
   {
     return _title;
   }

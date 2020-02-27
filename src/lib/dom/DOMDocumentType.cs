@@ -44,12 +44,12 @@ public class DOMDocumentType
     return wrap(_delegate.getEntities());
   }
 
-  public String getInternalSubset()
+  public string getInternalSubset()
   {
     return _delegate.getInternalSubset();
   }
 
-  public String getName()
+  public string getName()
   {
     return _delegate.getName();
   }
@@ -59,12 +59,12 @@ public class DOMDocumentType
     return wrap(_delegate.getNotations());
   }
 
-  public String getPublicId()
+  public string getPublicId()
   {
     return _delegate.getPublicId();
   }
 
-  public String getSystemId()
+  public string getSystemId()
   {
     return _delegate.getSystemId();
   }

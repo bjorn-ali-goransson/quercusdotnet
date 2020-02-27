@@ -37,7 +37,7 @@
 public class DOMText
   extends DOMCharacterData<Text>
 {
-  public static DOMText __construct(Env env, @Optional String value)
+  public static DOMText __construct(Env env, @Optional string value)
   {
     DOMText text = getImpl(env).createText();
 
@@ -52,7 +52,7 @@ public class DOMText
     super(impl, delegate);
   }
 
-  public String getWholeText()
+  public string getWholeText()
   {
     return _delegate.getWholeText();
   }

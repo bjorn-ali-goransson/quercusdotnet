@@ -59,7 +59,7 @@ public class PDFImage extends PDFObject {
   
   private int _id;
 
-  private String _type;
+  private string _type;
   private int _width;
   private int _height;
   private int _bits;
@@ -301,12 +301,12 @@ public class PDFImage extends PDFObject {
     return false;
   }
 
-  String getResourceName()
+  string getResourceName()
   {
     return "/XObject";
   }
   
-  String getResource()
+  string getResource()
   {
     return ("<< /I" + _id + " " + _id + " 0 R >>");
   }

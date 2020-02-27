@@ -302,7 +302,7 @@ public class MysqliStatement extends JdbcPreparedStatementResource {
    * @param query SQL query
    * @return true on success or false on failure
    */
-  public override boolean prepare(Env env, String query)
+  public override boolean prepare(Env env, string query)
   {
     return super.prepare(env, query);
   }
@@ -385,7 +385,7 @@ public class MysqliStatement extends JdbcPreparedStatementResource {
    */
   public boolean send_long_data(Env env,
                                 int paramNumber,
-                                String data)
+                                string data)
   {
     throw new UnimplementedException("mysqli_stmt_send_long_data");
   }

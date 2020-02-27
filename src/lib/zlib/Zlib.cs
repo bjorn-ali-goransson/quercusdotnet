@@ -73,9 +73,9 @@ public class Zlib {
    * @param mode (ie: "w9" or "r7f")
    * @param useIncludePath is always on
    */
-  public Zlib(Env env, String filename, String mode, boolean useIncludePath)
+  public Zlib(Env env, string filename, string mode, boolean useIncludePath)
   {
-    String filemode = getFileMode(mode);
+    string filemode = getFileMode(mode);
     int compressionLevel = getCompressionLevel(mode);
     int compressionStrategy = getCompressionStrategy(mode);
 
@@ -278,7 +278,7 @@ public class Zlib {
     ArrayValue array = new ArrayValueImpl();
 
     try {
-      //read in String BuilderValue's initial capacity
+      //read in string BuilderValue's initial capacity
       while ((line = gzgets(Integer.MAX_VALUE)) != BooleanValue.FALSE) {
         array.put(line);
       }
@@ -420,10 +420,10 @@ public class Zlib {
    *  both reading and writing at the same time)
    *
    */
-  private String getFileMode(String input)
+  private string getFileMode(String input)
   {
-    String modifier = "";
-    String filemode = input.substring(0, 1);
+    string modifier = "";
+    string filemode = input.substring(0, 1);
 
     for (int i = 1; i < input.length(); i++)
     {
@@ -483,7 +483,7 @@ public class Zlib {
     return Deflater.DEFAULT_STRATEGY;
   }
 
-  public String toString()
+  public string toString()
   {
     return "Zlib[]";
   }

@@ -55,7 +55,7 @@ public abstract class SimpleXMLNode
    * public string getName()
    */
   @Name("getName")
-  public String simplexml_getName()
+  public string simplexml_getName()
   {
     return _view.getNodeName();
   }
@@ -65,7 +65,7 @@ public abstract class SimpleXMLNode
    */
   public StringValue __toString(Env env)
   {
-    String str = _view.toString(env);
+    string str = _view.toString(env);
     
     StringValue sb = env.createStringBuilder();
         
@@ -73,7 +73,7 @@ public abstract class SimpleXMLNode
       sb.append(str);
     }
     else {
-      String encoding = _view.getEncoding();
+      string encoding = _view.getEncoding();
       byte[] bytes;
       
       try {
@@ -152,12 +152,12 @@ public abstract class SimpleXMLNode
   public SimpleXMLElement addChild(Env env,
                                    StringValue nameV,
                                    @Optional StringValue valueV,
-                                   @Optional String namespace)
+                                   @Optional string namespace)
   {
-    String name;
-    String value;
+    string name;
+    string value;
     
-    String encoding = _view.getEncoding();
+    string encoding = _view.getEncoding();
     
     try {
       name = nameV.toString(encoding);
@@ -182,12 +182,12 @@ public abstract class SimpleXMLNode
   public void addAttribute(Env env,
                            StringValue nameV,
                            @Optional StringValue valueV,
-                           @Optional String namespace)
+                           @Optional string namespace)
   {
-    String name;
-    String value;
+    string name;
+    string value;
     
-    String encoding = _view.getEncoding();
+    string encoding = _view.getEncoding();
     
     try {
       name = nameV.toString(encoding);
@@ -223,7 +223,7 @@ public abstract class SimpleXMLNode
       return BooleanValue.FALSE;
     }
 
-    String encoding = _view.getEncoding();
+    string encoding = _view.getEncoding();
     
     if (filename.isDefault()) {
       StringValue value = env.createStringBuilder();
@@ -283,7 +283,7 @@ public abstract class SimpleXMLNode
                           @Optional Value namespaceV,
                           @Optional boolean isPrefix)
   {
-    String namespace = null;
+    string namespace = null;
     if (! namespaceV.isNull()) {
       namespace = namespaceV.toString();
 
@@ -306,8 +306,8 @@ public abstract class SimpleXMLNode
                         @Optional Value namespaceV,
                         @Optional boolean isPrefix)
   {
-    String namespace = null;
-    String prefix = null;
+    string namespace = null;
+    string prefix = null;
 
     if (! namespaceV.isNull()) {
       if (isPrefix) {
@@ -376,7 +376,7 @@ public abstract class SimpleXMLNode
   /**
    *  public bool SimpleXMLElement::registerXPathNamespace ( string $prefix , string $ns )
    */
-  public boolean registerXPathNamespace(Env env, String prefix, String ns)
+  public boolean registerXPathNamespace(Env env, string prefix, string ns)
   {
     if (_xpathNamespaceContext == null) {
       _xpathNamespaceContext = new SimpleNamespaceContext();
@@ -390,7 +390,7 @@ public abstract class SimpleXMLNode
   /**
    *  public array SimpleXMLElement::xpath( string $path )
    */
-  public Value xpath(Env env, String expression)
+  public Value xpath(Env env, string expression)
   {
     if (_xpathNamespaceContext == null) {
       _xpathNamespaceContext = new SimpleNamespaceContext();

@@ -45,7 +45,7 @@ public abstract class IteratorIndex
     return new StringIteratorIndex(index);
   }
 
-  public abstract Value toValue(Env env, String encoding);
+  public abstract Value toValue(Env env, string encoding);
 
   public static class IntIteratorIndex extends IteratorIndex {
     private int _index;
@@ -56,21 +56,21 @@ public abstract class IteratorIndex
     }
 
     @Override
-    public Value toValue(Env env, String encoding)
+    public Value toValue(Env env, string encoding)
     {
       return LongValue.create(_index);
     }
   }
 
   public static class StringIteratorIndex extends IteratorIndex {
-    private String _index;
+    private string _index;
 
     public StringIteratorIndex(String index)
     {
       _index = index;
     }
 
-    public override Value toValue(Env env, String encoding)
+    public override Value toValue(Env env, string encoding)
     {
       return env.createString(_index);
     }

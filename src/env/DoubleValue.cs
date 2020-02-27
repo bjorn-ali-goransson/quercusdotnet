@@ -71,7 +71,7 @@ public class DoubleValue extends NumberValue
   /**
    * Returns the type.
    */
-  public String getType()
+  public string getType()
   {
     // php/0142
 
@@ -384,7 +384,7 @@ public class DoubleValue extends NumberValue
   /**
    * Converts to a string.
    */
-  public override String toString()
+  public override string toString()
   {
     // XXX: pass in Env
     Env env = Env.getInstance();
@@ -404,7 +404,7 @@ public class DoubleValue extends NumberValue
    */
   public StringValue toString(Env env)
   {
-    String str = toString(env.getLocaleInfo().getNumeric());
+    string str = toString(env.getLocaleInfo().getNumeric());
 
     return env.createStringBuilder().append(str);
   }
@@ -412,7 +412,7 @@ public class DoubleValue extends NumberValue
   /**
    * Converts to a string.
    */
-  public String toString(QuercusLocale quercusLocale)
+  public string toString(QuercusLocale quercusLocale)
   {
     long longValue = (long) _value;
 
@@ -436,7 +436,7 @@ public class DoubleValue extends NumberValue
       else if (digits < 0)
         digits = 0;
 
-      String v = String.format(locale, "%." + digits + "f", _value);
+      string v = String.format(locale, "%." + digits + "f", _value);
 
       int len = v.length();
       int nonzero = -1;

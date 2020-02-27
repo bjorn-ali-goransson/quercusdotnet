@@ -69,7 +69,7 @@ public class HashModule extends AbstractQuercusModule {
   {
   }
 
-  public String []getLoadedExtensions()
+  public string []getLoadedExtensions()
   {
     return new String[] { "hash" };
   }
@@ -78,7 +78,7 @@ public class HashModule extends AbstractQuercusModule {
    * Hashes a string
    */
   public Value hash(Env env,
-                    String algorithm,
+                    string algorithm,
                     StringValue string,
                     @Optional boolean isBinary)
   {
@@ -146,7 +146,7 @@ public class HashModule extends AbstractQuercusModule {
    * Hashes a file
    */
   public Value hash_file(Env env,
-                         String algorithm,
+                         string algorithm,
                          Path path,
                          @Optional boolean isBinary)
   {
@@ -202,7 +202,7 @@ public class HashModule extends AbstractQuercusModule {
    * Hashes a string with the algorithm.
    */
   public Value hash_hmac(Env env,
-                         String algorithm,
+                         string algorithm,
                          StringValue data,
                          StringValue key,
                          @Optional boolean isBinary)
@@ -218,7 +218,7 @@ public class HashModule extends AbstractQuercusModule {
    * Hashes a file with the algorithm.
    */
   public Value hash_hmac_file(Env env,
-                              String algorithm,
+                              string algorithm,
                               Path path,
                               StringValue key,
                               @Optional boolean isBinary)
@@ -234,7 +234,7 @@ public class HashModule extends AbstractQuercusModule {
    * Initialize a hash context.
    */
   public HashContext hash_init(Env env,
-                               String algorithm,
+                               string algorithm,
                                @Optional int options,
                                @Optional StringValue keyString)
   {
@@ -405,9 +405,9 @@ public class HashModule extends AbstractQuercusModule {
     }
   }
 
-  private static String getAlgorithm(String algorithm)
+  private static string getAlgorithm(String algorithm)
   {
-    String name = _algorithmMap.get(algorithm);
+    string name = _algorithmMap.get(algorithm);
 
     if (name != null)
       return name;
@@ -415,9 +415,9 @@ public class HashModule extends AbstractQuercusModule {
       return algorithm;
   }
 
-  private static String getHmacAlgorithm(String algorithm)
+  private static string getHmacAlgorithm(String algorithm)
   {
-    String name = _hmacAlgorithmMap.get(algorithm);
+    string name = _hmacAlgorithmMap.get(algorithm);
 
     if (name != null)
       return name;
@@ -487,7 +487,7 @@ public class HashModule extends AbstractQuercusModule {
       }
     }
 
-    public String toString()
+    public string toString()
     {
       return (getClass().getSimpleName() + "[" + _digest + "]");
     }
@@ -556,7 +556,7 @@ public class HashModule extends AbstractQuercusModule {
       }
     }
 
-    public String toString()
+    public string toString()
     {
       return (getClass().getSimpleName() + "[" + _digest + "]");
     }

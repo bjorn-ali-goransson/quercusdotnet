@@ -50,7 +50,7 @@ public class ObjectMethod extends Function {
   public ObjectMethod(ExprFactory exprFactory,
                       Location location,
                       InterpretedClassDef quercusClass,
-                      String name,
+                      string name,
                       FunctionInfo info,
                       Arg []argList,
                       Statement []statementList)
@@ -60,7 +60,7 @@ public class ObjectMethod extends Function {
   }
 
   @Override
-  public String getDeclaringClassName()
+  public string getDeclaringClassName()
   {
     return _quercusClass.getName();
   }

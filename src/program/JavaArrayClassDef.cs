@@ -63,16 +63,16 @@
  */
 public class JavaArrayClassDef extends JavaClassDef {
   public JavaArrayClassDef(ModuleContext moduleContext,
-                           String name,
+                           string name,
                            Class type)
   {
     super(moduleContext, name, type);
   }
   
   public JavaArrayClassDef(ModuleContext moduleContext,
-                           String name,
+                           string name,
                            Class type,
-                           String extension)
+                           string extension)
   {
     super(moduleContext, name, type, extension);
   }

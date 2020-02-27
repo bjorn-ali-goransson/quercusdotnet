@@ -38,16 +38,16 @@
  * Represents a PHP instanceof expression.
  */
 public class BinaryInstanceOfExpr extends AbstractUnaryExpr {
-  protected final String _right;
+  protected final string _right;
 
-  public BinaryInstanceOfExpr(Location location, Expr left, String right)
+  public BinaryInstanceOfExpr(Location location, Expr left, string right)
   {
     super(location, left);
 
     _right = right;
   }
 
-  public BinaryInstanceOfExpr(Expr left, String right)
+  public BinaryInstanceOfExpr(Expr left, string right)
   {
     super(left);
 
@@ -82,7 +82,7 @@ public class BinaryInstanceOfExpr extends AbstractUnaryExpr {
     return obj.isA(env, _right);
   }
 
-  public String toString()
+  public string toString()
   {
     return "(" + _expr + " instanceof " + _right + ")";
   }

@@ -50,22 +50,22 @@ public class QuercusHttpServletResponseImpl implements QuercusHttpServletRespons
     _response.setContentType(type);
   }
 
-  public override void addHeader(String name, String value)
+  public override void addHeader(String name, string value)
   {
     _response.addHeader(name, value);
   }
 
-  public override void setHeader(String name, String value)
+  public override void setHeader(String name, string value)
   {
     _response.setHeader(name, value);
   }
 
-  public override void setStatus(int code, String status)
+  public override void setStatus(int code, string status)
   {
     _response.setStatus(code, status);
   }
 
-  public override String getCharacterEncoding()
+  public override string getCharacterEncoding()
   {
     return _response.getCharacterEncoding();
   }

@@ -46,8 +46,8 @@ public class TraitInsteadofMap
     = new HashMap<StringValue,TraitInsteadof>();
 
   public void put(StringValue funName,
-                  String traitName,
-                  String insteadofTraitName)
+                  string traitName,
+                  string insteadofTraitName)
   {
     TraitInsteadof insteadof
       = new TraitInsteadof(traitName, insteadofTraitName);
@@ -56,8 +56,8 @@ public class TraitInsteadofMap
   }
 
   public int get(StringValue funName,
-                 String newTraitName,
-                 String existingTraitName)
+                 string newTraitName,
+                 string existingTraitName)
   {
     TraitInsteadof insteadof
       = _insteadofMap.get(funName.toLowerCase(Locale.ENGLISH));
@@ -76,26 +76,26 @@ public class TraitInsteadofMap
   }
 
   static class TraitInsteadof {
-    private final String _traitName;
-    private final String _insteadofTraitName;
+    private final string _traitName;
+    private final string _insteadofTraitName;
 
-    public TraitInsteadof(String traitName, String insteadofTraitName)
+    public TraitInsteadof(String traitName, string insteadofTraitName)
     {
       _traitName = traitName;
       _insteadofTraitName = insteadofTraitName;
     }
 
-    public String getTraitName()
+    public string getTraitName()
     {
       return _traitName;
     }
 
-    public String getInsteadofTraitName()
+    public string getInsteadofTraitName()
     {
       return _insteadofTraitName;
     }
 
-    public int isInsteadOf(String newTraitName, String existingTraitName)
+    public int isInsteadOf(String newTraitName, string existingTraitName)
     {
       if (_traitName.equalsIgnoreCase(newTraitName)
           && _insteadofTraitName.equalsIgnoreCase(existingTraitName)) {

@@ -49,7 +49,7 @@ abstract public class UnicodeValue extends StringValue {
   }
   
   @Override
-  public String toDebugString()
+  public string toDebugString()
   {
     StringBuilder sb = new StringBuilder();
 
@@ -115,7 +115,7 @@ abstract public class UnicodeValue extends StringValue {
    * @param env
    * @param charset
    */
-  public override StringValue toUnicodeValue(Env env, String charset)
+  public override StringValue toUnicodeValue(Env env, string charset)
   {
     return this;
   }
@@ -152,7 +152,7 @@ abstract public class UnicodeValue extends StringValue {
   {    
     try {
       //XXX: refactor so that env is passed in
-      String charset = Env.getInstance().getRuntimeEncoding();
+      string charset = Env.getInstance().getRuntimeEncoding();
       
       return new ByteArrayInputStream(toString().getBytes(charset));
     }
@@ -166,7 +166,7 @@ abstract public class UnicodeValue extends StringValue {
     return toSimpleReader();
   }
   
-  public override String toString(String charset)
+  public override string toString(String charset)
   {
     return toString();
   }

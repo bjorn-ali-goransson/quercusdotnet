@@ -38,7 +38,7 @@ public interface Callable {
   /**
    * Returns the callable name, needed as special case for ob_*
    */
-  public String getCallbackName();
+  public string getCallbackName();
 
   /**
    * Checks for a valid callback.
@@ -48,7 +48,7 @@ public interface Callable {
   /**
    * Returns the name of the file where this is defined in.
    */
-  public String getDeclFileName(Env env);
+  public string getDeclFileName(Env env);
 
   /**
    * Returns the start line in the file where this is defined in.
@@ -63,7 +63,7 @@ public interface Callable {
   /**
    * Returns the comment in the file where this is defined in.
    */
-  public String getDeclComment(Env env);
+  public string getDeclComment(Env env);
 
   /**
    * Returns true if this returns a reference.

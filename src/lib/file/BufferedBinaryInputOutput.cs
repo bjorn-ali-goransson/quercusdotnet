@@ -225,7 +225,7 @@ abstract public class BufferedBinaryInputOutput
   /**
    * Converts to a string.
    */
-  public String toString()
+  public string toString()
   {
     if (_is != null)
       return "BufferedBinaryInputOutput[" + _is.getPath() + "]";

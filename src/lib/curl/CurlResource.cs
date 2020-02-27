@@ -52,20 +52,20 @@ public class CurlResource extends ResourceValue
     = Logger.getLogger(CurlResource.class.getName());
   private static final L10N L = new L10N(CurlResource.class);
 
-  private String _requestMethod = "GET";
+  private string _requestMethod = "GET";
   private int _responseCode;
 
-  private String _URL;
+  private string _URL;
   private int _port = -1;
 
-  private String _username;
-  private String _password;
+  private string _username;
+  private string _password;
 
   private boolean _isProxying = false;
-  private String _proxyUsername;
-  private String _proxyPassword;
-  private String _proxyURL;
-  private String _proxyType = "HTTP";
+  private string _proxyUsername;
+  private string _proxyPassword;
+  private string _proxyURL;
+  private string _proxyType = "HTTP";
   private int _proxyPort = -1;
 
   private boolean _isFollowingRedirects = true;
@@ -78,10 +78,10 @@ public class CurlResource extends ResourceValue
   private boolean _isVerifySSLHostname = true;
 
   private boolean _ifModifiedSince = true;
-  private String _modifiedTime;
+  private string _modifiedTime;
 
   private int _errorCode = CurlModule.CURLE_OK;
-  private String _error = "";
+  private string _error = "";
   private boolean _failOnError = false;
   private boolean _isVerbose = false;
 
@@ -97,11 +97,11 @@ public class CurlResource extends ResourceValue
 
   private StringValue _returnTransfer;
 
-  private String _contentType;
+  private string _contentType;
   private int _contentLength;
 
-  private String _cookie;
-  private String _cookieFilename;
+  private string _cookie;
+  private string _cookieFilename;
 
   private BinaryOutput _outputFile;
   private BinaryOutput _outputHeaderFile;
@@ -168,7 +168,7 @@ public class CurlResource extends ResourceValue
   /**
    * Returns the "Content-Type" header from the last request.
    */
-  public String getContentType()
+  public string getContentType()
   {
     return _contentType;
   }
@@ -200,7 +200,7 @@ public class CurlResource extends ResourceValue
   /**
    * Returns the error string from the last request.
    */
-  public String getError()
+  public string getError()
   {
     return _error;
   }
@@ -415,7 +415,7 @@ public class CurlResource extends ResourceValue
   /**
    * Returns the password to use for authentication.
    */
-  public String getPassword()
+  public string getPassword()
   {
     return _password;
   }
@@ -471,7 +471,7 @@ public class CurlResource extends ResourceValue
   /**
    * Returns the password to use for proxy authentication.
    */
-  public String getProxyPassword()
+  public string getProxyPassword()
   {
     return _proxyPassword;
   }
@@ -503,7 +503,7 @@ public class CurlResource extends ResourceValue
   /**
    * Returns of type of the proxy (Http or SOCKS).
    */
-  public String getProxyType()
+  public string getProxyType()
   {
     return _proxyType;
   }
@@ -519,7 +519,7 @@ public class CurlResource extends ResourceValue
   /**
    * Returns the URL of the proxy.
    */
-  public String getProxyURL()
+  public string getProxyURL()
   {
     return _proxyURL;
   }
@@ -535,7 +535,7 @@ public class CurlResource extends ResourceValue
   /**
    * Returns the username to use for proxy authentication.
    */
-  public String getProxyUsername()
+  public string getProxyUsername()
   {
     return _proxyUsername;
   }
@@ -583,7 +583,7 @@ public class CurlResource extends ResourceValue
   /**
    * Returns the current request method.
    */
-  public String getRequestMethod()
+  public string getRequestMethod()
   {
     return _requestMethod;
   }
@@ -626,7 +626,7 @@ public class CurlResource extends ResourceValue
   /**
    * Sets a request property to use for this request.
    */
-  public void setRequestProperty(String key, String value)
+  public void setRequestProperty(String key, string value)
   {
     // php/5034
     // php/5035
@@ -687,7 +687,7 @@ public class CurlResource extends ResourceValue
   /**
    * Gets the URL to use for this request.
    */
-  public String getURL()
+  public string getURL()
   {
     return _URL;
   }
@@ -703,7 +703,7 @@ public class CurlResource extends ResourceValue
   /**
    * Gets the username to use for authentication.
    */
-  public String getUsername()
+  public string getUsername()
   {
     return _username;
   }
@@ -954,7 +954,7 @@ public class CurlResource extends ResourceValue
     return curl;
   }
 
-  public String toString()
+  public string toString()
   {
     return "CurlResource[" + _requestMethod + " " + _URL + "]";
   }

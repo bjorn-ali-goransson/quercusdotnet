@@ -35,7 +35,7 @@
 public class PDFProcSet {
 
   private int _id;
-  private String _set = "";
+  private string _set = "";
 
   PDFProcSet()
   {
@@ -62,12 +62,12 @@ public class PDFProcSet {
       _set = proc;
   }
 
-  String getResourceName()
+  string getResourceName()
   {
     return "/ProcSet";
   }
   
-  String getResource()
+  string getResource()
   {
     return ("[" + _set + "]");
   }
@@ -89,7 +89,7 @@ public class PDFProcSet {
     return _set.equals(set._set);
   }
 
-  public String toString()
+  public string toString()
   {
     return "PDFProcSet[" + _set + "]";
   }

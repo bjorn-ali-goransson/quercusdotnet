@@ -50,8 +50,8 @@
 abstract public class ObjectValue extends Callback {
   transient protected QuercusClass _quercusClass;
 
-  protected String _className;
-  protected String _incompleteObjectName;
+  protected string _className;
+  protected string _incompleteObjectName;
 
   private final int _objectId;
 
@@ -98,7 +98,7 @@ abstract public class ObjectValue extends Callback {
   /**
    * Returns the name of the uninitialized object.
    */
-  public String getIncompleteObjectName()
+  public string getIncompleteObjectName()
   {
     return _incompleteObjectName;
   }
@@ -133,7 +133,7 @@ abstract public class ObjectValue extends Callback {
   /**
    * Returns the value's class name.
    */
-  public String getClassName()
+  public string getClassName()
   {
     return _className;
   }
@@ -152,7 +152,7 @@ abstract public class ObjectValue extends Callback {
   /**
    * Returns the class name.
    */
-  public String getName()
+  public string getName()
   {
     return _className;
   }
@@ -160,7 +160,7 @@ abstract public class ObjectValue extends Callback {
   /**
    * Returns the parent class
    */
-  public String getParentClassName()
+  public string getParentClassName()
   {
     return _quercusClass.getParentName();
   }
@@ -176,7 +176,7 @@ abstract public class ObjectValue extends Callback {
   /**
    * Returns the type.
    */
-  public override String getType()
+  public override string getType()
   {
     return "object";
   }
@@ -242,12 +242,12 @@ abstract public class ObjectValue extends Callback {
     return _quercusClass.getInvoke() != null;
   }
 
-  public override String getCallbackName()
+  public override string getCallbackName()
   {
     throw new UnsupportedOperationException();
   }
 
-  public override String getDeclFileName(Env env)
+  public override string getDeclFileName(Env env)
   {
     return null;
   }
@@ -262,7 +262,7 @@ abstract public class ObjectValue extends Callback {
     return -1;
   }
 
-  public override String getDeclComment(Env env)
+  public override string getDeclComment(Env env)
   {
     return null;
   }
@@ -299,7 +299,7 @@ abstract public class ObjectValue extends Callback {
   /**
    * Returns true for an implementation of a class
    */
-  public override boolean isA(Env env, String name)
+  public override boolean isA(Env env, string name)
   {
     return _quercusClass.isA(env, name);
   }
@@ -570,7 +570,7 @@ abstract public class ObjectValue extends Callback {
    * Adds a new value.
    * @Deprecated
    */
-  public Value putField(String key, String value)
+  public Value putField(String key, string value)
   {
     Env env = Env.getInstance();
 
@@ -580,7 +580,7 @@ abstract public class ObjectValue extends Callback {
   /**
    * Adds a new value.
    */
-  public Value putField(Env env, String key, String value)
+  public Value putField(Env env, string key, string value)
   {
     return putThisField(env, env.createString(key), env.createString(value));
   }
@@ -599,7 +599,7 @@ abstract public class ObjectValue extends Callback {
   /**
    * Adds a new value.
    */
-  public Value putField(Env env, String key, long value)
+  public Value putField(Env env, string key, long value)
   {
     return putThisField(env, env.createString(key), LongValue.create(value));
   }
@@ -607,7 +607,7 @@ abstract public class ObjectValue extends Callback {
   /**
    * Adds a new value.
    */
-  public Value putField(Env env, String key, Value value)
+  public Value putField(Env env, string key, Value value)
   {
     return putThisField(env, env.createString(key), value);
   }

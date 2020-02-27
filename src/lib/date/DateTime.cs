@@ -45,17 +45,17 @@ public class DateTime implements DateTimeInterface, Cloneable
 {
   private static final L10N L = new L10N(DateTime.class);
   
-  public static final String ATOM = "Y-m-d\\TH:i:sP";
-  public static final String COOKIE = "l, d-M-y H:i:s T";
-  public static final String ISO8601 = "Y-m-d\\TH:i:sO";
-  public static final String RFC822 = "D, d M y H:i:s O";
-  public static final String RFC850 = "l, d-M-y H:i:s T";
-  public static final String RFC1036 = "D, d M y H:i:s O";
-  public static final String RFC1123 = "D, d M Y H:i:s O";
-  public static final String RFC2822 = "D, d M Y H:i:s O";
-  public static final String RFC3339 = "Y-m-d\\TH:i:sP";
-  public static final String RSS = "D, d M Y H:i:s O";
-  public static final String W3C = "Y-m-d\\TH:i:sP";
+  public static final string ATOM = "Y-m-d\\TH:i:sP";
+  public static final string COOKIE = "l, d-M-y H:i:s T";
+  public static final string ISO8601 = "Y-m-d\\TH:i:sO";
+  public static final string RFC822 = "D, d M y H:i:s O";
+  public static final string RFC850 = "l, d-M-y H:i:s T";
+  public static final string RFC1036 = "D, d M y H:i:s O";
+  public static final string RFC1123 = "D, d M Y H:i:s O";
+  public static final string RFC2822 = "D, d M Y H:i:s O";
+  public static final string RFC3339 = "Y-m-d\\TH:i:sP";
+  public static final string RSS = "D, d M Y H:i:s O";
+  public static final string W3C = "Y-m-d\\TH:i:sP";
 
   private QDate _qDate;
   private DateTimeZone _dateTimeZone;
@@ -121,8 +121,8 @@ public class DateTime implements DateTimeInterface, Cloneable
   /*
   @ReturnNullAsFalse
   public static DateTime createFromFormat(Env env,
-                                          String format,
-                                          String timeStr,
+                                          string format,
+                                          string timeStr,
                                           @Optional DateTimeZone timeZone)
   {
 
@@ -323,7 +323,7 @@ public class DateTime implements DateTimeInterface, Cloneable
     _qDate.setGMTTime(time);
   }
 
-  public override String toString()
+  public override string toString()
   {
     Env env = Env.getInstance();
 

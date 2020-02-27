@@ -55,7 +55,7 @@ public class ForeachStatement
 
   protected final Statement _block;
 
-  protected final String _label;
+  protected final string _label;
 
   public ForeachStatement(Location location,
                           Expr objExpr,
@@ -63,7 +63,7 @@ public class ForeachStatement
                           AbstractVarExpr value,
                           boolean isRef,
                           Statement block,
-                          String label)
+                          string label)
   {
     super(location);
 

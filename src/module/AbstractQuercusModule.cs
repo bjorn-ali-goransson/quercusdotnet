@@ -65,25 +65,25 @@ public class AbstractQuercusModule implements QuercusModule {
   /**
    * Returns the extensions loaded by the module.
    */
-  public String []getLoadedExtensions()
+  public string []getLoadedExtensions()
   {
     return new String[0];
   }
 
   protected static void addConstant(Map<StringValue,Value> map,
-                                    String name, Value value)
+                                    string name, Value value)
   {
     map.put(new ConstStringValue(name), value);
   }
 
   protected static void addConstant(Map<StringValue,Value> map,
-                                    String name, long value)
+                                    string name, long value)
   {
     map.put(new ConstStringValue(name), LongValue.create(value));
   }
 
   protected static void addConstant(Map<StringValue,Value> map,
-                             String name, String value)
+                             string name, string value)
   {
     map.put(new ConstStringValue(name), StringValue.create(value));
   }

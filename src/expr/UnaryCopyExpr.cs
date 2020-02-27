@@ -72,7 +72,7 @@ public class UnaryCopyExpr extends AbstractUnaryExpr {
     return eval(env);
   }
 
-  public String toString()
+  public string toString()
   {
     return _expr.toString();
   }

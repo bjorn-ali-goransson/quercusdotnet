@@ -164,7 +164,7 @@ public class ProcOpenOutput extends AbstractBinaryOutput
    * Converts to a string.
    * @param env
    */
-  public String toString()
+  public string toString()
   {
     return "ProcOpenOutput[pipe]";
   }

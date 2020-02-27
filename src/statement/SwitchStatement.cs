@@ -48,14 +48,14 @@ public class SwitchStatement extends Statement {
   protected final BlockStatement[] _blocks;
 
   protected final Statement _defaultBlock;
-  protected final String _label;
+  protected final string _label;
 
   public SwitchStatement(Location location,
                          Expr value,
                          ArrayList<Expr[]> caseList,
                          ArrayList<BlockStatement> blockList,
                          Statement defaultBlock,
-                         String label)
+                         string label)
   {
     super(location);
 

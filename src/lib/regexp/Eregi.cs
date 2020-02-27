@@ -47,7 +47,7 @@ public class Eregi extends Ereg
     _flags |= Regcomp.IGNORE_CASE;
   }
 
-  public String toString()
+  public string toString()
   {
     return "Eregi[" + _pattern + "]";
   }

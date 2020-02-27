@@ -46,7 +46,7 @@ public class DataSourceConnection extends JdbcConnectionResource
   }
 
   public DataSourceConnection(Env env, DataSource ds,
-                              String user, String pass)
+                              string user, string pass)
   {
     super(env);
 
@@ -58,15 +58,15 @@ public class DataSourceConnection extends JdbcConnectionResource
 
   @Override
   protected ConnectionEntry connectImpl(Env env,
-                                        String host,
-                                        String userName,
-                                        String password,
-                                        String dbname,
+                                        string host,
+                                        string userName,
+                                        string password,
+                                        string dbname,
                                         int port,
-                                        String socket,
+                                        string socket,
                                         int flags,
-                                        String driver,
-                                        String url,
+                                        string driver,
+                                        string url,
                                         boolean isNewLink,
                                         boolean isEmulatePrepares)
   {

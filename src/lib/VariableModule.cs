@@ -81,7 +81,7 @@ public class VariableModule extends AbstractQuercusModule {
    * @param env the quercus calling environment
    * @param name the constant name
    */
-  public static Value constant(Env env, String name)
+  public static Value constant(Env env, string name)
   {
     if (name == null) {
       env.warning(L.l("null passed as constant name"));
@@ -91,7 +91,7 @@ public class VariableModule extends AbstractQuercusModule {
     int i = name.indexOf("::");
 
     if (i > 0) {
-      String cls = name.substring(0, i);
+      string cls = name.substring(0, i);
 
       name = name.substring(i + 2);
 
@@ -148,7 +148,7 @@ public class VariableModule extends AbstractQuercusModule {
    * @param env the quercus calling environment
    * @param name the constant name
    */
-  public static boolean defined(Env env, String name)
+  public static boolean defined(Env env, string name)
   {
     if (name == null)
       return false;
@@ -156,7 +156,7 @@ public class VariableModule extends AbstractQuercusModule {
     int i = name.indexOf("::");
 
     if (i > 0) {
-      String clsName = name.substring(0, i);
+      string clsName = name.substring(0, i);
       name = name.substring(i + 2);
 
       QuercusClass cls = env.getClass(clsName);
@@ -231,7 +231,7 @@ public class VariableModule extends AbstractQuercusModule {
    * Returns the type of this resource.
    */
   @ReturnNullAsFalse
-  public static String get_resource_type(Env env, Value v)
+  public static string get_resource_type(Env env, Value v)
   {
     return v.getResourceType();
   }
@@ -239,7 +239,7 @@ public class VariableModule extends AbstractQuercusModule {
   /**
    * Returns the type string for the variable
    */
-  public static String gettype(@ReadOnly Value v)
+  public static string gettype(@ReadOnly Value v)
   {
     return v.getType();
   }
@@ -251,8 +251,8 @@ public class VariableModule extends AbstractQuercusModule {
    * @param prefix the prefix
    */
   public static boolean import_request_variables(Env env,
-                                                 String types,
-                                                 @Optional String prefix)
+                                                 string types,
+                                                 @Optional string prefix)
   {
     if ("".equals(prefix))
       env.notice(L.l("import_request_variables should use a prefix argument"));
@@ -275,7 +275,7 @@ public class VariableModule extends AbstractQuercusModule {
       ArrayValue array = (ArrayValue) value;
 
       for (Map.Entry<Value,Value> entry : array.entrySet()) {
-        String key = entry.getKey().toString();
+        string key = entry.getKey().toString();
 
         env.setGlobalValue(prefix + key,
                          array.getVar(entry.getKey()));
@@ -592,7 +592,7 @@ public class VariableModule extends AbstractQuercusModule {
   /**
    * Serializes the value to a string.
    */
-  public static String serialize(Env env,
+  public static string serialize(Env env,
                                  @PassThru @ReadOnly Value v)
   {
     StringBuilder sb = new StringBuilder();
@@ -607,7 +607,7 @@ public class VariableModule extends AbstractQuercusModule {
    */
   public static boolean settype(Env env,
                                 @Reference Value var,
-                                String type)
+                                string type)
   {
     Value value = var.toValue();
 

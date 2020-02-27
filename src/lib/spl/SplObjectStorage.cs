@@ -307,7 +307,7 @@ public class SplObjectStorage
       entry = entry.getNext();
     }
 
-    String str = VariableModule.serialize(env, array);
+    string str = VariableModule.serialize(env, array);
 
     return env.createString(str);
   }

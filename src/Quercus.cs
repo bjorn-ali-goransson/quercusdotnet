@@ -50,8 +50,8 @@ public class Quercus
   private static final Logger log
     = Logger.getLogger(Quercus.class.getName());
 
-  private String _fileName;
-  private String []_argv;
+  private string _fileName;
+  private string []_argv;
 
   public Quercus()
   {
@@ -101,12 +101,12 @@ public class Quercus
   }
 
   @Override
-  public String getSapiName()
+  public string getSapiName()
   {
     return "cli";
   }
 
-  public String getFileName()
+  public string getFileName()
   {
     return _fileName;
   }
@@ -123,11 +123,11 @@ public class Quercus
     int i = 0;
     for (; i < args.length; i++) {
       if ("-d".equals(args[i])) {
-        String arg = args[i + 1];
+        string arg = args[i + 1];
         int eqIndex = arg.indexOf('=');
 
-        String name;
-        String value;
+        string name;
+        string value;
 
         if (eqIndex >= 0) {
           name = arg.substring(0, eqIndex);

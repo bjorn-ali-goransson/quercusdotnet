@@ -47,15 +47,15 @@ public class LazyFunction extends AbstractFunction
   private static final L10N L = new L10N(LazyFunction.class);
 
   private final QuercusContext _quercus;
-  private final String _name;
+  private final string _name;
   private final Class<?> _pageClass;
-  private final String _className;
+  private final string _className;
 
   private AbstractFunction _fun;
 
-  public LazyFunction(QuercusContext quercus, String name,
+  public LazyFunction(QuercusContext quercus, string name,
                       Class<?> pageClass,
-                      String className)
+                      string className)
   {
     _quercus = quercus;
     _name = name;
@@ -64,7 +64,7 @@ public class LazyFunction extends AbstractFunction
   }
 
   @Override
-  public String getName()
+  public string getName()
   {
     return _name;
   }
@@ -87,7 +87,7 @@ public class LazyFunction extends AbstractFunction
     try {
       ClassLoader loader = _pageClass.getClassLoader();
 
-      String className = _pageClass.getName() + "$" + _className;
+      string className = _pageClass.getName() + "$" + _className;
 
       Class<?> cl = Class.forName(className, false, loader);
 
@@ -108,7 +108,7 @@ public class LazyFunction extends AbstractFunction
     }
   }
 
-  public override String getComment()
+  public override string getComment()
   {
     if (_fun != null)
       return _fun.getComment();

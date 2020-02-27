@@ -150,7 +150,7 @@ abstract public class CompiledFunction_4 extends CompiledFunction {
    */
   abstract public Value call(Env env, Value a1, Value a2, Value a3, Value a4);
 
-  public String toString()
+  public string toString()
   {
     return "CompiledFunction_4[" + _name + "]";
   }

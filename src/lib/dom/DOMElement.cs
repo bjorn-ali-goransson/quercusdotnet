@@ -37,9 +37,9 @@
 public class DOMElement extends DOMNode<Element>
 {
   public static DOMElement __construct(Env env,
-                                       String name,
-                                       @Optional String textContent,
-                                       @Optional String namespace)
+                                       string name,
+                                       @Optional string textContent,
+                                       @Optional string namespace)
   {
     DOMElement element;
 
@@ -67,12 +67,12 @@ public class DOMElement extends DOMNode<Element>
     return getTextContent(env);
   }
 
-  public String getAttribute(String name)
+  public string getAttribute(String name)
   {
     return _delegate.getAttribute(name);
   }
 
-  public String getAttributeNS(String namespaceURI, String localName)
+  public string getAttributeNS(String namespaceURI, string localName)
     
   {
     try {
@@ -88,7 +88,7 @@ public class DOMElement extends DOMNode<Element>
     return wrap(_delegate.getAttributeNode(name));
   }
 
-  public DOMAttr getAttributeNodeNS(String namespaceURI, String localName)
+  public DOMAttr getAttributeNodeNS(String namespaceURI, string localName)
     
   {
     try {
@@ -105,7 +105,7 @@ public class DOMElement extends DOMNode<Element>
   }
 
   public DOMNodeList getElementsByTagNameNS(
-      String namespaceURI, String localName)
+      string namespaceURI, string localName)
   {
     try {
       return wrap(_delegate.getElementsByTagNameNS(namespaceURI, localName));
@@ -120,7 +120,7 @@ public class DOMElement extends DOMNode<Element>
     return wrap(_delegate.getSchemaTypeInfo());
   }
 
-  public String getTagName()
+  public string getTagName()
   {
     return _delegate.getTagName();
   }
@@ -130,7 +130,7 @@ public class DOMElement extends DOMNode<Element>
     return _delegate.hasAttribute(name);
   }
 
-  public boolean hasAttributeNS(String namespaceURI, String localName)
+  public boolean hasAttributeNS(String namespaceURI, string localName)
     
   {
     try {
@@ -152,7 +152,7 @@ public class DOMElement extends DOMNode<Element>
     }
   }
 
-  public void removeAttributeNS(String namespaceURI, String localName)
+  public void removeAttributeNS(String namespaceURI, string localName)
     
   {
     try {
@@ -174,7 +174,7 @@ public class DOMElement extends DOMNode<Element>
     }
   }
 
-  public void setAttribute(String name, String value)
+  public void setAttribute(String name, string value)
     
   {
     try {
@@ -186,8 +186,8 @@ public class DOMElement extends DOMNode<Element>
   }
 
   public void setAttributeNS(String namespaceURI,
-                             String qualifiedName,
-                             String value)
+                             string qualifiedName,
+                             string value)
     
   {
     try {
@@ -232,7 +232,7 @@ public class DOMElement extends DOMNode<Element>
   }
 
   public void setIdAttributeNS(String namespaceURI,
-                               String localName,
+                               string localName,
                                boolean isId)
     
   {

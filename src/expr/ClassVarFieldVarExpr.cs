@@ -84,7 +84,7 @@ public class ClassVarFieldVarExpr extends AbstractVarExpr {
    */
   public override Value eval(Env env)
   {
-    String className = _className.evalString(env);
+    string className = _className.evalString(env);
 
     QuercusClass qClass = env.getClass(className);
 
@@ -102,7 +102,7 @@ public class ClassVarFieldVarExpr extends AbstractVarExpr {
    */
   public override Var evalVar(Env env)
   {
-    String className = _className.evalString(env);
+    string className = _className.evalString(env);
 
     QuercusClass qClass = env.getClass(className);
 
@@ -120,7 +120,7 @@ public class ClassVarFieldVarExpr extends AbstractVarExpr {
    */
   public override Value evalAssignRef(Env env, Value value)
   {
-    String className = _className.evalString(env);
+    string className = _className.evalString(env);
 
     QuercusClass qClass = env.getClass(className);
 
@@ -142,7 +142,7 @@ public class ClassVarFieldVarExpr extends AbstractVarExpr {
               getLocation());
   }
 
-  public String toString()
+  public string toString()
   {
     return _className + "::$" + _varName;
   }

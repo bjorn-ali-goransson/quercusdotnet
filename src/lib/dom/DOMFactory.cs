@@ -47,12 +47,12 @@ public interface DOMFactory {
   DocumentType createDocumentType(String qualifiedName);
 
   DocumentType createDocumentType(String qualifiedName,
-                                  String publicId,
-                                  String systemId);
+                                  string publicId,
+                                  string systemId);
 
   Element createElement(String name);
 
-  Element createElement(String name, String namespace);
+  Element createElement(String name, string namespace);
 
   EntityReference createEntityReference(String name);
 
@@ -62,9 +62,9 @@ public interface DOMFactory {
 
   org.w3c.dom.DOMImplementation getImplementation();
 
-  void parseXMLDocument(Document document, InputStream is, String path)
+  void parseXMLDocument(Document document, InputStream is, string path)
     
 
-  void parseHTMLDocument(Document document, InputStream is, String path)
+  void parseHTMLDocument(Document document, InputStream is, string path)
     
 }

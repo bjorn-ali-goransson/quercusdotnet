@@ -255,7 +255,7 @@ public class QuercusProgram {
       return;
     }
 
-    String msg = e.toString();
+    string msg = e.toString();
 
     // XXX: temp for memory issues
     if (msg != null && msg.length() > 4096) {
@@ -483,7 +483,7 @@ public class QuercusProgram {
     }
   }
 
-  public String toString()
+  public string toString()
   {
     return getClass().getSimpleName() + "[" + _sourceFile + "]";
   }

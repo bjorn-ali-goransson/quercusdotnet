@@ -75,7 +75,7 @@ public class BinaryGeqExpr extends AbstractBinaryExpr {
     return lValue.geq(rValue);
   }
 
-  public String toString()
+  public string toString()
   {
     return "(" + _left + " >= " + _right + ")";
   }

@@ -34,7 +34,7 @@
 public class ReflectionModule
   extends AbstractQuercusModule
 {
-  public String []getLoadedExtensions()
+  public string []getLoadedExtensions()
   {
     return new String[] { "Reflection" };
   }

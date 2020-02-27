@@ -77,7 +77,7 @@ public class ToArrayExpr extends AbstractUnaryExpr {
       return value.toArray();
   }
 
-  public String toString()
+  public string toString()
   {
     return "((array) " + _expr + ")";
   }

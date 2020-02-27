@@ -67,7 +67,7 @@ public class IniDefinitions {
   /**
    * Add an ini default for an ini that has a string value.
    */
-  public IniDefinition add(String name, String deflt, int scope)
+  public IniDefinition add(String name, string deflt, int scope)
   {
     return add(name,
                IniDefinition.Type.STRING,
@@ -118,7 +118,7 @@ public class IniDefinitions {
   /**
    * Add an unsupported ini default for an ini that has a string value.
    */
-  public IniDefinition addUnsupported(String name, String deflt, int scope)
+  public IniDefinition addUnsupported(String name, string deflt, int scope)
   {
     return addUnsupported(name,
                           IniDefinition.Type.STRING,

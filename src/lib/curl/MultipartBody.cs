@@ -55,7 +55,7 @@ public class MultipartBody extends PostBody
   private ArrayList<MultipartEntry> _postItems
     = new ArrayList<MultipartEntry>();
 
-  private String _boundary;
+  private string _boundary;
   private byte []_boundaryBytes;
   private long _length;
 
@@ -94,13 +94,13 @@ public class MultipartBody extends PostBody
     _length = getContentLength(_postItems, _boundary);
   }
 
-  private static String createBoundary()
+  private static string createBoundary()
   {
     return "boundary" + RandomUtil.getRandomLong();
   }
 
   private static long getContentLength(ArrayList<MultipartEntry> list,
-                                       String boundary)
+                                       string boundary)
   {
     long size = (boundary.length() + 2) + 4;
 
@@ -112,7 +112,7 @@ public class MultipartBody extends PostBody
   }
 
   @Override
-  public String getContentType()
+  public string getContentType()
   {
     return "multipart/form-data; boundary=\"" + _boundary + "\"";
   }
@@ -151,23 +151,23 @@ public class MultipartBody extends PostBody
   }
 
   static abstract class MultipartEntry {
-    final String _name;
-    final String _header;
+    final string _name;
+    final string _header;
 
-    MultipartEntry(Env env, String name, String header)
+    MultipartEntry(Env env, string name, string header)
     {
       _name = name;
       _header = header;
     }
 
-    final String getName()
+    final string getName()
     {
       return _name;
     }
 
-    static String getHeader(String name,
-                            String contentType,
-                            String fileName)
+    static string getHeader(String name,
+                            string contentType,
+                            string fileName)
     {
       StringBuilder sb = new StringBuilder();
 
@@ -221,7 +221,7 @@ public class MultipartBody extends PostBody
   static class UrlEncodedEntry extends MultipartEntry {
     StringValue _value;
 
-    UrlEncodedEntry(Env env, String name, StringValue value)
+    UrlEncodedEntry(Env env, string name, StringValue value)
     {
       super(env, name, getHeader(name,
                                  "application/x-www-form-urlencoded",
@@ -244,7 +244,7 @@ public class MultipartBody extends PostBody
   static class PathEntry extends MultipartEntry {
     Path _path;
 
-    PathEntry(Env env, String name, Path path)
+    PathEntry(Env env, string name, Path path)
     {
       super(env, name, getHeader(name,
                                  getContentType(env, path.getTail()),
@@ -279,14 +279,14 @@ public class MultipartBody extends PostBody
       }
     }
 
-    private static String getContentType(Env env, String name)
+    private static string getContentType(Env env, string name)
     {
       QuercusContext quercus = env.getQuercus();
 
       QuercusServletContext context = quercus.getServletContext();
 
       if (context != null) {
-        String mimeType = context.getMimeType(name);
+        string mimeType = context.getMimeType(name);
 
         if (mimeType != null)
           return mimeType;

@@ -66,7 +66,7 @@ public class FilesystemIterator extends DirectoryIterator
     _flags = flags;
   }
 
-  protected FilesystemIterator(Path parent, Path path, String fileName, int flags)
+  protected FilesystemIterator(Path parent, Path path, string fileName, int flags)
   {
     super(parent, path, fileName);
 
@@ -92,7 +92,7 @@ public class FilesystemIterator extends DirectoryIterator
       return UnsetValue.UNSET;
     }
 
-    String key;
+    string key;
     int flags = _flags;
 
     if ((flags & KEY_AS_FILENAME) == KEY_AS_FILENAME) {

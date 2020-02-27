@@ -64,7 +64,7 @@ public class QuercusModule extends AbstractQuercusModule
    * Returns the version of Quercus.
    */
   @Name("quercus_version")
-  public static String version(Env env)
+  public static string version(Env env)
   {
     return env.getQuercus().getVersion();
   }
@@ -186,7 +186,7 @@ public class QuercusModule extends AbstractQuercusModule
    * Special quercus-only import statements.
    */
   @Name("quercus_import")
-  public static void q_import(Env env, String name)
+  public static void q_import(Env env, string name)
   {
     if (name.endsWith("*"))
       env.addWildcardImport(name);

@@ -31,8 +31,8 @@
 
 public interface QuercusCookie
 {
-  public String getName();
-  public String getValue();
+  public string getName();
+  public string getValue();
 
   public void setVersion(int version);
   public void setPath(String path);

@@ -42,10 +42,10 @@
  * Represents a PHP A::{$foo} constant call expression.
  */
 public class ClassVarNameConstExpr extends Expr {
-  protected final String _className;
+  protected final string _className;
   protected final Expr _name;
 
-  public ClassVarNameConstExpr(Location location, String className, Expr name)
+  public ClassVarNameConstExpr(Location location, string className, Expr name)
   {
     super(location);
 
@@ -91,7 +91,7 @@ public class ClassVarNameConstExpr extends Expr {
     return env.getClass(_className).getConstant(env, name);
   }
 
-  public override String toString()
+  public override string toString()
   {
     return _className + "::{" + _name + "}";
   }

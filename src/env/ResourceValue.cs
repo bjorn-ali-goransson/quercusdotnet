@@ -85,7 +85,7 @@ public class ResourceValue extends Value
   /**
    * Converts to a string.
    */
-  public override String toString()
+  public override string toString()
   {
     if (ResourceValue.class.equals(getClass())) {
       return ResourceValue.class.getSimpleName() + "[]";

@@ -185,7 +185,7 @@ abstract public class AbstractBinaryOutput
       return position;
   }
 
-  public String getResourceType()
+  public string getResourceType()
   {
     return "stream";
   }

@@ -40,5 +40,5 @@
 @Target(ElementType.TYPE)
 @Retention(RetentionPolicy.RUNTIME)
 public interface ResourceType {
-  public String value() default "Unknown";
+  public string value() default "Unknown";
 }

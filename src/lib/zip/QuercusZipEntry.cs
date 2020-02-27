@@ -64,7 +64,7 @@ public class QuercusZipEntry {
   /**
    * Returns the file name.
    */
-  public String zip_entry_name()
+  public string zip_entry_name()
   {
     return _entry.getName();
   }
@@ -158,7 +158,7 @@ public class QuercusZipEntry {
    *
    * @return the compression method used for this entry
    */
-  public String zip_entry_compressionmethod()
+  public string zip_entry_compressionmethod()
   {
     if (_entry == null)
       return "";
@@ -175,7 +175,7 @@ public class QuercusZipEntry {
     }
   }
 
-  public String toString()
+  public string toString()
   {
     return "QuercusZipEntry[" + _entry.getName() + "]";
   }

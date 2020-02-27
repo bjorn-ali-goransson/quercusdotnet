@@ -38,11 +38,11 @@ public class QuercusLocale
     = new QuercusLocale(Locale.US, "utf-8");
 
   private final Locale _locale;
-  private final String _charset;
+  private final string _charset;
 
   private DecimalFormatSymbols _format;
 
-  public QuercusLocale(Locale locale, String charset)
+  public QuercusLocale(Locale locale, string charset)
   {
     _locale = locale;
     _charset = charset;
@@ -53,7 +53,7 @@ public class QuercusLocale
     return _locale;
   }
 
-  public String getCharset()
+  public string getCharset()
   {
     return _charset;
   }
@@ -72,7 +72,7 @@ public class QuercusLocale
     return DEFAULT_US;
   }
 
-  public String toString()
+  public string toString()
   {
     return _locale.toString();
   }

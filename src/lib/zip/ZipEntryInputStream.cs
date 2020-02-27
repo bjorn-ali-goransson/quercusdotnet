@@ -79,7 +79,7 @@ public class ZipEntryInputStream extends ReadStreamInput
     return new ZipEntryInputStream(_in.openCopy(), _position);
   }
 
-  public String toString()
+  public string toString()
   {
     return "ZipEntryInputStream[]";
   }

@@ -106,7 +106,7 @@ abstract public class CompiledFunction_N extends CompiledFunction {
 
   abstract public Value callImpl(Env env, Value []args);
 
-  public String toString()
+  public string toString()
   {
     return "CompiledFunction_N[" + _name + "]";
   }

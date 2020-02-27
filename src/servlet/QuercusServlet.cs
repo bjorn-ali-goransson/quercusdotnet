@@ -85,10 +85,10 @@ public class QuercusServlet
   private int _pageCacheSize = -1;
   private int _regexpCacheSize = -1;
   private boolean _isConnectionPool = true;
-  private String _iniPath;
-  private String _scriptEncoding;
-  private String _mysqlVersion;
-  private String _phpVersion;
+  private string _iniPath;
+  private string _scriptEncoding;
+  private string _mysqlVersion;
+  private string _phpVersion;
 
   private File _licenseDirectory;
 
@@ -154,7 +154,7 @@ public class QuercusServlet
    */
   private static void checkJavaVersion()
   {
-    String version = System.getProperty("java.version");
+    string version = System.getProperty("java.version");
 
     if (version.startsWith("1.3.") || version.startsWith("1.4."))
       throw new QuercusRuntimeException(L.l(
@@ -376,7 +376,7 @@ public class QuercusServlet
    */
   public void setLicenseDirectory(String relPath)
   {
-    String dir;
+    string dir;
 
     if (relPath.startsWith("/") || relPath.contains(":")) {
       dir = relPath;
@@ -403,8 +403,8 @@ public class QuercusServlet
     Enumeration<String> paramNames = config.getInitParameterNames();
 
     while (paramNames.hasMoreElements()) {
-      String paramName = paramNames.nextElement();
-      String paramValue = config.getInitParameter(paramName);
+      string paramName = paramNames.nextElement();
+      string paramValue = config.getInitParameter(paramName);
 
       setInitParam(paramName, paramValue);
     }
@@ -417,7 +417,7 @@ public class QuercusServlet
    *
    * 
    */
-  protected void setInitParam(String paramName, String paramValue)
+  protected void setInitParam(String paramName, string paramValue)
     
   {
     if ("compile".equals(paramName)) {
@@ -535,7 +535,7 @@ public class QuercusServlet
         path = getQuercus().getPwd().lookup(_iniPath);
       }
       else {
-        String realPath = getServletContext().getRealPath(_iniPath);
+        string realPath = getServletContext().getRealPath(_iniPath);
 
         if (realPath != null) {
           path = getQuercus().getPwd().lookup(realPath);
@@ -547,7 +547,7 @@ public class QuercusServlet
       }
     }
     else {
-      String realPath = getServletContext().getRealPath("WEB-INF/php.ini");
+      string realPath = getServletContext().getRealPath("WEB-INF/php.ini");
 
       if (realPath != null) {
         quercus.setIniFile(getQuercus().getPwd().lookup(realPath));
@@ -630,7 +630,7 @@ public class QuercusServlet
     /**
      * Sets an arbitrary property.
      */
-    public void setProperty(String key, String value)
+    public void setProperty(String key, string value)
     {
       //_quercus.setIni(key, value);
 
@@ -648,7 +648,7 @@ public class QuercusServlet
     /**
      * Sets an arbitrary property.
      */
-    public void setProperty(String key, String value)
+    public void setProperty(String key, string value)
     {
       //_quercus.setServerEnv(key, value);
 

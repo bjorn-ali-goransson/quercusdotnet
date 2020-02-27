@@ -40,11 +40,11 @@
 
 public class GettextDomain
 {
-  private String _name; 
-  private String _charset;
+  private string _name; 
+  private string _charset;
   private Path _path;
   
-  public GettextDomain(Env env, String name)
+  public GettextDomain(Env env, string name)
   {
     _name = name;
     _path = env.getPwd();
@@ -52,7 +52,7 @@ public class GettextDomain
     _charset = env.getRuntimeEncoding();
   }
   
-  public String getName()
+  public string getName()
   {
     return _name;
   }
@@ -62,7 +62,7 @@ public class GettextDomain
     _name = name;
   }
   
-  public String getCharset()
+  public string getCharset()
   {
     return _charset;
   }
@@ -87,7 +87,7 @@ public class GettextDomain
     return path != null;
   }
   
-  public String toString()
+  public string toString()
   {
     return _name;
   }

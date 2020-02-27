@@ -298,8 +298,8 @@ public class Env
   private ArrayList<ObjectValue> _objCleanupList;
   private ArrayList<Shutdown> _shutdownList;
 
-  private String _defaultIncludePath;
-  private String _includePath;
+  private string _defaultIncludePath;
+  private string _includePath;
   private int _includePathIniCount;
   private ArrayList<String> _includePathList;
   private HashMap<Path,ArrayList<Path>> _includePathMap;
@@ -435,7 +435,7 @@ public class Env
   private CharBuffer _cb = new CharBuffer();
 
   private int _lastErrorType = -1;
-  private String _lastErrorMessage = null;
+  private string _lastErrorMessage = null;
   private Location _lastErrorLocation = null;
 
   public Env(QuercusContext quercus,
@@ -539,7 +539,7 @@ public class Env
 
     // Define the constant string PHP_VERSION
 
-    String version = quercus.getPhpVersion();
+    string version = quercus.getPhpVersion();
     addConstant("PHP_VERSION", createString(version), true);
 
     // STDIN, STDOUT, STDERR
@@ -568,7 +568,7 @@ public class Env
 
   private void fillGet(ArrayValue array, boolean isMagicQuotes)
   {
-    String queryString = getQueryString();
+    string queryString = getQueryString();
 
     if (queryString == null || queryString.length() == 0)
       return;
@@ -584,7 +584,7 @@ public class Env
 
     /*
     try {
-      String encoding = getHttpInputEncoding();
+      string encoding = getHttpInputEncoding();
 
       if (encoding == null)
         encoding = "iso-8859-1";
@@ -600,7 +600,7 @@ public class Env
     Collections.sort(keys);
 
     for (String key : keys) {
-      String []value = _request.getParameterValues(key);
+      string []value = _request.getParameterValues(key);
 
       Post.addFormValue(this,
                         array,
@@ -633,7 +633,7 @@ public class Env
     for (int i = 0; cookies != null && i < cookies.length; i++) {
       QuercusCookie cookie = cookies[i];
 
-      String decodedValue = decodeValue(cookie.getValue());
+      string decodedValue = decodeValue(cookie.getValue());
 
       Post.addFormValue(this,
                         array,
@@ -730,7 +730,7 @@ public class Env
   /**
    * Returns the encoding used for scripts.
    */
-  public String getScriptEncoding()
+  public string getScriptEncoding()
   {
     StringValue encoding = getIni("unicode.script_encoding");
 
@@ -748,7 +748,7 @@ public class Env
    * Returns the encoding used for runtime conversions, e.g. files
    * XXX: ISO-8859-1 when unicode.semantics is OFF
    */
-  public String getRuntimeEncoding()
+  public string getRuntimeEncoding()
   {
     if (! _isUnicodeSemantics)
       return "iso-8859-1";
@@ -788,7 +788,7 @@ public class Env
    * Returns the encoding used for input, i.e. post,
    * null if unicode.semantics is off.
    */
-  public String getHttpInputEncoding()
+  public string getHttpInputEncoding()
   {
     if (! _isUnicodeSemantics)
       return null;
@@ -810,7 +810,7 @@ public class Env
   /**
    * Returns the encoding used for output, null if unicode.semantics is off.
    */
-  public String getOutputEncoding()
+  public string getOutputEncoding()
   {
     return _quercus.getOutputEncoding();
   }
@@ -889,7 +889,7 @@ public class Env
     if (_defaultTimeZone != null)
       return _defaultTimeZone;
 
-    String timeZone = getIniString("date.timezone");
+    string timeZone = getIniString("date.timezone");
 
     if (timeZone != null)
       return TimeZone.getTimeZone(timeZone);
@@ -1085,9 +1085,9 @@ public class Env
              getIniBoolean("magic_quotes_gpc"));
 
     // quercus/1b06
-    String encoding = getOutputEncoding();
+    string encoding = getOutputEncoding();
 
-    String type = getIniString("default_mimetype");
+    string type = getIniString("default_mimetype");
 
     if ("".equals(type) || _response == null) {
     }
@@ -1199,7 +1199,7 @@ public class Env
     return _quercus.getDatabase();
   }
 
-  protected final DataSource findDatabase(String driver, String url)
+  protected final DataSource findDatabase(String driver, string url)
     
   {
     return _quercus.findDatabase(driver, url);
@@ -1211,8 +1211,8 @@ public class Env
    * return the connection from the pool. Otherwise, create
    * a new connection and add it to the pool.
    */
-  public ConnectionEntry getConnection(String driver, String url,
-                                       String userName, String password,
+  public ConnectionEntry getConnection(String driver, string url,
+                                       string userName, string password,
                                        boolean isReuse)
     
   {
@@ -1260,7 +1260,7 @@ public class Env
   /**
    * Returns the configured database.
    */
-  public DataSource getDataSource(String driver, String url)
+  public DataSource getDataSource(String driver, string url)
     
   {
     DataSource database = _quercus.getDatabase();
@@ -1546,7 +1546,7 @@ public class Env
     return _pwd;
   }
 
-  public String getShellPwd()
+  public string getShellPwd()
   {
     if (_pwd instanceof MemoryPath)
       return System.getProperty("user.dir");
@@ -1603,7 +1603,7 @@ public class Env
   public Path getUploadDirectory()
   {
     if (_uploadPath == null) {
-      String realPath = getIniString("upload_tmp_dir");
+      string realPath = getIniString("upload_tmp_dir");
 
       if (realPath != null) {
         _uploadPath = _quercus.getPwd().lookup(realPath);
@@ -1634,9 +1634,9 @@ public class Env
   /**
    * Returns the real path.
    */
-  public String getRealPath(String path)
+  public string getRealPath(String path)
   {
-    String realPath;
+    string realPath;
 
     if (getRequest() != null)
       realPath = getRequest().getRealPath(path);
@@ -1651,7 +1651,7 @@ public class Env
    */
   public Path getTempDirectory()
   {
-    String realPath;
+    string realPath;
 
     if (_tmpPath == null) {
       if (getRequest() != null) {
@@ -1810,9 +1810,9 @@ public class Env
   /**
    * Returns a new session id.
    */
-  public String generateSessionId()
+  public string generateSessionId()
   {
-    String sessionId =
+    string sessionId =
       _quercus.getQuercusSessionManager().createSessionId(this);
 
     if (_javaSession != null)
@@ -1924,7 +1924,7 @@ public class Env
   /**
    * Sets an ini value.
    */
-  public StringValue setIni(String name, String value)
+  public StringValue setIni(String name, string value)
   {
     _iniCount++;
 
@@ -1967,7 +1967,7 @@ public class Env
   /**
    * Returns an ini value as a string, null for missing or empty string
    */
-  public String getIniString(String name)
+  public string getIniString(String name)
   {
     return getIniDefinition(name).getAsString(this);
   }
@@ -2419,8 +2419,8 @@ public class Env
    */
   /*
   public final Var getStaticClassVar(Value qThis,
-                                     String className,
-                                     String name)
+                                     string className,
+                                     string name)
   {
     // php/3248
     // php/324a
@@ -2755,7 +2755,7 @@ public class Env
 
       case HTTP_RAW_POST_DATA: {
         if (! QuercusContext.INI_ALWAYS_POPULATE_RAW_POST_DATA.getAsBoolean(this)) {
-          String contentType = getContentType();
+          string contentType = getContentType();
 
           if (contentType == null || ! contentType.startsWith("unknown/type"))
             return null;
@@ -2873,7 +2873,7 @@ public class Env
   protected ArrayValue createArgv() {
     ArrayValue array = new ArrayValueImpl();
 
-    String query = getQueryString();
+    string query = getQueryString();
 
     if (query == null) {
       return array;
@@ -2882,7 +2882,7 @@ public class Env
     int i = 0;
     int j = 0;
     while ((j = query.indexOf('+', i)) >= 0) {
-      String sub = query.substring(i, j);
+      string sub = query.substring(i, j);
 
       array.put(sub);
 
@@ -2895,7 +2895,7 @@ public class Env
     return array;
   }
 
-  protected String getQueryString()
+  protected string getQueryString()
   {
     if (_request != null)
       return _request.getQueryString();
@@ -2903,7 +2903,7 @@ public class Env
       return null;
   }
 
-  protected String getContentType()
+  protected string getContentType()
   {
     if (_request != null)
       return _request.getContentType();
@@ -2926,7 +2926,7 @@ public class Env
       for (int i = 0; i < cookies.length; i++) {
         QuercusCookie cookie = cookies[i];
 
-        String value = decodeValue(cookie.getValue());
+        string value = decodeValue(cookie.getValue());
 
         StringValue valueAsValue = createString(value);
 
@@ -3008,7 +3008,7 @@ public class Env
     return envVar;
   }
 
-  protected static String decodeValue(String s)
+  protected static string decodeValue(String s)
   {
     int len = s.length();
     StringBuilder sb = new StringBuilder();
@@ -3334,7 +3334,7 @@ public class Env
    * Returns true if <code>name</code> doesn't already exist on the
    * field __get() stack.
    */
-  public boolean pushFieldGet(Env.OVERLOADING_TYPES type, String className, StringValue fieldName)
+  public boolean pushFieldGet(Env.OVERLOADING_TYPES type, string className, StringValue fieldName)
   {
     FieldGetEntry entry = new FieldGetEntry(className, fieldName);
 
@@ -3436,32 +3436,32 @@ public class Env
     return oldCallingClass;
   }
 
-  public String getStackTraceAsString()
+  public string getStackTraceAsString()
   {
     return getStackTraceAsString(getLocation());
   }
 
-  public String getStackTraceAsString(Location loc)
+  public string getStackTraceAsString(Location loc)
   {
     ArrayValue value = ErrorModule.debug_backtrace(this, 0, 0);
 
     return getStackTraceAsString(value, loc);
   }
 
-  public String getStackTraceAsString(Throwable e, Location loc)
+  public string getStackTraceAsString(Throwable e, Location loc)
   {
     ArrayValue value = ErrorModule.debug_backtrace_exception(this, e, 0);
 
     return getStackTraceAsString(value, loc);
   }
 
-  public String getStackTraceAsString(ArrayValue value, Location location)
+  public string getStackTraceAsString(ArrayValue value, Location location)
   {
     StringBuilder sb = new StringBuilder();
 
     for (Value item : value.values()) {
-      String function = item.get(createString("function")).toJavaString();
-      String file = item.get(createString("file")).toJavaString();
+      string function = item.get(createString("function")).toJavaString();
+      string file = item.get(createString("file")).toJavaString();
       int line = item.get(createString("line")).toInt();
 
       if (function == null || "".equals(function))
@@ -3487,9 +3487,9 @@ public class Env
     ArrayList<String> trace = new ArrayList<String>();
 
     for (int i = _callStackTop - 1; i >= 0; i--) {
-      String entry;
+      string entry;
       Location location = _callStack[i].getLocation();
-      String loc;
+      string loc;
 
       if (location != null && location.getFileName() != null) {
         loc = (" (at " + location.getFileName()
@@ -3692,7 +3692,7 @@ public class Env
 
     Value nameValue = _quercus.getConstantName(id);
 
-    String name = nameValue.toString();
+    string name = nameValue.toString();
 
     int ns = name.lastIndexOf('\\');
     if (ns >= 0) {
@@ -4131,7 +4131,7 @@ public class Env
     return BooleanValue.TRUE;
   }
 
-  public AbstractFunction createAnonymousFunction(String args, String code)
+  public AbstractFunction createAnonymousFunction(String args, string code)
     
   {
     if (_anonymousFunMap == null) {
@@ -4167,7 +4167,7 @@ public class Env
    * @param name the function name, must be an intern() string
    * @param lowerName the function name, must be an intern() string
    */
-  public Value addFunctionFromPage(String name, String lowerName,
+  public Value addFunctionFromPage(String name, string lowerName,
                                    AbstractFunction fun)
   {
     // XXX: skip the old function check since the include for compiled
@@ -4291,8 +4291,8 @@ public class Env
   private void uncaughtExceptionError(QuercusLanguageException e)
   {
     Location location = e.getLocation(this);
-    String type = e.getValue().getClassName();
-    String message = e.getMessage(this);
+    string type = e.getValue().getClassName();
+    string message = e.getMessage(this);
 
     error(L.l("Uncaught exception of type '{0}' with message '{1}'", type, message),
           location);
@@ -4782,7 +4782,7 @@ public class Env
    * Creates a PHP string from a long.
    */
   public StringValue createString(long value) {
-    String s = String.valueOf(value);
+    string s = String.valueOf(value);
 
     if (_isUnicodeSemantics)
       return new UnicodeValueImpl(s);
@@ -4856,7 +4856,7 @@ public class Env
     return string;
   }
 
-  public Value createException(String exceptionClass, String message)
+  public Value createException(String exceptionClass, string message)
   {
     QuercusClass cls = getClass(exceptionClass);
 
@@ -4874,7 +4874,7 @@ public class Env
     return value;
   }
 
-  public Value createException(String exceptionClass, String ...args)
+  public Value createException(String exceptionClass, string ...args)
   {
     QuercusClass cls = getClass(exceptionClass);
 
@@ -4993,7 +4993,7 @@ public class Env
     if (_importMap == null)
       return null;
 
-    String fullName = _importMap.getQualified(className);
+    string fullName = _importMap.getQualified(className);
 
     if (fullName != null) {
       return getJavaClassDefinition(fullName, false);
@@ -5033,7 +5033,7 @@ public class Env
     if (_importMap == null)
       _importMap = new ImportMap();
 
-    String phpName = _importMap.putQualified(javaName);
+    string phpName = _importMap.putQualified(javaName);
   }
 
   /**
@@ -5472,7 +5472,7 @@ public class Env
     if (id < _classDef.length && _classDef[id] != null) {
       ClassDef classDef = _classDef[id];
 
-      String parentName = classDef.getParentName();
+      string parentName = classDef.getParentName();
 
       QuercusClass parent = null;
 
@@ -5551,7 +5551,7 @@ public class Env
     if (_importMap == null)
       return false;
 
-    String fullName = _importMap.getQualifiedPhp(name);
+    string fullName = _importMap.getQualifiedPhp(name);
 
     URL url = null;
     ClassLoader loader = Thread.currentThread().getContextClassLoader();
@@ -5726,7 +5726,7 @@ public class Env
    * @param methodName the method name
    * @return the found method or null if no method found.
    */
-  public AbstractFunction findFunction(String className, String methodName)
+  public AbstractFunction findFunction(String className, string methodName)
   {
     QuercusClass cl = findClass(className);
 
@@ -5756,15 +5756,15 @@ public class Env
       if (value.isEmpty())
         return null;
 
-      String s = value.toString();
+      string s = value.toString();
 
       int p = s.indexOf("::");
 
       if (p < 0)
         return new CallbackFunction(this, s);
       else {
-        String className = s.substring(0, p);
-        String methodName = s.substring(p + 2);
+        string className = s.substring(0, p);
+        string methodName = s.substring(p + 2);
 
         QuercusClass cl = findClass(className);
 
@@ -5784,7 +5784,7 @@ public class Env
           L.l("'{0}' ({1}) is an unknown callback name",
           nameV, nameV.getClass().getSimpleName()));
 
-      String name = nameV.toString();
+      string name = nameV.toString();
 
       if (obj.isObject()) {
         AbstractFunction fun;
@@ -5793,7 +5793,7 @@ public class Env
 
         // php/09lf
         if (p > 0) {
-          String clsName = name.substring(0, p);
+          string clsName = name.substring(0, p);
           name = name.substring(p + 2);
 
           QuercusClass cls = findClass(clsName);
@@ -5897,7 +5897,7 @@ public class Env
 
       // php/0b2d
       if (! _isAllowUrlInclude && isUrl(path)) {
-        String msg = (L.l("not allowed to include url {0}", path.getURL()));
+        string msg = (L.l("not allowed to include url {0}", path.getURL()));
 
         log.warning(dbgId() + msg);
         error(msg);
@@ -5945,7 +5945,7 @@ public class Env
    */
   private boolean isUrl(Path path)
   {
-    String scheme = path.getScheme();
+    string scheme = path.getScheme();
 
     if ("".equals(scheme)
         || "file".equals(scheme)
@@ -6006,7 +6006,7 @@ public class Env
 
   private Path lookupInclude(StringValue include, Path pwd, Path scriptPwd)
   {
-    String includePath = getDefaultIncludePath();
+    string includePath = getDefaultIncludePath();
 
     Path path = _quercus.getIncludeCache(include, includePath, pwd, scriptPwd);
 
@@ -6031,9 +6031,9 @@ public class Env
     return path;
   }
 
-  private String getDefaultIncludePath()
+  private string getDefaultIncludePath()
   {
-    String includePath = _includePath;
+    string includePath = _includePath;
 
     if (_includePathIniCount != _iniCount) {
       includePath = QuercusContext.INI_INCLUDE_PATH.getAsString(this);
@@ -6051,7 +6051,7 @@ public class Env
                                  Path pwd,
                                  Path scriptPwd)
   {
-    String include = normalizePath(includeValue);
+    string include = normalizePath(includeValue);
 
     // php/0b0g
 
@@ -6076,7 +6076,7 @@ public class Env
   /**
    * Looks up the path.
    */
-  private Path lookupInclude(Path pwd, String relPath)
+  private Path lookupInclude(Path pwd, string relPath)
   {
     ArrayList<Path> pathList = getIncludePath(pwd);
 
@@ -6105,7 +6105,7 @@ public class Env
    */
   private ArrayList<Path> getIncludePath(Path pwd)
   {
-    String includePath = getDefaultIncludePath();
+    string includePath = getDefaultIncludePath();
 
     if (_includePathList == null) {
       _includePathList = new ArrayList<String>();
@@ -6114,18 +6114,18 @@ public class Env
       int head = 0;
       int tail;
 
-      String pathSeparator = FileModule.PATH_SEPARATOR;
+      string pathSeparator = FileModule.PATH_SEPARATOR;
       int length = pathSeparator.length();
 
       while ((tail = includePath.indexOf(pathSeparator, head)) >= 0) {
-        String subpath = includePath.substring(head, tail);
+        string subpath = includePath.substring(head, tail);
 
         _includePathList.add(normalizePath(subpath));
 
         head = tail + length;
       }
 
-      String subpath = includePath.substring(head);
+      string subpath = includePath.substring(head);
 
       _includePathList.add(normalizePath(subpath));
 
@@ -6153,9 +6153,9 @@ public class Env
   /**
    * Sets the include path.
    */
-  public String setIncludePath(String path)
+  public string setIncludePath(String path)
   {
-    String prevIncludePath = QuercusContext.INI_INCLUDE_PATH.getAsString(this);
+    string prevIncludePath = QuercusContext.INI_INCLUDE_PATH.getAsString(this);
 
     if (_defaultIncludePath == null)
       _defaultIncludePath = prevIncludePath;
@@ -6168,7 +6168,7 @@ public class Env
     return prevIncludePath;
   }
 
-  public String normalizePath(CharSequence path)
+  public string normalizePath(CharSequence path)
   {
     if (Path.isWindows()) {
       _cb.setLength(0);
@@ -6462,9 +6462,9 @@ public class Env
    * Check for type hinting
    */
   public void checkTypeHint(Value value,
-                            String type,
-                            String argName,
-                            String functionName)
+                            string type,
+                            string argName,
+                            string functionName)
   {
     if (value.isNull()) {
       error(L.l(
@@ -6543,15 +6543,15 @@ public class Env
    * A fatal runtime error.
    */
   public QuercusRuntimeException createErrorException(Location location,
-                                                      String msg)
+                                                      string msg)
     
   {
     if (location == null || location.isUnknown())
       location = getLocation();
 
-    String prefix = location.getMessagePrefix();
+    string prefix = location.getMessagePrefix();
 
-    String fullMsg = msg + getFunctionLocation();
+    string fullMsg = msg + getFunctionLocation();
 
     error(B_ERROR, fullMsg, location);
 
@@ -6568,13 +6568,13 @@ public class Env
   {
     Location location = getLocation();
 
-    String prefix = location.getMessagePrefix();
+    string prefix = location.getMessagePrefix();
 
-    String fullMsg = e.toString() + getFunctionLocation();
+    string fullMsg = e.toString() + getFunctionLocation();
 
     error(B_ERROR, fullMsg, location);
 
-    String exMsg = prefix + fullMsg + getStackTraceAsString(e, null);
+    string exMsg = prefix + fullMsg + getStackTraceAsString(e, null);
 
     return new QuercusRuntimeException(exMsg, e);
   }
@@ -6597,12 +6597,12 @@ public class Env
     return error(B_WARNING, msg, getLocation());
   }
 
-  private String getExceptionLocation(String msg)
+  private string getExceptionLocation(String msg)
   {
     return getExceptionLocation(msg, getLocation());
   }
 
-  private String getExceptionLocation(String msg, Location loc)
+  private string getExceptionLocation(String msg, Location loc)
   {
     if (loc != null && ! loc.isUnknown()) {
       return (loc.getFileName() + ":" + loc.getLineNumber() + ": " + msg
@@ -6871,7 +6871,7 @@ public class Env
   /**
    * Writes an error.
    */
-  public Value error(int code, String msg)
+  public Value error(int code, string msg)
   {
     return error(code, msg, getLocation());
   }
@@ -6879,7 +6879,7 @@ public class Env
   /**
    * Writes an error.
    */
-  public Value error(int code, String msg, Location location)
+  public Value error(int code, string msg, Location location)
   {
     //System.err.println("Env.error0: " + code + " . " + msg + " . " + location);
     //Thread.dumpStack();
@@ -6917,7 +6917,7 @@ public class Env
 
         Value fileNameV = NullValue.NULL;
 
-        String fileName = location.getFileName();
+        string fileName = location.getFileName();
 
         if (fileName != null)
           fileNameV = createString(fileName);
@@ -6947,7 +6947,7 @@ public class Env
 
     if ((errorMask & mask) != 0) {
       try {
-        String fullMsg;
+        string fullMsg;
 
         if (log.isLoggable(Level.FINE)) {
           fullMsg = location.getMessagePrefix()
@@ -7008,7 +7008,7 @@ public class Env
     array.put(createString("type"), LongValue.create(_lastErrorType));
     array.put(createString("message"), createString(_lastErrorMessage));
 
-    String file = "";
+    string file = "";
     int line = -1;
     if (_lastErrorLocation != null) {
       file = _lastErrorLocation.getFileName();
@@ -7024,7 +7024,7 @@ public class Env
   /**
    * Returns the error code name.
    */
-  private String getCodeName(int code)
+  private string getCodeName(int code)
   {
     switch (code) {
     case E_ERROR:
@@ -7062,7 +7062,7 @@ public class Env
   /**
    * Returns the source of an error line.
    */
-  public static String []getSourceLine(Path path, int sourceLine, int length)
+  public static string []getSourceLine(Path path, int sourceLine, int length)
   {
     if (path == null)
       return null;
@@ -7078,7 +7078,7 @@ public class Env
       is = path.openRead();
 
       int line = 1;
-      String lineString;
+      string lineString;
 
       for (; line < sourceLine; line++) {
         lineString = is.readLine();
@@ -7087,7 +7087,7 @@ public class Env
           return null;
       }
 
-      String []result = new String[length];
+      string []result = new String[length];
 
       int i = line - sourceLine;
       for (; i < length && (lineString = is.readLine()) != null; i++) {
@@ -7149,7 +7149,7 @@ public class Env
   /**
    * Returns the current function.
    */
-  public String getFunctionLocation()
+  public string getFunctionLocation()
   {
     // XXX: need to work with compiled code, too
     Expr call = peekCall(0);
@@ -7329,8 +7329,8 @@ public class Env
    */
   /*
   public Value callParentMethod(Value qThis,
-                                String parentName,
-                                String funName,
+                                string parentName,
+                                string funName,
                                 Value []args)
   {
     AbstractFunction fun
@@ -7350,7 +7350,7 @@ public class Env
    */
   /*
   public Value callParentMethod(Value qThis,
-                                String parentName,
+                                string parentName,
                                 int hash,
                                 char []name,
                                 int len,
@@ -7369,7 +7369,7 @@ public class Env
   }
   */
 
-  public String toString()
+  public string toString()
   {
     return "Env[]";
   }
@@ -7647,7 +7647,7 @@ public class Env
       SessionCallback callback = getSessionCallback();
 
       if (callback != null) {
-        String value;
+        string value;
 
         // php/1k6e
         if (session.getSize() > 0)
@@ -7670,13 +7670,13 @@ public class Env
     }
   }
 
-  public String dbgId()
+  public string dbgId()
   {
     return getClass().getSimpleName() + "[" + _selfPath + "] ";
   }
 
   static class FieldGetEntry {
-    private final String _className;
+    private final string _className;
     private final StringValue _fieldName;
 
     FieldGetEntry(String className, StringValue fieldName)
@@ -7754,7 +7754,7 @@ public class Env
     }
 
     @Override
-    public String toString()
+    public string toString()
     {
       return (getClass().getSimpleName()
               + "[" + _defRef.get() + ","

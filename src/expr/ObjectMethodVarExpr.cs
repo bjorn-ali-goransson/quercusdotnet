@@ -117,7 +117,7 @@ public class ObjectMethodVarExpr extends Expr {
     }
   }
 
-  public String toString()
+  public string toString()
   {
     return _objExpr + "->" + _name + "()";
   }

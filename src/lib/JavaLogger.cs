@@ -76,7 +76,7 @@ public class JavaLogger
   }
 
   @Override
-  public String toString()
+  public string toString()
   {
     return getClass().getName() + "[" + _log + "]";
   }

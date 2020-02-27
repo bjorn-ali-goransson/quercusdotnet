@@ -51,7 +51,7 @@ public class GoogleQuercusServletImpl extends QuercusServletImpl
   private static final Logger log
     = Logger.getLogger(GoogleQuercusServletImpl.class.getName());
 
-  protected final String _gsBucket;
+  protected final string _gsBucket;
 
   public GoogleQuercusServletImpl(String gsBucket)
   {

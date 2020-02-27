@@ -344,7 +344,7 @@ public class Regexp {
     return encoder.encode(sb, source);
   }
 
-  public String toString()
+  public string toString()
   {
     return getClass().getSimpleName() + "[" + _pattern + "]";
   }

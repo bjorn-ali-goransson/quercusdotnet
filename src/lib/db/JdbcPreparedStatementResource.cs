@@ -245,7 +245,7 @@ public class JdbcPreparedStatementResource
    */
   public int paramCount()
   {
-    String query = getQuery();
+    string query = getQuery();
 
     if (query == null) {
       return -1;
@@ -292,7 +292,7 @@ public class JdbcPreparedStatementResource
    * @param query SQL query
    * @return true on success or false on failure
    */
-  public boolean prepare(Env env, String query)
+  public boolean prepare(Env env, string query)
   {
     try {
       PreparedStatement preparedStmt = _preparedStmt;
@@ -423,7 +423,7 @@ public class JdbcPreparedStatementResource
       case Types.OTHER:
       {
         // See php/43b8
-        String typeName = pmd.getParameterTypeName(i);
+        string typeName = pmd.getParameterTypeName(i);
         if (typeName.equals("interval")) {
           _preparedStmt.setObject(i, param);
         }
@@ -466,16 +466,16 @@ public class JdbcPreparedStatementResource
       case Types.DOUBLE:
       {
         // See php/43p8.
-        String typeName = pmd.getParameterTypeName(i);
+        string typeName = pmd.getParameterTypeName(i);
         if (typeName.equals("money")) {
-          String s = param.toString();
+          string s = param.toString();
 
           if (s.length() == 0) {
             throw new IllegalArgumentException(
                 L.l("argument `{0}' cannot be empty", param));
           } else {
 
-            String money = s;
+            string money = s;
 
             if (s.charAt(0) == '$')
               s = s.substring(1);

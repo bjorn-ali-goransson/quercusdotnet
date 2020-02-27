@@ -135,7 +135,7 @@ public class ThisMethodExpr extends ObjectMethodExpr {
     }
   }
 
-  public override String toString()
+  public override string toString()
   {
     return "$this->$" + _methodName + "()";
   }

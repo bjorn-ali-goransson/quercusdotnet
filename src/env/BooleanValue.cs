@@ -75,7 +75,7 @@ public class BooleanValue extends Value
    * Returns the type.
    */
   @Override
-  public String getType()
+  public string getType()
   {
     return "boolean";
   }
@@ -155,7 +155,7 @@ public class BooleanValue extends Value
   /**
    * Converts to a string.
    */
-  public override String toString()
+  public override string toString()
   {
     return _value ? "1" : "";
   }
@@ -356,7 +356,7 @@ public class BooleanValue extends Value
     return _value == value._value;
   }
 
-  public override String toDebugString()
+  public override string toDebugString()
   {
     if (toBoolean())
       return "true";

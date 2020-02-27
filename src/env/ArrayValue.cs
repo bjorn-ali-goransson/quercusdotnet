@@ -66,7 +66,7 @@ abstract public class ArrayValue extends Value {
    * Returns the type.
    */
   @Override
-  public String getType()
+  public string getType()
   {
     return "array";
   }
@@ -153,7 +153,7 @@ abstract public class ArrayValue extends Value {
   /**
    * Converts to a string.
    */
-  public override String toString()
+  public override string toString()
   {
     return "Array";
   }
@@ -378,9 +378,9 @@ abstract public class ArrayValue extends Value {
       int p = nameStr.indexOf("::");
 
       if (p > 0) {
-        String name = nameStr.toString();
+        string name = nameStr.toString();
 
-        String clsName = name.substring(0, p);
+        string clsName = name.substring(0, p);
         name = name.substring(p + 2);
 
         QuercusClass cls = env.findClass(clsName);
@@ -401,7 +401,7 @@ abstract public class ArrayValue extends Value {
       }
     }
     else {
-      String clsName = obj.toString();
+      string clsName = obj.toString();
       QuercusClass cls = env.findClass(clsName);
 
       if (cls == null) {
@@ -445,7 +445,7 @@ abstract public class ArrayValue extends Value {
       return super.toCallable(env, false);
     }
 
-    String name = nameV.toString();
+    string name = nameV.toString();
 
     if (obj.isObject()) {
       AbstractFunction fun;
@@ -454,7 +454,7 @@ abstract public class ArrayValue extends Value {
 
       // php/09lf
       if (p > 0) {
-        String clsName = name.substring(0, p);
+        string clsName = name.substring(0, p);
         name = name.substring(p + 2);
 
         QuercusClass cls = env.findClass(clsName);
@@ -951,7 +951,7 @@ abstract public class ArrayValue extends Value {
   /**
    * Convenience for lib.
    */
-  public void put(String key, String value)
+  public void put(String key, string value)
   {
     // XXX: this needs an Env arg because of i18n
     // XXX: but some  modules have arrays that are static constants
@@ -961,7 +961,7 @@ abstract public class ArrayValue extends Value {
   /**
    * Convenience for lib.
    */
-  public void put(Env env, String key, String value)
+  public void put(Env env, string key, string value)
   {
     put(env.createString(key), env.createString(value));
   }
@@ -987,7 +987,7 @@ abstract public class ArrayValue extends Value {
   /**
    * Convenience for lib.
    */
-  public void put(Env env, String key, long value)
+  public void put(Env env, string key, long value)
   {
     put(env.createString(key), LongValue.create(value));
   }
@@ -1014,7 +1014,7 @@ abstract public class ArrayValue extends Value {
   /**
    * Convenience for lib.
    */
-  public void put(Env env, String key, boolean value)
+  public void put(Env env, string key, boolean value)
   {
     put(env.createString(key),
         value ? BooleanValue.TRUE : BooleanValue.FALSE);
@@ -1862,7 +1862,7 @@ abstract public class ArrayValue extends Value {
         out.print(' ');
     }
 
-    public override String toString()
+    public override string toString()
     {
       return "ArrayValue.Entry[" + getKey() + "]";
     }

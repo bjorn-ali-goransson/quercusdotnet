@@ -83,7 +83,7 @@ public class UnaryPostIncrementExpr extends AbstractUnaryExpr {
     return true;
   }
 
-  public String toString()
+  public string toString()
   {
     if (_incr > 0)
       return _expr + "++";

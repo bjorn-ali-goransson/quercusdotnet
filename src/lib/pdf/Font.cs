@@ -34,8 +34,8 @@
  */
 public class Font 
 {
-  private String _fontName;
-  private String _weight;
+  private string _fontName;
+  private string _weight;
 
   private double _llxBBox;
   private double _llyBBox;
@@ -57,7 +57,7 @@ public class Font
 
   private FontChar []_chars = new FontChar[256];
 
-  public String getFontName()
+  public string getFontName()
   {
     return _fontName;
   }
@@ -67,7 +67,7 @@ public class Font
     _fontName = name;
   }
 
-  public String getWeight()
+  public string getWeight()
   {
     return _weight;
   }

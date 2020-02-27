@@ -46,7 +46,7 @@
 public class ClassFieldExpr extends AbstractVarExpr {
   private static final L10N L = new L10N(ClassFieldExpr.class);
 
-  protected final String _className;
+  protected final string _className;
   protected final StringValue _varName;
 
   public ClassFieldExpr(String className, StringValue varName)
@@ -126,7 +126,7 @@ public class ClassFieldExpr extends AbstractVarExpr {
               getLocation());
   }
 
-  public String toString()
+  public string toString()
   {
     return _className + "::$" + _varName;
   }

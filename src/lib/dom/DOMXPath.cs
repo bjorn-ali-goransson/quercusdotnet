@@ -67,7 +67,7 @@ public class DOMXPath
   }
 
   public Object evaluate(Env env,
-                         String expression)
+                         string expression)
   {
     Node node = _document.getDelegate();
 
@@ -82,7 +82,7 @@ public class DOMXPath
   }
 
   public DOMNodeList query(Env env,
-                           String expression,
+                           string expression,
                            @Optional DOMNode<Node> contextNode)
   {
     Node node;
@@ -97,7 +97,7 @@ public class DOMXPath
     return _document.wrap(nodeList);
   }
 
-  private NodeList query2(Env env, String pattern, Node node)
+  private NodeList query2(Env env, string pattern, Node node)
   {
     // the JDKs xpath is extremely inefficient, causing benchmark
     // problems with mediawiki
@@ -112,7 +112,7 @@ public class DOMXPath
   }
 
 
-  private NodeList query(Env env, String pattern, Node node)
+  private NodeList query(Env env, string pattern, Node node)
   {
     try {
       if (_context == null) {
@@ -159,7 +159,7 @@ public class DOMXPath
     }
   }
 
-  public boolean registerNamespace(String prefix, String namespaceURI)
+  public boolean registerNamespace(String prefix, string namespaceURI)
   {
     if (_context == null)
       _context = new DOMNamespaceContext();
@@ -175,7 +175,7 @@ public class DOMXPath
     private HashMap<String, LinkedHashSet<String>> _namespaceMap
       = new HashMap<String, LinkedHashSet<String>>();
 
-    protected void addNamespace(String prefix, String namespaceURI)
+    protected void addNamespace(String prefix, string namespaceURI)
     {
       LinkedHashSet<String> list = _namespaceMap.get(namespaceURI);
 
@@ -188,7 +188,7 @@ public class DOMXPath
       list.add(prefix);
     }
 
-    public String getNamespaceURI(String prefix)
+    public string getNamespaceURI(String prefix)
     {
       for (Map.Entry<String, LinkedHashSet<String>> entry
            : _namespaceMap.entrySet()) {
@@ -199,7 +199,7 @@ public class DOMXPath
       return null;
     }
 
-    public String getPrefix(String namespaceURI)
+    public string getPrefix(String namespaceURI)
     {
       Iterator<String> iter = getPrefixes(namespaceURI);
 

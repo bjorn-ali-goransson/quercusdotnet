@@ -41,7 +41,7 @@
  * A parent::bar(...) method call expression.
  */
 public class TraitParentClassMethodExpr extends AbstractMethodExpr {
-  protected final String _traitName;
+  protected final string _traitName;
   protected final StringValue _methodName;
 
   protected final int _hash;
@@ -50,7 +50,7 @@ public class TraitParentClassMethodExpr extends AbstractMethodExpr {
   protected boolean _isMethod;
 
   public TraitParentClassMethodExpr(Location location,
-                                    String traitName,
+                                    string traitName,
                                     StringValue methodName,
                                     ArrayList<Expr> args)
   {
@@ -66,7 +66,7 @@ public class TraitParentClassMethodExpr extends AbstractMethodExpr {
   }
 
   public TraitParentClassMethodExpr(Location location,
-                                    String traitName,
+                                    string traitName,
                                     StringValue methodName,
                                     Expr []args)
   {
@@ -125,7 +125,7 @@ public class TraitParentClassMethodExpr extends AbstractMethodExpr {
     }
   }
 
-  public String toString()
+  public string toString()
   {
     return "parent::" + _methodName + "()";
   }

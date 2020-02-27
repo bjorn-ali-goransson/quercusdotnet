@@ -175,7 +175,7 @@ abstract public class Callback extends Value implements Callable {
    * Returns the name of the callback.
    *
    */
-  abstract public String getCallbackName();
+  abstract public string getCallbackName();
 
   /**
    * Returns true if this callback is implemented internally (i.e. in Java).
@@ -183,7 +183,7 @@ abstract public class Callback extends Value implements Callable {
    */
   abstract public boolean isInternal(Env env);
 
-  public String toString()
+  public string toString()
   {
     return getClass().getSimpleName() + "[" + getCallbackName() + "]";
   }

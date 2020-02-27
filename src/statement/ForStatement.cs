@@ -44,10 +44,10 @@ public class ForStatement extends Statement {
   protected final Expr _test;
   protected final Expr _incr;
   protected final Statement _block;
-  protected final String _label;
+  protected final string _label;
 
   public ForStatement(Location location, Expr init, Expr test, Expr incr,
-                      Statement block, String label)
+                      Statement block, string label)
   {
     super(location);
 

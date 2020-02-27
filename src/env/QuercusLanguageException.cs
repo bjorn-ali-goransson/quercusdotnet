@@ -87,11 +87,11 @@ public class QuercusLanguageException extends QuercusException
   /**
    * Returns the PHP exception message.  If null, returns the empty string.
    */
-  public String getMessage(Env env)
+  public string getMessage(Env env)
   {
     Value field = _value.getField(env, MESSAGE);
 
-    String msg;
+    string msg;
 
     if (field != null)
       msg = field.toString();
@@ -120,7 +120,7 @@ public class QuercusLanguageException extends QuercusException
     return getLocation(env).getLineNumber();
   }
 
-  public String getFile(Env env)
+  public string getFile(Env env)
   {
     return getLocation(env).getFileName();
   }

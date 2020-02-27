@@ -42,7 +42,7 @@
  * Represents an introspected Java class.
  */
 public class JavaCollectionClassDef extends JavaClassDef {
-  JavaCollectionClassDef(ModuleContext moduleContext, String name, Class type)
+  JavaCollectionClassDef(ModuleContext moduleContext, string name, Class type)
   {
     super(moduleContext, name, type);
   }

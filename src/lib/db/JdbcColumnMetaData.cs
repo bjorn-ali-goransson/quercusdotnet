@@ -41,7 +41,7 @@
 public class JdbcColumnMetaData {
   private final JdbcTableMetaData _table;
 
-  private final String _name;
+  private final string _name;
 
   private final int _jdbcType;
 
@@ -74,7 +74,7 @@ public class JdbcColumnMetaData {
     _isNotNull = rs.getInt(11) == DatabaseMetaData.columnNoNulls;
 
     // TYPE_NAME
-    String type = rs.getString(6).toLowerCase(Locale.ENGLISH);
+    string type = rs.getString(6).toLowerCase(Locale.ENGLISH);
 
     _isUnsigned = type.indexOf("unsigned") >= 0;
     _isZeroFill = type.indexOf("zerofill") >= 0;
@@ -83,7 +83,7 @@ public class JdbcColumnMetaData {
   /**
    * Returns the column's name.
    */
-  public String getName()
+  public string getName()
   {
     return _name;
   }
@@ -253,7 +253,7 @@ public class JdbcColumnMetaData {
     return isBlob(_jdbcType);
   }
 
-  public String toString()
+  public string toString()
   {
     return "JdbcColumnMetaData[" + getName() + "]";
   }

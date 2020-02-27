@@ -75,7 +75,7 @@ public class BinaryGtExpr extends AbstractBinaryExpr {
     return lValue.gt(rValue);
   }
 
-  public String toString()
+  public string toString()
   {
     return "(" + _left + " > " + _right + ")";
   }

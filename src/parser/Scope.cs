@@ -161,8 +161,8 @@ abstract public class Scope {
    * Adds a class.
    */
   abstract public InterpretedClassDef addClass(Location location,
-                                               String name,
-                                               String parent,
+                                               string name,
+                                               string parent,
                                                ArrayList<String> ifaceList,
                                                int index,
                                                boolean isTop);

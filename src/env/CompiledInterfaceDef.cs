@@ -35,15 +35,15 @@ public class CompiledInterfaceDef
   extends CompiledClassDef
 {
   public CompiledInterfaceDef(String name,
-                              String parent,
+                              string parent,
                               String[] ifaceList)
   {
     super(name, parent, ifaceList);
   }
 
   public CompiledInterfaceDef(Location location,
-                              String name,
-                              String parent,
+                              string name,
+                              string parent,
                               String[] ifaceList)
   {
     super(location, name, parent, ifaceList);

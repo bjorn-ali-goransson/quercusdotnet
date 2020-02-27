@@ -9,7 +9,7 @@
  * Crypt.
  */
 public class Crypt {
-  public static String crypt(String keyString, String salt)
+  public static string crypt(String keyString, string salt)
   {
     int len = keyString.length();
 
@@ -222,7 +222,7 @@ public class Crypt {
     return (v >>> n) + (v << (32 - n));
   }
 
-  private static String resultToString(String salt, long v)
+  private static string resultToString(String salt, long v)
   {
     StringBuilder sb = new StringBuilder();
 

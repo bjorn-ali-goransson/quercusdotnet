@@ -80,7 +80,7 @@ public class DOMNode<T extends Node>
     return wrap(_delegate.getAttributes());
   }
 
-  public String getBaseURI()
+  public string getBaseURI()
   {
     return _delegate.getBaseURI();
   }
@@ -90,7 +90,7 @@ public class DOMNode<T extends Node>
     return wrap(_delegate.getChildNodes());
   }
 
-  public Object getFeature(String feature, String version)
+  public Object getFeature(String feature, string version)
   {
     return _delegate.getFeature(feature, version);
   }
@@ -105,12 +105,12 @@ public class DOMNode<T extends Node>
     return wrap(_delegate.getLastChild());
   }
 
-  public String getLocalName()
+  public string getLocalName()
   {
     return _delegate.getLocalName();
   }
 
-  public String getNamespaceURI()
+  public string getNamespaceURI()
   {
     return _delegate.getNamespaceURI();
   }
@@ -120,7 +120,7 @@ public class DOMNode<T extends Node>
     return wrap(_delegate.getNextSibling());
   }
 
-  public String getNodeName()
+  public string getNodeName()
   {
     return _delegate.getNodeName();
   }
@@ -134,7 +134,7 @@ public class DOMNode<T extends Node>
     
   {
     try {
-      String value = _delegate.getNodeValue();
+      string value = _delegate.getNodeValue();
 
       return convertToUtf8(env, value);
     }
@@ -153,7 +153,7 @@ public class DOMNode<T extends Node>
     return wrap(_delegate.getParentNode());
   }
 
-  public String getPrefix()
+  public string getPrefix()
   {
     return _delegate.getPrefix();
   }
@@ -167,7 +167,7 @@ public class DOMNode<T extends Node>
     
   {
     try {
-      String value = _delegate.getTextContent();
+      string value = _delegate.getTextContent();
 
       return convertToUtf8(env, value);
     }
@@ -176,7 +176,7 @@ public class DOMNode<T extends Node>
     }
   }
 
-  private CharSequence convertToUtf8(Env env, String value)
+  private CharSequence convertToUtf8(Env env, string value)
   {
     if (env.isUnicodeSemantics()) {
       return value;
@@ -256,17 +256,17 @@ public class DOMNode<T extends Node>
     return _delegate.isSameNode(other.getDelegate());
   }
 
-  public boolean isSupported(String feature, String version)
+  public boolean isSupported(String feature, string version)
   {
     return _delegate.isSupported(feature, version);
   }
 
-  public String lookupNamespaceURI(String prefix)
+  public string lookupNamespaceURI(String prefix)
   {
     return _delegate.lookupNamespaceURI(prefix);
   }
 
-  public String lookupPrefix(String namespaceURI)
+  public string lookupPrefix(String namespaceURI)
   {
     return _delegate.lookupPrefix(namespaceURI);
   }
@@ -337,7 +337,7 @@ public class DOMNode<T extends Node>
     return _delegate.setUserData(key, data, null);
   }
 
-  public String toString()
+  public string toString()
   {
     return getClass().getSimpleName();
   }

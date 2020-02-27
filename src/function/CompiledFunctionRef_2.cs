@@ -102,7 +102,7 @@ abstract public class CompiledFunctionRef_2 extends CompiledFunctionRef {
 
   abstract public Value callRef(Env env, Value a1, Value a2);
 
-  public String toString()
+  public string toString()
   {
     return "CompiledFunction_1[" + _name + "]";
   }

@@ -335,7 +335,7 @@ public class AbstractBinaryInput
     return this;
   }
 
-  public String getResourceType()
+  public string getResourceType()
   {
     return "stream";
   }
@@ -356,7 +356,7 @@ public class AbstractBinaryInput
   /**
    * Converts to a string.
    */
-  public String toString()
+  public string toString()
   {
     if (_is != null)
       return "AbstractBinaryInput[" + _is.getPath() + "]";

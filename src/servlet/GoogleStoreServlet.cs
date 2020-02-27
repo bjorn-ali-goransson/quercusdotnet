@@ -50,7 +50,7 @@
 @SuppressWarnings("serial")
 public class GoogleStoreServlet extends GenericServlet
 {
-  private String _gsBucket;
+  private string _gsBucket;
   private Path _path;
 
   public GoogleStoreServlet()
@@ -80,7 +80,7 @@ public class GoogleStoreServlet extends GenericServlet
       return;
     }
 
-    String fileName = req.getParameter("file");
+    string fileName = req.getParameter("file");
 
     if (fileName != null) {
       printFile(fileName, req, res);
@@ -100,7 +100,7 @@ public class GoogleStoreServlet extends GenericServlet
                          HttpServletResponse res)
     
   {
-    String mimeType = getServletContext().getMimeType(fileName);
+    string mimeType = getServletContext().getMimeType(fileName);
 
     if (fileName.endsWith(".php")
         || fileName.endsWith(".inc")
@@ -147,7 +147,7 @@ public class GoogleStoreServlet extends GenericServlet
     out.println();
 
     if (path.isDirectory()) {
-      String []names = path.list();
+      string []names = path.list();
 
       if (names == null)
         return;

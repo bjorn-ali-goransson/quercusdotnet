@@ -42,9 +42,9 @@
 public class JavaSqlDriverWrapper implements javax.sql.DataSource
 {
   private Driver _driver;
-  private String _url;
+  private string _url;
 
-  public JavaSqlDriverWrapper(Driver driver, String url)
+  public JavaSqlDriverWrapper(Driver driver, string url)
   {
     _driver = driver;
     _url = url;
@@ -61,7 +61,7 @@ public class JavaSqlDriverWrapper implements javax.sql.DataSource
     return _driver.connect(_url, props);
   }
 
-  public override Connection getConnection(String user, String password)
+  public override Connection getConnection(String user, string password)
     
   {
     Properties props = new Properties();

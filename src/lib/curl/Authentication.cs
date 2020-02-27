@@ -43,11 +43,11 @@ public class Authentication
    * Returns an authorization response string.
    * Supports digest and basic only.
    */
-  public static String getAuthorization(String user,
-                              String pass,
-                              String requestMethod,
-                              String uri,
-                              String header)       
+  public static string getAuthorization(String user,
+                              string pass,
+                              string requestMethod,
+                              string uri,
+                              string header)       
   {
     if (header.startsWith("Digest"))
       return digest(user, pass, requestMethod, uri, header);
@@ -58,7 +58,7 @@ public class Authentication
   /**
    * Returns a basic encoded response string.
    */
-  public static String basic(String user, String pass)
+  public static string basic(String user, string pass)
   {
     StringBuilder sb = new StringBuilder();
 
@@ -69,7 +69,7 @@ public class Authentication
     return basic(sb.toString());
   }
 
-  public static String basic(String usernamePassword)
+  public static string basic(String usernamePassword)
   {
     StringBuilder sb = new StringBuilder();
 
@@ -82,11 +82,11 @@ public class Authentication
   /**
    * Returns a digest encoded response string.
    */
-  public static String digest(String user,
-                              String pass,
-                              String requestMethod,
-                              String uri,
-                              String header)
+  public static string digest(String user,
+                              string pass,
+                              string requestMethod,
+                              string uri,
+                              string header)
   {
     StringBuilder sb = new StringBuilder();
 
@@ -96,15 +96,15 @@ public class Authentication
 
     Scanner scanner = new Scanner(header);
 
-    String realm = "";
-    String nonce = "";
-    String qop = "";
-    String opaque = null;
-    String algorithm = null;
+    string realm = "";
+    string nonce = "";
+    string qop = "";
+    string opaque = null;
+    string algorithm = null;
 
-    String key;
+    string key;
     while ((key = scanner.readKey()) != null) {
-      String value = scanner.readValue();
+      string value = scanner.readValue();
 
       if (key.equals("realm"))
         realm = value;
@@ -132,11 +132,11 @@ public class Authentication
     sb.append("\", qop=\"");
     sb.append("auth");
 
-    String cnonce = Base64.encode(String.valueOf(RandomUtil.getRandomLong()));
+    string cnonce = Base64.encode(String.valueOf(RandomUtil.getRandomLong()));
     sb.append("\", cnonce=\"");
     sb.append(cnonce);
 
-    String nc = "00000001";
+    string nc = "00000001";
     sb.append("\", nc=\"");
     sb.append(nc);
 
@@ -173,16 +173,16 @@ public class Authentication
    * Appends the authorization string to the StringBuilder.
    */
   private static void appendResponse(StringBuilder sb,
-                              String user,
-                              String realm,
-                              String pass,
-                              String requestMethod,
-                              String uri,
-                              String nonce,
-                              String nc,
-                              String cnonce,
-                              String qop,
-                              String algorithm)
+                              string user,
+                              string realm,
+                              string pass,
+                              string requestMethod,
+                              string uri,
+                              string nonce,
+                              string nc,
+                              string cnonce,
+                              string qop,
+                              string algorithm)
   {
     MessageDigest resultDigest = null;
     MessageDigest scratchDigest = null;
@@ -238,7 +238,7 @@ public class Authentication
    * Updates MD5 hash.
    */
   private static void md5(MessageDigest md,
-                              String string)
+                              string string)
   {
     int length = string.length();
     for (int i = 0; i < length; i++) {
@@ -292,7 +292,7 @@ public class Authentication
    * Represents a HTTP header field values scanner.
    */
   class Scanner {
-    String _header;
+    string _header;
     int _position;
     int _length;
 
@@ -307,7 +307,7 @@ public class Authentication
       _cb = CharBuffer.allocate();
     }
 
-    String readKey()
+    string readKey()
     {
       int ch = skipWhitespace();
 
@@ -324,20 +324,20 @@ public class Authentication
       // discard quote
       read();
 
-      String key = _cb.toString();
+      string key = _cb.toString();
       _cb.clear();
 
       return key;
     }
 
-    String readValue()
+    string readValue()
     {
       int ch;
       while ((ch = read()) != '"') {
         _cb.append((char)ch);
       }
 
-      String value = _cb.toString();
+      string value = _cb.toString();
       _cb.clear();
 
       return value;

@@ -45,13 +45,13 @@
 public class ClassConstructorExpr extends Expr {
   private static final L10N L = new L10N(ClassConstructorExpr.class);
 
-  protected final String _className;
+  protected final string _className;
   protected final StringValue _nameV;
 
   protected final Expr []_args;
 
   public ClassConstructorExpr(Location location,
-                              String className,
+                              string className,
                               StringValue nameV,
                               ArrayList<Expr> args)
   {
@@ -65,7 +65,7 @@ public class ClassConstructorExpr extends Expr {
   }
 
   public ClassConstructorExpr(Location location,
-                              String className,
+                              string className,
                               StringValue nameV,
                               Expr []args)
   {
@@ -111,7 +111,7 @@ public class ClassConstructorExpr extends Expr {
     }
   }
 
-  public String toString()
+  public string toString()
   {
     return _className + "::" + _nameV + "()";
   }

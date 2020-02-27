@@ -42,12 +42,12 @@
 public class WhileStatement extends Statement {
   protected final Expr _test;
   protected final Statement _block;
-  protected final String _label;
+  protected final string _label;
 
   public WhileStatement(Location location,
                         Expr test,
                         Statement block,
-                        String label)
+                        string label)
   {
     super(location);
 

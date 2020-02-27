@@ -127,7 +127,7 @@ public class BinaryBuilderValue
    * Returns the type.
    */
   @Override
-  public String getType()
+  public string getType()
   {
     return "string";
   }
@@ -224,7 +224,7 @@ public class BinaryBuilderValue
   /**
    * Converts to a UnicodeValue in desired charset.
    */
-  public override StringValue toUnicodeValue(Env env, String charset)
+  public override StringValue toUnicodeValue(Env env, string charset)
   {
     return toUnicodeValue(env);
   }
@@ -554,7 +554,7 @@ public class BinaryBuilderValue
     }
   }
 
-  public override String toDebugString()
+  public override string toDebugString()
   {
     StringBuilder sb = new StringBuilder();
 

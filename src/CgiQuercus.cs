@@ -63,7 +63,7 @@ public class CgiQuercus
    * Returns the SAPI (Server API) name.
    */
   @Override
-  public String getSapiName()
+  public string getSapiName()
   {
     return "cgi";
   }

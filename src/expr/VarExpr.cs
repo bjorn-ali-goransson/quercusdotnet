@@ -82,7 +82,7 @@ public class VarExpr
   /**
    * Returns the java variable name.
    */
-  public String getJavaVar()
+  public string getJavaVar()
   {
     return "v_" + _name;
   }
@@ -307,7 +307,7 @@ public class VarExpr
     return _var == var._var;
   }
 
-  public String toString()
+  public string toString()
   {
     return "$" + _name;
   }

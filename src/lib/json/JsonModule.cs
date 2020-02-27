@@ -57,7 +57,7 @@ public class JsonModule extends AbstractQuercusModule
   public static final int JSON_UNESCAPED_SLASHES = 256;
   public static final int JSON_UNESCAPED_UNICODE = 512;
 
-  public String []getLoadedExtensions()
+  public string []getLoadedExtensions()
   {
     return new String[] { "json" };
   }
@@ -70,7 +70,7 @@ public class JsonModule extends AbstractQuercusModule
    *
    * @param env
    * @param val to encode into json format
-   * @return String JSON-encoded String
+   * @return string JSON-encoded String
    */
   public static StringValue json_encode(Env env,
                                         Value val,

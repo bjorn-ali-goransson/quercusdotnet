@@ -60,7 +60,7 @@ public abstract class ReflectionFunctionAbstract
   {
   }
 
-  public String getName()
+  public string getName()
   {
     return _callable.getCallbackName();
   }
@@ -75,7 +75,7 @@ public abstract class ReflectionFunctionAbstract
     return false;
   }
 
-  public String getFileName(Env env)
+  public string getFileName(Env env)
   {
     return _callable.getDeclFileName(env);
   }
@@ -92,7 +92,7 @@ public abstract class ReflectionFunctionAbstract
   }
 
   @ReturnNullAsFalse
-  public String getDocComment(Env env)
+  public string getDocComment(Env env)
   {
     return _callable.getDeclComment(env);
   }

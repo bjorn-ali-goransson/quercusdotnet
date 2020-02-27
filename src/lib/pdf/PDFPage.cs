@@ -90,9 +90,9 @@ public class PDFPage {
     return _stream;
   }
 
-  void addResource(String name, String value)
+  void addResource(String name, string value)
   {
-    String oldValue = _resources.get(name);
+    string oldValue = _resources.get(name);
     
     if (oldValue == null || oldValue.equals(value)) {
       _resources.put(name, value);
@@ -100,8 +100,8 @@ public class PDFPage {
     }
     
     if (oldValue.startsWith("<<")) {
-      String oldValueStrip = oldValue.substring(2, oldValue.length() - 2);
-      String valueStrip = value.substring(2, value.length() - 2);
+      string oldValueStrip = oldValue.substring(2, oldValue.length() - 2);
+      string valueStrip = value.substring(2, value.length() - 2);
       
       ArrayList<String> oldValueList = new ArrayList<String>();
       

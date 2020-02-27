@@ -72,7 +72,7 @@ public class FunGetCalledClassExpr extends Expr {
     return BooleanValue.FALSE;
   }
 
-  public String toString()
+  public string toString()
   {
     return "get_called_class()";
   }

@@ -43,13 +43,13 @@
 public class ClassConstructExpr extends AbstractMethodExpr {
   private static final L10N L = new L10N(ClassConstructExpr.class);
 
-  protected final String _className;
+  protected final string _className;
   protected final Expr []_args;
 
   protected boolean _isMethod;
 
   public ClassConstructExpr(Location location,
-                            String className,
+                            string className,
                             ArrayList<Expr> args)
   {
     super(location);
@@ -60,7 +60,7 @@ public class ClassConstructExpr extends AbstractMethodExpr {
   }
 
   public ClassConstructExpr(Location location,
-                            String className,
+                            string className,
                             Expr []args)
   {
     super(location);
@@ -104,7 +104,7 @@ public class ClassConstructExpr extends AbstractMethodExpr {
     }
   }
 
-  public String toString()
+  public string toString()
   {
     return _className + "::__construct()";
   }

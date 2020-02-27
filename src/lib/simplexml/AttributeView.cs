@@ -52,12 +52,12 @@ public class AttributeView extends SimpleView
   }
 
   @Override
-  public String getNodeName()
+  public string getNodeName()
   {
     return _attr.getNodeName();
   }
 
-  public override String getNodeValue()
+  public override string getNodeValue()
   {
     return _attr.getNodeValue();
   }
@@ -82,7 +82,7 @@ public class AttributeView extends SimpleView
     throw new UnsupportedOperationException();
   }
 
-  public override String toString(Env env)
+  public override string toString(Env env)
   {
     return _attr.getNodeValue();
   }
@@ -118,7 +118,7 @@ public class AttributeView extends SimpleView
     return obj;
   }
 
-  public override String toString()
+  public override string toString()
   {
     return getClass().getSimpleName() + "[" + _attr + "]";
   }

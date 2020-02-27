@@ -129,7 +129,7 @@ abstract public class StringValue
    * @param str should be a Unicode string
    * @param charset to decode string from
    */
-  public StringValue create(Env env, StringValue unicodeStr, String charset)
+  public StringValue create(Env env, StringValue unicodeStr, string charset)
   {
     if (! unicodeStr.isUnicode())
       return unicodeStr;
@@ -157,7 +157,7 @@ abstract public class StringValue
   /**
    * Returns the type.
    */
-  public String getType()
+  public string getType()
   {
     return "string";
   }
@@ -479,7 +479,7 @@ abstract public class StringValue
   }
 
   /**
-   * String to long conversion routines used by this module
+   * string to long conversion routines used by this module
    * and other modules in this package. These methods are
    * only invoked by other implementations of a "string" object.
    * The 3 implementations should be identical except for the
@@ -1458,7 +1458,7 @@ abstract public class StringValue
    * @param str should be a Unicode string
    * @param charset to decode string from
    */
-  public StringValue append(Env env, StringValue unicodeStr, String charset)
+  public StringValue append(Env env, StringValue unicodeStr, string charset)
   {
     if (! unicodeStr.isUnicode())
       return append(unicodeStr);
@@ -1675,7 +1675,7 @@ abstract public class StringValue
   }
 
   /**
-   * Append a Java String to the value without conversions.
+   * Append a Java string to the value without conversions.
    */
   public StringValue appendBytes(String s)
   {
@@ -1689,7 +1689,7 @@ abstract public class StringValue
   }
 
   /**
-   * Append a Java String to the value without conversions.
+   * Append a Java string to the value without conversions.
    */
   public StringValue appendBytes(StringValue s)
   {
@@ -2266,9 +2266,9 @@ abstract public class StringValue
   }
 
   /**
-   * Returns a String substring
+   * Returns a string substring
    */
-  public String stringSubstring(int begin, int end)
+  public string stringSubstring(int begin, int end)
   {
     return substring(begin, end).toString();
   }
@@ -2416,7 +2416,7 @@ abstract public class StringValue
     return new InputStreamReader(new ByteArrayInputStream(bytes), charset);
   }
   
-  public String toString(String charset)
+  public string toString(String charset)
     
   {
     byte []bytes = toBytes();
@@ -2443,7 +2443,7 @@ abstract public class StringValue
    * @param env
    * @param charset
    */
-  public StringValue toUnicodeValue(Env env, String charset)
+  public StringValue toUnicodeValue(Env env, string charset)
   {
     StringValue sb = new UnicodeBuilderValue();
 
@@ -2460,7 +2460,7 @@ abstract public class StringValue
    * @param env
    * @param charset
    */
-  public StringValue convertToUnicode(Env env, String charset)
+  public StringValue convertToUnicode(Env env, string charset)
   {
     Decoder decoder = Decoder.create(charset);
     decoder.setAllowMalformedOut(true);
@@ -2734,7 +2734,7 @@ abstract public class StringValue
 
     int len = length();
 
-    String className = getClass().getSimpleName();
+    string className = getClass().getSimpleName();
 
     if (len == 1) {
       out.print(className + ".create('");
@@ -2761,7 +2761,7 @@ abstract public class StringValue
     }
   }
 
-  abstract override public String toDebugString();
+  abstract override public string toDebugString();
 
   abstract override public void varDumpImpl(Env env,
                                    WriteStream out,

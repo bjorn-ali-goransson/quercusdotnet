@@ -121,7 +121,7 @@ public class UnaryRefExpr extends AbstractUnaryExpr {
     */
   }
 
-  public String toString()
+  public string toString()
   {
     return _expr.toString();
   }

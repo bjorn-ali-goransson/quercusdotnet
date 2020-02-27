@@ -262,7 +262,7 @@ public class IniParser {
         else if (ch == '"') {
           StringValue result = env.createStringBuilder();
 
-          String value = sb.toString().trim();
+          string value = sb.toString().trim();
 
           result.append(getIniConstant(env, value));
 
@@ -279,13 +279,13 @@ public class IniParser {
         }
       }
 
-      String value = sb.toString().trim();
+      string value = sb.toString().trim();
 
       return getIniConstant(env, value);
     }
   }
 
-  private static Value getIniConstant(Env env, String value)
+  private static Value getIniConstant(Env env, string value)
   {
     if (value.equalsIgnoreCase("null")) {
       return env.getEmptyString();

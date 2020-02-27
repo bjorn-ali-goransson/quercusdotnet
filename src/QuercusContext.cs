@@ -167,7 +167,7 @@ public class QuercusContext
     = new HashMap<Value, Value>();
 
   private IntMap _classNameMap = new IntMap(8192);
-  private String []_classNames = new String[256];
+  private string []_classNames = new String[256];
   private ClassDef []_classDefMap = new ClassDef[256];
   private QuercusClass []_classCacheMap = new QuercusClass[256];
 
@@ -202,10 +202,10 @@ public class QuercusContext
   private ConcurrentHashMap<String, Object> _specialMap
     = new ConcurrentHashMap<String, Object>();
 
-  private String _scriptEncoding;
+  private string _scriptEncoding;
 
-  private String _phpVersion = "5.5.0";
-  private String _mySqlVersion;
+  private string _phpVersion = "5.5.0";
+  private string _mySqlVersion;
 
   private boolean _isStrict;
   private boolean _isLooseParse;
@@ -329,7 +329,7 @@ public class QuercusContext
     _workDir = workDir;
   }
 
-  public String getCookieName()
+  public string getCookieName()
   {
     return "JSESSIONID";
   }
@@ -364,7 +364,7 @@ public class QuercusContext
     return _includeCacheTimeout;
   }
 
-  public String getName()
+  public string getName()
   {
     if (isPro()) {
       return "Quercus Pro";
@@ -374,12 +374,12 @@ public class QuercusContext
     }
   }
 
-  public String getVersion()
+  public string getVersion()
   {
     return "Open Source " + QuercusVersion.getVersionNumber();
   }
 
-  public String getVersionDate()
+  public string getVersionDate()
   {
     return QuercusVersion.getVersionDate();
   }
@@ -387,7 +387,7 @@ public class QuercusContext
   /**
    * Returns the SAPI (Server API) name.
    */
-  public String getSapiName()
+  public string getSapiName()
   {
     // default to cgi for mediawiki-1.19.1
     return "cgi";
@@ -545,7 +545,7 @@ public class QuercusContext
   /**
    * Returns the expected encoding of php scripts.
    */
-  public String getScriptEncoding()
+  public string getScriptEncoding()
   {
     if (_scriptEncoding != null)
       return _scriptEncoding;
@@ -566,12 +566,12 @@ public class QuercusContext
   /**
    * Returns the encoding used for output, null if unicode.semantics is off.
    */
-  public String getOutputEncoding()
+  public string getOutputEncoding()
   {
     if (! _isUnicodeSemantics)
       return null;
 
-    String encoding = QuercusContext.INI_UNICODE_OUTPUT_ENCODING.getAsString(this);
+    string encoding = QuercusContext.INI_UNICODE_OUTPUT_ENCODING.getAsString(this);
 
     if (encoding == null)
       encoding = QuercusContext.INI_UNICODE_FALLBACK_ENCODING.getAsString(this);
@@ -588,7 +588,7 @@ public class QuercusContext
    * It is user set-able to allow cloaking of the underlying mysql
    * JDBC driver version for application compatibility.
    */
-  public String getMysqlVersion()
+  public string getMysqlVersion()
   {
     return _mySqlVersion;
   }
@@ -603,7 +603,7 @@ public class QuercusContext
     _mySqlVersion = version;
   }
 
-  public String getPhpVersion()
+  public string getPhpVersion()
   {
     return _phpVersion;
   }
@@ -671,13 +671,13 @@ public class QuercusContext
   /**
    * Gets the default data source.
    */
-  public DataSource findDatabase(String driver, String url)
+  public DataSource findDatabase(String driver, string url)
   {
     if (_database != null)
       return _database;
     else {
       try {
-        String key = driver + ";" + url;
+        string key = driver + ";" + url;
 
         DataSource database = _databaseMap.get(key);
 
@@ -830,7 +830,7 @@ public class QuercusContext
   private void initJavaClasses()
   {
     for (Map.Entry<String, Class<?>> entry : _javaInitClassMap.entrySet()) {
-      String name = entry.getKey();
+      string name = entry.getKey();
       Class<?> cls = entry.getValue();
 
       try {
@@ -857,7 +857,7 @@ public class QuercusContext
   /**
    * Adds a java class
    */
-  public void addJavaClass(String phpName, String className)
+  public void addJavaClass(String phpName, string className)
   {
     try {
       Class<?> type = Class.forName(className, false, _loader);
@@ -891,7 +891,7 @@ public class QuercusContext
   /**
    * Adds a java class
    */
-  public JavaClassDef getJavaClassDefinition(Class<?> type, String className)
+  public JavaClassDef getJavaClassDefinition(Class<?> type, string className)
   {
     JavaClassDef def;
 
@@ -1012,7 +1012,7 @@ public class QuercusContext
   /**
    * Sets an ini value.
    */
-  public void setIni(String name, String value)
+  public void setIni(String name, string value)
   {
     _iniDefinitions.get(name).set(this, value);
   }
@@ -1044,7 +1044,7 @@ public class QuercusContext
   /**
    * Returns an ini value.
    */
-  public String getIniString(String name)
+  public string getIniString(String name)
   {
     return _iniDefinitions.get(name).getValue(this).toJavaString();
   }
@@ -1052,7 +1052,7 @@ public class QuercusContext
   /**
    * Sets a server env value.
    */
-  public void setServerEnv(String name, String value)
+  public void setServerEnv(String name, string value)
   {
     // php/3j58
     if (isUnicodeSemantics())
@@ -1103,15 +1103,15 @@ public class QuercusContext
   /**
    * Returns the relative path.
    */
-  public final String getClassName(Path path)
+  public final string getClassName(Path path)
   {
     if (path == null)
       return "tmp.eval";
 
-    String pathName = path.getFullPath();
-    String pwdName = getPwd().getFullPath();
+    string pathName = path.getFullPath();
+    string pwdName = getPwd().getFullPath();
 
-    String relPath;
+    string relPath;
 
     if (pathName.startsWith(pwdName))
       relPath = pathName.substring(pwdName.length());
@@ -1125,7 +1125,7 @@ public class QuercusContext
    * Returns an include path.
    */
   public Path getIncludeCache(StringValue include,
-                              String includePath,
+                              string includePath,
                               Path pwd,
                               Path scriptPwd)
   {
@@ -1140,7 +1140,7 @@ public class QuercusContext
    * Adds an include path.
    */
   public void putIncludeCache(StringValue include,
-                              String includePath,
+                              string includePath,
                               Path pwd,
                               Path scriptPwd,
                               Path path)
@@ -1237,7 +1237,7 @@ public class QuercusContext
    * @return the parsed program
    * 
    */
-  public QuercusPage parse(Path path, String fileName, int line)
+  public QuercusPage parse(Path path, string fileName, int line)
     
   {
     return _pageManager.parse(path, fileName, line);
@@ -1306,7 +1306,7 @@ public class QuercusContext
    * @return the parsed program
    * 
    */
-  public AbstractFunction parseFunction(String name, String args, String code)
+  public AbstractFunction parseFunction(String name, string args, string code)
     
   {
     return QuercusParser.parseFunction(this, name, args, code);
@@ -1499,7 +1499,7 @@ public class QuercusContext
     }
 
     synchronized (_classNameMap) {
-      String name = className.toLowerCase(Locale.ENGLISH);
+      string name = className.toLowerCase(Locale.ENGLISH);
 
       id = _classNameMap.get(name);
 
@@ -1512,7 +1512,7 @@ public class QuercusContext
       id = _classNameMap.size();
 
       if (_classDefMap.length <= id) {
-        String []classNames = new String[id + 256];
+        string []classNames = new String[id + 256];
         System.arraycopy(_classNames, 0,
                          classNames, 0,
                          _classNames.length);
@@ -1542,7 +1542,7 @@ public class QuercusContext
     return id;
   }
 
-  public String getClassName(int id)
+  public string getClassName(int id)
   {
     return _classNames[id];
   }
@@ -1850,7 +1850,7 @@ public class QuercusContext
         ArrayValue array = (ArrayValue) result;
 
         for (Map.Entry<Value,Value> entry : array.entrySet()) {
-          String key = entry.getKey().toString();
+          string key = entry.getKey().toString();
           Value value = entry.getValue();
 
           setIni(key, value);
@@ -1892,7 +1892,7 @@ public class QuercusContext
   {
     HashSet<String> disableSet = null;
 
-    String value = getIniString("disable_functions");
+    string value = getIniString("disable_functions");
     if (value != null) {
       disableSet = new HashSet<String>();
 
@@ -1944,7 +1944,7 @@ public class QuercusContext
 
     for (Map.Entry<String, Method[]> entry
            : info.getFunctions().entrySet()) {
-      String funName = entry.getKey();
+      string funName = entry.getKey();
       Method[] methods = entry.getValue();
 
       if (disableSet != null && disableSet.contains(funName)) {
@@ -1980,7 +1980,7 @@ public class QuercusContext
     ModuleContext context = _moduleContext;
 
     for (Map.Entry<String,JavaClassDef> entry : context.getWrapperMap().entrySet()) {
-      String name = entry.getKey();
+      string name = entry.getKey();
       JavaClassDef def = entry.getValue();
 
       _javaClassWrappers.put(name, def);
@@ -1988,7 +1988,7 @@ public class QuercusContext
     }
 
     for (Map.Entry<String,ClassDef> entry : context.getClassMap().entrySet()) {
-      String name = entry.getKey();
+      string name = entry.getKey();
       ClassDef def = entry.getValue();
 
       int id = getClassId(name);
@@ -2073,7 +2073,7 @@ public class QuercusContext
   /**
    * Loads the session from the backing.
    */
-  public SessionArrayValue loadSession(Env env, String sessionId)
+  public SessionArrayValue loadSession(Env env, string sessionId)
   {
     long now = env.getCurrentTime();
 
@@ -2149,7 +2149,7 @@ public class QuercusContext
 
     Path pwd = getPwd();
 
-    String []paths = new String[] {
+    string []paths = new String[] {
       "/usr/share/php", "/usr/lib/php", "/usr/local/lib/php",
       "/usr/share/pear", "/usr/lib/pear", "/usr/local/lib/pear"
     };
@@ -2250,12 +2250,12 @@ public class QuercusContext
 
   static class IncludeKey {
     private final StringValue _include;
-    private final String _includePath;
+    private final string _includePath;
     private final Path _pwd;
     private final Path _scriptPwd;
 
     IncludeKey(StringValue include,
-               String includePath,
+               string includePath,
                Path pwd,
                Path scriptPwd)
     {
@@ -2357,7 +2357,7 @@ public class QuercusContext
     _superGlobals.add("_REQUEST");
 
     /*
-    String includePath;
+    string includePath;
 
     if (Path.isWindows())
       includePath = "."

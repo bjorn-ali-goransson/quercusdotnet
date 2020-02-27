@@ -262,7 +262,7 @@ public class StringBuilderValue
   /**
    * Returns the value.
    */
-  public final String getValue()
+  public final string getValue()
   {
     return toString();
   }
@@ -271,7 +271,7 @@ public class StringBuilderValue
    * Returns the type.
    */
   @Override
-  public String getType()
+  public string getType()
   {
     return "string";
   }
@@ -477,7 +477,7 @@ public class StringBuilderValue
   /**
    * Converts to a string.
    */
-  public override String toString()
+  public override string toString()
   {
     if (_length == 1)
       return String.valueOf((char) (_buffer[0] & 0xff));
@@ -485,7 +485,7 @@ public class StringBuilderValue
       CharBuffer buf = CharBuffer.allocate();
       buf.append(_buffer, 0, _length);
 
-      String str = buf.toString();
+      string str = buf.toString();
       buf.free();
 
       return str;
@@ -528,7 +528,7 @@ public class StringBuilderValue
   /**
    * Converts to a UnicodeValue in desired charset.
    */
-  public override StringValue toUnicodeValue(Env env, String charset)
+  public override StringValue toUnicodeValue(Env env, string charset)
   {
     return toUnicodeValue();
   }
@@ -690,7 +690,7 @@ public class StringBuilderValue
    * sets the character at an index
    */
   /*
-  public Value setCharAt(long index, String value)
+  public Value setCharAt(long index, string value)
   {
     int len = _length;
 
@@ -843,7 +843,7 @@ public class StringBuilderValue
   /**
    * Returns a subsequence
    */
-  public override String stringSubstring(int start, int end)
+  public override string stringSubstring(int start, int end)
   {
     if (end <= start)
       return "";
@@ -851,7 +851,7 @@ public class StringBuilderValue
     CharBuffer buf = CharBuffer.allocate();
     buf.append(_buffer, start, end - start);
 
-    String str = buf.toString();
+    string str = buf.toString();
     buf.free();
 
     return str;
@@ -1615,7 +1615,7 @@ public class StringBuilderValue
     sb.append("\";");
   }
 
-  public override String toDebugString()
+  public override string toDebugString()
   {
     StringBuilder sb = new StringBuilder();
 
@@ -1856,7 +1856,7 @@ public class StringBuilderValue
       return super.eq(rValue);
     }
     else {
-      String rString = rValue.toString();
+      string rString = rValue.toString();
 
       int len = rString.length();
 

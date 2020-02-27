@@ -46,7 +46,7 @@ public class QuercusMimeMessage extends MimeMessage {
 
   private static final L10N L = new L10N(QuercusMimeMessage.class);
 
-  private String _messageId;
+  private string _messageId;
 
   public QuercusMimeMessage(Session session)
   {
@@ -59,7 +59,7 @@ public class QuercusMimeMessage extends MimeMessage {
   }
 
   @Override
-  public String getMessageID()
+  public string getMessageID()
     
   {
     if (_messageId == null)

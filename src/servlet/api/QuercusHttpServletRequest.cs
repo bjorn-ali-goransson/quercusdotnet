@@ -36,47 +36,47 @@
 
 public interface QuercusHttpServletRequest
 {
-  public String getMethod();
-  public String getHeader(String name);
+  public string getMethod();
+  public string getHeader(String name);
   public Enumeration getHeaderNames();
-  public String getParameter(String name);
-  public String []getParameterValues(String name);
+  public string getParameter(String name);
+  public string []getParameterValues(String name);
   public Map<String,String[]> getParameterMap();
-  public String getContentType();
-  public String getCharacterEncoding();
+  public string getContentType();
+  public string getCharacterEncoding();
 
-  public String getRequestURI();
-  public String getQueryString();
+  public string getRequestURI();
+  public string getQueryString();
   public QuercusCookie []getCookies();
 
-  public String getContextPath();
-  public String getServletPath();
-  public String getPathInfo();
-  public String getRealPath(String path);
+  public string getContextPath();
+  public string getServletPath();
+  public string getPathInfo();
+  public string getRealPath(String path);
 
   public InputStream getInputStream()
     
 
   public QuercusHttpSession getSession(boolean isCreate);
 
-  public String getLocalAddr();
-  public String getServerName();
+  public string getLocalAddr();
+  public string getServerName();
   public int getServerPort();
-  public String getRemoteHost();
-  public String getRemoteAddr();
+  public string getRemoteHost();
+  public string getRemoteAddr();
   public int getRemotePort();
-  public String getRemoteUser();
+  public string getRemoteUser();
 
   public boolean isSecure();
-  public String getProtocol();
+  public string getProtocol();
 
   public Object getAttribute(String name);
-  public String getIncludeRequestUri();
-  public String getForwardRequestUri();
-  public String getIncludeContextPath();
-  public String getIncludeServletPath();
-  public String getIncludePathInfo();
-  public String getIncludeQueryString();
+  public string getIncludeRequestUri();
+  public string getForwardRequestUri();
+  public string getIncludeContextPath();
+  public string getIncludeServletPath();
+  public string getIncludePathInfo();
+  public string getIncludeQueryString();
 
   public QuercusRequestDispatcher getRequestDispatcher(String url);
 

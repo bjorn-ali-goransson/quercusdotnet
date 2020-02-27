@@ -81,7 +81,7 @@ public class JavaAdapterVar extends Value
   /**
    * Returns the type.
    */
-  public override String getType()
+  public override string getType()
   {
     return getValue().getType();
   }
@@ -89,7 +89,7 @@ public class JavaAdapterVar extends Value
   /**
    * Returns the type of the resource.
    */
-  public override String getResourceType()
+  public override string getResourceType()
   {
     return getValue().getResourceType();
   }
@@ -105,7 +105,7 @@ public class JavaAdapterVar extends Value
   /**
    * Returns the class name.
    */
-  public override String getClassName()
+  public override string getClassName()
   {
     return getValue().getClassName();
   }
@@ -137,7 +137,7 @@ public class JavaAdapterVar extends Value
   /**
    * Returns true for an implementation of a class
    */
-  public override boolean isA(Env env, String name)
+  public override boolean isA(Env env, string name)
   {
     return getValue().isA(env, name);
   }
@@ -252,7 +252,7 @@ public class JavaAdapterVar extends Value
   // Conversions
   //
 
-  public override String toString()
+  public override string toString()
   {
     return getValue().toString();
   }

@@ -127,7 +127,7 @@ public class ZipDirectory
     extraLength |= (_tmpBuf[29] & 0xff) << 8;
 
     // XXX: correct char encoding?
-    String name;
+    string name;
     if (filenameLength <= _tmpBuf.length) {
       sublen = _in.read(_tmpBuf, 0, filenameLength);
       if (sublen < filenameLength)
@@ -187,7 +187,7 @@ public class ZipDirectory
     return true;
   }
 
-  public String toString()
+  public string toString()
   {
     return "ZipDirectory[]";
   }

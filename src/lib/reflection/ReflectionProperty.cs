@@ -82,7 +82,7 @@ public class ReflectionProperty
   }
 
   public static ReflectionProperty __construct(Env env,
-                                               String clsName,
+                                               string clsName,
                                                StringValue propName)
   {
     QuercusClass cls = env.findClass(clsName);
@@ -94,9 +94,9 @@ public class ReflectionProperty
     return new ReflectionProperty(env, cls, propName);
   }
 
-  public static String export(Env env,
+  public static string export(Env env,
                               Value cls,
-                              String name,
+                              string name,
                               @Optional boolean isReturn)
   {
     return null;
@@ -161,12 +161,12 @@ public class ReflectionProperty
   }
 
   @ReturnNullAsFalse
-  public String getDocComment(Env env)
+  public string getDocComment(Env env)
   {
     return _prop.getComment(env);
   }
 
-  public String toString()
+  public string toString()
   {
     return getClass().getSimpleName() + "[" + _prop.toString() + "]";
   }
@@ -274,7 +274,7 @@ public class ReflectionProperty
       return null;
     }
 
-    public String getComment(Env env)
+    public string getComment(Env env)
     {
       QuercusClass cls = getDeclaringClass(env, _cls);
 
@@ -283,7 +283,7 @@ public class ReflectionProperty
       return def.getFieldComment(_nameV);
     }
 
-    public String toString()
+    public string toString()
     {
       if (_cls.getName() != null)
         return _cls.getName() + "->" + _nameV;
@@ -352,7 +352,7 @@ public class ReflectionProperty
       return null;
     }
 
-    public override String getComment(Env env)
+    public override string getComment(Env env)
     {
       QuercusClass cls = getDeclaringClass(env, _cls);
 
@@ -361,7 +361,7 @@ public class ReflectionProperty
       return def.getStaticFieldComment(_name);
     }
 
-    public override String toString()
+    public override string toString()
     {
       if (_cls.getName() != null)
         return _cls.getName() + "::" + _name;

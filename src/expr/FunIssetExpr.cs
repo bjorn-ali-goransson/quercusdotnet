@@ -68,7 +68,7 @@ public class FunIssetExpr extends AbstractUnaryExpr {
     return _expr.evalIsset(env) ? BooleanValue.TRUE : BooleanValue.FALSE;
   }
 
-  public String toString()
+  public string toString()
   {
     return "isset(" + _expr + ")";
   }

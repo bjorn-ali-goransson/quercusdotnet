@@ -49,7 +49,7 @@ public class ThisMethodVarExpr extends ObjectMethodVarExpr {
   // java code generation
   //
 
-  public String toString()
+  public string toString()
   {
     return "$this->" + _name + "()";
   }

@@ -63,7 +63,7 @@ public class DirectoryIterator
     }
   }
 
-  protected DirectoryIterator(Path parent, Path path, String fileName)
+  protected DirectoryIterator(Path parent, Path path, string fileName)
   {
     super(parent, path, fileName);
 
@@ -102,7 +102,7 @@ public class DirectoryIterator
   protected SplFileInfo getCurrent(Env env)
   {
     if (_current == null && _index < _list.length) {
-      String name = _list[_index];
+      string name = _list[_index];
 
       Path child = _path.lookup(name);
 
@@ -115,7 +115,7 @@ public class DirectoryIterator
   protected SplFileInfo createCurrent(Env env,
                                       Path parent,
                                       Path path,
-                                      String fileName)
+                                      string fileName)
   {
     return new SplFileInfo(parent, path, fileName);
   }
@@ -129,7 +129,7 @@ public class DirectoryIterator
   {
     SplFileInfo current = getCurrent(env);
 
-    String fileName = current.getFilename(env);
+    string fileName = current.getFilename(env);
 
     return ".".equals(fileName) || "..".equals(fileName);
   }
@@ -170,7 +170,7 @@ public class DirectoryIterator
     return getCurrent(env).getATime(env);
   }
 
-  public override String getBasename(Env env, @Optional String suffix)
+  public override string getBasename(Env env, @Optional string suffix)
   {
     return getCurrent(env).getBasename(env, suffix);
   }
@@ -180,17 +180,17 @@ public class DirectoryIterator
     return getCurrent(env).getCTime(env);
   }
 
-  public override String getExtension(Env env)
+  public override string getExtension(Env env)
   {
     return getCurrent(env).getExtension(env);
   }
 
-  public override SplFileInfo getFileInfo(Env env, @Optional String className)
+  public override SplFileInfo getFileInfo(Env env, @Optional string className)
   {
     return getCurrent(env).getFileInfo(env, className);
   }
 
-  public override String getFilename(Env env)
+  public override string getFilename(Env env)
   {
     return getCurrent(env).getFilename(env);
   }
@@ -205,7 +205,7 @@ public class DirectoryIterator
     return getCurrent(env).getInode(env);
   }
 
-  public override String getLinkTarget(Env env)
+  public override string getLinkTarget(Env env)
   {
     return getCurrent(env).getLinkTarget(env);
   }
@@ -220,17 +220,17 @@ public class DirectoryIterator
     return getCurrent(env).getOwner(env);
   }
 
-  public override String getPath(Env env)
+  public override string getPath(Env env)
   {
     return getCurrent(env).getPath(env);
   }
 
-  public override SplFileInfo getPathInfo(Env env, @Optional String className)
+  public override SplFileInfo getPathInfo(Env env, @Optional string className)
   {
     return getCurrent(env).getPathInfo(env, className);
   }
 
-  public override String getPathname(Env env)
+  public override string getPathname(Env env)
   {
     return getCurrent(env).getPathname(env);
   }
@@ -240,7 +240,7 @@ public class DirectoryIterator
     return getCurrent(env).getPerms(env);
   }
 
-  public override String getRealPath(Env env)
+  public override string getRealPath(Env env)
   {
     return getCurrent(env).getRealPath(env);
   }
@@ -250,7 +250,7 @@ public class DirectoryIterator
     return getCurrent(env).getSize(env);
   }
 
-  public override String getType(Env env)
+  public override string getType(Env env)
   {
     return getCurrent(env).getType(env);
   }
@@ -286,14 +286,14 @@ public class DirectoryIterator
   }
 
   public override SplFileObject openFile(Env env,
-                                @Optional("r") String mode,
+                                @Optional("r") string mode,
                                 @Optional boolean isUseIncludePath,
                                 @Optional Value context)
   {
     return getCurrent(env).openFile(env, mode, isUseIncludePath, context);
   }
 
-  public override String __toString(Env env)
+  public override string __toString(Env env)
   {
     return getCurrent(env).__toString(env);
   }

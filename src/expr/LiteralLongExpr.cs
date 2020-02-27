@@ -81,7 +81,7 @@ public class LiteralLongExpr extends Expr {
     return _objValue;
   }
 
-  public String toString()
+  public string toString()
   {
     return String.valueOf(_value);
   }

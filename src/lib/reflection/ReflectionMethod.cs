@@ -57,7 +57,7 @@ public class ReflectionMethod extends ReflectionFunctionAbstract
   public static final int IS_PROTECTED = 512;
   public static final int IS_PRIVATE = 1024;
 
-  private String _clsName;
+  private string _clsName;
 
   protected ReflectionMethod(AbstractFunction method)
   {
@@ -74,7 +74,7 @@ public class ReflectionMethod extends ReflectionFunctionAbstract
   public static ReflectionMethod __construct(
       Env env, Value obj, StringValue name)
   {
-    String clsName;
+    string clsName;
 
     if (obj.isObject())
       clsName = obj.getClassName();
@@ -84,9 +84,9 @@ public class ReflectionMethod extends ReflectionFunctionAbstract
     return new ReflectionMethod(clsName, env.getClass(clsName).getFunction(name));
   }
 
-  public static String export(Env env,
+  public static string export(Env env,
                               Value cls,
-                              String name,
+                              string name,
                               @Optional boolean isReturn)
   {
     return null;
@@ -178,7 +178,7 @@ public class ReflectionMethod extends ReflectionFunctionAbstract
 
   public ReflectionClass getDeclaringClass(Env env)
   {
-    String clsName = getFunction().getDeclaringClassName();
+    string clsName = getFunction().getDeclaringClassName();
 
     if (clsName == null)
       throw new QuercusException(
@@ -213,9 +213,9 @@ public class ReflectionMethod extends ReflectionFunctionAbstract
     return (AbstractFunction) getCallable();
   }
 
-  public String toString()
+  public string toString()
   {
-    String name;
+    string name;
 
     if (_clsName != null)
       name = _clsName + "->" + getName();

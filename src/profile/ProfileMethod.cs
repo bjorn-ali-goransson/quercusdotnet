@@ -39,7 +39,7 @@
 public class ProfileMethod
 {
   private final int _id;
-  private final String _name;
+  private final string _name;
   
   private long _count;
   
@@ -49,7 +49,7 @@ public class ProfileMethod
   private ArrayList<ProfileItem> _parentList = new ArrayList<ProfileItem>();
   private ArrayList<ProfileItem> _childList = new ArrayList<ProfileItem>();
 
-  public ProfileMethod(int id, String name)
+  public ProfileMethod(int id, string name)
   {
     _id = id;
     _name = name;
@@ -66,7 +66,7 @@ public class ProfileMethod
   /**
    * Returns the item's function name
    */
-  public String getName()
+  public string getName()
   {
     return _name;
   }
@@ -160,7 +160,7 @@ public class ProfileMethod
   }
 
   @Override
-  public String toString()
+  public string toString()
   {
     return (getClass().getSimpleName()
             + "[" + _name

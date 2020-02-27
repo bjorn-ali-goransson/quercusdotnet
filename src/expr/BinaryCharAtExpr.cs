@@ -127,7 +127,7 @@ public class BinaryCharAtExpr extends AbstractVarExpr {
     throw new UnsupportedOperationException();
   }
 
-  public String toString()
+  public string toString()
   {
     return _objExpr + "{" + _indexExpr + "}";
   }

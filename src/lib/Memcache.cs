@@ -51,7 +51,7 @@ public class Memcache {
    * Adds a server.
    */
   public boolean addServer(Env env,
-                           String host,
+                           string host,
                            @Optional int port,
                            @Optional boolean persistent,
                            @Optional int weight,
@@ -68,13 +68,13 @@ public class Memcache {
    * Connect to a server.
    */
   public boolean connect(Env env,
-                         String host,
+                         string host,
                          @Optional int port,
                          @Optional("1") int timeout)
   {
     // Always true since this is a local copy
 
-    String name = "memcache::" + host + ":" + port;
+    string name = "memcache::" + host + ":" + port;
 
     _cache = (Cache) env.getQuercus().getSpecial(name);
 
@@ -95,7 +95,7 @@ public class Memcache {
     if (keys.isArray())
       return BooleanValue.FALSE;
 
-    String key = keys.toString();
+    string key = keys.toString();
 
     Value value = _cache.get(key);
 
@@ -109,7 +109,7 @@ public class Memcache {
    * Removes a value.
    */
   public boolean delete(Env env,
-                        String key,
+                        string key,
                         @Optional int timeout)
   {
     _cache.remove(key);
@@ -130,7 +130,7 @@ public class Memcache {
   /**
    * Returns version information.
    */
-  public String getVersion()
+  public string getVersion()
   {
     return "1.0";
   }
@@ -139,7 +139,7 @@ public class Memcache {
    * Connect to a server.
    */
   public boolean pconnect(Env env,
-                          String host,
+                          string host,
                           @Optional int port,
                           @Optional("1") int timeout)
   {
@@ -150,7 +150,7 @@ public class Memcache {
    * Sets a value.
    */
   public boolean set(Env env,
-                     String key,
+                     string key,
                      Value value,
                      @Optional int flag,
                      @Optional int expire)
@@ -177,7 +177,7 @@ public class Memcache {
     return true;
   }
 
-  public String toString()
+  public string toString()
   {
     return "Memcache[]";
   }

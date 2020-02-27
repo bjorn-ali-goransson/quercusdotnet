@@ -309,7 +309,7 @@ public class QuercusServletImpl extends HttpServlet
     // php/8173
     Path pwd = getQuercus().getPwd().copy();
 
-    String servletPath = QuercusRequestAdapter.getPageServletPath(req);
+    string servletPath = QuercusRequestAdapter.getPageServletPath(req);
 
     if (servletPath.startsWith("/")) {
       servletPath = servletPath.substring(1);
@@ -326,13 +326,13 @@ public class QuercusServletImpl extends HttpServlet
 
     sb.append(servletPath);
 
-    String pathInfo = QuercusRequestAdapter.getPagePathInfo(req);
+    string pathInfo = QuercusRequestAdapter.getPagePathInfo(req);
 
     if (pathInfo != null) {
       sb.append(pathInfo);
     }
 
-    String scriptPath = sb.toString();
+    string scriptPath = sb.toString();
 
     path = pwd.lookupChild(scriptPath);
 
@@ -342,8 +342,8 @@ public class QuercusServletImpl extends HttpServlet
     // php/8173
     Path pwd = getQuercus().getPwd().copy();
 
-    String scriptPath = QuercusRequestAdapter.getPageServletPath(req);
-    String pathInfo = QuercusRequestAdapter.getPagePathInfo(req);
+    string scriptPath = QuercusRequestAdapter.getPageServletPath(req);
+    string pathInfo = QuercusRequestAdapter.getPagePathInfo(req);
 
     Path path = pwd.lookup(req.getRealPath(scriptPath));
 
@@ -352,7 +352,7 @@ public class QuercusServletImpl extends HttpServlet
 
     // XXX: include
 
-    String fullPath;
+    string fullPath;
     if (pathInfo != null)
       fullPath = scriptPath + pathInfo;
     else

@@ -82,7 +82,7 @@ abstract public class QuercusPage
   /**
    * Returns the user name for profiling, if any
    */
-  public String getUserPath()
+  public string getUserPath()
   {
     return null;
   }
@@ -183,8 +183,8 @@ abstract public class QuercusPage
   private void uncaughtExceptionError(Env env, QuercusLanguageException e)
   {
     Location location = e.getLocation(env);
-    String type = e.getValue().getClassName();
-    String message = e.getMessage(env);
+    string type = e.getValue().getClassName();
+    string message = e.getMessage(env);
 
     env.error(L.l("Uncaught exception of type '{0}' with message '{1}'", type, message),
               location);
@@ -267,7 +267,7 @@ abstract public class QuercusPage
     return false;
   }
 
-  public String toString()
+  public string toString()
   {
     return getClass().getSimpleName() + "[]";
   }

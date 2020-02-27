@@ -105,7 +105,7 @@ public class FunIncludeOnceExpr extends AbstractUnaryExpr {
     return _isRequire;
   }
   
-  public String toString()
+  public string toString()
   {
     return _expr.toString();
   }

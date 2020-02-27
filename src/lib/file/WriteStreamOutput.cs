@@ -65,7 +65,7 @@ public class WriteStreamOutput extends OutputStream implements BinaryOutput {
     return this;
   }
 
-  public String getResourceType()
+  public string getResourceType()
   {
     return "stream";
   }
@@ -184,7 +184,7 @@ public class WriteStreamOutput extends OutputStream implements BinaryOutput {
   /**
    * Converts to a string.
    */
-  public String toString()
+  public string toString()
   {
     return "WriteStreamOutput[" + _os + "]";
   }

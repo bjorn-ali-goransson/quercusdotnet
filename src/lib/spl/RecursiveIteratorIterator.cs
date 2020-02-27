@@ -122,7 +122,7 @@ public class RecursiveIteratorIterator
     _iterStack.get(0).rewind(env);
   }
 
-  public override String toString()
+  public override string toString()
   {
     return getClass().getSimpleName() + "[" + _iterStack + "]";
   }

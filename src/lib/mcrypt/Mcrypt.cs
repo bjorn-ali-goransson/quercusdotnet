@@ -49,21 +49,21 @@ public class Mcrypt {
   private static final Logger log =
     Logger.getLogger(Mcrypt.class.getName());
 
-  private final String _algorithm;
-  private final String _mode;
+  private final string _algorithm;
+  private final string _mode;
 
   private final Cipher _cipher;
 
   private Key _key;
   private IvParameterSpec _iv;
 
-  Mcrypt(Env env, String algorithm, String mode)
+  Mcrypt(Env env, string algorithm, string mode)
     
   {
     _algorithm = algorithm;
     _mode = mode.toUpperCase(Locale.ENGLISH);
 
-    String transformation = getTransformation(algorithm, mode);
+    string transformation = getTransformation(algorithm, mode);
 
     if (transformation == null)
       throw new QuercusRuntimeException(L.l("'{0}' is an unknown algorithm",
@@ -128,7 +128,7 @@ public class Mcrypt {
   /**
    * Returns the initialization vector size.
    */
-  public String get_algorithms_name()
+  public string get_algorithms_name()
   {
     return _algorithm;
   }
@@ -251,7 +251,7 @@ public class Mcrypt {
   /**
    * Returns the initialization vector size.
    */
-  public String get_modes_name()
+  public string get_modes_name()
   {
     return _mode;
   }
@@ -340,7 +340,7 @@ public class Mcrypt {
   {
   }
 
-  private static String getTransformation(String algorithm, String mode)
+  private static string getTransformation(String algorithm, string mode)
     
   {
     mode = mode.toUpperCase(Locale.ENGLISH);
@@ -375,7 +375,7 @@ public class Mcrypt {
       return algorithm + '/' + mode + "/NoPadding";
   }
 
-  private static String getAlgorithm(String algorithm)
+  private static string getAlgorithm(String algorithm)
   {
     if (McryptModule.MCRYPT_RIJNDAEL_128.equals(algorithm))
       return "AES";
@@ -388,7 +388,7 @@ public class Mcrypt {
       return algorithm;
   }
 
-  public String toString()
+  public string toString()
   {
     return "Mcrypt[" + _algorithm + ", " + _mode + "]";
   }

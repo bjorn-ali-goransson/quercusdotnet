@@ -40,18 +40,18 @@ public class QuercusCookieImpl implements QuercusCookie
     _cookie = cookie;
   }
 
-  public QuercusCookieImpl(String name, String sessionId)
+  public QuercusCookieImpl(String name, string sessionId)
   {
     _cookie = new Cookie(name, sessionId);
   }
 
   @Override
-  public String getName()
+  public string getName()
   {
     return _cookie.getName();
   }
 
-  public override String getValue()
+  public override string getValue()
   {
     return _cookie.getValue();
   }

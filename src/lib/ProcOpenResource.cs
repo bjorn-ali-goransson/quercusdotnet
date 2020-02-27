@@ -54,7 +54,7 @@ public class ProcOpenResource
 
   private Process _process;
 
-  private String _command;
+  private string _command;
   private boolean _isRunning = true;
   private int _exitCode = -1;
 
@@ -63,7 +63,7 @@ public class ProcOpenResource
                           ProcOpenOutput in,
                           ProcOpenInput out,
                           ProcOpenInput err,
-                          String command)
+                          string command)
   {
     _env = env;
     _process = process;
@@ -107,7 +107,7 @@ public class ProcOpenResource
     }
   }
 
-  public String getCommand()
+  public string getCommand()
   {
     return _command;
   }

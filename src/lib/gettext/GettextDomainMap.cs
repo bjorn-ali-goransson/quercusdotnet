@@ -39,7 +39,7 @@
 
 public class GettextDomainMap
 {
-  private String _current = "messages";
+  private string _current = "messages";
   
   private HashMap<String, GettextDomain> _domains
     = new HashMap<String, GettextDomain>();
@@ -54,7 +54,7 @@ public class GettextDomainMap
     _current = current;
   }
   
-  public GettextDomain getDomain(Env env, String name)
+  public GettextDomain getDomain(Env env, string name)
   {
     GettextDomain domain = _domains.get(name);
     

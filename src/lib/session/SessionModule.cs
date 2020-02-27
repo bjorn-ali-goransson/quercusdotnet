@@ -68,7 +68,7 @@ public class SessionModule extends AbstractQuercusModule
     return _iniDefinitions;
   }
 
-  public String []getLoadedExtensions()
+  public string []getLoadedExtensions()
   {
     return new String[] { "session" };
   }
@@ -146,7 +146,7 @@ public class SessionModule extends AbstractQuercusModule
   /**
    * Encodes the session values.
    */
-  public static String session_encode(Env env)
+  public static string session_encode(Env env)
   {
     SessionArrayValue session = env.getSession();
 
@@ -192,11 +192,11 @@ public class SessionModule extends AbstractQuercusModule
   /**
    * Returns the session id
    */
-  public static String session_id(Env env, @Optional String id)
+  public static string session_id(Env env, @Optional string id)
   {
     Value sessionIdValue = (Value) env.getSpecialValue("caucho.session_id");
 
-    String oldValue;
+    string oldValue;
 
     if (sessionIdValue != null) {
       oldValue = sessionIdValue.toString();
@@ -232,7 +232,7 @@ public class SessionModule extends AbstractQuercusModule
   /**
    * Returns the object's class name
    */
-  public Value session_module_name(Env env, @Optional String newValue)
+  public Value session_module_name(Env env, @Optional string newValue)
   {
     Value value = env.getIni("session.save_handler");
 
@@ -245,7 +245,7 @@ public class SessionModule extends AbstractQuercusModule
   /**
    * Returns the object's class name
    */
-  public Value session_name(Env env, @Optional String newValue)
+  public Value session_name(Env env, @Optional string newValue)
   {
     Value value = env.getIni("session.name");
 
@@ -271,7 +271,7 @@ public class SessionModule extends AbstractQuercusModule
     if (env.getSession() == null)
       return ! deleteOld;
 
-    String sessionId = env.generateSessionId();
+    string sessionId = env.generateSessionId();
 
     if (deleteOld) {
       SessionArrayValue session = env.getSession();
@@ -322,7 +322,7 @@ public class SessionModule extends AbstractQuercusModule
     nameV = nameV.toValue();
 
     if (nameV instanceof StringValue) {
-      String name = nameV.toString();
+      string name = nameV.toString();
 
       Value var = env.getGlobalVar(name);
 
@@ -344,7 +344,7 @@ public class SessionModule extends AbstractQuercusModule
   /**
    * Returns the session's save path
    */
-  public Value session_save_path(Env env, @Optional String newValue)
+  public Value session_save_path(Env env, @Optional string newValue)
   {
     Value value = env.getIni("session.save_path");
 
@@ -442,16 +442,16 @@ public class SessionModule extends AbstractQuercusModule
     SessionCallback callback = env.getSessionCallback();
 
     Value sessionIdValue = (Value) env.getSpecialValue("caucho.session_id");
-    String sessionId = null;
+    string sessionId = null;
 
     env.removeConstant("SID");
 
-    String cookieName = env.getIni("session.name").toString();
+    string cookieName = env.getIni("session.name").toString();
     boolean generateCookie = true;
     boolean create = false;
 
     if (callback != null) {
-      String savePath = env.getIni("session.save_path").toString();
+      string savePath = env.getIni("session.save_path").toString();
 
       if (savePath == null || "".equals(savePath))
         callback.open(env, env.getWorkDir().getPath(), cookieName);
@@ -522,7 +522,7 @@ public class SessionModule extends AbstractQuercusModule
               + "because response is committed"));
     else {
       Value cacheLimiterValue = env.getIni("session.cache_limiter");
-      String cacheLimiter = String.valueOf(cacheLimiterValue);
+      string cacheLimiter = String.valueOf(cacheLimiterValue);
 
       Value cacheExpireValue = (LongValue)env.getSpecialValue("cache_expire");
 
@@ -573,11 +573,11 @@ public class SessionModule extends AbstractQuercusModule
   /**
    * Sends a new session cookie.
    */
-  private static void generateSessionCookie(Env env, String sessionId)
+  private static void generateSessionCookie(Env env, string sessionId)
   {
     final QuercusHttpServletResponse response = env.getResponse();
 
-    String cookieName = env.getIni("session.name").toString();
+    string cookieName = env.getIni("session.name").toString();
 
     StringValue cookieValue
       = env.createString(cookieName + '=' + sessionId);
@@ -586,7 +586,7 @@ public class SessionModule extends AbstractQuercusModule
 
     QuercusCookie cookie = new QuercusCookieImpl(cookieName, sessionId);
     // #2649
-    String cookieVersion = env.getIniString("session.cookie_version");
+    string cookieVersion = env.getIniString("session.cookie_version");
     if (! "0".equals(cookieVersion))
       cookie.setVersion(1);
 

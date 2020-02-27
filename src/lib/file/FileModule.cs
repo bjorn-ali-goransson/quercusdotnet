@@ -71,10 +71,10 @@ public class FileModule extends AbstractQuercusModule {
   private static final Logger log
     = Logger.getLogger(FileModule.class.getName());
 
-  public static final String DIRECTORY_SEPARATOR
+  public static final string DIRECTORY_SEPARATOR
     = String.valueOf(Path.getFileSeparatorChar());
 
-  public static final String PATH_SEPARATOR
+  public static final string PATH_SEPARATOR
     = String.valueOf(Path.getPathSeparatorChar());
 
   public static final int UPLOAD_ERR_OK = 0;
@@ -304,7 +304,7 @@ public class FileModule extends AbstractQuercusModule {
    */
   public static void clearstatcache(Env env,
                                     @Optional boolean clearRealPathCache,
-                                    @Optional String fileName)
+                                    @Optional string fileName)
   {
     // stubbed
   }
@@ -620,8 +620,8 @@ public class FileModule extends AbstractQuercusModule {
   public Value fgetcsv(Env env,
                        @NotNull BinaryInput is,
                        @Optional int length,
-                       @Optional String delimiter,
-                       @Optional String enclosure)
+                       @Optional string delimiter,
+                       @Optional string enclosure)
   {
     // php/1619
 
@@ -1211,7 +1211,7 @@ public class FileModule extends AbstractQuercusModule {
 
     try {
       boolean useIncludePath = (flags & FILE_USE_INCLUDE_PATH) != 0;
-      String mode = (flags & FILE_APPEND) != 0 ? "a" : "w";
+      string mode = (flags & FILE_APPEND) != 0 ? "a" : "w";
 
       s = fopen(env, filename, mode, useIncludePath, context);
 
@@ -1324,7 +1324,7 @@ public class FileModule extends AbstractQuercusModule {
   /**
    * Converts a glob pattern to a regular expression.
    */
-  private static String globToRegex(String pattern, int flags, boolean brace)
+  private static string globToRegex(String pattern, int flags, boolean brace)
   {
     StringBuilder globRegex = new StringBuilder();
 
@@ -1506,7 +1506,7 @@ public class FileModule extends AbstractQuercusModule {
   /**
    * Returns true if the given string matches the given glob pattern.
    */
-  public static boolean fnmatch(Env env, String pattern, String string,
+  public static boolean fnmatch(Env env, string pattern, string string,
                                 @Optional int flags)
   {
     if (pattern == null || string == null)
@@ -1540,7 +1540,7 @@ public class FileModule extends AbstractQuercusModule {
       }
     }
 
-    String globRegex = globToRegex(pattern, flags, false);
+    string globRegex = globToRegex(pattern, flags, false);
 
     if (globRegex == null)
       return false;
@@ -1571,7 +1571,7 @@ public class FileModule extends AbstractQuercusModule {
   @ReturnNullAsFalse
   public static BinaryStream fopen(Env env,
                                    StringValue filename,
-                                   String mode,
+                                   string mode,
                                    @Optional boolean useIncludePath,
                                    @Optional Value contextV)
   {
@@ -1609,7 +1609,7 @@ public class FileModule extends AbstractQuercusModule {
       Path path = env.lookupPwd(filename);
 
       if (! env.isAllowUrlFopen() && isUrl(path)) {
-        String msg = (L.l("not allowed to fopen url {0}", filename));
+        string msg = (L.l("not allowed to fopen url {0}", filename));
         env.error(msg);
 
         return null;
@@ -1633,7 +1633,7 @@ public class FileModule extends AbstractQuercusModule {
           */
 
         try {
-          String scheme = path.getScheme();
+          string scheme = path.getScheme();
 
           if (scheme.equals("http") || scheme.equals("https"))
             return new HttpInputOutput(env, path, context);
@@ -1652,7 +1652,7 @@ public class FileModule extends AbstractQuercusModule {
       }
       else if (mode.startsWith("w")) {
         try {
-          String scheme = path.getScheme();
+          string scheme = path.getScheme();
 
           if (scheme.equals("http") || scheme.equals("https"))
             return new HttpInputOutput(env, path, context);
@@ -1756,7 +1756,7 @@ public class FileModule extends AbstractQuercusModule {
 
   private static boolean isUrl(Path path)
   {
-    String scheme = path.getScheme();
+    string scheme = path.getScheme();
 
     if ("".equals(scheme)
         || "file".equals(scheme)
@@ -2016,12 +2016,12 @@ public class FileModule extends AbstractQuercusModule {
     }
   }
 
-  private static ArrayValue globImpl(Env env, String pattern, int flags,
-                                     Path path, String prefix,
+  private static ArrayValue globImpl(Env env, string pattern, int flags,
+                                     Path path, string prefix,
                                      ArrayValue result)
   {
-    String cwdPattern;
-    String subPattern = null;
+    string cwdPattern;
+    string subPattern = null;
 
     int firstSlash = pattern.indexOf('/');
 
@@ -2046,7 +2046,7 @@ public class FileModule extends AbstractQuercusModule {
 
     boolean doBraces = (flags & GLOB_BRACE) != 0;
 
-    String globRegex = globToRegex(cwdPattern, fnmatchFlags, doBraces);
+    string globRegex = globToRegex(cwdPattern, fnmatchFlags, doBraces);
 
     if (globRegex == null)
       return null;
@@ -2061,7 +2061,7 @@ public class FileModule extends AbstractQuercusModule {
       return null;
     }
 
-    String [] list;
+    string [] list;
 
     try {
       list = path.list();
@@ -2122,12 +2122,12 @@ public class FileModule extends AbstractQuercusModule {
   /**
    * Matches all files with the given pattern.
    */
-  public static Value glob(Env env, String pattern, @Optional int flags)
+  public static Value glob(Env env, string pattern, @Optional int flags)
   {
     Path path = env.getPwd();
 
     int patternLength = pattern.length();
-    String prefix = "";
+    string prefix = "";
 
     int braceIndex;
     if ((flags & GLOB_BRACE) != 0 && (braceIndex = pattern.indexOf('{')) >= 0) {
@@ -2179,7 +2179,7 @@ public class FileModule extends AbstractQuercusModule {
              && patternLength > 2 && pattern.charAt(1) == ':') {
       prefix = pattern.substring(0, 2);
 
-      String driveLetter = pattern.substring(0, 2);
+      string driveLetter = pattern.substring(0, 2);
 
       // X:/ - slash is required when looking up root
       path = path.lookup(driveLetter + '/');
@@ -2205,14 +2205,14 @@ public class FileModule extends AbstractQuercusModule {
   /*
    * Breaks a glob with braces into multiple globs.
    */
-  private static Value globBrace(Env env, String pattern, int flags,
+  private static Value globBrace(Env env, string pattern, int flags,
                                  int braceIndex)
   {
     int patternLength = pattern.length();
 
     boolean isEscaped = false;
 
-    String prefix = pattern.substring(0, braceIndex);
+    string prefix = pattern.substring(0, braceIndex);
 
     ArrayList<StringBuilder> basePathList
       = new ArrayList<StringBuilder>();
@@ -2270,7 +2270,7 @@ public class FileModule extends AbstractQuercusModule {
       }
     }
 
-    String suffix = "";
+    string suffix = "";
 
     if (i < patternLength)
       suffix = pattern.substring(i);
@@ -2309,7 +2309,7 @@ public class FileModule extends AbstractQuercusModule {
    *
    * @return the current directory
    */
-  public static String getcwd(Env env)
+  public static string getcwd(Env env)
   {
     // for xoops on Windows
     // paths returned must be consistent across Quercus
@@ -2361,7 +2361,7 @@ public class FileModule extends AbstractQuercusModule {
 
     if (Path.isWindows()) {
       // XXX: PHP appears to be looking for the "MZ" magic number in the header
-      String tail = path.getTail();
+      string tail = path.getTail();
 
       return tail.endsWith(".exe")
              || tail.endsWith(".com")
@@ -2373,11 +2373,11 @@ public class FileModule extends AbstractQuercusModule {
     }
     /*
     else {
-      String cmd = "if [ -x "
+      string cmd = "if [ -x "
                    + path.getNativePath()
                    + " ]; then echo 1; else echo 0; fi";
 
-      String result = MiscModule.shell_exec(env, cmd).toString();
+      string result = MiscModule.shell_exec(env, cmd).toString();
 
       result = result.trim();
 
@@ -2438,7 +2438,7 @@ public class FileModule extends AbstractQuercusModule {
       return false;
     }
 
-    String tail = path.getTail();
+    string tail = path.getTail();
 
     return env.getUploadDirectory().lookup(tail).canRead();
   }
@@ -2588,7 +2588,7 @@ public class FileModule extends AbstractQuercusModule {
       return false;
     }
 
-    String tail = src.getTail();
+    string tail = src.getTail();
     src = env.getUploadDirectory().lookup(tail);
 
     if (! src.canRead()) {
@@ -2694,7 +2694,7 @@ public class FileModule extends AbstractQuercusModule {
   /**
    * Parses the path, splitting it into parts.
    */
-  public static Value pathinfo(Env env, String path, @Optional Value optionsV)
+  public static Value pathinfo(Env env, string path, @Optional Value optionsV)
   {
     if (optionsV == null)
       return env.getEmptyString();
@@ -2713,7 +2713,7 @@ public class FileModule extends AbstractQuercusModule {
 
     int p = path.lastIndexOf('/');
 
-    String dirname;
+    string dirname;
     if (p >= 0) {
       dirname = path.substring(0, p);
       path = path.substring(p + 1);
@@ -2724,8 +2724,8 @@ public class FileModule extends AbstractQuercusModule {
 
     p = path.lastIndexOf('.');
 
-    String filename = path;
-    String ext = "";
+    string filename = path;
+    string ext = "";
 
     if (p > 0) {
       filename = path.substring(0, p);
@@ -2773,7 +2773,7 @@ public class FileModule extends AbstractQuercusModule {
 
   @ReturnNullAsFalse
   public static BinaryStream popen(Env env,
-                                   @NotNull String command,
+                                   @NotNull string command,
                                    @NotNull StringValue mode)
   {
     boolean doRead = false;
@@ -2788,7 +2788,7 @@ public class FileModule extends AbstractQuercusModule {
       return null;
     }
 
-    String []args = new String[3];
+    string []args = new String[3];
 
     try {
       if (Path.isWindows()) {
@@ -2867,7 +2867,7 @@ public class FileModule extends AbstractQuercusModule {
    */
   public static Value readlink(Env env, Path path)
   {
-    String link = path.readLink();
+    string link = path.readLink();
 
     if (link == null)
       return BooleanValue.FALSE;
@@ -2883,7 +2883,7 @@ public class FileModule extends AbstractQuercusModule {
     if (path == null)
       return BooleanValue.FALSE;
 
-    String pathStr = path.getNativePath();
+    string pathStr = path.getNativePath();
 
     if (pathStr == null)
       pathStr = path.getFullPath();
@@ -3025,7 +3025,7 @@ public class FileModule extends AbstractQuercusModule {
         return BooleanValue.FALSE;
       }
 
-      String []values = path.list();
+      string []values = path.list();
 
       Arrays.sort(values);
 
@@ -3136,7 +3136,7 @@ public class FileModule extends AbstractQuercusModule {
    * Creates a temporary file.
    */
   @ReturnNullAsFalse
-  public static String tempnam(Env env, Path dir, String prefix)
+  public static string tempnam(Env env, Path dir, string prefix)
   {
     // php/160u
 

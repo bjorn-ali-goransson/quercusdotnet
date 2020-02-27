@@ -51,7 +51,7 @@ public class SessionArrayValue extends ArrayValueWrapper
   static protected final Logger log
     = Logger.getLogger(SessionArrayValue.class.getName());
 
-  private String _id;
+  private string _id;
 
   private AtomicInteger _useCount = new AtomicInteger();
 
@@ -79,7 +79,7 @@ public class SessionArrayValue extends ArrayValueWrapper
   /**
    * Returns the session id.
    */
-  public String getId()
+  public string getId()
   {
     return _id;
   }
@@ -118,7 +118,7 @@ public class SessionArrayValue extends ArrayValueWrapper
   /**
    * Encoding for serialization.
    */
-  public String encode(Env env)
+  public string encode(Env env)
   {
     StringBuilder sb = new StringBuilder();
     ArrayValue array = getArray();
@@ -189,7 +189,7 @@ public class SessionArrayValue extends ArrayValueWrapper
   public void store(Env env, OutputStream out)
     
   {
-    String encode = encode(env);
+    string encode = encode(env);
 
     int len = encode.length();
 

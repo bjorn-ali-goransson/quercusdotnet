@@ -351,7 +351,7 @@ public class ReadStreamInput extends InputStream implements BinaryInput {
     return this;
   }
 
-  public String getResourceType()
+  public string getResourceType()
   {
     return "stream";
   }
@@ -359,7 +359,7 @@ public class ReadStreamInput extends InputStream implements BinaryInput {
   /**
    * Converts to a string.
    */
-  public override String toString()
+  public override string toString()
   {
     return getClass().getSimpleName() + "[" + _is.getPath() + "]";
   }

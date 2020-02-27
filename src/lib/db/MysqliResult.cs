@@ -95,7 +95,7 @@ public class MysqliResult extends JdbcResultResource {
     _conn = conn;
   }
 
-  public String getResourceType()
+  public string getResourceType()
   {
     return "mysql result";
   }
@@ -222,7 +222,7 @@ public class MysqliResult extends JdbcResultResource {
    * rows in resultset
    */
   public Value fetch_object(Env env,
-                            @Optional String className,
+                            @Optional string className,
                             @Optional Value[] args)
   {
     return fetchObject(env, className, args);
@@ -289,12 +289,12 @@ public class MysqliResult extends JdbcResultResource {
         return BooleanValue.FALSE;
 
       int jdbcType = md.getColumnType(offset);
-      String catalogName = md.getCatalogName(offset);
-      String fieldTable = md.getTableName(offset);
-      String fieldSchema = md.getSchemaName(offset);
-      String fieldName = md.getColumnName(offset);
-      String fieldAlias = md.getColumnLabel(offset);
-      String fieldMysqlType = md.getColumnTypeName(offset);
+      string catalogName = md.getCatalogName(offset);
+      string fieldTable = md.getTableName(offset);
+      string fieldSchema = md.getSchemaName(offset);
+      string fieldName = md.getColumnName(offset);
+      string fieldAlias = md.getColumnLabel(offset);
+      string fieldMysqlType = md.getColumnTypeName(offset);
       int fieldLength = md.getPrecision(offset);
       int fieldScale = md.getScale(offset);
 
@@ -302,7 +302,7 @@ public class MysqliResult extends JdbcResultResource {
         return fetchFieldImproved(env, md, offset);
       }
 
-      String sql = "SHOW FULL COLUMNS FROM "
+      string sql = "SHOW FULL COLUMNS FROM "
           + fieldTable + " LIKE \'" + fieldName + "\'";
 
       MysqliResult metaResult;
@@ -336,12 +336,12 @@ public class MysqliResult extends JdbcResultResource {
 
     try {
       int jdbcType = md.getColumnType(offset);
-      String catalogName = md.getCatalogName(offset);
-      String fieldTable = md.getTableName(offset);
-      String fieldSchema = md.getSchemaName(offset);
-      String fieldName = md.getColumnName(offset);
-      String fieldAlias = md.getColumnLabel(offset);
-      String mysqlType = md.getColumnTypeName(offset);
+      string catalogName = md.getCatalogName(offset);
+      string fieldTable = md.getTableName(offset);
+      string fieldSchema = md.getSchemaName(offset);
+      string fieldName = md.getColumnName(offset);
+      string fieldAlias = md.getColumnLabel(offset);
+      string mysqlType = md.getColumnTypeName(offset);
       int fieldLength = md.getPrecision(offset);
       int scale = md.getScale(offset);
 
@@ -491,11 +491,11 @@ public class MysqliResult extends JdbcResultResource {
    */
   protected Value fetchFieldImproved(Env env,
                                      int fieldLength,
-                                     String name,
-                                     String originalName,
-                                     String table,
+                                     string name,
+                                     string originalName,
+                                     string table,
                                      int jdbcType,
-                                     String mysqlType,
+                                     string mysqlType,
                                      int scale)
   {
     Value result = env.createObject();
@@ -684,7 +684,7 @@ public class MysqliResult extends JdbcResultResource {
    *
    * @return the field flags
    */
-  public Value getFieldFlagsImproved(Env env, int jdbcType, String mysqlType)
+  public Value getFieldFlagsImproved(Env env, int jdbcType, string mysqlType)
   {
     try {
       StringBuilder flags = new StringBuilder();
@@ -783,7 +783,7 @@ public class MysqliResult extends JdbcResultResource {
    * @param fieldOffset the field number (0-based)
    * @return the Mysql type
    */
-  protected String getMysqlType(int fieldOffset)
+  protected string getMysqlType(int fieldOffset)
   {
     try {
       ResultSetMetaData md = getMetaData();
@@ -800,12 +800,12 @@ public class MysqliResult extends JdbcResultResource {
    * return a PHP type string.
    */
 
-  protected String getFieldType(int fieldOffset, int jdbcType)
+  protected string getFieldType(int fieldOffset, int jdbcType)
   {
     if (jdbcType == Types.TIMESTAMP) {
       // The Mysql types DATETIME and TIMESTAMP both map to Types.TIMESTAMP
 
-      String mysqlType = getMysqlType(fieldOffset);
+      string mysqlType = getMysqlType(fieldOffset);
 
       if (mysqlType.equals("TIMESTAMP")) {
         return TIMESTAMP;
@@ -815,7 +815,7 @@ public class MysqliResult extends JdbcResultResource {
     } else if (jdbcType == Types.DATE) {
       // The Mysql types DATE and YEAR both map to Types.DATE
 
-      String mysqlType = getMysqlType(fieldOffset);
+      string mysqlType = getMysqlType(fieldOffset);
 
       if (mysqlType.equals("YEAR")) {
         return YEAR;
@@ -969,7 +969,7 @@ public class MysqliResult extends JdbcResultResource {
     Method getColumnCharacterSetMethod
       = _conn.getColumnCharacterSetMethod(md.getClass());
 
-    String encoding = null;
+    string encoding = null;
 
     try {
       if (getColumnCharacterSetMethod != null)
@@ -979,7 +979,7 @@ public class MysqliResult extends JdbcResultResource {
     }
     
     if (encoding == null) {
-      String value = rs.getString(column);
+      string value = rs.getString(column);
 
       if (value != null)
         return env.createString(value);
@@ -1042,7 +1042,7 @@ public class MysqliResult extends JdbcResultResource {
       return bb;
     }
     else {
-      String value = rs.getString(column);
+      string value = rs.getString(column);
 
       if (value != null)
         return env.createString(value);

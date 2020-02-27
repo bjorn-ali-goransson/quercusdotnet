@@ -34,12 +34,12 @@
  */
 public class ProfileItem
 {
-  private final String _name;
-  private final String _parent;
+  private final string _name;
+  private final string _parent;
   private final long _count;
   private final long _micros;
 
-  public ProfileItem(String name, String parent, long count, long micros)
+  public ProfileItem(String name, string parent, long count, long micros)
   {
     _name = name;
     _parent = parent;
@@ -50,7 +50,7 @@ public class ProfileItem
   /**
    * Returns the item's function name
    */
-  public String getName()
+  public string getName()
   {
     return _name;
   }
@@ -58,7 +58,7 @@ public class ProfileItem
   /**
    * Returns the item's parent name
    */
-  public String getParent()
+  public string getParent()
   {
     return _parent;
   }
@@ -80,7 +80,7 @@ public class ProfileItem
   }
 
   @Override
-  public String toString()
+  public string toString()
   {
     return (getClass().getSimpleName()
             + "[" + _name

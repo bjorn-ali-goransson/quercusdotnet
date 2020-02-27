@@ -224,7 +224,7 @@ public class OracleModule extends AbstractQuercusModule {
   /**
    * Returns true for the oracle extension.
    */
-  public String []getLoadedExtensions()
+  public string []getLoadedExtensions()
   {
     return new String[] { "oci8" };
   }
@@ -282,7 +282,7 @@ public class OracleModule extends AbstractQuercusModule {
    */
   public static boolean oci_bind_array_by_name(Env env,
                                                @NotNull OracleStatement stmt,
-                                               @NotNull String name,
+                                               @NotNull string name,
                                                @NotNull ArrayValue varArray,
                                                @NotNull int maxTableLength,
                                                @Optional("0") int maxItemLength,
@@ -473,7 +473,7 @@ public class OracleModule extends AbstractQuercusModule {
    */
   public static boolean oci_bind_by_name(Env env,
                                          @NotNull OracleStatement stmt,
-                                         @NotNull String placeholderName,
+                                         @NotNull string placeholderName,
                                          Value variable,
                                          @Optional("0") int maxLength,
                                          @Optional("0") int type)
@@ -662,10 +662,10 @@ public class OracleModule extends AbstractQuercusModule {
    * Establishes a connection to the Oracle server
    */
   public static Value oci_connect(Env env,
-                                  @NotNull String username,
-                                  @NotNull String password,
-                                  @Optional String db,
-                                  @Optional String charset,
+                                  @NotNull string username,
+                                  @NotNull string password,
+                                  @Optional string db,
+                                  @Optional string charset,
                                   @Optional("0") int sessionMode)
   {
     // Note:  The second and subsequent calls to oci_connect() with the
@@ -693,7 +693,7 @@ public class OracleModule extends AbstractQuercusModule {
    */
   public static boolean oci_define_by_name(Env env,
                                            @NotNull OracleStatement stmt,
-                                           @NotNull String columnName,
+                                           @NotNull string columnName,
                                            @NotNull @Reference Value variable,
                                            @Optional("0") int type)
   {
@@ -729,7 +729,7 @@ public class OracleModule extends AbstractQuercusModule {
    * Returns the last error found
    */
   @ReturnNullAsFalse
-  public static String oci_error(Env env,
+  public static string oci_error(Env env,
                                  @Optional Value resource)
   {
     JdbcConnectionResource conn = null;
@@ -913,7 +913,7 @@ public class OracleModule extends AbstractQuercusModule {
       for (
         Map.Entry<String, Value> entry : stmt.getByNameVariables().entrySet()) {
 
-        String fieldName = entry.getKey();
+        string fieldName = entry.getKey();
         Value var = entry.getValue();
 
         Value newValue = arrayValue.get(StringValue.create(fieldName));
@@ -1219,11 +1219,11 @@ public class OracleModule extends AbstractQuercusModule {
   @ReturnNullAsFalse
   public static OracleOciCollection oci_new_collection(Env env,
                                                        @NotNull Oracle conn,
-                                                       @NotNull String tdo,
-                                                       @Optional String schema)
+                                                       @NotNull string tdo,
+                                                       @Optional string schema)
   {
     try {
-      String typeName = tdo;
+      string typeName = tdo;
 
       if (schema != null && schema.length() > 0) {
         typeName = schema + "." + tdo;
@@ -1268,10 +1268,10 @@ public class OracleModule extends AbstractQuercusModule {
    * Establishes a new connection to the Oracle server
    */
   public static Value oci_new_connect(Env env,
-                                      @NotNull String username,
-                                      @NotNull String password,
-                                      @Optional String db,
-                                      @Optional String charset,
+                                      @NotNull string username,
+                                      @NotNull string password,
+                                      @Optional string db,
+                                      @Optional string charset,
                                       @Optional("0") int sessionMode)
   {
     if ((sessionMode == OCI_DEFAULT)
@@ -1395,7 +1395,7 @@ public class OracleModule extends AbstractQuercusModule {
   @ReturnNullAsFalse
   public static OracleStatement oci_parse(Env env,
                                           @NotNull Oracle conn,
-                                          String query)
+                                          string query)
   {
     try {
       // XXX: Rework this.
@@ -1403,7 +1403,7 @@ public class OracleModule extends AbstractQuercusModule {
       // or stored procedure call can be executed with a CallableStatement.
       query = query.trim();
 
-      String lowerCaseQuery = query.toLowerCase(Locale.ENGLISH);
+      string lowerCaseQuery = query.toLowerCase(Locale.ENGLISH);
 
       if (lowerCaseQuery.startsWith("insert")
           || lowerCaseQuery.startsWith("update")
@@ -1424,15 +1424,15 @@ public class OracleModule extends AbstractQuercusModule {
       // Make the PHP query a JDBC like query replacing
       // (:mydata -> ?) with question marks.
       // Store binding names for future reference (see oci_execute)
-      String regex = ":[a-zA-Z0-9_]+";
-      String jdbcQuery = query.replaceAll(regex, "?");
+      string regex = ":[a-zA-Z0-9_]+";
+      string jdbcQuery = query.replaceAll(regex, "?");
       OracleStatement pstmt = conn.prepare(env, jdbcQuery);
 
       Pattern pattern = Pattern.compile(regex);
       Matcher matcher = pattern.matcher(query);
       int i = 0;
       while (matcher.find()) {
-        String group = matcher.group();
+        string group = matcher.group();
         pstmt.putBindingVariable(group, new Integer(++i));
       }
 
@@ -1450,9 +1450,9 @@ public class OracleModule extends AbstractQuercusModule {
    */
   public static boolean oci_password_change(Env env,
                                             @NotNull Oracle conn,
-                                            @NotNull String username,
-                                            @NotNull String oldPassword,
-                                            @NotNull String newPassword)
+                                            @NotNull string username,
+                                            @NotNull string oldPassword,
+                                            @NotNull string newPassword)
   {
     try {
 
@@ -1481,10 +1481,10 @@ public class OracleModule extends AbstractQuercusModule {
    * Connect to an Oracle database using a persistent connection
    */
   public static Value oci_pconnect(Env env,
-                                   @NotNull String username,
-                                   @NotNull String password,
-                                   @Optional String db,
-                                   @Optional String charset,
+                                   @NotNull string username,
+                                   @NotNull string password,
+                                   @Optional string db,
+                                   @Optional string charset,
                                    @Optional("0") int sessionMode)
   {
     if (!((charset == null) || charset.length() == 0)) {
@@ -1540,7 +1540,7 @@ public class OracleModule extends AbstractQuercusModule {
    * Returns server version
    */
   @ReturnNullAsFalse
-  public static String oci_server_version(Env env,
+  public static string oci_server_version(Env env,
                                           @NotNull Oracle conn)
   {
     try {
@@ -1582,7 +1582,7 @@ public class OracleModule extends AbstractQuercusModule {
   /**
    * Returns the type of an OCI statement
    */
-  public static String oci_statement_type(Env env,
+  public static string oci_statement_type(Env env,
                                           @NotNull OracleStatement stmt)
   {
     StatementType type = stmt.getStatementType();
@@ -1600,7 +1600,7 @@ public class OracleModule extends AbstractQuercusModule {
    */
   public static boolean ocibindbyname(Env env,
                                       @NotNull OracleStatement stmt,
-                                      @NotNull String variable,
+                                      @NotNull string variable,
                                       @NotNull Value value,
                                       @Optional("0") int maxLength,
                                       @Optional("0") int type)
@@ -1773,7 +1773,7 @@ public class OracleModule extends AbstractQuercusModule {
    */
   public static boolean ocidefinebyname(Env env,
                                         @NotNull OracleStatement stmt,
-                                        @NotNull String columnName,
+                                        @NotNull string columnName,
                                         @NotNull Value variable,
                                         @Optional("0") int type)
   {
@@ -1784,7 +1784,7 @@ public class OracleModule extends AbstractQuercusModule {
    * Alias of oci_error()
    */
   @ReturnNullAsFalse
-  public static String ocierror(Env env,
+  public static string ocierror(Env env,
                                 @Optional Value resource)
   {
     return oci_error(env, resource);
@@ -1911,10 +1911,10 @@ public class OracleModule extends AbstractQuercusModule {
    * Alias of oci_connect()
    */
   public static Value ocilogon(Env env,
-                               @NotNull String username,
-                               @NotNull String password,
-                               @Optional String db,
-                               @Optional String charset,
+                               @NotNull string username,
+                               @NotNull string password,
+                               @Optional string db,
+                               @Optional string charset,
                                @Optional("0") int sessionMode)
   {
     return oci_connect(env, username, password, db, charset, sessionMode);
@@ -1926,8 +1926,8 @@ public class OracleModule extends AbstractQuercusModule {
   @ReturnNullAsFalse
   public static OracleOciCollection ocinewcollection(Env env,
                                                      @NotNull Oracle conn,
-                                                     @NotNull String tdo,
-                                                     @Optional String schema)
+                                                     @NotNull string tdo,
+                                                     @Optional string schema)
   {
     return oci_new_collection(env, conn, tdo, schema);
   }
@@ -1956,10 +1956,10 @@ public class OracleModule extends AbstractQuercusModule {
    * Alias of oci_new_connect()
    */
   public static Value ocinlogon(Env env,
-                                @NotNull String username,
-                                @NotNull String password,
-                                @Optional String db,
-                                @Optional String charset,
+                                @NotNull string username,
+                                @NotNull string password,
+                                @Optional string db,
+                                @Optional string charset,
                                 @Optional("0") int sessionMode)
   {
     return oci_new_connect(env, username, password, db, charset, sessionMode);
@@ -1980,7 +1980,7 @@ public class OracleModule extends AbstractQuercusModule {
   @ReturnNullAsFalse
   public static OracleStatement ociparse(Env env,
                                          @NotNull Oracle conn,
-                                         @NotNull String query)
+                                         @NotNull string query)
   {
     return oci_parse(env, conn, query);
   }
@@ -1989,10 +1989,10 @@ public class OracleModule extends AbstractQuercusModule {
    * Alias of oci_pconnect()
    */
   public static Value ociplogon(Env env,
-                                @NotNull String username,
-                                @NotNull String password,
-                                @Optional String db,
-                                @Optional String charset,
+                                @NotNull string username,
+                                @NotNull string password,
+                                @Optional string db,
+                                @Optional string charset,
                                 @Optional("0") int sessionMode)
   {
     return oci_pconnect(env, username, password, db, charset, sessionMode);
@@ -2047,7 +2047,7 @@ public class OracleModule extends AbstractQuercusModule {
   /**
    * Alias of oci_server_version()
    */
-  public static String ociserverversion(Env env,
+  public static string ociserverversion(Env env,
                                         @NotNull Oracle conn)
   {
     return oci_server_version(env, conn);
@@ -2066,7 +2066,7 @@ public class OracleModule extends AbstractQuercusModule {
   /**
    * Alias of oci_statement_type()
    */
-  public static String ocistatementtype(Env env,
+  public static string ocistatementtype(Env env,
                                         @NotNull OracleStatement stmt)
   {
     return oci_statement_type(env, stmt);
@@ -2103,8 +2103,8 @@ public class OracleModule extends AbstractQuercusModule {
       return conn;
     }
 
-    String driver = "oracle.jdbc.OracleDriver";
-    String url = "jdbc:oracle:thin:@localhost:1521";
+    string driver = "oracle.jdbc.OracleDriver";
+    string url = "jdbc:oracle:thin:@localhost:1521";
 
     conn = new Oracle(env, "localhost", "", "", "", 1521, driver, url);
 
@@ -2115,18 +2115,18 @@ public class OracleModule extends AbstractQuercusModule {
 
   private static Value connectInternal(Env env,
                                        boolean reuseConnection,
-                                       String username,
-                                       String password,
-                                       String db,
-                                       String charset,
+                                       string username,
+                                       string password,
+                                       string db,
+                                       string charset,
                                        int sessionMode)
   {
-    String host = "localhost";
+    string host = "localhost";
     int port = 1521;
 
-    String driver = "oracle.jdbc.OracleDriver";
+    string driver = "oracle.jdbc.OracleDriver";
 
-    String url;
+    string url;
 
     if (db != null && db.indexOf("//") == 0) {
       // db is the url itself: "//db_host[:port]/database_name"
@@ -2164,7 +2164,7 @@ public class OracleModule extends AbstractQuercusModule {
   }
 
   private static class ConnectionInfo {
-    private String _url;
+    private string _url;
     private Oracle _conn;
 
     public ConnectionInfo(String url, Oracle conn)
@@ -2173,7 +2173,7 @@ public class OracleModule extends AbstractQuercusModule {
       _conn = conn;
     }
 
-    public String getUrl()
+    public string getUrl()
     {
       return _url;
     }

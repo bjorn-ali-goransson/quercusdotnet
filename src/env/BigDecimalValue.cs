@@ -99,7 +99,7 @@ public class BigDecimalValue extends JavaValue {
     return _val.longValue() == _val.doubleValue();
   }
   
-  public String toString()
+  public string toString()
   {
     return "BigDecimal[" + _val.doubleValue() + "]";
   }

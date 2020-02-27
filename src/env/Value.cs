@@ -74,7 +74,7 @@ abstract public class Value implements java.io.Serializable
   /**
    * Returns the value's class name.
    */
-  public String getClassName()
+  public string getClassName()
   {
     return getType();
   }
@@ -98,7 +98,7 @@ abstract public class Value implements java.io.Serializable
       return cls;
     }
 
-    String name = toString();
+    string name = toString();
 
     return env.getClass(name);
   }
@@ -126,7 +126,7 @@ abstract public class Value implements java.io.Serializable
   /**
    * Returns true for an implementation of a class
    */
-  public boolean isA(Env env, String name)
+  public boolean isA(Env env, string name)
   {
     return false;
   }
@@ -152,14 +152,14 @@ abstract public class Value implements java.io.Serializable
   /**
    * Checks if 'this' is a valid protected call for 'className'
    */
-  public void checkProtected(Env env, String className)
+  public void checkProtected(Env env, string className)
   {
   }
 
   /**
    * Checks if 'this' is a valid private call for 'className'
    */
-  public void checkPrivate(Env env, String className)
+  public void checkPrivate(Env env, string className)
   {
   }
 
@@ -655,7 +655,7 @@ abstract public class Value implements java.io.Serializable
    */
   public char toChar()
   {
-    String s = toString();
+    string s = toString();
 
     if (s == null || s.length() < 1)
       return 0;
@@ -818,9 +818,9 @@ abstract public class Value implements java.io.Serializable
   }
 
   /**
-   * Converts to a java String object.
+   * Converts to a java string object.
    */
-  public String toJavaString()
+  public string toJavaString()
   {
     return toString();
   }
@@ -897,7 +897,7 @@ abstract public class Value implements java.io.Serializable
    */
   public Enum toJavaEnum(Env env, Class cls)
   {
-    String s = toString();
+    string s = toString();
 
     if (s == null) {
       return null;
@@ -932,7 +932,7 @@ abstract public class Value implements java.io.Serializable
   /**
    * Converts to an exception.
    */
-  public QuercusException toException(Env env, String file, int line)
+  public QuercusException toException(Env env, string file, int line)
   {
     putField(env, env.createString("file"), env.createString(file));
     putField(env, env.createString("line"), LongValue.create(line));
@@ -1243,7 +1243,7 @@ abstract public class Value implements java.io.Serializable
   /**
    * Returns the callable's name for is_callable()
    */
-  public String getCallableName()
+  public string getCallableName()
   {
     return null;
   }
@@ -1370,7 +1370,7 @@ abstract public class Value implements java.io.Serializable
   /**
    * Returns the type.
    */
-  public String getType()
+  public string getType()
   {
     return "value";
   }
@@ -1386,7 +1386,7 @@ abstract public class Value implements java.io.Serializable
   /**
    * Returns the resource type.
    */
-  public String getResourceType()
+  public string getResourceType()
   {
     return null;
   }
@@ -2657,7 +2657,7 @@ abstract public class Value implements java.io.Serializable
   // field convenience
   //
 
-  public Value putField(Env env, String name, Value value)
+  public Value putField(Env env, string name, Value value)
   {
     return putThisField(env, env.createString(name), value);
   }
@@ -3088,12 +3088,12 @@ abstract public class Value implements java.io.Serializable
     }
   }
 
-  public String toInternString()
+  public string toInternString()
   {
     return toString().intern();
   }
 
-  public String toDebugString()
+  public string toDebugString()
   {
     return toString();
   }

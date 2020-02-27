@@ -72,7 +72,7 @@ public class ApacheModule extends AbstractQuercusModule {
    * Gets and sets apache notes
    */
   public Value apache_note(Env env,
-                           String name,
+                           string name,
                            @Optional Value value)
   {
     Map<String,Value> map = (Map) env.getSpecialValue("_caucho_apache_note");
@@ -109,7 +109,7 @@ public class ApacheModule extends AbstractQuercusModule {
     Enumeration e = req.getHeaderNames();
 
     while (e.hasMoreElements()) {
-      String key = (String) e.nextElement();
+      string key = (String) e.nextElement();
 
       result.put(env.createString(key), env.createString(req.getHeader(key)));
     }
@@ -142,7 +142,7 @@ public class ApacheModule extends AbstractQuercusModule {
   /**
    * Include request.
    */
-  public boolean virtual(Env env, String url)
+  public boolean virtual(Env env, string url)
   {
     try {
       QuercusHttpServletRequest req = env.getRequest();

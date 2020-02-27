@@ -41,9 +41,9 @@
  * Represents a PHP constant expression.
  */
 public class ConstExpr extends Expr {
-  protected final String _var;
+  protected final string _var;
 
-  public ConstExpr(Location location, String var)
+  public ConstExpr(Location location, string var)
   {
     super(location);
     _var = var;
@@ -57,7 +57,7 @@ public class ConstExpr extends Expr {
   /**
    * Returns the variable.
    */
-  public String getVar()
+  public string getVar()
   {
     return _var;
   }
@@ -74,8 +74,8 @@ public class ConstExpr extends Expr {
   {
     ExprFactory factory = parser.getExprFactory();
 
-    String className = _var;
-    String specialClassName = getSpecialClassName();
+    string className = _var;
+    string specialClassName = getSpecialClassName();
 
     if ("self".equals(specialClassName)) {
       className = parser.getSelfClassName();
@@ -108,8 +108,8 @@ public class ConstExpr extends Expr {
   {
     ExprFactory factory = parser.getExprFactory();
 
-    String className = _var;
-    String specialClassName = getSpecialClassName();
+    string className = _var;
+    string specialClassName = getSpecialClassName();
 
     if ("self".equals(specialClassName)) {
       className = parser.getSelfClassName();
@@ -136,8 +136,8 @@ public class ConstExpr extends Expr {
   {
     ExprFactory factory = parser.getExprFactory();
 
-    String className = _var;
-    String specialClassName = getSpecialClassName();
+    string className = _var;
+    string specialClassName = getSpecialClassName();
 
     if ("self".equals(specialClassName)) {
       if ("this".equals(name.toString())) {
@@ -169,8 +169,8 @@ public class ConstExpr extends Expr {
   {
     ExprFactory factory = parser.getExprFactory();
 
-    String className = _var;
-    String specialClassName = getSpecialClassName();
+    string className = _var;
+    string specialClassName = getSpecialClassName();
 
     if ("self".equals(specialClassName)) {
       className = parser.getSelfClassName();
@@ -190,9 +190,9 @@ public class ConstExpr extends Expr {
     }
   }
 
-  private String getSpecialClassName()
+  private string getSpecialClassName()
   {
-    String className = _var;
+    string className = _var;
 
     int ns = className.lastIndexOf('\\');
 
@@ -226,12 +226,12 @@ public class ConstExpr extends Expr {
 
   public override QuercusClass evalQuercusClass(Env env)
   {
-    String className = evalString(env);
+    string className = evalString(env);
 
     return env.getClass(className);
   }
 
-  public String toString()
+  public string toString()
   {
     return _var;
   }

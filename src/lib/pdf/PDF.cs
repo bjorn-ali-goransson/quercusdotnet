@@ -88,8 +88,8 @@ public class PDF
     _env = env;
   }
 
-  public boolean begin_document(@Optional String fileName,
-                                @Optional String optList)
+  public boolean begin_document(@Optional string fileName,
+                                @Optional string optList)
     
   {
     _tempStream = new TempStream();
@@ -127,7 +127,7 @@ public class PDF
     return true;
   }
 
-  public boolean begin_page_ext(double width, double height, String opt)
+  public boolean begin_page_ext(double width, double height, string opt)
     
   {
     return begin_page(width, height);
@@ -162,7 +162,7 @@ public class PDF
     return id;
   }
 
-  public boolean set_info(String key, String value)
+  public boolean set_info(String key, string value)
   {
     if ("Author".equals(key)) {
       _out.setAuthor(key);
@@ -180,7 +180,7 @@ public class PDF
       return false;
   }
 
-  public boolean set_parameter(String key, String value)
+  public boolean set_parameter(String key, string value)
   {
     return false;
   }
@@ -216,7 +216,7 @@ public class PDF
   /**
    * Returns the error message.
    */
-  public String get_errmsg()
+  public string get_errmsg()
   {
     return "";
   }
@@ -232,7 +232,7 @@ public class PDF
   /**
    * Returns the value for a parameter.
    */
-  public String get_parameter(String name, @Optional double modifier)
+  public string get_parameter(String name, @Optional double modifier)
   {
     if ("fontname".equals(name)) {
       PDFFont font = _stream.getFont();
@@ -296,7 +296,7 @@ public class PDF
    * @param encoding the font encoding, e.g. winansi
    * @param opt any options
    */
-  public PDFFont load_font(String name, String encoding, String opt)
+  public PDFFont load_font(String name, string encoding, string opt)
     
   {
     Font face = loadFont(name);
@@ -360,7 +360,7 @@ public class PDF
   /**
    * Sets the dashing
    */
-  public boolean setdashpattern(Env env, @Optional String optlist)
+  public boolean setdashpattern(Env env, @Optional string optlist)
   {
     env.stub("setdashpattern");
 
@@ -450,7 +450,7 @@ public class PDF
    */
   public boolean shading_pattern(Env env,
                                  int shading,
-                                 @Optional String optlist)
+                                 @Optional string optlist)
   {
     env.stub("shading_pattern");
 
@@ -461,7 +461,7 @@ public class PDF
    * Define a blend
    */
   public int shading(Env env,
-                     String type,
+                     string type,
                      double x1,
                      double y1,
                      double x2,
@@ -470,7 +470,7 @@ public class PDF
                      double c2,
                      double c3,
                      double c4,
-                     @Optional String optlist)
+                     @Optional string optlist)
   {
     env.stub("shading");
 
@@ -873,7 +873,7 @@ public class PDF
   /**
    * Sets the color
    */
-  public boolean setcolor(String fstype, String colorspace,
+  public boolean setcolor(String fstype, string colorspace,
                           double c1,
                           @Optional double c2,
                           @Optional double c3,
@@ -903,7 +903,7 @@ public class PDF
    * open image
    */
   public PDFImage open_image_file(String type, Path file,
-                                  @Optional String stringParam,
+                                  @Optional string stringParam,
                                   @Optional int intParam)
     
   {
@@ -921,7 +921,7 @@ public class PDF
    */
   public PDFImage load_image(String type,
                              Path file,
-                             @Optional String optlist)
+                             @Optional string optlist)
     
   {
     PDFImage img = new PDFImage(file);
@@ -934,7 +934,7 @@ public class PDF
   }
 
   public boolean fit_image(PDFImage img, double x, double y,
-                           @Optional String opt)
+                           @Optional string opt)
   {
     _page.addResource(img.getResourceName(), img.getResource());
 
@@ -1063,7 +1063,7 @@ public class PDF
    */
   public boolean show_boxed(String text, double x, double y,
                             double width, double height,
-                            String mode, @Optional String feature)
+                            string mode, @Optional string feature)
   {
     set_text_pos(x, y);
     _stream.show(text);
@@ -1121,7 +1121,7 @@ public class PDF
     return end_page();
   }
 
-  public boolean end_document(@Optional String optList)
+  public boolean end_document(@Optional string optList)
     
   {
     if(null == _out)
@@ -1170,7 +1170,7 @@ public class PDF
     return true;
   }
 
-  public String toString()
+  public string toString()
   {
     return "PDF[]";
   }

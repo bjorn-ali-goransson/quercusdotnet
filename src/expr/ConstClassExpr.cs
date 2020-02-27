@@ -73,7 +73,7 @@ public class ConstClassExpr extends Expr {
       return env.getEmptyString();
     }
 
-    String bindingClassName = cls.getTraitMethodBindingClassName(funName);
+    string bindingClassName = cls.getTraitMethodBindingClassName(funName);
 
     if (bindingClassName == null) {
       return env.getEmptyString();
@@ -84,7 +84,7 @@ public class ConstClassExpr extends Expr {
   }
 
   @Override
-  public String toString()
+  public string toString()
   {
     return "__CLASS__";
   }

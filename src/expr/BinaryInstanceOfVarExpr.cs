@@ -78,7 +78,7 @@ public class BinaryInstanceOfVarExpr extends AbstractBinaryExpr {
     return lValue.isA(env, rValue);
   }
 
-  public String toString()
+  public string toString()
   {
     return "(" + _left + " instanceof " + _right + ")";
   }

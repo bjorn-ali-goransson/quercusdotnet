@@ -90,7 +90,7 @@ public class FilterModule extends AbstractQuercusModule
   public static HashMap<Integer,Filter> _filterMap
    =  new HashMap<Integer,Filter>();
 
-  public String []getLoadedExtensions()
+  public string []getLoadedExtensions()
   {
     return new String[] { "filter" };
   }

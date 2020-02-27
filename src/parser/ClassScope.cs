@@ -92,7 +92,7 @@ public class ClassScope extends Scope
   public void addClassField(StringValue name,
                             Expr value,
                             FieldVisibility visibility,
-                            String comment)
+                            string comment)
   {
     _cl.addClassField(name, value, visibility, comment);
   }
@@ -100,7 +100,7 @@ public class ClassScope extends Scope
   /**
    * Adds a static value
    */
-  public void addStaticClassField(StringValue name, Expr value, String comment)
+  public void addStaticClassField(StringValue name, Expr value, string comment)
   {
     _cl.addStaticValue(name, value, comment);
   }
@@ -116,8 +116,8 @@ public class ClassScope extends Scope
   /**
    * Adds a class
    */
-  public override InterpretedClassDef addClass(Location location, String name,
-                                      String parentName,
+  public override InterpretedClassDef addClass(Location location, string name,
+                                      string parentName,
                                       ArrayList<String> ifaceList,
                                       int index,
                                       boolean isTop)

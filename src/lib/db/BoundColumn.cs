@@ -37,7 +37,7 @@
 
 public class BoundColumn
 {
-  private final String _columnAsName;
+  private final string _columnAsName;
   private final Value _var;
 
   private int _column;
@@ -74,7 +74,7 @@ public class BoundColumn
 
     if (_columnAsName != null) {
       for (int i = 1; i <= columnCount; i++) {
-        String name = metaData.getColumnName(i);
+        string name = metaData.getColumnName(i);
         if (name.equals(_columnAsName)) {
           _column = i;
           break;

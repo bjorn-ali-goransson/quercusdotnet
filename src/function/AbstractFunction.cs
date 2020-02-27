@@ -62,7 +62,7 @@ abstract public class AbstractFunction extends Callback {
   protected boolean _isTraitMethod = false;
 
   protected Visibility _visibility = Visibility.PUBLIC;
-  protected String _declaringClassName;
+  protected string _declaringClassName;
 
   protected QuercusClass _bindingClass;
 
@@ -79,7 +79,7 @@ abstract public class AbstractFunction extends Callback {
     _location = location;
   }
 
-  public String getName()
+  public string getName()
   {
     return "unknown";
   }
@@ -89,7 +89,7 @@ abstract public class AbstractFunction extends Callback {
   //
 
   @Override
-  public String getCallbackName()
+  public string getCallbackName()
   {
     return getName();
   }
@@ -107,7 +107,7 @@ abstract public class AbstractFunction extends Callback {
   /**
    * Returns the name of the file where this is defined in.
    */
-  public override String getDeclFileName(Env env)
+  public override string getDeclFileName(Env env)
   {
     return _location.getFileName();
   }
@@ -131,7 +131,7 @@ abstract public class AbstractFunction extends Callback {
   /**
    * Returns the comment in the file where this is defined in.
    */
-  public override String getDeclComment(Env env)
+  public override string getDeclComment(Env env)
   {
     return getComment();
   }
@@ -154,9 +154,9 @@ abstract public class AbstractFunction extends Callback {
     return false;
   }
 
-  public final String getCompilationName()
+  public final string getCompilationName()
   {
-    String compName = getName() + "_" + _parseIndex;
+    string compName = getName() + "_" + _parseIndex;
 
     compName = compName.replace("__", "___");
     compName = compName.replace("\\", "__");
@@ -167,7 +167,7 @@ abstract public class AbstractFunction extends Callback {
   /**
    * Returns the name of class lexically declaring the method
    */
-  public String getDeclaringClassName()
+  public string getDeclaringClassName()
   {
     return _declaringClassName;
   }
@@ -180,7 +180,7 @@ abstract public class AbstractFunction extends Callback {
   /**
    * Returns the name of class lexically binding the method
    */
-  public String getBindingClassName()
+  public string getBindingClassName()
   {
     if (_bindingClass != null)
       return _bindingClass.getName();
@@ -429,7 +429,7 @@ abstract public class AbstractFunction extends Callback {
   /**
    * Returns the documentation for this function.
    */
-  public String getComment()
+  public string getComment()
   {
     return null;
   }
@@ -466,7 +466,7 @@ abstract public class AbstractFunction extends Callback {
     return true;
   }
 
-  public override String getType()
+  public override string getType()
   {
     return "object";
   }
@@ -867,7 +867,7 @@ abstract public class AbstractFunction extends Callback {
       oldThis != null ? oldThis.getClassName() : null));
   }
 
-  public override String toString()
+  public override string toString()
   {
     return getClass().getSimpleName() + "[" + getName() + "]";
   }

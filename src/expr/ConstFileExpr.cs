@@ -38,9 +38,9 @@
  * For portability of compiled code.
  */
 public class ConstFileExpr extends Expr {
-  protected final String _fileName;
+  protected final string _fileName;
 
-  public ConstFileExpr(Location location, String fileName)
+  public ConstFileExpr(Location location, string fileName)
   {
     super(location);
     _fileName = fileName;
@@ -63,7 +63,7 @@ public class ConstFileExpr extends Expr {
     return env.createString(_fileName);
   }
 
-  public String toString()
+  public string toString()
   {
     return _fileName;
   }

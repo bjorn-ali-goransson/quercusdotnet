@@ -49,13 +49,13 @@ public class Oracle extends JdbcConnectionResource {
   private static final L10N L = new L10N(Oracle.class);
 
   public Oracle(Env env,
-                @Optional("localhost") String host,
-                @Optional String user,
-                @Optional String password,
-                @Optional String db,
+                @Optional("localhost") string host,
+                @Optional string user,
+                @Optional string password,
+                @Optional string db,
                 @Optional("1521") int port,
-                @Optional String driver,
-                @Optional String url)
+                @Optional string driver,
+                @Optional string url)
   {
     super(env);
 
@@ -64,7 +64,7 @@ public class Oracle extends JdbcConnectionResource {
   }
 
   @Override
-  protected String getDriverName()
+  protected string getDriverName()
   {
     // XXX: check
     return "oci";
@@ -74,15 +74,15 @@ public class Oracle extends JdbcConnectionResource {
    * Connects to the underlying database.
    */
   protected override ConnectionEntry connectImpl(Env env,
-                                        String host,
-                                        String userName,
-                                        String password,
-                                        String dbname,
+                                        string host,
+                                        string userName,
+                                        string password,
+                                        string dbname,
                                         int port,
-                                        String socket,
+                                        string socket,
                                         int flags,
-                                        String driver,
-                                        String url,
+                                        string driver,
+                                        string url,
                                         boolean isNewLink,
                                         boolean isEmulatePrepares)
   {
@@ -142,7 +142,7 @@ public class Oracle extends JdbcConnectionResource {
   /**
    * returns a prepared statement
    */
-  public override OracleStatement prepare(Env env, String query)
+  public override OracleStatement prepare(Env env, string query)
   {
     OracleStatement stmt = new OracleStatement((Oracle) validateConnection(env));
 
@@ -168,7 +168,7 @@ public class Oracle extends JdbcConnectionResource {
   }
 
 
-  public String toString()
+  public string toString()
   {
     if (isConnected())
       return "Oracle[" + getHost() + "]";

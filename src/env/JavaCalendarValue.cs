@@ -66,7 +66,7 @@ public class JavaCalendarValue extends JavaValue {
     return _calendar;
   }
   
-  public String toString()
+  public string toString()
   {
     return _calendar.getTime().toString();
   }

@@ -58,8 +58,8 @@ public class UnicodeModule extends AbstractQuercusModule {
   public static final int U_INVALID_SUBSTITUTE = 2;
   public static final int U_INVALID_ESCAPE = 3;
 
-  public static final String ICONV_IMPL = "QuercusIconv";
-  public static final String ICONV_VERSION = "1.0";
+  public static final string ICONV_IMPL = "QuercusIconv";
+  public static final string ICONV_VERSION = "1.0";
 
   public static final int ICONV_MIME_DECODE_STRICT = 1;
   public static final int ICONV_MIME_DECODE_CONTINUE_ON_ERROR = 2;
@@ -69,7 +69,7 @@ public class UnicodeModule extends AbstractQuercusModule {
   /**
    * Returns the extensions implemented by the module.
    */
-  public String []getLoadedExtensions()
+  public string []getLoadedExtensions()
   {
     return new String[] { "iconv" };
   }
@@ -89,7 +89,7 @@ public class UnicodeModule extends AbstractQuercusModule {
 
   public static Value unicode_decode(Env env,
                                      BinaryValue str,
-                                     String encoding,
+                                     string encoding,
                                      @Optional int errorMode)
   {
     try {
@@ -107,7 +107,7 @@ public class UnicodeModule extends AbstractQuercusModule {
 
   public static Value unicode_encode(Env env,
                                      UnicodeValue str,
-                                     String encoding,
+                                     string encoding,
                                      @Optional int errorMode)
   {
     try {
@@ -134,7 +134,7 @@ public class UnicodeModule extends AbstractQuercusModule {
                                    StringValue haystack,
                                    StringValue needle,
                                    @Optional("0") int offset,
-                                   @Optional("") String charset)
+                                   @Optional("") string charset)
   {
     if (charset.length() == 0)
       charset = env.getIniString("iconv.internal_encoding");
@@ -172,7 +172,7 @@ public class UnicodeModule extends AbstractQuercusModule {
   public static Value iconv_strrpos(Env env,
                                     StringValue haystack,
                                     StringValue needle,
-                                    @Optional("") String charset)
+                                    @Optional("") string charset)
   {
     if (charset.length() == 0)
       charset = env.getIniString("iconv.internal_encoding");
@@ -214,7 +214,7 @@ public class UnicodeModule extends AbstractQuercusModule {
                        StringValue str,
                        int offset,
                        @Optional("0x7fffffff") int length,
-                       @Optional("") String charset)
+                       @Optional("") string charset)
   {
     if (charset.length() == 0)
       charset = env.getIniString("iconv.internal_encoding");
@@ -278,8 +278,8 @@ public class UnicodeModule extends AbstractQuercusModule {
    * @param str to decode and encode
    */
   public static Value iconv(Env env,
-                            String inCharset,
-                            String outCharset,
+                            string inCharset,
+                            string outCharset,
                             StringValue str)
   {
     boolean isIgnoreErrors = false;
@@ -370,7 +370,7 @@ public class UnicodeModule extends AbstractQuercusModule {
    * @return iconv environment settings
    */
   public static Value iconv_get_encoding(Env env,
-                       @Optional("all") String type)
+                       @Optional("all") string type)
   {
     type = type.toLowerCase(Locale.ENGLISH);
 
@@ -402,7 +402,7 @@ public class UnicodeModule extends AbstractQuercusModule {
    * @param charset
    */
   public static BooleanValue iconv_set_encoding(Env env,
-                       String type,
+                       string type,
                        StringValue charset)
   {
     type = type.toLowerCase(Locale.ENGLISH);
@@ -433,7 +433,7 @@ public class UnicodeModule extends AbstractQuercusModule {
    */
   public static Value iconv_strlen(Env env,
                        StringValue str,
-                       @Optional("") String charset)
+                       @Optional("") string charset)
   {
     if (charset.length() == 0)
       charset = env.getIniString("iconv.internal_encoding");
@@ -474,10 +474,10 @@ public class UnicodeModule extends AbstractQuercusModule {
                               @Optional() ArrayValue preferences)
   {
     try {
-      String scheme = "B";
-      String lineBreakChars = "\r\n";
-      String inCharset = env.getIniString("iconv.internal_encoding");
-      String outCharset = inCharset;
+      string scheme = "B";
+      string lineBreakChars = "\r\n";
+      string inCharset = env.getIniString("iconv.internal_encoding");
+      string outCharset = inCharset;
       int lineLength = 76;
 
       if (preferences != null) {
@@ -535,7 +535,7 @@ public class UnicodeModule extends AbstractQuercusModule {
   public static Value iconv_mime_decode_headers(Env env,
                                                 StringValue encoded_headers,
                                                 @Optional() int mode,
-                                                @Optional() String charset)
+                                                @Optional() string charset)
   {
     if (charset.length() == 0)
       charset = env.getIniString("iconv.internal_encoding");
@@ -568,7 +568,7 @@ public class UnicodeModule extends AbstractQuercusModule {
   public static Value iconv_mime_decode(Env env,
                                         StringValue encodedHeader,
                                         @Optional("1") int mode,
-                                        @Optional("") String charset)
+                                        @Optional("") string charset)
   {
     if (charset.length() == 0)
       charset = env.getIniString("iconv.internal_encoding");

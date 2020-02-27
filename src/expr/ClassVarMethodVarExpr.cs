@@ -106,7 +106,7 @@ public class ClassVarMethodVarExpr extends Expr
    */
   public override Value eval(Env env)
   {
-    String className = _className.evalString(env);
+    string className = _className.evalString(env);
 
     QuercusClass cl = env.findClass(className);
 
@@ -123,7 +123,7 @@ public class ClassVarMethodVarExpr extends Expr
                          args);
   }
 
-  public String toString()
+  public string toString()
   {
     return _className + "::" + _methodName + "()";
   }

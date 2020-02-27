@@ -84,7 +84,7 @@ public class QuercusCompiledScript extends CompiledScript {
 
         os.setNewlineString("\n");
 
-        String outputEncoding = quercus.getOutputEncoding();
+        string outputEncoding = quercus.getOutputEncoding();
 
         if (outputEncoding == null) {
           outputEncoding = "utf-8";
@@ -160,7 +160,7 @@ public class QuercusCompiledScript extends CompiledScript {
     return _engine;
   }
 
-  public String toString()
+  public string toString()
   {
     return "QuercusCompiledScript[]";
   }

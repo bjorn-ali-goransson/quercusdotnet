@@ -81,7 +81,7 @@ public class QuercusEngine
   /**
    * Sets a php-ini value.
    */
-  public void setIni(String name, String value)
+  public void setIni(String name, string value)
   {
     _quercus.setIni(name, value);
   }

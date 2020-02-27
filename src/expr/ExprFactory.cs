@@ -948,7 +948,7 @@ public class ExprFactory {
   /**
    * Creates an instanceof expression.
    */
-  public Expr createInstanceOf(Expr expr, String name)
+  public Expr createInstanceOf(Expr expr, string name)
   {
     return new BinaryInstanceOfExpr(expr, name);
   }
@@ -1132,7 +1132,7 @@ public class ExprFactory {
    * Creates a class method call A::foo(...)
    */
   public Expr createClassMethodCall(Location loc,
-                                    String className,
+                                    string className,
                                     StringValue methodName,
                                     ArrayList<Expr> args)
   {
@@ -1148,7 +1148,7 @@ public class ExprFactory {
    * Creates a parent class method call parent::foo(...)
    */
   public Expr createTraitParentClassMethodCall(Location loc,
-                                               String traitName,
+                                               string traitName,
                                                StringValue methodName,
                                                ArrayList<Expr> args)
   {
@@ -1180,7 +1180,7 @@ public class ExprFactory {
    * Creates a new method A::$f()
    */
   public Expr createClassMethodCall(Location loc,
-                                    String className,
+                                    string className,
                                     Expr methodName,
                                     ArrayList<Expr> args)
   {
@@ -1212,7 +1212,7 @@ public class ExprFactory {
    * Creates a class method call A::foo(...)
    */
   public Expr createClassConstructor(Location loc,
-                                     String className,
+                                     string className,
                                      StringValue methodName,
                                      ArrayList<Expr> args)
   {
@@ -1226,8 +1226,8 @@ public class ExprFactory {
    */
   /*
   public Expr createParentClassMethod(Location loc,
-                                      String parentName,
-                                      String name,
+                                      string parentName,
+                                      string name,
                                       ArrayList<Expr> args)
   {
     return new ParentMethodExpr(loc, parentName, name, args);
@@ -1239,8 +1239,8 @@ public class ExprFactory {
    */
   /*
   public Expr createStaticMethod(Location loc,
-                                 String className,
-                                 String name,
+                                 string className,
+                                 string name,
                                  ArrayList<Expr> args)
   {
     return new StaticMethodExpr(loc, className, name, args);
@@ -1252,7 +1252,7 @@ public class ExprFactory {
    */
   /*
   public Expr createLateStaticBindingStaticMethod(Location loc,
-                                                  String name,
+                                                  string name,
                                                   ArrayList<Expr> args)
   {
     return new LateStaticBindingStaticMethodExpr(loc, name, args);
@@ -1263,7 +1263,7 @@ public class ExprFactory {
    * Creates a new function call new foo(...).
    */
   public ObjectNewExpr createNew(Location loc,
-                                 String name,
+                                 string name,
                                  ArrayList<Expr> args)
   {
     return new ObjectNewExpr(loc, name, args);
@@ -1332,7 +1332,7 @@ public class ExprFactory {
    * Creates a Quercus class import.
    */
   public Expr createImport(Location loc,
-                           String name,
+                           string name,
                            boolean isWildcard)
   {
     return new ImportExpr(loc, name, isWildcard);
@@ -1440,7 +1440,7 @@ public class ExprFactory {
                                 ArrayList<Expr[]> caseList,
                                 ArrayList<BlockStatement> blockList,
                                 Statement defaultBlock,
-                                String label)
+                                string label)
   {
     return new SwitchStatement(loc, value, caseList, blockList,
                                defaultBlock, label);
@@ -1454,7 +1454,7 @@ public class ExprFactory {
                              Expr test,
                              Expr incr,
                              Statement block,
-                             String label)
+                             string label)
   {
     return new ForStatement(loc, init, test, incr, block, label);
   }
@@ -1468,7 +1468,7 @@ public class ExprFactory {
                                  AbstractVarExpr value,
                                  boolean isRef,
                                  Statement block,
-                                 String label)
+                                 string label)
   {
     return new ForeachStatement(loc, objExpr, key, value, isRef,
                                 block, label);
@@ -1480,7 +1480,7 @@ public class ExprFactory {
   public Statement createWhile(Location loc,
                                Expr test,
                                Statement block,
-                               String label)
+                               string label)
   {
     return new WhileStatement(loc, test, block, label);
   }
@@ -1491,7 +1491,7 @@ public class ExprFactory {
   public Statement createDo(Location loc,
                             Expr test,
                             Statement block,
-                            String label)
+                            string label)
   {
     return new DoStatement(loc, test, block, label);
   }
@@ -1629,7 +1629,7 @@ public class ExprFactory {
    */
   public FunctionInfo createFunctionInfo(QuercusContext quercus,
                                          ClassDef classDef,
-                                         String name)
+                                         string name)
   {
     return new FunctionInfo(quercus, classDef, name);
   }
@@ -1638,7 +1638,7 @@ public class ExprFactory {
    * Creates a new function definition.
    */
   public Function createFunction(Location loc,
-                                 String name,
+                                 string name,
                                  FunctionInfo info,
                                  Arg []argList,
                                  Statement []statementList)
@@ -1651,7 +1651,7 @@ public class ExprFactory {
    */
   public Function createObjectMethod(Location loc,
                                      InterpretedClassDef cl,
-                                     String name,
+                                     string name,
                                      FunctionInfo info,
                                      Arg []argList,
                                      Statement []statementList)
@@ -1664,7 +1664,7 @@ public class ExprFactory {
    */
   public Function createMethodDeclaration(Location loc,
                                           InterpretedClassDef cl,
-                                          String name,
+                                          string name,
                                           FunctionInfo info,
                                           Arg []argList)
   {
@@ -1672,9 +1672,9 @@ public class ExprFactory {
   }
 
   public InterpretedClassDef createClassDef(Location location,
-                                            String name,
-                                            String parentName,
-                                            String []ifaceList,
+                                            string name,
+                                            string parentName,
+                                            string []ifaceList,
                                             int index)
   {
     return new InterpretedClassDef(location,

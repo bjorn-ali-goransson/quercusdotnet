@@ -152,7 +152,7 @@ public class FileInput extends ReadStreamInput
   /**
    * Converts to a string.
    */
-  public override String toString()
+  public override string toString()
   {
     return getClass().getSimpleName() + "[" + getPath() + "]";
   }

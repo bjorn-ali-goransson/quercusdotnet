@@ -200,7 +200,7 @@ public class ObjectFieldVarExpr extends AbstractVarExpr {
     obj.unsetField(_nameExpr.evalStringValue(env));
   }
 
-  public String toString()
+  public string toString()
   {
     return _objExpr + "->{" + _nameExpr + "}";
   }

@@ -43,14 +43,14 @@ public class TraitAliasMap
 
   public void put(StringValue funName,
                   StringValue funNameAlias,
-                  String traitName)
+                  string traitName)
   {
     TraitAlias alias = new TraitAlias(traitName, funNameAlias);
 
     _aliasMap.put(funName.toLowerCase(Locale.ENGLISH), alias);
   }
 
-  public StringValue get(StringValue funName, String traitName)
+  public StringValue get(StringValue funName, string traitName)
   {
     TraitAlias alias = _aliasMap.get(funName.toLowerCase(Locale.ENGLISH));
 
@@ -71,7 +71,7 @@ public class TraitAliasMap
   }
 
   static class TraitAlias {
-    private final String _traitName;
+    private final string _traitName;
     private final StringValue _funNameAlias;
 
     public TraitAlias(String traitName, StringValue funNameAlias)
@@ -80,7 +80,7 @@ public class TraitAliasMap
       _funNameAlias = funNameAlias;
     }
 
-    public String getTraitName()
+    public string getTraitName()
     {
       return _traitName;
     }

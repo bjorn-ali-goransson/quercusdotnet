@@ -89,6 +89,6 @@ abstract public class PostBody
   }
 
   abstract public long getContentLength();
-  abstract public String getContentType();
+  abstract public string getContentType();
   abstract public void writeTo(Env env, OutputStream os)
 }

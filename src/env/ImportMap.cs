@@ -54,7 +54,7 @@ public class ImportMap
     _wildcardPhpList.add(name.replace('.', '/'));
   }
 
-  public String putQualified(String name)
+  public string putQualified(String name)
   {
     if (_qualifiedMap == null) {
       _qualifiedMap = new HashMap<String, String>();
@@ -62,7 +62,7 @@ public class ImportMap
 
     int i = name.lastIndexOf('.');
 
-    String shortName;
+    string shortName;
     if (i > 0)
       shortName = name.substring(i + 1);
     else
@@ -73,7 +73,7 @@ public class ImportMap
     return shortName;
   }
 
-  public void putQualified(String shortName, String name)
+  public void putQualified(String shortName, string name)
   {
     if (_qualifiedMap == null)
       _qualifiedMap = new HashMap<String, String>();
@@ -81,7 +81,7 @@ public class ImportMap
     _qualifiedMap.put(shortName, name);
   }
 
-  public String getQualified(String name)
+  public string getQualified(String name)
   {
     if (_qualifiedMap == null)
       return null;
@@ -89,12 +89,12 @@ public class ImportMap
       return _qualifiedMap.get(name);
   }
 
-  public String getQualifiedPhp(String name)
+  public string getQualifiedPhp(String name)
   {
     if (_qualifiedMap == null)
       return null;
 
-    String fullName = _qualifiedMap.get(name);
+    string fullName = _qualifiedMap.get(name);
 
     if (fullName != null)
       fullName = fullName.replace('.', '/') + ".php";

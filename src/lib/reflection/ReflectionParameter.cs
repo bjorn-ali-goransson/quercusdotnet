@@ -44,7 +44,7 @@ public class ReflectionParameter
 {
   private static final L10N L = new L10N(ReflectionParameter.class);
 
-  private String _clsName;
+  private string _clsName;
   private Callable _fun;
   private Arg _arg;
 
@@ -85,7 +85,7 @@ public class ReflectionParameter
                                   L.l("cannot find parameter '{0}'", paramName));
   }
 
-  public static String export(Env env,
+  public static string export(Env env,
                               Value function,
                               Value parameter,
                               boolean isReturn)
@@ -138,7 +138,7 @@ public class ReflectionParameter
 
   public ReflectionClass getClass(Env env)
   {
-    String name = _arg.getExpectedClass();
+    string name = _arg.getExpectedClass();
 
     if (name == null) {
       return null;
@@ -184,7 +184,7 @@ public class ReflectionParameter
     return _arg.getDefault().eval(env);
   }
 
-  public String toString()
+  public string toString()
   {
     return getClass().getSimpleName() + "[" + _fun.getCallbackName()
                                       + "(" + _arg.getName() + ")]";

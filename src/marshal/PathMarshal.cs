@@ -58,7 +58,7 @@ public class PathMarshal extends Marshal
   public Value unmarshal(Env env, Object value)
   {
     // XXX: need test
-    String className = value.getClass().getName();
+    string className = value.getClass().getName();
     JavaClassDef def = env.getQuercus().getJavaClassDefinition(className);
     
     return def.wrap(env, value);

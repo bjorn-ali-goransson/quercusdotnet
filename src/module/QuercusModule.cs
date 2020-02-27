@@ -43,7 +43,7 @@ public interface QuercusModule {
   /**
    * Returns the extensions implemented by the module.
    */
-  public String []getLoadedExtensions();
+  public string []getLoadedExtensions();
 
   /**
    * Returns the quercus.init default values.

@@ -41,40 +41,40 @@ public class GaeUser
   }
 
   public GaeUser(String email,
-                 String authDomain,
-                 String userId,
-                 String federatedIdentity)
+                 string authDomain,
+                 string userId,
+                 string federatedIdentity)
   {
     _user = new User(email, authDomain, userId, federatedIdentity);
   }
 
-  public String getAuthDomain()
+  public string getAuthDomain()
   {
     return _user.getAuthDomain();
   }
 
-  public String getEmail()
+  public string getEmail()
   {
     return _user.getEmail();
   }
 
-  public String getFederatedIdentity()
+  public string getFederatedIdentity()
   {
     return _user.getFederatedIdentity();
   }
 
-  public String getNickname()
+  public string getNickname()
   {
     return _user.getNickname();
   }
 
-  public String getUserId()
+  public string getUserId()
   {
     return _user.getUserId();
   }
 
   @Override
-  public String toString()
+  public string toString()
   {
     return getClass() + "[" + _user + "]";
   }

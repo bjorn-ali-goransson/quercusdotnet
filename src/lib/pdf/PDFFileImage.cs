@@ -70,12 +70,12 @@ public class PDFFileImage extends PDFObject {
     _id = id;
   }
 
-  String getResourceName()
+  string getResourceName()
   {
     return "/XObject";
   }
   
-  String getResource()
+  string getResource()
   {
     return ("<< /I" + _id + " " + _id + " 0 R >>");
   }

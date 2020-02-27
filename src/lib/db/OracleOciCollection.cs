@@ -307,7 +307,7 @@ public class OracleOciCollection {
     }
   }
 
-  public String toString() {
+  public string toString() {
     return "OracleOciCollection()";
   }
 }

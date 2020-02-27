@@ -59,7 +59,7 @@ public class PhpBinaryInput extends AbstractBinaryInput
     init(new ReadStream(new VfsStream(inputData.toInputStream(), null)));
   }
   
-  public String toString()
+  public string toString()
   {
     return "PhpBinaryInput[]";
   }

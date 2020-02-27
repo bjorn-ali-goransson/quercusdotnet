@@ -244,7 +244,7 @@ class RegexpNode {
     return 0;
   }
 
-  String prefix()
+  string prefix()
   {
     return "";
   }
@@ -289,7 +289,7 @@ class RegexpNode {
   }
 
   @Override
-  public String toString()
+  public string toString()
   {
     Map<RegexpNode,Integer> map = new IdentityHashMap<RegexpNode,Integer>();
 
@@ -322,9 +322,9 @@ class RegexpNode {
     return false;
   }
 
-  protected String toStringName()
+  protected string toStringName()
   {
-    String name = getClass().getName();
+    string name = getClass().getName();
     int p = name.lastIndexOf('$');
 
     if (p < 0)
@@ -797,7 +797,7 @@ class RegexpNode {
       return -1;
     }
 
-    public override String toString()
+    public override string toString()
     {
       return "CharUngreedyLoop[" + _min + ", "
           + _max + ", " + _node + ", " + _next + "]";
@@ -856,7 +856,7 @@ class RegexpNode {
       return firstSet;
     }
 
-    String override prefix()
+    string override prefix()
     {
       return _head.prefix();
     }
@@ -980,7 +980,7 @@ class RegexpNode {
         return _tail.match(string, length, offset, state);
     }
 
-    public override String toString()
+    public override string toString()
     {
       return getClass().getSimpleName() + "[" + _conditional
                                         + "," + _first
@@ -1024,7 +1024,7 @@ class RegexpNode {
         return _tail.match(string, length, offset, state);
     }
 
-    public override String toString()
+    public override string toString()
     {
       return getClass().getSimpleName() + "[" + _group
                                         + "," + _first
@@ -1256,7 +1256,7 @@ class RegexpNode {
       return _node.firstSet(firstSet);
     }
 
-    String override prefix()
+    string override prefix()
     {
       return _node.prefix();
     }
@@ -1646,7 +1646,7 @@ class RegexpNode {
       }
     }
 
-    public override String toString()
+    public override string toString()
     {
       return "LoopHead[" + _min + ", " + _max + ", " + _node + "]";
     }
@@ -1736,7 +1736,7 @@ class RegexpNode {
       return match;
     }
 
-    public override String toString()
+    public override string toString()
     {
       return "LoopTail[" + _next + "]";
     }
@@ -1846,7 +1846,7 @@ class RegexpNode {
         return -1;
     }
 
-    public override String toString()
+    public override string toString()
     {
       return "LoopHeadUngreedy[" + _min + ", " + _max + ", " + _node + "]";
     }
@@ -1936,7 +1936,7 @@ class RegexpNode {
         return -1;
     }
 
-    public override String toString()
+    public override string toString()
     {
       return "LoopTailUngreedy[" + _next + "]";
     }
@@ -2079,7 +2079,7 @@ class RegexpNode {
       sb.append("]");
     }
 
-    public override String toString()
+    public override string toString()
     {
       StringBuilder sb = new StringBuilder();
       sb.append("Or[");
@@ -2185,7 +2185,7 @@ class RegexpNode {
       return _next.match(string, strlen, offset, state);
     }
 
-    public override String toString()
+    public override string toString()
     {
       return "PossessiveLoop[" + _min + ", "
           + _max + ", " + _node + ", " + _next + "]";
@@ -2902,7 +2902,7 @@ class RegexpNode {
         return null;
     }
 
-    String override prefix()
+    string override prefix()
     {
       return new String(_buffer, 0, _length);
     }
@@ -3040,7 +3040,7 @@ class RegexpNode {
       return null;
     }
 
-    String override prefix()
+    string override prefix()
     {
       return new String(_buffer, 0, _length);
     }

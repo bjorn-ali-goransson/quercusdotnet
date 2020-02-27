@@ -60,20 +60,20 @@ public class SimpleNamespaceContext implements NamespaceContext
     return _xpath;
   }
 
-  public void addPrefix(String prefix, String namespaceURI)
+  public void addPrefix(String prefix, string namespaceURI)
   {
     _prefixMap.put(prefix, namespaceURI);
   }
 
   @Override
-  public String getNamespaceURI(String prefix)
+  public string getNamespaceURI(String prefix)
   {
-    String uri = _prefixMap.get(prefix);
+    string uri = _prefixMap.get(prefix);
 
     return uri;
   }
 
-  public override String getPrefix(String namespaceURI)
+  public override string getPrefix(String namespaceURI)
   {
     return null;
   }

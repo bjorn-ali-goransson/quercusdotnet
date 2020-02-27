@@ -239,7 +239,7 @@ public class ThisFieldVarExpr extends AbstractVarExpr {
     obj.unsetThisField(evalName(env));
   }
 
-  public String toString()
+  public string toString()
   {
     return "$this->{" + _nameExpr + "}";
   }

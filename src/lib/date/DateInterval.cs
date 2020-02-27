@@ -51,7 +51,7 @@ public class DateInterval
   public int invert = 0;
   public Value days = BooleanValue.FALSE;
 
-  public static DateInterval __construct(Env env, String time)
+  public static DateInterval __construct(Env env, string time)
   {
     DateInterval dateInterval = new DateInterval();
 
@@ -66,24 +66,24 @@ public class DateInterval
   {
   }
 
-  public static DateInterval createFromDateString(Env env, String time)
+  public static DateInterval createFromDateString(Env env, string time)
   {
     throw new UnimplementedException("DateInterval::createFromDateString()");
   }
 
-  public String format(String format)
+  public string format(String format)
   {
     throw new UnimplementedException("DateInterval::format()");
   }
 
   static class IntervalParser {
     private final DateInterval _dateInterval;
-    private final String _str;
+    private final string _str;
 
     private final int _length;
     private int _offset;
 
-    public IntervalParser(DateInterval dateInterval, String str)
+    public IntervalParser(DateInterval dateInterval, string str)
     {
       _dateInterval = dateInterval;
       _str = str;

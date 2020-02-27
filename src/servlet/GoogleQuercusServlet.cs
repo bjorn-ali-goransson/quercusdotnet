@@ -43,7 +43,7 @@ public class GoogleQuercusServlet extends QuercusServlet
   private static final Logger log
     = Logger.getLogger(GoogleQuercusServlet.class.getName());
 
-  private String _gsBucket;
+  private string _gsBucket;
 
   public GoogleQuercusServlet()
   {
@@ -77,7 +77,7 @@ public class GoogleQuercusServlet extends QuercusServlet
    *
    * 
    */
-  protected void setInitParam(String paramName, String paramValue)
+  protected void setInitParam(String paramName, string paramValue)
     
   {
     if ("cloud-storage-bucket".equals(paramName)) {

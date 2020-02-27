@@ -66,12 +66,12 @@ public class SessionCallback extends Value {
       throw new NullPointerException("open cannot be null");
   }
 
-  public void open(Env env, String savePath, String sessionName)
+  public void open(Env env, string savePath, string sessionName)
   {
     _open.call(env, env.createString(savePath), env.createString(sessionName));
   }
 
-  public StringValue read(Env env, String id)
+  public StringValue read(Env env, string id)
   {
     try {
       Value value = _read.call(env, env.createString(id));
@@ -87,7 +87,7 @@ public class SessionCallback extends Value {
     }
   }
 
-  public void write(Env env, String id, String value)
+  public void write(Env env, string id, string value)
   {
     try {
       _write.call(env, env.createString(id), env.createString(value));
@@ -98,7 +98,7 @@ public class SessionCallback extends Value {
     }
   }
 
-  public void destroy(Env env, String id)
+  public void destroy(Env env, string id)
   {
     try {
       _destroy.call(env, env.createString(id));
@@ -121,7 +121,7 @@ public class SessionCallback extends Value {
   }
 
   @Override
-  public String toString()
+  public string toString()
   {
     return getClass().getSimpleName() + "[" + _open + ","
                                             + _close  + ","

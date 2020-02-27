@@ -61,7 +61,7 @@ public class ReflectionClass
   public static int IS_EXPLICIT_ABSTRACT = 32;
   public static int IS_FINAL = 64;
 
-  public String _name;
+  public string _name;
   private QuercusClass _cls;
 
   protected ReflectionClass(QuercusClass cls)
@@ -70,7 +70,7 @@ public class ReflectionClass
     _name = cls.getName();
   }
 
-  protected ReflectionClass(Env env, String name)
+  protected ReflectionClass(Env env, string name)
   {
     _cls = env.findClass(name);
     _name = name;
@@ -101,21 +101,21 @@ public class ReflectionClass
     return new ReflectionClass(cls);
   }
 
-  public static String export(Env env,
+  public static string export(Env env,
                               Value cls,
                               @Optional boolean isReturn)
   {
     return null;
   }
 
-  public String getName()
+  public string getName()
   {
     return _name;
   }
 
-  public String getNamespaceName()
+  public string getNamespaceName()
   {
-    String name = getName();
+    string name = getName();
 
     int p = name.lastIndexOf('\\');
 
@@ -126,9 +126,9 @@ public class ReflectionClass
     return name.substring(0, p);
   }
 
-  public String getShortName()
+  public string getShortName()
   {
-    String name = getName();
+    string name = getName();
 
     int p = name.lastIndexOf('\\');
 
@@ -141,7 +141,7 @@ public class ReflectionClass
 
   public boolean inNamespace()
   {
-    String name = getName();
+    string name = getName();
 
     return name.contains("\\");
   }
@@ -166,7 +166,7 @@ public class ReflectionClass
     return _cls.hasConstant(name);
   }
 
-  public String getFileName()
+  public string getFileName()
   {
     return _cls.getClassDef().getLocation().getFileName();
   }
@@ -183,7 +183,7 @@ public class ReflectionClass
   }
 
   @ReturnNullAsFalse
-  public String getDocComment()
+  public string getDocComment()
   {
     ClassDef def = _cls.getClassDef();
 
@@ -321,13 +321,13 @@ public class ReflectionClass
 
   private void findInterfaces(Env env, ArrayValue array, ClassDef def)
   {
-    String name = def.getName();
+    string name = def.getName();
 
     if (def.isInterface()) {
       addInterface(env, array, name);
     }
     else {
-      String []defList = def.getInterfaces();
+      string []defList = def.getInterfaces();
 
       for (int i = 0; i < defList.length; i++) {
         QuercusClass cls = env.findClass(defList[i]);
@@ -337,7 +337,7 @@ public class ReflectionClass
     }
   }
 
-  private void addInterface(Env env, ArrayValue array, String name)
+  private void addInterface(Env env, ArrayValue array, string name)
   {
     QuercusClass cls = env.findClass(name);
 
@@ -403,7 +403,7 @@ public class ReflectionClass
 
   public boolean isSubclassOf(Env env, Object obj)
   {
-    String clsName;
+    string clsName;
 
     if (obj instanceof ReflectionClass) {
       clsName = ((ReflectionClass) obj).getName();
@@ -490,14 +490,14 @@ public class ReflectionClass
     return _cls.getTraversableDelegate() != null;
   }
 
-  public boolean implementsInterface(Env env, String name)
+  public boolean implementsInterface(Env env, string name)
   {
     return _cls.implementsInterface(env, name);
   }
 
   public ReflectionExtension getExtension(Env env)
   {
-    String extName = getExtensionName();
+    string extName = getExtensionName();
 
     if (extName != null)
       return new ReflectionExtension(env, extName);
@@ -505,12 +505,12 @@ public class ReflectionClass
       return null;
   }
 
-  public String getExtensionName()
+  public string getExtensionName()
   {
     return _cls.getExtension();
   }
 
-  public String toString()
+  public string toString()
   {
     return getClass().getSimpleName() + "[" + _name + "]";
   }

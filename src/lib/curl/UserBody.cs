@@ -59,7 +59,7 @@ public class UserBody extends PostBody
   }
 
   @Override
-  public String getContentType()
+  public string getContentType()
   {
     return "application/x-www-form-urlencoded";
   }

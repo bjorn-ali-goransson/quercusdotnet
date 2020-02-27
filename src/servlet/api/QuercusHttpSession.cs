@@ -31,5 +31,5 @@
 
 public interface QuercusHttpSession
 {
-  public String getId();
+  public string getId();
 }

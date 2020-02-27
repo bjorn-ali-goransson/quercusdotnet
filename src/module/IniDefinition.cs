@@ -45,7 +45,7 @@ public class IniDefinition {
 
   public static IniDefinition NULL = new Null();
 
-  private final String _name;
+  private final string _name;
   private final int _scope;
   private final Value _deflt;
   private final Type _type;
@@ -72,7 +72,7 @@ public class IniDefinition {
   /**
    * Returns the name of the ini definition.
    */
-  protected String getName()
+  protected string getName()
   {
     return _name;
   }
@@ -110,7 +110,7 @@ public class IniDefinition {
     if (!(value instanceof StringValue))
       return BooleanValue.create(value.toBoolean());
 
-    String valueAsString = value.toString().trim();
+    string valueAsString = value.toString().trim();
 
     if (valueAsString.length() == 0
         || valueAsString.equalsIgnoreCase("false")
@@ -129,7 +129,7 @@ public class IniDefinition {
     else if (! (value instanceof StringValue))
       return LongValue.create(value.toLong());
 
-    String valueAsString = value.toString().trim();
+    string valueAsString = value.toString().trim();
 
     if (valueAsString.length() == 0)
       return LongValue.ZERO;
@@ -160,7 +160,7 @@ public class IniDefinition {
   /**
    * Set the ini value for the given scope.
    */
-  public void set(QuercusContext quercus, String s)
+  public void set(QuercusContext quercus, string s)
   {
     StringValue value = null;
 
@@ -182,7 +182,7 @@ public class IniDefinition {
   /**
    * Set the ini value for the given scope.
    */
-  public void set(Env env, String value)
+  public void set(Env env, string value)
   {
     set(env.getIniMap(true),
         PHP_INI_USER,
@@ -268,14 +268,14 @@ public class IniDefinition {
   /**
    * @returns the value, null if the value is empty
    */
-  public String getAsString(Env env)
+  public string getAsString(Env env)
   {
     StringValue value = getAsStringValue(env);
 
     return (value.length() == 0) ? null : value.toString();
   }
 
-  public String getAsString(QuercusContext quercus)
+  public string getAsString(QuercusContext quercus)
   {
     StringValue value = getAsStringValue(quercus);
 
@@ -342,7 +342,7 @@ public class IniDefinition {
 
   public long getAsLongBytes(Env env, long deflt)
   {
-    String bytes = getAsString(env);
+    string bytes = getAsString(env);
 
     if (bytes == null)
       return deflt;

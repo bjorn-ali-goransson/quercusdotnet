@@ -64,7 +64,7 @@ public class SimpleHandler extends DefaultHandler2
   private Document _doc;
   private Node _node;
 
-  private String _entityName;
+  private string _entityName;
 
   public SimpleHandler(DOMImplementation impl)
   {
@@ -98,7 +98,7 @@ public class SimpleHandler extends DefaultHandler2
     }
   }
 
-  public override void processingInstruction(String target, String data)
+  public override void processingInstruction(String target, string data)
   {
     if (log.isLoggable(Level.FINE)) {
       log.log(Level.FINE, getClass().getSimpleName() + ".processingInstruction0: " + target + " . " + data);
@@ -113,7 +113,7 @@ public class SimpleHandler extends DefaultHandler2
     }
 
     if (_entityName != null) {
-      String entityName = _entityName;
+      string entityName = _entityName;
 
       appendText();
 
@@ -127,8 +127,8 @@ public class SimpleHandler extends DefaultHandler2
   }
 
   public override void startElement(String uri,
-                           String localName,
-                           String qName,
+                           string localName,
+                           string qName,
                            Attributes attributes)
   {
     appendText();
@@ -144,8 +144,8 @@ public class SimpleHandler extends DefaultHandler2
     }
 
     for (int i = 0; i < attributes.getLength(); i++) {
-      String attrName = attributes.getQName(i);
-      String attrValue = attributes.getValue(i);
+      string attrName = attributes.getQName(i);
+      string attrValue = attributes.getValue(i);
 
       e.setAttribute(attrName, attrValue);
 
@@ -159,7 +159,7 @@ public class SimpleHandler extends DefaultHandler2
     _node = e;
   }
 
-  public override void endElement(String uri, String localName, String qName)
+  public override void endElement(String uri, string localName, string qName)
   {
     if (log.isLoggable(Level.FINE)) {
       log.log(Level.FINE, getClass().getSimpleName() + ".endElement0: " + uri + " . " + localName + " . " + qName);
@@ -175,7 +175,7 @@ public class SimpleHandler extends DefaultHandler2
     _entityName = null;
 
     if (_sb.length() > 0) {
-      String str = _sb.toString();
+      string str = _sb.toString();
       _sb.setLength(0);
 
       if (log.isLoggable(Level.FINE)) {
@@ -188,14 +188,14 @@ public class SimpleHandler extends DefaultHandler2
     }
   }
 
-  public override void elementDecl(String name, String model)
+  public override void elementDecl(String name, string model)
   {
     if (log.isLoggable(Level.FINE)) {
       log.log(Level.FINE, getClass().getSimpleName() + ".elementDecl0: " + name + " . " + model);
     }
   }
 
-  public override void attributeDecl(String eName, String aName, String type, String mode, String value)
+  public override void attributeDecl(String eName, string aName, string type, string mode, string value)
   {
     if (log.isLoggable(Level.FINE)) {
       log.log(Level.FINE, getClass().getSimpleName() + ".attributeDecl0: " + eName + " . " + aName + " . " + type + " . " + mode + " . " + value);
@@ -208,14 +208,14 @@ public class SimpleHandler extends DefaultHandler2
   // DTDHandler start
   //
 
-  public override void notationDecl(String name, String publicId, String systemId)
+  public override void notationDecl(String name, string publicId, string systemId)
   {
     if (log.isLoggable(Level.FINE)) {
       log.log(Level.FINE, getClass().getSimpleName() + ".notationDecl0: " + name + " . " + publicId + " . " + systemId);
     }
   }
 
-  public override void unparsedEntityDecl(String name, String publicId, String systemId, String notationName)
+  public override void unparsedEntityDecl(String name, string publicId, string systemId, string notationName)
   {
     if (log.isLoggable(Level.FINE)) {
       log.log(Level.FINE, getClass().getSimpleName() + ".unparsedEntityDecl0: " + name + " . " + publicId + " . " + systemId + " . " + notationName);
@@ -224,7 +224,7 @@ public class SimpleHandler extends DefaultHandler2
 
   // DTDHandler end
 
-  public override void internalEntityDecl(String name, String value)
+  public override void internalEntityDecl(String name, string value)
   {
     if (log.isLoggable(Level.FINE)) {
       log.log(Level.FINE, getClass().getSimpleName() + ".internalEntityDecl0: " + name + " . " + value);
@@ -233,7 +233,7 @@ public class SimpleHandler extends DefaultHandler2
     _entityMap.put(name, value);
   }
 
-  public override void externalEntityDecl(String name, String publicId, String systemId)
+  public override void externalEntityDecl(String name, string publicId, string systemId)
   {
     if (log.isLoggable(Level.FINE)) {
       log.log(Level.FINE, getClass().getSimpleName() + ".externalEntityDecl0: " + name + " . " + publicId + " . " + systemId);
@@ -252,7 +252,7 @@ public class SimpleHandler extends DefaultHandler2
 
     appendText();
 
-    String str = new String(ch, start, length);
+    string str = new String(ch, start, length);
 
     Comment comment = getDocument().createComment(str);
 
@@ -273,7 +273,7 @@ public class SimpleHandler extends DefaultHandler2
     }
   }
 
-  public override void startDTD(String name, String publicId, String systemId)
+  public override void startDTD(String name, string publicId, string systemId)
   {
     if (log.isLoggable(Level.FINE)) {
       log.log(Level.FINE, getClass().getSimpleName() + ".startDTD0: " + name + " . " + publicId + " . " + systemId);
@@ -313,7 +313,7 @@ public class SimpleHandler extends DefaultHandler2
 
   // LexicalHandler end
 
-  public override InputSource getExternalSubset(String name, String baseURI)
+  public override InputSource getExternalSubset(String name, string baseURI)
   {
     if (log.isLoggable(Level.FINE)) {
       log.log(Level.FINE, getClass().getSimpleName() + ".getExternalSubset0: " + name + " . " + baseURI);
@@ -322,7 +322,7 @@ public class SimpleHandler extends DefaultHandler2
     return null;
   }
 
-  public override InputSource resolveEntity(String publicId, String systemId)
+  public override InputSource resolveEntity(String publicId, string systemId)
   {
     if (log.isLoggable(Level.FINE)) {
       log.log(Level.FINE, getClass().getSimpleName() + ".resolveEntity0: " + publicId + " . " + systemId);
@@ -334,8 +334,8 @@ public class SimpleHandler extends DefaultHandler2
     return is;
   }
 
-  public override InputSource resolveEntity(String name, String publicId,
-                                   String baseURI, String systemId)
+  public override InputSource resolveEntity(String name, string publicId,
+                                   string baseURI, string systemId)
   {
     if (log.isLoggable(Level.FINE)) {
       log.log(Level.FINE, getClass().getSimpleName() + ".resolveEntity1: " + name + " . " + publicId + " . " + baseURI + " . " + systemId);

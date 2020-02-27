@@ -43,7 +43,7 @@ public class SplFileObject extends SplFileInfo
 
   public SplFileObject(Env env,
                        StringValue fileName,
-                       @Optional("r") String mode,
+                       @Optional("r") string mode,
                        @Optional boolean isUseIncludePath,
                        @Optional Value contextV)
   {

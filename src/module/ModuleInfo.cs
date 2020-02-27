@@ -59,7 +59,7 @@ public class ModuleInfo {
   private static final Logger log
     = Logger.getLogger(ModuleInfo.class.getName());
 
-  private final String _name;
+  private final string _name;
   private final QuercusModule _module;
 
   private HashSet<String> _extensionSet
@@ -101,7 +101,7 @@ public class ModuleInfo {
     }
   }
 
-  public String getName()
+  public string getName()
   {
     return _name;
   }
@@ -239,7 +239,7 @@ public class ModuleInfo {
           throw new UnsupportedOperationException(L.l("{0}: use @Name instead",
                                                       method));
 
-        String functionName = JavaInvoker.getFunctionName(method);
+        string functionName = JavaInvoker.getFunctionName(method);
         Method[] methods = _staticFunctions.get(functionName);
 
         if (methods != null) {
@@ -302,7 +302,7 @@ public class ModuleInfo {
   }
 
   @Override
-  public String toString()
+  public string toString()
   {
     return getClass().getSimpleName() + "[" + _name + "]";
   }

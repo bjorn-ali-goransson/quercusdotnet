@@ -722,7 +722,7 @@ public class DateParser
 
         unread();
 
-        String s = _sb.toString();
+        string s = _sb.toString();
 
         return parseString(s);
       }

@@ -214,7 +214,7 @@ public final class UnserializeReader {
           return BooleanValue.FALSE;
         }
 
-        String className = readString(len);
+        string className = readString(len);
 
         expect('"');
         expect(':');
@@ -302,7 +302,7 @@ public final class UnserializeReader {
           return BooleanValue.FALSE;
         }
 
-        String className = readString(len);
+        string className = readString(len);
 
         expect('"');
         expect(':');
@@ -332,7 +332,7 @@ public final class UnserializeReader {
           return BooleanValue.FALSE;
         }
 
-        String data = readString(count);
+        string data = readString(count);
         StringValue dataV = env.createString(data);
 
         Value obj = qClass.createObject(env, false);
@@ -699,7 +699,7 @@ public final class UnserializeReader {
     }
   }
 
-  private String unserializeString()
+  private string unserializeString()
     
   {
     int ch = read();
@@ -715,7 +715,7 @@ public final class UnserializeReader {
     expect(':');
     expect('"');
 
-    String s = readString(len);
+    string s = readString(len);
 
     expect('"');
     expect(';');
@@ -733,7 +733,7 @@ public final class UnserializeReader {
     int ch = _buffer[_index++];
 
     if (ch != expectCh) {
-      String context = String.valueOf((char) ch);
+      string context = String.valueOf((char) ch);
 
       if (_index - 2 >= 0)
         context = _buffer[_index - 2] + context;
@@ -782,9 +782,9 @@ public final class UnserializeReader {
     return true;
   }
 
-  public final String readString(int len)
+  public final string readString(int len)
   {
-    String s = new String(_buffer, _index, len);
+    string s = new String(_buffer, _index, len);
 
     _index += len;
 

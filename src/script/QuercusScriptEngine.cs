@@ -73,7 +73,7 @@ public class QuercusScriptEngine
   private final QuercusScriptEngineFactory _factory;
   private QuercusContext _quercus;
 
-  private String _scriptEncoding = "utf-8";
+  private string _scriptEncoding = "utf-8";
   private boolean _isUnicodeSemantics;
 
   public QuercusScriptEngine()
@@ -132,7 +132,7 @@ public class QuercusScriptEngine
   /**
    * Returns the encoding to use for reading in scripts (default utf-8).
    */
-  public String getScriptEncoding()
+  public string getScriptEncoding()
   {
     return _scriptEncoding;
   }
@@ -212,7 +212,7 @@ public class QuercusScriptEngine
 
         os.setNewlineString("\n");
 
-        String outputEncoding = quercus.getOutputEncoding();
+        string outputEncoding = quercus.getOutputEncoding();
 
         if (outputEncoding == null) {
           outputEncoding = "utf-8";
@@ -366,7 +366,7 @@ public class QuercusScriptEngine
   }
 
   @Override
-  public String toString()
+  public string toString()
   {
     return getClass().getSimpleName() + "[isUnicodeSemantics=" + _isUnicodeSemantics + "]";
   }

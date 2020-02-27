@@ -130,7 +130,7 @@ public class FunArrayExpr extends Expr {
     return array;
   }
 
-  public String toString()
+  public string toString()
   {
     return "array()";
   }

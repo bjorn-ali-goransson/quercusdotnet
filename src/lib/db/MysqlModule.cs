@@ -100,7 +100,7 @@ public class MysqlModule extends AbstractQuercusModule {
   /**
    * Returns true for the mysql extension.
    */
-  public String []getLoadedExtensions()
+  public string []getLoadedExtensions()
   {
     return new String[] { "mysql" };
   }
@@ -505,13 +505,13 @@ public class MysqlModule extends AbstractQuercusModule {
       int jdbcField = fieldOffset + 1;
       int jdbcColumnType = md.getColumnType(jdbcField);
 
-      String catalogName = md.getCatalogName(jdbcField);
-      String tableName = md.getTableName(jdbcField);
+      string catalogName = md.getCatalogName(jdbcField);
+      string tableName = md.getTableName(jdbcField);
 
-      String schemaName = md.getSchemaName(jdbcField);
+      string schemaName = md.getSchemaName(jdbcField);
 
-      String columnName = md.getColumnName(jdbcField);
-      String columnLabel = md.getColumnLabel(jdbcField);
+      string columnName = md.getColumnName(jdbcField);
+      string columnLabel = md.getColumnLabel(jdbcField);
 
       if (schemaName == null || "".equals(schemaName))
         schemaName = tableName;
@@ -543,7 +543,7 @@ public class MysqlModule extends AbstractQuercusModule {
           .isNullable(jdbcField) == ResultSetMetaData.columnNullable ? 0 : 1;
       int numeric = JdbcColumnMetaData.isNumeric(jdbcColumnType) ? 1 : 0;
       int blob = JdbcColumnMetaData.isBlob(jdbcColumnType) ? 1 : 0;
-      String type = result.getFieldType(fieldOffset, jdbcColumnType);
+      string type = result.getFieldType(fieldOffset, jdbcColumnType);
       int unsigned = md.isSigned(jdbcField) ? 0 : numeric;
 
       if (jdbcColumnType == Types.BOOLEAN || jdbcColumnType == Types.BIT)
@@ -639,7 +639,7 @@ public class MysqlModule extends AbstractQuercusModule {
    */
   public static Value mysql_fetch_object(Env env,
                                          @NotNull MysqliResult result,
-                                         @Optional String className,
+                                         @Optional string className,
                                          @Optional Value[] args)
   {
     if (result == null) {
@@ -703,14 +703,14 @@ public class MysqlModule extends AbstractQuercusModule {
 
     Value fieldTable = result.getFieldTable(env, fieldOffset);
     Value fieldJdbcType = result.getJdbcType(fieldOffset);
-    String fieldMysqlType = result.getMysqlType(fieldOffset);
+    string fieldMysqlType = result.getMysqlType(fieldOffset);
 
     if ((fieldTable == BooleanValue.FALSE)
         || (fieldJdbcType == BooleanValue.FALSE)
         || (fieldMysqlType == null))
       return BooleanValue.FALSE;
 
-    String sql = "SHOW FULL COLUMNS FROM "
+    string sql = "SHOW FULL COLUMNS FROM "
         + fieldTable.toString() + " LIKE \'" + fieldName.toString() + "\'";
 
     Mysqli conn = getConnection(env);
@@ -866,7 +866,7 @@ public class MysqlModule extends AbstractQuercusModule {
   /**
    * Returns the MySQL client version.
    */
-  public static String mysql_get_client_info(Env env)
+  public static string mysql_get_client_info(Env env)
   {
     return Mysqli.getClientInfoStatic(env);
   }
@@ -950,7 +950,7 @@ public class MysqlModule extends AbstractQuercusModule {
    * A Result on success, FALSE on failure.
    */
   public static Value mysql_list_fields(Env env,
-                                        String database,
+                                        string database,
                                         StringValue tableName,
                                         @Optional Mysqli conn)
   {
@@ -989,7 +989,7 @@ public class MysqlModule extends AbstractQuercusModule {
    */
 
   public static Value mysql_listfields(Env env,
-                                       String databaseName,
+                                       string databaseName,
                                        StringValue tableName,
                                        @Optional Mysqli conn)
   {
@@ -1000,7 +1000,7 @@ public class MysqlModule extends AbstractQuercusModule {
    * Returns result set or false on error
    */
   public static Value mysql_db_query(Env env,
-                                     String databaseName,
+                                     string databaseName,
                                      StringValue query,
                                      @Optional Mysqli conn)
   {
@@ -1017,7 +1017,7 @@ public class MysqlModule extends AbstractQuercusModule {
    * Selects the database
    */
   public static boolean mysql_select_db(Env env,
-                                        String dbName,
+                                        string dbName,
                                         @Optional Mysqli conn)
   {
     if (dbName == null || dbName.length() == 0)
@@ -1111,10 +1111,10 @@ public class MysqlModule extends AbstractQuercusModule {
                                     @Optional boolean isNewLink,
                                     @Optional int flags) {
     int port = -1;
-    String socketStr = "";
+    string socketStr = "";
 
-    String hostStr;
-    String url = null;
+    string hostStr;
+    string url = null;
 
     if (host.length() == 0) {
       hostStr = env.getIniString("mysql.default_host");
@@ -1144,8 +1144,8 @@ public class MysqlModule extends AbstractQuercusModule {
       int sepIndex = hostStr.indexOf(':');
 
       if (sepIndex > -1) {
-        String tmp;
-        String portStr;
+        string tmp;
+        string portStr;
 
         tmp = hostStr;
         hostStr = tmp.substring(0, sepIndex);
@@ -1177,7 +1177,7 @@ public class MysqlModule extends AbstractQuercusModule {
       }
 
       /*
-      String catalog = (String) env.getQuercus().getSpecial("mysql.catalog");
+      string catalog = (String) env.getQuercus().getSpecial("mysql.catalog");
 
       if (catalog == null)
         catalog = "";
@@ -1295,7 +1295,7 @@ public class MysqlModule extends AbstractQuercusModule {
     return getConnection(env, "");
   }
 
-  private static Mysqli getConnection(Env env, String db)
+  private static Mysqli getConnection(Env env, string db)
   {
     Mysqli conn = (Mysqli) env.getSpecialValue("caucho.mysql");
 

@@ -177,7 +177,7 @@ public class TokenModule extends AbstractQuercusModule {
 
   private static final IniDefinitions _iniDefinitions = new IniDefinitions();
 
-  public String []getLoadedExtensions()
+  public string []getLoadedExtensions()
   {
     return new String[] { "tokenizer" };
   }
@@ -265,7 +265,7 @@ public class TokenModule extends AbstractQuercusModule {
 
   private static void highlight(StringValue sb,
                                 WriteStream out,
-                                String string)
+                                string string)
     
   {
     if (sb != null) {
@@ -389,7 +389,7 @@ public class TokenModule extends AbstractQuercusModule {
   /**
    * Returns the token name for th egiven token.
    */
-  public static String token_name(int token)
+  public static string token_name(int token)
   {
     switch (token) {
     case T_ABSTRACT: return "T_ABSTRACT";

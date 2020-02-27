@@ -49,7 +49,7 @@ public class DOMNamedNodeMap
     return wrap(_delegate.getNamedItem(name));
   }
 
-  public DOMNode getNamedItemNS(String namespaceURI, String localName)
+  public DOMNode getNamedItemNS(String namespaceURI, string localName)
     
   {
     try {
@@ -76,7 +76,7 @@ public class DOMNamedNodeMap
     }
   }
 
-  public DOMNode removeNamedItemNS(String namespaceURI, String localName)
+  public DOMNode removeNamedItemNS(String namespaceURI, string localName)
     
   {
     try {

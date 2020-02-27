@@ -74,7 +74,7 @@ class PeekString extends PeekStream {
   }
 
   @Override
-  public String getPattern()
+  public string getPattern()
   {
     return "/" + _string + "/";
   }
@@ -84,7 +84,7 @@ class PeekString extends PeekStream {
     return _index;
   }
 
-  public String toString()
+  public string toString()
   {
     return "PeekString[" + _string + "]";
   }

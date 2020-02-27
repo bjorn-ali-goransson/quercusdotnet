@@ -68,7 +68,7 @@ public class PDOStatement
   private final PDOError _error;
 
   // XXX: need to make public @Name("queryString")
-  public String queryString;
+  public string queryString;
 
   private int _fetchMode = PDO.FETCH_BOTH;
   private Value[] _fetchModeArgs = NULL_VALUES;
@@ -95,7 +95,7 @@ public class PDOStatement
   protected static PDOStatement prepare(Env env,
                                         PDO pdo,
                                         PDOError error,
-                                        String query,
+                                        string query,
                                         boolean isCatchException)
     
   {
@@ -126,7 +126,7 @@ public class PDOStatement
   protected static PDOStatement execute(Env env,
                                         PDO pdo,
                                         PDOError error,
-                                        String query,
+                                        string query,
                                         boolean isCatchException)
     
   {
@@ -148,7 +148,7 @@ public class PDOStatement
     return stmt;
   }
   
-  private void init(JdbcStatementResource stmt, String query)
+  private void init(JdbcStatementResource stmt, string query)
   {
     stmt.setQuery(query);
     
@@ -163,7 +163,7 @@ public class PDOStatement
   }
 
   //side-effect, updates _parameterNameMap
-  private String parseQueryString(Env env, String query)
+  private string parseQueryString(Env env, string query)
   {
     int len = query.length();
     StringBuilder sb = new StringBuilder(len);
@@ -222,7 +222,7 @@ public class PDOStatement
 
           // XXX: check what characters are allowed
           if (ch2 < 0 || ! Character.isJavaIdentifierPart(ch2)) {
-            String name = query.substring(start, i);
+            string name = query.substring(start, i);
 
             if (_parameterNameMap == null) {
               _parameterNameMap = new HashMap<String,Integer>();
@@ -411,7 +411,7 @@ public class PDOStatement
     close();
   }
 
-  public String errorCode(Env env)
+  public string errorCode(Env env)
   {
     return _error.getErrorCode();
   }
@@ -643,7 +643,7 @@ public class PDOStatement
 
   private Value fetchClass(Env env, JdbcResultResource rs)
   {
-    String className;
+    string className;
     Value[] ctorArgs;
 
     if (_fetchModeArgs.length == 0 || _fetchModeArgs.length > 2) {
@@ -854,7 +854,7 @@ public class PDOStatement
       int columnCount = _stmt.getMetaData().getColumnCount();
 
       for (int i = 1; i <= columnCount; i++) {
-        String name = rs.getColumnLabel(i);
+        string name = rs.getColumnLabel(i);
         Value value = getColumnValue(env, i);
 
         var.putField(env, name, value);
@@ -912,7 +912,7 @@ public class PDOStatement
   }
 
   public Value fetchObject(Env env,
-                           @Optional String className,
+                           @Optional string className,
                            @Optional Value[] args)
   {
     JdbcResultResource rs = _stmt.getResultSet();
@@ -985,7 +985,7 @@ public class PDOStatement
       index = Integer.valueOf(parameter.toInt() - 1);
     }
     else {
-      String name = parameter.toString();
+      string name = parameter.toString();
 
       if (name.length() > 1 && name.charAt(0) == ':') {
         name = name.substring(1);
@@ -1134,9 +1134,9 @@ public class PDOStatement
     return true;
   }
 
-  public String toString()
+  public string toString()
   {
-    String query = _stmt.getQuery();
+    string query = _stmt.getQuery();
 
     return "PDOStatement[" + query + "]";
   }

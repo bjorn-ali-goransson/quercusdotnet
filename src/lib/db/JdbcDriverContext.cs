@@ -33,9 +33,9 @@
 
 public class JdbcDriverContext
 {
-  private String _defaultDriver;
-  private String _defaultUrlPrefix;
-  private String _defaultEncoding;
+  private string _defaultDriver;
+  private string _defaultUrlPrefix;
+  private string _defaultEncoding;
 
   private HashMap<String,String> _protocolDriverMap
     = new HashMap<String,String>();
@@ -52,22 +52,22 @@ public class JdbcDriverContext
     _protocolDriverMap.put("sqlite", "org.sqlite.JDBC");
   }
 
-  public String getDefaultDriver()
+  public string getDefaultDriver()
   {
     return _defaultDriver;
   }
 
-  public String getDefaultUrlPrefix()
+  public string getDefaultUrlPrefix()
   {
     return _defaultUrlPrefix;
   }
 
-  public String getDefaultEncoding()
+  public string getDefaultEncoding()
   {
     return _defaultEncoding;
   }
 
-  public String getDriver(String protocol)
+  public string getDriver(String protocol)
   {
     return _protocolDriverMap.get(protocol);
   }
@@ -87,7 +87,7 @@ public class JdbcDriverContext
     _defaultEncoding = encoding;
   }
 
-  public void setProtocol(String protocol, String driver)
+  public void setProtocol(String protocol, string driver)
   {
     _protocolDriverMap.put(protocol, driver);
   }

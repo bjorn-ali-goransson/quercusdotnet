@@ -85,7 +85,7 @@ public class PopenInput extends ReadStreamInput
   /**
    * Converts to a string.
    */
-  public String toString()
+  public string toString()
   {
     return "PopenInput[" + _process + "]";
   }

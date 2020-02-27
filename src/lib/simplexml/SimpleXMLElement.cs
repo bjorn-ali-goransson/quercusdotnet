@@ -96,7 +96,7 @@ public class SimpleXMLElement extends SimpleXMLNode
     }
 
     try {
-      String namespace = null;
+      string namespace = null;
 
       if (! namespaceV.isNull()) {
         namespace = namespaceV.toString();
@@ -158,7 +158,7 @@ public class SimpleXMLElement extends SimpleXMLNode
                                 Value data,
                                 int options,
                                 boolean dataIsUrl,
-                                String namespace,
+                                string namespace,
                                 boolean isPrefix)
     
            ParserConfigurationException,
@@ -217,7 +217,7 @@ public class SimpleXMLElement extends SimpleXMLNode
                                  StringValue data,
                                  int options,
                                  boolean dataIsUrl,
-                                 String namespace,
+                                 string namespace,
                                  boolean isPrefix)
     
            ParserConfigurationException,
@@ -279,7 +279,7 @@ public class SimpleXMLElement extends SimpleXMLNode
   private static DocumentView buildNode(Env env,
                                         QuercusClass cls,
                                         Document doc,
-                                        String namespace,
+                                        string namespace,
                                         boolean isPrefix)
   {
     DocumentView view = new DocumentView(doc);
@@ -340,13 +340,13 @@ public class SimpleXMLElement extends SimpleXMLNode
     _view.printR(env, out, depth, valueSet, _cls);
   }
 
-  private String getEncoding()
+  private string getEncoding()
   {
     return _view.getEncoding();
   }
 
   @Override
-  public String toString()
+  public string toString()
   {
     return getClass().getSimpleName() + "[" + _view + "]";
   }
@@ -448,7 +448,7 @@ public class SimpleXMLElement extends SimpleXMLNode
       Env env = Env.getInstance();
 
       if (_node.getFirstChild() == null) {
-        String text = _node.getTextContent();
+        string text = _node.getTextContent();
 
         return env.createString(text);
       }

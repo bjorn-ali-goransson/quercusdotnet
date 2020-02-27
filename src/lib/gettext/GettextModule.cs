@@ -59,7 +59,7 @@ public class GettextModule
     = Logger.getLogger(GettextModule.class.getName());
   private final L10N L = new L10N(GettextModule.class);
 
-  public String []getLoadedExtensions()
+  public string []getLoadedExtensions()
   {
     return new String[] { "gettext" };
   }
@@ -72,9 +72,9 @@ public class GettextModule
    * @param codeset
    * @return codeset
    */
-  public String bind_textdomain_codeset(Env env,
-                                             String domainName,
-                                             String charset)
+  public string bind_textdomain_codeset(Env env,
+                                             string domainName,
+                                             string charset)
   {
     getDomain(env, domainName).setCharset(charset);
     
@@ -90,7 +90,7 @@ public class GettextModule
    * @return directory
    */
   public Value bindtextdomain(Env env,
-                              String domainName,
+                              string domainName,
                               StringValue directory)
   {
     GettextDomain domain = getDomain(env, domainName);
@@ -112,7 +112,7 @@ public class GettextModule
    * @param category
    */
   public StringValue dcgettext(Env env,
-                              String domainName,
+                              string domainName,
                               StringValue message,
                               int category,
                               Value []args)
@@ -135,7 +135,7 @@ public class GettextModule
    * @param category
    */
   public StringValue dcngettext(Env env,
-                                String domainName,
+                                string domainName,
                                 StringValue msgid1,
                                 StringValue msgid2,
                                 int n,
@@ -159,7 +159,7 @@ public class GettextModule
    * @param message
    */
   public StringValue dgettext(Env env,
-                              String domainName,
+                              string domainName,
                               StringValue message,
                               Value []args)
   {
@@ -180,7 +180,7 @@ public class GettextModule
    * @param n
    */
   public StringValue dngettext(Env env,
-                               String domainName,
+                               string domainName,
                                StringValue msgid1,
                                StringValue msgid2,
                                int n,
@@ -254,11 +254,11 @@ public class GettextModule
    * @param domain
    * @return name of current domain after change.
    */
-  public String textdomain(Env env,
+  public string textdomain(Env env,
                                 @Optional Value domain)
   {
     if (! domain.isNull()) {
-      String name = domain.toString();
+      string name = domain.toString();
       
       setCurrentDomain(env, name);
       
@@ -346,7 +346,7 @@ public class GettextModule
                               Path path,
                               Locale locale,
                               CharSequence category,
-                              String domain)
+                              string domain)
   {
     ArrayList<Object> key = new ArrayList<Object>();
 
@@ -378,7 +378,7 @@ public class GettextModule
     return (GettextDomainMap) val;
   }
   
-  private GettextDomain getDomain(Env env, String name)
+  private GettextDomain getDomain(Env env, string name)
   {
     return getDomains(env).getDomain(env, name);
   }
@@ -388,7 +388,7 @@ public class GettextModule
     return getDomains(env).getCurrent(env);
   }
 
-  private void setCurrentDomain(Env env, String name)
+  private void setCurrentDomain(Env env, string name)
   {
     getDomains(env).setCurrent(name);
   }
@@ -396,7 +396,7 @@ public class GettextModule
   /**
    * Gets the name for this category.
    */
-  private String getCategory(Env env, int category)
+  private string getCategory(Env env, int category)
   {
     switch (category) {
       case StringModule.LC_MESSAGES:
@@ -450,7 +450,7 @@ public class GettextModule
   private static StringValue formatBinary(Env env,
                                           StringValue msg,
                                           Value []args,
-                                          String charset)
+                                          string charset)
   {
     StringValue sb = env.createBinaryBuilder();
 

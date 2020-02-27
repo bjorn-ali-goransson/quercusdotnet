@@ -85,7 +85,7 @@ public class LargeStringBuilderValue
   /**
    * Returns the value.
    */
-  public String getValue()
+  public string getValue()
   {
     return toString();
   }
@@ -94,7 +94,7 @@ public class LargeStringBuilderValue
    * Returns the type.
    */
   @Override
-  public String getType()
+  public string getType()
   {
     return "string";
   }
@@ -179,7 +179,7 @@ public class LargeStringBuilderValue
   /**
    * Converts to a string.
    */
-  public override String toString()
+  public override string toString()
   {
     char []buffer = new char[_length];
 
@@ -788,7 +788,7 @@ public class LargeStringBuilderValue
     return hash;
   }
 
-  public override String toDebugString()
+  public override string toDebugString()
   {
     StringBuilder sb = new StringBuilder();
 

@@ -116,7 +116,7 @@ public class BinaryAssignExpr extends Expr {
     return _var.eval(env);
   }
 
-  public String toString()
+  public string toString()
   {
     return _var + "=" + _value;
   }

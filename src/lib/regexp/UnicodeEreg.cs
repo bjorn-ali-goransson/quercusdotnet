@@ -39,7 +39,7 @@ public class UnicodeEreg extends Ereg
     super(rawRegexp);
   }
 
-  public String toString()
+  public string toString()
   {
     return "UnicodeEreg[" + _pattern + "]";
   }

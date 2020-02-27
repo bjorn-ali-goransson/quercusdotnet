@@ -35,12 +35,12 @@ public class LibXmlError
   public int code;
   public int column;
 
-  public String message;
-  public String file;
+  public string message;
+  public string file;
   public int line;
 
   protected LibXmlError(int level, int code, int column,
-                        String message, String file, int line)
+                        string message, string file, int line)
   {
     this.level = level;
     this.code = code;
@@ -51,7 +51,7 @@ public class LibXmlError
   }
 
   @Override
-  public String toString()
+  public string toString()
   {
     return getClass().getSimpleName() + "[" + line
                                       + "," + message + "]";

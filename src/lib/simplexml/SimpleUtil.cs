@@ -163,12 +163,12 @@ public class SimpleUtil
 
   public static void toXmlImpl(Env env, StringBuilder sb, Text node)
   {
-    String str = node.getNodeValue();
+    string str = node.getNodeValue();
 
     for (int i = 0; i < str.length(); i++) {
       char ch = str.charAt(i);
 
-      String entity = SimpleUtil.toEntity(ch);
+      string entity = SimpleUtil.toEntity(ch);
 
       if (entity != null) {
         sb.append('&');
@@ -243,7 +243,7 @@ public class SimpleUtil
     sb.append("-->");
   }
 
-  public static String toEntity(char ch)
+  public static string toEntity(char ch)
   {
     switch (ch) {
       case '<':
@@ -283,14 +283,14 @@ public class SimpleUtil
     }
   }
 
-  public static boolean isSameNamespace(Node node, String namespace)
+  public static boolean isSameNamespace(Node node, string namespace)
   {
-    String prefix = getPrefix(node.getNodeName());
+    string prefix = getPrefix(node.getNodeName());
 
     return hasNamespace(node, prefix, namespace);
   }
 
-  public static String getPrefix(String name)
+  public static string getPrefix(String name)
   {
     int i = name.indexOf(':');
 
@@ -298,18 +298,18 @@ public class SimpleUtil
       return null;
     }
 
-    String prefix = name.substring(0, i);
+    string prefix = name.substring(0, i);
 
     return prefix;
   }
 
-  public static boolean hasNamespace(Node node, String prefix, String namespace)
+  public static boolean hasNamespace(Node node, string prefix, string namespace)
   {
     if (namespace == null) {
       return true;
     }
 
-    String attrName;
+    string attrName;
 
     if (prefix != null && prefix.length() > 0) {
       attrName = "xmlns:" + prefix;

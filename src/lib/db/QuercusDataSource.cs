@@ -38,8 +38,8 @@
 
 public class QuercusDataSource implements DataSource {
   private final DataSource _ds;
-  private final String _user;
-  private final String _pass;
+  private final string _user;
+  private final string _pass;
 
   private final boolean _isAllowPerConnectionUserPass;
 
@@ -52,8 +52,8 @@ public class QuercusDataSource implements DataSource {
    *        preset user/pass if set
    */
   public QuercusDataSource(DataSource ds,
-                           String user,
-                           String pass,
+                           string user,
+                           string pass,
                            boolean isAllowPerConnectionUserPass)
   {
     _ds = ds;
@@ -75,7 +75,7 @@ public class QuercusDataSource implements DataSource {
     }
   }
 
-  public Connection getConnection(String user, String pass)
+  public Connection getConnection(String user, string pass)
     
   {
     if (user != null && _isAllowPerConnectionUserPass) {
@@ -131,7 +131,7 @@ public class QuercusDataSource implements DataSource {
     throw new UnsupportedOperationException();
   }
 
-  public override String toString() {
+  public override string toString() {
     return getClass().getSimpleName() + "[" + _ds
                                       + "," + _user + "]";
   }

@@ -47,9 +47,9 @@
 
 public class SplModule extends AbstractQuercusModule
 {
-  private static String DEFAULT_EXTENSIONS = ".php,.inc";
+  private static string DEFAULT_EXTENSIONS = ".php,.inc";
 
-  public String []getLoadedExtensions()
+  public string []getLoadedExtensions()
   {
     return new String[] { "SPL" };
   }
@@ -94,7 +94,7 @@ public class SplModule extends AbstractQuercusModule
       QuercusClass parent = cls;
 
       while ((parent = parent.getParent()) != null) {
-        String name = parent.getName();
+        string name = parent.getName();
 
         array.put(name, name);
       }
@@ -148,10 +148,10 @@ public class SplModule extends AbstractQuercusModule
     return array;
   }
 
-  public static String spl_autoload_extensions(Env env,
-                                               @Optional String extensions)
+  public static string spl_autoload_extensions(Env env,
+                                               @Optional string extensions)
   {
-    String oldExtensions = getAutoloadExtensions(env);
+    string oldExtensions = getAutoloadExtensions(env);
 
     if (extensions != null) {
       env.setSpecialValue("caucho.spl_autoload", extensions);
@@ -160,7 +160,7 @@ public class SplModule extends AbstractQuercusModule
     return oldExtensions;
   }
 
-  private static String getAutoloadExtensions(Env env)
+  private static string getAutoloadExtensions(Env env)
   {
     Object obj = env.getSpecialValue("caucho.spl_autoload");
 
@@ -173,13 +173,13 @@ public class SplModule extends AbstractQuercusModule
   }
 
   public static void spl_autoload(Env env,
-                                  String className,
-                                  @Optional String extensions)
+                                  string className,
+                                  @Optional string extensions)
   {
     if (env.findClass(className, false, true, true) != null)
       return;
 
-    String []extensionList;
+    string []extensionList;
 
     if (extensions == null || "".equals(extensions)) {
       extensionList = new String[] { ".php", ".inc" };
@@ -188,7 +188,7 @@ public class SplModule extends AbstractQuercusModule
       extensionList = extensions.split("[,\\s]+");
     }
 
-    String filePrefix = className.toLowerCase(Locale.ENGLISH);
+    string filePrefix = className.toLowerCase(Locale.ENGLISH);
 
     for (String ext : extensionList) {
       StringValue sb = env.createStringBuilder();

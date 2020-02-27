@@ -64,7 +64,7 @@ public class TcpInputOutput
 
   private int _errno;
 
-  public TcpInputOutput(Env env, String host, int port,
+  public TcpInputOutput(Env env, string host, int port,
                         boolean isSecure,
                         Domain domain)
     
@@ -112,11 +112,11 @@ public class TcpInputOutput
         }
 
         public void checkClientTrusted(
-            java.security.cert.X509Certificate[] cert, String foo) {
+            java.security.cert.X509Certificate[] cert, string foo) {
         }
 
         public void checkServerTrusted(
-            java.security.cert.X509Certificate[] cert, String foo) {
+            java.security.cert.X509Certificate[] cert, string foo) {
         }
       };
 
@@ -221,7 +221,7 @@ public class TcpInputOutput
     }
   }
 
-  public String toString()
+  public string toString()
   {
     if (_socket != null)
       return "TcpInputOutput[" + _socket.getInetAddress()

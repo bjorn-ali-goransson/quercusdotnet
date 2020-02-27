@@ -161,7 +161,7 @@ public class ThisExpr extends AbstractVarExpr {
     return env.getThis().getQuercusClass();
   }
 
-  public String toString()
+  public string toString()
   {
     return "$this";
   }

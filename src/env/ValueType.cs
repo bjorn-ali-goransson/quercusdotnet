@@ -80,7 +80,7 @@ abstract public class ValueType implements Serializable {
 
   public static final ValueType NULL = new ValueType()
     {
-      public String toString()
+      public string toString()
       {
         return "ValueType.NULL";
       }
@@ -93,7 +93,7 @@ abstract public class ValueType implements Serializable {
         return true;
       }
 
-      public String toString()
+      public string toString()
       {
         return "ValueType.BOOLEAN";
       }
@@ -131,7 +131,7 @@ abstract public class ValueType implements Serializable {
         return true;
       }
 
-      public String toString()
+      public string toString()
       {
         return "ValueType.LONG";
       }
@@ -159,7 +159,7 @@ abstract public class ValueType implements Serializable {
         return true;
       }
 
-      public String toString()
+      public string toString()
       {
         return "ValueType.LONG_EQ";
       }
@@ -177,7 +177,7 @@ abstract public class ValueType implements Serializable {
         return true;
       }
 
-      public String toString()
+      public string toString()
       {
         return "ValueType.LONG_ADD";
       }
@@ -205,7 +205,7 @@ abstract public class ValueType implements Serializable {
         return true;
       }
 
-      public String toString()
+      public string toString()
       {
         return "ValueType.DOUBLE";
       }
@@ -223,16 +223,16 @@ abstract public class ValueType implements Serializable {
         return true;
       }
 
-      public String toString()
+      public string toString()
       {
         return "ValueType.DOUBLE_CMP";
       }
     };
 
-  public static final ValueType STRING = new ValueType()
+  public static final ValueType string = new ValueType()
     {
 
-      public String toString()
+      public string toString()
       {
         return "ValueType.STRING";
       }
@@ -241,7 +241,7 @@ abstract public class ValueType implements Serializable {
   public static final ValueType ARRAY = new ValueType()
     {
 
-      public String toString()
+      public string toString()
       {
         return "ValueType.ARRAY";
       }
@@ -250,7 +250,7 @@ abstract public class ValueType implements Serializable {
   public static final ValueType OBJECT = new ValueType()
     {
 
-      public String toString()
+      public string toString()
       {
         return "ValueType.OBJECT";
       }
@@ -259,7 +259,7 @@ abstract public class ValueType implements Serializable {
   public static final ValueType VALUE = new ValueType()
     {
 
-      public String toString()
+      public string toString()
       {
         return "ValueType.VALUE";
       }

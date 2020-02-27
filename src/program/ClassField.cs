@@ -39,18 +39,18 @@ public class ClassField
 {
   private final StringValue _name;
   private final StringValue _canonicalName;
-  private final String _declaringClassName;
+  private final string _declaringClassName;
 
   private Expr _initValue;
   private boolean _isTraitField;
 
-  private final String _comment;
+  private final string _comment;
 
   public ClassField(StringValue name,
                     StringValue canonicalName,
-                    String declaringClassName,
+                    string declaringClassName,
                     Expr initValue,
-                    String comment,
+                    string comment,
                     boolean isTraitField)
   {
     _name = name;
@@ -65,10 +65,10 @@ public class ClassField
   }
 
   public ClassField(StringValue name,
-                    String declaringClassName,
+                    string declaringClassName,
                     Expr initValue,
                     FieldVisibility visibility,
-                    String comment,
+                    string comment,
                     boolean isTraitField)
   {
     _name = name;
@@ -108,7 +108,7 @@ public class ClassField
   }
 
   public static StringValue getCanonicalName(Env env,
-                                             String classContext,
+                                             string classContext,
                                              StringValue name)
   {
     ClassDef classDef = env.findClassDef(classContext);
@@ -133,14 +133,14 @@ public class ClassField
   }
 
   public static StringValue createPrivateCanonicalName(StringValue name,
-                                                       String declaringClass)
+                                                       string declaringClass)
   {
     return createPrivateCanonicalName(name.createStringBuilder(), name, declaringClass);
   }
 
   public static StringValue createPrivateCanonicalName(StringValue sb,
                                                        StringValue name,
-                                                       String declaringClass)
+                                                       string declaringClass)
   {
     sb.append('\u0000');
     sb.append(declaringClass);
@@ -195,7 +195,7 @@ public class ClassField
     return sb;
   }
 
-  public String getDeclaringClassName()
+  public string getDeclaringClassName()
   {
     return _declaringClassName;
   }
@@ -245,15 +245,15 @@ public class ClassField
     return _isTraitField;
   }
 
-  public String getComment()
+  public string getComment()
   {
     return _comment;
   }
 
   @Override
-  public String toString()
+  public string toString()
   {
-    String access = "";
+    string access = "";
 
     if (isPrivate()) {
       access = "private:";

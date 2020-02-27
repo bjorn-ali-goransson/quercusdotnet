@@ -45,7 +45,7 @@ public class RecursiveDirectoryIterator
     super(env, fileName, flags);
   }
 
-  protected RecursiveDirectoryIterator(Path parent, Path path, String fileName, int flags)
+  protected RecursiveDirectoryIterator(Path parent, Path path, string fileName, int flags)
   {
     super(parent, path, fileName, flags);
   }
@@ -63,7 +63,7 @@ public class RecursiveDirectoryIterator
       return false;
     }
 
-    String fileName = current.getFilename(env);
+    string fileName = current.getFilename(env);
 
     if (".".equals(fileName) || "..".equals(fileName)) {
       return false;

@@ -115,7 +115,7 @@ public class ZlibInputStream extends ReadStreamInput
     }
   }
 
-  public String toString()
+  public string toString()
   {
     return getClass().getSimpleName() + "[" + _in + "]";
   }

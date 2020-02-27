@@ -40,18 +40,18 @@ public class DOMTypeInfo
     super(impl, delegate);
   }
 
-  public String getTypeName()
+  public string getTypeName()
   {
     return _delegate.getTypeName();
   }
 
-  public String getTypeNamespace()
+  public string getTypeNamespace()
   {
     return _delegate.getTypeNamespace();
   }
 
   public boolean isDerivedFrom(String typeNamespaceArg,
-                               String typeNameArg,
+                               string typeNameArg,
                                int derivationMethod)
   {
     return _delegate.isDerivedFrom(

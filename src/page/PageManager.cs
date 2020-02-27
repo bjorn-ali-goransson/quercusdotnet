@@ -184,15 +184,15 @@ public class PageManager
    * Returns the relative path.
    */
   /*
-  public String getClassName(Path path)
+  public string getClassName(Path path)
   {
     if (path == null)
       return "tmp.eval";
 
-    String pathName = path.getFullPath();
-    String pwdName = getPwd().getFullPath();
+    string pathName = path.getFullPath();
+    string pwdName = getPwd().getFullPath();
 
-    String relPath;
+    string relPath;
 
     if (pathName.startsWith(pwdName))
       relPath = pathName.substring(pwdName.length());
@@ -227,10 +227,10 @@ public class PageManager
    *
    * 
    */
-  public QuercusPage parse(Path path, String fileName, int line)
+  public QuercusPage parse(Path path, string fileName, int line)
     
   {
-    String fullName = path.getFullPath();
+    string fullName = path.getFullPath();
 
     try {
       Object lock = _programLockMap.get(fullName);
@@ -250,7 +250,7 @@ public class PageManager
     }
   }
 
-  public QuercusPage parseImpl(Path path, String fileName, int line)
+  public QuercusPage parseImpl(Path path, string fileName, int line)
     
   {
     try {
@@ -312,7 +312,7 @@ public class PageManager
     return false;
   }
 
-  protected QuercusProgram preloadProgram(Path path, String fileName)
+  protected QuercusProgram preloadProgram(Path path, string fileName)
   {
     return null;
   }

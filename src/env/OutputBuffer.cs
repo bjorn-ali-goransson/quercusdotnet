@@ -80,7 +80,7 @@ public class OutputBuffer {
     
     _out.setNewlineString("\n");
 
-    String encoding = env.getOutputEncoding();
+    string encoding = env.getOutputEncoding();
 
     if (encoding != null) {
       try {

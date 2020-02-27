@@ -78,7 +78,7 @@ public class LongValue extends NumberValue
    * Returns the type.
    */
   @Override
-  public String getType()
+  public string getType()
   {
     return "integer";
   }
@@ -210,7 +210,7 @@ public class LongValue extends NumberValue
   /**
    * Converts to a string.
    */
-  public override String toString()
+  public override string toString()
   {
     return String.valueOf(_value);
   }

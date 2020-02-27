@@ -77,7 +77,7 @@ public class CurlHttpRequest
    */
   public static final CurlHttpRequest getRequest(CurlResource curl)
   {
-    String requestMethod = curl.getRequestMethod();
+    string requestMethod = curl.getRequestMethod();
 
     if (requestMethod.equals("GET"))
       return new HttpGetRequest(curl);
@@ -270,7 +270,7 @@ public class CurlHttpRequest
     return _conn;
   }
 
-  protected final void error(Env env, int code, String error)
+  protected final void error(Env env, int code, string error)
   {
     log.log(Level.FINE, error);
 
@@ -281,7 +281,7 @@ public class CurlHttpRequest
     _curl.setErrorCode(code);
   }
 
-  protected final void error(Env env, int code, String error, Throwable e)
+  protected final void error(Env env, int code, string error, Throwable e)
   {
     log.log(Level.FINE, error, e);
 
@@ -295,7 +295,7 @@ public class CurlHttpRequest
   /**
    * Returns a valid URL or null on error.
    */
-  protected final URL getURL(Env env, String urlString, int port)
+  protected final URL getURL(Env env, string urlString, int port)
     
   {
     if (urlString == null)
@@ -319,7 +319,7 @@ public class CurlHttpRequest
    */
   private final Value getHeader(Env env, StringValue bb)
   {
-    String httpStatus = _conn.getHeaderField(0);
+    string httpStatus = _conn.getHeaderField(0);
 
     int i = 0;
 
@@ -357,7 +357,7 @@ public class CurlHttpRequest
       }
     }
 
-    String key;
+    string key;
 
     while ((key = _conn.getHeaderFieldKey(i)) != null) {
       bb.append(key);
@@ -421,7 +421,7 @@ public class CurlHttpRequest
       return StringValue.EMPTY;
     }
 
-    String encoding = _conn.getHeaderField("Content-Encoding");
+    string encoding = _conn.getHeaderField("Content-Encoding");
 
     if (encoding != null) {
       if (encoding.equals("gzip"))

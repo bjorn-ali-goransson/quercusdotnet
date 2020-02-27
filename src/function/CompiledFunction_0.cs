@@ -72,7 +72,7 @@ abstract public class CompiledFunction_0 extends CompiledFunction {
     return call(env);
   }
 
-  public String toString()
+  public string toString()
   {
     return "CompiledFunction_0[" + _name + "]";
   }

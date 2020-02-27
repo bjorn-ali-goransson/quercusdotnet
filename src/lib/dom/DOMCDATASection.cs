@@ -39,7 +39,7 @@ public class DOMCDATASection
     super(impl, delegate);
   }
 
-  public String getWholeText()
+  public string getWholeText()
   {
     return _delegate.getWholeText();
   }

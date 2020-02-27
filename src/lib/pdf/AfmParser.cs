@@ -46,7 +46,7 @@
 public class AfmParser {
   private static final L10N L = new L10N(AfmParser.class);
   
-  private static final String END_OF_FILE = "end of file";
+  private static final string END_OF_FILE = "end of file";
 
   private ReadStream _is;
 
@@ -56,7 +56,7 @@ public class AfmParser {
    * applications WEB-INF/lib folder (or any other folder containing jars to load),
    * jars inside that folder are also searched for fonts.
    */
-  public Font parse(String webInfLibPath, String name)
+  public Font parse(String webInfLibPath, string name)
     
   {
     MergePath mergePath = new MergePath();
@@ -113,7 +113,7 @@ public class AfmParser {
     Font font = new Font();
 
     while (skipWhitespace()) {
-      String id = parseIdentifier();
+      string id = parseIdentifier();
 
       if ("FontName".equals(id)) {
         font.setFontName(parseString());
@@ -165,7 +165,7 @@ public class AfmParser {
     if ((ch = _is.read()) != ';')
       throw new IOException("Expected ';'");
 
-    String wx = parseString();
+    string wx = parseString();
 
     if (! "WX".equals(wx))
       throw new IOException("Expected 'WX'");
@@ -175,7 +175,7 @@ public class AfmParser {
     return new FontChar(code, width);
   }
 
-  private String parseString()
+  private string parseString()
     
   {
     skipWhitespace();
@@ -240,7 +240,7 @@ public class AfmParser {
     return Double.parseDouble(sb.toString());
   }
 
-  private String parseIdentifier()
+  private string parseIdentifier()
     
   {
     StringBuilder sb = new StringBuilder();

@@ -181,7 +181,7 @@ public class ArgGetFieldValue extends ArgValue {
     return toValue().toStringValue();
   }
 
-  public override String toJavaString()
+  public override string toJavaString()
   {
     return toValue().toJavaString();
   }

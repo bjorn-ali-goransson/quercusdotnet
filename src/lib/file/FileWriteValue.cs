@@ -134,7 +134,7 @@ public class FileWriteValue extends FileValue {
    * Converts to a string.
    * @param env
    */
-  public String toString()
+  public string toString()
   {
     return "File[" + getPath() + "]";
   }

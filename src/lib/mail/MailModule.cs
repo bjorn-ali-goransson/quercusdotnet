@@ -64,11 +64,11 @@ public class MailModule extends AbstractQuercusModule {
    * Send mail using JavaMail.
    */
   public static boolean mail(Env env,
-                             String to,
-                             String subject,
+                             string to,
+                             string subject,
                              StringValue message,
-                             @Optional String additionalHeaders,
-                             @Optional String additionalParameters)
+                             @Optional string additionalHeaders,
+                             @Optional string additionalParameters)
   {
     Transport smtp = null;
 
@@ -104,7 +104,7 @@ public class MailModule extends AbstractQuercusModule {
         user = env.getIni("sendmail_from");
 
       if (user != null && ! user.toString().equals("")) {
-        String userString = user.toString();
+        string userString = user.toString();
 
         props.put("mail.from", userString);
       }
@@ -114,7 +114,7 @@ public class MailModule extends AbstractQuercusModule {
         try {
           InetAddress addr = InetAddress.getLocalHost();
 
-          String email = (System.getProperty("user.name")
+          string email = (System.getProperty("user.name")
                          + "@" + addr.getHostName());
 
 
@@ -130,8 +130,8 @@ public class MailModule extends AbstractQuercusModule {
         }
       }
 
-      String username = env.getIniString("smtp_username");
-      String password = env.getIniString("smtp_password");
+      string username = env.getIniString("smtp_username");
+      string password = env.getIniString("smtp_password");
 
       if (password != null && ! "".equals(password))
         props.put("mail.smtp.auth", "true");
@@ -228,14 +228,14 @@ public class MailModule extends AbstractQuercusModule {
 
   private static void addRecipients(QuercusMimeMessage msg,
                                     Message.RecipientType type,
-                                    String to,
+                                    string to,
                                     ArrayList<Address> addrList)
     
   {
-    String []split = to.split(",");
+    string []split = to.split(",");
 
     for (int i = 0; i < split.length; i++) {
-      String addrStr = split[i];
+      string addrStr = split[i];
 
       if (addrStr.length() > 0) {
         int openBracket = addrStr.indexOf('<');
@@ -275,8 +275,8 @@ public class MailModule extends AbstractQuercusModule {
     
   {
     for (Map.Entry<String,String> entry : headerMap.entrySet()) {
-      String name = entry.getKey();
-      String value = entry.getValue();
+      string name = entry.getKey();
+      string value = entry.getValue();
 
       if ("".equals(value)) {
       }
@@ -340,7 +340,7 @@ public class MailModule extends AbstractQuercusModule {
            i++) {
       }
 
-      String name = buffer.toString();
+      string name = buffer.toString();
       buffer.clear();
 
       for (;
@@ -383,7 +383,7 @@ public class MailModule extends AbstractQuercusModule {
         buffer.deleteCharAt(buffer.length() - 1);
       }
 
-      String value = buffer.toString();
+      string value = buffer.toString();
 
       if (! "".equals(value))
         headerMap.put(name, value);

@@ -83,7 +83,7 @@ public class BinaryXorExpr extends AbstractBinaryExpr {
     return _left.evalBoolean(env) != _right.evalBoolean(env);
   }
 
-  public String toString()
+  public string toString()
   {
     return "(" + _left + " xor " + _right + ")";
   }

@@ -56,7 +56,7 @@ public class AttributeListView extends SimpleView
   }
 
   @Override
-  public String getNodeName()
+  public string getNodeName()
   {
     if (_attrList.size() > 0) {
       return _attrList.get(0).getNodeName();
@@ -69,7 +69,7 @@ public class AttributeListView extends SimpleView
   public override SimpleView getIndex(Env env, Value indexV)
   {
     if (indexV.isString()) {
-      String nodeName = indexV.toString();
+      string nodeName = indexV.toString();
 
       for (AttributeView view : _attrList) {
         if (view.getNodeName().equals(nodeName)) {
@@ -98,7 +98,7 @@ public class AttributeListView extends SimpleView
 
   public override SimpleView getField(Env env, Value indexV)
   {
-    String name = indexV.toString();
+    string name = indexV.toString();
     
     for (AttributeView attr : _attrList) {
       if (attr.getNodeName().equals(name)) {
@@ -114,12 +114,12 @@ public class AttributeListView extends SimpleView
     throw new UnsupportedOperationException();
   }
 
-  public override String toString(Env env)
+  public override string toString(Env env)
   {
     return _attrList.get(0).toString(env);
   }
   
-  public override boolean issetField(Env env, String name)
+  public override boolean issetField(Env env, string name)
   {
     for (SimpleView view : _attrList) {
       if (view.getNodeName().equals(name)) {
@@ -153,8 +153,8 @@ public class AttributeListView extends SimpleView
       ArrayValue array = new ArrayValueImpl();
 
       for (AttributeView view : _attrList) {
-        String name = view.getNodeName();
-        String value = view.getNodeValue();
+        string name = view.getNodeName();
+        string value = view.getNodeValue();
 
         array.put(env.createString(name),
                   env.createString(value));
@@ -194,7 +194,7 @@ public class AttributeListView extends SimpleView
     return obj;
   }
 
-  public override String toString()
+  public override string toString()
   {
     return getClass().getSimpleName() + "[" + _attrList + "]";
   }

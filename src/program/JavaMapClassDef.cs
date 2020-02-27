@@ -40,7 +40,7 @@
  * Represents an introspected Java class.
  */
 public class JavaMapClassDef extends JavaClassDef {
-  JavaMapClassDef(ModuleContext moduleContext, String name, Class type)
+  JavaMapClassDef(ModuleContext moduleContext, string name, Class type)
   {
     super(moduleContext, name, type);
   }

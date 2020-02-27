@@ -46,10 +46,10 @@ public class PDFFont extends PDFObject {
 
   private final Font _face;
 
-  private final String _encoding;
-  private final String _opt;
+  private final string _encoding;
+  private final string _opt;
 
-  PDFFont(Font face, String encoding, String opt)
+  PDFFont(Font face, string encoding, string opt)
   {
     _face = face;
     _encoding = encoding;
@@ -66,12 +66,12 @@ public class PDFFont extends PDFObject {
     return _id;
   }
 
-  public String getFontName()
+  public string getFontName()
   {
     return _face.getFontName();
   }
 
-  public String getFontStyle()
+  public string getFontStyle()
   {
     return _face.getWeight();
   }
@@ -111,18 +111,18 @@ public class PDFFont extends PDFObject {
     return _face.getMaxCharWidth();
   }
 
-  public String getPDFName()
+  public string getPDFName()
   {
     return "F" + _id;
   }
 
-  String getResourceName()
+  string getResourceName()
   {
     return "/Font";
     
   }
   
-  String getResource()
+  string getResource()
   {
     return "<< /F" + _id + " " + _id + " 0 R >>";
   }
@@ -163,7 +163,7 @@ public class PDFFont extends PDFObject {
             _opt.equals(font._opt));
   }
 
-  public String toString()
+  public string toString()
   {
     return "PDFFont[" + _face.getFontName() + "," + _encoding + "," + _opt + "]";
   }

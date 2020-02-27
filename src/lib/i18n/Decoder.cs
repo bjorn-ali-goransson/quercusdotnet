@@ -36,7 +36,7 @@
 
 abstract public class Decoder
 {
-  protected String _charset;
+  protected string _charset;
   protected CharSequence _replacement;
 
   protected boolean _isIgnoreErrors = false;

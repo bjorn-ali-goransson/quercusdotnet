@@ -35,7 +35,7 @@
 @SuppressWarnings("serial")
 public abstract class CompiledAbstractFunction extends AbstractFunction
 {
-  protected final String _name;
+  protected final string _name;
   protected final Arg []_args;
 
   public CompiledAbstractFunction(String name,
@@ -47,7 +47,7 @@ public abstract class CompiledAbstractFunction extends AbstractFunction
   }
 
   @Override
-  public final String getName()
+  public final string getName()
   {
     return _name;
   }

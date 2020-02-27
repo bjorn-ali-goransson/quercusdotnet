@@ -33,9 +33,9 @@
 
 public class QuercusRequestAdapter
 {
-  public static String getPageURI(QuercusHttpServletRequest request)
+  public static string getPageURI(QuercusHttpServletRequest request)
   {
-    String uri = request.getIncludeRequestUri();
+    string uri = request.getIncludeRequestUri();
 
     if (uri != null)
       return uri;
@@ -53,9 +53,9 @@ public class QuercusRequestAdapter
     }
   }
 
-  public static String getPageContextPath(QuercusHttpServletRequest request)
+  public static string getPageContextPath(QuercusHttpServletRequest request)
   {
-    String contextPath = request.getIncludeContextPath();
+    string contextPath = request.getIncludeContextPath();
 
     if (contextPath != null) {
       return contextPath;
@@ -69,9 +69,9 @@ public class QuercusRequestAdapter
    * Returns the servlet-path for the current page, i.e. this will return the
    * url of the include page, not the original request.
    */
-  public static String getPageServletPath(QuercusHttpServletRequest request)
+  public static string getPageServletPath(QuercusHttpServletRequest request)
   {
-    String servletPath = request.getIncludeServletPath();
+    string servletPath = request.getIncludeServletPath();
 
     if (servletPath != null) {
       return servletPath;
@@ -85,9 +85,9 @@ public class QuercusRequestAdapter
    * Returns the path-info for the current page, i.e. this will return the
    * url of the include page, not the original request.
    */
-  public static String getPagePathInfo(QuercusHttpServletRequest request)
+  public static string getPagePathInfo(QuercusHttpServletRequest request)
   {
-    String uri = request.getIncludeRequestUri();
+    string uri = request.getIncludeRequestUri();
 
     if (uri != null) {
       return request.getIncludePathInfo();
@@ -101,9 +101,9 @@ public class QuercusRequestAdapter
    * Returns the query-string for the current page, i.e. this will return the
    * url of the include page, not the original request.
    */
-  public static String getPageQueryString(QuercusHttpServletRequest request)
+  public static string getPageQueryString(QuercusHttpServletRequest request)
   {
-    String uri = request.getIncludeRequestUri();
+    string uri = request.getIncludeRequestUri();
 
     if (uri != null) {
       return request.getIncludeQueryString();

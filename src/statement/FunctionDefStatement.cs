@@ -53,7 +53,7 @@ public class FunctionDefStatement extends Statement {
   public Value execute(Env env)
   {
     try {
-      String name = _fun.getName();
+      string name = _fun.getName();
 
       if (env.findFunction(env.createString(name)) == null)
         env.addFunction(name, _fun);

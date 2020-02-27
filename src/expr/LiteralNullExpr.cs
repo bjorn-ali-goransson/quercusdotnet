@@ -84,7 +84,7 @@ public class LiteralNullExpr extends Expr {
   // Java code generation
   //
 
-  public String toString()
+  public string toString()
   {
     return "null";
   }

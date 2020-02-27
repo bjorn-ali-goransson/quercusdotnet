@@ -39,10 +39,10 @@
  */
 public class ImportExpr extends Expr
 {
-  protected final String _name;
+  protected final string _name;
   protected final boolean _isWildcard;
   
-  public ImportExpr(Location location, String name, boolean isWildcard)
+  public ImportExpr(Location location, string name, boolean isWildcard)
   {
     super(location);
 
@@ -67,7 +67,7 @@ public class ImportExpr extends Expr
     return NullValue.NULL;
   }
   
-  public String toString()
+  public string toString()
   {
     if (_isWildcard)
       return "";

@@ -64,7 +64,7 @@ public class ApcModule extends AbstractQuercusModule
   /**
    * Returns true for the mysql extension.
    */
-  public String []getLoadedExtensions()
+  public string []getLoadedExtensions()
   {
     return new String[] { "apc" };
   }
@@ -81,7 +81,7 @@ public class ApcModule extends AbstractQuercusModule
    * Returns cache information.
    */
   public Value apc_cache_info(Env env,
-                              @Optional String type,
+                              @Optional string type,
                               @Optional boolean limited)
   {
     ArrayValue value = new ArrayValueImpl();
@@ -120,7 +120,7 @@ public class ApcModule extends AbstractQuercusModule
       }
 
       for (int i = 0; i < keys.size(); i++) {
-        String key = keys.get(i);
+        string key = keys.get(i);
         Entry entryValue = values.get(i);
 
         if (entryValue.isValid(env)) {
@@ -143,7 +143,7 @@ public class ApcModule extends AbstractQuercusModule
   /**
    * Clears the cache
    */
-  public boolean apc_clear_cache(Env env, @Optional String type)
+  public boolean apc_clear_cache(Env env, @Optional string type)
   {
     if (_cache != null)
       _cache.clear();
@@ -175,7 +175,7 @@ public class ApcModule extends AbstractQuercusModule
    * Defines constants
    */
   public boolean apc_define_constants(Env env,
-                                      String key,
+                                      string key,
                                       ArrayValue values,
                                       @Optional("true") boolean caseSensitive)
   {
@@ -187,7 +187,7 @@ public class ApcModule extends AbstractQuercusModule
   /**
    * Deletes a value.
    */
-  public boolean apc_delete(Env env, String key)
+  public boolean apc_delete(Env env, string key)
   {
     if (_cache == null)
       return false;
@@ -199,7 +199,7 @@ public class ApcModule extends AbstractQuercusModule
    * Returns a value.
    */
   public Value apc_fetch(Env env,
-                         String key,
+                         string key,
                          @Optional @Reference Value isSuccessful)
   {
     isSuccessful.set(BooleanValue.FALSE);
@@ -240,7 +240,7 @@ public class ApcModule extends AbstractQuercusModule
 
       ObjectValue obj = (ObjectValue) value.toValue().toObject(env);
 
-      String className;
+      string className;
 
       if (obj.isIncompleteObject())
         className = obj.getIncompleteObjectName();
@@ -271,7 +271,7 @@ public class ApcModule extends AbstractQuercusModule
    * Defines constants
    */
   public boolean apc_load_constants(Env env,
-                                    String key,
+                                    string key,
                                     @Optional("true") boolean caseSensitive)
   {
     ArrayValue array = (ArrayValue) _constMap.get(key);
@@ -291,7 +291,7 @@ public class ApcModule extends AbstractQuercusModule
   /**
    * Returns cache information.
    */
-  public Value apc_sma_info(Env env, @Optional String type)
+  public Value apc_sma_info(Env env, @Optional string type)
   {
     ArrayValue value = new ArrayValueImpl();
 
@@ -304,7 +304,7 @@ public class ApcModule extends AbstractQuercusModule
   }
 
   public Value apc_add(Env env,
-                       String key,
+                       string key,
                        Value value,
                        @Optional("0") int ttl) {
     LruCache<String,Entry> cache = getCache(env);
@@ -322,7 +322,7 @@ public class ApcModule extends AbstractQuercusModule
   /**
    * Returns a value.
    */
-  public Value apc_store(Env env, String key, Value value,
+  public Value apc_store(Env env, string key, Value value,
                          @Optional("0") int ttl)
   {
     LruCache<String,Entry> cache = getCache(env);

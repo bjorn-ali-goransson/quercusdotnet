@@ -54,11 +54,11 @@ abstract public class ClassDef implements InstanceInitializer {
   private final static L10N L = new L10N(ClassDef.class);
 
   private final Location _location;
-  private final String _name;
-  private final String _parentName;
+  private final string _name;
+  private final string _parentName;
 
-  private String []_ifaceList;
-  private String []_traitList;
+  private string []_ifaceList;
+  private string []_traitList;
 
   private TraitInsteadofMap _traitInsteadofMap;
   private TraitAliasMap _traitAliasMap;
@@ -66,25 +66,25 @@ abstract public class ClassDef implements InstanceInitializer {
   protected static final String[] NULL_STRING_ARRAY = new String[0];
 
   protected ClassDef(Location location,
-                     String name,
-                     String parentName)
+                     string name,
+                     string parentName)
   {
     this(location, name, parentName, NULL_STRING_ARRAY, NULL_STRING_ARRAY);
   }
 
   protected ClassDef(Location location,
-                     String name,
-                     String parentName,
-                     String []ifaceList)
+                     string name,
+                     string parentName,
+                     string []ifaceList)
   {
     this(location, name, parentName, ifaceList, NULL_STRING_ARRAY);
   }
 
   protected ClassDef(Location location,
-                     String name,
-                     String parentName,
-                     String []ifaceList,
-                     String []traitList)
+                     string name,
+                     string parentName,
+                     string []ifaceList,
+                     string []traitList)
   {
     _location = location;
     _name = name;
@@ -105,7 +105,7 @@ abstract public class ClassDef implements InstanceInitializer {
   /**
    * Returns the name.
    */
-  public String getName()
+  public string getName()
   {
     return _name;
   }
@@ -113,7 +113,7 @@ abstract public class ClassDef implements InstanceInitializer {
   /**
    * Returns the parent name.
    */
-  public String getParentName()
+  public string getParentName()
   {
     return _parentName;
   }
@@ -121,7 +121,7 @@ abstract public class ClassDef implements InstanceInitializer {
   /**
    * Returns the name of the extension that this class is part of.
    */
-  public String getExtension()
+  public string getExtension()
   {
     return null;
   }
@@ -186,8 +186,8 @@ abstract public class ClassDef implements InstanceInitializer {
   }
 
   public void addTraitInsteadOf(StringValue funName,
-                                String traitName,
-                                String insteadofTraitName)
+                                string traitName,
+                                string insteadofTraitName)
   {
     TraitInsteadofMap traitInsteadofMap = _traitInsteadofMap;
 
@@ -201,7 +201,7 @@ abstract public class ClassDef implements InstanceInitializer {
 
   public void addTraitAlias(StringValue funName,
                             StringValue funNameAlias,
-                            String traitName)
+                            string traitName)
   {
     TraitAliasMap traitAliasMap = _traitAliasMap;
 
@@ -252,7 +252,7 @@ abstract public class ClassDef implements InstanceInitializer {
   /**
    * Returns the interfaces.
    */
-  public String []getInterfaces()
+  public string []getInterfaces()
   {
     return _ifaceList;
   }
@@ -260,7 +260,7 @@ abstract public class ClassDef implements InstanceInitializer {
   /**
    * Returns the interfaces.
    */
-  public String []getTraits()
+  public string []getTraits()
   {
     return _traitList;
   }
@@ -332,7 +332,7 @@ abstract public class ClassDef implements InstanceInitializer {
    * @param cl add methods to this QuercusClass
    * @param bindingClassName name of the owning class (for __CLASS__ resolution)
    */
-  public void initClassMethods(QuercusClass cl, String bindingClassName)
+  public void initClassMethods(QuercusClass cl, string bindingClassName)
   {
   }
 
@@ -341,7 +341,7 @@ abstract public class ClassDef implements InstanceInitializer {
    * @param cl add fields to this QuercusClass
    * @param bindingClassName name of the owning class (for static fields)
    */
-  public void initClassFields(QuercusClass cl, String bindingClassName)
+  public void initClassFields(QuercusClass cl, string bindingClassName)
   {
   }
 
@@ -381,7 +381,7 @@ abstract public class ClassDef implements InstanceInitializer {
   /**
    * Returns value for instanceof.
    */
-  public boolean isA(Env env, String name)
+  public boolean isA(Env env, string name)
   {
     if (_name.equalsIgnoreCase(name)) {
       return true;
@@ -412,7 +412,7 @@ abstract public class ClassDef implements InstanceInitializer {
   /**
    * Returns the documentation for this class.
    */
-  public String getComment()
+  public string getComment()
   {
     return null;
   }
@@ -420,7 +420,7 @@ abstract public class ClassDef implements InstanceInitializer {
   /**
    * Returns the comment for the specified field.
    */
-  public String getFieldComment(StringValue name)
+  public string getFieldComment(StringValue name)
   {
     return null;
   }
@@ -428,13 +428,13 @@ abstract public class ClassDef implements InstanceInitializer {
   /**
    * Returns the comment for the specified static field.
    */
-  public String getStaticFieldComment(StringValue name)
+  public string getStaticFieldComment(StringValue name)
   {
     return null;
   }
 
   @Override
-  public String toString()
+  public string toString()
   {
     return getClass().getSimpleName()
            + "@"
@@ -466,7 +466,7 @@ abstract public class ClassDef implements InstanceInitializer {
   public static class FieldEntry {
     private final Expr _value;
     private final FieldVisibility _visibility;
-    private final String _comment;
+    private final string _comment;
 
     public FieldEntry(Expr value, FieldVisibility visibility)
     {
@@ -475,7 +475,7 @@ abstract public class ClassDef implements InstanceInitializer {
       _comment = null;
     }
 
-    public FieldEntry(Expr value, FieldVisibility visibility, String comment)
+    public FieldEntry(Expr value, FieldVisibility visibility, string comment)
     {
       _value = value;
       _visibility = visibility;
@@ -492,7 +492,7 @@ abstract public class ClassDef implements InstanceInitializer {
       return _visibility;
     }
 
-    public String getComment()
+    public string getComment()
     {
       return _comment;
     }
@@ -500,7 +500,7 @@ abstract public class ClassDef implements InstanceInitializer {
 
   public static class StaticFieldEntry {
     private final Expr _value;
-    private final String _comment;
+    private final string _comment;
 
     public StaticFieldEntry(Expr value)
     {
@@ -508,7 +508,7 @@ abstract public class ClassDef implements InstanceInitializer {
       _comment = null;
     }
 
-    public StaticFieldEntry(Expr value, String comment)
+    public StaticFieldEntry(Expr value, string comment)
     {
       _value = value;
       _comment = comment;
@@ -519,7 +519,7 @@ abstract public class ClassDef implements InstanceInitializer {
       return _value;
     }
 
-    public String getComment()
+    public string getComment()
     {
       return _comment;
     }

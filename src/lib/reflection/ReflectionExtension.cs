@@ -50,9 +50,9 @@ public class ReflectionExtension
 {
   private static final L10N L = new L10N(ReflectionExtension.class);
 
-  private String _name;
+  private string _name;
 
-  protected ReflectionExtension(Env env, String extension)
+  protected ReflectionExtension(Env env, string extension)
   {
     _name = extension;
   }
@@ -62,24 +62,24 @@ public class ReflectionExtension
 
   }
 
-  public static ReflectionExtension __construct(Env env, String name)
+  public static ReflectionExtension __construct(Env env, string name)
   {
     return new ReflectionExtension(env, name);
   }
 
-  public static String export(Env env,
-                              String name,
+  public static string export(Env env,
+                              string name,
                               @Optional boolean isReturn)
   {
     return null;
   }
 
-  public String getName()
+  public string getName()
   {
     return _name;
   }
 
-  public String getVersion()
+  public string getVersion()
   {
     return null;
   }
@@ -176,7 +176,7 @@ public class ReflectionExtension
     return array;
   }
 
-  public String toString()
+  public string toString()
   {
     return getClass().getSimpleName() + "[" + _name + "]";
   }

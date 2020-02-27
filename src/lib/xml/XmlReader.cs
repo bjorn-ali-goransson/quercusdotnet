@@ -114,7 +114,7 @@ public class XmlReader
    * @param operation name of the operation being performed (i.e. read, etc.)
    * @return true if the stream is open, false otherwise
    */
-  private boolean streamIsOpen(Env env, String operation) {
+  private boolean streamIsOpen(Env env, string operation) {
     if (! streamIsOpen()) {
       env.warning(L.l("Load Data before trying to " + operation));
 
@@ -258,7 +258,7 @@ public class XmlReader
     if (! streamIsOpen())
       return NullValue.NULL;
 
-    String name = "";
+    string name = "";
 
     if (_currentNodeType == XMLStreamConstants.CHARACTERS)
       name = "#text";
@@ -280,13 +280,13 @@ public class XmlReader
       return NullValue.NULL;
 
     try {
-      String name = "";
+      string name = "";
 
       // XXX: Next line should be "String prefix = _streamReader.getPrefix();"
       // but there was a NullPointerException for XMLStreamReaderImpl._name.
 
       // php/4618
-      String prefix = _streamReader.getPrefix();
+      string prefix = _streamReader.getPrefix();
 
       if (_currentNodeType == XMLStreamConstants.CHARACTERS)
         name = "#text";
@@ -441,7 +441,7 @@ public class XmlReader
    * @param namespaceURI
    * @return
    */
-  public StringValue getAttributeNS(String localName, String namespaceURI) {
+  public StringValue getAttributeNS(String localName, string namespaceURI) {
     throw new UnsupportedOperationException(getClass().getName());
   }
 
@@ -495,7 +495,7 @@ public class XmlReader
    * @param namespaceURI
    * @return
    */
-  public BooleanValue moveToAttributeNs(String localName, String namespaceURI) {
+  public BooleanValue moveToAttributeNs(String localName, string namespaceURI) {
     throw new UnsupportedOperationException(getClass().getName());
   }
 
@@ -528,7 +528,7 @@ public class XmlReader
    * @param localname
    * @return
    */
-  public BooleanValue next(@Optional String localname) {
+  public BooleanValue next(@Optional string localname) {
     throw new UnsupportedOperationException(getClass().getName());
   }
 
@@ -585,7 +585,7 @@ public class XmlReader
   private void updateAttribute(Env env) {
     _hasAttribute = false;
 
-    String key = getName(env).toString() + _depth;
+    string key = getName(env).toString() + _depth;
 
     if (_currentNodeType == XMLStreamConstants.START_ELEMENT
         && _streamReader.getAttributeCount() > 0) {

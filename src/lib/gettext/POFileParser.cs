@@ -303,7 +303,7 @@ class POFileParser extends GettextParser
       }
     }
 
-    // String may be continued on the next line.
+    // string may be continued on the next line.
 
     int ch = skipWhitespace();
 

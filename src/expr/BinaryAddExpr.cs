@@ -79,7 +79,7 @@ public class BinaryAddExpr extends AbstractBinaryExpr {
     return true;
   }
 
-  public String toString()
+  public string toString()
   {
     return "(" + _left + " + " + _right + ")";
   }

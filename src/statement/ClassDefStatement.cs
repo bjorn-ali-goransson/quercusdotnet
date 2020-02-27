@@ -59,7 +59,7 @@ public class ClassDefStatement extends Statement {
     return null;
   }
 
-  public String toString()
+  public string toString()
   {
     return getClass().getSimpleName() + "[" + _cl + "]";
   }

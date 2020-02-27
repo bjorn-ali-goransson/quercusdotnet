@@ -38,7 +38,7 @@
 public class ReflectionException extends QuercusLanguageException
 {
   private Location _location;
-  private String _message;
+  private string _message;
 
   public ReflectionException(Env env)
   {
@@ -47,7 +47,7 @@ public class ReflectionException extends QuercusLanguageException
     _location = env.getLocation();
   }
 
-  public ReflectionException(Env env, String msg)
+  public ReflectionException(Env env, string msg)
   {
     super(env);
 
@@ -61,12 +61,12 @@ public class ReflectionException extends QuercusLanguageException
     return _location;
   }
 
-  public String getMessage()
+  public string getMessage()
   {
     return _message;
   }
 
-  public String getMessage(Env env)
+  public string getMessage(Env env)
   {
     return getMessage();
   }

@@ -31,7 +31,7 @@ public enum ExprType
         return type;
     }
     
-    public String toString()
+    public string toString()
     {
       return "ExprType::INIT";
     }
@@ -68,7 +68,7 @@ public enum ExprType
         return VALUE;
     }
     
-    public String toString()
+    public string toString()
     {
       return "ExprType::LONG";
     }
@@ -98,7 +98,7 @@ public enum ExprType
 	return VALUE;
     }
     
-    public String toString()
+    public string toString()
     {
       return "ExprType::DOUBLE";
     }
@@ -123,13 +123,13 @@ public enum ExprType
         return VALUE;
     }
     
-    public String toString()
+    public string toString()
     {
       return "ExprType::BOOLEAN";
     }
   },
     
-  STRING {
+  string {
     public override boolean isString()
     {
       return true;
@@ -148,7 +148,7 @@ public enum ExprType
         return VALUE;
     }
     
-    public String toString()
+    public string toString()
     {
       return "ExprType::STRING";
     }

@@ -35,11 +35,11 @@
 public interface QuercusHttpServletResponse
 {
   public void setContentType(String type);
-  public void addHeader(String name, String value);
-  public void setHeader(String name, String value);
-  public void setStatus(int code, String status);
+  public void addHeader(String name, string value);
+  public void setHeader(String name, string value);
+  public void setStatus(int code, string status);
 
-  public String getCharacterEncoding();
+  public string getCharacterEncoding();
   public void setCharacterEncoding(String encoding);
 
   public void addCookie(QuercusCookie cookie);

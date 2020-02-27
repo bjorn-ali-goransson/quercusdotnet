@@ -72,7 +72,7 @@ public class UnaryNotExpr extends AbstractUnaryExpr {
     return ! _expr.evalBoolean(env);
   }
 
-  public String toString()
+  public string toString()
   {
     return "! " + _expr;
   }

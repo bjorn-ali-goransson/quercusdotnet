@@ -42,10 +42,10 @@ public class SplFileInfo
   private final Path _parent;
 
   protected Path _path;
-  private String _openFileClassName;
-  private String _infoFileClassName;
+  private string _openFileClassName;
+  private string _infoFileClassName;
 
-  private String _fileName;
+  private string _fileName;
 
   public SplFileInfo(Env env, StringValue fileName)
   {
@@ -56,7 +56,7 @@ public class SplFileInfo
     _fileName = fileName.toString();
   }
 
-  protected SplFileInfo(Path parent, Path path, String fileName)
+  protected SplFileInfo(Path parent, Path path, string fileName)
   {
     _parent = parent;
 
@@ -89,9 +89,9 @@ public class SplFileInfo
     return _path.getLastAccessTime() / 1000;
   }
 
-  public String getBasename(Env env, @Optional String suffix)
+  public string getBasename(Env env, @Optional string suffix)
   {
-    String name = _path.getTail();
+    string name = _path.getTail();
 
     if (suffix != null && name.endsWith(suffix)) {
       name = name.substring(0, name.length() - suffix.length());
@@ -105,9 +105,9 @@ public class SplFileInfo
     return _path.getCreateTime() / 1000;
   }
 
-  public String getExtension(Env env)
+  public string getExtension(Env env)
   {
-    String name = _path.getTail();
+    string name = _path.getTail();
 
     int pos = name.lastIndexOf('.');
 
@@ -119,12 +119,12 @@ public class SplFileInfo
     }
   }
 
-  public SplFileInfo getFileInfo(Env env, @Optional String className)
+  public SplFileInfo getFileInfo(Env env, @Optional string className)
   {
     throw new UnimplementedException("SplFileInfo::getFileInfo()");
   }
 
-  public String getFilename(Env env)
+  public string getFilename(Env env)
   {
     return _fileName;
   }
@@ -139,7 +139,7 @@ public class SplFileInfo
     return _path.getInode();
   }
 
-  public String getLinkTarget(Env env)
+  public string getLinkTarget(Env env)
   {
     return _path.readLink();
   }
@@ -154,7 +154,7 @@ public class SplFileInfo
     return _path.getOwner();
   }
 
-  public String getPath(Env env)
+  public string getPath(Env env)
   {
     return _parent.getNativePath();
 
@@ -165,14 +165,14 @@ public class SplFileInfo
     */
   }
 
-  public SplFileInfo getPathInfo(Env env, @Optional String className)
+  public SplFileInfo getPathInfo(Env env, @Optional string className)
   {
     throw new UnimplementedException("SplFileInfo::getPathInfo()");
   }
 
-  public String getPathname(Env env)
+  public string getPathname(Env env)
   {
-    String parentPath = "";
+    string parentPath = "";
 
     if (_parent != null) {
       parentPath = _parent.getNativePath();
@@ -212,7 +212,7 @@ public class SplFileInfo
     return _path.getMode();
   }
 
-  public String getRealPath(Env env)
+  public string getRealPath(Env env)
   {
     return _path.realPath();
   }
@@ -222,7 +222,7 @@ public class SplFileInfo
     return _path.getLength();
   }
 
-  public String getType(Env env)
+  public string getType(Env env)
   {
     if (_path.isLink()) {
       return "link";
@@ -270,29 +270,29 @@ public class SplFileInfo
   }
 
   public SplFileObject openFile(Env env,
-                                @Optional("r") String mode,
+                                @Optional("r") string mode,
                                 @Optional boolean isUseIncludePath,
                                 @Optional Value context)
   {
     throw new UnimplementedException("SplFileInfo::openFile()");
   }
 
-  public void setFileClass(Env env, @Optional String className)
+  public void setFileClass(Env env, @Optional string className)
   {
     _openFileClassName = className;
   }
 
-  public void setInfoClass(Env env, @Optional String className)
+  public void setInfoClass(Env env, @Optional string className)
   {
     _infoFileClassName = className;
   }
 
-  public String __toString(Env env)
+  public string __toString(Env env)
   {
     return _path.getNativePath();
   }
 
-  public String toString()
+  public string toString()
   {
     return getClass().getSimpleName() + "[" + _parent + "," + _fileName + "]";
   }

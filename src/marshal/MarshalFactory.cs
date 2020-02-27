@@ -233,21 +233,21 @@ public class MarshalFactory {
       }
     }
     else if (Map.class.isAssignableFrom(argType)) {
-      String typeName = argType.getName();
+      string typeName = argType.getName();
 
       JavaClassDef javaDef = _moduleContext.getJavaClassDefinition(typeName);
 
       marshal = new JavaMapMarshal(javaDef, isNotNull, isNullAsFalse);
     }
     else if (List.class.isAssignableFrom(argType)) {
-      String typeName = argType.getName();
+      string typeName = argType.getName();
 
       JavaClassDef javaDef = _moduleContext.getJavaClassDefinition(typeName);
 
       marshal = new JavaListMarshal(javaDef, isNotNull, isNullAsFalse);
     }
     else if (Collection.class.isAssignableFrom(argType)) {
-      String typeName = argType.getName();
+      string typeName = argType.getName();
 
       JavaClassDef javaDef = _moduleContext.getJavaClassDefinition(typeName);
 
@@ -257,7 +257,7 @@ public class MarshalFactory {
       marshal = new EnumMarshal(argType);
     }
     else {
-      String typeName = argType.getName();
+      string typeName = argType.getName();
 
       JavaClassDef javaDef = _moduleContext.getJavaClassDefinition(typeName);
 
@@ -277,7 +277,7 @@ public class MarshalFactory {
           || Double.class.equals(argType)
           || Character.class.equals(argType)) {
 
-        String shortName = argType.getSimpleName();
+        string shortName = argType.getSimpleName();
         throw new UnsupportedOperationException(
           "@ReturnNullAsFalse cannot be used with return type `"
           + shortName + "'");

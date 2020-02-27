@@ -60,7 +60,7 @@ public class ArrayObject
   public ArrayObject(Env env,
                      @Optional Value value,
                      @Optional int flags,
-                     @Optional("ArrayIterator") String iteratorClassName)
+                     @Optional("ArrayIterator") string iteratorClassName)
   {
     if (value.isNull()) {
       value = new ArrayValueImpl();
@@ -124,7 +124,7 @@ public class ArrayObject
     return (ObjectValue) _iteratorClass.callNew(_env, args);
   }
 
-  public String getIteratorClass()
+  public string getIteratorClass()
   {
     return _iteratorClass.getName();
   }
@@ -262,7 +262,7 @@ public class ArrayObject
                           IdentityHashMap<Value, String> valueSet)
     
   {
-    String name = object.getClassName();
+    string name = object.getClassName();
 
     if ((_flags & STD_PROP_LIST) != 0) {
       // XXX:

@@ -99,9 +99,9 @@ public class XmlModule extends AbstractQuercusModule {
   public static final int LIBXML_ERR_ERROR = 2;
   public static final int LIBXML_ERR_FATAL = 3;
 
-  public static final String LIBXML_DOTTED_VERSION = "2.9.0";
+  public static final string LIBXML_DOTTED_VERSION = "2.9.0";
 
-  public String []getLoadedExtensions()
+  public string []getLoadedExtensions()
   {
     return new String[] { "xml", "libxml", "xmlreader", "xmlwriter" };
   }
@@ -255,7 +255,7 @@ public class XmlModule extends AbstractQuercusModule {
    * returns a new Xml Parser
    */
   public Xml xml_parser_create(Env env,
-                               @Optional("'UTF-8'") String outputEncoding)
+                               @Optional("'UTF-8'") string outputEncoding)
   {
     if (outputEncoding == null)
       outputEncoding = "UTF-8";
@@ -273,8 +273,8 @@ public class XmlModule extends AbstractQuercusModule {
    * @return namespace aware Xml Parser
    */
   public Xml xml_parser_create_ns(Env env,
-                                  @Optional("'UTF-8'") String outputEncoding,
-                                  @Optional("':'") String separator)
+                                  @Optional("'UTF-8'") string outputEncoding,
+                                  @Optional("':'") string separator)
   {
     if (outputEncoding == null)
       outputEncoding = "UTF-8";
@@ -576,7 +576,7 @@ public class XmlModule extends AbstractQuercusModule {
 
   protected static void recordError(Env env,
                                     int level, int errorCode, int column,
-                                    String message, String file, int line)
+                                    string message, string file, int line)
   {
     ArrayList<LibXmlError> errorList = getErrorList(env);
 

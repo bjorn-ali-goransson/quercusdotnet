@@ -51,7 +51,7 @@ public class StringUtility
                                CharSequence str,
                                ArrayValue result,
                                boolean isRef,
-                               String encoding,
+                               string encoding,
                                boolean isReplaceSpacesWithUnderscores)
   {
     return parseStr(env, str, result, isRef, encoding,
@@ -64,7 +64,7 @@ public class StringUtility
                                CharSequence str,
                                ArrayValue result,
                                boolean isRef,
-                               String encoding,
+                               string encoding,
                                boolean isMagicQuotes,
                                boolean isReplaceSpacesWithUnderscores,
                                int []querySeparatorMap)
@@ -93,11 +93,11 @@ public class StringUtility
           i = addQueryChar(byteToChar, str, len, i, ch, querySeparatorMap);
         }
 
-        String key = byteToChar.getConvertedString();
+        string key = byteToChar.getConvertedString();
 
         byteToChar.clear();
 
-        String value;
+        string value;
         if (ch == '=') {
           for (i++; i < len
                && ! isSeparator(querySeparatorMap, (ch = str.charAt(i))); i++) {
@@ -134,7 +134,7 @@ public class StringUtility
             continue;
           }
           else if (openBracketIndex > 0) {
-            String arrayName = key.substring(0, openBracketIndex);
+            string arrayName = key.substring(0, openBracketIndex);
             arrayName = arrayName.replace('.', '_');
 
             Value v = env.getVar(arrayName).getRawValue();
@@ -146,7 +146,7 @@ public class StringUtility
               }
 
               if (closeBracketIndex > openBracketIndex + 1) {
-                String index = key.substring(key.indexOf('[') + 1,
+                string index = key.substring(key.indexOf('[') + 1,
                                              key.indexOf(']'));
                 v.put(env.createString(index), env.createString(value));
               } else {
@@ -227,7 +227,7 @@ public class StringUtility
   }
 
   public static void addQueryValue(Env env, ArrayValue array,
-                                   String key, String valueStr)
+                                   string key, string valueStr)
   {
     if (key == null)
       key = "";
@@ -240,7 +240,7 @@ public class StringUtility
     Value value = env.createString(valueStr);
 
     if ((p = key.indexOf('[')) > 0 && key.endsWith("]")) {
-      String index = key.substring(p + 1, key.length() - 1);
+      string index = key.substring(p + 1, key.length() - 1);
       key = key.substring(0, p);
 
       StringValue keyValue = env.createString(key);

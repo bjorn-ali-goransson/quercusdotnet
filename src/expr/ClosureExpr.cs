@@ -62,7 +62,7 @@ public class ClosureExpr extends Expr {
   /**
    * Returns the name.
    */
-  public String getName()
+  public string getName()
   {
     return _fun.getName();
   }
@@ -79,7 +79,7 @@ public class ClosureExpr extends Expr {
    * Returns the location if known.
    */
   @Override
-  public String getFunctionLocation()
+  public string getFunctionLocation()
   {
     return " [" + getName() + "]";
   }
@@ -144,7 +144,7 @@ public class ClosureExpr extends Expr {
     return new InterpretedClosure(env, _fun, qThis);
   }
 
-  public String toString()
+  public string toString()
   {
     return getName() + "()";
   }

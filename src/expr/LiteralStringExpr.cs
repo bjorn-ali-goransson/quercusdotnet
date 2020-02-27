@@ -73,7 +73,7 @@ public class LiteralStringExpr extends Expr {
   {
     ExprFactory factory = parser.getExprFactory();
 
-    String className = _value.toString();
+    string className = _value.toString();
 
     if ("self".equals(className)) {
       className = parser.getSelfClassName();
@@ -100,7 +100,7 @@ public class LiteralStringExpr extends Expr {
   {
     ExprFactory factory = parser.getExprFactory();
 
-    String className = _value.toString();
+    string className = _value.toString();
 
     if ("self".equals(className)) {
       className = parser.getSelfClassName();
@@ -154,7 +154,7 @@ public class LiteralStringExpr extends Expr {
     return _value;
   }
 
-  public override String toString()
+  public override string toString()
   {
     return "\"" + _value + "\"";
   }

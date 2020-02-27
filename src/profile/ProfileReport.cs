@@ -47,7 +47,7 @@ public class ProfileReport
 {
   private long _id;
   
-  private String _url;
+  private string _url;
   private long _timestamp;
 
   private ArrayList<ProfileItem> _itemList = new ArrayList<ProfileItem>();
@@ -57,7 +57,7 @@ public class ProfileReport
 
   private long _totalMicros;
 
-  public ProfileReport(long id, String url, long timestamp)
+  public ProfileReport(long id, string url, long timestamp)
   {
     _id = id;
     _url = url;
@@ -75,7 +75,7 @@ public class ProfileReport
   /**
    * Returns the url
    */
-  public String getUrl()
+  public string getUrl()
   {
     return _url;
   }
@@ -131,7 +131,7 @@ public class ProfileReport
   /**
    * Adds a profile item.
    */
-  public void addItem(String name, String parent, long count, long micros)
+  public void addItem(String name, string parent, long count, long micros)
   {
     ProfileItem item = new ProfileItem(name, parent, count, micros);
     _itemList.add(item);
@@ -218,7 +218,7 @@ public class ProfileReport
     double sumMicros = 0;
 
     for (ProfileMethod method : methodList) {
-      String name = method.getName();
+      string name = method.getName();
       long selfMicros = method.getSelfMicros();
       sumMicros += selfMicros;
 
@@ -261,7 +261,7 @@ public class ProfileReport
     double sumMicros = 0;
 
     for (ProfileMethod method : methodList) {
-      String name = method.getName();
+      string name = method.getName();
       long ownTotalMicros = method.getTotalMicros();
       long selfMicros = method.getSelfMicros();
       sumMicros += selfMicros;
@@ -317,7 +317,7 @@ public class ProfileReport
   }
 
   @Override
-  public String toString()
+  public string toString()
   {
     return getClass().getSimpleName() + "[]";
   }

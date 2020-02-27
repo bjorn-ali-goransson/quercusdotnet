@@ -47,20 +47,20 @@ public class HttpsConnection
   extends CurlHttpConnection
 {
   protected HttpsConnection(URL url,
-                            String username,
-                            String password)
+                            string username,
+                            string password)
     
   {
     super(url, username, password);
   }
 
   public HttpsConnection(URL url,
-                         String username,
-                         String password,
+                         string username,
+                         string password,
                          URL proxyURL,
-                         String proxyUsername,
-                         String proxyPassword,
-                         String proxyType)
+                         string proxyUsername,
+                         string proxyPassword,
+                         string proxyType)
     
   {
     super(url, username, password,

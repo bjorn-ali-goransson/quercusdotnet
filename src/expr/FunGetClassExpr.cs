@@ -38,7 +38,7 @@
  * Represents returns the current class.
  */
 public class FunGetClassExpr extends Expr {
-  private String _className;
+  private string _className;
 
   public FunGetClassExpr(QuercusParser parser)
   {
@@ -47,7 +47,7 @@ public class FunGetClassExpr extends Expr {
     _className = parser.getClassName();
   }
   
-  protected String getClassName()
+  protected string getClassName()
   {
     return _className;
   }
@@ -65,7 +65,7 @@ public class FunGetClassExpr extends Expr {
     return env.createString(_className);
   }
 
-  public String toString()
+  public string toString()
   {
     return "get_class()";
   }

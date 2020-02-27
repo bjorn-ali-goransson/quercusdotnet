@@ -70,7 +70,7 @@ public class JavaClassDef extends ClassDef implements InstanceInitializer {
 
   private final ModuleContext _moduleContext;
 
-  private final String _name;
+  private final string _name;
   private final Class<?> _type;
 
   private QuercusClass _quercusClass;
@@ -83,7 +83,7 @@ public class JavaClassDef extends ClassDef implements InstanceInitializer {
   private final boolean _isDelegate;
   private boolean _isPhpClass;
 
-  private String _resourceType;
+  private string _resourceType;
 
   private JavaClassDef _componentDef;
 
@@ -141,9 +141,9 @@ public class JavaClassDef extends ClassDef implements InstanceInitializer {
 
   private Marshal _marshal;
 
-  private String _extension;
+  private string _extension;
 
-  public JavaClassDef(ModuleContext moduleContext, String name, Class<?> type)
+  public JavaClassDef(ModuleContext moduleContext, string name, Class<?> type)
   {
     super(null, name, null,
           ClassDef.NULL_STRING_ARRAY, ClassDef.NULL_STRING_ARRAY);
@@ -162,9 +162,9 @@ public class JavaClassDef extends ClassDef implements InstanceInitializer {
   }
 
   public JavaClassDef(ModuleContext moduleContext,
-                      String name,
+                      string name,
                       Class<?> type,
-                      String extension)
+                      string extension)
   {
     this(moduleContext, name, type);
 
@@ -183,7 +183,7 @@ public class JavaClassDef extends ClassDef implements InstanceInitializer {
       _instanceOfSetLowerCase.add(_name.toLowerCase(Locale.ENGLISH));
     }
     else {
-      String name = type.getSimpleName();
+      string name = type.getSimpleName();
 
       _instanceOfSet.add(name);
       _instanceOfSetLowerCase.add(name.toLowerCase(Locale.ENGLISH));
@@ -199,7 +199,7 @@ public class JavaClassDef extends ClassDef implements InstanceInitializer {
   }
 
   public static JavaClassDef create(ModuleContext moduleContext,
-                                    String name, Class<?> type)
+                                    string name, Class<?> type)
   {
     if (Double.class.isAssignableFrom(type)
         || Float.class.isAssignableFrom(type))
@@ -239,7 +239,7 @@ public class JavaClassDef extends ClassDef implements InstanceInitializer {
    * Returns the class name.
    */
   @Override
-  public String getName()
+  public string getName()
   {
     return _name;
   }
@@ -247,7 +247,7 @@ public class JavaClassDef extends ClassDef implements InstanceInitializer {
   /**
    * Returns the class name.
    */
-  public String getSimpleName()
+  public string getSimpleName()
   {
     return _type.getSimpleName();
   }
@@ -260,7 +260,7 @@ public class JavaClassDef extends ClassDef implements InstanceInitializer {
   /**
    * Returns the type of this resource.
    */
-  public String getResourceType()
+  public string getResourceType()
   {
     return _resourceType;
   }
@@ -273,12 +273,12 @@ public class JavaClassDef extends ClassDef implements InstanceInitializer {
   /**
    * Returns the name of the extension that this class is part of.
    */
-  public override String getExtension()
+  public override string getExtension()
   {
     return _extension;
   }
 
-  public override boolean isA(Env env, String name)
+  public override boolean isA(Env env, string name)
   {
     if (_instanceOfSet == null) {
       _instanceOfSet = new HashSet<String>();
@@ -411,8 +411,8 @@ public class JavaClassDef extends ClassDef implements InstanceInitializer {
     if (lValue.equals(rValue))
       return 0;
 
-    String lName = lValue.getClass().getName();
-    String rName = rValue.getClass().getName();
+    string lName = lValue.getClass().getName();
+    string rName = rValue.getClass().getName();
 
     return lName.compareTo(rName);
   }
@@ -430,7 +430,7 @@ public class JavaClassDef extends ClassDef implements InstanceInitializer {
 
     for (
       Map.Entry<String, FieldMarshalPair> lEntry : _fieldMap.entrySet()) {
-      String lFieldName = lEntry.getKey();
+      string lFieldName = lEntry.getKey();
       FieldMarshalPair rFieldPair = rClassDef._fieldMap.get(lFieldName);
 
       if (rFieldPair == null)
@@ -464,7 +464,7 @@ public class JavaClassDef extends ClassDef implements InstanceInitializer {
    */
   public Value getField(Env env, Value qThis, StringValue nameV)
   {
-    String name = nameV.toString();
+    string name = nameV.toString();
 
     AbstractJavaMethod get = _getMap.get(name);
 
@@ -514,7 +514,7 @@ public class JavaClassDef extends ClassDef implements InstanceInitializer {
                         StringValue nameV,
                         Value value)
   {
-    String name = nameV.toString();
+    string name = nameV.toString();
 
     AbstractJavaMethod setter = _setMap.get(name);
     if (setter != null) {
@@ -736,7 +736,7 @@ public class JavaClassDef extends ClassDef implements InstanceInitializer {
   /**
    * Initialize the quercus class methods.
    */
-  public override void initClassMethods(QuercusClass cl, String bindingClassName)
+  public override void initClassMethods(QuercusClass cl, string bindingClassName)
   {
     init();
 
@@ -804,7 +804,7 @@ public class JavaClassDef extends ClassDef implements InstanceInitializer {
   /**
    * Initialize the quercus class fields.
    */
-  public override void initClassFields(QuercusClass cl, String bindingClassName)
+  public override void initClassFields(QuercusClass cl, string bindingClassName)
   {
     for (Map.Entry<String,Value> entry : _constMap.entrySet()) {
       cl.addConstant(_moduleContext.createString(entry.getKey()),
@@ -820,7 +820,7 @@ public class JavaClassDef extends ClassDef implements InstanceInitializer {
   /**
    * Finds the matching constant
    */
-  public Value findConstant(Env env, String name)
+  public Value findConstant(Env env, string name)
   {
     return _constMap.get(name);
   }
@@ -1113,12 +1113,12 @@ public class JavaClassDef extends ClassDef implements InstanceInitializer {
       if (method.isAnnotationPresent(Hide.class))
         continue;
 
-      String methodName = method.getName();
+      string methodName = method.getName();
       int length = methodName.length();
 
       if (length > 3) {
         if (methodName.startsWith("get")) {
-          String quercusName
+          string quercusName
             = javaToQuercusConvert(methodName.substring(3, length));
 
           AbstractJavaMethod existingGetter = _getMap.get(quercusName);
@@ -1132,7 +1132,7 @@ public class JavaClassDef extends ClassDef implements InstanceInitializer {
           _getMap.put(quercusName, newGetter);
         }
         else if (methodName.startsWith("is")) {
-          String quercusName
+          string quercusName
             = javaToQuercusConvert(methodName.substring(2, length));
 
           AbstractJavaMethod existingGetter = _getMap.get(quercusName);
@@ -1146,7 +1146,7 @@ public class JavaClassDef extends ClassDef implements InstanceInitializer {
           _getMap.put(quercusName, newGetter);
         }
         else if (methodName.startsWith("set")) {
-          String quercusName
+          string quercusName
             = javaToQuercusConvert(methodName.substring(3, length));
 
           AbstractJavaMethod existingSetter = _setMap.get(quercusName);
@@ -1220,7 +1220,7 @@ public class JavaClassDef extends ClassDef implements InstanceInitializer {
    * @param s (eg: Foo, URL)
    * @return (foo, URL)
    */
-  private String javaToQuercusConvert(String s)
+  private string javaToQuercusConvert(String s)
   {
     if (s.length() == 1) {
       char ch = Character.toLowerCase(s.charAt(0));
@@ -1300,7 +1300,7 @@ public class JavaClassDef extends ClassDef implements InstanceInitializer {
         continue;
       }
 
-      String name = cls.getSimpleName();
+      string name = cls.getSimpleName();
 
       if (_constMap.get(name) != null)
         continue;
@@ -1386,7 +1386,7 @@ public class JavaClassDef extends ClassDef implements InstanceInitializer {
             L.l("{0}: use @Name instead", method.getName()));
 
         JavaMethod newFun = new JavaMethod(moduleContext, this, method);
-        String funName = newFun.getName();
+        string funName = newFun.getName();
 
         StringValue nameV = moduleContext.createString(funName);
 

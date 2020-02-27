@@ -41,10 +41,10 @@
  * Represents a PHP function expression of the form "new ClassName()".
  */
 public class ObjectNewExpr extends Expr {
-  protected final String _name;
+  protected final string _name;
   protected final Expr []_args;
 
-  public ObjectNewExpr(Location location, String name, ArrayList<Expr> args)
+  public ObjectNewExpr(Location location, string name, ArrayList<Expr> args)
   {
     super(location);
     _name = name.intern();
@@ -53,7 +53,7 @@ public class ObjectNewExpr extends Expr {
     args.toArray(_args);
   }
 
-  public ObjectNewExpr(Location location, String name, Expr []args)
+  public ObjectNewExpr(Location location, string name, Expr []args)
   {
     super(location);
     _name = name.intern();
@@ -99,7 +99,7 @@ public class ObjectNewExpr extends Expr {
   }
 
   @Override
-  public String toString()
+  public string toString()
   {
     return _name + "()";
   }

@@ -36,7 +36,7 @@
 public class DOMEntityReference
   extends DOMNode<EntityReference>
 {
-  public static DOMEntityReference __construct(Env env, String name)
+  public static DOMEntityReference __construct(Env env, string name)
   {
     return getImpl(env).createEntityReference(name);
   }

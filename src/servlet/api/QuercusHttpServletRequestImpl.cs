@@ -49,12 +49,12 @@ public class QuercusHttpServletRequestImpl implements QuercusHttpServletRequest
   }
 
   @Override
-  public String getMethod()
+  public string getMethod()
   {
     return _request.getMethod();
   }
 
-  public override String getHeader(String name)
+  public override string getHeader(String name)
   {
     return _request.getHeader(name);
   }
@@ -64,12 +64,12 @@ public class QuercusHttpServletRequestImpl implements QuercusHttpServletRequest
     return _request.getHeaderNames();
   }
 
-  public override String getParameter(String name)
+  public override string getParameter(String name)
   {
     return _request.getParameter(name);
   }
 
-  public override String []getParameterValues(String name)
+  public override string []getParameterValues(String name)
   {
     return _request.getParameterValues(name);
   }
@@ -79,22 +79,22 @@ public class QuercusHttpServletRequestImpl implements QuercusHttpServletRequest
     return _request.getParameterMap();
   }
 
-  public override String getContentType()
+  public override string getContentType()
   {
     return _request.getContentType();
   }
 
-  public override String getCharacterEncoding()
+  public override string getCharacterEncoding()
   {
     return _request.getCharacterEncoding();
   }
 
-  public override String getRequestURI()
+  public override string getRequestURI()
   {
     return _request.getRequestURI();
   }
 
-  public override String getQueryString()
+  public override string getQueryString()
   {
     return _request.getQueryString();
   }
@@ -116,22 +116,22 @@ public class QuercusHttpServletRequestImpl implements QuercusHttpServletRequest
     return qCookies;
   }
 
-  public override String getContextPath()
+  public override string getContextPath()
   {
     return _request.getContextPath();
   }
 
-  public override String getServletPath()
+  public override string getServletPath()
   {
     return _request.getServletPath();
   }
 
-  public override String getPathInfo()
+  public override string getPathInfo()
   {
     return _request.getPathInfo();
   }
 
-  public override String getRealPath(String path)
+  public override string getRealPath(String path)
   {
     return _request.getRealPath(path);
   }
@@ -153,12 +153,12 @@ public class QuercusHttpServletRequestImpl implements QuercusHttpServletRequest
     return new QuercusHttpSessionImpl(session);
   }
 
-  public override String getLocalAddr()
+  public override string getLocalAddr()
   {
     return _request.getLocalAddr();
   }
 
-  public override String getServerName()
+  public override string getServerName()
   {
     return _request.getServerName();
   }
@@ -168,12 +168,12 @@ public class QuercusHttpServletRequestImpl implements QuercusHttpServletRequest
     return _request.getServerPort();
   }
 
-  public override String getRemoteHost()
+  public override string getRemoteHost()
   {
     return _request.getRemoteHost();
   }
 
-  public override String getRemoteAddr()
+  public override string getRemoteAddr()
   {
     return _request.getRemoteAddr();
   }
@@ -183,7 +183,7 @@ public class QuercusHttpServletRequestImpl implements QuercusHttpServletRequest
     return _request.getRemotePort();
   }
 
-  public override String getRemoteUser()
+  public override string getRemoteUser()
   {
     return _request.getRemoteUser();
   }
@@ -193,7 +193,7 @@ public class QuercusHttpServletRequestImpl implements QuercusHttpServletRequest
     return _request.isSecure();
   }
 
-  public override String getProtocol()
+  public override string getProtocol()
   {
     return _request.getProtocol();
   }
@@ -203,32 +203,32 @@ public class QuercusHttpServletRequestImpl implements QuercusHttpServletRequest
     return _request.getAttribute(name);
   }
 
-  public override String getIncludeRequestUri()
+  public override string getIncludeRequestUri()
   {
     return (String) _request.getAttribute(RequestDispatcher.INCLUDE_REQUEST_URI);
   }
 
-  public override String getForwardRequestUri()
+  public override string getForwardRequestUri()
   {
     return (String) _request.getAttribute(RequestDispatcher.FORWARD_REQUEST_URI);
   }
 
-  public override String getIncludeContextPath()
+  public override string getIncludeContextPath()
   {
     return (String) _request.getAttribute(RequestDispatcher.INCLUDE_CONTEXT_PATH);
   }
 
-  public override String getIncludeServletPath()
+  public override string getIncludeServletPath()
   {
     return (String) _request.getAttribute(RequestDispatcher.INCLUDE_SERVLET_PATH);
   }
 
-  public override String getIncludePathInfo()
+  public override string getIncludePathInfo()
   {
     return (String) _request.getAttribute(RequestDispatcher.INCLUDE_PATH_INFO);
   }
 
-  public override String getIncludeQueryString()
+  public override string getIncludeQueryString()
   {
     return (String) _request.getAttribute(RequestDispatcher.INCLUDE_QUERY_STRING);
   }

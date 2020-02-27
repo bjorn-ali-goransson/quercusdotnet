@@ -78,7 +78,7 @@ public class JMSQueue
     _connection.start();
   }
 
-  public static Value __construct(Env env, @Optional String queueName)
+  public static Value __construct(Env env, @Optional string queueName)
   {
     JMSQueue queue = JMSModule.message_get_queue(env, queueName, null);
 
@@ -195,7 +195,7 @@ public class JMSQueue
       ArrayValue array = new ArrayValueImpl();
 
       while (mapNames.hasMoreElements()) {
-        String name = mapNames.nextElement().toString();
+        string name = mapNames.nextElement().toString();
 
         Object object = mapMessage.getObject(name);
 

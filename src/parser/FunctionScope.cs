@@ -107,15 +107,15 @@ public class FunctionScope extends Scope {
    * Adds a class
    */
   public InterpretedClassDef addClass(Location location,
-                                      String name,
-                                      String parentName,
+                                      string name,
+                                      string parentName,
                                       ArrayList<String> ifaceList,
                                       int index,
                                       boolean isTop)
   {
     InterpretedClassDef existingClass = _classMap.get(name);
 
-    String []ifaces = new String[ifaceList.size()];
+    string []ifaces = new String[ifaceList.size()];
     ifaceList.toArray(ifaces);
 
     InterpretedClassDef cl

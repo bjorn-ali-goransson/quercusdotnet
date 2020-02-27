@@ -73,7 +73,7 @@ public class BinaryEqExpr extends AbstractBinaryExpr
     return lValue.eq(rValue);
   }
 
-  public String toString()
+  public string toString()
   {
     return "(" + _left + " == " + _right + ")";
   }

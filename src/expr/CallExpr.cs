@@ -101,7 +101,7 @@ public class CallExpr extends Expr {
   /**
    * Returns the location if known.
    */
-  public String getFunctionLocation()
+  public string getFunctionLocation()
   {
     return " [" + _name + "]";
   }
@@ -247,7 +247,7 @@ public class CallExpr extends Expr {
     return fun.evalArguments(env, this, _args);
   }
 
-  public String toString()
+  public string toString()
   {
     return _name + "()";
   }

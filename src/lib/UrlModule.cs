@@ -125,7 +125,7 @@ public class UrlModule
   /**
    * Encodes base64
    */
-  public static String base64_encode(StringValue s)
+  public static string base64_encode(StringValue s)
   {
     CharBuffer cb = new CharBuffer();
 
@@ -183,7 +183,7 @@ public class UrlModule
    * Connects to the given URL using a HEAD request to retreive
    * the headers sent in the response.
    */
-  public static Value get_headers(Env env, String urlString,
+  public static Value get_headers(Env env, string urlString,
                                   @Optional Value format)
   {
     Socket socket = null;
@@ -336,13 +336,13 @@ public class UrlModule
       BinaryInput input = (BinaryInput) stream;
 
       while (! input.isEOF()) {
-        String tag = getNextTag(input);
+        string tag = getNextTag(input);
 
         if (tag.equalsIgnoreCase("meta")) {
-          String name = null;
-          String content = null;
+          string name = null;
+          string content = null;
 
-          String [] attr;
+          string [] attr;
 
           while ((attr = getNextAttribute(input)) != null) {
             if (name == null && attr[0].equalsIgnoreCase("name")) {
@@ -471,8 +471,8 @@ public class UrlModule
    * Creates a http string.
    */
   /*
-  public String http_build_query(Value value,
-                                 @Optional String prefix)
+  public string http_build_query(Value value,
+                                 @Optional string prefix)
   {
     StringBuilder sb = new StringBuilder();
 
@@ -484,7 +484,7 @@ public class UrlModule
         Value keyValue = entry.getKey();
         Value v = entry.getValue();
 
-        String key;
+        string key;
 
         if (keyValue.isLongConvertible())
           key = prefix + keyValue;
@@ -513,14 +513,14 @@ public class UrlModule
    */
   /*
   private void http_build_query(StringBuilder sb,
-                                String prefix,
+                                string prefix,
                                 ArrayValue array)
   {
     for (Map.Entry<Value,Value> entry : array.entrySet()) {
       Value keyValue = entry.getKey();
       Value v = entry.getValue();
 
-      String key = prefix + '[' + keyValue + ']';
+      string key = prefix + '[' + keyValue + ']';
 
       if (v instanceof ArrayValue)
         http_build_query(sb, key, (ArrayValue) v);
@@ -770,7 +770,7 @@ public class UrlModule
   /**
    * Returns the decoded string.
    */
-  public static String rawurldecode(String s)
+  public static string rawurldecode(String s)
   {
     if (s == null)
       return "";
@@ -822,7 +822,7 @@ public class UrlModule
   /**
    * Encodes the url
    */
-  public static String rawurlencode(String str)
+  public static string rawurlencode(String str)
   {
     if (str == null)
       return "";
@@ -895,7 +895,7 @@ public class UrlModule
   /**
    * Returns the decoded string.
    */
-  public static String urldecode(String s)
+  public static string urldecode(String s)
   {
     if (s == null)
       return "";
@@ -946,7 +946,7 @@ public class UrlModule
     return sb.toString();
   }
 
-  private static String getNextTag(BinaryInput input)
+  private static string getNextTag(BinaryInput input)
     
   {
     StringBuilder tag = new StringBuilder();
@@ -971,7 +971,7 @@ public class UrlModule
    * Finds the next attribute in the stream and return the key and value
    * as an array.
    */
-  private static String [] getNextAttribute(BinaryInput input)
+  private static string [] getNextAttribute(BinaryInput input)
     
   {
     int ch;

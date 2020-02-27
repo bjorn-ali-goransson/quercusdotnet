@@ -58,7 +58,7 @@ abstract public class JavaInvoker
   private final ModuleContext _moduleContext;
   private final JavaClassDef _classDef;
 
-  private final String _name;
+  private final string _name;
   protected final Method _method;
   private final Class<?> [] _param;
   private final Class<?> _retType;
@@ -88,7 +88,7 @@ abstract public class JavaInvoker
   public JavaInvoker(ModuleContext moduleContext,
                      JavaClassDef classDef,
                      Method method,
-                     String name,
+                     string name,
                      Class<?> []param,
                      Annotation [][]paramAnn,
                      Annotation []methodAnn,
@@ -127,7 +127,7 @@ abstract public class JavaInvoker
     // init();
   }
 
-  public static String getFunctionName(Method method)
+  public static string getFunctionName(Method method)
   {
     Name nameAnn = method.getAnnotation(Name.class);
 
@@ -467,7 +467,7 @@ abstract public class JavaInvoker
     return _unmarshalReturn.isDouble();
   }
 
-  public String getName()
+  public string getName()
   {
     return _name;
   }
@@ -680,7 +680,7 @@ abstract public class JavaInvoker
 
     // php/0k45
     if (qThis != null && isConstructor()) {
-      String parentName = qThis.getQuercusClass().getParentName();
+      string parentName = qThis.getQuercusClass().getParentName();
 
       if (parentName != null) {
         ClassDef classDef = getDeclaringClass();
@@ -736,7 +736,7 @@ abstract public class JavaInvoker
       obj = qThis != null ? qThis.toJavaObject() : null;
     }
 
-    String warnMessage = null;
+    string warnMessage = null;
     for (int i = 0; i < _marshalArgs.length; i++) {
       if (i < args.length && args[i] != null)
         javaArgs[k] = _marshalArgs[i].marshal(env, args[i], _param[k]);

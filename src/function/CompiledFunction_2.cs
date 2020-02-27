@@ -98,7 +98,7 @@ abstract public class CompiledFunction_2 extends CompiledFunction {
     return call(env, a0, _args[1].eval(env));
   }
 
-  public String toString()
+  public string toString()
   {
     return "CompiledFunction_1[" + _name + "]";
   }

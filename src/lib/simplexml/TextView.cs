@@ -53,12 +53,12 @@ public class TextView extends SimpleView
   }
 
   @Override
-  public String getNodeName()
+  public string getNodeName()
   {
     return "#text";
   }
 
-  public override String getNodeValue()
+  public override string getNodeValue()
   {
     return _node.getTextContent();
   }
@@ -83,7 +83,7 @@ public class TextView extends SimpleView
     throw new UnsupportedOperationException();
   }
 
-  public override String toString(Env env)
+  public override string toString(Env env)
   {
     return _node.getTextContent();
   }
@@ -107,7 +107,7 @@ public class TextView extends SimpleView
     return value;
   }
 
-  public override String toString()
+  public override string toString()
   {
     return getClass().getSimpleName() + "[" + _node + "]";
   }

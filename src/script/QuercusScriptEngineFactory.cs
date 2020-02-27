@@ -48,7 +48,7 @@ public class QuercusScriptEngineFactory implements ScriptEngineFactory
   /**
    * Returns the full name of the ScriptEngine.
    */
-  public String getEngineName()
+  public string getEngineName()
   {
     return "Caucho Quercus Script Engine";
   }
@@ -56,7 +56,7 @@ public class QuercusScriptEngineFactory implements ScriptEngineFactory
   /**
    * Returns the version of the ScriptEngine.
    */
-  public String getEngineVersion()
+  public string getEngineVersion()
   {
     try {
       Class<?> cl = Class.forName("com.caucho.Version");
@@ -104,7 +104,7 @@ public class QuercusScriptEngineFactory implements ScriptEngineFactory
   /**
    * Returns the name of the supported language.
    */
-  public String getLanguageName()
+  public string getLanguageName()
   {
     return "php";
   }
@@ -112,7 +112,7 @@ public class QuercusScriptEngineFactory implements ScriptEngineFactory
   /**
    * Returns the version of the scripting language.
    */
-  public String getLanguageVersion()
+  public string getLanguageVersion()
   {
     return "5.4.0";
   }
@@ -146,7 +146,7 @@ public class QuercusScriptEngineFactory implements ScriptEngineFactory
   /**
    * Returns a string which could invoke a method of a Java object.
    */
-  public String getMethodCallSyntax(String obj, String m, String []args)
+  public string getMethodCallSyntax(String obj, string m, string []args)
   {
     StringBuilder sb = new StringBuilder();
 
@@ -170,7 +170,7 @@ public class QuercusScriptEngineFactory implements ScriptEngineFactory
   /**
    * Returns a string which generates an output statement.
    */
-  public String getOutputStatement(String toDisplay)
+  public string getOutputStatement(String toDisplay)
   {
     return "echo(\'" + toDisplay.replace("\'", "\\\'") + "\');";
   }
@@ -178,7 +178,7 @@ public class QuercusScriptEngineFactory implements ScriptEngineFactory
   /**
    * Returns a string which generates a valid program.
    */
-  public String getProgram(String []statements)
+  public string getProgram(String []statements)
   {
     StringBuilder sb = new StringBuilder();
 
@@ -202,7 +202,7 @@ public class QuercusScriptEngineFactory implements ScriptEngineFactory
     return new QuercusScriptEngine(this);
   }
 
-  public String toString()
+  public string toString()
   {
     return getClass().getSimpleName() + "[]";
   }

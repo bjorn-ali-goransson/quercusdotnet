@@ -47,7 +47,7 @@ public class DOMStringList
     return _delegate.getLength();
   }
 
-  public String item(int index)
+  public string item(int index)
   {
     return _delegate.item(index);
   }

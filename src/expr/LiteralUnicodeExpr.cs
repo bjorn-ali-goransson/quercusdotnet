@@ -74,7 +74,7 @@ public class LiteralUnicodeExpr extends Expr {
     return _value;
   }
 
-  public String toString()
+  public string toString()
   {
     return "\"" + _value + "\"";
   }

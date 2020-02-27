@@ -71,7 +71,7 @@ public class ClassStaticStatement
       Value qThis = env.getThis();
 
       QuercusClass qClass = qThis.getQuercusClass();
-      String className = qClass.getName();
+      string className = qClass.getName();
 
       // Var var = qClass.getStaticFieldVar(env, env.createString(staticName));
       // Var var = qClass.getStaticFieldVar(env, staticName);

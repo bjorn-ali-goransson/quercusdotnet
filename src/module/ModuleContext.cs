@@ -112,7 +112,7 @@ public class ModuleContext
     _marshalFactory = new MarshalFactory(this);
     _exprFactory = new ExprFactory();
 
-    String []empty = new String[0];
+    string []empty = new String[0];
     _stdClassDef = new InterpretedClassDef("stdClass", null, empty, empty);
     _stdClass = new QuercusClass(this, _stdClassDef, null);
 
@@ -214,7 +214,7 @@ public class ModuleContext
   }
 
   public JavaClassDef addClass(String name, Class<?> type,
-                               String extension, Class<?> javaClassDefClass)
+                               string extension, Class<?> javaClassDefClass)
     
            InvocationTargetException,
            IllegalAccessException,
@@ -273,7 +273,7 @@ public class ModuleContext
   /**
    * Gets or creates a JavaClassDef for the given class name.
    */
-  public JavaClassDef getJavaClassDefinition(Class<?> type, String className)
+  public JavaClassDef getJavaClassDefinition(Class<?> type, string className)
   {
     JavaClassDef def;
 
@@ -366,7 +366,7 @@ public class ModuleContext
 
   protected JavaClassDef createDefaultJavaClassDef(String className,
                                                    Class type,
-                                                   String extension)
+                                                   string extension)
   {
     if (type.isArray())
       return new JavaArrayClassDef(this, className, type, extension);
@@ -444,7 +444,7 @@ public class ModuleContext
   /**
    * Adds a class to the extension's list of classes.
    */
-  public void addExtensionClass(String ext, String clsName)
+  public void addExtensionClass(String ext, string clsName)
   {
     HashSet<String> list = _extensionClasses.get(ext);
 
@@ -492,7 +492,7 @@ public class ModuleContext
     try {
       setContextClassLoader(_loader);
 
-      String quercusModule
+      string quercusModule
         = "META-INF/quercus/com.caucho.quercus.QuercusModule";
       Enumeration<URL> urls = _loader.getResources(quercusModule);
 
@@ -532,7 +532,7 @@ public class ModuleContext
            IllegalAccessException, InstantiationException
   {
     ClassLoader loader = Thread.currentThread().getContextClassLoader();
-    String line;
+    string line;
 
     while ((line = in.readLine()) != null) {
       int p = line.indexOf('#');
@@ -543,7 +543,7 @@ public class ModuleContext
       line = line.trim();
 
       if (line.length() > 0) {
-        String className = line;
+        string className = line;
 
         try {
           Class<?> cl;
@@ -645,7 +645,7 @@ public class ModuleContext
       synchronized (_staticFunctionMap) {
         for (Map.Entry<String, AbstractFunction> entry
                : info.getFunctions().entrySet()) {
-          String funName = entry.getKey();
+          string funName = entry.getKey();
           AbstractFunction fun = entry.getValue();
 
           _staticFunctionMap.put(funName, fun);
@@ -669,7 +669,7 @@ public class ModuleContext
     ClassLoader loader = thread.getContextClassLoader();
 
     try {
-      String quercusModule
+      string quercusModule
         = "META-INF/quercus/com.caucho.quercus.QuercusClass";
       Enumeration<URL> urls = loader.getResources(quercusModule);
 
@@ -719,7 +719,7 @@ public class ModuleContext
            ConfigException, NoSuchMethodException, InvocationTargetException
   {
     ClassLoader loader = Thread.currentThread().getContextClassLoader();
-    String line;
+    string line;
 
     while ((line = in.readLine()) != null) {
       int p = line.indexOf('#');
@@ -734,16 +734,16 @@ public class ModuleContext
 
       String[] args = line.split(" ");
 
-      String className = args[0];
+      string className = args[0];
 
       Class<?> cl;
 
       try {
         cl = Class.forName(className, false, loader);
 
-        String phpClassName = null;
-        String extension = null;
-        String definedBy = null;
+        string phpClassName = null;
+        string extension = null;
+        string definedBy = null;
 
         for (int i = 1; i < args.length; i++) {
           if ("as".equals(args[i])) {
@@ -816,7 +816,7 @@ public class ModuleContext
    * @param extension the extension provided by the class, or null
    * @param javaClassDefClass
    */
-  public void introspectJavaClass(String name, Class type, String extension,
+  public void introspectJavaClass(String name, Class type, string extension,
                                   Class javaClassDefClass)
     
            NoSuchMethodException, InvocationTargetException
@@ -842,7 +842,7 @@ public class ModuleContext
    */
   public void introspectJavaImplClass(String name,
                                       Class type,
-                                      String extension)
+                                      string extension)
     
   {
     if (log.isLoggable(Level.FINEST)) {
@@ -926,7 +926,7 @@ public class ModuleContext
   }
 
   @Override
-  public String toString()
+  public string toString()
   {
     return getClass().getSimpleName() + "[" + _loader + "]";
   }

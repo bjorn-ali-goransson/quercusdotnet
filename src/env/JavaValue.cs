@@ -90,7 +90,7 @@ public class JavaValue extends ObjectValue
   }
 
   @Override
-  public String getClassName()
+  public string getClassName()
   {
     return _classDef.getName();
   }
@@ -316,7 +316,7 @@ public class JavaValue extends ObjectValue
   /**
    * Returns the type.
    */
-  public override String getType()
+  public override string getType()
   {
     return "object";
   }
@@ -499,7 +499,7 @@ public class JavaValue extends ObjectValue
    */
   public override void serialize(Env env, StringBuilder sb, SerializeMap map)
   {
-    String name = _classDef.getSimpleName();
+    string name = _classDef.getSimpleName();
 
     Set<? extends Map.Entry<Value,Value>> entrySet = entrySet();
 
@@ -539,7 +539,7 @@ public class JavaValue extends ObjectValue
   /**
    * Converts to a string.
    */
-  public String toString()
+  public string toString()
   {
     if (_object != null) {
       return String.valueOf(_object);

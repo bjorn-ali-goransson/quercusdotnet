@@ -91,13 +91,13 @@ public class UrlRewriterCallback extends CallbackFunction {
    * Adds a rewrite variable.  Intended for
    * <code>output_add_rewrite_var()</code>.
    */
-  public void addRewriterVar(String var, String value)
+  public void addRewriterVar(String var, string value)
   {
     if (_rewriterQuery.length() > 0)
       _rewriterQuery.append("&");
 
-    String encodedVar = URLUtil.encodeURL(var.replace(' ', '+'));
-    String encodedValue = URLUtil.encodeURL(value.replace(' ', '+'));
+    string encodedVar = URLUtil.encodeURL(var.replace(' ', '+'));
+    string encodedValue = URLUtil.encodeURL(value.replace(' ', '+'));
 
     _rewriterQuery.append(encodedVar + "=" + encodedValue);
     _rewriterVars.add(new String[] {encodedVar, encodedValue});
@@ -146,16 +146,16 @@ public class UrlRewriterCallback extends CallbackFunction {
     private Env _env;
 
     private boolean _includeSessionInfo = false;
-    private String _sessionName = null;
-    private String _sessionId = null;
-    private String _javaSessionName = null;
-    private String _javaSessionId = null;
+    private string _sessionName = null;
+    private string _sessionId = null;
+    private string _javaSessionName = null;
+    private string _javaSessionId = null;
 
     private int _index;
-    private String _value;
+    private string _value;
     private boolean _quoted;
 
-    private String _input;
+    private string _input;
     private StringValue _output;
 
     public Parser(String input, Env env)
@@ -183,12 +183,12 @@ public class UrlRewriterCallback extends CallbackFunction {
       if (_includeSessionInfo == false && _rewriterVars.isEmpty())
         return NullValue.NULL;
 
-      String [] tagPairs =
+      string [] tagPairs =
         _env.getIni("url_rewriter.tags").toString().split(",");
       HashMap<String,String> tags = new HashMap<String,String>();
 
       for (String tagPair : tagPairs) {
-        String [] tagAttribute = tagPair.split("=");
+        string [] tagAttribute = tagPair.split("=");
 
         switch (tagAttribute.length) {
           case 1:
@@ -206,13 +206,13 @@ public class UrlRewriterCallback extends CallbackFunction {
 
       for (String tag = getNextTag(); tag != null; tag = getNextTag()) {
         if (tags.containsKey(tag)) {
-          String attribute = tags.get(tag);
+          string attribute = tags.get(tag);
 
           if (attribute == null) {
             consumeToEndOfTag();
 
             if (_includeSessionInfo) {
-              String phpSessionInputTag =
+              string phpSessionInputTag =
                 "<input type=\"hidden\" name=\"" + _sessionName + "\""
                     + " value=\"" + _sessionId + "\" />";
 
@@ -220,7 +220,7 @@ public class UrlRewriterCallback extends CallbackFunction {
             }
 
             for (String[] entry : _rewriterVars) {
-              String inputTag =
+              string inputTag =
                 "<input type=\"hidden\" name=\"" + entry[0] + "\""
                     + " value=\"" + entry[1] + "\" />";
               _output.append(inputTag);
@@ -252,7 +252,7 @@ public class UrlRewriterCallback extends CallbackFunction {
     /**
      * Finds the next tag in the string returns it.
      */
-    private String getNextTag()
+    private string getNextTag()
     {
       int tagStart = _input.indexOf('<', _index);
 
@@ -296,7 +296,7 @@ public class UrlRewriterCallback extends CallbackFunction {
       if (_index == attributeStart)
         return -1;
 
-      String foundAttribute = _input.substring(attributeStart, _index);
+      string foundAttribute = _input.substring(attributeStart, _index);
 
       consumeWhiteSpace();
 
@@ -401,7 +401,7 @@ public class UrlRewriterCallback extends CallbackFunction {
           || (ch == '-') || (ch == '.') || (ch == '_') || (ch == ':');
     }
 
-    private String rewriteUrl(String urlString)
+    private string rewriteUrl(String urlString)
     {
       // according to php documentation, it only adds tags to the
       // end of relative URLs, but according to RFC 2396, any

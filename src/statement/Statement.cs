@@ -51,7 +51,7 @@ abstract public class Statement {
   private final Location _location;
 
   private Statement _parent;
-  private String _loopLabel;
+  private string _loopLabel;
 
   protected Statement()
   {
@@ -141,8 +141,8 @@ abstract public class Statement {
     }
 
     if (!(rootCause instanceof QuercusExecutionException)) {
-      String rootCauseName = rootCause.getClass().getName();
-      String rootCauseMessage = rootCause.getMessage();
+      string rootCauseName = rootCause.getClass().getName();
+      string rootCauseMessage = rootCause.getMessage();
 
       StringBuilder quercusExMessage = new StringBuilder();
 
@@ -193,9 +193,9 @@ abstract public class Statement {
       }
     }
 
-    String className = _location.getClassName();
-    String functionName = _location.getFunctionName();
-    String fileName = _location.getFileName();
+    string className = _location.getClassName();
+    string functionName = _location.getFunctionName();
+    string fileName = _location.getFileName();
     int lineNumber = _location.getLineNumber();
 
     if (className == null)
@@ -235,7 +235,7 @@ abstract public class Statement {
     throw typedT;
   }
 
-  public String toString()
+  public string toString()
   {
     return getClass().getSimpleName() + "[]";
   }

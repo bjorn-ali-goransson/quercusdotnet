@@ -41,7 +41,7 @@ public class QuercusHttpSessionImpl implements QuercusHttpSession
   }
 
   @Override
-  public String getId()
+  public string getId()
   {
     return _session.getId();
   }

@@ -36,7 +36,7 @@ public class UnicodeUtility
 {
   public static StringValue utf8Clean(Env env,
                                       StringValue str,
-                                      String replacement,
+                                      string replacement,
                                       boolean isIgnore)
   {
     StringValue sb = str.createStringBuilder();
@@ -116,15 +116,15 @@ public class UnicodeUtility
 
   public static CharSequence decode(Env env,
                                     StringValue str,
-                                    String charset)
+                                    string charset)
   {
     return decode(env, str, charset, null, false);
   }
 
   public static CharSequence decode(Env env,
                                     StringValue str,
-                                    String charset,
-                                    String replacement,
+                                    string charset,
+                                    string replacement,
                                     boolean isIgnoreErrors)
   {
     Decoder decoder = Decoder.create(charset);
@@ -137,15 +137,15 @@ public class UnicodeUtility
 
   public static StringValue encode(Env env,
                                    CharSequence str,
-                                   String charset)
+                                   string charset)
   {
     return encode(env, str, charset, null, false);
   }
 
   public static StringValue encode(Env env,
                                    CharSequence str,
-                                   String charset,
-                                   String replacement,
+                                   string charset,
+                                   string replacement,
                                    boolean isIgnoreErrors)
   {
     Encoder encoder = Encoder.create(charset);
@@ -159,9 +159,9 @@ public class UnicodeUtility
 
   public static StringValue decodeEncode(Env env,
                                          StringValue str,
-                                         String inCharset,
-                                         String outCharset,
-                                         String replacement,
+                                         string inCharset,
+                                         string outCharset,
+                                         string replacement,
                                          boolean isIgnoreErrors)
   {
     boolean isStartUtf8 = false;

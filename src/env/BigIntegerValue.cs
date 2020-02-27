@@ -99,7 +99,7 @@ public class BigIntegerValue extends JavaValue {
     return true;
   }
   
-  public String toString()
+  public string toString()
   {
     return "BigInteger[" + _val.toString() + "]";
   }

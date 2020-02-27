@@ -355,7 +355,7 @@ public class JavaOverloadMethod extends AbstractJavaMethod {
     */
   }
 
-  public override String getName()
+  public override string getName()
   {
     AbstractJavaMethod method;
 
@@ -367,7 +367,7 @@ public class JavaOverloadMethod extends AbstractJavaMethod {
     return "unknown";
   }
 
-  public String toString()
+  public string toString()
   {
     return getClass().getSimpleName() + "[" + getName() + "]";
   }

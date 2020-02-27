@@ -66,7 +66,7 @@ public class InterpretedClosure extends Closure
   }
 
   @Override
-  public String getDeclFileName(Env env)
+  public string getDeclFileName(Env env)
   {
     return _fun.getDeclFileName(env);
   }
@@ -81,7 +81,7 @@ public class InterpretedClosure extends Closure
     return _fun.getDeclEndLine(env);
   }
 
-  public override String getDeclComment(Env env)
+  public override string getDeclComment(Env env)
   {
     return _fun.getDeclComment(env);
   }

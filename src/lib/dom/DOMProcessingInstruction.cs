@@ -38,7 +38,7 @@ public class DOMProcessingInstruction
   extends DOMNode<ProcessingInstruction>
 {
   public static DOMProcessingInstruction __construct(
-      Env env, String name, @Optional String data)
+      Env env, string name, @Optional string data)
   {
     DOMProcessingInstruction pi = getImpl(env)
         .createProcessingInstruction(name);
@@ -55,12 +55,12 @@ public class DOMProcessingInstruction
     super(impl, delegate);
   }
 
-  public String getData()
+  public string getData()
   {
     return _delegate.getData();
   }
 
-  public String getTarget()
+  public string getTarget()
   {
     return _delegate.getTarget();
   }

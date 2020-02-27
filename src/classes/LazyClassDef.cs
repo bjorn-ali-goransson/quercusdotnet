@@ -51,15 +51,15 @@
  */
 public class LazyClassDef extends CompiledClassDef
 {
-  private final String _name;
+  private final string _name;
   private final Class<?> _pageClass;
-  private final String _className;
+  private final string _className;
 
   private CompiledClassDef _def;
 
   public LazyClassDef(String name,
                       Class<?> pageClass,
-                      String className)
+                      string className)
   {
     super(name, null, null);
 
@@ -93,7 +93,7 @@ public class LazyClassDef extends CompiledClassDef
     try {
       ClassLoader loader = _pageClass.getClassLoader();
 
-      String className = _pageClass.getName() + "$" + _className;
+      string className = _pageClass.getName() + "$" + _className;
 
       Class<?> cl = Class.forName(className, false, loader);
 
@@ -109,7 +109,7 @@ public class LazyClassDef extends CompiledClassDef
    * Returns the name.
    */
   @Override
-  public String getName()
+  public string getName()
   {
     return getClassDef().getName();
   }
@@ -118,7 +118,7 @@ public class LazyClassDef extends CompiledClassDef
    * Returns the parent name.
    */
   @Override
-  public String getParentName()
+  public string getParentName()
   {
     return getClassDef().getParentName();
   }
@@ -127,7 +127,7 @@ public class LazyClassDef extends CompiledClassDef
    * Returns the name of the extension that this class is part of.
    */
   @Override
-  public String getExtension()
+  public string getExtension()
   {
     return getClassDef().getExtension();
   }
@@ -142,7 +142,7 @@ public class LazyClassDef extends CompiledClassDef
    * Returns the interfaces.
    */
   @Override
-  public String []getInterfaces()
+  public string []getInterfaces()
   {
     return getClassDef().getInterfaces();
   }
@@ -151,7 +151,7 @@ public class LazyClassDef extends CompiledClassDef
    * Returns the interfaces.
    */
   @Override
-  public String []getTraits()
+  public string []getTraits()
   {
     return getClassDef().getTraits();
   }
@@ -187,7 +187,7 @@ public class LazyClassDef extends CompiledClassDef
    * Returns the documentation for this class.
    */
   @Override
-  public String getComment()
+  public string getComment()
   {
     return getClassDef().getComment();
   }
@@ -196,7 +196,7 @@ public class LazyClassDef extends CompiledClassDef
    * Returns the comment for the specified field.
    */
   @Override
-  public String getFieldComment(StringValue name)
+  public string getFieldComment(StringValue name)
   {
     return getClassDef().getFieldComment(name);
   }
@@ -205,7 +205,7 @@ public class LazyClassDef extends CompiledClassDef
    * Returns the comment for the specified static field.
    */
   @Override
-  public String getStaticFieldComment(StringValue name)
+  public string getStaticFieldComment(StringValue name)
   {
     return getClassDef().getStaticFieldComment(name);
   }
@@ -223,7 +223,7 @@ public class LazyClassDef extends CompiledClassDef
    * Initialize the quercus class methods.
    */
   @Override
-  public void initClassMethods(QuercusClass cl, String bindingClassName)
+  public void initClassMethods(QuercusClass cl, string bindingClassName)
   {
     getClassDef().initClassMethods(cl, bindingClassName);
   }
@@ -232,7 +232,7 @@ public class LazyClassDef extends CompiledClassDef
    * Initialize the quercus class fields.
    */
   @Override
-  public void initClassFields(QuercusClass cl, String bindingClassName)
+  public void initClassFields(QuercusClass cl, string bindingClassName)
   {
     getClassDef().initClassFields(cl, bindingClassName);
   }
@@ -268,7 +268,7 @@ public class LazyClassDef extends CompiledClassDef
    * Returns value for instanceof.
    */
   @Override
-  public boolean isA(Env env, String name)
+  public boolean isA(Env env, string name)
   {
     return getClassDef().isA(env, name);
   }
@@ -326,7 +326,7 @@ public class LazyClassDef extends CompiledClassDef
   }
 
   @Override
-  public String toString()
+  public string toString()
   {
     return getClass().getSimpleName()
            + "@"

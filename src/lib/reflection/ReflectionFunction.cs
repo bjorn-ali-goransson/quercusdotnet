@@ -74,7 +74,7 @@ public class ReflectionFunction extends ReflectionFunctionAbstract
   }
 
   public Value export(Env env,
-                      String name,
+                      string name,
                       @Optional boolean isReturn)
   {
     return null;
@@ -91,7 +91,7 @@ public class ReflectionFunction extends ReflectionFunctionAbstract
   }
 
   @Override
-  public String toString()
+  public string toString()
   {
     return getClass().getSimpleName() + "[" + getName() + "]";
   }

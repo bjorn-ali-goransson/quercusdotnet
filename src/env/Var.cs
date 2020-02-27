@@ -129,7 +129,7 @@ public class Var extends Value
   /**
    * Returns the type.
    */
-  public override String getType()
+  public override string getType()
   {
     return _value.getType();
   }
@@ -145,7 +145,7 @@ public class Var extends Value
   /**
    * Returns the type of the resource.
    */
-  public override String getResourceType()
+  public override string getResourceType()
   {
     return _value.getResourceType();
   }
@@ -161,7 +161,7 @@ public class Var extends Value
   /**
    * Returns the class name.
    */
-  public override String getClassName()
+  public override string getClassName()
   {
     return _value.getClassName();
   }
@@ -195,7 +195,7 @@ public class Var extends Value
   /**
    * Returns true for an implementation of a class
    */
-  public override boolean isA(Env env, String name)
+  public override boolean isA(Env env, string name)
   {
     return _value.isA(env, name);
   }
@@ -334,7 +334,7 @@ public class Var extends Value
   // Conversions
   //
 
-  public override String toString()
+  public override string toString()
   {
     return _value.toString();
   }
@@ -453,9 +453,9 @@ public class Var extends Value
   }
 
   /**
-   * Converts to a java String object.
+   * Converts to a java string object.
    */
-  public override String toJavaString()
+  public override string toJavaString()
   {
     if (_value.isObject())
       return toString(Env.getInstance()).toString();

@@ -91,7 +91,7 @@ public class PDO implements EnvCleanup {
   public static final int CURSOR_FWDONLY = 0;
   public static final int CURSOR_SCROLL = 1;
 
-  public static final String ERR_NONE = "00000";
+  public static final string ERR_NONE = "00000";
 
   public static final int ERRMODE_SILENT = 0;
   public static final int ERRMODE_WARNING = 1;
@@ -147,7 +147,7 @@ public class PDO implements EnvCleanup {
 
   public static final int PARAM_INPUT_OUTPUT = 0x80000000;
 
-  private final String _dsn;
+  private final string _dsn;
 
   private JdbcConnectionResource _conn;
 
@@ -158,19 +158,19 @@ public class PDO implements EnvCleanup {
 
   private boolean _inTransaction;
 
-  private String _statementClassName;
+  private string _statementClassName;
   private Value[] _statementClassArgs;
 
   private boolean _isEmulatePrepares;
 
-  private String _initQuery;
+  private string _initQuery;
 
   private int _columnCase = JdbcResultResource.COLUMN_CASE_NATURAL;
 
   public PDO(Env env,
-             String dsn,
-             @Optional String user,
-             @Optional String pass,
+             string dsn,
+             @Optional string user,
+             @Optional string pass,
              @Optional @ReadOnly ArrayValue options)
   {
     _dsn = dsn;
@@ -285,7 +285,7 @@ public class PDO implements EnvCleanup {
     }
   }
 
-  public String errorCode()
+  public string errorCode()
   {
     return _error.getErrorCode();
   }
@@ -303,7 +303,7 @@ public class PDO implements EnvCleanup {
   /**
    * Executes a statement, returning the number of rows.
    */
-  public Value exec(Env env, String query)
+  public Value exec(Env env, string query)
   {
     _error.clear();
 
@@ -346,14 +346,14 @@ public class PDO implements EnvCleanup {
       }
       case ATTR_CLIENT_VERSION:
       {
-        String clientVersion = getConnection().getClientInfo(env);
+        string clientVersion = getConnection().getClientInfo(env);
 
         return env.createString(clientVersion);
       }
       case ATTR_CONNECTION_STATUS:
       {
         try {
-          String hostInfo = getConnection().getHostInfo();
+          string hostInfo = getConnection().getHostInfo();
 
           return env.createString(hostInfo);
         }
@@ -365,7 +365,7 @@ public class PDO implements EnvCleanup {
       }
       case ATTR_DRIVER_NAME:
       {
-        String driverName = getConnection().getDriverName();
+        string driverName = getConnection().getDriverName();
 
         return env.createString(driverName);
       }
@@ -461,7 +461,7 @@ public class PDO implements EnvCleanup {
     }
 
     try {
-      String info = _conn.getServerInfo();
+      string info = _conn.getServerInfo();
 
       return env.createString(info);
     }
@@ -479,7 +479,7 @@ public class PDO implements EnvCleanup {
     return BooleanValue.FALSE;
   }
 
-  public String lastInsertId(Env env, @Optional Value nameV)
+  public string lastInsertId(Env env, @Optional Value nameV)
   {
     if (! nameV.isDefault()) {
       throw new UnimplementedException("lastInsertId with name");
@@ -490,7 +490,7 @@ public class PDO implements EnvCleanup {
     }
 
     try {
-      String lastInsertId = _lastExecutedStatement.getStatement().lastInsertId(env);
+      string lastInsertId = _lastExecutedStatement.getStatement().lastInsertId(env);
 
       if (lastInsertId == null) {
         return "0";
@@ -508,7 +508,7 @@ public class PDO implements EnvCleanup {
    * Prepares a statement for execution.
    */
   public Value prepare(Env env,
-                       String query,
+                       string query,
                        @Optional ArrayValue driverOptions)
   {
     if (! isConnected()) {
@@ -545,7 +545,7 @@ public class PDO implements EnvCleanup {
    * Queries the database
    */
   public Value query(Env env,
-                     String query,
+                     string query,
                      @Optional int mode,
                      @Optional @ReadOnly Value[] args)
   {
@@ -588,7 +588,7 @@ public class PDO implements EnvCleanup {
   /**
    * Quotes the string
    */
-  public String quote(String query, @Optional int parameterType)
+  public string quote(String query, @Optional int parameterType)
   {
     return "'" + real_escape_string(query) + "'";
   }
@@ -596,7 +596,7 @@ public class PDO implements EnvCleanup {
   /**
    * Escapes the string.
    */
-  public String real_escape_string(String str)
+  public string real_escape_string(String str)
   {
     StringBuilder buf = new StringBuilder();
 
@@ -876,9 +876,9 @@ public class PDO implements EnvCleanup {
    * Opens a connection based on the dsn.
    */
   private JdbcConnectionResource getConnection(Env env,
-                                               String dsn,
-                                               String user,
-                                               String pass)
+                                               string dsn,
+                                               string user,
+                                               string pass)
     
   {
     if (dsn.startsWith("mysql:")) {
@@ -911,20 +911,20 @@ public class PDO implements EnvCleanup {
    * Opens a mysql connection based on the dsn.
    */
   private JdbcConnectionResource getMysqlConnection(Env env,
-                                                    String dsn,
-                                                    String user,
-                                                    String pass)
+                                                    string dsn,
+                                                    string user,
+                                                    string pass)
     
   {
     HashMap<String,String> attrMap = parseAttr(dsn, dsn.indexOf(':'));
 
-    String host = "localhost";
+    string host = "localhost";
     int port = -1;
-    String dbName = null;
+    string dbName = null;
 
     for (Map.Entry<String,String> entry : attrMap.entrySet()) {
-      String key = entry.getKey();
-      String value = entry.getValue();
+      string key = entry.getKey();
+      string value = entry.getValue();
 
       if ("host".equals(key)) {
         host = value;
@@ -955,10 +955,10 @@ public class PDO implements EnvCleanup {
     // password override arguments
     // passed to constructor
 
-    String socket = null;
+    string socket = null;
     int flags = 0;
-    String driver = null;
-    String url = null;
+    string driver = null;
+    string url = null;
     boolean isNewLink = false;
 
     Mysqli mysqli =  new Mysqli(env, host, user, pass, dbName, port,
@@ -972,19 +972,19 @@ public class PDO implements EnvCleanup {
    * Opens a postgres connection based on the dsn.
    */
   private JdbcConnectionResource getPgsqlDataSource(Env env,
-                                                    String dsn,
-                                                    String user,
-                                                    String pass)
+                                                    string dsn,
+                                                    string user,
+                                                    string pass)
   {
     HashMap<String,String> attrMap = parseAttr(dsn, dsn.indexOf(':'));
 
-    String host = "localhost";
+    string host = "localhost";
     int port = 5432;
-    String dbName = null;
+    string dbName = null;
 
     for (Map.Entry<String,String> entry : attrMap.entrySet()) {
-      String key = entry.getKey();
-      String value = entry.getValue();
+      string key = entry.getKey();
+      string value = entry.getValue();
 
       if ("host".equals(key)) {
         host = value;
@@ -1010,8 +1010,8 @@ public class PDO implements EnvCleanup {
       }
     }
 
-    String driver = null;
-    String url = null;
+    string driver = null;
+    string url = null;
 
     Postgres postgres
       = new Postgres(env, host, user, pass, dbName, port, driver, url);
@@ -1022,11 +1022,11 @@ public class PDO implements EnvCleanup {
   /**
    * Opens a resin connection based on the dsn.
    */
-  private JdbcConnectionResource getResinDataSource(Env env, String dsn)
+  private JdbcConnectionResource getResinDataSource(Env env, string dsn)
   {
     try {
-      String driver = "com.caucho.db.jdbc.ConnectionPoolDataSourceImpl";
-      String url = "jdbc:" + dsn;
+      string driver = "com.caucho.db.jdbc.ConnectionPoolDataSourceImpl";
+      string url = "jdbc:" + dsn;
 
       DataSource ds = env.getDataSource(driver, url);
 
@@ -1043,9 +1043,9 @@ public class PDO implements EnvCleanup {
    * Opens a connection based on the dsn.
    */
   private JdbcConnectionResource getJndiDataSource(Env env,
-                                                   String dsn,
-                                                   String user,
-                                                   String pass)
+                                                   string dsn,
+                                                   string user,
+                                                   string pass)
   {
     DataSource ds = null;
 
@@ -1070,9 +1070,9 @@ public class PDO implements EnvCleanup {
    * Opens a connection based on the dsn.
    */
   private JdbcConnectionResource getJdbcDataSource(Env env,
-                                                   String dsn,
-                                                   String user,
-                                                   String pass)
+                                                   string dsn,
+                                                   string user,
+                                                   string pass)
   {
     JdbcDriverContext context = env.getQuercus().getJdbcDriverContext();
 
@@ -1087,13 +1087,13 @@ public class PDO implements EnvCleanup {
       return null;
     }
 
-    String protocol = dsn.substring(i + 5, j);
+    string protocol = dsn.substring(i + 5, j);
 
     if ("sqlite".equals(protocol)) {
       return new SQLite3(env, dsn);
     }
 
-    String driver = context.getDriver(protocol);
+    string driver = context.getDriver(protocol);
 
     if (driver == null) {
       return null;
@@ -1114,9 +1114,9 @@ public class PDO implements EnvCleanup {
   /**
    * Opens a resin connection based on the dsn.
    */
-  private JdbcConnectionResource getSqliteDataSource(Env env, String dsn)
+  private JdbcConnectionResource getSqliteDataSource(Env env, string dsn)
   {
-    String jdbcUrl = "jdbc:" + dsn;
+    string jdbcUrl = "jdbc:" + dsn;
 
     return new SQLite3(env, jdbcUrl);
   }
@@ -1141,7 +1141,7 @@ public class PDO implements EnvCleanup {
         sb.append(ch);
       }
 
-      String name = sb.toString();
+      string name = sb.toString();
       sb.setLength(0);
 
       for (; i < length && ((ch = dsn.charAt(i)) == ' ' || ch == '='); i++) {
@@ -1151,7 +1151,7 @@ public class PDO implements EnvCleanup {
         sb.append(ch);
       }
 
-      String value = sb.toString();
+      string value = sb.toString();
       sb.setLength(0);
 
       attr.put(name, value);
@@ -1160,7 +1160,7 @@ public class PDO implements EnvCleanup {
     return attr;
   }
 
-  public String toString()
+  public string toString()
   {
     // do not show password!
     if (_dsn == null)
@@ -1187,8 +1187,8 @@ public class PDO implements EnvCleanup {
     boolean first = true;
 
     for (Map.Entry<String,String> entry : attr.entrySet()) {
-      String key = entry.getKey();
-      String value = entry.getValue();
+      string key = entry.getKey();
+      string value = entry.getValue();
 
       if ("password".equalsIgnoreCase(key))
         value = "XXXXX";

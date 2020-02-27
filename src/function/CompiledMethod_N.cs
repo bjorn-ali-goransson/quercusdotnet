@@ -101,7 +101,7 @@ abstract public class CompiledMethod_N extends CompiledMethod {
   abstract public Value callMethodImpl(Env env, QuercusClass qClass, Value qThis,
                                        Value []args);
 
-  public String toString()
+  public string toString()
   {
     return "CompiledMethod_N[" + _name + "]";
   }
