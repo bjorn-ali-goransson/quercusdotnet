@@ -36,7 +36,7 @@
 /**
  * Key for caching function definitions
  */
-public final class DefinitionKey {
+public class DefinitionKey {
   // crc of the current definition
   private final long _crc;
 

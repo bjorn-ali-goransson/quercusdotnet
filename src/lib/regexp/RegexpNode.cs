@@ -804,7 +804,7 @@ class RegexpNode {
     }
   }
 
-  final static class Concat extends RegexpNode {
+ static class Concat extends RegexpNode {
     private final RegexpNode _head;
     private RegexpNode _next;
 
@@ -1966,7 +1966,7 @@ class RegexpNode {
     }
   }
 
-  final static class Or extends RegexpNode {
+ static class Or extends RegexpNode {
     private final RegexpNode _left;
     private Or _right;
 
@@ -2803,7 +2803,7 @@ class RegexpNode {
     }
   }
 
-  static final class StringNode extends RegexpNode {
+  static class StringNode extends RegexpNode {
     private final char []_buffer;
     private final int _length;
 

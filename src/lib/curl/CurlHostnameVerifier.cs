@@ -35,7 +35,7 @@
 
 
 
-public final class CurlHostnameVerifier
+public class CurlHostnameVerifier
   implements HostnameVerifier
 {
   private boolean _isVerifySSLPeer;

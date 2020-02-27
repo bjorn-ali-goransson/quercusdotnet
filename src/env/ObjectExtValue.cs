@@ -1452,7 +1452,7 @@ public class ObjectExtValue extends ObjectValue
     }
   }
 
-  public final static class Entry
+  publicstatic class Entry
     implements Map.Entry<Value,Value>,
                Comparable<Map.Entry<Value, Value>>
   {

@@ -40,7 +40,7 @@
 /**
  * Case-insensitive method mapping
  */
-public final class MethodMap<V>
+public class MethodMap<V>
 {
   private static final L10N L = new L10N(MethodMap.class);
 
@@ -267,7 +267,7 @@ public final class MethodMap<V>
     _prime = newPrime;
   }
 
-  final static class Entry<V> {
+ static class Entry<V> {
     private final StringValue _key;
     private V _value;
 
@@ -316,7 +316,7 @@ public final class MethodMap<V>
     }
   }
 
-  final static class ValueIterator<V> implements Iterable<V>, Iterator<V>
+ static class ValueIterator<V> implements Iterable<V>, Iterator<V>
   {
     Entry<V> _next;
 

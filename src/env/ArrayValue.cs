@@ -1599,7 +1599,7 @@ abstract public class ArrayValue extends Value {
     entry.printRImpl(env, out, depth, valueSet);
   }
 
-  public static final class Entry
+  public static class Entry
     implements Map.Entry<Value,Value>, Serializable
   {
     private final Value _key;

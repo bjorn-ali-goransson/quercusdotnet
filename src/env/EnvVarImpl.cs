@@ -33,7 +33,7 @@
  * Encapsulates an environment entry for a variable.  The EnvVar is a
  * container for Vars.
  */
-public final class EnvVarImpl extends EnvVar
+public class EnvVarImpl extends EnvVar
 {
   private Var _var;
 

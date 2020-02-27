@@ -34,7 +34,7 @@
 /**
  * Case-insensitive method mapping
  */
-public final class MethodIntern
+public class MethodIntern
 {
   private static final ConcurrentHashMap<String,StringValue> _internMap
     = new ConcurrentHashMap<String,StringValue>();

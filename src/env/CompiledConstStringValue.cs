@@ -35,7 +35,7 @@
  * Represents a StringValue that is never modified.
  * For compiled code.
  */
-public final class CompiledConstStringValue
+public class CompiledConstStringValue
   extends ConstStringValue
 {
   private final int _compiledHashCode;

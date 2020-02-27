@@ -39,7 +39,7 @@
 
 
 
-public final class UnserializeReader {
+public class UnserializeReader {
   private static final L10N L = new L10N(UnserializeReader.class);
   private static final Logger log
     = Logger.getLogger(UnserializeReader.class.getName());
@@ -831,7 +831,7 @@ public final class UnserializeReader {
     _index--;
   }
 
-  public final static class StringKey
+  publicstatic class StringKey
   {
     char []_buffer;
     int _offset;

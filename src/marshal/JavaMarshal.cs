@@ -113,7 +113,7 @@ public class JavaMarshal extends Marshal {
       return Marshal.FOUR;
   }
 
-  public override final Class getExpectedClass()
+  public override class getExpectedClass()
   {
     return _def.getType();
   }

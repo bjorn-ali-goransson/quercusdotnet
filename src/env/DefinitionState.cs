@@ -47,7 +47,7 @@
  * Represents the state of the definitions: functions, classes and
  * constants.
  */
-public final class DefinitionState {
+public class DefinitionState {
   private static final L10N L = new L10N(DefinitionState.class);
 
   private final QuercusContext _quercus;

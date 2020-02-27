@@ -33,7 +33,7 @@
 /*
  * Holds reference indexes for serialization.
  */
-public final class SerializeMap {
+public class SerializeMap {
   private IdentityHashMap<Value, Integer> _varMap
     = new IdentityHashMap<Value, Integer>();
   

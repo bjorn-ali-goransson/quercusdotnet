@@ -2447,7 +2447,7 @@ public class RegexpModule
     }
   }
 
-  static final class RegexpCacheItem {
+  static class RegexpCacheItem {
     private final StringValue _pattern;
 
     private Regexp _regexp;
