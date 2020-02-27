@@ -65,7 +65,7 @@ public class QuercusParser {
   private const int M_TRAIT = 0x80;
 
   private const int IDENTIFIER = 256;
-  private const int string = 257;
+  private const int STRING = 257;
   private const int LONG = 258;
   private const int DOUBLE = 259;
   private const int LSHIFT = 260;
