@@ -27,7 +27,7 @@
  * @author Sam
  */
 
-package com.caucho.quercus.lib.dom;
+
 
 public class DOMStringList
   extends DOMWrapper<org.w3c.dom.DOMStringList>

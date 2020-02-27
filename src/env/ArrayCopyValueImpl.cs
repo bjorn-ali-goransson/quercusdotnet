@@ -27,7 +27,7 @@
  * @author Scott Ferguson
  */
 
-package com.caucho.quercus.env;
+
 
 /**
  * Represents a PHP array value copied as part of deserialization or APC.

@@ -27,7 +27,7 @@
  * @author Nam Nguyen
  */
 
-package com.caucho.quercus.lib.curl;
+
 
 /**
  * Represents a GET Http request.

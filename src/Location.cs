@@ -26,7 +26,7 @@
  * @author Sam
  */
 
-package com.caucho.quercus;
+
 
 /**
  * Records the source file location of a statement or expression.

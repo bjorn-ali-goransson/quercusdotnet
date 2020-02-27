@@ -27,7 +27,7 @@
  * @author Scott Ferguson
  */
 
-package com.caucho.quercus;
+
 
 /**
  * Exception thrown by die() or exit()

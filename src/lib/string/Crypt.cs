@@ -3,7 +3,7 @@
  * Eric Young's DES implementation from OpenSSL.
  */
 
-package com.caucho.quercus.lib.string;
+
 
 /**
  * Crypt.

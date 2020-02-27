@@ -27,7 +27,7 @@
  * @author Scott Ferguson
  */
 
-package com.caucho.quercus.lib.regexp;
+
 
 public class IllegalRegexpException extends Exception {
   IllegalRegexpException(String msg) {

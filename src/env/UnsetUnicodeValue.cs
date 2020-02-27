@@ -26,7 +26,7 @@
  *
  * @author Nam Nguyen
  */
-package com.caucho.quercus.env;
+
 
 public class UnsetUnicodeValue
   extends UnicodeValueImpl

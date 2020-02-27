@@ -31,7 +31,7 @@
  * XXX: anchored expressions should have flags for quick matching.
  */
 
-package com.caucho.quercus.lib.regexp;
+
 
 
 

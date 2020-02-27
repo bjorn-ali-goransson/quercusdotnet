@@ -27,7 +27,7 @@
  * @author Scott Ferguson
  */
 
-package com.caucho.quercus.expr;
+
 
 /**
  * Represents the state of a PHP variable.

@@ -26,7 +26,7 @@
  * @author Charles Reich
  */
 
-package com.caucho.quercus.lib.zip;
+
 
 
 

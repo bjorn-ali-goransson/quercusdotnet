@@ -27,7 +27,7 @@
  * @author Scott Ferguson
  */
 
-package com.caucho.quercus.env;
+
 
 /**
  * Represents a PHP long value.

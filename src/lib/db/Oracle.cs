@@ -27,7 +27,7 @@
  * @author Rodrigo Westrupp
  */
 
-package com.caucho.quercus.lib.db;
+
 
 
 

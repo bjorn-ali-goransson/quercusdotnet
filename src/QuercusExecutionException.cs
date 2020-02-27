@@ -27,7 +27,7 @@
  */
 
 
-package com.caucho.quercus;
+
 
 @SuppressWarnings("serial")
 public class QuercusExecutionException

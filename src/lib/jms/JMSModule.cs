@@ -27,7 +27,7 @@
  * @author Emil Ong
  */
 
-package com.caucho.quercus.lib.jms;
+
 
 
 

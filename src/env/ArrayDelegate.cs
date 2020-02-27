@@ -27,7 +27,7 @@
  * @author Sam
  */
 
-package com.caucho.quercus.env;
+
 
 
 /**

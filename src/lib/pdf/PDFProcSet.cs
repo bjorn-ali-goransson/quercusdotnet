@@ -27,7 +27,7 @@
  * @author Scott Ferguson
  */
 
-package com.caucho.quercus.lib.pdf;
+
 
 /**
  * pdf object oriented API facade

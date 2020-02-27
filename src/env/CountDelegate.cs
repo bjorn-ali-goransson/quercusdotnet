@@ -27,7 +27,7 @@
  * @author Sam
  */
 
-package com.caucho.quercus.env;
+
 
 /**
  * A delegate that performs the count operations for Quercus objects.

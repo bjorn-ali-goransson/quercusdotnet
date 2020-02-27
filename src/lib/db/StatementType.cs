@@ -27,7 +27,7 @@
  * @author Nam Nguyen
  */
 
-package com.caucho.quercus.lib.db;
+
 
 public enum StatementType
 {

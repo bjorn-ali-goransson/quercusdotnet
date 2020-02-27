@@ -4,7 +4,7 @@
  * @author Scott Ferguson
  */
 
-package com.caucho.quercus.expr;
+
 
 /**
  * Analyzed types of expressions

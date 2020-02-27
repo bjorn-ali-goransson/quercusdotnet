@@ -27,7 +27,7 @@
  * @author Nam Nguyen
  */
 
-package com.caucho.quercus.lib.xml;
+
 
 public class LibXmlError
 {

@@ -26,7 +26,7 @@
  * @author Scott Ferguson
  */
 
-package com.caucho.quercus.lib.xml;
+
 
 
 

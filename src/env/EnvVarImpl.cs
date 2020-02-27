@@ -27,7 +27,7 @@
  * @author Scott Ferguson
  */
 
-package com.caucho.quercus.env;
+
 
 /**
  * Encapsulates an environment entry for a variable.  The EnvVar is a

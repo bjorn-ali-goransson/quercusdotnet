@@ -27,7 +27,7 @@
  * @author Scott Ferguson
  */
 
-package com.caucho.quercus.env;
+
 
 /**
  * Represents an object-get argument which might be a call to a reference.

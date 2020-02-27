@@ -27,7 +27,7 @@
  * @author Nam Nguyen
  */
 
-package com.caucho.quercus.program;
+
 
 /**
  * Function and field visibility.
