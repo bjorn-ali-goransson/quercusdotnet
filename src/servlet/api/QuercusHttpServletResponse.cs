@@ -29,8 +29,8 @@
 
 package com.caucho.quercus.servlet.api;
 
-import java.io.IOException;
-import java.io.OutputStream;
+
+
 
 public interface QuercusHttpServletResponse
 {

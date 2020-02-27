@@ -29,7 +29,7 @@
 
 package com.caucho.quercus.lib.db;
 
-import java.sql.ResultSetMetaData;
+
 
 /**
  * Extra ResultSet metadata for a Quercus Mysql connection.

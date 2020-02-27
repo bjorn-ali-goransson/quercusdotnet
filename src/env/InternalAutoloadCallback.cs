@@ -29,14 +29,14 @@
 
 package com.caucho.quercus.env;
 
-import com.caucho.quercus.QuercusException;
-import com.caucho.quercus.page.QuercusPage;
-import com.caucho.vfs.Path;
-import com.caucho.vfs.ReadStream;
-import com.caucho.vfs.VfsStream;
 
-import java.io.InputStream;
-import java.net.URL;
+
+
+
+
+
+
+
 
 /**
  * Internal call to autoload an internally defined PHP, e.g. for the SPL

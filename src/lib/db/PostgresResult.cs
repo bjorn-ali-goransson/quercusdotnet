@@ -29,19 +29,19 @@
 
 package com.caucho.quercus.lib.db;
 
-import com.caucho.util.L10N;
-import com.caucho.quercus.env.Env;
-import com.caucho.quercus.env.Value;
-import com.caucho.quercus.env.NullValue;
 
-import java.sql.Date;
-import java.sql.ResultSet;
-import java.sql.ResultSetMetaData;
-import java.sql.SQLException;
-import java.sql.Statement;
-import java.sql.Timestamp;
-import java.sql.Time;
-import java.util.logging.Logger;
+
+
+
+
+
+
+
+
+
+
+
+
 
 /**
  * postgres result set class (postgres has NO object oriented API)

@@ -29,17 +29,17 @@
 
 package com.caucho.quercus.lib.simplexml;
 
-import java.util.Map;
-import java.util.Set;
 
-import org.w3c.dom.Document;
-import org.w3c.dom.Node;
-import org.w3c.dom.Text;
 
-import com.caucho.quercus.env.Env;
-import com.caucho.quercus.env.QuercusClass;
-import com.caucho.quercus.env.StringValue;
-import com.caucho.quercus.env.Value;
+
+
+
+
+
+
+
+
+
 
 public class TextView extends SimpleView
 {

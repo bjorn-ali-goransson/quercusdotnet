@@ -29,13 +29,13 @@
 
 package com.caucho.quercus.lib.i18n;
 
-import java.nio.ByteBuffer;
-import java.nio.CharBuffer;
-import java.nio.charset.Charset;
-import java.nio.charset.CharsetEncoder;
-import java.nio.charset.CoderResult;
-import com.caucho.quercus.env.StringValue;
-import com.caucho.vfs.TempBuffer;
+
+
+
+
+
+
+
 
 public class GenericEncoder
   extends Encoder

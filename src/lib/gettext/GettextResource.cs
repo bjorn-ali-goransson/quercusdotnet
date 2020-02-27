@@ -29,19 +29,19 @@
 
 package com.caucho.quercus.lib.gettext;
 
-import com.caucho.vfs.BasicDependencyContainer;
-import com.caucho.quercus.QuercusModuleException;
-import com.caucho.quercus.env.Env;
-import com.caucho.quercus.env.StringValue;
-import com.caucho.quercus.env.UnicodeValue;
-import com.caucho.quercus.lib.gettext.expr.PluralExpr;
-import com.caucho.vfs.Depend;
-import com.caucho.vfs.Path;
 
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Locale;
+
+
+
+
+
+
+
+
+
+
+
+
 
 /**
  * Represents a container for gettext translations.

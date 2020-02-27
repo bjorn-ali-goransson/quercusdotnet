@@ -29,10 +29,10 @@
 
 package com.caucho.quercus.lib.dom;
 
-import com.caucho.quercus.annotation.Optional;
-import com.caucho.quercus.env.Env;
 
-import org.w3c.dom.Comment;
+
+
+
 
 public class DOMComment
   extends DOMCharacterData<Comment>

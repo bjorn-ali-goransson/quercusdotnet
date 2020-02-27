@@ -29,7 +29,7 @@
 
 package com.caucho.quercus.lib.file;
 
-import com.caucho.quercus.env.*;
+
 
 /**
  * Bucket for stream filters.

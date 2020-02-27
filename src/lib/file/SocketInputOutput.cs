@@ -29,10 +29,10 @@
 
 package com.caucho.quercus.lib.file;
 
-import com.caucho.quercus.env.EnvCleanup;
 
-import java.io.IOException;
-import java.net.SocketAddress;
+
+
+
 
 /**
  * Represents read/write stream

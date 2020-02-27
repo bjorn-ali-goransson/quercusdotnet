@@ -29,7 +29,7 @@
 
 package com.caucho.quercus.lib;
 
-import java.util.logging.Logger;
+
 
 public class JavaLogger
 {

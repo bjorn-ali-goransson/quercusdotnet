@@ -29,11 +29,11 @@
 
 package com.caucho.quercus.lib.db;
 
-import com.caucho.quercus.env.Env;
-import com.caucho.quercus.env.Value;
 
-import java.sql.ResultSetMetaData;
-import java.sql.SQLException;
+
+
+
+
 
 public class BoundColumn
 {

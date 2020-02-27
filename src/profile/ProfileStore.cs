@@ -29,8 +29,8 @@
 
 package com.caucho.quercus.profile;
 
-import java.util.ArrayList;
-import java.util.concurrent.atomic.AtomicLong;
+
+
 
 /**
  * Stores the most recent profiles

@@ -29,21 +29,21 @@
 
 package com.caucho.quercus.env;
 
-import java.io.IOException;
-import java.io.Serializable;
-import java.math.BigDecimal;
-import java.math.BigInteger;
-import java.net.URL;
-import java.util.Calendar;
-import java.util.Collection;
-import java.util.Date;
-import java.util.IdentityHashMap;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Map;
 
-import com.caucho.quercus.program.ClassField;
-import com.caucho.vfs.WriteStream;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /**
  * Represents a PHP variable value.

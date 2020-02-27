@@ -29,33 +29,33 @@
 
 package com.caucho.quercus.lib.file;
 
-import com.caucho.quercus.annotation.NotNull;
-import com.caucho.quercus.annotation.Optional;
-import com.caucho.quercus.annotation.ReadOnly;
-import com.caucho.quercus.annotation.Reference;
-import com.caucho.quercus.annotation.ReturnNullAsFalse;
-import com.caucho.quercus.env.ArrayValue;
-import com.caucho.quercus.env.ArrayValueImpl;
-import com.caucho.quercus.env.BooleanValue;
-import com.caucho.quercus.env.Env;
-import com.caucho.quercus.env.LongValue;
-import com.caucho.quercus.env.QuercusClass;
-import com.caucho.quercus.env.StringValue;
-import com.caucho.quercus.env.Value;
-import com.caucho.quercus.lib.file.SocketInputOutput.Domain;
-import com.caucho.quercus.module.AbstractQuercusModule;
-import com.caucho.quercus.resources.StreamContextResource;
-import com.caucho.util.L10N;
-import com.caucho.vfs.FilePath;
-import com.caucho.vfs.MemoryPath;
-import com.caucho.vfs.Path;
-import com.caucho.vfs.TempBuffer;
 
-import java.io.IOException;
-import java.net.UnknownHostException;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.logging.Logger;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /**
  * Handling the PHP Stream API

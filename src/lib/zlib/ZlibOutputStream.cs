@@ -29,14 +29,14 @@
 
 package com.caucho.quercus.lib.zlib;
 
-import com.caucho.quercus.QuercusModuleException;
-import com.caucho.quercus.lib.file.AbstractBinaryOutput;
 
-import java.io.IOException;
-import java.io.OutputStream;
-import java.util.zip.CRC32;
-import java.util.zip.Deflater;
-import java.util.zip.DeflaterOutputStream;
+
+
+
+
+
+
+
 
 /**
  * As opposed to java's GZIPOutputStream, this class allows for more control on

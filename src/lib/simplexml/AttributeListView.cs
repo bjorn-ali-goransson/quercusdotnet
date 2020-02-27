@@ -29,20 +29,20 @@
 
 package com.caucho.quercus.lib.simplexml;
 
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.LinkedHashMap;
-import java.util.Map;
-import java.util.Set;
 
-import org.w3c.dom.Document;
 
-import com.caucho.quercus.env.ArrayValue;
-import com.caucho.quercus.env.ArrayValueImpl;
-import com.caucho.quercus.env.Env;
-import com.caucho.quercus.env.ObjectValue;
-import com.caucho.quercus.env.QuercusClass;
-import com.caucho.quercus.env.Value;
+
+
+
+
+
+
+
+
+
+
+
+
 
 public class AttributeListView extends SimpleView
 {

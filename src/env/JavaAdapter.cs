@@ -29,22 +29,22 @@
 
 package com.caucho.quercus.env;
 
-import com.caucho.quercus.UnimplementedException;
-import com.caucho.quercus.function.AbstractFunction;
-import com.caucho.quercus.marshal.Marshal;
-import com.caucho.quercus.marshal.MarshalFactory;
-import com.caucho.quercus.program.JavaClassDef;
-import com.caucho.vfs.WriteStream;
 
-import java.io.IOException;
-import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
-import java.io.Serializable;
-import java.lang.ref.WeakReference;
-import java.lang.reflect.Array;
-import java.util.*;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /**
  * Interface for marshalled Java data structures.

@@ -29,7 +29,7 @@
 
 package com.caucho.quercus.env;
 
-import java.util.Locale;
+
 
 public class LocaleInfo {
   private static LocaleInfo _default = new LocaleInfo();

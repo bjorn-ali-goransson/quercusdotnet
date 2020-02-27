@@ -29,17 +29,17 @@
 
 package com.caucho.quercus.env;
 
-import com.caucho.quercus.function.AbstractFunction;
-import com.caucho.quercus.marshal.Marshal;
-import com.caucho.quercus.marshal.MarshalFactory;
-import com.caucho.vfs.WriteStream;
 
-import java.io.IOException;
-import java.io.Serializable;
-import java.lang.reflect.Array;
-import java.util.*;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+
+
+
+
+
+
+
+
+
+
 
 /**
  * Represents a PHP array value.

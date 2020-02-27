@@ -29,7 +29,7 @@
 
 package com.caucho.quercus.lib.dom;
 
-import org.w3c.dom.CharacterData;
+
 
 public class DOMCharacterData<T extends CharacterData>
   extends DOMNode<T>

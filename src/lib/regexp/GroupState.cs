@@ -29,7 +29,7 @@
 
 package com.caucho.quercus.lib.regexp;
 
-import com.caucho.util.IntArray;
+
 
 /*
  * Represents the state of groups in the regexp.

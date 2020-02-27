@@ -29,7 +29,7 @@
 
 package com.caucho.quercus.env;
 
-import java.io.Serializable;
+
 
 /**
  * Represents an array-get argument which might be a call to a reference.

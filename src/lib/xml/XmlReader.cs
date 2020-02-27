@@ -28,21 +28,21 @@
 
 package com.caucho.quercus.lib.xml;
 
-import com.caucho.quercus.annotation.Optional;
-import com.caucho.quercus.env.BooleanValue;
-import com.caucho.quercus.env.Env;
-import com.caucho.quercus.env.LongValue;
-import com.caucho.quercus.env.NullValue;
-import com.caucho.quercus.env.StringValue;
-import com.caucho.quercus.env.Value;
-import com.caucho.util.L10N;
-import com.caucho.vfs.Path;
 
-import javax.xml.stream.*;
-import java.io.IOException;
-import java.util.HashMap;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 public class XmlReader
 {

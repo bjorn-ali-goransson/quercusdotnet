@@ -29,20 +29,20 @@
 
 package com.caucho.quercus.lib;
 
-import com.caucho.quercus.env.Env;
-import com.caucho.quercus.env.EnvCleanup;
 
-import com.caucho.quercus.lib.file.BinaryInput;
-import com.caucho.quercus.lib.file.FileInput;
-import com.caucho.quercus.lib.file.FileOutput;
-import com.caucho.quercus.lib.file.ReadStreamInput;
-import com.caucho.vfs.ReadStream;
-import com.caucho.vfs.VfsStream;
 
-import java.io.IOException;
-import java.io.InputStream;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+
+
+
+
+
+
+
+
+
+
+
+
 
 /**
  * Represents an input stream for a proc_open process.

@@ -29,12 +29,12 @@
 
 package com.caucho.quercus.env;
 
-import com.caucho.quercus.QuercusRuntimeException;
-import com.caucho.quercus.program.JavaClassDef;
 
-import java.io.IOException;
-import java.io.InputStream;
-import java.net.URL;
+
+
+
+
+
 
 /**
  * Represents a Quercus java URL value.

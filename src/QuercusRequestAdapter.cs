@@ -29,7 +29,7 @@
 
 package com.caucho.quercus;
 
-import com.caucho.quercus.servlet.api.QuercusHttpServletRequest;
+
 
 public class QuercusRequestAdapter
 {

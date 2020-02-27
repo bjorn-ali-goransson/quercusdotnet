@@ -29,10 +29,10 @@
 
 package com.caucho.quercus.env;
 
-import com.caucho.quercus.program.JavaClassDef;
 
-import java.util.Calendar;
-import java.util.logging.Logger;
+
+
+
 
 /**
  * Represents a Quercus java Calendar value.

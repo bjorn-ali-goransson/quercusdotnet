@@ -29,8 +29,8 @@
 
 package com.caucho.quercus.env;
 
-import java.lang.ref.*;
-import com.caucho.util.*;
+
+
 
 /**
  * Cache entry root

@@ -29,10 +29,10 @@
 
 package com.caucho.quercus.expr;
 
-import com.caucho.quercus.Location;
-import com.caucho.quercus.env.Env;
-import com.caucho.quercus.env.NullValue;
-import com.caucho.quercus.env.Value;
+
+
+
+
 
 /**
  * Represents a PHP import statement
@@ -70,9 +70,9 @@ public class ImportExpr extends Expr
   public String toString()
   {
     if (_isWildcard)
-      return "import " + _name + ".*;";
+      return "";
     else
-      return "import " + _name + ";";
+      return "";
   }
 }
 

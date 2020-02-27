@@ -29,11 +29,11 @@
 
 package com.caucho.quercus.env;
 
-import com.caucho.quercus.program.JavaClassDef;
 
-import java.math.BigDecimal;
-import java.math.BigInteger;
-import java.util.logging.Logger;
+
+
+
+
 
 /**
  * Represents a Quercus java BigInteger value.

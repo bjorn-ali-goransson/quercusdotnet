@@ -29,7 +29,7 @@
 
 package com.caucho.quercus.module;
 
-import com.caucho.quercus.env.Env;
+
 
 /**
  * A module with some startup code that needs to be run before each

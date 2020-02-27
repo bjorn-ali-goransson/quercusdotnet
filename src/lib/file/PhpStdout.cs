@@ -28,7 +28,7 @@
  */
 package com.caucho.quercus.lib.file;
 
-import java.io.IOException;
+
 
 /*
  * STDOUT, php://stdout

@@ -29,16 +29,16 @@
 
 package com.caucho.quercus.lib.i18n;
 
-import com.caucho.quercus.QuercusModuleException;
-import com.caucho.quercus.UnimplementedException;
-import com.caucho.quercus.env.*;
-import com.caucho.vfs.*;
 
-import javax.mail.internet.MimeUtility;
-import java.io.IOException;
-import java.io.Reader;
-import java.io.UnsupportedEncodingException;
-import java.util.logging.*;
+
+
+
+
+
+
+
+
+
 
 public class IconvUtility {
   private static final Logger log

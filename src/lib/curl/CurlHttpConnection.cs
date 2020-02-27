@@ -29,17 +29,17 @@
 
 package com.caucho.quercus.lib.curl;
 
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.OutputStream;
-import java.net.ConnectException;
-import java.net.HttpURLConnection;
-import java.net.InetSocketAddress;
-import java.net.ProtocolException;
-import java.net.Proxy;
-import java.net.SocketTimeoutException;
-import java.net.URL;
-import java.net.URLConnection;
+
+
+
+
+
+
+
+
+
+
+
 
 /**
  * Represents a HttpURLConnection wrapper.

@@ -29,11 +29,11 @@
 
 package com.caucho.quercus.resources;
 
-import com.caucho.quercus.env.Env;
-import com.caucho.quercus.env.ResourceValue;
-import com.caucho.quercus.env.StringValue;
 
-import java.io.IOException;
+
+
+
+
 
 /**
  * Represents a PHP open stream

@@ -29,9 +29,9 @@
 
 package com.caucho.quercus.expr;
 
-import com.caucho.quercus.Location;
 
-import java.util.ArrayList;
+
+
 
 /**
  * Represents a PHP method call expression from $this.

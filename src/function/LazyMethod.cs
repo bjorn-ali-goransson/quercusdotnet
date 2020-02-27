@@ -29,11 +29,11 @@
 
 package com.caucho.quercus.function;
 
-import com.caucho.quercus.env.ArrayValue;
-import com.caucho.quercus.env.Env;
-import com.caucho.quercus.env.QuercusClass;
-import com.caucho.quercus.env.Value;
-import com.caucho.quercus.program.Arg;
+
+
+
+
+
 
 /**
  * Lazily load a compiled method.

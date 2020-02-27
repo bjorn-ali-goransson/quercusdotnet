@@ -29,30 +29,30 @@
 
 package com.caucho.quercus.lib;
 
-import com.caucho.quercus.Location;
-import com.caucho.quercus.QuercusContext;
-import com.caucho.quercus.annotation.Optional;
-import com.caucho.quercus.annotation.ReadOnly;
-import com.caucho.quercus.annotation.UsesSymbolTable;
-import com.caucho.quercus.annotation.Name;
-import com.caucho.quercus.env.*;
-import com.caucho.quercus.lib.file.FileModule;
-import com.caucho.quercus.module.AbstractQuercusModule;
-import com.caucho.quercus.module.IniDefinition;
-import com.caucho.quercus.module.IniDefinitions;
-import com.caucho.quercus.program.QuercusProgram;
-import com.caucho.util.IoUtil;
-import com.caucho.util.L10N;
-import com.caucho.vfs.Path;
 
-import java.io.IOException;
-import java.io.InputStream;
-import java.net.InetAddress;
-import java.util.ArrayList;
-import java.util.Locale;
-import java.util.Map;
-import java.util.TreeSet;
-import java.util.logging.*;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /**
  * PHP options

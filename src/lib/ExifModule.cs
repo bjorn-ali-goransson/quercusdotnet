@@ -29,22 +29,22 @@
 
 package com.caucho.quercus.lib;
 
-import com.caucho.quercus.QuercusException;
-import com.caucho.quercus.annotation.Optional;
-import com.caucho.quercus.annotation.Reference;
-import com.caucho.quercus.env.BooleanValue;
-import com.caucho.quercus.env.Env;
-import com.caucho.quercus.env.LongValue;
-import com.caucho.quercus.env.Value;
-import com.caucho.quercus.lib.image.ImageModule;
-import com.caucho.quercus.module.AbstractQuercusModule;
-import com.caucho.util.L10N;
-import com.caucho.vfs.Path;
 
-import javax.imageio.ImageIO;
-import javax.imageio.ImageReader;
-import java.io.IOException;
-import java.util.Iterator;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 /**

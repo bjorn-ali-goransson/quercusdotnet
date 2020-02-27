@@ -29,13 +29,13 @@
 
 package com.caucho.quercus.lib.curl;
 
-import com.caucho.quercus.QuercusModuleException;
-import com.caucho.util.Base64;
-import com.caucho.util.CharBuffer;
-import com.caucho.util.RandomUtil;
 
-import java.security.MessageDigest;
-import java.security.NoSuchAlgorithmException;
+
+
+
+
+
+
 
 public class Authentication
 {

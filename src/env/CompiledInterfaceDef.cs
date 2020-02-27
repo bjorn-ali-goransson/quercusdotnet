@@ -29,7 +29,7 @@
 
 package com.caucho.quercus.env;
 
-import com.caucho.quercus.Location;
+
 
 public class CompiledInterfaceDef
   extends CompiledClassDef

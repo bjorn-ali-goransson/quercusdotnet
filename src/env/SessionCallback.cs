@@ -29,10 +29,10 @@
 
 package com.caucho.quercus.env;
 
-import com.caucho.quercus.QuercusRuntimeException;
 
-import java.util.logging.Level;
-import java.util.logging.Logger;
+
+
+
 
 /**
  * Represents a PHP session callback.

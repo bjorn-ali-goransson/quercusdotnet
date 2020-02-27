@@ -29,9 +29,9 @@
 
 package com.caucho.quercus.expr;
 
-import com.caucho.quercus.env.Env;
-import com.caucho.quercus.env.UnicodeValue;
-import com.caucho.quercus.env.Value;
+
+
+
 
 /**
  * Represents a PHP string literal expression.

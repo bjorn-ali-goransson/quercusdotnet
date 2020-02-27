@@ -29,10 +29,10 @@
 
 package com.caucho.quercus.env;
 
-import com.caucho.vfs.WriteStream;
 
-import java.io.IOException;
-import java.util.IdentityHashMap;
+
+
+
 
 /**
  * Represents a PHP resource

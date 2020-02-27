@@ -29,10 +29,10 @@
 
 package com.caucho.quercus.servlet.api;
 
-import java.io.IOException;
-import java.io.InputStream;
-import java.util.Enumeration;
-import java.util.Map;
+
+
+
+
 
 public interface QuercusHttpServletRequest
 {

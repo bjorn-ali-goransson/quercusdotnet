@@ -28,9 +28,9 @@
  */
 package com.caucho.quercus.lib.file;
 
-import com.caucho.quercus.env.Env;
 
-import java.io.IOException;
+
+
 
 /*
  * php://output

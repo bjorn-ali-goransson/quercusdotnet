@@ -29,9 +29,9 @@
 
 package com.caucho.quercus.parser;
 
-import com.caucho.util.LineCompileException;
 
-import java.io.IOException;
+
+
 
 /**
  * PHP parse exception

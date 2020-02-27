@@ -29,35 +29,35 @@
 
 package com.caucho.quercus.lib;
 
-import com.caucho.quercus.QuercusContext;
-import com.caucho.quercus.QuercusException;
-import com.caucho.quercus.QuercusModuleException;
-import com.caucho.quercus.annotation.NotNull;
-import com.caucho.quercus.annotation.Optional;
-import com.caucho.quercus.annotation.Reference;
-import com.caucho.quercus.annotation.ReturnNullAsFalse;
-import com.caucho.quercus.annotation.UsesSymbolTable;
-import com.caucho.quercus.env.*;
-import com.caucho.quercus.lib.file.BinaryStream;
-import com.caucho.quercus.lib.file.FileInput;
-import com.caucho.quercus.lib.file.FileModule;
-import com.caucho.quercus.lib.file.FileOutput;
-import com.caucho.quercus.module.AbstractQuercusModule;
-import com.caucho.quercus.program.QuercusProgram;
-import com.caucho.util.L10N;
-import com.caucho.util.RandomUtil;
-import com.caucho.vfs.*;
 
-import java.io.File;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.OutputStream;
-import java.util.ArrayList;
-import java.util.Map;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /**
  * PHP misc functions.

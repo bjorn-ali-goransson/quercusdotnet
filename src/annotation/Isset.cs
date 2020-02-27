@@ -27,8 +27,8 @@
 
 package com.caucho.quercus.annotation;
 
-import java.lang.annotation.Retention;
-import java.lang.annotation.RetentionPolicy;
+
+
 
 /**
  * Used to specify a function to be used for isset().

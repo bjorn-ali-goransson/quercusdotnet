@@ -29,13 +29,13 @@
 
 package com.caucho.quercus.env;
 
-import com.caucho.quercus.lib.OutputModule;
-import com.caucho.vfs.*;
 
-import java.io.IOException;
-import java.io.UnsupportedEncodingException;
-import java.util.logging.Logger;
-import java.util.logging.Level;
+
+
+
+
+
+
 
 /**
  * Represents a PHP output buffer

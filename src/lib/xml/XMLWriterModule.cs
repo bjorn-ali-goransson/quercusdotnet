@@ -29,18 +29,18 @@
 
 package com.caucho.quercus.lib.xml;
 
-import java.util.logging.Logger;
 
-import com.caucho.quercus.annotation.NotNull;
-import com.caucho.quercus.annotation.Optional;
-import com.caucho.quercus.env.BooleanValue;
-import com.caucho.quercus.env.Env;
-import com.caucho.quercus.env.NullValue;
-import com.caucho.quercus.env.StringValue;
-import com.caucho.quercus.env.Value;
-import com.caucho.quercus.module.AbstractQuercusModule;
-import com.caucho.util.L10N;
-import com.caucho.vfs.Path;
+
+
+
+
+
+
+
+
+
+
+
 
 /**
  * XMLWriter

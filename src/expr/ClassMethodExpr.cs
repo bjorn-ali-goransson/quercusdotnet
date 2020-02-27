@@ -29,14 +29,14 @@
 
 package com.caucho.quercus.expr;
 
-import java.util.ArrayList;
 
-import com.caucho.quercus.Location;
-import com.caucho.quercus.env.Env;
-import com.caucho.quercus.env.QuercusClass;
-import com.caucho.quercus.env.StringValue;
-import com.caucho.quercus.env.Value;
-import com.caucho.util.L10N;
+
+
+
+
+
+
+
 
 /**
  * A Foo::bar(...) method call expression.

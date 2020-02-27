@@ -29,7 +29,7 @@
 
 package com.caucho.quercus.lib.dom;
 
-import com.caucho.quercus.env.Env;
+
 
 public class DOMWrapper<T> {
   private final DOMImplementation _impl;

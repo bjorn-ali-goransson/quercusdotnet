@@ -29,13 +29,13 @@
 
 package com.caucho.quercus.lib.mail;
 
-import java.util.logging.Logger;
 
-import javax.mail.MessagingException;
-import javax.mail.Session;
-import javax.mail.internet.MimeMessage;
 
-import com.caucho.util.L10N;
+
+
+
+
+
 
 /**
  * Extended MimeMessage that allows overriding Message-ID header

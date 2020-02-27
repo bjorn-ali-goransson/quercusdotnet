@@ -29,7 +29,7 @@
 
 package com.caucho.quercus.lib.spl;
 
-import com.caucho.quercus.env.*;
+
 
 /**
  * A delegate that intercepts array access methods on the

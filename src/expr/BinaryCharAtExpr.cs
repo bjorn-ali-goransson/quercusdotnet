@@ -29,11 +29,11 @@
 
 package com.caucho.quercus.expr;
 
-import com.caucho.quercus.Location;
-import com.caucho.quercus.env.Env;
-import com.caucho.quercus.env.Value;
-import com.caucho.quercus.env.Var;
-import com.caucho.util.L10N;
+
+
+
+
+
 
 /**
  * Represents the character at expression

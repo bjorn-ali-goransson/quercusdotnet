@@ -28,7 +28,7 @@
  */
 package com.caucho.quercus.env;
 
-import java.util.IdentityHashMap;
+
 
 /*
  * Holds reference indexes for serialization.

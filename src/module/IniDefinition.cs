@@ -29,11 +29,11 @@
 
 package com.caucho.quercus.module;
 
-import com.caucho.quercus.env.*;
-import com.caucho.quercus.QuercusContext;
-import com.caucho.util.L10N;
 
-import java.util.HashMap;
+
+
+
+
 
 public class IniDefinition {
   private L10N L = new L10N(IniDefinition.class);

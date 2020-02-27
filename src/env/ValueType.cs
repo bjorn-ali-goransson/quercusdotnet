@@ -29,7 +29,7 @@
 
 package com.caucho.quercus.env;
 
-import java.io.Serializable;
+
 
 @SuppressWarnings("serial")
 abstract public class ValueType implements Serializable {

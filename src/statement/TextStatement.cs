@@ -29,10 +29,10 @@
 
 package com.caucho.quercus.statement;
 
-import com.caucho.quercus.Location;
-import com.caucho.quercus.env.Env;
-import com.caucho.quercus.env.StringValue;
-import com.caucho.quercus.env.Value;
+
+
+
+
 
 /**
  * Represents static text in a PHP program.

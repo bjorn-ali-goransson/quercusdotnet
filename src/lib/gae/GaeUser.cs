@@ -29,7 +29,7 @@
 
 package com.caucho.quercus.lib.gae;
 
-import com.google.appengine.api.users.User;
+
 
 public class GaeUser
 {

@@ -29,9 +29,9 @@
 
 package com.caucho.quercus.profile;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
+
+
+
 
 /**
  * Report for a method (function)

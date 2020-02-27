@@ -29,8 +29,8 @@
 
 package com.caucho.quercus.annotation;
 
-import java.lang.annotation.Retention;
-import java.lang.annotation.RetentionPolicy;
+
+
 
 /**
  * Used to hide Java functions from the php namespace.

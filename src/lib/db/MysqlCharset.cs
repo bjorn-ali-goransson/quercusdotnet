@@ -29,7 +29,7 @@
 
 package com.caucho.quercus.lib.db;
 
-import java.util.HashMap;
+
 
 /**
  * Metadata for mysql charsets.

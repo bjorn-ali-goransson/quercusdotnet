@@ -29,14 +29,14 @@
 
 package com.caucho.quercus.script;
 
-import javax.script.Bindings;
-import javax.script.ScriptEngine;
-import javax.script.ScriptEngineFactory;
-import javax.script.SimpleBindings;
 
-import java.lang.reflect.Field;
-import java.util.ArrayList;
-import java.util.List;
+
+
+
+
+
+
+
 
 /**
  * Script engine factory

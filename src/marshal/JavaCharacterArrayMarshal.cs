@@ -29,9 +29,9 @@
 
 package com.caucho.quercus.marshal;
 
-import com.caucho.quercus.env.Env;
-import com.caucho.quercus.env.NullValue;
-import com.caucho.quercus.env.Value;
+
+
+
 
 public class JavaCharacterArrayMarshal extends JavaArrayMarshal
 {

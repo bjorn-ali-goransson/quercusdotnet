@@ -29,10 +29,10 @@
 
 package com.caucho.quercus.lib.dom;
 
-import com.caucho.quercus.env.Env;
-import com.caucho.quercus.env.QuercusLanguageException;
-import com.caucho.quercus.env.StringValue;
-import com.caucho.quercus.env.Value;
+
+
+
+
 
 public class DOMException
   extends QuercusLanguageException

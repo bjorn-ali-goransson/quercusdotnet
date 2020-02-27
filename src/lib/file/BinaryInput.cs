@@ -29,10 +29,10 @@
 
 package com.caucho.quercus.lib.file;
 
-import com.caucho.quercus.env.StringValue;
 
-import java.io.IOException;
-import java.io.InputStream;
+
+
+
 
 /**
  * Interface for a Quercus binary input stream

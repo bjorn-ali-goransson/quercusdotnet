@@ -29,28 +29,28 @@
 
 package com.caucho.quercus.env;
 
-import com.caucho.quercus.QuercusException;
-import com.caucho.quercus.QuercusRuntimeException;
-import com.caucho.quercus.expr.Expr;
-import com.caucho.quercus.module.ModuleContext;
-import com.caucho.quercus.function.AbstractFunction;
-import com.caucho.quercus.program.ClassDef;
-import com.caucho.quercus.program.ClassField;
-import com.caucho.quercus.program.InstanceInitializer;
-import com.caucho.quercus.program.JavaClassDef;
-import com.caucho.quercus.program.TraitAliasMap;
-import com.caucho.quercus.program.TraitInsteadofMap;
-import com.caucho.util.L10N;
 
-import java.lang.ref.WeakReference;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.LinkedHashMap;
-import java.util.Locale;
-import java.util.Map;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /**
  * Represents a Quercus runtime class.

@@ -29,7 +29,7 @@
 
 package com.caucho.quercus.servlet.api;
 
-import javax.servlet.ServletContext;
+
 
 public class QuercusServletContextImpl implements QuercusServletContext
 {

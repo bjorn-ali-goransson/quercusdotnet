@@ -29,7 +29,7 @@
 
 package com.caucho.quercus.lib.date;
 
-import com.caucho.util.QDate;
+
 
 public class DateParser
 {

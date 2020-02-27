@@ -29,23 +29,23 @@
 
 package com.caucho.quercus.lib.spl;
 
-import com.caucho.quercus.annotation.Optional;
-import com.caucho.quercus.annotation.This;
-import com.caucho.quercus.env.ArrayValue;
-import com.caucho.quercus.env.ArrayValueImpl;
-import com.caucho.quercus.env.Callback;
-import com.caucho.quercus.env.Env;
-import com.caucho.quercus.env.MethodIntern;
-import com.caucho.quercus.env.NullValue;
-import com.caucho.quercus.env.StringValue;
-import com.caucho.quercus.env.UnsetValue;
-import com.caucho.quercus.env.Value;
-import com.caucho.quercus.lib.ArrayModule;
-import com.caucho.vfs.WriteStream;
 
-import java.io.IOException;
-import java.util.IdentityHashMap;
-import java.util.Map;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 public class ArrayIterator
   implements SeekableIterator,

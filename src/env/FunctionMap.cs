@@ -29,9 +29,9 @@
  
 package com.caucho.quercus.env;
 
-import java.util.HashMap;
-import java.util.Set;
-import java.util.Map.Entry;
+
+
+
 
 /**
  * Handles Java function overloading.

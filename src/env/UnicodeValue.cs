@@ -29,16 +29,16 @@
 
 package com.caucho.quercus.env;
 
-import com.caucho.vfs.WriteStream;
-import com.caucho.quercus.QuercusRuntimeException;
-import com.caucho.quercus.marshal.Marshal;
 
-import java.util.IdentityHashMap;
-import java.io.ByteArrayInputStream;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.Reader;
-import java.io.UnsupportedEncodingException;
+
+
+
+
+
+
+
+
+
 
 /**
  * Represents a 16-bit unicode string value.

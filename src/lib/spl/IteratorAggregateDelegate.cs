@@ -29,17 +29,17 @@
 
 package com.caucho.quercus.lib.spl;
 
-import com.caucho.quercus.QuercusException;
-import com.caucho.quercus.env.ConstStringValue;
-import com.caucho.quercus.env.TraversableDelegate;
-import com.caucho.quercus.env.Env;
-import com.caucho.quercus.env.ObjectValue;
-import com.caucho.quercus.env.StringBuilderValue;
-import com.caucho.quercus.env.Value;
-import com.caucho.util.L10N;
 
-import java.util.Iterator;
-import java.util.Map;
+
+
+
+
+
+
+
+
+
+
 
 /**
  * A delegate that intercepts requests for iterator's and delegates

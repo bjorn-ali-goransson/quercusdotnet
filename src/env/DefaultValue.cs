@@ -29,8 +29,8 @@
 
 package com.caucho.quercus.env;
 
-import java.io.IOException;
-import java.io.PrintWriter;
+
+
 
 /**
  * Represents a PHP default value.

@@ -29,12 +29,12 @@
 
 package com.caucho.quercus.lib.db;
 
-import com.caucho.quercus.env.ConnectionEntry;
-import com.caucho.quercus.env.Env;
 
-import java.sql.SQLException;
 
-import javax.sql.DataSource;
+
+
+
+
 
 public class DataSourceConnection extends JdbcConnectionResource
 {

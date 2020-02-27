@@ -29,22 +29,22 @@
 
 package com.caucho.quercus.lib;
 
-import com.caucho.quercus.annotation.Optional;
-import com.caucho.quercus.annotation.Reference;
-import com.caucho.quercus.env.ArrayValue;
-import com.caucho.quercus.env.ArrayValueImpl;
-import com.caucho.quercus.env.Env;
-import com.caucho.quercus.env.NullValue;
-import com.caucho.quercus.env.StringValue;
-import com.caucho.quercus.env.Value;
-import com.caucho.quercus.module.AbstractQuercusModule;
-import com.caucho.quercus.servlet.api.QuercusCookie;
-import com.caucho.quercus.servlet.api.QuercusCookieImpl;
-import com.caucho.quercus.servlet.api.QuercusHttpServletResponse;
-import com.caucho.util.L10N;
-import com.caucho.util.QDate;
 
-import java.util.ArrayList;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /**
  * PHP HTTP functions

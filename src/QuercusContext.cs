@@ -29,75 +29,75 @@
 
 package com.caucho.quercus;
 
-import java.io.IOException;
-import java.lang.reflect.Method;
-import java.sql.Connection;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Locale;
-import java.util.Map;
-import java.util.Set;
-import java.util.concurrent.ConcurrentHashMap;
-import java.util.concurrent.locks.LockSupport;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
-import javax.cache.Cache;
-import javax.sql.DataSource;
 
-import com.caucho.config.ConfigException;
-import com.caucho.java.JavaCompilerUtil;
-import com.caucho.quercus.annotation.ClassImplementation;
-import com.caucho.quercus.env.AbstractJavaMethod;
-import com.caucho.quercus.env.ArrayValue;
-import com.caucho.quercus.env.ArrayValueImpl;
-import com.caucho.quercus.env.BooleanValue;
-import com.caucho.quercus.env.ConstStringValue;
-import com.caucho.quercus.env.DoubleValue;
-import com.caucho.quercus.env.Env;
-import com.caucho.quercus.env.LongValue;
-import com.caucho.quercus.env.NullValue;
-import com.caucho.quercus.env.QuercusClass;
-import com.caucho.quercus.env.SessionArrayValue;
-import com.caucho.quercus.env.StringBuilderValue;
-import com.caucho.quercus.env.StringValue;
-import com.caucho.quercus.env.UnicodeBuilderValue;
-import com.caucho.quercus.env.Value;
-import com.caucho.quercus.expr.ExprFactory;
-import com.caucho.quercus.function.AbstractFunction;
-import com.caucho.quercus.lib.db.JavaSqlDriverWrapper;
-import com.caucho.quercus.lib.db.JdbcDriverContext;
-import com.caucho.quercus.lib.file.FileModule;
-import com.caucho.quercus.lib.regexp.RegexpModule;
-import com.caucho.quercus.lib.session.QuercusSessionManager;
-import com.caucho.quercus.module.IniDefinition;
-import com.caucho.quercus.module.IniDefinitions;
-import com.caucho.quercus.module.ModuleContext;
-import com.caucho.quercus.module.ModuleInfo;
-import com.caucho.quercus.module.ModuleStartupListener;
-import com.caucho.quercus.module.QuercusModule;
-import com.caucho.quercus.page.InterpretedPage;
-import com.caucho.quercus.page.PageManager;
-import com.caucho.quercus.page.QuercusPage;
-import com.caucho.quercus.parser.QuercusParser;
-import com.caucho.quercus.program.ClassDef;
-import com.caucho.quercus.program.JavaClassDef;
-import com.caucho.quercus.program.QuercusProgram;
-import com.caucho.quercus.program.UndefinedFunction;
-import com.caucho.quercus.servlet.api.QuercusHttpServletRequest;
-import com.caucho.quercus.servlet.api.QuercusHttpServletResponse;
-import com.caucho.quercus.servlet.api.QuercusServletContext;
-import com.caucho.util.IntMap;
-import com.caucho.util.L10N;
-import com.caucho.util.LruCache;
-import com.caucho.util.TimedCache;
-import com.caucho.vfs.FilePath;
-import com.caucho.vfs.Path;
-import com.caucho.vfs.ReadStream;
-import com.caucho.vfs.Vfs;
-import com.caucho.vfs.WriteStream;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /**
  * Facade for the PHP language.

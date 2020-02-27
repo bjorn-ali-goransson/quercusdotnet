@@ -29,16 +29,16 @@
 
 package com.caucho.quercus.lib.file;
 
-import com.caucho.quercus.QuercusModuleException;
-import com.caucho.quercus.env.*;
-import com.caucho.quercus.function.AbstractFunction;
-import com.caucho.quercus.program.Function;
-import com.caucho.vfs.TempBuffer;
 
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.OutputStream;
-import java.io.UnsupportedEncodingException;
+
+
+
+
+
+
+
+
+
 
 /**
  * A stream that has its operations mediated by a Quercus object.

@@ -29,7 +29,7 @@
 
 package com.caucho.quercus.env;
 
-import java.util.Locale;
+
 
 /**
  * Represents a StringValue that is never modified.

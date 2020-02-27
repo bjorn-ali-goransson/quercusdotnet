@@ -29,21 +29,21 @@
 
 package com.caucho.quercus.lib.db;
 
-import com.caucho.quercus.env.Env;
-import com.caucho.quercus.env.NullValue;
-import com.caucho.quercus.env.Value;
-import com.caucho.quercus.env.Var;
-import com.caucho.util.L10N;
-import com.caucho.util.Log;
 
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.SQLFeatureNotSupportedException;
-import java.sql.Statement;
-import java.sql.ResultSetMetaData;
-import java.sql.SQLException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 public class JdbcStatementResource
 {

@@ -29,15 +29,15 @@
 
 package com.caucho.quercus.lib.pdf;
 
-import com.caucho.quercus.QuercusModuleException;
-import com.caucho.util.CharBuffer;
-import com.caucho.util.L10N;
-import com.caucho.vfs.TempStream;
-import com.caucho.vfs.WriteStream;
 
-import java.io.IOException;
-import java.util.Locale;
-import java.util.logging.Logger;
+
+
+
+
+
+
+
+
 
 /**
  * pdf object oriented API facade

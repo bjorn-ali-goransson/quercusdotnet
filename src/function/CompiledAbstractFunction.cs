@@ -29,8 +29,8 @@
 
 package com.caucho.quercus.function;
 
-import com.caucho.quercus.env.Env;
-import com.caucho.quercus.program.Arg;
+
+
 
 @SuppressWarnings("serial")
 public abstract class CompiledAbstractFunction extends AbstractFunction

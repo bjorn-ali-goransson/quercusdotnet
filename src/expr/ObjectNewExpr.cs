@@ -29,13 +29,13 @@
 
 package com.caucho.quercus.expr;
 
-import com.caucho.quercus.Location;
-import com.caucho.quercus.env.Env;
-import com.caucho.quercus.env.NullValue;
-import com.caucho.quercus.env.QuercusClass;
-import com.caucho.quercus.env.Value;
 
-import java.util.ArrayList;
+
+
+
+
+
+
 
 /**
  * Represents a PHP function expression of the form "new ClassName()".

@@ -29,9 +29,9 @@
 
 package com.caucho.quercus.env;
 
-import java.util.IdentityHashMap;
-import java.util.Map;
-import java.util.Iterator;
+
+
+
 
 /**
  * Represents a PHP array value.

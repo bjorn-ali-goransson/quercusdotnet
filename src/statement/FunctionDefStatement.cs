@@ -29,11 +29,11 @@
 
 package com.caucho.quercus.statement;
 
-import com.caucho.quercus.Location;
-import com.caucho.quercus.env.Env;
-import com.caucho.quercus.env.Value;
-import com.caucho.quercus.program.Function;
-import com.caucho.util.L10N;
+
+
+
+
+
 
 /**
  * Represents a function definition

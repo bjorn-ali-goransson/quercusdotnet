@@ -29,7 +29,7 @@
 
 package com.caucho.quercus.lib.pdf;
 
-import java.io.IOException;
+
 
 /**
  * A pdf object.

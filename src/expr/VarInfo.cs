@@ -29,8 +29,8 @@
 
 package com.caucho.quercus.expr;
 
-import com.caucho.quercus.env.StringValue;
-import com.caucho.quercus.program.FunctionInfo;
+
+
 
 /**
  * Information about a variable's use in a function.

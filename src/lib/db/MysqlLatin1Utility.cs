@@ -29,8 +29,8 @@
 
 package com.caucho.quercus.lib.db;
 
-import com.caucho.util.IntArray;
-import com.caucho.util.IntMap;
+
+
 
 public class MysqlLatin1Utility
 {

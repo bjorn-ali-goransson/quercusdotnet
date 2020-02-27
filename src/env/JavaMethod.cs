@@ -29,15 +29,15 @@
 
 package com.caucho.quercus.env;
 
-import com.caucho.quercus.QuercusException;
-import com.caucho.quercus.annotation.Name;
-import com.caucho.quercus.module.ModuleContext;
-import com.caucho.quercus.program.JavaClassDef;
-import com.caucho.util.L10N;
 
-import java.lang.reflect.InvocationTargetException;
-import java.lang.reflect.Method;
-import java.lang.reflect.Modifier;
+
+
+
+
+
+
+
+
 
 /**
  * Represents a function created from a java method.

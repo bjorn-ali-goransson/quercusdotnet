@@ -29,10 +29,10 @@
 
 package com.caucho.quercus.lib.db;
 
-import java.sql.SQLException;
 
-import com.caucho.quercus.env.ConnectionEntry;
-import com.caucho.quercus.env.Env;
+
+
+
 
 /**
  * Tested with sqlite-jdbc-3.7.2.jar.

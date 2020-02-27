@@ -29,14 +29,14 @@
 
 package com.caucho.quercus.env;
 
-import com.caucho.quercus.program.ClassField;
-import com.caucho.vfs.WriteStream;
 
-import java.io.IOException;
-import java.math.BigDecimal;
-import java.math.BigInteger;
-import java.net.URL;
-import java.util.*;
+
+
+
+
+
+
+
 
 /**
  * Represents a PHP variable value.

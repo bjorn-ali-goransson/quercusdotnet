@@ -29,20 +29,20 @@
 
 package com.caucho.quercus.lib.jms;
 
-import com.caucho.quercus.QuercusModuleException;
-import com.caucho.quercus.annotation.ClassImplementation;
-import com.caucho.quercus.env.Env;
-import com.caucho.quercus.module.IniDefinitions;
-import com.caucho.quercus.env.StringValue;
-import com.caucho.quercus.module.IniDefinition;
-import com.caucho.quercus.module.AbstractQuercusModule;
-import com.caucho.util.L10N;
 
-import javax.jms.ConnectionFactory;
-import javax.jms.Destination;
-import javax.naming.Context;
-import javax.naming.InitialContext;
-import java.util.logging.Logger;
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /**
  * JMS functions

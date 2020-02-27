@@ -29,8 +29,8 @@
 
 package com.caucho.quercus;
 
-import com.caucho.quercus.env.ConstStringValue;
-import com.caucho.quercus.env.StringValue;
+
+
 
 public class StringConstants
 {

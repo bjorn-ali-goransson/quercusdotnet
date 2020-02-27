@@ -29,7 +29,7 @@
 
 package com.caucho.quercus.env;
 
-import com.caucho.quercus.QuercusModuleException;
+
 
 /**
  * Represents a PHP variable value.

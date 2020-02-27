@@ -29,7 +29,7 @@
 
 package com.caucho.quercus.lib.regexp;
 
-import com.caucho.quercus.env.StringValue;
+
 
 /**
  * FIFO cache of line-item regular expressions.

@@ -29,19 +29,19 @@
 
 package com.caucho.quercus.env;
 
-import com.caucho.quercus.QuercusContext;
-import com.caucho.quercus.QuercusException;
-import com.caucho.quercus.function.AbstractFunction;
-import com.caucho.quercus.program.ClassDef;
-import com.caucho.quercus.program.UnsetFunction;
-import com.caucho.util.Crc64;
-import com.caucho.util.L10N;
 
-import java.lang.ref.WeakReference;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.Locale;
+
+
+
+
+
+
+
+
+
+
+
+
 
 /**
  * Represents the state of the definitions: functions, classes and

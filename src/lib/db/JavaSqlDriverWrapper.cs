@@ -29,12 +29,12 @@
 
 package com.caucho.quercus.lib.db;
 
-import java.io.PrintWriter;
-import java.sql.Connection;
-import java.sql.Driver;
-import java.sql.SQLException;
-import java.util.Properties;
-import java.util.logging.Logger;
+
+
+
+
+
+
 
 /**
  * javax.sql.DataSource adapter for java.sql.Driver

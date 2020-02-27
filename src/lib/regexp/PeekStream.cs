@@ -29,7 +29,7 @@
 
 package com.caucho.quercus.lib.regexp;
 
-import com.caucho.quercus.env.*;
+
 
 class PeekStream {
   int read() { return -1; }

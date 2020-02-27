@@ -29,10 +29,10 @@
 
 package com.caucho.quercus.servlet;
 
-import java.lang.reflect.Constructor;
-import java.util.logging.Logger;
 
-import javax.servlet.ServletException;
+
+
+
 
 /**
  * Servlet to call PHP through javax.script.

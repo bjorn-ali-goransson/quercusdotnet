@@ -29,12 +29,12 @@
 
 package com.caucho.quercus.program;
 
-import com.caucho.quercus.env.Env;
-import com.caucho.quercus.env.JavaListAdapter;
-import com.caucho.quercus.env.Value;
-import com.caucho.quercus.module.ModuleContext;
 
-import java.util.List;
+
+
+
+
+
 
 /**
  * Represents an introspected Java class.

@@ -29,7 +29,7 @@
 
 package com.caucho.quercus.lib.dom;
 
-import org.w3c.dom.Notation;
+
 
 public class DOMNotation
   extends DOMNode<Notation>

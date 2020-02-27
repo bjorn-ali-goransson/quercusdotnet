@@ -29,7 +29,7 @@
 
 package com.caucho.quercus.env;
 
-import java.io.Closeable;
+
 
 public class EnvCloseable implements EnvCleanup {
   private Closeable _obj;

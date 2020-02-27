@@ -29,16 +29,16 @@
 
 package com.caucho.quercus.env;
 
-import com.caucho.quercus.QuercusRequestAdapter;
-import com.caucho.quercus.servlet.api.QuercusHttpServletRequest;
-import com.caucho.util.Base64;
-import com.caucho.vfs.WriteStream;
 
-import java.io.IOException;
-import java.util.Enumeration;
-import java.util.IdentityHashMap;
-import java.util.Map;
-import java.util.Set;
+
+
+
+
+
+
+
+
+
 
 /**
  * Represents the server

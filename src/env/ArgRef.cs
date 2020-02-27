@@ -29,15 +29,15 @@
 
 package com.caucho.quercus.env;
 
-import com.caucho.quercus.expr.Expr;
-import com.caucho.quercus.function.AbstractFunction;
-import com.caucho.vfs.WriteStream;
 
-import java.io.IOException;
-import java.io.Serializable;
-import java.util.IdentityHashMap;
-import java.util.Iterator;
-import java.util.Map;
+
+
+
+
+
+
+
+
 
 /**
  * Represents a reference to a PHP variable in a function call.

@@ -29,25 +29,25 @@
 
 package com.caucho.quercus.parser;
 
-import com.caucho.quercus.Location;
-import com.caucho.quercus.QuercusContext;
-import com.caucho.quercus.QuercusRuntimeException;
-import com.caucho.quercus.env.*;
-import com.caucho.quercus.expr.*;
-import com.caucho.quercus.function.*;
-import com.caucho.quercus.program.*;
-import com.caucho.quercus.statement.*;
-import com.caucho.util.IntMap;
-import com.caucho.util.L10N;
-import com.caucho.vfs.*;
 
-import java.io.CharConversionException;
-import java.io.Reader;
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.LinkedHashMap;
-import java.util.Locale;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /**
  * Parses a PHP program.
@@ -174,7 +174,7 @@ public class QuercusParser {
   private final static int TRAIT = 573;
   private final static int IMPLEMENTS = 574;
 
-  private final static int IMPORT = 575;
+  private final static int 
   private final static int TEXT_PHP = 576;
   private final static int NAMESPACE = 577;
   private final static int USE = 578;

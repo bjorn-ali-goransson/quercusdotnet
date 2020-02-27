@@ -29,11 +29,11 @@
 
 package com.caucho.quercus.env;
 
-import java.sql.Connection;
-import java.sql.SQLException;
-import java.util.logging.*;
 
-import javax.sql.DataSource;
+
+
+
+
 
 public class ConnectionEntry implements EnvCleanup
 {

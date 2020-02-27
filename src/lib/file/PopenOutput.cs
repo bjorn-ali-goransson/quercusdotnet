@@ -29,15 +29,15 @@
 
 package com.caucho.quercus.lib.file;
 
-import com.caucho.quercus.env.Env;
-import com.caucho.quercus.env.EnvCleanup;
-import com.caucho.vfs.VfsStream;
-import com.caucho.vfs.WriteStream;
 
-import java.io.IOException;
-import java.io.OutputStream;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+
+
+
+
+
+
+
+
 
 /**
  * Represents an output stream for a popen'ed process.

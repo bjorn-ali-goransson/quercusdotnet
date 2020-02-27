@@ -29,9 +29,9 @@
 
 package com.caucho.quercus.env;
 
-import com.caucho.quercus.Location;
-import com.caucho.quercus.QuercusException;
-import com.caucho.quercus.lib.ErrorModule;
+
+
+
 
 /**
  * Parent of PHP exceptions

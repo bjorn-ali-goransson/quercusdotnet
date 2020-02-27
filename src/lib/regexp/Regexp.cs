@@ -29,16 +29,16 @@
 
 package com.caucho.quercus.lib.regexp;
 
-import java.util.*;
-import java.util.logging.*;
 
-import com.caucho.quercus.QuercusException;
-import com.caucho.quercus.env.Env;
-import com.caucho.quercus.env.StringValue;
-import com.caucho.quercus.env.UnicodeBuilderValue;
-import com.caucho.quercus.env.UnicodeValue;
-import com.caucho.quercus.lib.i18n.Utf8Encoder;
-import com.caucho.util.*;
+
+
+
+
+
+
+
+
+
 
 public class Regexp {
   private static final Logger log

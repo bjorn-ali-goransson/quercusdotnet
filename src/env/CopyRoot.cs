@@ -29,7 +29,7 @@
 
 package com.caucho.quercus.env;
 
-import java.util.IdentityHashMap;
+
 
 /**
  * Root for saving copy information for the serialization cache.

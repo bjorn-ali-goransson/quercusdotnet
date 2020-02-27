@@ -29,7 +29,7 @@
 
 package com.caucho.quercus.lib.gettext.expr;
 
-import com.caucho.quercus.env.StringValue;
+
 
 /**
  * Represents a gettext plural expression.

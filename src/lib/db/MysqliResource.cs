@@ -29,10 +29,10 @@
 
 package com.caucho.quercus.lib.db;
 
-import com.caucho.quercus.annotation.Optional;
-import com.caucho.quercus.annotation.ResourceType;
-import com.caucho.quercus.env.Env;
-import com.caucho.quercus.env.StringValue;
+
+
+
+
 
 /**
  * mysqli object oriented API facade

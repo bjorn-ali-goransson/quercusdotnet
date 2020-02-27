@@ -29,7 +29,7 @@
 
 package com.caucho.quercus.env;
 
-import com.caucho.quercus.QuercusException;
+
 
 /**
  * Parent of PHP exceptions

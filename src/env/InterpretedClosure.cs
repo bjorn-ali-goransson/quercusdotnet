@@ -29,8 +29,8 @@
 
 package com.caucho.quercus.env;
 
-import com.caucho.quercus.function.AbstractFunction;
-import com.caucho.quercus.program.Arg;
+
+
 
 /**
  * Represents a closure

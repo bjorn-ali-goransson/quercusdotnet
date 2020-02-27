@@ -28,9 +28,9 @@
  */
 package com.caucho.quercus.lib.file;
 
-import com.caucho.quercus.env.Env;
-import com.caucho.vfs.ReadStream;
-import com.caucho.vfs.VfsStream;
+
+
+
 
 /*
  * STDIN, php://stdin

@@ -29,12 +29,12 @@
 
 package com.caucho.quercus.lib.dom;
 
-import com.caucho.quercus.env.DefaultValue;
-import com.caucho.quercus.env.Env;
-import com.caucho.quercus.env.StringValue;
-import com.caucho.quercus.env.Value;
-import com.caucho.quercus.lib.simplexml.SimpleXMLElement;
-import com.caucho.quercus.module.AbstractQuercusModule;
+
+
+
+
+
+
 
 public class QuercusDOMModule
   extends AbstractQuercusModule

@@ -29,8 +29,8 @@
 
 package com.caucho.quercus.lib.file;
 
-import com.caucho.quercus.annotation.ResourceType;
-import com.caucho.quercus.env.Value;
+
+
 
 /**
  * Interface for a Quercus stream

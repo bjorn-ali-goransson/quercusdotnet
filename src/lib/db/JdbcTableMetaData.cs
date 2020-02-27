@@ -29,13 +29,13 @@
 
 package com.caucho.quercus.lib.db;
 
-import com.caucho.quercus.env.Env;
 
-import java.sql.DatabaseMetaData;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.util.HashMap;
-import java.util.logging.*;
+
+
+
+
+
+
 
 /**
  * Represents a JDBC column metadata

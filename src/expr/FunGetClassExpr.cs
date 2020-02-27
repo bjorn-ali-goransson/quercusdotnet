@@ -29,10 +29,10 @@
 
 package com.caucho.quercus.expr;
 
-import com.caucho.quercus.env.Env;
-import com.caucho.quercus.env.Value;
-import com.caucho.quercus.parser.QuercusParser;
-import com.caucho.util.L10N;
+
+
+
+
 
 /**
  * Represents returns the current class.

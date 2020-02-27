@@ -29,30 +29,30 @@
 
 package com.caucho.quercus.lib;
 
-import com.caucho.quercus.annotation.Hide;
-import com.caucho.quercus.annotation.Optional;
-import com.caucho.quercus.env.ArrayValue;
-import com.caucho.quercus.env.ArrayValueImpl;
-import com.caucho.quercus.env.BooleanValue;
-import com.caucho.quercus.env.Callable;
-import com.caucho.quercus.env.Env;
-import com.caucho.quercus.env.LongValue;
-import com.caucho.quercus.env.NullValue;
-import com.caucho.quercus.env.OutputBuffer;
-import com.caucho.quercus.env.StringBuilderOutputStream;
-import com.caucho.quercus.env.StringValue;
-import com.caucho.quercus.env.Value;
-import com.caucho.quercus.module.AbstractQuercusModule;
-import com.caucho.quercus.module.ModuleStartupListener;
-import com.caucho.quercus.module.IniDefinitions;
-import com.caucho.quercus.module.IniDefinition;
-import com.caucho.util.L10N;
 
-import java.io.IOException;
-import java.io.OutputStream;
-import java.util.logging.Logger;
-import java.util.zip.DeflaterOutputStream;
-import java.util.zip.GZIPOutputStream;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /**
  * PHP output routines.

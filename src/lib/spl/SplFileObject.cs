@@ -29,13 +29,13 @@
 
 package com.caucho.quercus.lib.spl;
 
-import com.caucho.quercus.UnimplementedException;
-import com.caucho.quercus.annotation.Optional;
-import com.caucho.quercus.env.Env;
-import com.caucho.quercus.env.StringValue;
-import com.caucho.quercus.env.Value;
-import com.caucho.quercus.lib.file.BinaryStream;
-import com.caucho.quercus.lib.file.FileModule;
+
+
+
+
+
+
+
 
 public class SplFileObject extends SplFileInfo
 {

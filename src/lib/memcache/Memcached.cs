@@ -29,9 +29,9 @@
 
 package com.caucho.quercus.lib.memcache;
 
-import com.caucho.quercus.env.ArrayValue;
-import com.caucho.quercus.env.Env;
-import com.caucho.quercus.env.Value;
+
+
+
 
 public class Memcached
 {

@@ -29,7 +29,7 @@
 
 package com.caucho.quercus.env;
 
-import com.caucho.quercus.marshal.Marshal;
+
 
 /**
  * Represents an 8-bit binary php-6 value.

@@ -29,8 +29,8 @@
 
 package com.caucho.quercus.env;
 
-import java.util.HashMap;
-import java.util.Map;
+
+
 
 /**
  * Represents a PHP chained map

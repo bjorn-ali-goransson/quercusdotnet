@@ -29,21 +29,21 @@
 
 package com.caucho.quercus.page;
 
-import com.caucho.quercus.Location;
-import com.caucho.quercus.QuercusContext;
-import com.caucho.quercus.env.Env;
-import com.caucho.quercus.env.NullValue;
-import com.caucho.quercus.env.QuercusLanguageException;
-import com.caucho.quercus.env.StringValue;
-import com.caucho.quercus.env.Value;
-import com.caucho.quercus.function.AbstractFunction;
-import com.caucho.quercus.program.ClassDef;
-import com.caucho.util.L10N;
-import com.caucho.vfs.Path;
 
-import java.util.HashMap;
-import java.util.Locale;
-import java.util.Map;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /**
  * Represents a compiled PHP program.

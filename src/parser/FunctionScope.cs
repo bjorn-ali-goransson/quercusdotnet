@@ -29,15 +29,15 @@
 
 package com.caucho.quercus.parser;
 
-import com.caucho.quercus.env.StringValue;
-import com.caucho.quercus.expr.ExprFactory;
-import com.caucho.quercus.program.Function;
-import com.caucho.quercus.program.InterpretedClassDef;
-import com.caucho.quercus.Location;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Locale;
+
+
+
+
+
+
+
+
 
 /**
  * Parse scope.

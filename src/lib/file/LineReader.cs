@@ -29,10 +29,10 @@
 
 package com.caucho.quercus.lib.file;
 
-import com.caucho.quercus.env.Env;
-import com.caucho.quercus.env.StringValue;
 
-import java.io.IOException;
+
+
+
 
 /**
  * A helper class that handles line endings when reading from a BinaryInput.

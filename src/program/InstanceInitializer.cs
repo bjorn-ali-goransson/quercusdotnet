@@ -29,8 +29,8 @@
 
 package com.caucho.quercus.program;
 
-import com.caucho.quercus.env.Env;
-import com.caucho.quercus.env.Value;
+
+
 
 /**
  * Represents a Quercus class instance initializer

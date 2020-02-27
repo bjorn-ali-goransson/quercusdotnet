@@ -29,12 +29,12 @@
 
 package com.caucho.quercus.program;
 
-import java.util.HashMap;
-import java.util.Locale;
-import java.util.Map;
-import java.util.Set;
 
-import com.caucho.quercus.env.StringValue;
+
+
+
+
+
 
 public class TraitAliasMap
 {

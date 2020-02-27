@@ -29,14 +29,14 @@
 
 package com.caucho.quercus.env;
 
-import com.caucho.quercus.QuercusException;
-import com.caucho.quercus.annotation.Name;
-import com.caucho.quercus.module.ModuleContext;
-import com.caucho.quercus.program.JavaClassDef;
-import com.caucho.util.L10N;
 
-import java.lang.reflect.Constructor;
-import java.lang.reflect.InvocationTargetException;
+
+
+
+
+
+
+
 
 /**
  * Represents the introspected static function information.

@@ -29,12 +29,12 @@
 
 package com.caucho.quercus.function;
 
-import com.caucho.quercus.env.ArrayValueImpl;
-import com.caucho.quercus.env.Callable;
-import com.caucho.quercus.env.Env;
-import com.caucho.quercus.env.QuercusClass;
-import com.caucho.quercus.env.StringValue;
-import com.caucho.quercus.env.Value;
+
+
+
+
+
+
 
 /**
  * Represents a function

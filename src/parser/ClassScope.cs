@@ -29,14 +29,14 @@
 
 package com.caucho.quercus.parser;
 
-import com.caucho.quercus.env.FieldVisibility;
-import com.caucho.quercus.env.StringValue;
-import com.caucho.quercus.expr.Expr;
-import com.caucho.quercus.program.Function;
-import com.caucho.quercus.program.InterpretedClassDef;
-import com.caucho.quercus.Location;
 
-import java.util.ArrayList;
+
+
+
+
+
+
+
 
 /**
  * Class parse scope.

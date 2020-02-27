@@ -29,12 +29,12 @@
 
 package com.caucho.quercus.lib.gae;
 
-import com.caucho.quercus.annotation.Optional;
-import com.google.appengine.api.users.User;
-import com.google.appengine.api.users.UserService;
-import com.google.appengine.api.users.UserServiceFactory;
 
-import java.util.Set;
+
+
+
+
+
 
 public class GaeUserService
 {

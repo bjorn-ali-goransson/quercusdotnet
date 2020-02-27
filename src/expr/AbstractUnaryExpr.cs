@@ -29,7 +29,7 @@
 
 package com.caucho.quercus.expr;
 
-import com.caucho.quercus.Location;
+
 
 /**
  * Represents a PHP boolean negation

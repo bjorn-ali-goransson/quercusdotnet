@@ -29,10 +29,10 @@
 
 package com.caucho.quercus.lib.filter;
 
-import com.caucho.quercus.env.BooleanValue;
-import com.caucho.quercus.env.Env;
-import com.caucho.quercus.env.StringValue;
-import com.caucho.quercus.env.Value;
+
+
+
+
 
 /**
  * Coded to RFC822 specifications. XXX: RFC2822.

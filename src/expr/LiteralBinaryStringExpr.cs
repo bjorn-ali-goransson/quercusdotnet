@@ -29,7 +29,7 @@
 
 package com.caucho.quercus.expr;
 
-import com.caucho.quercus.env.BinaryValue;
+
 
 /**
  * Represents a PHP string literal expression.

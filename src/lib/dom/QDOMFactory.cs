@@ -29,13 +29,13 @@
 
 package com.caucho.quercus.lib.dom;
 
-import com.caucho.xml.*;
 
-import org.w3c.dom.*;
-import org.xml.sax.SAXException;
 
-import java.io.IOException;
-import java.io.InputStream;
+
+
+
+
+
 
 public class QDOMFactory
   implements DOMFactory

@@ -28,10 +28,10 @@
 
 package com.caucho.quercus.lib.zip;
 
-import com.caucho.quercus.lib.file.BinaryInput;
 
-import java.io.IOException;
-import java.util.zip.ZipEntry;
+
+
+
 
 /**
  * Reads the zip header and prepares zip entries.

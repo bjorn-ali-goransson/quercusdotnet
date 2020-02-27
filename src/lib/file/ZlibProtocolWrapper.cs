@@ -29,12 +29,12 @@
 
 package com.caucho.quercus.lib.file;
 
-import com.caucho.quercus.env.*;
-import com.caucho.quercus.lib.UrlModule;
-import com.caucho.quercus.lib.zlib.ZlibModule;
-import com.caucho.util.L10N;
 
-import java.util.logging.Logger;
+
+
+
+
+
 
 public class ZlibProtocolWrapper extends ProtocolWrapper {
   private static final Logger log

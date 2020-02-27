@@ -28,14 +28,14 @@
 
 package com.caucho.quercus.lib.db;
 
-import com.caucho.quercus.env.ArrayValue;
-import com.caucho.quercus.env.ArrayValueImpl;
-import com.caucho.quercus.env.Env;
-import com.caucho.util.L10N;
 
-import java.sql.SQLException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+
+
+
+
+
+
+
 
 public class PDOError
 {

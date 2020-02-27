@@ -29,8 +29,8 @@
 
 package com.caucho.quercus;
 
-import java.util.*;
-import java.lang.reflect.*;
+
+
 
 /**
  * Parent of PHP exceptions

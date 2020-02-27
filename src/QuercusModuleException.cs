@@ -29,7 +29,7 @@
 
 package com.caucho.quercus;
 
-import java.lang.reflect.*;
+
 
 /**
  * Java exception caught and rethrown by modules.

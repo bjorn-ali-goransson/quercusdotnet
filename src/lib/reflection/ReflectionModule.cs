@@ -29,7 +29,7 @@
 
 package com.caucho.quercus.lib.reflection;
 
-import com.caucho.quercus.module.AbstractQuercusModule;
+
 
 public class ReflectionModule
   extends AbstractQuercusModule

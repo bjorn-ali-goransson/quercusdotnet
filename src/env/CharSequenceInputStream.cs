@@ -29,7 +29,7 @@
 
 package com.caucho.quercus.env;
 
-import java.io.InputStream;
+
 
 /**
  * Represents an ISO-8859-1 input stream.

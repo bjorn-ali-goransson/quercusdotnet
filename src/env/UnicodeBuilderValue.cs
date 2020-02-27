@@ -29,11 +29,11 @@
 
 package com.caucho.quercus.env;
 
-import com.caucho.quercus.QuercusModuleException;
-import com.caucho.vfs.*;
 
-import java.io.*;
-import java.util.Locale;
+
+
+
+
 
 /**
  * Represents a PHP string value.

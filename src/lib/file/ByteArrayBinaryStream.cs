@@ -29,11 +29,11 @@
 
 package com.caucho.quercus.lib.file;
 
-import com.caucho.quercus.env.Env;
 
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.OutputStream;
+
+
+
+
 
 /**
  * php://memory

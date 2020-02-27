@@ -29,7 +29,7 @@
 
 package com.caucho.quercus.lib.i18n;
 
-import com.caucho.quercus.env.StringValue;
+
 
 public class Utf8Encoder
   extends Encoder

@@ -29,7 +29,7 @@
 
 package com.caucho.quercus.env;
 
-import java.io.Serializable;
+
 
 /**
  * Represents a PHP null value.

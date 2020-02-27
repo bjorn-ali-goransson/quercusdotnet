@@ -29,12 +29,12 @@
 
 package com.caucho.quercus.statement;
 
-import com.caucho.quercus.Location;
-import com.caucho.quercus.env.Env;
-import com.caucho.quercus.env.QuercusClass;
-import com.caucho.quercus.env.Value;
-import com.caucho.quercus.program.InterpretedClassDef;
-import com.caucho.util.L10N;
+
+
+
+
+
+
 
 /**
  * Represents a class definition

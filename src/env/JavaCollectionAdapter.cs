@@ -29,9 +29,9 @@
 
 package com.caucho.quercus.env;
 
-import com.caucho.quercus.program.JavaClassDef;
 
-import java.util.*;
+
+
 
 /**
  * Represents a marshalled Collection argument.

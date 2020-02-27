@@ -29,12 +29,12 @@
 
 package com.caucho.quercus.lib;
 
-import com.caucho.quercus.annotation.ResourceType;
-import com.caucho.quercus.env.Env;
-import com.caucho.quercus.env.EnvCleanup;
 
-import java.util.logging.Level;
-import java.util.logging.Logger;
+
+
+
+
+
 
 /*
  * Represents a resource opened by proc_open().

@@ -29,8 +29,8 @@
 
 package com.caucho.quercus.lib.db;
 
-import java.sql.ResultSet;
-import java.sql.SQLException;
+
+
 
 /**
  * Extra ResultSet metadata for a Quercus Mysql connection.

@@ -29,23 +29,23 @@
 
 package com.caucho.quercus.program;
 
-import com.caucho.quercus.env.Env;
-import com.caucho.quercus.env.FieldVisibility;
-import com.caucho.quercus.env.ObjectExtValue;
-import com.caucho.quercus.env.ObjectValue;
-import com.caucho.quercus.env.QuercusClass;
-import com.caucho.quercus.env.StringValue;
-import com.caucho.quercus.env.Value;
-import com.caucho.quercus.expr.Expr;
-import com.caucho.quercus.function.AbstractFunction;
-import com.caucho.quercus.Location;
-import com.caucho.util.L10N;
 
-import java.util.HashMap;
-import java.util.Locale;
-import java.util.Map;
-import java.util.HashSet;
-import java.util.Set;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /**
  * Represents a Quercus class definition

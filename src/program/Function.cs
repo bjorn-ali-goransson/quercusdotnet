@@ -29,25 +29,25 @@
 
 package com.caucho.quercus.program;
 
-import com.caucho.quercus.Location;
-import com.caucho.quercus.QuercusException;
-import com.caucho.quercus.env.Env;
-import com.caucho.quercus.env.EnvVar;
-import com.caucho.quercus.env.EnvVarImpl;
-import com.caucho.quercus.env.NullThisValue;
-import com.caucho.quercus.env.NullValue;
-import com.caucho.quercus.env.StringValue;
-import com.caucho.quercus.env.QuercusClass;
-import com.caucho.quercus.env.Value;
-import com.caucho.quercus.env.Var;
-import com.caucho.quercus.expr.Expr;
-import com.caucho.quercus.expr.ExprFactory;
-import com.caucho.quercus.expr.ParamRequiredExpr;
-import com.caucho.quercus.function.AbstractFunction;
-import com.caucho.quercus.statement.Statement;
 
-import java.util.HashMap;
-import java.util.Map;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /**
  * Represents sequence of statements.

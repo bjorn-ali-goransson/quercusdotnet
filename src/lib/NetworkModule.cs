@@ -29,33 +29,33 @@
 
 package com.caucho.quercus.lib;
 
-import com.caucho.quercus.QuercusModuleException;
-import com.caucho.quercus.annotation.NotNull;
-import com.caucho.quercus.annotation.Optional;
-import com.caucho.quercus.annotation.Reference;
-import com.caucho.quercus.annotation.ReturnNullAsFalse;
-import com.caucho.quercus.env.*;
-import com.caucho.quercus.lib.file.SocketInputOutput;
-import com.caucho.quercus.lib.file.TcpInputOutput;
-import com.caucho.quercus.lib.file.UdpInputOutput;
-import com.caucho.quercus.lib.file.SocketInputOutput.Domain;
-import com.caucho.quercus.module.AbstractQuercusModule;
-import com.caucho.util.L10N;
 
-import javax.naming.NameNotFoundException;
-import javax.naming.NamingEnumeration;
-import javax.naming.NamingException;
-import javax.naming.directory.Attribute;
-import javax.naming.directory.Attributes;
-import javax.naming.directory.DirContext;
-import javax.naming.directory.InitialDirContext;
-import java.io.IOException;
-import java.net.InetAddress;
-import java.util.LinkedHashMap;
-import java.util.Map;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import java.util.regex.Pattern;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /**
  * Information about PHP network

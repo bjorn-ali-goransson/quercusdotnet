@@ -29,9 +29,9 @@
 
 package com.caucho.quercus.env;
 
-import com.caucho.quercus.QuercusContext;
-import com.caucho.quercus.page.QuercusPage;
-import com.caucho.vfs.WriteStream;
+
+
+
 
 public class CliEnv extends Env {
   private final String[] _argv;

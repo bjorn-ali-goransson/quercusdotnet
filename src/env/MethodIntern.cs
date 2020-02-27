@@ -29,7 +29,7 @@
 
 package com.caucho.quercus.env;
 
-import java.util.concurrent.ConcurrentHashMap;
+
 
 /**
  * Case-insensitive method mapping

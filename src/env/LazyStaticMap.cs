@@ -29,9 +29,9 @@
 
 package com.caucho.quercus.env;
 
-import com.caucho.util.IntMap;
 
-import java.util.*;
+
+
 
 /**
  * Represents the Quercus static environment.

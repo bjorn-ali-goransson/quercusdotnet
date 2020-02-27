@@ -29,7 +29,7 @@
 
 package com.caucho.quercus.lib.reflection;
 
-import com.caucho.quercus.annotation.ClassImplementation;
+
 
 @ClassImplementation
 public interface Reflector

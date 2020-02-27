@@ -29,16 +29,16 @@
 
 package com.caucho.quercus.lib.curl;
 
-import com.caucho.quercus.env.Callable;
-import com.caucho.quercus.env.Env;
-import com.caucho.quercus.env.LongValue;
-import com.caucho.quercus.env.StringValue;
-import com.caucho.quercus.env.Value;
-import com.caucho.quercus.lib.file.BinaryInput;
 
-import java.io.IOException;
-import java.io.OutputStream;
-import java.net.ProtocolException;
+
+
+
+
+
+
+
+
+
 
 /**
  * Represents a PUT Http request.

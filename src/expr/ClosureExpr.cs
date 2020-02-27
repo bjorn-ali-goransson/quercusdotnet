@@ -29,15 +29,15 @@
 
 package com.caucho.quercus.expr;
 
-import java.util.ArrayList;
 
-import com.caucho.quercus.Location;
-import com.caucho.quercus.env.Env;
-import com.caucho.quercus.env.InterpretedClosure;
-import com.caucho.quercus.env.NullValue;
-import com.caucho.quercus.env.Value;
-import com.caucho.quercus.parser.QuercusParser;
-import com.caucho.quercus.program.Function;
+
+
+
+
+
+
+
+
 
 /**
  * Represents a PHP closure expression.

@@ -29,19 +29,19 @@
 
 package com.caucho.quercus.lib;
 
-import com.caucho.quercus.annotation.Optional;
-import com.caucho.quercus.annotation.ReadOnly;
-import com.caucho.quercus.annotation.ReturnNullAsFalse;
-import com.caucho.quercus.env.*;
-import com.caucho.quercus.expr.Expr;
-import com.caucho.quercus.module.AbstractQuercusModule;
-import com.caucho.quercus.program.ClassField;
-import com.caucho.quercus.function.AbstractFunction;
-import com.caucho.util.L10N;
 
-import java.util.HashSet;
-import java.util.Iterator;
-import java.util.Map;
+
+
+
+
+
+
+
+
+
+
+
+
 
 /**
  * Quercus class information

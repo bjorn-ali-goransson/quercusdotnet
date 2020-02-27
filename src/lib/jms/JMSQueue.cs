@@ -29,18 +29,18 @@
 
 package com.caucho.quercus.lib.jms;
 
-import com.caucho.quercus.annotation.NotNull;
-import com.caucho.quercus.annotation.Optional;
-import com.caucho.quercus.env.*;
-import com.caucho.vfs.TempBuffer;
-import com.caucho.util.L10N;
 
-import javax.jms.*;
-import java.io.Serializable;
-import java.util.Enumeration;
-import java.util.Map;
-import java.util.Set;
-import java.util.logging.Logger;
+
+
+
+
+
+
+
+
+
+
+
 
 /**
  * JMS functions

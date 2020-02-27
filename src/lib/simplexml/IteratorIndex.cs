@@ -29,9 +29,9 @@
 
 package com.caucho.quercus.lib.simplexml;
 
-import com.caucho.quercus.env.Env;
-import com.caucho.quercus.env.LongValue;
-import com.caucho.quercus.env.Value;
+
+
+
 
 public abstract class IteratorIndex
 {

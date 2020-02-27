@@ -29,9 +29,9 @@
 
 package com.caucho.quercus.env;
 
-import com.caucho.quercus.page.QuercusPage;
 
-import java.lang.ref.WeakReference;
+
+
 
 /**
  * Key for caching function definitions

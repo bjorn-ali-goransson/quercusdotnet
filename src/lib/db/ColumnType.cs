@@ -29,9 +29,9 @@
 
 package com.caucho.quercus.lib.db;
 
-import com.caucho.quercus.env.Value;
 
-import java.sql.Types;
+
+
 
 public enum ColumnType {
   BLOB(Types.BLOB),

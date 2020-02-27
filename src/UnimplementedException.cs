@@ -28,7 +28,7 @@
 
 package com.caucho.quercus;
 
-import com.caucho.util.L10N;
+
 
 @SuppressWarnings("serial")
 public class UnimplementedException

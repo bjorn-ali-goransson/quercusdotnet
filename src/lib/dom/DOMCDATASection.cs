@@ -29,7 +29,7 @@
 
 package com.caucho.quercus.lib.dom;
 
-import org.w3c.dom.CDATASection;
+
 
 public class DOMCDATASection
   extends DOMCharacterData<CDATASection>

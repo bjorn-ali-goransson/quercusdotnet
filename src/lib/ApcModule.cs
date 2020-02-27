@@ -29,20 +29,20 @@
 
 package com.caucho.quercus.lib;
 
-import com.caucho.quercus.annotation.Optional;
-import com.caucho.quercus.annotation.Reference;
-import com.caucho.quercus.env.*;
-import com.caucho.quercus.module.AbstractQuercusModule;
-import com.caucho.quercus.module.IniDefinitions;
-import com.caucho.quercus.module.IniDefinition;
-import com.caucho.util.L10N;
-import com.caucho.util.LruCache;
-import com.caucho.vfs.Path;
 
-import java.io.IOException;
-import java.util.*;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /**
  * APC object oriented API facade

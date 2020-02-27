@@ -29,7 +29,7 @@
 
 package com.caucho.quercus.resources;
 
-import com.caucho.quercus.env.*;
+
 
 /**
  * Represents a PHP stream context.

@@ -29,21 +29,21 @@
 
 package com.caucho.quercus.lib;
 
-import com.caucho.quercus.annotation.Optional;
-import com.caucho.quercus.env.*;
-import com.caucho.quercus.module.*;
-import com.caucho.util.*;
-import com.caucho.vfs.*;
 
-import java.io.*;
-import java.security.*;
-import java.util.*;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import java.util.zip.Adler32;
 
-import javax.crypto.*;
-import javax.crypto.spec.*;
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /**
  * Hash functions.

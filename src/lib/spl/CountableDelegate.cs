@@ -29,12 +29,12 @@
 
 package com.caucho.quercus.lib.spl;
 
-import com.caucho.quercus.env.CountDelegate;
-import com.caucho.quercus.env.Env;
-import com.caucho.quercus.env.ObjectValue;
-import com.caucho.quercus.env.ConstStringValue;
-import com.caucho.quercus.env.Value;
-import com.caucho.quercus.env.StringValue;
+
+
+
+
+
+
 
 /**
  * A delegate that intercepts the global count() function and calls count()

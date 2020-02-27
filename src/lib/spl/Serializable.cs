@@ -29,10 +29,10 @@
 
 package com.caucho.quercus.lib.spl;
 
-import com.caucho.quercus.env.ConstStringValue;
-import com.caucho.quercus.env.Env;
-import com.caucho.quercus.env.StringValue;
-import com.caucho.quercus.env.Value;
+
+
+
+
 
 public interface Serializable
 {

@@ -29,16 +29,16 @@
 
 package com.caucho.quercus.lib.mcrypt;
 
-import com.caucho.quercus.QuercusRuntimeException;
-import com.caucho.quercus.env.*;
-import com.caucho.util.L10N;
 
-import javax.crypto.Cipher;
-import javax.crypto.spec.IvParameterSpec;
-import javax.crypto.spec.SecretKeySpec;
-import java.security.Key;
-import java.util.Locale;
-import java.util.logging.Logger;
+
+
+
+
+
+
+
+
+
 
 /**
  * Encryption class

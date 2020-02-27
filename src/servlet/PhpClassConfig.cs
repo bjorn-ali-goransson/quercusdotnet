@@ -29,10 +29,10 @@
 
 package com.caucho.quercus.servlet;
 
-import com.caucho.config.ConfigException;
-import com.caucho.util.L10N;
 
-import javax.annotation.PostConstruct;
+
+
+
 
 /**
  * Custom class configuration.

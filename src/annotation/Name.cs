@@ -29,8 +29,8 @@
 
 package com.caucho.quercus.annotation;
 
-import java.lang.annotation.Retention;
-import java.lang.annotation.RetentionPolicy;
+
+
 
 /**
  * Used to indicate the name that should be used in the php namespace.

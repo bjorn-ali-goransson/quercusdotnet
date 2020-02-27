@@ -29,10 +29,10 @@
 
 package com.caucho.quercus.lib.spl;
 
-import com.caucho.quercus.annotation.Optional;
-import com.caucho.quercus.env.Env;
-import com.caucho.quercus.env.StringValue;
-import com.caucho.vfs.Path;
+
+
+
+
 
 public class RecursiveDirectoryIterator
   extends FilesystemIterator

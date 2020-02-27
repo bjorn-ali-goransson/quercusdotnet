@@ -29,17 +29,17 @@
 
 package com.caucho.quercus.lib.curl;
 
-import java.util.ArrayList;
 
-import com.caucho.quercus.annotation.ResourceType;
-import com.caucho.quercus.env.ArrayValue;
-import com.caucho.quercus.env.ArrayValueImpl;
-import com.caucho.quercus.env.BooleanValue;
-import com.caucho.quercus.env.Env;
-import com.caucho.quercus.env.LongValue;
-import com.caucho.quercus.env.ResourceValue;
-import com.caucho.quercus.env.StringValue;
-import com.caucho.quercus.env.Value;
+
+
+
+
+
+
+
+
+
+
 
 @ResourceType("curl_multi")
 public class CurlMultiResource extends ResourceValue
