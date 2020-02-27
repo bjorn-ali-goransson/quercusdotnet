@@ -65,8 +65,8 @@
 public class DOMDocument
   extends DOMNode<Document>
 {
-  private final static L10N L = new L10N(DOMDocument.class);
-  private final static Logger log
+  private const L10N L = new L10N(DOMDocument.class);
+  private const Logger log
     = Logger.getLogger(DOMDocument.class.getName());
 
   private string _encoding;

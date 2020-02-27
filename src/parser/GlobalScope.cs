@@ -44,7 +44,7 @@
  * Parse scope.
  */
 public class GlobalScope extends Scope {
-  private final static L10N L = new L10N(GlobalScope.class);
+  private const L10N L = new L10N(GlobalScope.class);
 
   private ExprFactory _exprFactory;
 

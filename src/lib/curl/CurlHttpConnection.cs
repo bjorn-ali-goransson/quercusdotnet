@@ -105,7 +105,7 @@ public class CurlHttpConnection
       setConnection(_url.openConnection());
   }
 
-  public final static CurlHttpConnection createConnection(URL url,
+  public const CurlHttpConnection createConnection(URL url,
                                                       string username,
                                                       string password,
                                                       CurlResource curl,
@@ -137,7 +137,7 @@ public class CurlHttpConnection
     return conn;
   }
 
-  public final static CurlHttpConnection createConnection(URL url,
+  public const CurlHttpConnection createConnection(URL url,
                                                           string username,
                                                           string password,
                                                           CurlResource curl)

@@ -39,8 +39,8 @@
 
 public class PDOError
 {
-  private final static L10N L = new L10N(PDOError.class);
-  private final static Logger log = Logger.getLogger(PDOError.class.getName());
+  private const L10N L = new L10N(PDOError.class);
+  private const Logger log = Logger.getLogger(PDOError.class.getName());
 
   private static final string ERR_NONE = PDO.ERR_NONE;
   private static final string ERR_GENERAL = "HY000";

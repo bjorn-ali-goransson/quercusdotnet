@@ -40,7 +40,7 @@
  * Represents a class definition
  */
 public class ClassDefStatement extends Statement {
-  private final static L10N L = new L10N(ClassDefStatement.class);
+  private const L10N L = new L10N(ClassDefStatement.class);
   
   protected final InterpretedClassDef _cl;
 

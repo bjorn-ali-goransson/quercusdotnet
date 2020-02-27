@@ -39,7 +39,7 @@
  * Represents a function definition
  */
 public class FunctionDefStatement extends Statement {
-  private final static L10N L = new L10N(FunctionDefStatement.class);
+  private const L10N L = new L10N(FunctionDefStatement.class);
 
   protected Function _fun;
 

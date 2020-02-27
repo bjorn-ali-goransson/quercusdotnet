@@ -34,7 +34,7 @@
 
 public class QuercusLocale
 {
-  private final static QuercusLocale DEFAULT_US
+  private const QuercusLocale DEFAULT_US
     = new QuercusLocale(Locale.US, "utf-8");
 
   private final Locale _locale;

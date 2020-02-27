@@ -45,7 +45,7 @@ public class BinaryBuilderValue
 {
   public static final BinaryBuilderValue EMPTY = new BinaryBuilderValue("");
 
-  private final static BinaryBuilderValue []CHAR_STRINGS;
+  private const BinaryBuilderValue []CHAR_STRINGS;
 
   public BinaryBuilderValue()
   {

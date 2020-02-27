@@ -267,12 +267,12 @@ public class Crypt {
       return (char) (v + 0x61 - 0x26);
   }
 
-  private final static boolean []KEY_SHIFTS = new boolean[] {
+  private const boolean []KEY_SHIFTS = new boolean[] {
     false, false, true, true, true, true, true, true,
     false, true,  true, true, true, true, true, false
   };
 
-  private final static int []REVERSE_BITS = new int[] {
+  private const int []REVERSE_BITS = new int[] {
     0x00, 0x20, 0x10, 0x30, 0x08, 0x28, 0x18, 0x38,
     0x04, 0x24, 0x14, 0x34, 0x0c, 0x2c, 0x1c, 0x3c,
     0x02, 0x22, 0x12, 0x32, 0x0a, 0x2a, 0x1a, 0x3a,

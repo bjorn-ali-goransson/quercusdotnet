@@ -1108,7 +1108,7 @@ class RegexpNode {
     }
   }
 
-  final static EmptyNode EMPTY = new EmptyNode();
+  const EmptyNode EMPTY = new EmptyNode();
 
   /**
    * Matches an empty production

@@ -34,7 +34,7 @@
 public class UnimplementedException
   extends UnsupportedOperationException
 {
-  private final static L10N L = new L10N(UnimplementedException.class);
+  private const L10N L = new L10N(UnimplementedException.class);
 
   private static final string MESSAGE
     = "{0} has not been implemented. "

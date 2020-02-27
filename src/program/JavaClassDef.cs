@@ -64,9 +64,9 @@
  * Represents an introspected Java class.
  */
 public class JavaClassDef extends ClassDef implements InstanceInitializer {
-  private final static Logger log
+  private const Logger log
     = Logger.getLogger(JavaClassDef.class.getName());
-  private final static L10N L = new L10N(JavaClassDef.class);
+  private const L10N L = new L10N(JavaClassDef.class);
 
   private final ModuleContext _moduleContext;
 

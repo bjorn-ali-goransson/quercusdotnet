@@ -34,19 +34,19 @@
  */
 class PluralExprParser
 {
-  final static int INTEGER = 256;
+  const int INTEGER = 256;
 
-  final static int EQ = 270;
-  final static int NEQ = 271;
-  final static int LE = 272;
-  final static int GE = 273;
+  const int EQ = 270;
+  const int NEQ = 271;
+  const int LE = 272;
+  const int GE = 273;
 
-  final static int AND = 280;
-  final static int OR = 281;
+  const int AND = 280;
+  const int OR = 281;
 
-  final static int VARIABLE_N = 290;
-  final static int UNKNOWN = 291;
-  final static int UNSET = 292;
+  const int VARIABLE_N = 290;
+  const int UNKNOWN = 291;
+  const int UNSET = 292;
 
   private CharSequence _expr;
   private int _exprLength;
