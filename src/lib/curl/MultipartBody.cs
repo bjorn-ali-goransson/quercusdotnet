@@ -125,7 +125,7 @@ public class MultipartBody extends PostBody
 
   public void writeTo(Env env,
                       OutputStream os)
-    throws IOException
+    
   {
     for (MultipartEntry entry : _postItems) {
       os.write('-');
@@ -193,7 +193,7 @@ public class MultipartBody extends PostBody
     }
 
     final void write(Env env, OutputStream os)
-      throws IOException
+      
     {
       int len = _header.length();
 
@@ -236,7 +236,7 @@ public class MultipartBody extends PostBody
     }
 
     void writeData(Env env, OutputStream os)
-      throws IOException
+      
     {
       os.write(_value.toString().getBytes());
     }
@@ -259,7 +259,7 @@ public class MultipartBody extends PostBody
     }
 
     void writeData(Env env, OutputStream os)
-      throws IOException
+      
     {
       TempBuffer tempBuf = null;
 

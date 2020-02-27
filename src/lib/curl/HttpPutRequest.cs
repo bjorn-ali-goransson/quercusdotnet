@@ -55,7 +55,7 @@ public class HttpPutRequest
    * Initializes the connection.
    */
   protected boolean init(Env env)
-    throws ProtocolException
+    
   {
     if (! super.init(env)) {
       return false;
@@ -70,7 +70,7 @@ public class HttpPutRequest
    * Transfer data to the server.
    */
   protected void transfer(Env env)
-    throws IOException
+    
   {
     super.transfer(env);
 

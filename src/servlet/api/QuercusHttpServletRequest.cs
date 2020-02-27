@@ -55,7 +55,7 @@ public interface QuercusHttpServletRequest
   public String getRealPath(String path);
 
   public InputStream getInputStream()
-    throws IOException;
+    
 
   public QuercusHttpSession getSession(boolean isCreate);
 

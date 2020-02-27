@@ -43,13 +43,13 @@ public class StringBuilderOutputStream
   }
 
   public void write(byte []buffer, int offset, int length)
-    throws IOException
+    
   {
     _sb.append(buffer, offset, length);
   }
 
   public void write(int ch)
-    throws IOException
+    
   {
     _sb.appendByte(ch);
   }

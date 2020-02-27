@@ -237,7 +237,7 @@ public class QuercusSessionManager
    * session doesn't exist.
    */
   public void setReuseSessionId(String reuse)
-    throws ConfigException
+    
   {
     if (reuse == null)
       _reuseSessionId = COOKIE;
@@ -305,7 +305,7 @@ public class QuercusSessionManager
    * @param obj the session object to be deserialized
    */
   public void load(ObjectInputStream in, Object obj)
-    throws IOException
+    
   {
     SessionArrayValue session = (SessionArrayValue) obj;
 
@@ -647,7 +647,7 @@ public class QuercusSessionManager
    * Saves the session.
    */
   public void store(OutputStream out, Object obj)
-    throws IOException
+    
   {
     SessionArrayValue session = (SessionArrayValue) obj;
 

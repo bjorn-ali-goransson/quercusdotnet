@@ -77,7 +77,7 @@ abstract public class UnicodeValue extends StringValue {
                           WriteStream out,
                           int depth,
                           IdentityHashMap<Value, String> valueSet)
-    throws IOException
+    
   {
     int length = length();
 

@@ -49,7 +49,7 @@ public class FileInput extends ReadStreamInput
   private ReadStream _is;
 
   public FileInput(Env env, Path path)
-    throws IOException
+    
   {
     super(env);
 
@@ -77,7 +77,7 @@ public class FileInput extends ReadStreamInput
    */
   @Override
   public BinaryInput openCopy()
-    throws IOException
+    
   {
     return new FileInput(_env, _path);
   }

@@ -267,8 +267,8 @@ public class Zlib {
    * need to have created a Zlib before calling this
    *
    * @return array of uncompressed lines
-   * @throws IOException
-   * @throws DataFormatException
+   * 
+   * 
    */
   public ArrayValue gzfile()
   {
@@ -293,8 +293,8 @@ public class Zlib {
    * same as gzgets but does not stop at '\n' or '\r'
    * @param length
    * @return BinaryValue, an empty BinaryValue if no data read
-   * @throws IOException
-   * @throws DataFormatException
+   * 
+   * 
    */
   public StringValue gzread(Env env, int length)
   {
@@ -334,8 +334,8 @@ public class Zlib {
    * @param length
    * @param allowedTags
    * @return next line stripping tags
-   * @throws IOException
-   * @throws DataFormatException
+   * 
+   * 
    */
   @ReturnNullAsFalse
   public StringValue gzgetss(Env env,
@@ -374,7 +374,7 @@ public class Zlib {
    * resets to the beginning of the file stream.
    *
    * @return always true
-   * @throws IOException
+   * 
    */
   public boolean gzrewind()
   {
@@ -394,17 +394,17 @@ public class Zlib {
   /**
    * helper function to open file for reading when necessary
    *
-   * @throws IOException
+   * 
    */
   protected InputStream getGZIPInputStream()
-    throws IOException
+    
   {
     try {
       _isGZIPInputStream = true;
       return new GZIPInputStream(_fileValue.getPath().openRead());
     }
     catch (IOException e) {
-      //GZIPInputStream throws an Exception if not in gzip format
+      //GZIPInputStream 
       //else open uncompressed stream
       _isGZIPInputStream = false;
 

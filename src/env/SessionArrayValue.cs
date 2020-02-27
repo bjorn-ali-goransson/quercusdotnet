@@ -187,7 +187,7 @@ public class SessionArrayValue extends ArrayValueWrapper
    * Saves the object to the output stream.
    */
   public void store(Env env, OutputStream out)
-    throws IOException
+    
   {
     String encode = encode(env);
 
@@ -207,7 +207,7 @@ public class SessionArrayValue extends ArrayValueWrapper
   }
 
   public void load(Env env, InputStream in)
-    throws IOException
+    
   {
     int len = (((in.read() & 0xff) << 24)
                + ((in.read() & 0xff) << 16)

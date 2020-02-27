@@ -85,7 +85,7 @@ public class QuercusServletImpl extends HttpServlet
    */
   @Override
   public final void init(ServletConfig config)
-    throws ServletException
+    
   {
     _config = config;
     _servletContext = config.getServletContext();
@@ -111,7 +111,7 @@ public class QuercusServletImpl extends HttpServlet
   }
 
   protected void initImpl(ServletConfig config)
-    throws ServletException
+    
   {
   }
 
@@ -141,7 +141,7 @@ public class QuercusServletImpl extends HttpServlet
   @Override
   public final void service(HttpServletRequest request,
                             HttpServletResponse response)
-    throws ServletException, IOException
+    
   {
     Env env = null;
     WriteStream ws = null;
@@ -288,13 +288,13 @@ public class QuercusServletImpl extends HttpServlet
   }
 
   protected void handleThrowable(HttpServletResponse response, Throwable e)
-    throws IOException, ServletException
+    
   {
     throw new ServletException(e);
   }
 
   protected WriteStream openWrite(HttpServletResponse response)
-    throws IOException
+    
   {
     WriteStream ws;
 

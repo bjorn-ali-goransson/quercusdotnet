@@ -49,7 +49,7 @@ public class DOMNode<T extends Node>
   }
 
   public DOMNode appendChild(DOMNode newChild)
-    throws DOMException
+    
   {
     try {
       return wrap(_delegate.appendChild(newChild.getDelegate()));
@@ -65,7 +65,7 @@ public class DOMNode<T extends Node>
   }
 
   public short compareDocumentPosition(DOMNode other)
-    throws DOMException
+    
   {
     try {
       return _delegate.compareDocumentPosition(other.getDelegate());
@@ -131,7 +131,7 @@ public class DOMNode<T extends Node>
   }
 
   public CharSequence getNodeValue(Env env)
-    throws DOMException
+    
   {
     try {
       String value = _delegate.getNodeValue();
@@ -164,7 +164,7 @@ public class DOMNode<T extends Node>
   }
 
   public CharSequence getTextContent(Env env)
-    throws DOMException
+    
   {
     try {
       String value = _delegate.getTextContent();
@@ -230,7 +230,7 @@ public class DOMNode<T extends Node>
   }
 
   public DOMNode insertBefore(DOMNode newChild, DOMNode refChild)
-    throws DOMException
+    
   {
     try {
       return wrap(_delegate.insertBefore(
@@ -277,7 +277,7 @@ public class DOMNode<T extends Node>
   }
 
   public DOMNode removeChild(DOMNode oldChild)
-    throws DOMException
+    
   {
     try {
       return wrap(_delegate.removeChild(oldChild.getDelegate()));
@@ -288,7 +288,7 @@ public class DOMNode<T extends Node>
   }
 
   public DOMNode replaceChild(DOMNode newChild, DOMNode oldChild)
-    throws DOMException
+    
   {
     try {
       return wrap(_delegate.replaceChild(
@@ -300,7 +300,7 @@ public class DOMNode<T extends Node>
   }
 
   public void setNodeValue(String nodeValue)
-    throws DOMException
+    
   {
     try {
       _delegate.setNodeValue(nodeValue);
@@ -311,7 +311,7 @@ public class DOMNode<T extends Node>
   }
 
   public void setPrefix(String prefix)
-    throws DOMException
+    
   {
     try {
       _delegate.setPrefix(prefix);
@@ -322,7 +322,7 @@ public class DOMNode<T extends Node>
   }
 
   public void setTextContent(String textContent)
-    throws DOMException
+    
   {
     try {
       _delegate.setTextContent(textContent);

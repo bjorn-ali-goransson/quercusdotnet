@@ -57,7 +57,7 @@ public class AfmParser {
    * jars inside that folder are also searched for fonts.
    */
   public Font parse(String webInfLibPath, String name)
-    throws IOException
+    
   {
     MergePath mergePath = new MergePath();
     mergePath.addClassPath();
@@ -108,7 +108,7 @@ public class AfmParser {
   }
 
   private Font parseTop()
-    throws IOException
+    
   {
     Font font = new Font();
 
@@ -154,7 +154,7 @@ public class AfmParser {
   }
 
   private FontChar parseCharacter()
-    throws IOException
+    
   {
     int code = parseInteger();
 
@@ -176,7 +176,7 @@ public class AfmParser {
   }
 
   private String parseString()
-    throws IOException
+    
   {
     skipWhitespace();
 
@@ -194,7 +194,7 @@ public class AfmParser {
   }
 
   private int parseInteger()
-    throws IOException
+    
   {
     skipWhitespace();
 
@@ -219,7 +219,7 @@ public class AfmParser {
   }
 
   private double parseNumber()
-    throws IOException
+    
   {
     skipWhitespace();
 
@@ -241,7 +241,7 @@ public class AfmParser {
   }
 
   private String parseIdentifier()
-    throws IOException
+    
   {
     StringBuilder sb = new StringBuilder();
 
@@ -257,7 +257,7 @@ public class AfmParser {
   }
 
   private void skipToEndOfLine()
-    throws IOException
+    
   {
     int ch;
 
@@ -266,7 +266,7 @@ public class AfmParser {
   }
 
   private boolean skipWhitespace()
-    throws IOException
+    
   {
     int ch;
 

@@ -115,7 +115,7 @@ public class PostgresResult extends JdbcResultResource {
 
   @Override
   protected Value getColumnTime(Env env, ResultSet rs, int column)
-    throws SQLException
+    
   {
     Time time = rs.getTime(column);
 
@@ -127,7 +127,7 @@ public class PostgresResult extends JdbcResultResource {
 
   @Override
   protected Value getColumnDate(Env env, ResultSet rs, int column)
-    throws SQLException
+    
   {
     Date date = rs.getDate(column);
 
@@ -139,7 +139,7 @@ public class PostgresResult extends JdbcResultResource {
 
   @Override
   protected Value getColumnTimestamp(Env env, ResultSet rs, int column)
-    throws SQLException
+    
   {
     Timestamp timestamp = rs.getTimestamp(column);
 

@@ -227,7 +227,7 @@ public class DOMXPath
       = new LruCache<String,ExpressionEntry>(1024);
 
     XPathExpression compile(String pattern)
-      throws XPathExpressionException
+      
     {
       ExpressionEntry entry = _xpathCache.get(pattern);
       XPathExpression expr = null;

@@ -239,7 +239,7 @@ public class ArrayIterator
 
 
    private static void printDepth(WriteStream out, int depth)
-    throws java.io.IOException
+    
   {
     for (int i = depth; i > 0; i--)
       out.print(' ');
@@ -250,7 +250,7 @@ public class ArrayIterator
                           WriteStream out,
                           int depth,
                           IdentityHashMap<Value, String> valueSet)
-    throws IOException
+    
   {
     String name = "ArrayIterator";
 

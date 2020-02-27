@@ -85,7 +85,7 @@ public class DOMAttr
   }
 
   public void setValue(String value)
-    throws DOMException
+    
   {
     try {
       _delegate.setValue(value);

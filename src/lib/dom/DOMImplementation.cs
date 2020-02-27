@@ -377,13 +377,13 @@ public class DOMImplementation
   }
 
   public void parseHTMLDocument(Document document, ReadStream is, String path)
-    throws IOException, SAXException
+    
   {
     _factory.parseHTMLDocument(document, is, path);
   }
 
   public void parseXMLDocument(Document document, ReadStream is, String path)
-    throws IOException, SAXException
+    
   {
     _factory.parseXMLDocument(document, is, path);
   }

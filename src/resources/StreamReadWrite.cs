@@ -73,7 +73,7 @@ public class StreamReadWrite extends StreamResource
    * Reads the next byte, returning -1 on eof.
    */
   public int read()
-    throws IOException
+    
   {
     if (_is != null)
       return _is.read();
@@ -85,7 +85,7 @@ public class StreamReadWrite extends StreamResource
    * Reads a buffer, returning -1 on eof.
    */
   public int read(byte []buffer, int offset, int length)
-    throws IOException
+    
   {
     if (_is != null)
       return _is.read(buffer, offset, length);
@@ -97,7 +97,7 @@ public class StreamReadWrite extends StreamResource
    * Reads the optional linefeed character from a \r\n
    */
   public boolean readOptionalLinefeed()
-    throws IOException
+    
   {
     if (_is != null) {
       int ch = _is.read();
@@ -119,7 +119,7 @@ public class StreamReadWrite extends StreamResource
    */
   @Override
   public StringValue readLine(Env env)
-    throws IOException
+    
   {
     if (_is != null)
       return env.createString(_is.readLineNoChop());
@@ -146,7 +146,7 @@ public class StreamReadWrite extends StreamResource
    * Writes to a buffer.
    */
   public int write(byte []buffer, int offset, int length)
-    throws IOException
+    
   {
     if (_os != null) {
       _os.write(buffer, offset, length);
@@ -161,7 +161,7 @@ public class StreamReadWrite extends StreamResource
    * prints
    */
   public void print(char ch)
-    throws IOException
+    
   {
     print(String.valueOf(ch));
   }
@@ -170,7 +170,7 @@ public class StreamReadWrite extends StreamResource
    * prints
    */
   public void print(String s)
-    throws IOException
+    
   {
     if (_os != null)
       _os.print(s);

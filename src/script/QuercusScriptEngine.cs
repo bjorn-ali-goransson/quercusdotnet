@@ -180,7 +180,7 @@ public class QuercusScriptEngine
    * evaluates based on a reader.
    */
   public Object eval(Reader script, ScriptContext cxt)
-    throws ScriptException
+    
   {
     QuercusContext quercus = getQuercus();
 
@@ -301,7 +301,7 @@ public class QuercusScriptEngine
    * @return Value object, or null if script returned no value
    */
   public Object eval(String script, ScriptContext cxt)
-    throws ScriptException
+    
   {
     return eval(new StringReader(script), cxt);
   }
@@ -310,7 +310,7 @@ public class QuercusScriptEngine
    * compiles based on a reader.
    */
   public CompiledScript compile(Reader reader)
-    throws ScriptException
+    
   {
     try {
       QuercusProgram program = QuercusParser.parse(getQuercus(), null, reader);
@@ -332,7 +332,7 @@ public class QuercusScriptEngine
    * evaluates based on a script.
    */
   public CompiledScript compile(String script)
-    throws ScriptException
+    
   {
     return compile(new StringReader(script));
   }

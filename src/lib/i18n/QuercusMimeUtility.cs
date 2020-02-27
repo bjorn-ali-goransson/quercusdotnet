@@ -58,7 +58,7 @@ public class QuercusMimeUtility
   public static Value decodeMimeHeaders(Env env,
                                         StringValue encodedHeaders,
                                         String charset)
-    throws UnsupportedEncodingException
+    
   {
     ArrayValue headers = new ArrayValueImpl();
 
@@ -109,7 +109,7 @@ public class QuercusMimeUtility
   public static StringValue decodeMime(Env env,
                               CharSequence word,
                               String charset)
-    throws UnsupportedEncodingException
+    
   {
     String decodedStr = MimeUtility.decodeText(word.toString());
 
@@ -125,7 +125,7 @@ public class QuercusMimeUtility
                               String inCharset,
                               String outCharset,
                               String scheme)
-    throws UnsupportedEncodingException
+    
   {
     return encodeMime(env,
                       name,
@@ -155,7 +155,7 @@ public class QuercusMimeUtility
                                        String scheme,
                                        String lineBreakChars,
                                        int lineLength)
-    throws UnsupportedEncodingException
+    
   {
     Decoder decoder = Decoder.create(inCharset);
 
@@ -185,7 +185,7 @@ public class QuercusMimeUtility
                                       String scheme,
                                       String lineBreakChars,
                                       int lineLength)
-    throws UnsupportedEncodingException
+    
   {
     if (lineLength != 76)
       throw new UnimplementedException("Mime line length option");

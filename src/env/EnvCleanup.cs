@@ -41,6 +41,6 @@ public interface EnvCleanup {
    * method should be invoked.
    */
   public void cleanup()
-    throws Exception;
+    
 }
 

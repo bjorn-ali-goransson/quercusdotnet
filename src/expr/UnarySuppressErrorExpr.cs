@@ -54,7 +54,7 @@ public class UnarySuppressErrorExpr extends AbstractUnaryExpr {
    * Creates the assignment.
    */
   public Expr createAssign(QuercusParser parser, Expr value)
-    throws IOException
+    
   {
     // php/03j2
 
@@ -68,7 +68,7 @@ public class UnarySuppressErrorExpr extends AbstractUnaryExpr {
   public Expr createAssignRef(QuercusParser parser,
                               Expr value
   )
-    throws IOException
+    
   {
     // php/03j2
 

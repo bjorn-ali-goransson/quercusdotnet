@@ -129,7 +129,7 @@ public class PDFFont extends PDFObject {
 
   @Override
   public void writeObject(PDFWriter out)
-    throws IOException
+    
   {
     out.println("<< /Type /Font");
     out.println("   /Subtype /Type1");

@@ -1771,7 +1771,7 @@ public class ImageModule extends AbstractQuercusModule {
    * Parses the image size from the file.
    */
   private static boolean parseImageSize(ReadStream is, ImageInfo info)
-    throws IOException
+    
   {
     int ch;
 
@@ -1816,7 +1816,7 @@ public class ImageModule extends AbstractQuercusModule {
    * Parses the image size from the PNG file.
    */
   private static boolean parsePNGImageSize(ReadStream is, ImageInfo info)
-    throws IOException
+    
   {
     int length;
 
@@ -1859,7 +1859,7 @@ public class ImageModule extends AbstractQuercusModule {
    * Parses the image size from the PNG file.
    */
   private static boolean parseGIFImageSize(ReadStream is, ImageInfo info)
-    throws IOException
+    
   {
     int length;
 
@@ -1883,7 +1883,7 @@ public class ImageModule extends AbstractQuercusModule {
    * Parses the image size from the PNG file.
    */
   private static boolean parseJPEGImageSize(ReadStream is, ImageInfo info)
-    throws IOException
+    
   {
     int ch;
 
@@ -1936,7 +1936,7 @@ public class ImageModule extends AbstractQuercusModule {
   }
 
   private static int readInt(ReadStream is)
-    throws IOException
+    
   {
     return (((is.read() & 0xff) << 24)
         | ((is.read() & 0xff) << 16)

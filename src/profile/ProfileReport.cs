@@ -188,7 +188,7 @@ public class ProfileReport
    * Printable flat report
    */
   public void printHotSpotReport(OutputStream os)
-    throws IOException
+    
   {
     WriteStream out = Vfs.openWrite(os);
     
@@ -240,7 +240,7 @@ public class ProfileReport
    * Printable hierarchy report
    */
   public void printHierarchyReport(OutputStream os)
-    throws IOException
+    
   {
     WriteStream out = Vfs.openWrite(os);
     

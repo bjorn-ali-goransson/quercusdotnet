@@ -199,7 +199,7 @@ public class ModuleContext
    * Adds module info.
    */
   public ModuleInfo addModule(String name, QuercusModule module)
-    throws ConfigException
+    
   {
     synchronized (this) {
       ModuleInfo info = _moduleInfoMap.get(name);
@@ -215,7 +215,7 @@ public class ModuleContext
 
   public JavaClassDef addClass(String name, Class<?> type,
                                String extension, Class<?> javaClassDefClass)
-    throws NoSuchMethodException,
+    
            InvocationTargetException,
            IllegalAccessException,
            InstantiationException
@@ -528,7 +528,7 @@ public class ModuleContext
    * Parses the services file, looking for PHP services.
    */
   private void parseServicesModule(ReadStream in)
-    throws IOException, ClassNotFoundException,
+    
            IllegalAccessException, InstantiationException
   {
     ClassLoader loader = Thread.currentThread().getContextClassLoader();
@@ -600,7 +600,7 @@ public class ModuleContext
    * @param cl the class to introspect.
    */
   private void introspectPhpModuleClass(Class<?> cl)
-    throws IllegalAccessException, InstantiationException, ConfigException,
+    
            InvocationTargetException, NoSuchMethodException
   {
     synchronized (_moduleInfoMap) {
@@ -714,7 +714,7 @@ public class ModuleContext
    * Parses the services file, looking for PHP services.
    */
   private void parseClassServicesModule(ReadStream in)
-    throws IOException, ClassNotFoundException,
+    
            IllegalAccessException, InstantiationException,
            ConfigException, NoSuchMethodException, InvocationTargetException
   {
@@ -818,7 +818,7 @@ public class ModuleContext
    */
   public void introspectJavaClass(String name, Class type, String extension,
                                   Class javaClassDefClass)
-    throws IllegalAccessException, InstantiationException, ConfigException,
+    
            NoSuchMethodException, InvocationTargetException
   {
     JavaClassDef def = addClass(name, type, extension, javaClassDefClass);
@@ -843,7 +843,7 @@ public class ModuleContext
   public void introspectJavaImplClass(String name,
                                       Class type,
                                       String extension)
-    throws IllegalAccessException, InstantiationException, ConfigException
+    
   {
     if (log.isLoggable(Level.FINEST)) {
       if (extension == null)

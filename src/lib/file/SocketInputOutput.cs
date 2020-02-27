@@ -43,13 +43,13 @@ public interface SocketInputOutput
   public enum Domain { AF_INET, AF_INET6, AF_UNIX };
 
   public void init()
-    throws IOException;
+    
 
   public void bind(SocketAddress address)
-    throws IOException;
+    
 
   public void connect(SocketAddress address)
-    throws IOException;
+    
 
   public void setError(int error);
 

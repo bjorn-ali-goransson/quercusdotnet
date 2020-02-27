@@ -238,7 +238,7 @@ class Regcomp {
    *                node
    */
   private RegexpNode parseRec(PeekStream pattern, RegexpNode tail)
-    throws IllegalRegexpException
+    
   {
     int ch = pattern.read();
     RegexpNode next;
@@ -545,7 +545,7 @@ class Regcomp {
   }
 
   private RegexpNode parseLookahead(PeekStream pattern)
-    throws IllegalRegexpException
+    
   {
     int ch = pattern.read();
     boolean isPositive = (ch == '=');
@@ -577,7 +577,7 @@ class Regcomp {
   }
 
   private RegexpNode parseLookbehind(PeekStream pattern)
-    throws IllegalRegexpException
+    
   {
     int ch = pattern.read();
     boolean isPositive = (ch == '=');
@@ -632,7 +632,7 @@ class Regcomp {
   }
 
   private RegexpNode parseNamedGroup(PeekStream pattern, RegexpNode tail)
-    throws IllegalRegexpException
+    
   {
     int ch = pattern.read();
 
@@ -730,7 +730,7 @@ class Regcomp {
   }
 
   private RegexpNode parseConditional(PeekStream pattern, RegexpNode tail)
-    throws IllegalRegexpException
+    
   {
     int ch = pattern.read();
 
@@ -816,7 +816,7 @@ class Regcomp {
 
   private RegexpNode parseGroup(PeekStream pattern, RegexpNode tail,
                                 int group, int oldFlags)
-    throws IllegalRegexpException
+    
   {
     RegexpNode.GroupHead groupHead = new RegexpNode.GroupHead(group);
     RegexpNode groupTail = groupHead.getTail();
@@ -850,7 +850,7 @@ class Regcomp {
   }
 
   private void expect(char expected, int value)
-    throws IllegalRegexpException
+    
   {
     if (expected != value)
       throw error(L.l("expected '{0}'", String.valueOf(expected)));
@@ -870,7 +870,7 @@ class Regcomp {
    *   {,m}   -- at most m
    */
   private RegexpNode parseBrace(PeekStream pattern, RegexpNode node)
-    throws IllegalRegexpException
+    
   {
     int ch;
     int min = 0;
@@ -964,7 +964,7 @@ class Regcomp {
    *   lastdash -- Contains character before dash or -1 if not after dash.
    */
   private RegexpNode parseSet(PeekStream pattern)
-    throws IllegalRegexpException
+    
   {
     int first = pattern.peek();
     boolean isNot = false;
@@ -1256,7 +1256,7 @@ class Regcomp {
   }
 
   private RegexpSet getUnicodeSet(String name)
-    throws IllegalRegexpException
+    
   {
     _flags |= UTF8;
 
@@ -1287,7 +1287,7 @@ class Regcomp {
    * Returns a node for sequences starting with a backslash.
    */
   private RegexpNode parseSlash(PeekStream pattern)
-    throws IllegalRegexpException
+    
   {
     int ch;
     switch (ch = pattern.read()) {
@@ -1384,7 +1384,7 @@ class Regcomp {
    * Returns a node for sequences starting with a '[:'.
    */
   private RegexpSet parseCharacterClass(PeekStream pattern)
-    throws IllegalRegexpException
+    
   {
     StringBuilder sb = new StringBuilder();
 
@@ -1416,7 +1416,7 @@ class Regcomp {
   }
 
   private int parseHex(PeekStream pattern)
-    throws IllegalRegexpException
+    
   {
     int ch = pattern.read();
 
@@ -1467,7 +1467,7 @@ class Regcomp {
   }
 
   private RegexpNode parseBackReference(int ch, PeekStream pattern)
-    throws IllegalRegexpException
+    
   {
     int value = ch - '0';
     int ch2 = pattern.peek();
@@ -1508,7 +1508,7 @@ class Regcomp {
 
   private RegexpNode parseString(int ch,
                                                  PeekStream pattern)
-    throws IllegalRegexpException
+    
   {
     return parseString(ch, pattern, false);
   }
@@ -1519,7 +1519,7 @@ class Regcomp {
   private RegexpNode parseString(int ch,
                                  PeekStream pattern,
                                  boolean isEscaped)
-    throws IllegalRegexpException
+    
   {
     CharBuffer cb = new CharBuffer();
     cb.append((char) ch);
@@ -1687,7 +1687,7 @@ class Regcomp {
   }
 
   private int parseOctal(int ch, PeekStream pattern)
-    throws IllegalRegexpException
+    
   {
     if ('0' > ch || ch > '7')
       throw new IllegalRegexpException("expected octal digit at "
@@ -1716,7 +1716,7 @@ class Regcomp {
 
   private RegexpNode parseUnicodeProperty(PeekStream pattern,
                                           boolean isNegated)
-    throws IllegalRegexpException
+    
   {
     int ch = pattern.read();
 
@@ -1753,7 +1753,7 @@ class Regcomp {
 
   private RegexpNode parseUnicodeProperty(int ch, int ch2,
                                           boolean isNegated)
-    throws IllegalRegexpException
+    
   {
     byte category = 0;
 
@@ -1876,7 +1876,7 @@ class Regcomp {
 
   private RegexpNode parseUnicodeProperty(int ch,
                                           boolean isNegated)
-    throws IllegalRegexpException
+    
   {
     switch (ch) {
       case 'C':

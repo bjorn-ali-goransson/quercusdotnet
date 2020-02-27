@@ -66,20 +66,20 @@ public class FileInputOutput extends AbstractBinaryOutput
   private boolean _temporary;
 
   public FileInputOutput(Env env, Path path)
-    throws IOException
+    
   {
     this(env, path, false, false, false);
   }
 
   public FileInputOutput(Env env, Path path, boolean append, boolean truncate)
-    throws IOException
+    
   {
     this(env, path, append, truncate, false);
   }
 
   public FileInputOutput(Env env, Path path,
                           boolean append, boolean truncate, boolean temporary)
-    throws IOException
+    
   {
     _env = env;
 
@@ -130,7 +130,7 @@ public class FileInputOutput extends AbstractBinaryOutput
 
   @Override
   public int getAvailable()
-    throws IOException
+    
   {
     return _stream.getInputStream().available();
   }
@@ -150,7 +150,7 @@ public class FileInputOutput extends AbstractBinaryOutput
    * @param encoding name of the read encoding
    */
   public void setEncoding(String encoding)
-    throws UnsupportedEncodingException
+    
   {
     String mimeName = Encoding.getMimeName(encoding);
 
@@ -162,7 +162,7 @@ public class FileInputOutput extends AbstractBinaryOutput
   }
 
   private int readChar()
-    throws IOException
+    
   {
     if (_readEncoding != null) {
       int ch = _readEncoding.read();
@@ -176,7 +176,7 @@ public class FileInputOutput extends AbstractBinaryOutput
    * Unread a character.
    */
   public void unread()
-    throws IOException
+    
   {
     _doUnread = true;
   }
@@ -185,7 +185,7 @@ public class FileInputOutput extends AbstractBinaryOutput
    * Reads a character from a file, returning -1 on EOF.
    */
   public int read()
-    throws IOException
+    
   {
     if (_doUnread) {
       _doUnread = false;
@@ -202,7 +202,7 @@ public class FileInputOutput extends AbstractBinaryOutput
    * Reads a buffer from a file, returning -1 on EOF.
    */
   public int read(byte []buffer, int offset, int length)
-    throws IOException
+    
   {
     _doUnread = false;
 
@@ -213,7 +213,7 @@ public class FileInputOutput extends AbstractBinaryOutput
    * Reads a buffer from a file, returning -1 on EOF.
    */
   public int read(char []buffer, int offset, int length)
-    throws IOException
+    
   {
     _doUnread = false;
 
@@ -224,7 +224,7 @@ public class FileInputOutput extends AbstractBinaryOutput
    * Appends to a string builder.
    */
   public StringValue appendTo(StringValue builder)
-    throws IOException
+    
   {
     if (_stream != null)
       return builder.append(_stream);
@@ -236,7 +236,7 @@ public class FileInputOutput extends AbstractBinaryOutput
    * Reads a Binary string.
    */
   public StringValue read(int length)
-    throws IOException
+    
   {
     StringValue bb = _env.createBinaryBuilder();
     TempBuffer temp = TempBuffer.allocate();
@@ -270,7 +270,7 @@ public class FileInputOutput extends AbstractBinaryOutput
    * Reads the optional linefeed character from a \r\n
    */
   public boolean readOptionalLinefeed()
-    throws IOException
+    
   {
     int ch = read();
 
@@ -288,7 +288,7 @@ public class FileInputOutput extends AbstractBinaryOutput
    * Reads a line from the buffer.
    */
   public StringValue readLine(long length)
-    throws IOException
+    
   {
     return _lineReader.readLine(_env, this, length);
   }
@@ -309,7 +309,7 @@ public class FileInputOutput extends AbstractBinaryOutput
    * Prints a string to a file.
    */
   public void print(char v)
-    throws IOException
+    
   {
     _stream.write((byte) v);
   }
@@ -318,7 +318,7 @@ public class FileInputOutput extends AbstractBinaryOutput
    * Prints a string to a file.
    */
   public void print(String v)
-    throws IOException
+    
   {
     for (int i = 0; i < v.length(); i++)
       write(v.charAt(i));
@@ -328,7 +328,7 @@ public class FileInputOutput extends AbstractBinaryOutput
    * Writes a buffer to a file.
    */
   public void write(byte []buffer, int offset, int length)
-    throws IOException
+    
   {
     _stream.write(buffer, offset, length);
   }
@@ -337,7 +337,7 @@ public class FileInputOutput extends AbstractBinaryOutput
    * Writes a buffer to a file.
    */
   public void write(int ch)
-    throws IOException
+    
   {
     _stream.write(ch);
   }
@@ -346,7 +346,7 @@ public class FileInputOutput extends AbstractBinaryOutput
    * Flushes the output.
    */
   public void flush()
-    throws IOException
+    
   {
   }
 
@@ -451,7 +451,7 @@ public class FileInputOutput extends AbstractBinaryOutput
    * Opens a copy.
    */
   public BinaryInput openCopy()
-    throws IOException
+    
   {
     return new FileInputOutput(_env, _path);
   }

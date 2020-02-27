@@ -38,8 +38,8 @@
 public interface QuercusResultSet extends ResultSet
 {
   public int getStringLength(int column)
-    throws SQLException;
+    
 
   public void getString(int column, byte []buffer, int offset)
-    throws SQLException;
+    
 }

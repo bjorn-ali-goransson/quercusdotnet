@@ -76,13 +76,13 @@ public class HttpInputOutput extends AbstractBinaryOutput
   private byte []_bodyStart;
   
   public HttpInputOutput(Env env, Path path, StreamContextResource context)
-    throws IOException
+    
   {
     init(env, path, context);
   }
   
   private void init(Env env, Path path, StreamContextResource context)
-    throws IOException
+    
   {
     _env = env;
     _path = path;
@@ -122,7 +122,7 @@ public class HttpInputOutput extends AbstractBinaryOutput
   }
 
   private void setOptions(Env env, Value options)
-    throws IOException
+    
   {
     Iterator<Map.Entry<Value,Value>> iter = options.getIterator(env);
 
@@ -194,7 +194,7 @@ public class HttpInputOutput extends AbstractBinaryOutput
   
   @Override
   public void write(int ch)
-    throws IOException
+    
   {
     if (_os != null)
       _os.write(ch);
@@ -204,7 +204,7 @@ public class HttpInputOutput extends AbstractBinaryOutput
    * Appends to a string builder.
    */
   public StringValue appendTo(StringValue builder)
-    throws IOException
+    
   {
     if (_is != null)
       return builder.append(_is);
@@ -222,7 +222,7 @@ public class HttpInputOutput extends AbstractBinaryOutput
 
   @Override
   public int getAvailable()
-    throws IOException
+    
   {
     return _is.available();
   }
@@ -231,7 +231,7 @@ public class HttpInputOutput extends AbstractBinaryOutput
    * Opens a copy.
    */
   public BinaryInput openCopy()
-    throws IOException
+    
   {
     return new HttpInputOutput(_env, _path, _context);
   }
@@ -240,7 +240,7 @@ public class HttpInputOutput extends AbstractBinaryOutput
    * Reads a character from a file, returning -1 on EOF.
    */
   public int read()
-    throws IOException
+    
   {
     if (_is != null)
       return _is.read();
@@ -252,7 +252,7 @@ public class HttpInputOutput extends AbstractBinaryOutput
    * Reads a buffer from a file, returning -1 on EOF.
    */
   public int read(byte []buffer, int offset, int length)
-    throws IOException
+    
   {
     if (_is != null)
       return _is.read(buffer, offset, length);
@@ -264,7 +264,7 @@ public class HttpInputOutput extends AbstractBinaryOutput
    * Reads a buffer from a file, returning -1 on EOF.
    */
   public int read(char []buffer, int offset, int length)
-    throws IOException
+    
   {
     if (_is != null)
       return _is.read(buffer, offset, length);
@@ -276,7 +276,7 @@ public class HttpInputOutput extends AbstractBinaryOutput
    * Reads a Binary string.
    */
   public StringValue read(int length)
-    throws IOException
+    
   {
     StringValue bb = _env.createBinaryBuilder();
     TempBuffer temp = TempBuffer.allocate();
@@ -311,7 +311,7 @@ public class HttpInputOutput extends AbstractBinaryOutput
    */
   @Override
   public StringValue readLine(long length)
-    throws IOException
+    
   {
     return _lineReader.readLine(_env, this, length);
   }
@@ -320,7 +320,7 @@ public class HttpInputOutput extends AbstractBinaryOutput
    * Reads the optional linefeed character from a \r\n
    */
   public boolean readOptionalLinefeed()
-    throws IOException
+    
   {
     int ch = read();
 
@@ -355,7 +355,7 @@ public class HttpInputOutput extends AbstractBinaryOutput
    * @param encoding name of the read encoding
    */
   public void setEncoding(String encoding)
-    throws UnsupportedEncodingException
+    
   {
     String mimeName = Encoding.getMimeName(encoding);
     
@@ -371,7 +371,7 @@ public class HttpInputOutput extends AbstractBinaryOutput
    */
   @Override
   public void unread()
-    throws IOException
+    
   {
     if (_is != null)
       _is.unread();

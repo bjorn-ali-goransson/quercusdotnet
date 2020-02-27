@@ -1197,14 +1197,14 @@ public class MiscModule extends AbstractQuercusModule {
   abstract static class PackSegment {
     abstract public int pack(Env env, StringValue bb,
                               int i, Value []args)
-      throws IOException;
+      
 
     abstract public int unpack(Env env,
                                ArrayValue array,
                                StringValue s,
                                int offset,
                                int strLen)
-      throws IOException;
+      
   }
 
   static class SpacePackSegment extends PackSegment {
@@ -1226,7 +1226,7 @@ public class MiscModule extends AbstractQuercusModule {
 
     @Override
     public int pack(Env env, StringValue bb, int i, Value []args)
-      throws IOException
+      
     {
       Value arg;
 
@@ -1309,7 +1309,7 @@ public class MiscModule extends AbstractQuercusModule {
 
     @Override
     public int pack(Env env, StringValue bb, int i, Value []args)
-      throws IOException
+      
     {
       Value arg;
 
@@ -1383,7 +1383,7 @@ public class MiscModule extends AbstractQuercusModule {
 
     @Override
     public int pack(Env env, StringValue bb, int i, Value []args)
-      throws IOException
+      
     {
       Value arg;
 
@@ -1488,7 +1488,7 @@ public class MiscModule extends AbstractQuercusModule {
 
     @Override
     public int pack(Env env, StringValue bb, int i, Value []args)
-      throws IOException
+      
     {
       Value arg;
 
@@ -1585,7 +1585,7 @@ public class MiscModule extends AbstractQuercusModule {
 
     @Override
     public int pack(Env env, StringValue bb, int i, Value []args)
-      throws IOException
+      
     {
       for (int j = 0; j < _length; j++) {
         Value arg;
@@ -1689,7 +1689,7 @@ public class MiscModule extends AbstractQuercusModule {
 
     @Override
     public int pack(Env env, StringValue bb, int i, Value []args)
-      throws IOException
+      
     {
       for (int j = 0; j < _length; j++) {
         Value arg;
@@ -1773,7 +1773,7 @@ public class MiscModule extends AbstractQuercusModule {
 
     @Override
     public int pack(Env env, StringValue bb, int i, Value []args)
-      throws IOException
+      
     {
       for (int j = 0; j < _length; j++) {
         Value arg;
@@ -1858,7 +1858,7 @@ public class MiscModule extends AbstractQuercusModule {
 
     @Override
     public int pack(Env env, StringValue bb, int i, Value []args)
-      throws IOException
+      
     {
       for (int j = 0; j < _length; j++) {
         Value arg;
@@ -1947,7 +1947,7 @@ public class MiscModule extends AbstractQuercusModule {
 
     @Override
     public int pack(Env env, StringValue bb, int i, Value []args)
-      throws IOException
+      
     {
       for (int j = 0; j < _length; j++) {
         bb.appendByte(0);
@@ -1982,7 +1982,7 @@ public class MiscModule extends AbstractQuercusModule {
 
     @Override
     public int pack(Env env, StringValue bb, int i, Value []args)
-      throws IOException
+      
     {
       while (bb.length() < _length) {
         bb.appendByte(0);

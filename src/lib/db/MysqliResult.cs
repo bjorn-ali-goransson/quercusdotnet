@@ -941,7 +941,7 @@ public class MysqliResult extends JdbcResultResource {
                                   ResultSet rs,
                                   ResultSetMetaData md,
                                   int column)
-    throws SQLException
+    
   {
     // php/1464, php/144f, php/144g, php/144b
 

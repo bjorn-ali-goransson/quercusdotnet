@@ -103,14 +103,14 @@ public class QDOMFactory
   }
 
   public void parseXMLDocument(Document document, InputStream is, String path)
-    throws IOException, SAXException
+    
   {
     Xml xml = new Xml();
     xml.parseDocument((QDocument) document, is, path);
   }
 
   public void parseHTMLDocument(Document document, InputStream is, String path)
-    throws IOException, SAXException
+    
   {
     Html html = new Html();
 

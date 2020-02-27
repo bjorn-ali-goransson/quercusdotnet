@@ -2632,7 +2632,7 @@ public class ArrayModule
    * @param array the array to sort
    * @param sortFlag provides optional methods to process the sort
    * @return true if the sort works, false otherwise
-   * @throws ClassCastException if the elements are not mutually comparable
+   * 
    */
   public static boolean arsort(Env env,
                                @Reference Value arrayVar,
@@ -2670,7 +2670,7 @@ public class ArrayModule
    * @param array the array to sort
    * @param sortFlag provides optional methods to process the sort
    * @return true if the sort works, false otherwise
-   * @throws ClassCastException if the elements are not mutually comparable
+   * 
    */
   public static boolean asort(Env env,
                               @Reference Value arrayVar,
@@ -2958,7 +2958,7 @@ public class ArrayModule
    *
    * @param needle the array to sort
    * @return true if the sort works, false otherwise
-   * @throws ClassCastException if the elements are not mutually comparable
+   * 
    */
   public static boolean in_array(@ReadOnly Value needle,
                                  @ReadOnly ArrayValue stack,
@@ -3001,7 +3001,7 @@ public class ArrayModule
    * @param array the array to sort
    * @param sortFlag provides optional methods to process the sort
    * @return true if the sort works, false otherwise
-   * @throws ClassCastException if the elements are not mutually comparable
+   * 
    */
   public static boolean krsort(Env env,
                                @Reference Value arrayVar,
@@ -3039,7 +3039,7 @@ public class ArrayModule
    * @param array the array to sort
    * @param sortFlag provides optional methods to process the sort
    * @return true if the sort works, false otherwise
-   * @throws ClassCastException if the elements are not mutually comparable
+   * 
    */
   public static boolean ksort(Env env,
                               @Reference Value arrayVar,
@@ -3079,7 +3079,7 @@ public class ArrayModule
    *
    * @param array the array to sort
    * @return true if the sort works, false otherwise
-   * @throws ClassCastException if the elements are not mutually comparable
+   * 
    */
   public static Value natcasesort(Env env, @Reference Value arrayVar)
   {
@@ -3101,7 +3101,7 @@ public class ArrayModule
    *
    * @param array the array to sort
    * @return true if the sort works, false otherwise
-   * @throws ClassCastException if the elements are not mutually comparable
+   * 
    */
   public static Value natsort(Env env, @Reference Value arrayVar)
   {
@@ -3240,7 +3240,7 @@ public class ArrayModule
    * @param array the array to sort
    * @param sortFlag provides optional methods to process the sort
    * @return true if the sort works, false otherwise
-   * @throws ClassCastException if the elements are not mutually comparable
+   * 
    */
   public static boolean rsort(Env env,
                               @Reference Value arrayVar,
@@ -3297,7 +3297,7 @@ public class ArrayModule
    * @param array the array to sort
    * @param sortFlag provides optional methods to process the sort
    * @return true if the sort works, false otherwise
-   * @throws ClassCastException if the elements are not mutually comparable
+   * 
    */
   public static boolean sort(Env env,
                              @Reference Value arrayVar,
@@ -3337,7 +3337,7 @@ public class ArrayModule
    * @param func the name of the callback function
    * @param sortFlag provides optional methods to process the sort
    * @return true if the sort works, false otherwise
-   * @throws ClassCastException if the elements are not mutually comparable
+   * 
    */
   public static boolean uasort(Env env,
                                @Reference Value arrayVar,
@@ -3371,7 +3371,7 @@ public class ArrayModule
    * @param func the name of the callback function
    * @param sortFlag provides optional methods to process the sort
    * @return true if the sort works, false otherwise
-   * @throws ClassCastException if the elements are not mutually comparable
+   * 
    */
   public static boolean uksort(Env env,
                                @Reference Value arrayVar,
@@ -3405,7 +3405,7 @@ public class ArrayModule
    * @param func the name of the callback function
    * @param sortFlag provides optional methods to process the sort
    * @return true if the sort works, false otherwise
-   * @throws ClassCastException if the elements are not mutually comparable
+   * 
    */
   public static boolean usort(Env env,
                               @Reference Value arrayVar,

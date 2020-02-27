@@ -104,7 +104,7 @@ public class ResourceValue extends Value
                              WriteStream out,
                              int depth,
                              IdentityHashMap<Value, String> valueSet)
-    throws IOException
+    
   {
     out.print("resource(" + toString(env) + ")");
   }
@@ -114,7 +114,7 @@ public class ResourceValue extends Value
                             WriteStream out,
                             int depth,
                             IdentityHashMap<Value, String> valueSet)
-    throws IOException
+    
   {
     out.print("resource(" + toString(env) + ")");
   }

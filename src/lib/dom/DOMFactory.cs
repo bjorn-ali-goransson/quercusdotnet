@@ -63,8 +63,8 @@ public interface DOMFactory {
   org.w3c.dom.DOMImplementation getImplementation();
 
   void parseXMLDocument(Document document, InputStream is, String path)
-    throws IOException, SAXException;
+    
 
   void parseHTMLDocument(Document document, InputStream is, String path)
-    throws IOException, SAXException;
+    
 }

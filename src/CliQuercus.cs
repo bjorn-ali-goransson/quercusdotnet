@@ -50,7 +50,7 @@ public class CliQuercus extends Quercus
   }
 
   public static void main(String []args)
-    throws IOException
+    
   {
     CliQuercus quercus = new CliQuercus();
 

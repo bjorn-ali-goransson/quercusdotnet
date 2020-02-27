@@ -50,7 +50,7 @@ public class DOMNamedNodeMap
   }
 
   public DOMNode getNamedItemNS(String namespaceURI, String localName)
-    throws DOMException
+    
   {
     try {
       return wrap(_delegate.getNamedItemNS(namespaceURI, localName));
@@ -66,7 +66,7 @@ public class DOMNamedNodeMap
   }
 
   public DOMNode removeNamedItem(String name)
-    throws DOMException
+    
   {
     try {
       return wrap(_delegate.removeNamedItem(name));
@@ -77,7 +77,7 @@ public class DOMNamedNodeMap
   }
 
   public DOMNode removeNamedItemNS(String namespaceURI, String localName)
-    throws DOMException
+    
   {
     try {
       return wrap(_delegate.removeNamedItemNS(namespaceURI, localName));
@@ -88,7 +88,7 @@ public class DOMNamedNodeMap
   }
 
   public DOMNode setNamedItem(DOMNode arg)
-    throws DOMException
+    
   {
     try {
       return wrap(_delegate.setNamedItem(arg.getDelegate()));
@@ -99,7 +99,7 @@ public class DOMNamedNodeMap
   }
 
   public DOMNode setNamedItemNS(DOMNode arg)
-    throws DOMException
+    
   {
     try {
       return wrap(_delegate.setNamedItemNS(arg.getDelegate()));

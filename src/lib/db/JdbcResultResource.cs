@@ -437,7 +437,7 @@ public class JdbcResultResource
   }
 
   protected boolean next()
-    throws SQLException
+    
   {
     if (_rs == null) {
       return false;
@@ -454,7 +454,7 @@ public class JdbcResultResource
    * @return the column number (always 0-based) or -1 on error
    */
   protected int getColumnNumber(Value fieldNameOrNumber, int base)
-    throws SQLException
+    
   {
     int fieldNumber = -1;
 
@@ -479,7 +479,7 @@ public class JdbcResultResource
    * @return the column number (0-based) or -1 on error
    */
   protected int getColumnNumber(String colName)
-    throws SQLException
+    
   {
     return getColumnNumber(colName, getMetaData());
   }
@@ -493,7 +493,7 @@ public class JdbcResultResource
    */
   private int getColumnNumber(String colName,
                               ResultSetMetaData md)
-    throws SQLException
+    
   {
     int numColumns = md.getColumnCount();
 
@@ -517,7 +517,7 @@ public class JdbcResultResource
   }
 
   protected Value getColumnValue(Env env, int column)
-    throws SQLException
+    
   {
     int type = getMetaData().getColumnType(column);
 
@@ -534,7 +534,7 @@ public class JdbcResultResource
    * @return the column value
    */
   protected Value getColumnValue(Env env, int column, int type)
-    throws SQLException
+    
   {
     ResultSet rs = _rs;
 
@@ -711,7 +711,7 @@ public class JdbcResultResource
                                ResultSet rs,
                                ResultSetMetaData metaData,
                                int column)
-    throws SQLException
+    
   {
     return getColumnString(env, rs, metaData, column);
   }
@@ -720,7 +720,7 @@ public class JdbcResultResource
                                ResultSet rs,
                                ResultSetMetaData metaData,
                                int column)
-    throws SQLException
+    
   {
     return getColumnString(env, rs, metaData, column);
   }
@@ -729,7 +729,7 @@ public class JdbcResultResource
                                          ResultSet rs,
                                          ResultSetMetaData md,
                                          int column)
-    throws IOException, SQLException
+    
   {
     Reader reader = rs.getCharacterStream(column);
 
@@ -747,7 +747,7 @@ public class JdbcResultResource
                                   ResultSet rs,
                                   ResultSetMetaData md,
                                   int column)
-    throws SQLException
+    
   {
     // php/1464, php/144f, php/144g
     // php/144b
@@ -768,7 +768,7 @@ public class JdbcResultResource
   }
 
   protected Value getColumnTime(Env env, ResultSet rs, int column)
-    throws SQLException
+    
   {
     Time time = rs.getTime(column);
 
@@ -779,7 +779,7 @@ public class JdbcResultResource
   }
 
   protected Value getColumnDate(Env env, ResultSet rs, int column)
-    throws SQLException
+    
   {
     Date date = rs.getDate(column);
 
@@ -790,7 +790,7 @@ public class JdbcResultResource
   }
 
   protected Value getColumnTimestamp(Env env, ResultSet rs, int column)
-    throws SQLException
+    
   {
     try {
       Timestamp timestamp = rs.getTimestamp(column);
@@ -881,7 +881,7 @@ public class JdbcResultResource
    */
 
   protected boolean isInResultString(int columnIndex, String substring)
-    throws SQLException
+    
   {
     String resultString = _rs.getString(columnIndex);
 
@@ -1216,7 +1216,7 @@ public class JdbcResultResource
    * @return the meta data for this result set
    */
   public ResultSetMetaData getMetaData()
-    throws SQLException
+    
   {
     if (_metaData != null)
       return _metaData;
@@ -1351,13 +1351,13 @@ public class JdbcResultResource
   }
 
   protected String getColumnLabel(int index)
-    throws SQLException
+    
   {
     return getColumnLabel(_rs.getMetaData(), index);
   }
 
   private String getColumnLabel(ResultSetMetaData md, int index)
-    throws SQLException
+    
   {
     String name = md.getColumnLabel(index);
 

@@ -63,7 +63,7 @@ public class ClassVarVarConstExpr extends Expr
   public Expr createCall(QuercusParser parser,
                          Location location,
                          ArrayList<Expr> args)
-    throws IOException
+    
   {
     ExprFactory factory = parser.getExprFactory();
 

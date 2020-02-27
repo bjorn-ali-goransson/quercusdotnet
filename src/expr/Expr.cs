@@ -226,7 +226,7 @@ abstract public class Expr {
   //
 
   public Expr createAssign(QuercusParser parser, Expr value)
-    throws IOException
+    
   {
     String msg = (L.l("{0} is an invalid left-hand side of an assignment.",
                       this));
@@ -252,7 +252,7 @@ abstract public class Expr {
    * Mark as an assignment for a list()
    */
   public void assign(QuercusParser parser)
-    throws IOException
+    
   {
     String msg = L.l("{0} is an invalid left-hand side of an assignment.",
                      this);
@@ -264,7 +264,7 @@ abstract public class Expr {
   }
 
   public Expr createAssignRef(QuercusParser parser, Expr value)
-    throws IOException
+    
   {
     // XXX: need real exception
     String msg = L.l("{0} is an invalid left-hand side of an assignment.",
@@ -281,13 +281,13 @@ abstract public class Expr {
    * @param location
    */
   public Expr createRef(QuercusParser parser)
-    throws IOException
+    
   {
     return this;
   }
 
   public Expr createDeref(ExprFactory factory)
-    throws IOException
+    
   {
     return this;
   }
@@ -384,7 +384,7 @@ abstract public class Expr {
    * Creates a assignment
    */
   public Statement createUnset(ExprFactory factory, Location location)
-    throws IOException
+    
   {
     throw new IOException(L.l("{0} is an illegal value to unset",
                               this));
@@ -394,7 +394,7 @@ abstract public class Expr {
    * Creates an isset expression
    */
   public Expr createIsset(ExprFactory factory)
-    throws IOException
+    
   {
     throw new IOException(L.l("{0} is an illegal value to isset",
                               this));
@@ -410,7 +410,7 @@ abstract public class Expr {
   public Expr createCall(QuercusParser parser,
                          Location location,
                          ArrayList<Expr> args)
-    throws IOException
+    
   {
     ExprFactory factory = parser.getExprFactory();
 
@@ -859,7 +859,7 @@ abstract public class Expr {
    * Prints to the output as an echo.
    */
   public void print(Env env)
-    throws IOException
+    
   {
     eval(env).print(env);
   }

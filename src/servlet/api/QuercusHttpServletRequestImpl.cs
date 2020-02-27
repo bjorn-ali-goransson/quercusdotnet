@@ -152,7 +152,7 @@ public class QuercusHttpServletRequestImpl implements QuercusHttpServletRequest
 
   @Override
   public InputStream getInputStream()
-    throws IOException
+    
   {
     return _request.getInputStream();
   }

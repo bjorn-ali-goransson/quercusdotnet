@@ -131,7 +131,7 @@ public class DefaultValue extends NullValue {
    */
   @Override
   public void generate(PrintWriter out)
-    throws IOException
+    
   {
     out.print("DefaultValue.DEFAULT");
   }
@@ -142,7 +142,7 @@ public class DefaultValue extends NullValue {
    * @param out the writer to the Java source code.
    */
   public void generateLong(PrintWriter out)
-    throws IOException
+    
   {
     out.print("0");
   }
@@ -153,7 +153,7 @@ public class DefaultValue extends NullValue {
    * @param out the writer to the Java source code.
    */
   public void generateString(PrintWriter out)
-    throws IOException
+    
   {
     out.print("\"\"");
   }

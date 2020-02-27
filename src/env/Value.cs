@@ -3026,7 +3026,7 @@ abstract public class Value implements java.io.Serializable
    * @param out the writer to the Java source code.
    */
   public void generate(PrintWriter out)
-    throws IOException
+    
   {
   }
 
@@ -3102,7 +3102,7 @@ abstract public class Value implements java.io.Serializable
                             WriteStream out,
                             int depth,
                             IdentityHashMap<Value, String> valueSet)
-    throws IOException
+    
   {
     if (valueSet.get(this) != null) {
       out.print("*recursion*");
@@ -3123,7 +3123,7 @@ abstract public class Value implements java.io.Serializable
                              WriteStream out,
                              int depth,
                              IdentityHashMap<Value, String> valueSet)
-    throws IOException
+    
   {
     out.print("resource(" + toString() + ")");
   }
@@ -3132,7 +3132,7 @@ abstract public class Value implements java.io.Serializable
                            WriteStream out,
                            int depth,
                            IdentityHashMap<Value, String> valueSet)
-    throws IOException
+    
   {
     if (valueSet.get(this) != null) {
       out.print("*recursion*");
@@ -3153,13 +3153,13 @@ abstract public class Value implements java.io.Serializable
                             WriteStream out,
                             int depth,
                             IdentityHashMap<Value, String> valueSet)
-    throws IOException
+    
   {
     out.print(toString());
   }
 
   protected void printDepth(WriteStream out, int depth)
-    throws IOException
+    
   {
     for (int i = 0; i < depth; i++)
       out.print(' ');

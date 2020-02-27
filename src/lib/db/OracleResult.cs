@@ -76,7 +76,7 @@ public class OracleResult extends JdbcResultResource {
                                ResultSet rs,
                                ResultSetMetaData metaData,
                                int column)
-    throws SQLException
+    
   {
     Blob object = rs.getBlob(column);
     OracleOciLob ociLob = new OracleOciLob(_conn,
@@ -91,7 +91,7 @@ public class OracleResult extends JdbcResultResource {
                                ResultSet rs,
                                ResultSetMetaData metaData,
                                int column)
-    throws SQLException
+    
   {
     Clob clob = rs.getClob(column);
     OracleOciLob ociLob = new OracleOciLob(_conn,

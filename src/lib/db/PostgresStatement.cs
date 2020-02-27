@@ -70,7 +70,7 @@ public class PostgresStatement extends JdbcPreparedStatementResource {
 
   @Override
   protected boolean prepareForExecute(Env env)
-    throws SQLException
+    
   {
     int size = _preparedMapping.size();
 

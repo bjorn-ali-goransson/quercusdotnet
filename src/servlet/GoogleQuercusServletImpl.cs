@@ -79,7 +79,7 @@ public class GoogleQuercusServletImpl extends QuercusServletImpl
 
   @Override
   protected void handleThrowable(HttpServletResponse response, Throwable e)
-    throws IOException, ServletException
+    
   {
     log.log(Level.WARNING, e.toString(), e);
 

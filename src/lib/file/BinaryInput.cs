@@ -47,55 +47,55 @@ public interface BinaryInput extends BinaryStream {
    * Opens a new copy.
    */
   public BinaryInput openCopy()
-    throws IOException;
+    
 
   /**
    * @return
    */
   public int getAvailable()
-    throws IOException;
+    
 
   /**
    * Reads the next byte, returning -1 on eof.
    */
   public int read()
-    throws IOException;
+    
 
   /**
    * Unreads the last byte.
    */
   public void unread()
-    throws IOException;
+    
 
   /**
    * Reads into a buffer, returning -1 on eof.
    */
   public int read(byte []buffer, int offset, int length)
-    throws IOException;
+    
 
   /**
    * Reads a Binary string.
    */
   public StringValue read(int length)
-    throws IOException;
+    
 
   /**
    * Reads the optional linefeed character from a \r\n
    */
   public boolean readOptionalLinefeed()
-    throws IOException;
+    
 
   /**
    * Reads a line from the buffer.
    */
   public StringValue readLine(long length)
-    throws IOException;
+    
 
   /**
    * Appends to a string builder.
    */
   public StringValue appendTo(StringValue builder)
-    throws IOException;
+    
 
   /**
    * Returns the current location in the stream

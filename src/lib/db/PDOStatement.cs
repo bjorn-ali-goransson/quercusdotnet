@@ -97,7 +97,7 @@ public class PDOStatement
                                         PDOError error,
                                         String query,
                                         boolean isCatchException)
-    throws SQLException
+    
   {
     PDOStatement stmt = new PDOStatement(env, pdo, error);
     
@@ -128,7 +128,7 @@ public class PDOStatement
                                         PDOError error,
                                         String query,
                                         boolean isCatchException)
-    throws SQLException
+    
   {
     PDOStatement stmt = new PDOStatement(env, pdo, error);
     
@@ -632,7 +632,7 @@ public class PDOStatement
   }
 
   private void bindColumns(Env env, JdbcResultResource rs)
-    throws SQLException
+    
   {
     if (_boundColumnMap != null) {
       for (BoundColumn binding : _boundColumnMap.values()) {
@@ -949,7 +949,7 @@ public class PDOStatement
    * @param column 1-based column index
    */
   private Value getColumnValue(Env env, int column)
-    throws SQLException
+    
   {
     JdbcResultResource rs = _stmt.getResultSet();
 

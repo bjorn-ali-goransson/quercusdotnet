@@ -59,7 +59,7 @@ public class JdbcColumnMetaData {
    * @param rs the ResultSet from a DatabaseMetaData.getColumns call
    */
   public JdbcColumnMetaData(JdbcTableMetaData table, ResultSet rs)
-    throws SQLException
+    
   {
     _table = table;
 

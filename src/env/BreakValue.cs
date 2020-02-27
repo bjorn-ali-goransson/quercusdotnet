@@ -106,7 +106,7 @@ public class BreakValue extends Value {
                           WriteStream out,
                           int depth,
                           IdentityHashMap<Value, String> valueSet)
-    throws IOException
+    
   {
     out.print(getClass().getName());
   }

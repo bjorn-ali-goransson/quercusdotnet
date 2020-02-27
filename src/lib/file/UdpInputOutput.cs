@@ -58,7 +58,7 @@ public class UdpInputOutput
   private byte _unread;
 
   public UdpInputOutput(Env env, String host, int port, Domain domain)
-    throws IOException
+    
   {
     super(env);
     env.addCleanup(this);
@@ -78,13 +78,13 @@ public class UdpInputOutput
   }
 
   public void bind(SocketAddress address)
-    throws IOException
+    
   {
     _socket.bind(address);
   }
 
   public void connect(SocketAddress address)
-    throws IOException
+    
   {
     _socket.connect(address);
 
@@ -151,7 +151,7 @@ public class UdpInputOutput
    * Unread the last byte.
    */
   public void unread()
-    throws IOException
+    
   {
     if (_stream != null) {
       _stream.unread();

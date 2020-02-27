@@ -62,7 +62,7 @@ public class ZlibInputStream extends ReadStreamInput
   }
 
   private void init(BinaryInput in)
-    throws IOException
+    
   {
     _in = in;
 
@@ -79,7 +79,7 @@ public class ZlibInputStream extends ReadStreamInput
    * Opens a new copy.
    */
   public BinaryInput openCopy()
-    throws IOException
+    
   {
     return new ZlibInputStream(_env, _in.openCopy());
   }

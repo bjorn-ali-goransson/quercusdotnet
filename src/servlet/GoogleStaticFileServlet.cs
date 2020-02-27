@@ -111,7 +111,7 @@ public class GoogleStaticFileServlet extends GenericServlet {
 
   @Override
   public void service(ServletRequest request, ServletResponse response)
-    throws IOException, ServletException
+    
   {
     QuercusHttpServletRequest req
       = new QuercusHttpServletRequestImpl((HttpServletRequest) request);

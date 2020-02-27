@@ -366,7 +366,7 @@ public class SplObjectStorage
                           WriteStream out,
                           int depth,
                           IdentityHashMap<Value, String> valueSet)
-    throws IOException
+    
   {
     ArrayValue array = toArrayValue(env);
 

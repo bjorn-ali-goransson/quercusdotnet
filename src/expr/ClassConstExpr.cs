@@ -73,7 +73,7 @@ public class ClassConstExpr extends Expr {
   public Expr createCall(QuercusParser parser,
                          Location location,
                          ArrayList<Expr> args)
-    throws IOException
+    
   {
     /*
     if (_className.equals(_name))

@@ -127,7 +127,7 @@ abstract public class ArgValue extends Value
                              WriteStream out,
                              int depth,
                              IdentityHashMap<Value, String> valueSet)
-    throws IOException
+    
   {
     toLocalValue().varDumpImpl(env, out, depth, valueSet);
   }
@@ -137,7 +137,7 @@ abstract public class ArgValue extends Value
                             WriteStream out,
                             int depth,
                             IdentityHashMap<Value, String> valueSet)
-    throws IOException
+    
   {
     toLocalValue().printRImpl(env, out, depth, valueSet);
   }

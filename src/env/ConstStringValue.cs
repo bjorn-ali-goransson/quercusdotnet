@@ -278,7 +278,7 @@ public class ConstStringValue
    * @param out the writer to the Java source code.
    */
   public void generate(PrintWriter out)
-    throws IOException
+    
   {
     generateImpl(out, this);
   }
@@ -289,7 +289,7 @@ public class ConstStringValue
    * @param out the writer to the Java source code.
    */
   public static void generateImpl(PrintWriter out, StringBuilderValue value)
-    throws IOException
+    
   {
     // max JVM constant string length
     int maxSublen = 0xFFFE;

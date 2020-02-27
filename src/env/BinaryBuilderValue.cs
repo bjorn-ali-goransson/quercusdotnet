@@ -612,7 +612,7 @@ public class BinaryBuilderValue
                           WriteStream out,
                           int depth,
                           IdentityHashMap<Value, String> valueSet)
-    throws IOException
+    
   {
     int length = length();
 

@@ -947,7 +947,7 @@ public class UrlModule
   }
 
   private static String getNextTag(BinaryInput input)
-    throws IOException
+    
   {
     StringBuilder tag = new StringBuilder();
 
@@ -972,7 +972,7 @@ public class UrlModule
    * as an array.
    */
   private static String [] getNextAttribute(BinaryInput input)
-    throws IOException
+    
   {
     int ch;
 
@@ -1040,7 +1040,7 @@ public class UrlModule
   }
 
   private static void consumeWhiteSpace(BinaryInput input)
-    throws IOException
+    
   {
     int ch = 0;
 

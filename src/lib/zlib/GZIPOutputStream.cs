@@ -64,7 +64,7 @@ public class GZIPOutputStream extends DeflaterOutputStream {
    * @param def
    */
   private GZIPOutputStream(OutputStream out, Deflater def)
-    throws IOException
+    
   {
     super(out, def);
     
@@ -83,7 +83,7 @@ public class GZIPOutputStream extends DeflaterOutputStream {
                           int compressionLevel,
                           int strategy,
                           int encodingMode)
-    throws IOException
+    
   {
     this(out, createDeflater(compressionLevel, strategy, encodingMode));
 
@@ -120,7 +120,7 @@ public class GZIPOutputStream extends DeflaterOutputStream {
    * @param strategy Deflate compression strategy
    */
   public GZIPOutputStream(OutputStream out, int compressionLevel, int strategy)
-    throws IOException
+    
   {
     this(out, compressionLevel, strategy, ZlibModule.FORCE_GZIP);
   }
@@ -129,7 +129,7 @@ public class GZIPOutputStream extends DeflaterOutputStream {
    * @param out
    */
   public GZIPOutputStream(OutputStream out)
-    throws IOException
+    
   {
     this(out, Deflater.DEFAULT_COMPRESSION, Deflater.DEFAULT_STRATEGY);
   }
@@ -140,7 +140,7 @@ public class GZIPOutputStream extends DeflaterOutputStream {
    * @param input
    */
   public void write(int v)
-    throws IOException
+    
   {
     super.write(v);
 
@@ -154,7 +154,7 @@ public class GZIPOutputStream extends DeflaterOutputStream {
    * @param length
    */
   public void write(byte[] buffer, int offset, int length)
-    throws IOException
+    
   {
     super.write(buffer, offset, length);
     
@@ -163,7 +163,7 @@ public class GZIPOutputStream extends DeflaterOutputStream {
   }
 
   public void finish()
-    throws IOException
+    
   {
     super.finish();
 
@@ -198,7 +198,7 @@ public class GZIPOutputStream extends DeflaterOutputStream {
    * Calls super function, which in turn closes the underlying 'in' stream
    */
   public void close()
-    throws IOException
+    
   {
     if (! def.finished())
       finish();

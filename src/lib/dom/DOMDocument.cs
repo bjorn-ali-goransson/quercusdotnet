@@ -107,13 +107,13 @@ public class DOMDocument
   }
 
   public DOMNode adoptNode(DOMNode source)
-    throws DOMException
+    
   {
     return wrap(_delegate.adoptNode(source.getDelegate()));
   }
 
   public DOMAttr createAttribute(String name)
-    throws DOMException
+    
   {
     try {
       return wrap(_delegate.createAttribute(name));
@@ -124,7 +124,7 @@ public class DOMDocument
   }
 
   public DOMAttr createAttributeNS(String namespaceURI, String qualifiedName)
-    throws DOMException
+    
   {
     try {
       return wrap(_delegate.createAttributeNS(namespaceURI, qualifiedName));
@@ -150,7 +150,7 @@ public class DOMDocument
   }
 
   public DOMElement createElement(String tagName)
-    throws DOMException
+    
   {
     try {
       return wrap(_delegate.createElement(tagName));
@@ -161,7 +161,7 @@ public class DOMDocument
   }
 
   public DOMElement createElement(String tagName, String textContent)
-    throws DOMException
+    
   {
     try {
       DOMElement element = createElement(tagName);
@@ -176,7 +176,7 @@ public class DOMDocument
   }
 
   public DOMElement createElementNS(String namespaceURI, String tagName)
-    throws DOMException
+    
   {
     try {
       return wrap(_delegate.createElementNS(namespaceURI, tagName));
@@ -189,7 +189,7 @@ public class DOMDocument
   public DOMElement createElementNS(String namespaceURI,
                                     String tagName,
                                     String textContent)
-    throws DOMException
+    
   {
     try {
       DOMElement element = createElementNS(namespaceURI, tagName);
@@ -204,7 +204,7 @@ public class DOMDocument
   }
 
   public DOMEntityReference createEntityReference(String name)
-    throws DOMException
+    
   {
     try {
       return wrap(_delegate.createEntityReference(name));
@@ -215,7 +215,7 @@ public class DOMDocument
   }
 
   public DOMProcessingInstruction createProcessingInstruction(String target)
-    throws DOMException
+    
   {
     try {
       return createProcessingInstruction(target, null);
@@ -227,7 +227,7 @@ public class DOMDocument
 
   public DOMProcessingInstruction createProcessingInstruction(String target,
                                                               String data)
-    throws DOMException
+    
   {
     try {
       return wrap(_delegate.createProcessingInstruction(target, data));
@@ -353,7 +353,7 @@ public class DOMDocument
   }
 
   public DOMNode importNode(DOMNode importedNode, boolean deep)
-    throws DOMException
+    
   {
     try {
       return wrap(_delegate.importNode(importedNode.getDelegate(), deep));
@@ -524,7 +524,7 @@ public class DOMDocument
   public DOMNode renameNode(DOMNode node,
                             String namespaceURI,
                             String qualifiedName)
-    throws DOMException
+    
   {
     try {
       return wrap(_delegate.renameNode(node.getDelegate(),
@@ -574,7 +574,7 @@ public class DOMDocument
   }
 
   private void saveToStream(DOMNode delegate, WriteStream os, boolean isHTML)
-    throws IOException
+    
   {
     XmlPrinter printer = new XmlPrinter(os);
 
@@ -650,7 +650,7 @@ public class DOMDocument
   public StringValue saveXML(Env env,
                              @Optional DOMNode node,
                              @Optional Value options)
-    throws DOMException
+    
   {
     if (options != null)
       env.stub(L.l("`{0}' is ignored", "options"));
@@ -758,13 +758,13 @@ public class DOMDocument
   }
 
   public void setXmlStandalone(boolean xmlStandalone)
-    throws DOMException
+    
   {
     _delegate.setXmlStandalone(xmlStandalone);
   }
 
   public void setXmlVersion(String xmlVersion)
-    throws DOMException
+    
   {
     _delegate.setXmlVersion(xmlVersion);
   }

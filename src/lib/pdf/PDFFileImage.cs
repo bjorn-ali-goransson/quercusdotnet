@@ -46,7 +46,7 @@ public class PDFFileImage extends PDFObject {
   private double _height;
 
   public PDFFileImage(int refId, double width, double height)
-    throws IOException
+    
   {
     _refId = refId;
     _width = width;
@@ -85,7 +85,7 @@ public class PDFFileImage extends PDFObject {
    */
   @Override
   public void writeObject(PDFWriter out)
-    throws IOException
+    
   {
     out.println("<< /Type /XObject");
     out.println("   /Subtype /Image");

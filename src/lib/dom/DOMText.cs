@@ -68,7 +68,7 @@ public class DOMText
   }
 
   public DOMText replaceWholeText(String content)
-    throws DOMException
+    
   {
     try {
       return wrap(_delegate.replaceWholeText(content));
@@ -79,7 +79,7 @@ public class DOMText
   }
 
   public DOMText splitText(int offset)
-    throws DOMException
+    
   {
     try {
       return wrap(_delegate.splitText(offset));

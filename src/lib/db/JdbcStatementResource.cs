@@ -223,7 +223,7 @@ public class JdbcStatementResource
   }
 
   protected final boolean execute(Env env, boolean isCatchException)
-    throws SQLException
+    
   {
     if (_stmt == null) {
       return false;
@@ -264,13 +264,13 @@ public class JdbcStatementResource
   }
 
   protected boolean prepareForExecute(Env env)
-    throws SQLException
+    
   {
     return true;
   }
 
   protected boolean executeImpl(Env env)
-    throws SQLException
+    
   {
     if (getStatementType() == StatementType.INSERT) {
       try {
@@ -324,7 +324,7 @@ public class JdbcStatementResource
    * @return the result set meta data
    */
   protected ResultSetMetaData getMetaData()
-    throws SQLException
+    
   {
     if (_rs == null) {
       return null;
@@ -339,7 +339,7 @@ public class JdbcStatementResource
    * @return the number of rows in the result set
    */
   public int getNumRows()
-    throws SQLException
+    
   {
     if (_rs == null) {
       return 0;
@@ -364,7 +364,7 @@ public class JdbcStatementResource
   }
 
   protected String lastInsertId(Env env)
-    throws SQLException
+    
   {
     Statement stmt = _stmt;
 
@@ -411,7 +411,7 @@ public class JdbcStatementResource
   }
 
   protected Connection getJavaConnection(Env env)
-    throws SQLException
+    
   {
     return _conn.getJavaConnection(env);
   }

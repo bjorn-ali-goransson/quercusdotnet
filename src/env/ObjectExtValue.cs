@@ -1240,7 +1240,7 @@ public class ObjectExtValue extends ObjectValue
                           WriteStream out,
                           int depth,
                           IdentityHashMap<Value, String> valueSet)
-    throws IOException
+    
   {
     int size = getSize();
 
@@ -1278,7 +1278,7 @@ public class ObjectExtValue extends ObjectValue
                             WriteStream out,
                             int depth,
                             IdentityHashMap<Value, String> valueSet)
-    throws IOException
+    
   {
     out.print(getName());
     out.print(' ');
@@ -1301,7 +1301,7 @@ public class ObjectExtValue extends ObjectValue
   //
 
   private void writeObject(ObjectOutputStream out)
-    throws IOException
+    
   {
     out.writeObject(_className);
 
@@ -1352,7 +1352,7 @@ public class ObjectExtValue extends ObjectValue
   }
 
   private void readObject(ObjectInputStream in)
-    throws ClassNotFoundException, IOException
+    
   {
     Env env = Env.getInstance();
     String name = (String) in.readObject();
@@ -1686,7 +1686,7 @@ public class ObjectExtValue extends ObjectValue
                             WriteStream out,
                             int depth,
                             IdentityHashMap<Value, String> valueSet)
-      throws IOException
+      
     {
       StringValue name = ClassField.getOrdinaryName(getKey());
       String suffix = "";
@@ -1712,7 +1712,7 @@ public class ObjectExtValue extends ObjectValue
                               WriteStream out,
                               int depth,
                               IdentityHashMap<Value, String> valueSet)
-      throws IOException
+      
     {
       StringValue name = ClassField.getOrdinaryName(getKey());
       String suffix = "";
@@ -1733,7 +1733,7 @@ public class ObjectExtValue extends ObjectValue
     }
 
     private void printDepth(WriteStream out, int depth)
-      throws java.io.IOException
+      
     {
       for (int i = 0; i < depth; i++)
         out.print(' ');

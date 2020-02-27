@@ -160,7 +160,7 @@ public class SimpleXMLElement extends SimpleXMLNode
                                 boolean dataIsUrl,
                                 String namespace,
                                 boolean isPrefix)
-    throws IOException,
+    
            ParserConfigurationException,
            SAXException
   {
@@ -185,7 +185,7 @@ public class SimpleXMLElement extends SimpleXMLNode
     if (dataIsUrl) {
       Path path = env.lookup(data.toStringValue());
 
-      // PHP throws an Exception instead
+      // PHP 
       if (path == null) {
         log.log(Level.FINE, L.l("Cannot read file/URL '{0}'", data));
         env.warning(L.l("Cannot read file/URL '{0}'", data));
@@ -219,7 +219,7 @@ public class SimpleXMLElement extends SimpleXMLNode
                                  boolean dataIsUrl,
                                  String namespace,
                                  boolean isPrefix)
-    throws IOException,
+    
            ParserConfigurationException,
            SAXException
   {    
@@ -248,7 +248,7 @@ public class SimpleXMLElement extends SimpleXMLNode
     if (dataIsUrl) {
       Path path = env.lookup(data);
 
-      // PHP throws an Exception instead
+      // PHP 
       if (path == null) {
         log.log(Level.FINE, L.l("Cannot read file/URL '{0}'", data));
         env.warning(L.l("Cannot read file/URL '{0}'", data));
@@ -326,7 +326,7 @@ public class SimpleXMLElement extends SimpleXMLNode
                           WriteStream out,
                           int depth,
                           IdentityHashMap<Value, String> valueSet)
-    throws IOException
+    
   {
     _view.varDump(env, out, depth, valueSet, _cls);
   }
@@ -335,7 +335,7 @@ public class SimpleXMLElement extends SimpleXMLNode
                          WriteStream out,
                          int depth,
                          IdentityHashMap<Value, String> valueSet)
-    throws IOException
+    
   {
     _view.printR(env, out, depth, valueSet, _cls);
   }

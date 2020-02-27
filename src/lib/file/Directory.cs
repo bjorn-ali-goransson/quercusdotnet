@@ -52,7 +52,7 @@ public class Directory
   }
 
   protected Directory(Env env, Path dir)
-    throws IOException
+    
   {
     handle = this;
 

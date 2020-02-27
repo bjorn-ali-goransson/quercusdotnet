@@ -809,7 +809,7 @@ abstract public class ObjectValue extends Callback {
                             WriteStream out,
                             int depth,
                             IdentityHashMap<Value, String> valueSet)
-    throws IOException
+    
   {
     int size = getSize();
 

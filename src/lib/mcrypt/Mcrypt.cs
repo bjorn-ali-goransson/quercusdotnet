@@ -58,7 +58,7 @@ public class Mcrypt {
   private IvParameterSpec _iv;
 
   Mcrypt(Env env, String algorithm, String mode)
-    throws Exception
+    
   {
     _algorithm = algorithm;
     _mode = mode.toUpperCase(Locale.ENGLISH);
@@ -341,7 +341,7 @@ public class Mcrypt {
   }
 
   private static String getTransformation(String algorithm, String mode)
-    throws Exception
+    
   {
     mode = mode.toUpperCase(Locale.ENGLISH);
 

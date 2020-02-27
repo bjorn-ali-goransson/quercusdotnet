@@ -62,7 +62,7 @@ class MOFileParser extends GettextParser
   private int _offsetTranslation;
 
   MOFileParser(Env env, Path path)
-    throws IOException
+    
   {
     _env = env;
     
@@ -70,7 +70,7 @@ class MOFileParser extends GettextParser
   }
 
   private void init(Path path)
-    throws IOException
+    
   {
     _in = path.openRead();
 
@@ -101,7 +101,7 @@ class MOFileParser extends GettextParser
    * Returns the gettext metadata.
    */
   private StringValue getMetadata()
-    throws IOException
+    
   {
     _in.setPosition(_offsetTranslation);
     int length = readInt();
@@ -116,7 +116,7 @@ class MOFileParser extends GettextParser
    * @return translations from file, or null on error
    */
   HashMap<StringValue, ArrayList<StringValue>> readTranslations()
-    throws IOException
+    
   {
     int[] originalOffsets = new int[_numberOfStrings];
     int[] translatedOffsets = new int[_numberOfStrings];
@@ -174,7 +174,7 @@ class MOFileParser extends GettextParser
    * Reads in a string until NULL or EOF encountered.
    */
   private StringValue readOriginalString()
-    throws IOException
+    
   {
     StringValue sb = _env.createUnicodeBuilder();
 
@@ -189,7 +189,7 @@ class MOFileParser extends GettextParser
    * Reads in translated plurals forms that are separated by NULL.
    */
   private ArrayList<StringValue> readPluralForms(int length)
-    throws IOException
+    
   {
     ArrayList<StringValue> list = new ArrayList<StringValue>();
     StringValue sb = new UnicodeBuilderValue();
@@ -213,7 +213,7 @@ class MOFileParser extends GettextParser
   }
 
   private int readInt()
-    throws IOException
+    
   {
     int len = _in.read(_tmpBuf);
 

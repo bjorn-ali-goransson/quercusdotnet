@@ -525,7 +525,7 @@ abstract public class JavaAdapter extends ArrayValue
    *
    * @return the key if it is found in the array, NULL otherwise
    *
-   * @throws NullPointerException
+   * 
    */
   @Override
   public Value contains(Value value)
@@ -885,7 +885,7 @@ abstract public class JavaAdapter extends ArrayValue
                           WriteStream out,
                           int depth,
                           IdentityHashMap<Value, String> valueSet)
-    throws IOException
+    
   {
     out.println("array(" + getSize() + ") {");
 
@@ -921,7 +921,7 @@ abstract public class JavaAdapter extends ArrayValue
                             WriteStream out,
                             int depth,
                             IdentityHashMap<Value, String> valueSet)
-    throws IOException
+    
   {
     out.println("Array");
     printDepth(out, 8 * depth);
@@ -950,14 +950,14 @@ abstract public class JavaAdapter extends ArrayValue
   //
 
   private void writeObject(ObjectOutputStream out)
-    throws IOException
+    
   {
     out.writeObject(_object);
     out.writeObject(_classDef.getName());
   }
 
   private void readObject(ObjectInputStream in)
-    throws ClassNotFoundException, IOException
+    
   {
     _envRef = new WeakReference<Env>(Env.getInstance());
 

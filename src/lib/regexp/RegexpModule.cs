@@ -942,7 +942,7 @@ public class RegexpModule
                                    StringValue subject,
                                    @Optional("-1") long limit,
                                    Value countV)
-    throws IllegalRegexpException
+    
   {
     StringValue string = subject;
 
@@ -1534,7 +1534,7 @@ public class RegexpModule
                                            StringValue subject,
                                            @Optional("-1") long limit,
                                            @Optional @Reference Value countV)
-    throws IllegalRegexpException
+    
   {
     if (limit < 0)
       limit = LONG_MAX;

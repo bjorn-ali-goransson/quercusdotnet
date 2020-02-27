@@ -92,7 +92,7 @@ abstract class GettextParser
    * @return translations from file, or null on error
    */
   abstract HashMap<StringValue, ArrayList<StringValue>> readTranslations()
-    throws IOException;
+    
 
   abstract void close();
 }

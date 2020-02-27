@@ -77,7 +77,7 @@ public class DirectoryIterator
   }
 
   private static String[] getPathList(Path path)
-    throws IOException
+    
   {
     String[] list = path.list();
 

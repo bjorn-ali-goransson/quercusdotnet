@@ -98,7 +98,7 @@ public class CopyRoot implements EnvCleanup
   }
 
   public void cleanup()
-    throws Exception
+    
   {
     if (! _isModified)
       _entry.free(this);

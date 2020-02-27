@@ -82,7 +82,7 @@ public class PDFWriter {
   }
 
   public void beginDocument()
-    throws IOException
+    
   {
     println("%PDF-1.4");
     println("#\u00c0\u00c3\u00c4\u00c9");
@@ -93,7 +93,7 @@ public class PDFWriter {
                            int outlineId,
                            ArrayList<Integer> pagesList, 
                            int pageCount)
-    throws IOException
+    
   {
     beginObject(catalogId);
 
@@ -131,7 +131,7 @@ public class PDFWriter {
   }
   
   public void writeOutline(PDFOutline outline)
-    throws IOException
+    
   {
     List<PDFDestination> roots = outline.getRootDestinations();
     
@@ -149,7 +149,7 @@ public class PDFWriter {
   }
   
   private void writeOutlineItem(List<PDFDestination> destinations, int index)
-    throws IOException
+    
   {
     PDFDestination dest = destinations.get(index);
     
@@ -181,7 +181,7 @@ public class PDFWriter {
   }
 
   public void writePageGroup(int id, int parentId, ArrayList<PDFPage> pages)
-    throws IOException
+    
   {
     beginObject(id);
     println("  << /Type /Pages");
@@ -207,7 +207,7 @@ public class PDFWriter {
   }
 
   public void writeStream(int id, PDFStream stream)
-    throws IOException
+    
   {
     stream.flush();
     int length = stream.getLength();
@@ -224,7 +224,7 @@ public class PDFWriter {
   }
 
   public void endDocument()
-    throws IOException
+    
   {
     long xrefOffset = _offset;
 
@@ -254,7 +254,7 @@ public class PDFWriter {
   }
 
   public void addPendingObject(PDFObject obj)
-    throws IOException
+    
   {
     if (_lastObject + 1 == obj.getId()) {
       beginObject(obj.getId());
@@ -266,7 +266,7 @@ public class PDFWriter {
   }
 
   public void beginObject(int id)
-    throws IOException
+    
   {
     while (_xref.size() < id)
       _xref.add(null);
@@ -277,7 +277,7 @@ public class PDFWriter {
   }
 
   public void endObject()
-    throws IOException
+    
   {
     println("endobj");
 
@@ -298,7 +298,7 @@ public class PDFWriter {
   }
 
   public void write(byte []buffer, int offset, int length)
-    throws IOException
+    
   {
     _out.write(buffer, offset, length);
 
@@ -306,7 +306,7 @@ public class PDFWriter {
   }
 
   public void print(String s)
-    throws IOException
+    
   {
     _out.print(s);
 
@@ -314,7 +314,7 @@ public class PDFWriter {
   }
 
   public void println(String s)
-    throws IOException
+    
   {
     _out.println(s);
 
@@ -322,7 +322,7 @@ public class PDFWriter {
   }
 
   public void println()
-    throws IOException
+    
   {
     _out.println();
 
@@ -330,19 +330,19 @@ public class PDFWriter {
   }
 
   public void print(long v)
-    throws IOException
+    
   {
     println(String.valueOf(v));
   }
 
   public void println(long v)
-    throws IOException
+    
   {
     println(String.valueOf(v));
   }
 
   public void print(double v)
-    throws IOException
+    
   {
     if ((long) v == v)
       print(String.valueOf((long) v));
@@ -351,7 +351,7 @@ public class PDFWriter {
   }
 
   public void println(double v)
-    throws IOException
+    
   {
     if ((long) v == v)
       println(String.valueOf((long) v));
@@ -375,7 +375,7 @@ public class PDFWriter {
     }
 
     void write()
-      throws IOException
+      
     {
       _out.print(_offset / 1000000000L % 10);
       _out.print(_offset / 100000000L % 10);

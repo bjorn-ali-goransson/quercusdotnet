@@ -50,7 +50,7 @@ public class ZipEntryInputStream extends ReadStreamInput
   private final long _position;
 
   public ZipEntryInputStream(BinaryInput in, long position)
-    throws IOException
+    
   {
     super(Env.getInstance());
 
@@ -74,7 +74,7 @@ public class ZipEntryInputStream extends ReadStreamInput
    * Opens a copy.
    */
   public BinaryInput openCopy()
-    throws IOException
+    
   {
     return new ZipEntryInputStream(_in.openCopy(), _position);
   }

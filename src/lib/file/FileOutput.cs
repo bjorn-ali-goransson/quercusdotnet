@@ -60,13 +60,13 @@ public class FileOutput extends AbstractBinaryOutput
   private long _offset;
 
   public FileOutput(Env env, Path path)
-    throws IOException
+    
   {
     this(env, path, false);
   }
 
   public FileOutput(Env env, Path path, boolean isAppend)
-    throws IOException
+    
   {
     _env = env;
     
@@ -100,7 +100,7 @@ public class FileOutput extends AbstractBinaryOutput
    * Prints a string to a file.
    */
   public void print(char v)
-    throws IOException
+    
   {
     if (_os != null)
       _os.print(v);
@@ -110,7 +110,7 @@ public class FileOutput extends AbstractBinaryOutput
    * Prints a string to a file.
    */
   public void print(String v)
-    throws IOException
+    
   {
     if (_os != null)
       _os.print(v);
@@ -120,7 +120,7 @@ public class FileOutput extends AbstractBinaryOutput
    * Writes a character
    */
   public void write(int ch)
-    throws IOException
+    
   {
     if (_os != null)
       _os.write(ch);
@@ -130,7 +130,7 @@ public class FileOutput extends AbstractBinaryOutput
    * Writes a buffer to a file.
    */
   public void write(byte []buffer, int offset, int length)
-    throws IOException
+    
   {
     if (_os != null)
       _os.write(buffer, offset, length);
@@ -140,7 +140,7 @@ public class FileOutput extends AbstractBinaryOutput
    * Flushes the output.
    */
   public void flush()
-    throws IOException
+    
   {
     if (_os != null)
       _os.flush();

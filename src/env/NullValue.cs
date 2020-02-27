@@ -677,7 +677,7 @@ public class NullValue extends Value
    */
   @Override
   public void generate(PrintWriter out)
-    throws IOException
+    
   {
     out.print("NullValue.NULL");
   }
@@ -702,7 +702,7 @@ public class NullValue extends Value
                           WriteStream out,
                           int depth,
                           IdentityHashMap<Value, String> valueSet)
-    throws IOException
+    
   {
     out.print("NULL");
   }

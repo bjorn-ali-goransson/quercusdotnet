@@ -61,7 +61,7 @@ public class JMSQueue
    */
   public JMSQueue(ConnectionFactory connectionFactory,
                   Destination queue)
-    throws Exception
+    
   {
     _connection = connectionFactory.createConnection();
 
@@ -91,7 +91,7 @@ public class JMSQueue
   }
 
   public boolean send(@NotNull Value value, @Optional JMSQueue replyTo)
-    throws JMSException
+    
   {
     Message message = null;
 
@@ -149,7 +149,7 @@ public class JMSQueue
   }
 
   public Value receive(Env env, @Optional("1") long timeout)
-    throws JMSException
+    
   {
     Message message = _consumer.receive(timeout);
 

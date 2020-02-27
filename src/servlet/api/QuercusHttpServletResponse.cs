@@ -47,7 +47,7 @@ public interface QuercusHttpServletResponse
   public boolean isCommitted();
 
   public OutputStream getOutputStream()
-    throws IOException;
+    
 
   public <T> T toResponse(Class<T> cls);
 }

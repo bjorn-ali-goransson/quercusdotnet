@@ -47,7 +47,7 @@ public class FileWriteValue extends FileValue {
   private long _offset;
 
   public FileWriteValue(Path path)
-    throws IOException
+    
   {
     super(path);
 
@@ -55,7 +55,7 @@ public class FileWriteValue extends FileValue {
   }
 
   public FileWriteValue(Path path, boolean isAppend)
-    throws IOException
+    
   {
     super(path);
 
@@ -69,7 +69,7 @@ public class FileWriteValue extends FileValue {
    * Prints a string to a file.
    */
   public void print(char v)
-    throws IOException
+    
   {
     if (_os != null)
       _os.print(v);
@@ -79,7 +79,7 @@ public class FileWriteValue extends FileValue {
    * Prints a string to a file.
    */
   public void print(String v)
-    throws IOException
+    
   {
     if (_os != null)
       _os.print(v);
@@ -89,7 +89,7 @@ public class FileWriteValue extends FileValue {
    * Writes a buffer to a file.
    */
   public int write(byte []buffer, int offset, int length)
-    throws IOException
+    
   {
     if (_os != null) {
       _os.write(buffer, offset, length);

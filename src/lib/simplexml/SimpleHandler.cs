@@ -109,7 +109,7 @@ public class SimpleHandler extends DefaultHandler2
 
   @Override
   public void characters(char []ch, int start, int length)
-    throws SAXException
+    
   {
     if (log.isLoggable(Level.FINE)) {
       log.log(Level.FINE, getClass().getSimpleName() + ".characters0: " + new String(ch, start, length));
@@ -381,7 +381,7 @@ public class SimpleHandler extends DefaultHandler2
 
   @Override
   public void warning(SAXParseException e)
-    throws SAXException
+    
   {
     if (log.isLoggable(Level.FINE)) {
       log.log(Level.FINE, getClass().getSimpleName() + ".warning0: " + e);
@@ -390,7 +390,7 @@ public class SimpleHandler extends DefaultHandler2
 
   @Override
   public void error(SAXParseException e)
-    throws SAXException
+    
   {
     if (log.isLoggable(Level.FINE)) {
       log.log(Level.FINE, getClass().getSimpleName() + ".error0: " + e);
@@ -399,7 +399,7 @@ public class SimpleHandler extends DefaultHandler2
 
   @Override
   public void fatalError(SAXParseException e)
-    throws SAXException
+    
   {
     if (log.isLoggable(Level.FINE)) {
       log.log(Level.FINE, getClass().getSimpleName() + ".fatalError0: " + e);

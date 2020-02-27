@@ -180,7 +180,7 @@ public class Post
                                           ArrayValue files,
                                           boolean addSlashesToValues,
                                           boolean isAllowUploads)
-    throws IOException
+    
   {
     ReadStream is;
 

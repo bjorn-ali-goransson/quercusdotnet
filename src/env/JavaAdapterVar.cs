@@ -1453,7 +1453,7 @@ public class JavaAdapterVar extends Value
                           WriteStream out,
                           int depth,
                           IdentityHashMap<Value, String> valueSet)
-    throws IOException
+    
   {
     out.print("&");
     getValue().varDump(env, out, depth, valueSet);

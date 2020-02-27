@@ -66,7 +66,7 @@ public class PDFImage extends PDFObject {
   private TempBuffer _jpegHead;
 
   public PDFImage(Path path)
-    throws IOException
+    
   {
     _path = path;
     _is = path.openRead();
@@ -105,7 +105,7 @@ public class PDFImage extends PDFObject {
   }
 
   private boolean parseImage()
-    throws IOException
+    
   {
     _image = ImageIO.read(_is);
     
@@ -142,7 +142,7 @@ public class PDFImage extends PDFObject {
   }
 
   private boolean parseImageJpeg(ReadStream is)
-    throws IOException
+    
   {
     int ch = is.read();
 
@@ -173,7 +173,7 @@ public class PDFImage extends PDFObject {
   }
 
   private boolean parseGIF()
-    throws IOException
+    
   {
     int width = (_is.read() & 0xff) + 256 * (_is.read() & 0xff);
     int heigth = (_is.read() & 0xff) + 256 * (_is.read() & 0xff);
@@ -218,7 +218,7 @@ public class PDFImage extends PDFObject {
   }
 
   private int []parseGIFColorMap(int depth)
-    throws IOException
+    
   {
     int []values = new int[1 << depth];
 
@@ -234,7 +234,7 @@ public class PDFImage extends PDFObject {
   }
 
   private void parseGIFData(int []colorMap)
-    throws IOException
+    
   {
     /*
     System.out.println("CS: " + codeSize);
@@ -261,7 +261,7 @@ public class PDFImage extends PDFObject {
   }
 
   private boolean parseJPEG()
-    throws IOException
+    
   {
     if (_is.read() != 0xff ||
         _is.read() != 0xd8)
@@ -315,7 +315,7 @@ public class PDFImage extends PDFObject {
    * Writes the object to the stream
    */
   public void writeObjectNew(PDFWriter out)
-    throws IOException
+    
   {
     long length = _path.getLength();
 
@@ -345,7 +345,7 @@ public class PDFImage extends PDFObject {
   }
 
   public void writeObject(PDFWriter out)
-    throws IOException
+    
   {
     int length = 0;
 
@@ -379,7 +379,7 @@ public class PDFImage extends PDFObject {
     private int _blockSize;
 
     GIFDecode(ReadStream is)
-      throws IOException
+      
     {
       _is = is;
 
@@ -389,7 +389,7 @@ public class PDFImage extends PDFObject {
     }
 
     int readByte()
-      throws IOException
+      
     {
       if (_blockSize < 0)
         return -1;

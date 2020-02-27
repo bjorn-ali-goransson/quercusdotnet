@@ -98,7 +98,7 @@ abstract public class AbstractBinaryOutput
    * Prints a string to a file.
    */
   public void print(char v)
-    throws IOException
+    
   {
     write((byte) v);
   }
@@ -107,7 +107,7 @@ abstract public class AbstractBinaryOutput
    * Prints a string to a file.
    */
   public void print(String v)
-    throws IOException
+    
   {
     for (int i = 0; i < v.length(); i++)
       write(v.charAt(i));
@@ -117,7 +117,7 @@ abstract public class AbstractBinaryOutput
    * Flushes the output.
    */
   public void flush()
-    throws IOException
+    
   {
   }
 

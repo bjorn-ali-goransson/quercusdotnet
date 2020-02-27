@@ -77,7 +77,7 @@ public class UserBody extends PostBody
   }
 
   public void writeTo(Env env, OutputStream os)
-    throws IOException
+    
   {
     long length = _length;
 

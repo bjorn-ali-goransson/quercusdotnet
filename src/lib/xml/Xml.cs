@@ -377,14 +377,14 @@ public class Xml {
    * @param data
    * @param isFinal
    * @return
-   * @throws IOException
-   * @throws SAXException
-   * @throws ParserConfigurationException
+   * 
+   * 
+   * 
    */
   public int xml_parse(Env env,
                        StringValue data,
                        @Optional("true") boolean isFinal)
-    throws Exception
+    
   {
     if (_xmlString == null)
       _xmlString = data.createStringBuilder();
@@ -453,7 +453,7 @@ public class Xml {
                                    StringValue data,
                                    @Reference Value valsV,
                                    @Optional @Reference Value indexV)
-    throws Exception
+    
   {
     ArrayValueImpl valueArray = new ArrayValueImpl();
     ArrayValueImpl indexArray = new ArrayValueImpl();
@@ -650,7 +650,7 @@ public class Xml {
     }
 
     public void endDocument()
-      throws SAXException
+      
     {
       for (StringValue sv : _indexArrayKeys) {
         _indexArray.put(sv, _indexArrayHashMap.get(sv));
@@ -661,7 +661,7 @@ public class Xml {
                              String lName,
                              String qName,
                              Attributes attrs)
-      throws SAXException
+      
     {
       Value elementArray = new ArrayValueImpl();
 
@@ -692,7 +692,7 @@ public class Xml {
     public void endElement(String namespaceURI,
                            String sName,
                            String qName)
-      throws SAXException
+      
     {
       Value elementArray;
 
@@ -738,7 +738,7 @@ public class Xml {
     public void characters(char[] ch,
                            int start,
                            int length)
-      throws SAXException
+      
     {
       if (_isOutside) {
         StringValue s = _env.createString(ch, start, length);
@@ -821,13 +821,13 @@ public class Xml {
      * @param lName
      * @param qName
      * @param attrs
-     * @throws SAXException
+     * 
      */
     public void startElement(String namespaceURI,
                              String lName,
                              String qName,
                              Attributes attrs)
-      throws SAXException
+      
     {
       /**
        *  args[0] reference to this parser
@@ -914,12 +914,12 @@ public class Xml {
      * @param namespaceURI
      * @param sName
      * @param qName
-     * @throws SAXException
+     * 
      */
     public void endElement(String namespaceURI,
                            String sName,
                            String qName)
-      throws SAXException
+      
     {
       try {
         String eName = sName; // element name
@@ -959,12 +959,12 @@ public class Xml {
      * @param ch
      * @param start
      * @param length
-     * @throws SAXException
+     * 
      */
     public void characters(char[] buf,
                            int start,
                            int length)
-      throws SAXException
+      
     {
       StringValue value;
 
@@ -1011,11 +1011,11 @@ public class Xml {
      * wrapper for _processingInstructionHandler
      * @param target
      * @param data
-     * @throws SAXException
+     * 
      */
     public void processingInstruction(String target,
                                       String data)
-      throws SAXException
+      
     {
       try {
         if (_processingInstructionHandler != null) {
@@ -1037,11 +1037,11 @@ public class Xml {
      * wrapper for _startNamespaceDeclHandler
      * @param prefix
      * @param uri
-     * @throws SAXException
+     * 
      */
     public void startPrefixMapping (String prefix,
                                     String uri)
-      throws SAXException
+      
     {
       try {
         if (_startNamespaceDeclHandler != null)
@@ -1063,10 +1063,10 @@ public class Xml {
      * wrapper for _endNamespaceDeclHandler
      *
      * @param prefix
-     * @throws SAXException
+     * 
      */
     public void endPrefixMapping(String prefix)
-      throws SAXException
+      
     {
       try {
         if (_endNamespaceDeclHandler != null)
@@ -1084,7 +1084,7 @@ public class Xml {
     public void notationDecl(String name,
                              String publicId,
                              String systemId)
-      throws SAXException
+      
     {
       try {
         if (_notationDeclHandler != null)
@@ -1109,7 +1109,7 @@ public class Xml {
                                    String publicId,
                                    String systemId,
                                    String notationName)
-      throws SAXException
+      
     {
       /**
        * args[0] reference to this parser

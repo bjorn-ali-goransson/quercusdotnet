@@ -266,7 +266,7 @@ public class TokenModule extends AbstractQuercusModule {
   private static void highlight(StringValue sb,
                                 WriteStream out,
                                 String string)
-    throws IOException
+    
   {
     if (sb != null) {
       sb.append(string);
@@ -279,7 +279,7 @@ public class TokenModule extends AbstractQuercusModule {
   private static void highlight(StringValue sb,
                                 WriteStream out,
                                 StringValue string)
-    throws IOException
+    
   {
     if (sb != null) {
       int len = string.length();

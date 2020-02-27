@@ -164,7 +164,7 @@ public class JdbcPreparedStatementResource
 
   @Override
   protected boolean prepareForExecute(Env env)
-    throws SQLException
+    
   {
     if (_types == null || _preparedStmt == null) {
       return true;
@@ -219,7 +219,7 @@ public class JdbcPreparedStatementResource
 
   @Override
   protected boolean executeImpl(Env env)
-    throws SQLException
+    
   {
     if (_preparedStmt != null) {
       return _preparedStmt.execute();
@@ -414,7 +414,7 @@ public class JdbcPreparedStatementResource
    * Known subclasses: see PostgresStatement.execute
    */
   protected void setObject(int i, Object param)
-    throws SQLException
+    
   {
     // See php/4358, php/43b8, php/43d8, and php/43p8.
     ParameterMetaData pmd = _preparedStmt.getParameterMetaData();

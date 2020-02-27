@@ -52,7 +52,7 @@ public class JavaSqlDriverWrapper implements javax.sql.DataSource
 
   @Override
   public Connection getConnection()
-    throws SQLException
+    
   {
     Properties props = new Properties();
     props.put("user", "");
@@ -63,7 +63,7 @@ public class JavaSqlDriverWrapper implements javax.sql.DataSource
 
   @Override
   public Connection getConnection(String user, String password)
-    throws SQLException
+    
   {
     Properties props = new Properties();
 
@@ -106,14 +106,14 @@ public class JavaSqlDriverWrapper implements javax.sql.DataSource
 
   @Override
   public <T> T unwrap(Class<T> iface)
-    throws SQLException
+    
   {
     throw new UnsupportedOperationException();
   }
 
   @Override
   public boolean isWrapperFor(Class<?> iface)
-    throws SQLException
+    
   {
     throw new UnsupportedOperationException();
   }

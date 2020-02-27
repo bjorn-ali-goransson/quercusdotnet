@@ -2357,7 +2357,7 @@ public class Var extends Value
                           WriteStream out,
                           int depth,
                           IdentityHashMap<Value, String> valueSet)
-    throws IOException
+    
   {
     out.print("&");
     _value.varDump(env, out, depth, valueSet);
@@ -2367,7 +2367,7 @@ public class Var extends Value
                             WriteStream out,
                             int depth,
                             IdentityHashMap<Value, String> valueSet)
-    throws IOException
+    
   {
     _value.printRImpl(env, out, depth, valueSet);
   }

@@ -51,7 +51,7 @@ public class FileReadValue extends FileValue {
   private long _offset;
 
   public FileReadValue(Path path)
-    throws IOException
+    
   {
     super(path);
 
@@ -70,7 +70,7 @@ public class FileReadValue extends FileValue {
    * Reads a character from a file, returning -1 on EOF.
    */
   public int read()
-    throws IOException
+    
   {
     if (_is != null) {
       int v = _is.read();
@@ -90,7 +90,7 @@ public class FileReadValue extends FileValue {
    * Reads a buffer from a file, returning -1 on EOF.
    */
   public int read(byte []buffer, int offset, int length)
-    throws IOException
+    
   {
     if (_is != null) {
       int len = _is.read(buffer, offset, length);
@@ -110,7 +110,7 @@ public class FileReadValue extends FileValue {
    * Reads the optional linefeed character from a \r\n
    */
   public boolean readOptionalLinefeed()
-    throws IOException
+    
   {
     if (_is != null) {
       int ch = _is.read();
@@ -130,7 +130,7 @@ public class FileReadValue extends FileValue {
 
   @Override
   public void writeToStream(OutputStream os, int length)
-    throws IOException
+    
   {
     if (_is != null) {
       _is.writeToStream(os, length);
@@ -142,7 +142,7 @@ public class FileReadValue extends FileValue {
    */
   @Override
   public StringValue readLine(Env env)
-    throws IOException
+    
   {
     // XXX: offset messed up
 

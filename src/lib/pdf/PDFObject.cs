@@ -44,5 +44,5 @@ abstract public class PDFObject {
    * Writes the object to the stream
    */
   abstract public void writeObject(PDFWriter out)
-    throws IOException;
+    
 }

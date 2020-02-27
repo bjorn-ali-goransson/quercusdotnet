@@ -151,7 +151,7 @@ public class QuercusImage extends ResourceValue
   }
 
   public Font getTrueTypeFont(Env env, StringValue fontPath)
-    throws FontFormatException,
+    
            IOException
   {
     Font font = _fontMap.get(fontPath);

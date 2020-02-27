@@ -40,13 +40,13 @@ public class DOMCharacterData<T extends CharacterData>
   }
 
   public void appendData(String arg)
-    throws DOMException
+    
   {
     _delegate.appendData(arg);
   }
 
   public void deleteData(int offset, int count)
-    throws DOMException
+    
   {
     try {
       _delegate.deleteData(offset, count);
@@ -57,7 +57,7 @@ public class DOMCharacterData<T extends CharacterData>
   }
 
   public String getData()
-    throws DOMException
+    
   {
     try {
       return _delegate.getData();
@@ -73,7 +73,7 @@ public class DOMCharacterData<T extends CharacterData>
   }
 
   public void insertData(int offset, String arg)
-    throws DOMException
+    
   {
     try {
       _delegate.insertData(offset, arg);
@@ -84,7 +84,7 @@ public class DOMCharacterData<T extends CharacterData>
   }
 
   public void replaceData(int offset, int count, String arg)
-    throws DOMException
+    
   {
     try {
       _delegate.replaceData(offset, count, arg);
@@ -95,7 +95,7 @@ public class DOMCharacterData<T extends CharacterData>
   }
 
   public void setData(String data)
-    throws DOMException
+    
   {
     try {
       _delegate.setData(data);
@@ -106,7 +106,7 @@ public class DOMCharacterData<T extends CharacterData>
   }
 
   public String substringData(int offset, int count)
-    throws DOMException
+    
   {
     try {
       return _delegate.substringData(offset, count);

@@ -140,7 +140,7 @@ public class WrappedStream implements BinaryInput, BinaryOutput {
    * Opens a new copy.
    */
   public BinaryInput openCopy()
-    throws IOException
+    
   {
     return new WrappedStream(_env, _wrapper);
   }
@@ -152,7 +152,7 @@ public class WrappedStream implements BinaryInput, BinaryOutput {
    * @param encoding name of the read encoding
    */
   public void setEncoding(String encoding)
-    throws UnsupportedEncodingException
+    
   {
   }
 
@@ -194,7 +194,7 @@ public class WrappedStream implements BinaryInput, BinaryOutput {
 
   @Override
   public int getAvailable()
-    throws IOException
+    
   {
     return 1;
   }
@@ -203,7 +203,7 @@ public class WrappedStream implements BinaryInput, BinaryOutput {
    * Reads a character from a file, returning -1 on EOF.
    */
   public int read()
-    throws IOException
+    
   {
     if (_doUnread) {
       _doUnread = false;
@@ -227,7 +227,7 @@ public class WrappedStream implements BinaryInput, BinaryOutput {
    * Unread a character.
    */
   public void unread()
-    throws IOException
+    
   {
     _doUnread = true;
   }
@@ -307,7 +307,7 @@ public class WrappedStream implements BinaryInput, BinaryOutput {
    * Reads a Binary string.
    */
   public StringValue read(int length)
-    throws IOException
+    
   {
     Value output;
 
@@ -325,7 +325,7 @@ public class WrappedStream implements BinaryInput, BinaryOutput {
    * Reads the optional linefeed character from a \r\n
    */
   public boolean readOptionalLinefeed()
-    throws IOException
+    
   {
     int ch = read();
 
@@ -342,13 +342,13 @@ public class WrappedStream implements BinaryInput, BinaryOutput {
    * Reads a line from a file, returning null on EOF.
    */
   public StringValue readLine(long length)
-    throws IOException
+    
   {
     return _lineReader.readLine(_env, this, length);
   }
 
   public void write(byte []buffer, int offset, int length)
-    throws IOException
+    
   {
     StringValue bb = _env.createBinaryBuilder(buffer, offset, length);
 
@@ -411,7 +411,7 @@ public class WrappedStream implements BinaryInput, BinaryOutput {
    * Prints a string to a file.
    */
   public void print(char v)
-    throws IOException
+    
   {
     printBuffer[0] = (byte) v;
 
@@ -422,7 +422,7 @@ public class WrappedStream implements BinaryInput, BinaryOutput {
    * Prints a string to a file.
    */
   public void print(String v)
-    throws IOException
+    
   {
     for (int i = 0; i < v.length(); i++)
       print(v.charAt(i));
@@ -480,7 +480,7 @@ public class WrappedStream implements BinaryInput, BinaryOutput {
   }
 
   public void flush()
-    throws IOException
+    
   {
     boolean result;
 
@@ -503,7 +503,7 @@ public class WrappedStream implements BinaryInput, BinaryOutput {
 
   private class WrappedInputStream extends InputStream {
     public int read()
-      throws IOException
+      
     {
       return WrappedStream.this.read();
     }
@@ -511,7 +511,7 @@ public class WrappedStream implements BinaryInput, BinaryOutput {
 
   private class WrappedOutputStream extends OutputStream {
     public void write(int b)
-      throws IOException
+      
     {
       if (_env.isUnicodeSemantics())
         _wrapper.callMethod(_env, STREAM_WRITE_U, LongValue.create(b));

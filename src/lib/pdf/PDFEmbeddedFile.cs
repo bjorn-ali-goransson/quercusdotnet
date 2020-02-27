@@ -44,7 +44,7 @@ public class PDFEmbeddedFile extends PDFObject {
   private int _id;
 
   public PDFEmbeddedFile(Path path)
-    throws IOException
+    
   {
     _path = path;
   }
@@ -69,7 +69,7 @@ public class PDFEmbeddedFile extends PDFObject {
    * Writes the object to the stream
    */
   public void writeObject(PDFWriter out)
-    throws IOException
+    
   {
     long length = _path.getLength();
 

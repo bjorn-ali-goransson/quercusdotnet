@@ -66,7 +66,7 @@ public class DOMProcessingInstruction
   }
 
   public void setData(String data)
-    throws DOMException
+    
   {
     try {
     _delegate.setData(data);

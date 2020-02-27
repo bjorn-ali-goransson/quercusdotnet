@@ -62,7 +62,7 @@ public final class UnserializeReader {
   private boolean _useReference;
 
   public UnserializeReader(StringValue s)
-    throws IOException
+    
   {
     _buffer = s.toCharArray();
     _length = _buffer.length;
@@ -73,7 +73,7 @@ public final class UnserializeReader {
   }
 
   public UnserializeReader(String s)
-     throws IOException
+     
   {
     _buffer = s.toCharArray();
     _length = _buffer.length;
@@ -89,7 +89,7 @@ public final class UnserializeReader {
   }
 
   public Value unserialize(Env env)
-    throws IOException
+    
   {
     int ch = read();
 
@@ -422,7 +422,7 @@ public final class UnserializeReader {
   }
 
   private void initReferenceList()
-    throws IOException
+    
   {
     populateReferenceList();
 
@@ -430,7 +430,7 @@ public final class UnserializeReader {
   }
 
   private void populateReferenceList()
-    throws IOException
+    
   {
     int ch = read();
 
@@ -635,7 +635,7 @@ public final class UnserializeReader {
   }
 
   public Value unserializeKey(Env env)
-    throws IOException
+    
   {
     int ch = read();
 
@@ -700,7 +700,7 @@ public final class UnserializeReader {
   }
 
   private String unserializeString()
-    throws IOException
+    
   {
     int ch = read();
 
@@ -724,7 +724,7 @@ public final class UnserializeReader {
   }
 
   public final void expect(int expectCh)
-    throws IOException
+    
   {
     if (_length <= _index)
       throw new IOException(L.l("expected '{0}' at end of string",

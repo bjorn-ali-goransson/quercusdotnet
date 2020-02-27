@@ -424,13 +424,13 @@ public class PDFStream {
   }
 
   public void write(PDFWriter out)
-    throws IOException
+    
   {
     out.writeStream(getId(), this);
   }
 
   public void writeToStream(WriteStream os)
-    throws IOException
+    
   {
     _tempStream.writeToStream(os);
     _tempStream.destroy();

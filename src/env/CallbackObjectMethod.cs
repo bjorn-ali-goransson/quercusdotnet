@@ -142,7 +142,7 @@ public class CallbackObjectMethod extends Callback {
                           WriteStream out,
                           int depth,
                           IdentityHashMap<Value, String> valueSet)
-    throws IOException
+    
   {
     out.print(getClass().getName());
     out.print('[');

@@ -232,7 +232,7 @@ public class XmlModule extends AbstractQuercusModule {
    * @param data
    * @param isFinal
    * @return false if parser == null
-   * @throws Exception
+   * 
    */
   public int xml_parse(Env env,
                        @NotNull Xml parser,
@@ -460,7 +460,7 @@ public class XmlModule extends AbstractQuercusModule {
    * @param valueArray
    * @param indexArray
    * @return false if parser == null
-   * @throws Exception
+   * 
    */
   public int xml_parse_into_struct(Env env,
                                    @NotNull Xml parser,

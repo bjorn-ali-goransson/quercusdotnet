@@ -52,7 +52,7 @@ public class BoundColumn
    */
   public BoundColumn(ResultSetMetaData metaData,
                      Value column, Value var, ColumnType type)
-    throws SQLException
+    
   {
     if (column.isNumberConvertible()) {
       _column = column.toInt();
@@ -68,7 +68,7 @@ public class BoundColumn
   }
 
   private boolean init(ResultSetMetaData metaData)
-    throws SQLException
+    
   {
     int columnCount = metaData.getColumnCount();
 
@@ -88,7 +88,7 @@ public class BoundColumn
   }
 
   public boolean bind(Env env, JdbcResultResource rs)
-    throws SQLException
+    
   {
     if (!_isValid) {
       // this matches php behaviour

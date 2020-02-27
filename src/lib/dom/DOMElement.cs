@@ -61,7 +61,7 @@ public class DOMElement extends DOMNode<Element>
 
   @Override
   public CharSequence getNodeValue(Env env)
-    throws DOMException
+    
   {
     // php/1zd1
     return getTextContent(env);
@@ -73,7 +73,7 @@ public class DOMElement extends DOMNode<Element>
   }
 
   public String getAttributeNS(String namespaceURI, String localName)
-    throws DOMException
+    
   {
     try {
       return _delegate.getAttributeNS(namespaceURI, localName);
@@ -89,7 +89,7 @@ public class DOMElement extends DOMNode<Element>
   }
 
   public DOMAttr getAttributeNodeNS(String namespaceURI, String localName)
-    throws DOMException
+    
   {
     try {
       return wrap(_delegate.getAttributeNodeNS(namespaceURI, localName));
@@ -131,7 +131,7 @@ public class DOMElement extends DOMNode<Element>
   }
 
   public boolean hasAttributeNS(String namespaceURI, String localName)
-    throws DOMException
+    
   {
     try {
       return _delegate.hasAttributeNS(namespaceURI, localName);
@@ -142,7 +142,7 @@ public class DOMElement extends DOMNode<Element>
   }
 
   public void removeAttribute(String name)
-    throws DOMException
+    
   {
     try {
       _delegate.removeAttribute(name);
@@ -153,7 +153,7 @@ public class DOMElement extends DOMNode<Element>
   }
 
   public void removeAttributeNS(String namespaceURI, String localName)
-    throws DOMException
+    
   {
     try {
       _delegate.removeAttributeNS(namespaceURI, localName);
@@ -164,7 +164,7 @@ public class DOMElement extends DOMNode<Element>
   }
 
   public DOMAttr removeAttributeNode(DOMAttr oldAttr)
-    throws DOMException
+    
   {
     try {
       return wrap(_delegate.removeAttributeNode(oldAttr._delegate));
@@ -175,7 +175,7 @@ public class DOMElement extends DOMNode<Element>
   }
 
   public void setAttribute(String name, String value)
-    throws DOMException
+    
   {
     try {
       _delegate.setAttribute(name, value);
@@ -188,7 +188,7 @@ public class DOMElement extends DOMNode<Element>
   public void setAttributeNS(String namespaceURI,
                              String qualifiedName,
                              String value)
-    throws DOMException
+    
   {
     try {
       _delegate.setAttributeNS(namespaceURI, qualifiedName, value);
@@ -199,7 +199,7 @@ public class DOMElement extends DOMNode<Element>
   }
 
   public DOMAttr setAttributeNode(DOMAttr newAttr)
-    throws DOMException
+    
   {
     try {
       return wrap(_delegate.setAttributeNode(newAttr._delegate));
@@ -210,7 +210,7 @@ public class DOMElement extends DOMNode<Element>
   }
 
   public DOMAttr setAttributeNodeNS(DOMAttr newAttr)
-    throws DOMException
+    
   {
     try {
       return wrap(_delegate.setAttributeNodeNS(newAttr._delegate));
@@ -221,7 +221,7 @@ public class DOMElement extends DOMNode<Element>
   }
 
   public void setIdAttribute(String name, boolean isId)
-    throws DOMException
+    
   {
     try {
       _delegate.setIdAttribute(name, isId);
@@ -234,7 +234,7 @@ public class DOMElement extends DOMNode<Element>
   public void setIdAttributeNS(String namespaceURI,
                                String localName,
                                boolean isId)
-    throws DOMException
+    
   {
     try {
       _delegate.setIdAttributeNS(namespaceURI, localName, isId);
@@ -245,7 +245,7 @@ public class DOMElement extends DOMNode<Element>
   }
 
   public void setIdAttributeNode(DOMAttr idAttr, boolean isId)
-    throws DOMException
+    
   {
     try {
       _delegate.setIdAttributeNode(idAttr._delegate, isId);
@@ -256,7 +256,7 @@ public class DOMElement extends DOMNode<Element>
   }
 
   public void setNodeValue(String nodeValue)
-    throws DOMException
+    
   {
     // php/1zd1
 

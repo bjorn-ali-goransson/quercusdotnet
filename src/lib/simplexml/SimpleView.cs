@@ -176,7 +176,7 @@ public abstract class SimpleView
                       int depth,
                       IdentityHashMap<Value, String> valueSet,
                       QuercusClass cls)
-    throws IOException
+    
   {
     Value value = toDumpValue(env, cls, false);
 
@@ -188,7 +188,7 @@ public abstract class SimpleView
                      int depth,
                      IdentityHashMap<Value, String> valueSet,
                      QuercusClass cls)
-    throws IOException
+    
   {
     Value value = toDumpValue(env, cls, false);
 
@@ -237,7 +237,7 @@ public abstract class SimpleView
   protected static List<SimpleView> xpath(Node node,
                                           SimpleNamespaceContext context,
                                           String expression)
-    throws XPathExpressionException
+    
   {
     XPath xpath = context.getXPath();
 

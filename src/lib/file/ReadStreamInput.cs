@@ -98,13 +98,13 @@ public class ReadStreamInput extends InputStream implements BinaryInput {
    */
   @Override
   public BinaryInput openCopy()
-    throws IOException
+    
   {
     return new ReadStreamInput(_env, _lineReader, _is.getPath().openRead());
   }
 
   public void setEncoding(String encoding)
-    throws UnsupportedEncodingException
+    
   {
     if (_is != null)
       _is.setEncoding(encoding);
@@ -115,7 +115,7 @@ public class ReadStreamInput extends InputStream implements BinaryInput {
    */
   @Override
   public void unread()
-    throws IOException
+    
   {
     if (_is != null)
       _is.unread();
@@ -123,7 +123,7 @@ public class ReadStreamInput extends InputStream implements BinaryInput {
 
   @Override
   public int getAvailable()
-    throws IOException
+    
   {
     if (_is != null)
       return _is.available();
@@ -136,7 +136,7 @@ public class ReadStreamInput extends InputStream implements BinaryInput {
    */
   @Override
   public int read()
-    throws IOException
+    
   {
     if (_is != null)
       return _is.read();
@@ -149,7 +149,7 @@ public class ReadStreamInput extends InputStream implements BinaryInput {
    */
   @Override
   public int read(byte []buffer, int offset, int length)
-    throws IOException
+    
   {
     ReadStream is = _is;
     
@@ -176,7 +176,7 @@ public class ReadStreamInput extends InputStream implements BinaryInput {
    * Reads a buffer from a file, returning -1 on EOF.
    */
   public int read(char []buffer, int offset, int length)
-    throws IOException
+    
   {
     if (_is != null) {
       return _is.read(buffer, offset, length);
@@ -190,7 +190,7 @@ public class ReadStreamInput extends InputStream implements BinaryInput {
    */
   @Override
   public StringValue read(int length)
-    throws IOException
+    
     {
       if (_is == null)
         return null;
@@ -207,7 +207,7 @@ public class ReadStreamInput extends InputStream implements BinaryInput {
    */
   @Override
   public boolean readOptionalLinefeed()
-    throws IOException
+    
   {
     if (_is == null)
       return false;
@@ -224,7 +224,7 @@ public class ReadStreamInput extends InputStream implements BinaryInput {
   }
 
   public void writeToStream(OutputStream os, int length)
-    throws IOException
+    
   {
     if (_is != null) {
       _is.writeToStream(os, length);
@@ -248,7 +248,7 @@ public class ReadStreamInput extends InputStream implements BinaryInput {
    */
   @Override
   public StringValue readLine(long length)
-    throws IOException
+    
   {
     return getLineReader().readLine(_env, this, length);
   }

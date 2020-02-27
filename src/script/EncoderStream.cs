@@ -74,7 +74,7 @@ public class EncoderStream extends StreamImpl
   }
 
   public int read(byte []buf, int offset, int length)
-    throws IOException
+    
   {
     _inputSb.setLength(0);
     _sb.setLength(0);
@@ -111,7 +111,7 @@ public class EncoderStream extends StreamImpl
 
   @Override
   public int getAvailable()
-    throws IOException
+    
   {
     throw new UnsupportedOperationException();
   }

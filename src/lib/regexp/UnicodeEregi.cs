@@ -34,7 +34,7 @@
 public class UnicodeEregi extends UnicodeEreg
 {
   public UnicodeEregi(StringValue rawRegexp)
-    throws IllegalRegexpException
+    
   {
     super(rawRegexp);
   }

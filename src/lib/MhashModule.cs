@@ -258,7 +258,7 @@ public class MhashModule extends AbstractQuercusModule {
     }
 
     public void init()
-      throws ConfigException
+      
     {
       if (_name == null)
         throw new ConfigException(L.l("`{0}' is required", "name"));

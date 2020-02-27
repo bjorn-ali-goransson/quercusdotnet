@@ -65,7 +65,7 @@ public class QuercusDataSource implements DataSource {
   }
 
   public Connection getConnection()
-    throws SQLException
+    
   {
     if (_user != null) {
       return _ds.getConnection(_user, _pass);
@@ -76,7 +76,7 @@ public class QuercusDataSource implements DataSource {
   }
 
   public Connection getConnection(String user, String pass)
-    throws SQLException
+    
   {
     if (user != null && _isAllowPerConnectionUserPass) {
       return _ds.getConnection(user, pass);
@@ -88,42 +88,42 @@ public class QuercusDataSource implements DataSource {
 
   @Override
   public int getLoginTimeout()
-    throws SQLException
+    
   {
     return _ds.getLoginTimeout();
   }
 
   @Override
   public PrintWriter getLogWriter()
-    throws SQLException
+    
   {
     return _ds.getLogWriter();
   }
 
   @Override
   public void setLoginTimeout(int seconds)
-    throws SQLException
+    
   {
     _ds.setLoginTimeout(seconds);
   }
 
   @Override
   public void setLogWriter(PrintWriter out)
-    throws SQLException
+    
   {
     _ds.setLogWriter(out);
   }
 
   @Override
   public boolean isWrapperFor(Class<?> iface)
-    throws SQLException
+    
   {
     return _ds.isWrapperFor(iface);
   }
 
   @Override
   public <T> T unwrap(Class<T> iface)
-    throws SQLException
+    
   {
     return _ds.unwrap(iface);
   }

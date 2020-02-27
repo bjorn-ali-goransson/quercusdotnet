@@ -43,13 +43,13 @@ public class PhpStdout extends AbstractBinaryOutput {
    * Writes a buffer.
    */
   public void write(byte []buffer, int offset, int length)
-    throws IOException
+    
   {
     System.out.write(buffer, offset, length);
   }
 
   public void write(int b)
-    throws IOException
+    
   {
     System.out.write(b);
   }

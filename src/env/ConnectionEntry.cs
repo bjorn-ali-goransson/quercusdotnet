@@ -61,7 +61,7 @@ public class ConnectionEntry implements EnvCleanup
   }
 
   public void connect(boolean isReuse)
-    throws SQLException
+    
   {
     if (_conn != null)
       throw new IllegalStateException();
@@ -89,7 +89,7 @@ public class ConnectionEntry implements EnvCleanup
   }
 
   public void setCatalog(String catalog)
-    throws SQLException
+    
   {
     _isReuse = false;
 
@@ -149,7 +149,7 @@ public class ConnectionEntry implements EnvCleanup
   }
 
   public void cleanup()
-    throws SQLException
+    
   {
     Connection conn = _conn;
     _conn = null;

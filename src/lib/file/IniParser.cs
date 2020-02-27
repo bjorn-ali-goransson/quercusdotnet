@@ -44,7 +44,7 @@
 
 public class IniParser {
   public static ArrayValue parse(Env env, ReadStream is, boolean isProcessSections)
-    throws IOException
+    
   {
     ArrayValue top = new ArrayValueImpl();
     ArrayValue section = top;
@@ -81,7 +81,7 @@ public class IniParser {
   }
 
   private static StringValue parseBracketKey(Env env, ReadStream is)
-    throws IOException
+    
   {
     StringValue sb = env.createStringBuilder();
 
@@ -116,7 +116,7 @@ public class IniParser {
   }
 
   private static void parseIniLine(Env env, ReadStream is, ArrayValue section)
-    throws IOException
+    
   {
     StringValue name = parseIniName(env, is);
     StringValue key = null;
@@ -154,7 +154,7 @@ public class IniParser {
   }
 
   private static StringValue parseIniName(Env env, ReadStream is)
-    throws IOException
+    
   {
     StringValue sb = env.createStringBuilder();
 
@@ -207,7 +207,7 @@ public class IniParser {
   }
 
   private static Value parseIniValue(Env env, ReadStream is)
-    throws IOException
+    
   {
     int ch = skipSpacesAndTabs(is);
 
@@ -327,7 +327,7 @@ public class IniParser {
   }
 
   private static int skipWhitespaces(ReadStream is)
-    throws IOException
+    
   {
     int ch;
 
@@ -338,7 +338,7 @@ public class IniParser {
   }
 
   private static int skipSpacesAndTabs(ReadStream is)
-    throws IOException
+    
   {
     int ch;
 
@@ -354,7 +354,7 @@ public class IniParser {
   }
 
   private static int skipToNewline(ReadStream is)
-    throws IOException
+    
   {
     int ch;
 

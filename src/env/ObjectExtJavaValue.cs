@@ -142,7 +142,7 @@ public class ObjectExtJavaValue extends ObjectExtValue
                           WriteStream out,
                           int depth,
                           IdentityHashMap<Value, String> valueSet)
-    throws IOException
+    
   {
     if (_object == null) {
       _object = createJavaObject(Env.getInstance());
@@ -157,7 +157,7 @@ public class ObjectExtJavaValue extends ObjectExtValue
                             WriteStream out,
                             int depth,
                             IdentityHashMap<Value, String> valueSet)
-    throws IOException
+    
   {
     if (_object == null) {
       _object = createJavaObject(Env.getInstance());

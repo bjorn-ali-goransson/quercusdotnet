@@ -66,7 +66,7 @@ public class ClassFieldExpr extends AbstractVarExpr {
   public Expr createCall(QuercusParser parser,
                          Location location,
                          ArrayList<Expr> args)
-    throws IOException
+    
   {
     Expr var = parser.createVar(_varName);
     ExprFactory factory = parser.getExprFactory();

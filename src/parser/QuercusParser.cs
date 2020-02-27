@@ -287,7 +287,7 @@ public class QuercusParser {
   }
 
   private void init(Path sourceFile)
-    throws IOException
+    
   {
     init(sourceFile, sourceFile.openRead(), null);
   }
@@ -327,7 +327,7 @@ public class QuercusParser {
   public static QuercusProgram parse(QuercusContext quercus,
                                      Path path,
                                      String encoding)
-    throws IOException
+    
   {
     ReadStream is = path.openRead();
 
@@ -350,7 +350,7 @@ public class QuercusParser {
                                      String encoding,
                                      String fileName,
                                      int line)
-    throws IOException
+    
   {
     ReadStream is = path.openRead();
 
@@ -377,7 +377,7 @@ public class QuercusParser {
 
   public static QuercusProgram parse(QuercusContext quercus,
                                      ReadStream is)
-    throws IOException
+    
   {
     QuercusParser parser;
     parser = new QuercusParser(quercus, is.getPath(), is);
@@ -388,7 +388,7 @@ public class QuercusParser {
   public static QuercusProgram parse(QuercusContext quercus,
                                      Path path,
                                      Reader reader)
-    throws IOException
+    
   {
     QuercusParser parser;
     parser = new QuercusParser(quercus, path, reader);
@@ -399,14 +399,14 @@ public class QuercusParser {
   public static QuercusProgram parse(QuercusContext quercus,
                                      Path path,
                                      ReadStream is)
-    throws IOException
+    
   {
     return new QuercusParser(quercus, path, is).parse();
   }
 
   public static QuercusProgram parseEval(QuercusContext quercus,
                                          StringValue str)
-    throws IOException
+    
   {
     QuercusParser parser;
 
@@ -424,7 +424,7 @@ public class QuercusParser {
 
   public static QuercusProgram parseEvalExpr(QuercusContext quercus,
                                              StringValue str)
-    throws IOException
+    
   {
     QuercusParser parser;
 
@@ -444,7 +444,7 @@ public class QuercusParser {
                                                String name,
                                                String args,
                                                String code)
-    throws IOException
+    
   {
     Path argPath = new StringPath(args);
     Path codePath = new StringPath(code);
@@ -469,7 +469,7 @@ public class QuercusParser {
   }
 
   public static Expr parse(QuercusContext quercus, String str)
-    throws IOException
+    
   {
       Path path = new StringPath(str);
 
@@ -543,7 +543,7 @@ public class QuercusParser {
   }
 
   public QuercusProgram parse()
-    throws IOException
+    
   {
     ClassDef globalClass = null;
 
@@ -575,7 +575,7 @@ public class QuercusParser {
   }
 
   QuercusProgram parseCode()
-    throws IOException
+    
   {
     ClassDef globalClass = null;
 
@@ -597,7 +597,7 @@ public class QuercusParser {
   }
 
   public Function parseFunction(String name, Path argPath, Path codePath)
-    throws IOException
+    
   {
     ClassDef globalClass = null;
 
@@ -630,7 +630,7 @@ public class QuercusParser {
    * Parses the top page.
    */
   Statement parseTop()
-    throws IOException
+    
   {
     _isTop = true;
 
@@ -663,7 +663,7 @@ public class QuercusParser {
    * Parses a statement list.
    */
   private Statement []parseStatements()
-    throws IOException
+    
   {
     ArrayList<Statement> statementList = parseStatementList();
 
@@ -678,7 +678,7 @@ public class QuercusParser {
    * Parses a statement list.
    */
   private ArrayList<Statement> parseStatementList()
-    throws IOException
+    
   {
     ArrayList<Statement> statementList = new ArrayList<Statement>();
 
@@ -886,7 +886,7 @@ public class QuercusParser {
   }
 
   private Statement parseStatement()
-    throws IOException
+    
   {
     Location location = getLocation();
 
@@ -968,7 +968,7 @@ public class QuercusParser {
    * Parses statements that expect to be terminated by ';'.
    */
   private Statement parseStatementImpl(int token)
-    throws IOException
+    
   {
     switch (token) {
     case ECHO:
@@ -1023,7 +1023,7 @@ public class QuercusParser {
    * Parses the echo statement.
    */
   private void parseEcho(ArrayList<Statement> statements)
-    throws IOException
+    
   {
     Location location = getLocation();
 
@@ -1078,7 +1078,7 @@ public class QuercusParser {
    * Parses the print statement.
    */
   private Statement parsePrint()
-    throws IOException
+    
   {
     return _factory.createExpr(getLocation(), parsePrintExpr());
   }
@@ -1087,7 +1087,7 @@ public class QuercusParser {
    * Parses the print statement.
    */
   private Expr parsePrintExpr()
-    throws IOException
+    
   {
     ArrayList<Expr> args = new ArrayList<Expr>();
     args.add(parseTopExpr());
@@ -1099,7 +1099,7 @@ public class QuercusParser {
    * Parses the global statement.
    */
   private Statement parseGlobal()
-    throws IOException
+    
   {
     ArrayList<Statement> statementList = new ArrayList<Statement>();
 
@@ -1142,7 +1142,7 @@ public class QuercusParser {
    * Parses the static statement.
    */
   private Statement parseStatic()
-    throws IOException
+    
   {
     ArrayList<Statement> statementList = new ArrayList<Statement>();
 
@@ -1204,7 +1204,7 @@ public class QuercusParser {
    * Parses the unset statement.
    */
   private Statement parseUnset()
-    throws IOException
+    
   {
     Location location = getLocation();
 
@@ -1218,7 +1218,7 @@ public class QuercusParser {
    * Parses the unset statement.
    */
   private void parseUnset(ArrayList<Statement> statementList)
-    throws IOException
+    
   {
     Location location = getLocation();
 
@@ -1249,7 +1249,7 @@ public class QuercusParser {
    * Parses the if statement
    */
   private Statement parseIf()
-    throws IOException
+    
   {
     boolean oldTop = _isTop;
     _isTop = false;
@@ -1300,7 +1300,7 @@ public class QuercusParser {
    * Parses the if statement
    */
   private Statement parseAlternateIf(Expr test, Location location)
-    throws IOException
+    
   {
     Statement trueBlock = null;
 
@@ -1337,7 +1337,7 @@ public class QuercusParser {
    * Parses the switch statement
    */
   private Statement parseSwitch()
-    throws IOException
+    
   {
     Location location = getLocation();
 
@@ -1462,7 +1462,7 @@ public class QuercusParser {
    * Parses the 'while' statement
    */
   private Statement parseWhile()
-    throws IOException
+    
   {
     boolean oldTop = _isTop;
     _isTop = false;
@@ -1507,7 +1507,7 @@ public class QuercusParser {
    * Parses the 'do' statement
    */
   private Statement parseDo()
-    throws IOException
+    
   {
     boolean oldTop = _isTop;
     _isTop = false;
@@ -1540,7 +1540,7 @@ public class QuercusParser {
    * Parses the 'for' statement
    */
   private Statement parseFor()
-    throws IOException
+    
   {
     boolean oldTop = _isTop;
     _isTop = false;
@@ -1610,7 +1610,7 @@ public class QuercusParser {
    * Parses the 'foreach' statement
    */
   private Statement parseForeach()
-    throws IOException
+    
   {
     boolean oldTop = _isTop;
     _isTop = false;
@@ -1692,7 +1692,7 @@ public class QuercusParser {
    * Parses the try statement
    */
   private Statement parseTry()
-    throws IOException
+    
   {
     boolean oldTop = _isTop;
     _isTop = false;
@@ -1740,7 +1740,7 @@ public class QuercusParser {
    * Parses a function definition
    */
   private Function parseFunctionDefinition(int modifiers)
-    throws IOException
+    
   {
     boolean oldTop = _isTop;
     _isTop = false;
@@ -1896,7 +1896,7 @@ public class QuercusParser {
    * Parses a function definition
    */
   private Expr parseClosure()
-    throws IOException
+    
   {
     boolean oldTop = _isTop;
     _isTop = false;
@@ -1998,7 +1998,7 @@ public class QuercusParser {
   }
 
   private Arg []parseFunctionArgDefinition()
-    throws IOException
+    
   {
     LinkedHashMap<StringValue, Arg> argMap
       = new LinkedHashMap<StringValue, Arg>();
@@ -2069,7 +2069,7 @@ public class QuercusParser {
    * Parses the 'return' statement
    */
   private Statement parseBreak()
-    throws IOException
+    
   {
     // commented out for adodb (used by Moodle and others)
     // XXX: should only throw fatal error if break statement is reached
@@ -2105,7 +2105,7 @@ public class QuercusParser {
    * Parses the 'return' statement
    */
   private Statement parseContinue()
-    throws IOException
+    
   {
     if (! _isTop && _loopLabelList.size() == 0 && ! _quercus.isLooseParse())
       throw error(L.l("cannot 'continue' inside a function"));
@@ -2140,7 +2140,7 @@ public class QuercusParser {
    * Parses the 'return' statement
    */
   private Statement parseReturn()
-    throws IOException
+    
   {
     Location location = getLocation();
 
@@ -2175,7 +2175,7 @@ public class QuercusParser {
    * Parses the 'throw' statement
    */
   private Statement parseThrow()
-    throws IOException
+    
   {
     Location location = getLocation();
 
@@ -2188,7 +2188,7 @@ public class QuercusParser {
    * Parses a class definition
    */
   private Statement parseClassDefinition(int modifiers)
-    throws IOException
+    
   {
     StringValue nameV = parseIdentifier();
     nameV = resolveIdentifier(nameV);
@@ -2268,7 +2268,7 @@ public class QuercusParser {
    * Parses a statement list.
    */
   private void parseClassContents()
-    throws IOException
+    
   {
     while (true) {
       _comment = null;
@@ -2351,7 +2351,7 @@ public class QuercusParser {
    * Parses a function definition
    */
   private void parseClassVarDefinition(int modifiers)
-    throws IOException
+    
   {
     int token;
 
@@ -2406,7 +2406,7 @@ public class QuercusParser {
    * Parses a const definition
    */
   private ArrayList<Statement> parseConstDefinition()
-    throws IOException
+    
   {
     ArrayList<Statement> constList = new ArrayList<Statement>();
 
@@ -2440,7 +2440,7 @@ public class QuercusParser {
    * Parses a const definition
    */
   private void parseClassConstDefinition()
-    throws IOException
+    
   {
     int token;
 
@@ -2460,7 +2460,7 @@ public class QuercusParser {
   }
 
   private void parseUseTraitDefinition()
-    throws IOException
+    
   {
    int token;
 
@@ -2531,7 +2531,7 @@ public class QuercusParser {
   }
 
   private int parseModifiers()
-    throws IOException
+    
   {
     int token;
     int modifiers = 0;
@@ -2572,7 +2572,7 @@ public class QuercusParser {
   }
 
   private ArrayList<Statement> parseNamespace()
-    throws IOException
+    
   {
     int token = parseToken();
 
@@ -2609,7 +2609,7 @@ public class QuercusParser {
   }
 
   private void parseUse()
-    throws IOException
+    
   {
     int token = parseNamespaceIdentifier(read());
 
@@ -2653,7 +2653,7 @@ public class QuercusParser {
    * Parses an expression statement.
    */
   private Statement parseExprStatement()
-    throws IOException
+    
   {
     Location location = getLocation();
 
@@ -2686,7 +2686,7 @@ public class QuercusParser {
    * Parses a top expression.
    */
   private Expr parseTopExpr()
-    throws IOException
+    
   {
     return parseExpr();
   }
@@ -2695,7 +2695,7 @@ public class QuercusParser {
    * Parses a top expression.
    */
   private Expr parseTopCommaExpr()
-    throws IOException
+    
   {
     return parseCommaExpr();
   }
@@ -2704,7 +2704,7 @@ public class QuercusParser {
    * Parses a comma expression.
    */
   private Expr parseCommaExpr()
-    throws IOException
+    
   {
     Expr expr = parseExpr();
 
@@ -2726,7 +2726,7 @@ public class QuercusParser {
    * Parses an expression with optional '&'.
    */
   private Expr parseRefExpr()
-    throws IOException
+    
   {
     int token = parseToken();
 
@@ -2747,7 +2747,7 @@ public class QuercusParser {
    * Parses an expression.
    */
   private Expr parseExpr()
-    throws IOException
+    
   {
     return parseWeakOrExpr();
   }
@@ -2756,7 +2756,7 @@ public class QuercusParser {
    * Parses a logical xor expression.
    */
   private Expr parseWeakOrExpr()
-    throws IOException
+    
   {
     Expr expr = parseWeakXorExpr();
 
@@ -2778,7 +2778,7 @@ public class QuercusParser {
    * Parses a logical xor expression.
    */
   private Expr parseWeakXorExpr()
-    throws IOException
+    
   {
     Expr expr = parseWeakAndExpr();
 
@@ -2800,7 +2800,7 @@ public class QuercusParser {
    * Parses a logical and expression.
    */
   private Expr parseWeakAndExpr()
-    throws IOException
+    
   {
     Expr expr = parseConditionalExpr();
 
@@ -2822,7 +2822,7 @@ public class QuercusParser {
    * Parses a conditional expression.
    */
   private Expr parseConditionalExpr()
-    throws IOException
+    
   {
     Expr expr = parseOrExpr();
 
@@ -2856,7 +2856,7 @@ public class QuercusParser {
    * Parses a logical or expression.
    */
   private Expr parseOrExpr()
-    throws IOException
+    
   {
     Expr expr = parseAndExpr();
 
@@ -2878,7 +2878,7 @@ public class QuercusParser {
    * Parses a logical and expression.
    */
   private Expr parseAndExpr()
-    throws IOException
+    
   {
     Expr expr = parseBitOrExpr();
 
@@ -2900,7 +2900,7 @@ public class QuercusParser {
    * Parses a bit or expression.
    */
   private Expr parseBitOrExpr()
-    throws IOException
+    
   {
     Expr expr = parseBitXorExpr();
 
@@ -2922,7 +2922,7 @@ public class QuercusParser {
    * Parses a bit xor expression.
    */
   private Expr parseBitXorExpr()
-    throws IOException
+    
   {
     Expr expr = parseBitAndExpr();
 
@@ -2944,7 +2944,7 @@ public class QuercusParser {
    * Parses a bit and expression.
    */
   private Expr parseBitAndExpr()
-    throws IOException
+    
   {
     Expr expr = parseEqExpr();
 
@@ -2966,7 +2966,7 @@ public class QuercusParser {
    * Parses a comparison expression.
    */
   private Expr parseEqExpr()
-    throws IOException
+    
   {
     Expr expr = parseCmpExpr();
 
@@ -2995,7 +2995,7 @@ public class QuercusParser {
    * Parses a comparison expression.
    */
   private Expr parseCmpExpr()
-    throws IOException
+    
   {
     Expr expr = parseShiftExpr();
 
@@ -3045,7 +3045,7 @@ public class QuercusParser {
    * Parses a left/right shift expression.
    */
   private Expr parseShiftExpr()
-    throws IOException
+    
   {
     Expr expr = parseAddExpr();
 
@@ -3070,7 +3070,7 @@ public class QuercusParser {
    * Parses an add/substract expression.
    */
   private Expr parseAddExpr()
-    throws IOException
+    
   {
     Expr expr = parseMulExpr();
 
@@ -3098,7 +3098,7 @@ public class QuercusParser {
    * Parses a multiplication/division expression.
    */
   private Expr parseMulExpr()
-    throws IOException
+    
   {
     Expr expr = parseAssignExpr();
 
@@ -3126,7 +3126,7 @@ public class QuercusParser {
    * Parses an assignment expression.
    */
   private Expr parseAssignExpr()
-    throws IOException
+    
   {
     Expr expr = parseUnary();
 
@@ -3302,7 +3302,7 @@ public class QuercusParser {
    * </pre>
    */
   private Expr parseUnary()
-    throws IOException
+    
   {
     int token = parseToken();
 
@@ -3385,7 +3385,7 @@ public class QuercusParser {
    * </pre>
    */
   private Expr parseTerm(boolean isParseCall)
-    throws IOException
+    
   {
     Expr term = parseTermBase();
 
@@ -3466,7 +3466,7 @@ public class QuercusParser {
    * </pre>
    */
   private Expr parseTermArray()
-    throws IOException
+    
   {
     Expr term = parseTermBase();
 
@@ -3528,7 +3528,7 @@ public class QuercusParser {
    * </pre>
    */
   private Expr parseDeref(Expr term)
-    throws IOException
+    
   {
     Expr nameExpr = null;
 
@@ -3567,7 +3567,7 @@ public class QuercusParser {
    * </pre>
    */
   private Expr parseTermBase()
-    throws IOException
+    
   {
     int token = parseToken();
 
@@ -3813,7 +3813,7 @@ public class QuercusParser {
    * </pre>
    */
   private AbstractVarExpr parseLeftHandSide()
-    throws IOException
+    
   {
     int token = parseToken();
     AbstractVarExpr lhs = null;
@@ -3870,7 +3870,7 @@ public class QuercusParser {
   }
 
   private Expr parseScope(Expr classNameExpr)
-    throws IOException
+    
   {
     int token = parseToken();
 
@@ -3919,7 +3919,7 @@ public class QuercusParser {
    * Parses the next variable
    */
   private AbstractVarExpr parseVariable()
-    throws IOException
+    
   {
     int token = parseToken();
 
@@ -3958,7 +3958,7 @@ public class QuercusParser {
    * Parses the next function
    */
   private Expr parseCall(StringValue name)
-    throws IOException
+    
   {
     if (name.equalsStringIgnoreCase("array")) {
       return parseArrayFunction('(', ')');
@@ -4044,13 +4044,13 @@ public class QuercusParser {
    * Parses the next function
    */
   private Expr parseCall(Expr name)
-    throws IOException
+    
   {
     return name.createCall(this, getLocation(), parseArgs());
   }
 
   private ArrayList<Expr> parseArgs()
-    throws IOException
+    
   {
     expect('(');
 
@@ -4108,7 +4108,7 @@ public class QuercusParser {
    * Parses the new expression
    */
   private Expr parseNew()
-    throws IOException
+    
   {
     String name = null;
     Expr nameExpr = null;
@@ -4180,7 +4180,7 @@ public class QuercusParser {
    * Parses the include expression
    */
   private Expr parseInclude()
-    throws IOException
+    
   {
     Expr name = parseExpr();
 
@@ -4191,7 +4191,7 @@ public class QuercusParser {
    * Parses the list(...) = value expression
    */
   private Expr parseList()
-    throws IOException
+    
   {
     ListHeadExpr leftVars = parseListHead();
 
@@ -4206,7 +4206,7 @@ public class QuercusParser {
    * Parses the list(...) expression
    */
   private ListHeadExpr parseListHead()
-    throws IOException
+    
   {
     expect('(');
 
@@ -4251,7 +4251,7 @@ public class QuercusParser {
    * Parses the exit/die expression
    */
   private Expr parseExit()
-    throws IOException
+    
   {
     int token = parseToken();
     _peekToken = token;
@@ -4273,7 +4273,7 @@ public class QuercusParser {
    * Parses the exit/die expression
    */
   private Expr parseDie()
-    throws IOException
+    
   {
     int token = parseToken();
     _peekToken = token;
@@ -4295,7 +4295,7 @@ public class QuercusParser {
    * Parses the empty() expression.
    */
   private Expr parseEmpty()
-    throws IOException
+    
   {
     int token = parseToken();
     _peekToken = token;
@@ -4317,7 +4317,7 @@ public class QuercusParser {
    * Parses the array() expression
    */
   private Expr parseArrayFunction(char beginChar, char endChar)
-    throws IOException
+    
   {
     int token = parseToken();
 
@@ -4364,7 +4364,7 @@ public class QuercusParser {
    * Parses a Quercus import.
    */
   private Expr parseImport()
-    throws IOException
+    
   {
     boolean isWildcard = false;
     boolean isIdentifierStart = true;
@@ -4409,7 +4409,7 @@ public class QuercusParser {
    * Parses the next token.
    */
   private int parseToken()
-    throws IOException
+    
   {
     int peekToken = _peekToken;
     if (peekToken > 0) {
@@ -4774,7 +4774,7 @@ public class QuercusParser {
   }
 
   private StringValue parseIdentifier()
-    throws IOException
+    
   {
     int token = _peekToken;
     _peekToken = -1;
@@ -4799,7 +4799,7 @@ public class QuercusParser {
 
 
   private StringValue parseNamespaceIdentifier()
-    throws IOException
+    
   {
     int token = _peekToken;
     _peekToken = -1;
@@ -4885,7 +4885,7 @@ public class QuercusParser {
   }
 
   private int parseIdentifier(int ch)
-    throws IOException
+    
   {
     for (; Character.isWhitespace(ch); ch = read()) {
     }
@@ -4907,7 +4907,7 @@ public class QuercusParser {
   }
 
   private int parseNamespaceIdentifier(int ch)
-    throws IOException
+    
   {
     for (; Character.isWhitespace(ch); ch = read()) {
     }
@@ -4929,7 +4929,7 @@ public class QuercusParser {
   }
 
   private int lexemeToToken()
-    throws IOException
+    
   {
     _lexeme = copyStringValue(_sb);
 
@@ -4959,7 +4959,7 @@ public class QuercusParser {
    * Parses a multiline comment.
    */
   private void parseMultilineComment()
-    throws IOException
+    
   {
     int ch = read();
 
@@ -5004,7 +5004,7 @@ public class QuercusParser {
    * Parses quercus text
    */
   private int parsePhpText()
-    throws IOException
+    
   {
     StringValue sb = createStringBuilder();
 
@@ -5075,7 +5075,7 @@ public class QuercusParser {
    * Parses the <script language="quercus"> opening
    */
   private boolean parseScriptBegin(StringValue sb)
-    throws IOException
+    
   {
     int begin = sb.length();
 
@@ -5120,7 +5120,7 @@ public class QuercusParser {
   }
 
   private boolean parseTextMatch(StringValue sb, String text)
-    throws IOException
+    
   {
     int len = text.length();
 
@@ -5142,7 +5142,7 @@ public class QuercusParser {
   }
 
   private void parseWhitespace(StringValue sb)
-    throws IOException
+    
   {
     int ch;
 
@@ -5154,7 +5154,7 @@ public class QuercusParser {
   }
 
   private void parseStringToken(int end)
-    throws IOException
+    
   {
     parseStringToken(end, isUnicodeSemantics());
   }
@@ -5163,7 +5163,7 @@ public class QuercusParser {
    * Parses the next string token.
    */
   private void parseStringToken(int end, boolean isUnicode)
-    throws IOException
+    
   {
     _sb.setLength(0);
 
@@ -5229,7 +5229,7 @@ public class QuercusParser {
    * Parses the nowdoc.
    */
   private int parseNowdoc()
-    throws IOException
+    
   {
     _sb.setLength(0);
     int ch;
@@ -5288,7 +5288,7 @@ public class QuercusParser {
   }
 
   private boolean parseNowdocEnd(String nowdocName)
-    throws IOException
+    
   {
     int i = 0;
     int len = nowdocName.length();
@@ -5321,7 +5321,7 @@ public class QuercusParser {
    * Parses the next heredoc token.
    */
   private int parseHeredocToken(boolean isQuoted)
-    throws IOException
+    
   {
     _sb.setLength(0);
 
@@ -5371,7 +5371,7 @@ public class QuercusParser {
   private Expr parseEscapedString(StringValue prefix,
                                   int token,
                                   boolean isSystem)
-    throws IOException
+    
   {
     return parseEscapedString(prefix, token, isSystem, true);
   }
@@ -5383,7 +5383,7 @@ public class QuercusParser {
                                   int token,
                                   boolean isSystem,
                                   boolean isUnicode)
-    throws IOException
+    
   {
     Expr expr;
 
@@ -5482,7 +5482,7 @@ public class QuercusParser {
    * Parses the next string
    */
   private Expr parseSimpleArrayTail(Expr tail)
-    throws IOException
+    
   {
     int ch = read();
 
@@ -5593,7 +5593,7 @@ public class QuercusParser {
    * XXX: parse as Unicode if and only if unicode.semantics is on.
    */
   private int parseEscapedString(char end)
-    throws IOException
+    
   {
     return parseEscapedString(end, isUnicodeSemantics());
   }
@@ -5602,7 +5602,7 @@ public class QuercusParser {
    * Parses the next string
    */
   private int parseEscapedString(char end, boolean isUnicode)
-    throws IOException
+    
   {
     _sb.setLength(0);
 
@@ -5801,7 +5801,7 @@ public class QuercusParser {
   }
 
   private int parseOctalEscape(int ch)
-    throws IOException
+    
   {
     int value = ch - '0';
 
@@ -5825,7 +5825,7 @@ public class QuercusParser {
   }
 
   private int parseHexEscape()
-    throws IOException
+    
   {
     int value = 0;
 
@@ -5859,7 +5859,7 @@ public class QuercusParser {
   }
 
   private int parseUnicodeEscape(boolean isLongForm)
-    throws IOException
+    
   {
     int codePoint = parseHexEscape();
 
@@ -5889,7 +5889,7 @@ public class QuercusParser {
    * Parses the next number.
    */
   private int parseNumberToken(int ch)
-    throws IOException
+    
   {
     int ch0 = ch;
 
@@ -5975,7 +5975,7 @@ public class QuercusParser {
    * Parses the next as hex
    */
   private int parseHex()
-    throws IOException
+    
   {
     long value = 0;
     double dValue = 0;
@@ -6017,7 +6017,7 @@ public class QuercusParser {
    * Parses a binary number (0b010101111).
    */
   private int parseBinary()
-    throws IOException
+    
   {
     long value = 0;
     double dValue = 0;
@@ -6049,7 +6049,7 @@ public class QuercusParser {
    * Parses the next as octal
    */
   private int parseOctal(int ch)
-    throws IOException
+    
   {
     long value = 0;
     double dValue = 0;
@@ -6084,7 +6084,7 @@ public class QuercusParser {
   }
 
   private void expect(int expect)
-    throws IOException
+    
   {
     int token = parseToken();
 
@@ -6099,7 +6099,7 @@ public class QuercusParser {
    * Reads the next character.
    */
   private int read()
-    throws IOException
+    
   {
     int peek = _peek;
 
@@ -6135,7 +6135,7 @@ public class QuercusParser {
   }
 
   private int readInternal()
-    throws IOException
+    
   {
     if (_reader != null) {
       return _reader.read();

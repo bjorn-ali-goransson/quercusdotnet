@@ -50,7 +50,7 @@ public class PopenInput extends ReadStreamInput
   private Process _process;
 
   public PopenInput(Env env, Process process)
-    throws IOException
+    
   {
     super(env);
     
@@ -69,7 +69,7 @@ public class PopenInput extends ReadStreamInput
    * Opens a copy.
    */
   public BinaryInput openCopy()
-    throws IOException
+    
   {
     return new PopenInput(_env, _process);
   }

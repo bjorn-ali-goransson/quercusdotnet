@@ -94,13 +94,13 @@ abstract public class Statement {
   }
 
   final protected void rethrow(Throwable t)
-    throws Throwable
+    
   {
     rethrow(t, Throwable.class);
   }
 
   final protected <E extends Throwable> void rethrow(Throwable t, Class<E> cl)
-    throws E
+    
   {
     E typedT;
 

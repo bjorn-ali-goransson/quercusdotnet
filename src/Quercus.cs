@@ -63,7 +63,7 @@ public class Quercus
   //
 
   public static void main(String []args)
-    throws IOException
+    
   {
     Quercus quercus = new Quercus();
 
@@ -71,7 +71,7 @@ public class Quercus
   }
 
   public static void startMain(String []args, Quercus quercus)
-    throws IOException
+    
   {
     if (! quercus.parseArgs(args)) {
       quercus.printUsage();
@@ -183,7 +183,7 @@ public class Quercus
   }
 
   public void execute()
-    throws IOException
+    
   {
     Path path = getPwd().lookup(_fileName);
 
@@ -191,7 +191,7 @@ public class Quercus
   }
 
   public void execute(String code)
-    throws IOException
+    
   {
     Path path = new StringPath(code);
 
@@ -199,7 +199,7 @@ public class Quercus
   }
 
   public void execute(Path path)
-    throws IOException
+    
   {
     QuercusPage page = parse(path);
 
@@ -227,7 +227,7 @@ public class Quercus
   }
 
   public void execute(ReadStream stream)
-    throws IOException
+    
   {
     QuercusPage page = parse(stream);
 

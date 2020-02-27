@@ -90,7 +90,7 @@ public class PDF
 
   public boolean begin_document(@Optional String fileName,
                                 @Optional String optList)
-    throws IOException
+    
   {
     _tempStream = new TempStream();
     _tempStream.openWrite();
@@ -107,7 +107,7 @@ public class PDF
   }
 
   public boolean begin_page(double width, double height)
-    throws IOException
+    
   {
     if (PAGE_GROUP_SIZE <= _pageGroup.size()) {
       _out.writePageGroup(_pageParentId, _rootId, _pageGroup);
@@ -128,7 +128,7 @@ public class PDF
   }
 
   public boolean begin_page_ext(double width, double height, String opt)
-    throws IOException
+    
   {
     return begin_page(width, height);
   }
@@ -297,7 +297,7 @@ public class PDF
    * @param opt any options
    */
   public PDFFont load_font(String name, String encoding, String opt)
-    throws IOException
+    
   {
     Font face = loadFont(name);
 
@@ -318,7 +318,7 @@ public class PDF
   }
 
   private Font loadFont(String name)
-    throws IOException
+    
   {
     synchronized (_faceMap) {
       Font face = _faceMap.get(name);
@@ -407,7 +407,7 @@ public class PDF
    * @param opt any options
    */
   public boolean setfont(@NotNull PDFFont font, double size)
-    throws IOException
+    
   {
     if (font == null)
       return false;
@@ -905,7 +905,7 @@ public class PDF
   public PDFImage open_image_file(String type, Path file,
                                   @Optional String stringParam,
                                   @Optional int intParam)
-    throws IOException
+    
   {
     PDFImage img = new PDFImage(file);
 
@@ -922,7 +922,7 @@ public class PDF
   public PDFImage load_image(String type,
                              Path file,
                              @Optional String optlist)
-    throws IOException
+    
   {
     PDFImage img = new PDFImage(file);
 
@@ -955,7 +955,7 @@ public class PDF
   public PDFEmbeddedFile fit_embedded_file(Path path,
                                            double x, double y,
                                            double width, double height)
-    throws IOException
+    
   {
     PDFEmbeddedFile file = new PDFEmbeddedFile(path);
 
@@ -1122,7 +1122,7 @@ public class PDF
   }
 
   public boolean end_document(@Optional String optList)
-    throws IOException
+    
   {
     if(null == _out)
     {
@@ -1159,13 +1159,13 @@ public class PDF
   }
 
   public boolean close()
-    throws IOException
+    
   {
     return end_document("");
   }
 
   public boolean delete()
-    throws IOException
+    
   {
     return true;
   }

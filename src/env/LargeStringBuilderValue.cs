@@ -850,7 +850,7 @@ public class LargeStringBuilderValue
                           WriteStream out,
                           int depth,
                           IdentityHashMap<Value, String> valueSet)
-    throws IOException
+    
   {
     int length = length();
 

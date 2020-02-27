@@ -102,7 +102,7 @@ public class QuercusZipEntry {
    * Closes the zip entry.
    */
   public boolean zip_entry_close()
-    throws IOException
+    
   {
     if (_in == null)
       return false;

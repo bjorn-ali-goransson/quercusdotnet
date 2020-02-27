@@ -34,7 +34,7 @@
 public class Ereg extends Regexp
 {
   public Ereg(StringValue rawRegexp)
-    throws IllegalRegexpException
+    
   {
     super(rawRegexp);
   }

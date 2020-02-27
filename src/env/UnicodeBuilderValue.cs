@@ -488,7 +488,7 @@ public class UnicodeBuilderValue
 
   @Override
   public StringValue append(Reader reader, long length)
-    throws IOException
+    
   {
     // php/4407 - oracle clob callback passes very long length
 
@@ -1426,7 +1426,7 @@ public class UnicodeBuilderValue
   }
 
   private void readObject(ObjectInputStream in)
-    throws ClassNotFoundException, IOException
+    
   {
     _length = in.readInt();
     _buffer = new char[_length];

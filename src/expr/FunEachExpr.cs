@@ -48,7 +48,7 @@ public class FunEachExpr extends AbstractUnaryExpr {
   private boolean _isVar;
   
   public FunEachExpr(Location location, Expr expr)
-    throws IOException
+    
   {
     super(location, expr);
     

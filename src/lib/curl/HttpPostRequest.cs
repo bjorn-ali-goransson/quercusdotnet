@@ -54,7 +54,7 @@ public class HttpPostRequest
    * Initializes the connection.
    */
   protected boolean init(Env env)
-    throws ProtocolException
+    
   {
     if (! super.init(env)) {
       return false;
@@ -95,7 +95,7 @@ public class HttpPostRequest
    * Transfer data to the server.
    */
   protected void transfer(Env env)
-    throws IOException
+    
   {
     super.transfer(env);
 
@@ -114,7 +114,7 @@ public class HttpPostRequest
     FileOutputStream _ps;
 
     TestOutputStream(OutputStream out)
-      throws IOException
+      
     {
       _out = out;
 
@@ -122,35 +122,35 @@ public class HttpPostRequest
     }
 
     public void close()
-      throws IOException
+      
     {
       _out.close();
       _ps.close();
     }
 
     public void flush()
-      throws IOException
+      
     {
       _out.flush();
       _ps.close();
     }
 
     public void write(int b)
-      throws IOException
+      
     {
       _out.write(b);
       _ps.write(b);
     }
 
     public void write(byte b[])
-      throws IOException
+      
     {
       _out.write(b);
       _ps.write(b);
     }
 
     public void write(byte b[], int offset, int len)
-      throws IOException
+      
     {
       _out.write(b, offset, len);
       _ps.write(b, offset, len);

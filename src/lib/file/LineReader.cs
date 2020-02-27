@@ -56,7 +56,7 @@ public class LineReader
    * Reads a line from the BinaryInput, returning null on EOF.
    */
   public StringValue readLine(Env env, BinaryInput input, long length)
-    throws IOException
+    
   {
     StringValue sb = env.createBinaryBuilder();
 

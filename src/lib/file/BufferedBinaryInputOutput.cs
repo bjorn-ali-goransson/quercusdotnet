@@ -70,7 +70,7 @@ abstract public class BufferedBinaryInputOutput
   //
 
   public void setEncoding(String encoding)
-    throws UnsupportedEncodingException
+    
   {
     if (_is != null)
       _is.setEncoding(encoding);
@@ -80,7 +80,7 @@ abstract public class BufferedBinaryInputOutput
    * Unread the last byte.
    */
   public void unread()
-    throws IOException
+    
   {
     if (_is != null) {
       _is.unread();
@@ -90,7 +90,7 @@ abstract public class BufferedBinaryInputOutput
 
   @Override
   public int getAvailable()
-    throws IOException
+    
   {
     if (_is != null)
       return _is.available();
@@ -102,7 +102,7 @@ abstract public class BufferedBinaryInputOutput
    * Reads a character from a file, returning -1 on EOF.
    */
   public int read()
-    throws IOException
+    
   {
     try {
       if (_is != null) {
@@ -129,7 +129,7 @@ abstract public class BufferedBinaryInputOutput
    * Reads a buffer from a file, returning -1 on EOF.
    */
   public int read(char []buffer, int offset, int length)
-    throws IOException
+    
   {
     try {
       if (_is != null) {
@@ -155,7 +155,7 @@ abstract public class BufferedBinaryInputOutput
   }
 
   public void writeToStream(OutputStream os, int length)
-    throws IOException
+    
   {
     try {
       if (_is != null) {
@@ -173,7 +173,7 @@ abstract public class BufferedBinaryInputOutput
    * Reads a line from a file, returning null on EOF.
    */
   public StringValue readLine(long length)
-    throws IOException
+    
   {
     try {
       StringValue line = _lineReader.readLine(_env, this, length);

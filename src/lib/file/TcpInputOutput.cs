@@ -67,7 +67,7 @@ public class TcpInputOutput
   public TcpInputOutput(Env env, String host, int port,
                         boolean isSecure,
                         Domain domain)
-    throws IOException
+    
   {
     super(env);
     
@@ -98,7 +98,7 @@ public class TcpInputOutput
   }
 
   private Socket createSSLSocket(String host, int port)
-    throws IOException, NoSuchAlgorithmException, KeyManagementException
+    
   {
     Socket s = new Socket(host, port);
 
@@ -128,13 +128,13 @@ public class TcpInputOutput
   }
 
   public void bind(SocketAddress address)
-    throws IOException
+    
   {
     _socket.bind(address);
   }
 
   public void connect(SocketAddress address)
-    throws IOException
+    
   {
     _socket.connect(address);
 
@@ -180,7 +180,7 @@ public class TcpInputOutput
 
   @Override
   public void write(int ch)
-    throws IOException
+    
   {
     super.write(ch);
     flush();
@@ -188,7 +188,7 @@ public class TcpInputOutput
 
   @Override
   public void write(byte []buffer, int offset, int length)
-    throws IOException
+    
   {
     super.write(buffer, offset, length);
     flush();
@@ -200,7 +200,7 @@ public class TcpInputOutput
    */
   @Override
   public int write(InputStream is, int length)
-    throws IOException
+    
   {
     int writeLength = super.write(is, length);
     flush();

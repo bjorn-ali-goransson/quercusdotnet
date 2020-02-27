@@ -1721,7 +1721,7 @@ public class FileModule extends AbstractQuercusModule {
   @Hide
   public static BinaryStream openForAppend(Env env, StringValue filename,
                                            boolean isUseIncludePath)
-    throws IOException
+    
   {
     ProtocolWrapper wrapper = getProtocolWrapper(env, filename);
 
@@ -2686,7 +2686,7 @@ public class FileModule extends AbstractQuercusModule {
   private static ArrayValue parseIni(Env env,
                                      ReadStream is,
                                      boolean isProcessSections)
-    throws IOException
+    
   {
     return IniParser.parse(env, is, isProcessSections);
   }
@@ -3287,7 +3287,7 @@ public class FileModule extends AbstractQuercusModule {
     }
 
     public void cleanup()
-      throws IOException
+      
     {
       _path.remove();
     }

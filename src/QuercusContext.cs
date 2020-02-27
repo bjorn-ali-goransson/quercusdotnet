@@ -849,7 +849,7 @@ public class QuercusContext
    * Adds a java class
    */
   public void addJavaClass(String name, Class<?> type)
-    throws ConfigException
+    
   {
     _javaInitClassMap.put(name, type);
   }
@@ -875,7 +875,7 @@ public class QuercusContext
    * Adds a impl class
    */
   public void addImplClass(String name, Class<?> type)
-    throws ConfigException
+    
   {
     throw new UnsupportedOperationException(
       "XXX: need to merge with ModuleContext: " + name);
@@ -1222,10 +1222,10 @@ public class QuercusContext
    *
    * @param path the source file path
    * @return the parsed program
-   * @throws IOException
+   * 
    */
   public QuercusPage parse(Path path)
-    throws IOException
+    
   {
     return _pageManager.parse(path);
   }
@@ -1235,10 +1235,10 @@ public class QuercusContext
    *
    * @param path the source file path
    * @return the parsed program
-   * @throws IOException
+   * 
    */
   public QuercusPage parse(Path path, String fileName, int line)
-    throws IOException
+    
   {
     return _pageManager.parse(path, fileName, line);
   }
@@ -1248,10 +1248,10 @@ public class QuercusContext
    *
    * @param path the source file path
    * @return the parsed program
-   * @throws IOException
+   * 
    */
   public QuercusPage parse(ReadStream is)
-    throws IOException
+    
   {
     return new InterpretedPage(QuercusParser.parse(this, is));
   }
@@ -1261,10 +1261,10 @@ public class QuercusContext
    *
    * @param code the source code
    * @return the parsed program
-   * @throws IOException
+   * 
    */
   public QuercusProgram parseCode(StringValue code)
-    throws IOException
+    
   {
     QuercusProgram program = _evalCache.get(code);
 
@@ -1281,10 +1281,10 @@ public class QuercusContext
    *
    * @param code the source code
    * @return the parsed program
-   * @throws IOException
+   * 
    */
   public QuercusProgram parseEvalExpr(StringValue code)
-    throws IOException
+    
   {
     // XXX: possible conflict with parse eval because of the
     // return value changes
@@ -1304,10 +1304,10 @@ public class QuercusContext
    * @param args the arguments
    * @param code the source code
    * @return the parsed program
-   * @throws IOException
+   * 
    */
   public AbstractFunction parseFunction(String name, String args, String code)
-    throws IOException
+    
   {
     return QuercusParser.parseFunction(this, name, args, code);
   }
@@ -2241,7 +2241,7 @@ public class QuercusContext
    */
   @Override
   protected void finalize()
-    throws Throwable
+    
   {
     super.finalize();
 

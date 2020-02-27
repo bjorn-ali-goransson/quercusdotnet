@@ -48,7 +48,7 @@ public class IconvUtility {
                                         StringValue str,
                                         String inCharset,
                                         String outCharset)
-    throws UnsupportedEncodingException
+    
   {
     return decodeEncode(env, str, inCharset, outCharset, 0, Integer.MAX_VALUE);
   }
@@ -58,7 +58,7 @@ public class IconvUtility {
                                          String inCharset,
                                          String outCharset,
                                          int offset)
-    throws UnsupportedEncodingException
+    
   {
     return decodeEncode(env, str, inCharset, outCharset,
                         offset, Integer.MAX_VALUE);
@@ -73,7 +73,7 @@ public class IconvUtility {
                                          String outCharset,
                                          int offset,
                                          int length)
-    throws UnsupportedEncodingException
+    
   {
     TempCharBuffer tb = TempCharBuffer.allocate();
     char[] charBuf = tb.getBuffer();
@@ -140,7 +140,7 @@ public class IconvUtility {
   public static StringValue decodeMime(Env env,
                               CharSequence word,
                               String charset)
-    throws UnsupportedEncodingException
+    
   {
     StringValue str = env.createString(
             MimeUtility.unfold(MimeUtility.decodeText(word.toString())));
@@ -154,7 +154,7 @@ public class IconvUtility {
                               String inCharset,
                               String outCharset,
                               String scheme)
-    throws UnsupportedEncodingException
+    
   {
     return encodeMime(env,
                       name,
@@ -186,7 +186,7 @@ public class IconvUtility {
                               String scheme,
                               String lineBreakChars,
                               int lineLength)
-    throws UnsupportedEncodingException
+    
   {
     name = name.toUnicodeValue(env, inCharset);
     value = value.toUnicodeValue(env, inCharset);
@@ -209,7 +209,7 @@ public class IconvUtility {
                               String scheme,
                               String lineBreakChars,
                               int lineLength)
-    throws UnsupportedEncodingException
+    
   {
     if (lineLength != 76)
       throw new UnimplementedException("Mime line length option");

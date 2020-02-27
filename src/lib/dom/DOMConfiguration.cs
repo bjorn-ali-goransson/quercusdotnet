@@ -44,7 +44,7 @@ public class DOMConfiguration
   }
 
   public Object getParameter(String name)
-    throws DOMException
+    
   {
     try {
       return wrap(_delegate.getParameter(name));
@@ -60,7 +60,7 @@ public class DOMConfiguration
   }
 
   public void setParameter(String name, Object value)
-    throws DOMException
+    
   {
     try {
       _delegate.setParameter(name, value);

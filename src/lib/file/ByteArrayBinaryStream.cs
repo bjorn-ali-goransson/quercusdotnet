@@ -76,7 +76,7 @@ public class ByteArrayBinaryStream extends AbstractBinaryInputOutput
 
   @Override
   public void unread()
-    throws IOException
+    
   {
     if (_pos == 0) {
       throw new IOException("no more bytes to unread");

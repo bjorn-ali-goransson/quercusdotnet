@@ -301,7 +301,7 @@ public class BooleanValue extends Value
    */
   @Override
   public void generate(PrintWriter out)
-    throws IOException
+    
   {
     if (_value)
       out.print("com.caucho.quercus.env.BooleanValue.TRUE");
@@ -315,7 +315,7 @@ public class BooleanValue extends Value
    * @param out the writer to the Java source code.
    */
   public void generateBoolean(PrintWriter out)
-    throws IOException
+    
   {
     if (_value)
       out.print("true");
@@ -394,7 +394,7 @@ public class BooleanValue extends Value
                           WriteStream out,
                           int depth,
                           IdentityHashMap<Value,String> valueSet)
-    throws IOException
+    
   {
     if (toBoolean())
       out.print("bool(true)");

@@ -61,7 +61,7 @@ public class FileValue extends StreamResource {
    * Reads a character from a file, returning -1 on EOF.
    */
   public int read()
-    throws IOException
+    
   {
     return -1;
   }
@@ -71,7 +71,7 @@ public class FileValue extends StreamResource {
    */
   @Override
   public StringValue readLine(Env env)
-    throws IOException
+    
   {
     StringValue sb = env.createStringBuilder();
 
@@ -99,7 +99,7 @@ public class FileValue extends StreamResource {
    * @param length the maximum number of bytes to read
    */
   public void writeToStream(OutputStream os, int length)
-    throws IOException
+    
   {
   }
 
@@ -107,7 +107,7 @@ public class FileValue extends StreamResource {
    * Prints a string to a file.
    */
   public void print(String v)
-    throws IOException
+    
   {
   }
 

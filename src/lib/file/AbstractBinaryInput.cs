@@ -88,7 +88,7 @@ public class AbstractBinaryInput
   
   @Override
   public int getAvailable()
-    throws IOException
+    
   {
     return _is.getAvailable();
   }
@@ -97,13 +97,13 @@ public class AbstractBinaryInput
    * Opens a copy.
    */
   public BinaryInput openCopy()
-    throws IOException
+    
   {
     throw new UnsupportedOperationException(getClass().getName());
   }
 
   public void setEncoding(String encoding)
-    throws UnsupportedEncodingException
+    
   {
     if (_is != null)
       _is.setEncoding(encoding);
@@ -113,7 +113,7 @@ public class AbstractBinaryInput
    * Unread the last byte.
    */
   public void unread()
-    throws IOException
+    
   {
     if (_is != null) {
       _is.unread();
@@ -125,7 +125,7 @@ public class AbstractBinaryInput
    * Reads a character from a file, returning -1 on EOF.
    */
   public int read()
-    throws IOException
+    
   {
     if (_is != null) {
       int c = _is.read();
@@ -145,7 +145,7 @@ public class AbstractBinaryInput
    * Reads a buffer from a file, returning -1 on EOF.
    */
   public int read(byte []buffer, int offset, int length)
-    throws IOException
+    
   {
     if (_is != null) {
       int c = _is.read(buffer, offset, length);
@@ -165,7 +165,7 @@ public class AbstractBinaryInput
    * Reads a buffer from a file, returning -1 on EOF.
    */
   public int read(char []buffer, int offset, int length)
-    throws IOException
+    
   {
     if (_is != null) {
       int c = _is.read(buffer, offset, length);
@@ -185,7 +185,7 @@ public class AbstractBinaryInput
    * Reads into a binary builder.
    */
   public StringValue read(int length)
-    throws IOException
+    
   {
     if (_is == null)
       return null;
@@ -202,7 +202,7 @@ public class AbstractBinaryInput
    * Reads the optional linefeed character from a \r\n
    */
   public boolean readOptionalLinefeed()
-    throws IOException
+    
   {
     if (_is == null)
       return false;
@@ -219,7 +219,7 @@ public class AbstractBinaryInput
   }
 
   public void writeToStream(OutputStream os, int length)
-    throws IOException
+    
   {
     if (_is != null) {
       _is.writeToStream(os, length);
@@ -230,7 +230,7 @@ public class AbstractBinaryInput
    * Reads a line from a file, returning null on EOF.
    */
   public StringValue readLine(long length)
-    throws IOException
+    
   {
     return _lineReader.readLine(_env, this, length);
   }
@@ -239,7 +239,7 @@ public class AbstractBinaryInput
    * Appends to a string builder.
    */
   public StringValue appendTo(StringValue builder)
-    throws IOException
+    
   {
     if (_is != null)
       return builder.append(_is);

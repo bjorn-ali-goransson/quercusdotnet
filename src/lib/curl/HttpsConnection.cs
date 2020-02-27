@@ -49,7 +49,7 @@ public class HttpsConnection
   protected HttpsConnection(URL url,
                             String username,
                             String password)
-    throws IOException
+    
   {
     super(url, username, password);
   }
@@ -61,7 +61,7 @@ public class HttpsConnection
                          String proxyUsername,
                          String proxyPassword,
                          String proxyType)
-    throws IOException
+    
   {
     super(url, username, password,
           proxyURL, proxyUsername, proxyPassword, proxyType);
@@ -69,7 +69,7 @@ public class HttpsConnection
   
   @Override
   protected void init(CurlResource curl)
-    throws IOException
+    
   {
     Proxy proxy = getProxy();
 
@@ -106,7 +106,7 @@ public class HttpsConnection
   /*
   @Override
   public void connect(CurlResource curl)
-    throws ConnectException, ProtocolException, SocketTimeoutException,
+    
             IOException
   {
     try {

@@ -58,7 +58,7 @@ public class ProcOpenInput extends ReadStreamInput
   private FileOutput _out;
 
   public ProcOpenInput(Env env, InputStream in)
-    throws IOException
+    
   {
     super(env);
     
@@ -93,7 +93,7 @@ public class ProcOpenInput extends ReadStreamInput
    * Opens a copy.
    */
   public BinaryInput openCopy()
-    throws IOException
+    
   {
     return new ProcOpenInput(_env, _in, _out);
   }

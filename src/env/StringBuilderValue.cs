@@ -1564,7 +1564,7 @@ public class StringBuilderValue
 
   @Override
   public StringValue append(Reader reader, long length)
-    throws IOException
+    
   {
     // php/4407 - oracle clob callback passes very long length
 
@@ -1703,7 +1703,7 @@ public class StringBuilderValue
                           WriteStream out,
                           int depth,
                           IdentityHashMap<Value, String> valueSet)
-    throws IOException
+    
   {
     int length = length();
 
@@ -2087,7 +2087,7 @@ public class StringBuilderValue
    * @param out the writer to the Java source code.
    */
   public void generate(PrintWriter out)
-    throws IOException
+    
   {
     ConstStringValue.generateImpl(out, this);
   }
@@ -2097,7 +2097,7 @@ public class StringBuilderValue
   //
 
   private void writeObject(ObjectOutputStream out)
-    throws IOException
+    
   {
     out.writeInt(_length);
 
@@ -2105,7 +2105,7 @@ public class StringBuilderValue
   }
 
   private void readObject(ObjectInputStream in)
-    throws ClassNotFoundException, IOException
+    
   {
     _length = in.readInt();
     _buffer = new byte[_length];

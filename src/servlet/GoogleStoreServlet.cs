@@ -69,7 +69,7 @@ public class GoogleStoreServlet extends GenericServlet
 
   @Override
   public void service(ServletRequest request, ServletResponse response)
-    throws IOException, ServletException
+    
   {
     HttpServletRequest req = (HttpServletRequest) request;
     HttpServletResponse res = (HttpServletResponse) response;
@@ -99,7 +99,7 @@ public class GoogleStoreServlet extends GenericServlet
   private void printFile(String fileName,
                          HttpServletRequest req,
                          HttpServletResponse res)
-    throws IOException
+    
   {
     String mimeType = getServletContext().getMimeType(fileName);
 
@@ -123,7 +123,7 @@ public class GoogleStoreServlet extends GenericServlet
   }
 
   private void printPath(PrintWriter out, Path path, int depth)
-    throws IOException
+    
   {
     if (path == null || ! path.exists())
       return;
@@ -164,7 +164,7 @@ public class GoogleStoreServlet extends GenericServlet
   }
 
   private void printDepth(PrintWriter out, int depth)
-    throws IOException
+    
   {
     for (int i = 0; i < 2 * depth; i++) {
       out.print(" ");

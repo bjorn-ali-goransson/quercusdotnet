@@ -782,7 +782,7 @@ public class ArgRef extends Value
                           WriteStream out,
                           int depth,
                           IdentityHashMap<Value,String> valueSet)
-    throws IOException
+    
   {
     out.print("&");
     toValue().varDumpImpl(env, out, depth, valueSet);
@@ -793,7 +793,7 @@ public class ArgRef extends Value
                             WriteStream out,
                             int depth,
                             IdentityHashMap<Value, String> valueSet)
-    throws IOException
+    
   {
     toValue().printRImpl(env, out, depth, valueSet);
   }

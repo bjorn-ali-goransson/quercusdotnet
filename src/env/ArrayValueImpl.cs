@@ -1316,7 +1316,7 @@ public class ArrayValueImpl extends ArrayValue
   //
 
   private void writeObject(ObjectOutputStream out)
-    throws IOException
+    
   {
     out.writeInt(_size);
 
@@ -1327,7 +1327,7 @@ public class ArrayValueImpl extends ArrayValue
   }
 
   private void readObject(ObjectInputStream in)
-    throws ClassNotFoundException, IOException
+    
   {
     int size = in.readInt();
 
@@ -1355,7 +1355,7 @@ public class ArrayValueImpl extends ArrayValue
    * @param out the writer to the Java source code.
    */
   public void generate(PrintWriter out)
-    throws IOException
+    
   {
     out.print("new ConstArrayValue(");
 

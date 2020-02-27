@@ -86,7 +86,7 @@ abstract public class AbstractBinaryInputOutput
    * Opens a copy.
    */
   public BinaryInput openCopy()
-    throws IOException
+    
   {
     throw new UnsupportedOperationException(getClass().getName());
   }
@@ -95,11 +95,11 @@ abstract public class AbstractBinaryInputOutput
    * Unread the last byte.
    */
   abstract public void unread()
-    throws IOException;
+    
 
   @Override
   public int getAvailable()
-    throws IOException
+    
   {
     if (_is != null)
       return _is.available();
@@ -111,7 +111,7 @@ abstract public class AbstractBinaryInputOutput
    * Reads a character from a file, returning -1 on EOF.
    */
   public int read()
-    throws IOException
+    
   {
     try {
       if (_is != null) {
@@ -138,7 +138,7 @@ abstract public class AbstractBinaryInputOutput
    * Reads a buffer from a file, returning -1 on EOF.
    */
   public int read(byte []buffer, int offset, int length)
-    throws IOException
+    
   {
     try {
       if (_is != null) {
@@ -165,7 +165,7 @@ abstract public class AbstractBinaryInputOutput
    * Reads into a binary builder.
    */
   public StringValue read(int length)
-    throws IOException
+    
   {
     if (_is == null)
       return null;
@@ -182,7 +182,7 @@ abstract public class AbstractBinaryInputOutput
    * Reads a line from a file, returning null on EOF.
    */
   public StringValue readLine(long length)
-    throws IOException
+    
   {
     try {
       StringValue line = _lineReader.readLine(_env, this, length);
@@ -202,7 +202,7 @@ abstract public class AbstractBinaryInputOutput
    * Reads the optional linefeed character from a \r\n
    */
   public boolean readOptionalLinefeed()
-    throws IOException
+    
   {
     if (_is == null)
       return false;
@@ -222,7 +222,7 @@ abstract public class AbstractBinaryInputOutput
    * Appends to a string builder.
    */
   public StringValue appendTo(StringValue builder)
-    throws IOException
+    
   {
     if (_is != null)
       return builder.append(_is);
@@ -316,13 +316,13 @@ abstract public class AbstractBinaryInputOutput
   }
 
   public void write(int ch)
-    throws IOException
+    
   {
     _os.write(ch);
   }
 
   public void write(byte []buffer, int offset, int length)
-    throws IOException
+    
   {
     _os.write(buffer, offset, length);
   }
@@ -332,7 +332,7 @@ abstract public class AbstractBinaryInputOutput
    * argument and write them to this output stream.
    */
   public int write(InputStream is, int length)
-    throws IOException
+    
   {
     int writeLength = 0;
 
@@ -369,7 +369,7 @@ abstract public class AbstractBinaryInputOutput
    * Prints a string to a file.
    */
   public void print(char v)
-    throws IOException
+    
   {
     write((byte) v);
   }
@@ -378,7 +378,7 @@ abstract public class AbstractBinaryInputOutput
    * Prints a string to a file.
    */
   public void print(String s)
-    throws IOException
+    
   {
     int len = s.length();
     for (int i = 0; i < len; i++) {
@@ -390,7 +390,7 @@ abstract public class AbstractBinaryInputOutput
    * Flushes the output.
    */
   public void flush()
-    throws IOException
+    
   {
     _os.flush();
   }

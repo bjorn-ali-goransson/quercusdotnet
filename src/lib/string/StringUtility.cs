@@ -188,7 +188,7 @@ public class StringUtility
                                     int i,
                                     int ch,
                                     int[] querySeparatorMap)
-    throws IOException
+    
   {
     if (str == null)
       str = "";

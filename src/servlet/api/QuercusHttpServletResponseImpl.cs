@@ -94,7 +94,7 @@ public class QuercusHttpServletResponseImpl implements QuercusHttpServletRespons
 
   @Override
   public OutputStream getOutputStream()
-    throws IOException
+    
   {
     return _response.getOutputStream();
   }

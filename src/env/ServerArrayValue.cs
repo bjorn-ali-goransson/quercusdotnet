@@ -323,7 +323,7 @@ public class ServerArrayValue extends ArrayValueImpl
                           WriteStream out,
                           int depth,
                           IdentityHashMap<Value, String> valueSet)
-    throws IOException
+    
   {
     if (! _isFilled)
       fillMap();
@@ -336,7 +336,7 @@ public class ServerArrayValue extends ArrayValueImpl
                             WriteStream out,
                             int depth,
                             IdentityHashMap<Value, String> valueSet)
-    throws IOException
+    
   {
     if (! _isFilled)
       fillMap();

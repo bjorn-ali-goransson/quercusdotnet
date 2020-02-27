@@ -83,7 +83,7 @@ public class ModuleInfo {
    * Constructor.
    */
   public ModuleInfo(String name, QuercusModule module)
-    throws ConfigException
+    
   {
     _name = name;
     _module = module;
@@ -92,7 +92,7 @@ public class ModuleInfo {
   }
 
   private void init()
-    throws ConfigException
+    
   {
     try {
       introspectPhpModuleClass(_module.getClass());
@@ -161,7 +161,7 @@ public class ModuleInfo {
    * @param cl the class to introspect.
    */
   private void introspectPhpModuleClass(Class<?> cl)
-    throws IllegalAccessException, InstantiationException
+    
   {
     for (String ext : _module.getLoadedExtensions()) {
       _extensionSet.add(ext);

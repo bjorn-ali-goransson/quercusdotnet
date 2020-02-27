@@ -70,7 +70,7 @@ public class ZlibOutputStream extends AbstractBinaryOutput {
    * @param def
    */
   private ZlibOutputStream(OutputStream os, Deflater def)
-    throws IOException
+    
   {
     _os = os;
     _out = new DeflaterOutputStream(_os, def);
@@ -90,7 +90,7 @@ public class ZlibOutputStream extends AbstractBinaryOutput {
                           int compressionLevel,
                           int strategy,
                           int encodingMode)
-    throws IOException
+    
   {
     this(os, createDeflater(compressionLevel, strategy, encodingMode));
 
@@ -106,13 +106,13 @@ public class ZlibOutputStream extends AbstractBinaryOutput {
    * @param strategy Deflate compression strategy
    */
   public ZlibOutputStream(OutputStream os, int compressionLevel, int strategy)
-    throws IOException
+    
   {
     this(os, compressionLevel, strategy, ZlibModule.FORCE_GZIP);
   }
 
   public ZlibOutputStream(OutputStream os)
-    throws IOException
+    
   {
     this(os,
          Deflater.DEFAULT_COMPRESSION,
@@ -145,7 +145,7 @@ public class ZlibOutputStream extends AbstractBinaryOutput {
    * @param input
    */
   public void write(int v)
-    throws IOException
+    
   {
     _out.write(v);
 
@@ -161,7 +161,7 @@ public class ZlibOutputStream extends AbstractBinaryOutput {
    * @param length
    */
   public void write(byte[] buffer, int offset, int length)
-    throws IOException
+    
   {
     _out.write(buffer, offset, length);
     
@@ -172,7 +172,7 @@ public class ZlibOutputStream extends AbstractBinaryOutput {
   }
 
   private void finish(DeflaterOutputStream out)
-    throws IOException
+    
   {
     out.finish();
     

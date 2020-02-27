@@ -779,7 +779,7 @@ public class Env
    * Returns the encoding used for runtime conversions, e.g. files
    */
   public EncodingReader getRuntimeEncodingFactory()
-    throws IOException
+    
   {
     return Encoding.getReadFactory(getRuntimeEncoding());
   }
@@ -1200,7 +1200,7 @@ public class Env
   }
 
   protected final DataSource findDatabase(String driver, String url)
-    throws Exception
+    
   {
     return _quercus.findDatabase(driver, url);
   }
@@ -1214,7 +1214,7 @@ public class Env
   public ConnectionEntry getConnection(String driver, String url,
                                        String userName, String password,
                                        boolean isReuse)
-    throws Exception
+    
   {
     // XXX: connections might not be reusable (see gallery2), because
     // of case with two reuses and one closes because of CREATE or
@@ -1261,7 +1261,7 @@ public class Env
    * Returns the configured database.
    */
   public DataSource getDataSource(String driver, String url)
-    throws Exception
+    
   {
     DataSource database = _quercus.getDatabase();
 
@@ -4132,7 +4132,7 @@ public class Env
   }
 
   public AbstractFunction createAnonymousFunction(String args, String code)
-    throws IOException
+    
   {
     if (_anonymousFunMap == null) {
       _anonymousFunMap = new HashMap<StringValue, AbstractFunction>();
@@ -4202,7 +4202,7 @@ public class Env
    * @return the result
    */
   public Value evalCode(StringValue code)
-    throws IOException
+    
   {
     if (log.isLoggable(Level.FINER)) {
       log.finer(code.toString());
@@ -4224,7 +4224,7 @@ public class Env
    * Evaluates the top-level code and prepend and append code.
    */
   public void execute()
-    throws IOException
+    
   {
     StringValue prepend
       = _quercus.getIniValue("auto_prepend_file").toStringValue(this);
@@ -4286,7 +4286,7 @@ public class Env
   }
 
   /*
-   * Throws an error for this uncaught exception.
+   * 
    */
   private void uncaughtExceptionError(QuercusLanguageException e)
   {
@@ -5637,7 +5637,7 @@ public class Env
    *
    * @param name the class name
    * @return the found class
-   * @throws QuercusRuntimeException if the class is not found
+   * 
    */
   public QuercusClass getClass(String name)
   {
@@ -6534,7 +6534,7 @@ public class Env
    * A fatal runtime error.
    */
   public QuercusRuntimeException createErrorException(String msg)
-    throws QuercusRuntimeException
+    
   {
     return createErrorException(null, msg);
   }
@@ -6544,7 +6544,7 @@ public class Env
    */
   public QuercusRuntimeException createErrorException(Location location,
                                                       String msg)
-    throws QuercusRuntimeException
+    
   {
     if (location == null || location.isUnknown())
       location = getLocation();
@@ -6564,7 +6564,7 @@ public class Env
    * A fatal runtime error.
    */
   public QuercusRuntimeException createErrorException(Throwable e)
-    throws QuercusRuntimeException
+    
   {
     Location location = getLocation();
 
@@ -6749,7 +6749,7 @@ public class Env
    * A parse error
    */
   public Value parse(String msg)
-    throws Exception
+    
   {
     return error(B_PARSE, msg);
   }

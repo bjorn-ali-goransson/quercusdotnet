@@ -131,7 +131,7 @@ public class JavaListAdapter
    *
    * @return the key if it is found in the array, NULL otherwise
    *
-   * @throws NullPointerException
+   * 
    */
   public Value contains(Value value)
   {

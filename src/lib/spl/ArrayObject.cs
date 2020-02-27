@@ -202,7 +202,7 @@ public class ArrayObject
   }
 
   static private void printDepth(WriteStream out, int depth)
-    throws java.io.IOException
+    
   {
     for (int i = depth; i > 0; i--)
       out.print(' ');
@@ -212,7 +212,7 @@ public class ArrayObject
                          WriteStream out,
                          int depth,
                          IdentityHashMap<Value, String> valueSet)
-    throws IOException
+    
   {
 
     if ((_flags & STD_PROP_LIST) != 0) {
@@ -264,7 +264,7 @@ public class ArrayObject
                           WriteStream out,
                           int depth,
                           IdentityHashMap<Value, String> valueSet)
-    throws IOException
+    
   {
     String name = object.getClassName();
 

@@ -98,7 +98,7 @@ public class QuercusEngine
    * Executes the script
    */
   public Value executeFile(String filename)
-    throws IOException
+    
   {
     init();
 
@@ -111,7 +111,7 @@ public class QuercusEngine
    * Executes the script.
    */
   public Value execute(String script)
-    throws IOException
+    
   {
     return execute(new StringPath(script));
   }
@@ -120,7 +120,7 @@ public class QuercusEngine
    * Executes the script.
    */
   public Value execute(Path path)
-    throws IOException
+    
   {
     init();
 
@@ -196,7 +196,7 @@ public class QuercusEngine
      * @param isEnd true when the write is flushing a close.
      */
     public void write(byte []buffer, int offset, int length, boolean isEnd)
-      throws IOException
+      
     {
       _out.write(buffer, offset, length);
     }

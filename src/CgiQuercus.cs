@@ -53,7 +53,7 @@ public class CgiQuercus
   }
 
   public static void main(String []args)
-    throws IOException
+    
   {
     CgiQuercus quercus = new CgiQuercus();
 
@@ -71,7 +71,7 @@ public class CgiQuercus
 
   @Override
   public void execute()
-    throws IOException
+    
   {
     Path path = getPwd().lookup(getFileName());
 

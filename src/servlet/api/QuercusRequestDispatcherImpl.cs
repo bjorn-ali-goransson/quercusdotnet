@@ -45,7 +45,7 @@ public class QuercusRequestDispatcherImpl implements QuercusRequestDispatcher
   @Override
   public void include(QuercusHttpServletRequest request,
                       QuercusHttpServletResponse response)
-    throws Exception
+    
   {
     HttpServletRequest req = request.toRequest(HttpServletRequest.class);
     HttpServletResponse res = response.toResponse(HttpServletResponse.class);

@@ -129,7 +129,7 @@ public class PDFPage {
   }
 
   void write(PDFWriter out)
-    throws IOException
+    
   {
     out.beginObject(_id);
     out.println("  << /Type /Page");

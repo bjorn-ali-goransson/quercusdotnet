@@ -879,7 +879,7 @@ public class PDO implements EnvCleanup {
                                                String dsn,
                                                String user,
                                                String pass)
-    throws SQLException
+    
   {
     if (dsn.startsWith("mysql:")) {
       return getMysqlConnection(env, dsn, user, pass);
@@ -914,7 +914,7 @@ public class PDO implements EnvCleanup {
                                                     String dsn,
                                                     String user,
                                                     String pass)
-    throws SQLException
+    
   {
     HashMap<String,String> attrMap = parseAttr(dsn, dsn.indexOf(':'));
 

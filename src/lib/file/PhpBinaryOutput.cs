@@ -47,13 +47,13 @@ public class PhpBinaryOutput extends AbstractBinaryOutput {
    * Writes a buffer.
    */
   public void write(byte []buffer, int offset, int length)
-    throws IOException
+    
   {
     _env.getOut().write(buffer, offset, length);
   }
 
   public void write(int b)
-    throws IOException
+    
   {
     _env.getOut().write(b);
   }

@@ -80,7 +80,7 @@ public class PhpClassConfig {
    */
   @PostConstruct
   public void init()
-    throws ConfigException
+    
   {
     if (_type == null)
       throw new ConfigException(L.l("<class> requires a type."));

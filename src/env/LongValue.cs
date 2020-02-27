@@ -578,7 +578,7 @@ public class LongValue extends NumberValue
    */
   @Override
   public void generate(PrintWriter out)
-    throws IOException
+    
   {
     if (_value == 0)
       out.print("LongValue.ZERO");
@@ -624,7 +624,7 @@ public class LongValue extends NumberValue
                           WriteStream out,
                           int depth,
                           IdentityHashMap<Value,String> valueSet)
-    throws IOException
+    
   {
     out.print("int(" + toLong() + ")");
   }

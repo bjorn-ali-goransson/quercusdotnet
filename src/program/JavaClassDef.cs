@@ -1028,7 +1028,7 @@ public class JavaClassDef extends ClassDef implements InstanceInitializer {
   }
 
   private boolean addDelegate(Class<?> cl)
-    throws InstantiationException, IllegalAccessException
+    
   {
     boolean isDelegate = false;
 
@@ -1485,14 +1485,14 @@ public class JavaClassDef extends ClassDef implements InstanceInitializer {
   /**
    *
    * @return false if printRImpl not implemented
-   * @throws IOException
+   * 
    */
   public boolean printRImpl(Env env,
                             Object obj,
                             WriteStream out,
                             int depth,
                             IdentityHashMap<Value, String> valueSet)
-    throws IOException
+    
   {
 
     try {
@@ -1516,7 +1516,7 @@ public class JavaClassDef extends ClassDef implements InstanceInitializer {
                              WriteStream out,
                              int depth,
                              IdentityHashMap<Value, String> valueSet)
-    throws IOException
+    
   {
     try {
       if (_varDumpImpl == null)

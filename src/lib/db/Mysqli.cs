@@ -1898,7 +1898,7 @@ public class Mysqli extends JdbcConnectionResource
 
   /*
   private static String checkDriverVersionImpl(Env env, Connection conn)
-    throws SQLException
+    
   {
     DatabaseMetaData databaseMetaData = null;
 

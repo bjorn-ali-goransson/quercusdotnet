@@ -99,7 +99,7 @@ public class Regexp {
   }
 
   protected void init()
-    throws IllegalRegexpException
+    
   {
     StringValue rawRegexp = _rawRegexp;
 

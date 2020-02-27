@@ -245,7 +245,7 @@ public class MysqliModule extends AbstractQuercusModule {
                                       @Optional String dbname,
                                       @Optional("3306") int port,
                                       @Optional StringValue socket)
-    throws IllegalStateException
+    
   {
     Mysqli mysqli = new Mysqli(env,
                                host,

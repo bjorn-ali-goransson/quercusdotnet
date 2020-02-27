@@ -1604,7 +1604,7 @@ abstract public class ArrayValue extends Value {
                           WriteStream out,
                           int depth,
                           IdentityHashMap<Value, String> valueSet)
-    throws IOException
+    
   {
     out.println("array(" + getSize() + ") {");
 
@@ -1624,7 +1624,7 @@ abstract public class ArrayValue extends Value {
                               int depth,
                               IdentityHashMap<Value, String> valueSet,
                               Map.Entry<Value, Value> mapEntry)
-    throws IOException
+    
   {
     ArrayValue.Entry entry = (ArrayValue.Entry) mapEntry;
 
@@ -1636,7 +1636,7 @@ abstract public class ArrayValue extends Value {
                             WriteStream out,
                             int depth,
                             IdentityHashMap<Value, String> valueSet)
-    throws IOException
+    
   {
     out.println("Array");
     printDepth(out, 4 * depth);
@@ -1657,7 +1657,7 @@ abstract public class ArrayValue extends Value {
                              int depth,
                              IdentityHashMap<Value, String> valueSet,
                              Map.Entry<Value, Value> mapEntry)
-    throws IOException
+    
   {
     ArrayValue.Entry entry = (ArrayValue.Entry) mapEntry;
 
@@ -1886,7 +1886,7 @@ abstract public class ArrayValue extends Value {
                             WriteStream out,
                             int depth,
                             IdentityHashMap<Value, String> valueSet)
-      throws IOException
+      
     {
       printDepth(out, 2 * depth);
       out.print("[");
@@ -1907,7 +1907,7 @@ abstract public class ArrayValue extends Value {
                               WriteStream out,
                               int depth,
                               IdentityHashMap<Value, String> valueSet)
-      throws IOException
+      
     {
       printDepth(out, 4 * (depth + 1));
       out.print("[");
@@ -1921,7 +1921,7 @@ abstract public class ArrayValue extends Value {
     }
 
     private void printDepth(WriteStream out, int depth)
-      throws java.io.IOException
+      
     {
       for (int i = depth; i > 0; i--)
         out.print(' ');

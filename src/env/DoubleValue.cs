@@ -529,7 +529,7 @@ public class DoubleValue extends NumberValue
    */
   @Override
   public void generate(PrintWriter out)
-    throws IOException
+    
   {
     if (_value == 0)
       out.print("DoubleValue.ZERO");
@@ -571,7 +571,7 @@ public class DoubleValue extends NumberValue
                           WriteStream out,
                           int depth,
                           IdentityHashMap<Value, String> valueSet)
-    throws IOException
+    
   {
     out.print("float(" + toString() + ")");
   }

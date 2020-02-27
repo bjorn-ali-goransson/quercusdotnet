@@ -165,7 +165,7 @@ public class QuercusServlet
    * Set true if quercus should be compiled into Java.
    */
   public void setCompile(String isCompile)
-    throws ConfigException
+    
   {
     if ("true".equals(isCompile) || "".equals(isCompile)) {
       _isCompile = true;
@@ -185,7 +185,7 @@ public class QuercusServlet
    * Set true interpreted pages should be used for pages that fail to compile.
    */
   public void setCompileFailover(String isCompileFailover)
-    throws ConfigException
+    
   {
     if ("true".equals(isCompileFailover) || "".equals(isCompileFailover)) {
       _isCompileFailover = true;
@@ -201,7 +201,7 @@ public class QuercusServlet
    * Sets the frequency of profiling, expressed as a probability.
    */
   public void setProfileProbability(double probability)
-    throws ConfigException
+    
   {
     _profileProbability = probability;
   }
@@ -223,7 +223,7 @@ public class QuercusServlet
    * Set the default data source.
    */
   public void setDatabase(DataSource database)
-    throws ConfigException
+    
   {
     if (database == null)
       throw new ConfigException(L.l("invalid database"));
@@ -283,7 +283,7 @@ public class QuercusServlet
    * Adds a quercus module.
    */
   public void addModule(QuercusModule module)
-    throws ConfigException
+    
   {
     //getQuercus().addModule(module);
 
@@ -294,7 +294,7 @@ public class QuercusServlet
    * Adds a quercus class.
    */
   public void addClass(PhpClassConfig classConfig)
-    throws ConfigException
+    
   {
     //getQuercus().addJavaClass(classConfig.getName(), classConfig.getType());
 
@@ -305,7 +305,7 @@ public class QuercusServlet
    * Adds a quercus class.
    */
   public void addImplClass(PhpClassConfig classConfig)
-    throws ConfigException
+    
   {
     //getQuercus().addImplClass(classConfig.getName(), classConfig.getType());
 
@@ -316,7 +316,7 @@ public class QuercusServlet
    * Adds a quercus.ini configuration
    */
   public PhpIni createPhpIni()
-    throws ConfigException
+    
   {
     PhpIni ini = new PhpIni();
 
@@ -329,7 +329,7 @@ public class QuercusServlet
    * Adds a $_SERVER configuration
    */
   public ServerEnv createServerEnv()
-    throws ConfigException
+    
   {
     ServerEnv ini = new ServerEnv();
 
@@ -350,7 +350,7 @@ public class QuercusServlet
    * Sets the script encoding.
    */
   public void setScriptEncoding(String encoding)
-    throws ConfigException
+    
   {
     _scriptEncoding = encoding;
   }
@@ -396,7 +396,7 @@ public class QuercusServlet
    */
   @Override
   public void init(ServletConfig config)
-    throws ServletException
+    
   {
     super.init(config);
 
@@ -415,10 +415,10 @@ public class QuercusServlet
   /**
    * Sets a named init-param to the passed value.
    *
-   * @throws ServletException if the init-param is not recognized
+   * 
    */
   protected void setInitParam(String paramName, String paramValue)
-    throws ServletException
+    
   {
     if ("compile".equals(paramName)) {
       setCompile(paramValue);
@@ -469,7 +469,7 @@ public class QuercusServlet
   }
 
   private void setJndiDatabase(String value)
-    throws ServletException
+    
   {
     try {
       Context ic = new InitialContext();
@@ -498,7 +498,7 @@ public class QuercusServlet
   }
 
   private void initImpl(ServletConfig config)
-    throws ServletException
+    
   {
     long start = CurrentTime.getCurrentTime();
 
@@ -601,7 +601,7 @@ public class QuercusServlet
   @Override
   public void service(HttpServletRequest request,
                       HttpServletResponse response)
-    throws ServletException, IOException
+    
   {
     _impl.service(request, response);
   }

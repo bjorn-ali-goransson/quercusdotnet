@@ -68,7 +68,7 @@ public class UrlEncodedBody extends PostBody
   }
 
   public void writeTo(Env env, OutputStream os)
-    throws IOException
+    
   {
     for (int i = 0; i < _length; i++) {
       os.write(_body.charAt(i));

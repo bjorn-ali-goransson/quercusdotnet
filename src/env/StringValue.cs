@@ -1779,7 +1779,7 @@ abstract public class StringValue
    * Append from a read stream
    */
   public StringValue append(Reader reader)
-    throws IOException
+    
   {
     int ch;
 
@@ -1794,7 +1794,7 @@ abstract public class StringValue
    * Append from a read stream
    */
   public StringValue append(Reader reader, long length)
-    throws IOException
+    
   {
     int ch;
 
@@ -2442,7 +2442,7 @@ abstract public class StringValue
    * @param charset to decode bytes by
    */
   public Reader toReader(String charset)
-    throws UnsupportedEncodingException
+    
   {
     byte []bytes = toBytes();
 
@@ -2450,7 +2450,7 @@ abstract public class StringValue
   }
   
   public String toString(String charset)
-    throws UnsupportedEncodingException
+    
   {
     byte []bytes = toBytes();
     
@@ -2764,7 +2764,7 @@ abstract public class StringValue
    */
   @Override
   public void generate(PrintWriter out)
-    throws IOException
+    
   {
     // max JVM constant string length
     int maxSublen = 0xFFFE;
@@ -2806,7 +2806,7 @@ abstract public class StringValue
                                    WriteStream out,
                                    int depth,
                                    IdentityHashMap<Value, String> valueSet)
-    throws IOException;
+    
 
   class StringValueInputStream extends java.io.InputStream {
     private final int _length;
@@ -2904,7 +2904,7 @@ abstract public class StringValue
     }
 
     public void close()
-      throws IOException
+      
     {
     }
   }

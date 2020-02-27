@@ -65,7 +65,7 @@ class POFileParser extends GettextParser
   private StringValue _string;
 
   POFileParser(Env env, Path path)
-    throws IOException
+    
   {
     _env = env;
     
@@ -73,7 +73,7 @@ class POFileParser extends GettextParser
   }
 
   void init(Path path)
-    throws IOException
+    
   {
     _in = path.openRead();
     _peekChar = -1;
@@ -87,7 +87,7 @@ class POFileParser extends GettextParser
   }
 
   private StringValue getMetadata()
-    throws IOException
+    
   {
     StringValue metadata = null;
 
@@ -115,7 +115,7 @@ class POFileParser extends GettextParser
    * @return translations from file, or null on error
    */
   HashMap<StringValue, ArrayList<StringValue>> readTranslations()
-    throws IOException
+    
   {
     HashMap<StringValue, ArrayList<StringValue>> translations =
             new HashMap<StringValue, ArrayList<StringValue>>();
@@ -145,7 +145,7 @@ class POFileParser extends GettextParser
   }
 
   private int readToken()
-    throws IOException
+    
   {
     int ch = skipWhitespace();
 
@@ -171,7 +171,7 @@ class POFileParser extends GettextParser
   }
 
   private int readMsgToken()
-    throws IOException
+    
   {
     int ch = read();
 
@@ -195,7 +195,7 @@ class POFileParser extends GettextParser
   }
 
   private int readMsgidToken()
-    throws IOException
+    
   {
     int token;
     int ch = skipWhitespace();
@@ -224,7 +224,7 @@ class POFileParser extends GettextParser
   }
 
   private int readMsgstrToken()
-    throws IOException
+    
   {
     int ch = skipWhitespace();
 
@@ -248,7 +248,7 @@ class POFileParser extends GettextParser
    * Reads a string in quotes.
    */
   private int readOriginalString(int token)
-    throws IOException
+    
   {
     return readString(_env.createUnicodeBuilder(), token);
   }
@@ -257,7 +257,7 @@ class POFileParser extends GettextParser
    * Reads a string in quotes.
    */
   private int readString(int token)
-    throws IOException
+    
   {
     return readString(new UnicodeBuilderValue(), token);
   }
@@ -266,7 +266,7 @@ class POFileParser extends GettextParser
    * XXX: any other possible character escapes?
    */
   private int readString(StringValue sb, int token)
-    throws IOException
+    
   {
     for (int ch = read(); ch != '"'; ch = read()) {
       switch (ch) {
@@ -317,7 +317,7 @@ class POFileParser extends GettextParser
   }
 
   private int read()
-    throws IOException
+    
   {
     if (_peekChar >= 0) {
       int swap = _peekChar;
@@ -329,7 +329,7 @@ class POFileParser extends GettextParser
   }
 
   private void skipLine()
-    throws IOException
+    
   {
     int ch = read();
 
@@ -352,7 +352,7 @@ class POFileParser extends GettextParser
   }
 
   private int skipWhitespace()
-    throws IOException
+    
   {
     while (true) {
       int ch = read();

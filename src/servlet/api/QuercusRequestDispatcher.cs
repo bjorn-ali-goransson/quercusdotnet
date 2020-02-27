@@ -33,5 +33,5 @@ public interface QuercusRequestDispatcher
 {
   public void include(QuercusHttpServletRequest request,
                       QuercusHttpServletResponse response)
-    throws Exception;
+    
 }

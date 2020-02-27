@@ -68,7 +68,7 @@ public class BinaryBuilderStream extends StreamImpl
    * @param isEnd true when the write is flushing a close.
    */
   public void write(byte []buffer, int offset, int length, boolean isEnd)
-    throws IOException
+    
   {
     _out.append(buffer, offset, length);
   }

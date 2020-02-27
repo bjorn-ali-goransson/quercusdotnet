@@ -582,7 +582,7 @@ public class VariableModule extends AbstractQuercusModule {
   }
 
   private static void printDepth(WriteStream out, int depth)
-    throws IOException
+    
   {
     for (int i = 0; i < depth; i++) {
       out.print(' ');
@@ -812,7 +812,7 @@ public class VariableModule extends AbstractQuercusModule {
   }
 
   private static void debug_impl(Env env, Value v, int depth)
-    throws IOException
+    
   {
     WriteStream out = env.getOut();
 

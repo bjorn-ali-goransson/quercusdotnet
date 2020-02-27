@@ -60,7 +60,7 @@ public class QuercusMimeMessage extends MimeMessage {
 
   @Override
   public String getMessageID()
-    throws MessagingException
+    
   {
     if (_messageId == null)
       return super.getMessageID();
@@ -70,7 +70,7 @@ public class QuercusMimeMessage extends MimeMessage {
 
   @Override
   protected void updateHeaders()
-    throws MessagingException
+    
   {
     super.updateHeaders();
 

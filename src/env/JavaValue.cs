@@ -184,7 +184,7 @@ public class JavaValue extends ObjectValue
                             WriteStream out,
                             int depth,
                             IdentityHashMap<Value, String> valueSet)
-    throws IOException
+    
   {
     if (_classDef.printRImpl(env, _object, out, depth, valueSet)) {
       return;
@@ -220,7 +220,7 @@ public class JavaValue extends ObjectValue
                             WriteStream out,
                             int depth,
                             IdentityHashMap<Value, String> valueSet)
-    throws IOException
+    
   {
     Value oldThis = env.setThis(this);
 
@@ -666,7 +666,7 @@ public class JavaValue extends ObjectValue
   }
 
   private static void printRDepth(WriteStream out, int depth)
-    throws IOException
+    
   {
     for (int i = 0; i < 8 * depth; i++)
       out.print(' ');
@@ -677,7 +677,7 @@ public class JavaValue extends ObjectValue
   //
 
   private void writeObject(ObjectOutputStream out)
-    throws IOException
+    
   {
     out.writeObject(_classDef.getType().getCanonicalName());
 
@@ -685,7 +685,7 @@ public class JavaValue extends ObjectValue
   }
 
   private void readObject(ObjectInputStream in)
-    throws ClassNotFoundException, IOException
+    
   {
     _env = Env.getInstance();
 

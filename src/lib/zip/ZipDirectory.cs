@@ -56,7 +56,7 @@ public class ZipDirectory
    * Closes the previous entry and returns the next entry's metadata.
    */
   public QuercusZipEntry zip_read()
-    throws IOException
+    
   {
     closeEntry();
 
@@ -73,7 +73,7 @@ public class ZipDirectory
    * Reads the next entry's metadata from the current stream position.
    */
   protected ZipEntry readEntry()
-    throws IOException
+    
   {
     if (_eof || _currentEntry != null)
       return null;
@@ -156,7 +156,7 @@ public class ZipDirectory
   }
 
   private void skip(long len)
-    throws IOException
+    
   {
     while (len-- > 0 && _in.read() != -1) {
     }
@@ -166,7 +166,7 @@ public class ZipDirectory
    * Positions stream to beginning of next entry
    */
   protected void closeEntry()
-    throws IOException
+    
   {
     if (_currentEntry == null)
       return;

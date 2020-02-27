@@ -60,7 +60,7 @@ public class JdbcTableMetaData {
                            String schema,
                            String name,
                            DatabaseMetaData md)
-    throws SQLException
+    
   {
     _catalog = catalog;
     _schema = schema;

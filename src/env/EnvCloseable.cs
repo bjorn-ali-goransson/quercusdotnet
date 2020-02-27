@@ -49,7 +49,7 @@ public class EnvCloseable implements EnvCleanup {
    * method should be invoked.
    */
   public void cleanup()
-    throws Exception
+    
   {
     _obj.close();
   }

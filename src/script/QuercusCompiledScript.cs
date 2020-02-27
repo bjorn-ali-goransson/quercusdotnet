@@ -67,7 +67,7 @@ public class QuercusCompiledScript extends CompiledScript {
    * evaluates based on a reader.
    */
   public Object eval(ScriptContext cxt)
-    throws ScriptException
+    
   {
     QuercusContext quercus = _engine.getQuercus();
     Env env = null;

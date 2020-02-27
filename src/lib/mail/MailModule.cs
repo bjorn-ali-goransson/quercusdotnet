@@ -230,7 +230,7 @@ public class MailModule extends AbstractQuercusModule {
                                     Message.RecipientType type,
                                     String to,
                                     ArrayList<Address> addrList)
-    throws MessagingException
+    
   {
     String []split = to.split(",");
 
@@ -272,7 +272,7 @@ public class MailModule extends AbstractQuercusModule {
   private static void addHeaders(QuercusMimeMessage msg,
                                   HashMap<String,String> headerMap,
                                  ArrayList<Address> addrList)
-    throws MessagingException
+    
   {
     for (Map.Entry<String,String> entry : headerMap.entrySet()) {
       String name = entry.getKey();

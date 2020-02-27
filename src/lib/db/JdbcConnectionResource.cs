@@ -108,7 +108,7 @@ public abstract class JdbcConnectionResource
   }
   
   protected JdbcStatementResource createStatementResource(Env env)
-    throws SQLException
+    
   {
     JdbcStatementResource stmt = new JdbcStatementResource(this);
 
@@ -116,7 +116,7 @@ public abstract class JdbcConnectionResource
   }
   
   protected final JdbcStatementResource createStatement(Env env)
-    throws SQLException
+    
   {
     JdbcStatementResource stmt = createStatementResource(env);
     
@@ -464,7 +464,7 @@ public abstract class JdbcConnectionResource
    * associated to this statement.
    */
   protected Connection getJavaConnection(Env env)
-    throws SQLException
+    
   {
     // XXX: jdbc for jdk 1.6 updates
     return env.getQuercus().getConnection(_conn.getConnection());
@@ -507,7 +507,7 @@ public abstract class JdbcConnectionResource
    * XXX: PHP returns Localhost via UNIX socket
    */
   public String getHostInfo()
-    throws SQLException
+    
   {
     if (_dmd == null)
       _dmd = _conn.getConnection().getMetaData();
@@ -519,7 +519,7 @@ public abstract class JdbcConnectionResource
    * returns the server version
    */
   protected String getServerInfo()
-    throws SQLException
+    
   {
     return getMetaData().getDatabaseProductVersion();
   }
@@ -531,7 +531,7 @@ public abstract class JdbcConnectionResource
                                             String catalog,
                                             String schema,
                                             String table)
-    throws SQLException
+    
   {
     try {
       if (table == null || table.equals(""))
@@ -562,7 +562,7 @@ public abstract class JdbcConnectionResource
   }
 
   private DatabaseMetaData getMetaData()
-    throws SQLException
+    
   {
     if (_dmd == null)
       _dmd = _conn.getConnection().getMetaData();
@@ -770,7 +770,7 @@ public abstract class JdbcConnectionResource
   }
 
   protected Statement createJavaStatement(Env env)
-    throws SQLException
+    
   {
     Connection conn = getConnection(env);
     Statement stmt;
@@ -1006,7 +1006,7 @@ public abstract class JdbcConnectionResource
    * Sets the catalog
    */
   public void setCatalog(Env env, String name)
-    throws SQLException
+    
   {
     if (_catalog != null && _catalog.equals(name))
       return;
