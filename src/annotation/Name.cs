@@ -36,6 +36,6 @@
  * Used to indicate the name that should be used in the php namespace.
  */
 @Retention(RetentionPolicy.RUNTIME)
-public @interface Name {
+public interface Name {
   String value();
 }

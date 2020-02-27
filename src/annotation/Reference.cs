@@ -39,5 +39,5 @@
  */
 @Target(ElementType.PARAMETER)
 @Retention(RetentionPolicy.RUNTIME)
-public @interface Reference {
+public interface Reference {
 }

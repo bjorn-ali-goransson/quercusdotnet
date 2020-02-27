@@ -36,5 +36,5 @@
  * Used to specify a function to be used for json encoding.
  */
 @Retention(RetentionPolicy.RUNTIME)
-public @interface JsonEncode {
+public interface JsonEncode {
 }

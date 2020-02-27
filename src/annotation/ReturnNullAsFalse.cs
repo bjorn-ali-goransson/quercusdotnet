@@ -44,5 +44,5 @@
  */
 @Target(ElementType.METHOD)
 @Retention(RetentionPolicy.RUNTIME)
-public @interface ReturnNullAsFalse {
+public interface ReturnNullAsFalse {
 }

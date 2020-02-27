@@ -39,5 +39,5 @@
  */
 @Target(ElementType.METHOD)
 @Retention(RetentionPolicy.RUNTIME)
-public @interface VariableArguments {
+public interface VariableArguments {
 }

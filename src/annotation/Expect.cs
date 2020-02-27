@@ -39,7 +39,7 @@
  */
 @Target({ ElementType.PARAMETER })
 @Retention(RetentionPolicy.RUNTIME)
-public @interface Expect {
+public interface Expect {
   public enum Type {
     STRING, NUMERIC, BOOLEAN
   }

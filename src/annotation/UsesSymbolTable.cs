@@ -39,7 +39,7 @@
  */
 @Target(ElementType.METHOD)
 @Retention(RetentionPolicy.RUNTIME)
-public @interface UsesSymbolTable {
+public interface UsesSymbolTable {
   /**
    * Replace is true if the symbol table can override existing Var, not
    * just set their values.

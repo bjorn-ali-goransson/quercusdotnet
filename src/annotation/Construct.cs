@@ -41,5 +41,5 @@
  */
 @Target({ElementType.CONSTRUCTOR })
 @Retention(RetentionPolicy.RUNTIME)
-public @interface Construct {
+public interface Construct {
 }

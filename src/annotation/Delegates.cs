@@ -44,6 +44,6 @@
  */
 @Target({ElementType.TYPE })
 @Retention(RetentionPolicy.RUNTIME)
-public @interface Delegates {
+public interface Delegates {
   public Class<?>[] value();
 }

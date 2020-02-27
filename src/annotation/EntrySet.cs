@@ -40,5 +40,5 @@
  */
 @Target({ElementType.METHOD })
 @Retention(RetentionPolicy.RUNTIME)
-public @interface EntrySet {
+public interface EntrySet {
 }

@@ -40,5 +40,5 @@
  */
 @Target(ElementType.PARAMETER)
 @Retention(RetentionPolicy.RUNTIME)
-public @interface This {
+public interface This {
 }

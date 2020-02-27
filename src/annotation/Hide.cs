@@ -36,5 +36,5 @@
  * Used to hide Java functions from the php namespace.
  */
 @Retention(RetentionPolicy.RUNTIME)
-public @interface Hide {
+public interface Hide {
 }

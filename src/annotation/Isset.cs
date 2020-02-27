@@ -34,5 +34,5 @@
  * Used to specify a function to be used for isset().
  */
 @Retention(RetentionPolicy.RUNTIME)
-public @interface Isset {
+public interface Isset {
 }
