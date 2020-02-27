@@ -52,7 +52,7 @@ public class ZlibInputStream extends ReadStreamInput
 
   private ReadStream _rs;
 
-  public ZlibInputStream(Env env, BinaryInput in) throws IOException
+  public ZlibInputStream(Env env, BinaryInput in)
   {
     super(env);
 

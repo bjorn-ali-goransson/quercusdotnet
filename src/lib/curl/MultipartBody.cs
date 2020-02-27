@@ -216,7 +216,7 @@ public class MultipartBody extends PostBody
 
     abstract long getLengthImpl();
 
-    abstract void writeData(Env env, OutputStream os) throws IOException;
+    abstract void writeData(Env env, OutputStream os)
   }
 
   static class UrlEncodedEntry extends MultipartEntry {

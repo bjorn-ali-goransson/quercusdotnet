@@ -111,7 +111,7 @@ public class GZInputStream extends InputStream
    * Returns the byte read, -1 if EOF
    * @return number of bytes read, or -1 if EOF
    */
-  public int read() throws IOException
+  public int read()
   {
     byte[] b = new byte[1];
     int n = read(b);

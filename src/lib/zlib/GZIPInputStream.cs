@@ -38,11 +38,11 @@
  */
 public class GZIPInputStream extends java.util.zip.GZIPInputStream
 {
-  public GZIPInputStream(InputStream in) throws IOException
+  public GZIPInputStream(InputStream in)
   {
     super(in);
   }
-  public GZIPInputStream(InputStream in, int size) throws IOException
+  public GZIPInputStream(InputStream in, int size)
   {
     super(in, size);
   }

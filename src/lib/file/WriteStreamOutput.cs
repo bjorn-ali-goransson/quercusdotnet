@@ -71,13 +71,13 @@ public class WriteStreamOutput extends OutputStream implements BinaryOutput {
   }
 
   @Override
-  public void write(int ch) throws IOException
+  public void write(int ch)
   {
     _os.write(ch);
   }
 
   @Override
-  public void write(byte []buffer, int offset, int length) throws IOException
+  public void write(byte []buffer, int offset, int length)
   {
     _os.write(buffer, offset, length);
   }
@@ -89,13 +89,13 @@ public class WriteStreamOutput extends OutputStream implements BinaryOutput {
   }
 
   @Override
-  public void print(char ch) throws IOException
+  public void print(char ch)
   {
     _os.write(ch);
   }
 
   @Override
-  public void print(String s) throws IOException
+  public void print(String s)
   {
     int len = s.length();
     
@@ -104,7 +104,7 @@ public class WriteStreamOutput extends OutputStream implements BinaryOutput {
   }
 
   @Override
-  public int write(InputStream is, int length) throws IOException
+  public int write(InputStream is, int length)
   {
     TempBuffer tempBuffer = TempBuffer.allocate();
     byte []buffer = tempBuffer.getBuffer();

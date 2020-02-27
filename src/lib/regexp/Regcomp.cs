@@ -140,7 +140,7 @@ class Regcomp {
     return _nLoop++;
   }
 
-  RegexpNode parse(PeekStream pattern) throws IllegalRegexpException
+  RegexpNode parse(PeekStream pattern)
   {
     _pattern = pattern;
 

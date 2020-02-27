@@ -91,7 +91,7 @@ public class DateInterval
       _length = str.length();
     }
 
-    public void parse() throws ParseException
+    public void parse()
     {
       int ch = read();
 
@@ -104,7 +104,7 @@ public class DateInterval
       parseTime();
     }
 
-    private void parseDate() throws ParseException
+    private void parseDate()
     {
       while (true) {
         int ch = peek();
@@ -135,7 +135,7 @@ public class DateInterval
       }
     }
 
-    private int readInt() throws ParseException
+    private int readInt()
     {
       int ch = read();
 
@@ -153,7 +153,7 @@ public class DateInterval
       return value;
     }
 
-    private void parseTime() throws ParseException
+    private void parseTime()
     {
       int ch = peek();
 

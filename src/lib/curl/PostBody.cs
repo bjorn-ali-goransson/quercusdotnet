@@ -90,5 +90,5 @@ abstract public class PostBody
 
   abstract public long getContentLength();
   abstract public String getContentType();
-  abstract public void writeTo(Env env, OutputStream os) throws IOException;
+  abstract public void writeTo(Env env, OutputStream os)
 }

@@ -1623,7 +1623,7 @@ public class PostgresModule extends AbstractQuercusModule {
       // org.postgresql.PGConnection
       Class<?> cl = Class.forName("org.postgresql.PGConnection");
 
-      // public PGNotification[] getNotifications() throws SQLException;
+      // public PGNotification[] getNotifications()
       Method method = cl.getDeclaredMethod("getNotifications", null);
 
       Connection pgconn = conn.getJavaConnection(env);
