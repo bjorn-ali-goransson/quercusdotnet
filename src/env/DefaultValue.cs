@@ -123,34 +123,34 @@ public class DefaultValue : NullValue {
   /**
    * Generates code to recreate the expression.
    *
-   * @param out the writer to the Java source code.
+   * @param @out the writer to the Java source code.
    */
   public override void generate(PrintWriter out)
     
   {
-    out.print("DefaultValue.DEFAULT");
+    @out.print("DefaultValue.DEFAULT");
   }
 
   /**
    * Generates code to recreate the expression.
    *
-   * @param out the writer to the Java source code.
+   * @param @out the writer to the Java source code.
    */
   public void generateLong(PrintWriter out)
     
   {
-    out.print("0");
+    @out.print("0");
   }
 
   /**
    * Generates code to recreate the expression.
    *
-   * @param out the writer to the Java source code.
+   * @param @out the writer to the Java source code.
    */
   public void generateString(PrintWriter out)
     
   {
-    out.print("\"\"");
+    @out.print("\"\"");
   }
 
   //

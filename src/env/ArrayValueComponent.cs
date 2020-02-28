@@ -91,7 +91,7 @@ public class ArrayValueComponent
     return components;
   }
   
-  public static void generate(PrintWriter out, ArrayValue array)
+  public static void generate(PrintWriter @out, ArrayValue array)
     
   {
     int size = array.getSize();
@@ -105,45 +105,45 @@ public class ArrayValueComponent
     Value []keys = array.keysToArray();
     Value []values = array.valuesToArray();
     
-    out.print("new ArrayValueComponent[] {");
+    @out.print("new ArrayValueComponent[] {");
     
     while (bin < bins) {
       int binSize = MAX_SIZE;
       
       if (bin != 0)
-        out.print(", ");
+        @out.print(", ");
         
       if (bin + 1 == bins)
         binSize = size - bin * MAX_SIZE;
       
-      out.println("new ArrayValueComponent() {");
-      out.println("    public void init() {");
+      @out.println("new ArrayValueComponent() {");
+      @out.println("    public void init() {");
       
-      out.print("      _keys = new Value[] {");
+      @out.print("      _keys = new Value[] {");
       for (int i = 0; i < binSize; i++) {
         if (i != 0)
-          out.print(", ");
+          @out.print(", ");
         
         keys[i + bin * MAX_SIZE].generate(out);
       }
-      out.println("};");
+      @out.println("};");
       
-      out.print("      _values = new Value[] {");
+      @out.print("      _values = new Value[] {");
       for (int i = 0; i < binSize; i++) {
         if (i != 0)
-          out.print(", ");
+          @out.print(", ");
         
         values[i + bin * MAX_SIZE].generate(out);
       }
-      out.println("};");
+      @out.println("};");
       
-      out.println("    }");
-      out.println("  }");
+      @out.println("    }");
+      @out.println("  }");
       
       bin++;
     }
     
-    out.print("}");
+    @out.print("}");
   }
   
   public void init()

@@ -2726,7 +2726,7 @@ abstract public class StringValue
   /**
    * Generates code to recreate the expression.
    *
-   * @param out the writer to the Java source code.
+   * @param @out the writer to the Java source code.
    */
   public override void generate(PrintWriter out)
     
@@ -2739,34 +2739,34 @@ abstract public class StringValue
     string className = getClass().getSimpleName();
 
     if (len == 1) {
-      out.print(className + ".create('");
-      printJavaChar(out, charAt(0));
-      out.print("')");
+      @out.print(className + ".create('");
+      printJavaChar(@out, charAt(0));
+      @out.print("')");
     }
     else if (len < maxSublen) {
-      out.print("new " + className + "(\"");
-      printJavaString(out, this);
-      out.print("\")");
+      @out.print("new " + className + "(\"");
+      printJavaString(@out, this);
+      @out.print("\")");
     }
     else {
-      out.print("((" + className + ") (new " + className + "(\"");
+      @out.print("((" + className + ") (new " + className + "(\"");
 
       // php/313u
       for (int i = 0; i < len; i += maxSublen) {
         if (i != 0)
-          out.print("\").append(\"");
+          @out.print("\").append(\"");
 
-        printJavaString(out, substring(i, Math.min(i + maxSublen, len)));
+        printJavaString(@out, substring(i, Math.min(i + maxSublen, len)));
       }
 
-      out.print("\")))");
+      @out.print("\")))");
     }
   }
 
   abstract override public string toDebugString();
 
   abstract override public void varDumpImpl(Env env,
-                                   WriteStream out,
+                                   WriteStream @out,
                                    int depth,
                                    IdentityHashMap<Value, String> valueSet)
     

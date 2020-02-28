@@ -146,17 +146,17 @@ public class CallbackClassMethod : Callback {
   }
 
   public override void varDumpImpl(Env env,
-                          WriteStream out,
+                          WriteStream @out,
                           int depth,
                           IdentityHashMap<Value, String> valueSet)
     
   {
-    out.print(getClass().getName());
-    out.print('[');
-    out.print(_qClass.getName());
-    out.print(", ");
-    out.print(_methodName);
-    out.print(']');
+    @out.print(getClass().getName());
+    @out.print('[');
+    @out.print(_qClass.getName());
+    @out.print(", ");
+    @out.print(_methodName);
+    @out.print(']');
   }
 
   public override bool isValid(Env env)

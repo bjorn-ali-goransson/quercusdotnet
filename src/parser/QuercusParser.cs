@@ -569,9 +569,9 @@ public class QuercusParser {
     return program;
 
     /*
-    com.caucho.vfs.WriteStream out = com.caucho
+    com.caucho.vfs.WriteStream @out = com.caucho
         .vfs.Vfs.lookup("stdout:").openWrite();
-    out.setFlushOnNewline(true);
+    @out.setFlushOnNewline(true);
     stmt.debug(new JavaWriter(out));
     */
   }
@@ -1880,9 +1880,9 @@ public class QuercusParser {
       _scope.addFunction(createStringValue(name), function, oldTop);
 
       /*
-    com.caucho.vfs.WriteStream out = com.caucho.vfs
+    com.caucho.vfs.WriteStream @out = com.caucho.vfs
           .Vfs.lookup("stdout:").openWrite();
-    out.setFlushOnNewline(true);
+    @out.setFlushOnNewline(true);
     function.debug(new JavaWriter(out));
       */
 
@@ -2073,7 +2073,7 @@ public class QuercusParser {
   private Statement parseBreak()
     
   {
-    // commented out for adodb (used by Moodle and others)
+    // commented @out for adodb (used by Moodle and others)
     // XXX: should only throw fatal error if break statement is reached
     //      during execution
 

@@ -212,7 +212,7 @@ public class UrlModule
 
       socket = new Socket(url.getHost(), port);
 
-      OutputStream out = socket.getOutputStream();
+      OutputStream @out = socket.getOutputStream();
       InputStream in = socket.getInputStream();
 
       StringBuilder request = new StringBuilder();

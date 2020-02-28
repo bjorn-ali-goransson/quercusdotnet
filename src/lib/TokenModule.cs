@@ -215,25 +215,25 @@ public class TokenModule : AbstractQuercusModule {
   {
     try {
       StringValue sb = isReturn ? env.createUnicodeBuilder() : null;
-      WriteStream out = env.getOut();
+      WriteStream @out = env.getOut();
 
       Token lexer = new Token(env, s);
       int token;
       StringValue topColor = env.createString("#000000");
       StringValue lastColor = topColor;
 
-      highlight(sb, out, "<code>");
-      highlight(sb, out, "<span style=\"color: #000000\">\n");
+      highlight(sb, @out, "<code>");
+      highlight(sb, @out, "<span style=\"color: #000000\">\n");
 
       while ((token = lexer.nextToken()) >= 0) {
         StringValue color = getColor(env, token);
 
         if (color != null && ! color.equals(lastColor)) {
           if (! topColor.equals(lastColor))
-            highlight(sb, out, "</span>");
+            highlight(sb, @out, "</span>");
 
           if (! topColor.equals(color))
-            highlight(sb, out, "<span style=\"color: " + color + "\">");
+            highlight(sb, @out, "<span style=\"color: " + color + "\">");
 
           lastColor = color;
         }
@@ -242,19 +242,19 @@ public class TokenModule : AbstractQuercusModule {
           if (sb != null)
             sb.append((char) token);
           else
-            out.print((char) token);
+            @out.print((char) token);
         }
         else {
           StringValue lexeme = lexer.getLexeme();
 
-          highlight(sb, out, lexeme);
+          highlight(sb, @out, lexeme);
         }
       }
 
       if (! topColor.equals(lastColor))
-        highlight(sb, out, "</span>\n");
-      highlight(sb, out, "</span>\n");
-      highlight(sb, out, "</code>");
+        highlight(sb, @out, "</span>\n");
+      highlight(sb, @out, "</span>\n");
+      highlight(sb, @out, "</code>");
 
       if (sb != null)
         return sb;
@@ -266,7 +266,7 @@ public class TokenModule : AbstractQuercusModule {
   }
 
   private static void highlight(StringValue sb,
-                                WriteStream out,
+                                WriteStream @out,
                                 string string)
     
   {
@@ -274,12 +274,12 @@ public class TokenModule : AbstractQuercusModule {
       sb.append(string);
     }
     else {
-      out.print(string);
+      @out.print(string);
     }
   }
 
   private static void highlight(StringValue sb,
-                                WriteStream out,
+                                WriteStream @out,
                                 StringValue string)
     
   {
@@ -311,16 +311,16 @@ public class TokenModule : AbstractQuercusModule {
 
         switch (ch) {
           case '<':
-            out.print("&lt;");
+            @out.print("&lt;");
             break;
           case '>':
-            out.print("&gt;");
+            @out.print("&gt;");
             break;
           case ' ':
-            out.print("&nbsp;");
+            @out.print("&nbsp;");
             break;
           default:
-            out.print(ch);
+            @out.print(ch);
           break;
         }
       }

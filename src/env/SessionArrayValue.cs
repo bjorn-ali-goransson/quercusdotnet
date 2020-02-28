@@ -195,16 +195,16 @@ public class SessionArrayValue : ArrayValueWrapper
 
     int len = encode.length();
 
-    out.write(len >> 24);
-    out.write(len >> 16);
-    out.write(len >> 8);
-    out.write(len);
+    @out.write(len >> 24);
+    @out.write(len >> 16);
+    @out.write(len >> 8);
+    @out.write(len);
 
     for (int i = 0; i < len; i++) {
       char ch = encode.charAt(i);
 
-      out.write(ch >> 8);
-      out.write(ch);
+      @out.write(ch >> 8);
+      @out.write(ch);
     }
   }
 

@@ -144,14 +144,14 @@ public class QuercusEngine
       } catch (Exception e) {
       }
 
-      out = ws;
+      @out = ws;
     }
     else
-      out = new WriteStream(StdoutStream.create());
+      @out = new WriteStream(StdoutStream.create());
 
     QuercusPage page = new InterpretedPage(program);
 
-    Env env = new Env(_quercus, page, out, null, null);
+    Env env = new Env(_quercus, page, @out, null, null);
 
     Value value = NullValue.NULL;
 
@@ -163,8 +163,8 @@ public class QuercusEngine
     catch (QuercusExitException e) {
     }
 
-    out.flushBuffer();
-    out.free();
+    @out.flushBuffer();
+    @out.free();
 
     if (os != null)
       os.flush();

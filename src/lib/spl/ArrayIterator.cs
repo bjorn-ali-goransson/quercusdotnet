@@ -232,16 +232,16 @@ public class ArrayIterator
   }
 
 
-   private static void printDepth(WriteStream out, int depth)
+   private static void printDepth(WriteStream @out, int depth)
     
   {
     for (int i = depth; i > 0; i--)
-      out.print(' ');
+      @out.print(' ');
   }
 
   public void varDumpImpl(Env env,
                           Value obj,
-                          WriteStream out,
+                          WriteStream @out,
                           int depth,
                           IdentityHashMap<Value, String> valueSet)
     
@@ -252,12 +252,12 @@ public class ArrayIterator
       name = obj.getClassName();
 
     if ((_flags & STD_PROP_LIST) != 0) {
-      // XXX:  env.getThis().varDumpObject(env, out, depth, valueSet);
+      // XXX:  env.getThis().varDumpObject(env, @out, depth, valueSet);
     }
     else {
       Value arrayValue = _value;
 
-      out.println("object(" + name + ") (" + arrayValue.getCount(env) + ") {");
+      @out.println("object(" + name + ") (" + arrayValue.getCount(env) + ") {");
 
       depth++;
 
@@ -270,29 +270,29 @@ public class ArrayIterator
         Value key = entry.getKey();
         Value value = entry.getValue();
 
-        printDepth(out, 2 * depth);
+        printDepth(@out, 2 * depth);
 
-        out.print("[");
+        @out.print("[");
 
         if (key.isString())
-          out.print("\"" + key + "\"");
+          @out.print("\"" + key + "\"");
         else
-          out.print(key);
+          @out.print(key);
 
-        out.println("]=>");
+        @out.println("]=>");
 
-        printDepth(out, 2 * depth);
+        printDepth(@out, 2 * depth);
 
-        value.varDump(env, out, depth, valueSet);
+        value.varDump(env, @out, depth, valueSet);
 
-        out.println();
+        @out.println();
       }
 
       depth--;
 
-      printDepth(out, 2 * depth);
+      printDepth(@out, 2 * depth);
 
-      out.print("}");
+      @out.print("}");
     }
   }
 }

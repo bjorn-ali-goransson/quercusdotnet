@@ -1539,26 +1539,26 @@ abstract public class ArrayValue : Value {
   }
 
   public override void varDumpImpl(Env env,
-                          WriteStream out,
+                          WriteStream @out,
                           int depth,
                           IdentityHashMap<Value, String> valueSet)
     
   {
-    out.println("array(" + getSize() + ") {");
+    @out.println("array(" + getSize() + ") {");
 
     for (Map.Entry<Value,Value> mapEntry : entrySet()) {
-      varDumpEntry(env, out, depth + 1, valueSet, mapEntry);
+      varDumpEntry(env, @out, depth + 1, valueSet, mapEntry);
 
-      out.println();
+      @out.println();
     }
 
-    printDepth(out, 2 * depth);
+    printDepth(@out, 2 * depth);
 
-    out.print("}");
+    @out.print("}");
   }
 
   protected void varDumpEntry(Env env,
-                              WriteStream out,
+                              WriteStream @out,
                               int depth,
                               IdentityHashMap<Value, String> valueSet,
                               Map.Entry<Value, Value> mapEntry)
@@ -1566,31 +1566,31 @@ abstract public class ArrayValue : Value {
   {
     ArrayValue.Entry entry = (ArrayValue.Entry) mapEntry;
 
-    entry.varDumpImpl(env, out, depth, valueSet);
+    entry.varDumpImpl(env, @out, depth, valueSet);
   }
 
   protected override void printRImpl(Env env,
-                            WriteStream out,
+                            WriteStream @out,
                             int depth,
                             IdentityHashMap<Value, String> valueSet)
     
   {
-    out.println("Array");
-    printDepth(out, 4 * depth);
-    out.println("(");
+    @out.println("Array");
+    printDepth(@out, 4 * depth);
+    @out.println("(");
 
     for (Map.Entry<Value,Value> mapEntry : entrySet()) {
       ArrayValue.Entry entry = (ArrayValue.Entry) mapEntry;
 
-      entry.printRImpl(env, out, depth, valueSet);
+      entry.printRImpl(env, @out, depth, valueSet);
     }
 
-    printDepth(out, 4 * depth);
-    out.println(")");
+    printDepth(@out, 4 * depth);
+    @out.println(")");
   }
 
   protected void printREntry(Env env,
-                             WriteStream out,
+                             WriteStream @out,
                              int depth,
                              IdentityHashMap<Value, String> valueSet,
                              Map.Entry<Value, Value> mapEntry)
@@ -1598,7 +1598,7 @@ abstract public class ArrayValue : Value {
   {
     ArrayValue.Entry entry = (ArrayValue.Entry) mapEntry;
 
-    entry.printRImpl(env, out, depth, valueSet);
+    entry.printRImpl(env, @out, depth, valueSet);
   }
 
   public static class Entry
@@ -1820,48 +1820,48 @@ abstract public class ArrayValue : Value {
     }
 
     public void varDumpImpl(Env env,
-                            WriteStream out,
+                            WriteStream @out,
                             int depth,
                             IdentityHashMap<Value, String> valueSet)
       
     {
-      printDepth(out, 2 * depth);
-      out.print("[");
+      printDepth(@out, 2 * depth);
+      @out.print("[");
 
       if (_key instanceof StringValue)
-        out.print("\"" + _key + "\"");
+        @out.print("\"" + _key + "\"");
       else
-        out.print(_key);
+        @out.print(_key);
 
-      out.println("]=>");
+      @out.println("]=>");
 
-      printDepth(out, 2 * depth);
+      printDepth(@out, 2 * depth);
 
-      getRawValue().varDump(env, out, depth, valueSet);
+      getRawValue().varDump(env, @out, depth, valueSet);
     }
 
     protected void printRImpl(Env env,
-                              WriteStream out,
+                              WriteStream @out,
                               int depth,
                               IdentityHashMap<Value, String> valueSet)
       
     {
-      printDepth(out, 4 * (depth + 1));
-      out.print("[");
-      out.print(_key);
-      out.print("] => ");
+      printDepth(@out, 4 * (depth + 1));
+      @out.print("[");
+      @out.print(_key);
+      @out.print("] => ");
       if (getRawValue() != null) {
-        getRawValue().printR(env, out, depth + 2, valueSet);
+        getRawValue().printR(env, @out, depth + 2, valueSet);
       }
 
-      out.println();
+      @out.println();
     }
 
-    private void printDepth(WriteStream out, int depth)
+    private void printDepth(WriteStream @out, int depth)
       
     {
       for (int i = depth; i > 0; i--)
-        out.print(' ');
+        @out.print(' ');
     }
 
     public override string toString()

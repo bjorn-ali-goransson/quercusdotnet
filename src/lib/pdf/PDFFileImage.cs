@@ -88,17 +88,17 @@ public class PDFFileImage : PDFObject {
   public override void writeObject(PDFWriter out)
     
   {
-    out.println("<< /Type /XObject");
-    out.println("   /Subtype /Image");
-    out.println("   /BitsPerComponent 8");
-    out.println("   /ColorSpace /DeviceRGB");
-    out.println("   /Width " + _width);
-    out.println("   /Height " + _height);
-    out.println("   /F " + _refId + " 0 R");
-    out.println("   /Length " + 0);
-    out.println(">>");
-    out.println("stream");
-    out.println("endstream");
+    @out.println("<< /Type /XObject");
+    @out.println("   /Subtype /Image");
+    @out.println("   /BitsPerComponent 8");
+    @out.println("   /ColorSpace /DeviceRGB");
+    @out.println("   /Width " + _width);
+    @out.println("   /Height " + _height);
+    @out.println("   /F " + _refId + " 0 R");
+    @out.println("   /Length " + 0);
+    @out.println(">>");
+    @out.println("stream");
+    @out.println("endstream");
   }
 }
 }

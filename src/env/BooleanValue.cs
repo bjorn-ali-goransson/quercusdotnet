@@ -281,29 +281,29 @@ public class BooleanValue : Value
   /**
    * Generates code to recreate the expression.
    *
-   * @param out the writer to the Java source code.
+   * @param @out the writer to the Java source code.
    */
   public override void generate(PrintWriter out)
     
   {
     if (_value)
-      out.print("com.caucho.quercus.env.BooleanValue.TRUE");
+      @out.print("com.caucho.quercus.env.BooleanValue.TRUE");
     else
-      out.print("com.caucho.quercus.env.BooleanValue.FALSE");
+      @out.print("com.caucho.quercus.env.BooleanValue.FALSE");
   }
 
   /**
    * Generates code to recreate the expression.
    *
-   * @param out the writer to the Java source code.
+   * @param @out the writer to the Java source code.
    */
   public void generateBoolean(PrintWriter out)
     
   {
     if (_value)
-      out.print("true");
+      @out.print("true");
     else
-      out.print("false");
+      @out.print("false");
   }
 
   /**
@@ -367,15 +367,15 @@ public class BooleanValue : Value
   }
 
   public override void varDumpImpl(Env env,
-                          WriteStream out,
+                          WriteStream @out,
                           int depth,
                           IdentityHashMap<Value,String> valueSet)
     
   {
     if (toBoolean())
-      out.print("bool(true)");
+      @out.print("bool(true)");
     else
-      out.print("bool(false)");
+      @out.print("bool(false)");
   }
 
   //

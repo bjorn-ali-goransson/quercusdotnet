@@ -139,7 +139,7 @@ public class ObjectExtJavaValue : ObjectExtValue
   }
 
   public void varDumpImpl(Env env,
-                          WriteStream out,
+                          WriteStream @out,
                           int depth,
                           IdentityHashMap<Value, String> valueSet)
     
@@ -148,12 +148,12 @@ public class ObjectExtJavaValue : ObjectExtValue
       _object = createJavaObject(Env.getInstance());
     }
 
-    if (! _javaClassDef.varDumpImpl(env, this, _object, out, depth, valueSet))
-      super.varDumpImpl(env, out, depth, valueSet);
+    if (! _javaClassDef.varDumpImpl(env, this, _object, @out, depth, valueSet))
+      super.varDumpImpl(env, @out, depth, valueSet);
   }
 
   protected override void printRImpl(Env env,
-                            WriteStream out,
+                            WriteStream @out,
                             int depth,
                             IdentityHashMap<Value, String> valueSet)
     
@@ -162,7 +162,7 @@ public class ObjectExtJavaValue : ObjectExtValue
       _object = createJavaObject(Env.getInstance());
     }
 
-    _javaClassDef.printRImpl(env, _object, out, depth, valueSet);
+    _javaClassDef.printRImpl(env, _object, @out, depth, valueSet);
   }
 
   /**

@@ -589,7 +589,7 @@ public class ObjectExtValue : ObjectValue
       if (cls != _quercusClass) {
         return null;
       }
-      /* nam: 2012-04-29 this doesn't work, commented out for drupal-7.12
+      /* nam: 2012-04-29 this doesn't work, commented @out for drupal-7.12
       else if (entry._visibility == FieldVisibility.PROTECTED) {
         QuercusClass cls = env.getCallingClass();
 
@@ -1186,7 +1186,7 @@ public class ObjectExtValue : ObjectValue
 
   //XXX: push up to super, and use varDumpObject
   public void varDumpImpl(Env env,
-                          WriteStream out,
+                          WriteStream @out,
                           int depth,
                           IdentityHashMap<Value, String> valueSet)
     
@@ -1196,52 +1196,52 @@ public class ObjectExtValue : ObjectValue
     if (isIncompleteObject())
       size++;
 
-    out.println("object(" + getName() + ") (" + size + ") {");
+    @out.println("object(" + getName() + ") (" + size + ") {");
 
     if (isIncompleteObject()) {
-      printDepth(out, 2 * (depth + 1));
-      out.println("[\"__Quercus_Incomplete_Class_name\"]=>");
+      printDepth(@out, 2 * (depth + 1));
+      @out.println("[\"__Quercus_Incomplete_Class_name\"]=>");
 
-      printDepth(out, 2 * (depth + 1));
+      printDepth(@out, 2 * (depth + 1));
 
       Value value = env.createString(getIncompleteObjectName());
 
-      value.varDump(env, out, depth + 1, valueSet);
+      value.varDump(env, @out, depth + 1, valueSet);
 
-      out.println();
+      @out.println();
     }
 
     for (Map.Entry<Value,Value> mapEntry : entrySet()) {
       ObjectExtValue.Entry entry = (ObjectExtValue.Entry) mapEntry;
 
-      entry.varDumpImpl(env, out, depth + 1, valueSet);
+      entry.varDumpImpl(env, @out, depth + 1, valueSet);
     }
 
-    printDepth(out, 2 * depth);
+    printDepth(@out, 2 * depth);
 
-    out.print("}");
+    @out.print("}");
   }
 
   protected override void printRImpl(Env env,
-                            WriteStream out,
+                            WriteStream @out,
                             int depth,
                             IdentityHashMap<Value, String> valueSet)
     
   {
-    out.print(getName());
-    out.print(' ');
-    out.println("Object");
-    printDepth(out, 4 * depth);
-    out.println("(");
+    @out.print(getName());
+    @out.print(' ');
+    @out.println("Object");
+    printDepth(@out, 4 * depth);
+    @out.println("(");
 
     for (Map.Entry<Value,Value> mapEntry : entrySet()) {
       ObjectExtValue.Entry entry = (ObjectExtValue.Entry) mapEntry;
 
-      entry.printRImpl(env, out, depth + 1, valueSet);
+      entry.printRImpl(env, @out, depth + 1, valueSet);
     }
 
-    printDepth(out, 4 * depth);
-    out.println(")");
+    printDepth(@out, 4 * depth);
+    @out.println(")");
   }
 
   //
@@ -1251,13 +1251,13 @@ public class ObjectExtValue : ObjectValue
   private void writeObject(ObjectOutputStream out)
     
   {
-    out.writeObject(_className);
+    @out.writeObject(_className);
 
-    out.writeInt(_fieldMap.size());
+    @out.writeInt(_fieldMap.size());
 
     for (Map.Entry<Value,Value> entry : entrySet()) {
-      out.writeObject(entry.getKey());
-      out.writeObject(entry.getValue());
+      @out.writeObject(entry.getKey());
+      @out.writeObject(entry.getValue());
     }
   }
 
@@ -1625,7 +1625,7 @@ public class ObjectExtValue : ObjectValue
     }
 
     public void varDumpImpl(Env env,
-                            WriteStream out,
+                            WriteStream @out,
                             int depth,
                             IdentityHashMap<Value, String> valueSet)
       
@@ -1640,18 +1640,18 @@ public class ObjectExtValue : ObjectValue
         suffix = ":private";
       }
 
-      printDepth(out, 2 * depth);
-      out.println("[\"" + name + suffix + "\"]=>");
+      printDepth(@out, 2 * depth);
+      @out.println("[\"" + name + suffix + "\"]=>");
 
-      printDepth(out, 2 * depth);
+      printDepth(@out, 2 * depth);
 
-      _value.varDump(env, out, depth, valueSet);
+      _value.varDump(env, @out, depth, valueSet);
 
-      out.println();
+      @out.println();
     }
 
     protected void printRImpl(Env env,
-                              WriteStream out,
+                              WriteStream @out,
                               int depth,
                               IdentityHashMap<Value, String> valueSet)
       
@@ -1666,19 +1666,19 @@ public class ObjectExtValue : ObjectValue
         suffix = ":private";
       }
 
-      printDepth(out, 4 * depth);
-      out.print("[" + name + suffix + "] => ");
+      printDepth(@out, 4 * depth);
+      @out.print("[" + name + suffix + "] => ");
 
-      _value.printR(env, out, depth + 1, valueSet);
+      _value.printR(env, @out, depth + 1, valueSet);
 
-      out.println();
+      @out.println();
     }
 
-    private void printDepth(WriteStream out, int depth)
+    private void printDepth(WriteStream @out, int depth)
       
     {
       for (int i = 0; i < depth; i++)
-        out.print(' ');
+        @out.print(' ');
     }
 
     public override string toString()

@@ -63,7 +63,7 @@ public class ProcOpenResource
   public ProcOpenResource(Env env,
                           Process process,
                           ProcOpenOutput in,
-                          ProcOpenInput out,
+                          ProcOpenInput @out,
                           ProcOpenInput err,
                           string command)
   {

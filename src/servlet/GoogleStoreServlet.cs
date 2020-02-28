@@ -89,12 +89,12 @@ public class GoogleStoreServlet : GenericServlet
       return;
     }
 
-    PrintWriter out = res.getWriter();
-    out.println("<pre>");
+    PrintWriter @out = res.getWriter();
+    @out.println("<pre>");
 
-    printPath(out, _path, 0);
+    printPath(@out, _path, 0);
 
-    out.println("</pre>");
+    @out.println("</pre>");
   }
 
   private void printFile(String fileName,
@@ -123,30 +123,30 @@ public class GoogleStoreServlet : GenericServlet
     path.writeToStream(os);
   }
 
-  private void printPath(PrintWriter out, Path path, int depth)
+  private void printPath(PrintWriter @out, Path path, int depth)
     
   {
     if (path == null || ! path.exists())
       return;
 
-    printDepth(out, depth);
+    printDepth(@out, depth);
 
     if (path.isDirectory()) {
-      out.print(path.getFullPath());
-      out.print("/");
+      @out.print(path.getFullPath());
+      @out.print("/");
     }
     else if (path.isFile()) {
-      out.print("<a href='?file=" + path.getFullPath() + "'>");
-      out.print(path.getTail());
-      out.print("</a>");
+      @out.print("<a href='?file=" + path.getFullPath() + "'>");
+      @out.print(path.getTail());
+      @out.print("</a>");
     }
     else {
-      out.print(path.getTail());
+      @out.print(path.getTail());
     }
 
-    out.print(" ");
-    out.print(" len=" + path.getLength());
-    out.println();
+    @out.print(" ");
+    @out.print(" len=" + path.getLength());
+    @out.println();
 
     if (path.isDirectory()) {
       string []names = path.list();
@@ -159,16 +159,16 @@ public class GoogleStoreServlet : GenericServlet
       for (String name : names) {
         Path subPath = path.lookup(name);
 
-        printPath(out, subPath, depth + 1);
+        printPath(@out, subPath, depth + 1);
       }
     }
   }
 
-  private void printDepth(PrintWriter out, int depth)
+  private void printDepth(PrintWriter @out, int depth)
     
   {
     for (int i = 0; i < 2 * depth; i++) {
-      out.print(" ");
+      @out.print(" ");
     }
   }
 }

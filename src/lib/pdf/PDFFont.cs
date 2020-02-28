@@ -133,11 +133,11 @@ public class PDFFont : PDFObject {
   public void writeObject(PDFWriter out)
     
   {
-    out.println("<< /Type /Font");
-    out.println("   /Subtype /Type1");
-    out.println("   /BaseFont /" + _face.getFontName());
-    out.println("   /Encoding /MacRomanEncoding");
-    out.println(">>");
+    @out.println("<< /Type /Font");
+    @out.println("   /Subtype /Type1");
+    @out.println("   /BaseFont /" + _face.getFontName());
+    @out.println("   /Encoding /MacRomanEncoding");
+    @out.println(">>");
   }
 
   public int hashCode()

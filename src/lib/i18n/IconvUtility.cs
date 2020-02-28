@@ -92,14 +92,14 @@ public class IconvUtility {
       }
 
       TempStream ts = new TempStream();
-      WriteStream out = new WriteStream(ts);
+      WriteStream @out = new WriteStream(ts);
 
       try {
-        out.setEncoding(outCharset);
+        @out.setEncoding(outCharset);
       } catch (IOException e) {
         log.log(Level.WARNING, e.toString(), e);
     
-        out.setEncoding("utf-8");
+        @out.setEncoding("utf-8");
       }
 
       while (offset > 0) {
@@ -115,11 +115,11 @@ public class IconvUtility {
 
         sublen = Math.min(length, sublen);
 
-        out.print(charBuf, 0, sublen);
+        @out.print(charBuf, 0, sublen);
         length -= sublen;
       }
 
-      out.flush();
+      @out.flush();
 
       StringValue sb = env.createBinaryBuilder();
       for (TempBuffer ptr = ts.getHead(); ptr != null; ptr = ptr.getNext()) {

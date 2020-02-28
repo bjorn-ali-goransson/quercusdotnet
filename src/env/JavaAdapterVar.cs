@@ -1324,13 +1324,13 @@ public class JavaAdapterVar : Value
   }
 
   public override void varDumpImpl(Env env,
-                          WriteStream out,
+                          WriteStream @out,
                           int depth,
                           IdentityHashMap<Value, String> valueSet)
     
   {
-    out.print("&");
-    getValue().varDump(env, out, depth, valueSet);
+    @out.print("&");
+    getValue().varDump(env, @out, depth, valueSet);
   }
 
   private void setRaw(Value value)

@@ -299,7 +299,7 @@ public class QuercusServletImpl : HttpServlet
   {
     WriteStream ws;
 
-    OutputStream out = response.getOutputStream();
+    OutputStream @out = response.getOutputStream();
 
     ws = Vfs.openWrite(out);
 

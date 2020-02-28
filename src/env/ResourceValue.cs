@@ -99,21 +99,21 @@ public class ResourceValue : Value
   }
 
   protected override void varDumpImpl(Env env,
-                             WriteStream out,
+                             WriteStream @out,
                              int depth,
                              IdentityHashMap<Value, String> valueSet)
     
   {
-    out.print("resource(" + toString(env) + ")");
+    @out.print("resource(" + toString(env) + ")");
   }
 
   protected override void printRImpl(Env env,
-                            WriteStream out,
+                            WriteStream @out,
                             int depth,
                             IdentityHashMap<Value, String> valueSet)
     
   {
-    out.print("resource(" + toString(env) + ")");
+    @out.print("resource(" + toString(env) + ")");
   }
 }
 

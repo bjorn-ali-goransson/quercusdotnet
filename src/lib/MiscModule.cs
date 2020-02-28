@@ -566,7 +566,7 @@ public class MiscModule : AbstractQuercusModule {
   }
 
   /**
-   * Dumps the Java stack to standard out.
+   * Dumps the Java stack to standard @out.
    */
   public Value resin_thread_dump()
   {
@@ -584,12 +584,12 @@ public class MiscModule : AbstractQuercusModule {
       Exception e = new Exception("Stack trace");
       e.fillInStackTrace();
 
-      WriteStream out = env.getPwd().lookup("stderr:").openWrite();
+      WriteStream @out = env.getPwd().lookup("stderr:").openWrite();
       try {
-        e.printStackTrace(out.getPrintWriter());
-        //ScriptStackTrace.printStackTrace(e, out.getPrintWriter());
+        e.printStackTrace(@out.getPrintWriter());
+        //ScriptStackTrace.printStackTrace(e, @out.getPrintWriter());
       } finally {
-        out.close();
+        @out.close();
       }
 
       return NullValue.NULL;
@@ -762,7 +762,7 @@ public class MiscModule : AbstractQuercusModule {
       Process process = Runtime.getRuntime().exec(args, envStrings, pwdFile);
 
       ProcOpenOutput in = null;
-      ProcOpenInput out = null;
+      ProcOpenInput @out = null;
       ProcOpenInput es = null;
 
       ArrayValue array = pipes.toAutoArray().toArrayValue(env);
@@ -806,7 +806,7 @@ public class MiscModule : AbstractQuercusModule {
         // place to put output from the command
         else if (key.equals(LongValue.ONE)) {
           if (type.equals("pipe")) {
-            out = new ProcOpenInput(env, process.getInputStream());
+            @out = new ProcOpenInput(env, process.getInputStream());
 
             array.put(LongValue.ONE, env.wrapJava(out));
           }
@@ -817,7 +817,7 @@ public class MiscModule : AbstractQuercusModule {
             if (stream instanceof FileOutput) {
               FileOutput file = (FileOutput) stream;
 
-              out = new ProcOpenInput(env, process.getInputStream(), file);
+              @out = new ProcOpenInput(env, process.getInputStream(), file);
             }
             else if (stream != null)
               stream.close();
@@ -845,7 +845,7 @@ public class MiscModule : AbstractQuercusModule {
         }
       }
 
-      return new ProcOpenResource(env, process, in, out, es, command);
+      return new ProcOpenResource(env, process, in, @out, es, command);
 
     }
     catch (Throwable e) {

@@ -74,25 +74,25 @@ public class GenericEncoder
     TempBuffer tempBuf = TempBuffer.allocate();
 
     try {
-      ByteBuffer out = ByteBuffer.wrap(tempBuf.getBuffer());
+      ByteBuffer @out = ByteBuffer.wrap(tempBuf.getBuffer());
 
       while (in.hasRemaining()) {
-        CoderResult coder = _encoder.encode(in, out, false);
+        CoderResult coder = _encoder.encode(in, @out, false);
 
-        if (! fill(sb, in, out, coder))
+        if (! fill(sb, in, @out, coder))
           return sb;
 
-        out.clear();
+        @out.clear();
       }
 
-      CoderResult coder = _encoder.encode(in, out, true);
-      if (! fill(sb, in, out, coder))
+      CoderResult coder = _encoder.encode(in, @out, true);
+      if (! fill(sb, in, @out, coder))
         return sb;
 
-      out.clear();
+      @out.clear();
 
       coder = _encoder.flush(out);
-      fill(sb, in, out, coder);
+      fill(sb, in, @out, coder);
 
       return sb;
     } finally {
@@ -101,14 +101,14 @@ public class GenericEncoder
   }
 
   protected bool fill(StringValue sb, CharBuffer in,
-                         ByteBuffer out, CoderResult coder)
+                         ByteBuffer @out, CoderResult coder)
   {
-    int len = out.position();
+    int len = @out.position();
 
     if (len > 0) {
-      int offset = out.arrayOffset();
+      int offset = @out.arrayOffset();
 
-      sb.appendBytes(out.array(), offset, offset + len);
+      sb.appendBytes(@out.array(), offset, offset + len);
     }
 
     if (coder.isMalformed() || coder.isUnmappable()) {

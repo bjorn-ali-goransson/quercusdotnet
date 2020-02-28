@@ -437,13 +437,13 @@ public class HtmlModule : AbstractQuercusModule {
     else
       htmlEntities = HTML_ENTITIES_ARRAY_ENTITY_KEY;
 
-    EncodingWriter out = null;
+    EncodingWriter @out = null;
 
     if (! isUnicode) {
       if (charset == null || charset.length() == 0)
         charset = env.getRuntimeEncoding();
 
-      out = Encoding.getWriteEncoding(charset);
+      @out = Encoding.getWriteEncoding(charset);
     }
 
     int len = string.length();
@@ -476,7 +476,7 @@ public class HtmlModule : AbstractQuercusModule {
             result.append((char)value.toInt());
           }
           else {
-            out.write(result, (char)value.toInt());
+            @out.write(result, (char)value.toInt());
           }
 
           htmlEntityStart = -1;

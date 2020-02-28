@@ -174,7 +174,7 @@ public abstract class SimpleView
   }
 
   public void varDump(Env env,
-                      WriteStream out,
+                      WriteStream @out,
                       int depth,
                       IdentityHashMap<Value, String> valueSet,
                       QuercusClass cls)
@@ -182,11 +182,11 @@ public abstract class SimpleView
   {
     Value value = toDumpValue(env, cls, false);
 
-    value.varDump(env, out, depth, valueSet);
+    value.varDump(env, @out, depth, valueSet);
   }
 
   public void printR(Env env,
-                     WriteStream out,
+                     WriteStream @out,
                      int depth,
                      IdentityHashMap<Value, String> valueSet,
                      QuercusClass cls)
@@ -194,7 +194,7 @@ public abstract class SimpleView
   {
     Value value = toDumpValue(env, cls, false);
 
-    value.printR(env, out, depth, valueSet);
+    value.printR(env, @out, depth, valueSet);
   }
   
   public void jsonEncode(Env env, JsonEncodeContext context, StringValue sb, QuercusClass cls)

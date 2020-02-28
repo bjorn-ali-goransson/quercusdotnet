@@ -40,10 +40,10 @@ public class CliEnv : Env {
 
   public CliEnv(QuercusContext quercus,
                 QuercusPage page,
-                WriteStream out,
+                WriteStream @out,
                 String[] argv)
   {
-    super(quercus, page, out, null, null);
+    super(quercus, page, @out, null, null);
 
     _argv = argv;
   }

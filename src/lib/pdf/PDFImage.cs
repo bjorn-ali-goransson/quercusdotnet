@@ -321,16 +321,16 @@ public class PDFImage : PDFObject {
   {
     long length = _path.getLength();
 
-    out.println("<< /Type /XObject");
-    out.println("   /Subtype /Image");
-    out.println("   /Width " + _width);
-    out.println("   /Height " + _height);
-    out.println("   /ColorSpace /DeviceRGB");
-    out.println("   /BitsPerComponent " + _bits);
-    // out.println("   /Filter /DCTDecode");
-    out.println("   /Length " + length);
-    out.println(">>");
-    out.println("stream");
+    @out.println("<< /Type /XObject");
+    @out.println("   /Subtype /Image");
+    @out.println("   /Width " + _width);
+    @out.println("   /Height " + _height);
+    @out.println("   /ColorSpace /DeviceRGB");
+    @out.println("   /BitsPerComponent " + _bits);
+    // @out.println("   /Filter /DCTDecode");
+    @out.println("   /Length " + length);
+    @out.println(">>");
+    @out.println("stream");
 
     TempBuffer tb = TempBuffer.allocate();
     byte []buffer = tb.getBuffer();
@@ -339,11 +339,11 @@ public class PDFImage : PDFObject {
     InputStream is = _path.openRead();
     
     while ((sublen = is.read(buffer, 0, buffer.length)) > 0) {
-      out.write(buffer, 0, sublen);
+      @out.write(buffer, 0, sublen);
     }
     
-    out.println();
-    out.println("endstream");
+    @out.println();
+    @out.println("endstream");
   }
 
   public void writeObject(PDFWriter out)
@@ -354,22 +354,22 @@ public class PDFImage : PDFObject {
     for (TempBuffer ptr = _jpegHead; ptr != null; ptr = ptr.getNext())
       length += ptr.getLength();
 
-    out.println("<< /Type /XObject");
-    out.println("   /Subtype /Image");
-    out.println("   /Width " + _width);
-    out.println("   /Height " + _height);
-    out.println("   /ColorSpace /DeviceRGB");
-    out.println("   /BitsPerComponent " + _bits);
-    out.println("   /Filter /DCTDecode");
-    out.println("   /Length " + length);
-    out.println(">>");
-    out.println("stream");
+    @out.println("<< /Type /XObject");
+    @out.println("   /Subtype /Image");
+    @out.println("   /Width " + _width);
+    @out.println("   /Height " + _height);
+    @out.println("   /ColorSpace /DeviceRGB");
+    @out.println("   /BitsPerComponent " + _bits);
+    @out.println("   /Filter /DCTDecode");
+    @out.println("   /Length " + length);
+    @out.println(">>");
+    @out.println("stream");
 
     for (TempBuffer ptr = _jpegHead; ptr != null; ptr = ptr.getNext()) {
-      out.write(ptr.getBuffer(), 0, ptr.getLength());
+      @out.write(ptr.getBuffer(), 0, ptr.getLength());
     }
-    out.println();
-    out.println("endstream");
+    @out.println();
+    @out.println("endstream");
   }
 
   static class GIFDecode {

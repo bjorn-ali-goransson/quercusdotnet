@@ -428,7 +428,7 @@ public class PDFStream {
   public void write(PDFWriter out)
     
   {
-    out.writeStream(getId(), this);
+    @out.writeStream(getId(), this);
   }
 
   public void writeToStream(WriteStream os)

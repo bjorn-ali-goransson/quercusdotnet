@@ -53,23 +53,23 @@ public class Big5Decoder
       return true;
 
     ByteBuffer in = ByteBuffer.wrap(str.toBytes());
-    CharBuffer out = CharBuffer.allocate(512);
+    CharBuffer @out = CharBuffer.allocate(512);
 
     while (in.hasRemaining()) {
-      CoderResult coder = _decoder.decode(in, out, false);
+      CoderResult coder = _decoder.decode(in, @out, false);
       if (isMalformed(coder, in)) {
         return false;
       }
 
-      out.clear();
+      @out.clear();
     }
 
-    CoderResult coder = _decoder.decode(in, out, true);
+    CoderResult coder = _decoder.decode(in, @out, true);
     if (isMalformed(coder, in)) {
       return false;
     }
 
-    out.clear();
+    @out.clear();
 
     coder = _decoder.flush(out);
     if (isMalformed(coder, in)) {
@@ -97,13 +97,13 @@ public class Big5Decoder
   }
 
   protected override bool fill(UnicodeBuilderValue sb, ByteBuffer in,
-                         CharBuffer out, CoderResult coder)
+                         CharBuffer @out, CoderResult coder)
   {
-    int len = out.position();
+    int len = @out.position();
 
     if (len > 0) {
-      int offset = out.arrayOffset();
-      sb.append(out.array(), offset, len);
+      int offset = @out.arrayOffset();
+      sb.append(@out.array(), offset, len);
     }
 
     if (coder.isMalformed() || coder.isUnmappable()) {

@@ -62,14 +62,14 @@ public class Big5Encoder
   }
 
   protected override bool fill(StringValue sb, CharBuffer in,
-                         ByteBuffer out, CoderResult coder)
+                         ByteBuffer @out, CoderResult coder)
   {
-    int len = out.position();
+    int len = @out.position();
 
     if (len > 0) {
-      int offset = out.arrayOffset();
+      int offset = @out.arrayOffset();
 
-      sb.appendBytes(out.array(), offset, offset + len);
+      sb.appendBytes(@out.array(), offset, offset + len);
     }
 
     if (coder.isMalformed() || coder.isUnmappable()) {

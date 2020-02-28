@@ -109,7 +109,7 @@ public class XMLWriter {
   public bool openURI(Env env, Path path)
   {
     try {
-      WriteStream out = path.openWrite();
+      WriteStream @out = path.openWrite();
 
       _s = new PathXMLWriterStream(out);
 

@@ -139,14 +139,14 @@ public class OracleStatement : JdbcPreparedStatementResource {
       //  $stmt = oci_parse($conn,
       //  "CREATE OR REPLACE PACKAGE cauchopkgtestoci AS ".
       //  "TYPE refcur IS REF CURSOR; ".
-      //  "PROCEDURE testproc (var_result out cauchopkgtestoci.refcur); ".
+      //  "PROCEDURE testproc (var_result @out cauchopkgtestoci.refcur); ".
       //  "END cauchopkgtestoci; ");
       //
       //  oci_execute($stmt);
       //
       //  $stmt = oci_parse($conn,
       //  "CREATE OR REPLACE PACKAGE BODY cauchopkgtestoci IS ".
-      //  "PROCEDURE testproc (var_result out cauchopkgtestoci.refcur) IS ".
+      //  "PROCEDURE testproc (var_result @out cauchopkgtestoci.refcur) IS ".
       //  "BEGIN ".
       //  "OPEN var_result FOR SELECT data FROM caucho.test; ".
       //  "END testproc; ".
@@ -375,18 +375,18 @@ public class OracleStatement : JdbcPreparedStatementResource {
   }
 
   /**
-   * Gets the out parameter.
+   * Gets the @out parameter.
    *
-   * @return the out parameter
+   * @return the @out parameter
    */
   protected OracleOciLob getOutParameter() {
     return _outParameter;
   }
 
   /**
-   * Sets the out parameter.
+   * Sets the @out parameter.
    *
-   * @param outParameter the new out parameter
+   * @param outParameter the new @out parameter
    */
   protected void setOutParameter(OracleOciLob outParameter) {
     _outParameter = outParameter;

@@ -206,7 +206,7 @@ public class StreamModule : AbstractQuercusModule {
    */
   public static long stream_copy_to_stream(Env env,
                                            @NotNull BinaryInput in,
-                                           @NotNull BinaryOutput out,
+                                           @NotNull BinaryOutput @out,
                                            @Optional("-1") int length,
                                            @Optional int offset)
   {
@@ -216,7 +216,7 @@ public class StreamModule : AbstractQuercusModule {
       if (in == null)
         return -1;
 
-      if (out == null)
+      if (@out == null)
         return -1;
 
       TempBuffer temp = TempBuffer.allocate();
@@ -238,7 +238,7 @@ public class StreamModule : AbstractQuercusModule {
         if (sublen < 0)
           return bytesWritten;
 
-        out.write(buffer, 0, sublen);
+        @out.write(buffer, 0, sublen);
 
         bytesWritten += sublen;
         length -= sublen;

@@ -75,7 +75,7 @@ abstract public class UnicodeValue : StringValue {
   }
 
   public override void varDumpImpl(Env env,
-                          WriteStream out,
+                          WriteStream @out,
                           int depth,
                           IdentityHashMap<Value, String> valueSet)
     
@@ -85,14 +85,14 @@ abstract public class UnicodeValue : StringValue {
     if (length < 0)
         length = 0;
     
-    out.print("unicode(");
-    out.print(length);
-    out.print(") \"");
+    @out.print("unicode(");
+    @out.print(length);
+    @out.print(") \"");
 
     for (int i = 0; i < length; i++)
-      out.print(charAt(i));
+      @out.print(charAt(i));
 
-    out.print("\"");
+    @out.print("\"");
   }
 
   /**

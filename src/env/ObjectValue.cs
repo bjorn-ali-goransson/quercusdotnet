@@ -765,7 +765,7 @@ abstract public class ObjectValue : Callback {
   }
 
   public void varDumpObject(Env env,
-                            WriteStream out,
+                            WriteStream @out,
                             int depth,
                             IdentityHashMap<Value, String> valueSet)
     
@@ -775,19 +775,19 @@ abstract public class ObjectValue : Callback {
     if (isIncompleteObject())
       size++;
 
-    out.println("object(" + getName() + ") (" + size + ") {");
+    @out.println("object(" + getName() + ") (" + size + ") {");
 
     if (isIncompleteObject()) {
-      printDepth(out, 2 * (depth + 1));
-      out.println("[\"__Quercus_Incomplete_Class_name\"]=>");
+      printDepth(@out, 2 * (depth + 1));
+      @out.println("[\"__Quercus_Incomplete_Class_name\"]=>");
 
-      printDepth(out, 2 * (depth + 1));
+      printDepth(@out, 2 * (depth + 1));
 
       Value value = env.createString(getIncompleteObjectName());
 
-      value.varDump(env, out, depth + 1, valueSet);
+      value.varDump(env, @out, depth + 1, valueSet);
 
-      out.println();
+      @out.println();
     }
 
     ArrayValue sortedEntries = new ArrayValueImpl();
@@ -809,23 +809,23 @@ abstract public class ObjectValue : Callback {
       Value key = entry.getKey();
       Value value = entry.getValue();
 
-      printDepth(out, 2 * depth);
-      out.println("[\"" + key + "\"]=>");
+      printDepth(@out, 2 * depth);
+      @out.println("[\"" + key + "\"]=>");
 
       depth++;
 
-      printDepth(out, 2 * depth);
+      printDepth(@out, 2 * depth);
 
-      value.varDump(env, out, depth, valueSet);
+      value.varDump(env, @out, depth, valueSet);
 
-      out.println();
+      @out.println();
 
       depth--;
     }
 
-    printDepth(out, 2 * depth);
+    printDepth(@out, 2 * depth);
 
-    out.print("}");
+    @out.print("}");
   }
 
   /**

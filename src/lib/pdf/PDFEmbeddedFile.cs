@@ -75,10 +75,10 @@ public class PDFEmbeddedFile : PDFObject {
   {
     long length = _path.getLength();
 
-    out.println("<< /Type /EmbeddedFile");
-    out.println("   /Length " + length);
-    out.println(">>");
-    out.println("stream");
+    @out.println("<< /Type /EmbeddedFile");
+    @out.println("   /Length " + length);
+    @out.println(">>");
+    @out.println("stream");
 
     TempBuffer tb = TempBuffer.allocate();
     byte []buffer = tb.getBuffer();
@@ -87,11 +87,11 @@ public class PDFEmbeddedFile : PDFObject {
     InputStream is = _path.openRead();
     
     while ((sublen = is.read(buffer, 0, buffer.length)) > 0) {
-      out.write(buffer, 0, sublen);
+      @out.write(buffer, 0, sublen);
     }
     
-    out.println();
-    out.println("endstream");
+    @out.println();
+    @out.println("endstream");
   }
 }
 }

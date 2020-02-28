@@ -105,12 +105,12 @@ public class BreakValue : Value {
   }
 
   public void varDumpImpl(Env env,
-                          WriteStream out,
+                          WriteStream @out,
                           int depth,
                           IdentityHashMap<Value, String> valueSet)
     
   {
-    out.print(getClass().getName());
+    @out.print(getClass().getName());
   }
 }
 

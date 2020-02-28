@@ -1595,7 +1595,7 @@ public class StringBuilderValue
   public void print(Env env, WriteStream out)
   {
     try {
-      out.write(_buffer, 0, _length);
+      @out.write(_buffer, 0, _length);
     } catch (IOException e) {
       throw new QuercusModuleException(e);
     }
@@ -1641,7 +1641,7 @@ public class StringBuilderValue
   }
 
   public override void varDumpImpl(Env env,
-                          WriteStream out,
+                          WriteStream @out,
                           int depth,
                           IdentityHashMap<Value, String> valueSet)
     
@@ -1651,13 +1651,13 @@ public class StringBuilderValue
     if (length < 0)
         length = 0;
 
-    out.print("string(");
-    out.print(length);
-    out.print(") \"");
+    @out.print("string(");
+    @out.print(length);
+    @out.print(") \"");
 
-    out.write(_buffer, 0, _length);
+    @out.write(_buffer, 0, _length);
 
-    out.print("\"");
+    @out.print("\"");
   }
 
   public override OutputStream getOutputStream()
@@ -2017,12 +2017,12 @@ public class StringBuilderValue
   /**
    * Generates code to recreate the expression.
    *
-   * @param out the writer to the Java source code.
+   * @param @out the writer to the Java source code.
    */
   public void generate(PrintWriter out)
     
   {
-    ConstStringValue.generateImpl(out, this);
+    ConstStringValue.generateImpl(@out, this);
   }
 
   //
@@ -2032,9 +2032,9 @@ public class StringBuilderValue
   private void writeObject(ObjectOutputStream out)
     
   {
-    out.writeInt(_length);
+    @out.writeInt(_length);
 
-    out.write(_buffer, 0, _length);
+    @out.write(_buffer, 0, _length);
   }
 
   private void readObject(ObjectInputStream in)

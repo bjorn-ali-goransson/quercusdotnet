@@ -192,7 +192,7 @@ public class ProfileReport
   public void printHotSpotReport(OutputStream os)
     
   {
-    WriteStream out = Vfs.openWrite(os);
+    WriteStream @out = Vfs.openWrite(os);
     
     ArrayList<ProfileMethod> methodList
       = new ArrayList<ProfileMethod>(_methodMap.values());
@@ -211,11 +211,11 @@ public class ProfileReport
       totalMicros += method.getSelfMicros();
     }
 
-    out.println();
-    out.println("Hot Spot Profile: " + _url + " at " + new Date(_timestamp));
-    out.println();
-    out.println(" self(us)  total(us)  count   %time     %sum   name");
-    out.println("----------------------------------------------------");
+    @out.println();
+    @out.println("Hot Spot Profile: " + _url + " at " + new Date(_timestamp));
+    @out.println();
+    @out.println(" self(us)  total(us)  count   %time     %sum   name");
+    @out.println("----------------------------------------------------");
 
     double sumMicros = 0;
 
@@ -224,18 +224,18 @@ public class ProfileReport
       long selfMicros = method.getSelfMicros();
       sumMicros += selfMicros;
 
-      out.print(String.format("%7dus", selfMicros));
-      out.print(String.format(" %8dus", method.getTotalMicros()));
-      out.print(String.format(" %6d", method.getCount()));
-      out.print(String.format(" %6.2f%%", 100.0 * selfMicros / totalMicros));
-      out.print(String.format("  %6.2f%%", 100.0 * sumMicros / totalMicros));
-      out.print("   " + name);
+      @out.print(String.format("%7dus", selfMicros));
+      @out.print(String.format(" %8dus", method.getTotalMicros()));
+      @out.print(String.format(" %6d", method.getCount()));
+      @out.print(String.format(" %6.2f%%", 100.0 * selfMicros / totalMicros));
+      @out.print(String.format("  %6.2f%%", 100.0 * sumMicros / totalMicros));
+      @out.print("   " + name);
 
-      out.println();
+      @out.println();
     }
 
-    out.println();
-    out.close();
+    @out.println();
+    @out.close();
   }
 
   /**
@@ -244,7 +244,7 @@ public class ProfileReport
   public void printHierarchyReport(OutputStream os)
     
   {
-    WriteStream out = Vfs.openWrite(os);
+    WriteStream @out = Vfs.openWrite(os);
     
     ArrayList<ProfileMethod> methodList
       = new ArrayList<ProfileMethod>(_methodMap.values());
@@ -254,11 +254,11 @@ public class ProfileReport
     double totalMicros = methodList.get(0).getTotalMicros();
     int maxNameLength = 0;
 
-    out.println();
-    out.println("Hierarchy: " + _url + " at " + new Date(_timestamp));
-    out.println();
-    out.println(" total(us)  self(us)  count   %time     %sum   name");
-    out.println("----------------------------------------------------");
+    @out.println();
+    @out.println("Hierarchy: " + _url + " at " + new Date(_timestamp));
+    @out.println();
+    @out.println(" total(us)  self(us)  count   %time     %sum   name");
+    @out.println("----------------------------------------------------");
 
     double sumMicros = 0;
 
@@ -268,7 +268,7 @@ public class ProfileReport
       long selfMicros = method.getSelfMicros();
       sumMicros += selfMicros;
 
-      out.println();
+      @out.println();
 
       ArrayList<ProfileItem> parentList
         = new ArrayList<ProfileItem>(method.getParentItems());
@@ -276,25 +276,25 @@ public class ProfileReport
       Collections.sort(parentList, new ItemMicrosComparator());
 
       for (ProfileItem item : parentList) {
-        out.print("        ");
-        out.print(String.format(" %7dus", item.getMicros()));
-        out.print(String.format(" %6d", item.getCount()));
+        @out.print("        ");
+        @out.print(String.format(" %7dus", item.getMicros()));
+        @out.print(String.format(" %6d", item.getCount()));
 
-        out.print(String.format("     %-19s", item.getParent()));
-        out.print(String.format("%6.2f%%",
+        @out.print(String.format("     %-19s", item.getParent()));
+        @out.print(String.format("%6.2f%%",
                                 100.0 * item.getMicros() / ownTotalMicros));
-        out.println();
+        @out.println();
       }
 
-      out.print(String.format(" %6.2f%%",
+      @out.print(String.format(" %6.2f%%",
                               100.0 * ownTotalMicros / totalMicros));
-      out.print(String.format(" %7dus", method.getTotalMicros()));
-      out.print(String.format(" %6d", method.getCount()));
-      out.print(String.format("  %-22s", name));
-      out.print(String.format("%6.2f%%",
+      @out.print(String.format(" %7dus", method.getTotalMicros()));
+      @out.print(String.format(" %6d", method.getCount()));
+      @out.print(String.format("  %-22s", name));
+      @out.print(String.format("%6.2f%%",
                               100.0 * selfMicros / ownTotalMicros));
-      out.print(String.format(" %7dus", method.getSelfMicros()));
-      out.println();
+      @out.print(String.format(" %7dus", method.getSelfMicros()));
+      @out.println();
 
       ArrayList<ProfileItem> childList
         = new ArrayList<ProfileItem>(method.getChildItems());
@@ -302,20 +302,20 @@ public class ProfileReport
       Collections.sort(childList, new ItemMicrosComparator());
       
       for (ProfileItem item : childList) {
-        out.print("        ");
-        out.print(String.format(" %7dus", item.getMicros()));
-        out.print(String.format(" %6d", item.getCount()));
+        @out.print("        ");
+        @out.print(String.format(" %7dus", item.getMicros()));
+        @out.print(String.format(" %6d", item.getCount()));
 
-        out.print(String.format("     %-19s", item.getName()));
-        out.print(String.format("%6.2f%%",
+        @out.print(String.format("     %-19s", item.getName()));
+        @out.print(String.format("%6.2f%%",
                                 100.0 * item.getMicros() / ownTotalMicros));
-        out.println();
+        @out.println();
       }
     }
 
-    out.println();
+    @out.println();
 
-    out.close();
+    @out.close();
   }
 
   @Override

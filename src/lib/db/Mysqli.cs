@@ -438,8 +438,8 @@ public class Mysqli : JdbcConnectionResource
   /**
    * Returns the client encoding.
    *
-   * XXX: stubbed out. has to be revised once we
-   * figure out what to do with character encoding
+   * XXX: stubbed @out. has to be revised once we
+   * figure @out what to do with character encoding
    */
   public StringValue character_set_name(Env env)
   {

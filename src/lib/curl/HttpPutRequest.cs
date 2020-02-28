@@ -77,7 +77,7 @@ public class HttpPutRequest
     super.transfer(env);
 
     CurlHttpConnection conn = getHttpConnection();
-    OutputStream out = conn.getOutputStream();
+    OutputStream @out = conn.getOutputStream();
 
     CurlResource curl = getCurlResource();
 
@@ -118,14 +118,14 @@ public class HttpPutRequest
             break;
           }
 
-          out.write(buffer, 0, count);
+          @out.write(buffer, 0, count);
 
           totalWritten += count;
         }
       }
     }
     finally {
-      out.close();
+      @out.close();
     }
   }
 }

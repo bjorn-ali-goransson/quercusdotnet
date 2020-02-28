@@ -664,12 +664,12 @@ public class UnicodeBuilderValue
       BinaryBuilderStream stream = new BinaryBuilderStream(result);
 
       // XXX: can use EncodingWriter directly(?)
-      WriteStream out = new WriteStream(stream);
-      out.setEncoding(charset);
+      WriteStream @out = new WriteStream(stream);
+      @out.setEncoding(charset);
 
-      out.print(_buffer, 0, _length);
+      @out.print(_buffer, 0, _length);
 
-      out.close();
+      @out.close();
 
       return result;
     } catch (IOException e) {

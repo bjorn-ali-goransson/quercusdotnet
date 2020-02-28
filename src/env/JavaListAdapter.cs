@@ -81,8 +81,8 @@ public class JavaListAdapter
       return value;
     }
     else {
-      getEnv().warning(L.l("index {0} is out of range", pos));
-      log.log(Level.FINE, L.l("index {0} is out of range", pos));
+      getEnv().warning(L.l("index {0} is @out of range", pos));
+      log.log(Level.FINE, L.l("index {0} is @out of range", pos));
  
       return UnsetValue.UNSET; 
     }

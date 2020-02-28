@@ -365,7 +365,7 @@ public class UnserializeReader {
         expect(';');
 
         if (index - 1 >= _valueList.size()) {
-          throw new IOException(L.l("reference out of range: {0}, size {1}, index {2}",
+          throw new IOException(L.l("reference @out of range: {0}, size {1}, index {2}",
                                     index - 1, _valueList.size(), _index));
           //return BooleanValue.FALSE;
         }
@@ -383,7 +383,7 @@ public class UnserializeReader {
         expect(';');
 
         if (index - 1 >= _valueList.size()) {
-          throw new IOException(L.l("reference out of range: {0}, size {1}, index {2}",
+          throw new IOException(L.l("reference @out of range: {0}, size {1}, index {2}",
                                     index - 1, _valueList.size(), _index));
           //return BooleanValue.FALSE;
         }

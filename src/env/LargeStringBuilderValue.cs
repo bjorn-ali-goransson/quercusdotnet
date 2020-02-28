@@ -719,7 +719,7 @@ public class LargeStringBuilderValue
         if (SIZE < sublen)
           sublen = SIZE;
 
-        out.write(_bufferList[chunk], 0, sublen);
+        @out.write(_bufferList[chunk], 0, sublen);
       }
     } catch (IOException e) {
       throw new QuercusRuntimeException(e);
@@ -814,7 +814,7 @@ public class LargeStringBuilderValue
   }
 
   public override void varDumpImpl(Env env,
-                          WriteStream out,
+                          WriteStream @out,
                           int depth,
                           IdentityHashMap<Value, String> valueSet)
     
@@ -824,17 +824,17 @@ public class LargeStringBuilderValue
     if (length < 0)
         length = 0;
 
-    out.print("string(");
-    out.print(length);
-    out.print(") \"");
+    @out.print("string(");
+    @out.print(length);
+    @out.print(") \"");
 
     for (int i = 0; i < length; i++) {
       int ch = charAt(i);
 
-      out.print((char) ch);
+      @out.print((char) ch);
     }
 
-    out.print("\"");
+    @out.print("\"");
 
     /*
     int length = length();
@@ -842,22 +842,22 @@ public class LargeStringBuilderValue
     if (length < 0)
         length = 0;
 
-    out.print("string");
+    @out.print("string");
 
-    out.print("(");
-    out.print(length);
-    out.print(") \"");
+    @out.print("(");
+    @out.print(length);
+    @out.print(") \"");
 
     for (int i = 0; i < length; i++) {
       char ch = charAt(i);
 
       if (0x20 <= ch && ch <= 0x7f || ch == '\t' || ch == '\r' || ch == '\n')
-        out.print(ch);
+        @out.print(ch);
       else if (ch <= 0xff)
-        out.print("\\x"
+        @out.print("\\x"
         + Integer.toHexString(ch / 16) + Integer.toHexString(ch % 16));
       else {
-        out.print("\\u"
+        @out.print("\\u"
                   + Integer.toHexString((ch >> 12) & 0xf)
                   + Integer.toHexString((ch >> 8) & 0xf)
                   + Integer.toHexString((ch >> 4) & 0xf)
@@ -865,7 +865,7 @@ public class LargeStringBuilderValue
       }
     }
 
-    out.print("\"");
+    @out.print("\"");
     */
   }
 

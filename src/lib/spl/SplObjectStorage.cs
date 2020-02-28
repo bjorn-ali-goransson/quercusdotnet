@@ -354,14 +354,14 @@ public class SplObjectStorage
 
   public void varDumpImpl(Env env,
                           Value obj,
-                          WriteStream out,
+                          WriteStream @out,
                           int depth,
                           IdentityHashMap<Value, String> valueSet)
     
   {
     ArrayValue array = toArrayValue(env);
 
-    array.varDump(env, out, depth, valueSet);
+    array.varDump(env, @out, depth, valueSet);
   }
 
   static class ObjectEntry {

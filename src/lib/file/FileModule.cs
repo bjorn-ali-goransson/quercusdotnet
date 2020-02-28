@@ -1781,9 +1781,9 @@ public class FileModule : AbstractQuercusModule {
       if (is == null)
         return BooleanValue.FALSE;
 
-      WriteStream out = env.getOut();
+      WriteStream @out = env.getOut();
 
-      long writeLength = out.writeStream(is.getInputStream());
+      long writeLength = @out.writeStream(is.getInputStream());
 
       return LongValue.create(writeLength);
     } catch (IOException e) {
@@ -2840,7 +2840,7 @@ public class FileModule : AbstractQuercusModule {
   }
 
   /**
-   * Read the contents of a file and write them out.
+   * Read the contents of a file and write them @out.
    */
   public Value readfile(Env env,
                         StringValue filename,

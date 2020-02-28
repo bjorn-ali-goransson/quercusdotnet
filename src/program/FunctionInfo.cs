@@ -356,7 +356,7 @@ public class FunctionInfo
   }
 
   /**
-   * Returns true if the out is used.
+   * Returns true if the @out is used.
    */
   public bool isOutUsed()
   {
@@ -364,7 +364,7 @@ public class FunctionInfo
   }
 
   /**
-   * Set true if the out is used.
+   * Set true if the @out is used.
    */
   public void setOutUsed()
   {

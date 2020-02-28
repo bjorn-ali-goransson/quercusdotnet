@@ -424,7 +424,7 @@ public class QuercusSessionManager
       System.out.println("LOAD:" + isNew);
     }
     else if (! getSaveOnlyOnShutdown() && ! session.load()) {
-      // if the load failed, then the session died out from underneath
+      // if the load failed, then the session died @out from underneath
       session.reset(now);
       isNew = true;
     }
@@ -648,7 +648,7 @@ public class QuercusSessionManager
   /**
    * Saves the session.
    */
-  public void store(OutputStream out, Object obj)
+  public void store(OutputStream @out, Object obj)
     
   {
     SessionArrayValue session = (SessionArrayValue) obj;

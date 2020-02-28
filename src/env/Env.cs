@@ -442,7 +442,7 @@ public class Env
 
   public Env(QuercusContext quercus,
              QuercusPage page,
-             WriteStream out,
+             WriteStream @out,
              QuercusHttpServletRequest request,
              QuercusHttpServletResponse response)
   {
@@ -7523,7 +7523,7 @@ public class Env
           updateTimeout();
 
           if (_isTimeout) {
-            log.log(Level.WARNING, "script has timed out while calling __destruct()");
+            log.log(Level.WARNING, "script has timed @out while calling __destruct()");
 
             break;
           }

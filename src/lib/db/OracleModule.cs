@@ -513,7 +513,7 @@ public class OracleModule : AbstractQuercusModule {
       CallableStatement callableStmt = (CallableStatement) pstmt;
 
       // XXX: We could use ParameterMetaData.getParameterMode
-      // to figure out which parameters are IN and/or OUT and
+      // to figure @out which parameters are IN and/or @out and
       // then setObject and/or registerOutParameter according
       // to the parameter mode. However, getParameterMode()
       // is unsupported from Oracle JDBC drivers (Jun-2006).
@@ -547,7 +547,7 @@ public class OracleModule : AbstractQuercusModule {
       case OCI_B_CURSOR:
       case SQLT_RSET:
         {
-          // Assume the most common scenario: OUT parameter mode.
+          // Assume the most common scenario: @out parameter mode.
           int oracleType = arrayPhpToOracleType[type];
           callableStmt.registerOutParameter(i, oracleType);
           // Set the cursor's underlying statement (see php/4404).
@@ -568,7 +568,7 @@ public class OracleModule : AbstractQuercusModule {
       case OCI_B_ROWID:   // ROWID
       case SQLT_RDD:      // ...
         {
-          // Assume the most common scenario: OUT parameter mode.
+          // Assume the most common scenario: @out parameter mode.
           int oracleType = arrayPhpToOracleType[type];
           callableStmt.registerOutParameter(i, oracleType);
           Object ociLob = variable.toJavaObject();

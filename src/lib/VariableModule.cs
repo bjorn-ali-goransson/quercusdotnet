@@ -562,18 +562,18 @@ public class VariableModule : AbstractQuercusModule {
 
       if (isReturn) {
         StringWriter writer = new StringWriter();
-        out = writer.openWrite();
+        @out = writer.openWrite();
 
-        out.setNewlineString("\n");
+        @out.setNewlineString("\n");
 
-        v.printR(env, out, 0, new IdentityHashMap<Value, String>());
+        v.printR(env, @out, 0, new IdentityHashMap<Value, String>());
 
         return env.createString(writer.getString());
       }
       else {
-        out = env.getOut();
+        @out = env.getOut();
 
-        v.printR(env, out, 0, new IdentityHashMap<Value, String>());
+        v.printR(env, @out, 0, new IdentityHashMap<Value, String>());
 
         return BooleanValue.TRUE;
       }
@@ -583,11 +583,11 @@ public class VariableModule : AbstractQuercusModule {
     }
   }
 
-  private static void printDepth(WriteStream out, int depth)
+  private static void printDepth(WriteStream @out, int depth)
     
   {
     for (int i = 0; i < depth; i++) {
-      out.print(' ');
+      @out.print(' ');
     }
   }
 
@@ -762,31 +762,31 @@ public class VariableModule : AbstractQuercusModule {
                                       @PassThru @ReadOnly Value v,
                                       Value []args)
   {
-    WriteStream out = new WriteStream(StderrStream.create());
+    WriteStream @out = new WriteStream(StderrStream.create());
 
     try {
       if (v == null)
-        out.print("NULL#java");
+        @out.print("NULL#java");
       else {
-        v.varDump(env, out, 0,  new IdentityHashMap<Value,String>());
+        v.varDump(env, @out, 0,  new IdentityHashMap<Value,String>());
 
-        out.println();
+        @out.println();
       }
 
       if (args != null) {
         for (Value value : args) {
           if (value == null)
-            out.print("NULL#java");
+            @out.print("NULL#java");
           else {
-            value.varDump(env, out, 0,
+            value.varDump(env, @out, 0,
                           new IdentityHashMap<Value,String>());
 
-            out.println();
+            @out.println();
           }
         }
       }
 
-      out.flush();
+      @out.flush();
 
       return NullValue.NULL;
     } catch (IOException e) {
@@ -816,47 +816,47 @@ public class VariableModule : AbstractQuercusModule {
   private static void debug_impl(Env env, Value v, int depth)
     
   {
-    WriteStream out = env.getOut();
+    WriteStream @out = env.getOut();
 
     if (v instanceof Var)
-      out.print("&");
+      @out.print("&");
 
     v = v.toValue();
 
     if (v instanceof ArrayValue) {
       ArrayValue array = (ArrayValue) v;
 
-      out.println("Array");
-      printDepth(out, 2 * depth);
-      out.println("(");
+      @out.println("Array");
+      printDepth(@out, 2 * depth);
+      @out.println("(");
 
       for (Map.Entry<Value,Value> entry : array.entrySet()) {
-        printDepth(out, 2 * depth);
-        out.print("    [");
-        out.print(entry.getKey());
-        out.print("] => ");
+        printDepth(@out, 2 * depth);
+        @out.print("    [");
+        @out.print(entry.getKey());
+        @out.print("] => ");
         debug_impl(env, entry.getValue(), depth + 1); // XXX: recursion
       }
-      printDepth(out, 2 * depth);
-      out.println(")");
+      printDepth(@out, 2 * depth);
+      @out.println(")");
     }
     else if (v instanceof BooleanValue) {
       if (v.toBoolean())
-        out.print("bool(true)");
+        @out.print("bool(true)");
       else
-        out.print("bool(false)");
+        @out.print("bool(false)");
     }
     else if (v instanceof LongValue) {
-      out.print("int(" + v.toLong() + ")");
+      @out.print("int(" + v.toLong() + ")");
     }
     else if (v instanceof DoubleValue) {
-      out.print("float(" + v.toDouble() + ")");
+      @out.print("float(" + v.toDouble() + ")");
     }
     else if (v instanceof StringValue) {
-      out.print("string(" + v.toString() + ")");
+      @out.print("string(" + v.toString() + ")");
     }
     else if (v instanceof NullValue) {
-      out.print("NULL");
+      @out.print("NULL");
     }
     else {
       v.print(env);

@@ -84,9 +84,9 @@ public class GoogleQuercusServletImpl : QuercusServletImpl
     log.log(Level.WARNING, e.toString(), e);
 
     OutputStream os = response.getOutputStream();
-    WriteStream out = Vfs.openWrite(os);
-    out.println(e);
-    out.close();
+    WriteStream @out = Vfs.openWrite(os);
+    @out.println(e);
+    @out.close();
   }
 }
 

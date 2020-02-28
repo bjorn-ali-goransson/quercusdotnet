@@ -434,7 +434,7 @@ public class ImageModule : AbstractQuercusModule {
     int height = image.getHeight();
 
     if (width <= x || height <= y) {
-      env.warning(L.l("({0},{1}) is out of bounds: ({2},{3})",
+      env.warning(L.l("({0},{1}) is @out of bounds: ({2},{3})",
                       x, y, width, height));
 
       return BooleanValue.FALSE;
@@ -552,7 +552,7 @@ public class ImageModule : AbstractQuercusModule {
   }
 
   /**
-   * Find out the number of colors in an image's palette
+   * Find @out the number of colors in an image's palette
    */
   public static Value imagecolorstotal()
   {

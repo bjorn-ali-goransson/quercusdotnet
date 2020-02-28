@@ -71,21 +71,21 @@ public class GenericDecoder
       return true;
 
     ByteBuffer in = ByteBuffer.wrap(str.toBytes());
-    CharBuffer out = CharBuffer.allocate(512);
+    CharBuffer @out = CharBuffer.allocate(512);
 
     while (in.hasRemaining()) {
-      CoderResult coder = _decoder.decode(in, out, false);
+      CoderResult coder = _decoder.decode(in, @out, false);
       if (coder.isMalformed())
         return false;
 
-      out.clear();
+      @out.clear();
     }
 
-    CoderResult coder = _decoder.decode(in, out, true);
+    CoderResult coder = _decoder.decode(in, @out, true);
     if (coder.isMalformed())
       return false;
 
-    out.clear();
+    @out.clear();
 
     coder = _decoder.flush(out);
     if (coder.isMalformed())
@@ -101,24 +101,24 @@ public class GenericDecoder
     TempCharBuffer tempBuf = TempCharBuffer.allocate();
 
     try  {
-      CharBuffer out = CharBuffer.wrap(tempBuf.getBuffer());
+      CharBuffer @out = CharBuffer.wrap(tempBuf.getBuffer());
 
       while (in.hasRemaining()) {
-        CoderResult coder = _decoder.decode(in, out, false);
-        if (! fill(sb, in, out, coder))
+        CoderResult coder = _decoder.decode(in, @out, false);
+        if (! fill(sb, in, @out, coder))
           return;
 
-        out.clear();
+        @out.clear();
       }
 
-      CoderResult coder = _decoder.decode(in, out, true);
-      if (! fill(sb, in, out, coder))
+      CoderResult coder = _decoder.decode(in, @out, true);
+      if (! fill(sb, in, @out, coder))
         return;
 
-      out.clear();
+      @out.clear();
 
       coder = _decoder.flush(out);
-      fill(sb, in, out, coder);
+      fill(sb, in, @out, coder);
 
       return;
     }
@@ -128,13 +128,13 @@ public class GenericDecoder
   }
 
   protected bool fill(UnicodeBuilderValue sb, ByteBuffer in,
-                         CharBuffer out, CoderResult coder)
+                         CharBuffer @out, CoderResult coder)
   {
-    int len = out.position();
+    int len = @out.position();
 
     if (len > 0) {
-      int offset = out.arrayOffset();
-      sb.append(out.array(), offset, len);
+      int offset = @out.arrayOffset();
+      sb.append(@out.array(), offset, len);
     }
 
     if (coder.isMalformed() || coder.isUnmappable()) {

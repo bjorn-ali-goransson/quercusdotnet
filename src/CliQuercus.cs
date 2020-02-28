@@ -44,11 +44,11 @@ public class CliQuercus : Quercus
 {
   @Override
   public Env createEnv(QuercusPage page,
-                       WriteStream out,
+                       WriteStream @out,
                        QuercusHttpServletRequest request,
                        QuercusHttpServletResponse response)
   {
-    return new CliEnv(this, page, out, getArgv());
+    return new CliEnv(this, page, @out, getArgv());
   }
 
   public static void main(String []args)

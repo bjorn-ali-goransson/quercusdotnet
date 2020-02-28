@@ -57,13 +57,13 @@ public class PDFPage {
 
   private HashMap<String,String> _resources = new HashMap<String,String>();
 
-  PDFPage(PDFWriter out, int parent, double width, double height)
+  PDFPage(PDFWriter @out, int parent, double width, double height)
   {
     _parent = parent;
-    _id = out.allocateId(1);
+    _id = @out.allocateId(1);
     _width = width;
     _height = height;
-    _stream = new PDFStream(out.allocateId(1));
+    _stream = new PDFStream(@out.allocateId(1));
   }
 
   /**
@@ -133,20 +133,20 @@ public class PDFPage {
   void write(PDFWriter out)
     
   {
-    out.beginObject(_id);
-    out.println("  << /Type /Page");
-    out.println("     /Parent " + _parent + " 0 R");
-    out.println("     /MediaBox [0 0 " + _width + " " + _height + "]");
-    out.println("     /Contents " + _stream.getId() + " 0 R");
-    out.println("     /Resources <<");
+    @out.beginObject(_id);
+    @out.println("  << /Type /Page");
+    @out.println("     /Parent " + _parent + " 0 R");
+    @out.println("     /MediaBox [0 0 " + _width + " " + _height + "]");
+    @out.println("     /Contents " + _stream.getId() + " 0 R");
+    @out.println("     /Resources <<");
 
     for (Map.Entry<String,String> entry : _resources.entrySet()) {
-      out.println("     " + entry.getKey() + " " + entry.getValue());
+      @out.println("     " + entry.getKey() + " " + entry.getValue());
     }
 
-    out.println("     >>");
-    out.println("  >>");
-    out.endObject();
+    @out.println("     >>");
+    @out.println("  >>");
+    @out.endObject();
 
     _stream.write(out);
   }

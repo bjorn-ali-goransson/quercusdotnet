@@ -859,17 +859,17 @@ public class CurlResource : ResourceValue
    */
   private void saveCookie(Env env)
   {
-    WriteStream out = null;
+    WriteStream @out = null;
 
     try {
       Path path = env.getPwd().lookup(_cookieFilename);
 
-      out = path.openWrite();
+      @out = path.openWrite();
 
       int len = _cookie.length();
 
       for (int i = 0; i < len; i++) {
-        out.write((byte)_cookie.charAt(i));
+        @out.write((byte)_cookie.charAt(i));
       }
     }
     catch (IOException e) {
@@ -877,8 +877,8 @@ public class CurlResource : ResourceValue
     }
     finally {
       try {
-        if (out != null)
-          out.close();
+        if (@out != null)
+          @out.close();
       }
       catch (IOException e) {
         // intentionally don't do anything

@@ -102,7 +102,7 @@ public class HttpPostRequest
     super.transfer(env);
 
     CurlHttpConnection conn = getHttpConnection();
-    OutputStream out = conn.getOutputStream();
+    OutputStream @out = conn.getOutputStream();
 
     //out = new TestOutputStream(out);
 

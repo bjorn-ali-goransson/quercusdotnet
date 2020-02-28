@@ -255,20 +255,20 @@ public class ConstStringValue
   /**
    * Generates code to recreate the expression.
    *
-   * @param out the writer to the Java source code.
+   * @param @out the writer to the Java source code.
    */
   public void generate(PrintWriter out)
     
   {
-    generateImpl(out, this);
+    generateImpl(@out, this);
   }
 
   /**
    * Generates code to recreate the expression.
    *
-   * @param out the writer to the Java source code.
+   * @param @out the writer to the Java source code.
    */
-  public static void generateImpl(PrintWriter out, StringBuilderValue value)
+  public static void generateImpl(PrintWriter @out, StringBuilderValue value)
     
   {
     // max JVM constant string length
@@ -277,43 +277,43 @@ public class ConstStringValue
     int len = value.length();
 
     if (len == 1) {
-      out.print("(ConstStringValue.create((char) '");
-      printJavaChar(out, value.charAt(0));
-      out.print("'))");
+      @out.print("(ConstStringValue.create((char) '");
+      printJavaChar(@out, value.charAt(0));
+      @out.print("'))");
     }
     else if (len < maxSublen) {
-      out.print("(new CompiledConstStringValue (\"");
-      printJavaString(out, value);
-      out.print("\", ");
+      @out.print("(new CompiledConstStringValue (\"");
+      printJavaString(@out, value);
+      @out.print("\", ");
       value.toLongValue().generate(out);
-      out.print(", ");
+      @out.print(", ");
       value.toDoubleValue().generate(out);
-      out.print(", ");
-      out.print(value.getValueType());
-      out.print(", ");
+      @out.print(", ");
+      @out.print(value.getValueType());
+      @out.print(", ");
 
       Value key = value.toKey();
 
       if (key instanceof LongValue) {
         key.generate(out);
-        out.print(", ");
+        @out.print(", ");
       }
 
-      out.print(value.hashCode());
-      out.print("))");
+      @out.print(value.hashCode());
+      @out.print("))");
     }
     else {
-      out.print("(new ConstStringValue(new StringBuilderValue(\"");
+      @out.print("(new ConstStringValue(new StringBuilderValue(\"");
 
       // php/313u
       for (int i = 0; i < len; i += maxSublen) {
         if (i != 0)
-          out.print("\").append(\"");
+          @out.print("\").append(\"");
 
-        printJavaString(out, value.substring(i, Math.min(i + maxSublen, len)));
+        printJavaString(@out, value.substring(i, Math.min(i + maxSublen, len)));
       }
 
-      out.print("\")))");
+      @out.print("\")))");
     }
   }
 

@@ -819,66 +819,66 @@ abstract public class JavaAdapter : ArrayValue
   }
 
   public override void varDumpImpl(Env env,
-                          WriteStream out,
+                          WriteStream @out,
                           int depth,
                           IdentityHashMap<Value, String> valueSet)
     
   {
-    out.println("array(" + getSize() + ") {");
+    @out.println("array(" + getSize() + ") {");
 
     int nestedDepth = depth + 1;
 
     for (Map.Entry<Value,Value> mapEntry : entrySet()) {
-      printDepth(out, nestedDepth * 2);
-      out.print("[");
+      printDepth(@out, nestedDepth * 2);
+      @out.print("[");
 
       Value key = mapEntry.getKey();
 
       if (key.isString())
-        out.print("\"" + key + "\"");
+        @out.print("\"" + key + "\"");
       else
-        out.print(key);
+        @out.print(key);
 
-      out.println("]=>");
+      @out.println("]=>");
 
-      printDepth(out, nestedDepth * 2);
+      printDepth(@out, nestedDepth * 2);
 
-      mapEntry.getValue().varDump(env, out, nestedDepth, valueSet);
+      mapEntry.getValue().varDump(env, @out, nestedDepth, valueSet);
 
-      out.println();
+      @out.println();
     }
 
-    printDepth(out, 2 * depth);
+    printDepth(@out, 2 * depth);
 
-    out.print("}");
+    @out.print("}");
   }
 
   protected override void printRImpl(Env env,
-                            WriteStream out,
+                            WriteStream @out,
                             int depth,
                             IdentityHashMap<Value, String> valueSet)
     
   {
-    out.println("Array");
-    printDepth(out, 8 * depth);
-    out.println("(");
+    @out.println("Array");
+    printDepth(@out, 8 * depth);
+    @out.println("(");
 
     for (Map.Entry<Value,Value> mapEntry : entrySet()) {
-      printDepth(out, 8 * depth);
+      printDepth(@out, 8 * depth);
 
-      out.print("    [");
-      out.print(mapEntry.getKey());
-      out.print("] => ");
+      @out.print("    [");
+      @out.print(mapEntry.getKey());
+      @out.print("] => ");
 
       Value value = mapEntry.getValue();
 
       if (value != null)
-        value.printR(env, out, depth + 1, valueSet);
-      out.println();
+        value.printR(env, @out, depth + 1, valueSet);
+      @out.println();
     }
 
-    printDepth(out, 8 * depth);
-    out.println(")");
+    printDepth(@out, 8 * depth);
+    @out.println(")");
   }
 
   //
@@ -888,8 +888,8 @@ abstract public class JavaAdapter : ArrayValue
   private void writeObject(ObjectOutputStream out)
     
   {
-    out.writeObject(_object);
-    out.writeObject(_classDef.getName());
+    @out.writeObject(_object);
+    @out.writeObject(_classDef.getName());
   }
 
   private void readObject(ObjectInputStream in)

@@ -1476,7 +1476,7 @@ public class JavaClassDef : ClassDef implements InstanceInitializer {
    */
   public bool printRImpl(Env env,
                             Object obj,
-                            WriteStream out,
+                            WriteStream @out,
                             int depth,
                             IdentityHashMap<Value, String> valueSet)
     
@@ -1488,7 +1488,7 @@ public class JavaClassDef : ClassDef implements InstanceInitializer {
 
       }
 
-      _printRImpl.invoke(obj, env, out, depth, valueSet);
+      _printRImpl.invoke(obj, env, @out, depth, valueSet);
       return true;
     } catch (InvocationTargetException e) {
       throw new QuercusRuntimeException(e);
@@ -1500,7 +1500,7 @@ public class JavaClassDef : ClassDef implements InstanceInitializer {
   public bool varDumpImpl(Env env,
                              Value obj,
                              Object javaObj,
-                             WriteStream out,
+                             WriteStream @out,
                              int depth,
                              IdentityHashMap<Value, String> valueSet)
     
@@ -1509,7 +1509,7 @@ public class JavaClassDef : ClassDef implements InstanceInitializer {
       if (_varDumpImpl == null)
         return false;
 
-      _varDumpImpl.invoke(javaObj, env, obj, out, depth, valueSet);
+      _varDumpImpl.invoke(javaObj, env, obj, @out, depth, valueSet);
       return true;
     } catch (InvocationTargetException e) {
       throw new QuercusRuntimeException(e);

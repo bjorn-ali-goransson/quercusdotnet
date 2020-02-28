@@ -78,7 +78,7 @@ public class ProcOpenInput : ReadStreamInput
     _env = env;
     _in = in;
 
-    // Invoke removeCleanup() to ensure that out is not closed
+    // Invoke removeCleanup() to ensure that @out is not closed
     // before cleanup() is invoked for this object.
 
     env.removeCleanup(out);

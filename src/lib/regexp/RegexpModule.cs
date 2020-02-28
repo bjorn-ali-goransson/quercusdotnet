@@ -1947,7 +1947,7 @@ public class RegexpModule
             text.append('\\');
           }
           text.append(digit);
-          // took out test for ch == '$' because must be true
+          // took @out test for ch == '$' because must be true
           //} else if (ch == '$' && digit == '{') {
         } else if (digit == '{') {
           i += 2;

@@ -615,12 +615,12 @@ public class NullValue : Value
   /**
    * Generates code to recreate the expression.
    *
-   * @param out the writer to the Java source code.
+   * @param @out the writer to the Java source code.
    */
   public override void generate(PrintWriter out)
     
   {
-    out.print("NullValue.NULL");
+    @out.print("NullValue.NULL");
   }
 
   /**
@@ -637,12 +637,12 @@ public class NullValue : Value
   }
 
   public override void varDumpImpl(Env env,
-                          WriteStream out,
+                          WriteStream @out,
                           int depth,
                           IdentityHashMap<Value, String> valueSet)
     
   {
-    out.print("NULL");
+    @out.print("NULL");
   }
 
   //

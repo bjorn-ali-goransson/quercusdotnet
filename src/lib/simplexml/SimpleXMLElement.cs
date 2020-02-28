@@ -325,21 +325,21 @@ public class SimpleXMLElement : SimpleXMLNode
 
   public void varDumpImpl(Env env,
                           Value obj,
-                          WriteStream out,
+                          WriteStream @out,
                           int depth,
                           IdentityHashMap<Value, String> valueSet)
     
   {
-    _view.varDump(env, out, depth, valueSet, _cls);
+    _view.varDump(env, @out, depth, valueSet, _cls);
   }
 
   public void printRImpl(Env env,
-                         WriteStream out,
+                         WriteStream @out,
                          int depth,
                          IdentityHashMap<Value, String> valueSet)
     
   {
-    _view.printR(env, out, depth, valueSet, _cls);
+    _view.printR(env, @out, depth, valueSet, _cls);
   }
 
   private string getEncoding()

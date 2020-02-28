@@ -1298,11 +1298,11 @@ public class ArrayValueImpl : ArrayValue
   private void writeObject(ObjectOutputStream out)
     
   {
-    out.writeInt(_size);
+    @out.writeInt(_size);
 
     for (Map.Entry<Value,Value> entry : entrySet()) {
-      out.writeObject(entry.getKey());
-      out.writeObject(entry.getValue());
+      @out.writeObject(entry.getKey());
+      @out.writeObject(entry.getValue());
     }
   }
 
@@ -1332,42 +1332,42 @@ public class ArrayValueImpl : ArrayValue
   /**
    * Generates code to recreate the expression.
    *
-   * @param out the writer to the Java source code.
+   * @param @out the writer to the Java source code.
    */
   public void generate(PrintWriter out)
     
   {
-    out.print("new ConstArrayValue(");
+    @out.print("new ConstArrayValue(");
 
     if (getSize() < ArrayValueComponent.MAX_SIZE) {
-      out.print("new Value[] {");
+      @out.print("new Value[] {");
 
       for (Entry entry = getHead(); entry != null; entry = entry.getNext()) {
         if (entry != getHead())
-          out.print(", ");
+          @out.print(", ");
 
             if (entry.getKey() != null)
           entry.getKey().generate(out);
             else
-          out.print("null");
+          @out.print("null");
       }
 
-      out.print("}, new Value[] {");
+      @out.print("}, new Value[] {");
 
       for (Entry entry = getHead(); entry != null; entry = entry.getNext()) {
         if (entry != getHead())
-      out.print(", ");
+      @out.print(", ");
 
         entry.getValue().generate(out);
       }
 
-      out.print("}");
+      @out.print("}");
     }
     else {
-      ArrayValueComponent.generate(out, this);
+      ArrayValueComponent.generate(@out, this);
     }
 
-    out.print(")");
+    @out.print(")");
   }
 }
 }

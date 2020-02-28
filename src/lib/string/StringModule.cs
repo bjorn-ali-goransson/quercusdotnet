@@ -3781,7 +3781,7 @@ public class StringModule : AbstractQuercusModule {
   }
 
   /**
-   * Strip out the backslashes, recognizing the escape sequences, octal,
+   * Strip @out the backslashes, recognizing the escape sequences, octal,
    * and hexadecimal representations.
    *
    * @param source the string to clean
@@ -3931,7 +3931,7 @@ public class StringModule : AbstractQuercusModule {
   }
 
   /**
-   * Strips out the backslashes.
+   * Strips @out the backslashes.
    *
    * @param string the string to clean
    */
@@ -5376,7 +5376,7 @@ public class StringModule : AbstractQuercusModule {
       }
 
       // php/115b
-      // strip out illegal precision specifier from phpBB vote function
+      // strip @out illegal precision specifier from phpBB vote function
       if (format.length() > 1 && format.charAt(1) == '.') {
         int i;
 

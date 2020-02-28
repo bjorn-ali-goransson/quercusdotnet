@@ -176,7 +176,7 @@ public class ZlibOutputStream : AbstractBinaryOutput {
   private void finish(DeflaterOutputStream out)
     
   {
-    out.finish();
+    @out.finish();
     
     if (_isGzip) {
       long crcValue = _crc32.getValue();
@@ -207,13 +207,13 @@ public class ZlibOutputStream : AbstractBinaryOutput {
   public void close()
   {
     try {
-      DeflaterOutputStream out = _out;
+      DeflaterOutputStream @out = _out;
       _out = null;
 
-      if (out != null) {
+      if (@out != null) {
         finish(out);
 
-        out.close();
+        @out.close();
       }
 
       _os.close();

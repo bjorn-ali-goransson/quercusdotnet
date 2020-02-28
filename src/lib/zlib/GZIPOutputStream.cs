@@ -65,12 +65,12 @@ public class GZIPOutputStream : DeflaterOutputStream {
    * @param out
    * @param def
    */
-  private GZIPOutputStream(OutputStream out, Deflater def)
+  private GZIPOutputStream(OutputStream @out, Deflater def)
     
   {
-    super(out, def);
+    super(@out, def);
     
-    out.write(_header, 0, _header.length);
+    @out.write(_header, 0, _header.length);
   }
 
   /**
@@ -81,13 +81,13 @@ public class GZIPOutputStream : DeflaterOutputStream {
    *    FORCE_DEFLATE to write gzip header and zlib header,
    *    but do not write crc32 trailer
    */
-  public GZIPOutputStream(OutputStream out,
+  public GZIPOutputStream(OutputStream @out,
                           int compressionLevel,
                           int strategy,
                           int encodingMode)
     
   {
-    this(out, createDeflater(compressionLevel, strategy, encodingMode));
+    this(@out, createDeflater(compressionLevel, strategy, encodingMode));
 
     _isGzip = (encodingMode == ZlibModule.FORCE_GZIP);
 
@@ -121,10 +121,10 @@ public class GZIPOutputStream : DeflaterOutputStream {
    * @param compressionLevel
    * @param strategy Deflate compression strategy
    */
-  public GZIPOutputStream(OutputStream out, int compressionLevel, int strategy)
+  public GZIPOutputStream(OutputStream @out, int compressionLevel, int strategy)
     
   {
-    this(out, compressionLevel, strategy, ZlibModule.FORCE_GZIP);
+    this(@out, compressionLevel, strategy, ZlibModule.FORCE_GZIP);
   }
 
   /**
@@ -133,7 +133,7 @@ public class GZIPOutputStream : DeflaterOutputStream {
   public GZIPOutputStream(OutputStream out)
     
   {
-    this(out, Deflater.DEFAULT_COMPRESSION, Deflater.DEFAULT_STRATEGY);
+    this(@out, Deflater.DEFAULT_COMPRESSION, Deflater.DEFAULT_STRATEGY);
   }
 
   /**
@@ -179,7 +179,7 @@ public class GZIPOutputStream : DeflaterOutputStream {
       trailerCRC[2] = (byte) (crcValue >> 16);
       trailerCRC[3] = (byte) (crcValue >> 24);
       
-      out.write(trailerCRC, 0, trailerCRC.length);
+      @out.write(trailerCRC, 0, trailerCRC.length);
     }
 
     long inputSize = def.getBytesRead();
@@ -191,9 +191,9 @@ public class GZIPOutputStream : DeflaterOutputStream {
     trailerInputSize[2] = (byte) (inputSize >> 16);
     trailerInputSize[3] = (byte) (inputSize >> 24);
     
-    out.write(trailerInputSize, 0, trailerInputSize.length);
+    @out.write(trailerInputSize, 0, trailerInputSize.length);
 
-    out.flush();
+    @out.flush();
   }
 
   /**

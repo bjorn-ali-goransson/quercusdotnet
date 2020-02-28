@@ -227,15 +227,15 @@ public class QuercusScriptEngine
           log.log(Level.FINE, e.getMessage(), e);
         }
 
-        out = os;
+        @out = os;
       }
       else {
-        out = new NullWriteStream();
+        @out = new NullWriteStream();
       }
 
       QuercusPage page = new InterpretedPage(program);
 
-      env = new Env(quercus, page, out, null, null);
+      env = new Env(quercus, page, @out, null, null);
 
       env.setScriptContext(cxt);
 
@@ -262,8 +262,8 @@ public class QuercusScriptEngine
         //php/2148
       }
 
-      out.flushBuffer();
-      out.free();
+      @out.flushBuffer();
+      @out.free();
 
       // flush buffer just in case
       //

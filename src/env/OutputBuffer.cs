@@ -251,15 +251,15 @@ public class OutputBuffer {
       doFlush();
     }
 
-    WriteStream out = _out;
+    WriteStream @out = _out;
     _out = null;
 
     TempStream tempStream = _tempStream;
     _tempStream = null;
 
     try {
-      if (out != null)
-        out.close();
+      if (@out != null)
+        @out.close();
     } catch (IOException e) {
       log.log(Level.FINER, e.toString(), e);
     }
@@ -300,7 +300,7 @@ public class OutputBuffer {
     try {
       _out.flush();
 
-      WriteStream out = getNextOut();
+      WriteStream @out = getNextOut();
 
       _tempStream.writeToStream(out);
 

@@ -46,11 +46,11 @@ public class CgiQuercus
   : Quercus
 {
   public override Env createEnv(QuercusPage page,
-                       WriteStream out,
+                       WriteStream @out,
                        QuercusHttpServletRequest request,
                        QuercusHttpServletResponse response)
   {
-    return new CgiEnv(this, page, out, request, response);
+    return new CgiEnv(this, page, @out, request, response);
   }
 
   public static void main(String []args)

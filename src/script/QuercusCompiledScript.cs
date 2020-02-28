@@ -99,15 +99,15 @@ public class QuercusCompiledScript : CompiledScript {
           log.log(Level.FINE, e.getMessage(), e);
         }
 
-        out = os;
+        @out = os;
       }
       else {
-        out = new NullWriteStream();
+        @out = new NullWriteStream();
       }
 
       QuercusPage page = new InterpretedPage(_program);
 
-      env = new Env(quercus, page, out, null, null);
+      env = new Env(quercus, page, @out, null, null);
 
       env.setScriptContext(cxt);
 
@@ -134,8 +134,8 @@ public class QuercusCompiledScript : CompiledScript {
         //php/2148
       }
 
-      out.flushBuffer();
-      out.free();
+      @out.flushBuffer();
+      @out.free();
 
       return result;
       /*

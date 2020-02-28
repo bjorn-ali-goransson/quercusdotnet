@@ -320,7 +320,7 @@ public class ServerArrayValue : ArrayValueImpl
   }
 
   public override void varDumpImpl(Env env,
-                          WriteStream out,
+                          WriteStream @out,
                           int depth,
                           IdentityHashMap<Value, String> valueSet)
     
@@ -328,11 +328,11 @@ public class ServerArrayValue : ArrayValueImpl
     if (! _isFilled)
       fillMap();
 
-    super.varDumpImpl(env, out, depth, valueSet);
+    super.varDumpImpl(env, @out, depth, valueSet);
   }
 
   protected override void printRImpl(Env env,
-                            WriteStream out,
+                            WriteStream @out,
                             int depth,
                             IdentityHashMap<Value, String> valueSet)
     
@@ -340,7 +340,7 @@ public class ServerArrayValue : ArrayValueImpl
     if (! _isFilled)
       fillMap();
 
-    super.printRImpl(env, out, depth, valueSet);
+    super.printRImpl(env, @out, depth, valueSet);
   }
 
   /**

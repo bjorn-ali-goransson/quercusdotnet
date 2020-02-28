@@ -360,11 +360,11 @@ public class ZlibModule : AbstractQuercusModule {
   }
 
   /**
-   * Prints out the remaining data in the stream to stdout
+   * Prints @out the remaining data in the stream to stdout
    */
   public Value gzpassthru(Env env, @NotNull BinaryInput is)
   {
-    WriteStream out = env.getOut();
+    WriteStream @out = env.getOut();
     TempBuffer tempBuf = TempBuffer.allocate();
     byte[] buffer = tempBuf.getBuffer();
 
@@ -372,7 +372,7 @@ public class ZlibModule : AbstractQuercusModule {
     try {
       int sublen = is.read(buffer, 0, buffer.length);
       while (sublen > 0) {
-        out.write(buffer, 0, sublen);
+        @out.write(buffer, 0, sublen);
         length += sublen;
         sublen = is.read(buffer, 0, buffer.length);
       }
@@ -448,7 +448,7 @@ public class ZlibModule : AbstractQuercusModule {
 
       bool isFinished = false;
 
-      StringValue out = env.createLargeBinaryBuilder();
+      StringValue @out = env.createLargeBinaryBuilder();
 
       inputBuffer[0] = (byte) 0x78;
 
@@ -465,7 +465,7 @@ public class ZlibModule : AbstractQuercusModule {
         inputBuffer[1] = (byte) 0xda;
       }
 
-      out.append(inputBuffer, 0, 2);
+      @out.append(inputBuffer, 0, 2);
 
       int len;
       while (! isFinished) {
@@ -483,7 +483,7 @@ public class ZlibModule : AbstractQuercusModule {
         }
 
         while ((len = deflater.deflate(outputBuffer, 0, outputBuffer.length)) > 0) {
-          out.append(outputBuffer, 0, len);
+          @out.append(outputBuffer, 0, len);
         }
       }
 
@@ -494,7 +494,7 @@ public class ZlibModule : AbstractQuercusModule {
       inputBuffer[2] = (byte) (value >> 8);
       inputBuffer[3] = (byte) (value >> 0);
 
-      out.append(inputBuffer, 0, 4);
+      @out.append(inputBuffer, 0, 4);
 
       return out;
     }
@@ -572,7 +572,7 @@ public class ZlibModule : AbstractQuercusModule {
       deflater = new Deflater(level, true);
 
       bool isFinished = false;
-      TempStream out = new TempStream();
+      TempStream @out = new TempStream();
 
       int len;
       while (! isFinished) {
@@ -588,13 +588,13 @@ public class ZlibModule : AbstractQuercusModule {
         }
 
         while ((len = deflater.deflate(outputBuffer, 0, outputBuffer.length)) > 0) {
-          out.write(outputBuffer, 0, len, false);
+          @out.write(outputBuffer, 0, len, false);
         }
       }
 
       deflater.end();
 
-      return env.createBinaryString(out.getHead());
+      return env.createBinaryString(@out.getHead());
     }
     catch (Exception e) {
       throw QuercusModuleException.create(e);
@@ -692,12 +692,12 @@ public class ZlibModule : AbstractQuercusModule {
     byte[] buffer = tempBuf.getBuffer();
 
     TempStream ts = new TempStream();
-    StreamImplOutputStream out = new StreamImplOutputStream(ts);
+    StreamImplOutputStream @out = new StreamImplOutputStream(ts);
 
     ZlibOutputStream gzOut = null;
 
     try {
-      gzOut = new ZlibOutputStream(out, level,
+      gzOut = new ZlibOutputStream(@out, level,
                                    Deflater.DEFAULT_STRATEGY,
                                    encodingMode);
 

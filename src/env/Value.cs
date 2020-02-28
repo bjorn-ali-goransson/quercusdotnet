@@ -2949,7 +2949,7 @@ abstract public class Value implements java.io.Serializable
   public void print(Env env, WriteStream out)
   {
     try {
-      out.print(toString(env));
+      @out.print(toString(env));
     } catch (IOException e) {
       throw new QuercusRuntimeException(e);
     }
@@ -3025,41 +3025,41 @@ abstract public class Value implements java.io.Serializable
   /**
    * Generates code to recreate the expression.
    *
-   * @param out the writer to the Java source code.
+   * @param @out the writer to the Java source code.
    */
   public void generate(PrintWriter out)
     
   {
   }
 
-  protected static void printJavaChar(PrintWriter out, char ch)
+  protected static void printJavaChar(PrintWriter @out, char ch)
   {
     switch (ch) {
       case '\r':
-        out.print("\\r");
+        @out.print("\\r");
         break;
       case '\n':
-        out.print("\\n");
+        @out.print("\\n");
         break;
       //case '\"':
-      //  out.print("\\\"");
+      //  @out.print("\\\"");
       //  break;
       case '\'':
-        out.print("\\\'");
+        @out.print("\\\'");
         break;
       case '\\':
-        out.print("\\\\");
+        @out.print("\\\\");
         break;
       default:
-        out.print(ch);
+        @out.print(ch);
         break;
     }
   }
 
-  protected static void printJavaString(PrintWriter out, StringValue s)
+  protected static void printJavaString(PrintWriter @out, StringValue s)
   {
     if (s == null) {
-      out.print("");
+      @out.print("");
       return;
     }
 
@@ -3069,22 +3069,22 @@ abstract public class Value implements java.io.Serializable
 
       switch (ch) {
       case '\r':
-        out.print("\\r");
+        @out.print("\\r");
         break;
       case '\n':
-        out.print("\\n");
+        @out.print("\\n");
         break;
       case '\"':
-        out.print("\\\"");
+        @out.print("\\\"");
         break;
       case '\'':
-        out.print("\\\'");
+        @out.print("\\\'");
         break;
       case '\\':
-        out.print("\\\\");
+        @out.print("\\\\");
         break;
       default:
-        out.print(ch);
+        @out.print(ch);
         break;
       }
     }
@@ -3101,20 +3101,20 @@ abstract public class Value implements java.io.Serializable
   }
 
   public final void varDump(Env env,
-                            WriteStream out,
+                            WriteStream @out,
                             int depth,
                             IdentityHashMap<Value, String> valueSet)
     
   {
     if (valueSet.get(this) != null) {
-      out.print("*recursion*");
+      @out.print("*recursion*");
       return;
     }
 
     valueSet.put(this, "printing");
 
     try {
-      varDumpImpl(env, out, depth, valueSet);
+      varDumpImpl(env, @out, depth, valueSet);
     }
     finally {
       valueSet.remove(this);
@@ -3122,29 +3122,29 @@ abstract public class Value implements java.io.Serializable
   }
 
   protected void varDumpImpl(Env env,
-                             WriteStream out,
+                             WriteStream @out,
                              int depth,
                              IdentityHashMap<Value, String> valueSet)
     
   {
-    out.print("resource(" + toString() + ")");
+    @out.print("resource(" + toString() + ")");
   }
 
   public final void printR(Env env,
-                           WriteStream out,
+                           WriteStream @out,
                            int depth,
                            IdentityHashMap<Value, String> valueSet)
     
   {
     if (valueSet.get(this) != null) {
-      out.print("*recursion*");
+      @out.print("*recursion*");
       return;
     }
 
     valueSet.put(this, "printing");
 
     try {
-      printRImpl(env, out, depth, valueSet);
+      printRImpl(env, @out, depth, valueSet);
     }
     finally {
       valueSet.remove(this);
@@ -3152,19 +3152,19 @@ abstract public class Value implements java.io.Serializable
   }
 
   protected void printRImpl(Env env,
-                            WriteStream out,
+                            WriteStream @out,
                             int depth,
                             IdentityHashMap<Value, String> valueSet)
     
   {
-    out.print(toString());
+    @out.print(toString());
   }
 
-  protected void printDepth(WriteStream out, int depth)
+  protected void printDepth(WriteStream @out, int depth)
     
   {
     for (int i = 0; i < depth; i++)
-      out.print(' ');
+      @out.print(' ');
   }
 
   public int getHashCode()

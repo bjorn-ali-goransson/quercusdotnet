@@ -199,15 +199,15 @@ public class ArrayObject
       return UnsetValue.UNSET;
   }
 
-  static private void printDepth(WriteStream out, int depth)
+  static private void printDepth(WriteStream @out, int depth)
     
   {
     for (int i = depth; i > 0; i--)
-      out.print(' ');
+      @out.print(' ');
   }
 
   public void printRImpl(Env env,
-                         WriteStream out,
+                         WriteStream @out,
                          int depth,
                          IdentityHashMap<Value, String> valueSet)
     
@@ -215,19 +215,19 @@ public class ArrayObject
 
     if ((_flags & STD_PROP_LIST) != 0) {
       // XXX:
-      out.print("ArrayObject");
-      out.print(' ');
-      out.println("Object");
-      printDepth(out, 4 * depth);
-      out.println("(");
-      out.print(")");
+      @out.print("ArrayObject");
+      @out.print(' ');
+      @out.println("Object");
+      printDepth(@out, 4 * depth);
+      @out.println("(");
+      @out.print(")");
     }
     else {
-      out.print("ArrayObject");
-      out.print(' ');
-      out.println("Object");
-      printDepth(out, 4 * depth);
-      out.println("(");
+      @out.print("ArrayObject");
+      @out.print(' ');
+      @out.println("Object");
+      printDepth(@out, 4 * depth);
+      @out.println("(");
 
       depth++;
 
@@ -241,25 +241,25 @@ public class ArrayObject
         Value key = entry.getKey();
         Value value = entry.getValue();
 
-        printDepth(out, 4 * depth);
+        printDepth(@out, 4 * depth);
 
-        out.print("[" + key + "] => ");
+        @out.print("[" + key + "] => ");
 
-        value.printR(env, out, depth + 1, valueSet);
+        value.printR(env, @out, depth + 1, valueSet);
 
-        out.println();
+        @out.println();
       }
 
       depth--;
 
-      printDepth(out, 4 * depth);
-      out.println(")");
+      printDepth(@out, 4 * depth);
+      @out.println(")");
     }
   }
 
   public void varDumpImpl(Env env,
                           Value object,
-                          WriteStream out,
+                          WriteStream @out,
                           int depth,
                           IdentityHashMap<Value, String> valueSet)
     
@@ -268,12 +268,12 @@ public class ArrayObject
 
     if ((_flags & STD_PROP_LIST) != 0) {
       // XXX:
-      out.println("object(" + name + ") (0) {");
-      out.print("}");
+      @out.println("object(" + name + ") (0) {");
+      @out.print("}");
 
     }
     else {
-      out.println("object(" + name + ") (" + _value.getSize() + ") {");
+      @out.println("object(" + name + ") (" + _value.getSize() + ") {");
 
       depth++;
 
@@ -286,29 +286,29 @@ public class ArrayObject
         Value key = entry.getKey();
         Value value = entry.getValue();
 
-        printDepth(out, 2 * depth);
+        printDepth(@out, 2 * depth);
 
-        out.print("[");
+        @out.print("[");
 
         if (key instanceof StringValue)
-          out.print("\"" + key + "\"");
+          @out.print("\"" + key + "\"");
         else
-          out.print(key);
+          @out.print(key);
 
-        out.println("]=>");
+        @out.println("]=>");
 
-        printDepth(out, 2 * depth);
+        printDepth(@out, 2 * depth);
 
-        value.varDump(env, out, depth, valueSet);
+        value.varDump(env, @out, depth, valueSet);
 
-        out.println();
+        @out.println();
       }
 
       depth--;
 
-      printDepth(out, 2 * depth);
+      printDepth(@out, 2 * depth);
 
-      out.print("}");
+      @out.print("}");
     }
   }
 }

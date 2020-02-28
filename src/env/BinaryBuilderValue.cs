@@ -572,7 +572,7 @@ public class BinaryBuilderValue
   }
 
   public override void varDumpImpl(Env env,
-                          WriteStream out,
+                          WriteStream @out,
                           int depth,
                           IdentityHashMap<Value, String> valueSet)
     
@@ -584,25 +584,25 @@ public class BinaryBuilderValue
 
     // QA needs to distinguish php5 string from php6 binary
     if (CurrentTime.isTest())
-      out.print("binary");
+      @out.print("binary");
     else
-      out.print("string");
+      @out.print("string");
 
-    out.print("(");
-    out.print(length);
-    out.print(") \"");
+    @out.print("(");
+    @out.print(length);
+    @out.print(") \"");
 
     for (int i = 0; i < length; i++) {
       char ch = charAt(i);
 
       if (0x20 <= ch && ch <= 0x7f || ch == '\t' || ch == '\r' || ch == '\n')
-        out.print(ch);
+        @out.print(ch);
       else if (ch <= 0xff)
-        out.print("\\x"
+        @out.print("\\x"
                   + Integer.toHexString(ch / 16)
                   + Integer.toHexString(ch % 16));
       else {
-        out.print("\\u"
+        @out.print("\\u"
                   + Integer.toHexString((ch >> 12) & 0xf)
                   + Integer.toHexString((ch >> 8) & 0xf)
                   + Integer.toHexString((ch >> 4) & 0xf)
@@ -610,7 +610,7 @@ public class BinaryBuilderValue
       }
     }
 
-    out.print("\"");
+    @out.print("\"");
   }
 
 

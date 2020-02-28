@@ -635,7 +635,7 @@ public class ArrayModule
   }
 
   /**
-   * Returns an array that filters out any values that do not hold true when
+   * Returns an array that filters @out any values that do not hold true when
    * used in the callback function.
    *
    * @param array the array to filter

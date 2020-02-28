@@ -510,19 +510,19 @@ public class DoubleValue : NumberValue
   /**
    * Generates code to recreate the expression.
    *
-   * @param out the writer to the Java source code.
+   * @param @out the writer to the Java source code.
    */
   public override void generate(PrintWriter out)
     
   {
     if (_value == 0)
-      out.print("DoubleValue.ZERO");
+      @out.print("DoubleValue.ZERO");
     else if (_value == Double.POSITIVE_INFINITY)
-      out.print("new DoubleValue(Double.POSITIVE_INFINITY)");
+      @out.print("new DoubleValue(Double.POSITIVE_INFINITY)");
     else if (_value == Double.NEGATIVE_INFINITY)
-      out.print("new DoubleValue(Double.NEGATIVE_INFINITY)");
+      @out.print("new DoubleValue(Double.NEGATIVE_INFINITY)");
     else
-      out.print("new DoubleValue(" + _value + ")");
+      @out.print("new DoubleValue(" + _value + ")");
   }
 
   /**
@@ -549,12 +549,12 @@ public class DoubleValue : NumberValue
   }
 
   public override void varDumpImpl(Env env,
-                          WriteStream out,
+                          WriteStream @out,
                           int depth,
                           IdentityHashMap<Value, String> valueSet)
     
   {
-    out.print("float(" + toString() + ")");
+    @out.print("float(" + toString() + ")");
   }
 
   //

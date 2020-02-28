@@ -179,42 +179,42 @@ public class JavaValue : ObjectValue
   }
 
   protected override void printRImpl(Env env,
-                            WriteStream out,
+                            WriteStream @out,
                             int depth,
                             IdentityHashMap<Value, String> valueSet)
     
   {
-    if (_classDef.printRImpl(env, _object, out, depth, valueSet)) {
+    if (_classDef.printRImpl(env, _object, @out, depth, valueSet)) {
       return;
     }
 
     Set<? : Map.Entry<Value,Value>> entrySet = entrySet();
 
     if (entrySet == null) {
-      out.print("resource(" + toString(env) + ")"); // XXX:
+      @out.print("resource(" + toString(env) + ")"); // XXX:
       return;
     }
 
-    out.print(_classDef.getSimpleName());
-    out.println(" Object");
-    printRDepth(out, depth);
-    out.print("(");
+    @out.print(_classDef.getSimpleName());
+    @out.println(" Object");
+    printRDepth(@out, depth);
+    @out.print("(");
 
     for (Map.Entry<Value,Value> entry : entrySet) {
-      out.println();
-      printRDepth(out, depth);
-      out.print("    [" + entry.getKey() + "] => ");
+      @out.println();
+      printRDepth(@out, depth);
+      @out.print("    [" + entry.getKey() + "] => ");
 
-      entry.getValue().printRImpl(env, out, depth + 1, valueSet);
+      entry.getValue().printRImpl(env, @out, depth + 1, valueSet);
     }
 
-    out.println();
-    printRDepth(out, depth);
-    out.println(")");
+    @out.println();
+    printRDepth(@out, depth);
+    @out.println(")");
   }
 
   protected override void varDumpImpl(Env env,
-                            WriteStream out,
+                            WriteStream @out,
                             int depth,
                             IdentityHashMap<Value, String> valueSet)
     
@@ -222,8 +222,8 @@ public class JavaValue : ObjectValue
     Value oldThis = env.setThis(this);
 
     try {
-      if (! _classDef.varDumpImpl(env, this, _object, out, depth, valueSet))
-        out.print("resource(" + toString(env) + ")"); // XXX:
+      if (! _classDef.varDumpImpl(env, this, _object, @out, depth, valueSet))
+        @out.print("resource(" + toString(env) + ")"); // XXX:
     }
     finally {
       env.setThis(oldThis);
@@ -631,11 +631,11 @@ public class JavaValue : ObjectValue
       return super.toInputStream();
   }
 
-  private static void printRDepth(WriteStream out, int depth)
+  private static void printRDepth(WriteStream @out, int depth)
     
   {
     for (int i = 0; i < 8 * depth; i++)
-      out.print(' ');
+      @out.print(' ');
   }
 
   //
@@ -645,9 +645,9 @@ public class JavaValue : ObjectValue
   private void writeObject(ObjectOutputStream out)
     
   {
-    out.writeObject(_classDef.getType().getCanonicalName());
+    @out.writeObject(_classDef.getType().getCanonicalName());
 
-    out.writeObject(_object);
+    @out.writeObject(_object);
   }
 
   private void readObject(ObjectInputStream in)

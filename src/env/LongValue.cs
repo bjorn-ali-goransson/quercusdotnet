@@ -531,21 +531,21 @@ public class LongValue : NumberValue
   /**
    * Generates code to recreate the expression.
    *
-   * @param out the writer to the Java source code.
+   * @param @out the writer to the Java source code.
    */
   public override void generate(PrintWriter out)
     
   {
     if (_value == 0)
-      out.print("LongValue.ZERO");
+      @out.print("LongValue.ZERO");
     else if (_value == 1)
-      out.print("LongValue.ONE");
+      @out.print("LongValue.ONE");
     else if (_value == -1)
-      out.print("LongValue.MINUS_ONE");
+      @out.print("LongValue.MINUS_ONE");
     else if (STATIC_MIN <= _value && _value <= STATIC_MAX)
-      out.print("LongValue.STATIC_VALUES[" + (_value - STATIC_MIN) + "]");
+      @out.print("LongValue.STATIC_VALUES[" + (_value - STATIC_MIN) + "]");
     else
-      out.print("new LongValue(" + _value + "L)");
+      @out.print("new LongValue(" + _value + "L)");
   }
 
   /**
@@ -574,12 +574,12 @@ public class LongValue : NumberValue
   }
 
   public override void varDumpImpl(Env env,
-                          WriteStream out,
+                          WriteStream @out,
                           int depth,
                           IdentityHashMap<Value,String> valueSet)
     
   {
-    out.print("int(" + toLong() + ")");
+    @out.print("int(" + toLong() + ")");
   }
 
   //
