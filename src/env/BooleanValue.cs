@@ -131,7 +131,7 @@ public class BooleanValue : Value
    */
   public override int toBooleanMarshalCost()
   {
-    return Marshal.COST_EQUAL;
+    return  Marshal.Marshal.COST_EQUAL;
   }
 
   //

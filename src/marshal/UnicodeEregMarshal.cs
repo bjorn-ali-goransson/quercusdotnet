@@ -64,10 +64,10 @@ public class UnicodeEregMarshal : StringMarshal {
   protected int getMarshalingCostImpl(Value argValue)
   {
     if (argValue.isString()) {
-      return Marshal.ZERO;
+      return  Marshal.Marshal.ZERO;
     }
     else
-      return Marshal.MAX;
+      return  Marshal.Marshal.MAX;
   }
   
   public override Class getExpectedClass()

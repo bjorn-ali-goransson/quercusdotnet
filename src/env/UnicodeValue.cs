@@ -147,7 +147,7 @@ abstract public class UnicodeValue : StringValue {
    */
   public int toUnicodeValueMarshalCost()
   {
-    return Marshal.COST_IDENTICAL;
+    return  Marshal.Marshal.COST_IDENTICAL;
   }
   
   public override InputStream toInputStream()

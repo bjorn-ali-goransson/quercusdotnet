@@ -109,7 +109,7 @@ public class NullValue : Value
    */
   public override int toDoubleMarshalCost()
   {
-    return Marshal.COST_FROM_NULL;
+    return  Marshal.Marshal.COST_FROM_NULL;
   }
 
   /**
@@ -117,7 +117,7 @@ public class NullValue : Value
    */
   public override int toLongMarshalCost()
   {
-    return Marshal.COST_FROM_NULL;
+    return  Marshal.Marshal.COST_FROM_NULL;
   }
 
   /**
@@ -125,7 +125,7 @@ public class NullValue : Value
    */
   public override int toIntegerMarshalCost()
   {
-    return Marshal.COST_FROM_NULL;
+    return  Marshal.Marshal.COST_FROM_NULL;
   }
 
   /**
@@ -133,7 +133,7 @@ public class NullValue : Value
    */
   public override int toShortMarshalCost()
   {
-    return Marshal.COST_FROM_NULL;
+    return  Marshal.Marshal.COST_FROM_NULL;
   }
 
   /**
@@ -141,7 +141,7 @@ public class NullValue : Value
    */
   public override int toByteMarshalCost()
   {
-    return Marshal.COST_FROM_NULL;
+    return  Marshal.Marshal.COST_FROM_NULL;
   }
 
   /**
@@ -149,7 +149,7 @@ public class NullValue : Value
    */
   public override int toBooleanMarshalCost()
   {
-    return Marshal.COST_FROM_NULL;
+    return  Marshal.Marshal.COST_FROM_NULL;
   }
 
   /**

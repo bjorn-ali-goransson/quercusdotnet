@@ -69,13 +69,13 @@ public class BigIntegerMarshal : Marshal {
   protected int getMarshalingCostImpl(Value argValue)
   {
     if (argValue instanceof BigIntegerValue)
-      return Marshal.ZERO;
+      return  Marshal.Marshal.ZERO;
     else if (argValue instanceof LongValue)
-      return Marshal.ONE;
+      return  Marshal.Marshal.ONE;
     else if (argValue.isLongConvertible())
-      return Marshal.ONE;
+      return  Marshal.Marshal.ONE;
     else
-      return Marshal.FOUR;
+      return  Marshal.Marshal.FOUR;
   }
 
   public override Class getExpectedClass()

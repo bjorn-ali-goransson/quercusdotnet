@@ -68,7 +68,7 @@ public class ReferenceMarshal : Marshal
 
   protected override int getMarshalingCostImpl(Value argValue)
   {
-    return Marshal.ZERO;
+    return  Marshal.Marshal.ZERO;
   }
   
   public override Class getExpectedClass()

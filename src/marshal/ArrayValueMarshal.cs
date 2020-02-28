@@ -85,12 +85,12 @@ public class ArrayValueMarshal : Marshal
   {
     if (argValue.isArray()) {
       if (argValue instanceof JavaAdapter)
-        return Marshal.ONE;
+        return  Marshal.Marshal.ONE;
       else
-        return Marshal.ZERO;
+        return  Marshal.Marshal.ZERO;
     }
     else
-      return Marshal.FOUR;
+      return  Marshal.Marshal.FOUR;
   }
   
   public override Class getExpectedClass()

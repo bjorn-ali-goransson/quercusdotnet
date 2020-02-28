@@ -58,16 +58,16 @@ public class JavaCharacterArrayMarshal : JavaArrayMarshal
     /*
     if (argValue.isString()) {
       if (argValue.isUnicode())
-        return Marshal.UNICODE_CHARACTER_ARRAY_COST;
+        return  Marshal.Marshal.UNICODE_CHARACTER_ARRAY_COST;
       else if (argValue.isBinary())
-        return Marshal.BINARY_CHARACTER_ARRAY_COST;
+        return  Marshal.Marshal.BINARY_CHARACTER_ARRAY_COST;
       else
-        return Marshal.PHP5_CHARACTER_ARRAY_COST;
+        return  Marshal.Marshal.PHP5_CHARACTER_ARRAY_COST;
     }
     else if (argValue.isArray())
-      return Marshal.TWO; // php/0cib
+      return  Marshal.Marshal.TWO; // php/0cib
     else
-      return Marshal.FOUR;
+      return  Marshal.Marshal.FOUR;
     */
   }
 

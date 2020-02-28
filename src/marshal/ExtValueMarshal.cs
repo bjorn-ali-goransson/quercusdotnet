@@ -93,9 +93,9 @@ public class ExtValueMarshal : Marshal
   protected override int getMarshalingCostImpl(Value argValue)
   {
     if (_expectedClass.isAssignableFrom(argValue.getClass()))
-      return Marshal.ONE;
+      return  Marshal.Marshal.ONE;
     else
-      return Marshal.FOUR;
+      return  Marshal.Marshal.FOUR;
   }
 
   public override Class getExpectedClass()

@@ -78,13 +78,13 @@ public class LongValueMarshal
   protected override int getMarshalingCostImpl(Value argValue)
   {
     if (argValue instanceof LongValue)
-      return Marshal.ZERO;
+      return  Marshal.Marshal.ZERO;
     else if (argValue.isLongConvertible())
       return LONG_CONVERTIBLE_LONG_VALUE_COST;
     else if (argValue.isDoubleConvertible())
       return DOUBLE_CONVERTIBLE_LONG_VALUE_COST;
     else
-      return Marshal.FOUR;
+      return  Marshal.Marshal.FOUR;
   }
 
   public override Class getExpectedClass()

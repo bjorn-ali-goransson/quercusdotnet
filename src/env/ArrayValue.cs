@@ -90,7 +90,7 @@ abstract public class ArrayValue : Value {
    */
   public override int toCharMarshalCost()
   {
-    return Marshal.COST_INCOMPATIBLE;
+    return  Marshal.Marshal.COST_INCOMPATIBLE;
   }
 
   /**
@@ -98,7 +98,7 @@ abstract public class ArrayValue : Value {
    */
   public override int toStringMarshalCost()
   {
-    return Marshal.COST_INCOMPATIBLE;
+    return  Marshal.Marshal.COST_INCOMPATIBLE;
   }
 
   /**
@@ -106,7 +106,7 @@ abstract public class ArrayValue : Value {
    */
   public override int toBinaryValueMarshalCost()
   {
-    return Marshal.COST_INCOMPATIBLE;
+    return  Marshal.Marshal.COST_INCOMPATIBLE;
   }
 
   /**
@@ -114,7 +114,7 @@ abstract public class ArrayValue : Value {
    */
   public override int toStringValueMarshalCost()
   {
-    return Marshal.COST_INCOMPATIBLE;
+    return  Marshal.Marshal.COST_INCOMPATIBLE;
   }
 
   /**
@@ -122,7 +122,7 @@ abstract public class ArrayValue : Value {
    */
   public override int toUnicodeValueMarshalCost()
   {
-    return Marshal.COST_INCOMPATIBLE;
+    return  Marshal.Marshal.COST_INCOMPATIBLE;
   }
 
   /**

@@ -66,19 +66,19 @@ public class URLMarshal : Marshal
   protected int getMarshalingCostImpl(Value argValue)
   {
     if (argValue instanceof JavaURLValue)
-      return Marshal.ZERO;
+      return  Marshal.Marshal.ZERO;
     else if (argValue.isString())
-      return Marshal.THREE;
+      return  Marshal.Marshal.THREE;
     else
-      return Marshal.FOUR;
+      return  Marshal.Marshal.FOUR;
   }
   
   public int getMarshalingCost(Expr expr)
   {
     if (expr.isString())
-      return Marshal.THREE;
+      return  Marshal.Marshal.THREE;
     else
-      return Marshal.MAX;
+      return  Marshal.Marshal.MAX;
   }
   
   public override Class getExpectedClass()

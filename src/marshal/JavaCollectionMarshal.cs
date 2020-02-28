@@ -90,11 +90,11 @@ public class JavaCollectionMarshal : JavaMarshal {
     if (argValue instanceof JavaCollectionAdapter
         && getExpectedClass().isAssignableFrom(
             argValue.toJavaObject().getClass()))
-      return Marshal.ZERO;
+      return  Marshal.Marshal.ZERO;
     else if (argValue.isArray())
-      return Marshal.THREE;
+      return  Marshal.Marshal.THREE;
     else
-      return Marshal.FOUR;
+      return  Marshal.Marshal.FOUR;
   }
 }
 

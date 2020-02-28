@@ -65,19 +65,19 @@ public class RegexpArrayMarshal : StringMarshal {
   protected override int getMarshalingCostImpl(Value argValue)
   {
     if (argValue.isArray())
-      return Marshal.ZERO;
+      return  Marshal.Marshal.ZERO;
     else if (argValue.isString())
-      return Marshal.ONE;
+      return  Marshal.Marshal.ONE;
     else
-      return Marshal.MAX;
+      return  Marshal.Marshal.MAX;
   }
 
   public override int getMarshalingCost(Expr expr)
   {
     if (expr.isArray())
-      return Marshal.ZERO;
+      return  Marshal.Marshal.ZERO;
     else
-      return Marshal.ONE;
+      return  Marshal.Marshal.ONE;
   }
 
   public override Class getExpectedClass()

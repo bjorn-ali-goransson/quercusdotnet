@@ -74,13 +74,13 @@ public class CallableMarshal : Marshal
   protected override int getMarshalingCostImpl(Value argValue)
   {
     if (argValue instanceof Callable) {
-      return Marshal.ZERO;
+      return  Marshal.Marshal.ZERO;
     }
     else if (argValue.isString()) {
-      return Marshal.THREE;
+      return  Marshal.Marshal.THREE;
     }
     else {
-      return Marshal.FOUR;
+      return  Marshal.Marshal.FOUR;
     }
   }
 

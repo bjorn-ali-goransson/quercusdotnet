@@ -76,7 +76,7 @@ public class DoubleObjectMarshal : Marshal
     else if (argValue.isDoubleConvertible())
       return COST_LOSSLESS_NUMERIC;
     else
-      return Marshal.FOUR;
+      return  Marshal.Marshal.FOUR;
     */
   }
 

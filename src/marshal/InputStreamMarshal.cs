@@ -69,9 +69,9 @@ public class InputStreamMarshal : Marshal
     if (argValue instanceof JavaValue
         && InputStream.class.isAssignableFrom(
             argValue.toJavaObject().getClass()))
-      return Marshal.ZERO;
+      return  Marshal.Marshal.ZERO;
     else
-      return Marshal.FOUR;
+      return  Marshal.Marshal.FOUR;
   }
 
   public override Class getExpectedClass()

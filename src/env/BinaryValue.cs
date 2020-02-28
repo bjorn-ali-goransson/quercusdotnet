@@ -51,7 +51,7 @@ abstract public class BinaryValue : StringValue
    */
   public int toBinaryValueMarshalCost()
   {
-    return Marshal.COST_IDENTICAL + 1;
+    return  Marshal.Marshal.COST_IDENTICAL + 1;
   }
 }
 

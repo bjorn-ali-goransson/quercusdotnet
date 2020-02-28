@@ -75,13 +75,13 @@ public class LongMarshal : Marshal
 
     /*
     if (argValue instanceof LongValue)
-      return Marshal.ONE;
+      return  Marshal.Marshal.ONE;
     else if (argValue.isLongConvertible())
       return LONG_CONVERTIBLE_LONG_COST;
     else if (argValue.isDoubleConvertible())
       return DOUBLE_CONVERTIBLE_LONG_COST;
     else
-      return Marshal.FOUR;
+      return  Marshal.Marshal.FOUR;
     */
   }
 

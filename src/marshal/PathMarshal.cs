@@ -71,11 +71,11 @@ public class PathMarshal : Marshal
   {
     if (argValue instanceof JavaValue
         && Path.class.isAssignableFrom(argValue.toJavaObject().getClass()))
-      return Marshal.ZERO;
+      return  Marshal.Marshal.ZERO;
     else if (argValue.isString())
-      return Marshal.THREE;
+      return  Marshal.Marshal.THREE;
     else
-      return Marshal.FOUR;
+      return  Marshal.Marshal.FOUR;
   }
   
   public override Class getExpectedClass()

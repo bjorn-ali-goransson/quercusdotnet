@@ -146,7 +146,7 @@ public class DoubleValue : NumberValue
    */
   public override int toDoubleMarshalCost()
   {
-    return Marshal.COST_EQUAL;
+    return  Marshal.Marshal.COST_EQUAL;
   }
 
   /**
@@ -154,7 +154,7 @@ public class DoubleValue : NumberValue
    */
   public override int toLongMarshalCost()
   {
-    return Marshal.COST_NUMERIC_LOSSY;
+    return  Marshal.Marshal.COST_NUMERIC_LOSSY;
   }
 
   /**
@@ -162,7 +162,7 @@ public class DoubleValue : NumberValue
    */
   public override int toIntegerMarshalCost()
   {
-    return Marshal.COST_NUMERIC_LOSSY;
+    return  Marshal.Marshal.COST_NUMERIC_LOSSY;
   }
 
   /**
@@ -170,7 +170,7 @@ public class DoubleValue : NumberValue
    */
   public override int toShortMarshalCost()
   {
-    return Marshal.COST_NUMERIC_LOSSY;
+    return  Marshal.Marshal.COST_NUMERIC_LOSSY;
   }
 
   /**
@@ -178,7 +178,7 @@ public class DoubleValue : NumberValue
    */
   public override int toByteMarshalCost()
   {
-    return Marshal.COST_NUMERIC_LOSSY;
+    return  Marshal.Marshal.COST_NUMERIC_LOSSY;
   }
 
   //

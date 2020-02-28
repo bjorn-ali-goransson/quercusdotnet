@@ -93,16 +93,16 @@ public class BinaryValueMarshal : Marshal
     /*
     if (argValue.isString()) {
       if (argValue.isUnicode())
-        return Marshal.UNICODE_BINARY_VALUE_COST;
+        return  Marshal.Marshal.UNICODE_BINARY_VALUE_COST;
       else if (argValue.isBinary())
-        return Marshal.BINARY_BINARY_VALUE_COST;
+        return  Marshal.Marshal.BINARY_BINARY_VALUE_COST;
       else
-        return Marshal.PHP5_BINARY_VALUE_COST;
+        return  Marshal.Marshal.PHP5_BINARY_VALUE_COST;
     }
     else if (! (argValue.isArray() || argValue.isObject()))
-      return Marshal.THREE;
+      return  Marshal.Marshal.THREE;
     else
-      return Marshal.FOUR;
+      return  Marshal.Marshal.FOUR;
     */
   }
 

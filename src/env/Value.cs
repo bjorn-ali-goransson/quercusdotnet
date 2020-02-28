@@ -1,4 +1,5 @@
 using System;
+
 namespace QuercusDotNet.Env{
 /*
  * Copyright (c) 1998-2012 Caucho Technology -- all rights reserved
@@ -302,7 +303,7 @@ abstract public class Value : java.io.Serializable
    */
   public int toBooleanMarshalCost()
   {
-    return Marshal.COST_TO_BOOLEAN;
+    return  Marshal.Marshal.COST_TO_BOOLEAN;
   }
 
   /**
@@ -310,7 +311,7 @@ abstract public class Value : java.io.Serializable
    */
   public int toByteMarshalCost()
   {
-    return Marshal.COST_INCOMPATIBLE;
+    return  Marshal.Marshal.COST_INCOMPATIBLE;
   }
 
   /**
@@ -318,7 +319,7 @@ abstract public class Value : java.io.Serializable
    */
   public int toShortMarshalCost()
   {
-    return Marshal.COST_INCOMPATIBLE;
+    return  Marshal.Marshal.COST_INCOMPATIBLE;
   }
 
   /**
@@ -326,7 +327,7 @@ abstract public class Value : java.io.Serializable
    */
   public int toIntegerMarshalCost()
   {
-    return Marshal.COST_INCOMPATIBLE;
+    return  Marshal.Marshal.COST_INCOMPATIBLE;
   }
 
   /**
@@ -334,7 +335,7 @@ abstract public class Value : java.io.Serializable
    */
   public int toLongMarshalCost()
   {
-    return Marshal.COST_INCOMPATIBLE;
+    return  Marshal.Marshal.COST_INCOMPATIBLE;
   }
 
   /**
@@ -342,7 +343,7 @@ abstract public class Value : java.io.Serializable
    */
   public int toDoubleMarshalCost()
   {
-    return Marshal.COST_INCOMPATIBLE;
+    return  Marshal.Marshal.COST_INCOMPATIBLE;
   }
 
   /**
@@ -358,7 +359,7 @@ abstract public class Value : java.io.Serializable
    */
   public int toCharMarshalCost()
   {
-    return Marshal.COST_TO_CHAR;
+    return  Marshal.Marshal.COST_TO_CHAR;
   }
 
   /**
@@ -366,7 +367,7 @@ abstract public class Value : java.io.Serializable
    */
   public int toStringMarshalCost()
   {
-    return Marshal.COST_TO_STRING;
+    return  Marshal.Marshal.COST_TO_STRING;
   }
 
   /**
@@ -374,7 +375,7 @@ abstract public class Value : java.io.Serializable
    */
   public int toByteArrayMarshalCost()
   {
-    return Marshal.COST_TO_BYTE_ARRAY;
+    return  Marshal.Marshal.COST_TO_BYTE_ARRAY;
   }
 
   /**
@@ -382,7 +383,7 @@ abstract public class Value : java.io.Serializable
    */
   public int toCharArrayMarshalCost()
   {
-    return Marshal.COST_TO_CHAR_ARRAY;
+    return  Marshal.Marshal.COST_TO_CHAR_ARRAY;
   }
 
   /**
@@ -390,7 +391,7 @@ abstract public class Value : java.io.Serializable
    */
   public int toJavaObjectMarshalCost()
   {
-    return Marshal.COST_TO_JAVA_OBJECT;
+    return  Marshal.Marshal.COST_TO_JAVA_OBJECT;
   }
 
   /**
@@ -398,7 +399,7 @@ abstract public class Value : java.io.Serializable
    */
   public int toBinaryValueMarshalCost()
   {
-    return Marshal.COST_TO_STRING + 1;
+    return  Marshal.Marshal.COST_TO_STRING + 1;
   }
 
   /**
@@ -406,7 +407,7 @@ abstract public class Value : java.io.Serializable
    */
   public int toStringValueMarshalCost()
   {
-    return Marshal.COST_TO_STRING + 1;
+    return  Marshal.Marshal.COST_TO_STRING + 1;
   }
 
   /**
@@ -414,7 +415,7 @@ abstract public class Value : java.io.Serializable
    */
   public int toUnicodeValueMarshalCost()
   {
-    return Marshal.COST_TO_STRING + 1;
+    return  Marshal.Marshal.COST_TO_STRING + 1;
   }
 
   //

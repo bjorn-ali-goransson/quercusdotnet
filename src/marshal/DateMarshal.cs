@@ -67,13 +67,13 @@ public class DateMarshal : Marshal
   protected int getMarshalingCostImpl(Value argValue)
   {
     if (argValue instanceof JavaDateValue)
-      return Marshal.ZERO;
+      return  Marshal.Marshal.ZERO;
     else if (argValue instanceof LongValue)
-      return Marshal.THREE;
+      return  Marshal.Marshal.THREE;
     else if (argValue.isLongConvertible())
-      return Marshal.THREE;
+      return  Marshal.Marshal.THREE;
     else
-      return Marshal.FOUR;
+      return  Marshal.Marshal.FOUR;
   }
   
   public override Class getExpectedClass()

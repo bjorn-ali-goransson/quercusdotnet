@@ -81,13 +81,13 @@ public class UnicodeValueMarshal : Marshal
 
     /*
     if (argValue.isUnicode())
-      return Marshal.ZERO;
+      return  Marshal.Marshal.ZERO;
     else if (argValue.isString())
-      return Marshal.TWO;
+      return  Marshal.Marshal.TWO;
     else if (! (argValue.isArray() || argValue.isObject()))
-      return Marshal.THREE;
+      return  Marshal.Marshal.THREE;
     else
-      return Marshal.FOUR;
+      return  Marshal.Marshal.FOUR;
     */
   }
   

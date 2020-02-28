@@ -78,7 +78,7 @@ public class ByteMarshal : Marshal
     else if (argValue.isDoubleConvertible())
       return DOUBLE_CONVERTIBLE_BYTE_COST;
     else
-      return Marshal.FOUR;
+      return  Marshal.Marshal.FOUR;
     */
   }
 

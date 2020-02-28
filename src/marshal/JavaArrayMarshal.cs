@@ -92,12 +92,12 @@ public class JavaArrayMarshal : Marshal
     if (argValue.isArray()) {
       if (Value[].class.equals(_expectedClass)
           || Object[].class.equals(_expectedClass))
-        return Marshal.ONE;
+        return  Marshal.Marshal.ONE;
       else
-        return Marshal.THREE;
+        return  Marshal.Marshal.THREE;
     }
     else
-      return Marshal.FOUR;
+      return  Marshal.Marshal.FOUR;
   }
 
   public override Class getExpectedClass()

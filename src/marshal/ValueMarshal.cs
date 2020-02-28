@@ -81,13 +81,13 @@ public class ValueMarshal : Marshal
 
   protected override int getMarshalingCostImpl(Value argValue)
   {
-    return Marshal.COST_VALUE;
+    return  Marshal.Marshal.COST_VALUE;
   }
 
   /*
   public override int getMarshalingCost(Expr expr)
   {
-    return Marshal.FOUR;
+    return  Marshal.Marshal.FOUR;
   }
   */
 

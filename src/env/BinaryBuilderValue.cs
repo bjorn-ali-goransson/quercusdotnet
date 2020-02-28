@@ -144,11 +144,11 @@ public class BinaryBuilderValue
   public override int toByteMarshalCost()
   {
     if (isLongConvertible())
-      return Marshal.COST_NUMERIC_LOSSLESS;
+      return  Marshal.Marshal.COST_NUMERIC_LOSSLESS;
     else if (isDoubleConvertible())
-      return Marshal.COST_NUMERIC_LOSSY;
+      return  Marshal.Marshal.COST_NUMERIC_LOSSY;
     else
-      return Marshal.COST_BINARY_TO_BYTE;
+      return  Marshal.Marshal.COST_BINARY_TO_BYTE;
   }
 
   /**
@@ -156,7 +156,7 @@ public class BinaryBuilderValue
    */
   public override int toStringMarshalCost()
   {
-    return Marshal.COST_BINARY_TO_STRING;
+    return  Marshal.Marshal.COST_BINARY_TO_STRING;
   }
 
   /**
@@ -164,7 +164,7 @@ public class BinaryBuilderValue
    */
   public override int toCharArrayMarshalCost()
   {
-    return Marshal.COST_BINARY_TO_STRING + 5;
+    return  Marshal.Marshal.COST_BINARY_TO_STRING + 5;
   }
 
   /**
@@ -172,7 +172,7 @@ public class BinaryBuilderValue
    */
   public override int toByteArrayMarshalCost()
   {
-    return Marshal.COST_EQUAL;
+    return  Marshal.Marshal.COST_EQUAL;
   }
 
   /**
@@ -180,7 +180,7 @@ public class BinaryBuilderValue
    */
   public override int toBinaryValueMarshalCost()
   {
-    return Marshal.COST_IDENTICAL;
+    return  Marshal.Marshal.COST_IDENTICAL;
   }
 
   /**
@@ -188,7 +188,7 @@ public class BinaryBuilderValue
    */
   public override int toStringValueMarshalCost()
   {
-    return Marshal.COST_IDENTICAL + 1;
+    return  Marshal.Marshal.COST_IDENTICAL + 1;
   }
 
   /**

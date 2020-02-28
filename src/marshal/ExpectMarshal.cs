@@ -96,7 +96,7 @@ public class ExpectMarshal : Marshal
 
   protected override int getMarshalingCostImpl(Value argValue)
   {
-    return Marshal.COST_VALUE;
+    return  Marshal.Marshal.COST_VALUE;
   }
 
   public override Class getExpectedClass()

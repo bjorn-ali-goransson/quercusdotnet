@@ -52,16 +52,16 @@ public class JavaByteArrayMarshal : JavaArrayMarshal
     /*
     if (argValue.isString()) {
       if (argValue.isUnicode())
-        return Marshal.UNICODE_BYTE_ARRAY_COST;
+        return  Marshal.Marshal.UNICODE_BYTE_ARRAY_COST;
       else if (argValue.isBinary())
-        return Marshal.BINARY_BYTE_ARRAY_COST;
+        return  Marshal.Marshal.BINARY_BYTE_ARRAY_COST;
       else
-        return Marshal.PHP5_BYTE_ARRAY_COST;
+        return  Marshal.Marshal.PHP5_BYTE_ARRAY_COST;
     }
     else if (argValue.isArray())
-      return Marshal.THREE;
+      return  Marshal.Marshal.THREE;
     else
-      return Marshal.FOUR;
+      return  Marshal.Marshal.FOUR;
     */
   }
 

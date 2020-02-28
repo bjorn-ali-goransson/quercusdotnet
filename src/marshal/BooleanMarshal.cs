@@ -79,9 +79,9 @@ public class BooleanMarshal : Marshal {
     return argValue.toBooleanMarshalCost();
     /*
     if (argValue instanceof BooleanValue)
-      return Marshal.ONE;
+      return  Marshal.Marshal.ONE;
     else
-      return Marshal.THREE;
+      return  Marshal.Marshal.THREE;
     */
   }
 

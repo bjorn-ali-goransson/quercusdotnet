@@ -70,14 +70,14 @@ public class CharacterMarshal : Marshal
 
     /*
     if (argValue.isUnicode() && argValue.length() == 1)
-      return Marshal.ONE;
+      return  Marshal.Marshal.ONE;
     else if (argValue.isString()
             &&  !argValue.isBinary() && argValue.length() == 1)
-      return Marshal.ONE; // php/0ch0
+      return  Marshal.Marshal.ONE; // php/0ch0
     else if (argValue.isLongConvertible())
-      return Marshal.THREE;
+      return  Marshal.Marshal.THREE;
     else
-      return Marshal.FOUR;
+      return  Marshal.Marshal.FOUR;
     */
   }
 

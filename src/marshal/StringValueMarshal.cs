@@ -83,25 +83,25 @@ public class StringValueMarshal : Marshal
     /*
     if (argValue.isString()) {
       if (argValue.isUnicode())
-        return Marshal.UNICODE_STRING_VALUE_COST;
+        return  Marshal.Marshal.UNICODE_STRING_VALUE_COST;
       else if (argValue.isBinary())
-        return Marshal.BINARY_STRING_VALUE_COST;
+        return  Marshal.Marshal.BINARY_STRING_VALUE_COST;
       else
-        return Marshal.PHP5_STRING_VALUE_COST;
+        return  Marshal.Marshal.PHP5_STRING_VALUE_COST;
     }
     else if (! (argValue.isArray() || argValue.isObject()))
-      return Marshal.THREE;
+      return  Marshal.Marshal.THREE;
     else
-      return Marshal.FOUR;
+      return  Marshal.Marshal.FOUR;
     */
   }
 
   public int getMarshalingCost(Expr expr)
   {
     if (expr.isString())
-      return Marshal.ZERO;
+      return  Marshal.Marshal.ZERO;
     else
-      return Marshal.FOUR;
+      return  Marshal.Marshal.FOUR;
   }
 
   public override Class getExpectedClass()

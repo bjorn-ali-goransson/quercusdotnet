@@ -57,20 +57,20 @@ public class JavaByteObjectArrayMarshal : JavaArrayMarshal
 
   protected override int getMarshalingCostImpl(Value argValue)
   {
-    return Marshal.COST_INCOMPATIBLE;
+    return  Marshal.Marshal.COST_INCOMPATIBLE;
     /*
     if (argValue.isString()) {
       if (argValue.isUnicode())
-        return Marshal.UNICODE_BYTE_OBJECT_ARRAY_COST;
+        return  Marshal.Marshal.UNICODE_BYTE_OBJECT_ARRAY_COST;
       else if (argValue.isBinary())
-        return Marshal.BINARY_BYTE_OBJECT_ARRAY_COST;
+        return  Marshal.Marshal.BINARY_BYTE_OBJECT_ARRAY_COST;
       else
-        return Marshal.PHP5_BYTE_OBJECT_ARRAY_COST;
+        return  Marshal.Marshal.PHP5_BYTE_OBJECT_ARRAY_COST;
     }
     else if (argValue.isArray())
-      return Marshal.THREE;
+      return  Marshal.Marshal.THREE;
     else
-      return Marshal.FOUR;
+      return  Marshal.Marshal.FOUR;
     */
   }
 

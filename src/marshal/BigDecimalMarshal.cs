@@ -68,17 +68,17 @@ public class BigDecimalMarshal : Marshal {
   protected int getMarshalingCostImpl(Value argValue)
   {
     if (argValue instanceof BigDecimalValue)
-      return Marshal.ZERO;
+      return  Marshal.Marshal.ZERO;
     else if (argValue instanceof DoubleValue)
-      return Marshal.ONE;
+      return  Marshal.Marshal.ONE;
     else if (argValue instanceof LongValue)
-      return Marshal.ONE;
+      return  Marshal.Marshal.ONE;
     else if (argValue.isDoubleConvertible())
-      return Marshal.ONE;
+      return  Marshal.Marshal.ONE;
     else if (argValue.isLongConvertible())
-      return Marshal.ONE;
+      return  Marshal.Marshal.ONE;
     else
-      return Marshal.FOUR;
+      return  Marshal.Marshal.FOUR;
   }
   
   public override Class getExpectedClass()

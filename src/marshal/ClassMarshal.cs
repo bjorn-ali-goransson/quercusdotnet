@@ -104,32 +104,32 @@ public class ClassMarshal : Marshal {
     Object javaValue = argValue.toJavaObject();
 
     if (Class.class.equals(javaValue))
-      return Marshal.COST_IDENTICAL;
+      return  Marshal.Marshal.COST_IDENTICAL;
     else
       return argValue.toStringMarshalCost() + 1;
 
     /*
     if (argValue.isString()) {
       if (argValue.isUnicode())
-        return Marshal.UNICODE_STRING_COST;
+        return  Marshal.Marshal.UNICODE_STRING_COST;
       else if (argValue.isBinary())
-        return Marshal.BINARY_STRING_COST;
+        return  Marshal.Marshal.BINARY_STRING_COST;
       else
-        return Marshal.PHP5_STRING_COST;
+        return  Marshal.Marshal.PHP5_STRING_COST;
     }
     else if (! (argValue.isArray() || argValue.isObject()))
-      return Marshal.THREE;
+      return  Marshal.Marshal.THREE;
     else
-      return Marshal.FOUR;
+      return  Marshal.Marshal.FOUR;
     */
   }
 
   public int getMarshalingCost(Expr expr)
   {
     if (expr.isString())
-      return Marshal.ZERO;
+      return  Marshal.Marshal.ZERO;
     else
-      return Marshal.FOUR;
+      return  Marshal.Marshal.FOUR;
   }
 
   public override Class getExpectedClass()

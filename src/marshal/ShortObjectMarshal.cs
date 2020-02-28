@@ -67,13 +67,13 @@ public class ShortObjectMarshal : Marshal
   protected override int getMarshalingCostImpl(Value argValue)
   {
     if (argValue instanceof LongValue)
-      return Marshal.ONE;
+      return  Marshal.Marshal.ONE;
     else if (argValue.isLongConvertible())
-      return Marshal.THREE;
+      return  Marshal.Marshal.THREE;
     else if (argValue.isNumeric())
-      return Marshal.THREE;
+      return  Marshal.Marshal.THREE;
     else
-      return Marshal.FOUR;
+      return  Marshal.Marshal.FOUR;
   }
   
   public override Class getExpectedClass()

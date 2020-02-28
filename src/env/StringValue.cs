@@ -255,11 +255,11 @@ abstract public class StringValue
     ValueType valueType = getValueType();
 
     if (valueType.isLongCmp())
-      return Marshal.COST_TO_CHAR_ARRAY + 20;
+      return  Marshal.Marshal.COST_TO_CHAR_ARRAY + 20;
     else if (valueType.isNumberCmp())
-      return Marshal.COST_TO_CHAR_ARRAY + 10;
+      return  Marshal.Marshal.COST_TO_CHAR_ARRAY + 10;
     else
-      return Marshal.COST_INCOMPATIBLE;
+      return  Marshal.Marshal.COST_INCOMPATIBLE;
   }
 
   /**
@@ -270,11 +270,11 @@ abstract public class StringValue
     ValueType valueType = getValueType();
 
     if (valueType.isLongCmp())
-      return Marshal.COST_TO_CHAR_ARRAY + 25;
+      return  Marshal.Marshal.COST_TO_CHAR_ARRAY + 25;
     else if (valueType.isNumberCmp())
-      return Marshal.COST_TO_CHAR_ARRAY + 15;
+      return  Marshal.Marshal.COST_TO_CHAR_ARRAY + 15;
     else
-      return Marshal.COST_INCOMPATIBLE;
+      return  Marshal.Marshal.COST_INCOMPATIBLE;
   }
 
   /**
@@ -285,11 +285,11 @@ abstract public class StringValue
     ValueType valueType = getValueType();
 
     if (valueType.isLongCmp())
-      return Marshal.COST_TO_CHAR_ARRAY + 10;
+      return  Marshal.Marshal.COST_TO_CHAR_ARRAY + 10;
     else if (valueType.isNumberCmp())
-      return Marshal.COST_TO_CHAR_ARRAY + 40;
+      return  Marshal.Marshal.COST_TO_CHAR_ARRAY + 40;
     else
-      return Marshal.COST_INCOMPATIBLE;
+      return  Marshal.Marshal.COST_INCOMPATIBLE;
   }
 
   /**
@@ -300,11 +300,11 @@ abstract public class StringValue
     ValueType valueType = getValueType();
 
     if (valueType.isLongCmp())
-      return Marshal.COST_TO_CHAR_ARRAY + 10;
+      return  Marshal.Marshal.COST_TO_CHAR_ARRAY + 10;
     else if (valueType.isNumberCmp())
-      return Marshal.COST_TO_CHAR_ARRAY + 40;
+      return  Marshal.Marshal.COST_TO_CHAR_ARRAY + 40;
     else
-      return Marshal.COST_INCOMPATIBLE;
+      return  Marshal.Marshal.COST_INCOMPATIBLE;
   }
 
   /**
@@ -315,11 +315,11 @@ abstract public class StringValue
     ValueType valueType = getValueType();
 
     if (valueType.isLongCmp())
-      return Marshal.COST_TO_CHAR_ARRAY + 30;
+      return  Marshal.Marshal.COST_TO_CHAR_ARRAY + 30;
     else if (valueType.isNumberCmp())
-      return Marshal.COST_TO_CHAR_ARRAY + 50;
+      return  Marshal.Marshal.COST_TO_CHAR_ARRAY + 50;
     else
-      return Marshal.COST_INCOMPATIBLE;
+      return  Marshal.Marshal.COST_INCOMPATIBLE;
   }
 
   /**
@@ -330,11 +330,11 @@ abstract public class StringValue
     ValueType valueType = getValueType();
 
     if (valueType.isLongCmp())
-      return Marshal.COST_TO_CHAR_ARRAY + 30;
+      return  Marshal.Marshal.COST_TO_CHAR_ARRAY + 30;
     else if (valueType.isNumberCmp())
-      return Marshal.COST_TO_CHAR_ARRAY + 50;
+      return  Marshal.Marshal.COST_TO_CHAR_ARRAY + 50;
     else
-      return Marshal.COST_STRING_TO_BYTE;
+      return  Marshal.Marshal.COST_STRING_TO_BYTE;
   }
 
   /**
@@ -342,7 +342,7 @@ abstract public class StringValue
    */
   public override int toCharMarshalCost()
   {
-    return Marshal.COST_STRING_TO_CHAR;
+    return  Marshal.Marshal.COST_STRING_TO_CHAR;
   }
 
   /**
@@ -350,7 +350,7 @@ abstract public class StringValue
    */
   public override int toStringMarshalCost()
   {
-    return Marshal.COST_EQUAL;
+    return  Marshal.Marshal.COST_EQUAL;
   }
 
   /**
@@ -358,7 +358,7 @@ abstract public class StringValue
    */
   public override int toCharArrayMarshalCost()
   {
-    return Marshal.COST_STRING_TO_CHAR_ARRAY;
+    return  Marshal.Marshal.COST_STRING_TO_CHAR_ARRAY;
   }
 
   /**
@@ -366,7 +366,7 @@ abstract public class StringValue
    */
   public int toStringValueMarshalCost()
   {
-    return Marshal.COST_IDENTICAL;
+    return  Marshal.Marshal.COST_IDENTICAL;
   }
 
   /**
@@ -374,7 +374,7 @@ abstract public class StringValue
    */
   public override int toBinaryValueMarshalCost()
   {
-    return Marshal.COST_STRING_TO_BINARY;
+    return  Marshal.Marshal.COST_STRING_TO_BINARY;
   }
 
   /**
