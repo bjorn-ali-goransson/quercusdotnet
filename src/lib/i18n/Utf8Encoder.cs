@@ -50,7 +50,7 @@ public class Utf8Encoder
   public override bool isEncodable(StringValue str, int start, int end)
   {
     for (int i = start; i < end; i++) {
-      char ch = str.charAt(i);
+      char ch = str[i];
 
       if (ch <= 0x7F)
         continue;
@@ -59,7 +59,7 @@ public class Utf8Encoder
         char ch2;
 
         if (i + 1 < end
-            && 0xDC00 <= (ch2 = str.charAt(i + 1)) && ch2 <= 0xDFFF) {
+            && 0xDC00 <= (ch2 = str[i + 1]) && ch2 <= 0xDFFF) {
           i++;
         }
         else
@@ -74,7 +74,7 @@ public class Utf8Encoder
                             int start, int end)
   {
     for (int i = start; i < end; i++) {
-      char ch = str.charAt(i);
+      char ch = str[i];
 
       if (ch <= 0x7F) {
         sb.appendByte(ch);
@@ -88,7 +88,7 @@ public class Utf8Encoder
         char ch2;
 
         if (i + 1 < end
-            && 0xDC00 <= (ch2 = str.charAt(i + 1)) && ch2 <= 0xDFFF) {
+            && 0xDC00 <= (ch2 = str[i + 1]) && ch2 <= 0xDFFF) {
           i++;
 
           code = 0x10000 + ((ch - 0xD800) << 10) + (ch2 - 0xDC00);

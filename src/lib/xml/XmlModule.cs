@@ -117,7 +117,7 @@ public class XmlModule : AbstractQuercusModule {
 
     int len = str.length();
     for (int i = 0; i < len; i++) {
-      int ch = str.charAt(i);
+      int ch = str[i];
 
       if (ch < 0x80)
         sb.append((char) ch);
@@ -144,20 +144,20 @@ public class XmlModule : AbstractQuercusModule {
 
     int len = str.length();
     for (int i = 0; i < len; i++) {
-      int ch = str.charAt(i) & 0xff;
+      int ch = str[i] & 0xff;
 
       if (ch < 0x80)
         sb.append((char) ch);
       else if ((ch & 0xe0) == 0xc0) {
         int d1 = (ch & 0x1f) << 6;
-        int d2 = str.charAt(++i) & 0x3f;
+        int d2 = str[++i] & 0x3f;
 
         sb.append((char) (d1 + d2));
       }
       else {
         int d1 = (ch & 0xf) << 12;
-        int d2 = (str.charAt(++i) & 0x3f) << 6;
-        int d3 = (str.charAt(++i) & 0x3f);
+        int d2 = (str[++i] & 0x3f) << 6;
+        int d3 = (str[++i] & 0x3f);
 
         sb.append((char) (d1 + d2 + d3));
       }

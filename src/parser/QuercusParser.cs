@@ -3630,7 +3630,7 @@ public class QuercusParser {
       long sign = 1;
       bool isOverflow = false;
 
-      char ch = _lexeme.charAt(0);
+      char ch = _lexeme[0];
 
       int i = 0;
       if (ch == '+') {
@@ -3642,7 +3642,7 @@ public class QuercusParser {
 
       int len = _lexeme.length();
       for (; i < len; i++) {
-        int digit = _lexeme.charAt(i) - '0';
+        int digit = _lexeme[i] - '0';
         long oldValue = value;
 
         value = value * 10 + digit;
@@ -5132,7 +5132,7 @@ public class QuercusParser {
       if (ch < 0)
         return false;
 
-      if (Character.toLowerCase(ch) != text.charAt(i)) {
+      if (Character.toLowerCase(ch) != text[i]) {
         _peek = ch;
         return false;
       }
@@ -5297,7 +5297,7 @@ public class QuercusParser {
 
     int ch = read();
     for (; i < len; i++) {
-      if (nowdocName.charAt(i) == ch) {
+      if (nowdocName[i] == ch) {
         ch = read();
 
         continue;
@@ -5742,13 +5742,13 @@ public class QuercusParser {
         if (_heredocEnd == null || ! _sb.endsWith(_heredocEnd)) {
         }
         else if (_sb.length() == _heredocEnd.length()
-                 || _sb.charAt(_sb.length() - _heredocEnd.length() - 1) == '\n'
-                 || _sb.charAt(_sb.length() - _heredocEnd.length() - 1) == '\r') {
+                 || _sb[_sb.length(] - _heredocEnd.length() - 1) == '\n'
+                 || _sb[_sb.length(] - _heredocEnd.length() - 1) == '\r') {
           _sb.setLength(_sb.length() - _heredocEnd.length());
 
-          if (_sb.length() > 0 && _sb.charAt(_sb.length() - 1) == '\n')
+          if (_sb.length() > 0 && _sb[_sb.length(] - 1) == '\n')
             _sb.setLength(_sb.length() - 1);
-          if (_sb.length() > 0 && _sb.charAt(_sb.length() - 1) == '\r')
+          if (_sb.length() > 0 && _sb[_sb.length(] - 1) == '\r')
             _sb.setLength(_sb.length() - 1);
 
           _heredocEnd = null;
@@ -5957,7 +5957,7 @@ public class QuercusParser {
       int value = 0;
 
       for (int i = 0; i < len; i++) {
-        ch = _sb.charAt(i);
+        ch = _sb[i];
         if ('0' <= ch && ch <= '7')
           value = value * 8 + ch - '0';
         else

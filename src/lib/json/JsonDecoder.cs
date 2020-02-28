@@ -88,7 +88,7 @@ class JsonDecoder {
     if (_len <= _offset)
       return errorReturn(env);
 
-    char ch = _str.charAt(_offset);
+    char ch = _str[_offset];
 
     switch (ch) {
     case '"': {
@@ -101,15 +101,15 @@ class JsonDecoder {
       if (isTop && _offset + 4 < _len)
         return decodeString(env, false);
       else if (_offset + 3 < _len) {
-        char ch2 = _str.charAt(_offset + 1);
-        char ch3 = _str.charAt(_offset + 2);
-        char ch4 = _str.charAt(_offset + 3);
+        char ch2 = _str[_offset + 1];
+        char ch3 = _str[_offset + 2];
+        char ch4 = _str[_offset + 3];
 
         if ((ch2 == 'r' || ch2 == 'R')
             && (ch3 == 'u' || ch3 == 'U')
             && (ch4 == 'e' || ch4 == 'E')) {
           if (_offset + 4 < _len
-              && (ch = _str.charAt(_offset + 4)) != ','
+              && (ch = _str[_offset + 4]) != ','
               && ch != ']'
               && ch != '}'
               && ! Character.isWhitespace(ch))
@@ -132,17 +132,17 @@ class JsonDecoder {
       if (isTop && _offset + 5 < _len)
         return decodeString(env, false);
       else if (_offset + 4 < _len) {
-        char ch2 = _str.charAt(_offset + 1);
-        char ch3 = _str.charAt(_offset + 2);
-        char ch4 = _str.charAt(_offset + 3);
-        char ch5 = _str.charAt(_offset + 4);
+        char ch2 = _str[_offset + 1];
+        char ch3 = _str[_offset + 2];
+        char ch4 = _str[_offset + 3];
+        char ch5 = _str[_offset + 4];
 
         if ((ch2 == 'a' || ch2 == 'A')
             && (ch3 == 'l' || ch3 == 'L')
             && (ch4 == 's' || ch4 == 'S')
             && (ch5 == 'e' || ch5 == 'E')) {
           if (_offset + 5 < _len
-              && (ch = _str.charAt(_offset + 5)) != ','
+              && (ch = _str[_offset + 5]) != ','
               && ch != ']'
               && ch != '}'
               && ! Character.isWhitespace(ch))
@@ -165,15 +165,15 @@ class JsonDecoder {
       if (isTop && _offset + 4 < _len)
         return decodeString(env, false);
       else if (_offset + 3 < _len) {
-        char ch2 = _str.charAt(_offset + 1);
-        char ch3 = _str.charAt(_offset + 2);
-        char ch4 = _str.charAt(_offset + 3);
+        char ch2 = _str[_offset + 1];
+        char ch3 = _str[_offset + 2];
+        char ch4 = _str[_offset + 3];
 
         if ((ch2 == 'u' || ch2 == 'U')
             && (ch3 == 'l' || ch3 == 'L')
             && (ch4 == 'l' || ch4 == 'L')) {
           if (_offset + 4 < _len
-              && (ch = _str.charAt(_offset + 4)) != ','
+              && (ch = _str[_offset + 4]) != ','
               && ch != ']'
               && ch != '}'
               && ! Character.isWhitespace(ch))
@@ -225,7 +225,7 @@ class JsonDecoder {
     char ch;
 
     // (-)?
-    if ((ch = _str.charAt(_offset)) == '-') {
+    if ((ch = _str[_offset]) == '-') {
       sign = -1;
 
       _offset++;
@@ -234,7 +234,7 @@ class JsonDecoder {
     if (_len <= _offset)
       return errorReturn(env, "expected 1-9");
 
-    ch = _str.charAt(_offset++);
+    ch = _str[_offset++];
 
     // (0) | ([1-9] [0-9]*)
     if (ch == '0') {
@@ -243,7 +243,7 @@ class JsonDecoder {
       value = ch - '0';
 
       while (_offset < _len
-             && '0' <= (ch = _str.charAt(_offset)) && ch <= '9') {
+             && '0' <= (ch = _str[_offset]) && ch <= '9') {
         _offset++;
 
         value = 10 * value + ch - '0';
@@ -253,29 +253,29 @@ class JsonDecoder {
     bool isDouble = false;
 
     // ((decimalPoint) [0-9]+)?
-    if (_offset < _len && (ch = _str.charAt(_offset)) == '.') {
+    if (_offset < _len && (ch = _str[_offset]) == '.') {
       _offset++;
 
       isDouble = true;
 
       while (_offset < _len
-             && '0' <= (ch = _str.charAt(_offset)) && ch <= '9') {
+             && '0' <= (ch = _str[_offset]) && ch <= '9') {
         _offset++;
       }
     }
 
     // ((e | E) (+ | -)? [0-9]+)
-    if (_offset < _len && (ch = _str.charAt(_offset)) == 'e' || ch == 'E') {
+    if (_offset < _len && (ch = _str[_offset]) == 'e' || ch == 'E') {
       _offset++;
 
       isDouble = true;
 
-      if (_offset < _len && (ch = _str.charAt(_offset)) == '+' || ch == '-') {
+      if (_offset < _len && (ch = _str[_offset]) == '+' || ch == '-') {
         _offset++;
       }
 
       while (_offset < _len
-             && '0' <= (ch = _str.charAt(_offset)) && ch <= '9') {
+             && '0' <= (ch = _str[_offset]) && ch <= '9') {
         _offset++;
       }
 
@@ -311,7 +311,7 @@ class JsonDecoder {
       if (_offset >= _len)
         return errorReturn(env, "expected either ',' or ']'");
 
-      if (_str.charAt(_offset) == ']') {
+      if (_str[_offset] == ']') {
         _offset++;
         break;
       }
@@ -323,7 +323,7 @@ class JsonDecoder {
       if (_offset >= _len)
         return errorReturn(env, "expected either ',' or ']'");
 
-      char ch = _str.charAt(_offset++);
+      char ch = _str[_offset++];
 
       if (ch == ',') {
       }
@@ -356,7 +356,7 @@ class JsonDecoder {
     while (true) {
       skipWhitespace();
 
-      if (_len <= _offset || _str.charAt(_offset) == '}') {
+      if (_len <= _offset || _str[_offset] == '}') {
         _offset++;
         break;
       }
@@ -365,7 +365,7 @@ class JsonDecoder {
 
       skipWhitespace();
 
-      if (_offset >= _len || _str.charAt(_offset++) != ':')
+      if (_offset >= _len || _str[_offset++] != ':')
         return errorReturn(env, "expected ':'");
 
       array.append(name, jsonDecodeImpl(env, false));
@@ -376,7 +376,7 @@ class JsonDecoder {
 
       if (_offset >= _len)
         return errorReturn(env, "expected either ',' or '}'");
-      else if ((ch = _str.charAt(_offset++)) == ',') {
+      else if ((ch = _str[_offset++]) == ',') {
       }
       else if (ch == '}')
         break;
@@ -399,7 +399,7 @@ class JsonDecoder {
     while (true) {
       skipWhitespace();
 
-      if (_len <= _offset || _str.charAt(_offset) == '}') {
+      if (_len <= _offset || _str[_offset] == '}') {
         _offset++;
         break;
       }
@@ -408,7 +408,7 @@ class JsonDecoder {
 
       skipWhitespace();
 
-      if (_len <= _offset || _str.charAt(_offset++) != ':')
+      if (_len <= _offset || _str[_offset++] != ':')
         return errorReturn(env, "expected ':'");
 
       object.putField(env, name.ToString(), jsonDecodeImpl(env, false));
@@ -419,7 +419,7 @@ class JsonDecoder {
 
       if (_offset >= _len)
         return errorReturn(env, "expected either ',' or '}'");
-      else if ((ch = _str.charAt(_offset++)) == ',') {
+      else if ((ch = _str[_offset++]) == ',') {
       }
       else if (ch == '}')
         break;
@@ -438,7 +438,7 @@ class JsonDecoder {
     StringValue sb = env.createUnicodeBuilder();
 
     while (_offset < _len) {
-      char ch = _str.charAt(_offset++);
+      char ch = _str[_offset++];
 
       switch (ch) {
 
@@ -447,7 +447,7 @@ class JsonDecoder {
         if (_offset >= _len)
           return errorReturn(env, "invalid escape character");
 
-        ch = _str.charAt(_offset++);
+        ch = _str[_offset++];
 
         switch (ch) {
           case '"':
@@ -480,7 +480,7 @@ class JsonDecoder {
 
             for (int i = 0; _offset < _len && i < 4; i++) {
               hex = hex << 4;
-              ch = _str.charAt(_offset++);
+              ch = _str[_offset++];
 
               if ('0' <= ch && ch <= '9')
                 hex += ch - '0';
@@ -529,7 +529,7 @@ class JsonDecoder {
     StringValue sb = env.createUnicodeBuilder();
 
     while (_offset < _len) {
-      char ch = _str.charAt(_offset++);
+      char ch = _str[_offset++];
 
       if (! Character.isJavaIdentifierPart(ch)) {
         _offset--;
@@ -575,14 +575,14 @@ class JsonDecoder {
 
     int head = _offset;
 
-    for (; head >= 0 && s.charAt(head) != '\n'; head--) {
+    for (; head >= 0 && s[head] != '\n'; head--) {
     }
 
     if (head < 0)
       head = 0;
 
     int tail = _offset;
-    for (; tail < len && s.charAt(tail) != '\n'; tail++) {
+    for (; tail < len && s[tail] != '\n'; tail++) {
     }
 
     return s.substring(head, tail).ToString();
@@ -591,7 +591,7 @@ class JsonDecoder {
   private void skipWhitespace()
   {
     while (_offset < _len) {
-      char ch = _str.charAt(_offset);
+      char ch = _str[_offset];
 
       if (ch == ' '
           || ch == '\n'

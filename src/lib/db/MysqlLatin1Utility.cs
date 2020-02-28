@@ -93,7 +93,7 @@ public class MysqlLatin1Utility
     byte []bytes = new byte[len];
     
     for (int i = 0; i < len; i++) {
-      int ch = s.charAt(i);
+      int ch = s[i];
       
       // there was a previous error in converting to a Java String
       if (ch == 0xfffd)

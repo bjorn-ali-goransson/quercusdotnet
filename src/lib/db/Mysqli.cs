@@ -878,7 +878,7 @@ public class Mysqli : JdbcConnectionResource
     StringBuilder sb = new StringBuilder();
 
     for (int i = 0; i < str.length(); i++) {
-      char ch = str.charAt(i);
+      char ch = str[i];
 
       if (ch > 0x7f) {
         // hack to prevent the JDBC driver from doing any decoding/encoding on this char
@@ -898,7 +898,7 @@ public class Mysqli : JdbcConnectionResource
     bool isBinary = false;
 
     for (int i = 0; i < len; i++) {
-      char ch = str.charAt(i);
+      char ch = str[i];
 
       if (ch > 0x7f) {
         isBinary = true;
@@ -913,7 +913,7 @@ public class Mysqli : JdbcConnectionResource
     StringBuilder sb = new StringBuilder();
 
     for (int i = 0; i < len; i++) {
-      char ch = str.charAt(i);
+      char ch = str[i];
 
       if (ch == '\'' || ch == '"' || ch == '`') {
         i = appendString(sb, str, len, i + 1, ch);
@@ -933,13 +933,13 @@ public class Mysqli : JdbcConnectionResource
     bool isBinary = false;
 
     for (; index < length; index++) {
-      char ch = str.charAt(index);
+      char ch = str[index];
 
       if (ch > 0x7f) {
         isBinary = true;
       }
       else if (ch == '\\' && index + 1 < length) {
-        char ch2 = str.charAt(index + 1);
+        char ch2 = str[index + 1];
         index++;
 
         if (ch2 > 0x7f) {
@@ -962,10 +962,10 @@ public class Mysqli : JdbcConnectionResource
       sb.append("0x");
 
       for (int i = start; i < end; i++) {
-        char ch = str.charAt(i);
+        char ch = str[i];
 
         if (ch == '\\' && i + 1 < end) {
-          char ch2 = str.charAt(i + 1);
+          char ch2 = str[i + 1];
           i++;
 
           switch (ch2) {
@@ -1810,12 +1810,12 @@ public class Mysqli : JdbcConnectionResource
     char c;
 
     for (int i = 0; i < length; i++) {
-      c = sql.charAt(i);
+      c = sql[i];
 
       if (c == '\\') {
         queryBuffer.append(c);
         if (i < length - 1) {
-          queryBuffer.append(sql.charAt(i + 1));
+          queryBuffer.append(sql[i + 1]);
           i++;
         }
         continue;

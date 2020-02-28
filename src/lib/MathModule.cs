@@ -153,7 +153,7 @@ public class MathModule : AbstractQuercusModule {
     int len = str.length();
 
     for (int i = 0; i < len; i++) {
-      int ch = str.charAt(i);
+      int ch = str[i];
 
       int d;
 
@@ -240,7 +240,7 @@ public class MathModule : AbstractQuercusModule {
 
     int len = sb.length();
     for (int i = len - 1; i >= 0; i--) {
-      toReturn.append(sb.charAt(i));
+      toReturn.append(sb[i]);
     }
 
     return toReturn;

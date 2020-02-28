@@ -173,7 +173,7 @@ public class PDOStatement
     int parameterCount = 0;
 
     for (int i = 0; i < len; i++) {
-      int ch = query.charAt(i);
+      int ch = query[i];
 
       if (ch == '\'' || ch == '"') {
         sb.append((char) ch);
@@ -181,7 +181,7 @@ public class PDOStatement
         while (true) {
           i++;
 
-          int ch2 = query.charAt(i);
+          int ch2 = query[i];
 
           if (ch2 < 0) {
             env.error(L.l("missing ending quote in query: {0}", query));
@@ -200,10 +200,10 @@ public class PDOStatement
         sb.append((char) ch);
       }
       else if (ch == ':') {
-        if (i + 1 < len && query.charAt(i + 1) == ':') {
+        if (i + 1 < len && query[i + 1] == ':') {
           int j = i + 1;
 
-          for (; j < len && query.charAt(j) == ':'; j++) {
+          for (; j < len && query[j] == ':'; j++) {
           }
 
           sb.append(query, i, j + 1);
@@ -219,7 +219,7 @@ public class PDOStatement
 
           int ch2 = -1;
           if (i < len) {
-            ch2 = query.charAt(i);
+            ch2 = query[i];
           }
 
           // XXX: check what characters are allowed
@@ -989,7 +989,7 @@ public class PDOStatement
     else {
       string name = parameter.ToString();
 
-      if (name.length() > 1 && name.charAt(0) == ':') {
+      if (name.length() > 1 && name[0] == ':') {
         name = name.substring(1);
       }
 

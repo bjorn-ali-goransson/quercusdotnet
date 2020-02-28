@@ -207,7 +207,7 @@ public class RegexpState {
 
       for (; _first + minLength <= length; _first++) {
         if (firstSet != null && _first < length) {
-          char firstChar = subject.charAt(_first);
+          char firstChar = subject[_first];
 
           if (firstChar < 256 && ! firstSet[firstChar])
             continue;
@@ -328,7 +328,7 @@ public class RegexpState {
 
       for (; start <= end; start++) {
         if (firstSet != null && (start < end || minLength > 0)) {
-          char firstChar = subject.charAt(start);
+          char firstChar = subject[start];
 
           if (firstChar < 256 && ! firstSet[firstChar])
             continue;

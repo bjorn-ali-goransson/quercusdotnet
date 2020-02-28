@@ -97,7 +97,7 @@ public class ZlibModule : AbstractQuercusModule {
       return null;
 
     try {
-      int ch = filemode.charAt(0);
+      int ch = filemode[0];
 
       if (ch == 'r') {
         BinaryInput @is = (BinaryInput) val;
@@ -402,7 +402,7 @@ public class ZlibModule : AbstractQuercusModule {
 
     //zlib_get_coding_type can also be an integer > 0
     if (! ini.equalsIgnoreCase("on")) {
-      int ch = ini.charAt(0);
+      int ch = ini[0];
 
       if (ch < '0' || ch > '9')
         return BooleanValue.FALSE;
@@ -739,7 +739,7 @@ public class ZlibModule : AbstractQuercusModule {
 
     for (int i = 1; i < input.length(); i++)
     {
-      char ch = input.charAt(i);
+      char ch = input[i];
       switch (ch) {
         case 'r':
           filemode = "r";
@@ -768,7 +768,7 @@ public class ZlibModule : AbstractQuercusModule {
   private static int getCompressionLevel(String input)
   {
     for (int i = input.length() - 1; i >= 0; i--) {
-      char ch = input.charAt(i);
+      char ch = input[i];
 
       if (ch >= '0' && ch <= '9')
         return ch - '0';
@@ -784,7 +784,7 @@ public class ZlibModule : AbstractQuercusModule {
   private static int getCompressionStrategy(String input)
   {
     for (int i = input.length() - 1; i >= 0; i--) {
-      char ch = input.charAt(i);
+      char ch = input[i];
 
       switch (ch) {
       case 'f':

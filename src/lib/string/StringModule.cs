@@ -144,7 +144,7 @@ public class StringModule : AbstractQuercusModule {
     StringValue sb = source.createStringBuilder(length * 5 / 4);
 
     for (int i = 0; i < length; i++) {
-      char ch = source.charAt(i);
+      char ch = source[i];
 
       if (ch >= 256 || ! bitmap[ch]) {
         sb.append(ch);
@@ -205,7 +205,7 @@ public class StringModule : AbstractQuercusModule {
 
     int length = charset.length();
     for (int i = 0; i < length; i++) {
-      char ch = charset.charAt(i);
+      char ch = charset[i];
 
       // XXX: the bitmap eventual might need to deal with unicode
       if (ch >= 256)
@@ -216,10 +216,10 @@ public class StringModule : AbstractQuercusModule {
       if (length <= i + 3)
         continue;
 
-      if (charset.charAt(i + 1) != '.' || charset.charAt(i + 2) != '.')
+      if (charset[i + 1] != '.' || charset[i + 2] != '.')
         continue;
 
-      char last = charset.charAt(i + 3);
+      char last = charset[i + 3];
 
       if (last < ch) {
         env.warning(L.l("character set range @is invalid: {0}..{1}",
@@ -250,7 +250,7 @@ public class StringModule : AbstractQuercusModule {
 
     int length = source.length();
     for (int i = 0; i < length; i++) {
-      char ch = source.charAt(i);
+      char ch = source[i];
 
       switch (ch) {
       case 0x0:
@@ -404,7 +404,7 @@ public class StringModule : AbstractQuercusModule {
 
       int i = 0;
       while (i < length) {
-        int ch1 = source.charAt(i++);
+        int ch1 = source[i++];
 
         if (ch1 == 0x60 || ch1 == 0x20)
           break;
@@ -416,10 +416,10 @@ public class StringModule : AbstractQuercusModule {
         while (sublen > 0) {
           int code;
 
-          code = ((source.charAt(i++) - 0x20) & 0x3f) << 18;
-          code += ((source.charAt(i++) - 0x20) & 0x3f) << 12;
-          code += ((source.charAt(i++) - 0x20) & 0x3f) << 6;
-          code += ((source.charAt(i++) - 0x20) & 0x3f);
+          code = ((source[i++] - 0x20) & 0x3f) << 18;
+          code += ((source[i++] - 0x20) & 0x3f) << 12;
+          code += ((source[i++] - 0x20) & 0x3f) << 6;
+          code += ((source[i++] - 0x20) & 0x3f);
 
           byteToChar.addByte(code >> 16);
 
@@ -462,13 +462,13 @@ public class StringModule : AbstractQuercusModule {
       int end = i + sublen;
 
       while (i < end) {
-        int code = source.charAt(i++) << 16;
+        int code = source[i++] << 16;
 
         if (i < length)
-          code += source.charAt(i++) << 8;
+          code += source[i++] << 8;
 
         if (i < length)
-          code += source.charAt(i++);
+          code += source[i++];
 
         result.append(toUUChar(((code >> 18) & 0x3f)));
         result.append(toUUChar(((code >> 12) & 0x3f)));
@@ -495,7 +495,7 @@ public class StringModule : AbstractQuercusModule {
     int length = data.length();
 
     for (int i = 0; i < length; i++) {
-      count[data.charAt(i) & 0xff] += 1;
+      count[data[i] & 0xff] += 1;
     }
 
     switch (mode) {
@@ -675,8 +675,8 @@ public class StringModule : AbstractQuercusModule {
     int len = s.length();
 
     for (int i = 0; i + 1 < len; i += 2) {
-      int d1 = hexDigit(s.charAt(i));
-      int d2 = hexDigit(s.charAt(i + 1));
+      int d1 = hexDigit(s[i]);
+      int d2 = hexDigit(s[i + 1]);
 
       int d = d1 * 16 + d2;
 
@@ -836,7 +836,7 @@ public class StringModule : AbstractQuercusModule {
       trim = parseCharsetBitmap(env, characters);
 
     for (int i = 0; i < string.length(); i++) {
-      char ch = string.charAt(i);
+      char ch = string[i];
 
       if (ch >= 256 || ! trim[ch]) {
         if (i == 0)
@@ -990,7 +990,7 @@ public class StringModule : AbstractQuercusModule {
 
     // ignore everything up until first letter
     for (; index < length; index++) {
-      ch = toUpperCase(string.charAt(index));
+      ch = toUpperCase(string[index]);
 
       if ('A' <= ch && ch <= 'Z')
         break;
@@ -1007,7 +1007,7 @@ public class StringModule : AbstractQuercusModule {
 
     char nextCh
       = index < lastIndex
-      ? toUpperCase(string.charAt(index + 1))
+      ? toUpperCase(string[index + 1])
       : 0;
 
     switch (ch) {
@@ -1079,11 +1079,11 @@ public class StringModule : AbstractQuercusModule {
     for (; index < length; index++) {
 
       if (index > 0)
-        prevCh = toUpperCase(string.charAt(index - 1));
+        prevCh = toUpperCase(string[index - 1]);
       else
         prevCh = 0;
 
-      ch = toUpperCase(string.charAt(index));
+      ch = toUpperCase(string[index]);
 
       if (ch < 'A' || ch > 'Z')
         continue;
@@ -1092,14 +1092,14 @@ public class StringModule : AbstractQuercusModule {
         continue;
 
       if (index + 1 < length)
-        nextCh = toUpperCase(string.charAt(index + 1));
+        nextCh = toUpperCase(string[index + 1]);
       else
         nextCh = 0;
 
       char nextnextCh;
 
       if (index + 2 < length)
-        nextnextCh = toUpperCase(string.charAt(index + 2));
+        nextnextCh = toUpperCase(string[index + 2]);
       else
         nextnextCh = 0;
 
@@ -1163,7 +1163,7 @@ public class StringModule : AbstractQuercusModule {
             bool isSilent = false;
 
             if (index - 3 >= 0) {
-              char prev3Ch = toUpperCase(string.charAt(index - 3));
+              char prev3Ch = toUpperCase(string[index - 3]);
               switch (prev3Ch) {
                 // noghtof
                 case 'B':
@@ -1178,7 +1178,7 @@ public class StringModule : AbstractQuercusModule {
 
             if (!isSilent) {
               if (index - 4 >= 0) {
-                char prev4Ch = toUpperCase(string.charAt(index - 4));
+                char prev4Ch = toUpperCase(string[index - 4]);
 
                 isSilent = (prev4Ch == 'H');
               }
@@ -1193,7 +1193,7 @@ public class StringModule : AbstractQuercusModule {
             char nextnextnextCh;
 
             if (index + 3 < length)
-              nextnextnextCh = toUpperCase(string.charAt(index + 3));
+              nextnextnextCh = toUpperCase(string[index + 3]);
             else
               nextnextnextCh = 0;
 
@@ -1386,7 +1386,7 @@ public class StringModule : AbstractQuercusModule {
     if (! pointValue.isNull()) {
       string pointString = pointValue.ToString();
 
-      point =  (pointString.length() == 0) ? 0 : pointString.charAt(0);
+      point =  (pointString.length() == 0) ? 0 : pointString[0];
     }
 
     char group = ',';
@@ -1394,7 +1394,7 @@ public class StringModule : AbstractQuercusModule {
     if (! groupValue.isNull()) {
       string groupString = groupValue.ToString();
 
-      group = (groupString.length() == 0) ? 0 : groupString.charAt(0);
+      group = (groupString.length() == 0) ? 0 : groupString[0];
     }
 
     if (decimals > 0) {
@@ -1449,7 +1449,7 @@ public class StringModule : AbstractQuercusModule {
     if (string.length() == 0)
       return 0;
     else {
-      return string.charAt(0);
+      return string[0];
     }
   }
 
@@ -1532,7 +1532,7 @@ public class StringModule : AbstractQuercusModule {
     int length = str.length();
 
     for (int i = 0; i < length; i++) {
-      char ch = str.charAt(i);
+      char ch = str[i];
 
       if (33 <= ch && ch <= 60)
         sb.append(ch);
@@ -1540,7 +1540,7 @@ public class StringModule : AbstractQuercusModule {
         sb.append(ch);
       else if (ch == ' ' || ch == '\t') {
         if (i + 1 < str.length()
-            && (str.charAt(i + 1) == '\r' || str.charAt(i + 1) == '\n')) {
+            && (str[i + 1] == '\r' || str[i + 1] == '\n')) {
           sb.append('=');
           sb.append(toUpperHexChar(ch >> 4));
           sb.append(toUpperHexChar(ch));
@@ -1575,7 +1575,7 @@ public class StringModule : AbstractQuercusModule {
     StringValue sb = string.createStringBuilder(len * 5 / 4);
 
     for (int i = 0; i < len; i++) {
-      char ch = string.charAt(i);
+      char ch = string[i];
 
       switch (ch) {
       case '.': case '\\': case '+': case '*': case '?':
@@ -1627,7 +1627,7 @@ public class StringModule : AbstractQuercusModule {
       trim = parseCharsetBitmap(env, characters);
 
     for (int i = string.length() - 1; i >= 0; i--) {
-      char ch = string.charAt(i);
+      char ch = string[i];
 
       if (ch >= 256 || ! trim[ch]) {
         if (i == string.length())
@@ -1737,14 +1737,14 @@ public class StringModule : AbstractQuercusModule {
     int i = 0;
 
     char ch = 0;
-    while (i < len && (ch = localeName.charAt(i++)) != '-' && ch != '_') {
+    while (i < len && (ch = localeName[i++]) != '-' && ch != '_') {
       sb.append(ch);
     }
 
     language = sb.ToString();
     sb.clear();
 
-    while (i < len && (ch = localeName.charAt(i)) != '.' && ch != '@') {
+    while (i < len && (ch = localeName[i]) != '.' && ch != '@') {
       sb.append(ch);
 
       i++;
@@ -1756,7 +1756,7 @@ public class StringModule : AbstractQuercusModule {
     country = sb.ToString();
     sb.clear();
 
-    while (i < len && (ch = localeName.charAt(i)) != '@') {
+    while (i < len && (ch = localeName[i]) != '@') {
       sb.append(ch);
 
       i++;
@@ -1952,7 +1952,7 @@ public class StringModule : AbstractQuercusModule {
 
 
     for (int i = 0; i < length && count < 4; i++) {
-      char ch = toUpperCase(string.charAt(i));
+      char ch = toUpperCase(string[i]);
 
       if ('A' <= ch  && ch <= 'Z') {
         char code = SOUNDEX_VALUES[ch - 'A'];
@@ -2011,7 +2011,7 @@ public class StringModule : AbstractQuercusModule {
     int index = 0;
 
     for (int i = 0; i < length; i++) {
-      char ch = format.charAt(i);
+      char ch = format[i];
 
       if (i + 1 < length && ch == '%') {
         // The C printf silently ignores invalid flags, so we need to
@@ -2036,20 +2036,20 @@ public class StringModule : AbstractQuercusModule {
 
         loop:
         for (; j < length; j++) {
-          ch = format.charAt(j);
+          ch = format[j];
 
           switch (ch) {
           case '-':
             isLeft = true;
 
-            if (j + 1 < length && format.charAt(j + 1) == '0') {
+            if (j + 1 < length && format[j + 1] == '0') {
               padChar = '0';
               j++;
             }
 
             /*
             for (int k = j + 1; k < length; k++) {
-              char digit = format.charAt(k);
+              char digit = format[k];
 
               if ('0' <= digit && digit <= '9') {
                 leftPadLength = leftPadLength * 10 + digit - '0';
@@ -2072,7 +2072,7 @@ public class StringModule : AbstractQuercusModule {
               int value = 0;
 
               for (int k = j + 1; k < length; k++) {
-                char digit = format.charAt(k);
+                char digit = format[k];
 
                 if ('0' <= digit && digit <= '9') {
                   value = value * 10 + digit - '0';
@@ -2082,7 +2082,7 @@ public class StringModule : AbstractQuercusModule {
                   break;
               }
 
-              if (j + 1 < length && format.charAt(j + 1) == '$') {
+              if (j + 1 < length && format[j + 1] == '$') {
                 argIndex = value - 1;
                 j++;
               }
@@ -2098,7 +2098,7 @@ public class StringModule : AbstractQuercusModule {
             int value = ch - '0';
 
             for (int k = j + 1; k < length; k++) {
-              char digit = format.charAt(k);
+              char digit = format[k];
 
               if ('0' <= digit && digit <= '9') {
                 value = value * 10 + digit - '0';
@@ -2108,7 +2108,7 @@ public class StringModule : AbstractQuercusModule {
                 break;
             }
 
-            if (j + 1 < length && format.charAt(j + 1) == '$') {
+            if (j + 1 < length && format[j + 1] == '$') {
               argIndex = value - 1;
               j++;
             }
@@ -2118,7 +2118,7 @@ public class StringModule : AbstractQuercusModule {
 
             break;
           case '\'':
-            padChar = format.charAt(j + 1);
+            padChar = format[j + 1];
             j += 1;
             break;
           case '+':
@@ -2141,7 +2141,7 @@ public class StringModule : AbstractQuercusModule {
 
         loop:
         for (; j < length; j++) {
-          ch = format.charAt(j);
+          ch = format[j];
 
           switch (ch) {
           case '%':
@@ -2437,12 +2437,12 @@ public class StringModule : AbstractQuercusModule {
     StringBuilder sb = new StringBuilder();
 
     while (fIndex < fmtLen) {
-      char ch = format.charAt(fIndex++);
+      char ch = format[fIndex++];
 
       if (isWhitespace(ch)) {
         for (;
              (fIndex < fmtLen
-              && isWhitespace(ch = format.charAt(fIndex)));
+              && isWhitespace(ch = format[fIndex]));
              fIndex++) {
         }
 
@@ -2455,7 +2455,7 @@ public class StringModule : AbstractQuercusModule {
 
         loop:
         while (fIndex < fmtLen) {
-          ch = format.charAt(fIndex++);
+          ch = format[fIndex++];
 
           switch (ch) {
           case '%':
@@ -2543,7 +2543,7 @@ public class StringModule : AbstractQuercusModule {
             bool isNegated = false;
 
             if (fIndex < fmtLen
-                && format.charAt(fIndex) == '^') {
+                && format[fIndex] == '^') {
               isNegated = true;
               fIndex++;
             }
@@ -2556,7 +2556,7 @@ public class StringModule : AbstractQuercusModule {
                 break loop;
               }
 
-              char ch2 = format.charAt(fIndex++);
+              char ch2 = format[fIndex++];
 
               if (ch2 == ']') {
                 break;
@@ -2636,23 +2636,23 @@ public class StringModule : AbstractQuercusModule {
     ArrayValue array = new ArrayValueImpl();
 
     while (fIndex < fmtLen) {
-      char ch = format.charAt(fIndex++);
+      char ch = format[fIndex++];
 
       if (isWhitespace(ch)) {
         for (;
              (fIndex < fmtLen
-                 && isWhitespace(ch = format.charAt(fIndex)));
+                 && isWhitespace(ch = format[fIndex]));
              fIndex++) {
         }
 
-        /*ch = string.charAt(sIndex);
+        /*ch = string[sIndex];
         if (! isWhitespace(ch)) {
           // XXX: return false?
           return sscanfReturn(env, array, args, argIndex, isAssign, true);
         }*/
 
         for (;
-          sIndex < strlen && isWhitespace(string.charAt(sIndex));
+          sIndex < strlen && isWhitespace(string[sIndex]);
           sIndex++) {
         }
       }
@@ -2661,7 +2661,7 @@ public class StringModule : AbstractQuercusModule {
 
         loop:
         while (fIndex < fmtLen) {
-          ch = format.charAt(fIndex++);
+          ch = format[fIndex++];
 
           if (sIndex >= strlen && ch != 'n') {
             array.append(NullValue.NULL);
@@ -2683,7 +2683,7 @@ public class StringModule : AbstractQuercusModule {
 
           switch (ch) {
           case '%':
-            if (string.charAt(sIndex) != '%')
+            if (string[sIndex] != '%')
               return sscanfReturn(env, array, args, argIndex, isAssign, true);
             else
               break loop;
@@ -2770,7 +2770,7 @@ public class StringModule : AbstractQuercusModule {
           }
         }
       }
-      else if (ch == string.charAt(sIndex)) {
+      else if (ch == string[sIndex]) {
         sIndex++;
       }
       else
@@ -2816,7 +2816,7 @@ public class StringModule : AbstractQuercusModule {
     StringValue sb = string.createStringBuilder();
 
     for (; sIndex < strlen && maxLen-- > 0; sIndex++) {
-      char ch = string.charAt(sIndex);
+      char ch = string[sIndex];
 
       if (! isWhitespace(ch))
         sb.append(ch);
@@ -2858,7 +2858,7 @@ public class StringModule : AbstractQuercusModule {
     bool isNotMatched = true;
 
     if (sIndex < strlen) {
-      char ch = string.charAt(sIndex);
+      char ch = string[sIndex];
 
       if (ch == '+') {
         sIndex++;
@@ -2875,7 +2875,7 @@ public class StringModule : AbstractQuercusModule {
     int topRange = base + '0';
 
     for (; sIndex < strlen && maxLen-- > 0; sIndex++) {
-      char ch = string.charAt(sIndex);
+      char ch = string[sIndex];
 
       if ('0' <= ch && ch < topRange) {
         val = val * base + ch - '0';
@@ -2920,7 +2920,7 @@ public class StringModule : AbstractQuercusModule {
     bool isMatched = false;
 
     if (sIndex < strlen) {
-      char ch = string.charAt(sIndex);
+      char ch = string[sIndex];
 
       if (ch == '+') {
         sIndex++;
@@ -2935,7 +2935,7 @@ public class StringModule : AbstractQuercusModule {
     }
 
     for (; sIndex < strlen && maxLen-- > 0; sIndex++) {
-      char ch = string.charAt(sIndex);
+      char ch = string[sIndex];
 
       if ('0' <= ch && ch <= '9') {
         val = val * 16 + ch - '0';
@@ -2978,13 +2978,13 @@ public class StringModule : AbstractQuercusModule {
     int len = s.length();
     int ch = 0;
 
-    if (i < len && maxLen > 0 && ((ch = s.charAt(i)) == '+' || ch == '-')) {
+    if (i < len && maxLen > 0 && ((ch = s[i]) == '+' || ch == '-')) {
       i++;
       maxLen--;
     }
 
     for (; i < len && maxLen > 0
-           && '0' <= (ch = s.charAt(i)) && ch <= '9'; i++) {
+           && '0' <= (ch = s[i]) && ch <= '9'; i++) {
       maxLen--;
     }
 
@@ -2992,7 +2992,7 @@ public class StringModule : AbstractQuercusModule {
       maxLen--;
 
       for (i++; i < len && maxLen > 0
-                && '0' <= (ch = s.charAt(i)) && ch <= '9'; i++) {
+                && '0' <= (ch = s[i]) && ch <= '9'; i++) {
         maxLen--;
       }
     }
@@ -3007,13 +3007,13 @@ public class StringModule : AbstractQuercusModule {
         return start;
       }
 
-      if (i < len && maxLen > 0 && (ch = s.charAt(i)) == '+' || ch == '-') {
+      if (i < len && maxLen > 0 && (ch = s[i]) == '+' || ch == '-') {
         i++;
         maxLen--;
       }
 
       for (; i < len && maxLen > 0
-             && '0' <= (ch = s.charAt(i)) && ch <= '9'; i++) {
+             && '0' <= (ch = s[i]) && ch <= '9'; i++) {
         maxLen--;
       }
 
@@ -3096,12 +3096,12 @@ public class StringModule : AbstractQuercusModule {
     StringValue sb = string.createStringBuilder(string.length() + padLen);
 
     for (int i = 0; i < leftPad; i++)
-      sb.append(pad.charAt(i % padStringLen));
+      sb.append(pad[i % padStringLen]);
 
     sb = sb.append(string);
 
     for (int i = 0; i < rightPad; i++)
-      sb.append(pad.charAt(i % padStringLen));
+      sb.append(pad[i % padStringLen]);
 
     return sb;
   }
@@ -3353,13 +3353,13 @@ public class StringModule : AbstractQuercusModule {
       if (matchLen <= 0)
         return -1;
 
-      char ch = Character.toLowerCase(match.charAt(0));
+      char ch = Character.toLowerCase(match[0]);
       loop:
       for (; head + matchLen <= length; head++) {
-        if (ch == Character.toLowerCase(subject.charAt(head))) {
+        if (ch == Character.toLowerCase(subject[head])) {
           for (int i = 1; i < matchLen; i++) {
-            if (Character.toLowerCase(subject.charAt(head + i))
-                != Character.toLowerCase(match.charAt(i)))
+            if (Character.toLowerCase(subject[head + i])
+                != Character.toLowerCase(match[i]))
               continue loop;
           }
 
@@ -3385,7 +3385,7 @@ public class StringModule : AbstractQuercusModule {
 
     int len = string.length();
     for (int i = 0; i < len; i++) {
-      char ch = string.charAt(i);
+      char ch = string[i];
 
       if ('a' <= ch && ch <= 'z') {
         int off = ch - 'a';
@@ -3491,7 +3491,7 @@ public class StringModule : AbstractQuercusModule {
       bool isWordCharacter;
 
       if (i < strlen) {
-        int ch = string.charAt(i);
+        int ch = string[i];
 
         isWordCharacter = Character.isLetter(ch)
                           || ch == '-'
@@ -3547,8 +3547,8 @@ public class StringModule : AbstractQuercusModule {
     int bLen = b.length();
 
     for (int i = 0; i < aLen && i < bLen; i++) {
-      char chA = a.charAt(i);
-      char chB = b.charAt(i);
+      char chA = a[i];
+      char chB = b[i];
 
       if (chA == chB)
         continue;
@@ -3598,8 +3598,8 @@ public class StringModule : AbstractQuercusModule {
     int bLen = b.length();
 
     for (int i = 0; i < aLen && i < bLen; i++) {
-      char chA = a.charAt(i);
-      char chB = b.charAt(i);
+      char chA = a[i];
+      char chB = b[i];
 
       if (chA == chB)
         continue;
@@ -3690,14 +3690,14 @@ public class StringModule : AbstractQuercusModule {
     int len = string.length();
 
     for (int i = 0; i < len; i++) {
-      char ch = string.charAt(i);
+      char ch = string[i];
 
       if (i + 1 >= len || ch != '<') {
         result.append(ch);
         continue;
       }
 
-      ch = string.charAt(i + 1);
+      ch = string[i + 1];
 
       if (Character.isWhitespace(ch)) {
         i++;
@@ -3715,7 +3715,7 @@ public class StringModule : AbstractQuercusModule {
       int j = tagNameStart;
 
       while (j < len
-             && (ch = string.charAt(j)) != '>'
+             && (ch = string[j]) != '>'
              // && ch != '/'
              && ! Character.isWhitespace(ch)) {
         j++;
@@ -3728,7 +3728,7 @@ public class StringModule : AbstractQuercusModule {
         result.append(string, i, Math.min(j + 1, len));
       }
       else {
-        while (j < len && (ch = string.charAt(j)) != '<') {
+        while (j < len && (ch = string[j]) != '<') {
 
           if (ch == '>') {
             tagEnd = j;
@@ -3750,7 +3750,7 @@ public class StringModule : AbstractQuercusModule {
     HashSet<StringValue> set = new HashSet<StringValue>();
 
     for (int i = 0; i < len; i++) {
-      char ch = str.charAt(i);
+      char ch = str[i];
 
       switch (ch) {
         case '<':
@@ -3758,7 +3758,7 @@ public class StringModule : AbstractQuercusModule {
           int j = i + 1;
 
           while (j < len
-                 && (ch = str.charAt(j)) != '>'
+                 && (ch = str[j]) != '>'
                  //&& ch != '/'
                  && ! Character.isWhitespace(ch)) {
             j++;
@@ -3797,7 +3797,7 @@ public class StringModule : AbstractQuercusModule {
     int length = source.length();
 
     for (int i = 0; i < length; i++) {
-      int ch = source.charAt(i);
+      int ch = source[i];
 
       if (ch == '\\') {
         i++;
@@ -3805,7 +3805,7 @@ public class StringModule : AbstractQuercusModule {
         if (i == length)
           ch = '\\';
         else {
-          ch = source.charAt(i);
+          ch = source[i];
 
           switch (ch) {
           case 'a':
@@ -3834,7 +3834,7 @@ public class StringModule : AbstractQuercusModule {
             if (i + 1 == length)
               break;
 
-            int digitValue = hexToDigit(source.charAt(i + 1));
+            int digitValue = hexToDigit(source[i + 1]);
 
             if (digitValue < 0)
               break;
@@ -3845,7 +3845,7 @@ public class StringModule : AbstractQuercusModule {
             if (i + 1 == length)
               break;
 
-            digitValue = hexToDigit(source.charAt(i + 1));
+            digitValue = hexToDigit(source[i + 1]);
 
             if (digitValue < 0)
               break;
@@ -3866,7 +3866,7 @@ public class StringModule : AbstractQuercusModule {
             if (i + 1 == length)
               break;
 
-            digitValue = octToDigit(source.charAt(i + 1));
+            digitValue = octToDigit(source[i + 1]);
 
             if (digitValue < 0)
               break;
@@ -3877,7 +3877,7 @@ public class StringModule : AbstractQuercusModule {
             if (i + 1 == length)
               break;
 
-            digitValue = octToDigit(source.charAt(i + 1));
+            digitValue = octToDigit(source[i + 1]);
 
             if (digitValue < 0)
               break;
@@ -3941,11 +3941,11 @@ public class StringModule : AbstractQuercusModule {
     int len = string.length();
 
     for (int i = 0; i < len; i++) {
-      char ch = string.charAt(i);
+      char ch = string[i];
 
       if (ch == '\\') {
         if (i + 1 < len) {
-          char ch2 = string.charAt(i + 1);
+          char ch2 = string[i + 1];
           if (ch2 == '0') {
             ch2 = 0x0;
           }
@@ -4148,8 +4148,8 @@ public class StringModule : AbstractQuercusModule {
       else if (bLen <= i)
         return LongValue.ONE;
 
-      char aChar = Character.toUpperCase(a.charAt(i));
-      char bChar = Character.toUpperCase(b.charAt(i));
+      char aChar = Character.toUpperCase(a[i]);
+      char bChar = Character.toUpperCase(b[i]);
 
       if (aChar < bChar)
         return LongValue.MINUS_ONE;
@@ -4200,7 +4200,7 @@ public class StringModule : AbstractQuercusModule {
 
     for (int i = 0; i < len; i++) {
       for (int j = 0; j < sublen; j++) {
-        if (haystack.charAt(i) == charList.charAt(j))
+        if (haystack[i] == charList[j])
           return haystack.substring(i);
       }
     }
@@ -4275,7 +4275,7 @@ public class StringModule : AbstractQuercusModule {
     StringValue sb = string.createStringBuilder(string.length());
 
     for (int i = string.length() - 1; i >= 0; i--) {
-      sb.append(string.charAt(i));
+      sb.append(string[i]);
     }
 
     return sb;
@@ -4419,7 +4419,7 @@ public class StringModule : AbstractQuercusModule {
     int count = 0;
 
     for (; offset < end; offset++) {
-      char ch = string.charAt(offset);
+      char ch = string[offset];
       bool isPresent = characters.indexOf(ch) > -1;
 
       if (isPresent == isMatch)
@@ -4550,7 +4550,7 @@ public class StringModule : AbstractQuercusModule {
 
     // skip any at beginning
     for (; offset < strlen; offset++) {
-      char ch = string.charAt(offset);
+      char ch = string[offset];
 
       if (characters.indexOf(ch) < 0)
         break;
@@ -4571,14 +4571,14 @@ public class StringModule : AbstractQuercusModule {
 
       // find end
       for (; end < strlen; end++) {
-        char ch = string.charAt(end);
+        char ch = string[end];
 
         if (characters.indexOf(ch) > -1)
           break;
       }
 
       for (offset = end; offset < strlen; offset++) {
-        char ch = string.charAt(offset);
+        char ch = string[offset];
 
         if (characters.indexOf(ch) < 0)
           break;
@@ -4637,13 +4637,13 @@ public class StringModule : AbstractQuercusModule {
 
     char []map = new char[256];
     for (int i = len - 1; i >= 0; i--)
-      map[from.charAt(i)] = to.charAt(i);
+      map[from[i]] = to[i];
 
     StringValue sb = string.createStringBuilder();
 
     len = string.length();
     for (int i = 0; i < len; i++) {
-      char ch = string.charAt(i);
+      char ch = string[i];
 
       if (map[ch] != 0)
         sb.append(map[ch]);
@@ -4685,7 +4685,7 @@ public class StringModule : AbstractQuercusModule {
       fromList[i] = entryArray[i].getKey().ToStringValue(env);
       toList[i] = entryArray[i].getValue().ToStringValue(env);
 
-      charSet[fromList[i].charAt(0)] = true;
+      charSet[fromList[i][0]] = true;
     }
 
     StringValue result = string.createStringBuilder();
@@ -4694,7 +4694,7 @@ public class StringModule : AbstractQuercusModule {
 
     top:
     while (head < len) {
-      char ch = string.charAt(head);
+      char ch = string[head];
 
       if (charSet.length <= ch || charSet[ch]) {
         fromLoop:
@@ -4705,11 +4705,11 @@ public class StringModule : AbstractQuercusModule {
           if (head + fromLen > len)
             continue;
 
-          if (ch != from.charAt(0))
+          if (ch != from[0])
             continue;
 
           for (int j = 0; j < fromLen; j++) {
-            if (string.charAt(head + j) != from.charAt(j))
+            if (string[head + j] != from[j])
               continue fromLoop;
           }
 
@@ -4989,7 +4989,7 @@ public class StringModule : AbstractQuercusModule {
 
     int head = 0;
     for (; head < len; head++) {
-      char ch = string.charAt(head);
+      char ch = string[head];
 
       if (ch >= 256 || ! trim[ch]) {
         break;
@@ -4998,7 +4998,7 @@ public class StringModule : AbstractQuercusModule {
 
     int tail = len - 1;
     for (; tail >= 0; tail--) {
-      char ch = string.charAt(tail);
+      char ch = string[tail];
 
       if (ch >= 256 || ! trim[ch]) {
         break;
@@ -5029,7 +5029,7 @@ public class StringModule : AbstractQuercusModule {
 
     StringValue sb = string.createStringBuilder();
 
-    sb = sb.append(Character.toUpperCase(string.charAt(0)));
+    sb = sb.append(Character.toUpperCase(string[0]));
     sb = sb.append(string, 1, string.length());
 
     return sb;
@@ -5051,7 +5051,7 @@ public class StringModule : AbstractQuercusModule {
     StringBuilder sb = new StringBuilder();
 
     for (int i = 0; i < strLen; i++) {
-      char ch = string.charAt(i);
+      char ch = string[i];
 
       switch (ch) {
       case ' ': case '\t': case '\r': case '\n':
@@ -5191,7 +5191,7 @@ public class StringModule : AbstractQuercusModule {
     if (breakLen == 0)
       breakChar = -1;
     else
-      breakChar = breakString.charAt(0);
+      breakChar = breakString[0];
 
     int head = 0;
     int lastSpace = 0;
@@ -5199,7 +5199,7 @@ public class StringModule : AbstractQuercusModule {
     StringValue sb = env.createStringBuilder();
 
     for (int i = 0; i < len; i++) {
-      char ch = string.charAt(i);
+      char ch = string[i];
 
       if (ch == breakChar && string.regionMatches(
           i, breakString, 0, breakLen)) {
@@ -5316,7 +5316,7 @@ public class StringModule : AbstractQuercusModule {
       for (int i = 0; i < format.length(); i++) {
         char ch;
 
-        if ('0' <= (ch = format.charAt(i)) && ch <= '9')
+        if ('0' <= (ch = format[i]) && ch <= '9')
           value = 10 * value + ch - '0';
         else
           break;
@@ -5377,11 +5377,11 @@ public class StringModule : AbstractQuercusModule {
 
       // php/115b
       // strip @out illegal precision specifier from phpBB vote function
-      if (format.length() > 1 && format.charAt(1) == '.') {
+      if (format.length() > 1 && format[1] == '.') {
         int i;
 
         for (i = 2; i < format.length(); i++) {
-          char ch = format.charAt(i);
+          char ch = format[i];
 
           if (! ('0' <= ch && ch <= '9'))
             break;
@@ -5390,23 +5390,23 @@ public class StringModule : AbstractQuercusModule {
         format = '%' + format.substring(i);
       }
 
-      if (format.charAt(format.length() - 1) == 'x'
-          || format.charAt(format.length() - 1) == 'X') {
+      if (format[format.length(] - 1) == 'x'
+          || format[format.length(] - 1) == 'X') {
         HexPrintfSegment hex = HexPrintfSegment.create(format, index);
 
         if (hex != null)
           return hex;
       }
 
-      if (format.charAt(format.length() - 1) == 'b'
-          || format.charAt(format.length() - 1) == 'B') {
+      if (format[format.length(] - 1) == 'b'
+          || format[format.length(] - 1) == 'B') {
         BinaryPrintfSegment bin = BinaryPrintfSegment.create(format, index);
 
         if (bin != null)
           return bin;
       }
 
-      if (format.charAt(format.length() - 1) == 'u') {
+      if (format[format.length(] - 1) == 'u') {
         UnsignedPrintfSegment unsign
           = UnsignedPrintfSegment.create(format, index);
 
@@ -5460,21 +5460,21 @@ public class StringModule : AbstractQuercusModule {
       int length = format.length();
       int offset = 1;
 
-      bool isUpper = format.charAt(length - 1) == 'X';
+      bool isUpper = format[length - 1] == 'X';
       char pad = ' ';
 
-      if (format.charAt(offset) == ' ') {
+      if (format[offset] == ' ') {
         pad = ' ';
         offset++;
       }
-      else if (format.charAt(offset) == '0') {
+      else if (format[offset] == '0') {
         pad = '0';
         offset++;
       }
 
       int min = 0;
       for (; offset < length - 1; offset++) {
-        char ch = format.charAt(offset);
+        char ch = format[offset];
 
         if ('0' <= ch && ch <= '9')
           min = 10 * min + ch - '0';
@@ -5546,23 +5546,23 @@ public class StringModule : AbstractQuercusModule {
       int length = format.length();
       int offset = 1;
 
-      if (format.charAt(offset) == '+')
+      if (format[offset] == '+')
         offset++;
 
       char pad = ' ';
 
-      if (format.charAt(offset) == ' ') {
+      if (format[offset] == ' ') {
         pad = ' ';
         offset++;
       }
-      else if (format.charAt(offset) == '0') {
+      else if (format[offset] == '0') {
         pad = '0';
         offset++;
       }
 
       int min = 0;
       for (; offset < length - 1; offset++) {
-        char ch = format.charAt(offset);
+        char ch = format[offset];
 
         if ('0' <= ch && ch <= '9')
           min = 10 * min + ch - '0';
@@ -5648,18 +5648,18 @@ public class StringModule : AbstractQuercusModule {
 
       char pad = ' ';
 
-      if (format.charAt(offset) == ' ') {
+      if (format[offset] == ' ') {
         pad = ' ';
         offset++;
       }
-      else if (format.charAt(offset) == '0') {
+      else if (format[offset] == '0') {
         pad = '0';
         offset++;
       }
 
       int min = 0;
       for (; offset < length - 1; offset++) {
-        char ch = format.charAt(offset);
+        char ch = format[offset];
 
         if ('0' <= ch && ch <= '9')
           min = 10 * min + ch - '0';
@@ -5753,7 +5753,7 @@ public class StringModule : AbstractQuercusModule {
 
         // php/1174  "-0" not allowed by java formatter
         for (int i = 0; i < len; i++) {
-          char ch = s.charAt(i);
+          char ch = s[i];
 
           if (ch == ' ')
             sb.append('0');
@@ -5808,15 +5808,15 @@ public class StringModule : AbstractQuercusModule {
       char ch = ' ';
 
       /*
-      for (; i < len && '0' <= (ch = format.charAt(i)) && ch <= '9'; i++) {
+      for (; i < len && '0' <= (ch = format[i]) && ch <= '9'; i++) {
         min = 10 * min + ch - '0';
       }
       */
 
-      if (0 < len && format.charAt(0) == '.') {
+      if (0 < len && format[0] == '.') {
         max = 0;
 
-        for (i++; i < len && '0' <= (ch = format.charAt(i)) && ch <= '9'; i++) {
+        for (i++; i < len && '0' <= (ch = format[i]) && ch <= '9'; i++) {
           max = 10 * max + ch - '0';
         }
       }
@@ -5915,7 +5915,7 @@ public class StringModule : AbstractQuercusModule {
     int read()
     {
       if (_index < _length)
-        return _str.charAt(_index++);
+        return _str[_index++];
       else
         return -1;
     }
@@ -5923,7 +5923,7 @@ public class StringModule : AbstractQuercusModule {
     int peek()
     {
       if (_index < _length)
-        return _str.charAt(_index);
+        return _str[_index];
       else
         return -1;
 
@@ -5997,7 +5997,7 @@ public class StringModule : AbstractQuercusModule {
         return -1;
 
       for (int i = 0; i < fStrlen; i++) {
-        if (string.charAt(sIndex++) != fString.charAt(i))
+        if (string[sIndex++] != fString[i])
           return -1;
       }
 
@@ -6025,7 +6025,7 @@ public class StringModule : AbstractQuercusModule {
                      bool isReturnArray)
     {
       for (;
-           sIndex < strlen && isWhitespace(string.charAt(sIndex));
+           sIndex < strlen && isWhitespace(string[sIndex]);
            sIndex++) {
       }
 
@@ -6079,7 +6079,7 @@ public class StringModule : AbstractQuercusModule {
       StringValue sb = string.createStringBuilder();
 
       for (; sIndex < strlen; sIndex++) {
-        char ch = string.charAt(sIndex);
+        char ch = string[sIndex];
 
         if (_set.contains(ch)) {
           sb.append(ch);
@@ -6120,7 +6120,7 @@ public class StringModule : AbstractQuercusModule {
       StringValue sb = string.createStringBuilder();
 
       for (; sIndex < strlen; sIndex++) {
-        char ch = string.charAt(sIndex);
+        char ch = string[sIndex];
 
         if (! _set.contains(ch)) {
           sb.append(ch);
@@ -6174,13 +6174,13 @@ public class StringModule : AbstractQuercusModule {
 
       int maxLen = _maxLen;
 
-      if (i < len && maxLen > 0 && ((ch = s.charAt(i)) == '+' || ch == '-')) {
+      if (i < len && maxLen > 0 && ((ch = s[i]) == '+' || ch == '-')) {
         i++;
         maxLen--;
       }
 
       for (; i < len && maxLen > 0
-             && '0' <= (ch = s.charAt(i)) && ch <= '9'; i++) {
+             && '0' <= (ch = s[i]) && ch <= '9'; i++) {
         maxLen--;
       }
 
@@ -6188,7 +6188,7 @@ public class StringModule : AbstractQuercusModule {
         maxLen--;
 
         for (i++; i < len && maxLen > 0
-                  && '0' <= (ch = s.charAt(i)) && ch <= '9'; i++) {
+                  && '0' <= (ch = s[i]) && ch <= '9'; i++) {
           maxLen--;
         }
       }
@@ -6203,13 +6203,13 @@ public class StringModule : AbstractQuercusModule {
           return start;
         }
 
-        if (i < len && maxLen > 0 && (ch = s.charAt(i)) == '+' || ch == '-') {
+        if (i < len && maxLen > 0 && (ch = s[i]) == '+' || ch == '-') {
           i++;
           maxLen--;
         }
 
         for (; i < len && maxLen > 0
-               && '0' <= (ch = s.charAt(i)) && ch <= '9'; i++) {
+               && '0' <= (ch = s[i]) && ch <= '9'; i++) {
           maxLen--;
         }
 
@@ -6266,7 +6266,7 @@ public class StringModule : AbstractQuercusModule {
       int maxLen = _maxLen;
 
       if (sIndex < strlen) {
-        char ch = string.charAt(sIndex);
+        char ch = string[sIndex];
 
         if (ch == '+') {
           sIndex++;
@@ -6281,7 +6281,7 @@ public class StringModule : AbstractQuercusModule {
       }
 
       for (; sIndex < strlen && maxLen-- > 0; sIndex++) {
-        char ch = string.charAt(sIndex);
+        char ch = string[sIndex];
 
         if ('0' <= ch && ch <= '9') {
           val = val * 16 + ch - '0';
@@ -6352,7 +6352,7 @@ public class StringModule : AbstractQuercusModule {
       int maxLen = _maxLen;
 
       if (sIndex < strlen) {
-        char ch = string.charAt(sIndex);
+        char ch = string[sIndex];
 
         if (ch == '+') {
           sIndex++;
@@ -6371,7 +6371,7 @@ public class StringModule : AbstractQuercusModule {
       int topRange = base + '0';
 
       for (; sIndex < strlen && maxLen-- > 0; sIndex++) {
-        char ch = string.charAt(sIndex);
+        char ch = string[sIndex];
 
         if ('0' <= ch && ch < topRange) {
           val = val * base + ch - '0';
@@ -6436,7 +6436,7 @@ public class StringModule : AbstractQuercusModule {
 
       // detect sign
       if (sIndex < strlen) {
-        char ch = string.charAt(sIndex);
+        char ch = string[sIndex];
 
         if (ch == '+') {
           sIndex++;
@@ -6454,13 +6454,13 @@ public class StringModule : AbstractQuercusModule {
 
       // detect base
       if (sIndex < strlen) {
-        char ch = string.charAt(sIndex);
+        char ch = string[sIndex];
 
         if (ch == '0') {
           sIndex++;
 
           if (sIndex < strlen
-              && Character.toLowerCase(string.charAt(sIndex)) == 'x') {
+              && Character.toLowerCase(string[sIndex]) == 'x') {
             base = 16;
 
             sIndex++;
@@ -6474,7 +6474,7 @@ public class StringModule : AbstractQuercusModule {
       bool isNotMatched = true;
 
       for (; sIndex < strlen && maxLen-- > 0; sIndex++) {
-        char ch = string.charAt(sIndex);
+        char ch = string[sIndex];
 
         int digit = toNumber(base, ch);
 
@@ -6586,7 +6586,7 @@ public class StringModule : AbstractQuercusModule {
       int maxLen = _maxLen;
 
       for (; sIndex < strlen && maxLen-- > 0; sIndex++) {
-        char ch = string.charAt(sIndex);
+        char ch = string[sIndex];
 
         if (isWhitespace(ch))
           break;

@@ -58,7 +58,7 @@ public class GenericEncoder
   public bool isEncodable(StringValue str, int start, int end)
   {
     for (int i = start; i < end; i++) {
-      if (! _encoder.canEncode(str.charAt(i))) {
+      if (! _encoder.canEncode(str[i])) {
         return false;
       }
     }

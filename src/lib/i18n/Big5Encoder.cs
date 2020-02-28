@@ -49,11 +49,11 @@ public class Big5Encoder
   public bool isEncodable(StringValue str, int start, int end)
   {
     for (int i = start; i < end; i++) {
-      char ch = str.charAt(i);
+      char ch = str[i];
 
       if (ch == '\u20AC') // euro
         continue;
-      else if (! _encoder.canEncode(str.charAt(i))) {
+      else if (! _encoder.canEncode(str[i])) {
         return false;
       }
     }

@@ -429,7 +429,7 @@ public class Zlib {
 
     for (int i = 1; i < input.length(); i++)
     {
-      char ch = input.charAt(i);
+      char ch = input[i];
       switch (ch) {
         case 'r':
           filemode = "r";
@@ -459,7 +459,7 @@ public class Zlib {
   {
     for (int i = input.length() - 1; i >= 0; i--)
     {
-      char ch = input.charAt(i);
+      char ch = input[i];
       if (ch >= '0' && ch <= '9')
         return ch - '0';
     }
@@ -474,7 +474,7 @@ public class Zlib {
   {
     for (int i = input.length() - 1; i >= 0; i--)
     {
-      char ch = input.charAt(i);
+      char ch = input[i];
       switch (ch) {
         case 'f':
           return Deflater.FILTERED;

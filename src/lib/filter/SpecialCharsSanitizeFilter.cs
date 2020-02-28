@@ -54,7 +54,7 @@ public class SpecialCharsSanitizeFilter
     bool isStripHigh = (flags & FilterModule.FILTER_FLAG_STRIP_HIGH) > 0;
 
     for (int i = 0; i < len; i++) {
-      char ch = str.charAt(i);
+      char ch = str[i];
 
       if (0x00 <= ch && ch <= 0x1f) {
         if (isStripLow) {

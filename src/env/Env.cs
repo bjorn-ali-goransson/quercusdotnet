@@ -467,7 +467,7 @@ public class Env
       _querySeparatorMap = new int[128];
 
       for (int i = 0; i < len; i++) {
-        char ch = querySeparators.charAt(i);
+        char ch = querySeparators[i];
 
         _querySeparatorMap[ch] = 1;
       }
@@ -2738,7 +2738,7 @@ public class Env
         int orderLen = _variablesOrder.length();
 
         for (int i = 0; i < orderLen; i++) {
-          switch (_variablesOrder.charAt(i)) {
+          switch (_variablesOrder[i]) {
             case 'G':
               array.putAll(getInputGetArray());
               break;
@@ -3016,11 +3016,11 @@ public class Env
     StringBuilder sb = new StringBuilder();
 
     for (int i = 0; i < len; i++) {
-      char ch = s.charAt(i);
+      char ch = s[i];
 
       if (ch == '%' && i + 2 < len) {
-        int d1 = s.charAt(i + 1);
-        int d2 = s.charAt(i + 2);
+        int d1 = s[i + 1];
+        int d2 = s[i + 2];
 
         int v = 0;
 
@@ -4804,9 +4804,9 @@ public class Env
     }
     else if (s.length() == 1) {
       if (_isUnicodeSemantics)
-        return UnicodeBuilderValue.create(s.charAt(0));
+        return UnicodeBuilderValue.create(s[0]);
       else
-        return ConstStringValue.create(s.charAt(0));
+        return ConstStringValue.create(s[0]);
     }
     else if (_isUnicodeSemantics) {
       return new UnicodeBuilderValue(s);
@@ -6181,17 +6181,17 @@ public class Env
         char ch;
         char ch3;
 
-        if (path.charAt(1) == ':'
-            && ('a' <= (ch = path.charAt(0)) && ch <= 'z'
+        if (path[1] == ':'
+            && ('a' <= (ch = path[0]) && ch <= 'z'
                 || 'A' <= ch && ch <= 'Z')
-            && (ch3 = path.charAt(2)) != '/' && ch3 != '\\') {
+            && (ch3 = path[2]) != '/' && ch3 != '\\') {
           _cb.append(ch);
           _cb.append(':');
           _cb.append('\\');
           _cb.append(ch3);
 
           for (int i = 3; i < len; i++) {
-            _cb.append(path.charAt(i));
+            _cb.append(path[i]);
           }
 
           return _cb.ToString();

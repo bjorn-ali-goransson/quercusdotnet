@@ -524,7 +524,7 @@ public class ArgRef : Value
   /* XXX: need test first
   public Value charAt(long index)
   {
-    return _ref.charAt(index);
+    return _ref[index];
   }
   */
 

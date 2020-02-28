@@ -259,7 +259,7 @@ public class JdbcPreparedStatementResource
     char c;
 
     for (int i = 0; i < length; i++) {
-      c = query.charAt(i);
+      c = query[i];
 
       if (c == '\\') {
         if (i < length - 1) {
@@ -479,7 +479,7 @@ public class JdbcPreparedStatementResource
 
             string money = s;
 
-            if (s.charAt(0) == '$')
+            if (s[0] == '$')
               s = s.substring(1);
             else
               money = "$" + money;

@@ -152,9 +152,9 @@ public class FileModule : AbstractQuercusModule {
     if (len == 0)
       return path;
 
-    else if (path.charAt(len - 1) == '/')
+    else if (path[len - 1] == '/')
       len -= 1;
-    else if (path.charAt(len - 1) == '\\')
+    else if (path[len - 1] == '\\')
       len -= 1;
 
     int p = path.lastIndexOf('/', len - 1);
@@ -473,7 +473,7 @@ public class FileModule : AbstractQuercusModule {
 
     if (len == 0)
       return env.getEmptyString();
-    else if (len == 1 && path.charAt(0) == '/')
+    else if (len == 1 && path[0] == '/')
       return path;
 
     int p = path.lastIndexOf('/', len - 2);
@@ -638,12 +638,12 @@ public class FileModule : AbstractQuercusModule {
       int comma = ',';
 
       if (delimiter != null && delimiter.length() > 0)
-        comma = delimiter.charAt(0);
+        comma = delimiter[0];
 
       int quote = '"';
 
       if (enclosure != null && enclosure.length() > 0)
-        quote = enclosure.charAt(0);
+        quote = enclosure[0];
 
       ArrayValue array = new ArrayValueImpl();
 
@@ -1336,7 +1336,7 @@ public class FileModule : AbstractQuercusModule {
     char lastCh = ' ';
 
     for (int i = 0; i < pattern.length(); i++) {
-      char ch = pattern.charAt(i);
+      char ch = pattern[i];
 
       switch (ch) {
         case '*':
@@ -1521,8 +1521,8 @@ public class FileModule : AbstractQuercusModule {
 
     // match "leading" periods exactly (i.e. no wildcards)
     if ((flags & FNM_PERIOD) != 0) {
-      if (string.length() > 0 && string.charAt(0) == '.') {
-        if (! (pattern.length() > 0 && pattern.charAt(0) == '.'))
+      if (string.length() > 0 && string[0] == '.') {
+        if (! (pattern.length() > 0 && pattern[0] == '.'))
           return false;
 
         string = string.substring(1);
@@ -1531,9 +1531,9 @@ public class FileModule : AbstractQuercusModule {
         // special case: if the string starts with '/.', then the pattern
         // must also start with exactly that.
         if ((string.length() >= 2)
-            && (string.charAt(0) == '/') && (string.charAt(1) == '.')) {
+            && (string[0] == '/') && (string[1] == '.')) {
           if (! ((pattern.length() >= 2)
-              && (pattern.charAt(0) == '/') && (pattern.charAt(1) == '.')))
+              && (pattern[0] == '/') && (pattern[1] == '.')))
             return false;
 
           string = string.substring(2);
@@ -1817,10 +1817,10 @@ public class FileModule : AbstractQuercusModule {
       char quote = '\"';
 
       if (delimiter != null && delimiter.length() > 0)
-        comma = delimiter.charAt(0);
+        comma = delimiter[0];
 
       if (enclosure != null && enclosure.length() > 0)
-        quote = enclosure.charAt(0);
+        quote = enclosure[0];
 
       int writeLength = 0;
       bool isFirst = true;
@@ -1839,7 +1839,7 @@ public class FileModule : AbstractQuercusModule {
         os.print(quote);
 
         for (int i = 0; i < strlen; i++) {
-          char ch = s.charAt(i);
+          char ch = s[i];
 
           if (ch != quote) {
             os.print(ch);
@@ -2034,7 +2034,7 @@ public class FileModule : AbstractQuercusModule {
 
       // strip off any extra slashes
       for (; firstSlash < pattern.length(); firstSlash++) {
-        if (pattern.charAt(firstSlash) != '/')
+        if (pattern[firstSlash] != '/')
           break;
       }
 
@@ -2142,7 +2142,7 @@ public class FileModule : AbstractQuercusModule {
 
       // find open bracket '{'
       while (i < patternLength) {
-        char ch = pattern.charAt(i);
+        char ch = pattern[i];
 
         if (ch == '\\')
           isEscaped = ! isEscaped;
@@ -2162,14 +2162,14 @@ public class FileModule : AbstractQuercusModule {
         return globBrace(env, pattern, flags, i);
     }
 
-    if (patternLength > 0 && pattern.charAt(0) == '/') {
+    if (patternLength > 0 && pattern[0] == '/') {
       prefix = "/";
 
       int i;
 
       // strip off any leading slashes
       for (i = 0; i < patternLength; i++) {
-        if (pattern.charAt(i) != '/')
+        if (pattern[i] != '/')
           break;
       }
 
@@ -2178,7 +2178,7 @@ public class FileModule : AbstractQuercusModule {
       pattern = pattern.substring(i);
     }
     else if (Path.isWindows()
-             && patternLength > 2 && pattern.charAt(1) == ':') {
+             && patternLength > 2 && pattern[1] == ':') {
       prefix = pattern.substring(0, 2);
 
       string driveLetter = pattern.substring(0, 2);
@@ -2228,7 +2228,7 @@ public class FileModule : AbstractQuercusModule {
 
     // parse bracket contents
     while (i < patternLength) {
-      char ch = pattern.charAt(i++);
+      char ch = pattern[i++];
 
       if (ch == ',') {
         if (isEscaped) {
@@ -2383,7 +2383,7 @@ public class FileModule : AbstractQuercusModule {
 
       result = result.trim();
 
-      return result.length() == 1 && result.charAt(0) == '1';
+      return result.length() == 1 && result[0] == '1';
     }
     */
   }

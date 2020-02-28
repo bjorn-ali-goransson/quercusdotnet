@@ -101,7 +101,7 @@ public class MiscModule : AbstractQuercusModule {
     bool hasQuot = false;
 
     for (int i = 0; i < len; i++) {
-      char ch = command.charAt(i);
+      char ch = command[i];
 
       switch (ch) {
       case '#': case '&': case ';': case '`': case '|':
@@ -160,7 +160,7 @@ public class MiscModule : AbstractQuercusModule {
     int len = arg.length();
 
     for (int i = 0; i < len; i++) {
-      char ch = arg.charAt(i);
+      char ch = arg[i];
 
       if (ch == quote) {
         sb.append('\\');
@@ -431,7 +431,7 @@ public class MiscModule : AbstractQuercusModule {
 
     StringBuilder sb = new StringBuilder();
     for (int i = 0; i < length; i++) {
-      char ch = key.charAt(i);
+      char ch = key[i];
       switch (ch) {
         case '*':
           sb.append('.');
@@ -990,14 +990,14 @@ public class MiscModule : AbstractQuercusModule {
 
     int length = format.length();
     for (int i = 0; i < length; i++) {
-      char ch = format.charAt(i);
+      char ch = format[i];
 
       int count = 0;
       bool isEnd = false;
 
       char ch1 = ' ';
       for (i++;
-           i < length && '0' <= (ch1 = format.charAt(i)) && ch1 <= '9';
+           i < length && '0' <= (ch1 = format[i]) && ch1 <= '9';
            i++) {
         count = 10 * count + ch1 - '0';
       }
@@ -1081,12 +1081,12 @@ public class MiscModule : AbstractQuercusModule {
 
     int i = 0;
     while (i < length) {
-      char ch = format.charAt(i++);
+      char ch = format[i++];
 
       int count = 0;
       bool isEnd = false;
 
-      if (i < length && format.charAt(i) == '*') {
+      if (i < length && format[i] == '*') {
         count = Integer.MAX_VALUE;
         isEnd = true;
 
@@ -1094,7 +1094,7 @@ public class MiscModule : AbstractQuercusModule {
       }
       else {
         while (i < length) {
-          char ch1 = format.charAt(i);
+          char ch1 = format[i];
 
           if ('0' <= ch1 && ch1 <= '9') {
             count = count * 10 + ch1 - '0';
@@ -1115,7 +1115,7 @@ public class MiscModule : AbstractQuercusModule {
         StringBuilder sb = new StringBuilder();
 
         while (i < length) {
-          char ch1 = format.charAt(i++);
+          char ch1 = format[i++];
 
           if (ch1 == '/')
             break;
@@ -1271,7 +1271,7 @@ public class MiscModule : AbstractQuercusModule {
       int j = offset;
 
       for (int i = 0; i < _length; i++) {
-        char ch = s.charAt(offset++);
+        char ch = s[offset++];
 
         if (ch != _pad) {
           if (j + 1 != offset)
@@ -1338,7 +1338,7 @@ public class MiscModule : AbstractQuercusModule {
       int j = offset;
 
       while (offset < strLen) {
-        char ch = s.charAt(offset++);
+        char ch = s[offset++];
 
         if (ch != _pad) {
           if (j + 1 != offset)
@@ -1413,11 +1413,11 @@ public class MiscModule : AbstractQuercusModule {
       for (int j = 0; j < tail; j++) {
         int d = 0;
 
-        char ch = s.charAt(2 * j);
+        char ch = s[2 * j];
 
         d += 16 * hexToDigit(env, ch);
 
-        ch = s.charAt(2 * j + 1);
+        ch = s[2 * j + 1];
 
         d += hexToDigit(env, ch);
 
@@ -1425,7 +1425,7 @@ public class MiscModule : AbstractQuercusModule {
       }
 
       if ((strlen & 1) == 1) {
-        int d = 16 * hexToDigit(env, s.charAt(strlen - 1));
+        int d = 16 * hexToDigit(env, s[strlen - 1]);
 
         bb.appendByte(d);
       }
@@ -1447,7 +1447,7 @@ public class MiscModule : AbstractQuercusModule {
 
       StringValue sb = env.createStringBuilder();
       while (offset < strLen) {
-        char ch = s.charAt(offset++);
+        char ch = s[offset++];
 
         sb.append(digitToHex(ch >> 4));
 
@@ -1516,11 +1516,11 @@ public class MiscModule : AbstractQuercusModule {
       for (int j = 0; j < tail; j++) {
         int d = 0;
 
-        char ch = s.charAt(2 * j);
+        char ch = s[2 * j];
 
         d += hexToDigit(env, ch);
 
-        ch = s.charAt(2 * j + 1);
+        ch = s[2 * j + 1];
 
         d += 16 * hexToDigit(env, ch);
 
@@ -1528,7 +1528,7 @@ public class MiscModule : AbstractQuercusModule {
       }
 
       if ((strlen & 1) == 1) {
-        int d = hexToDigit(env, s.charAt(strlen - 1));
+        int d = hexToDigit(env, s[strlen - 1]);
 
         bb.appendByte(d);
       }
@@ -1544,7 +1544,7 @@ public class MiscModule : AbstractQuercusModule {
 
       StringValue sb = env.createStringBuilder();
       for (int i = _length / 2 - 1; i >= 0; i--) {
-        char ch = s.charAt(offset++);
+        char ch = s[offset++];
 
         sb.append(digitToHex(ch));
         sb.append(digitToHex(ch >> 4));
@@ -1633,7 +1633,7 @@ public class MiscModule : AbstractQuercusModule {
           if (strLen <= offset)
             break outer;
 
-          char ch = s.charAt(offset++);
+          char ch = s[offset++];
 
           long d = ch & 0xff;
 
@@ -1733,7 +1733,7 @@ public class MiscModule : AbstractQuercusModule {
           if (offset >= strLen)
             break outer;
 
-          char ch = s.charAt(offset++);
+          char ch = s[offset++];
 
           long d = ch & 0xff;
 
@@ -1816,7 +1816,7 @@ public class MiscModule : AbstractQuercusModule {
           if (offset >= strLen)
             break outer;
 
-          char ch = s.charAt(offset++);
+          char ch = s[offset++];
 
           long d = ch & 0xff;
 
@@ -1899,7 +1899,7 @@ public class MiscModule : AbstractQuercusModule {
           if (offset >= strLen)
             break outer;
 
-          char ch = s.charAt(offset++);
+          char ch = s[offset++];
 
           int d = ch & 0xff;
 

@@ -1006,7 +1006,7 @@ public class MysqliModule : AbstractQuercusModule {
     int strLength = unescapedString.length();
 
     for (int i = 0; i < strLength; i++) {
-      c = unescapedString.charAt(i);
+      c = unescapedString[i];
       switch (c) {
       case '\u0000':
         sb.append('\\');
@@ -1075,7 +1075,7 @@ public class MysqliModule : AbstractQuercusModule {
     int argIndex = 0;
 
     for (int i = 0; i < size; i++) {
-      char ch = query.charAt(i);
+      char ch = query[i];
 
       if (ch == '?') {
         Object arg = args[argIndex++];

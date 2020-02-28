@@ -137,19 +137,19 @@ public class UrlModule
     int offset = 0;
 
     for (; offset + 3 <= strlen; offset += 3) {
-      buffer[0] = (byte) s.charAt(offset);
-      buffer[1] = (byte) s.charAt(offset + 1);
-      buffer[2] = (byte) s.charAt(offset + 2);
+      buffer[0] = (byte) s[offset];
+      buffer[1] = (byte) s[offset + 1];
+      buffer[2] = (byte) s[offset + 2];
 
       Base64.encode(cb, buffer, 0, 3);
     }
 
     if (offset < strlen)
-      buffer[0] = (byte) s.charAt(offset);
+      buffer[0] = (byte) s[offset];
     if (offset + 1 < strlen)
-      buffer[1] = (byte) s.charAt(offset + 1);
+      buffer[1] = (byte) s[offset + 1];
     if (offset + 2 < strlen)
-      buffer[2] = (byte) s.charAt(offset + 2);
+      buffer[2] = (byte) s[offset + 2];
 
     Base64.encode(cb, buffer, 0, strlen - offset);
 
@@ -595,11 +595,11 @@ public class UrlModule
     if (0 <= colon) {
       int end = colon;
 
-      if (colon + 1 < strlen && str.charAt(colon + 1) == '/') {
-        if (colon + 2 < strlen && str.charAt(colon + 2) == '/') {
+      if (colon + 1 < strlen && str[colon + 1] == '/') {
+        if (colon + 2 < strlen && str[colon + 2] == '/') {
           end = colon + 2;
 
-          if (colon + 3 < strlen && str.charAt(colon + 3) == '/') {
+          if (colon + 3 < strlen && str[colon + 3] == '/') {
           }
           else {
             hasHost = true;
@@ -613,7 +613,7 @@ public class UrlModule
         i = end + 1;
       }
       else if (colon + 1 == strlen
-               || (ch = str.charAt(colon + 1)) <= '0'
+               || (ch = str[colon + 1]) <= '0'
                || '9' <= ch) {
         StringValue sb = env.createStringBuilder();
         sb.append(str, 0, colon);
@@ -682,7 +682,7 @@ public class UrlModule
           int port = 0;
 
           for (int j = colon + 1; j < end; j++) {
-            ch = str.charAt(j);
+            ch = str[j];
 
             if ('0' <= ch && ch <= '9')
               port = port * 10 + ch - '0';
@@ -781,11 +781,11 @@ public class UrlModule
     StringBuilder sb = new StringBuilder();
 
     for (int i = 0; i < len; i++) {
-      char ch = s.charAt(i);
+      char ch = s[i];
 
       if (ch == '%' && i + 2 < len) {
-        int d1 = s.charAt(i + 1);
-        int d2 = s.charAt(i + 2);
+        int d1 = s[i + 1];
+        int d2 = s[i + 2];
 
         int v = 0;
 
@@ -832,7 +832,7 @@ public class UrlModule
     StringBuilder sb = new StringBuilder();
 
     for (int i = 0; i < str.length(); i++) {
-      char ch = str.charAt(i);
+      char ch = str[i];
 
       if ('a' <= ch && ch <= 'z'
           || 'A' <= ch && ch <= 'Z'
@@ -874,7 +874,7 @@ public class UrlModule
     int len = str.length();
 
     for (int i = 0; i < len; i++) {
-      char ch = str.charAt(i);
+      char ch = str[i];
 
       if ('a' <= ch && ch <= 'z')
         sb.append(ch);
@@ -906,11 +906,11 @@ public class UrlModule
     StringBuilder sb = new StringBuilder();
 
     for (int i = 0; i < len; i++) {
-      char ch = s.charAt(i);
+      char ch = s[i];
 
       if (ch == '%' && i + 2 < len) {
-        int d1 = s.charAt(i + 1);
-        int d2 = s.charAt(i + 2);
+        int d1 = s[i + 1];
+        int d2 = s[i + 2];
 
         int v = 0;
 

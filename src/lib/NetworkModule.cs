@@ -217,7 +217,7 @@ public class NetworkModule : AbstractQuercusModule {
       int digit = 0;
       char ch = 0;
 
-      for (; p < len && '0' <= (ch = ip.charAt(p)) && ch <= '9'; p++) {
+      for (; p < len && '0' <= (ch = ip[p]) && ch <= '9'; p++) {
         digit = 10 * digit + ch - '0';
       }
 

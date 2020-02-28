@@ -421,22 +421,22 @@ public class ErrorModule : AbstractQuercusModule {
     StringBuilder sb = new StringBuilder();
 
     for (; i < end; i++) {
-      char ch = className.charAt(i);
+      char ch = className[i];
 
-      if (ch == '.' && className.charAt(i + 1) == '_') {
+      if (ch == '.' && className[i + 1] == '_') {
         sb.append('/');
         i++;
       }
       else if (ch != '_') {
         sb.append(ch);
       }
-      else if (className.charAt(i + 1) == '_') {
+      else if (className[i + 1] == '_') {
         sb.append('.');
         i++;
       }
       else {
 //        System.out.println(
-//            "UNKNOWN:" + className.charAt(i + 1) + " " + className);
+//            "UNKNOWN:" + className[i + 1] + " " + className);
       }
     }
 

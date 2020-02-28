@@ -189,7 +189,7 @@ public class IniParser {
 
     int len = sb.length();
     for (; len > 0; len--) {
-      ch = sb.charAt(len - 1);
+      ch = sb[len - 1];
 
       if (! Character.isWhitespace(ch)) {
         break;

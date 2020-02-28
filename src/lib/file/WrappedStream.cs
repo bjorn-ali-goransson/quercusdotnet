@@ -427,7 +427,7 @@ public class WrappedStream : BinaryInput, BinaryOutput {
     
   {
     for (int i = 0; i < v.length(); i++)
-      print(v.charAt(i));
+      print(v[i]);
   }
 
   /**

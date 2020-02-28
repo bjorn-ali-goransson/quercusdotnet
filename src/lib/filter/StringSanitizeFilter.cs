@@ -58,7 +58,7 @@ public class StringSanitizeFilter
     bool isNoEncodeQuotes = (flags & FilterModule.FILTER_FLAG_NO_ENCODE_QUOTES) > 0;
 
     for (int i = 0; i < len; i++) {
-      char ch = str.charAt(i);
+      char ch = str[i];
 
       if (0x00 <= ch && ch <= 0x1f) {
         if (isStripLow) {
@@ -95,7 +95,7 @@ public class StringSanitizeFilter
       }
       else if (ch == '<') {
         while (++i < len) {
-          if (str.charAt(i) == '>') {
+          if (str[i] == '>') {
             break;
           }
         }

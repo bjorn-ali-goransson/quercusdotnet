@@ -2940,13 +2940,13 @@ public class ArrayModule
     if (variableName.length() < 1)
       return false;
 
-    char checkChar = variableName.charAt(0);
+    char checkChar = variableName[0];
 
     if (! Character.isLetter(checkChar) && checkChar != '_')
       return false;
 
     for (int k = 1; k < variableName.length(); k++) {
-      checkChar = variableName.charAt(k);
+      checkChar = variableName[k];
 
       if (!Character.isLetterOrDigit(checkChar) && checkChar != '_')
         return false;
@@ -3769,7 +3769,7 @@ public class ArrayModule
       int type;
 
       try {
-        char character = _string.charAt(_current);
+        char character = _string[_current];
 
         if (character == '0') {
           _current++;
@@ -3783,14 +3783,14 @@ public class ArrayModule
           type = SYMBOL;
 
         for (start = _current; _current < _length; _current++) {
-          if (type == LETTER && Character.isLetter(_string.charAt(_current)))
+          if (type == LETTER && Character.isLetter(_string[_current]))
           {
           }
-          else if (type == DIGIT && Character.isDigit(_string.charAt(_current)))
+          else if (type == DIGIT && Character.isDigit(_string[_current]))
           {
           }
           else if (type == SYMBOL
-              && !Character.isLetterOrDigit(_string.charAt(_current))) {
+              && !Character.isLetterOrDigit(_string[_current])) {
           }
           else
             break;

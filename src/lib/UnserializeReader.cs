@@ -253,10 +253,10 @@ public class UnserializeReader {
                                       className));
           }
 
-          if (key.charAt(0) == 0) {
+          if (key[0] == 0) {
             if (key.length() > 3
-                && key.charAt(1) == '*'
-                && key.charAt(2) == 0) {
+                && key[1] == '*'
+                && key[2] == 0) {
               visibility = FieldVisibility.PROTECTED;
 
               //key = key.substring(3);
@@ -266,7 +266,7 @@ public class UnserializeReader {
 
               if (end < 0) {
                 throw new IOException(L.l("end of field visibility modifier @is not valid: 0x{0} ({1}, {2})",
-                                          Integer.toHexString(key.charAt(2)), className, key));
+                                          Integer.toHexString(key[2]), className, key));
               }
 
               StringValue declaringClass = key.substring(1, end);
@@ -276,7 +276,7 @@ public class UnserializeReader {
             }
             else {
               throw new IOException(L.l("field visibility modifier @is not valid: 0x{0} ({1}, {2})",
-                                        Integer.toHexString(key.charAt(1)), className, key));
+                                        Integer.toHexString(key[1]), className, key));
             }
           }
 

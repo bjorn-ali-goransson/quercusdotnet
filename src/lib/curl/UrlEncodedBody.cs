@@ -73,7 +73,7 @@ public class UrlEncodedBody : PostBody
     
   {
     for (int i = 0; i < _length; i++) {
-      os.write(_body.charAt(i));
+      os.write(_body[i]);
     }
   }
 }

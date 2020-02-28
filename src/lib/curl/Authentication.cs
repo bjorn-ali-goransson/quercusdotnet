@@ -244,7 +244,7 @@ public class Authentication
   {
     int length = string.length();
     for (int i = 0; i < length; i++) {
-      md.update((byte)string.charAt(i));
+      md.update((byte)string[i]);
     }
   }
 
@@ -366,7 +366,7 @@ public class Authentication
       if (_position >= _length)
         return -1;
       else
-        return _header.charAt(_position++);
+        return _header[_position++];
     }
 
     void close()

@@ -194,7 +194,7 @@ public class DateInterval
     private int peek()
     {
       if (_offset < _length) {
-        return _str.charAt(_offset);
+        return _str[_offset];
       }
       else {
         return -1;
@@ -204,7 +204,7 @@ public class DateInterval
     private int read()
     {
       if (_offset < _length) {
-        return _str.charAt(_offset++);
+        return _str[_offset++];
       }
       else {
         return -1;

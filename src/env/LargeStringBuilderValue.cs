@@ -464,7 +464,7 @@ public class LargeStringBuilderValue
     ensureCapacity(_length + len);
 
     for (int i = 0; i < len; i++) {
-      _bufferList[_length / SIZE][_length % SIZE] = (byte) s.charAt(i);
+      _bufferList[_length / SIZE][_length % SIZE] = (byte) s[i];
 
       _length++;
     }
@@ -482,7 +482,7 @@ public class LargeStringBuilderValue
     ensureCapacity(_length + len);
 
     for (int i = 0; i < len; i++) {
-      _bufferList[_length / SIZE][_length % SIZE] = (byte) buf.charAt(i);
+      _bufferList[_length / SIZE][_length % SIZE] = (byte) buf[i];
 
       _length++;
     }

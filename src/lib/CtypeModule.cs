@@ -55,7 +55,7 @@ public class CtypeModule
         return false;
 
       for (int i = 0; i < string.length(); i++) {
-        if (! isalnum(string.charAt(i)))
+        if (! isalnum(string[i]))
           return false;
       }
 
@@ -76,7 +76,7 @@ public class CtypeModule
         return false;
 
       for (int i = 0; i < string.length(); i++) {
-        if (! isalpha(string.charAt(i)))
+        if (! isalpha(string[i]))
           return false;
       }
 
@@ -97,7 +97,7 @@ public class CtypeModule
         return false;
 
       for (int i = 0; i < string.length(); i++) {
-        if (! iscntrl(string.charAt(i)))
+        if (! iscntrl(string[i]))
           return false;
       }
 
@@ -118,7 +118,7 @@ public class CtypeModule
         return false;
 
       for (int i = 0; i < string.length(); i++) {
-        if (! isdigit(string.charAt(i)))
+        if (! isdigit(string[i]))
           return false;
       }
 
@@ -140,7 +140,7 @@ public class CtypeModule
         return false;
 
       for (int i = 0; i < string.length(); i++) {
-        if (! isgraph(string.charAt(i)))
+        if (! isgraph(string[i]))
           return false;
       }
 
@@ -161,7 +161,7 @@ public class CtypeModule
         return false;
 
       for (int i = 0; i < string.length(); i++) {
-        if (! islower(string.charAt(i)))
+        if (! islower(string[i]))
           return false;
       }
 
@@ -183,7 +183,7 @@ public class CtypeModule
         return false;
 
       for (int i = 0; i < string.length(); i++) {
-        if (! isprint(string.charAt(i)))
+        if (! isprint(string[i]))
           return false;
       }
 
@@ -204,7 +204,7 @@ public class CtypeModule
         return false;
 
       for (int i = 0; i < string.length(); i++) {
-        if (! ispunct(string.charAt(i)))
+        if (! ispunct(string[i]))
           return false;
       }
 
@@ -225,7 +225,7 @@ public class CtypeModule
         return false;
 
       for (int i = 0; i < string.length(); i++) {
-        if (! isspace(string.charAt(i)))
+        if (! isspace(string[i]))
           return false;
       }
 
@@ -246,7 +246,7 @@ public class CtypeModule
         return false;
 
       for (int i = 0; i < string.length(); i++) {
-        if (! isupper(string.charAt(i)))
+        if (! isupper(string[i]))
           return false;
       }
 
@@ -267,7 +267,7 @@ public class CtypeModule
         return false;
 
       for (int i = 0; i < string.length(); i++) {
-        if (! isxdigit(string.charAt(i)))
+        if (! isxdigit(string[i]))
           return false;
       }
 

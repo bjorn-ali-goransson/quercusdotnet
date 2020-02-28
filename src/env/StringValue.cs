@@ -658,21 +658,21 @@ abstract public class StringValue
     int offset = 0;
     int end = offset + len;
 
-    while (offset < end && Character.isWhitespace(string.charAt(offset))) {
+    while (offset < end && Character.isWhitespace(string[offset])) {
       offset++;
     }
 
-    if (offset < end && string.charAt(offset) == '-') {
+    if (offset < end && string[offset] == '-') {
       sign = -1;
       offset++;
     }
-    else if (offset < end && string.charAt(offset) == '+') {
+    else if (offset < end && string[offset] == '+') {
       sign = +1;
       offset++;
     }
 
     while (offset < end) {
-      int ch = string.charAt(offset++);
+      int ch = string[offset++];
 
       if ('0' <= ch && ch <= '9') {
         long newValue = 10 * value + ch - '0';
@@ -717,18 +717,18 @@ abstract public class StringValue
     int i = 0;
     int ch = 0;
 
-    while (i < len && Character.isWhitespace(s.charAt(i))) {
+    while (i < len && Character.isWhitespace(s[i])) {
       start++;
       i++;
     }
 
-    if (i + 1 < len && s.charAt(i) == '0'
-        && ((ch = s.charAt(i)) == 'x' || ch == 'X')) {
+    if (i + 1 < len && s[i] == '0'
+        && ((ch = s[i]) == 'x' || ch == 'X')) {
 
       double value = 0;
 
       for (i += 2; i < len; i++) {
-        ch = s.charAt(i);
+        ch = s[i];
 
         if ('0' <= ch && ch <= '9')
           value = value * 16 + ch - '0';
@@ -743,26 +743,26 @@ abstract public class StringValue
       return value;
     }
 
-    if (i < len && ((ch = s.charAt(i)) == '+' || ch == '-')) {
+    if (i < len && ((ch = s[i]) == '+' || ch == '-')) {
       i++;
     }
 
-    for (; i < len && '0' <= (ch = s.charAt(i)) && ch <= '9'; i++) {
+    for (; i < len && '0' <= (ch = s[i]) && ch <= '9'; i++) {
     }
 
     if (ch == '.') {
-      for (i++; i < len && '0' <= (ch = s.charAt(i)) && ch <= '9'; i++) {
+      for (i++; i < len && '0' <= (ch = s[i]) && ch <= '9'; i++) {
       }
     }
 
     if (ch == 'e' || ch == 'E') {
       int e = i++;
 
-      if (i < len && (ch = s.charAt(i)) == '+' || ch == '-') {
+      if (i < len && (ch = s[i]) == '+' || ch == '-') {
         i++;
       }
 
-      for (; i < len && '0' <= (ch = s.charAt(i)) && ch <= '9'; i++) {
+      for (; i < len && '0' <= (ch = s[i]) && ch <= '9'; i++) {
       }
 
       if (i == e + 1)
@@ -1109,7 +1109,7 @@ abstract public class StringValue
 
       for (int i = 0; i < len; i++) {
         char l = charAt(i);
-        char r = rStr.charAt(i);
+        char r = rStr[i];
 
         sb.appendByte(l & r);
       }
@@ -1133,7 +1133,7 @@ abstract public class StringValue
 
       for (int i = 0; i < len; i++) {
         char l = charAt(i);
-        char r = rStr.charAt(i);
+        char r = rStr[i];
 
         sb.appendByte(l | r);
       }
@@ -1162,7 +1162,7 @@ abstract public class StringValue
 
       for (int i = 0; i < len; i++) {
         char l = charAt(i);
-        char r = rStr.charAt(i);
+        char r = rStr[i];
 
         sb.appendByte(l ^ r);
       }
@@ -1684,7 +1684,7 @@ abstract public class StringValue
     StringValue sb = this;
 
     for (int i = 0; i < s.length(); i++) {
-      sb = sb.appendByte(s.charAt(i));
+      sb = sb.appendByte(s[i]);
     }
 
     return sb;
@@ -1698,7 +1698,7 @@ abstract public class StringValue
     StringValue sb = this;
 
     for (int i = 0; i < s.length(); i++) {
-      sb = sb.appendByte(s.charAt(i));
+      sb = sb.appendByte(s[i]);
     }
 
     return sb;
@@ -1992,7 +1992,7 @@ abstract public class StringValue
    */
   public char charAt(int index)
   {
-    return ToString().charAt(index);
+    return ToString()[index];
   }
 
   /**
@@ -2037,7 +2037,7 @@ abstract public class StringValue
       return -1;
 
     int end = length - matchLength;
-    char first = match.charAt(0);
+    char first = match[0];
 
     loop:
     for (; head <= end; head++) {
@@ -2045,7 +2045,7 @@ abstract public class StringValue
         continue;
 
       for (int i = 1; i < matchLength; i++) {
-        if (charAt(head + i) != match.charAt(i))
+        if (charAt(head + i) != match[i])
           continue loop;
       }
 
@@ -2128,7 +2128,7 @@ abstract public class StringValue
     if (tail > length - matchLength)
       tail = length - matchLength;
 
-    char first = match.charAt(0);
+    char first = match[0];
 
     loop:
     for (; tail >= 0; tail--) {
@@ -2136,7 +2136,7 @@ abstract public class StringValue
         continue;
 
       for (int i = 1; i < matchLength; i++) {
-        if (charAt(tail + i) != match.charAt(i))
+        if (charAt(tail + i) != match[i])
           continue loop;
       }
 
@@ -2179,7 +2179,7 @@ abstract public class StringValue
       return false;
 
     for (int i = 0; i < mLength; i++) {
-      if (charAt(offset + i) != match.charAt(mOffset + i))
+      if (charAt(offset + i) != match[mOffset + i])
         return false;
     }
 
@@ -2223,7 +2223,7 @@ abstract public class StringValue
     }
 
     for (int i = 0; i < headLen; i++) {
-      if (charAt(i) != head.charAt(i))
+      if (charAt(i) != head[i])
         return false;
     }
 
@@ -2244,7 +2244,7 @@ abstract public class StringValue
       return false;
 
     for (int i = 0; i < tailLen; i++) {
-      if (charAt(offset + i) != tail.charAt(i))
+      if (charAt(offset + i) != tail[i])
         return false;
     }
 
@@ -2613,7 +2613,7 @@ abstract public class StringValue
     }
 
     for (int i = aLength - 1; i >= 0; i--) {
-      if (charAt(i) != s.charAt(i)) {
+      if (charAt(i) != s[i]) {
         return false;
       }
     }
@@ -2647,7 +2647,7 @@ abstract public class StringValue
 
     for (int i = aLength - 1; i >= 0; i--) {
       char chA = charAt(i);
-      char chB = s.charAt(i);
+      char chB = s[i];
 
       chA = Character.toLowerCase(chA);
       chB = Character.toLowerCase(chB);
@@ -2675,7 +2675,7 @@ abstract public class StringValue
 
     for (int i = 0; i < lenA; i++) {
       char chA = charAt(i);
-      char chB = s.charAt(i);
+      char chB = s[i];
 
       if (chA != chB) {
         return false;
@@ -2700,7 +2700,7 @@ abstract public class StringValue
 
     for (int i = 0; i < lenA; i++) {
       char chA = charAt(i);
-      char chB = s.charAt(i);
+      char chB = s[i];
 
       if (chA == chB) {
       }
@@ -2848,7 +2848,7 @@ abstract public class StringValue
       if (_index >= _length)
         return -1;
       else
-        return _str.charAt(_index++);
+        return _str[_index++];
     }
 
     public int read(char []buf, int off, int len)
@@ -2860,7 +2860,7 @@ abstract public class StringValue
       len = Math.min(_length - _index, len);
 
       for (; i < len; i++) {
-        buf[off + i] = _str.charAt(i + _index++);
+        buf[off + i] = _str[i + _index++];
       }
 
       return i;

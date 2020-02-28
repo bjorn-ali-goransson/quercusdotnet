@@ -179,7 +179,7 @@ public class Font
     char prevChar = 0;
 
     for (int i = 0; i < len; i++) {
-      char ch = text.charAt(i);
+      char ch = text[i];
 
       if (ch >= 256)
         continue;

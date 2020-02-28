@@ -244,10 +244,10 @@ public class PostgresModule : AbstractQuercusModule {
         int len = value.length();
 
         for (int i = 0; i < len; i++) {
-          char ch = value.charAt(i);
+          char ch = value[i];
 
           if ('0' <= ch && ch <= '9')
-            port = port * 10 + value.charAt(i) - '0';
+            port = port * 10 + value[i] - '0';
           else
             break;
         }
@@ -303,12 +303,12 @@ public class PostgresModule : AbstractQuercusModule {
       buffer.clear();
 
       // skip whitespace
-      for (; i < len && Character.isWhitespace(ch = s.charAt(i)); i++) {
+      for (; i < len && Character.isWhitespace(ch = s[i]); i++) {
       }
 
       // get name
       for (;
-           i < len && ! Character.isWhitespace(ch = s.charAt(i))
+           i < len && ! Character.isWhitespace(ch = s[i])
                && ch != '='; i++) {
         buffer.append(ch);
       }
@@ -317,18 +317,18 @@ public class PostgresModule : AbstractQuercusModule {
       buffer.clear();
 
       // skip until '='
-      while (i < len && (ch = s.charAt(i++)) != '=') {
+      while (i < len && (ch = s[i++]) != '=') {
       }
 
       // skip whitespace
-      for (; i < len && Character.isWhitespace(ch = s.charAt(i)); i++) {
+      for (; i < len && Character.isWhitespace(ch = s[i]); i++) {
       }
 
       bool isQuoted = false;
 
       // value may be quoted
       if (i < len) {
-        if ((ch = s.charAt(i++)) == '\'')
+        if ((ch = s[i++]) == '\'')
           isQuoted = true;
         else
           buffer.append(ch);
@@ -339,7 +339,7 @@ public class PostgresModule : AbstractQuercusModule {
       // get value
       loop:
       while (i < len) {
-        ch = s.charAt(i++);
+        ch = s[i++];
 
         switch(ch) {
           case '\\':

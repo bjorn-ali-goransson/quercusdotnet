@@ -286,7 +286,7 @@ public class TokenModule : AbstractQuercusModule {
     if (sb != null) {
       int len = string.length();
       for (int i = 0; i < len; i++) {
-        char ch = string.charAt(i);
+        char ch = string[i];
 
         switch (ch) {
           case '<':
@@ -307,7 +307,7 @@ public class TokenModule : AbstractQuercusModule {
     else {
       int len = string.length();
       for (int i = 0; i < len; i++) {
-        char ch = string.charAt(i);
+        char ch = string[i];
 
         switch (ch) {
           case '<':
@@ -995,7 +995,7 @@ public class TokenModule : AbstractQuercusModule {
     private int read()
     {
       if (_i < _length)
-        return _s.charAt(_i++);
+        return _s[_i++];
       else {
         _i++;
         return -1;

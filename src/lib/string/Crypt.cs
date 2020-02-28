@@ -18,15 +18,15 @@ public class Crypt {
     if (8 < len)
       len = 8;
 
-    int swap0 = toSalt(salt.charAt(0)) << 2;
-    int swap1 = toSalt(salt.charAt(1)) << 6;
+    int swap0 = toSalt(salt[0]) << 2;
+    int swap1 = toSalt(salt[1]) << 6;
 
     char []result = new char[12];
     byte []key = new byte[8];
 
     int i;
     for (i = 0; i < len; i++) {
-      char ch = keyString.charAt(i);
+      char ch = keyString[i];
 
       key[i] = (byte) (ch << 1);
     }

@@ -98,7 +98,7 @@ public class WriteStreamOutput : OutputStream : BinaryOutput {
     int len = s.length();
     
     for (int i = 0; i < len; i++)
-      _os.write(s.charAt(i));
+      _os.write(s[i]);
   }
 
   public override int write(InputStream @is, int length)

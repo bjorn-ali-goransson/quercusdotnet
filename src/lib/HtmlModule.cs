@@ -175,7 +175,7 @@ public class HtmlModule : AbstractQuercusModule {
     StringValue sb = str.createStringBuilder(len * 4 / 5);
 
     for (int i = 0; i < len; i++) {
-      char ch = str.charAt(i);
+      char ch = str[i];
 
       if (ch != '&') {
         sb.append(ch);
@@ -183,13 +183,13 @@ public class HtmlModule : AbstractQuercusModule {
         continue;
       }
 
-      switch (str.charAt(i + 1)) {
+      switch (str[i + 1]) {
         case 'a':
           sb.append('&');
           if (i + 4 < len
-              && str.charAt(i + 2) == 'm'
-              && str.charAt(i + 3) == 'p'
-              && str.charAt(i + 4) == ';') {
+              && str[i + 2] == 'm'
+              && str[i + 3] == 'p'
+              && str[i + 4] == ';') {
             i += 4;
           }
           break;
@@ -197,10 +197,10 @@ public class HtmlModule : AbstractQuercusModule {
         case 'q':
           if ((quoteStyle & ENT_HTML_QUOTE_DOUBLE) != 0
               && i + 5 < len
-              && str.charAt(i + 2) == 'u'
-              && str.charAt(i + 3) == 'o'
-              && str.charAt(i + 4) == 't'
-              && str.charAt(i + 5) == ';') {
+              && str[i + 2] == 'u'
+              && str[i + 3] == 'o'
+              && str[i + 4] == 't'
+              && str[i + 5] == ';') {
             i += 5;
             sb.append('"');
           }
@@ -211,10 +211,10 @@ public class HtmlModule : AbstractQuercusModule {
         case '#':
           if ((quoteStyle & ENT_HTML_QUOTE_SINGLE) != 0
               && i + 5 < len
-              && str.charAt(i + 2) == '0'
-              && str.charAt(i + 3) == '3'
-              && str.charAt(i + 4) == '9'
-              && str.charAt(i + 5) == ';') {
+              && str[i + 2] == '0'
+              && str[i + 3] == '3'
+              && str[i + 4] == '9'
+              && str[i + 5] == ';') {
             i += 5;
             sb.append('\'');
           }
@@ -225,8 +225,8 @@ public class HtmlModule : AbstractQuercusModule {
 
         case 'l':
           if (i + 3 < len
-              && str.charAt(i + 2) == 't'
-              && str.charAt(i + 3) == ';') {
+              && str[i + 2] == 't'
+              && str[i + 3] == ';') {
                 i += 3;
 
                 sb.append('<');
@@ -237,8 +237,8 @@ public class HtmlModule : AbstractQuercusModule {
 
         case 'g':
           if (i + 3 < len
-              && str.charAt(i + 2) == 't'
-              && str.charAt(i + 3) == ';') {
+              && str[i + 2] == 't'
+              && str[i + 3] == ';') {
                 i += 3;
 
                 sb.append('>');
@@ -276,13 +276,13 @@ public class HtmlModule : AbstractQuercusModule {
 
     forLoop:
     for (int i = 0; i < len; i++) {
-      char ch = string.charAt(i);
+      char ch = string[i];
 
       switch (ch) {
         case '&':
           if (! isDoubleEncode) {
             for (int j = i + 1; j < len && j < i + 12; j++) {
-              char ch2 = string.charAt(j);
+              char ch2 = string[j];
 
               if (ch2 == ';') {
                 sb.append(string, i, j + 1);
@@ -371,7 +371,7 @@ public class HtmlModule : AbstractQuercusModule {
     int len = unicodeStr.length();
 
     for (int i = 0; i < len; i++) {
-      char ch = unicodeStr.charAt(i);
+      char ch = unicodeStr[i];
 
       StringValue entity = HTML_SPECIALCHARS_MAP[ch & 0xffff];
 
@@ -453,7 +453,7 @@ public class HtmlModule : AbstractQuercusModule {
     try {
       // Loop through each character
       for (int i = 0; i < len; i++) {
-        char ch = string.charAt(i);
+        char ch = string[i];
 
         // Check whether it's a html entity
         // i.e. starts with '&' and ends with ';'
@@ -511,13 +511,13 @@ public class HtmlModule : AbstractQuercusModule {
     StringValue sb = string.createStringBuilder(strLen * 5 / 4);
 
     for (int i = 0; i < strLen; i++) {
-      char ch = string.charAt(i);
+      char ch = string[i];
 
       if (ch == '\n') {
         sb.append("<br />\n");
       }
       else if (ch == '\r') {
-        if (i + 1 < strLen && string.charAt(i + 1) == '\n') {
+        if (i + 1 < strLen && string[i + 1] == '\n') {
           sb.append("<br />\r\n");
           i++;
         }

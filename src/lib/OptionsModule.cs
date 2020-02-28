@@ -636,7 +636,7 @@ public class OptionsModule : AbstractQuercusModule {
     if (mode == null || mode.equals(""))
       mode = "a";
 
-    switch (mode.charAt(0)) {
+    switch (mode[0]) {
     case 's':
       return System.getProperty("os.name");
 
@@ -990,12 +990,12 @@ public class OptionsModule : AbstractQuercusModule {
     int i = 0;
 
     while (i < len) {
-      char ch = version.charAt(i);
+      char ch = version[i];
 
       if ('0' <= ch && ch <= '9') {
         int value = 0;
 
-        for (; i < len && '0' <= (ch = version.charAt(i)) && ch <= '9'; i++) {
+        for (; i < len && '0' <= (ch = version[i]) && ch <= '9'; i++) {
           value = 10 * value + ch - '0';
         }
 
@@ -1004,7 +1004,7 @@ public class OptionsModule : AbstractQuercusModule {
       else if (Character.isLetter((char) ch)) {
         StringBuilder sb = new StringBuilder();
 
-        for (; i < len && Character.isLetter(version.charAt(i)); i++) {
+        for (; i < len && Character.isLetter(version[i]); i++) {
           sb.append((char) ch);
         }
 

@@ -196,7 +196,7 @@ public class QuercusMimeUtility
       StringBuilder sb = new StringBuilder();
 
       for (int i = 0; i < lineBreakChars.length(); i++) {
-        char ch = lineBreakChars.charAt(i);
+        char ch = lineBreakChars[i];
 
         string hex = Integer.toHexString(ch);
 

@@ -291,7 +291,7 @@ public class UrlRewriterCallback : CallbackFunction {
       int attributeStart = _index;
 
       while (_index < _input.length()
-          && isValidAttributeCharacter(_input.charAt(_index)))
+          && isValidAttributeCharacter(_input[_index]))
         consumeOneCharacter();
 
       // no valid attribute was found (we're probably at the end of the tag)
@@ -303,7 +303,7 @@ public class UrlRewriterCallback : CallbackFunction {
       consumeWhiteSpace();
 
       // Any attributes that we will affect are of the form attr=value
-      if (_input.length() <= _index || _input.charAt(_index) != '=')
+      if (_input.length() <= _index || _input[_index] != '=')
         return -1;
 
       consumeOneCharacter();
@@ -313,9 +313,9 @@ public class UrlRewriterCallback : CallbackFunction {
       // check for quoting
       char quote = ' ';
 
-      if (_input.charAt(_index) == '"' || _input.charAt(_index) == '\'') {
+      if (_input[_index] == '"' || _input[_index] == '\'') {
         _quoted = true;
-        quote = _input.charAt(_index);
+        quote = _input[_index];
 
         consumeOneCharacter();
       }
@@ -338,9 +338,9 @@ public class UrlRewriterCallback : CallbackFunction {
         // skip to the end of the value
         for (valueEnd = _index;
              valueEnd < _input.length()
-                 && _input.charAt(valueEnd) != '/'
-                 && _input.charAt(valueEnd) != '>'
-                 && _input.charAt(valueEnd) != ' ';
+                 && _input[valueEnd] != '/'
+                 && _input[valueEnd] != '>'
+                 && _input[valueEnd] != ' ';
              valueEnd++) {
           // intentionally left empty
         }
@@ -369,7 +369,7 @@ public class UrlRewriterCallback : CallbackFunction {
     private void consumeOneCharacter()
     {
       if (_index < _input.length()) {
-        _output.append(_input.charAt(_index));
+        _output.append(_input[_index]);
         _index += 1;
       }
     }
@@ -377,20 +377,20 @@ public class UrlRewriterCallback : CallbackFunction {
     private void consumeWhiteSpace()
     {
       while (_index < _input.length()
-          && Character.isWhitespace(_input.charAt(_index)))
+          && Character.isWhitespace(_input[_index]))
         consumeOneCharacter();
     }
 
     private void consumeNonWhiteSpace()
     {
       while (_index < _input.length()
-          && !Character.isWhitespace(_input.charAt(_index)))
+          && !Character.isWhitespace(_input[_index]))
         consumeOneCharacter();
     }
 
     private void consumeToEndOfTag()
     {
-      while (_input.charAt(_index) != '>')
+      while (_input[_index] != '>')
         consumeOneCharacter();
 
       // consume the '>'

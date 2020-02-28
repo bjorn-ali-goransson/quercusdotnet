@@ -51,7 +51,7 @@ public class CharSequenceInputStream : InputStream {
   public int read()
   {
     if (_index < _length)
-      return _string.charAt(_index++);
+      return _string[_index++];
     else
       return -1;
   }
@@ -70,7 +70,7 @@ public class CharSequenceInputStream : InputStream {
     int index = _index;
 
     for (int i = 0; i < sublen; i++) {
-      buffer[offset + i] = (byte) s.charAt(index + i);
+      buffer[offset + i] = (byte) s[index + i];
     }
 
     _index = index + sublen;

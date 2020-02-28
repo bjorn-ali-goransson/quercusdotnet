@@ -141,7 +141,7 @@ public class StringBuilderValue
     _length = len;
 
     for (int i = 0; i < len; i++) {
-      _buffer[i] = (byte) s.charAt(i);
+      _buffer[i] = (byte) s[i];
     }
   }
 
@@ -766,7 +766,7 @@ public class StringBuilderValue
       if (value.length() == 0)
         sb._buffer[index] = 0;
       else
-        sb._buffer[index] = (byte) str.charAt(0);
+        sb._buffer[index] = (byte) str[0];
 
       return sb;
     }
@@ -791,7 +791,7 @@ public class StringBuilderValue
       if (value.length() == 0)
         sb._buffer[index] = 0;
       else
-        sb._buffer[index] = (byte) str.charAt(0);
+        sb._buffer[index] = (byte) str[0];
 
       return sb;
     }
@@ -1099,7 +1099,7 @@ public class StringBuilderValue
     int length = _length;
 
     for (int i = 0; i < sublen; i++) {
-      buffer[length + i] = (byte) s.charAt(i);
+      buffer[length + i] = (byte) s[i];
     }
 
     _length = length + sublen;
@@ -1121,7 +1121,7 @@ public class StringBuilderValue
     int length = _length;
 
     for (; start < end; start++)
-      buffer[length++] = (byte) s.charAt(start);
+      buffer[length++] = (byte) s[start];
 
     _length = length;
 
@@ -1260,7 +1260,7 @@ public class StringBuilderValue
       int bufferLength = _length;
 
       for (; head < tail; head++) {
-        buffer[bufferLength++] = (byte) buf.charAt(head);
+        buffer[bufferLength++] = (byte) buf[head];
       }
 
       _length = bufferLength;
@@ -1323,7 +1323,7 @@ public class StringBuilderValue
 
     int length = _length;
     int end = length - matchLength;
-    char first = match.charAt(0);
+    char first = match[0];
     byte []buffer = _buffer;
 
     loop:
@@ -1332,7 +1332,7 @@ public class StringBuilderValue
         continue;
 
       for (int i = 1; i < matchLength; i++) {
-        if (buffer[head + i] != match.charAt(i))
+        if (buffer[head + i] != match[i])
           continue loop;
       }
 
@@ -1483,7 +1483,7 @@ public class StringBuilderValue
       ensureCapacity(_length + sublen);
 
     for (int i = 0; i < sublen; i++) {
-      _buffer[_length++] = (byte) s.charAt(i);
+      _buffer[_length++] = (byte) s[i];
     }
 
     return this;
@@ -1847,7 +1847,7 @@ public class StringBuilderValue
       byte []buffer = _buffer;
 
       for (int i = length - 1; i >= 0; i--) {
-        if ((buffer[i] & 0xff) != value.charAt(i)) {
+        if ((buffer[i] & 0xff) != value[i]) {
           return false;
         }
       }
@@ -1867,7 +1867,7 @@ public class StringBuilderValue
       }
 
       for (int i = len - 1; i >= 0; i--) {
-        if ((_buffer[i] & 0xff) != rString.charAt(i)) {
+        if ((_buffer[i] & 0xff) != rString[i]) {
           return false;
         }
       }
@@ -1912,7 +1912,7 @@ public class StringBuilderValue
       byte []bufferA = _buffer;
 
       for (int i = length - 1; i >= 0; i--) {
-        if (bufferA[i] != value.charAt(i))
+        if (bufferA[i] != value[i])
           return false;
       }
 
@@ -1930,7 +1930,7 @@ public class StringBuilderValue
       byte []buffer = _buffer;
 
       for (int i = len - 1; i >= 0; i--) {
-        if ((buffer[i] & 0xff) != str.charAt(i)) {
+        if ((buffer[i] & 0xff) != str[i]) {
           return false;
         }
       }

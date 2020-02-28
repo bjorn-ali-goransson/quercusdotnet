@@ -131,7 +131,7 @@ public class CgiEnv
 
       StringValue nameV = cleanCookieName(name);
 
-      if (nameV.length() > 0 && nameV.charAt(0) == '$')
+      if (nameV.length() > 0 && nameV[0] == '$')
         array.append(nameV, getEmptyString());
     }
   }
@@ -144,7 +144,7 @@ public class CgiEnv
 
     int i = 0;
     while (i < len) {
-      char ch = name.charAt(i);
+      char ch = name[i];
 
       if (ch == ' ')
         i++;
@@ -152,8 +152,8 @@ public class CgiEnv
         i++;
       else if (i + 2 < len
                && ch == '%'
-               && name.charAt(i + 1) == '2'
-               && name.charAt(i + 2) == '0')
+               && name[i + 1] == '2'
+               && name[i + 2] == '0')
         i += 3;
       else
         break;
@@ -162,13 +162,13 @@ public class CgiEnv
     int spaces = 0;
 
     for (; i < len; i++) {
-      char ch = name.charAt(i);
+      char ch = name[i];
 
       switch (ch) {
         case '%':
           if (i + 2 < len
-              && name.charAt(i + 1) == '2'
-              && name.charAt(i + 2) == '0') {
+              && name[i + 1] == '2'
+              && name[i + 2] == '0') {
             spaces++;
             i += 2;
           }

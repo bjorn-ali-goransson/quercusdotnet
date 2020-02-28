@@ -168,7 +168,7 @@ public class SimpleUtil
     string str = node.getNodeValue();
 
     for (int i = 0; i < str.length(); i++) {
-      char ch = str.charAt(i);
+      char ch = str[i];
 
       string entity = SimpleUtil.toEntity(ch);
 

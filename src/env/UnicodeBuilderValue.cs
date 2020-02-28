@@ -430,7 +430,7 @@ public class UnicodeBuilderValue
     int bufferLength = _length;
 
     for (; head < tail; head++) {
-      buffer[bufferLength++] = buf.charAt(head);
+      buffer[bufferLength++] = buf[head];
     }
 
     _length = bufferLength;
@@ -715,7 +715,7 @@ public class UnicodeBuilderValue
       if (value.length() == 0)
         sb._buffer[index] = 0;
       else
-        sb._buffer[index] = str.charAt(0);
+        sb._buffer[index] = str[0];
 
       return sb;
     }
@@ -738,7 +738,7 @@ public class UnicodeBuilderValue
       if (value.length() == 0)
         sb._buffer[index] = 0;
       else
-        sb._buffer[index] = str.charAt(0);
+        sb._buffer[index] = str[0];
 
       return sb;
     }
@@ -1256,7 +1256,7 @@ public class UnicodeBuilderValue
       char []buffer = _buffer;
 
       for (int i = length - 1; i >= 0; i--) {
-        if (buffer[i] != value.charAt(i)) {
+        if (buffer[i] != value[i]) {
           return false;
         }
       }
@@ -1275,7 +1275,7 @@ public class UnicodeBuilderValue
         return false;
 
       for (int i = len - 1; i >= 0; i--) {
-        if (_buffer[i] != rString.charAt(i))
+        if (_buffer[i] != rString[i])
           return false;
       }
 
@@ -1320,7 +1320,7 @@ public class UnicodeBuilderValue
       char []buffer = _buffer;
 
       for (int i = len - 1; i >= 0; i--) {
-        if (buffer[i] != str.charAt(i)) {
+        if (buffer[i] != str[i]) {
           return false;
         }
       }
@@ -1379,7 +1379,7 @@ public class UnicodeBuilderValue
       char []buffer = _buffer;
 
       for (int i = length - 1; i >= 0; i--) {
-        if (buffer[i] != str.charAt(i)) {
+        if (buffer[i] != str[i]) {
           return false;
         }
       }

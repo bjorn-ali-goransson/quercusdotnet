@@ -321,7 +321,7 @@ public class StreamModule : AbstractQuercusModule {
       if (lineLength == 0)
         return line;
 
-      char tail = line.charAt(lineLength - 1);
+      char tail = line[lineLength - 1];
 
       if (tail == '\n')
         return line.substring(0, line.length() - 1);
@@ -546,7 +546,7 @@ public class StreamModule : AbstractQuercusModule {
         port = 0;
 
         for (int i = colonIndex + 1; i < remoteSocket.length(); i++) {
-          char ch = remoteSocket.charAt(i);
+          char ch = remoteSocket[i];
 
           if ('0' <= ch && ch <= '9')
             port = port * 10 + ch - '0';

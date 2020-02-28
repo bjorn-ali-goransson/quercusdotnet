@@ -99,7 +99,7 @@ public class HashModule : AbstractQuercusModule {
       int len = string.length();
 
       for (int i = 0; i < len; i++) {
-        digest.update((byte) string.charAt(i));
+        digest.update((byte) string[i]);
       }
 
       byte []bytes = digest.digest();
@@ -255,7 +255,7 @@ public class HashModule : AbstractQuercusModule {
         byte []keyBytes = new byte[keySize];
 
         for (int i = 0; i < keyString.length(); i++) {
-          keyBytes[i] = (byte) keyString.charAt(i);
+          keyBytes[i] = (byte) keyString[i];
         }
 
         Key key = new SecretKeySpec(keyBytes, "dsa");
@@ -464,7 +464,7 @@ public class HashModule : AbstractQuercusModule {
       MessageDigest digest = _digest;
 
       for (int i = 0; i < len; i++) {
-        digest.update((byte) value.charAt(i));
+        digest.update((byte) value[i]);
       }
     }
 
@@ -526,7 +526,7 @@ public class HashModule : AbstractQuercusModule {
           sublen = buffer.length;
 
         for (int i = 0; i < sublen; i++) {
-          buffer[i] = (byte) value.charAt(offset + i);
+          buffer[i] = (byte) value[offset + i];
         }
 
         digest.update(buffer, 0, sublen);

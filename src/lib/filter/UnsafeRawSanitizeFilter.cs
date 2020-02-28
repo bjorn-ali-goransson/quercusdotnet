@@ -57,7 +57,7 @@ public class UnsafeRawSanitizeFilter
     bool isEncodeAmp = (flags & FilterModule.FILTER_FLAG_ENCODE_AMP) > 0;
 
     for (int i = 0; i < len; i++) {
-      char ch = str.charAt(i);
+      char ch = str[i];
 
       if (0x00 <= ch && ch <= 0x1f) {
         if (isStripLow) {

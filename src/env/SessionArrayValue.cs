@@ -201,7 +201,7 @@ public class SessionArrayValue : ArrayValueWrapper
     @out.write(len);
 
     for (int i = 0; i < len; i++) {
-      char ch = encode.charAt(i);
+      char ch = encode[i];
 
       @out.write(ch >> 8);
       @out.write(ch);

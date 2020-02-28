@@ -46,14 +46,14 @@ public class UnicodeUtility
     int len = str.length();
 
     for (int i = 0; i < len; i++) {
-      char ch = str.charAt(i);
+      char ch = str[i];
 
       if (ch <= 0x7F)
         sb.append(ch);
       else if (0xC2 <= ch && ch <= 0xDF) {
         char ch2;
         if (i + 1 < len
-            && 0x80 <= (ch2 = str.charAt(i + 1)) && ch2 <= 0xBF) {
+            && 0x80 <= (ch2 = str[i + 1]) && ch2 <= 0xBF) {
           i++;
           sb.append(ch);
           sb.append(ch2);
@@ -69,8 +69,8 @@ public class UnicodeUtility
         char ch2;
         char ch3;
         if (i + 2 < len
-            && 0x80 <= (ch2 = str.charAt(i + 1)) && ch2 <= 0xBF
-            && 0x80 <= (ch3 = str.charAt(i + 2)) && ch3 <= 0xBF) {
+            && 0x80 <= (ch2 = str[i + 1]) && ch2 <= 0xBF
+            && 0x80 <= (ch3 = str[i + 2]) && ch3 <= 0xBF) {
           i += 2;
           sb.append(ch);
           sb.append(ch2);
@@ -89,9 +89,9 @@ public class UnicodeUtility
         char ch4;
 
         if (i + 3 < len
-            && 0x80 <= (ch2 = str.charAt(i + 1)) && ch2 <= 0xBF
-            && 0x80 <= (ch3 = str.charAt(i + 2)) && ch3 <= 0xBF
-            && 0x80 <= (ch4 = str.charAt(i + 3)) && ch4 <= 0xBF) {
+            && 0x80 <= (ch2 = str[i + 1]) && ch2 <= 0xBF
+            && 0x80 <= (ch3 = str[i + 2]) && ch3 <= 0xBF
+            && 0x80 <= (ch4 = str[i + 3]) && ch4 <= 0xBF) {
           i += 3;
           sb.append(ch);
           sb.append(ch2);

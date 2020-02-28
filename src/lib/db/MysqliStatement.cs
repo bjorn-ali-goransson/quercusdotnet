@@ -114,7 +114,7 @@ public class MysqliStatement : JdbcPreparedStatementResource {
     ColumnType[] types = new ColumnType[len];
 
     for (int i = 0; i < len; i++) {
-      char ch = typeStr.charAt(i);
+      char ch = typeStr[i];
 
       if (ch == 's') {
         types[i] = ColumnType.STRING;

@@ -260,7 +260,7 @@ public class VariableModule : AbstractQuercusModule {
       env.notice(L.l("import_request_variables should use a prefix argument"));
 
     for (int i = 0; i < types.length(); i++) {
-      char ch = types.charAt(i);
+      char ch = types[i];
 
       Value value = null;
 
@@ -315,7 +315,7 @@ public class VariableModule : AbstractQuercusModule {
     long value = 0;
 
     for (int i = 0; i < len; i++) {
-      char ch = s.charAt(i);
+      char ch = s[i];
 
       int digit;
 

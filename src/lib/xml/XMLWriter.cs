@@ -502,7 +502,7 @@ public class XMLWriter {
       int len = text.length();
 
       for (int i = 0; i < len; i++) {
-        char ch = text.charAt(i);
+        char ch = text[i];
 
         switch (ch) {
         case '<':

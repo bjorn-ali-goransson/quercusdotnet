@@ -534,7 +534,7 @@ public class ServerArrayValue : ArrayValueImpl
 
     int len = key.length();
     for (int i = 0; i < len; i++) {
-      char ch = key.charAt(i);
+      char ch = key[i];
 
       if (Character.isLowerCase(ch))
         sb.append(Character.toUpperCase(ch));

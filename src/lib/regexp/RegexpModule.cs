@@ -845,12 +845,12 @@ public class RegexpModule
       extra = new boolean[256];
 
       for (int i = 0; i < delim.length(); i++)
-        extra[delim.charAt(i)] = true;
+        extra[delim[i]] = true;
     }
 
     int length = string.length();
     for (int i = 0; i < length; i++) {
-      char ch = string.charAt(i);
+      char ch = string[i];
 
       if (ch >= 256)
         sb.append(ch);
@@ -1744,7 +1744,7 @@ public class RegexpModule
 
     int len = string.length();
     for (int i = 0; i < len; i++) {
-      char ch = string.charAt(i);
+      char ch = string[i];
 
       if (Character.isLowerCase(ch)) {
         sb.append('[');
@@ -1914,17 +1914,17 @@ public class RegexpModule
     StringBuilder text = new StringBuilder();
 
     for (int i = 0; i < replacement.length(); i++) {
-      char ch = replacement.charAt(i);
+      char ch = replacement[i];
 
       if ((ch == '\\' || ch == '$') && i + 1 < replacement.length()) {
         char digit;
 
-        if ('0' <= (digit = replacement.charAt(i + 1)) && digit <= '9') {
+        if ('0' <= (digit = replacement[i + 1]) && digit <= '9') {
           int group = digit - '0';
           i++;
 
           if (i + 1 < replacement.length()
-          && '0' <= (digit = replacement.charAt(i + 1)) && digit <= '9') {
+          && '0' <= (digit = replacement[i + 1]) && digit <= '9') {
             group = 10 * group + digit - '0';
             i++;
           }
@@ -1955,7 +1955,7 @@ public class RegexpModule
           int group = 0;
 
           while (i < replacement.length()
-                 && '0' <= (digit = replacement.charAt(i)) && digit <= '9') {
+                 && '0' <= (digit = replacement[i]) && digit <= '9') {
             group = 10 * group + digit - '0';
 
             i++;
@@ -2005,7 +2005,7 @@ public class RegexpModule
     char quote = 0;
 
     for (int i = 0; i < len; i++) {
-      char ch = regexp.charAt(i);
+      char ch = regexp[i];
 
       switch (ch) {
       case '\\':
@@ -2018,13 +2018,13 @@ public class RegexpModule
         if (i + 1 < len) {
           i++;
 
-          ch = regexp.charAt(i);
+          ch = regexp[i];
 
           if (
               ch == '0'
               || '1' <= ch && ch <= '3'
               && i + 1 < len
-              && '0' <= regexp.charAt(i + 1)
+              && '0' <= regexp[i + 1]
               && ch <= '7'
               ) {
             // Java's regexp requires \0 for octal
@@ -2033,7 +2033,7 @@ public class RegexpModule
             sb = sb.appendByte('0');
             sb = sb.appendByte(ch);
           }
-          else if (ch == 'x' && i + 1 < len && regexp.charAt(i + 1) == '{') {
+          else if (ch == 'x' && i + 1 < len && regexp[i + 1] == '{') {
             sb = sb.appendByte('\\');
 
             int tail = regexp.indexOf('}', i + 1);
@@ -2105,7 +2105,7 @@ public class RegexpModule
 
       case '[':
         if (quote == '[') {
-          if (i + 1 < len && regexp.charAt(i + 1) == ':') {
+          if (i + 1 < len && regexp[i + 1] == ':') {
             sb = sb.appendByte('[');
           }
           else {
@@ -2113,8 +2113,8 @@ public class RegexpModule
             sb = sb.appendByte('[');
           }
         }
-        else if (i + 1 < len && regexp.charAt(i + 1) == '['
-          && ! (i + 2 < len && regexp.charAt(i + 2) == ':')) {
+        else if (i + 1 < len && regexp[i + 1] == '['
+          && ! (i + 2 < len && regexp[i + 2] == ':')) {
           // XXX: check regexp grammar
           // php/151n
           sb = sb.appendByte('[');
@@ -2124,8 +2124,8 @@ public class RegexpModule
         }
         /*
         else if (i + 2 < len &&
-                regexp.charAt(i + 1) == '^' &&
-                regexp.charAt(i + 2) == ']') {
+                regexp[i + 1] == '^' &&
+                regexp[i + 2] == ']') {
           sb.append("[^\\]");
           i += 2;
         }
@@ -2146,7 +2146,7 @@ public class RegexpModule
           sb = sb.appendByte(ch);
 
           for (i++; i < len; i++) {
-            ch = regexp.charAt(i);
+            ch = regexp[i];
 
             sb = sb.appendByte(ch);
 
@@ -2170,7 +2170,7 @@ public class RegexpModule
       case '{':
         if (i + 1 < len
             && (
-              '0' <= (ch = regexp.charAt(i + 1))
+              '0' <= (ch = regexp[i + 1])
               && ch <= '9'
               || ch == ','
               )
@@ -2178,13 +2178,13 @@ public class RegexpModule
           sb = sb.appendByte('{');
           for (i++;
           i < len
-              && ('0' <= (ch = regexp.charAt(i)) && ch <= '9' || ch == ',');
+              && ('0' <= (ch = regexp[i]) && ch <= '9' || ch == ',');
           i++) {
             sb = sb.appendByte(ch);
           }
 
           if (i < len)
-            sb = sb.appendByte(regexp.charAt(i));
+            sb = sb.appendByte(regexp[i]);
         }
         else {
           sb = sb.appendByte('\\');
@@ -2303,7 +2303,7 @@ public class RegexpModule
         int len = group.length();
 
         for (int i = 0; i < len; i++) {
-          char ch = group.charAt(i);
+          char ch = group[i];
 
           switch (ch) {
             case '\'':
@@ -2365,7 +2365,7 @@ public class RegexpModule
       ArrayList<Boolean> openParenStack = new ArrayList<Boolean>(groups);
 
       for (int i = 0; i < length; i++) {
-        char ch = regexp.charAt(i);
+        char ch = regexp[i];
 
         if (ch == ' ' || ch == '\t' || ch == '\n' || ch == 'r' || ch == '\f') {
           continue;
@@ -2384,7 +2384,7 @@ public class RegexpModule
           sawEscape = false;
         }
         else if (ch == '(') {
-          if (i + 1 < length && regexp.charAt(i + 1) == '?') {
+          if (i + 1 < length && regexp[i + 1] == '?') {
             openParenStack.add(true);
             continue;
           }

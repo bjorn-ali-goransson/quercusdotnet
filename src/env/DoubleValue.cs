@@ -445,7 +445,7 @@ public class DoubleValue : NumberValue
       bool dot = false;
 
       for (len--; len >= 0; len--) {
-        int ch = v.charAt(len);
+        int ch = v[len];
 
         if (ch == decimalSeparator)
           dot = true;

@@ -551,7 +551,7 @@ public class Post
         else
           array.put(formValue);
       }
-      else if ('0' <= key.charAt(0) && key.charAt(0) <= '9') {
+      else if ('0' <= key[0] && key[0] <= '9') {
         put(array,
             LongValue.create(StringValue.toLong(key)),
             formValue,
@@ -607,12 +607,12 @@ public class Post
 
     if (length <= i)
       return null;
-    else if ((ch = contentType.charAt(i)) == '\'') {
+    else if ((ch = contentType[i]) == '\'') {
       StringBuilder sb = new StringBuilder();
 
       for (
         i++;
-        i < length && (ch = contentType.charAt(i)) != '\'';
+        i < length && (ch = contentType[i]) != '\'';
         i++
         ) {
         sb.append(ch);
@@ -623,7 +623,7 @@ public class Post
     else if (ch == '"') {
       StringBuilder sb = new StringBuilder();
 
-      for (i++; i < length && (ch = contentType.charAt(i)) != '"'; i++) {
+      for (i++; i < length && (ch = contentType[i]) != '"'; i++) {
         sb.append(ch);
       }
 
@@ -634,7 +634,7 @@ public class Post
 
       for (/* intentionally left empty */;
                                          i < length
-                                         && (ch = contentType.charAt(i)) != ' '
+                                         && (ch = contentType[i]) != ' '
                                          && ch != ';'
                                          && ch != ',';
                                          i++) {
@@ -659,7 +659,7 @@ public class Post
       return null;
 
     while (true) {
-      char ch = attr.charAt(i - 1);
+      char ch = attr[i - 1];
 
       if (i > 0 && ch != ' ' && ch != ';') {
         i = attr.indexOf(name, i + name.length());
@@ -671,17 +671,17 @@ public class Post
         return null;
     }
 
-    for (i += name.length(); i < length && attr.charAt(i) != '='; i++) {
+    for (i += name.length(); i < length && attr[i] != '='; i++) {
     }
 
-    for (i++; i < length && attr.charAt(i) == ' '; i++) {
+    for (i++; i < length && attr[i] == ' '; i++) {
     }
 
     StringBuilder value = new StringBuilder();
 
-    if (i < length && attr.charAt(i) == '\'') {
-      for (i++; i < length && attr.charAt(i) != '\''; i++) {
-        char ch = attr.charAt(i);
+    if (i < length && attr[i] == '\'') {
+      for (i++; i < length && attr[i] != '\''; i++) {
+        char ch = attr[i];
 
         if (ch == '"' && addSlashesToValues)
           break;
@@ -689,9 +689,9 @@ public class Post
         value.append(ch);
       }
     }
-    else if (i < length && attr.charAt(i) == '"') {
-      for (i++; i < length && attr.charAt(i) != '"'; i++) {
-        char ch = attr.charAt(i);
+    else if (i < length && attr[i] == '"') {
+      for (i++; i < length && attr[i] != '"'; i++) {
+        char ch = attr[i];
 
         if (ch == '\'' && addSlashesToValues)
           break;
@@ -701,7 +701,7 @@ public class Post
     }
     else if (i < length) {
       char ch;
-      for (; i < length && (ch = attr.charAt(i)) != ' ' && ch != ';'; i++)
+      for (; i < length && (ch = attr[i]) != ' ' && ch != ';'; i++)
         value.append(ch);
     }
 

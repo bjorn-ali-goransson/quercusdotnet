@@ -403,7 +403,7 @@ public class EmailValidateFilter
         return -1;
       }
       else {
-        return _s.charAt(offset);
+        return _s[offset];
       }
     }
 
@@ -413,7 +413,7 @@ public class EmailValidateFilter
         return -1;
       }
       else {
-        return _s.charAt(_offset);
+        return _s[_offset];
       }
     }
 

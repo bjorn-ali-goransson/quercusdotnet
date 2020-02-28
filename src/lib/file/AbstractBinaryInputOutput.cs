@@ -384,7 +384,7 @@ abstract public class AbstractBinaryInputOutput
   {
     int len = s.length();
     for (int i = 0; i < len; i++) {
-      print(s.charAt(i));
+      print(s[i]);
     }
   }
 

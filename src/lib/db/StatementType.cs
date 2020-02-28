@@ -41,7 +41,7 @@ public enum StatementType
     int len = query.length();
     int i = 0;
 
-    while (i < len && Character.isWhitespace(query.charAt(i))) {
+    while (i < len && Character.isWhitespace(query[i])) {
       i++;
     }
 
@@ -51,7 +51,7 @@ public enum StatementType
 
     int start = i;
 
-    while (i < len && ! Character.isWhitespace(query.charAt(i))) {
+    while (i < len && ! Character.isWhitespace(query[i])) {
       i++;
     }
 

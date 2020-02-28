@@ -318,7 +318,7 @@ public class MailModule : AbstractQuercusModule {
       char ch;
 
       for (;
-           i < len && Character.isWhitespace(headers.charAt(i));
+           i < len && Character.isWhitespace(headers[i]);
            i++) {
       }
 
@@ -328,14 +328,14 @@ public class MailModule : AbstractQuercusModule {
       buffer.clear();
 
       for (;
-           i < len && (! Character.isWhitespace(ch = headers.charAt(i))
+           i < len && (! Character.isWhitespace(ch = headers[i])
                        && ch != ':');
            i++) {
         buffer.append((char) ch);
       }
 
       for (;
-           i < len && ((ch = headers.charAt(i)) == ' '
+           i < len && ((ch = headers[i]) == ' '
                        || ch == '\t'
                        || ch == '\f'
                        || ch == ':');
@@ -347,7 +347,7 @@ public class MailModule : AbstractQuercusModule {
 
       for (;
            i < len
-           && ((ch = headers.charAt(i)) != '\r' && ch != '\n');
+           && ((ch = headers[i]) != '\r' && ch != '\n');
            i++) {
         buffer.append((char) ch);
       }
@@ -358,23 +358,23 @@ public class MailModule : AbstractQuercusModule {
 
       for (;
            i < len
-           && ((ch = headers.charAt(i)) == '\r' || ch == '\n');
+           && ((ch = headers[i]) == '\r' || ch == '\n');
            i++) {
         buffer.append((char) ch);
       }
 
       while (i < len
-             && ((ch = headers.charAt(i)) == '\t' || ch == ' ')) {
+             && ((ch = headers[i]) == '\t' || ch == ' ')) {
         for (;
              i < len
-             && ((ch = headers.charAt(i)) != '\r' && ch != '\n');
+             && ((ch = headers[i]) != '\r' && ch != '\n');
              i++) {
           buffer.append((char) ch);
         }
 
         for (;
              i < len
-             && ((ch = headers.charAt(i)) == '\r' || ch == '\n');
+             && ((ch = headers[i]) == '\r' || ch == '\n');
              i++) {
           buffer.append((char) ch);
         }

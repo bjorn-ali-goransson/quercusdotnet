@@ -996,7 +996,7 @@ public class MbstringModule
       return str.EMPTY;
 
     // XXX: not quite exactly the same behavior as PHP
-    if (start < len && Character.isHighSurrogate(unicodeStr.charAt(start))) {
+    if (start < len && Character.isHighSurrogate(unicodeStr[start])) {
       start--;
     }
 
@@ -1141,7 +1141,7 @@ public class MbstringModule
 
     // Per PHP manual
     for (int i = 0; i < len; i++) {
-      char ch = string.charAt(i);
+      char ch = string[i];
 
       if (ch <= 0x19)
         continue;
@@ -1226,7 +1226,7 @@ public class MbstringModule
     bool isWordStart = true;
 
     for (int i = 0; i < strLen; i++) {
-      char ch = str.charAt(i);
+      char ch = str[i];
 
       switch (ch) {
       case ' ': case '\t': case '\r': case '\n':
@@ -1280,10 +1280,10 @@ public class MbstringModule
       int value = 0;
 
       for (int i = 0; i < len; i++) {
-        char ch = ini.charAt(i);
+        char ch = ini[i];
 
         if ('0' <= ch && ch <= '9')
-          value = value * 10 + ini.charAt(i) - '0';
+          value = value * 10 + ini[i] - '0';
         else
           break;
       }
@@ -1326,10 +1326,10 @@ public class MbstringModule
       int value = 0;
 
       for (int i = 0; i < len; i++) {
-        char ch = ini.charAt(i);
+        char ch = ini[i];
 
         if ('0' <= ch && ch <= '9')
-          value = value * 10 + ini.charAt(i) - '0';
+          value = value * 10 + ini[i] - '0';
         else
           break;
       }

@@ -72,7 +72,7 @@ abstract class GettextParser
 
     int j = i + 1;
     for (; j < len; j++) {
-      char ch = metadata.charAt(j);
+      char ch = metadata[j];
 
       switch (ch) {
         case ' ':

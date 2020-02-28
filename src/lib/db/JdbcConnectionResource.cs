@@ -284,7 +284,7 @@ public abstract class JdbcConnectionResource
     int strLength = str.length();
 
     for (int i = 0; i < strLength; i++) {
-      char c = str.charAt(i);
+      char c = str[i];
 
       switch (c) {
       case '\u0000':
@@ -897,7 +897,7 @@ public abstract class JdbcConnectionResource
     else
       i = prevToken.getEnd();
 
-    while (i < len && Character.isWhitespace(sql.charAt(i))) {
+    while (i < len && Character.isWhitespace(sql[i])) {
       i++;
     }
 
@@ -910,7 +910,7 @@ public abstract class JdbcConnectionResource
 
     start = i;
 
-    while (i < len && !Character.isWhitespace(sql.charAt(i))) {
+    while (i < len && !Character.isWhitespace(sql[i])) {
       i++;
     }
 

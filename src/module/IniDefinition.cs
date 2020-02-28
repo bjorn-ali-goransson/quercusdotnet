@@ -136,7 +136,7 @@ public class IniDefinition {
     if (valueAsString.length() == 0)
       return LongValue.ZERO;
 
-    char suffix = valueAsString.charAt(valueAsString.length() - 1);
+    char suffix = valueAsString[valueAsString.length(] - 1);
 
     long val = value.toLong();
 
@@ -357,11 +357,11 @@ public class IniDefinition {
     if (length == 0)
       return deflt;
 
-    if (bytes.charAt(i) == '-') {
+    if (bytes[i] == '-') {
       sign = -1;
       i++;
     }
-    else if (bytes.charAt(i) == '+') {
+    else if (bytes[i] == '+') {
       i++;
     }
 
@@ -369,7 +369,7 @@ public class IniDefinition {
       return deflt;
 
     int ch;
-    for (; i < length && (ch = bytes.charAt(i)) >= '0' && ch <= '9'; i++)
+    for (; i < length && (ch = bytes[i]) >= '0' && ch <= '9'; i++)
       value = 10 * value + ch - '0';
 
     value = sign * value;

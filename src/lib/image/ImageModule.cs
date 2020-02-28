@@ -1931,10 +1931,10 @@ public class ImageModule : AbstractQuercusModule {
 
   private static int pngCode(String code)
   {
-    return ((code.charAt(0) << 24)
-        | (code.charAt(1) << 16)
-        | (code.charAt(2) << 8)
-        | (code.charAt(3)));
+    return ((code[0] << 24)
+        | (code[1] << 16)
+        | (code[2] << 8)
+        | (code[3]));
   }
 
   private static int readInt(ReadStream is)

@@ -115,7 +115,7 @@ public class Regexp {
     char delim = '/';
 
     for (; head < rawRegexp.length()
-           && Character.isWhitespace((delim = rawRegexp.charAt(head)));
+           && Character.isWhitespace((delim = rawRegexp[head]));
         head++) {
     }
 
@@ -148,7 +148,7 @@ public class Regexp {
     int flags = 0;
 
     for (int i = 0; sflags != null && i < sflags.length(); i++) {
-      switch (sflags.charAt(i)) {
+      switch (sflags[i]) {
       case 'm': flags |= Regcomp.MULTILINE; break;
       case 's': flags |= Regcomp.SINGLE_LINE; break;
       case 'i': flags |= Regcomp.IGNORE_CASE; break;
@@ -168,7 +168,7 @@ public class Regexp {
 
       default:
         throw new IllegalRegexpException(L.l("'{0}' @is an unknown regexp flag in {1}",
-                                             (char) sflags.charAt(i), rawRegexp));
+                                             (char) sflags[i], rawRegexp));
       }
     }
 
@@ -283,7 +283,7 @@ public class Regexp {
     int len = source.length();
 
     for (int i = 0; i < len; i++) {
-      char ch = source.charAt(i);
+      char ch = source[i];
 
       if (ch < 0x80) {
         target.append(ch);
@@ -294,7 +294,7 @@ public class Regexp {
           return null;
         }
 
-        char ch2 = source.charAt(++i);
+        char ch2 = source[++i];
 
         target.append((char) (((ch & 0x1f) << 6)
                               + (ch2 & 0x3f)));
@@ -305,8 +305,8 @@ public class Regexp {
           return null;
         }
 
-        char ch2 = source.charAt(++i);
-        char ch3 = source.charAt(++i);
+        char ch2 = source[++i];
+        char ch3 = source[++i];
 
         target.append((char) (((ch & 0x0f) << 12)
                               + ((ch2 & 0x3f) << 6)
@@ -318,9 +318,9 @@ public class Regexp {
           return null;
         }
 
-        char ch2 = source.charAt(++i);
-        char ch3 = source.charAt(++i);
-        char ch4 = source.charAt(++i);
+        char ch2 = source[++i];
+        char ch3 = source[++i];
+        char ch4 = source[++i];
 
         int codePoint = ((ch & 0x07) << 18)
                          + ((ch2 & 0x3F) << 12)

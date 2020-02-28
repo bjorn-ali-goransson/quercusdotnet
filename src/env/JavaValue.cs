@@ -121,26 +121,26 @@ public class JavaValue : ObjectValue
     int i = 0;
     int ch = 0;
 
-    if (i < len && ((ch = s.charAt(i)) == '+' || ch == '-')) {
+    if (i < len && ((ch = s[i]) == '+' || ch == '-')) {
       i++;
     }
 
-    for (; i < len && '0' <= (ch = s.charAt(i)) && ch <= '9'; i++) {
+    for (; i < len && '0' <= (ch = s[i]) && ch <= '9'; i++) {
     }
 
     if (ch == '.') {
-      for (i++; i < len && '0' <= (ch = s.charAt(i)) && ch <= '9'; i++) {
+      for (i++; i < len && '0' <= (ch = s[i]) && ch <= '9'; i++) {
       }
     }
 
     if (ch == 'e' || ch == 'E') {
       int e = i++;
 
-      if (i < len && (ch = s.charAt(i)) == '+' || ch == '-') {
+      if (i < len && (ch = s[i]) == '+' || ch == '-') {
         i++;
       }
 
-      for (; i < len && '0' <= (ch = s.charAt(i)) && ch <= '9'; i++) {
+      for (; i < len && '0' <= (ch = s[i]) && ch <= '9'; i++) {
       }
 
       if (i == e + 1)

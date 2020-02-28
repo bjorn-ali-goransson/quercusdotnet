@@ -605,7 +605,7 @@ public class PDO : EnvCleanup {
     int strLength = str.length();
 
     for (int i = 0; i < strLength; i++) {
-      char c = str.charAt(i);
+      char c = str[i];
 
       switch (c) {
       case '\u0000':
@@ -1132,13 +1132,13 @@ public class PDO : EnvCleanup {
     StringBuilder sb = new StringBuilder();
 
     for (; i < length; i++) {
-      char ch = dsn.charAt(i);
+      char ch = dsn[i];
 
       if (! Character.isJavaIdentifierStart(ch))
         continue;
 
       for (;
-           i < length && Character.isJavaIdentifierPart((ch = dsn.charAt(i)));
+           i < length && Character.isJavaIdentifierPart((ch = dsn[i]));
            i++) {
         sb.append(ch);
       }
@@ -1146,10 +1146,10 @@ public class PDO : EnvCleanup {
       string name = sb.ToString();
       sb.setLength(0);
 
-      for (; i < length && ((ch = dsn.charAt(i)) == ' ' || ch == '='); i++) {
+      for (; i < length && ((ch = dsn[i]) == ' ' || ch == '='); i++) {
       }
 
-      for (; i < length && (ch = dsn.charAt(i)) != ' ' && ch != ';'; i++) {
+      for (; i < length && (ch = dsn[i]) != ' ' && ch != ';'; i++) {
         sb.append(ch);
       }
 

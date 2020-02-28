@@ -163,28 +163,28 @@ public class ClassField
   public static bool isPrivate(StringValue canonicalName)
   {
     return canonicalName.length() > 3
-           && canonicalName.charAt(0) == '\u0000'
-           && canonicalName.charAt(1) != '*';
+           && canonicalName[0] == '\u0000'
+           && canonicalName[1] != '*';
   }
 
   public static bool isProtected(StringValue canonicalName)
   {
     return canonicalName.length() > 3
-           && canonicalName.charAt(0) == '\u0000'
-           && canonicalName.charAt(1) == '*'
-           && canonicalName.charAt(2) == '\u0000';
+           && canonicalName[0] == '\u0000'
+           && canonicalName[1] == '*'
+           && canonicalName[2] == '\u0000';
   }
 
   public static StringValue getDeclaringClass(StringValue sb,
                                               StringValue canonicalName)
   {
-    if (canonicalName.charAt(0) != '\u0000') {
+    if (canonicalName[0] != '\u0000') {
       return sb;
     }
 
     int len = canonicalName.length();
     for (int i = 1; i < len; i++) {
-      char ch = canonicalName.charAt(i);
+      char ch = canonicalName[i];
 
       if (ch == '\u0000') {
         break;

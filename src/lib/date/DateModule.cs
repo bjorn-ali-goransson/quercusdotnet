@@ -152,7 +152,7 @@ public class DateModule : AbstractQuercusModule {
       time = time(env);
     }
 
-    switch (format.charAt(0)) {
+    switch (format[0]) {
       case 'B':
       case 'd':
       case 'h': case 'H':
@@ -176,7 +176,7 @@ public class DateModule : AbstractQuercusModule {
         int length = dateString.length();
 
         for (int i = 0; i < length; i++) {
-          char ch = dateString.charAt(i);
+          char ch = dateString[i];
 
           if ('0' <= ch && ch <= '9')
             result = result * 10 + ch - '0';
@@ -418,7 +418,7 @@ public class DateModule : AbstractQuercusModule {
     int len = format.length();
 
     for (int i = 0; i < len; i++) {
-      char ch = format.charAt(i);
+      char ch = format[i];
 
       switch (ch) {
         //
@@ -795,7 +795,7 @@ public class DateModule : AbstractQuercusModule {
           }
 
         case '\\':
-          sb.append(format.charAt(++i));
+          sb.append(format[++i]);
           break;
 
         default:
@@ -1031,12 +1031,12 @@ public class DateModule : AbstractQuercusModule {
 
       int len = format.length();
       for (int i = 0; i < len; i++) {
-        char ch = format.charAt(i);
+        char ch = format[i];
 
         sb.append(ch);
 
         if (ch == '%' && i + 1 < len) {
-          char ch2 = format.charAt(++i);
+          char ch2 = format[++i];
 
           if (ch2 == 'p') {
             ch2 = 'P';

@@ -177,7 +177,7 @@ public class QuercusImage : ResourceValue
       return font;
     }
 
-    if (fontPath.length() > 0 && fontPath.charAt(0) == '/')
+    if (fontPath.length() > 0 && fontPath[0] == '/')
       return null;
 
     StringValue gdFontPathKey = env.createString("GDFONTPATH");
@@ -191,7 +191,7 @@ public class QuercusImage : ResourceValue
     while (start < len) {
       int i = gdFontPath.indexOf(':', start);
 
-      if (i >= 0 && i + 1 < len && gdFontPath.charAt(i + 1) == ';') {
+      if (i >= 0 && i + 1 < len && gdFontPath[i + 1] == ';') {
         StringValue item = gdFontPath.substring(start, i);
 
         path = env.lookupPwd(item);

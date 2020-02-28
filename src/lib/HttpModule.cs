@@ -90,14 +90,14 @@ public class HttpModule : AbstractQuercusModule {
       int status = 0;
       int ch;
 
-      for (; p < len && header.charAt(p) == ' '; p++) {
+      for (; p < len && header[p] == ' '; p++) {
       }
 
-      for (; p < len && '0' <= (ch = header.charAt(p)) && ch <= '9'; p++) {
+      for (; p < len && '0' <= (ch = header[p]) && ch <= '9'; p++) {
         status = 10 * status + ch - '0';
       }
 
-      for (; p < len && header.charAt(p) == ' '; p++) {
+      for (; p < len && header[p] == ' '; p++) {
       }
 
       if (status > 0) {
@@ -234,7 +234,7 @@ public class HttpModule : AbstractQuercusModule {
     int len = value.length();
 
     for (int i = 0; i < len; i++) {
-      char ch = value.charAt(i);
+      char ch = value[i];
 
       if ('0' <= ch && ch <= '9'
           || 'a' <= ch && ch <= 'z'

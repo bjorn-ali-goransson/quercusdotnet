@@ -278,7 +278,7 @@ public class ConstStringValue
 
     if (len == 1) {
       @out.print("(ConstStringValue.create((char) '");
-      printJavaChar(@out, value.charAt(0));
+      printJavaChar(@out, value[0]);
       @out.print("'))");
     }
     else if (len < maxSublen) {

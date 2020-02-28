@@ -1225,21 +1225,21 @@ public class JavaClassDef : ClassDef : InstanceInitializer {
   private string javaToQuercusConvert(String s)
   {
     if (s.length() == 1) {
-      char ch = Character.toLowerCase(s.charAt(0));
+      char ch = Character.toLowerCase(s[0]);
 
       return String.valueOf(ch);
     }
-    else if (Character.isUpperCase(s.charAt(1))) {
+    else if (Character.isUpperCase(s[1])) {
       return s;
     }
     else {
       StringBuilder sb = new StringBuilder();
 
-      sb.append(Character.toLowerCase(s.charAt(0)));
+      sb.append(Character.toLowerCase(s[0]));
 
       int length = s.length();
       for (int i = 1; i < length; i++) {
-        sb.append(s.charAt(i));
+        sb.append(s[i]);
       }
 
       return sb.ToString();

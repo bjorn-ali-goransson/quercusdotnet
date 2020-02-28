@@ -112,7 +112,7 @@ abstract public class AbstractBinaryOutput
     
   {
     for (int i = 0; i < v.length(); i++)
-      write(v.charAt(i));
+      write(v[i]);
   }
 
   /**

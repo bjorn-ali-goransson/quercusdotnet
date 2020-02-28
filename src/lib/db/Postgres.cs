@@ -282,7 +282,7 @@ public class Postgres : JdbcConnectionResource
     int strLength = str.length();
 
     for (int i = 0; i < strLength; i++) {
-      char c = str.charAt(i);
+      char c = str[i];
 
       switch (c) {
         case '\u0000':

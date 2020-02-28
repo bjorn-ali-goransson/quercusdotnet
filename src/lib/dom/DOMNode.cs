@@ -189,7 +189,7 @@ public class DOMNode<T : Node>
       bool isUtf16 = false;
 
       for (int i = 0; i < len; i++) {
-        char ch = value.charAt(i);
+        char ch = value[i];
 
         if (0x00 <= ch && ch <= 0xff) {
         }

@@ -976,7 +976,7 @@ public class DateParser
   private int read()
   {
     if (_index < _length)
-      return _s.charAt(_index++);
+      return _s[_index++];
     else {
       _index++;
       return -1;

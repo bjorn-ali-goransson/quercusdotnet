@@ -869,7 +869,7 @@ public class CurlResource : ResourceValue
       int len = _cookie.length();
 
       for (int i = 0; i < len; i++) {
-        @out.write((byte)_cookie.charAt(i));
+        @out.write((byte)_cookie[i]);
       }
     }
     catch (IOException e) {

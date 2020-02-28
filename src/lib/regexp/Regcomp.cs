@@ -1061,14 +1061,14 @@ class Regcomp {
               if (nodeList == null)
                   nodeList = new ArrayList<RegexpNode>();
 
-              nodeList.add(parseUnicodeProperty(name.charAt(0), false));
+              nodeList.add(parseUnicodeProperty(name[0], false));
             }
             else if (len == 2) {
               if (nodeList == null)
                   nodeList = new ArrayList<RegexpNode>();
 
-              nodeList.add(parseUnicodeProperty(name.charAt(0),
-                                                name.charAt(1),
+              nodeList.add(parseUnicodeProperty(name[0],
+                                                name[1],
                                                 false));
             }
             else {
@@ -1453,7 +1453,7 @@ class Regcomp {
     int len = sb.length();
 
     for (int i = 0; i < len; i++) {
-      ch = sb.charAt(i);
+      ch = sb[i];
 
       if ('0' <= ch && ch <= '9')
         hex = hex * 16 + ch - '0';

@@ -513,22 +513,22 @@ public class GettextModule
     int length = msg.length();
 
     while (i < length) {
-      char ch = msg.charAt(i);
+      char ch = msg[i];
 
       if (ch != '[' || i + 4 > length) {
         sb.append(ch);
         i++;
       }
-      else if (msg.charAt(i + 1) != '_') {
+      else if (msg[i + 1] != '_') {
         sb.append(ch);
         i++;
       }
-      else if (msg.charAt(i + 3) != ']') {
+      else if (msg[i + 3] != ']') {
         sb.append(ch);
         i++;
       }
       else {
-        ch = msg.charAt(i + 2);
+        ch = msg[i + 2];
         int argIndex = ch - '0';
 
         if (0 <= argIndex && argIndex < args.length) {

@@ -74,7 +74,7 @@ public class MultipartBody : PostBody
       StringValue key = entry.getKey().ToString(env);
       StringValue value = entry.getValue().ToString(env);
 
-      if (value.length() > 0 && value.charAt(0) == '@') {
+      if (value.length() > 0 && value[0] == '@') {
         StringValue fileName = value.substring(1);
 
         Path path = env.lookup(fileName);
@@ -199,7 +199,7 @@ public class MultipartBody : PostBody
       int len = _header.length();
 
       for (int i = 0; i < len; i++) {
-        os.write(_header.charAt(i));
+        os.write(_header[i]);
       }
 
       os.write('\r');

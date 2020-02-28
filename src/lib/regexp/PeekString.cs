@@ -48,7 +48,7 @@ class PeekString : PeekStream {
   int read()
   {
     if (_index < _length) {
-      return _string.charAt(_index++);
+      return _string[_index++];
     }
     else {
       return -1;
@@ -58,7 +58,7 @@ class PeekString : PeekStream {
   int peek()
   {
     if (_index < _length)
-      return _string.charAt(_index);
+      return _string[_index];
     else
       return -1;
   }

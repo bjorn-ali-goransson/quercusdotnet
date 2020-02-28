@@ -54,7 +54,7 @@ public class SqlParseToken
     _token = null;
     _start = start;
     _end = end;
-    _firstChar = query.charAt(start);
+    _firstChar = query[start];
   }
 
   public bool matchesFirstChar(char upper, char lower)
@@ -102,8 +102,8 @@ public class SqlParseToken
     // Extract database name if back quoted : "DROP DATABASE `DBNAME`"
 
     if (tok.length() >= 2
-        && tok.charAt(0) == '`'
-        && tok.charAt(tok.length() - 1) == '`') {
+        && tok[0] == '`'
+        && tok[tok.length(] - 1) == '`') {
       tok = tok.substring(1, tok.length() - 1);
     }
 

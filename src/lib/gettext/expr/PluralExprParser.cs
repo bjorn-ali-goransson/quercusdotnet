@@ -400,7 +400,7 @@ class PluralExprParser
   private int read()
   {
     if (_parseIndex < _exprLength)
-      return _expr.charAt(_parseIndex++);
+      return _expr[_parseIndex++];
     else
       return -1;
   }

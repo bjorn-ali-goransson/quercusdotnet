@@ -381,7 +381,7 @@ class RegexpNode {
 
     int override match(StringValue string, int length, int offset, RegexpState state)
     {
-      if (offset < length && string.charAt(offset) == _ch)
+      if (offset < length && string[offset] == _ch)
         return offset + 1;
       else
         return -1;
@@ -418,7 +418,7 @@ class RegexpNode {
   private static class AnchorBeginOrNewline : NullableNode {
     int override match(StringValue string, int strlen, int offset, RegexpState state)
     {
-      if (offset == 0 || string.charAt(offset - 1) == '\n')
+      if (offset == 0 || string[offset - 1] == '\n')
         return offset;
       else
         return -1;
@@ -439,7 +439,7 @@ class RegexpNode {
     int override match(StringValue string, int strlen, int offset, RegexpState state)
     {
       if (offset == strlen
-          || offset + 1 == strlen && string.charAt(offset) == '\n')
+          || offset + 1 == strlen && string[offset] == '\n')
         return offset;
       else
         return -1;
@@ -459,7 +459,7 @@ class RegexpNode {
   private static class AnchorEndOrNewline : NullableNode {
     int override match(StringValue string, int length, int offset, RegexpState state)
     {
-      if (offset == length || string.charAt(offset) == '\n')
+      if (offset == length || string[offset] == '\n')
         return offset;
       else
         return -1;
@@ -519,7 +519,7 @@ class RegexpNode {
       if (length <= offset)
         return -1;
 
-      char ch = string.charAt(offset);
+      char ch = string[offset];
 
       if (ch < 128 && _set[ch])
         return offset + 1;
@@ -557,14 +557,14 @@ class RegexpNode {
         return -1;
       }
 
-      char ch = string.charAt(offset);
+      char ch = string[offset];
 
       if (ch < 128 && _set[ch]) {
         return -1;
       }
       else if (Character.isHighSurrogate(ch)
                && offset + 1 < length
-               && Character.isLowSurrogate(string.charAt(offset + 1))) {
+               && Character.isLowSurrogate(string[offset + 1])) {
         // php/4ef3
         return offset + 2;
       }
@@ -2322,7 +2322,7 @@ class RegexpNode {
     int override match(StringValue string, int strlen, int offset, RegexpState state)
     {
       if (offset < strlen) {
-        char ch = string.charAt(offset);
+        char ch = string[offset];
 
         if (Character.getType(ch) == _category)
           return offset + 1;
@@ -2343,7 +2343,7 @@ class RegexpNode {
     int override match(StringValue string, int strlen, int offset, RegexpState state)
     {
       if (offset < strlen) {
-        char ch = string.charAt(offset);
+        char ch = string[offset];
 
         if (Character.getType(ch) != _category)
           return offset + 1;
@@ -2357,7 +2357,7 @@ class RegexpNode {
     int override match(StringValue string, int strlen, int offset, RegexpState state)
     {
       if (offset < strlen) {
-        char ch = string.charAt(offset);
+        char ch = string[offset];
 
         int value = Character.getType(ch);
 
@@ -2378,7 +2378,7 @@ class RegexpNode {
     int override match(StringValue string, int strlen, int offset, RegexpState state)
     {
       if (offset < strlen) {
-        char ch = string.charAt(offset);
+        char ch = string[offset];
 
         int value = Character.getType(ch);
 
@@ -2399,7 +2399,7 @@ class RegexpNode {
     int override match(StringValue string, int strlen, int offset, RegexpState state)
     {
       if (offset < strlen) {
-        char ch = string.charAt(offset);
+        char ch = string[offset];
 
         int value = Character.getType(ch);
 
@@ -2420,7 +2420,7 @@ class RegexpNode {
     int override match(StringValue string, int strlen, int offset, RegexpState state)
     {
       if (offset < strlen) {
-        char ch = string.charAt(offset);
+        char ch = string[offset];
 
         int value = Character.getType(ch);
 
@@ -2441,7 +2441,7 @@ class RegexpNode {
     int override match(StringValue string, int strlen, int offset, RegexpState state)
     {
       if (offset < strlen) {
-        char ch = string.charAt(offset);
+        char ch = string[offset];
 
         int value = Character.getType(ch);
 
@@ -2460,7 +2460,7 @@ class RegexpNode {
     int override match(StringValue string, int strlen, int offset, RegexpState state)
     {
       if (offset < strlen) {
-        char ch = string.charAt(offset);
+        char ch = string[offset];
 
         int value = Character.getType(ch);
 
@@ -2479,7 +2479,7 @@ class RegexpNode {
     int override match(StringValue string, int strlen, int offset, RegexpState state)
     {
       if (offset < strlen) {
-        char ch = string.charAt(offset);
+        char ch = string[offset];
 
         int value = Character.getType(ch);
 
@@ -2498,7 +2498,7 @@ class RegexpNode {
     int override match(StringValue string, int strlen, int offset, RegexpState state)
     {
       if (offset < strlen) {
-        char ch = string.charAt(offset);
+        char ch = string[offset];
 
         int value = Character.getType(ch);
 
@@ -2518,7 +2518,7 @@ class RegexpNode {
     int override match(StringValue string, int strlen, int offset, RegexpState state)
     {
       if (offset < strlen) {
-        char ch = string.charAt(offset);
+        char ch = string[offset];
 
         int value = Character.getType(ch);
 
@@ -2542,7 +2542,7 @@ class RegexpNode {
     int override match(StringValue string, int strlen, int offset, RegexpState state)
     {
       if (offset < strlen) {
-        char ch = string.charAt(offset);
+        char ch = string[offset];
 
         int value = Character.getType(ch);
 
@@ -2565,7 +2565,7 @@ class RegexpNode {
     int override match(StringValue string, int strlen, int offset, RegexpState state)
     {
       if (offset < strlen) {
-        char ch = string.charAt(offset);
+        char ch = string[offset];
 
         int value = Character.getType(ch);
 
@@ -2585,7 +2585,7 @@ class RegexpNode {
     int override match(StringValue string, int strlen, int offset, RegexpState state)
     {
       if (offset < strlen) {
-        char ch = string.charAt(offset);
+        char ch = string[offset];
 
         int value = Character.getType(ch);
 
@@ -2605,7 +2605,7 @@ class RegexpNode {
     int override match(StringValue string, int strlen, int offset, RegexpState state)
     {
       if (offset < strlen) {
-        char ch = string.charAt(offset);
+        char ch = string[offset];
 
         int value = Character.getType(ch);
 
@@ -2624,7 +2624,7 @@ class RegexpNode {
     int override match(StringValue string, int strlen, int offset, RegexpState state)
     {
       if (offset < strlen) {
-        char ch = string.charAt(offset);
+        char ch = string[offset];
 
         int value = Character.getType(ch);
 
@@ -2761,7 +2761,7 @@ class RegexpNode {
       if (strlen <= offset)
         return -1;
 
-      char ch = string.charAt(offset++);
+      char ch = string[offset++];
 
       if (ch < 128)
         return _asciiSet[ch] ? offset : -1;
@@ -2769,7 +2769,7 @@ class RegexpNode {
       int codePoint = ch;
 
       if ('\uD800' <= ch && ch <= '\uDBFF' && offset < strlen) {
-        char low = string.charAt(offset++);
+        char low = string[offset++];
 
         if ('\uDC00' <= low && ch <= '\uDFFF')
           codePoint = Character.toCodePoint(ch, low);
@@ -2796,7 +2796,7 @@ class RegexpNode {
       if (strlen <= offset)
         return -1;
 
-      char ch = string.charAt(offset);
+      char ch = string[offset];
 
       if (ch < 128)
         return _asciiSet[ch] ? -1 : offset + 1;
@@ -3099,7 +3099,7 @@ class RegexpNode {
     int override match(StringValue string, int strlen, int offset, RegexpState state)
     {
       if (offset == strlen
-          || string.charAt(offset) == '\n' && offset + 1 == string.length())
+          || string[offset] == '\n' && offset + 1 == string.length())
           return offset;
         else
           return -1;
@@ -3113,9 +3113,9 @@ class RegexpNode {
     int override match(StringValue string, int strlen, int offset, RegexpState state)
     {
       if ((state._start < offset
-           && RegexpSet.WORD.match(string.charAt(offset - 1)))
+           && RegexpSet.WORD.match(string[offset - 1]))
           != (offset < strlen
-              && RegexpSet.WORD.match(string.charAt(offset))))
+              && RegexpSet.WORD.match(string[offset])))
         return offset;
       else
         return -1;
@@ -3126,9 +3126,9 @@ class RegexpNode {
     int override match(StringValue string, int strlen, int offset, RegexpState state)
     {
       if ((state._start < offset
-           && RegexpSet.WORD.match(string.charAt(offset - 1)))
+           && RegexpSet.WORD.match(string[offset - 1]))
           == (offset < strlen
-              && RegexpSet.WORD.match(string.charAt(offset))))
+              && RegexpSet.WORD.match(string[offset])))
         return offset;
       else
         return -1;

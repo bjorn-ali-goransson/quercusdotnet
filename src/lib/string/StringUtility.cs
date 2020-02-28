@@ -84,12 +84,12 @@ public class StringUtility
         byteToChar.clear();
 
         for (;
-             i < len && isSeparator(querySeparatorMap, ch = str.charAt(i));
+             i < len && isSeparator(querySeparatorMap, ch = str[i]);
              i++) {
         }
 
         for (; i < len
-               && (ch = str.charAt(i)) != '='
+               && (ch = str[i]) != '='
                && ! isSeparator(querySeparatorMap, ch);
             i++) {
           i = addQueryChar(byteToChar, str, len, i, ch, querySeparatorMap);
@@ -102,7 +102,7 @@ public class StringUtility
         string value;
         if (ch == '=') {
           for (i++; i < len
-               && ! isSeparator(querySeparatorMap, (ch = str.charAt(i))); i++) {
+               && ! isSeparator(querySeparatorMap, (ch = str[i])); i++) {
             i = addQueryChar(byteToChar, str, len, i, ch, querySeparatorMap);
           }
 
@@ -205,9 +205,9 @@ public class StringUtility
       char ch2;
 
       if (i + 2 < len
-          && (ch1 = str.charAt(i + 1)) != '='
+          && (ch1 = str[i + 1]) != '='
           && ! isSeparator(querySeparatorMap, ch1)
-          && (ch2 = str.charAt(i + 2)) != '='
+          && (ch2 = str[i + 2]) != '='
           && ! isSeparator(querySeparatorMap, ch2)) {
         int d1 = StringModule.hexToDigit(ch1);
         int d2 = StringModule.hexToDigit(ch2);

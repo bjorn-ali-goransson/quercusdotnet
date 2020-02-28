@@ -364,7 +364,7 @@ public class MysqlModule : AbstractQuercusModule {
     int len = unescapedString.length();
 
     for (int i = 0; i < len; i++) {
-      char ch = unescapedString.charAt(i);
+      char ch = unescapedString[i];
 
       switch(ch) {
         case 0:
@@ -1157,7 +1157,7 @@ public class MysqlModule : AbstractQuercusModule {
         sepIndex++;
         tmp = tmp.substring(sepIndex);
 
-        if ((tmp.length() > 0) && (tmp.charAt(0) != '/')) {
+        if ((tmp.length() > 0) && (tmp[0] != '/')) {
           sepIndex = tmp.indexOf(':');
 
           if (sepIndex > -1) {

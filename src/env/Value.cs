@@ -663,7 +663,7 @@ abstract public class Value : java.io.Serializable
     if (s == null || s.length() < 1)
       return 0;
     else
-      return s.charAt(0);
+      return s[0];
   }
 
   /**
@@ -3066,7 +3066,7 @@ abstract public class Value : java.io.Serializable
 
     int len = s.length();
     for (int i = 0; i < len; i++) {
-      char ch = s.charAt(i);
+      char ch = s[i];
 
       switch (ch) {
       case '\r':
