@@ -127,7 +127,7 @@ abstract public class Value implements java.io.Serializable
   /**
    * Returns true for an implementation of a class
    */
-  public boolean isA(Env env, string name)
+  public bool isA(Env env, string name)
   {
     return false;
   }
@@ -135,7 +135,7 @@ abstract public class Value implements java.io.Serializable
   /**
    * Returns true for an implementation of a class
    */
-  final public boolean isA(Env env, Value value)
+  final public bool isA(Env env, Value value)
   {
     if (value.isObject()) {
       // php/03p7
@@ -175,7 +175,7 @@ abstract public class Value implements java.io.Serializable
   /**
    * Returns true for an array.
    */
-  public boolean isArray()
+  public bool isArray()
   {
     return false;
   }
@@ -183,7 +183,7 @@ abstract public class Value implements java.io.Serializable
   /**
    * Returns true for a double-value.
    */
-  public boolean isDoubleConvertible()
+  public bool isDoubleConvertible()
   {
     return false;
   }
@@ -191,7 +191,7 @@ abstract public class Value implements java.io.Serializable
   /**
    * Returns true for a long-value.
    */
-  public boolean isLongConvertible()
+  public bool isLongConvertible()
   {
     return false;
   }
@@ -199,7 +199,7 @@ abstract public class Value implements java.io.Serializable
   /**
    * Returns true for a long-value.
    */
-  public boolean isLong()
+  public bool isLong()
   {
     return false;
   }
@@ -207,7 +207,7 @@ abstract public class Value implements java.io.Serializable
   /**
    * Returns true for a long-value.
    */
-  public boolean isDouble()
+  public bool isDouble()
   {
     return false;
   }
@@ -215,7 +215,7 @@ abstract public class Value implements java.io.Serializable
   /**
    * Returns true for a null.
    */
-  public boolean isNull()
+  public bool isNull()
   {
     return false;
   }
@@ -223,7 +223,7 @@ abstract public class Value implements java.io.Serializable
   /**
    * Returns true for a number.
    */
-  public boolean isNumberConvertible()
+  public bool isNumberConvertible()
   {
     return isLongConvertible() || isDoubleConvertible();
   }
@@ -231,7 +231,7 @@ abstract public class Value implements java.io.Serializable
   /**
    * Matches is_numeric
    */
-  public boolean isNumeric()
+  public bool isNumeric()
   {
     return false;
   }
@@ -239,7 +239,7 @@ abstract public class Value implements java.io.Serializable
   /**
    * Returns true for an object.
    */
-  public boolean isObject()
+  public bool isObject()
   {
     return false;
   }
@@ -247,7 +247,7 @@ abstract public class Value implements java.io.Serializable
   /**
    * Returns true for a resource.
    */
-  public boolean isResource()
+  public bool isResource()
   {
     return false;
   }
@@ -255,7 +255,7 @@ abstract public class Value implements java.io.Serializable
   /**
    * Returns true for a StringValue.
    */
-  public boolean isString()
+  public bool isString()
   {
     return false;
   }
@@ -263,7 +263,7 @@ abstract public class Value implements java.io.Serializable
   /**
    * Returns true for a BinaryValue.
    */
-  public boolean isBinary()
+  public bool isBinary()
   {
     return false;
   }
@@ -271,7 +271,7 @@ abstract public class Value implements java.io.Serializable
   /**
    * Returns true for a UnicodeValue.
    */
-  public boolean isUnicode()
+  public bool isUnicode()
   {
     return false;
   }
@@ -279,7 +279,7 @@ abstract public class Value implements java.io.Serializable
   /**
    * Returns true for a BooleanValue
    */
-  public boolean isBoolean()
+  public bool isBoolean()
   {
     return false;
   }
@@ -287,7 +287,7 @@ abstract public class Value implements java.io.Serializable
   /**
    * Returns true for a DefaultValue
    */
-  public boolean isDefault()
+  public bool isDefault()
   {
     return false;
   }
@@ -423,7 +423,7 @@ abstract public class Value implements java.io.Serializable
   /**
    * Returns true if the value is set.
    */
-  public boolean isset()
+  public bool isset()
   {
     return true;
   }
@@ -431,7 +431,7 @@ abstract public class Value implements java.io.Serializable
   /**
    * Returns true if the value is empty
    */
-  public boolean isEmpty()
+  public bool isEmpty()
   {
     return false;
   }
@@ -439,7 +439,7 @@ abstract public class Value implements java.io.Serializable
   /**
    * Returns true if the value is empty
    */
-  public boolean isEmpty(Env env, Value index)
+  public bool isEmpty(Env env, Value index)
   {
     return isEmpty();
   }
@@ -447,7 +447,7 @@ abstract public class Value implements java.io.Serializable
   /**
    * Returns true if there are more elements.
    */
-  public boolean hasCurrent()
+  public bool hasCurrent()
   {
     return false;
   }
@@ -463,7 +463,7 @@ abstract public class Value implements java.io.Serializable
   /**
    * Returns true for equality
    */
-  public boolean eq(Value rValue)
+  public bool eq(Value rValue)
   {
     if (rValue.isArray())
       return false;
@@ -483,7 +483,7 @@ abstract public class Value implements java.io.Serializable
   /**
    * Returns true for equality
    */
-  public boolean eql(Value rValue)
+  public bool eql(Value rValue)
   {
     return this == rValue.toValue();
   }
@@ -514,8 +514,8 @@ abstract public class Value implements java.io.Serializable
         || rVal instanceof NullValue
         || rVal instanceof BooleanValue)
     {
-      boolean lBool = toBoolean();
-      boolean rBool    = rValue.toBoolean();
+      bool lBool = toBoolean();
+      bool rBool    = rValue.toBoolean();
 
       if (!lBool && rBool) return -1;
       if (lBool && !rBool) return 1;
@@ -546,7 +546,7 @@ abstract public class Value implements java.io.Serializable
   /**
    * Returns true for less than
    */
-  public boolean lt(Value rValue)
+  public bool lt(Value rValue)
   {
     return cmp(rValue) < 0;
   }
@@ -554,7 +554,7 @@ abstract public class Value implements java.io.Serializable
   /**
    * Returns true for less than or equal to
    */
-  public boolean leq(Value rValue)
+  public bool leq(Value rValue)
   {
     return cmp(rValue) <= 0;
   }
@@ -562,7 +562,7 @@ abstract public class Value implements java.io.Serializable
   /**
    * Returns true for greater than
    */
-  public boolean gt(Value rValue)
+  public bool gt(Value rValue)
   {
     return cmp(rValue) > 0;
   }
@@ -570,7 +570,7 @@ abstract public class Value implements java.io.Serializable
   /**
    * Returns true for greater than or equal to
    */
-  public boolean geq(Value rValue)
+  public bool geq(Value rValue)
   {
     return cmp(rValue) >= 0;
   }
@@ -622,7 +622,7 @@ abstract public class Value implements java.io.Serializable
   /**
    * Converts to a boolean.
    */
-  public boolean toBoolean()
+  public bool toBoolean()
   {
     return true;
   }
@@ -755,9 +755,9 @@ abstract public class Value implements java.io.Serializable
   }
 
   /**
-   * Converts to a java boolean object.
+   * Converts to a java bool object.
    */
-  public Boolean toJavaBoolean()
+  public bool toJavaBoolean()
   {
     return toBoolean() ? Boolean.TRUE : Boolean.FALSE;
   }
@@ -1236,7 +1236,7 @@ abstract public class Value implements java.io.Serializable
   /**
    * Returns true for a callable object.
    */
-  public boolean isCallable(Env env, boolean isCheckSyntaxOnly, Value nameRef)
+  public bool isCallable(Env env, bool isCheckSyntaxOnly, Value nameRef)
   {
     return false;
   }
@@ -1252,7 +1252,7 @@ abstract public class Value implements java.io.Serializable
   /**
    * Converts to a callable
    */
-  public Callable toCallable(Env env, boolean isOptional)
+  public Callable toCallable(Env env, bool isOptional)
   {
     if (! isOptional) {
       env.warning(L.l("Callable: '{0}' is not a valid callable argument",
@@ -2276,7 +2276,7 @@ abstract public class Value implements java.io.Serializable
     final Iterator<Map.Entry<Value, Value>> iter = getIterator(env);
 
     return new Iterator<Value>() {
-      public boolean hasNext() { return iter.hasNext(); }
+      public bool hasNext() { return iter.hasNext(); }
       public Value next()      { return iter.next().getKey(); }
       public void remove()     { iter.remove(); }
     };
@@ -2309,7 +2309,7 @@ abstract public class Value implements java.io.Serializable
     final Iterator<Map.Entry<Value, Value>> iter = getIterator(env);
 
     return new Iterator<Value>() {
-      public boolean hasNext() { return iter.hasNext(); }
+      public bool hasNext() { return iter.hasNext(); }
       public Value next()      { return iter.next().getValue(); }
       public void remove()     { iter.remove(); }
     };
@@ -2338,7 +2338,7 @@ abstract public class Value implements java.io.Serializable
   /**
    * Returns the field used as a method argument
    */
-  public Value getFieldArg(Env env, StringValue name, boolean isTop)
+  public Value getFieldArg(Env env, StringValue name, bool isTop)
   {
     return getFieldVar(env, name);
   }
@@ -2416,7 +2416,7 @@ abstract public class Value implements java.io.Serializable
    * Returns true if the object is in a __set() method call.
    * Prevents infinite recursion.
    */
-  public boolean isFieldInit()
+  public bool isFieldInit()
   {
     return false;
   }
@@ -2424,14 +2424,14 @@ abstract public class Value implements java.io.Serializable
   /**
    * Returns true if the object has this field.
    */
-  public boolean isFieldExists(Env env, StringValue name) {
+  public bool isFieldExists(Env env, StringValue name) {
     return getField(env, name) == UnsetValue.UNSET;
   }
 
   /**
    * Returns true if the field is set
    */
-  public boolean issetField(Env env, StringValue name)
+  public bool issetField(Env env, StringValue name)
   {
     return false;
   }
@@ -2540,7 +2540,7 @@ abstract public class Value implements java.io.Serializable
 
   public final void initField(Env env,
                               ClassField field,
-                              boolean isInitFieldValues)
+                              bool isInitFieldValues)
   {
     Value value = NullValue.NULL;
 
@@ -2603,7 +2603,7 @@ abstract public class Value implements java.io.Serializable
   /**
    * Returns true if the field is set
    */
-  public boolean issetThisField(Env env, StringValue name)
+  public bool issetThisField(Env env, StringValue name)
   {
     return issetField(env, name);
   }
@@ -2702,7 +2702,7 @@ abstract public class Value implements java.io.Serializable
   /**
    * Returns the array ref as a function argument.
    */
-  public Value getArg(Value index, boolean isTop)
+  public Value getArg(Value index, bool isTop)
   {
     return get(index);
   }
@@ -2761,7 +2761,7 @@ abstract public class Value implements java.io.Serializable
     }
   }
 
-  public boolean isVar()
+  public bool isVar()
   {
     return false;
   }
@@ -2850,7 +2850,7 @@ abstract public class Value implements java.io.Serializable
   /**
    * Sets the array tail, returning a reference to the tail.
    */
-  public Value getArgTail(Env env, boolean isTop)
+  public Value getArgTail(Env env, bool isTop)
   {
     return putVar();
   }
@@ -2870,7 +2870,7 @@ abstract public class Value implements java.io.Serializable
   /**
    * Return true if the array value is set
    */
-  public boolean isset(Value index)
+  public bool isset(Value index)
   {
     return false;
   }
@@ -2878,7 +2878,7 @@ abstract public class Value implements java.io.Serializable
   /**
    * Returns true if the key exists in the array.
    */
-  public boolean keyExists(Value key)
+  public bool keyExists(Value key)
   {
     return isset(key);
   }

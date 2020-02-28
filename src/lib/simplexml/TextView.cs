@@ -94,14 +94,14 @@ public class TextView : SimpleView
     throw new UnsupportedOperationException();
   }
 
-  public override boolean toXml(Env env, StringBuilder sb)
+  public override bool toXml(Env env, StringBuilder sb)
   {
     sb.append(_node.getTextContent());
 
     return true;
   }
 
-  public override Value toDumpValue(Env env, QuercusClass cls, boolean isChildren)
+  public override Value toDumpValue(Env env, QuercusClass cls, bool isChildren)
   {
     StringValue value = env.createString(_node.getTextContent());
 

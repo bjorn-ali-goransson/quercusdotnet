@@ -50,12 +50,12 @@ public class CallbackError : Callback {
     return NullValue.NULL;
   }
 
-  public override boolean isValid(Env env)
+  public override bool isValid(Env env)
   {
     return false;
   }
 
-  public override boolean isInternal(Env env)
+  public override bool isInternal(Env env)
   {
     return false;
   }
@@ -80,7 +80,7 @@ public class CallbackError : Callback {
     return null;
   }
 
-  public override boolean isReturnsReference(Env env)
+  public override bool isReturnsReference(Env env)
   {
     return false;
   }

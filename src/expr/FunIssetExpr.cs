@@ -51,7 +51,7 @@ public class FunIssetExpr : AbstractUnaryExpr {
   /**
    * Return true as a boolean.
    */
-  public boolean isBoolean()
+  public bool isBoolean()
   {
     return true;
   }

@@ -42,7 +42,7 @@ public class InputStreamMarshal : Marshal
 {
   public readonly Marshal MARSHAL = new InputStreamMarshal();
 
-  public boolean isReadOnly()
+  public bool isReadOnly()
   {
     return true;
   }

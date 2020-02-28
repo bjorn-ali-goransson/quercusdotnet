@@ -154,7 +154,7 @@ public class ArrayGetExpr : AbstractVarExpr {
    *
    * @return the expression value.
    */
-  public override Value evalArg(Env env, boolean isTop)
+  public override Value evalArg(Env env, bool isTop)
   {
     // php/0d2t
     // php/0d1c
@@ -219,7 +219,7 @@ public class ArrayGetExpr : AbstractVarExpr {
   /**
    * Evaluates the expression as an isset().
    */
-  public override boolean evalIsset(Env env)
+  public override bool evalIsset(Env env)
   {
     Value array = _expr.evalIssetValue(env);
     Value index = _index.evalIssetValue(env);
@@ -242,7 +242,7 @@ public class ArrayGetExpr : AbstractVarExpr {
   /**
    * Evaluates as an empty() expression.
    */
-  public override boolean evalEmpty(Env env)
+  public override bool evalEmpty(Env env)
   {
     Value array = _expr.evalIssetValue(env);
     Value index = _index.evalIssetValue(env);

@@ -61,6 +61,6 @@ public interface Iterator
   /**
    * Returns true if the iterator currently points to a valid row.
    */
-  public boolean valid(Env env);
+  public bool valid(Env env);
 }
 }

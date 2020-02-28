@@ -42,12 +42,12 @@ public class StringMarshal : Marshal {
   public readonly StringMarshal MARSHAL = new StringMarshal();
 
   @Override
-  public boolean isString()
+  public bool isString()
   {
     return true;
   }
 
-  public override boolean isReadOnly()
+  public override bool isReadOnly()
   {
     return true;
   }

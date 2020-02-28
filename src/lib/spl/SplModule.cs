@@ -57,7 +57,7 @@ public class SplModule : AbstractQuercusModule
 
   public static Value class_implements(Env env,
                                         Value obj,
-                                        @Optional boolean autoload)
+                                        @Optional bool autoload)
   {
     QuercusClass cls;
 
@@ -78,7 +78,7 @@ public class SplModule : AbstractQuercusModule
 
   public static Value class_parents(Env env,
                                     Value obj,
-                                    @Optional boolean autoload)
+                                    @Optional bool autoload)
   {
     QuercusClass cls;
 
@@ -107,10 +107,10 @@ public class SplModule : AbstractQuercusModule
     }
   }
 
-  public static boolean spl_autoload_register(Env env,
+  public static bool spl_autoload_register(Env env,
                                               @Optional Callable fun,
-                                              @Optional("true") boolean isThrowErrors,
-                                              @Optional boolean isPrepend)
+                                              @Optional("true") bool isThrowErrors,
+                                              @Optional bool isPrepend)
   {
     if (fun == null) {
       fun = new CallbackFunction(env, env.createString("spl_autoload"));
@@ -121,7 +121,7 @@ public class SplModule : AbstractQuercusModule
     return true;
   }
 
-  public static boolean spl_autoload_unregister(Env env,
+  public static bool spl_autoload_unregister(Env env,
                                                 Callable fun)
   {
     env.removeAutoloadFunction(fun);

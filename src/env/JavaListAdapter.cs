@@ -169,7 +169,7 @@ public class JavaListAdapter
   /**
    * Returns true if there are more elements.
    */
-  public boolean hasCurrent()
+  public bool hasCurrent()
   {
     return _next < _list.size();
   }

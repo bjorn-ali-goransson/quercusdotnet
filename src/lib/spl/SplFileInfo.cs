@@ -67,7 +67,7 @@ public class SplFileInfo
   }
 
   /*
-  protected SplFileInfo(Env env, StringValue fileName, boolean isUseIncludePath)
+  protected SplFileInfo(Env env, StringValue fileName, bool isUseIncludePath)
   {
     _path = env.lookupInclude(fileName);
 
@@ -240,39 +240,39 @@ public class SplFileInfo
     }
   }
 
-  public boolean isDir(Env env)
+  public bool isDir(Env env)
   {
     return _path.isDirectory();
   }
 
-  public boolean isExecutable(Env env)
+  public bool isExecutable(Env env)
   {
     return _path.isExecutable();
   }
 
-  public boolean isFile(Env env)
+  public bool isFile(Env env)
   {
     return _path.isFile();
   }
 
-  public boolean isLink(Env env)
+  public bool isLink(Env env)
   {
     return _path.isLink();
   }
 
-  public boolean isReadable(Env env)
+  public bool isReadable(Env env)
   {
     return _path.canRead();
   }
 
-  public boolean isWritable(Env env)
+  public bool isWritable(Env env)
   {
     return _path.canWrite();
   }
 
   public SplFileObject openFile(Env env,
                                 @Optional("r") string mode,
-                                @Optional boolean isUseIncludePath,
+                                @Optional bool isUseIncludePath,
                                 @Optional Value context)
   {
     throw new UnimplementedException("SplFileInfo::openFile()");

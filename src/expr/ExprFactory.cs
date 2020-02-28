@@ -84,7 +84,7 @@ public class ExprFactory {
   private const Logger log
     = Logger.getLogger(ExprFactory.class.getName());
 
-  private static boolean _isPro = true;
+  private static bool _isPro = true;
 
   public ExprFactory()
   {
@@ -526,7 +526,7 @@ public class ExprFactory {
   }
 
   /**
-   * Creates a boolean cast
+   * Creates a bool cast
    */
   public Expr createToBoolean(Expr expr)
   {
@@ -976,7 +976,7 @@ public class ExprFactory {
   public final Expr createList(QuercusParser parser,
                                ListHeadExpr head, Expr value)
   {
-    boolean isSuppress = value instanceof UnarySuppressErrorExpr;
+    bool isSuppress = value instanceof UnarySuppressErrorExpr;
 
     if (isSuppress) {
       UnarySuppressErrorExpr suppressExpr = (UnarySuppressErrorExpr) value;
@@ -1098,7 +1098,7 @@ public class ExprFactory {
   public ClosureExpr createClosure(Location loc,
                                    Function fun,
                                    ArrayList<VarExpr> useArgs,
-                                   boolean isInClassScope)
+                                   bool isInClassScope)
   {
     return new ClosureExpr(loc, fun, useArgs, isInClassScope);
   }
@@ -1334,7 +1334,7 @@ public class ExprFactory {
    */
   public Expr createImport(Location loc,
                            string name,
-                           boolean isWildcard)
+                           bool isWildcard)
   {
     return new ImportExpr(loc, name, isWildcard);
   }
@@ -1467,7 +1467,7 @@ public class ExprFactory {
                                  Expr objExpr,
                                  AbstractVarExpr key,
                                  AbstractVarExpr value,
-                                 boolean isRef,
+                                 bool isRef,
                                  Statement block,
                                  string label)
   {

@@ -124,7 +124,7 @@ public class CurlHttpRequest
   /**
    * Initializes the connection.
    */
-  protected boolean init(Env env)
+  protected bool init(Env env)
     
   {
     if (_conn == null || _curl == null) {
@@ -177,7 +177,7 @@ public class CurlHttpRequest
   /**
    * Closes the connection and sends data and connection info to curl.
    */
-  protected boolean finish(Env env)
+  protected bool finish(Env env)
     
   {
     if (_curl == null || _conn == null) {
@@ -214,7 +214,7 @@ public class CurlHttpRequest
   /**
    * Perform this request.
    */
-  public final boolean execute(Env env)
+  public final bool execute(Env env)
   {
     try {
       create(env);

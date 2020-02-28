@@ -87,7 +87,7 @@ public class InterpretedClosure : Closure
     return _fun.getDeclComment(env);
   }
 
-  public override boolean isReturnsReference(Env env)
+  public override bool isReturnsReference(Env env)
   {
     return _fun.isReturnsReference(env);
   }
@@ -97,7 +97,7 @@ public class InterpretedClosure : Closure
     return _fun.getArgs(env);
   }
 
-  public override boolean isInternal(Env env)
+  public override bool isInternal(Env env)
   {
     return _fun.isInternal(env);
   }

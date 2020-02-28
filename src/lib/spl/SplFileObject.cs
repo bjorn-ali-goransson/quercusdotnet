@@ -45,7 +45,7 @@ public class SplFileObject : SplFileInfo
   public SplFileObject(Env env,
                        StringValue fileName,
                        @Optional("r") string mode,
-                       @Optional boolean isUseIncludePath,
+                       @Optional bool isUseIncludePath,
                        @Optional Value contextV)
   {
     super(env, fileName);

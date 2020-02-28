@@ -148,7 +148,7 @@ public class ArrayObject
       ArrayModule.natsort(_env, _value);
   }
 
-  public override boolean offsetExists(Env env, Value offset)
+  public override bool offsetExists(Env env, Value offset)
   {
     return _value.get(offset).isset();
   }

@@ -101,7 +101,7 @@ public class UnarySuppressErrorExpr : AbstractUnaryExpr {
    *
    * @return the expression value.
    */
-  public boolean evalBoolean(Env env)
+  public bool evalBoolean(Env env)
   {
     int oldErrorMask = env.setErrorMask(0);
 

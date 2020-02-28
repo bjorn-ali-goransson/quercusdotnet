@@ -43,10 +43,10 @@ public class QuercusTimer
   private TimerThread _timerThread;
 
   private volatile long _currentTime;
-  private volatile boolean _isCurrentTimeUsed;
-  private volatile boolean _isSlowTime;
+  private volatile bool _isCurrentTimeUsed;
+  private volatile bool _isSlowTime;
 
-  private volatile boolean _isRunnable = true;
+  private volatile bool _isRunnable = true;
 
   public QuercusTimer()
   {
@@ -139,7 +139,7 @@ public class QuercusTimer
 
           _currentTime = now;
 
-          boolean isCurrentTimeUsed = _isCurrentTimeUsed;
+          bool isCurrentTimeUsed = _isCurrentTimeUsed;
           _isCurrentTimeUsed = false;
 
           if (isCurrentTimeUsed) {

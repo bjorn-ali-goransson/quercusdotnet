@@ -147,7 +147,7 @@ public class MathModule : AbstractQuercusModule {
   {
     long result = 0L;
 
-    boolean isLong = true;
+    bool isLong = true;
 
     int len = str.length();
 
@@ -419,7 +419,7 @@ public class MathModule : AbstractQuercusModule {
     return Math.hypot(a, b);
   }
 
-  public static boolean is_finite(Value value)
+  public static bool is_finite(Value value)
   {
     if (value instanceof LongValue)
       return true;

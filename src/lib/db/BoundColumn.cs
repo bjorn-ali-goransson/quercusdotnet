@@ -44,7 +44,7 @@ public class BoundColumn
   private int _column;
   private ColumnType _type;
 
-  private boolean _isValid;
+  private bool _isValid;
 
   /**
    * @param column 1-based column index
@@ -68,7 +68,7 @@ public class BoundColumn
     init(metaData);
   }
 
-  private boolean init(ResultSetMetaData metaData)
+  private bool init(ResultSetMetaData metaData)
     
   {
     int columnCount = metaData.getColumnCount();
@@ -88,7 +88,7 @@ public class BoundColumn
     return true;
   }
 
-  public boolean bind(Env env, JdbcResultResource rs)
+  public bool bind(Env env, JdbcResultResource rs)
     
   {
     if (!_isValid) {

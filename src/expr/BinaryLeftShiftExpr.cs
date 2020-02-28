@@ -50,7 +50,7 @@ public class BinaryLeftShiftExpr : AbstractBinaryExpr {
   /**
    * Returns true for a long.
    */
-  public boolean isLong()
+  public bool isLong()
   {
     return true;
   }

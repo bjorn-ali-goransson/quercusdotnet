@@ -47,9 +47,9 @@ public class IniDefinitions {
   private HashMap<String, IniDefinition> _defaultMap;
 
   /**
-   * Add an ini default for an ini that has a boolean value.
+   * Add an ini default for an ini that has a bool value.
    */
-  public IniDefinition add(String name, boolean deflt, int scope)
+  public IniDefinition add(String name, bool deflt, int scope)
   {
     return add(name,
                IniDefinition.Type.BOOLEAN,
@@ -95,9 +95,9 @@ public class IniDefinitions {
   }
 
   /**
-   * Add an unsupported ini default for an ini that has a boolean value.
+   * Add an unsupported ini default for an ini that has a bool value.
    */
-  public IniDefinition addUnsupported(String name, boolean deflt, int scope)
+  public IniDefinition addUnsupported(String name, bool deflt, int scope)
   {
     return addUnsupported(name,
                           IniDefinition.Type.BOOLEAN,

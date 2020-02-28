@@ -113,7 +113,7 @@ public class Location {
       return _fileName + ":" + _lineNumber + ": ";
   }
 
-  public boolean isUnknown()
+  public bool isUnknown()
   {
     return _fileName == null || _lineNumber <= 0;
   }

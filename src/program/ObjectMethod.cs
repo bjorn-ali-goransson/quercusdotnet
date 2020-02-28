@@ -71,7 +71,7 @@ public class ObjectMethod : Function {
     return _quercusClass;
   }
 
-  public override boolean isObjectMethod()
+  public override bool isObjectMethod()
   {
     return true;
   }

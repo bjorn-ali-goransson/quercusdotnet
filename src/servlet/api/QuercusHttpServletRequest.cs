@@ -68,7 +68,7 @@ public interface QuercusHttpServletRequest
   public int getRemotePort();
   public string getRemoteUser();
 
-  public boolean isSecure();
+  public bool isSecure();
   public string getProtocol();
 
   public Object getAttribute(String name);

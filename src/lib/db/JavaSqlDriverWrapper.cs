@@ -106,7 +106,7 @@ public class JavaSqlDriverWrapper implements javax.sql.DataSource
     throw new UnsupportedOperationException();
   }
 
-  public override boolean isWrapperFor(Class<?> iface)
+  public override bool isWrapperFor(Class<?> iface)
     
   {
     throw new UnsupportedOperationException();

@@ -72,7 +72,7 @@ public class DOMNodeListDelegate
       _list = list;
     }
     
-    public boolean hasNext()
+    public bool hasNext()
     {
       return _index < _list.getLength();
     }
@@ -101,7 +101,7 @@ public class DOMNodeListDelegate
       _list = list;
     }
     
-    public boolean hasNext()
+    public bool hasNext()
     {
       return _index < _list.getLength();
     }
@@ -130,7 +130,7 @@ public class DOMNodeListDelegate
       _list = list;
     }
     
-    public boolean hasNext()
+    public bool hasNext()
     {
       return _index < _list.getLength();
     }

@@ -137,7 +137,7 @@ public class CompiledConstStringValue
     _compiledHashCode = hashCode;
   }
 
-  public boolean isStatic()
+  public bool isStatic()
   {
     return true;
   }

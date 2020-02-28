@@ -136,7 +136,7 @@ abstract public class Marshal {
   /**
    * Returns true if the result is a primitive boolean.
    */
-  public boolean isBoolean()
+  public bool isBoolean()
   {
     return false;
   }
@@ -144,7 +144,7 @@ abstract public class Marshal {
   /**
    * Returns true if the result is a string.
    */
-  public boolean isString()
+  public bool isString()
   {
     return false;
   }
@@ -152,7 +152,7 @@ abstract public class Marshal {
   /**
    * Returns true if the result is a long.
    */
-  public boolean isLong()
+  public bool isLong()
   {
     return false;
   }
@@ -160,7 +160,7 @@ abstract public class Marshal {
   /**
    * Returns true if the result is a double.
    */
-  public boolean isDouble()
+  public bool isDouble()
   {
     return false;
   }
@@ -168,7 +168,7 @@ abstract public class Marshal {
   /**
    * Return true for read-only.
    */
-  public boolean isReadOnly()
+  public bool isReadOnly()
   {
     return true;
   }
@@ -176,7 +176,7 @@ abstract public class Marshal {
   /**
    * Return true for a reference
    */
-  public boolean isReference()
+  public bool isReference()
   {
     return false;
   }
@@ -184,7 +184,7 @@ abstract public class Marshal {
   /**
    * Return true if is a Value.
    */
-  public boolean isValue()
+  public bool isValue()
   {
     return false;
   }

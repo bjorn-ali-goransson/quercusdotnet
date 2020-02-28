@@ -62,29 +62,29 @@ public class CurlResource : ResourceValue
   private string _username;
   private string _password;
 
-  private boolean _isProxying = false;
+  private bool _isProxying = false;
   private string _proxyUsername;
   private string _proxyPassword;
   private string _proxyURL;
   private string _proxyType = "HTTP";
   private int _proxyPort = -1;
 
-  private boolean _isFollowingRedirects = true;
-  private boolean _isReturningBody = true;
-  private boolean _isReturningData = false;
-  private boolean _isReturningHeader = false;
+  private bool _isFollowingRedirects = true;
+  private bool _isReturningBody = true;
+  private bool _isReturningData = false;
+  private bool _isReturningHeader = false;
 
-  private boolean _isVerifySSLPeer = true;
-  private boolean _isVerifySSLCommonName = true;
-  private boolean _isVerifySSLHostname = true;
+  private bool _isVerifySSLPeer = true;
+  private bool _isVerifySSLCommonName = true;
+  private bool _isVerifySSLHostname = true;
 
-  private boolean _ifModifiedSince = true;
+  private bool _ifModifiedSince = true;
   private string _modifiedTime;
 
   private int _errorCode = CurlModule.CURLE_OK;
   private string _error = "";
-  private boolean _failOnError = false;
-  private boolean _isVerbose = false;
+  private bool _failOnError = false;
+  private bool _isVerbose = false;
 
   private int _readTimeoutMs = -1;
   private int _connectTimeoutMs = -1;
@@ -282,7 +282,7 @@ public class CurlResource : ResourceValue
   /**
    * Returns true if automatically following redirects.
    */
-  public boolean getIsFollowingRedirects()
+  public bool getIsFollowingRedirects()
   {
     return _isFollowingRedirects;
   }
@@ -298,7 +298,7 @@ public class CurlResource : ResourceValue
   /**
    * Returns true if a proxy is to be used.
    */
-  public boolean getIsProxying()
+  public bool getIsProxying()
   {
     return _isProxying;
   }
@@ -322,7 +322,7 @@ public class CurlResource : ResourceValue
   /**
    * Returns true if returning data instead of to stdout.
    */
-  public boolean isReturningData()
+  public bool isReturningData()
   {
     return _isReturningData;
   }
@@ -346,7 +346,7 @@ public class CurlResource : ResourceValue
   /**
    * Returns the verbosity of this library.
    */
-  public boolean getIsVerbose()
+  public bool getIsVerbose()
   {
     return _isVerbose;
   }
@@ -359,7 +359,7 @@ public class CurlResource : ResourceValue
     _isVerbose = verbose;
   }
 
-  public boolean getIsVerifySSLPeer()
+  public bool getIsVerifySSLPeer()
   {
     return _isVerifySSLPeer;
   }
@@ -369,7 +369,7 @@ public class CurlResource : ResourceValue
     _isVerifySSLPeer = isVerify;
   }
 
-  public boolean getIsVerifySSLCommonName()
+  public bool getIsVerifySSLCommonName()
   {
     return _isVerifySSLCommonName;
   }
@@ -379,7 +379,7 @@ public class CurlResource : ResourceValue
     _isVerifySSLCommonName = isVerify;
   }
 
-  public boolean getIsVerifySSLHostname()
+  public bool getIsVerifySSLHostname()
   {
     return _isVerifySSLHostname;
   }
@@ -767,7 +767,7 @@ public class CurlResource : ResourceValue
   /**
    * Executes this request.
    */
-  public Value execute(Env env, boolean isPrintData)
+  public Value execute(Env env, bool isPrintData)
   {
     init();
 
@@ -792,7 +792,7 @@ public class CurlResource : ResourceValue
   /**
    * Returns headers and/or body of the last request.
    */
-  private Value getReturnValue(Env env, boolean isPrintData)
+  private Value getReturnValue(Env env, bool isPrintData)
   {
     StringValue data;
 
@@ -895,7 +895,7 @@ public class CurlResource : ResourceValue
   /**
    * Returns true if an error occuring during the last operation.
    */
-  protected boolean hasError()
+  protected bool hasError()
   {
     return _errorCode != CurlModule.CURLE_OK;
   }
@@ -962,7 +962,7 @@ public class CurlResource : ResourceValue
 
 
   @Override
-  public boolean isResource()
+  public bool isResource()
   {
     return true;
   }

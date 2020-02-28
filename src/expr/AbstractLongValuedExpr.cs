@@ -67,7 +67,7 @@ abstract public class AbstractLongValuedExpr : Expr {
    *
    * @return the expression value.
    */
-  public boolean evalBoolean(Env env)
+  public bool evalBoolean(Env env)
   {
     return evalLong(env) != 0;
   }

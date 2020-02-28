@@ -44,18 +44,18 @@ public class JavaMarshal : Marshal {
   private readonly L10N L = new L10N(JavaMarshal.class);
 
   protected final JavaClassDef _def;
-  protected final boolean _isNotNull;
-  protected final boolean _isUnmarshalNullAsFalse;
+  protected final bool _isNotNull;
+  protected final bool _isUnmarshalNullAsFalse;
 
   public JavaMarshal(JavaClassDef def,
-                      boolean isNotNull)
+                      bool isNotNull)
   {
     this(def, isNotNull, false);
   }
 
   public JavaMarshal(JavaClassDef def,
-                      boolean isNotNull,
-                      boolean isUnmarshalNullAsFalse)
+                      bool isNotNull,
+                      bool isUnmarshalNullAsFalse)
   {
     _def = def;
     _isNotNull = isNotNull;

@@ -64,7 +64,7 @@ public class UnaryPreIncrementExpr : AbstractUnaryExpr {
   /**
    * Return true for a double value
    */
-  public boolean isDouble()
+  public bool isDouble()
   {
     return _expr.isDouble();
   }
@@ -72,7 +72,7 @@ public class UnaryPreIncrementExpr : AbstractUnaryExpr {
   /**
    * Return true for a long value
    */
-  public boolean isLong()
+  public bool isLong()
   {
     return _expr.isLong();
   }
@@ -80,7 +80,7 @@ public class UnaryPreIncrementExpr : AbstractUnaryExpr {
   /**
    * Return true for a number
    */
-  public boolean isNumber()
+  public bool isNumber()
   {
     return true;
   }

@@ -88,7 +88,7 @@ public class WrappedStream implements BinaryInput, BinaryOutput {
   private InputStream _is;
   private OutputStream _os;
   private int _buffer;
-  private boolean _doUnread = false;
+  private bool _doUnread = false;
 
   private int _writeLength;
 
@@ -325,7 +325,7 @@ public class WrappedStream implements BinaryInput, BinaryOutput {
   /**
    * Reads the optional linefeed character from a \r\n
    */
-  public boolean readOptionalLinefeed()
+  public bool readOptionalLinefeed()
     
   {
     int ch = read();
@@ -432,7 +432,7 @@ public class WrappedStream implements BinaryInput, BinaryOutput {
   /**
    * Returns true if end-of-file has been reached
    */
-  public boolean isEOF()
+  public bool isEOF()
   {
     if (_env.isUnicodeSemantics())
       return _wrapper.callMethod(_env, STREAM_EOF_U).toBoolean();
@@ -454,7 +454,7 @@ public class WrappedStream implements BinaryInput, BinaryOutput {
   /**
    * Sets the position.
    */
-  public boolean setPosition(long offset)
+  public bool setPosition(long offset)
   {
     LongValue offsetValue = LongValue.create(offset);
     LongValue whenceValue = LongValue.create(SEEK_SET);
@@ -483,7 +483,7 @@ public class WrappedStream implements BinaryInput, BinaryOutput {
   public void flush()
     
   {
-    boolean result;
+    bool result;
 
     if (_env.isUnicodeSemantics())
       result = _wrapper.callMethod(_env, STREAM_FLUSH_U).toBoolean();

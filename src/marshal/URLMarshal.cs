@@ -41,7 +41,7 @@ public class URLMarshal : Marshal
 {
   public readonly Marshal MARSHAL = new URLMarshal();
   
-  public boolean isReadOnly()
+  public bool isReadOnly()
   {
     return true;
   }

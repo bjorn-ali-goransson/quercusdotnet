@@ -39,12 +39,12 @@ public class FloatMarshal : Marshal
 {
   public readonly Marshal MARSHAL = new FloatMarshal();
 
-  public boolean isDouble()
+  public bool isDouble()
   {
     return true;
   }
 
-  public boolean isReadOnly()
+  public bool isReadOnly()
   {
     return true;
   }

@@ -39,7 +39,7 @@ public class IntegerObjectMarshal : Marshal
 {
   public readonly Marshal MARSHAL = new IntegerObjectMarshal();
   
-  public boolean isReadOnly()
+  public bool isReadOnly()
   {
     return true;
   }

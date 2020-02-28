@@ -83,7 +83,7 @@ public interface BinaryInput : BinaryStream {
   /**
    * Reads the optional linefeed character from a \r\n
    */
-  public boolean readOptionalLinefeed()
+  public bool readOptionalLinefeed()
     
 
   /**
@@ -106,7 +106,7 @@ public interface BinaryInput : BinaryStream {
   /**
    * Sets the current location in the stream
    */
-  public boolean setPosition(long offset);
+  public bool setPosition(long offset);
 
   /**
    * Closes the stream.

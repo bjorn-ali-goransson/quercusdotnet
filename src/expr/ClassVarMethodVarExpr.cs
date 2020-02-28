@@ -55,7 +55,7 @@ public class ClassVarMethodVarExpr : Expr
   protected Expr []_fullArgs;
 
   protected AbstractFunction _fun;
-  protected boolean _isMethod;
+  protected bool _isMethod;
 
   public ClassVarMethodVarExpr(Location location,
                                Expr className,

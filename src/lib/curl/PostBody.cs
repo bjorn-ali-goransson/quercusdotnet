@@ -41,7 +41,7 @@ namespace QuercusDotNet.lib.curl {
 
 abstract public class PostBody
 {
-  private boolean _isValid = true;
+  private bool _isValid = true;
 
   static PostBody create(Env env, CurlResource curl)
   {
@@ -74,7 +74,7 @@ abstract public class PostBody
     }
   }
 
-  public boolean isChunked()
+  public bool isChunked()
   {
     return false;
   }
@@ -84,7 +84,7 @@ abstract public class PostBody
     _isValid = isValid;
   }
 
-  public boolean isValid()
+  public bool isValid()
   {
     return true;
   }

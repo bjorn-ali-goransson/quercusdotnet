@@ -48,7 +48,7 @@ public class TraitParentClassMethodExpr : AbstractMethodExpr {
   protected final int _hash;
   protected final Expr []_args;
 
-  protected boolean _isMethod;
+  protected bool _isMethod;
 
   public TraitParentClassMethodExpr(Location location,
                                     string traitName,

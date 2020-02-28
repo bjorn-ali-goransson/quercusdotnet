@@ -63,7 +63,7 @@ public class ByteArrayBinaryStream : AbstractBinaryInputOutput
     return _pos;
   }
 
-  public override boolean setPosition(long pos)
+  public override bool setPosition(long pos)
   {
     if (_length < pos) {
       return false;
@@ -84,7 +84,7 @@ public class ByteArrayBinaryStream : AbstractBinaryInputOutput
     _pos--;
   }
 
-  public override boolean isEOF()
+  public override bool isEOF()
   {
     // php/167i
 

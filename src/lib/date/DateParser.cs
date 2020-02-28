@@ -70,8 +70,8 @@ public class DateParser
   private int _unit;
   private int _weekday;
 
-  private boolean _hasDate;
-  private boolean _hasTime;
+  private bool _hasDate;
+  private bool _hasTime;
 
   private const long MINUTE = 60000L;
   private const long HOUR = 60 * MINUTE;
@@ -476,7 +476,7 @@ public class DateParser
   {
     int token = nextToken();
     int sign = 1;
-    boolean hasUTC = false;
+    bool hasUTC = false;
 
     if (token == UTC) {
       token = nextToken();

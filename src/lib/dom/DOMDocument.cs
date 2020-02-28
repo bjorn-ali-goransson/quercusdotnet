@@ -283,7 +283,7 @@ public class DOMDocument
     return wrap(_delegate.getElementsByTagNameNS(uri, name));
   }
 
-  public boolean getFormatOutput()
+  public bool getFormatOutput()
   {
     throw new UnimplementedException();
   }
@@ -298,32 +298,32 @@ public class DOMDocument
     return _delegate.getInputEncoding();
   }
 
-  public boolean getPreserveWhiteSpace()
+  public bool getPreserveWhiteSpace()
   {
     throw new UnimplementedException();
   }
 
-  public boolean getRecover()
+  public bool getRecover()
   {
     throw new UnimplementedException();
   }
 
-  public boolean getResolveExternals()
+  public bool getResolveExternals()
   {
     throw new UnimplementedException();
   }
 
-  public boolean getStrictErrorChecking()
+  public bool getStrictErrorChecking()
   {
     return _delegate.getStrictErrorChecking();
   }
 
-  public boolean getSubstituteEntities()
+  public bool getSubstituteEntities()
   {
     throw new UnimplementedException();
   }
 
-  public boolean getValidateOnParse()
+  public bool getValidateOnParse()
   {
     throw new UnimplementedException();
   }
@@ -338,7 +338,7 @@ public class DOMDocument
     return _delegate.getXmlEncoding();
   }
 
-  public boolean getXmlStandalone()
+  public bool getXmlStandalone()
   {
     return _delegate.getXmlStandalone();
   }
@@ -353,7 +353,7 @@ public class DOMDocument
     return importNode(node, false);
   }
 
-  public DOMNode importNode(DOMNode importedNode, boolean deep)
+  public DOMNode importNode(DOMNode importedNode, bool deep)
     
   {
     try {
@@ -365,7 +365,7 @@ public class DOMDocument
   }
 
   // XXX: also can be called statically, returns a DOMDocument in that case
-  public boolean load(Env env, Path path, @Optional Value options)
+  public bool load(Env env, Path path, @Optional Value options)
   {
     if (options != null)
       env.stub(L.l("`{0}' is ignored", "options"));
@@ -402,7 +402,7 @@ public class DOMDocument
    * @param source A string containing the HTML
    */
   // XXX: also can be called statically, returns a DOMDocument in that case
-  public boolean loadHTML(Env env, string source)
+  public bool loadHTML(Env env, string source)
   {
     ReadStream is = StringStream.open(source);
 
@@ -440,7 +440,7 @@ public class DOMDocument
   }
 
   // XXX: also can be called statically, returns a DOMDocument in that case
-  public boolean loadHTMLFile(Env env, Path path)
+  public bool loadHTMLFile(Env env, Path path)
   {
     ReadStream is = null;
 
@@ -475,7 +475,7 @@ public class DOMDocument
   }
 
   // XXX: also can be called statically, returns a DOMDocument in that case
-  public boolean loadXML(Env env, StringValue source, @Optional Value options)
+  public bool loadXML(Env env, StringValue source, @Optional Value options)
   {
     if (options != null)
       env.stub(L.l("loadXML 'options' is ignored"));
@@ -512,12 +512,12 @@ public class DOMDocument
     _delegate.normalizeDocument();
   }
 
-  public boolean relaxNGValidate(String rngFilename)
+  public bool relaxNGValidate(String rngFilename)
   {
     throw new UnimplementedException();
   }
 
-  public boolean relaxNGValidateSource(String rngSource)
+  public bool relaxNGValidateSource(String rngSource)
   {
     throw new UnimplementedException();
   }
@@ -548,7 +548,7 @@ public class DOMDocument
     return saveToFile(env, path, false);
   }
 
-  private Value saveToFile(Env env, Path path, boolean isHTML)
+  private Value saveToFile(Env env, Path path, bool isHTML)
   {
     WriteStream os = null;
 
@@ -574,7 +574,7 @@ public class DOMDocument
     return LongValue.create(path.getLength());
   }
 
-  private void saveToStream(DOMNode delegate, WriteStream os, boolean isHTML)
+  private void saveToStream(DOMNode delegate, WriteStream os, bool isHTML)
     
   {
     XmlPrinter printer = new XmlPrinter(os);
@@ -613,7 +613,7 @@ public class DOMDocument
     return saveToString(env, this, true);
   }
 
-  private StringValue saveToString(Env env, DOMNode node, boolean isHTML)
+  private StringValue saveToString(Env env, DOMNode node, bool isHTML)
   {
     TempStream tempStream = new TempStream();
 
@@ -671,7 +671,7 @@ public class DOMDocument
     return saveToString(env, this, false);
   }
 
-  public boolean schemaValidate(Env env, string schemaFilename)
+  public bool schemaValidate(Env env, string schemaFilename)
   {
     File file = new File(schemaFilename);
 
@@ -680,14 +680,14 @@ public class DOMDocument
     return validate(env, source);
   }
 
-  public boolean schemaValidateSource(Env env, string schemaSource)
+  public bool schemaValidateSource(Env env, string schemaSource)
   {
     Source source = new StreamSource(new StringReader(schemaSource));
 
     return validate(env, source);
   }
 
-  private boolean validate(Env env, Source source)
+  private bool validate(Env env, Source source)
   {
     string language = XMLConstants.W3C_XML_SCHEMA_NS_URI;
     SchemaFactory factory = SchemaFactory.newInstance(language);
@@ -770,7 +770,7 @@ public class DOMDocument
     _delegate.setXmlVersion(xmlVersion);
   }
 
-  public boolean validate()
+  public bool validate()
   {
     throw new UnimplementedException();
   }

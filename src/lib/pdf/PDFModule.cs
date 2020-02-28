@@ -63,7 +63,7 @@ public class PDFModule : AbstractQuercusModule {
   /**
    * Activates a created element.
    */
-  public static boolean pdf_activate_item(Env env,
+  public static bool pdf_activate_item(Env env,
                                           @NotNull PDF pdf,
                                           int id)
   {
@@ -75,7 +75,7 @@ public class PDFModule : AbstractQuercusModule {
   /**
    * Adds an annotation
    */
-  public static boolean pdf_add_annotation(Env env,
+  public static bool pdf_add_annotation(Env env,
                                           @NotNull PDF pdf)
   {
     env.stub("pdf_add_annotation");
@@ -86,7 +86,7 @@ public class PDFModule : AbstractQuercusModule {
   /**
    * Adds an bookmarkannotation
    */
-  public static boolean pdf_add_bookmark(Env env,
+  public static bool pdf_add_bookmark(Env env,
                                          @NotNull PDF pdf)
   {
     env.stub("pdf_add_bookmark");
@@ -97,7 +97,7 @@ public class PDFModule : AbstractQuercusModule {
   /**
    * Adds an launchlink
    */
-  public static boolean pdf_add_launchlink(Env env,
+  public static bool pdf_add_launchlink(Env env,
                                            @NotNull PDF pdf,
                                            double llx,
                                            double lly,
@@ -113,7 +113,7 @@ public class PDFModule : AbstractQuercusModule {
   /**
    * Adds a locallink
    */
-  public static boolean pdf_add_locallink(Env env,
+  public static bool pdf_add_locallink(Env env,
                                           @NotNull PDF pdf,
                                           double llx,
                                           double lly,
@@ -130,7 +130,7 @@ public class PDFModule : AbstractQuercusModule {
   /**
    * Creates a named destination
    */
-  public static boolean pdf_add_nameddest(Env env,
+  public static bool pdf_add_nameddest(Env env,
                                           @NotNull PDF pdf,
                                           string name,
                                           @Optional string optlist)
@@ -143,7 +143,7 @@ public class PDFModule : AbstractQuercusModule {
   /**
    * Creates an annotation
    */
-  public static boolean pdf_add_note(Env env,
+  public static bool pdf_add_note(Env env,
                                      @NotNull PDF pdf,
                                      double llx,
                                      double lly,
@@ -162,7 +162,7 @@ public class PDFModule : AbstractQuercusModule {
   /**
    * Creates an outline
    */
-  public static boolean pdf_add_outline(Env env,
+  public static bool pdf_add_outline(Env env,
                                         @NotNull PDF pdf,
                                         string name,
                                         @Optional string optlist)
@@ -175,7 +175,7 @@ public class PDFModule : AbstractQuercusModule {
   /**
    * Creates a file link annotation
    */
-  public static boolean pdf_add_pdflink(Env env,
+  public static bool pdf_add_pdflink(Env env,
                                         @NotNull PDF pdf,
                                         double llx,
                                         double lly,
@@ -193,7 +193,7 @@ public class PDFModule : AbstractQuercusModule {
   /**
    * Adds a thumbnail
    */
-  public static boolean pdf_add_thumbnail(Env env,
+  public static bool pdf_add_thumbnail(Env env,
                                           @NotNull PDF pdf,
                                           @NotNull PDFImage image)
   {
@@ -205,7 +205,7 @@ public class PDFModule : AbstractQuercusModule {
   /**
    * Adds a web link
    */
-  public static boolean pdf_add_weblink(Env env,
+  public static bool pdf_add_weblink(Env env,
                                         @NotNull PDF pdf,
                                         double llx,
                                         double lly,
@@ -221,7 +221,7 @@ public class PDFModule : AbstractQuercusModule {
   /**
    * Creates a counterclockwise arc
    */
-  public static boolean pdf_arc(@NotNull PDF pdf,
+  public static bool pdf_arc(@NotNull PDF pdf,
                                 double x1, double y1,
                                 double r, double a, double b)
   {
@@ -234,7 +234,7 @@ public class PDFModule : AbstractQuercusModule {
   /**
    * Creates a clockwise arc
    */
-  public static boolean pdf_arcn(@NotNull PDF pdf,
+  public static bool pdf_arcn(@NotNull PDF pdf,
                                 double x1, double y1,
                                 double r, double a, double b)
   {
@@ -247,7 +247,7 @@ public class PDFModule : AbstractQuercusModule {
   /**
    * Adds a file attachment
    */
-  public static boolean pdf_attach_file(Env env,
+  public static bool pdf_attach_file(Env env,
                                         @NotNull PDF pdf,
                                         double llx,
                                         double lly,
@@ -267,7 +267,7 @@ public class PDFModule : AbstractQuercusModule {
   /**
    * Starts the document.
    */
-  public static boolean pdf_begin_document(@NotNull PDF pdf,
+  public static bool pdf_begin_document(@NotNull PDF pdf,
                                            @Optional string fileName,
                                            @Optional string optList)
   {
@@ -284,7 +284,7 @@ public class PDFModule : AbstractQuercusModule {
   /**
    * Starts a font definition
    */
-  public static boolean pdf_begin_font(Env env,
+  public static bool pdf_begin_font(Env env,
                                        @NotNull PDF pdf,
                                        string fileName,
                                        double a,
@@ -303,7 +303,7 @@ public class PDFModule : AbstractQuercusModule {
   /**
    * Starts a glyph definition
    */
-  public static boolean pdf_begin_glyph(Env env,
+  public static bool pdf_begin_glyph(Env env,
                                         @NotNull PDF pdf,
                                         string glyphname,
                                         double wx,
@@ -320,7 +320,7 @@ public class PDFModule : AbstractQuercusModule {
   /**
    * Starts a structure element
    */
-  public static boolean pdf_begin_item(Env env,
+  public static bool pdf_begin_item(Env env,
                                        @NotNull PDF pdf,
                                        string tag,
                                        string optlist)
@@ -333,7 +333,7 @@ public class PDFModule : AbstractQuercusModule {
   /**
    * Starts a pdf layer
    */
-  public static boolean pdf_begin_layer(Env env,
+  public static bool pdf_begin_layer(Env env,
                                         @NotNull PDF pdf,
                                         int layer)
   {
@@ -345,7 +345,7 @@ public class PDFModule : AbstractQuercusModule {
   /**
    * Starts the page.
    */
-  public static boolean pdf_begin_page_ext(@NotNull PDF pdf,
+  public static bool pdf_begin_page_ext(@NotNull PDF pdf,
                                            double w, double h,
                                            @Optional string optlist)
   {
@@ -362,7 +362,7 @@ public class PDFModule : AbstractQuercusModule {
   /**
    * Starts the page.
    */
-  public static boolean pdf_begin_page(@NotNull PDF pdf,
+  public static bool pdf_begin_page(@NotNull PDF pdf,
                                        double w, double h)
   {
     try {
@@ -378,7 +378,7 @@ public class PDFModule : AbstractQuercusModule {
   /**
    * Starts a pattern
    */
-  public static boolean pdf_begin_pattern(Env env,
+  public static bool pdf_begin_pattern(Env env,
                                           @NotNull PDF pdf,
                                           double w,
                                           double h,
@@ -394,7 +394,7 @@ public class PDFModule : AbstractQuercusModule {
   /**
    * Starts a template
    */
-  public static boolean pdf_begin_template(Env env,
+  public static bool pdf_begin_template(Env env,
                                           @NotNull PDF pdf,
                                           double w,
                                           double h)
@@ -407,7 +407,7 @@ public class PDFModule : AbstractQuercusModule {
   /**
    * Draws a circle
    */
-  public static boolean pdf_circle(@NotNull PDF pdf,
+  public static bool pdf_circle(@NotNull PDF pdf,
                                    double x,
                                    double y,
                                    double r)
@@ -421,7 +421,7 @@ public class PDFModule : AbstractQuercusModule {
   /**
    * Clips the path.
    */
-  public static boolean pdf_clip(@NotNull PDF pdf)
+  public static bool pdf_clip(@NotNull PDF pdf)
   {
     if (pdf == null)
       return false;
@@ -432,7 +432,7 @@ public class PDFModule : AbstractQuercusModule {
   /**
    * Closes an image
    */
-  public static boolean pdf_close_image(Env env,
+  public static bool pdf_close_image(Env env,
                                         @NotNull PDF pdf,
                                         PDFImage image)
   {
@@ -444,7 +444,7 @@ public class PDFModule : AbstractQuercusModule {
   /**
    * Closes a page
    */
-  public static boolean pdf_close_pdi_page(Env env,
+  public static bool pdf_close_pdi_page(Env env,
                                        @NotNull PDF pdf,
                                        int page)
   {
@@ -456,7 +456,7 @@ public class PDFModule : AbstractQuercusModule {
   /**
    * Closes a document
    */
-  public static boolean pdf_close_pdi(Env env,
+  public static bool pdf_close_pdi(Env env,
                                       @NotNull PDF pdf,
                                       int doc)
   {
@@ -468,7 +468,7 @@ public class PDFModule : AbstractQuercusModule {
   /**
    * Closes the pdf document.
    */
-  public static boolean pdf_close(@NotNull PDF pdf)
+  public static bool pdf_close(@NotNull PDF pdf)
   {
     try {
       if (pdf == null)
@@ -483,7 +483,7 @@ public class PDFModule : AbstractQuercusModule {
   /**
    * Closes the path, fill, and stroke it.
    */
-  public static boolean pdf_closepath_fill_stroke(@NotNull PDF pdf)
+  public static bool pdf_closepath_fill_stroke(@NotNull PDF pdf)
   {
     if (pdf == null)
       return false;
@@ -494,7 +494,7 @@ public class PDFModule : AbstractQuercusModule {
   /**
    * Closes the path and stroke it.
    */
-  public static boolean pdf_closepath_stroke(@NotNull PDF pdf)
+  public static bool pdf_closepath_stroke(@NotNull PDF pdf)
   {
     if (pdf == null)
       return false;
@@ -505,7 +505,7 @@ public class PDFModule : AbstractQuercusModule {
   /**
    * Closes the path.
    */
-  public static boolean pdf_closepath(@NotNull PDF pdf)
+  public static bool pdf_closepath(@NotNull PDF pdf)
   {
     if (pdf == null)
       return false;
@@ -516,7 +516,7 @@ public class PDFModule : AbstractQuercusModule {
   /**
    * Concatenates a transformation matrix
    */
-  public static boolean pdf_concat(@NotNull PDF pdf,
+  public static bool pdf_concat(@NotNull PDF pdf,
                                    double a,
                                    double b,
                                    double c,
@@ -533,7 +533,7 @@ public class PDFModule : AbstractQuercusModule {
   /**
    * Continues text at the next line.
    */
-  public static boolean pdf_continue_text(@NotNull PDF pdf,
+  public static bool pdf_continue_text(@NotNull PDF pdf,
                                           string text)
   {
     if (pdf == null)
@@ -545,7 +545,7 @@ public class PDFModule : AbstractQuercusModule {
   /**
    * Creates an action.
    */
-  public static boolean pdf_create_action(Env env,
+  public static bool pdf_create_action(Env env,
                                           @NotNull PDF pdf,
                                           string type,
                                           @Optional string optList)
@@ -558,7 +558,7 @@ public class PDFModule : AbstractQuercusModule {
   /**
    * Creates a rectangular annotation
    */
-  public static boolean pdf_create_annotation(Env env,
+  public static bool pdf_create_annotation(Env env,
                                               @NotNull PDF pdf,
                                               double llx,
                                               double lly,
@@ -575,7 +575,7 @@ public class PDFModule : AbstractQuercusModule {
   /**
    * Creates a bookmark
    */
-  public static boolean pdf_create_bookmark(Env env,
+  public static bool pdf_create_bookmark(Env env,
                                             @NotNull PDF pdf,
                                             string text,
                                             @Optional string optList)
@@ -588,7 +588,7 @@ public class PDFModule : AbstractQuercusModule {
   /**
    * Creates a form field.
    */
-  public static boolean pdf_create_field(Env env,
+  public static bool pdf_create_field(Env env,
                                          @NotNull PDF pdf,
                                          double llx,
                                          double lly,
@@ -606,7 +606,7 @@ public class PDFModule : AbstractQuercusModule {
   /**
    * Creates a form field group.
    */
-  public static boolean pdf_create_fieldgroup(Env env,
+  public static bool pdf_create_fieldgroup(Env env,
                                               @NotNull PDF pdf,
                                               string name,
                                               @Optional string optList)
@@ -619,7 +619,7 @@ public class PDFModule : AbstractQuercusModule {
   /**
    * Creates a graphics state
    */
-  public static boolean pdf_create_gstate(Env env,
+  public static bool pdf_create_gstate(Env env,
                                           @NotNull PDF pdf,
                                           @Optional string optList)
   {
@@ -631,7 +631,7 @@ public class PDFModule : AbstractQuercusModule {
   /**
    * Creates a virtual file
    */
-  public static boolean pdf_create_pvf(Env env,
+  public static bool pdf_create_pvf(Env env,
                                        @NotNull PDF pdf,
                                        string filename,
                                        string data,
@@ -645,7 +645,7 @@ public class PDFModule : AbstractQuercusModule {
   /**
    * Creates a textflow object
    */
-  public static boolean pdf_create_textflow(Env env,
+  public static bool pdf_create_textflow(Env env,
                                             @NotNull PDF pdf,
                                             string text,
                                             @Optional string optList)
@@ -658,7 +658,7 @@ public class PDFModule : AbstractQuercusModule {
   /**
    * Draws a bezier curve
    */
-  public static boolean pdf_curveto(@NotNull PDF pdf,
+  public static bool pdf_curveto(@NotNull PDF pdf,
                                     double x1,
                                     double y1,
                                     double x2,
@@ -675,7 +675,7 @@ public class PDFModule : AbstractQuercusModule {
   /**
    * Creates a layer
    */
-  public static boolean pdf_define_layer(Env env,
+  public static bool pdf_define_layer(Env env,
                                          @NotNull PDF pdf,
                                          string name,
                                          @Optional string optList)
@@ -688,7 +688,7 @@ public class PDFModule : AbstractQuercusModule {
   /**
    * Delete a virtual file
    */
-  public static boolean pdf_delete_pvf(Env env,
+  public static bool pdf_delete_pvf(Env env,
                                        @NotNull PDF pdf,
                                        string name)
   {
@@ -700,7 +700,7 @@ public class PDFModule : AbstractQuercusModule {
   /**
    * Delete a textflow object
    */
-  public static boolean pdf_delete_textflow(Env env,
+  public static bool pdf_delete_textflow(Env env,
                                             @NotNull PDF pdf,
                                             int textflow)
   {
@@ -712,7 +712,7 @@ public class PDFModule : AbstractQuercusModule {
   /**
    * Delete the pdf object.
    */
-  public static boolean pdf_delete(@NotNull PDF pdf)
+  public static bool pdf_delete(@NotNull PDF pdf)
   {
     try {
       if (pdf == null)
@@ -727,7 +727,7 @@ public class PDFModule : AbstractQuercusModule {
   /**
    * Adds a glyph to a custom encoding.
    */
-  public static boolean pdf_encoding_set_char(Env env,
+  public static bool pdf_encoding_set_char(Env env,
                                               @NotNull PDF pdf,
                                               string encoding,
                                               int slow,
@@ -742,7 +742,7 @@ public class PDFModule : AbstractQuercusModule {
   /**
    * Completes the document.
    */
-  public static boolean pdf_end_document(@NotNull PDF pdf,
+  public static bool pdf_end_document(@NotNull PDF pdf,
                                          @Optional string optlist)
   {
     try {
@@ -758,7 +758,7 @@ public class PDFModule : AbstractQuercusModule {
   /**
    * Completes a font definition
    */
-  public static boolean pdf_end_font(Env env,
+  public static bool pdf_end_font(Env env,
                                      @NotNull PDF pdf)
   {
     env.stub("pdf_end_font");
@@ -769,7 +769,7 @@ public class PDFModule : AbstractQuercusModule {
   /**
    * Completes a glyph definition
    */
-  public static boolean pdf_end_glyph(Env env,
+  public static bool pdf_end_glyph(Env env,
                                      @NotNull PDF pdf)
   {
     env.stub("pdf_end_glyph");
@@ -780,7 +780,7 @@ public class PDFModule : AbstractQuercusModule {
   /**
    * Completes a structure element.
    */
-  public static boolean pdf_end_item(Env env,
+  public static bool pdf_end_item(Env env,
                                      @NotNull PDF pdf,
                                      int id)
   {
@@ -792,7 +792,7 @@ public class PDFModule : AbstractQuercusModule {
   /**
    * Completes a layer
    */
-  public static boolean pdf_end_layer(Env env,
+  public static bool pdf_end_layer(Env env,
                                       @NotNull PDF pdf)
   {
     env.stub("pdf_end_layer");
@@ -803,7 +803,7 @@ public class PDFModule : AbstractQuercusModule {
   /**
    * Completes a page
    */
-  public static boolean pdf_end_page_ext(@NotNull PDF pdf,
+  public static bool pdf_end_page_ext(@NotNull PDF pdf,
                                          @Optional string optlist)
   {
     if (pdf == null)
@@ -815,7 +815,7 @@ public class PDFModule : AbstractQuercusModule {
   /**
    * Completes a page
    */
-  public static boolean pdf_end_page(@NotNull PDF pdf)
+  public static bool pdf_end_page(@NotNull PDF pdf)
   {
     if (pdf == null)
       return false;
@@ -826,7 +826,7 @@ public class PDFModule : AbstractQuercusModule {
   /**
    * Completes a pattern
    */
-  public static boolean pdf_end_pattern(Env env,
+  public static bool pdf_end_pattern(Env env,
                                         @NotNull PDF pdf)
   {
     env.stub("pdf_end_pattern");
@@ -837,7 +837,7 @@ public class PDFModule : AbstractQuercusModule {
   /**
    * Completes a template
    */
-  public static boolean pdf_end_template(Env env,
+  public static bool pdf_end_template(Env env,
                                          @NotNull PDF pdf)
   {
     env.stub("pdf_end_template");
@@ -848,7 +848,7 @@ public class PDFModule : AbstractQuercusModule {
   /**
    * End the current path.
    */
-  public static boolean pdf_end_path(@NotNull PDF pdf)
+  public static bool pdf_end_path(@NotNull PDF pdf)
   {
     if (pdf == null)
       return false;
@@ -859,7 +859,7 @@ public class PDFModule : AbstractQuercusModule {
   /**
    * Fill the image with data.
    */
-  public static boolean pdf_fill_imageblock(Env env,
+  public static bool pdf_fill_imageblock(Env env,
                                             @NotNull PDF pdf,
                                             int page,
                                             string blockname,
@@ -874,7 +874,7 @@ public class PDFModule : AbstractQuercusModule {
   /**
    * Fill the pdfblock with data.
    */
-  public static boolean pdf_fill_pdfblock(Env env,
+  public static bool pdf_fill_pdfblock(Env env,
                                           @NotNull PDF pdf,
                                           int page,
                                           string blockname,
@@ -889,7 +889,7 @@ public class PDFModule : AbstractQuercusModule {
   /**
    * Fill and stroke the path.
    */
-  public static boolean pdf_fill_stroke(@NotNull PDF pdf)
+  public static bool pdf_fill_stroke(@NotNull PDF pdf)
   {
     if (pdf == null)
       return false;
@@ -900,7 +900,7 @@ public class PDFModule : AbstractQuercusModule {
   /**
    * Fill the text with data.
    */
-  public static boolean pdf_fill_textblock(Env env,
+  public static bool pdf_fill_textblock(Env env,
                                            @NotNull PDF pdf,
                                            int page,
                                            string block,
@@ -915,7 +915,7 @@ public class PDFModule : AbstractQuercusModule {
   /**
    * Fill the path.
    */
-  public static boolean pdf_fill(@NotNull PDF pdf)
+  public static bool pdf_fill(@NotNull PDF pdf)
   {
     if (pdf == null)
       return false;
@@ -926,7 +926,7 @@ public class PDFModule : AbstractQuercusModule {
   /**
    * Loads a font.
    */
-  public static boolean pdf_findfont(Env env,
+  public static bool pdf_findfont(Env env,
                                      @NotNull PDF pdf,
                                      string fontname,
                                      string encoding,
@@ -940,7 +940,7 @@ public class PDFModule : AbstractQuercusModule {
   /**
    * Place an image
    */
-  public static boolean pdf_fit_image(@NotNull PDF pdf,
+  public static bool pdf_fit_image(@NotNull PDF pdf,
                                       @NotNull PDFImage image,
                                       double x,
                                       double y,
@@ -955,7 +955,7 @@ public class PDFModule : AbstractQuercusModule {
   /**
    * Place an embedded pdf
    */
-  public static boolean pdf_fit_pdi_page(Env env,
+  public static bool pdf_fit_pdi_page(Env env,
                                          @NotNull PDF pdf,
                                          int page,
                                          double x,
@@ -970,7 +970,7 @@ public class PDFModule : AbstractQuercusModule {
   /**
    * Place a textflow object
    */
-  public static boolean pdf_fit_textflow(Env env,
+  public static bool pdf_fit_textflow(Env env,
                                          @NotNull PDF pdf,
                                          int textflow,
                                          double llx,
@@ -987,7 +987,7 @@ public class PDFModule : AbstractQuercusModule {
   /**
    * Place a line of text.
    */
-  public static boolean pdf_fit_textline(Env env,
+  public static bool pdf_fit_textline(Env env,
                                          @NotNull PDF pdf,
                                          string text,
                                          double x,
@@ -1151,7 +1151,7 @@ public class PDFModule : AbstractQuercusModule {
   /**
    * Resets the graphic state
    */
-  public static boolean pdf_initgraphics(Env env,
+  public static bool pdf_initgraphics(Env env,
                                          @NotNull PDF pdf)
   {
     if (pdf != null)
@@ -1163,7 +1163,7 @@ public class PDFModule : AbstractQuercusModule {
   /**
    * Draw a line from the current position.
    */
-  public static boolean pdf_lineto(@NotNull PDF pdf,
+  public static bool pdf_lineto(@NotNull PDF pdf,
                                    double x,
                                    double y)
   {
@@ -1194,7 +1194,7 @@ public class PDFModule : AbstractQuercusModule {
   /**
    * Search for an icc profile
    */
-  public static boolean pdf_load_iccprofile(Env env,
+  public static bool pdf_load_iccprofile(Env env,
                                             @NotNull PDF pdf,
                                             string profileName,
                                             @Optional string optlist)
@@ -1225,7 +1225,7 @@ public class PDFModule : AbstractQuercusModule {
   /**
    * Finds a spot color
    */
-  public static boolean pdf_makespotcolor(Env env,
+  public static bool pdf_makespotcolor(Env env,
                                           @NotNull PDF pdf,
                                           string spotname)
   {
@@ -1237,7 +1237,7 @@ public class PDFModule : AbstractQuercusModule {
   /**
    * Sets the current graphics point.
    */
-  public static boolean pdf_moveto(@NotNull PDF pdf,
+  public static bool pdf_moveto(@NotNull PDF pdf,
                                    double x,
                                    double y)
   {
@@ -1258,7 +1258,7 @@ public class PDFModule : AbstractQuercusModule {
   /**
    * Opens a file.
    */
-  public static boolean pdf_open_file(@NotNull PDF pdf,
+  public static bool pdf_open_file(@NotNull PDF pdf,
                                       string filename)
   {
     return pdf_begin_document(pdf, filename, "");
@@ -1279,7 +1279,7 @@ public class PDFModule : AbstractQuercusModule {
   /**
    * Opens an image.
    */
-  public static boolean pdf_open_image_data(Env env,
+  public static bool pdf_open_image_data(Env env,
                                              @NotNull PDF pdf,
                                              string imagetype,
                                              string source,
@@ -1299,7 +1299,7 @@ public class PDFModule : AbstractQuercusModule {
   /**
    * Opens an embedded page.
    */
-  public static boolean pdf_open_pdi_page(Env env,
+  public static bool pdf_open_pdi_page(Env env,
                                           @NotNull PDF pdf,
                                           int doc,
                                           int pagenumber,
@@ -1313,7 +1313,7 @@ public class PDFModule : AbstractQuercusModule {
   /**
    * Opens an embedded document
    */
-  public static boolean pdf_open_pdi(Env env,
+  public static bool pdf_open_pdi(Env env,
                                      @NotNull PDF pdf,
                                      string filename,
                                      @Optional string optlist)
@@ -1326,7 +1326,7 @@ public class PDFModule : AbstractQuercusModule {
   /**
    * Place an image.
    */
-  public static boolean pdf_place_image(@NotNull PDF pdf,
+  public static bool pdf_place_image(@NotNull PDF pdf,
                                         PDFImage image,
                                         double x,
                                         double y,
@@ -1338,7 +1338,7 @@ public class PDFModule : AbstractQuercusModule {
   /**
    * Place an embedded page.
    */
-  public static boolean pdf_place_pdi_page(Env env,
+  public static bool pdf_place_pdi_page(Env env,
                                            @NotNull PDF pdf,
                                            int page,
                                            double x,
@@ -1352,7 +1352,7 @@ public class PDFModule : AbstractQuercusModule {
   /**
    * Process an imported PDF document.
    */
-  public static boolean pdf_process_pdi(Env env,
+  public static bool pdf_process_pdi(Env env,
                                         @NotNull PDF pdf,
                                         int doc,
                                         int page,
@@ -1366,7 +1366,7 @@ public class PDFModule : AbstractQuercusModule {
   /**
    * Creates a rectangle
    */
-  public static boolean pdf_rect(@NotNull PDF pdf,
+  public static bool pdf_rect(@NotNull PDF pdf,
                                  double x, double y,
                                  double width, double height)
   {
@@ -1379,7 +1379,7 @@ public class PDFModule : AbstractQuercusModule {
   /**
    * Restores the graphics state.
    */
-  public static boolean pdf_restore(@NotNull PDF pdf)
+  public static bool pdf_restore(@NotNull PDF pdf)
   {
     if (pdf == null)
       return false;
@@ -1390,7 +1390,7 @@ public class PDFModule : AbstractQuercusModule {
   /**
    * Rotate the coordinates.
    */
-  public static boolean pdf_rotate(@NotNull PDF pdf,
+  public static bool pdf_rotate(@NotNull PDF pdf,
                                    double phi)
   {
     if (pdf == null)
@@ -1402,7 +1402,7 @@ public class PDFModule : AbstractQuercusModule {
   /**
    * Save the graphics state.
    */
-  public static boolean pdf_save(@NotNull PDF pdf)
+  public static bool pdf_save(@NotNull PDF pdf)
   {
     if (pdf == null)
       return false;
@@ -1413,7 +1413,7 @@ public class PDFModule : AbstractQuercusModule {
   /**
    * Scale the coordinates.
    */
-  public static boolean pdf_scale(@NotNull PDF pdf,
+  public static bool pdf_scale(@NotNull PDF pdf,
                                   double scaleX,
                                   double scaleY)
   {
@@ -1426,7 +1426,7 @@ public class PDFModule : AbstractQuercusModule {
   /**
    * Sets an annotation border color.
    */
-  public static boolean pdf_set_border_color(Env env,
+  public static bool pdf_set_border_color(Env env,
                                              @NotNull PDF pdf,
                                              double red,
                                              double green,
@@ -1440,7 +1440,7 @@ public class PDFModule : AbstractQuercusModule {
   /**
    * Sets an annotation border dash
    */
-  public static boolean pdf_set_border_dash(Env env,
+  public static bool pdf_set_border_dash(Env env,
                                             @NotNull PDF pdf,
                                             double black,
                                             double white)
@@ -1453,7 +1453,7 @@ public class PDFModule : AbstractQuercusModule {
   /**
    * Sets an annotation border style
    */
-  public static boolean pdf_set_border_style(Env env,
+  public static bool pdf_set_border_style(Env env,
                                             @NotNull PDF pdf,
                                             string style,
                                             double width)
@@ -1466,7 +1466,7 @@ public class PDFModule : AbstractQuercusModule {
   /**
    * Activate a graphics state.
    */
-  public static boolean pdf_set_gstate(Env env,
+  public static bool pdf_set_gstate(Env env,
                                        @NotNull PDF pdf,
                                        int gstate)
   {
@@ -1478,7 +1478,7 @@ public class PDFModule : AbstractQuercusModule {
   /**
    * Sets document info.
    */
-  public static boolean pdf_set_info(@NotNull PDF pdf,
+  public static bool pdf_set_info(@NotNull PDF pdf,
                                      string key,
                                      string value)
   {
@@ -1491,7 +1491,7 @@ public class PDFModule : AbstractQuercusModule {
   /**
    * Define a relationship between layers.
    */
-  public static boolean pdf_set_layer_dependency(Env env,
+  public static bool pdf_set_layer_dependency(Env env,
                                                  @NotNull PDF pdf,
                                                  string type,
                                                  @Optional string optlist)
@@ -1504,7 +1504,7 @@ public class PDFModule : AbstractQuercusModule {
   /**
    * Sets a string parameter.
    */
-  public static boolean pdf_set_parameter(@NotNull PDF pdf,
+  public static bool pdf_set_parameter(@NotNull PDF pdf,
                                           string key,
                                           string value)
   {
@@ -1517,7 +1517,7 @@ public class PDFModule : AbstractQuercusModule {
   /**
    * Sets the text position
    */
-  public static boolean pdf_set_text_pos(@NotNull PDF pdf,
+  public static bool pdf_set_text_pos(@NotNull PDF pdf,
                                          double x,
                                          double y)
   {
@@ -1530,7 +1530,7 @@ public class PDFModule : AbstractQuercusModule {
   /**
    * Sets a double parameter.
    */
-  public static boolean pdf_set_value(@NotNull PDF pdf,
+  public static bool pdf_set_value(@NotNull PDF pdf,
                                       string key,
                                       double value)
   {
@@ -1543,7 +1543,7 @@ public class PDFModule : AbstractQuercusModule {
   /**
    * Sets the colorspace and color
    */
-  public static boolean pdf_setcolor(@NotNull PDF pdf,
+  public static bool pdf_setcolor(@NotNull PDF pdf,
                                      string type,
                                      string colorspace,
                                      double c1,
@@ -1560,7 +1560,7 @@ public class PDFModule : AbstractQuercusModule {
   /**
    * Sets the dashing
    */
-  public static boolean pdf_setdash(@NotNull PDF pdf,
+  public static bool pdf_setdash(@NotNull PDF pdf,
                                     double black,
                                     double white)
   {
@@ -1573,7 +1573,7 @@ public class PDFModule : AbstractQuercusModule {
   /**
    * Sets the dash pattern
    */
-  public static boolean pdf_setdashpattern(Env env,
+  public static bool pdf_setdashpattern(Env env,
                                            @NotNull PDF pdf,
                                            string optlist)
   {
@@ -1586,7 +1586,7 @@ public class PDFModule : AbstractQuercusModule {
   /**
    * Sets the flatness
    */
-  public static boolean pdf_setflat(Env env,
+  public static bool pdf_setflat(Env env,
                                     @NotNull PDF pdf,
                                     double flatness)
   {
@@ -1599,7 +1599,7 @@ public class PDFModule : AbstractQuercusModule {
   /**
    * Sets the font size
    */
-  public static boolean pdf_setfont(@NotNull PDF pdf,
+  public static bool pdf_setfont(@NotNull PDF pdf,
                                     @NotNull PDFFont font,
                                     double size)
   {
@@ -1616,7 +1616,7 @@ public class PDFModule : AbstractQuercusModule {
   /**
    * Sets the fill color to gray
    */
-  public static boolean pdf_setgray_fill(@NotNull PDF pdf,
+  public static bool pdf_setgray_fill(@NotNull PDF pdf,
                                          double g)
   {
     if (pdf == null)
@@ -1628,7 +1628,7 @@ public class PDFModule : AbstractQuercusModule {
   /**
    * Sets the stroke color to gray
    */
-  public static boolean pdf_setgray_stroke(@NotNull PDF pdf,
+  public static bool pdf_setgray_stroke(@NotNull PDF pdf,
                                            double g)
   {
     if (pdf == null)
@@ -1640,7 +1640,7 @@ public class PDFModule : AbstractQuercusModule {
   /**
    * Sets the color to gray
    */
-  public static boolean pdf_setgray(@NotNull PDF pdf,
+  public static bool pdf_setgray(@NotNull PDF pdf,
                                     double g)
   {
     if (pdf == null)
@@ -1652,7 +1652,7 @@ public class PDFModule : AbstractQuercusModule {
   /**
    * Sets the linecap param
    */
-  public static boolean pdf_setlinecap(Env env,
+  public static bool pdf_setlinecap(Env env,
                                        @NotNull PDF pdf,
                                        int value)
   {
@@ -1665,7 +1665,7 @@ public class PDFModule : AbstractQuercusModule {
   /**
    * Sets the linejoin param
    */
-  public static boolean pdf_setlinejoin(Env env,
+  public static bool pdf_setlinejoin(Env env,
                                         @NotNull PDF pdf,
                                         int value)
   {
@@ -1678,7 +1678,7 @@ public class PDFModule : AbstractQuercusModule {
   /**
    * Sets the line width
    */
-  public static boolean pdf_setlinewidth(@NotNull PDF pdf,
+  public static bool pdf_setlinewidth(@NotNull PDF pdf,
                                          double width)
   {
     if (pdf == null)
@@ -1690,7 +1690,7 @@ public class PDFModule : AbstractQuercusModule {
   /**
    * Sets the current transformation matrix
    */
-  public static boolean pdf_setmatrix(Env env,
+  public static bool pdf_setmatrix(Env env,
                                       @NotNull PDF pdf,
                                       double a,
                                       double b,
@@ -1708,7 +1708,7 @@ public class PDFModule : AbstractQuercusModule {
   /**
    * Sets the line miter limit.
    */
-  public static boolean pdf_setmiterlimit(Env env,
+  public static bool pdf_setmiterlimit(Env env,
                                           @NotNull PDF pdf,
                                           double value)
   {
@@ -1721,7 +1721,7 @@ public class PDFModule : AbstractQuercusModule {
   /**
    * Sets the fill in rgb
    */
-  public static boolean pdf_setrgbcolor_fill(@NotNull PDF pdf,
+  public static bool pdf_setrgbcolor_fill(@NotNull PDF pdf,
                                              double red,
                                              double green,
                                              double blue)
@@ -1735,7 +1735,7 @@ public class PDFModule : AbstractQuercusModule {
   /**
    * Sets the stroke in rgb
    */
-  public static boolean pdf_setrgbcolor_stroke(@NotNull PDF pdf,
+  public static bool pdf_setrgbcolor_stroke(@NotNull PDF pdf,
                                                double red,
                                                double green,
                                                double blue)
@@ -1749,7 +1749,7 @@ public class PDFModule : AbstractQuercusModule {
   /**
    * Sets the color in rgb
    */
-  public static boolean pdf_setrgbcolor(@NotNull PDF pdf,
+  public static bool pdf_setrgbcolor(@NotNull PDF pdf,
                                         double red,
                                         double green,
                                         double blue)
@@ -1763,7 +1763,7 @@ public class PDFModule : AbstractQuercusModule {
   /**
    * Sets the shading pattern
    */
-  public static boolean pdf_shading_pattern(Env env,
+  public static bool pdf_shading_pattern(Env env,
                                             @NotNull PDF pdf,
                                             int shading,
                                             @Optional string optlist)
@@ -1799,7 +1799,7 @@ public class PDFModule : AbstractQuercusModule {
   /**
    * Fill with a shading object.
    */
-  public static boolean pdf_shfill(Env env,
+  public static bool pdf_shfill(Env env,
                                    @NotNull PDF pdf,
                                    int shading)
   {
@@ -1812,7 +1812,7 @@ public class PDFModule : AbstractQuercusModule {
   /**
    * Output text in a box.
    */
-  public static boolean pdf_show_boxed(Env env,
+  public static bool pdf_show_boxed(Env env,
                                        @NotNull PDF pdf,
                                        string text,
                                        double x,
@@ -1831,7 +1831,7 @@ public class PDFModule : AbstractQuercusModule {
   /**
    * Output text at a location
    */
-  public static boolean pdf_show_xy(Env env,
+  public static bool pdf_show_xy(Env env,
                                     @NotNull PDF pdf,
                                     string text,
                                     double x,
@@ -1846,7 +1846,7 @@ public class PDFModule : AbstractQuercusModule {
   /**
    * Output text at the current
    */
-  public static boolean pdf_show(Env env,
+  public static bool pdf_show(Env env,
                                  @NotNull PDF pdf,
                                  string text)
   {
@@ -1859,7 +1859,7 @@ public class PDFModule : AbstractQuercusModule {
   /**
    * Skew the coordinate system.
    */
-  public static boolean pdf_skew(@NotNull PDF pdf,
+  public static bool pdf_skew(@NotNull PDF pdf,
                                  double alpha,
                                  double beta)
   {
@@ -1886,7 +1886,7 @@ public class PDFModule : AbstractQuercusModule {
   /**
    * Strokes the path
    */
-  public static boolean pdf_stroke(@NotNull PDF pdf)
+  public static bool pdf_stroke(@NotNull PDF pdf)
   {
     if (pdf == null)
       return false;
@@ -1897,7 +1897,7 @@ public class PDFModule : AbstractQuercusModule {
   /**
    * Suspend the page.
    */
-  public static boolean pdf_suspend_page(Env env,
+  public static bool pdf_suspend_page(Env env,
                                          @NotNull PDF pdf,
                                          @Optional string optlist)
   {
@@ -1909,7 +1909,7 @@ public class PDFModule : AbstractQuercusModule {
   /**
    * Sets the coordinate system origin.
    */
-  public static boolean pdf_translate(@NotNull PDF pdf,
+  public static bool pdf_translate(@NotNull PDF pdf,
                                       double x,
                                       double y)
   {

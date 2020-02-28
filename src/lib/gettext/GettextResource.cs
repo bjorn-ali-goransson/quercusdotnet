@@ -135,7 +135,7 @@ class GettextResource
     return getTranslationImpl(key, 0);
   }
 
-  private boolean isModified()
+  private bool isModified()
   {
     if (_depend == null)
       return true;

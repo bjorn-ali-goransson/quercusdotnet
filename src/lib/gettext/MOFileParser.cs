@@ -56,7 +56,7 @@ class MOFileParser : GettextParser
   private ReadStream _in;
   private byte[] _tmpBuf = new byte[4];
 
-  private boolean _isLittleEndian;
+  private bool _isLittleEndian;
 
   private int _numberOfStrings;
   private int _offsetOriginal;

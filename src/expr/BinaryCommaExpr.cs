@@ -68,7 +68,7 @@ public class BinaryCommaExpr : AbstractBinaryExpr {
    *
    * @return the expression value.
    */
-  public boolean evalBoolean(Env env)
+  public bool evalBoolean(Env env)
   {
     _left.eval(env);
 

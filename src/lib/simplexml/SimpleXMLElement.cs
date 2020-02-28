@@ -87,9 +87,9 @@ public class SimpleXMLElement : SimpleXMLNode
                                 QuercusClass cls,
                                 StringValue data,
                                 int options,
-                                boolean dataIsUrl,
+                                bool dataIsUrl,
                                 Value namespaceV,
-                                boolean isPrefix)
+                                bool isPrefix)
   {
     if (data.length() == 0) {
       env.warning(L.l("xml data must have length greater than 0"));
@@ -137,9 +137,9 @@ public class SimpleXMLElement : SimpleXMLNode
   public static Value __construct(Env env,
                                   StringValue data,
                                   @Optional int options,
-                                  @Optional boolean dataIsUrl,
+                                  @Optional bool dataIsUrl,
                                   @Optional Value namespaceV,
-                                  @Optional boolean isPrefix)
+                                  @Optional bool isPrefix)
   {
     QuercusClass cls = env.getCallingClass();
 
@@ -158,9 +158,9 @@ public class SimpleXMLElement : SimpleXMLNode
   private static Document parse(Env env,
                                 Value data,
                                 int options,
-                                boolean dataIsUrl,
+                                bool dataIsUrl,
                                 string namespace,
-                                boolean isPrefix)
+                                bool isPrefix)
     
            ParserConfigurationException,
            SAXException
@@ -217,9 +217,9 @@ public class SimpleXMLElement : SimpleXMLNode
   private static Document parse2(Env env,
                                  StringValue data,
                                  int options,
-                                 boolean dataIsUrl,
+                                 bool dataIsUrl,
                                  string namespace,
-                                 boolean isPrefix)
+                                 bool isPrefix)
     
            ParserConfigurationException,
            SAXException
@@ -281,7 +281,7 @@ public class SimpleXMLElement : SimpleXMLNode
                                         QuercusClass cls,
                                         Document doc,
                                         string namespace,
-                                        boolean isPrefix)
+                                        bool isPrefix)
   {
     DocumentView view = new DocumentView(doc);
 
@@ -289,7 +289,7 @@ public class SimpleXMLElement : SimpleXMLNode
   }
   
   @Isset
-  public boolean issetField(Env env, StringValue name)
+  public bool issetField(Env env, StringValue name)
   {
     return _view.issetField(env, name.toString());
   }
@@ -360,7 +360,7 @@ public class SimpleXMLElement : SimpleXMLNode
       _iter = iter;
     }
 
-    public override boolean hasNext()
+    public override bool hasNext()
     {
       return _iter.hasNext();
     }
@@ -392,7 +392,7 @@ public class SimpleXMLElement : SimpleXMLNode
 
     }
 
-    public override boolean hasNext()
+    public override bool hasNext()
     {
       Node node = _node;
 

@@ -46,13 +46,13 @@ public class Utf8Decoder
     super(charset);
   }
 
-  public boolean isUtf8()
+  public bool isUtf8()
   {
     return true;
   }
 
   @Override
-  public boolean isDecodable(Env env, StringValue str)
+  public bool isDecodable(Env env, StringValue str)
   {
     if (str.isUnicode())
       return true;

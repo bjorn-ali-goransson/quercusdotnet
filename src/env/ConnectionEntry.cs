@@ -47,7 +47,7 @@ public class ConnectionEntry implements EnvCleanup
   private string _user;
   private string _password;
   private Connection _conn;
-  private boolean _isReuse;
+  private bool _isReuse;
 
   public ConnectionEntry(Env env)
   {
@@ -79,7 +79,7 @@ public class ConnectionEntry implements EnvCleanup
     _env.addCleanup(this);
   }
 
-  public boolean isReusable()
+  public bool isReusable()
   {
     return _isReuse && _conn != null;
   }
@@ -107,7 +107,7 @@ public class ConnectionEntry implements EnvCleanup
       return 65521 * hash + _user.hashCode();
   }
 
-  public boolean equals(Object o)
+  public bool equals(Object o)
   {
     if (! (o instanceof ConnectionEntry))
       return false;

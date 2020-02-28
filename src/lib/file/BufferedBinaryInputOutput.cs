@@ -204,7 +204,7 @@ abstract public class BufferedBinaryInputOutput
   /**
    * Sets the current location in the file.
    */
-  public boolean setPosition(long offset)
+  public bool setPosition(long offset)
   {
     if (_is == null)
       return false;

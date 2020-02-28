@@ -59,8 +59,8 @@ public class ExifModule : AbstractQuercusModule {
    */
   public static Value exif_read_data(Env env, Path file,
                                      @Optional string sections,
-                                     @Optional boolean arrays,
-                                     @Optional boolean thumbs)
+                                     @Optional bool arrays,
+                                     @Optional bool thumbs)
   {
     return BooleanValue.FALSE;
   }
@@ -70,8 +70,8 @@ public class ExifModule : AbstractQuercusModule {
    */
   public static Value read_exif_data(Env env, Path file,
                                      @Optional string sections,
-                                     @Optional boolean arrays,
-                                     @Optional boolean thumbs)
+                                     @Optional bool arrays,
+                                     @Optional bool thumbs)
   {
     return exif_read_data(env, file, sections, arrays, thumbs);
   }

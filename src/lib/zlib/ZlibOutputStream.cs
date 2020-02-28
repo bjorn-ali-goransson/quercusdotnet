@@ -60,7 +60,7 @@ public class ZlibOutputStream : AbstractBinaryOutput {
   };
 
   private int _encodingMode;
-  private boolean _isGzip;
+  private bool _isGzip;
   private long _inputSize;
 
   /**
@@ -224,7 +224,7 @@ public class ZlibOutputStream : AbstractBinaryOutput {
   /**
    * Returns false always for a write stream.
    */
-  public boolean isEOF()
+  public bool isEOF()
   {
     return false;
   }
@@ -240,7 +240,7 @@ public class ZlibOutputStream : AbstractBinaryOutput {
   /**
    * Sets the position.
    */
-  public boolean setPosition(long offset)
+  public bool setPosition(long offset)
   {
     if (offset < _inputSize)
       return false;

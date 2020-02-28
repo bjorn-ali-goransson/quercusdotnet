@@ -88,7 +88,7 @@ public class ZlibInputStream : ReadStreamInput
   /**
    * Sets the position.
    */
-  public boolean setPosition(long offset)
+  public bool setPosition(long offset)
   {
     try {
       long pos = _rs.getPosition();

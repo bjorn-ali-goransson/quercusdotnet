@@ -266,7 +266,7 @@ public class AfmParser {
     }
   }
 
-  private boolean skipWhitespace()
+  private bool skipWhitespace()
     
   {
     int ch;

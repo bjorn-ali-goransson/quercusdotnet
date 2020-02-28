@@ -89,7 +89,7 @@ public class OutputModule : AbstractQuercusModule
   @Hide
   public void startup(Env env)
   {
-    boolean isOutputBuffering = INI_OUTPUT_BUFFERING.getAsBoolean(env);
+    bool isOutputBuffering = INI_OUTPUT_BUFFERING.getAsBoolean(env);
     StringValue handlerName = INI_OUTPUT_HANDLER.getAsStringValue(env);
 
     if (handlerName.length() > 0 && env.getFunction(handlerName) != null) {
@@ -137,7 +137,7 @@ public class OutputModule : AbstractQuercusModule
   /**
    * Pops the output buffer, discarding the contents.
    */
-  public static boolean ob_end_clean(Env env)
+  public static bool ob_end_clean(Env env)
   {
     OutputBuffer ob = env.getOutputBuffer();
 
@@ -157,7 +157,7 @@ public class OutputModule : AbstractQuercusModule
   /**
    * Pops the output buffer.
    */
-  public static boolean ob_end_flush(Env env)
+  public static bool ob_end_flush(Env env)
   {
     return env.popOutputBuffer();
   }
@@ -297,7 +297,7 @@ public class OutputModule : AbstractQuercusModule
    * by getFullStatus() and ob_get_status().
    */
   private static void putCommonStatus(ArrayValue element, OutputBuffer ob,
-                                      Env env, boolean fullStatus)
+                                      Env env, bool fullStatus)
   {
     LongValue type = LongValue.ONE;
     Callable callback = ob.getCallback();
@@ -383,7 +383,7 @@ public class OutputModule : AbstractQuercusModule
   /**
    * Gets the status of the current output buffer(s)
    */
-  public static Value ob_get_status(Env env, @Optional boolean full_status)
+  public static Value ob_get_status(Env env, @Optional bool full_status)
   {
     if (full_status) {
       OutputBuffer ob = env.getOutputBuffer();
@@ -411,7 +411,7 @@ public class OutputModule : AbstractQuercusModule
   /**
    * Makes the original "output buffer" flush on every write.
    */
-  public static Value ob_implicit_flush(Env env, @Optional("true") boolean flag)
+  public static Value ob_implicit_flush(Env env, @Optional("true") bool flag)
   {
     if (env.getOriginalOut() != null)
       env.getOriginalOut().setImplicitFlush(flag);
@@ -422,10 +422,10 @@ public class OutputModule : AbstractQuercusModule
   /**
    * Pushes the output buffer
    */
-  public static boolean ob_start(Env env,
+  public static bool ob_start(Env env,
                                  @Optional Callable callback,
                                  @Optional int chunkSize,
-                                 @Optional("true") boolean erase)
+                                 @Optional("true") bool erase)
   {
     if (callback != null && ! callback.isValid(env)) {
       return false;
@@ -475,7 +475,7 @@ public class OutputModule : AbstractQuercusModule
   /**
    * Adds a variable to the list for rewritten URLs.
    */
-  public static boolean output_add_rewrite_var(Env env,
+  public static bool output_add_rewrite_var(Env env,
                                                string name, string value)
   {
     UrlRewriterCallback rewriter = pushUrlRewriter(env);
@@ -488,7 +488,7 @@ public class OutputModule : AbstractQuercusModule
   /**
    * Clears the list of variables for rewritten URLs.
    */
-  public static boolean output_reset_rewrite_vars(Env env)
+  public static bool output_reset_rewrite_vars(Env env)
   {
     UrlRewriterCallback rewriter = UrlRewriterCallback.getInstance(env);
 

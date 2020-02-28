@@ -193,7 +193,7 @@ public class TokenModule : AbstractQuercusModule {
 
   public static Value highlight_file(Env env,
                                      StringValue filename,
-                                     @Optional boolean isReturn)
+                                     @Optional bool isReturn)
   {
     StringValue v = FileModule.file_get_contents(env,
                                                  filename,
@@ -210,7 +210,7 @@ public class TokenModule : AbstractQuercusModule {
 
   public static Value highlight_string(Env env,
                                        StringValue s,
-                                       @Optional boolean isReturn)
+                                       @Optional bool isReturn)
   {
     try {
       StringValue sb = isReturn ? env.createUnicodeBuilder() : null;
@@ -523,7 +523,7 @@ public class TokenModule : AbstractQuercusModule {
     private final StringValue _s;
     private final int _length;
     private int _i;
-    private boolean _inPhp;
+    private bool _inPhp;
 
     private StringValue _lexeme;
 
@@ -935,7 +935,7 @@ public class TokenModule : AbstractQuercusModule {
       return _lexeme;
     }
     
-    private boolean parseHtml()
+    private bool parseHtml()
     {
       int ch;
 
@@ -971,7 +971,7 @@ public class TokenModule : AbstractQuercusModule {
 
     private int parseNumber()
     {
-      boolean isInt = false;
+      bool isInt = false;
       int ch;
       
       while ('0' <= (ch = read()) && ch <= '9'

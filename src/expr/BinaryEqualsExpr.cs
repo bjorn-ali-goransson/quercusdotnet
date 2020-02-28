@@ -48,7 +48,7 @@ public class BinaryEqualsExpr : AbstractBinaryExpr {
    : base(left, right) {
   }
 
-  public boolean isBoolean()
+  public bool isBoolean()
   {
     return true;
   }
@@ -64,7 +64,7 @@ public class BinaryEqualsExpr : AbstractBinaryExpr {
   /**
    * Evaluates the equality as a boolean.
    */
-  public boolean evalBoolean(Env env)
+  public bool evalBoolean(Env env)
   {
     Value lValue = _left.eval(env);
     Value rValue = _right.eval(env);

@@ -140,37 +140,37 @@ public class LazyMethod : AbstractFunction
     }
   }
 
-  public override boolean isStatic()
+  public override bool isStatic()
   {
     return getFun().isStatic();
   }
 
-  public override boolean isFinal()
+  public override bool isFinal()
   {
     return getFun().isFinal();
   }
 
-  public override boolean isPublic()
+  public override bool isPublic()
   {
     return getFun().isPublic();
   }
 
-  public override boolean isProtected()
+  public override bool isProtected()
   {
     return getFun().isProtected();
   }
 
-  public override boolean isPrivate()
+  public override bool isPrivate()
   {
     return getFun().isPrivate();
   }
 
-  public override boolean isAbstract()
+  public override bool isAbstract()
   {
     return getFun().isAbstract();
   }
 
-  public override boolean isTraitMethod()
+  public override bool isTraitMethod()
   {
     return getFun().isTraitMethod();
   }

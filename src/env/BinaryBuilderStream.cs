@@ -55,7 +55,7 @@ public class BinaryBuilderStream : StreamImpl
   /**
    * Returns true if this is a writable stream.
    */
-  public boolean canWrite()
+  public bool canWrite()
   {
     return true;
   }
@@ -68,7 +68,7 @@ public class BinaryBuilderStream : StreamImpl
    * @param length the number of bytes to write.
    * @param isEnd true when the write is flushing a close.
    */
-  public void write(byte []buffer, int offset, int length, boolean isEnd)
+  public void write(byte []buffer, int offset, int length, bool isEnd)
     
   {
     _out.append(buffer, offset, length);

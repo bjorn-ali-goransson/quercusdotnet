@@ -54,7 +54,7 @@ public class CopyArrayValue : ArrayValue {
   /**
    * Converts to a boolean.
    */
-  public boolean toBoolean()
+  public bool toBoolean()
   {
     if (_copyArray != null)
       return _copyArray.toBoolean();
@@ -150,7 +150,7 @@ public class CopyArrayValue : ArrayValue {
   /**
    * Slices.
    */
-  public ArrayValue slice(Env env, int start, int end, boolean isPreserveKeys)
+  public ArrayValue slice(Env env, int start, int end, bool isPreserveKeys)
   {
     return getCopyArray().slice(env, start, end, isPreserveKeys);
   }
@@ -166,7 +166,7 @@ public class CopyArrayValue : ArrayValue {
   /**
    * Returns the value as an argument which may be a reference.
    */
-  public override Value getArg(Value index, boolean isTop)
+  public override Value getArg(Value index, bool isTop)
   {
     return getCopyArray().getArg(index, isTop);
   }
@@ -339,7 +339,7 @@ public class CopyArrayValue : ArrayValue {
       return _constArray.cmp(rValue);
   }
   
-  public override boolean eq(Value rValue)
+  public override bool eq(Value rValue)
   {
     if (_copyArray != null)
       return _copyArray.eq(rValue);
@@ -347,7 +347,7 @@ public class CopyArrayValue : ArrayValue {
       return _constArray.eq(rValue);
   }
   
-  public override boolean eql(Value rValue)
+  public override bool eql(Value rValue)
   {
     if (_copyArray != null)
       return _copyArray.eql(rValue);
@@ -375,7 +375,7 @@ public class CopyArrayValue : ArrayValue {
     return this;
   }
   
-  public override boolean equals(Object o)
+  public override bool equals(Object o)
   {
     if (_copyArray != null)
       return _copyArray.equals(o);

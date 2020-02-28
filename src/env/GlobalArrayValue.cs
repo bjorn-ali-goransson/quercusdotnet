@@ -62,7 +62,7 @@ public class GlobalArrayValue : ArrayValueImpl {
   }
   
   @Override
-  public boolean toBoolean()
+  public bool toBoolean()
   {
     return true;
   }
@@ -98,7 +98,7 @@ public class GlobalArrayValue : ArrayValueImpl {
   /**
    * Returns the value as an argument which may be a reference.
    */
-  public override Value getArg(Value index, boolean isTop)
+  public override Value getArg(Value index, bool isTop)
   {
     return getVar(index);
   }
@@ -157,7 +157,7 @@ public class GlobalArrayValue : ArrayValueImpl {
   /**
    * Returns true if the index isset().
    */
-  public override boolean isset(Value key)
+  public override bool isset(Value key)
   {
     return get(key).isset();
   }
@@ -165,7 +165,7 @@ public class GlobalArrayValue : ArrayValueImpl {
   /**
    * Returns true if the key exists in the array.
    */
-  public boolean keyExists(Value key)
+  public bool keyExists(Value key)
   {
     EnvVar var = _env.getGlobalEnv().get(key.toStringValue());
     

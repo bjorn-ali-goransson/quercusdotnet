@@ -55,7 +55,7 @@ abstract public class AbstractVarExpr : Expr {
    * Returns true if the expression is a var/left-hand-side.
    */
   @Override
-  public boolean isVar()
+  public bool isVar()
   {
     return true;
   }
@@ -148,7 +148,7 @@ abstract public class AbstractVarExpr : Expr {
    *
    * @return the expression value.
    */
-  public override Value evalArg(Env env, boolean isTop)
+  public override Value evalArg(Env env, bool isTop)
   {
     return evalVar(env);
   }

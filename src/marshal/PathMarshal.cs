@@ -41,7 +41,7 @@ public class PathMarshal : Marshal
 {
   public readonly Marshal MARSHAL = new PathMarshal();
   
-  public boolean isReadOnly()
+  public bool isReadOnly()
   {
     return true;
   }

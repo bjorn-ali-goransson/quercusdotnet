@@ -56,13 +56,13 @@ namespace QuercusDotNet.Program{
 @SuppressWarnings("serial")
 public class Function : AbstractFunction {
   protected final FunctionInfo _info;
-  protected final boolean _isReturnsReference;
+  protected final bool _isReturnsReference;
 
   protected final string _name;
   protected final Arg []_args;
   protected final Statement _statement;
 
-  protected boolean _hasReturn;
+  protected bool _hasReturn;
 
   protected string _comment;
 
@@ -116,7 +116,7 @@ public class Function : AbstractFunction {
     return _info;
   }
 
-  protected boolean isMethod()
+  protected bool isMethod()
   {
     return getDeclaringClassName() != null;
   }
@@ -158,7 +158,7 @@ public class Function : AbstractFunction {
     _closureUseArgs = useArgs;
   }
 
-  public boolean isObjectMethod()
+  public bool isObjectMethod()
   {
     return false;
   }
@@ -166,7 +166,7 @@ public class Function : AbstractFunction {
   /**
    * True for a returns reference.
    */
-  public override boolean isReturnsReference(Env env)
+  public override bool isReturnsReference(Env env)
   {
     return _isReturnsReference;
   }
@@ -233,7 +233,7 @@ public class Function : AbstractFunction {
     return callImpl(env, args, true);
   }
 
-  private Value callImpl(Env env, Expr []args, boolean isRef)
+  private Value callImpl(Env env, Expr []args, bool isRef)
   {
     HashMap<StringValue,EnvVar> map = new HashMap<StringValue,EnvVar>();
 
@@ -335,7 +335,7 @@ public class Function : AbstractFunction {
     return callImpl(env, args, false, getClosureUseArgs(), useArgs).copy();
   }
 
-  public Value callImpl(Env env, Value []args, boolean isRef,
+  public Value callImpl(Env env, Value []args, bool isRef,
                         Arg []useParams, Value []useArgs)
   {
     HashMap<StringValue,EnvVar> map = new HashMap<StringValue,EnvVar>(8);
@@ -466,12 +466,12 @@ public class Function : AbstractFunction {
   }
 
 
-  private boolean isVariableArgs()
+  private bool isVariableArgs()
   {
     return _info.isVariableArgs() || _args.length > 5;
   }
 
-  private boolean isVariableMap()
+  private bool isVariableMap()
   {
     // return _info.isVariableVar();
     // php/3254

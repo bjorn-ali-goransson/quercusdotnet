@@ -41,12 +41,12 @@ public class ArrayValueMarshal : Marshal
 {
   public readonly Marshal MARSHAL = new ArrayValueMarshal();
   
-  public boolean isReference()
+  public bool isReference()
   {
     return true;
   }
       
-  public boolean isReadOnly()
+  public bool isReadOnly()
   {
     return false;
   }
@@ -55,7 +55,7 @@ public class ArrayValueMarshal : Marshal
    * Return true if is a Value.
    */
   @Override
-  public boolean isValue()
+  public bool isValue()
   {
     return true;
   }

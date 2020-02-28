@@ -84,7 +84,7 @@ public class JdbcPreparedStatementResource
    * @param params = array of values (probably Vars)
    * @return true on success ir false on failure
    */
-  protected boolean bindParams(Env env,
+  protected bool bindParams(Env env,
                                ColumnType[] types,
                                Value[] params)
   {
@@ -94,7 +94,7 @@ public class JdbcPreparedStatementResource
     return true;
   }
 
-  private boolean setLobParameter(Env env, int index, Value value)
+  private bool setLobParameter(Env env, int index, Value value)
   {
     if (_preparedStmt == null) {
       return false;
@@ -164,7 +164,7 @@ public class JdbcPreparedStatementResource
   }
 
   @Override
-  protected boolean prepareForExecute(Env env)
+  protected bool prepareForExecute(Env env)
     
   {
     if (_types == null || _preparedStmt == null) {
@@ -218,7 +218,7 @@ public class JdbcPreparedStatementResource
     return true;
   }
 
-  protected override boolean executeImpl(Env env)
+  protected override bool executeImpl(Env env)
     
   {
     if (_preparedStmt != null) {
@@ -254,7 +254,7 @@ public class JdbcPreparedStatementResource
 
     int count = 0;
     int length = query.length();
-    boolean inQuotes = false;
+    bool inQuotes = false;
     char c;
 
     for (int i = 0; i < length; i++) {
@@ -293,7 +293,7 @@ public class JdbcPreparedStatementResource
    * @param query SQL query
    * @return true on success or false on failure
    */
-  public boolean prepare(Env env, string query)
+  public bool prepare(Env env, string query)
   {
     try {
       PreparedStatement preparedStmt = _preparedStmt;
@@ -353,7 +353,7 @@ public class JdbcPreparedStatementResource
     }
   }
 
-  protected boolean isPreparable(String query)
+  protected bool isPreparable(String query)
   {
     // for Google
     SqlParseToken token = getConnection().parseSqlToken(query, null);

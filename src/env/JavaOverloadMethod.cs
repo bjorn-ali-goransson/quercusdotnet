@@ -62,7 +62,7 @@ public class JavaOverloadMethod : AbstractJavaMethod {
     throw new UnsupportedOperationException();
   }
 
-  public override boolean getHasRestArgs()
+  public override bool getHasRestArgs()
   {
     throw new UnsupportedOperationException();
   }

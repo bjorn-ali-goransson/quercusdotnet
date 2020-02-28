@@ -44,32 +44,32 @@ public class NullAsFalseMarshal : Marshal
     _marshal = marshal;
   }
 
-  public boolean isBoolean()
+  public bool isBoolean()
   {
     return _marshal.isBoolean();
   }
 
-  public boolean isString()
+  public bool isString()
   {
     return _marshal.isString();
   }
 
-  public boolean isLong()
+  public bool isLong()
   {
     return _marshal.isLong();
   }
 
-  public boolean isDouble()
+  public bool isDouble()
   {
     return _marshal.isDouble();
   }
 
-  public boolean isReadOnly()
+  public bool isReadOnly()
   {
     return _marshal.isReadOnly();
   }
 
-  public boolean isReference()
+  public bool isReference()
   {
     return _marshal.isReference();
   }

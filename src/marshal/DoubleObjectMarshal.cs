@@ -39,7 +39,7 @@ public class DoubleObjectMarshal : Marshal
 {
   public readonly Marshal MARSHAL = new DoubleObjectMarshal();
 
-  public boolean isReadOnly()
+  public bool isReadOnly()
   {
     return true;
   }

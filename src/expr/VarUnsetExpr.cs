@@ -71,7 +71,7 @@ public class VarUnsetExpr : Expr {
     return _var.hashCode();
   }
 
-  public boolean equals(Object o)
+  public bool equals(Object o)
   {
     if (this == o)
       return true;

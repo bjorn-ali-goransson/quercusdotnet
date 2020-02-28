@@ -227,7 +227,7 @@ public class XmlModule : AbstractQuercusModule {
   }
 
   /**
-   * @see boolean Xml.xml_parse
+   * @see bool Xml.xml_parse
    *
    * @param parser
    * @param data
@@ -238,7 +238,7 @@ public class XmlModule : AbstractQuercusModule {
   public int xml_parse(Env env,
                        @NotNull Xml parser,
                        StringValue data,
-                       @Optional("true") boolean isFinal)
+                       @Optional("true") bool isFinal)
   {
     if (parser == null)
       return 0;
@@ -285,14 +285,14 @@ public class XmlModule : AbstractQuercusModule {
 
   /**
    *
-   * @see boolean Xml.xml_parser_set_option
+   * @see bool Xml.xml_parser_set_option
    *
    * @param parser
    * @param option
    * @param value
    * @return false if parser == null
    */
-  public boolean xml_parser_set_option(@NotNull Xml parser,
+  public bool xml_parser_set_option(@NotNull Xml parser,
                                        @NotNull int option,
                                        @NotNull Value value)
   {
@@ -303,7 +303,7 @@ public class XmlModule : AbstractQuercusModule {
   }
 
   /**
-   * @see boolean Xml.xml_parser_get_option
+   * @see bool Xml.xml_parser_get_option
    *
    * @param parser
    * @param option
@@ -320,14 +320,14 @@ public class XmlModule : AbstractQuercusModule {
   }
 
   /**
-   * @see boolean Xml.xml_set_element_handler
+   * @see bool Xml.xml_set_element_handler
    *
    * @param parser
    * @param startElementHandler
    * @param endElementHandler
    * @return false if parser == null
    */
-  public boolean xml_set_element_handler(Env env,
+  public bool xml_set_element_handler(Env env,
                                          @NotNull Xml parser,
                                          @NotNull Value startElementHandler,
                                          @NotNull Value endElementHandler)
@@ -339,13 +339,13 @@ public class XmlModule : AbstractQuercusModule {
   }
 
   /**
-   * @see boolean Xml.xml_set_character_data_handler
+   * @see bool Xml.xml_set_character_data_handler
    *
    * @param parser
    * @param handler
    * @return false if parser == null
    */
-  public boolean xml_set_character_data_handler(Env env,
+  public bool xml_set_character_data_handler(Env env,
                                                 @NotNull Xml parser,
                                                 @NotNull Value handler)
   {
@@ -357,13 +357,13 @@ public class XmlModule : AbstractQuercusModule {
 
 
   /**
-   * @see boolean Xml.xml_set_start_namespace_decl_handler
+   * @see bool Xml.xml_set_start_namespace_decl_handler
    *
    * @param parser
    * @param startNamespaceDeclHandler
    * @return false if parser == null
    */
-  public boolean xml_set_start_namespace_decl_handler(
+  public bool xml_set_start_namespace_decl_handler(
       Env env,
       @NotNull Xml parser,
       @NotNull Value startNamespaceDeclHandler) {
@@ -380,7 +380,7 @@ public class XmlModule : AbstractQuercusModule {
    * @param obj
    * @return false if parser == null
    */
-  public boolean xml_set_object(@NotNull Xml parser,
+  public bool xml_set_object(@NotNull Xml parser,
                                 @NotNull ObjectValue obj)
   {
     if (parser == null)
@@ -395,7 +395,7 @@ public class XmlModule : AbstractQuercusModule {
    * @param handler
    * @return false if parser == null
    */
-  public boolean xml_set_processing_instruction_handler(Env env,
+  public bool xml_set_processing_instruction_handler(Env env,
                                                         @NotNull Xml parser,
                                                         @NotNull Value handler)
   {
@@ -411,7 +411,7 @@ public class XmlModule : AbstractQuercusModule {
    * @param handler
    * @return false if parser == null
    */
-  public boolean xml_set_default_handler(Env env,
+  public bool xml_set_default_handler(Env env,
                                          @NotNull Xml parser,
                                          @NotNull Value handler)
   {
@@ -422,13 +422,13 @@ public class XmlModule : AbstractQuercusModule {
   }
 
   /**
-   * @see boolean Xml.xml_set_notation_decl_handler
+   * @see bool Xml.xml_set_notation_decl_handler
    *
    * @param parser
    * @param handler
    * @return false is parser == null
    */
-  public boolean xml_set_notation_decl_handler(Env env,
+  public bool xml_set_notation_decl_handler(Env env,
                                                @NotNull Xml parser,
                                                @NotNull Value handler)
   {
@@ -444,7 +444,7 @@ public class XmlModule : AbstractQuercusModule {
    * @param handler
    * @return false if parser == null
    */
-  public boolean xml_set_end_namespace_decl_handler(Env env,
+  public bool xml_set_end_namespace_decl_handler(Env env,
                                                     @NotNull Xml parser,
                                                     @NotNull Value handler)
   {
@@ -485,7 +485,7 @@ public class XmlModule : AbstractQuercusModule {
    * @param parser
    * @return false if parser == null, otherwise true
    */
-  public boolean xml_parser_free(@NotNull Xml parser)
+  public bool xml_parser_free(@NotNull Xml parser)
   {
     if (parser == null)
       return false;
@@ -494,13 +494,13 @@ public class XmlModule : AbstractQuercusModule {
   }
 
   /**
-   * @see boolean Xml.xml_set_unparsed_entity_decl_handler
+   * @see bool Xml.xml_set_unparsed_entity_decl_handler
    *
    * @param parser
    * @param handler
    * @return false if parser == null, otherwise true
    */
-  public boolean xml_set_unparsed_entity_decl_handler(Env env,
+  public bool xml_set_unparsed_entity_decl_handler(Env env,
                                                       @NotNull Xml parser,
                                                       @NotNull Value handler)
   {
@@ -510,7 +510,7 @@ public class XmlModule : AbstractQuercusModule {
     return parser.xml_set_unparsed_entity_decl_handler(env, handler);
   }
 
-  public static boolean libxml_use_internal_errors(Env env,
+  public static bool libxml_use_internal_errors(Env env,
                                                    @Optional Value isKeepErrors)
   {
     ArrayList<LibXmlError> existingErrorList = getErrorList(env);

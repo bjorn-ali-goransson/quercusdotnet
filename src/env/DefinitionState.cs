@@ -53,7 +53,7 @@ public class DefinitionState {
 
   private final QuercusContext _quercus;
 
-  private boolean _isStrict;
+  private bool _isStrict;
 
   private HashMap<StringValue, AbstractFunction> _funMap;
 
@@ -63,7 +63,7 @@ public class DefinitionState {
 
   private HashMap<String, ClassDef> _lowerClassDefMap;
 
-  private boolean _isLazy;
+  private bool _isLazy;
 
   // crc of the entries
   private long _crc;
@@ -101,7 +101,7 @@ public class DefinitionState {
     _crc = oldState._crc;
   }
 
-  private DefinitionState(DefinitionState oldState, boolean isLazy)
+  private DefinitionState(DefinitionState oldState, bool isLazy)
   {
     _isLazy = true;
 
@@ -120,7 +120,7 @@ public class DefinitionState {
   /**
    * Returns true for strict mode.
    */
-  public final boolean isStrict()
+  public final bool isStrict()
   {
     return _isStrict;
   }
@@ -414,7 +414,7 @@ public class DefinitionState {
       return hash;
     }
 
-    public boolean equals(Object o)
+    public bool equals(Object o)
     {
       ClassKey key = (ClassKey) o;
 

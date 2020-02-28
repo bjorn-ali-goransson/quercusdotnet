@@ -55,8 +55,8 @@ public class Regexp {
   int _flags;
 
   RegexpNode _prog;
-  boolean _ignoreCase;
-  boolean _isGlobal;
+  bool _ignoreCase;
+  bool _isGlobal;
 
   int _nLoop;
   int _nGroup;
@@ -66,16 +66,16 @@ public class Regexp {
   CharBuffer _prefix; // initial string
   int _minLength; // minimum length possible for this regexp
   int _firstChar;
-  boolean []_firstSet;
-  boolean _isAnchorBegin;
+  bool []_firstSet;
+  bool _isAnchorBegin;
 
   StringValue []_groupNames;
 
-  boolean _isUnicode;
-  boolean _isPHP5String;
+  bool _isUnicode;
+  bool _isPHP5String;
 
-  boolean _isUtf8;
-  boolean _isEval;
+  bool _isUtf8;
+  bool _isEval;
 
   private IllegalRegexpException _exception;
 
@@ -194,12 +194,12 @@ public class Regexp {
     return _pattern;
   }
 
-  public boolean isUTF8()
+  public bool isUTF8()
   {
     return _isUtf8;
   }
 
-  public boolean isEval()
+  public bool isEval()
   {
     return _isEval;
   }
@@ -273,8 +273,8 @@ public class Regexp {
     return _groupNames[i];
   }
 
-  public boolean isGlobal() { return _isGlobal; }
-  public boolean isIgnoreCase() { return _ignoreCase; }
+  public bool isGlobal() { return _isGlobal; }
+  public bool isIgnoreCase() { return _ignoreCase; }
 
   static UnicodeValue fromUtf8(StringValue source)
   {

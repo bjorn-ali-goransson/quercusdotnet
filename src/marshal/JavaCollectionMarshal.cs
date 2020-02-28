@@ -43,14 +43,14 @@ public class JavaCollectionMarshal : JavaMarshal {
   private readonly L10N L = new L10N(JavaMarshal.class);
 
   public JavaCollectionMarshal(JavaClassDef def,
-                      boolean isNotNull)
+                      bool isNotNull)
   {
     this(def, isNotNull, false);
   }
 
   public JavaCollectionMarshal(JavaClassDef def,
-                      boolean isNotNull,
-                      boolean isUnmarshalNullAsFalse)
+                      bool isNotNull,
+                      bool isUnmarshalNullAsFalse)
   {
     super(def, isNotNull, isUnmarshalNullAsFalse);
   }

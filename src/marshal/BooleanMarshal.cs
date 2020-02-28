@@ -42,12 +42,12 @@ namespace QuercusDotNet.Marshal{
 public class BooleanMarshal : Marshal {
   public readonly BooleanMarshal MARSHAL = new BooleanMarshal();
 
-  public boolean isBoolean()
+  public bool isBoolean()
   {
     return true;
   }
 
-  public boolean isReadOnly()
+  public bool isReadOnly()
   {
     return true;
   }

@@ -47,7 +47,7 @@ abstract public class AbstractBinaryOutput
   implements BinaryOutput
 {
   private int lockedShared = 0;
-  private boolean lockedExclusive = false;
+  private bool lockedExclusive = false;
 
   /**
    * Returns self as the output stream.
@@ -141,7 +141,7 @@ abstract public class AbstractBinaryOutput
   /**
    * Returns false always for output streams
    */
-  public boolean isEOF()
+  public bool isEOF()
   {
     return false;
   }
@@ -157,7 +157,7 @@ abstract public class AbstractBinaryOutput
   /**
    * Sets the position.
    */
-  public boolean setPosition(long offset)
+  public bool setPosition(long offset)
   {
     return false;
   }

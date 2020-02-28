@@ -73,7 +73,7 @@ public class DOMImplementation
     _delegate = _factory.getImplementation();
   }
 
-  static public boolean hasFeature(Env env, string feature, string version)
+  static public bool hasFeature(Env env, string feature, string version)
   {
     return get(env)._delegate.hasFeature(feature, version);
   }

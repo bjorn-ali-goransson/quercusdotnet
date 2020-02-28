@@ -318,7 +318,7 @@ public class HttpInputOutput : AbstractBinaryOutput
   /**
    * Reads the optional linefeed character from a \r\n
    */
-  public boolean readOptionalLinefeed()
+  public bool readOptionalLinefeed()
     
   {
     int ch = read();
@@ -335,7 +335,7 @@ public class HttpInputOutput : AbstractBinaryOutput
   /**
    * Returns true on the EOF.
    */
-  public boolean isEOF()
+  public bool isEOF()
   {
     try {
       if (_is == null)
@@ -375,12 +375,12 @@ public class HttpInputOutput : AbstractBinaryOutput
       _is.unread();
   }
 
-  public override boolean lock(boolean shared, boolean block)
+  public override bool lock(boolean shared, bool block)
   {
     return false;
   }
 
-  public override boolean unlock()
+  public override bool unlock()
   {
     return false;
   }

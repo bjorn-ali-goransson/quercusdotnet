@@ -60,7 +60,7 @@ public class UnserializeReader {
   private ArrayList<Boolean> _referenceList
     = new ArrayList<Boolean>();
 
-  private boolean _useReference;
+  private bool _useReference;
 
   public UnserializeReader(StringValue s)
     
@@ -84,7 +84,7 @@ public class UnserializeReader {
       initReferenceList();
   }
 
-  protected boolean useReference()
+  protected bool useReference()
   {
     return _useReference;
   }
@@ -775,7 +775,7 @@ public class UnserializeReader {
     return sign * value;
   }
 
-  public final boolean isValidString(int len)
+  public final bool isValidString(int len)
   {
     if (_index + len >= _buffer.length)
       return false;
@@ -870,7 +870,7 @@ public class UnserializeReader {
       return hash;
     }
 
-    public boolean equals(Object o)
+    public bool equals(Object o)
     {
       if (! (o instanceof StringKey))
         return false;

@@ -78,7 +78,7 @@ public class JavaArrayClassDef : JavaClassDef {
   }
 
   @Override
-  public boolean isArray()
+  public bool isArray()
   {
     return true;
   }

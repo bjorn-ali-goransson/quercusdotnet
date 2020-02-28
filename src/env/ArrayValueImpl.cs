@@ -60,7 +60,7 @@ public class ArrayValueImpl : ArrayValue
 
   private int _size;
   private long _nextAvailableIndex;
-  private boolean _isDirty;
+  private bool _isDirty;
 
   private Entry _head;
   private Entry _tail;
@@ -296,7 +296,7 @@ public class ArrayValueImpl : ArrayValue
   /**
    * Converts to a boolean.
    */
-  public boolean toBoolean()
+  public bool toBoolean()
   {
     return _size != 0;
   }
@@ -448,7 +448,7 @@ public class ArrayValueImpl : ArrayValue
   /**
    * Returns true for an array.
    */
-  public boolean isArray()
+  public bool isArray()
   {
     return true;
   }
@@ -603,7 +603,7 @@ public class ArrayValueImpl : ArrayValue
   /**
    * Slices.
    */
-  public override ArrayValue slice(Env env, int start, int end, boolean isPreserveKeys)
+  public override ArrayValue slice(Env env, int start, int end, bool isPreserveKeys)
   {
     ArrayValueImpl array = new ArrayValueImpl();
 
@@ -627,7 +627,7 @@ public class ArrayValueImpl : ArrayValue
   /**
    * Returns the value as an argument which may be a reference.
    */
-  public override Value getArg(Value index, boolean isTop)
+  public override Value getArg(Value index, bool isTop)
   {
     if (_isDirty) // XXX: needed?
       copyOnWrite();
@@ -746,7 +746,7 @@ public class ArrayValueImpl : ArrayValue
   /**
    * Sets the array tail, returning a reference to the tail.
    */
-  public override Value getArgTail(Env env, boolean isTop)
+  public override Value getArgTail(Env env, bool isTop)
   {
     if (_isDirty) {
       copyOnWrite();

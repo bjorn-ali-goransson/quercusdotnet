@@ -87,7 +87,7 @@ public class XMLWriter {
   /**
    * Opens the writer for a memory target
    */
-  public boolean openMemory(Env env)
+  public bool openMemory(Env env)
   {
     StringValue s = env.createUnicodeBuilder();
     
@@ -105,7 +105,7 @@ public class XMLWriter {
   /**
    * Opens the writer for a uri target
    */
-  public boolean openURI(Env env, Path path)
+  public bool openURI(Env env, Path path)
   {
     try {
       WriteStream out = path.openWrite();
@@ -135,7 +135,7 @@ public class XMLWriter {
   /**
    * Ends an attribute
    */
-  public boolean endAttribute()
+  public bool endAttribute()
   {
     if (_state != WriterState.ATTRIBUTE)
       return false;
@@ -149,7 +149,7 @@ public class XMLWriter {
   /**
    * Starts a CData section
    */
-  public boolean endCData()
+  public bool endCData()
   {
     if (_state != WriterState.CDATA)
       return false;
@@ -164,7 +164,7 @@ public class XMLWriter {
   /**
    * Starts a comment section
    */
-  public boolean endComment()
+  public bool endComment()
   {
     if (_state != WriterState.COMMENT)
       return false;
@@ -179,7 +179,7 @@ public class XMLWriter {
   /**
    * Ends a pi section
    */
-  public boolean endPI()
+  public bool endPI()
   {
     if (_state != WriterState.PI)
       return false;
@@ -194,7 +194,7 @@ public class XMLWriter {
   /**
    * Ends the document
    */
-  public boolean endDocument()
+  public bool endDocument()
   {
     return true;
   }
@@ -202,7 +202,7 @@ public class XMLWriter {
   /**
    * Ends a DTD attribute list
    */
-  public boolean endDTDAttlist()
+  public bool endDTDAttlist()
   {
     return true;
   }
@@ -210,7 +210,7 @@ public class XMLWriter {
   /**
    * Ends a DTD element list
    */
-  public boolean endDTDElement()
+  public bool endDTDElement()
   {
     return true;
   }
@@ -218,7 +218,7 @@ public class XMLWriter {
   /**
    * Ends a DTD entity
    */
-  public boolean endDTDEntity()
+  public bool endDTDEntity()
   {
     return true;
   }
@@ -226,7 +226,7 @@ public class XMLWriter {
   /**
    * Ends a DTD
    */
-  public boolean endDTD()
+  public bool endDTD()
   {
     return true;
   }
@@ -234,7 +234,7 @@ public class XMLWriter {
   /**
    * Ends an element
    */
-  public boolean endElement(Env env)
+  public bool endElement(Env env)
   {
     if (_state == WriterState.ATTRIBUTE)
       endAttribute();
@@ -262,7 +262,7 @@ public class XMLWriter {
   /**
    * Ends an element
    */
-  public boolean endElementNS(Env env)
+  public bool endElementNS(Env env)
   {
     return endElement(env);
   }
@@ -270,7 +270,7 @@ public class XMLWriter {
   /**
    * Ends an element
    */
-  public boolean fullEndElement(Env env)
+  public bool fullEndElement(Env env)
   {
     if (_state == WriterState.ATTRIBUTE)
       endAttribute();
@@ -294,7 +294,7 @@ public class XMLWriter {
   /**
    * enables indentation
    */
-  public boolean setIndent(boolean isIndent)
+  public bool setIndent(boolean isIndent)
   {
     return false;
   }
@@ -302,7 +302,7 @@ public class XMLWriter {
   /**
    * sets the indentation string
    */
-  public boolean setIndentString(StringValue value)
+  public bool setIndentString(StringValue value)
   {
     return false;
   }
@@ -310,7 +310,7 @@ public class XMLWriter {
   /**
    * Starts an attribute
    */
-  public boolean startAttribute(Env env, StringValue name)
+  public bool startAttribute(Env env, StringValue name)
   {
     if (_state != WriterState.ELEMENT_HEADER)
       return false;
@@ -325,7 +325,7 @@ public class XMLWriter {
   /**
    * Starts an attribute with a namespace
    */
-  public boolean startAttributeNS(Env env,
+  public bool startAttributeNS(Env env,
                                   StringValue prefix,
                                   StringValue name,
                                   StringValue uri)
@@ -346,7 +346,7 @@ public class XMLWriter {
   /**
    * Starts a CData section
    */
-  public boolean startCData()
+  public bool startCData()
   {
     startContent();
 
@@ -360,7 +360,7 @@ public class XMLWriter {
   /**
    * Starts a comment section
    */
-  public boolean startComment()
+  public bool startComment()
   {
     startContent();
 
@@ -374,7 +374,7 @@ public class XMLWriter {
   /**
    * Starts the document
    */
-  public boolean startDocument(Env env,
+  public bool startDocument(Env env,
                                @Optional StringValue version,
                                @Optional StringValue encoding,
                                @Optional StringValue standalone)
@@ -400,7 +400,7 @@ public class XMLWriter {
   /**
    * Starts a DTD attribute list
    */
-  public boolean startDTDAttlist(StringValue name)
+  public bool startDTDAttlist(StringValue name)
   {
     return true;
   }
@@ -408,7 +408,7 @@ public class XMLWriter {
   /**
    * Starts a DTD element list
    */
-  public boolean startDTDElement(StringValue name)
+  public bool startDTDElement(StringValue name)
   {
     return true;
   }
@@ -416,7 +416,7 @@ public class XMLWriter {
   /**
    * Starts a DTD entity
    */
-  public boolean startDTDEntity(StringValue name)
+  public bool startDTDEntity(StringValue name)
   {
     return true;
   }
@@ -424,7 +424,7 @@ public class XMLWriter {
   /**
    * Starts a DTD
    */
-  public boolean startDTD(StringValue name,
+  public bool startDTD(StringValue name,
                           @Optional StringValue publicId,
                           @Optional StringValue systemId)
   {
@@ -434,7 +434,7 @@ public class XMLWriter {
   /**
    * Starts an element
    */
-  public boolean startElement(Env env, StringValue name)
+  public bool startElement(Env env, StringValue name)
   {
     if (_state == WriterState.ELEMENT_HEADER) {
       _s.append(">");
@@ -453,7 +453,7 @@ public class XMLWriter {
   /**
    * Starts a namespaced element
    */
-  public boolean startElementNS(Env env,
+  public bool startElementNS(Env env,
                                 StringValue prefix,
                                 StringValue name,
                                 StringValue uri)
@@ -478,7 +478,7 @@ public class XMLWriter {
   /**
    * Starts a processing instruction section
    */
-  public boolean startPI(Env env, StringValue target)
+  public bool startPI(Env env, StringValue target)
   {
     startContent();
 
@@ -492,7 +492,7 @@ public class XMLWriter {
   /**
    * Writes text
    */
-  public boolean text(Env env, StringValue text)
+  public bool text(Env env, StringValue text)
   {
     if (_state == WriterState.ELEMENT_HEADER)
       startContent();
@@ -531,7 +531,7 @@ public class XMLWriter {
   /**
    * Writes a complete attribute
    */
-  public boolean writeAttribute(Env env, StringValue name,
+  public bool writeAttribute(Env env, StringValue name,
                                 StringValue value)
   {
     startAttribute(env, name);
@@ -544,7 +544,7 @@ public class XMLWriter {
   /**
    * Writes a complete attribute
    */
-  public boolean writeAttributeNS(Env env,
+  public bool writeAttributeNS(Env env,
                                   StringValue prefix,
                                   StringValue name,
                                   StringValue uri,
@@ -560,7 +560,7 @@ public class XMLWriter {
   /**
    * Writes a complete cdata
    */
-  public boolean writeCData(Env env, StringValue value)
+  public bool writeCData(Env env, StringValue value)
   {
     startCData();
     text(env, value);
@@ -572,7 +572,7 @@ public class XMLWriter {
   /**
    * Writes a complete comment
    */
-  public boolean writeComment(Env env, StringValue value)
+  public bool writeComment(Env env, StringValue value)
   {
     startComment();
     text(env, value);
@@ -584,7 +584,7 @@ public class XMLWriter {
   /**
    * Writes a DTD attribute list
    */
-  public boolean writeDTDAttlist(Env env,
+  public bool writeDTDAttlist(Env env,
                                  StringValue name,
                                  StringValue content)
   {
@@ -598,7 +598,7 @@ public class XMLWriter {
   /**
    * Writes a DTD element
    */
-  public boolean writeDTDElement(Env env,
+  public bool writeDTDElement(Env env,
                                  StringValue name,
                                  StringValue content)
   {
@@ -612,7 +612,7 @@ public class XMLWriter {
   /**
    * Writes a DTD entity
    */
-  public boolean writeDTDEntity(Env env,
+  public bool writeDTDEntity(Env env,
                                 StringValue name,
                                 StringValue content)
   {
@@ -626,7 +626,7 @@ public class XMLWriter {
   /**
    * Writes a DTD
    */
-  public boolean writeDTD(Env env,
+  public bool writeDTD(Env env,
                           StringValue name,
                           @Optional StringValue publicId,
                           @Optional StringValue systemId,
@@ -642,7 +642,7 @@ public class XMLWriter {
   /**
    * Writes a complete element
    */
-  public boolean writeElement(Env env,
+  public bool writeElement(Env env,
                               StringValue name,
                               @Optional StringValue content)
   {
@@ -659,7 +659,7 @@ public class XMLWriter {
   /**
    * Writes a complete element
    */
-  public boolean writeElementNS(Env env,
+  public bool writeElementNS(Env env,
                                 StringValue prefix,
                                 StringValue name,
                                 StringValue uri,
@@ -678,7 +678,7 @@ public class XMLWriter {
   /**
    * Writes a pi
    */
-  public boolean writePI(Env env, StringValue name, StringValue value)
+  public bool writePI(Env env, StringValue name, StringValue value)
   {
     startPI(env, name);
     text(env, value);
@@ -690,7 +690,7 @@ public class XMLWriter {
   /**
    * Writes raw text
    */
-  public boolean writeRaw(Env env, StringValue value)
+  public bool writeRaw(Env env, StringValue value)
   {
     _s.append(env, value);
 

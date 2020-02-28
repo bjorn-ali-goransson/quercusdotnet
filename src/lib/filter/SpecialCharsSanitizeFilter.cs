@@ -48,9 +48,9 @@ public class SpecialCharsSanitizeFilter
 
     int len = str.length();
 
-    boolean isEncodeHigh = (flags & FilterModule.FILTER_FLAG_ENCODE_HIGH) > 0;
-    boolean isStripLow = (flags & FilterModule.FILTER_FLAG_STRIP_LOW) > 0;
-    boolean isStripHigh = (flags & FilterModule.FILTER_FLAG_STRIP_HIGH) > 0;
+    bool isEncodeHigh = (flags & FilterModule.FILTER_FLAG_ENCODE_HIGH) > 0;
+    bool isStripLow = (flags & FilterModule.FILTER_FLAG_STRIP_LOW) > 0;
+    bool isStripHigh = (flags & FilterModule.FILTER_FLAG_STRIP_HIGH) > 0;
 
     for (int i = 0; i < len; i++) {
       char ch = str.charAt(i);

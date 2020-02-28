@@ -55,7 +55,7 @@ abstract public class Closure : Callback
   }
 
   @Override
-  public boolean isCallable(Env env, boolean isCheckSyntaxOnly, Value nameRef)
+  public bool isCallable(Env env, bool isCheckSyntaxOnly, Value nameRef)
   {
     if (nameRef != null) {
       StringValue sb = env.createString("Closure::__invoke");
@@ -71,12 +71,12 @@ abstract public class Closure : Callback
     return _qThis;
   }
 
-  public override Callable toCallable(Env env, boolean isOptional)
+  public override Callable toCallable(Env env, bool isOptional)
   {
     return this;
   }
 
-  public override boolean isObject()
+  public override bool isObject()
   {
     return true;
   }
@@ -91,17 +91,17 @@ abstract public class Closure : Callback
     return _name;
   }
 
-  public override boolean isInternal(Env env)
+  public override bool isInternal(Env env)
   {
     return false;
   }
 
-  public override boolean isValid(Env env)
+  public override bool isValid(Env env)
   {
     return true;
   }
 
-  public override boolean isA(Env env, string name)
+  public override bool isA(Env env, string name)
   {
     return "Closure".equalsIgnoreCase(name);
   }

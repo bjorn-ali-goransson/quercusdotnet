@@ -283,7 +283,7 @@ public class UnicodeModule : AbstractQuercusModule {
                             string outCharset,
                             StringValue str)
   {
-    boolean isIgnoreErrors = false;
+    bool isIgnoreErrors = false;
 
     // options should be on outCharset
     if (inCharset.endsWith("//IGNORE"))
@@ -302,8 +302,8 @@ public class UnicodeModule : AbstractQuercusModule {
       outCharset = outCharset.substring(0, outCharset.length() - 10);
     }
 
-    boolean isStartUtf8 = false;
-    boolean isEndUtf8 = false;
+    bool isStartUtf8 = false;
+    bool isEndUtf8 = false;
 
     if (inCharset.equalsIgnoreCase("utf8")
         || inCharset.equalsIgnoreCase("utf-8"))

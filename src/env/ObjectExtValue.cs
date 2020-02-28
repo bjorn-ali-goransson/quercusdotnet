@@ -61,7 +61,7 @@ public class ObjectExtValue : ObjectValue
 
   private HashMap<StringValue,Entry> _protectedFieldMap;
 
-  private boolean _isFieldInit;
+  private bool _isFieldInit;
 
   public ObjectExtValue(Env env, QuercusClass cl)
   {
@@ -300,7 +300,7 @@ public class ObjectExtValue : ObjectValue
   /**
    * Returns the value as an argument which may be a reference.
    */
-  public override Value getFieldArg(Env env, StringValue name, boolean isTop)
+  public override Value getFieldArg(Env env, StringValue name, bool isTop)
   {
     Entry entry = getEntry(env, name);
 
@@ -496,7 +496,7 @@ public class ObjectExtValue : ObjectValue
    * Returns true if the object is in a __set() method call.
    * Prevents infinite recursion.
    */
-  public override boolean isFieldInit()
+  public override bool isFieldInit()
   {
     return _isFieldInit;
   }
@@ -1327,7 +1327,7 @@ public class ObjectExtValue : ObjectValue
     }
   }
 
-  public override boolean issetField(Env env, StringValue name)
+  public override bool issetField(Env env, StringValue name)
   {
     Entry entry = getThisEntry(name);
 
@@ -1335,12 +1335,12 @@ public class ObjectExtValue : ObjectValue
       return entry._value.isset();
     }
 
-    boolean result = getQuercusClass().issetField(env, this, name);
+    bool result = getQuercusClass().issetField(env, this, name);
 
     return result;
   }
 
-  public override boolean isFieldExists(Env env, StringValue name)
+  public override bool isFieldExists(Env env, StringValue name)
   {
     Entry entry = getThisEntry(name);
 
@@ -1383,7 +1383,7 @@ public class ObjectExtValue : ObjectValue
       _iter = iter;
     }
 
-    public boolean hasNext()
+    public bool hasNext()
     {
       return _iter.hasNext();
     }
@@ -1409,7 +1409,7 @@ public class ObjectExtValue : ObjectValue
       _iter = iter;
     }
 
-    public boolean hasNext()
+    public bool hasNext()
     {
       return _iter.hasNext();
     }
@@ -1435,7 +1435,7 @@ public class ObjectExtValue : ObjectValue
       _iter = iter;
     }
 
-    public boolean hasNext()
+    public bool hasNext()
     {
       return _iter.hasNext();
     }
@@ -1493,17 +1493,17 @@ public class ObjectExtValue : ObjectValue
       return _key;
     }
 
-    public boolean isPublic()
+    public bool isPublic()
     {
       return ! isPrivate() && ! isProtected();
     }
 
-    public boolean isProtected()
+    public bool isProtected()
     {
       return ClassField.isProtected(_key);
     }
 
-    public boolean isPrivate()
+    public bool isPrivate()
     {
       return ClassField.isPrivate(_key);
     }

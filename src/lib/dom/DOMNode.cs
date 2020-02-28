@@ -185,7 +185,7 @@ public class DOMNode<T : Node>
     else {
       int len = value.length();
 
-      boolean isUtf16 = false;
+      bool isUtf16 = false;
 
       for (int i = 0; i < len; i++) {
         char ch = value.charAt(i);
@@ -220,12 +220,12 @@ public class DOMNode<T : Node>
     return _delegate.getUserData(key);
   }
 
-  public boolean hasAttributes()
+  public bool hasAttributes()
   {
     return _delegate.hasAttributes();
   }
 
-  public boolean hasChildNodes()
+  public bool hasChildNodes()
   {
     return _delegate.hasChildNodes();
   }
@@ -242,22 +242,22 @@ public class DOMNode<T : Node>
     }
   }
 
-  public boolean isDefaultNamespace(String namespaceURI)
+  public bool isDefaultNamespace(String namespaceURI)
   {
     return _delegate.isDefaultNamespace(namespaceURI);
   }
 
-  public boolean isEqualNode(DOMNode arg)
+  public bool isEqualNode(DOMNode arg)
   {
     return _delegate.isEqualNode(arg.getDelegate());
   }
 
-  public boolean isSameNode(DOMNode other)
+  public bool isSameNode(DOMNode other)
   {
     return _delegate.isSameNode(other.getDelegate());
   }
 
-  public boolean isSupported(String feature, string version)
+  public bool isSupported(String feature, string version)
   {
     return _delegate.isSupported(feature, version);
   }

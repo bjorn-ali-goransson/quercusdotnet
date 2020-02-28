@@ -52,7 +52,7 @@ public class ClassVirtualMethodExpr : Expr {
   private final int _hash;
   protected final Expr []_args;
 
-  protected boolean _isMethod;
+  protected bool _isMethod;
 
   public ClassVirtualMethodExpr(Location location,
                                 StringValue methodName,

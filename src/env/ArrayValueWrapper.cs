@@ -137,7 +137,7 @@ public class ArrayValueWrapper : ArrayValue {
   /**
    * Returns the value as an argument which may be a reference.
    */
-  public override Value getArg(Value index, boolean isTop)
+  public override Value getArg(Value index, bool isTop)
   {
     return _array.getArg(index, isTop);
   }
@@ -177,7 +177,7 @@ public class ArrayValueWrapper : ArrayValue {
   /**
    * Returns true if the index isset().
    */
-  public override boolean isset(Value key)
+  public override bool isset(Value key)
   {
     return _array.isset(key);
   }
@@ -241,7 +241,7 @@ public class ArrayValueWrapper : ArrayValue {
   /**
    * Returns true if there are more elements.
    */
-  public override boolean hasCurrent()
+  public override bool hasCurrent()
   {
     return _array.hasCurrent();
   }

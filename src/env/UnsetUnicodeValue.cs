@@ -43,7 +43,7 @@ public class UnsetUnicodeValue
    * Returns true if string is not empty.
    */
   @Override
-  public boolean isset()
+  public bool isset()
   {
     return false;
   }

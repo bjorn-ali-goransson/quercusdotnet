@@ -55,7 +55,7 @@ public class DefinitionKey {
     return (int) _crc;
   }
 
-  public boolean equals(Object o)
+  public bool equals(Object o)
   {
     if (! (o instanceof DefinitionKey))
       return false;

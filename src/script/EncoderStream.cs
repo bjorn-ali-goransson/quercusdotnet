@@ -68,7 +68,7 @@ public class EncoderStream : StreamImpl
     throw new UnsupportedOperationException();
   }
 
-  public override boolean canRead()
+  public override bool canRead()
   {
     return true;
   }

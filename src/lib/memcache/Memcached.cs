@@ -94,12 +94,12 @@ public class Memcached
   public const int RES_CONNECTION_SOCKET_CREATE_FAILURE = 55;
   public const int RES_PAYLOAD_FAILURE = 56;
 
-  public boolean setOption(Env env, int option, Value value)
+  public bool setOption(Env env, int option, Value value)
   {
     return false;
   }
 
-  public boolean setOptions(Env env, ArrayValue array)
+  public bool setOptions(Env env, ArrayValue array)
   {
     return false;
   }

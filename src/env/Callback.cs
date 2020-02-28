@@ -37,7 +37,7 @@ namespace QuercusDotNet.Env{
 abstract public class Callback : Value implements Callable {
 
   @Override
-  public Callable toCallable(Env env, boolean isOptional)
+  public Callable toCallable(Env env, bool isOptional)
   {
     return this;
   }
@@ -170,7 +170,7 @@ abstract public class Callback : Value implements Callable {
    *
    * @return true if this is an invalid callback reference
    */
-  abstract override public boolean isValid(Env env);
+  abstract override public bool isValid(Env env);
 
   /**
    * Returns the name of the callback.
@@ -182,7 +182,7 @@ abstract public class Callback : Value implements Callable {
    * Returns true if this callback is implemented internally (i.e. in Java).
    *
    */
-  abstract public boolean isInternal(Env env);
+  abstract public bool isInternal(Env env);
 
   public string toString()
   {

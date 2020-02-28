@@ -66,12 +66,12 @@ public abstract class ReflectionFunctionAbstract
     return _callable.getCallbackName();
   }
 
-  public boolean isInternal()
+  public bool isInternal()
   {
     return false;
   }
 
-  public boolean isUserDefined()
+  public bool isUserDefined()
   {
     return false;
   }
@@ -104,7 +104,7 @@ public abstract class ReflectionFunctionAbstract
     return null;
   }
 
-  public boolean returnsReference(Env env)
+  public bool returnsReference(Env env)
   {
     return _callable.isReturnsReference(env);
   }

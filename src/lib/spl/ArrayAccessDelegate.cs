@@ -64,14 +64,14 @@ public class ArrayAccessDelegate implements ArrayDelegate
     return qThis.callMethod(env, OFFSET_SET, UnsetValue.UNSET, index);
   }
 
-  public override boolean isset(Env env, ObjectValue qThis, Value index)
+  public override bool isset(Env env, ObjectValue qThis, Value index)
   {
     return qThis.callMethod(env, OFFSET_EXISTS, index).toBoolean();
   }
 
-  public override boolean isEmpty(Env env, ObjectValue qThis, Value index)
+  public override bool isEmpty(Env env, ObjectValue qThis, Value index)
   {
-    boolean isExists = qThis.callMethod(env, OFFSET_EXISTS, index).toBoolean();
+    bool isExists = qThis.callMethod(env, OFFSET_EXISTS, index).toBoolean();
 
     if (! isExists) {
       return true;

@@ -52,7 +52,7 @@ public class RegexpState {
   private StringValue _subject;
   private int _subjectLength;
 
-  boolean _isGlobal;
+  bool _isGlobal;
 
   int _first;
   int _start;
@@ -61,16 +61,16 @@ public class RegexpState {
   CharBuffer _prefix; // initial string
   int _minLength; // minimum length possible for this regexp
 
-  boolean _isUnicode;
-  boolean _isPHP5String;
+  bool _isUnicode;
+  bool _isPHP5String;
 
-  boolean _isUTF8;
-  boolean _isEval;
+  bool _isUTF8;
+  bool _isEval;
 
   int _groupLength;
   int []_groupBegin;
   int []_groupEnd;
-  boolean []_isGroupFinalized;
+  bool []_isGroupFinalized;
 
   int []_loopCount;
   int []_loopOffset;
@@ -168,7 +168,7 @@ public class RegexpState {
     return _subjectLength;
   }
 
-  public boolean setSubject(Env env, StringValue subject)
+  public bool setSubject(Env env, StringValue subject)
   {
     _subject = _regexp.convertSubject(env, subject);
     _subjectLength = _subject != null ? _subject.length() : 0;
@@ -182,14 +182,14 @@ public class RegexpState {
     _start = first;
   }
 
-  public boolean find()
+  public bool find()
   {
     try {
       if (log.isLoggable(Level.FINEST))
         log.finest(this + " find()");
 
       int minLength = _regexp._minLength;
-      boolean []firstSet = _regexp._firstSet;
+      bool []firstSet = _regexp._firstSet;
 
       if (_subject == null)
         return false;
@@ -241,7 +241,7 @@ public class RegexpState {
     }
   }
 
-  public boolean find(Env env, StringValue subject)
+  public bool find(Env env, StringValue subject)
   {
     try {
       subject = _regexp.convertSubject(env, subject);
@@ -318,7 +318,7 @@ public class RegexpState {
       _subjectLength = subjectLength;
 
       int minLength = _regexp._minLength;
-      boolean []firstSet = _regexp._firstSet;
+      bool []firstSet = _regexp._firstSet;
       int end = subjectLength - minLength;
       RegexpNode prog = _regexp._prog;
 
@@ -378,12 +378,12 @@ public class RegexpState {
     _groupBegin[i] = v;
   }
 
-  public boolean isFinalized(int i)
+  public bool isFinalized(int i)
   {
     return _isGroupFinalized[i];
   }
 
-  public void setFinalized(int i, boolean isFinalized)
+  public void setFinalized(int i, bool isFinalized)
   {
     _isGroupFinalized[i] = isFinalized;
   }
@@ -433,7 +433,7 @@ public class RegexpState {
     return _regexp._nGroup;
   }
 
-  public boolean isMatchedGroup(int i)
+  public bool isMatchedGroup(int i)
   {
     return i <= _groupLength;
   }

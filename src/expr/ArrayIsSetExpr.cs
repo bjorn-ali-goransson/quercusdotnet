@@ -56,7 +56,7 @@ public class ArrayIsSetExpr : Expr {
     _index = index;
   }
 
-  public boolean isBoolean()
+  public bool isBoolean()
   {
     return true;
   }
@@ -80,7 +80,7 @@ public class ArrayIsSetExpr : Expr {
    *
    * @return the expression value.
    */
-  public boolean evalBoolean(Env env)
+  public bool evalBoolean(Env env)
   {
     Value array = _expr.eval(env);
     Value index = _index.eval(env);

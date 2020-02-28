@@ -132,7 +132,7 @@ public class SessionModule : AbstractQuercusModule
   /**
    * Encodes the session values.
    */
-  public static boolean session_decode(Env env, StringValue value)
+  public static bool session_decode(Env env, StringValue value)
   {
     SessionArrayValue session = env.getSession();
 
@@ -162,7 +162,7 @@ public class SessionModule : AbstractQuercusModule
   /**
    * Destroys the session
    */
-  public static boolean session_destroy(Env env)
+  public static bool session_destroy(Env env)
   {
     SessionArrayValue session = env.getSession();
 
@@ -223,7 +223,7 @@ public class SessionModule : AbstractQuercusModule
   /**
    * Returns true if a session variable is registered.
    */
-  public static boolean session_is_registered(Env env, StringValue name)
+  public static bool session_is_registered(Env env, StringValue name)
   {
     SessionArrayValue session = env.getSession();
 
@@ -265,8 +265,8 @@ public class SessionModule : AbstractQuercusModule
    * session ID should be transparent.
    * Therefore, session callbacks should not be called.
    */
-  public static boolean session_regenerate_id(Env env,
-                                              @Optional boolean deleteOld)
+  public static bool session_regenerate_id(Env env,
+                                              @Optional bool deleteOld)
   {
     // php/1k82, php/1k83
     if (env.getSession() == null)
@@ -300,7 +300,7 @@ public class SessionModule : AbstractQuercusModule
   /**
    * Registers global variables in the session.
    */
-  public boolean session_register(Env env, Value []values)
+  public bool session_register(Env env, Value []values)
   {
     SessionArrayValue session = env.getSession();
 
@@ -394,7 +394,7 @@ public class SessionModule : AbstractQuercusModule
   /**
    * Sets the session save handler
    */
-  public boolean session_set_save_handler(Env env,
+  public bool session_set_save_handler(Env env,
                                           Callable open,
                                           Callable close,
                                           Callable read,
@@ -427,7 +427,7 @@ public class SessionModule : AbstractQuercusModule
   /**
    * Start the session
    */
-  public static boolean session_start(Env env)
+  public static bool session_start(Env env)
   {
     if (env.getRequest() == null) {
       env.notice(L.l("cannot start session without a request context"));
@@ -448,8 +448,8 @@ public class SessionModule : AbstractQuercusModule
     env.removeConstant("SID");
 
     string cookieName = env.getIni("session.name").toString();
-    boolean generateCookie = true;
-    boolean create = false;
+    bool generateCookie = true;
+    bool create = false;
 
     if (callback != null) {
       string savePath = env.getIni("session.save_path").toString();
@@ -632,7 +632,7 @@ public class SessionModule : AbstractQuercusModule
   /**
    * Unsets the specified session values
    */
-  public boolean session_unregister(Env env, Value key)
+  public bool session_unregister(Env env, Value key)
   {
     SessionArrayValue session = env.getSession();
 

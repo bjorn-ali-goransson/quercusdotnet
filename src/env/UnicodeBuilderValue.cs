@@ -49,7 +49,7 @@ public class UnicodeBuilderValue
   private char []_buffer;
   private int _length;
 
-  protected boolean _isCopy;
+  protected bool _isCopy;
   private int _hashCode;
 
   public UnicodeBuilderValue()
@@ -151,7 +151,7 @@ public class UnicodeBuilderValue
     }
   }
 
-  public UnicodeBuilderValue(StringBuilderValue v, boolean isCopy)
+  public UnicodeBuilderValue(StringBuilderValue v, bool isCopy)
   {
     byte []vBuffer = v.getBuffer();
     int vOffset = v.length();
@@ -214,7 +214,7 @@ public class UnicodeBuilderValue
   /**
    * Returns true for UnicodeValue
    */
-  public override final boolean isUnicode()
+  public override final bool isUnicode()
   {
     return true;
   }
@@ -520,7 +520,7 @@ public class UnicodeBuilderValue
   /**
    * Returns true if the value is empty.
    */
-  public override final boolean isEmpty()
+  public override final bool isEmpty()
   {
     return _length == 0 || _length == 1 && _buffer[0] == '0';
   }
@@ -1027,7 +1027,7 @@ public class UnicodeBuilderValue
   /**
    * Converts to a boolean.
    */
-  public override final boolean toBoolean()
+  public override final bool toBoolean()
   {
     if (_length == 0)
       return false;
@@ -1199,7 +1199,7 @@ public class UnicodeBuilderValue
   /**
    * Returns true for equality
    */
-  public override boolean eq(Value rValue)
+  public override bool eq(Value rValue)
   {
     rValue = rValue.toValue();
 
@@ -1282,7 +1282,7 @@ public class UnicodeBuilderValue
     }
   }
 
-  public override boolean equals(Object o)
+  public override bool equals(Object o)
   {
     if (o == this) {
       return true;
@@ -1338,7 +1338,7 @@ public class UnicodeBuilderValue
     }
   }
 
-  public override boolean eql(Value o)
+  public override bool eql(Value o)
   {
     o = o.toValue();
 

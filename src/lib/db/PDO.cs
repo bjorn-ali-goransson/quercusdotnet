@@ -157,12 +157,12 @@ public class PDO implements EnvCleanup {
   private PDOStatement _lastPDOStatement;
   private PDOStatement _lastExecutedStatement;
 
-  private boolean _inTransaction;
+  private bool _inTransaction;
 
   private string _statementClassName;
   private Value[] _statementClassArgs;
 
-  private boolean _isEmulatePrepares;
+  private bool _isEmulatePrepares;
 
   private string _initQuery;
 
@@ -205,7 +205,7 @@ public class PDO implements EnvCleanup {
     return _conn;
   }
 
-  protected boolean isConnected()
+  protected bool isConnected()
   {
     return _conn != null && _conn.isConnected();
   }
@@ -218,7 +218,7 @@ public class PDO implements EnvCleanup {
   /**
    * Starts a transaction.
    */
-  public boolean beginTransaction()
+  public bool beginTransaction()
   {
     JdbcConnectionResource conn = getConnection();
 
@@ -248,7 +248,7 @@ public class PDO implements EnvCleanup {
   /**
    * Commits a transaction.
    */
-  public boolean commit()
+  public bool commit()
   {
     JdbcConnectionResource conn = getConnection();
 
@@ -421,7 +421,7 @@ public class PDO implements EnvCleanup {
   /**
    * Returns the auto commit value for the connection.
    */
-  private boolean getAutocommit()
+  private bool getAutocommit()
   {
     JdbcConnectionResource conn = getConnection();
 
@@ -442,7 +442,7 @@ public class PDO implements EnvCleanup {
     return 0;
   }
 
-  private boolean getPersistent()
+  private bool getPersistent()
   {
     return true;
   }
@@ -647,7 +647,7 @@ public class PDO implements EnvCleanup {
   /**
    * Rolls a transaction back.
    */
-  public boolean rollBack(Env env)
+  public bool rollBack(Env env)
   {
     JdbcConnectionResource conn = getConnection();
 
@@ -665,13 +665,13 @@ public class PDO implements EnvCleanup {
     return conn.setAutoCommit(true);
   }
 
-  public boolean setAttribute(Env env, int attribute, Value value)
+  public bool setAttribute(Env env, int attribute, Value value)
   {
     return setAttribute(env, attribute, value, false);
   }
 
-  private boolean setAttribute(Env env,
-                               int attribute, Value value, boolean isInit)
+  private bool setAttribute(Env env,
+                               int attribute, Value value, bool isInit)
   {
     switch (attribute) {
       case ATTR_AUTOCOMMIT:
@@ -731,7 +731,7 @@ public class PDO implements EnvCleanup {
    * Sets the auto commit, if true commit every statement.
    * @return true on success, false on error.
    */
-  private boolean setAutocommit(Env env, boolean autoCommit)
+  private bool setAutocommit(Env env, bool autoCommit)
   {
     JdbcConnectionResource conn = getConnection();
 
@@ -751,7 +751,7 @@ public class PDO implements EnvCleanup {
    * <dt>{@link CASE_UPPER}
    * </dl>
    */
-  private boolean setCase(Env env, int value)
+  private bool setCase(Env env, int value)
   {
     switch (value) {
       case CASE_LOWER:
@@ -787,7 +787,7 @@ public class PDO implements EnvCleanup {
    *
    * @return true on success, false on error.
    */
-  private boolean setOracleNulls(Env env, int value)
+  private bool setOracleNulls(Env env, int value)
   {
     switch (value) {
       case NULL_NATURAL:
@@ -801,7 +801,7 @@ public class PDO implements EnvCleanup {
     }
   }
 
-  private boolean setPersistent(boolean isPersistent)
+  private bool setPersistent(boolean isPersistent)
   {
     return true;
   }
@@ -813,7 +813,7 @@ public class PDO implements EnvCleanup {
    *
    * @return true on success, false on error.
    */
-  private boolean setStatementClass(Env env, ArrayValue value)
+  private bool setStatementClass(Env env, ArrayValue value)
   {
     Value className = value.get(LongValue.ZERO);
 
@@ -836,7 +836,7 @@ public class PDO implements EnvCleanup {
     return true;
   }
 
-  private boolean setEmulatePrepares(boolean isEmulate)
+  private bool setEmulatePrepares(boolean isEmulate)
   {
     if (_isEmulatePrepares == isEmulate) {
       return true;
@@ -851,7 +851,7 @@ public class PDO implements EnvCleanup {
     }
   }
 
-  private boolean setInitQuery(String query)
+  private bool setInitQuery(String query)
   {
     _initQuery = query;
 
@@ -863,12 +863,12 @@ public class PDO implements EnvCleanup {
    *
    * @return true on success, false on error.
    */
-  private boolean setStringifyFetches(boolean stringifyFetches)
+  private bool setStringifyFetches(boolean stringifyFetches)
   {
     throw new UnimplementedException();
   }
 
-  private boolean setTimeout(int timeoutSeconds)
+  private bool setTimeout(int timeoutSeconds)
   {
     throw new UnimplementedException();
   }
@@ -960,7 +960,7 @@ public class PDO implements EnvCleanup {
     int flags = 0;
     string driver = null;
     string url = null;
-    boolean isNewLink = false;
+    bool isNewLink = false;
 
     Mysqli mysqli =  new Mysqli(env, host, user, pass, dbName, port,
                                 socket, flags, driver, url, isNewLink,
@@ -1185,7 +1185,7 @@ public class PDO implements EnvCleanup {
 
     HashMap<String,String> attr = parseAttr(_dsn, i);
 
-    boolean first = true;
+    bool first = true;
 
     for (Map.Entry<String,String> entry : attr.entrySet()) {
       string key = entry.getKey();

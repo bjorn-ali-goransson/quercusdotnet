@@ -97,7 +97,7 @@ public class OracleStatement : JdbcPreparedStatementResource {
     _outParameter = null;
   }
 
-  protected boolean execute(Env env, int mode)
+  protected bool execute(Env env, int mode)
   {
     try {
 

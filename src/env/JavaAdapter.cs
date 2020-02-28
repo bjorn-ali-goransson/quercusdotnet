@@ -298,7 +298,7 @@ abstract public class JavaAdapter : ArrayValue
   /**
    * Returns the value as an argument which may be a reference.
    */
-  public override Value getArg(Value index, boolean isTop)
+  public override Value getArg(Value index, bool isTop)
   {
     return get(index);
   }
@@ -438,7 +438,7 @@ abstract public class JavaAdapter : ArrayValue
   /**
    * Returns true if there are more elements.
    */
-  public override boolean hasCurrent()
+  public override bool hasCurrent()
   {
     throw new UnsupportedOperationException();
   }
@@ -550,7 +550,7 @@ abstract public class JavaAdapter : ArrayValue
    * @param strict  true if alphabetic keys should not be preserved
    */
   public override void sort(Comparator<Map.Entry<Value, Value>> comparator,
-                   boolean resetKeys, boolean strict)
+                   bool resetKeys, bool strict)
   {
     Map.Entry<Value,Value>[] entries = new Map.Entry[getSize()];
 
@@ -600,7 +600,7 @@ abstract public class JavaAdapter : ArrayValue
    * @param base  the initial index
    * @param strict  if true, string keys are also reset
    */
-  public override boolean keyReset(long base, boolean strict)
+  public override bool keyReset(long base, bool strict)
   {
     throw new UnsupportedOperationException();
   }
@@ -665,7 +665,7 @@ abstract public class JavaAdapter : ArrayValue
     return _classDef.getName();
   }
 
-  public override boolean isA(Env env, string name)
+  public override bool isA(Env env, string name)
   {
     return _classDef.isA(env, name);
   }

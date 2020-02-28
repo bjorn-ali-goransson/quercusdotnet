@@ -76,7 +76,7 @@ public class ReflectionFunction : ReflectionFunctionAbstract
 
   public Value export(Env env,
                       string name,
-                      @Optional boolean isReturn)
+                      @Optional bool isReturn)
   {
     return null;
   }

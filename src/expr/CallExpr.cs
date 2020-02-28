@@ -53,7 +53,7 @@ public class CallExpr : Expr {
 
   private int _funId;
 
-  protected boolean _isRef;
+  protected bool _isRef;
 
   public CallExpr(Location location, StringValue name, ArrayList<Expr> args)
   {
@@ -172,7 +172,7 @@ public class CallExpr : Expr {
    *
    * @return the expression value.
    */
-  private Value evalImpl(Env env, boolean isRef, boolean isCopy)
+  private Value evalImpl(Env env, bool isRef, bool isCopy)
   {
     if (_funId <= 0) {
       _funId = env.findFunctionId(_name);

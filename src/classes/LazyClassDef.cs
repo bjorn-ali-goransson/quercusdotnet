@@ -161,7 +161,7 @@ public class LazyClassDef : CompiledClassDef
    * Return true for an abstract class.
    */
   @Override
-  public boolean isAbstract()
+  public bool isAbstract()
   {
     return getClassDef().isAbstract();
   }
@@ -170,7 +170,7 @@ public class LazyClassDef : CompiledClassDef
    * Return true for an interface class.
    */
   @Override
-  public boolean isInterface()
+  public bool isInterface()
   {
     return getClassDef().isInterface();
   }
@@ -179,7 +179,7 @@ public class LazyClassDef : CompiledClassDef
    * Returns true for a final class.
    */
   @Override
-  public boolean isFinal()
+  public bool isFinal()
   {
     return getClassDef().isFinal();
   }
@@ -215,7 +215,7 @@ public class LazyClassDef : CompiledClassDef
    * Returns true if the class has private/protected methods.
    */
   @Override
-  public boolean hasNonPublicMethods()
+  public bool hasNonPublicMethods()
   {
     return getClassDef().hasNonPublicMethods();
   }
@@ -260,7 +260,7 @@ public class LazyClassDef : CompiledClassDef
    * Initialize the quercus class.
    */
   @Override
-  public void initInstance(Env env, Value value, boolean isInitFieldValues)
+  public void initInstance(Env env, Value value, bool isInitFieldValues)
   {
     getClassDef().initInstance(env, value, isInitFieldValues);
   }
@@ -269,7 +269,7 @@ public class LazyClassDef : CompiledClassDef
    * Returns value for instanceof.
    */
   @Override
-  public boolean isA(Env env, string name)
+  public bool isA(Env env, string name)
   {
     return getClassDef().isA(env, name);
   }

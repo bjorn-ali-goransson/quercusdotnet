@@ -51,7 +51,7 @@ public class DOMTypeInfo
     return _delegate.getTypeNamespace();
   }
 
-  public boolean isDerivedFrom(String typeNamespaceArg,
+  public bool isDerivedFrom(String typeNamespaceArg,
                                string typeNameArg,
                                int derivationMethod)
   {

@@ -55,7 +55,7 @@ public class FileWriteValue : FileValue {
     _os = path.openWrite();
   }
 
-  public FileWriteValue(Path path, boolean isAppend)
+  public FileWriteValue(Path path, bool isAppend)
     
    : base(path) {
 

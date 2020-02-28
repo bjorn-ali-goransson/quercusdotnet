@@ -48,13 +48,13 @@ public class JdbcColumnMetaData {
 
   private final int _length;
 
-  private final boolean _isNotNull;
-  private final boolean _isUnsigned;
-  private final boolean _isZeroFill;
+  private final bool _isNotNull;
+  private final bool _isUnsigned;
+  private final bool _isZeroFill;
 
-  private boolean _isPrimaryKey;
-  private boolean _isIndex;
-  private boolean _isUnique;
+  private bool _isPrimaryKey;
+  private bool _isIndex;
+  private bool _isUnique;
 
   /**
    * @param rs the ResultSet from a DatabaseMetaData.getColumns call
@@ -108,7 +108,7 @@ public class JdbcColumnMetaData {
   /**
    * Returns true if the column is nullable.
    */
-  public boolean isNotNull()
+  public bool isNotNull()
   {
     return _isNotNull;
   }
@@ -116,7 +116,7 @@ public class JdbcColumnMetaData {
   /**
    * Returns true for a primary key.
    */
-  public boolean isPrimaryKey()
+  public bool isPrimaryKey()
   {
     return _isPrimaryKey;
   }
@@ -132,7 +132,7 @@ public class JdbcColumnMetaData {
   /**
    * Returns true for an index
    */
-  public boolean isIndex()
+  public bool isIndex()
   {
     return _isIndex;
   }
@@ -148,7 +148,7 @@ public class JdbcColumnMetaData {
   /**
    * Returns true for a unique column
    */
-  public boolean isUnique()
+  public bool isUnique()
   {
     return _isUnique;
   }
@@ -172,7 +172,7 @@ public class JdbcColumnMetaData {
   /**
    * Returns true for numeric data types.
    */
-  public static boolean isNumeric(int jdbcType)
+  public static bool isNumeric(int jdbcType)
   {
     switch (jdbcType) {
       case Types.BIT:
@@ -192,7 +192,7 @@ public class JdbcColumnMetaData {
   /**
    * Returns true for numeric data types.
    */
-  public boolean isNumeric()
+  public bool isNumeric()
   {
     return isNumeric(_jdbcType);
   }
@@ -200,7 +200,7 @@ public class JdbcColumnMetaData {
   /**
    * Returns true for float data types.
    */
-  public boolean isFloat()
+  public bool isFloat()
   {
     switch (_jdbcType) {
     case Types.DOUBLE:
@@ -215,7 +215,7 @@ public class JdbcColumnMetaData {
   /**
    * Returns true for unsigned.
    */
-  public boolean isUnsigned()
+  public bool isUnsigned()
   {
     return _isUnsigned;
   }
@@ -223,7 +223,7 @@ public class JdbcColumnMetaData {
   /**
    * Returns true for zerofill
    */
-  public boolean isZeroFill()
+  public bool isZeroFill()
   {
     return _isZeroFill;
   }
@@ -231,7 +231,7 @@ public class JdbcColumnMetaData {
   /**
    * Returns true for blob data types.
    */
-  public static boolean isBlob(int jdbcType)
+  public static bool isBlob(int jdbcType)
   {
     switch (jdbcType) {
       // php/142s
@@ -249,7 +249,7 @@ public class JdbcColumnMetaData {
   /**
    * Returns true for blob data types.
    */
-  public boolean isBlob()
+  public bool isBlob()
   {
     return isBlob(_jdbcType);
   }

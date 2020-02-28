@@ -136,7 +136,7 @@ abstract public class UnicodeValue : StringValue {
   /**
    * Returns true for UnicodeValue
    */
-  public override boolean isUnicode()
+  public override bool isUnicode()
   {
     return true;
   }
@@ -176,7 +176,7 @@ abstract public class UnicodeValue : StringValue {
    * Returns true for equality
    */
   /*
-  public override boolean eq(Value rValue)
+  public override bool eq(Value rValue)
   {
     rValue = rValue.toValue();
     

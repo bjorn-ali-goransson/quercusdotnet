@@ -87,7 +87,7 @@ public class Var : Value
     //assert(! (value instanceof Var));
   }
 
-  public boolean isVar()
+  public bool isVar()
   {
     return true;
   }
@@ -180,7 +180,7 @@ public class Var : Value
   /**
    * Returns true for an object.
    */
-  public override boolean isObject()
+  public override bool isObject()
   {
     return _value.isObject();
   }
@@ -188,7 +188,7 @@ public class Var : Value
   /*
    * Returns true for a resource.
    */
-  public override boolean isResource()
+  public override bool isResource()
   {
     return _value.isResource();
   }
@@ -196,7 +196,7 @@ public class Var : Value
   /**
    * Returns true for an implementation of a class
    */
-  public override boolean isA(Env env, string name)
+  public override bool isA(Env env, string name)
   {
     return _value.isA(env, name);
   }
@@ -204,7 +204,7 @@ public class Var : Value
   /**
    * True for a long
    */
-  public override boolean isLongConvertible()
+  public override bool isLongConvertible()
   {
     return _value.isLongConvertible();
   }
@@ -212,7 +212,7 @@ public class Var : Value
   /**
    * True to a double.
    */
-  public override boolean isDoubleConvertible()
+  public override bool isDoubleConvertible()
   {
     return _value.isDoubleConvertible();
   }
@@ -220,7 +220,7 @@ public class Var : Value
   /**
    * True for a number
    */
-  public override boolean isNumberConvertible()
+  public override bool isNumberConvertible()
   {
     return _value.isNumberConvertible();
   }
@@ -228,7 +228,7 @@ public class Var : Value
   /**
    * Returns true for a long-value.
    */
-  public override boolean isLong()
+  public override bool isLong()
   {
     return _value.isLong();
   }
@@ -236,7 +236,7 @@ public class Var : Value
   /**
    * Returns true for a long-value.
    */
-  public override boolean isDouble()
+  public override bool isDouble()
   {
     return _value.isDouble();
   }
@@ -244,7 +244,7 @@ public class Var : Value
   /**
    * Returns true for is_numeric
    */
-  public override boolean isNumeric()
+  public override bool isNumeric()
   {
     return _value.isNumeric();
   }
@@ -253,7 +253,7 @@ public class Var : Value
    * Returns true for a scalar
    */
   /*
-  public boolean isScalar()
+  public bool isScalar()
   {
     return _value.isScalar();
   }
@@ -262,7 +262,7 @@ public class Var : Value
   /**
    * Returns true for a StringValue.
    */
-  public override boolean isString()
+  public override bool isString()
   {
     return _value.isString();
   }
@@ -270,7 +270,7 @@ public class Var : Value
   /**
    * Returns true for a BinaryValue.
    */
-  public override boolean isBinary()
+  public override bool isBinary()
   {
     return _value.isBinary();
   }
@@ -278,7 +278,7 @@ public class Var : Value
   /**
    * Returns true for a UnicodeValue.
    */
-  public override boolean isUnicode()
+  public override bool isUnicode()
   {
     return _value.isUnicode();
   }
@@ -286,7 +286,7 @@ public class Var : Value
   /**
    * Returns true for a BooleanValue
    */
-  public override boolean isBoolean()
+  public override bool isBoolean()
   {
     return _value.isBoolean();
   }
@@ -294,7 +294,7 @@ public class Var : Value
   /**
    * Returns true for a DefaultValue
    */
-  public override boolean isDefault()
+  public override bool isDefault()
   {
     return _value.isDefault();
   }
@@ -302,7 +302,7 @@ public class Var : Value
   /**
    * Returns true if the value is set
    */
-  public override boolean isset()
+  public override bool isset()
   {
     return _value.isset();
   }
@@ -310,7 +310,7 @@ public class Var : Value
   /**
    * Returns true if the value is empty
    */
-  public override boolean isEmpty()
+  public override bool isEmpty()
   {
     return _value.isEmpty();
   }
@@ -318,7 +318,7 @@ public class Var : Value
   /**
    * Returns true if the value is empty
    */
-  public override boolean isEmpty(Env env, Value index)
+  public override bool isEmpty(Env env, Value index)
   {
     return _value.isEmpty(env, index);
   }
@@ -326,7 +326,7 @@ public class Var : Value
   /**
    * True if the object is null
    */
-  public override boolean isNull()
+  public override bool isNull()
   {
     return _value.isNull();
   }
@@ -343,7 +343,7 @@ public class Var : Value
   /**
    * Converts to a boolean.
    */
-  public override boolean toBoolean()
+  public override bool toBoolean()
   {
     return _value.toBoolean();
   }
@@ -390,9 +390,9 @@ public class Var : Value
   }
 
   /**
-   * Converts to a java boolean object.
+   * Converts to a java bool object.
    */
-  public override Boolean toJavaBoolean()
+  public override bool toJavaBoolean()
   {
     return _value.toJavaBoolean();
   }
@@ -907,7 +907,7 @@ public class Var : Value
     return _value.toInputStream();
   }
 
-  public override Callable toCallable(Env env, boolean isOptional)
+  public override Callable toCallable(Env env, bool isOptional)
   {
     return _value.toCallable(env, isOptional);
   }
@@ -970,7 +970,7 @@ public class Var : Value
   /**
    * Returns true for an array.
    */
-  public override boolean isArray()
+  public override bool isArray()
   {
     return _value.isArray();
   }
@@ -1192,7 +1192,7 @@ public class Var : Value
   /**
    * Returns true for equality
    */
-  public override boolean eq(Value rValue)
+  public override bool eq(Value rValue)
   {
     return _value.eq(rValue);
   }
@@ -1200,7 +1200,7 @@ public class Var : Value
   /**
    * Returns true for equality
    */
-  public override boolean eql(Value rValue)
+  public override bool eql(Value rValue)
   {
     return _value.eql(rValue);
   }
@@ -1216,7 +1216,7 @@ public class Var : Value
   /**
    * Returns true for less than
    */
-  public override boolean lt(Value rValue)
+  public override bool lt(Value rValue)
   {
     // php/335h
     return _value.lt(rValue);
@@ -1225,7 +1225,7 @@ public class Var : Value
   /**
    * Returns true for less than or equal to
    */
-  public override boolean leq(Value rValue)
+  public override bool leq(Value rValue)
   {
     // php/335h
     return _value.leq(rValue);
@@ -1234,7 +1234,7 @@ public class Var : Value
   /**
    * Returns true for greater than
    */
-  public override boolean gt(Value rValue)
+  public override bool gt(Value rValue)
   {
     // php/335h
     return _value.gt(rValue);
@@ -1243,7 +1243,7 @@ public class Var : Value
   /**
    * Returns true for greater than or equal to
    */
-  public override boolean geq(Value rValue)
+  public override bool geq(Value rValue)
   {
     // php/335h
     return _value.geq(rValue);
@@ -1360,7 +1360,7 @@ public class Var : Value
   /**
    * Returns the array ref.
    */
-  public override Value getArg(Value index, boolean isTop)
+  public override Value getArg(Value index, bool isTop)
   {
     // php/0921, php/3921
 
@@ -1466,7 +1466,7 @@ public class Var : Value
   /**
    * Return true if the array value is set
    */
-  public override boolean isset(Value index)
+  public override bool isset(Value index)
   {
     return _value.isset(index);
   }
@@ -1507,7 +1507,7 @@ public class Var : Value
   /**
    * Returns the array ref.
    */
-  public override Value getFieldArg(Env env, StringValue name, boolean isTop)
+  public override Value getFieldArg(Env env, StringValue name, bool isTop)
   {
     if (_value.isset())
       return _value.getFieldArg(env, name, isTop);
@@ -1558,14 +1558,14 @@ public class Var : Value
   /**
    * Returns true if the object has this field.
    */
-  public override boolean isFieldExists(Env env, StringValue name) {
+  public override bool isFieldExists(Env env, StringValue name) {
     return _value.isFieldExists(env, name);
   }
 
   /**
    * Returns true if the field is set.
    */
-  public override boolean issetField(Env env, StringValue name)
+  public override bool issetField(Env env, StringValue name)
   {
     return _value.issetField(env, name);
   }
@@ -1652,7 +1652,7 @@ public class Var : Value
   /**
    * Returns true if the field is set.
    */
-  public override boolean issetThisField(Env env, StringValue name)
+  public override bool issetThisField(Env env, StringValue name)
   {
     return _value.issetThisField(env, name);
   }
@@ -1735,7 +1735,7 @@ public class Var : Value
   /**
    * Returns true if there are more elements.
    */
-  public override boolean hasCurrent()
+  public override bool hasCurrent()
   {
     return _value.hasCurrent();
   }

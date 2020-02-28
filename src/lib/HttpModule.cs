@@ -71,7 +71,7 @@ public class HttpModule : AbstractQuercusModule {
    */
   public static Value header(Env env,
                              StringValue headerStr,
-                             @Optional("true") boolean replace,
+                             @Optional("true") bool replace,
                              @Optional long httpResponseCode)
   {
     QuercusHttpServletResponse res = env.getResponse();
@@ -196,7 +196,7 @@ public class HttpModule : AbstractQuercusModule {
   /**
    * Return true if the headers have been sent.
    */
-  public static boolean headers_sent(Env env,
+  public static bool headers_sent(Env env,
                                      @Optional @Reference Value file,
                                      @Optional @Reference Value line)
   {
@@ -209,14 +209,14 @@ public class HttpModule : AbstractQuercusModule {
   /**
    * Sets a cookie
    */
-  public static boolean setcookie(Env env,
+  public static bool setcookie(Env env,
                                   string name,
                                   @Optional string value,
                                   @Optional long expire,
                                   @Optional string path,
                                   @Optional string domain,
-                                  @Optional boolean secure,
-                                  @Optional boolean httpOnly)
+                                  @Optional bool secure,
+                                  @Optional bool httpOnly)
   {
     QuercusHttpServletResponse response = env.getResponse();
 

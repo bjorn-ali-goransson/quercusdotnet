@@ -48,7 +48,7 @@ public class ExtValueMarshal : Marshal
   }
 
   @Override
-  public boolean isReadOnly()
+  public bool isReadOnly()
   {
     return false;
   }
@@ -56,7 +56,7 @@ public class ExtValueMarshal : Marshal
   /**
    * Return true if is a Value.
    */
-  public override boolean isValue()
+  public override bool isValue()
   {
     return true;
   }

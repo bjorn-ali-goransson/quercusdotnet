@@ -66,12 +66,12 @@ public class MethodDeclaration : Function
     _qClass = qClass;
   }
 
-  public boolean isAbstract()
+  public bool isAbstract()
   {
     return true;
   }
 
-  public boolean isObjectMethod()
+  public bool isObjectMethod()
   {
     return true;
   }

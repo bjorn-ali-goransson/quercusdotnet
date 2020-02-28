@@ -70,7 +70,7 @@ public class DOMAttr
     return wrap(_delegate.getSchemaTypeInfo());
   }
 
-  public boolean getSpecified()
+  public bool getSpecified()
   {
     return _delegate.getSpecified();
   }
@@ -80,7 +80,7 @@ public class DOMAttr
     return _delegate.getValue();
   }
 
-  public boolean isId()
+  public bool isId()
   {
     return _delegate.isId();
   }

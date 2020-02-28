@@ -36,7 +36,7 @@ namespace QuercusDotNet.Expr{
 
 
 /**
- * Represents a PHP boolean negation
+ * Represents a PHP bool negation
  */
 public class UnaryNotExpr : AbstractUnaryExpr {
   public UnaryNotExpr(Location location, Expr expr)
@@ -51,7 +51,7 @@ public class UnaryNotExpr : AbstractUnaryExpr {
   /**
    * Return true as a boolean.
    */
-  public boolean isBoolean()
+  public bool isBoolean()
   {
     return true;
   }
@@ -67,7 +67,7 @@ public class UnaryNotExpr : AbstractUnaryExpr {
   /**
    * Evaluates the equality as a boolean.
    */
-  public boolean evalBoolean(Env env)
+  public bool evalBoolean(Env env)
   {
     return ! _expr.evalBoolean(env);
   }

@@ -248,7 +248,7 @@ public class SocketModule : AbstractQuercusModule {
     }
   }
 
-  public static boolean socket_bind(Env env,
+  public static bool socket_bind(Env env,
                                     @NotNull SocketInputOutput socket,
                                     StringValue address,
                                     @Optional("0") int port)
@@ -277,7 +277,7 @@ public class SocketModule : AbstractQuercusModule {
     socket.close();
   }
 
-  public static boolean socket_connect(Env env,
+  public static bool socket_connect(Env env,
                                        @NotNull SocketInputOutput socket,
                                        StringValue address, @Optional int port)
   {
@@ -344,7 +344,7 @@ public class SocketModule : AbstractQuercusModule {
     }
   }
 
-  public static boolean socket_set_timeout(Env env,
+  public static bool socket_set_timeout(Env env,
                                            @NotNull Value stream,
                                            int seconds,
                                            @Optional("-1") int milliseconds)
@@ -383,7 +383,7 @@ public class SocketModule : AbstractQuercusModule {
    *
    * @param how 0 = read, 1 = write, 2 = both
    */
-  public boolean socket_shutdown(Env env,
+  public bool socket_shutdown(Env env,
                                  @NotNull SocketInputOutput file,
                                  @Optional("2") int how)
   {

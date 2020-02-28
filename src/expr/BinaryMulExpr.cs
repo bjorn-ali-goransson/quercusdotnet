@@ -50,7 +50,7 @@ public class BinaryMulExpr : AbstractBinaryExpr {
   /**
    * Return true for a double value
    */
-  public boolean isDouble()
+  public bool isDouble()
   {
     return _left.isDouble() || _right.isDouble();
   }
@@ -58,7 +58,7 @@ public class BinaryMulExpr : AbstractBinaryExpr {
   /**
    * Return true for a long value
    */
-  public boolean isLong()
+  public bool isLong()
   {
     return _left.isLong() && _right.isLong();
   }
@@ -66,7 +66,7 @@ public class BinaryMulExpr : AbstractBinaryExpr {
   /**
    * Return true for a number
    */
-  public boolean isNumber()
+  public bool isNumber()
   {
     return true;
   }

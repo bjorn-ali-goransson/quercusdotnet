@@ -92,14 +92,14 @@ public class QuercusSessionManager
   private int _cookieLength = 18;
 
   private int _alwaysLoadSession;
-  private boolean _alwaysSaveSession;
-  private boolean _saveOnlyOnShutdown;
+  private bool _alwaysSaveSession;
+  private bool _saveOnlyOnShutdown;
 
-  private boolean _isModuloSessionId = false;
-  private boolean _isAppendServerIndex = false;
-  private boolean _isTwoDigitSessionIndex = false;
+  private bool _isModuloSessionId = false;
+  private bool _isAppendServerIndex = false;
+  private bool _isTwoDigitSessionIndex = false;
   
-  protected boolean _isClosed;
+  protected bool _isClosed;
 
   //private Alarm _alarm = new Alarm(this);
 
@@ -124,7 +124,7 @@ public class QuercusSessionManager
   /**
    * True if sessions should always be saved.
    */
-  boolean getAlwaysSaveSession()
+  bool getAlwaysSaveSession()
   {
     return _alwaysSaveSession;
   }
@@ -140,7 +140,7 @@ public class QuercusSessionManager
   /**
    * True if sessions should always be loadd.
    */
-  boolean getAlwaysLoadSession()
+  bool getAlwaysLoadSession()
   {
     return _alwaysLoadSession == SET_TRUE;
   }
@@ -156,7 +156,7 @@ public class QuercusSessionManager
   /**
    * True if sessions should only be saved on shutdown.
    */
-  public boolean getSaveOnlyOnShutdown()
+  public bool getSaveOnlyOnShutdown()
   {
     return _saveOnlyOnShutdown;
   }
@@ -260,7 +260,7 @@ public class QuercusSessionManager
   /**
    * Returns true if the sessions are closed.
    */
-  public boolean isClosed()
+  public bool isClosed()
   {
     return _isClosed;
   }
@@ -316,7 +316,7 @@ public class QuercusSessionManager
   /**
    * Checks if the session is empty.
    */
-  public boolean isEmpty(Object obj)
+  public bool isEmpty(Object obj)
   {
     SessionArrayValue session = (SessionArrayValue) obj;
 
@@ -396,8 +396,8 @@ public class QuercusSessionManager
   public SessionArrayValue getSession(Env env, string key, long now)
   {
     SessionArrayValue session;
-    boolean isNew = false;
-    boolean killSession = false;
+    bool isNew = false;
+    bool killSession = false;
 
     if (_sessions == null)
       return null;
@@ -486,7 +486,7 @@ public class QuercusSessionManager
    * the cache and do not intend actually to load it if it is not.
    *
    */
-  protected boolean load(Env env, SessionArrayValue session, long now)
+  protected bool load(Env env, SessionArrayValue session, long now)
   {
     try {
       if (session.inUse()) {
@@ -593,7 +593,7 @@ public class QuercusSessionManager
 
     ArrayList<SessionArrayValue> list = new ArrayList<SessionArrayValue>();
 
-    boolean isError = false;
+    bool isError = false;
 
     synchronized (_sessions) {
       _sessionIter = _sessions.values(_sessionIter);

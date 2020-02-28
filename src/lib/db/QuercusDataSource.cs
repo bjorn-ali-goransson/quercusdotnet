@@ -42,7 +42,7 @@ public class QuercusDataSource implements DataSource {
   private final string _user;
   private final string _pass;
 
-  private final boolean _isAllowPerConnectionUserPass;
+  private final bool _isAllowPerConnectionUserPass;
 
   /**
    * @param ds
@@ -55,7 +55,7 @@ public class QuercusDataSource implements DataSource {
   public QuercusDataSource(DataSource ds,
                            string user,
                            string pass,
-                           boolean isAllowPerConnectionUserPass)
+                           bool isAllowPerConnectionUserPass)
   {
     _ds = ds;
 
@@ -112,7 +112,7 @@ public class QuercusDataSource implements DataSource {
     _ds.setLogWriter(out);
   }
 
-  public override boolean isWrapperFor(Class<?> iface)
+  public override bool isWrapperFor(Class<?> iface)
     
   {
     return _ds.isWrapperFor(iface);

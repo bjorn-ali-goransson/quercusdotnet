@@ -50,7 +50,7 @@ public class BinaryModExpr : AbstractBinaryExpr {
   /**
    * Return true for a long.
    */
-  public boolean isLong()
+  public bool isLong()
   {
     return true;
   }
@@ -58,7 +58,7 @@ public class BinaryModExpr : AbstractBinaryExpr {
   /**
    * Return true for a long.
    */
-  public boolean isNumber()
+  public bool isNumber()
   {
     return true;
   }

@@ -70,7 +70,7 @@ public class QuercusClass : NullValue {
 
   private WeakReference<QuercusClass> _cacheRef;
 
-  private boolean _isJavaWrapper;
+  private bool _isJavaWrapper;
 
   private ClassDef []_classDefList;
 
@@ -108,7 +108,7 @@ public class QuercusClass : NullValue {
   private final HashSet<String> _instanceofSet;
   private final HashMap<StringValue,String> _traitMethodBindingClassMap;
 
-  private boolean _isModified;
+  private bool _isModified;
 
   private final ModuleContext _moduleContext;
 
@@ -235,7 +235,7 @@ public class QuercusClass : NullValue {
     // _instanceofSet.add(classDef.getName());
 
     for (String iface : classDef.getInterfaces()) {
-      boolean isJavaClassDef = classDef instanceof JavaClassDef;
+      bool isJavaClassDef = classDef instanceof JavaClassDef;
 
       QuercusClass cls;
 
@@ -434,22 +434,22 @@ public class QuercusClass : NullValue {
     return _classDef.getExtension();
   }
 
-  public boolean isInterface()
+  public bool isInterface()
   {
     return _classDef.isInterface();
   }
 
-  public boolean isAbstract()
+  public bool isAbstract()
   {
     return _classDef.isAbstract();
   }
 
-  public boolean isTrait()
+  public bool isTrait()
   {
     return _classDef.isTrait();
   }
 
-  public boolean isFinal()
+  public bool isFinal()
   {
     return _classDef.isFinal();
   }
@@ -489,7 +489,7 @@ public class QuercusClass : NullValue {
   /**
    * Returns true if the class is modified for caching.
    */
-  public boolean isModified()
+  public bool isModified()
   {
     if (_isModified)
       return true;
@@ -1009,7 +1009,7 @@ public class QuercusClass : NullValue {
         Function fun = (Function) absFun;
          */
 
-        boolean isAbstract;
+        bool isAbstract;
 
         // php/093g constructor
         if (_constructor != null
@@ -1153,7 +1153,7 @@ public class QuercusClass : NullValue {
    * Creates a new object without calling the constructor.  This is used
    * for unserializing classes.
    */
-  public Value createObject(Env env, boolean isInit)
+  public Value createObject(Env env, bool isInit)
   {
     if (isAbstract()) {
       throw env.createErrorException(L.l("abstract class '{0}' cannot be instantiated.",
@@ -1209,7 +1209,7 @@ public class QuercusClass : NullValue {
   /**
    * Initializes the object's methods and fields.
    */
-  public void initObject(Env env, ObjectValue obj, boolean isInitFieldValues)
+  public void initObject(Env env, ObjectValue obj, bool isInitFieldValues)
   {
     for (InstanceInitializer initializer : _initializers) {
       initializer.initInstance(env, obj, isInitFieldValues);
@@ -1333,13 +1333,13 @@ public class QuercusClass : NullValue {
   /**
    * Returns true for an implementation of a class
    */
-  public override boolean isA(Env env, string name)
+  public override bool isA(Env env, string name)
   {
     if (name.startsWith("\\")) {
       name = name.substring(1);
     }
 
-    boolean isA = _instanceofSet.contains(name.toLowerCase(Locale.ENGLISH));
+    bool isA = _instanceofSet.contains(name.toLowerCase(Locale.ENGLISH));
 
     if (isA) {
       return true;
@@ -1358,7 +1358,7 @@ public class QuercusClass : NullValue {
    * Returns an array of the interfaces that this class and its parents
    * implements.
    */
-  public ArrayValue getInterfaces(Env env, boolean autoload)
+  public ArrayValue getInterfaces(Env env, bool autoload)
   {
     ArrayValue array = new ArrayValueImpl();
 
@@ -1372,7 +1372,7 @@ public class QuercusClass : NullValue {
    * into the array.
    */
   private void getInterfaces(Env env, ArrayValue array,
-                             boolean autoload, boolean isTop)
+                             bool autoload, bool isTop)
   {
     ClassDef [] defList = _classDefList;
 
@@ -1401,7 +1401,7 @@ public class QuercusClass : NullValue {
   /**
    * Returns true if this class or its parents implements specified interface.
    */
-  public boolean implementsInterface(Env env, string name)
+  public bool implementsInterface(Env env, string name)
   {
     ClassDef [] defList = _classDefList;
 
@@ -1477,7 +1477,7 @@ public class QuercusClass : NullValue {
    * Implements the __isset method call.
    * __isset() is triggered by calling isset() or empty()  on inaccessible properties.
   */
-  public boolean issetField(Env env, Value qThis, StringValue name)
+  public bool issetField(Env env, Value qThis, StringValue name)
   {
     ClassField field = _fieldMap.get(name);
 
@@ -1502,7 +1502,7 @@ public class QuercusClass : NullValue {
     return false;
   }
 
-  public override boolean issetField(Env env, StringValue name) {
+  public override bool issetField(Env env, StringValue name) {
     if(_fieldMap.containsKey(name)) {
       return true;
     }
@@ -2574,7 +2574,7 @@ public class QuercusClass : NullValue {
   /**
    * Returns true if the constant exists.
    */
-  public final boolean hasConstant(StringValue name)
+  public final bool hasConstant(StringValue name)
   {
     if (_constMap.get(name) != null)
       return true;
@@ -2604,7 +2604,7 @@ public class QuercusClass : NullValue {
   // Value methods
   //
 
-  public override boolean isNull()
+  public override bool isNull()
   {
     return false;
   }
@@ -2632,7 +2632,7 @@ public class QuercusClass : NullValue {
     return _className.hashCode();
   }
 
-  public boolean equals(Object o)
+  public bool equals(Object o)
   {
     if (this == o)
       return true;

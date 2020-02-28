@@ -51,7 +51,7 @@ public class ClassMethodExpr : AbstractMethodExpr {
   protected final int _hash;
   protected final Expr []_args;
 
-  protected boolean _isMethod;
+  protected bool _isMethod;
 
   public ClassMethodExpr(Location location, string className,
                          StringValue methodName,

@@ -195,7 +195,7 @@ public class ServerArrayValue : ArrayValueImpl
 
   private final Env _env;
 
-  private boolean _isFilled;
+  private bool _isFilled;
 
   public ServerArrayValue(Env env)
   {
@@ -247,7 +247,7 @@ public class ServerArrayValue : ArrayValueImpl
    * Gets a new value.
    */
   @Override
-  public Value getArg(Value key, boolean isTop)
+  public Value getArg(Value key, bool isTop)
   {
     if (! _isFilled)
       fillMap();
@@ -313,7 +313,7 @@ public class ServerArrayValue : ArrayValueImpl
   /**
    * Returns true if the value is isset().
    */
-  public override boolean isset(Value key)
+  public override bool isset(Value key)
   {
     return get(key).isset();
   }
@@ -358,7 +358,7 @@ public class ServerArrayValue : ArrayValueImpl
     }
 
     QuercusHttpServletRequest request = _env.getRequest();
-    boolean isUnicode = _env.isUnicodeSemantics();
+    bool isUnicode = _env.isUnicodeSemantics();
 
     if (request != null) {
       super.put(isUnicode ? SERVER_ADDR_VU : SERVER_ADDR_V,
@@ -465,7 +465,7 @@ public class ServerArrayValue : ArrayValueImpl
           super.put(isUnicode ? AUTH_TYPE_VU : AUTH_TYPE_V,
                     _env.createString("Basic"));
 
-            boolean userNameIsSet = false;
+            bool userNameIsSet = false;
             if (request.getRemoteUser() != null) {
               super.put(isUnicode ? PHP_AUTH_USER_VU : PHP_AUTH_USER_V,
                         _env.createString(request.getRemoteUser()));

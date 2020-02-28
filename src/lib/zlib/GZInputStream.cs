@@ -48,8 +48,8 @@ public class GZInputStream : InputStream
   private Inflater _inflater;
 
   private CRC32 _crc;
-  private boolean _eof;
-  private boolean _isGzip;
+  private bool _eof;
+  private bool _isGzip;
 
   private byte[] _readBuffer;        //raw input data buffer
   private byte[] _tbuffer;        //temporary buffer
@@ -103,7 +103,7 @@ public class GZInputStream : InputStream
    * mark() and reset() are not supported by this class.
    * @return false always
    */
-  public boolean markSupported()
+  public bool markSupported()
   {
     return false;
   }
@@ -345,7 +345,7 @@ public class GZInputStream : InputStream
   /**
    * Returns true if stream is in gzip format.
    */
-  public boolean isGzip()
+  public bool isGzip()
   {
     return _isGzip;
   }

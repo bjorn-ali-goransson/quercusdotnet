@@ -273,8 +273,8 @@ public class ElementView : SimpleView
   }
 
   public override HashMap<String,String> getNamespaces(boolean isRecursive,
-                                              boolean isFromRoot,
-                                              boolean isCheckUsage)
+                                              bool isFromRoot,
+                                              bool isCheckUsage)
   {
     HashMap<String,String> newMap = new LinkedHashMap<String,String>();
     HashMap<String,String> usedMap = new LinkedHashMap<String,String>();
@@ -300,9 +300,9 @@ public class ElementView : SimpleView
   private void getNamespaces(HashMap<String,String> newMap,
                              HashMap<String,String> usedMap,
                              Node node,
-                             boolean isRecursive,
-                             boolean isCheckUsage,
-                             boolean isTop)
+                             bool isRecursive,
+                             bool isCheckUsage,
+                             bool isTop)
   {
     NamedNodeMap attrMap = node.getAttributes();
 
@@ -525,7 +525,7 @@ public class ElementView : SimpleView
     return count;
   }
   
-  public override boolean issetField(Env env, string name)
+  public override bool issetField(Env env, string name)
   {    
     Node child = _node.getFirstChild();
     
@@ -660,14 +660,14 @@ public class ElementView : SimpleView
     return map.entrySet();
   }
 
-  public override boolean toXml(Env env, StringBuilder sb)
+  public override bool toXml(Env env, StringBuilder sb)
   {
     SimpleUtil.toXml(env, sb, _node);
 
     return true;
   }
 
-  public override Value toDumpValue(Env env, QuercusClass cls, boolean isChildren)
+  public override Value toDumpValue(Env env, QuercusClass cls, bool isChildren)
   {
     ArrayList<ElementView> elementList = new ArrayList<ElementView>();
     ArrayList<AttributeView> attrList = new ArrayList<AttributeView>();

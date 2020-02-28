@@ -150,7 +150,7 @@ public class ArrayIterator
       _current = null;
   }
 
-  public override boolean offsetExists(Env env, Value offset)
+  public override bool offsetExists(Env env, Value offset)
   {
     return _value.get(offset).isset();
   }
@@ -222,7 +222,7 @@ public class ArrayIterator
       ArrayModule.uksort(_env, (ArrayValue) _value, func, sortFlag);
   }
 
-  public override boolean valid(Env env)
+  public override bool valid(Env env)
   {
     if (_iterator == null)
       rewind(env);

@@ -46,7 +46,7 @@ public class ThisMethodExpr : ObjectMethodExpr {
   protected final InterpretedClassDef _classDef;
 
   protected final int _hashCodeInsensitive;
-  protected boolean _isInit;
+  protected bool _isInit;
 
   protected AbstractFunction _fun;
 

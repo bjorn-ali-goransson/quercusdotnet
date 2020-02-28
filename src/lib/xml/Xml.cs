@@ -78,7 +78,7 @@ public class Xml {
    * only affects startElement (including attribute
    * names) and endElement handlers.
    */
-  private boolean _xmlOptionCaseFolding = true;
+  private bool _xmlOptionCaseFolding = true;
 
   private string _outputEncoding;
 
@@ -93,7 +93,7 @@ public class Xml {
   /**
    *  XXX: _xmlOptionSkipWhite not yet implemented
    */
-  private boolean _xmlOptionSkipWhite = false;
+  private bool _xmlOptionSkipWhite = false;
 
   /** XXX: _separator is set by xml_parse_create_ns but
    *  not yet used.  Default value is ":"
@@ -171,7 +171,7 @@ public class Xml {
    * @return true always even if handlers are disabled
    */
 
-  public boolean xml_set_element_handler(Env env,
+  public bool xml_set_element_handler(Env env,
                                          Value startElementHandler,
                                          Value endElementHandler)
   {
@@ -209,7 +209,7 @@ public class Xml {
    * @param handler can be empty string or FALSE
    * @return true always even if handler is disabled
    */
-  public boolean xml_set_character_data_handler(Env env, Value handler)
+  public bool xml_set_character_data_handler(Env env, Value handler)
   {
     if (_obj == null) {
       _characterDataHandler = handler.toCallable(env, false);
@@ -238,7 +238,7 @@ public class Xml {
    * @param handler
    * @return true always even if handler is disabled
    */
-  public boolean xml_set_default_handler(Env env, Value handler)
+  public bool xml_set_default_handler(Env env, Value handler)
   {
     if (_obj == null) {
       _defaultHandler = handler.toCallable(env, false);
@@ -258,7 +258,7 @@ public class Xml {
    * @param processingInstructionHandler
    * @return true always even if handler is disabled
    */
-  public boolean xml_set_processing_instruction_handler(
+  public bool xml_set_processing_instruction_handler(
       Env env,
       Value processingInstructionHandler)
   {
@@ -280,7 +280,7 @@ public class Xml {
    * @param startNamespaceDeclHandler
    * @return true always even if handler is disabled
    */
-  public boolean xml_set_start_namespace_decl_handler(
+  public bool xml_set_start_namespace_decl_handler(
       Env env,
       Value startNamespaceDeclHandler)
   {
@@ -301,7 +301,7 @@ public class Xml {
    * @param handler
    * @return true always even if handler is disabled
    */
-  public boolean xml_set_unparsed_entity_decl_handler(Env env, Value handler)
+  public bool xml_set_unparsed_entity_decl_handler(Env env, Value handler)
   {
     if (_obj == null) {
       _unparsedEntityDeclHandler = handler.toCallable(env, false);
@@ -320,7 +320,7 @@ public class Xml {
    * @param endNamespaceDeclHandler
    * @return true always even if handler is disabled
    */
-  public boolean xml_set_end_namespace_decl_handler(
+  public bool xml_set_end_namespace_decl_handler(
       Env env,
       Value endNamespaceDeclHandler)
   {
@@ -341,7 +341,7 @@ public class Xml {
    * @param handler
    * @return true always even if handler is disabled
    */
-  public boolean xml_set_notation_decl_handler(Env env, Value handler)
+  public bool xml_set_notation_decl_handler(Env env, Value handler)
   {
     if (_obj == null) {
       _notationDeclHandler = handler.toCallable(env, false);
@@ -360,7 +360,7 @@ public class Xml {
    * @param obj
    * @return returns true unless obj == null
    */
-  public boolean xml_set_object(ObjectValue obj)
+  public bool xml_set_object(ObjectValue obj)
   {
     if (obj == null) {
       return false;
@@ -384,7 +384,7 @@ public class Xml {
    */
   public int xml_parse(Env env,
                        StringValue data,
-                       @Optional("true") boolean isFinal)
+                       @Optional("true") bool isFinal)
     
   {
     if (_xmlString == null)
@@ -517,7 +517,7 @@ public class Xml {
    * @param value
    * @return true unless value could not be set
    */
-  public boolean xml_parser_set_option(int option,
+  public bool xml_parser_set_option(int option,
                                        Value value)
   {
     switch(option) {
@@ -583,8 +583,8 @@ public class Xml {
         new ArrayList<StringValue>();
 
     // Used to determine whether a given element has sub elements
-    private boolean _isComplete = true;
-    private boolean _isOutside = true;
+    private bool _isComplete = true;
+    private bool _isOutside = true;
 
     private int _valueArrayIndex = 0;
 

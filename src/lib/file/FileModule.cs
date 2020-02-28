@@ -179,7 +179,7 @@ public class FileModule : AbstractQuercusModule {
    *
    * @param path the path to change to
    */
-  public static boolean chdir(Env env, Path path)
+  public static bool chdir(Env env, Path path)
   {
     if (path.isDirectory()) {
       env.setPwd(path);
@@ -197,7 +197,7 @@ public class FileModule : AbstractQuercusModule {
    *
    * @param path the path to change to
    */
-  public static boolean chroot(Env env, Path path)
+  public static bool chroot(Env env, Path path)
   {
     if (path.isDirectory()) {
 
@@ -219,7 +219,7 @@ public class FileModule : AbstractQuercusModule {
    * @param file the file to change the group of
    * @param group the group id to change to
    */
-  public static boolean chgrp(Env env, Path file, Value group)
+  public static bool chgrp(Env env, Path file, Value group)
   {
     if (!file.canRead()) {
       env.warning(L.l("{0} cannot be read", file.getFullPath()));
@@ -252,7 +252,7 @@ public class FileModule : AbstractQuercusModule {
    * @param file the file to change the group of
    * @param mode the mode id to change to
    */
-  public static boolean chmod(Env env, Path file, int mode)
+  public static bool chmod(Env env, Path file, int mode)
   {
     if (! file.canRead()) {
       // XXX: gallery?
@@ -274,7 +274,7 @@ public class FileModule : AbstractQuercusModule {
    * @param file the file to change the group of
    * @param user the user id to change to
    */
-  public static boolean chown(Env env, Path file, Value user)
+  public static bool chown(Env env, Path file, Value user)
   {
     if (!file.canRead()) {
       env.warning(L.l("{0} cannot be read", file.getFullPath()));
@@ -304,7 +304,7 @@ public class FileModule : AbstractQuercusModule {
    * @param env the PHP executing environment
    */
   public static void clearstatcache(Env env,
-                                    @Optional boolean clearRealPathCache,
+                                    @Optional bool clearRealPathCache,
                                     @Optional string fileName)
   {
     // stubbed
@@ -316,7 +316,7 @@ public class FileModule : AbstractQuercusModule {
    * @param src the source path
    * @param dst the destination path
    */
-  public static boolean copy(Env env, StringValue src, StringValue dst)
+  public static bool copy(Env env, StringValue src, StringValue dst)
   {
     // System.out.println("XXX-COPY: " + src + " " + dst);
     ProtocolWrapper srcWrapper = getProtocolWrapper(env, src);
@@ -544,7 +544,7 @@ public class FileModule : AbstractQuercusModule {
   /**
    * Closes a file.
    */
-  public static boolean fclose(Env env, @NotNull BinaryStream s)
+  public static bool fclose(Env env, @NotNull BinaryStream s)
   {
     if (s == null)
       return false;
@@ -557,7 +557,7 @@ public class FileModule : AbstractQuercusModule {
   /**
    * Checks for the end of file.
    */
-  public static boolean feof(Env env, @NotNull BinaryStream binaryStream)
+  public static bool feof(Env env, @NotNull BinaryStream binaryStream)
   {
     if (binaryStream == null)
       return false;
@@ -568,7 +568,7 @@ public class FileModule : AbstractQuercusModule {
   /**
    * Flushes a file.
    */
-  public static boolean fflush(Env env, @NotNull BinaryOutput os)
+  public static bool fflush(Env env, @NotNull BinaryOutput os)
   {
     if (os == null)
       return false;
@@ -791,9 +791,9 @@ public class FileModule : AbstractQuercusModule {
     if (filename.length() == 0)
       return BooleanValue.FALSE;
 
-    boolean useIncludePath = (flags & FILE_USE_INCLUDE_PATH) != 0;
-    boolean ignoreNewLines = (flags & FILE_IGNORE_NEW_LINES) != 0;
-    boolean skipEmptyLines = (flags & FILE_SKIP_EMPTY_LINES) != 0;
+    bool useIncludePath = (flags & FILE_USE_INCLUDE_PATH) != 0;
+    bool ignoreNewLines = (flags & FILE_IGNORE_NEW_LINES) != 0;
+    bool skipEmptyLines = (flags & FILE_SKIP_EMPTY_LINES) != 0;
 
     try {
       BinaryStream stream = fopen(env, filename, "r", useIncludePath, context);
@@ -1130,7 +1130,7 @@ public class FileModule : AbstractQuercusModule {
    *
    * @param path the path to check
    */
-  public static boolean file_exists(Env env, StringValue filename)
+  public static bool file_exists(Env env, StringValue filename)
   {
     ProtocolWrapper wrapper = getProtocolWrapper(env, filename);
 
@@ -1168,7 +1168,7 @@ public class FileModule : AbstractQuercusModule {
   @ReturnNullAsFalse
   public static StringValue file_get_contents(Env env,
                                               StringValue filename,
-                                              @Optional boolean useIncludePath,
+                                              @Optional bool useIncludePath,
                                               @Optional Value context,
                                               @Optional long offset,
                                               @Optional("4294967296") long maxLen)
@@ -1211,7 +1211,7 @@ public class FileModule : AbstractQuercusModule {
     BinaryStream s = null;
 
     try {
-      boolean useIncludePath = (flags & FILE_USE_INCLUDE_PATH) != 0;
+      bool useIncludePath = (flags & FILE_USE_INCLUDE_PATH) != 0;
       string mode = (flags & FILE_APPEND) != 0 ? "a" : "w";
 
       s = fopen(env, filename, mode, useIncludePath, context);
@@ -1281,7 +1281,7 @@ public class FileModule : AbstractQuercusModule {
    * @param operation the locking operation
    * @param wouldBlock the resource context
    */
-  public static boolean flock(Env env,
+  public static bool flock(Env env,
                               LockableStream fileV,
                               int operation,
                               @Optional Value wouldBlock)
@@ -1293,8 +1293,8 @@ public class FileModule : AbstractQuercusModule {
       return false;
     }
 
-    boolean shared = false;
-    boolean block = true;
+    bool shared = false;
+    bool block = true;
 
     if (operation > LOCK_NB) {
       block = false;
@@ -1325,13 +1325,13 @@ public class FileModule : AbstractQuercusModule {
   /**
    * Converts a glob pattern to a regular expression.
    */
-  private static string globToRegex(String pattern, int flags, boolean brace)
+  private static string globToRegex(String pattern, int flags, bool brace)
   {
     StringBuilder globRegex = new StringBuilder();
 
     int bracketCount = 0;
-    boolean inSquareBrackets = false;
-    boolean inCurlyBrackets = false;
+    bool inSquareBrackets = false;
+    bool inCurlyBrackets = false;
     char lastCh = ' ';
 
     for (int i = 0; i < pattern.length(); i++) {
@@ -1507,7 +1507,7 @@ public class FileModule : AbstractQuercusModule {
   /**
    * Returns true if the given string matches the given glob pattern.
    */
-  public static boolean fnmatch(Env env, string pattern, string string,
+  public static bool fnmatch(Env env, string pattern, string string,
                                 @Optional int flags)
   {
     if (pattern == null || string == null)
@@ -1573,7 +1573,7 @@ public class FileModule : AbstractQuercusModule {
   public static BinaryStream fopen(Env env,
                                    StringValue filename,
                                    string mode,
-                                   @Optional boolean useIncludePath,
+                                   @Optional bool useIncludePath,
                                    @Optional Value contextV)
   {
     if (filename.length() == 0) {
@@ -1721,7 +1721,7 @@ public class FileModule : AbstractQuercusModule {
 
   @Hide
   public static BinaryStream openForAppend(Env env, StringValue filename,
-                                           boolean isUseIncludePath)
+                                           bool isUseIncludePath)
     
   {
     ProtocolWrapper wrapper = getProtocolWrapper(env, filename);
@@ -1755,7 +1755,7 @@ public class FileModule : AbstractQuercusModule {
     return new FileOutput(env, path, true);
   }
 
-  private static boolean isUrl(Path path)
+  private static bool isUrl(Path path)
   {
     string scheme = path.getScheme();
 
@@ -1822,7 +1822,7 @@ public class FileModule : AbstractQuercusModule {
         quote = enclosure.charAt(0);
 
       int writeLength = 0;
-      boolean isFirst = true;
+      bool isFirst = true;
 
       for (Value data : value.values()) {
         if (! isFirst) {
@@ -1978,7 +1978,7 @@ public class FileModule : AbstractQuercusModule {
   /**
    * Truncates a file.
    */
-  public static boolean ftruncate(Env env,
+  public static bool ftruncate(Env env,
                                   @NotNull BinaryOutput handle,
                                   long size)
   {
@@ -2045,7 +2045,7 @@ public class FileModule : AbstractQuercusModule {
     if ((flags & GLOB_NOESCAPE) != 0)
       fnmatchFlags = FNM_NOESCAPE;
 
-    boolean doBraces = (flags & GLOB_BRACE) != 0;
+    bool doBraces = (flags & GLOB_BRACE) != 0;
 
     string globRegex = globToRegex(cwdPattern, fnmatchFlags, doBraces);
 
@@ -2094,7 +2094,7 @@ public class FileModule : AbstractQuercusModule {
             // ArrayValue.add only adds values when the argument is an
             // actual array
 
-            boolean isNull = null == globImpl(env,
+            bool isNull = null == globImpl(env,
                                               subPattern,
                                               flags,
                                               entryPath,
@@ -2137,7 +2137,7 @@ public class FileModule : AbstractQuercusModule {
 
       int i = 0;
 
-      boolean isEscaped = false;
+      bool isEscaped = false;
 
       // find open bracket '{'
       while (i < patternLength) {
@@ -2211,7 +2211,7 @@ public class FileModule : AbstractQuercusModule {
   {
     int patternLength = pattern.length();
 
-    boolean isEscaped = false;
+    bool isEscaped = false;
 
     string prefix = pattern.substring(0, braceIndex);
 
@@ -2324,7 +2324,7 @@ public class FileModule : AbstractQuercusModule {
    *
    * @param path the path to check
    */
-  public static boolean is_dir(Env env, StringValue filename)
+  public static bool is_dir(Env env, StringValue filename)
   {
     ProtocolWrapper wrapper = getProtocolWrapper(env, filename);
 
@@ -2353,7 +2353,7 @@ public class FileModule : AbstractQuercusModule {
    *
    * @param path the path to check
    */
-  public static boolean is_executable(Env env,
+  public static bool is_executable(Env env,
                                       @NotNull Path path)
   {
     if (path == null || ! path.exists()) {
@@ -2392,7 +2392,7 @@ public class FileModule : AbstractQuercusModule {
    *
    * @param path the path to check
    */
-  public static boolean is_file(@NotNull Path path)
+  public static bool is_file(@NotNull Path path)
   {
     if (path == null)
       return false;
@@ -2405,7 +2405,7 @@ public class FileModule : AbstractQuercusModule {
    *
    * @param path the path to check
    */
-  public static boolean is_link(Env env, @NotNull Path path)
+  public static bool is_link(Env env, @NotNull Path path)
   {
     if (path == null)
       return false;
@@ -2418,7 +2418,7 @@ public class FileModule : AbstractQuercusModule {
    *
    * @param path the path to check
    */
-  public static boolean is_readable(Path path)
+  public static bool is_readable(Path path)
   {
     if (path == null)
       return false;
@@ -2431,7 +2431,7 @@ public class FileModule : AbstractQuercusModule {
    *
    * @param path the temp name of the uploaded file
    */
-  public static boolean is_uploaded_file(Env env, @NotNull Path path)
+  public static bool is_uploaded_file(Env env, @NotNull Path path)
   {
     // php/1663, php/1664
 
@@ -2449,7 +2449,7 @@ public class FileModule : AbstractQuercusModule {
    *
    * @param path the path to check
    */
-  public static boolean is_writable(Env env, StringValue filename)
+  public static bool is_writable(Env env, StringValue filename)
   {
     ProtocolWrapper wrapper = getProtocolWrapper(env, filename);
 
@@ -2476,7 +2476,7 @@ public class FileModule : AbstractQuercusModule {
    *
    * @param path the path to check
    */
-  public static boolean is_writeable(Env env, StringValue filename)
+  public static bool is_writeable(Env env, StringValue filename)
   {
     return is_writable(env, filename);
   }
@@ -2484,7 +2484,7 @@ public class FileModule : AbstractQuercusModule {
   /**
    * Creates a hard link
    */
-  public boolean link(Env env, Path source, Path destination)
+  public bool link(Env env, Path source, Path destination)
   {
     try {
       return destination.createLink(source, true);
@@ -2530,10 +2530,10 @@ public class FileModule : AbstractQuercusModule {
    *
    * @param path the directory to make
    */
-  public static boolean mkdir(Env env,
+  public static bool mkdir(Env env,
                               StringValue dirname,
                               @Optional("") int mode,
-                              @Optional boolean recursive,
+                              @Optional bool recursive,
                               @Optional Value context)
   {
     ProtocolWrapper wrapper = getProtocolWrapper(env, dirname);
@@ -2575,7 +2575,7 @@ public class FileModule : AbstractQuercusModule {
    * @param path the temp name of the uploaded file
    * @param dst the destination path
    */
-  public static boolean move_uploaded_file(Env env,
+  public static bool move_uploaded_file(Env env,
                                            @NotNull Path src,
                                            StringValue dst)
   {
@@ -2602,7 +2602,7 @@ public class FileModule : AbstractQuercusModule {
       if (wrapper != null) {
         StringValue path = env.createString(src.getNativePath());
 
-        boolean result = copy(env, path, dst);
+        bool result = copy(env, path, dst);
 
         if (! result) {
           return false;
@@ -2660,7 +2660,7 @@ public class FileModule : AbstractQuercusModule {
    */
   public static Value parse_ini_file(Env env,
                                      Path path,
-                                     @Optional boolean processSections)
+                                     @Optional bool processSections)
   {
     ReadStream is = null;
 
@@ -2686,7 +2686,7 @@ public class FileModule : AbstractQuercusModule {
 
   private static ArrayValue parseIni(Env env,
                                      ReadStream is,
-                                     boolean isProcessSections)
+                                     bool isProcessSections)
     
   {
     return IniParser.parse(env, is, isProcessSections);
@@ -2777,7 +2777,7 @@ public class FileModule : AbstractQuercusModule {
                                    @NotNull string command,
                                    @NotNull StringValue mode)
   {
-    boolean doRead = false;
+    bool doRead = false;
 
     if (mode.equalsStringIgnoreCase("r")) {
       doRead = true;
@@ -2843,7 +2843,7 @@ public class FileModule : AbstractQuercusModule {
    */
   public Value readfile(Env env,
                         StringValue filename,
-                        @Optional boolean useIncludePath,
+                        @Optional bool useIncludePath,
                         @Optional Value context)
   {
     if (filename.length() == 0)
@@ -2904,7 +2904,7 @@ public class FileModule : AbstractQuercusModule {
    * @param fromPath the path to change to
    * @param toPath the path to change to
    */
-  public static boolean rename(Env env, StringValue from, StringValue to)
+  public static bool rename(Env env, StringValue from, StringValue to)
   {
     ProtocolWrapper wrapper = getProtocolWrapper(env, from);
 
@@ -2960,7 +2960,7 @@ public class FileModule : AbstractQuercusModule {
   /**
    * remove a directory
    */
-  public static boolean rmdir(Env env,
+  public static bool rmdir(Env env,
                               StringValue filename,
                               @Optional Value context)
   {
@@ -3122,7 +3122,7 @@ public class FileModule : AbstractQuercusModule {
   /**
    * Creates a symlink
    */
-  public boolean symlink(Env env, Path source, Path destination)
+  public bool symlink(Env env, Path source, Path destination)
   {
     try {
       return destination.createLink(source, false);
@@ -3194,7 +3194,7 @@ public class FileModule : AbstractQuercusModule {
   /**
    * sets the time to the current time
    */
-  public static boolean touch(Env env,
+  public static bool touch(Env env,
                               StringValue filename,
                               @Optional int time,
                               @Optional int atime)
@@ -3250,7 +3250,7 @@ public class FileModule : AbstractQuercusModule {
   /**
    * remove call
    */
-  public static boolean unlink(Env env,
+  public static bool unlink(Env env,
                                StringValue filename,
                                @Optional Value context)
   {

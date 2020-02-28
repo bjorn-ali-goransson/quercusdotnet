@@ -67,7 +67,7 @@ public class SimpleXMLModule
                                      @Optional string className,
                                      @Optional int options,
                                      @Optional Value namespaceV,
-                                     @Optional boolean isPrefix)
+                                     @Optional bool isPrefix)
   {
     if (data.length() == 0) {
       return BooleanValue.FALSE;
@@ -88,7 +88,7 @@ public class SimpleXMLModule
                                    @Optional string className,
                                    @Optional int options,
                                    @Optional Value namespaceV,
-                                   @Optional boolean isPrefix)
+                                   @Optional bool isPrefix)
   {
     if (className == null || className.length() == 0) {
       className = "SimpleXMLElement";

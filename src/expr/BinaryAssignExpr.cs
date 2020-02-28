@@ -70,7 +70,7 @@ public class BinaryAssignExpr : Expr {
   /**
    * Returns true if a static false value.
    */
-  public override boolean isAssign()
+  public override bool isAssign()
   {
     return true;
   }

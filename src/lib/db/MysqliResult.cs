@@ -102,7 +102,7 @@ public class MysqliResult : JdbcResultResource {
   }
 
 
-  public boolean isLastSqlDescribe()
+  public bool isLastSqlDescribe()
   {
     return _conn.isLastSqlDescribe();
   }
@@ -115,7 +115,7 @@ public class MysqliResult : JdbcResultResource {
    * @param rowNumber the row offset
    * @return true on success or false on failure
    */
-  public boolean data_seek(Env env, int rowNumber)
+  public bool data_seek(Env env, int rowNumber)
   {
     if (seek(env, rowNumber)) {
       return true;
@@ -710,7 +710,7 @@ public class MysqliResult : JdbcResultResource {
         }
       }
 
-      final boolean isTimestamp = (jdbcType == Types.TIMESTAMP)
+      final bool isTimestamp = (jdbcType == Types.TIMESTAMP)
           && mysqlType.equals("TIMESTAMP");
 
       if (isInResultString(2, "blob")
@@ -857,9 +857,9 @@ public class MysqliResult : JdbcResultResource {
    * @param env the PHP executing environment
    * @return previous value of field cursor
    */
-  public boolean field_seek(Env env, int offset)
+  public bool field_seek(Env env, int offset)
   {
-    boolean success = setFieldOffset(offset);
+    bool success = setFieldOffset(offset);
 
     if (! success)
       env.invalidArgument("field", offset);

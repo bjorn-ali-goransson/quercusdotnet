@@ -76,7 +76,7 @@ public class BinaryAppendExpr : Expr
   /**
    * Returns true for a string.
    */
-  public boolean isString()
+  public bool isString()
   {
     return true;
   }

@@ -233,7 +233,7 @@ public class ImageModule : AbstractQuercusModule {
   /**
    * Get file extension for image type
    */
-  public static Value image_type_to_extension(int imageType, boolean dot)
+  public static Value image_type_to_extension(int imageType, bool dot)
   {
     switch(imageType) {
       case IMAGETYPE_GIF:     return StringValue.create(dot ? ".gif" : "gif");
@@ -315,7 +315,7 @@ public class ImageModule : AbstractQuercusModule {
   /**
    * Returns a copy of the current transform
    */
-  public static boolean image_set_transform(QuercusImage image,
+  public static bool image_set_transform(QuercusImage image,
                                             AffineTransform transform)
   {
     if (image == null)
@@ -329,8 +329,8 @@ public class ImageModule : AbstractQuercusModule {
   /**
    * Set the blending mode for an image
    */
-  public static boolean imagealphablending(QuercusImage image,
-                                           boolean useAlphaBlending)
+  public static bool imagealphablending(QuercusImage image,
+                                           bool useAlphaBlending)
   {
     image.getGraphics().setComposite(useAlphaBlending
                                      ? AlphaComposite.SrcOver
@@ -341,8 +341,8 @@ public class ImageModule : AbstractQuercusModule {
   /**
    * Should antialias functions be used or not
    */
-  public static boolean imageantialias(QuercusImage image,
-                                       boolean useAntiAliasing)
+  public static bool imageantialias(QuercusImage image,
+                                       bool useAntiAliasing)
   {
     image.getGraphics().setRenderingHint(RenderingHints.KEY_ANTIALIASING,
                                          useAntiAliasing
@@ -354,7 +354,7 @@ public class ImageModule : AbstractQuercusModule {
   /**
    * Draw a partial ellipse
    */
-  public static boolean imagearc(QuercusImage image,
+  public static bool imagearc(QuercusImage image,
                                  double cx, double cy,
                                  double width, double height,
                                  double start, double end,
@@ -370,7 +370,7 @@ public class ImageModule : AbstractQuercusModule {
   /**
    * Draw a character horizontally
    */
-  public static boolean imagechar(QuercusImage image, int font,
+  public static bool imagechar(QuercusImage image, int font,
                                   int x, int y, string c, int color)
   {
     Graphics2D g = image.getGraphics();
@@ -385,7 +385,7 @@ public class ImageModule : AbstractQuercusModule {
   /**
    * Draw a character vertically
    */
-  public static boolean imagecharup(QuercusImage image, int font,
+  public static bool imagecharup(QuercusImage image, int font,
                                     int x, int y, string c, int color)
   {
     Graphics2D g = (Graphics2D)image.getGraphics().create();
@@ -472,7 +472,7 @@ public class ImageModule : AbstractQuercusModule {
   /**
    * De-allocate a color for an image
    */
-  public static boolean imagecolordeallocate(QuercusImage image, int rgb)
+  public static bool imagecolordeallocate(QuercusImage image, int rgb)
   {
     // no-op
     return true;
@@ -499,7 +499,7 @@ public class ImageModule : AbstractQuercusModule {
    * Makes the colors of the palette version of an image more closely
    * match the true color version
    */
-  public static boolean imagecolormatch(QuercusImage image1,
+  public static bool imagecolormatch(QuercusImage image1,
                                         QuercusImage image2)
   {
     // no-op
@@ -527,7 +527,7 @@ public class ImageModule : AbstractQuercusModule {
   /**
    * Set the color for the specified palette index
    */
-  public static boolean imagecolorset(QuercusImage image, int index,
+  public static bool imagecolorset(QuercusImage image, int index,
                                       int r, int g, int b)
   {
     // no-op since we currently only support true-color, full-alpha channel
@@ -572,7 +572,7 @@ public class ImageModule : AbstractQuercusModule {
   /**
    * Apply a 3x3 convolution matrix, using coefficient div and offset
    */
-  public static boolean imageconvolution(QuercusImage image, ArrayValue matrix,
+  public static bool imageconvolution(QuercusImage image, ArrayValue matrix,
                                          double div, double offset)
   {
     // XXX: implement div and offset
@@ -601,7 +601,7 @@ public class ImageModule : AbstractQuercusModule {
   /**
    * Copy part of an image
    */
-  public static boolean imagecopy(QuercusImage dest, QuercusImage src,
+  public static bool imagecopy(QuercusImage dest, QuercusImage src,
                                   int dx, int dy, int sx, int sy, int w, int h)
   {
     dest.getGraphics().drawImage(src.getBufferedImage(),
@@ -613,7 +613,7 @@ public class ImageModule : AbstractQuercusModule {
   /**
    * Copy and merge part of an image
    */
-  public static boolean imagecopymerge(QuercusImage dest, QuercusImage src,
+  public static bool imagecopymerge(QuercusImage dest, QuercusImage src,
                                        int dx, int dy, int sx, int sy,
                                        int w, int h, int pct)
   {
@@ -638,7 +638,7 @@ public class ImageModule : AbstractQuercusModule {
   /**
    * Copy and merge part of an image with gray scale
    */
-  public static boolean imagecopymergegray(QuercusImage dest, QuercusImage src,
+  public static bool imagecopymergegray(QuercusImage dest, QuercusImage src,
                                            int dx, int dy, int sx, int sy,
                                            int w, int h, int pct)
   {
@@ -668,7 +668,7 @@ public class ImageModule : AbstractQuercusModule {
   /**
    * Copy and resize part of an image with resampling
    */
-  public static boolean imagecopyresampled(QuercusImage dest, QuercusImage src,
+  public static bool imagecopyresampled(QuercusImage dest, QuercusImage src,
                                            int dx, int dy, int sx, int sy,
                                            int dw, int dh, int sw, int sh)
   {
@@ -686,7 +686,7 @@ public class ImageModule : AbstractQuercusModule {
   /**
    * Copy and resize part of an image
    */
-  public static boolean imagecopyresized(QuercusImage dest, QuercusImage src,
+  public static bool imagecopyresized(QuercusImage dest, QuercusImage src,
                                          int dx, int dy, int sx, int sy,
                                          int dw, int dh, int sw, int sh)
   {
@@ -815,7 +815,7 @@ public class ImageModule : AbstractQuercusModule {
   /**
    * Draw a dashed line
    */
-  public static boolean imagedashedline(QuercusImage image,
+  public static bool imagedashedline(QuercusImage image,
                                         int x1, int y1, int x2, int y2,
                                         int color)
   {
@@ -833,7 +833,7 @@ public class ImageModule : AbstractQuercusModule {
   /**
    * Destroy an image
    */
-  public static boolean imagedestroy(QuercusImage image)
+  public static bool imagedestroy(QuercusImage image)
   {
     // no-op
     return true;
@@ -842,7 +842,7 @@ public class ImageModule : AbstractQuercusModule {
   /**
    * Draw an ellipse
    */
-  public static boolean imageellipse(QuercusImage image,
+  public static bool imageellipse(QuercusImage image,
                                      double cx, double cy,
                                      double width, double height,
                                      int color)
@@ -859,7 +859,7 @@ public class ImageModule : AbstractQuercusModule {
   /**
    * Flood fill
    */
-  public static boolean imagefill(QuercusImage image, int x, int y, int color)
+  public static bool imagefill(QuercusImage image, int x, int y, int color)
   {
     image.flood(x, y, color);
     return true;
@@ -868,7 +868,7 @@ public class ImageModule : AbstractQuercusModule {
   /**
    * Draw a partial ellipse and fill it
    */
-  public static boolean imagefilledarc(QuercusImage image,
+  public static bool imagefilledarc(QuercusImage image,
                                        double cx, double cy,
                                        double width, double height,
                                        double start, double end,
@@ -893,7 +893,7 @@ public class ImageModule : AbstractQuercusModule {
   /**
    * Draw a filled ellipse
    */
-  public static boolean imagefilledellipse(QuercusImage image,
+  public static bool imagefilledellipse(QuercusImage image,
                                            double cx, double cy,
                                            double width, double height,
                                            int color)
@@ -907,7 +907,7 @@ public class ImageModule : AbstractQuercusModule {
   /**
    * Draw a filled polygon
    */
-  public static boolean imagefilledpolygon(Env env,
+  public static bool imagefilledpolygon(Env env,
                                            QuercusImage image,
                                            ArrayValue points,
                                            int numPoints, int color)
@@ -919,7 +919,7 @@ public class ImageModule : AbstractQuercusModule {
   /**
    * Draw a filled rectangle
    */
-  public static boolean imagefilledrectangle(QuercusImage image, int x1, int y1,
+  public static bool imagefilledrectangle(QuercusImage image, int x1, int y1,
                                              int x2, int y2, int color)
   {
     image.fill(new Rectangle2D.Float(x1, y1, x2 - x1 + 1, y2 - y1 + 1), color);
@@ -930,7 +930,7 @@ public class ImageModule : AbstractQuercusModule {
   /**
    * Flood fill to specific color
    */
-  public static boolean imagefilltoborder(QuercusImage image, int x, int y,
+  public static bool imagefilltoborder(QuercusImage image, int x, int y,
                                           int border, int color)
   {
     image.flood(x, y, color, border);
@@ -943,7 +943,7 @@ public class ImageModule : AbstractQuercusModule {
   /**
    * Applies a filter to an image
    */
-  public static boolean imagefilter(Env env, QuercusImage image, int filterType,
+  public static bool imagefilter(Env env, QuercusImage image, int filterType,
                                     @Optional int arg1, @Optional int arg2,
                                     @Optional int arg3)
   {
@@ -1190,7 +1190,7 @@ public class ImageModule : AbstractQuercusModule {
   /**
    * Apply a gamma correction to a GD image
    */
-  public static boolean imagegammacorrect(QuercusImage image,
+  public static bool imagegammacorrect(QuercusImage image,
                                           float gammaBefore, float gammaAfter)
   {
     // this is a no-op in PHP; apparently the GD library dropped
@@ -1217,7 +1217,7 @@ public class ImageModule : AbstractQuercusModule {
   /**
    * Output image to browser or file
    */
-  public static boolean imagegif(Env env, QuercusImage image,
+  public static bool imagegif(Env env, QuercusImage image,
                                  @Optional Path path)
   {
     try {
@@ -1248,8 +1248,8 @@ public class ImageModule : AbstractQuercusModule {
   /**
    * Enable or disable interlace
    */
-  public static boolean imageinterlace(QuercusImage image,
-                                       @Optional Boolean enable)
+  public static bool imageinterlace(QuercusImage image,
+                                       @Optional bool enable)
   {
     if (enable != null)
       image.setInterlace(enable);
@@ -1261,7 +1261,7 @@ public class ImageModule : AbstractQuercusModule {
   /**
    * Finds whether an image is a truecolor image
    */
-  public static boolean imageistruecolor(QuercusImage image)
+  public static bool imageistruecolor(QuercusImage image)
   {
     return true;
   }
@@ -1269,7 +1269,7 @@ public class ImageModule : AbstractQuercusModule {
   /**
    * Output image to browser or file
    */
-  public static boolean imagejpeg(Env env,
+  public static bool imagejpeg(Env env,
                                   QuercusImage image,
                                   @Optional Path path,
                                   @Optional int quality)
@@ -1299,7 +1299,7 @@ public class ImageModule : AbstractQuercusModule {
   /**
    * Set the alpha blending flag to use the bundled libgd layering effects
    */
-  public static boolean imagelayereffect(QuercusImage image, int effect)
+  public static bool imagelayereffect(QuercusImage image, int effect)
   {
     // XXX: there is no documentation for how this function ought to work
     // http://us3.php.net/manual/en/function.imagelayereffect.php
@@ -1309,7 +1309,7 @@ public class ImageModule : AbstractQuercusModule {
   /**
    * Draw a line
    */
-  public static boolean imageline(QuercusImage image,
+  public static bool imageline(QuercusImage image,
                                   int x1, int y1, int x2, int y2, int color)
   {
     image.stroke(new Line2D.Float(x1, y1, x2, y2), color);
@@ -1328,7 +1328,7 @@ public class ImageModule : AbstractQuercusModule {
   /**
    * Copy the palette from one image to another
    */
-  public static boolean imagepalettecopy(QuercusImage source,
+  public static bool imagepalettecopy(QuercusImage source,
                                          QuercusImage dest)
   {
     return true;
@@ -1337,7 +1337,7 @@ public class ImageModule : AbstractQuercusModule {
   /**
    * Output a PNG image to either the browser or a file
    */
-  public static boolean imagepng(Env env,
+  public static bool imagepng(Env env,
                                  QuercusImage image,
                                  @Optional Path path)
   {
@@ -1366,7 +1366,7 @@ public class ImageModule : AbstractQuercusModule {
   /**
    * Draw a polygon
    */
-  public static boolean imagepolygon(Env env,
+  public static bool imagepolygon(Env env,
                                      QuercusImage image,
                                      ArrayValue points,
                                      int numPoints, int color)
@@ -1397,7 +1397,7 @@ public class ImageModule : AbstractQuercusModule {
   /**
    * Change the character encoding vector of a font
    */
-  public static boolean imagepsencodefont(Value fontIndex, Path encodingFile)
+  public static bool imagepsencodefont(Value fontIndex, Path encodingFile)
   {
     throw new QuercusException("imagepsencodefont() not implemented");
   }
@@ -1405,7 +1405,7 @@ public class ImageModule : AbstractQuercusModule {
   /**
    * Extend or condense a font
    */
-  public static boolean imagepsextendfont(int fontIndex, float extend)
+  public static bool imagepsextendfont(int fontIndex, float extend)
   {
     throw new QuercusException("imagepsextendfont() not implemented");
   }
@@ -1413,7 +1413,7 @@ public class ImageModule : AbstractQuercusModule {
   /**
    * Free memory used by a PostScript Type 1 font
    */
-  public static boolean imagepsfreefont(Value fontIndex)
+  public static bool imagepsfreefont(Value fontIndex)
   {
     throw new QuercusException("imagepsfreefont() not implemented");
   }
@@ -1429,7 +1429,7 @@ public class ImageModule : AbstractQuercusModule {
   /**
    * Slant a font
    */
-  public static boolean imagepsslantfont(Value fontIndex, float slant)
+  public static bool imagepsslantfont(Value fontIndex, float slant)
   {
     throw new QuercusException("imagepsslantfont() not implemented");
   }
@@ -1452,7 +1452,7 @@ public class ImageModule : AbstractQuercusModule {
   /**
    * Draw a rectangle
    */
-  public static boolean imagerectangle(QuercusImage image, int x1, int y1,
+  public static bool imagerectangle(QuercusImage image, int x1, int y1,
                                        int x2, int y2, int color)
   {
     if (x2 < x1) { int tmp = x1; x1 = x2; x2 = tmp; }
@@ -1464,7 +1464,7 @@ public class ImageModule : AbstractQuercusModule {
   /**
    * Rotate an image with a given angle
    */
-  public static boolean imagerotate(QuercusImage image, float angle,
+  public static bool imagerotate(QuercusImage image, float angle,
                                     int backgroundColor,
                                     @Optional int ignoreTransparent)
   {
@@ -1478,7 +1478,7 @@ public class ImageModule : AbstractQuercusModule {
    * Set the flag to save full alpha channel information (as opposed to
    * single-color transparency) when saving PNG images
    */
-  public static boolean imagesavealpha(QuercusImage image, boolean set)
+  public static bool imagesavealpha(QuercusImage image, bool set)
   {
     // no-op since we currently only support true-color, full-alpha channel
     return true;
@@ -1487,7 +1487,7 @@ public class ImageModule : AbstractQuercusModule {
   /**
    * Set the brush image for line drawing
    */
-  public static boolean imagesetbrush(QuercusImage image, QuercusImage brush)
+  public static bool imagesetbrush(QuercusImage image, QuercusImage brush)
   {
     image.setBrush(brush);
     return true;
@@ -1496,7 +1496,7 @@ public class ImageModule : AbstractQuercusModule {
   /**
    * Set a single pixel
    */
-  public static boolean imagesetpixel(QuercusImage image,
+  public static bool imagesetpixel(QuercusImage image,
                                       int x, int y, int color)
   {
     image.setPixel(x, y, color);
@@ -1506,7 +1506,7 @@ public class ImageModule : AbstractQuercusModule {
   /**
    * Set the style for line drawing
    */
-  public static boolean imagesetstyle(Env env,
+  public static bool imagesetstyle(Env env,
                                       QuercusImage image,
                                       ArrayValue style)
   {
@@ -1517,7 +1517,7 @@ public class ImageModule : AbstractQuercusModule {
   /**
    * Set the thickness for line
    */
-  public static boolean imagesetthickness(QuercusImage image, int thickness)
+  public static bool imagesetthickness(QuercusImage image, int thickness)
   {
     image.setThickness(thickness);
     return true;
@@ -1528,7 +1528,7 @@ public class ImageModule : AbstractQuercusModule {
   /**
    * Draw a string horizontally
    */
-  public static boolean imagestring(QuercusImage image, int font,
+  public static bool imagestring(QuercusImage image, int font,
                                   int x, int y, string s, int color)
   {
     Graphics2D g = image.getGraphics();
@@ -1544,7 +1544,7 @@ public class ImageModule : AbstractQuercusModule {
   /**
    * Draw a string vertically
    */
-  public static boolean imagestringup(QuercusImage image, int font,
+  public static bool imagestringup(QuercusImage image, int font,
                                       int x, int y, string s, int color)
   {
     Graphics2D g = image.getGraphics();
@@ -1600,7 +1600,7 @@ public class ImageModule : AbstractQuercusModule {
   /**
    * general affine transformation
    */
-  public static boolean image_transform(QuercusImage image,
+  public static bool image_transform(QuercusImage image,
                                         double m00, double m10,
                                         double m01, double m11,
                                         double m02, double m12)
@@ -1619,7 +1619,7 @@ public class ImageModule : AbstractQuercusModule {
   /**
    * scaling transformation
    */
-  public static boolean image_transform_scale(QuercusImage image,
+  public static bool image_transform_scale(QuercusImage image,
                                               double sx, double sy)
   {
     if (image == null)
@@ -1633,7 +1633,7 @@ public class ImageModule : AbstractQuercusModule {
   /**
    * shearing transformation
    */
-  public static boolean image_transform_shear(QuercusImage image,
+  public static bool image_transform_shear(QuercusImage image,
                                               double shx, double shy)
   {
     if (image == null)
@@ -1647,7 +1647,7 @@ public class ImageModule : AbstractQuercusModule {
   /**
    * translation transformation
    */
-  public static boolean image_transform_translate(QuercusImage image,
+  public static bool image_transform_translate(QuercusImage image,
                                                   double x, double y)
   {
     if (image == null)
@@ -1710,7 +1710,7 @@ public class ImageModule : AbstractQuercusModule {
   /**
    * Embed into single tags.
    */
-  public static boolean iptcembed(String iptcdata, string jpegFileName,
+  public static bool iptcembed(String iptcdata, string jpegFileName,
                                   @Optional int spool)
   {
     throw new UnimplementedException("iptcembed()");
@@ -1771,7 +1771,7 @@ public class ImageModule : AbstractQuercusModule {
   /**
    * Parses the image size from the file.
    */
-  private static boolean parseImageSize(ReadStream is, ImageInfo info)
+  private static bool parseImageSize(ReadStream is, ImageInfo info)
     
   {
     int ch;
@@ -1816,7 +1816,7 @@ public class ImageModule : AbstractQuercusModule {
   /**
    * Parses the image size from the PNG file.
    */
-  private static boolean parsePNGImageSize(ReadStream is, ImageInfo info)
+  private static bool parsePNGImageSize(ReadStream is, ImageInfo info)
     
   {
     int length;
@@ -1859,7 +1859,7 @@ public class ImageModule : AbstractQuercusModule {
   /**
    * Parses the image size from the PNG file.
    */
-  private static boolean parseGIFImageSize(ReadStream is, ImageInfo info)
+  private static bool parseGIFImageSize(ReadStream is, ImageInfo info)
     
   {
     int length;
@@ -1883,7 +1883,7 @@ public class ImageModule : AbstractQuercusModule {
   /**
    * Parses the image size from the PNG file.
    */
-  private static boolean parseJPEGImageSize(ReadStream is, ImageInfo info)
+  private static bool parseJPEGImageSize(ReadStream is, ImageInfo info)
     
   {
     int ch;

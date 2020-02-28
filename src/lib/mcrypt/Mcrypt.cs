@@ -76,7 +76,7 @@ public class Mcrypt {
   /**
    * Uninitialize data.
    */
-  public boolean deinit()
+  public bool deinit()
   {
     return false;
   }
@@ -207,7 +207,7 @@ public class Mcrypt {
       return get_block_size();
   }
 
-  private boolean isPadKey()
+  private bool isPadKey()
   {
     if (McryptModule.MCRYPT_BLOWFISH.equals(_algorithm))
       return false;
@@ -284,7 +284,7 @@ public class Mcrypt {
   /**
    * Returns true for block algorithms
    */
-  public boolean is_block_algorithm()
+  public bool is_block_algorithm()
   {
     if (_algorithm.equals(McryptModule.MCRYPT_BLOWFISH))
       return false;
@@ -295,7 +295,7 @@ public class Mcrypt {
   /**
    * Returns true for block algorithms
    */
-  public boolean is_block_algorithm_mode()
+  public bool is_block_algorithm_mode()
   {
     return _mode.equals("CBC") || _mode.equals("CFB") || _mode.equals("OFB");
   }
@@ -303,7 +303,7 @@ public class Mcrypt {
   /**
    * Returns true for block algorithms
    */
-  public boolean is_block_mode()
+  public bool is_block_mode()
   {
     return _mode.equals("CBC") || _mode.equals("ECB");
   }
@@ -326,7 +326,7 @@ public class Mcrypt {
     }
   }
 
-  private boolean isPadded()
+  private bool isPadded()
   {
     if (_mode.equals("CFB") || _mode.equals("OFB")) 
       return false;

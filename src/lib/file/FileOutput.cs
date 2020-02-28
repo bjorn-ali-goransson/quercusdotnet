@@ -66,7 +66,7 @@ public class FileOutput : AbstractBinaryOutput
     this(env, path, false);
   }
 
-  public FileOutput(Env env, Path path, boolean isAppend)
+  public FileOutput(Env env, Path path, bool isAppend)
     
   {
     _env = env;
@@ -185,7 +185,7 @@ public class FileOutput : AbstractBinaryOutput
   /**
    * Lock the shared advisory lock.
    */
-  public boolean lock(boolean shared, boolean block)
+  public bool lock(boolean shared, bool block)
   {
     return _os.lock(shared, block);
   }
@@ -193,7 +193,7 @@ public class FileOutput : AbstractBinaryOutput
   /**
    * Unlock the advisory lock.
    */
-  public boolean unlock()
+  public bool unlock()
   {
       if(_os != null)
         return _os.unlock();
@@ -219,7 +219,7 @@ public class FileOutput : AbstractBinaryOutput
   /**
    * Sets the current location in the stream
    */
-  public boolean setPosition(long offset)
+  public bool setPosition(long offset)
   {
     if (_os == null)
       return false;

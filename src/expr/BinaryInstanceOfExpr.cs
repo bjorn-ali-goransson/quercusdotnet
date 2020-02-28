@@ -57,7 +57,7 @@ public class BinaryInstanceOfExpr : AbstractUnaryExpr {
   /**
    * Returns true for a boolean.
    */
-  public boolean isBoolean()
+  public bool isBoolean()
   {
     return true;
   }
@@ -74,7 +74,7 @@ public class BinaryInstanceOfExpr : AbstractUnaryExpr {
   /**
    * Evaluates the equality as a boolean.
    */
-  public boolean evalBoolean(Env env)
+  public bool evalBoolean(Env env)
   {
     Value obj = _expr.eval(env);
 

@@ -60,8 +60,8 @@ public class CurlHttpConnection
   private string _proxyType;
 
   private int _responseCode;
-  private boolean _hadSentAuthorization = false;
-  private boolean _hadSentProxyAuthorization = false;
+  private bool _hadSentAuthorization = false;
+  private bool _hadSentProxyAuthorization = false;
 
   private string _authorization;
   private string _proxyAuthorization;

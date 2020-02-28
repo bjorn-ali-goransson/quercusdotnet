@@ -64,7 +64,7 @@ public class CurlMultiResource : ResourceValue
 
   public void removeCurl(CurlResource curl)
   {
-    boolean isRemoved = _curlList.remove(curl);
+    bool isRemoved = _curlList.remove(curl);
 
     _msgQueue.remove(curl);
   }

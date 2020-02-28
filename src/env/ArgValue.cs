@@ -81,7 +81,7 @@ abstract public class ArgValue : Value
     return toLocalValue().toJavaObject();
   }
 
-  public override boolean toBoolean()
+  public override bool toBoolean()
   {
     return toLocalValue().toBoolean();
   }

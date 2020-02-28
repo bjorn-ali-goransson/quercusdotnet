@@ -189,7 +189,7 @@ public class FunctionModule : AbstractQuercusModule {
    * @param env the PHP environment
    * @param name the function name
    */
-  public static boolean function_exists(Env env, StringValue name)
+  public static bool function_exists(Env env, StringValue name)
   {
     return env.findFunction(name) != null;
   }

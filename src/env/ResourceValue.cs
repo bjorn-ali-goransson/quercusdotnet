@@ -42,7 +42,7 @@ public class ResourceValue : Value
   implements EnvCleanup
 {
   @Override
-  public boolean isResource()
+  public bool isResource()
   {
     return true;
   }

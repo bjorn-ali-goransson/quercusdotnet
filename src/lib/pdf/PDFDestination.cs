@@ -97,7 +97,7 @@ public class PDFDestination
     return _children;
   }
   
-  public boolean hasChildren()
+  public bool hasChildren()
   {
     return ! _children.isEmpty();
   }

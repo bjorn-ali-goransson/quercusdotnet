@@ -42,7 +42,7 @@ public class Reflection
 {
   public static Value export(Env env,
                              Reflector r,
-                             @Optional boolean isReturn)
+                             @Optional bool isReturn)
   {
     return null;
   }

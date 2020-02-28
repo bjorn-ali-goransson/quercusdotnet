@@ -42,14 +42,14 @@ namespace QuercusDotNet.Marshal{
 public class JavaMapMarshal : JavaMarshal {
   private readonly L10N L = new L10N(JavaMapMarshal.class);
 
-  public JavaMapMarshal(JavaClassDef def, boolean isNotNull)
+  public JavaMapMarshal(JavaClassDef def, bool isNotNull)
   {
     this(def, isNotNull, false);
   }
 
   public JavaMapMarshal(JavaClassDef def,
-                        boolean isNotNull,
-                        boolean isUnmarshalNullAsFalse)
+                        bool isNotNull,
+                        bool isUnmarshalNullAsFalse)
   {
     super(def, isNotNull, isUnmarshalNullAsFalse);
   }

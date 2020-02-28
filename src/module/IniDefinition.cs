@@ -98,7 +98,7 @@ public class IniDefinition {
    * Returns true if this definition was added at runtime and not
    * definied by a module.
    */
-  public boolean isRuntimeDefinition()
+  public bool isRuntimeDefinition()
   {
     return false;
   }
@@ -283,12 +283,12 @@ public class IniDefinition {
     return (value.length() == 0) ? null : value.toString();
   }
 
-  public boolean getAsBoolean(QuercusContext quercus)
+  public bool getAsBoolean(QuercusContext quercus)
   {
     return getAsBooleanValue(quercus).toBoolean();
   }
 
-  public boolean getAsBoolean(Env env)
+  public bool getAsBoolean(Env env)
   {
     return getAsBooleanValue(env).toBoolean();
   }
@@ -469,7 +469,7 @@ public class IniDefinition {
             IniDefinition.PHP_INI_ALL) {
     }
 
-    public override boolean isRuntimeDefinition()
+    public override bool isRuntimeDefinition()
     {
       return true;
     }

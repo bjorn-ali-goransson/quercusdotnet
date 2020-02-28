@@ -208,11 +208,11 @@ public class QuercusContext
   private string _phpVersion = "5.5.0";
   private string _mySqlVersion;
 
-  private boolean _isStrict;
-  private boolean _isLooseParse;
-  private boolean _isRequireSource;
+  private bool _isStrict;
+  private bool _isLooseParse;
+  private bool _isRequireSource;
 
-  private boolean _isConnectionPool = true;
+  private bool _isConnectionPool = true;
 
   private DataSource _database;
 
@@ -241,11 +241,11 @@ public class QuercusContext
 
   private long _dependencyCheckInterval = 2000L;
 
-  private boolean _isClosed;
+  private bool _isClosed;
 
   private JdbcDriverContext _jdbcDriverContext;
 
-  private Boolean _isUnicodeSemantics;
+  private bool _isUnicodeSemantics;
 
   /**
    * Constructor.
@@ -394,11 +394,11 @@ public class QuercusContext
     return "cgi";
   }
 
-  public boolean isRegisterArgv() {
+  public bool isRegisterArgv() {
     return getIniBoolean("register_argc_argv");
   }
 
-  public boolean isProfile()
+  public bool isProfile()
   {
     return false;
   }
@@ -464,7 +464,7 @@ public class QuercusContext
   /**
    * true if the pages should be compiled.
    */
-  public boolean isCompile()
+  public bool isCompile()
   {
     return _pageManager.isCompile();
   }
@@ -472,7 +472,7 @@ public class QuercusContext
   /**
    * Returns true if this is the Professional version.
    */
-  public boolean isPro()
+  public bool isPro()
   {
     return false;
   }
@@ -480,7 +480,7 @@ public class QuercusContext
   /**
    * Returns true if Quercus is running under Resin.
    */
-  public boolean isResin()
+  public bool isResin()
   {
     return false;
   }
@@ -493,7 +493,7 @@ public class QuercusContext
   /**
    * Returns true if unicode.semantics is on.
    */
-  public boolean isUnicodeSemantics()
+  public bool isUnicodeSemantics()
   {
     if (_isUnicodeSemantics == null) {
       return false;
@@ -506,7 +506,7 @@ public class QuercusContext
   /**
    * Returns true if URLs may be arguments of include().
    */
-  public boolean isAllowUrlInclude()
+  public bool isAllowUrlInclude()
   {
     return getIniBoolean("allow_url_include");
   }
@@ -514,7 +514,7 @@ public class QuercusContext
   /**
    * Returns true if URLs may be arguments of fopen().
    */
-  public boolean isAllowUrlFopen()
+  public bool isAllowUrlFopen()
   {
     return getIniBoolean("allow_url_fopen");
   }
@@ -743,7 +743,7 @@ public class QuercusContext
   /**
    * Gets the strict mode.
    */
-  public boolean isStrict()
+  public bool isStrict()
   {
     return _isStrict;
   }
@@ -759,7 +759,7 @@ public class QuercusContext
   /**
    * Gets the loose mode.
    */
-  public boolean isLooseParse()
+  public bool isLooseParse()
   {
     return _isLooseParse;
   }
@@ -807,7 +807,7 @@ public class QuercusContext
   /**
    * Returns whether the php source is required for compiled files.
    */
-  public boolean isRequireSource()
+  public bool isRequireSource()
   {
     return _isRequireSource;
   }
@@ -823,7 +823,7 @@ public class QuercusContext
   /**
    * Returns true if connections should be pooled.
    */
-  public boolean isConnectionPool()
+  public bool isConnectionPool()
   {
     return _isConnectionPool;
   }
@@ -1021,7 +1021,7 @@ public class QuercusContext
   /**
    * Returns an ini value.
    */
-  public boolean getIniBoolean(String name)
+  public bool getIniBoolean(String name)
   {
     return _iniDefinitions.get(name).getAsBoolean(this);
   }
@@ -1213,7 +1213,7 @@ public class QuercusContext
   /**
    * Returns true if a precompiled page exists
    */
-  public boolean includeExists(Path path)
+  public bool includeExists(Path path)
   {
     return _pageManager.precompileExists(path);
   }
@@ -1725,7 +1725,7 @@ public class QuercusContext
   /**
    * Returns true if the variable is a superglobal.
    */
-  public static boolean isSuperGlobal(StringValue name)
+  public static bool isSuperGlobal(StringValue name)
   {
     return _superGlobals.contains(name.toString());
   }
@@ -1787,7 +1787,7 @@ public class QuercusContext
   /**
    * Returns true if an extension is loaded.
    */
-  public boolean isExtensionLoaded(String name)
+  public bool isExtensionLoaded(String name)
   {
     return _extensionSet.contains(name)
            || _extensionSetLowerCase.contains(name.toLowerCase(Locale.ENGLISH));
@@ -2204,7 +2204,7 @@ public class QuercusContext
     _activeEnvSet.remove(env);
   }
 
-  protected boolean isClosed()
+  protected bool isClosed()
   {
     return _isClosed;
   }
@@ -2279,7 +2279,7 @@ public class QuercusContext
       return hash;
     }
 
-    public boolean equals(Object o)
+    public bool equals(Object o)
     {
       if (! (o instanceof IncludeKey))
         return false;
@@ -2294,7 +2294,7 @@ public class QuercusContext
   }
 
   class EnvTimeoutThread : Thread {
-    private volatile boolean _isRunnable = true;
+    private volatile bool _isRunnable = true;
     private final long _timeout = _envTimeout;
 
     private long _quantumCount;

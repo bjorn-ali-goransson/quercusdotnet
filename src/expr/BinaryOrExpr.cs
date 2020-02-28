@@ -51,7 +51,7 @@ public class BinaryOrExpr : AbstractBinaryExpr {
   /**
    * Returns true for a boolean.
    */
-  public boolean isBoolean()
+  public bool isBoolean()
   {
     return true;
   }
@@ -78,7 +78,7 @@ public class BinaryOrExpr : AbstractBinaryExpr {
    *
    * @return the expression value.
    */
-  public boolean evalBoolean(Env env)
+  public bool evalBoolean(Env env)
   {
     return _left.evalBoolean(env) || _right.evalBoolean(env);
   }

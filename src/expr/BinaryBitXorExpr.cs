@@ -51,7 +51,7 @@ public class BinaryBitXorExpr : AbstractBinaryExpr {
   /**
    * Returns true for a long.
    */
-  public boolean isLong()
+  public bool isLong()
   {
     return true;
   }

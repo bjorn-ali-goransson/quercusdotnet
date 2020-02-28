@@ -200,7 +200,7 @@ public class ReadStreamInput : InputStream implements BinaryInput {
   /**
    * Reads the optional linefeed character from a \r\n
    */
-  public override boolean readOptionalLinefeed()
+  public override bool readOptionalLinefeed()
     
   {
     if (_is == null)
@@ -248,7 +248,7 @@ public class ReadStreamInput : InputStream implements BinaryInput {
   /**
    * Returns true on the EOF.
    */
-  public override boolean isEOF()
+  public override bool isEOF()
   {
     if (_is == null)
       return true;
@@ -278,7 +278,7 @@ public class ReadStreamInput : InputStream implements BinaryInput {
   /**
    * Returns the current location in the file.
    */
-  public override boolean setPosition(long offset)
+  public override bool setPosition(long offset)
   {
     if (_is == null)
       return false;

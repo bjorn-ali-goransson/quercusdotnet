@@ -45,12 +45,12 @@ namespace QuercusDotNet.Expr{
  */
 public class ClosureExpr : Expr {
   protected final Function _fun;
-  protected final boolean _isInClassScope;
+  protected final bool _isInClassScope;
 
   protected final ArrayList<VarExpr> _useArgs;
 
   public ClosureExpr(Location location, Function fun,
-                     ArrayList<VarExpr> useArgs, boolean isInClassScope)
+                     ArrayList<VarExpr> useArgs, bool isInClassScope)
   {
     super(location);
 

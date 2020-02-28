@@ -77,12 +77,12 @@ public class JsonModule : AbstractQuercusModule
                                         Value val,
                                         @Optional int options)
   {
-    boolean isEscapeTag = (options & JSON_HEX_TAG) > 0;
-    boolean isEscapeAmp = (options & JSON_HEX_AMP) > 0;
-    boolean isEscapeApos = (options & JSON_HEX_APOS) > 0;
-    boolean isEscapeQuote = (options & JSON_HEX_QUOT) > 0;
-    boolean isNumericCheck = (options & JSON_NUMERIC_CHECK) > 0;
-    boolean isBigIntAsString = (options & JSON_BIGINT_AS_STRING) > 0;
+    bool isEscapeTag = (options & JSON_HEX_TAG) > 0;
+    bool isEscapeAmp = (options & JSON_HEX_AMP) > 0;
+    bool isEscapeApos = (options & JSON_HEX_APOS) > 0;
+    bool isEscapeQuote = (options & JSON_HEX_QUOT) > 0;
+    bool isNumericCheck = (options & JSON_NUMERIC_CHECK) > 0;
+    bool isBigIntAsString = (options & JSON_BIGINT_AS_STRING) > 0;
 
     JsonEncodeContext context = new JsonEncodeContext(isEscapeTag,
                                                       isEscapeAmp,
@@ -109,7 +109,7 @@ public class JsonModule : AbstractQuercusModule
    */
   public static Value json_decode(Env env,
                                   StringValue s,
-                                  @Optional("false") boolean assoc)
+                                  @Optional("false") bool assoc)
   {
     env.removeSpecialValue("json.last_error");
 

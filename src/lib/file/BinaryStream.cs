@@ -58,7 +58,7 @@ public interface BinaryStream {
    * Sets the current position in the stream.
    * Returns true on success, false otherwise.
    */
-  public boolean setPosition(long offset);
+  public bool setPosition(long offset);
 
   /**
    * Seek according to offset and whence.
@@ -69,7 +69,7 @@ public interface BinaryStream {
   /**
    * Returns true if end-of-file has been reached
    */
-  public boolean isEOF();
+  public bool isEOF();
  
   /**
    * Returns an array filled with stat information.  Mainly for wrapped

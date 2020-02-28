@@ -66,7 +66,7 @@ public class BreakValue : Value {
   /**
    * Converts to a boolean.
    */
-  public boolean toBoolean()
+  public bool toBoolean()
   {
     return false;
   }

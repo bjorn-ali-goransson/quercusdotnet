@@ -39,12 +39,12 @@ public class DoubleMarshal : Marshal
 {
   public readonly DoubleMarshal MARSHAL = new DoubleMarshal();
 
-  public boolean isDouble()
+  public bool isDouble()
   {
     return true;
   }
 
-  public boolean isReadOnly()
+  public bool isReadOnly()
   {
     return true;
   }

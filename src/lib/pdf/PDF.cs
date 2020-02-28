@@ -89,7 +89,7 @@ public class PDF
     _env = env;
   }
 
-  public boolean begin_document(@Optional string fileName,
+  public bool begin_document(@Optional string fileName,
                                 @Optional string optList)
     
   {
@@ -107,7 +107,7 @@ public class PDF
     return true;
   }
 
-  public boolean begin_page(double width, double height)
+  public bool begin_page(double width, double height)
     
   {
     if (PAGE_GROUP_SIZE <= _pageGroup.size()) {
@@ -128,7 +128,7 @@ public class PDF
     return true;
   }
 
-  public boolean begin_page_ext(double width, double height, string opt)
+  public bool begin_page_ext(double width, double height, string opt)
     
   {
     return begin_page(width, height);
@@ -163,7 +163,7 @@ public class PDF
     return id;
   }
 
-  public boolean set_info(String key, string value)
+  public bool set_info(String key, string value)
   {
     if ("Author".equals(key)) {
       _out.setAuthor(key);
@@ -181,12 +181,12 @@ public class PDF
       return false;
   }
 
-  public boolean set_parameter(String key, string value)
+  public bool set_parameter(String key, string value)
   {
     return false;
   }
 
-  public boolean set_value(String key, double value)
+  public bool set_value(String key, double value)
   {
     return false;
   }
@@ -283,7 +283,7 @@ public class PDF
       return 0;
   }
 
-  public boolean initgraphics(Env env)
+  public bool initgraphics(Env env)
   {
     env.stub("initgraphics");
 
@@ -341,7 +341,7 @@ public class PDF
    * @param b black length
    * @param w which length
    */
-  public boolean setdash(double b, double w)
+  public bool setdash(double b, double w)
   {
     _stream.setDash(b, w);
 
@@ -351,7 +351,7 @@ public class PDF
   /**
    * Removes dashing
    */
-  public boolean setsolid()
+  public bool setsolid()
   {
     _stream.setSolid();
 
@@ -361,7 +361,7 @@ public class PDF
   /**
    * Sets the dashing
    */
-  public boolean setdashpattern(Env env, @Optional string optlist)
+  public bool setdashpattern(Env env, @Optional string optlist)
   {
     env.stub("setdashpattern");
 
@@ -371,7 +371,7 @@ public class PDF
   /**
    * Sets the flatness
    */
-  public boolean setflat(Env env, double flatness)
+  public bool setflat(Env env, double flatness)
   {
     env.stub("setflat");
 
@@ -381,7 +381,7 @@ public class PDF
   /**
    * Sets the linecap style
    */
-  public boolean setlinecap(Env env,
+  public bool setlinecap(Env env,
                             int cap)
   {
     env.stub("setlinecap");
@@ -392,7 +392,7 @@ public class PDF
   /**
    * Sets the linejoin style
    */
-  public boolean setlinejoin(Env env,
+  public bool setlinejoin(Env env,
                              int linejoin)
   {
     env.stub("setlinejoin");
@@ -407,7 +407,7 @@ public class PDF
    * @param encoding the font encoding, e.g. winansi
    * @param opt any options
    */
-  public boolean setfont(@NotNull PDFFont font, double size)
+  public bool setfont(@NotNull PDFFont font, double size)
     
   {
     if (font == null)
@@ -423,7 +423,7 @@ public class PDF
   /**
    * Sets the matrix style
    */
-  public boolean setmatrix(Env env,
+  public bool setmatrix(Env env,
                            double a,
                            double b,
                            double c,
@@ -439,7 +439,7 @@ public class PDF
   /**
    * Sets the miter limit
    */
-  public boolean setmiterlimit(Env env, double v)
+  public bool setmiterlimit(Env env, double v)
   {
     env.stub("setmiterlimit");
 
@@ -449,7 +449,7 @@ public class PDF
   /**
    * Sets the shading pattern
    */
-  public boolean shading_pattern(Env env,
+  public bool shading_pattern(Env env,
                                  int shading,
                                  @Optional string optlist)
   {
@@ -481,7 +481,7 @@ public class PDF
   /**
    * Fill with a shading object.
    */
-  public boolean shfill(Env env,
+  public bool shfill(Env env,
                         int shading)
   {
     env.stub("shfill");
@@ -502,7 +502,7 @@ public class PDF
 
   public double stringheight(String string, @NotNull PDFFont font, double size)
   {
-    boolean hasCap = false;
+    bool hasCap = false;
 
     for(char c : string.toCharArray()) {
       if (Character.isUpperCase(c)) {
@@ -532,7 +532,7 @@ public class PDF
   /**
    * Sets the text position.
    */
-  public boolean set_text_pos(double x, double y)
+  public bool set_text_pos(double x, double y)
   {
     _stream.setTextPos(x, y);
 
@@ -542,7 +542,7 @@ public class PDF
   /**
    * Fills
    */
-  public boolean fill()
+  public bool fill()
   {
     _stream.fill();
 
@@ -552,7 +552,7 @@ public class PDF
   /**
    * Closes the path
    */
-  public boolean closepath()
+  public bool closepath()
   {
     _stream.closepath();
 
@@ -562,7 +562,7 @@ public class PDF
   /**
    * Appends the current path to the clipping path.
    */
-  public boolean clip()
+  public bool clip()
   {
     _stream.clip();
 
@@ -572,7 +572,7 @@ public class PDF
   /**
    * Closes the path strokes
    */
-  public boolean closepath_stroke()
+  public bool closepath_stroke()
   {
     _stream.closepathStroke();
 
@@ -582,7 +582,7 @@ public class PDF
   /**
    * Closes the path strokes
    */
-  public boolean closepath_fill_stroke()
+  public bool closepath_fill_stroke()
   {
     _stream.closepathFillStroke();
 
@@ -592,7 +592,7 @@ public class PDF
   /**
    * Fills
    */
-  public boolean fill_stroke()
+  public bool fill_stroke()
   {
     _stream.fillStroke();
 
@@ -602,7 +602,7 @@ public class PDF
   /**
    * Ends the path
    */
-  public boolean endpath()
+  public bool endpath()
   {
     _stream.endpath();
 
@@ -612,7 +612,7 @@ public class PDF
   /**
    * Draws a bezier curve
    */
-  public boolean curveto(double x1, double y1,
+  public bool curveto(double x1, double y1,
                          double x2, double y2,
                          double x3, double y3)
   {
@@ -624,7 +624,7 @@ public class PDF
   /**
    * Draws a bezier curve
    */
-  public boolean curveto_b(double x1, double y1,
+  public bool curveto_b(double x1, double y1,
                            double x2, double y2)
   {
     _stream.curveTo(x1, y1, x1, y1, x2, y2);
@@ -635,7 +635,7 @@ public class PDF
   /**
    * Draws a bezier curve
    */
-  public boolean curveto_e(double x1, double y1,
+  public bool curveto_e(double x1, double y1,
                            double x2, double y2)
   {
     _stream.curveTo(x1, y1, x2, y2, x2, y2);
@@ -646,7 +646,7 @@ public class PDF
   /**
    * Creates a counterclockwise arg
    */
-  public boolean arc(double x1, double y1, double r, double a, double b)
+  public bool arc(double x1, double y1, double r, double a, double b)
   {
     a = a % 360;
     if (a < 0)
@@ -680,7 +680,7 @@ public class PDF
   /**
    * Creates a clockwise arc
    */
-  public boolean arcn(double x1, double y1, double r, double a, double b)
+  public bool arcn(double x1, double y1, double r, double a, double b)
   {
     a = a % 360;
     if (a < 0)
@@ -714,7 +714,7 @@ public class PDF
   /**
    * Creates an arc from 0 to pi/2
    */
-  private boolean clockwiseArc(double x, double y, double r,
+  private bool clockwiseArc(double x, double y, double r,
                                double aDeg, double bDeg)
   {
     double a = aDeg * Math.PI / 180.0;
@@ -745,7 +745,7 @@ public class PDF
   /**
    * Creates an arc from 0 to pi/2
    */
-  private boolean counterClockwiseArc(double x, double y, double r,
+  private bool counterClockwiseArc(double x, double y, double r,
                                       double aDeg, double bDeg)
   {
     double a = aDeg * Math.PI / 180.0;
@@ -776,7 +776,7 @@ public class PDF
   /**
    * Creates a circle
    */
-  public boolean circle(double x1, double y1, double r)
+  public bool circle(double x1, double y1, double r)
   {
     double l = r * KAPPA;
 
@@ -796,7 +796,7 @@ public class PDF
   /**
    * Sets the graphics position.
    */
-  public boolean lineto(double x, double y)
+  public bool lineto(double x, double y)
   {
     _stream.lineTo(x, y);
 
@@ -806,7 +806,7 @@ public class PDF
   /**
    * Sets the graphics position.
    */
-  public boolean moveto(double x, double y)
+  public bool moveto(double x, double y)
   {
     _stream.moveTo(x, y);
 
@@ -816,7 +816,7 @@ public class PDF
   /**
    * Creates a rectangle
    */
-  public boolean rect(double x, double y, double width, double height)
+  public bool rect(double x, double y, double width, double height)
   {
     _stream.rect(x, y, width, height);
 
@@ -826,7 +826,7 @@ public class PDF
   /**
    * Sets the color to a grayscale
    */
-  public boolean setgray_stroke(double g)
+  public bool setgray_stroke(double g)
   {
     return _stream.setcolor("stroke", "gray", g, 0, 0, 0);
   }
@@ -834,7 +834,7 @@ public class PDF
   /**
    * Sets the color to a grayscale
    */
-  public boolean setgray_fill(double g)
+  public bool setgray_fill(double g)
   {
     return _stream.setcolor("fill", "gray", g, 0, 0, 0);
   }
@@ -842,7 +842,7 @@ public class PDF
   /**
    * Sets the color to a grayscale
    */
-  public boolean setgray(double g)
+  public bool setgray(double g)
   {
     return _stream.setcolor("both", "gray", g, 0, 0, 0);
   }
@@ -850,7 +850,7 @@ public class PDF
   /**
    * Sets the color to a rgb
    */
-  public boolean setrgbcolor_stroke(double r, double g, double b)
+  public bool setrgbcolor_stroke(double r, double g, double b)
   {
     return _stream.setcolor("stroke", "rgb", r, g, b, 0);
   }
@@ -858,7 +858,7 @@ public class PDF
   /**
    * Sets the fill color to a rgb
    */
-  public boolean setrgbcolor_fill(double r, double g, double b)
+  public bool setrgbcolor_fill(double r, double g, double b)
   {
     return _stream.setcolor("fill", "rgb", r, g, b, 0);
   }
@@ -866,7 +866,7 @@ public class PDF
   /**
    * Sets the color to a rgb
    */
-  public boolean setrgbcolor(double r, double g, double b)
+  public bool setrgbcolor(double r, double g, double b)
   {
     return _stream.setcolor("both", "rgb", r, g, b, 0);
   }
@@ -874,7 +874,7 @@ public class PDF
   /**
    * Sets the color
    */
-  public boolean setcolor(String fstype, string colorspace,
+  public bool setcolor(String fstype, string colorspace,
                           double c1,
                           @Optional double c2,
                           @Optional double c3,
@@ -886,7 +886,7 @@ public class PDF
   /**
    * Sets the line width
    */
-  public boolean setlinewidth(double w)
+  public bool setlinewidth(double w)
   {
     return _stream.setlinewidth(w);
   }
@@ -894,7 +894,7 @@ public class PDF
   /**
    * Concatenates the matrix
    */
-  public boolean concat(double a, double b, double c,
+  public bool concat(double a, double b, double c,
                         double d, double e, double f)
   {
     return _stream.concat(a, b, c, d, e, f);
@@ -934,7 +934,7 @@ public class PDF
     return img;
   }
 
-  public boolean fit_image(PDFImage img, double x, double y,
+  public bool fit_image(PDFImage img, double x, double y,
                            @Optional string opt)
   {
     _page.addResource(img.getResourceName(), img.getResource());
@@ -989,7 +989,7 @@ public class PDF
    * @param a degrees to skew the x axis
    * @param b degrees to skew the y axis
    */
-  public boolean skew(double aDeg, double bDeg)
+  public bool skew(double aDeg, double bDeg)
   {
     double a = aDeg * Math.PI / 180;
     double b = bDeg * Math.PI / 180;
@@ -1003,7 +1003,7 @@ public class PDF
    * @param sx amount to scale the x axis
    * @param sy amount to scale the y axis
    */
-  public boolean scale(double sx, double sy)
+  public bool scale(double sx, double sy)
   {
     return _stream.concat(sx, 0, 0, sy, 0, 0);
   }
@@ -1014,7 +1014,7 @@ public class PDF
    * @param tx amount to translate the x axis
    * @param ty amount to translate the y axis
    */
-  public boolean translate(double tx, double ty)
+  public bool translate(double tx, double ty)
   {
     return _stream.concat(1, 0, 0, 1, tx, ty);
   }
@@ -1024,7 +1024,7 @@ public class PDF
    *
    * @param p amount to rotate
    */
-  public boolean rotate(double pDeg)
+  public bool rotate(double pDeg)
   {
     double p = pDeg * Math.PI / 180;
 
@@ -1036,7 +1036,7 @@ public class PDF
   /**
    * Saves the graphics state.
    */
-  public boolean save()
+  public bool save()
   {
     return _stream.save();
   }
@@ -1044,7 +1044,7 @@ public class PDF
   /**
    * Restores the graphics state.
    */
-  public boolean restore()
+  public bool restore()
   {
     return _stream.restore();
   }
@@ -1052,7 +1052,7 @@ public class PDF
   /**
    * Displays text
    */
-  public boolean show(String text)
+  public bool show(String text)
   {
     _stream.show(text);
 
@@ -1062,7 +1062,7 @@ public class PDF
   /**
    * Displays text
    */
-  public boolean show_boxed(String text, double x, double y,
+  public bool show_boxed(String text, double x, double y,
                             double width, double height,
                             string mode, @Optional string feature)
   {
@@ -1075,7 +1075,7 @@ public class PDF
   /**
    * Displays text
    */
-  public boolean show_xy(String text, double x, double y)
+  public bool show_xy(String text, double x, double y)
   {
     set_text_pos(x, y);
     _stream.show(text);
@@ -1086,7 +1086,7 @@ public class PDF
   /**
    * Draws the graph
    */
-  public boolean stroke()
+  public bool stroke()
   {
     _stream.stroke();
 
@@ -1096,14 +1096,14 @@ public class PDF
   /**
    * Displays text
    */
-  public boolean continue_text(String text)
+  public bool continue_text(String text)
   {
     _stream.continue_text(text);
 
     return true;
   }
 
-  public boolean end_page()
+  public bool end_page()
   {
     _stream.flush();
 
@@ -1117,12 +1117,12 @@ public class PDF
     return true;
   }
 
-  public boolean end_page_ext(String optlist)
+  public bool end_page_ext(String optlist)
   {
     return end_page();
   }
 
-  public boolean end_document(@Optional string optList)
+  public bool end_document(@Optional string optList)
     
   {
     if(null == _out)
@@ -1159,13 +1159,13 @@ public class PDF
     return true;
   }
 
-  public boolean close()
+  public bool close()
     
   {
     return end_document("");
   }
 
-  public boolean delete()
+  public bool delete()
     
   {
     return true;

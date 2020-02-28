@@ -46,10 +46,10 @@ public class OutputBuffer {
     = Logger.getLogger(OutputBuffer.class.getName());
 
   private int _state;
-  private boolean _haveFlushed;
+  private bool _haveFlushed;
   private Callable _callback;
   
-  private final boolean _erase;
+  private final bool _erase;
   private final int _chunkSize;
   private final int _level;
 
@@ -61,7 +61,7 @@ public class OutputBuffer {
   private final Env _env;
 
   OutputBuffer(OutputBuffer next, Env env, Callable callback, 
-               int chunkSize, boolean erase)
+               int chunkSize, bool erase)
   {
     _next = next;
 
@@ -171,7 +171,7 @@ public class OutputBuffer {
   /**
    * Returns true if this buffer has ever been flushed.
    */
-  public boolean haveFlushed()
+  public bool haveFlushed()
   {
     return _haveFlushed;
   }
@@ -179,7 +179,7 @@ public class OutputBuffer {
   /**
    * Returns the erase flag.
    */
-  public boolean getEraseFlag()
+  public bool getEraseFlag()
   {
     // XXX: Why would anyone need this?  If the erase flag is false,
     // that supposedly means that the buffer will not be destroyed 
@@ -270,7 +270,7 @@ public class OutputBuffer {
   /**
    * Invokes the callback using the data in the current buffer.
    */
-  private boolean callCallback()
+  private bool callCallback()
   {
     if (_callback == null || ! _callback.isValid(_env))
       return false;

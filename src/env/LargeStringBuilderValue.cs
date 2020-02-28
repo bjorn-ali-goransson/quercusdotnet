@@ -111,7 +111,7 @@ public class LargeStringBuilderValue
   /**
    * Returns true for a long
    */
-  public override boolean isLongConvertible()
+  public override bool isLongConvertible()
   {
     return false;
   }
@@ -119,7 +119,7 @@ public class LargeStringBuilderValue
   /**
    * Returns true for a double
    */
-  public boolean isDouble()
+  public bool isDouble()
   {
     return false;
   }
@@ -127,7 +127,7 @@ public class LargeStringBuilderValue
   /**
    * Returns true for a number
    */
-  public override boolean isNumber()
+  public override bool isNumber()
   {
     return false;
   }
@@ -135,7 +135,7 @@ public class LargeStringBuilderValue
   /**
    * Returns true for a scalar
    */
-  public override boolean isScalar()
+  public override bool isScalar()
   {
     return true;
   }
@@ -143,7 +143,7 @@ public class LargeStringBuilderValue
   /**
    * Converts to a boolean.
    */
-  public override boolean toBoolean()
+  public override bool toBoolean()
   {
     if (_length == 0)
       return false;
@@ -569,7 +569,7 @@ public class LargeStringBuilderValue
   }
 
   /**
-   * Append a Java boolean to the value.
+   * Append a Java bool to the value.
    */
   public override final StringValue append(boolean v)
   {

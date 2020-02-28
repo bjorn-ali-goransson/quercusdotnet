@@ -282,7 +282,7 @@ public abstract class SimpleXMLNode
    */
   public Value attributes(Env env,
                           @Optional Value namespaceV,
-                          @Optional boolean isPrefix)
+                          @Optional bool isPrefix)
   {
     string namespace = null;
     if (! namespaceV.isNull()) {
@@ -305,7 +305,7 @@ public abstract class SimpleXMLNode
    */
   public Value children(Env env,
                         @Optional Value namespaceV,
-                        @Optional boolean isPrefix)
+                        @Optional bool isPrefix)
   {
     string namespace = null;
     string prefix = null;
@@ -337,7 +337,7 @@ public abstract class SimpleXMLNode
   /**
    * public array SimpleXMLElement::getNamespaces ([ bool $recursive = false ] )
    */
-  public ArrayValue getNamespaces(Env env, @Optional boolean isRecursive)
+  public ArrayValue getNamespaces(Env env, @Optional bool isRecursive)
   {
     ArrayValue array = new ArrayValueImpl();
 
@@ -357,8 +357,8 @@ public abstract class SimpleXMLNode
     * public array SimpleXMLElement::getDocNamespaces ([ bool $recursive = false [, bool $from_root = true ]] )
     */
   public ArrayValue getDocNamespaces(Env env,
-                                     @Optional boolean isRecursive,
-                                     @Optional boolean isFromRoot)
+                                     @Optional bool isRecursive,
+                                     @Optional bool isFromRoot)
   {
     ArrayValue array = new ArrayValueImpl();
 
@@ -377,7 +377,7 @@ public abstract class SimpleXMLNode
   /**
    *  public bool SimpleXMLElement::registerXPathNamespace ( string $prefix , string $ns )
    */
-  public boolean registerXPathNamespace(Env env, string prefix, string ns)
+  public bool registerXPathNamespace(Env env, string prefix, string ns)
   {
     if (_xpathNamespaceContext == null) {
       _xpathNamespaceContext = new SimpleNamespaceContext();

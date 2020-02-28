@@ -59,8 +59,8 @@ public class Post
                        ArrayValue postArray,
                        ArrayValue files,
                        QuercusHttpServletRequest request,
-                       boolean addSlashesToValues,
-                       boolean isAllowUploads)
+                       bool addSlashesToValues,
+                       bool isAllowUploads)
   {
     InputStream is = null;
 
@@ -107,8 +107,8 @@ public class Post
                        string contentType,
                        string encoding,
                        int contentLength,
-                       boolean addSlashesToValues,
-                       boolean isAllowUploads)
+                       bool addSlashesToValues,
+                       bool isAllowUploads)
   {
     long maxPostSize = env.getIniBytes("post_max_size", 0);
 
@@ -179,8 +179,8 @@ public class Post
                                           MultipartStream ms,
                                           ArrayValue postArray,
                                           ArrayValue files,
-                                          boolean addSlashesToValues,
-                                          boolean isAllowUploads)
+                                          bool addSlashesToValues,
+                                          bool isAllowUploads)
     
   {
     ReadStream is;
@@ -299,7 +299,7 @@ public class Post
                                   string tmpName,
                                   string mimeType,
                                   long fileLength,
-                                  boolean addSlashesToValues,
+                                  bool addSlashesToValues,
                                   long maxFileSize)
   {
     ArrayValue entry = new ArrayValueImpl();
@@ -362,7 +362,7 @@ public class Post
                                   string tmpName,
                                   string mimeType,
                                   long fileLength,
-                                  boolean addSlashesToValues,
+                                  bool addSlashesToValues,
                                   long maxFileSize)
   {
     int p = name.indexOf('[');
@@ -441,8 +441,8 @@ public class Post
                                   ArrayValue array,
                                   string key,
                                   string []formValueList,
-                                  boolean addSlashesToValues,
-                                  boolean isReplaceSpacesWithUnderscores)
+                                  bool addSlashesToValues,
+                                  bool isReplaceSpacesWithUnderscores)
   {
     // php/081b
     string formValue = formValueList[formValueList.length - 1];
@@ -465,8 +465,8 @@ public class Post
                                   string key,
                                   Value formValue,
                                   string []formValueList,
-                                  boolean addSlashesToValues,
-                                  boolean isReplaceSpacesWithUnderscores)
+                                  bool addSlashesToValues,
+                                  bool isReplaceSpacesWithUnderscores)
   {
     int p = -1;
     int q = -1;
@@ -580,7 +580,7 @@ public class Post
   private static void put(ArrayValue array,
                           Value key,
                           Value value,
-                          boolean addSlashes)
+                          bool addSlashes)
   {
     if (addSlashes && value.isString()) {
       value = StringModule.addslashes(value.toStringValue());
@@ -646,7 +646,7 @@ public class Post
 
   private static string getAttribute(String attr,
                                      string name,
-                                     boolean addSlashesToValues)
+                                     bool addSlashesToValues)
   {
     if (attr == null)
       return null;
@@ -711,8 +711,8 @@ public class Post
                                     ArrayValue post,
                                     ArrayValue files,
                                     QuercusHttpServletRequest request,
-                                    boolean addSlashesToValues,
-                                    boolean isAllowUploads)
+                                    bool addSlashesToValues,
+                                    bool isAllowUploads)
   {
     // this call consumes the inputstream
     Map<String,String[]> map = request.getParameterMap();

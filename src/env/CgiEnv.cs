@@ -69,7 +69,7 @@ public class CgiEnv
   protected override ArrayValue getCookies()
   {
     ArrayValue array = new ArrayValueImpl();
-    boolean isMagicQuotes = getIniBoolean("magic_quotes_gpc");
+    bool isMagicQuotes = getIniBoolean("magic_quotes_gpc");
 
     Value serverEnv = getGlobalValue("_SERVER");
     string cookies = serverEnv.get(createString("HTTP_COOKIE")).toString();
@@ -100,7 +100,7 @@ public class CgiEnv
                          string cookies,
                          int start,
                          int end,
-                         boolean isMagicQuotes)
+                         bool isMagicQuotes)
   {
     int eqIndex = cookies.indexOf('=', start);
 
@@ -223,7 +223,7 @@ public class CgiEnv
       if (end <= j)
         break;
 
-      boolean isSpecial = false;
+      bool isSpecial = false;
       if (buf[j] == '$') {
         isSpecial = true;
         j++;
@@ -292,7 +292,7 @@ public class CgiEnv
   protected override void fillPost(ArrayValue postArray,
                           ArrayValue files,
                           QuercusHttpServletRequest request,
-                          boolean isMagicQuotes)
+                          bool isMagicQuotes)
   {
     InputStream is = System.in;
 

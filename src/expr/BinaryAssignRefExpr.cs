@@ -58,7 +58,7 @@ public class BinaryAssignRefExpr : Expr {
    * Returns true if a static false value.
    */
   @Override
-  public boolean isAssign()
+  public bool isAssign()
   {
     return true;
   }

@@ -71,7 +71,7 @@ class GroupState
     }
   }
   
-  public boolean isMatched(int group)
+  public bool isMatched(int group)
   {
     int i = group / BIT_WIDTH;
     

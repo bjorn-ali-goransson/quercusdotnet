@@ -60,7 +60,7 @@ public class CompiledClassDef : ClassDef {
 
   //protected ArrayValue _extFields = new ArrayValueImpl();
   protected Value _parent;
-  protected boolean _isFinal;
+  protected bool _isFinal;
 
   public CompiledClassDef(String name,
                           string parent,
@@ -87,7 +87,7 @@ public class CompiledClassDef : ClassDef {
                           string name,
                           string parent,
                           string []ifaceList,
-                          boolean isFinal)
+                          bool isFinal)
   {
     this(location, name, parent, ifaceList, ClassDef.NULL_STRING_ARRAY, isFinal);
   }
@@ -105,7 +105,7 @@ public class CompiledClassDef : ClassDef {
                           string parent,
                           string []ifaceList,
                           string []traitList,
-                          boolean isFinal)
+                          bool isFinal)
    : base(location, name, parent, ifaceList, traitList) {
 
     _isFinal = isFinal;
@@ -136,7 +136,7 @@ public class CompiledClassDef : ClassDef {
   /**
    * Returns true for a final class.
    */
-  public override boolean isFinal()
+  public override bool isFinal()
   {
     return _isFinal;
   }
@@ -182,7 +182,7 @@ public class CompiledClassDef : ClassDef {
   /**
    * Creates a new instance.
    */
-  public override void initInstance(Env env, Value value, boolean isInitFieldValues)
+  public override void initInstance(Env env, Value value, bool isInitFieldValues)
   {
   }
 

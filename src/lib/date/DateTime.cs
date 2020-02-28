@@ -236,7 +236,7 @@ public class DateTime implements DateTimeInterface, Cloneable
 
   public override DateInterval diff(Env env,
                            DateTimeInterface dateTime2,
-                           @Optional boolean isAbsolute)
+                           @Optional bool isAbsolute)
   {
     DateInterval dateInterval = new DateInterval();
 

@@ -57,15 +57,15 @@ public class PDFStream {
   private PDFFont _font;
   private double _fontSize = 24;
 
-  private boolean _inText;
-  private boolean _hasFont;
-  private boolean _hasTextPos = true;
+  private bool _inText;
+  private bool _hasFont;
+  private bool _hasTextPos = true;
   private double _textX = 0;
   private double _textY = 0;
 
   private double _x = -1;
   private double _y = -1;
-  private boolean _hasGraphicsPos = true;
+  private bool _hasGraphicsPos = true;
 
   PDFStream(int id)
   {
@@ -225,7 +225,7 @@ public class PDFStream {
   public static int FILL = 2;
   public static int BOTH = 3;
 
-  public boolean setcolor(String fstype, string colorspace,
+  public bool setcolor(String fstype, string colorspace,
                           double c1, double c2, double c3, double c4)
   {
     flushToGraph();
@@ -281,7 +281,7 @@ public class PDFStream {
     println(String.format(Locale.US, "[] 0 d"));
   }
 
-  public boolean setlinewidth(double w)
+  public bool setlinewidth(double w)
   {
     println(String.format(Locale.US, "%1.2f w", w));
 
@@ -291,7 +291,7 @@ public class PDFStream {
   /**
    * Saves the graphics state
    */
-  public boolean save()
+  public bool save()
   {
     flushToGraph();
     
@@ -303,7 +303,7 @@ public class PDFStream {
   /**
    * Restores the graphics state
    */
-  public boolean restore()
+  public bool restore()
   {
     flushToGraph();
     
@@ -312,7 +312,7 @@ public class PDFStream {
     return true;
   }
 
-  public boolean concat(double a, double b, double c,
+  public bool concat(double a, double b, double c,
                         double d, double e, double f)
   {
     println(String.format(Locale.US, "%1.2f %1.2f %1.2f %1.2f %1.2f %1.2f cm",
@@ -348,7 +348,7 @@ public class PDFStream {
     println("(" + pdfEscapeText(text) + ") T*");
   }
 
-  public boolean fit_image(PDFImage img)
+  public bool fit_image(PDFImage img)
   {
     _procSet.add("/ImageB");
     _procSet.add("/ImageC");
@@ -359,7 +359,7 @@ public class PDFStream {
     return true;
   }
 
-  public boolean fit_file_image(PDFFileImage img)
+  public bool fit_file_image(PDFFileImage img)
   {
     _procSet.add("/ImageB");
     _procSet.add("/ImageC");

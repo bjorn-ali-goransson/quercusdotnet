@@ -40,11 +40,11 @@ abstract public class Decoder
   protected string _charset;
   protected CharSequence _replacement;
 
-  protected boolean _isIgnoreErrors = false;
-  protected boolean _isReplaceUnicode = false;
-  protected boolean _isAllowMalformedOut = false;
+  protected bool _isIgnoreErrors = false;
+  protected bool _isReplaceUnicode = false;
+  protected bool _isAllowMalformedOut = false;
 
-  protected boolean _hasError;
+  protected bool _hasError;
 
   protected Decoder(String charset)
   {
@@ -63,12 +63,12 @@ abstract public class Decoder
       return new GenericDecoder(charset);
   }
 
-  public boolean isUtf8()
+  public bool isUtf8()
   {
     return false;
   }
 
-  public final boolean isIgnoreErrors()
+  public final bool isIgnoreErrors()
   {
     return _isIgnoreErrors;
   }
@@ -78,7 +78,7 @@ abstract public class Decoder
     _isIgnoreErrors = isIgnore;
   }
 
-  public final boolean hasError()
+  public final bool hasError()
   {
     return _hasError;
   }
@@ -127,6 +127,6 @@ abstract public class Decoder
 
   public abstract void decodeUnicode(StringValue str, UnicodeBuilderValue sb);
 
-  abstract public boolean isDecodable(Env env, StringValue str);
+  abstract public bool isDecodable(Env env, StringValue str);
 }
 }

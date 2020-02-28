@@ -39,7 +39,7 @@ public class LongObjectMarshal : Marshal
 {
   public readonly Marshal MARSHAL = new LongObjectMarshal();
 
-  public boolean isReadOnly()
+  public bool isReadOnly()
   {
     return true;
   }

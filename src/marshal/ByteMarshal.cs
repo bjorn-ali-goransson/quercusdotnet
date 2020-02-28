@@ -39,12 +39,12 @@ public class ByteMarshal : Marshal
 {
   public readonly Marshal MARSHAL = new ByteMarshal();
 
-  public boolean isLong()
+  public bool isLong()
   {
     return true;
   }
 
-  public boolean isReadOnly()
+  public bool isReadOnly()
   {
     return true;
   }

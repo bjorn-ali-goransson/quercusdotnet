@@ -86,7 +86,7 @@ public class NullValue : Value
   /**
    * Returns true for a set type.
    */
-  public override boolean isset()
+  public override bool isset()
   {
     return false;
   }
@@ -94,7 +94,7 @@ public class NullValue : Value
   /**
    * Returns true if the value is empty
    */
-  public override boolean isEmpty()
+  public override bool isEmpty()
   {
     return true;
   }
@@ -154,7 +154,7 @@ public class NullValue : Value
   /**
    * Converts to a boolean.
    */
-  public override boolean toBoolean()
+  public override bool toBoolean()
   {
     return false;
   }
@@ -162,7 +162,7 @@ public class NullValue : Value
   /**
    * Returns true for a null.
    */
-  public override boolean isNull()
+  public override bool isNull()
   {
     return true;
   }
@@ -228,9 +228,9 @@ public class NullValue : Value
   }
 
   /**
-   * Converts to a java boolean object.
+   * Converts to a java bool object.
    */
-  public override Boolean toJavaBoolean()
+  public override bool toJavaBoolean()
   {
     return null;
   }
@@ -475,7 +475,7 @@ public class NullValue : Value
   /**
    * Returns true for equality
    */
-  public override boolean eql(Value rValue)
+  public override bool eql(Value rValue)
   {
     return rValue.isNull();
   }
@@ -499,7 +499,7 @@ public class NullValue : Value
   /**
    * Returns true for equality
    */
-  public override boolean eq(Value rValue)
+  public override bool eq(Value rValue)
   {
     if (rValue.isString())
       return toString().equals(rValue.toString());

@@ -196,7 +196,7 @@ public class QuercusParser {
 
   private ExprFactory _factory;
 
-  private boolean _hasCr;
+  private bool _hasCr;
 
   private int _peek = -1;
   private ReadStream _is;
@@ -216,17 +216,17 @@ public class QuercusParser {
 
   private GlobalScope _globalScope;
 
-  private boolean _returnsReference = false;
+  private bool _returnsReference = false;
 
   private Scope _scope;
   private InterpretedClassDef _classDef;
 
   private FunctionInfo _function;
 
-  private boolean _isTop;
+  private bool _isTop;
 
-  private boolean _isNewExpr;
-  private boolean _isIfTest;
+  private bool _isNewExpr;
+  private bool _isIfTest;
 
   private int _classesParsed;
   private int _functionsParsed;
@@ -459,12 +459,12 @@ public class QuercusParser {
     return fun;
   }
 
-  public boolean isUnicodeSemantics()
+  public bool isUnicodeSemantics()
   {
     return _quercus != null && _quercus.isUnicodeSemantics();
   }
 
-  public boolean isShortOpenTag()
+  public bool isShortOpenTag()
   {
     return _quercus != null && _quercus.getIniBoolean("short_open_tag");
   }
@@ -1252,7 +1252,7 @@ public class QuercusParser {
   private Statement parseIf()
     
   {
-    boolean oldTop = _isTop;
+    bool oldTop = _isTop;
     _isTop = false;
 
     try {
@@ -1342,7 +1342,7 @@ public class QuercusParser {
   {
     Location location = getLocation();
 
-    boolean oldTop = _isTop;
+    bool oldTop = _isTop;
     _isTop = false;
 
     string label = pushSwitchLabel();
@@ -1354,7 +1354,7 @@ public class QuercusParser {
 
       expect(')');
 
-      boolean isAlternate = false;
+      bool isAlternate = false;
 
       int token = parseToken();
 
@@ -1378,7 +1378,7 @@ public class QuercusParser {
         Location caseLocation = getLocation();
 
         ArrayList<Expr> valueList = new ArrayList<Expr>();
-        boolean isDefault = false;
+        bool isDefault = false;
 
         while (token == CASE || token == DEFAULT) {
           if (token == CASE) {
@@ -1411,7 +1411,7 @@ public class QuercusParser {
         for (int fallThrough : fallThroughList) {
           BlockStatement block = blockList.get(fallThrough);
 
-          boolean isDefaultBlock = block == defaultBlock;
+          bool isDefaultBlock = block == defaultBlock;
 
           block = block.append(newBlockList);
 
@@ -1465,7 +1465,7 @@ public class QuercusParser {
   private Statement parseWhile()
     
   {
-    boolean oldTop = _isTop;
+    bool oldTop = _isTop;
     _isTop = false;
 
     string label = pushWhileLabel();
@@ -1510,7 +1510,7 @@ public class QuercusParser {
   private Statement parseDo()
     
   {
-    boolean oldTop = _isTop;
+    bool oldTop = _isTop;
     _isTop = false;
 
     string label = pushDoLabel();
@@ -1543,7 +1543,7 @@ public class QuercusParser {
   private Statement parseFor()
     
   {
-    boolean oldTop = _isTop;
+    bool oldTop = _isTop;
     _isTop = false;
 
     string label = pushForLabel();
@@ -1613,7 +1613,7 @@ public class QuercusParser {
   private Statement parseForeach()
     
   {
-    boolean oldTop = _isTop;
+    bool oldTop = _isTop;
     _isTop = false;
 
     string label = pushForeachLabel();
@@ -1627,7 +1627,7 @@ public class QuercusParser {
 
       expect(AS);
 
-      boolean isRef = false;
+      bool isRef = false;
 
       int token = parseToken();
       if (token == '&')
@@ -1695,7 +1695,7 @@ public class QuercusParser {
   private Statement parseTry()
     
   {
-    boolean oldTop = _isTop;
+    bool oldTop = _isTop;
     _isTop = false;
 
     try {
@@ -1743,16 +1743,16 @@ public class QuercusParser {
   private Function parseFunctionDefinition(int modifiers)
     
   {
-    boolean oldTop = _isTop;
+    bool oldTop = _isTop;
     _isTop = false;
 
-    boolean oldReturnsReference = _returnsReference;
+    bool oldReturnsReference = _returnsReference;
     FunctionInfo oldFunction = _function;
 
-    boolean isAbstract = (modifiers & M_ABSTRACT) != 0;
-    boolean isStatic = (modifiers & M_STATIC) != 0;
+    bool isAbstract = (modifiers & M_ABSTRACT) != 0;
+    bool isStatic = (modifiers & M_STATIC) != 0;
 
-    boolean isTraitMethod = _classDef != null && _classDef.isTrait();
+    bool isTraitMethod = _classDef != null && _classDef.isTrait();
 
     if (_classDef != null && _classDef.isInterface()) {
       isAbstract = true;
@@ -1789,7 +1789,7 @@ public class QuercusParser {
         }
       }
 
-      boolean isConstructor = false;
+      bool isConstructor = false;
 
       if (_classDef != null
           && (nameV.equalsString(_classDef.getName())
@@ -1899,10 +1899,10 @@ public class QuercusParser {
   private Expr parseClosure()
     
   {
-    boolean oldTop = _isTop;
+    bool oldTop = _isTop;
     _isTop = false;
 
-    boolean oldReturnsReference = _returnsReference;
+    bool oldReturnsReference = _returnsReference;
     FunctionInfo oldFunction = _function;
 
     try {
@@ -1987,7 +1987,7 @@ public class QuercusParser {
 
       _globalScope.addFunction(createStringValue(name), function, oldTop);
 
-      boolean isInClassScope = _classDef != null
+      bool isInClassScope = _classDef != null
                                && ! oldFunction.isStaticClassMethod();
 
       return _factory.createClosure(location, function, useVars, isInClassScope);
@@ -2006,7 +2006,7 @@ public class QuercusParser {
 
     while (true) {
       int token = parseToken();
-      boolean isReference = false;
+      bool isReference = false;
 
       // php/076b, php/1c02
       // XXX: save arg type for type checking upon function call
@@ -2731,7 +2731,7 @@ public class QuercusParser {
   {
     int token = parseToken();
 
-    boolean isRef = token == '&';
+    bool isRef = token == '&';
 
     if (! isRef)
       _peekToken = token;
@@ -3627,7 +3627,7 @@ public class QuercusParser {
       long value = 0;
       double doubleValue = 0;
       long sign = 1;
-      boolean isOverflow = false;
+      bool isOverflow = false;
 
       char ch = _lexeme.charAt(0);
 
@@ -3911,7 +3911,7 @@ public class QuercusParser {
                     tokenName(token)));
   }
 
-  private boolean isIdentifier(int token)
+  private bool isIdentifier(int token)
   {
     return token == IDENTIFIER || FIRST_IDENTIFIER_LEXEME <= token;
   }
@@ -4060,7 +4060,7 @@ public class QuercusParser {
     int token;
 
     while ((token = parseToken()) > 0 && token != ')') {
-      boolean isRef = false;
+      bool isRef = false;
 
       if (token == '&')
         isRef = true;
@@ -4114,7 +4114,7 @@ public class QuercusParser {
     string name = null;
     Expr nameExpr = null;
 
-    boolean isNewExpr = _isNewExpr;
+    bool isNewExpr = _isNewExpr;
     _isNewExpr = true;
 
     //nameExpr = parseTermBase();
@@ -4367,8 +4367,8 @@ public class QuercusParser {
   private Expr parseImport()
     
   {
-    boolean isWildcard = false;
-    boolean isIdentifierStart = true;
+    bool isWildcard = false;
+    bool isIdentifierStart = true;
 
     StringBuilder sb = new StringBuilder();
 
@@ -5075,7 +5075,7 @@ public class QuercusParser {
   /**
    * Parses the <script language="quercus"> opening
    */
-  private boolean parseScriptBegin(StringValue sb)
+  private bool parseScriptBegin(StringValue sb)
     
   {
     int begin = sb.length();
@@ -5120,7 +5120,7 @@ public class QuercusParser {
     }
   }
 
-  private boolean parseTextMatch(StringValue sb, string text)
+  private bool parseTextMatch(StringValue sb, string text)
     
   {
     int len = text.length();
@@ -5163,7 +5163,7 @@ public class QuercusParser {
   /**
    * Parses the next string token.
    */
-  private void parseStringToken(int end, boolean isUnicode)
+  private void parseStringToken(int end, bool isUnicode)
     
   {
     _sb.setLength(0);
@@ -5288,7 +5288,7 @@ public class QuercusParser {
     return STRING;
   }
 
-  private boolean parseNowdocEnd(String nowdocName)
+  private bool parseNowdocEnd(String nowdocName)
     
   {
     int i = 0;
@@ -5371,7 +5371,7 @@ public class QuercusParser {
    */
   private Expr parseEscapedString(StringValue prefix,
                                   int token,
-                                  boolean isSystem)
+                                  bool isSystem)
     
   {
     return parseEscapedString(prefix, token, isSystem, true);
@@ -5382,8 +5382,8 @@ public class QuercusParser {
    */
   private Expr parseEscapedString(StringValue prefix,
                                   int token,
-                                  boolean isSystem,
-                                  boolean isUnicode)
+                                  bool isSystem,
+                                  bool isUnicode)
     
   {
     Expr expr;
@@ -5602,7 +5602,7 @@ public class QuercusParser {
   /**
    * Parses the next string
    */
-  private int parseEscapedString(char end, boolean isUnicode)
+  private int parseEscapedString(char end, bool isUnicode)
     
   {
     _sb.setLength(0);
@@ -5762,12 +5762,12 @@ public class QuercusParser {
     return STRING;
   }
 
-  private boolean isNamespaceIdentifierStart(int ch)
+  private bool isNamespaceIdentifierStart(int ch)
   {
     return isIdentifierStart(ch) || ch == '\\';
   }
 
-  private boolean isIdentifierStart(int ch)
+  private bool isIdentifierStart(int ch)
   {
     if (ch < 0) {
       return false;
@@ -5781,12 +5781,12 @@ public class QuercusParser {
     }
   }
 
-  private boolean isNamespaceIdentifierPart(int ch)
+  private bool isNamespaceIdentifierPart(int ch)
   {
     return isIdentifierPart(ch) || ch == '\\';
   }
 
-  private boolean isIdentifierPart(int ch)
+  private bool isIdentifierPart(int ch)
   {
     if (ch < 0) {
       return false;
@@ -6400,7 +6400,7 @@ public class QuercusParser {
   /*
    * Returns true if this is a switch label.
    */
-  public static boolean isSwitchLabel(String label)
+  public static bool isSwitchLabel(String label)
   {
     return label != null && label.startsWith("switch");
   }
@@ -6511,7 +6511,7 @@ public class QuercusParser {
       return _location;
     }
 
-    private boolean equals(String s1, string s2)
+    private bool equals(String s1, string s2)
     {
       return (s1 == null || s2 == null) ?  s1 == s2 : s1.equals(s2);
     }

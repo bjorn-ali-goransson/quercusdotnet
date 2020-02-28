@@ -100,12 +100,12 @@ public class ArrayModule
   public const int COUNT_NORMAL = 0;
   public const int COUNT_RECURSIVE = 1;
 
-  public const boolean CASE_SENSITIVE = true;
-  public const boolean CASE_INSENSITIVE = false;
-  public const boolean KEY_RESET = true;
-  public const boolean NO_KEY_RESET = false;
-  public const boolean STRICT = true;
-  public const boolean NOT_STRICT = false;
+  public const bool CASE_SENSITIVE = true;
+  public const bool CASE_INSENSITIVE = false;
+  public const bool KEY_RESET = true;
+  public const bool NO_KEY_RESET = false;
+  public const bool STRICT = true;
+  public const bool NOT_STRICT = false;
 
   private const CompareString CS_VALUE_NORMAL
     = new CompareString(ArrayValue.GET_VALUE, SORT_NORMAL);
@@ -192,7 +192,7 @@ public class ArrayModule
   public static Value array_chunk(Env env,
                                   ArrayValue array,
                                   int size,
-                                  @Optional boolean preserveKeys)
+                                  @Optional bool preserveKeys)
   {
     if (array == null)
       return NullValue.NULL;
@@ -337,7 +337,7 @@ public class ArrayModule
     ArrayValue diffArray = new ArrayValueImpl();
 
     for (Map.Entry<Value, Value> entry : array.entrySet()) {
-      boolean valueFound = false;
+      bool valueFound = false;
 
       Value entryValue = entry.getValue();
 
@@ -387,7 +387,7 @@ public class ArrayModule
     ArrayValue diffArray = new ArrayValueImpl();
 
     for (Map.Entry<Value, Value> entry : array.entrySet()) {
-      boolean keyFound = false;
+      bool keyFound = false;
 
       Value entryKey = entry.getKey();
 
@@ -443,7 +443,7 @@ public class ArrayModule
     ArrayValue diffArray = new ArrayValueImpl();
 
     for (Map.Entry<Value, Value> entry : array.entrySet()) {
-      boolean ValueFound = false;
+      bool ValueFound = false;
 
       Value entryValue = entry.getValue();
 
@@ -505,7 +505,7 @@ public class ArrayModule
     ArrayValue diffArray = new ArrayValueImpl();
 
     for (Map.Entry<Value, Value> entry : array.entrySet()) {
-      boolean keyFound = false;
+      bool keyFound = false;
 
       Value entryKey = entry.getKey();
 
@@ -557,7 +557,7 @@ public class ArrayModule
 
     ArrayValue diffArray = new ArrayValueImpl();
 
-    boolean valueFound;
+    bool valueFound;
 
     for (Map.Entry<Value, Value> entry : array.entrySet()) {
       valueFound = false;
@@ -672,7 +672,7 @@ public class ArrayModule
             value = entry.getValue();
 
           // php/1740
-          boolean isMatch
+          bool isMatch
             = callback.callArray(env, array, key, value).toBoolean();
 
           if (isMatch)
@@ -753,7 +753,7 @@ public class ArrayModule
     ArrayValue interArray = new ArrayValueImpl();
 
     for (Map.Entry<Value, Value> entry : array.entrySet()) {
-      boolean valueFound = false;
+      bool valueFound = false;
 
       Value entryKey = entry.getKey();
 
@@ -810,7 +810,7 @@ public class ArrayModule
     ArrayValue interArray = new ArrayValueImpl();
 
     for (Map.Entry<Value, Value> entry : array.entrySet()) {
-      boolean keyFound = false;
+      bool keyFound = false;
 
       Value entryKey = entry.getKey();
 
@@ -870,7 +870,7 @@ public class ArrayModule
     ArrayValue interArray = new ArrayValueImpl();
 
     for (Map.Entry<Value, Value> entry : array.entrySet()) {
-      boolean valueFound = false;
+      bool valueFound = false;
 
       Value entryKey = entry.getKey();
 
@@ -937,7 +937,7 @@ public class ArrayModule
     ArrayValue interArray = new ArrayValueImpl();
 
     for (Map.Entry<Value, Value> entry : array.entrySet()) {
-      boolean keyFound = false;
+      bool keyFound = false;
 
       Value entryKey = entry.getKey();
 
@@ -996,7 +996,7 @@ public class ArrayModule
     ArrayValue interArray = new ArrayValueImpl();
 
     for (Map.Entry<Value, Value> entry : array.entrySet()) {
-      boolean valueFound = false;
+      bool valueFound = false;
 
       Value entryValue = entry.getValue();
 
@@ -1028,7 +1028,7 @@ public class ArrayModule
    * @param searchArray the array to search for the key in
    * @return true if the key is in the array, and false otherwise
    */
-  public static boolean array_key_exists(Env env,
+  public static bool array_key_exists(Env env,
                                          @ReadOnly Value key,
                                          @ReadOnly Value searchArray)
   {
@@ -1069,7 +1069,7 @@ public class ArrayModule
   public static Value array_keys(Env env,
                                  @ReadOnly ArrayValue array,
                                  @Optional @ReadOnly Value searchValue,
-                                 @Optional boolean isStrict)
+                                 @Optional bool isStrict)
   {
     if (array == null)
       return NullValue.NULL;
@@ -1311,9 +1311,9 @@ public class ArrayModule
    *
    * @return true on success, and false on failure
    */
-  public static boolean array_multisort(Env env, Value[] arrays)
+  public static bool array_multisort(Env env, Value[] arrays)
   {
-    boolean isNewKeys = true;
+    bool isNewKeys = true;
 
     if (arrays.length == 0 || ! arrays[0].isArray()) {
       env.warning("the first argument must be an array");
@@ -1366,7 +1366,7 @@ public class ArrayModule
   private static void permute(Env env,
                               ArrayValue array,
                               Value[] permutation,
-                              boolean isNewKeys)
+                              bool isNewKeys)
   {
     Value[] keys = array.getKeyArray(env);
     Value[] values = array.getValueArray(env);
@@ -1429,7 +1429,7 @@ public class ArrayModule
 
     ArrayValue paddedArray = new ArrayValueImpl();
 
-    boolean padFront = padSize < 0;
+    bool padFront = padSize < 0;
 
     Iterator<Value> keyIterator = input.keySet().iterator();
 
@@ -1662,7 +1662,7 @@ public class ArrayModule
    */
   public static Value array_reverse(Env env,
                                     @ReadOnly ArrayValue inputArray,
-                                    @Optional("false") boolean keyed)
+                                    @Optional("false") bool keyed)
   {
     if (inputArray == null) {
       return NullValue.NULL;
@@ -1708,7 +1708,7 @@ public class ArrayModule
   public static Value array_search(Env env,
                                    @ReadOnly Value needle,
                                    @ReadOnly ArrayValue array,
-                                   @Optional("false") boolean strict)
+                                   @Optional("false") bool strict)
   {
     // php/171i
     // php/172y
@@ -1783,7 +1783,7 @@ public class ArrayModule
                                   @ReadOnly ArrayValue array,
                                   int offset,
                                   @Optional Value length,
-                                  @Optional boolean isPreserveKeys)
+                                  @Optional bool isPreserveKeys)
   {
     if (array == null)
       return NullValue.NULL;
@@ -1966,7 +1966,7 @@ public class ArrayModule
 
     ArrayValue diffArray = new ArrayValueImpl();
 
-    boolean isFound = false;
+    bool isFound = false;
 
     for (Value entryKey : array.keySet()) {
       Value entryValue = array.get(entryKey);
@@ -1982,9 +1982,9 @@ public class ArrayModule
 
         for (Map.Entry<Value, Value> entry : checkArray.entrySet()) {
           try {
-            boolean keyFound = entryKey.eql(entry.getKey());
+            bool keyFound = entryKey.eql(entry.getKey());
 
-            boolean valueFound = false;
+            bool valueFound = false;
 
             if (keyFound)
               valueFound = cmp.call(env, entryValue, entry.getValue())
@@ -2057,7 +2057,7 @@ public class ArrayModule
 
     ArrayValue diffArray = new ArrayValueImpl();
 
-    boolean isFound = false;
+    bool isFound = false;
 
     for (Value entryKey : array.keySet()) {
       Value entryValue = array.get(entryKey);
@@ -2073,10 +2073,10 @@ public class ArrayModule
 
         for (Map.Entry<Value, Value> entry : checkArray.entrySet()) {
           try {
-            boolean valueFound =
+            bool valueFound =
               cmpValue.call(env, entryValue, entry.getValue()).toLong() == 0;
 
-            boolean keyFound = false;
+            bool keyFound = false;
 
             if (valueFound)
               keyFound = cmpKey.call(env, entryKey, entry.getKey()).toLong()
@@ -2141,7 +2141,7 @@ public class ArrayModule
 
     ArrayValue diffArray = new ArrayValueImpl();
 
-    boolean isFound = false;
+    bool isFound = false;
 
     for (Value entryKey : array.keySet()) {
       Value entryValue = array.get(entryKey);
@@ -2217,7 +2217,7 @@ public class ArrayModule
 
     ArrayValue interArray = new ArrayValueImpl();
 
-    boolean isFound = true;
+    bool isFound = true;
 
     for (Value entryKey : array.keySet()) {
       Value entryValue = array.get(entryKey);
@@ -2233,9 +2233,9 @@ public class ArrayModule
 
         for (Map.Entry<Value, Value> entry : checkArray.entrySet()) {
           try {
-            boolean keyFound = entryKey.eql(entry.getKey());
+            bool keyFound = entryKey.eql(entry.getKey());
 
-            boolean valueFound = false;
+            bool valueFound = false;
 
             if (keyFound)
               valueFound = cmp.call(env, entryValue, entry.getValue())
@@ -2306,7 +2306,7 @@ public class ArrayModule
 
     ArrayValue interArray = new ArrayValueImpl();
 
-    boolean isFound = true;
+    bool isFound = true;
 
     for (Value entryKey : array.keySet()) {
       Value entryValue = array.get(entryKey);
@@ -2322,10 +2322,10 @@ public class ArrayModule
 
         for (Map.Entry<Value, Value> entry : checkArray.entrySet()) {
           try {
-            boolean valueFound =
+            bool valueFound =
               cmpValue.call(env, entryValue, entry.getValue()).toLong() == 0;
 
-            boolean keyFound = false;
+            bool keyFound = false;
 
             if (valueFound)
               keyFound = cmpKey.call(env, entryKey, entry.getKey()).toLong()
@@ -2388,7 +2388,7 @@ public class ArrayModule
 
     ArrayValue interArray = new ArrayValueImpl();
 
-    boolean isFound = true;
+    bool isFound = true;
 
     for (Value entryKey : array.keySet()) {
       Value entryValue = array.get(entryKey);
@@ -2518,7 +2518,7 @@ public class ArrayModule
    * @param extra extra parameter required by the callback function
    * @return true if the walk succedded, false otherwise
    */
-  public static boolean array_walk_recursive(Env env,
+  public static bool array_walk_recursive(Env env,
                                              @Reference Value arrayVar,
                                              Callable callback,
                                              @Optional("NULL") Value extra)
@@ -2550,7 +2550,7 @@ public class ArrayModule
           value = entry.getValue();
 
         if (value.isArray()) {
-          boolean result = array_walk_recursive(env,
+          bool result = array_walk_recursive(env,
                                                 (ArrayValue) value.toValue(),
                                                 callback,
                                                 extra);
@@ -2581,7 +2581,7 @@ public class ArrayModule
    *
    * @return true if the walk succeeded, false otherwise
    */
-  public static boolean array_walk(Env env,
+  public static bool array_walk(Env env,
                                    @Reference Value arrayVar,
                                    Callable callback,
                                    @Optional("NULL") Value userData)
@@ -2635,7 +2635,7 @@ public class ArrayModule
    * @return true if the sort works, false otherwise
    * 
    */
-  public static boolean arsort(Env env,
+  public static bool arsort(Env env,
                                @Reference Value arrayVar,
                                @Optional long sortFlag)
   {
@@ -2673,7 +2673,7 @@ public class ArrayModule
    * @return true if the sort works, false otherwise
    * 
    */
-  public static boolean asort(Env env,
+  public static bool asort(Env env,
                               @Reference Value arrayVar,
                               @Optional long sortFlag)
   {
@@ -2742,7 +2742,7 @@ public class ArrayModule
                            @ReadOnly Value value,
                            @Optional int countMethod)
   {
-    boolean isRecursive = countMethod == COUNT_RECURSIVE;
+    bool isRecursive = countMethod == COUNT_RECURSIVE;
 
     if (! isRecursive)
       return value.getCount(env);
@@ -2845,7 +2845,7 @@ public class ArrayModule
 
     long extractType = rawType & ~EXTR_REFS;
 
-    boolean extrRefs = (rawType & EXTR_REFS) != 0;
+    bool extrRefs = (rawType & EXTR_REFS) != 0;
 
     if (extractType < EXTR_OVERWRITE
         || extractType > EXTR_IF_EXISTS && extractType != EXTR_REFS) {
@@ -2934,7 +2934,7 @@ public class ArrayModule
    * @param variableName the name to check
    * @return true if the name is valid, false otherwise
    */
-  private static boolean validVariableName(StringValue variableName)
+  private static bool validVariableName(StringValue variableName)
   {
     if (variableName.length() < 1)
       return false;
@@ -2961,9 +2961,9 @@ public class ArrayModule
    * @return true if the sort works, false otherwise
    * 
    */
-  public static boolean in_array(@ReadOnly Value needle,
+  public static bool in_array(@ReadOnly Value needle,
                                  @ReadOnly ArrayValue stack,
-                                 @Optional("false") boolean strict)
+                                 @Optional("false") bool strict)
   {
     if (stack == null)
       return false;
@@ -2989,7 +2989,7 @@ public class ArrayModule
   /**
    * Undocumented alias for {@link #array_key_exists}.
    */
-  public static boolean key_exists(Env env,
+  public static bool key_exists(Env env,
                                    @ReadOnly Value key,
                                    @ReadOnly Value searchArray)
   {
@@ -3004,7 +3004,7 @@ public class ArrayModule
    * @return true if the sort works, false otherwise
    * 
    */
-  public static boolean krsort(Env env,
+  public static bool krsort(Env env,
                                @Reference Value arrayVar,
                                @Optional long sortFlag)
   {
@@ -3042,7 +3042,7 @@ public class ArrayModule
    * @return true if the sort works, false otherwise
    * 
    */
-  public static boolean ksort(Env env,
+  public static bool ksort(Env env,
                               @Reference Value arrayVar,
                               @Optional long sortFlag)
   {
@@ -3183,7 +3183,7 @@ public class ArrayModule
     long start;
     long end;
 
-    boolean isAppendChars = false;
+    bool isAppendChars = false;
 
     if (startV.isLongConvertible() && endV.isLongConvertible()) {
       start = startV.toLong();
@@ -3204,7 +3204,7 @@ public class ArrayModule
       return BooleanValue.FALSE;
     }
 
-    boolean increment = true;
+    bool increment = true;
 
     if (end < start) {
       step *= -1;
@@ -3243,7 +3243,7 @@ public class ArrayModule
    * @return true if the sort works, false otherwise
    * 
    */
-  public static boolean rsort(Env env,
+  public static bool rsort(Env env,
                               @Reference Value arrayVar,
                               @Optional long sortFlag)
   {
@@ -3300,7 +3300,7 @@ public class ArrayModule
    * @return true if the sort works, false otherwise
    * 
    */
-  public static boolean sort(Env env,
+  public static bool sort(Env env,
                              @Reference Value arrayVar,
                              @Optional long sortFlag)
   {
@@ -3340,7 +3340,7 @@ public class ArrayModule
    * @return true if the sort works, false otherwise
    * 
    */
-  public static boolean uasort(Env env,
+  public static bool uasort(Env env,
                                @Reference Value arrayVar,
                                Callable func,
                                @Optional long sortFlag)
@@ -3374,7 +3374,7 @@ public class ArrayModule
    * @return true if the sort works, false otherwise
    * 
    */
-  public static boolean uksort(Env env,
+  public static bool uksort(Env env,
                                @Reference Value arrayVar,
                                Callable func,
                                @Optional long sortFlag)
@@ -3408,7 +3408,7 @@ public class ArrayModule
    * @return true if the sort works, false otherwise
    * 
    */
-  public static boolean usort(Env env,
+  public static bool usort(Env env,
                               @Reference Value arrayVar,
                               Callable func,
                               @Optional long sortFlag)
@@ -3556,9 +3556,9 @@ public class ArrayModule
 
     private int _order;
 
-    private boolean _isCaseSensitive;
+    private bool _isCaseSensitive;
 
-    CompareNatural(AbstractGet getter, int order, boolean isCaseSensitive)
+    CompareNatural(AbstractGet getter, int order, bool isCaseSensitive)
     {
       _getter = getter;
       _order = order;
@@ -3757,7 +3757,7 @@ public class ArrayModule
       _current = 0;
     }
 
-    public boolean hasNext()
+    public bool hasNext()
     {
       return _current < _length;
     }

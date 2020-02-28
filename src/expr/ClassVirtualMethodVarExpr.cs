@@ -57,7 +57,7 @@ public class ClassVirtualMethodVarExpr : Expr {
   protected Expr []_fullArgs;
 
   protected AbstractFunction _fun;
-  protected boolean _isMethod;
+  protected bool _isMethod;
 
   public ClassVirtualMethodVarExpr(Location location,
                                    Expr methodName,

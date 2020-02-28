@@ -91,7 +91,7 @@ public class DoubleValue : NumberValue
   /**
    * Returns true for a double.
    */
-  public boolean isDoubleConvertible()
+  public bool isDoubleConvertible()
   {
     return true;
   }
@@ -99,7 +99,7 @@ public class DoubleValue : NumberValue
   /**
    * Returns true for integer looking doubles.
    */
-  public boolean isLongConvertible()
+  public bool isLongConvertible()
   {
     return _value == (double)((long) _value);
   }
@@ -107,7 +107,7 @@ public class DoubleValue : NumberValue
   /**
    * Returns true for a long-value.
    */
-  public override boolean isLong()
+  public override bool isLong()
   {
     return false;
   }
@@ -115,7 +115,7 @@ public class DoubleValue : NumberValue
   /**
    * Returns true for a double-value.
    */
-  public override boolean isDouble()
+  public override bool isDouble()
   {
     return true;
   }
@@ -123,7 +123,7 @@ public class DoubleValue : NumberValue
   /**
    * Returns true for is_numeric
    */
-  public override boolean isNumeric()
+  public override bool isNumeric()
   {
     return true;
   }
@@ -131,7 +131,7 @@ public class DoubleValue : NumberValue
   /**
    * Returns true for a scalar
    */
-  public boolean isScalar()
+  public bool isScalar()
   {
     return true;
   }
@@ -187,7 +187,7 @@ public class DoubleValue : NumberValue
   /**
    * Converts to a boolean.
    */
-  public boolean toBoolean()
+  public bool toBoolean()
   {
     return _value != 0;
   }
@@ -370,7 +370,7 @@ public class DoubleValue : NumberValue
   /**
    * Returns true for equality
    */
-  public boolean eql(Value rValue)
+  public bool eql(Value rValue)
   {
     rValue = rValue.toValue();
 
@@ -441,7 +441,7 @@ public class DoubleValue : NumberValue
 
       int len = v.length();
       int nonzero = -1;
-      boolean dot = false;
+      bool dot = false;
 
       for (len--; len >= 0; len--) {
         int ch = v.charAt(len);
@@ -535,7 +535,7 @@ public class DoubleValue : NumberValue
   /**
    * Compare for equality.
    */
-  public override boolean equals(Object o)
+  public override bool equals(Object o)
   {
     if (this == o)
       return true;

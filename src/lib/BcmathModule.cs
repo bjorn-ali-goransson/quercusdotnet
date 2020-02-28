@@ -279,7 +279,7 @@ public class BcmathModule : AbstractQuercusModule {
     if (exp.compareTo(BigInteger.ZERO) == 0)
       return BigDecimal.ONE;
 
-    boolean isNeg;
+    bool isNeg;
 
     if (exp.compareTo(BigInteger.ZERO) < 0)  {
       isNeg = true;
@@ -359,7 +359,7 @@ public class BcmathModule : AbstractQuercusModule {
    * A default scale set with this function overrides the value of the
    * "bcmath.scale" ini variable.
    */
-  public static boolean bcscale(Env env, int scale)
+  public static bool bcscale(Env env, int scale)
   {
     env.setIni("bcmath.scale", String.valueOf(scale));
 

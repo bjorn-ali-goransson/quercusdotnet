@@ -267,7 +267,7 @@ public class HtmlModule : AbstractQuercusModule {
                                        StringValue string,
                                        @Optional("ENT_COMPAT") int quoteStyle,
                                        @Optional string charset,
-                                       @Optional("true") boolean isDoubleEncode)
+                                       @Optional("true") bool isDoubleEncode)
   {
     int len = string.length();
 
@@ -423,7 +423,7 @@ public class HtmlModule : AbstractQuercusModule {
 
     ArrayValue htmlEntities = null;
 
-    boolean isUnicode = env.isUnicodeSemantics();
+    bool isUnicode = env.isUnicodeSemantics();
 
     if (isUnicode) {
       if (HTML_ENTITIES_ARRAY_UNICODE_ENTITY_KEY == null) {

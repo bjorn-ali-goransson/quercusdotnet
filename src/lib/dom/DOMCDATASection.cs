@@ -45,12 +45,12 @@ public class DOMCDATASection
     return _delegate.getWholeText();
   }
 
-  public boolean isElementContentWhitespace()
+  public bool isElementContentWhitespace()
   {
     return _delegate.isElementContentWhitespace();
   }
 
-  public boolean isWhitespaceInElementContent()
+  public bool isWhitespaceInElementContent()
   {
     return _delegate.isElementContentWhitespace();
   }

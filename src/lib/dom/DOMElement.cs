@@ -126,12 +126,12 @@ public class DOMElement : DOMNode<Element>
     return _delegate.getTagName();
   }
 
-  public boolean hasAttribute(String name)
+  public bool hasAttribute(String name)
   {
     return _delegate.hasAttribute(name);
   }
 
-  public boolean hasAttributeNS(String namespaceURI, string localName)
+  public bool hasAttributeNS(String namespaceURI, string localName)
     
   {
     try {
@@ -221,7 +221,7 @@ public class DOMElement : DOMNode<Element>
     }
   }
 
-  public void setIdAttribute(String name, boolean isId)
+  public void setIdAttribute(String name, bool isId)
     
   {
     try {
@@ -234,7 +234,7 @@ public class DOMElement : DOMNode<Element>
 
   public void setIdAttributeNS(String namespaceURI,
                                string localName,
-                               boolean isId)
+                               bool isId)
     
   {
     try {
@@ -245,7 +245,7 @@ public class DOMElement : DOMNode<Element>
     }
   }
 
-  public void setIdAttributeNode(DOMAttr idAttr, boolean isId)
+  public void setIdAttributeNode(DOMAttr idAttr, bool isId)
     
   {
     try {

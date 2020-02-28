@@ -43,7 +43,7 @@ public class CtypeModule
     return new String[] { "ctype" };
   }
 
-  public static boolean ctype_alnum(Value value)
+  public static bool ctype_alnum(Value value)
   {
     if (value instanceof LongValue)
       return isalnum(value.toInt());
@@ -64,7 +64,7 @@ public class CtypeModule
       return false;
   }
 
-  public static boolean ctype_alpha(Value value)
+  public static bool ctype_alpha(Value value)
   {
     if (value instanceof LongValue)
       return isalpha(value.toInt());
@@ -85,7 +85,7 @@ public class CtypeModule
       return false;
   }
 
-  public static boolean ctype_cntrl(Value value)
+  public static bool ctype_cntrl(Value value)
   {
     if (value instanceof LongValue)
       return iscntrl(value.toInt());
@@ -106,7 +106,7 @@ public class CtypeModule
       return false;
   }
 
-  public static boolean ctype_digit(Value value)
+  public static bool ctype_digit(Value value)
   {
     if (value instanceof LongValue)
       return isdigit(value.toInt());
@@ -128,7 +128,7 @@ public class CtypeModule
   }
 
 
-  public static boolean ctype_graph(Value value)
+  public static bool ctype_graph(Value value)
   {
     if (value instanceof LongValue)
       return isgraph(value.toInt());
@@ -149,7 +149,7 @@ public class CtypeModule
       return false;
   }
 
-  public static boolean ctype_lower(Value value)
+  public static bool ctype_lower(Value value)
   {
     if (value instanceof LongValue)
       return islower(value.toInt());
@@ -171,7 +171,7 @@ public class CtypeModule
   }
 
 
-  public static boolean ctype_print(Value value)
+  public static bool ctype_print(Value value)
   {
     if (value instanceof LongValue)
       return isprint(value.toInt());
@@ -192,7 +192,7 @@ public class CtypeModule
       return false;
   }
 
-  public static boolean ctype_punct(Value value)
+  public static bool ctype_punct(Value value)
   {
     if (value instanceof LongValue)
       return ispunct(value.toInt());
@@ -213,7 +213,7 @@ public class CtypeModule
       return false;
   }
 
-  public static boolean ctype_space(Value value)
+  public static bool ctype_space(Value value)
   {
     if (value instanceof LongValue)
       return isspace(value.toInt());
@@ -234,7 +234,7 @@ public class CtypeModule
       return false;
   }
 
-  public static boolean ctype_upper(Value value)
+  public static bool ctype_upper(Value value)
   {
     if (value instanceof LongValue)
       return isupper(value.toInt());
@@ -255,7 +255,7 @@ public class CtypeModule
       return false;
   }
 
-  public static boolean ctype_xdigit(Value value)
+  public static bool ctype_xdigit(Value value)
   {
     if (value instanceof LongValue)
       return isxdigit(value.toInt());
@@ -276,60 +276,60 @@ public class CtypeModule
       return false;
   }
 
-  public static boolean isalnum(int ch)
+  public static bool isalnum(int ch)
   {
     return ('a' <= ch && ch <= 'z'
             || 'A' <= ch && ch <= 'Z'
             || '0' <= ch && ch <= '9');
   }
 
-  public static boolean isalpha(int ch)
+  public static bool isalpha(int ch)
   {
     return ('a' <= ch && ch <= 'z'
             || 'A' <= ch && ch <= 'Z');
   }
 
-  public static boolean iscntrl(int ch)
+  public static bool iscntrl(int ch)
   {
     return (0 <= ch && ch <= 31 || ch == 127);
   }
 
-  public static boolean isdigit(int ch)
+  public static bool isdigit(int ch)
   {
     return ('0' <= ch && ch <= '9');
   }
 
-  public static boolean isgraph(int ch)
+  public static bool isgraph(int ch)
   {
     return ('!' <= ch && ch <= '~');
   }
 
-  public static boolean islower(int ch)
+  public static bool islower(int ch)
   {
     return ('a' <= ch && ch <= 'z');
   }
 
-  public static boolean isprint(int ch)
+  public static bool isprint(int ch)
   {
     return (' ' <= ch && ch <= '~');
   }
 
-  public static boolean ispunct(int ch)
+  public static bool ispunct(int ch)
   {
     return isprint(ch) && !isspace(ch) && !isalnum(ch);
   }
 
-  public static boolean isspace(int ch)
+  public static bool isspace(int ch)
   {
     return ch == ' ' || 9 <= ch && ch <= 13;
   }
 
-  public static boolean isupper(int ch)
+  public static bool isupper(int ch)
   {
     return ('A' <= ch && ch <= 'Z');
   }
 
-  public static boolean isxdigit(int ch)
+  public static bool isxdigit(int ch)
   {
     return ((ch >= '0' && ch <= '9')
             || (ch >= 'a' && ch <= 'f')

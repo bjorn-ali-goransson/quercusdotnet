@@ -54,7 +54,7 @@ public class ArgRef : Value
   }
 
   @Override
-  public boolean hasCurrent()
+  public bool hasCurrent()
   {
     return _var.hasCurrent();
   }
@@ -62,7 +62,7 @@ public class ArgRef : Value
   /**
    * Returns true for an implementation of a class
    */
-  public override boolean isA(Env env, string name)
+  public override bool isA(Env env, string name)
   {
     return _var.isA(env, name);
   }
@@ -70,7 +70,7 @@ public class ArgRef : Value
   /**
    * True for a long
    */
-  public override boolean isLongConvertible()
+  public override bool isLongConvertible()
   {
     return _var.isLongConvertible();
   }
@@ -78,7 +78,7 @@ public class ArgRef : Value
   /**
    * True to a double.
    */
-  public override boolean isDoubleConvertible()
+  public override bool isDoubleConvertible()
   {
     return _var.isDoubleConvertible();
   }
@@ -86,7 +86,7 @@ public class ArgRef : Value
   /**
    * True for a number
    */
-  public override boolean isNumberConvertible()
+  public override bool isNumberConvertible()
   {
     return _var.isNumberConvertible();
   }
@@ -94,7 +94,7 @@ public class ArgRef : Value
   /**
    * Returns true for a long-value.
    */
-  public boolean isLong()
+  public bool isLong()
   {
     return _var.isLong();
   }
@@ -102,7 +102,7 @@ public class ArgRef : Value
   /**
    * Returns true for a long-value.
    */
-  public boolean isDouble()
+  public bool isDouble()
   {
     return _var.isDouble();
   }
@@ -116,7 +116,7 @@ public class ArgRef : Value
   /**
    * Converts to a boolean.
    */
-  public override boolean toBoolean()
+  public override bool toBoolean()
   {
     return _var.toBoolean();
   }
@@ -173,7 +173,7 @@ public class ArgRef : Value
   /**
    * Returns true for an object.
    */
-  public override boolean isObject()
+  public override bool isObject()
   {
     return _var.isObject();
   }
@@ -181,7 +181,7 @@ public class ArgRef : Value
   /**
    * Returns true for an array.
    */
-  public override boolean isArray()
+  public override bool isArray()
   {
     return _var.isArray();
   }
@@ -457,7 +457,7 @@ public class ArgRef : Value
   /**
    * Returns true for equality
    */
-  public override boolean eql(Value rValue)
+  public override bool eql(Value rValue)
   {
     return _var.eql(rValue);
   }

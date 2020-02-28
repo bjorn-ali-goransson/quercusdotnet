@@ -133,7 +133,7 @@ public class MysqlModule : AbstractQuercusModule {
    * This function is deprecated and was removed from PHP in PHP 3.0.14.
    */
 
-  public static boolean mysql_change_user(Env env,
+  public static bool mysql_change_user(Env env,
                                           StringValue user,
                                           StringValue pass,
                                           @Optional StringValue database,
@@ -157,9 +157,9 @@ public class MysqlModule : AbstractQuercusModule {
   /**
    * Closes a mysql connection.
    */
-  public static boolean mysql_close(Env env, @Optional Mysqli conn)
+  public static bool mysql_close(Env env, @Optional Mysqli conn)
   {
-    boolean isEnvConn = false;
+    bool isEnvConn = false;
 
     if (conn == null) {
       conn = (Mysqli) env.getSpecialValue("caucho.mysql");
@@ -193,7 +193,7 @@ public class MysqlModule : AbstractQuercusModule {
   /**
    * Creates a database.
    */
-  public static boolean mysql_create_db(Env env,
+  public static bool mysql_create_db(Env env,
                                         @NotNull StringValue name,
                                         @Optional Mysqli conn)
   {
@@ -232,7 +232,7 @@ public class MysqlModule : AbstractQuercusModule {
    * Moves the intenal row pointer of the MySQL result to the
    * specified row number, 0 based.
    */
-  public static boolean mysql_data_seek(Env env,
+  public static bool mysql_data_seek(Env env,
                                         @NotNull MysqliResult result,
                                         int rowNumber)
   {
@@ -292,7 +292,7 @@ public class MysqlModule : AbstractQuercusModule {
   /**
    * Drops a database.
    */
-  public static boolean mysql_drop_db(Env env,
+  public static bool mysql_drop_db(Env env,
                                       @NotNull StringValue databaseName,
                                       @Optional Mysqli conn)
   {
@@ -308,7 +308,7 @@ public class MysqlModule : AbstractQuercusModule {
   /**
    * Deprecated alias for mysql_drop_db.
    */
-  public static boolean mysql_dropdb(Env env,
+  public static bool mysql_dropdb(Env env,
                                      @NotNull StringValue databaseName,
                                      @Optional Mysqli conn)
   {
@@ -766,7 +766,7 @@ public class MysqlModule : AbstractQuercusModule {
    * Seeks to the specified field offset, the field offset is
    * is used as the default for the next call to {@link #mysql_fetch_field}.
    */
-  public static boolean mysql_field_seek(Env env,
+  public static bool mysql_field_seek(Env env,
                                          @NotNull MysqliResult result,
                                          int fieldOffset)
   {
@@ -846,7 +846,7 @@ public class MysqlModule : AbstractQuercusModule {
   /**
    * Frees a mysql result.
    */
-  public static boolean mysql_free_result(@NotNull MysqliResult result)
+  public static bool mysql_free_result(@NotNull MysqliResult result)
   {
     if (result == null)
       return false;
@@ -859,7 +859,7 @@ public class MysqlModule : AbstractQuercusModule {
   /**
    * Alias for mysql_free_result.
    */
-  public static boolean mysql_freeresult(@NotNull MysqliResult result)
+  public static bool mysql_freeresult(@NotNull MysqliResult result)
   {
     return mysql_free_result(result);
   }
@@ -1017,7 +1017,7 @@ public class MysqlModule : AbstractQuercusModule {
   /**
    * Selects the database
    */
-  public static boolean mysql_select_db(Env env,
+  public static bool mysql_select_db(Env env,
                                         string dbName,
                                         @Optional Mysqli conn)
   {
@@ -1089,7 +1089,7 @@ public class MysqlModule : AbstractQuercusModule {
                                      @Optional StringValue server,
                                      @Optional StringValue user,
                                      @Optional StringValue password,
-                                     @Optional boolean newLink,
+                                     @Optional bool newLink,
                                      @Optional int flags)
   {
     Value value = mysql_connect(env, server, user, password, newLink, flags);
@@ -1109,7 +1109,7 @@ public class MysqlModule : AbstractQuercusModule {
                                     @Optional StringValue host,
                                     @Optional StringValue userName,
                                     @Optional StringValue password,
-                                    @Optional boolean isNewLink,
+                                    @Optional bool isNewLink,
                                     @Optional int flags) {
     int port = -1;
     string socketStr = "";
@@ -1203,7 +1203,7 @@ public class MysqlModule : AbstractQuercusModule {
   /**
    * Checks if the connection is still valid.
    */
-  public static boolean mysql_ping(Env env, @Optional Mysqli conn)
+  public static bool mysql_ping(Env env, @Optional Mysqli conn)
   {
     if (conn == null)
       conn = getConnection(env);
@@ -1280,7 +1280,7 @@ public class MysqlModule : AbstractQuercusModule {
     return conn.get_charset(env);
   }
 
-  public static boolean mysql_set_charset(Env env,
+  public static bool mysql_set_charset(Env env,
                                           StringValue charset,
                                           @Optional Mysqli conn)
   {

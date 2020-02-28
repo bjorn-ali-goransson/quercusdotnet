@@ -146,7 +146,7 @@ public class UrlRewriterCallback : CallbackFunction {
   private class Parser {
     private Env _env;
 
-    private boolean _includeSessionInfo = false;
+    private bool _includeSessionInfo = false;
     private string _sessionName = null;
     private string _sessionId = null;
     private string _javaSessionName = null;
@@ -154,7 +154,7 @@ public class UrlRewriterCallback : CallbackFunction {
 
     private int _index;
     private string _value;
-    private boolean _quoted;
+    private bool _quoted;
 
     private string _input;
     private StringValue _output;
@@ -396,7 +396,7 @@ public class UrlRewriterCallback : CallbackFunction {
       consumeOneCharacter();
     }
 
-    private boolean isValidAttributeCharacter(char ch)
+    private bool isValidAttributeCharacter(char ch)
     {
       return Character.isLetterOrDigit(ch)
           || (ch == '-') || (ch == '.') || (ch == '_') || (ch == ':');

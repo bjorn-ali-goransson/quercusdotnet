@@ -84,7 +84,7 @@ public class ZlibModule : AbstractQuercusModule {
   public static BinaryStream gzopen(Env env,
                                     StringValue fileName,
                                     string mode,
-                                    @Optional("false") boolean useIncludePath)
+                                    @Optional("false") bool useIncludePath)
   {
     string filemode = getFileMode(mode);
     int compressionLevel = getCompressionLevel(mode);
@@ -136,7 +136,7 @@ public class ZlibModule : AbstractQuercusModule {
   @ReturnNullAsFalse
   public static ArrayValue gzfile(Env env,
                                   StringValue fileName,
-                                  @Optional boolean useIncludePath)
+                                  @Optional bool useIncludePath)
   {
     BinaryInput is = (BinaryInput) gzopen(env, fileName, "r", useIncludePath);
 
@@ -176,7 +176,7 @@ public class ZlibModule : AbstractQuercusModule {
    */
   public static Value readgzfile(Env env,
                                  StringValue fileName,
-                                 @Optional boolean useIncludePath)
+                                 @Optional bool useIncludePath)
   {
     BinaryInput is = (BinaryInput) gzopen(env, fileName, "r", useIncludePath);
 
@@ -235,7 +235,7 @@ public class ZlibModule : AbstractQuercusModule {
   /**
    * Closes the stream.
    */
-  public boolean gzclose(@NotNull BinaryStream os)
+  public bool gzclose(@NotNull BinaryStream os)
   {
     if (os == null)
       return false;
@@ -248,7 +248,7 @@ public class ZlibModule : AbstractQuercusModule {
   /**
    * Returns true if the GZip stream is ended.
    */
-  public boolean gzeof(@NotNull BinaryStream binaryStream)
+  public bool gzeof(@NotNull BinaryStream binaryStream)
   {
     if (binaryStream == null)
       return true;
@@ -320,7 +320,7 @@ public class ZlibModule : AbstractQuercusModule {
   /**
    * Rewinds the stream to the very beginning
    */
-  public boolean gzrewind(@NotNull BinaryStream binaryStream)
+  public bool gzrewind(@NotNull BinaryStream binaryStream)
   {
     if (binaryStream == null)
       return false;
@@ -445,7 +445,7 @@ public class ZlibModule : AbstractQuercusModule {
       deflater = new Deflater(level, true);
       Adler32 crc = new Adler32();
 
-      boolean isFinished = false;
+      bool isFinished = false;
 
       StringValue out = env.createLargeBinaryBuilder();
 
@@ -570,7 +570,7 @@ public class ZlibModule : AbstractQuercusModule {
     try {
       deflater = new Deflater(level, true);
 
-      boolean isFinished = false;
+      bool isFinished = false;
       TempStream out = new TempStream();
 
       int len;

@@ -176,7 +176,7 @@ public class SaveState {
     return _importMap;
   }
   
-  public boolean isModified()
+  public bool isModified()
   {
     return false;
   }

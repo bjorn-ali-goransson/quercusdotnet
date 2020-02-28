@@ -43,7 +43,7 @@ public class BinaryInputMarshal : Marshal
 {
   public readonly Marshal MARSHAL = new BinaryInputMarshal();
   
-  public boolean isReadOnly()
+  public bool isReadOnly()
   {
     return true;
   }

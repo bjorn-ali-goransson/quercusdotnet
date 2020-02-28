@@ -44,7 +44,7 @@ public interface Callable {
   /**
    * Checks for a valid callback.
    */
-  public boolean isValid(Env env);
+  public bool isValid(Env env);
 
   /**
    * Returns the name of the file where this is defined in.
@@ -69,7 +69,7 @@ public interface Callable {
   /**
    * Returns true if this returns a reference.
    */
-  public boolean isReturnsReference(Env env);
+  public bool isReturnsReference(Env env);
 
   /**
    * Returns the formal arguments.

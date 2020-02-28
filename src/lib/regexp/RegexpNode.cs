@@ -255,17 +255,17 @@ class RegexpNode {
     return -1;
   }
 
-  boolean isNullable()
+  bool isNullable()
   {
     return false;
   }
 
-  boolean []firstSet(boolean []firstSet)
+  bool []firstSet(boolean []firstSet)
   {
     return null;
   }
 
-  boolean isAnchorBegin()
+  bool isAnchorBegin()
   {
     return false;
   }
@@ -309,7 +309,7 @@ class RegexpNode {
     sb.append(toStringName()).append("[]");
   }
 
-  protected boolean toStringAdd(StringBuilder sb, Map<RegexpNode,Integer> map)
+  protected bool toStringAdd(StringBuilder sb, Map<RegexpNode,Integer> map)
   {
     Integer v = map.get(this);
 
@@ -367,7 +367,7 @@ class RegexpNode {
       return _ch;
     }
 
-    boolean override []firstSet(boolean []firstSet)
+    bool override []firstSet(boolean []firstSet)
     {
       if (firstSet != null && _ch < firstSet.length) {
         firstSet[_ch] = true;
@@ -400,7 +400,7 @@ class RegexpNode {
     = new AnchorEndOrNewline();
 
   static class AnchorBegin : NullableNode {
-    boolean override isAnchorBegin()
+    bool override isAnchorBegin()
     {
       return true;
     }
@@ -478,7 +478,7 @@ class RegexpNode {
   const RegexpNode NOT_S_WORD = RegexpSet.WORD.createNotNode();
 
   static class AsciiSet : AbstractCharNode {
-    private final boolean []_set;
+    private final bool []_set;
 
     AsciiSet()
     {
@@ -490,7 +490,7 @@ class RegexpNode {
       _set = set;
     }
 
-    boolean override []firstSet(boolean []firstSet)
+    bool override []firstSet(boolean []firstSet)
     {
       if (firstSet == null)
         return null;
@@ -528,7 +528,7 @@ class RegexpNode {
   }
 
   static class AsciiNotSet : AbstractCharNode {
-    private final boolean []_set;
+    private final bool []_set;
 
     AsciiNotSet()
     {
@@ -630,7 +630,7 @@ class RegexpNode {
       return _min;
     }
 
-    boolean override []firstSet(boolean []firstSet)
+    bool override []firstSet(boolean []firstSet)
     {
       firstSet = _node.firstSet(firstSet);
 
@@ -751,7 +751,7 @@ class RegexpNode {
       return _min;
     }
 
-    boolean override []firstSet(boolean []firstSet)
+    bool override []firstSet(boolean []firstSet)
     {
       firstSet = _node.firstSet(firstSet);
 
@@ -847,7 +847,7 @@ class RegexpNode {
       return _head.firstChar();
     }
 
-    boolean override []firstSet(boolean []firstSet)
+    bool override []firstSet(boolean []firstSet)
     {
       firstSet = _head.firstSet(firstSet);
 
@@ -862,7 +862,7 @@ class RegexpNode {
       return _head.prefix();
     }
 
-    boolean override isAnchorBegin()
+    bool override isAnchorBegin()
     {
       return _head.isAnchorBegin();
     }
@@ -1252,7 +1252,7 @@ class RegexpNode {
       return _node.firstChar();
     }
 
-    boolean override []firstSet(boolean []firstSet)
+    bool override []firstSet(boolean []firstSet)
     {
       return _node.firstSet(firstSet);
     }
@@ -1262,7 +1262,7 @@ class RegexpNode {
       return _node.prefix();
     }
 
-    boolean override isAnchorBegin()
+    bool override isAnchorBegin()
     {
       return _node.isAnchorBegin();
     }
@@ -1527,7 +1527,7 @@ class RegexpNode {
    * A nullable node can match an empty string.
    */
   abstract static class NullableNode : RegexpNode {
-    boolean override isNullable()
+    bool override isNullable()
     {
       return true;
     }
@@ -1600,7 +1600,7 @@ class RegexpNode {
       return _min * _node.minLength() + _tail.minLength();
     }
 
-    boolean override []firstSet(boolean []firstSet)
+    bool override []firstSet(boolean []firstSet)
     {
       firstSet = _node.firstSet(firstSet);
 
@@ -2035,7 +2035,7 @@ class RegexpNode {
         return -1;
     }
 
-    boolean override []firstSet(boolean []firstSet)
+    bool override []firstSet(boolean []firstSet)
     {
       if (_right == null)
         return _left.firstSet(firstSet);
@@ -2046,7 +2046,7 @@ class RegexpNode {
       return firstSet;
     }
 
-    boolean override isAnchorBegin()
+    bool override isAnchorBegin()
     {
       return _left.isAnchorBegin() && _right != null && _right.isAnchorBegin();
     }
@@ -2746,7 +2746,7 @@ class RegexpNode {
   }
 
   static class Set : AbstractCharNode {
-    private final boolean []_asciiSet;
+    private final bool []_asciiSet;
     private final IntSet _range;
 
     Set(boolean []set, IntSet range)
@@ -2781,7 +2781,7 @@ class RegexpNode {
 
 
   static class NotSet : AbstractCharNode {
-    private final boolean []_asciiSet;
+    private final bool []_asciiSet;
     private final IntSet _range;
 
     NotSet(boolean []set, IntSet range)
@@ -2892,7 +2892,7 @@ class RegexpNode {
         return -1;
     }
 
-    boolean override []firstSet(boolean []firstSet)
+    bool override []firstSet(boolean []firstSet)
     {
       if (firstSet != null && _length > 0 && _buffer[0] < firstSet.length) {
         firstSet[_buffer[0]] = true;
@@ -3024,7 +3024,7 @@ class RegexpNode {
         return -1;
     }
 
-    boolean override []firstSet(boolean []firstSet)
+    bool override []firstSet(boolean []firstSet)
     {
       if (_length > 0 && firstSet != null) {
         char lower = Character.toLowerCase(_buffer[0]);

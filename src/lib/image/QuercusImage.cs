@@ -68,14 +68,14 @@ public class QuercusImage : ResourceValue
 
   private BufferedImage _bufferedImage;
   private Graphics2D _graphics;
-  private boolean _isInterlace;
+  private bool _isInterlace;
 
   private BufferedImage _brush;
   private int[] _style;
   private int _thickness;
 
-  private boolean _isToFill = false;
-  private boolean _isBlankImage = false;
+  private bool _isToFill = false;
+  private bool _isBlankImage = false;
 
   public QuercusImage(int width, int height)
   {
@@ -113,7 +113,7 @@ public class QuercusImage : ResourceValue
     _isInterlace = isInterlace;
   }
 
-  public boolean isInterlace()
+  public bool isInterlace()
   {
     return _isInterlace;
   }
@@ -409,9 +409,9 @@ public class QuercusImage : ResourceValue
   }
 
   private void flood(int startX, int startY,
-                     int color, int border, boolean isUseBorder)
+                     int color, int border, bool isUseBorder)
   {
-    boolean isBlank = _isBlankImage;
+    bool isBlank = _isBlankImage;
 
     if (isBlank) {
       floodBlankImage(color);
@@ -487,7 +487,7 @@ public class QuercusImage : ResourceValue
                                int fillColor,
                                int borderColor,
                                int startColor,
-                               boolean isUseBorder)
+                               bool isUseBorder)
   {
     int pixel = getPixel(x, y) & 0x00ffffff;
 

@@ -66,7 +66,7 @@ public class ProtocolWrapper {
       return env.wrapJava(value);
   }
 
-  public boolean unlink(Env env, StringValue path)
+  public bool unlink(Env env, StringValue path)
   {
     // php/1e23
     Value obj = _qClass.createObject(env);
@@ -81,7 +81,7 @@ public class ProtocolWrapper {
     return result.toBoolean();
   }
 
-  public boolean rename(Env env, StringValue from, StringValue to)
+  public bool rename(Env env, StringValue from, StringValue to)
   {
     // php/1e24
     Value obj = _qClass.createObject(env);
@@ -96,7 +96,7 @@ public class ProtocolWrapper {
     return result.toBoolean();
   }
 
-  public boolean mkdir(Env env,
+  public bool mkdir(Env env,
                        StringValue path, LongValue mode, LongValue options)
   {
     // creating an uninitialized object makes no sense but it's here
@@ -114,7 +114,7 @@ public class ProtocolWrapper {
     return result.toBoolean();
   }
 
-  public boolean rmdir(Env env, StringValue path, LongValue options)
+  public bool rmdir(Env env, StringValue path, LongValue options)
   {
     // php/1e25
     Value obj = _qClass.createObject(env);
@@ -144,7 +144,7 @@ public class ProtocolWrapper {
     return result;
   }
 
-  public boolean stream_metadata(Env env, StringValue path,
+  public bool stream_metadata(Env env, StringValue path,
                                  LongValue options, Value arg)
   {
     Value obj = _qClass.createObject(env);

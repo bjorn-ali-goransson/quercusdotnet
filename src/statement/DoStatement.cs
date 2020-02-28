@@ -60,7 +60,7 @@ public class DoStatement : Statement {
   }
 
   @Override
-  public boolean isLoop()
+  public bool isLoop()
   {
     return true;
   }

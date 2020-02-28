@@ -49,7 +49,7 @@ public class ArgGetFieldValue : ArgValue {
    * Creates an argument which may create the given field.
    */
   @Override
-  public Value getArg(Value name, boolean isTop)
+  public Value getArg(Value name, bool isTop)
   {
     // php/3d1q
     return new ArgGetValue(this, name);
@@ -58,7 +58,7 @@ public class ArgGetFieldValue : ArgValue {
   /**
    * Creates an argument which may create the given field.
    */
-  public override Value getFieldArg(Env env, StringValue name, boolean isTop)
+  public override Value getFieldArg(Env env, StringValue name, bool isTop)
   {
     // php/3d2q
     return new ArgGetFieldValue(env, this, name);

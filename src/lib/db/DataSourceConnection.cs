@@ -68,8 +68,8 @@ public class DataSourceConnection : JdbcConnectionResource
                                         int flags,
                                         string driver,
                                         string url,
-                                        boolean isNewLink,
-                                        boolean isEmulatePrepares)
+                                        bool isNewLink,
+                                        bool isEmulatePrepares)
   {
     try {
       _conn.connect(! isNewLink);

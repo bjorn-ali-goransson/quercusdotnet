@@ -50,7 +50,7 @@ public class CompiledInterfaceDef
   }
 
   @Override
-  public boolean isInterface()
+  public bool isInterface()
   {
     return true;
   }

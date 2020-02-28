@@ -59,7 +59,7 @@ public class SessionArrayValue : ArrayValueWrapper
   protected long _accessTime;
   private long _maxInactiveInterval;
 
-  private boolean _isValid;
+  private bool _isValid;
 
   public SessionArrayValue(String id, long now, 
                            long maxInactiveInterval)
@@ -141,7 +141,7 @@ public class SessionArrayValue : ArrayValueWrapper
   /**
    * Decodes encoded values, adding them to this object.
    */
-  public boolean decode(Env env, StringValue encoded)
+  public bool decode(Env env, StringValue encoded)
   {
     ArrayValue array = getArray();
 
@@ -169,7 +169,7 @@ public class SessionArrayValue : ArrayValueWrapper
     }
   }
 
-  public boolean inUse()
+  public bool inUse()
   {
     return _useCount.get() > 0;
   }
@@ -179,7 +179,7 @@ public class SessionArrayValue : ArrayValueWrapper
     _useCount.incrementAndGet();
   }
 
-  public boolean load()
+  public bool load()
   {
     return true;
   }
@@ -289,7 +289,7 @@ public class SessionArrayValue : ArrayValueWrapper
     _accessTime = now;
   }
 
-  public boolean isValid()
+  public bool isValid()
   {
     return _isValid;
   }
@@ -321,7 +321,7 @@ public class SessionArrayValue : ArrayValueWrapper
   {
   }
   
-  public boolean isEmpty()
+  public bool isEmpty()
   {
     return getSize() == 0;
   }
@@ -335,7 +335,7 @@ public class SessionArrayValue : ArrayValueWrapper
     // XXX: logic doesn't make sense
     
     /*
-    boolean isValid = _isValid;
+    bool isValid = _isValid;
 
     if (log.isLoggable(Level.FINE)) {
       log.fine("remove session " + _id);

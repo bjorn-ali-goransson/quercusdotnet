@@ -43,7 +43,7 @@ public class ClassField
   private final string _declaringClassName;
 
   private Expr _initValue;
-  private boolean _isTraitField;
+  private bool _isTraitField;
 
   private final string _comment;
 
@@ -52,7 +52,7 @@ public class ClassField
                     string declaringClassName,
                     Expr initValue,
                     string comment,
-                    boolean isTraitField)
+                    bool isTraitField)
   {
     _name = name;
     _canonicalName = canonicalName;
@@ -70,7 +70,7 @@ public class ClassField
                     Expr initValue,
                     FieldVisibility visibility,
                     string comment,
-                    boolean isTraitField)
+                    bool isTraitField)
   {
     _name = name;
     _declaringClassName = declaringClassName;
@@ -152,21 +152,21 @@ public class ClassField
     return sb;
   }
 
-  public static boolean isPublic(StringValue canonicalName)
+  public static bool isPublic(StringValue canonicalName)
   {
     int p = canonicalName.lastIndexOf('\u0000');
 
     return p < 0;
   }
 
-  public static boolean isPrivate(StringValue canonicalName)
+  public static bool isPrivate(StringValue canonicalName)
   {
     return canonicalName.length() > 3
            && canonicalName.charAt(0) == '\u0000'
            && canonicalName.charAt(1) != '*';
   }
 
-  public static boolean isProtected(StringValue canonicalName)
+  public static bool isProtected(StringValue canonicalName)
   {
     return canonicalName.length() > 3
            && canonicalName.charAt(0) == '\u0000'
@@ -226,22 +226,22 @@ public class ClassField
     return _initValue.eval(env).copy();
   }
 
-  public boolean isPublic()
+  public bool isPublic()
   {
     return ! isProtected() && ! isPrivate();
   }
 
-  public boolean isProtected()
+  public bool isProtected()
   {
     return isProtected(_canonicalName);
   }
 
-  public boolean isPrivate()
+  public bool isPrivate()
   {
     return isPrivate(_canonicalName);
   }
 
-  public boolean isTraitField()
+  public bool isTraitField()
   {
     return _isTraitField;
   }

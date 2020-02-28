@@ -64,7 +64,7 @@ public class GenericDecoder
     super.reset();
   }
 
-  public override boolean isDecodable(Env env, StringValue str)
+  public override bool isDecodable(Env env, StringValue str)
   {
     if (str.isUnicode())
       return true;
@@ -126,7 +126,7 @@ public class GenericDecoder
     }
   }
 
-  protected boolean fill(UnicodeBuilderValue sb, ByteBuffer in,
+  protected bool fill(UnicodeBuilderValue sb, ByteBuffer in,
                          CharBuffer out, CoderResult coder)
   {
     int len = out.position();

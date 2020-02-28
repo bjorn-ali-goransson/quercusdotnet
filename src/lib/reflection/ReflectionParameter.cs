@@ -89,7 +89,7 @@ public class ReflectionParameter
   public static string export(Env env,
                               Value function,
                               Value parameter,
-                              boolean isReturn)
+                              bool isReturn)
   {
     return null;
   }
@@ -99,7 +99,7 @@ public class ReflectionParameter
     return _arg.getName();
   }
 
-  public boolean isPassedByReference()
+  public bool isPassedByReference()
   {
     return _arg.isReference();
   }
@@ -150,27 +150,27 @@ public class ReflectionParameter
     return cls;
   }
 
-  public boolean isArray()
+  public bool isArray()
   {
     return false;
   }
 
-  public boolean allowsNull()
+  public bool allowsNull()
   {
     return false;
   }
 
-  public boolean isCallable()
+  public bool isCallable()
   {
     return "Callable".equalsIgnoreCase(_arg.getExpectedClass());
   }
 
-  public boolean isOptional()
+  public bool isOptional()
   {
     return ! (_arg.getDefault() instanceof ParamRequiredExpr);
   }
 
-  public boolean isDefaultValueAvailable()
+  public bool isDefaultValueAvailable()
   {
     return isOptional();
   }

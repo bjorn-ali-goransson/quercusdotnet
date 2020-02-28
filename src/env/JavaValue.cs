@@ -262,7 +262,7 @@ public class JavaValue : ObjectValue
   /**
    * Returns true if the field is set
    */
-  public override boolean issetField(Env env, StringValue name)
+  public override bool issetField(Env env, StringValue name)
   {
     return _classDef.issetField(env, _object, name);
   }
@@ -300,7 +300,7 @@ public class JavaValue : ObjectValue
   /**
    * Returns true for an object.
    */
-  public override boolean isObject()
+  public override bool isObject()
   {
     return true;
   }
@@ -308,7 +308,7 @@ public class JavaValue : ObjectValue
   /**
    * Returns true for a resource.
    */
-  public override boolean isResource()
+  public override bool isResource()
   {
     return false;
   }
@@ -666,7 +666,7 @@ public class JavaValue : ObjectValue
   private static class EntryItem implements Map.Entry<Value,Value> {
     private Value _key;
     private Value _value;
-    private boolean _isArray;
+    private bool _isArray;
 
     EntryItem(Value key, Value value)
     {

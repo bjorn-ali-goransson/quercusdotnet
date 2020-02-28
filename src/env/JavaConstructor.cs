@@ -102,7 +102,7 @@ public class JavaConstructor : JavaInvoker {
     return name;
   }
 
-  public override boolean isConstructor()
+  public override bool isConstructor()
   {
     return true;
   }

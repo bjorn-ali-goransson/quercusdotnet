@@ -51,10 +51,10 @@ public class Memcache {
   /**
    * Adds a server.
    */
-  public boolean addServer(Env env,
+  public bool addServer(Env env,
                            string host,
                            @Optional int port,
-                           @Optional boolean persistent,
+                           @Optional bool persistent,
                            @Optional int weight,
                            @Optional int timeout,
                            @Optional int retryInterval)
@@ -68,7 +68,7 @@ public class Memcache {
   /**
    * Connect to a server.
    */
-  public boolean connect(Env env,
+  public bool connect(Env env,
                          string host,
                          @Optional int port,
                          @Optional("1") int timeout)
@@ -109,7 +109,7 @@ public class Memcache {
   /*
    * Removes a value.
    */
-  public boolean delete(Env env,
+  public bool delete(Env env,
                         string key,
                         @Optional int timeout)
   {
@@ -121,7 +121,7 @@ public class Memcache {
   /*
    * Clears the cache.
    */
-  public boolean flush(Env env)
+  public bool flush(Env env)
   {
     _cache.clear();
     
@@ -139,7 +139,7 @@ public class Memcache {
   /**
    * Connect to a server.
    */
-  public boolean pconnect(Env env,
+  public bool pconnect(Env env,
                           string host,
                           @Optional int port,
                           @Optional("1") int timeout)
@@ -150,7 +150,7 @@ public class Memcache {
   /**
    * Sets a value.
    */
-  public boolean set(Env env,
+  public bool set(Env env,
                      string key,
                      Value value,
                      @Optional int flag,
@@ -164,7 +164,7 @@ public class Memcache {
   /**
    * Sets the compression threshold
    */
-  public boolean setCompressThreshold(int threshold,
+  public bool setCompressThreshold(int threshold,
                                       @Optional double minSavings)
   {
     return true;
@@ -173,7 +173,7 @@ public class Memcache {
   /**
    * Closes the connection.
    */
-  public boolean close()
+  public bool close()
   {
     return true;
   }

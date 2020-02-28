@@ -164,9 +164,9 @@ public class MysqliModule : AbstractQuercusModule {
   /**
    * Turns auto-commit on or off.
    */
-  public static boolean mysqli_autocommit(Env env,
+  public static bool mysqli_autocommit(Env env,
                                           @NotNull Mysqli conn,
-                                          boolean mode)
+                                          bool mode)
   {
     if (conn == null) {
       return false;
@@ -178,7 +178,7 @@ public class MysqliModule : AbstractQuercusModule {
   /**
    * Deprecated alias for {@link #mysqli_stmt_bind_param}.
    */
-  public static boolean mysqli_bind_param(Env env,
+  public static bool mysqli_bind_param(Env env,
                                           @NotNull MysqliStatement stmt,
                                           StringValue types,
                                           @Reference Value[] params)
@@ -191,7 +191,7 @@ public class MysqliModule : AbstractQuercusModule {
    *
    * returns true on success or false on failure
    */
-  public static boolean mysqli_commit(@NotNull Mysqli conn)
+  public static bool mysqli_commit(@NotNull Mysqli conn)
   {
     if (conn == null)
       return false;
@@ -221,7 +221,7 @@ public class MysqliModule : AbstractQuercusModule {
   /**
    * Closes a connection.
    */
-  public static boolean mysqli_close(Env env, @NotNull Mysqli conn)
+  public static bool mysqli_close(Env env, @NotNull Mysqli conn)
   {
     if (conn == null)
       return false;
@@ -410,7 +410,7 @@ public class MysqliModule : AbstractQuercusModule {
    * a field offset, the field offset specified in
    * mysqli_field_seek() will be returned.
    */
-  public static boolean mysqli_field_seek(Env env,
+  public static bool mysqli_field_seek(Env env,
                                           @NotNull MysqliResult result,
                                           int fieldOffset)
   {
@@ -437,7 +437,7 @@ public class MysqliModule : AbstractQuercusModule {
   /**
    * Frees a mysqli result
    */
-  public static boolean mysqli_free_result(@NotNull MysqliResult result)
+  public static bool mysqli_free_result(@NotNull MysqliResult result)
   {
     if (result == null)
       return false;
@@ -476,7 +476,7 @@ public class MysqliModule : AbstractQuercusModule {
    * Executes one or multiple queires which are
    * concatenated by a semicolon.
    */
-  public static boolean mysqli_multi_query(Env env,
+  public static bool mysqli_multi_query(Env env,
                                            @NotNull Mysqli conn,
                                            StringValue query)
   {
@@ -490,7 +490,7 @@ public class MysqliModule : AbstractQuercusModule {
    * Indicates if one or more result sets are available from
    * a previous call to mysqli_multi_query.
    */
-  public static boolean mysqli_more_results(Env env, @NotNull Mysqli conn)
+  public static bool mysqli_more_results(Env env, @NotNull Mysqli conn)
   {
     if (conn == null) {
       return false;
@@ -503,7 +503,7 @@ public class MysqliModule : AbstractQuercusModule {
    * Prepares next result set from a previous call to
    * mysqli_multi_query.
    */
-  public static boolean mysqli_next_result(Env env, @NotNull Mysqli conn)
+  public static bool mysqli_next_result(Env env, @NotNull Mysqli conn)
   {
     if (conn == null) {
       return false;
@@ -713,7 +713,7 @@ public class MysqliModule : AbstractQuercusModule {
   /**
    * Sets the options for a connection.
    */
-  public static boolean mysqli_options(Env env,
+  public static bool mysqli_options(Env env,
                                        @NotNull Mysqli mysqli,
                                        int option,
                                        Value value)
@@ -727,7 +727,7 @@ public class MysqliModule : AbstractQuercusModule {
   /**
    * Alias of {@link #mysqli_options}.
    */
-  public static boolean mysqli_set_opt(Env env,
+  public static bool mysqli_set_opt(Env env,
                                        @NotNull Mysqli mysqli,
                                        int option,
                                        Value value)
@@ -749,7 +749,7 @@ public class MysqliModule : AbstractQuercusModule {
    *
    * @return true on success or false on failure.
    */
-  public static boolean mysqli_rollback(@NotNull Mysqli conn)
+  public static bool mysqli_rollback(@NotNull Mysqli conn)
   {
     if (conn == null)
       return false;
@@ -785,7 +785,7 @@ public class MysqliModule : AbstractQuercusModule {
   /**
    * Prepares a statment with a query.
    */
-  public static boolean mysqli_stmt_prepare(Env env,
+  public static bool mysqli_stmt_prepare(Env env,
                                             @NotNull MysqliStatement stmt,
                                             string query)
   {
@@ -798,7 +798,7 @@ public class MysqliModule : AbstractQuercusModule {
   /**
    * Resets a statment.
    */
-  public static boolean mysqli_stmt_reset(Env env,
+  public static bool mysqli_stmt_reset(Env env,
                                           @NotNull MysqliStatement stmt)
   {
     if (stmt == null)
@@ -848,7 +848,7 @@ public class MysqliModule : AbstractQuercusModule {
   /**
    * Saves the result.
    */
-  public static boolean mysqli_stmt_store_result(Env env,
+  public static bool mysqli_stmt_store_result(Env env,
                                                  @NotNull MysqliStatement stmt)
   {
     if (stmt == null)
@@ -908,7 +908,7 @@ public class MysqliModule : AbstractQuercusModule {
   /**
    * Checks if the connection is still valid
    */
-  public static boolean mysqli_ping(Env env,
+  public static bool mysqli_ping(Env env,
                                     @NotNull Mysqli conn)
   {
     if (conn == null)
@@ -959,7 +959,7 @@ public class MysqliModule : AbstractQuercusModule {
   /**
    * Connects to the database.
    */
-  public static boolean mysqli_real_connect(
+  public static bool mysqli_real_connect(
       Env env,
       @NotNull Mysqli mysqli,
       @Optional("localhost") StringValue host,
@@ -1048,7 +1048,7 @@ public class MysqliModule : AbstractQuercusModule {
    * or stored using the mysqli_store_result()
    * or mysqli_use_result() functions.
    */
-  public static boolean mysqli_real_query(Env env,
+  public static bool mysqli_real_query(Env env,
                                           @NotNull Mysqli conn,
                                           StringValue query)
   {
@@ -1097,7 +1097,7 @@ public class MysqliModule : AbstractQuercusModule {
   /**
    * Select the database for a connection.
    */
-  public static boolean mysqli_select_db(Env env, Mysqli conn, string dbName)
+  public static bool mysqli_select_db(Env env, Mysqli conn, string dbName)
   {
     if (conn == null) {
       return false;
@@ -1152,7 +1152,7 @@ public class MysqliModule : AbstractQuercusModule {
    * (which really means all other types);
    * </dl>
    */
-  public static boolean mysqli_stmt_bind_param(Env env,
+  public static bool mysqli_stmt_bind_param(Env env,
                                                @NotNull MysqliStatement stmt,
                                                StringValue types,
                                                @Reference Value[] params)
@@ -1167,7 +1167,7 @@ public class MysqliModule : AbstractQuercusModule {
   /**
    * Binds outparams to result set.
    */
-  public static boolean mysqli_stmt_bind_result(Env env,
+  public static bool mysqli_stmt_bind_result(Env env,
                                                 @NotNull MysqliStatement stmt,
                                                 @Reference Value[] outParams)
   {
@@ -1181,7 +1181,7 @@ public class MysqliModule : AbstractQuercusModule {
   /**
    * Closes the statement.
    */
-  public boolean mysql_stmt_close(Env env, MysqliStatement stmt)
+  public bool mysql_stmt_close(Env env, MysqliStatement stmt)
   {
     if (stmt == null) {
       return false;
@@ -1238,7 +1238,7 @@ public class MysqliModule : AbstractQuercusModule {
    *
    * @return true on success or false on failure
    */
-  public static boolean mysqli_stmt_execute(Env env,
+  public static bool mysqli_stmt_execute(Env env,
                                             @NotNull MysqliStatement stmt)
   {
     if (stmt == null) {
@@ -1265,7 +1265,7 @@ public class MysqliModule : AbstractQuercusModule {
   /**
    * Frees the result.
    */
-  public static boolean mysqli_stmt_free_result(Env env,
+  public static bool mysqli_stmt_free_result(Env env,
                                                 MysqliStatement stmt)
   {
     if (stmt == null) {
@@ -1281,7 +1281,7 @@ public class MysqliModule : AbstractQuercusModule {
    * Deprecated alias for {@link #mysqli_stmt_bind_result}.
    */
 
-  public static boolean mysqli_bind_result(Env env,
+  public static bool mysqli_bind_result(Env env,
                                            @NotNull MysqliStatement stmt,
                                            @Reference Value[] outParams)
   {
@@ -1291,7 +1291,7 @@ public class MysqliModule : AbstractQuercusModule {
   /**
    * Changes the user and database.
    */
-  public static boolean mysqli_change_user(Env env,
+  public static bool mysqli_change_user(Env env,
                                            @NotNull Mysqli mysqli,
                                            string user,
                                            string password,
@@ -1307,7 +1307,7 @@ public class MysqliModule : AbstractQuercusModule {
   /**
    * Deprecated alias for {@link #mysqli_stmt_execute}.
    */
-  public static boolean mysqli_execute(Env env,
+  public static bool mysqli_execute(Env env,
                                        @NotNull MysqliStatement stmt)
   {
     return mysqli_stmt_execute(env, stmt);
@@ -1348,7 +1348,7 @@ public class MysqliModule : AbstractQuercusModule {
   /**
    * Closes a statement.
    */
-  public static boolean mysqli_stmt_close(Env env,
+  public static bool mysqli_stmt_close(Env env,
                                           @NotNull MysqliStatement stmt)
   {
     if (stmt == null) {
@@ -1418,7 +1418,7 @@ public class MysqliModule : AbstractQuercusModule {
    * API returns a thread id, so only the id of the current
    * thread can be looked up.
    */
-  public static boolean mysqli_kill(Env env,
+  public static bool mysqli_kill(Env env,
                                     @NotNull Mysqli conn,
                                     int threadId)
   {
@@ -1429,7 +1429,7 @@ public class MysqliModule : AbstractQuercusModule {
     return conn.kill(env, threadId);
   }
 
-  public static boolean mysqli_report(Env env, int flags)
+  public static bool mysqli_report(Env env, int flags)
   {
     // stubbed for phpMyAdmin 3.5.1
     env.stub("mysqli_report");
@@ -1446,7 +1446,7 @@ public class MysqliModule : AbstractQuercusModule {
     return conn.get_charset(env);
   }
 
-  public static boolean mysqli_set_charset(Env env,
+  public static bool mysqli_set_charset(Env env,
                                            @NotNull Mysqli conn,
                                            StringValue charset)
   {

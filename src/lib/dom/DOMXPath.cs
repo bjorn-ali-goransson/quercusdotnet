@@ -160,7 +160,7 @@ public class DOMXPath
     }
   }
 
-  public boolean registerNamespace(String prefix, string namespaceURI)
+  public bool registerNamespace(String prefix, string namespaceURI)
   {
     if (_context == null)
       _context = new DOMNamespaceContext();

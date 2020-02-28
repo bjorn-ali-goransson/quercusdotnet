@@ -152,7 +152,7 @@ public class VarExpr
   /**
    * Evaluates the expression as an isset() statement.
    */
-  public boolean evalIsset(Env env)
+  public bool evalIsset(Env env)
   {
     return env.getValue(_name, false, false).isset();
   }
@@ -242,7 +242,7 @@ public class VarExpr
    * @param env the calling environment.
    * @return the expression value.
    */
-  public override Value evalArg(Env env, boolean isTop)
+  public override Value evalArg(Env env, bool isTop)
   {
     // php/043k
     // php/0443
@@ -296,7 +296,7 @@ public class VarExpr
     return _name.hashCode();
   }
 
-  public boolean equals(Object o)
+  public bool equals(Object o)
   {
     if (this == o)
       return true;

@@ -39,12 +39,12 @@ public class LongMarshal : Marshal
 {
   public readonly Marshal MARSHAL = new LongMarshal();
 
-  public boolean isLong()
+  public bool isLong()
   {
     return true;
   }
 
-  public boolean isReadOnly()
+  public bool isReadOnly()
   {
     return true;
   }

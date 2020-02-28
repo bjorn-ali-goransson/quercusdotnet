@@ -56,7 +56,7 @@ public class SqlParseToken
     _firstChar = query.charAt(start);
   }
 
-  public boolean matchesFirstChar(char upper, char lower)
+  public bool matchesFirstChar(char upper, char lower)
   {
     return (_firstChar == upper) || (_firstChar == lower);
   }
@@ -72,7 +72,7 @@ public class SqlParseToken
   }
 
   // Case insensitive compare of token string
-  public boolean matchesToken(String token)
+  public bool matchesToken(String token)
   {
     if (_token == null)
       _token = _query.substring(_start, _end);

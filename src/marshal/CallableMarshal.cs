@@ -40,14 +40,14 @@ public class CallableMarshal : Marshal
   public readonly Marshal MARSHAL = new CallableMarshal(false);
   public readonly Marshal MARSHAL_OPTIONAL = new CallableMarshal(true);
 
-  protected boolean _isOptional;
+  protected bool _isOptional;
 
   protected CallableMarshal(boolean isOptional)
   {
     _isOptional = isOptional;
   }
 
-  public boolean isReadOnly()
+  public bool isReadOnly()
   {
     return true;
   }

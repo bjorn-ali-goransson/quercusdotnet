@@ -162,7 +162,7 @@ public class NetworkModule : AbstractQuercusModule {
       if ("udp".equals(protocol))
         stream = new UdpInputOutput(env, host, port, Domain.AF_INET);
       else {
-        boolean isSecure = "ssl".equals(protocol);
+        bool isSecure = "ssl".equals(protocol);
 
         stream = new TcpInputOutput(env, host, port, isSecure, Domain.AF_INET);
       }
@@ -485,7 +485,7 @@ public class NetworkModule : AbstractQuercusModule {
     return null;
   }
 
-  public static boolean getmxrr(Env env,
+  public static bool getmxrr(Env env,
                                 @NotNull string hostname,
                                 @Reference Value mxhosts,
                                 @Optional @Reference Value weight)
@@ -493,7 +493,7 @@ public class NetworkModule : AbstractQuercusModule {
     return dns_get(env, hostname, "MX", mxhosts, weight);
   }
 
-  private static boolean dns_get(Env env,
+  private static bool dns_get(Env env,
                                  string hostname,
                                  string type,
                                  Value hostsRef,
@@ -588,7 +588,7 @@ public class NetworkModule : AbstractQuercusModule {
    *
    * @return true if records are found, false otherwise
    */
-  public static boolean dns_get_mx(Env env,
+  public static bool dns_get_mx(Env env,
                                    @NotNull string hostname,
                                    @Reference Value mxhosts,
                                    @Optional @Reference Value weight)
@@ -597,7 +597,7 @@ public class NetworkModule : AbstractQuercusModule {
 
   }
 
-  public static boolean checkdnsrr(Env env,
+  public static bool checkdnsrr(Env env,
                                    @NotNull string hostname,
                                    @Optional("MX") string type)
   {
@@ -613,7 +613,7 @@ public class NetworkModule : AbstractQuercusModule {
    *
    * @return true if records are found, false otherwise
    */
-  public static boolean dns_check_record(Env env,
+  public static bool dns_check_record(Env env,
                                          @NotNull string hostname,
                                          @Optional("MX") string type)
   {
@@ -755,7 +755,7 @@ public class NetworkModule : AbstractQuercusModule {
   /**
    * Opens syslog.
    */
-  public static boolean openlog(Env env, string ident, int option, int facility)
+  public static bool openlog(Env env, string ident, int option, int facility)
   {
     return true;
   }
@@ -763,7 +763,7 @@ public class NetworkModule : AbstractQuercusModule {
   /**
    * Closes syslog.
    */
-  public static boolean closelog()
+  public static bool closelog()
   {
     return true;
   }
@@ -771,7 +771,7 @@ public class NetworkModule : AbstractQuercusModule {
   /**
    * syslog
    */
-  public static boolean syslog(Env env, int priority, string message)
+  public static bool syslog(Env env, int priority, string message)
   {
     Level level = Level.OFF;
 
@@ -804,10 +804,10 @@ public class NetworkModule : AbstractQuercusModule {
   private static class ServiceNode {
     private LongValue _port;
 
-    private boolean _isTCP;
-    private boolean _isUDP;
+    private bool _isTCP;
+    private bool _isUDP;
 
-    ServiceNode(int port, boolean tcp, boolean udp)
+    ServiceNode(int port, bool tcp, bool udp)
     {
       _port = LongValue.create(port);
       _isTCP = tcp;
@@ -819,7 +819,7 @@ public class NetworkModule : AbstractQuercusModule {
       return _port;
     }
 
-    public boolean protocolCheck(String protocol)
+    public bool protocolCheck(String protocol)
     {
       if (protocol.equals("tcp"))
               return _isTCP;
@@ -829,12 +829,12 @@ public class NetworkModule : AbstractQuercusModule {
               return false;
     }
 
-    public boolean isTCP()
+    public bool isTCP()
     {
       return _isTCP;
     }
 
-    public boolean isUDP()
+    public bool isUDP()
     {
       return _isUDP;
     }

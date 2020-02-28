@@ -52,17 +52,17 @@ namespace QuercusDotNet.Program{
 public class InterpretedClassDef : ClassDef
   implements InstanceInitializer
 {
-  protected boolean _isAbstract;
-  protected boolean _isInterface;
-  protected boolean _isTrait;
-  protected boolean _isFinal;
+  protected bool _isAbstract;
+  protected bool _isInterface;
+  protected bool _isTrait;
+  protected bool _isFinal;
 
-  protected boolean _hasPublicMethods;
-  protected boolean _hasProtectedMethods;
-  protected boolean _hasPrivateMethods;
+  protected bool _hasPublicMethods;
+  protected bool _hasProtectedMethods;
+  protected bool _hasPrivateMethods;
 
   // true if defined in the top scope of a page
-  private boolean _isTopScope;
+  private bool _isTopScope;
 
   protected final LinkedHashMap<StringValue,AbstractFunction> _functionMap
     = new LinkedHashMap<StringValue,AbstractFunction>();
@@ -144,7 +144,7 @@ public class InterpretedClassDef : ClassDef
    * True for an abstract class.
    */
   @Override
-  public boolean isAbstract()
+  public bool isAbstract()
   {
     return _isAbstract;
   }
@@ -160,7 +160,7 @@ public class InterpretedClassDef : ClassDef
   /**
    * True for an interface class.
    */
-  public override boolean isInterface()
+  public override bool isInterface()
   {
     return _isInterface;
   }
@@ -176,7 +176,7 @@ public class InterpretedClassDef : ClassDef
   /**
    * True for an trait class.
    */
-  public override boolean isTrait()
+  public override bool isTrait()
   {
     return _isTrait;
   }
@@ -192,7 +192,7 @@ public class InterpretedClassDef : ClassDef
   /**
    * Returns true for a final class.
    */
-  public boolean isFinal()
+  public bool isFinal()
   {
     return _isFinal;
   }
@@ -200,7 +200,7 @@ public class InterpretedClassDef : ClassDef
   /**
    * Returns true if class has public methods.
    */
-  public boolean hasPublicMethods()
+  public bool hasPublicMethods()
   {
     return _hasPublicMethods;
   }
@@ -208,7 +208,7 @@ public class InterpretedClassDef : ClassDef
   /**
    * Returns true if class has protected or private methods.
    */
-  public boolean hasProtectedMethods()
+  public bool hasProtectedMethods()
   {
     return _hasProtectedMethods;
   }
@@ -216,7 +216,7 @@ public class InterpretedClassDef : ClassDef
   /**
    * Returns true if the class has private methods.
    */
-  public boolean hasPrivateMethods()
+  public bool hasPrivateMethods()
   {
     return _hasPrivateMethods;
   }
@@ -224,7 +224,7 @@ public class InterpretedClassDef : ClassDef
   /**
    * True if defined at the top-level scope
    */
-  public boolean isTopScope()
+  public bool isTopScope()
   {
     return _isTopScope;
   }
@@ -516,7 +516,7 @@ public class InterpretedClassDef : ClassDef
   /**
    * Return true for a declared field.
    */
-  public boolean isDeclaredField(StringValue name)
+  public bool isDeclaredField(StringValue name)
   {
     return _fieldMap.get(name) != null;
   }
@@ -542,7 +542,7 @@ public class InterpretedClassDef : ClassDef
   /**
    * Initialize the fields
    */
-  public override void initInstance(Env env, Value obj, boolean isInitFieldValues)
+  public override void initInstance(Env env, Value obj, bool isInitFieldValues)
   {
     ObjectValue object = (ObjectValue) obj;
 

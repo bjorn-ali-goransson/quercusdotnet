@@ -54,7 +54,7 @@ public class HttpPostRequest
   /**
    * Initializes the connection.
    */
-  protected boolean init(Env env)
+  protected bool init(Env env)
     
   {
     if (! super.init(env)) {

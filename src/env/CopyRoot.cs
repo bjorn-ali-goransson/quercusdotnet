@@ -40,7 +40,7 @@ public class CopyRoot implements EnvCleanup
   private final UnserializeCacheEntry _entry;
   
   private Value _root;
-  private boolean _isModified;
+  private bool _isModified;
 
   private IdentityHashMap<Value,Value> _copyMap
     = new IdentityHashMap<Value,Value>();
@@ -61,7 +61,7 @@ public class CopyRoot implements EnvCleanup
   /**
    * True if it's modified
    */
-  public boolean isModified()
+  public bool isModified()
   {
     return _isModified;
   }

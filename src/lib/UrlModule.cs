@@ -160,7 +160,7 @@ public class UrlModule
    */
   public static Value base64_decode(Env env,
                                     StringValue str,
-                                    @Optional boolean isStrict)
+                                    @Optional bool isStrict)
   {
     if (str.length() == 0)
       return str;
@@ -321,7 +321,7 @@ public class UrlModule
    */
   public static Value get_meta_tags(Env env,
                                     StringValue filename,
-                                    @Optional boolean useIncludePath)
+                                    @Optional bool useIncludePath)
   {
     InputStream in = null;
 
@@ -414,7 +414,7 @@ public class UrlModule
       return;
     }
 
-    boolean isFirst = true;
+    bool isFirst = true;
     for (Map.Entry<Value,Value> entry : entrySet) {
       if (! isFirst) {
         if (separator != null)
@@ -544,7 +544,7 @@ public class UrlModule
                                 StringValue str,
                                 @Optional("-1") int component)
   {
-    boolean isUnicode = env.isUnicodeSemantics();
+    bool isUnicode = env.isUnicodeSemantics();
 
     ArrayValueImpl array = new ArrayValueImpl();
 
@@ -575,7 +575,7 @@ public class UrlModule
   private static void parseUrl(Env env,
                                StringValue str,
                                ArrayValue array,
-                               boolean isUnicode)
+                               bool isUnicode)
   {
     int strlen = str.length();
 
@@ -589,7 +589,7 @@ public class UrlModule
 
     int colon = str.indexOf(":");
 
-    boolean hasHost = false;
+    bool hasHost = false;
 
     if (0 <= colon) {
       int end = colon;
@@ -1011,7 +1011,7 @@ public class UrlModule
 
     // check for quoting
     int quote = ' ';
-    boolean quoted = false;
+    bool quoted = false;
 
     if (input.isEOF())
       return new String[] { attribute.toString() };
@@ -1053,7 +1053,7 @@ public class UrlModule
       input.unread();
   }
 
-  private static boolean isValidAttributeCharacter(int ch)
+  private static bool isValidAttributeCharacter(int ch)
   {
     return Character.isLetterOrDigit(ch)
         || (ch == '-') || (ch == '.') || (ch == '_') || (ch == ':');

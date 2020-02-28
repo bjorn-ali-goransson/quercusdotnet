@@ -87,7 +87,7 @@ public class BigIntegerValue : JavaValue {
   /**
    * Returns true for a double-value.
    */
-  public override boolean isDoubleConvertible()
+  public override bool isDoubleConvertible()
   {
     return true;
   }
@@ -95,7 +95,7 @@ public class BigIntegerValue : JavaValue {
   /**
    * Returns true for a long-value.
    */
-  public override boolean isLongConvertible()
+  public override bool isLongConvertible()
   {
     return true;
   }

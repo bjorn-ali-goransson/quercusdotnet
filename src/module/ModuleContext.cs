@@ -101,7 +101,7 @@ public class ModuleContext
   protected MarshalFactory _marshalFactory;
   protected ExprFactory _exprFactory;
 
-  private boolean _isUnicodeSemantics;
+  private bool _isUnicodeSemantics;
 
   /**
    * Constructor.
@@ -141,7 +141,7 @@ public class ModuleContext
     }
   }
 
-  public boolean isUnicodeSemantics()
+  public bool isUnicodeSemantics()
   {
     return _isUnicodeSemantics;
   }
@@ -175,7 +175,7 @@ public class ModuleContext
   /**
    * Tests if the URL has already been loaded for the context classes
    */
-  public boolean hasServiceClass(URL url)
+  public bool hasServiceClass(URL url)
   {
     return _serviceClassUrls.contains(url);
   }
@@ -429,7 +429,7 @@ public class ModuleContext
   /**
    * Returns true if an extension is loaded.
    */
-  public boolean isExtensionLoaded(String name)
+  public bool isExtensionLoaded(String name)
   {
     return _extensionSet.contains(name);
   }

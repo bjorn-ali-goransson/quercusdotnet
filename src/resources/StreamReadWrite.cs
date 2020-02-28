@@ -97,7 +97,7 @@ public class StreamReadWrite : StreamResource
   /**
    * Reads the optional linefeed character from a \r\n
    */
-  public boolean readOptionalLinefeed()
+  public bool readOptionalLinefeed()
     
   {
     if (_is != null) {
@@ -180,7 +180,7 @@ public class StreamReadWrite : StreamResource
   /**
    * Returns true on the end of file.
    */
-  public boolean isEOF()
+  public bool isEOF()
   {
     return true;
   }

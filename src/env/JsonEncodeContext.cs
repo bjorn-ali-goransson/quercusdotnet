@@ -32,19 +32,19 @@ namespace QuercusDotNet.Env{
 
 public class JsonEncodeContext
 {
-  private final boolean _isEscapeTag;
-  private final boolean _isEscapeAmp;
-  private final boolean _isEscapeApos;
-  private final boolean _isEscapeQuote;
-  private final boolean _isCheckNumeric;
-  private final boolean _isBigIntAsString;
+  private final bool _isEscapeTag;
+  private final bool _isEscapeAmp;
+  private final bool _isEscapeApos;
+  private final bool _isEscapeQuote;
+  private final bool _isCheckNumeric;
+  private final bool _isBigIntAsString;
 
   public JsonEncodeContext(boolean isEscapeTag,
-                           boolean isEscapeAmp,
-                           boolean isEscapeApos,
-                           boolean isEscapeQuote,
-                           boolean isCheckNumeric,
-                           boolean isBigIntAsString)
+                           bool isEscapeAmp,
+                           bool isEscapeApos,
+                           bool isEscapeQuote,
+                           bool isCheckNumeric,
+                           bool isBigIntAsString)
   {
     _isEscapeTag = isEscapeTag;
     _isEscapeAmp = isEscapeAmp;
@@ -54,32 +54,32 @@ public class JsonEncodeContext
     _isBigIntAsString = isBigIntAsString;
   }
 
-  public boolean isEscapeTag()
+  public bool isEscapeTag()
   {
     return _isEscapeTag;
   }
 
-  public boolean isEscapeAmp()
+  public bool isEscapeAmp()
   {
     return _isEscapeAmp;
   }
 
-  public boolean isEscapeApos()
+  public bool isEscapeApos()
   {
     return _isEscapeApos;
   }
 
-  public boolean isEscapeQuote()
+  public bool isEscapeQuote()
   {
     return _isEscapeQuote;
   }
 
-  public boolean isCheckNumeric()
+  public bool isCheckNumeric()
   {
     return _isCheckNumeric;
   }
 
-  public boolean isBigIntAsString()
+  public bool isBigIntAsString()
   {
     return _isBigIntAsString;
   }

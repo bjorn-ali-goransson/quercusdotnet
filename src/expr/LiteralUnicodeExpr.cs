@@ -48,7 +48,7 @@ public class LiteralUnicodeExpr : Expr {
   /**
    * Returns true for a literal expression.
    */
-  public boolean isLiteral()
+  public bool isLiteral()
   {
     return true;
   }

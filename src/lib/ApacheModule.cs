@@ -59,7 +59,7 @@ public class ApacheModule : AbstractQuercusModule {
   /**
    * Stub for insisting the apache process should terminate.
    */
-  public boolean apache_child_terminate()
+  public bool apache_child_terminate()
   {
     return false;
   }
@@ -123,7 +123,7 @@ public class ApacheModule : AbstractQuercusModule {
   /**
    * Stub for resetting the output timeout.
    */
-  public boolean apache_reset_timeout()
+  public bool apache_reset_timeout()
   {
     return false;
   }
@@ -143,7 +143,7 @@ public class ApacheModule : AbstractQuercusModule {
   /**
    * Include request.
    */
-  public boolean virtual(Env env, string url)
+  public bool virtual(Env env, string url)
   {
     try {
       QuercusHttpServletRequest req = env.getRequest();

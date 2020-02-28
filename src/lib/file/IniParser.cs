@@ -44,7 +44,7 @@ namespace QuercusDotNet.lib.file {
 
 
 public class IniParser {
-  public static ArrayValue parse(Env env, ReadStream is, boolean isProcessSections)
+  public static ArrayValue parse(Env env, ReadStream is, bool isProcessSections)
     
   {
     ArrayValue top = new ArrayValueImpl();
@@ -307,7 +307,7 @@ public class IniParser {
     }
   }
 
-  private static boolean isValidIniKeyChar(int ch)
+  private static bool isValidIniKeyChar(int ch)
   {
     if (ch <= 0
         || ch == '='

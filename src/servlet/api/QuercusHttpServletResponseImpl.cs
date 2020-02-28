@@ -81,7 +81,7 @@ public class QuercusHttpServletResponseImpl implements QuercusHttpServletRespons
     _response.addCookie(cookie.toCookie(Cookie.class));
   }
 
-  public override boolean isCommitted()
+  public override bool isCommitted()
   {
     return _response.isCommitted();
   }

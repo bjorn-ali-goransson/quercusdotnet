@@ -120,7 +120,7 @@ public class AttributeListView : SimpleView
     return _attrList.get(0).toString(env);
   }
   
-  public override boolean issetField(Env env, string name)
+  public override bool issetField(Env env, string name)
   {
     for (SimpleView view : _attrList) {
       if (view.getNodeName().equals(name)) {
@@ -167,7 +167,7 @@ public class AttributeListView : SimpleView
     return map.entrySet();
   }
 
-  public override boolean toXml(Env env, StringBuilder sb)
+  public override bool toXml(Env env, StringBuilder sb)
   {
     if (_attrList.size() > 0) {
       SimpleView attr = _attrList.get(0);
@@ -181,7 +181,7 @@ public class AttributeListView : SimpleView
     }
   }
 
-  public override Value toDumpValue(Env env, QuercusClass cls, boolean isChildren)
+  public override Value toDumpValue(Env env, QuercusClass cls, bool isChildren)
   {
     ObjectValue obj = env.createObject();
     obj.setClassName(cls.getName());

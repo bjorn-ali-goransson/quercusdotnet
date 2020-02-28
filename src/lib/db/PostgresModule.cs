@@ -156,7 +156,7 @@ public class PostgresModule : AbstractQuercusModule {
   /**
    * Cancel an asynchronous query
    */
-  public static boolean pg_cancel_query(Env env,
+  public static bool pg_cancel_query(Env env,
                                         @NotNull Postgres conn)
   {
     try {
@@ -195,7 +195,7 @@ public class PostgresModule : AbstractQuercusModule {
   /**
    * Closes a PostgreSQL connection
    */
-  public static boolean pg_close(Env env,
+  public static bool pg_close(Env env,
                                  @Optional Postgres conn)
   {
     try {
@@ -323,7 +323,7 @@ public class PostgresModule : AbstractQuercusModule {
       for (; i < len && Character.isWhitespace(ch = s.charAt(i)); i++) {
       }
 
-      boolean isQuoted = false;
+      bool isQuoted = false;
 
       // value may be quoted
       if (i < len) {
@@ -333,7 +333,7 @@ public class PostgresModule : AbstractQuercusModule {
           buffer.append(ch);
       }
 
-      boolean isEscaped = false;
+      bool isEscaped = false;
 
       // get value
       loop:
@@ -395,7 +395,7 @@ public class PostgresModule : AbstractQuercusModule {
   /**
    * Get connection is busy or not
    */
-  public static boolean pg_connection_busy(Env env,
+  public static bool pg_connection_busy(Env env,
                                            @NotNull Postgres conn)
   {
     // Always return false, for now (pg_send_xxxx are not asynchronous)
@@ -408,7 +408,7 @@ public class PostgresModule : AbstractQuercusModule {
   /**
    * Reset connection (reconnect)
    */
-  public static boolean pg_connection_reset(Env env,
+  public static bool pg_connection_reset(Env env,
                                             @NotNull Postgres conn)
   {
     try {
@@ -450,7 +450,7 @@ public class PostgresModule : AbstractQuercusModule {
       if (conn == null)
         return PGSQL_CONNECTION_BAD;
 
-      boolean ping = pg_ping(env, conn);
+      bool ping = pg_ping(env, conn);
 
       return ping ? PGSQL_CONNECTION_OK : PGSQL_CONNECTION_BAD;
 
@@ -477,9 +477,9 @@ public class PostgresModule : AbstractQuercusModule {
       // XXX: options has not been implemented yet.
 
       // XXX: the following PHP note has not been implemented yet.
-      // Note:  If there are boolean fields in table_name don't use
+      // Note:  If there are bool fields in table_name don't use
       // the constant TRUE in assoc_array. It will be converted to the
-      // string 'TRUE' which is no valid entry for boolean fields in
+      // string 'TRUE' which is no valid entry for bool fields in
       // PostgreSQL. Use one of t, true, 1, y, yes instead.
 
       if (options > 0) {
@@ -584,7 +584,7 @@ public class PostgresModule : AbstractQuercusModule {
   /**
    * Insert records into a table from an array
    */
-  public static boolean pg_copy_from(Env env,
+  public static bool pg_copy_from(Env env,
                                      @NotNull Postgres conn,
                                      string tableName,
                                      ArrayValue rows,
@@ -780,7 +780,7 @@ public class PostgresModule : AbstractQuercusModule {
   /**
    * Deletes records
    */
-  public static boolean pg_delete(Env env,
+  public static bool pg_delete(Env env,
                                   @NotNull Postgres conn,
                                   string tableName,
                                   ArrayValue assocArray,
@@ -803,7 +803,7 @@ public class PostgresModule : AbstractQuercusModule {
 
       StringBuilder condition = new StringBuilder();
 
-      boolean isFirst = true;
+      bool isFirst = true;
 
       for (Map.Entry<Value,Value> entry : assocArray.entrySet()) {
         Value k = entry.getKey();
@@ -838,7 +838,7 @@ public class PostgresModule : AbstractQuercusModule {
   /**
    * Sync with PostgreSQL backend
    */
-  public static boolean pg_end_copy(Env env,
+  public static bool pg_end_copy(Env env,
                                     @Optional Postgres conn)
   {
     env.stub("pg_end_copy");
@@ -1487,7 +1487,7 @@ public class PostgresModule : AbstractQuercusModule {
   public static string pg_field_table(Env env,
                                       @NotNull PostgresResult result,
                                       int fieldNumber,
-                                      @Optional("false") boolean oidOnly)
+                                      @Optional("false") bool oidOnly)
   {
     // The Postgres JDBC driver doesn't have a concept of exposing
     // to the client what table maps to a particular select item
@@ -1576,7 +1576,7 @@ public class PostgresModule : AbstractQuercusModule {
   /**
    * Free result memory
    */
-  public static boolean pg_free_result(Env env,
+  public static bool pg_free_result(Env env,
                                        PostgresResult result)
   {
     try {
@@ -1596,7 +1596,7 @@ public class PostgresModule : AbstractQuercusModule {
   /**
    * pg_free_result() alias.
    */
-  public static boolean pg_freeresult(Env env,
+  public static bool pg_freeresult(Env env,
                                       PostgresResult result)
   {
     if (result == null)
@@ -1810,7 +1810,7 @@ public class PostgresModule : AbstractQuercusModule {
   /**
    * Insert array into table
    */
-  public static boolean pg_insert(Env env,
+  public static bool pg_insert(Env env,
                                   @NotNull Postgres conn,
                                   string tableName,
                                   ArrayValue assocArray,
@@ -1827,7 +1827,7 @@ public class PostgresModule : AbstractQuercusModule {
       StringBuilder names = new StringBuilder();
       StringBuilder values = new StringBuilder();
 
-      boolean isFirst = true;
+      bool isFirst = true;
 
       for (Map.Entry<Value,Value> entry : assocArray.entrySet()) {
         Value k = entry.getKey();
@@ -1959,7 +1959,7 @@ public class PostgresModule : AbstractQuercusModule {
   /**
    * Close a large object
    */
-  public static boolean pg_lo_close(Env env,
+  public static bool pg_lo_close(Env env,
                                     Object largeObject)
   {
     try {
@@ -1981,7 +1981,7 @@ public class PostgresModule : AbstractQuercusModule {
   /**
    * pg_lo_close() alias.
    */
-  public static boolean pg_loclose(Env env,
+  public static bool pg_loclose(Env env,
                                    Object largeObject)
   {
     return pg_lo_close(env, largeObject);
@@ -2049,7 +2049,7 @@ public class PostgresModule : AbstractQuercusModule {
   /**
    * Export a large object to a file
    */
-  public static boolean pg_lo_export(Env env,
+  public static bool pg_lo_export(Env env,
                                      @NotNull Postgres conn,
                                      int oid,
                                      Path path)
@@ -2113,7 +2113,7 @@ public class PostgresModule : AbstractQuercusModule {
   /**
    * pg_lo_export() alias.
    */
-  public static boolean pg_loexport(Env env,
+  public static bool pg_loexport(Env env,
                                      @NotNull Postgres conn,
                                      int oid,
                                      Path path)
@@ -2205,8 +2205,8 @@ public class PostgresModule : AbstractQuercusModule {
       method = cl.getDeclaredMethod("open",
           new Class[] {Integer.TYPE, Integer.TYPE});
 
-      boolean write = mode.indexOf("w") >= 0;
-      boolean read = mode.indexOf("r") >= 0;
+      bool write = mode.indexOf("w") >= 0;
+      bool read = mode.indexOf("r") >= 0;
 
       int modeREAD = cl.getDeclaredField("READ").getInt(null);
       int modeREADWRITE = cl.getDeclaredField("READWRITE").getInt(null);
@@ -2326,7 +2326,7 @@ public class PostgresModule : AbstractQuercusModule {
   /**
    * Seeks position within a large object
    */
-  public static boolean pg_lo_seek(Env env,
+  public static bool pg_lo_seek(Env env,
                                    Object largeObject,
                                    int offset,
                                    @Optional int whence)
@@ -2386,7 +2386,7 @@ public class PostgresModule : AbstractQuercusModule {
   /**
    * Delete a large object
    */
-  public static boolean pg_lo_unlink(Env env,
+  public static bool pg_lo_unlink(Env env,
                                      @NotNull Postgres conn,
                                      int oid)
   {
@@ -2424,7 +2424,7 @@ public class PostgresModule : AbstractQuercusModule {
   /**
    * pg_lo_unlink() alias.
    */
-  public static boolean pg_lounlink(Env env,
+  public static bool pg_lounlink(Env env,
                                     @NotNull Postgres conn,
                                     int oid)
   {
@@ -2619,7 +2619,7 @@ public class PostgresModule : AbstractQuercusModule {
   /**
    * Ping database connection
    */
-  public static boolean pg_ping(Env env,
+  public static bool pg_ping(Env env,
                                 @Optional Postgres conn)
   {
     try {
@@ -2684,7 +2684,7 @@ public class PostgresModule : AbstractQuercusModule {
   /**
    * Send a NULL-terminated string to PostgreSQL backend
    */
-  public static boolean pg_put_line(Env env,
+  public static bool pg_put_line(Env env,
                                     @NotNull Postgres conn,
                                     string data)
   {
@@ -2788,7 +2788,7 @@ public class PostgresModule : AbstractQuercusModule {
   private static PostgresResult pg_query_impl(Env env,
                                               Postgres conn,
                                               string query,
-                                              boolean reportError)
+                                              bool reportError)
   {
     try {
       // XXX: the PHP api allows conn to be optional but we
@@ -2940,7 +2940,7 @@ public class PostgresModule : AbstractQuercusModule {
   /**
    * Set internal row offset in result resource
    */
-  public static boolean pg_result_seek(Env env,
+  public static bool pg_result_seek(Env env,
                                        @NotNull PostgresResult result,
                                        int offset)
   {
@@ -3009,7 +3009,7 @@ public class PostgresModule : AbstractQuercusModule {
 
       StringValue whereClause = env.createUnicodeBuilder();
 
-      boolean isFirst = true;
+      bool isFirst = true;
 
       for (Map.Entry<Value,Value> entry : assocArray.entrySet()) {
         Value k = entry.getKey();
@@ -3043,7 +3043,7 @@ public class PostgresModule : AbstractQuercusModule {
    * Sends a request to execute a prepared statement with given parameters,
    * without waiting for the result(s)
    */
-  public static boolean pg_send_execute(Env env,
+  public static bool pg_send_execute(Env env,
                                         @NotNull Postgres conn,
                                         string stmtName,
                                         ArrayValue params)
@@ -3071,7 +3071,7 @@ public class PostgresModule : AbstractQuercusModule {
    * Sends a request to create a prepared statement with the given parameters,
    * without waiting for completion
    */
-  public static boolean pg_send_prepare(Env env,
+  public static bool pg_send_prepare(Env env,
                                         @NotNull Postgres conn,
                                         string stmtName,
                                         string query)
@@ -3099,7 +3099,7 @@ public class PostgresModule : AbstractQuercusModule {
    * Submits a command and separate parameters to the server
    * without waiting for the result(s)
    */
-  public static boolean pg_send_query_params(Env env,
+  public static bool pg_send_query_params(Env env,
                                              @NotNull Postgres conn,
                                              string query,
                                              ArrayValue params)
@@ -3135,7 +3135,7 @@ public class PostgresModule : AbstractQuercusModule {
   /**
    * Sends asynchronous query
    */
-  public static boolean pg_send_query(Env env,
+  public static bool pg_send_query(Env env,
                                       @NotNull Postgres conn,
                                       string query)
   {
@@ -3227,7 +3227,7 @@ public class PostgresModule : AbstractQuercusModule {
   /**
    * Enable tracing a PostgreSQL connection
    */
-  public static boolean pg_trace(Env env,
+  public static bool pg_trace(Env env,
                                  Path path,
                                  @Optional string mode,
                                  @Optional Postgres conn)
@@ -3287,7 +3287,7 @@ public class PostgresModule : AbstractQuercusModule {
   /**
    * Disable tracing of a PostgreSQL connection
    */
-  public static boolean pg_untrace(Env env,
+  public static bool pg_untrace(Env env,
                                    @Optional Postgres conn)
   {
     // Always returns TRUE
@@ -3300,7 +3300,7 @@ public class PostgresModule : AbstractQuercusModule {
   /**
    * Update table
    */
-  public static boolean pg_update(Env env,
+  public static bool pg_update(Env env,
                                   @NotNull Postgres conn,
                                   string tableName,
                                   ArrayValue data,
@@ -3321,7 +3321,7 @@ public class PostgresModule : AbstractQuercusModule {
 
       StringBuilder values = new StringBuilder();
 
-      boolean isFirst = true;
+      bool isFirst = true;
 
       for (Map.Entry<Value,Value> entry : data.entrySet()) {
         Value k = entry.getKey();

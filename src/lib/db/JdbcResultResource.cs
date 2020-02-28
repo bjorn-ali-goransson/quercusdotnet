@@ -84,7 +84,7 @@ public class JdbcResultResource
   protected const int COLUMN_CASE_LOWER = 2;
 
   protected ResultSet _rs;
-  private boolean _isValid;
+  private bool _isValid;
   private int _fieldOffset;
 
   protected ResultSetMetaData _metaData;
@@ -168,7 +168,7 @@ public class JdbcResultResource
     return fetchArray(env, type, true);
   }
 
-  protected Value fetchArray(Env env, int type, boolean isOrderIndexBeforeName)
+  protected Value fetchArray(Env env, int type, bool isOrderIndexBeforeName)
   {
     try {
       if (_rs == null) {
@@ -240,7 +240,7 @@ public class JdbcResultResource
     return fetchArray(env, JdbcResultResource.FETCH_ASSOC, true);
   }
 
-  public Value fetchBoth(Env env, boolean isOrderIndexBeforeName)
+  public Value fetchBoth(Env env, bool isOrderIndexBeforeName)
   {
     return fetchArray(env, JdbcResultResource.FETCH_BOTH, isOrderIndexBeforeName);
   }
@@ -437,7 +437,7 @@ public class JdbcResultResource
     return _affectedRows;
   }
 
-  protected boolean next()
+  protected bool next()
     
   {
     if (_rs == null) {
@@ -561,7 +561,7 @@ public class JdbcResultResource
 
       case Types.BOOLEAN:
         {
-          boolean b = rs.getBoolean(column);
+          bool b = rs.getBoolean(column);
           if (rs.wasNull())
             return NullValue.NULL;
           else
@@ -860,7 +860,7 @@ public class JdbcResultResource
    * is larger than 0 and is less that the max number
    * of fields in this result resource.
    */
-  protected boolean isValidFieldOffset(int fieldOffset)
+  protected bool isValidFieldOffset(int fieldOffset)
   {
     try {
       ResultSetMetaData md = getMetaData();
@@ -881,7 +881,7 @@ public class JdbcResultResource
    * the substring.
    */
 
-  protected boolean isInResultString(int columnIndex, string substring)
+  protected bool isInResultString(int columnIndex, string substring)
     
   {
     string resultString = _rs.getString(columnIndex);
@@ -1392,7 +1392,7 @@ public class JdbcResultResource
    * @param rowNumber the row offset
    * @return true on success or false on failure
    */
-  public boolean seek(Env env, int rowNumber)
+  public bool seek(Env env, int rowNumber)
   {
     if (setRowNumber(rowNumber))
       return true;
@@ -1417,7 +1417,7 @@ public class JdbcResultResource
    *
    * @param fieldOffset PHP is 0-based
    */
-  public boolean setFieldOffset(int fieldOffset)
+  public bool setFieldOffset(int fieldOffset)
   {
     _fieldOffset = fieldOffset;
 
@@ -1434,7 +1434,7 @@ public class JdbcResultResource
    * @param rowNumber the row offset
    * @return true on success or false on failure
    */
-  public boolean setRowNumber(int rowNumber)
+  public bool setRowNumber(int rowNumber)
   {
     // throw error if rowNumber is after last row
     int numRows = getNumRows();

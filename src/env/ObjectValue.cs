@@ -91,7 +91,7 @@ abstract public class ObjectValue : Callback {
     return getQuercusClass().getMethod(name);
   }
 
-  public boolean isIncompleteObject()
+  public bool isIncompleteObject()
   {
     return _incompleteObjectName != null;
   }
@@ -169,7 +169,7 @@ abstract public class ObjectValue : Callback {
   /**
    * Returns true for an object.
    */
-  public override boolean isObject()
+  public override bool isObject()
   {
     return true;
   }
@@ -204,7 +204,7 @@ abstract public class ObjectValue : Callback {
   /**
    * The object is callable if it has an __invoke method
    */
-  public override boolean isCallable(Env env, boolean isCheckSyntaxOnly, Value nameRef)
+  public override bool isCallable(Env env, bool isCheckSyntaxOnly, Value nameRef)
   {
     // php/127c, isCheckSyntaxOnly is not used
 
@@ -228,7 +228,7 @@ abstract public class ObjectValue : Callback {
     return true;
   }
 
-  public override Callable toCallable(Env env, boolean isOptional)
+  public override Callable toCallable(Env env, bool isOptional)
   {
     if (_quercusClass.getInvoke() != null) {
       return this;
@@ -238,7 +238,7 @@ abstract public class ObjectValue : Callback {
     }
   }
 
-  public override boolean isValid(Env env)
+  public override bool isValid(Env env)
   {
     return _quercusClass.getInvoke() != null;
   }
@@ -268,7 +268,7 @@ abstract public class ObjectValue : Callback {
     return null;
   }
 
-  public override boolean isReturnsReference(Env env)
+  public override bool isReturnsReference(Env env)
   {
     return false;
   }
@@ -284,7 +284,7 @@ abstract public class ObjectValue : Callback {
     return fun.getArgs(env);
   }
 
-  public override boolean isInternal(Env env)
+  public override bool isInternal(Env env)
   {
     return false;
   }
@@ -292,7 +292,7 @@ abstract public class ObjectValue : Callback {
   /**
    * Converts to a boolean.
    */
-  public override boolean toBoolean()
+  public override bool toBoolean()
   {
     return true;
   }
@@ -300,7 +300,7 @@ abstract public class ObjectValue : Callback {
   /**
    * Returns true for an implementation of a class
    */
-  public override boolean isA(Env env, string name)
+  public override bool isA(Env env, string name)
   {
     return _quercusClass.isA(env, name);
   }
@@ -455,7 +455,7 @@ abstract public class ObjectValue : Callback {
   /**
    * Return true if set
    */
-  public override boolean isset(Value key)
+  public override bool isset(Value key)
   {
     ArrayDelegate delegate = _quercusClass.getArrayDelegate();
 
@@ -472,7 +472,7 @@ abstract public class ObjectValue : Callback {
   /**
    * Return true if empty.
    */
-  public override boolean isEmpty(Env env, Value key)
+  public override bool isEmpty(Env env, Value key)
   {
     ArrayDelegate delegate = _quercusClass.getArrayDelegate();
 
@@ -670,7 +670,7 @@ abstract public class ObjectValue : Callback {
   /**
    * Returns true for equality
    */
-  public override boolean eq(Value rValue)
+  public override bool eq(Value rValue)
   {
     if (rValue.isObject()) {
       rValue = rValue.toValue();

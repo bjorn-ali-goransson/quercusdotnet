@@ -56,7 +56,7 @@ public class LiteralExpr : Expr {
    * Returns true for a literal expression.
    */
   @Override
-  public boolean isLiteral()
+  public bool isLiteral()
   {
     return true;
   }
@@ -64,7 +64,7 @@ public class LiteralExpr : Expr {
   /**
    * Returns true if a static true value.
    */
-  public override boolean isTrue()
+  public override bool isTrue()
   {
     if (_value == BooleanValue.TRUE)
       return true;
@@ -77,7 +77,7 @@ public class LiteralExpr : Expr {
   /**
    * Returns true if a static true value.
    */
-  public override boolean isFalse()
+  public override bool isFalse()
   {
     if (_value == BooleanValue.FALSE)
       return true;
@@ -90,7 +90,7 @@ public class LiteralExpr : Expr {
   /**
    * Returns true for a long value.
    */
-  public boolean isLong()
+  public bool isLong()
   {
     return _value.isLongConvertible();
   }
@@ -98,7 +98,7 @@ public class LiteralExpr : Expr {
   /**
    * Returns true for a double value.
    */
-  public boolean isDouble()
+  public bool isDouble()
   {
     return _value.isDoubleConvertible();
   }
@@ -106,7 +106,7 @@ public class LiteralExpr : Expr {
   /*
    *
    */
-  public boolean isBoolean()
+  public bool isBoolean()
   {
     return _value.isBoolean();
   }

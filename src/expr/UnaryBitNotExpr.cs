@@ -51,7 +51,7 @@ public class UnaryBitNotExpr : AbstractUnaryExpr {
   /**
    * Returns true for a long.
    */
-  public boolean isLong()
+  public bool isLong()
   {
     return true;
   }

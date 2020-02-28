@@ -40,7 +40,7 @@ namespace QuercusDotNet.lib.file {
  */
 public class LineReader
 {
-  private Boolean _isMacLineEnding;
+  private bool _isMacLineEnding;
 
   public LineReader(Env env)
   {

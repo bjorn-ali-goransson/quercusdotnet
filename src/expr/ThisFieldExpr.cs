@@ -49,7 +49,7 @@ public class ThisFieldExpr : AbstractVarExpr {
 
   protected StringValue _name;
 
-  protected boolean _isInit;
+  protected bool _isInit;
 
   public ThisFieldExpr(Location location,
                        ThisExpr qThis,
@@ -164,7 +164,7 @@ public class ThisFieldExpr : AbstractVarExpr {
    *
    * @return the expression value.
    */
-  public override Value evalArg(Env env, boolean isTop)
+  public override Value evalArg(Env env, bool isTop)
   {
     init();
 

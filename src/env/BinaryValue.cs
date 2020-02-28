@@ -39,7 +39,7 @@ abstract public class BinaryValue : StringValue
 {
   /*
   @Override
-  public boolean isBinary()
+  public bool isBinary()
   {
     return true;
   }

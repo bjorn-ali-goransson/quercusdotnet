@@ -78,7 +78,7 @@ public class RecursiveIteratorIterator
   // Iterator
   //
 
-  public override boolean valid(Env env)
+  public override bool valid(Env env)
   {
     return getInnerIterator().valid(env);
   }
@@ -169,7 +169,7 @@ public class RecursiveIteratorIterator
       }
     }
 
-    public override boolean hasChildren(Env env)
+    public override bool hasChildren(Env env)
     {
       return _obj.callMethod(env, HAS_CHILDREN).toBoolean();
     }
@@ -181,7 +181,7 @@ public class RecursiveIteratorIterator
       return create(result);
     }
 
-    public override boolean valid(Env env)
+    public override bool valid(Env env)
     {
       return _obj.callMethod(env, VALID).toBoolean();
     }

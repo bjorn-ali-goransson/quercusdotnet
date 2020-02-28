@@ -59,7 +59,7 @@ public class ReflectionObject : ReflectionClass
 
   public static string export(Env env,
                               Value object,
-                              @Optional boolean isReturn)
+                              @Optional bool isReturn)
   {
     return null;
   }

@@ -141,8 +141,8 @@ public abstract class SimpleView
   }
 
   public HashMap<String,String> getNamespaces(boolean isRecursive,
-                                              boolean isFromRoot,
-                                              boolean isCheckUsage)
+                                              bool isFromRoot,
+                                              bool isCheckUsage)
   {
     throw new UnsupportedOperationException(getClass().getSimpleName());
   }
@@ -165,9 +165,9 @@ public abstract class SimpleView
 
   public abstract string toString(Env env);
 
-  public abstract boolean toXml(Env env, StringBuilder sb);
+  public abstract bool toXml(Env env, StringBuilder sb);
 
-  public Value toDumpValue(Env env, QuercusClass cls, boolean isChildren)
+  public Value toDumpValue(Env env, QuercusClass cls, bool isChildren)
   {
     throw new UnsupportedOperationException(getClass().getSimpleName());
   }
@@ -208,7 +208,7 @@ public abstract class SimpleView
     throw new UnsupportedOperationException(getClass().getSimpleName());
   }
   
-  public boolean issetField(Env env, string name)
+  public bool issetField(Env env, string name)
   {
     return false;
   }

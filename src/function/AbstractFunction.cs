@@ -54,13 +54,13 @@ abstract public class AbstractFunction : Callback {
 
   private final Location _location;
 
-  private boolean _isGlobal = true;
-  protected boolean _isStatic = false;
-  protected boolean _isFinal = false;
-  protected boolean _isConstructor = false;
-  protected boolean _isClosure = false;
+  private bool _isGlobal = true;
+  protected bool _isStatic = false;
+  protected bool _isFinal = false;
+  protected bool _isConstructor = false;
+  protected bool _isClosure = false;
 
-  protected boolean _isTraitMethod = false;
+  protected bool _isTraitMethod = false;
 
   protected Visibility _visibility = Visibility.PUBLIC;
   protected string _declaringClassName;
@@ -95,12 +95,12 @@ abstract public class AbstractFunction : Callback {
     return getName();
   }
 
-  public override boolean isInternal(Env env)
+  public override bool isInternal(Env env)
   {
     return false;
   }
 
-  public override boolean isValid(Env env)
+  public override bool isValid(Env env)
   {
     return true;
   }
@@ -140,7 +140,7 @@ abstract public class AbstractFunction : Callback {
   /**
    * Returns true if this returns a reference.
    */
-  public override boolean isReturnsReference(Env env)
+  public override bool isReturnsReference(Env env)
   {
     return true;
   }
@@ -150,7 +150,7 @@ abstract public class AbstractFunction : Callback {
     return NULL_ARGS;
   }
 
-  public boolean isJavaMethod()
+  public bool isJavaMethod()
   {
     return false;
   }
@@ -210,7 +210,7 @@ abstract public class AbstractFunction : Callback {
   /**
    * Returns true for a global function.
    */
-  public final boolean isGlobal()
+  public final bool isGlobal()
   {
     return _isGlobal;
   }
@@ -218,7 +218,7 @@ abstract public class AbstractFunction : Callback {
   /**
    * Returns true for an abstract function.
    */
-  public boolean isAbstract()
+  public bool isAbstract()
   {
     return false;
   }
@@ -234,7 +234,7 @@ abstract public class AbstractFunction : Callback {
   /**
    * Returns true for a static function.
    */
-  public boolean isStatic()
+  public bool isStatic()
   {
     return _isStatic;
   }
@@ -242,7 +242,7 @@ abstract public class AbstractFunction : Callback {
   /**
    * Returns true for a final function.
    */
-  public boolean isFinal()
+  public bool isFinal()
   {
     return _isFinal;
   }
@@ -263,7 +263,7 @@ abstract public class AbstractFunction : Callback {
   /**
    * Returns true for a closure.
    */
-  public boolean isClosure()
+  public bool isClosure()
   {
     return _isClosure;
   }
@@ -271,7 +271,7 @@ abstract public class AbstractFunction : Callback {
   /**
    * Returns true for a constructor.
    */
-  public boolean isConstructor()
+  public bool isConstructor()
   {
     return _isConstructor;
   }
@@ -287,7 +287,7 @@ abstract public class AbstractFunction : Callback {
   /**
    * Returns true for a trait method.
    */
-  public boolean isTraitMethod()
+  public bool isTraitMethod()
   {
     return _isTraitMethod;
   }
@@ -303,7 +303,7 @@ abstract public class AbstractFunction : Callback {
   /**
    * Returns true for a protected function.
    */
-  public boolean isPublic()
+  public bool isPublic()
   {
     return _visibility == Visibility.PUBLIC;
   }
@@ -311,7 +311,7 @@ abstract public class AbstractFunction : Callback {
   /**
    * Returns true for a protected function.
    */
-  public boolean isProtected()
+  public bool isProtected()
   {
     return _visibility == Visibility.PROTECTED;
   }
@@ -319,7 +319,7 @@ abstract public class AbstractFunction : Callback {
   /**
    * Returns true for a private function.
    */
-  public boolean isPrivate()
+  public bool isPrivate()
   {
     return _visibility == Visibility.PRIVATE;
   }
@@ -348,9 +348,9 @@ abstract public class AbstractFunction : Callback {
   }
 
   /**
-   * Returns true for a boolean function.
+   * Returns true for a bool function.
    */
-  public boolean isBoolean()
+  public bool isBoolean()
   {
     return false;
   }
@@ -358,7 +358,7 @@ abstract public class AbstractFunction : Callback {
   /**
    * Returns true for a string function.
    */
-  public boolean isString()
+  public bool isString()
   {
     return false;
   }
@@ -366,7 +366,7 @@ abstract public class AbstractFunction : Callback {
   /**
    * Returns true for a long function.
    */
-  public boolean isLong()
+  public bool isLong()
   {
     return false;
   }
@@ -374,7 +374,7 @@ abstract public class AbstractFunction : Callback {
   /**
    * Returns true for a double function.
    */
-  public boolean isDouble()
+  public bool isDouble()
   {
     return false;
   }
@@ -382,7 +382,7 @@ abstract public class AbstractFunction : Callback {
   /**
    * Returns true if the function uses variable args.
    */
-  public boolean isCallUsesVariableArgs()
+  public bool isCallUsesVariableArgs()
   {
     return false;
   }
@@ -390,7 +390,7 @@ abstract public class AbstractFunction : Callback {
   /**
    * Returns true if the function uses/modifies the local symbol table
    */
-  public boolean isCallUsesSymbolTable()
+  public bool isCallUsesSymbolTable()
   {
     return false;
   }
@@ -462,7 +462,7 @@ abstract public class AbstractFunction : Callback {
   /**
    * Returns true for an object
    */
-  public override boolean isObject()
+  public override bool isObject()
   {
     return true;
   }
@@ -475,7 +475,7 @@ abstract public class AbstractFunction : Callback {
   /**
    * The object is callable if it has an __invoke method
    */
-  public override boolean isCallable(Env env, boolean isCheckSyntaxOnly, Value nameRef)
+  public override bool isCallable(Env env, bool isCheckSyntaxOnly, Value nameRef)
   {
     throw new UnimplementedException();
   }

@@ -120,14 +120,14 @@ public class DocumentView : SimpleView
     return _element.getCount();
   }
   
-  public override boolean issetField(Env env, string name)
+  public override bool issetField(Env env, string name)
   {
     return _element.issetField(env, name);
   }
 
   public override HashMap<String,String> getNamespaces(boolean isRecursive,
-                                              boolean isFromRoot,
-                                              boolean isCheckUsage)
+                                              bool isFromRoot,
+                                              bool isCheckUsage)
   {
     return _element.getNamespaces(isRecursive, isFromRoot, isCheckUsage);
   }
@@ -147,14 +147,14 @@ public class DocumentView : SimpleView
     return _element.getEntrySet(env, cls);
   }
 
-  public override boolean toXml(Env env, StringBuilder sb)
+  public override bool toXml(Env env, StringBuilder sb)
   {
     SimpleUtil.toXml(env, sb, getOwnerDocument());
 
     return true;
   }
 
-  public override Value toDumpValue(Env env, QuercusClass cls, boolean isChildren)
+  public override Value toDumpValue(Env env, QuercusClass cls, bool isChildren)
   {
     return _element.toDumpValue(env, cls, true);
   }

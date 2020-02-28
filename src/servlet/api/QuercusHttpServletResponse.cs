@@ -45,7 +45,7 @@ public interface QuercusHttpServletResponse
 
   public void addCookie(QuercusCookie cookie);
 
-  public boolean isCommitted();
+  public bool isCommitted();
 
   public OutputStream getOutputStream()
     

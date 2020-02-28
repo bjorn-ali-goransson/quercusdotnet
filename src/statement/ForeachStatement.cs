@@ -52,7 +52,7 @@ public class ForeachStatement
   protected final AbstractVarExpr _key;
 
   protected final AbstractVarExpr _value;
-  protected final boolean _isRef;
+  protected final bool _isRef;
 
   protected final Statement _block;
 
@@ -62,7 +62,7 @@ public class ForeachStatement
                           Expr objExpr,
                           AbstractVarExpr key,
                           AbstractVarExpr value,
-                          boolean isRef,
+                          bool isRef,
                           Statement block,
                           string label)
   {
@@ -81,7 +81,7 @@ public class ForeachStatement
   }
 
   @Override
-  public boolean isLoop()
+  public bool isLoop()
   {
     return true;
   }

@@ -138,7 +138,7 @@ public class VariableModule : AbstractQuercusModule {
   public static Value define(Env env,
                              StringValue name,
                              Value value,
-                             @Optional boolean isCaseInsensitive)
+                             @Optional bool isCaseInsensitive)
   {
     return env.addConstant(name, value, isCaseInsensitive);
   }
@@ -149,7 +149,7 @@ public class VariableModule : AbstractQuercusModule {
    * @param env the quercus calling environment
    * @param name the constant name
    */
-  public static boolean defined(Env env, string name)
+  public static bool defined(Env env, string name)
   {
     if (name == null)
       return false;
@@ -186,7 +186,7 @@ public class VariableModule : AbstractQuercusModule {
    *
    * @return true if the value is empty
    */
-  public static boolean empty(@ReadOnly Value v)
+  public static bool empty(@ReadOnly Value v)
   {
     return v.isEmpty();
   }
@@ -251,7 +251,7 @@ public class VariableModule : AbstractQuercusModule {
    * @param types the variables to import
    * @param prefix the prefix
    */
-  public static boolean import_request_variables(Env env,
+  public static bool import_request_variables(Env env,
                                                  string types,
                                                  @Optional string prefix)
   {
@@ -340,7 +340,7 @@ public class VariableModule : AbstractQuercusModule {
    *
    * @return true for an array
    */
-  public static boolean is_array(@ReadOnly Value v)
+  public static bool is_array(@ReadOnly Value v)
   {
     return v.isArray();
   }
@@ -366,9 +366,9 @@ public class VariableModule : AbstractQuercusModule {
   /**
    * Returns the type string for the variable
    */
-  public static boolean is_callable(Env env,
+  public static bool is_callable(Env env,
                                     @ReadOnly Value v,
-                                    @Optional boolean isCheckSyntaxOnly,
+                                    @Optional bool isCheckSyntaxOnly,
                                     @Optional @Reference Value nameRef)
   {
     if (nameRef.isDefault()) {
@@ -385,7 +385,7 @@ public class VariableModule : AbstractQuercusModule {
    *
    * @return true for a double
    */
-  public static boolean is_double(@ReadOnly Value v)
+  public static bool is_double(@ReadOnly Value v)
   {
     return is_float(v);
   }
@@ -397,7 +397,7 @@ public class VariableModule : AbstractQuercusModule {
    *
    * @return true for a double
    */
-  public static boolean is_float(@ReadOnly Value v)
+  public static bool is_float(@ReadOnly Value v)
   {
     return (v.toValue() instanceof DoubleValue);
   }
@@ -447,7 +447,7 @@ public class VariableModule : AbstractQuercusModule {
    *
    * @return true for null
    */
-  public static boolean is_null(@ReadOnly Value v)
+  public static bool is_null(@ReadOnly Value v)
   {
     return v.isNull();
   }
@@ -460,7 +460,7 @@ public class VariableModule : AbstractQuercusModule {
    *
    * @return true for numeric
    */
-  public static boolean is_numeric(Env env, @ReadOnly Value v)
+  public static bool is_numeric(Env env, @ReadOnly Value v)
   {
     return v.isNumeric();
   }
@@ -473,7 +473,7 @@ public class VariableModule : AbstractQuercusModule {
    *
    * @return true for object
    */
-  public static boolean is_object(Env env, @ReadOnly Value v)
+  public static bool is_object(Env env, @ReadOnly Value v)
   {
     return v.isObject();
   }
@@ -485,7 +485,7 @@ public class VariableModule : AbstractQuercusModule {
    *
    * @return true for a real
    */
-  public static boolean is_real(@ReadOnly Value v)
+  public static bool is_real(@ReadOnly Value v)
   {
     return is_float(v);
   }
@@ -493,7 +493,7 @@ public class VariableModule : AbstractQuercusModule {
   /**
    * Returns true if the value is a resource
    */
-  public boolean is_resource(@ReadOnly Value value)
+  public bool is_resource(@ReadOnly Value value)
   {
     return value.isResource();
   }
@@ -505,7 +505,7 @@ public class VariableModule : AbstractQuercusModule {
    *
    * @return true for a scalar
    */
-  public static boolean is_scalar(@ReadOnly Value v)
+  public static bool is_scalar(@ReadOnly Value v)
   {
     if (v == null) {
       return false;
@@ -522,7 +522,7 @@ public class VariableModule : AbstractQuercusModule {
   /**
    * Returns true if the value is a string
    */
-  public boolean is_string(@ReadOnly Value value)
+  public bool is_string(@ReadOnly Value value)
   {
     return value.isString();
   }
@@ -532,7 +532,7 @@ public class VariableModule : AbstractQuercusModule {
   /**
    * Returns the type string for the variable
    */
-  public static boolean isset(@ReadOnly Value ... values)
+  public static bool isset(@ReadOnly Value ... values)
   {
     for (Value v : values) {
       if (! v.isset()) {
@@ -554,7 +554,7 @@ public class VariableModule : AbstractQuercusModule {
    */
   public static Value print_r(Env env,
                               @ReadOnly Value v,
-                              @Optional boolean isReturn)
+                              @Optional bool isReturn)
   {
     try {
       WriteStream out;
@@ -606,7 +606,7 @@ public class VariableModule : AbstractQuercusModule {
   /**
    * Converts the variable to a specified tyep.
    */
-  public static boolean settype(Env env,
+  public static bool settype(Env env,
                                 @Reference Value var,
                                 string type)
   {
@@ -798,7 +798,7 @@ public class VariableModule : AbstractQuercusModule {
    */
   public static Value var_export(Env env,
                                  @ReadOnly Value v,
-                                 @Optional boolean isReturn)
+                                 @Optional bool isReturn)
   {
     StringValue s = v.varExport(env);
 
@@ -878,7 +878,7 @@ public class VariableModule : AbstractQuercusModule {
       return _hash;
     }
 
-    public boolean equals(Object o)
+    public bool equals(Object o)
     {
       if (this == o)
         return true;

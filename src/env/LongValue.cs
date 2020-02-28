@@ -95,7 +95,7 @@ public class LongValue : NumberValue
   /**
    * Returns true for a long.
    */
-  public override boolean isLongConvertible()
+  public override bool isLongConvertible()
   {
     return true;
   }
@@ -103,7 +103,7 @@ public class LongValue : NumberValue
   /**
    * Returns true for is_numeric
    */
-  public override boolean isNumeric()
+  public override bool isNumeric()
   {
     return true;
   }
@@ -111,7 +111,7 @@ public class LongValue : NumberValue
   /**
    * Returns true for a long-value.
    */
-  public override boolean isLong()
+  public override bool isLong()
   {
     return true;
   }
@@ -119,7 +119,7 @@ public class LongValue : NumberValue
   /**
    * Returns true for a double-value.
    */
-  public override boolean isDouble()
+  public override bool isDouble()
   {
     return false;
   }
@@ -127,7 +127,7 @@ public class LongValue : NumberValue
   /**
    * Returns true for a scalar
    */
-  public boolean isScalar()
+  public bool isScalar()
   {
     return true;
   }
@@ -135,7 +135,7 @@ public class LongValue : NumberValue
   /**
    * Returns true if the value is empty
    */
-  public override boolean isEmpty()
+  public override bool isEmpty()
   {
     return _value == 0;
   }
@@ -187,7 +187,7 @@ public class LongValue : NumberValue
   /**
    * Converts to a boolean.
    */
-  public override boolean toBoolean()
+  public override bool toBoolean()
   {
     return _value != 0;
   }
@@ -401,7 +401,7 @@ public class LongValue : NumberValue
   /**
    * Returns true for equality
    */
-  public override boolean eql(Value rValue)
+  public override bool eql(Value rValue)
   {
     rValue = rValue.toValue();
 
@@ -418,8 +418,8 @@ public class LongValue : NumberValue
   public override int cmp(Value rValue)
   {
     if (rValue.isBoolean()) {
-      boolean lBool = toBoolean();
-      boolean rBool = rValue.toBoolean();
+      bool lBool = toBoolean();
+      bool rBool = rValue.toBoolean();
 
       if (! lBool && rBool)
         return -1;
@@ -560,7 +560,7 @@ public class LongValue : NumberValue
   /**
    * Compare for equality.
    */
-  public override boolean equals(Object o)
+  public override bool equals(Object o)
   {
     if (this == o)
       return true;

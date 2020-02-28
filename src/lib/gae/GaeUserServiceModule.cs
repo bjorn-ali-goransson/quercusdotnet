@@ -80,11 +80,11 @@ public class GaeUserServiceModule : AbstractQuercusModule {
     return GaeUserService.getCurrentUser();
   }
 
-  public static boolean gae_users_is_user_admin(Env env) {
+  public static bool gae_users_is_user_admin(Env env) {
     return GaeUserService.isUserAdmin();
   }
 
-  public static boolean gae_users_is_user_logged_in(Env env) {
+  public static bool gae_users_is_user_logged_in(Env env) {
     return GaeUserService.isUserLoggedIn();
   }
 }

@@ -58,7 +58,7 @@ public class InterpretedPage : QuercusPage
    * Returns true if the page is modified.
    */
   @Override
-  public boolean isModified()
+  public bool isModified()
   {
     return _program.isModified();
   }
@@ -155,12 +155,12 @@ public class InterpretedPage : QuercusPage
   /**
    * Sets a runtime function array after an env.
    */
-  public override boolean setRuntimeFunction(AbstractFunction []funList)
+  public override bool setRuntimeFunction(AbstractFunction []funList)
   {
     return _program.setRuntimeFunction(funList);
   }
 
-  public boolean equals(Object o)
+  public bool equals(Object o)
   {
     if (! (o instanceof InterpretedPage))
       return false;

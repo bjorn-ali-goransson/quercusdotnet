@@ -116,8 +116,8 @@ public class SelectedView : SimpleView
   }
 
   public override HashMap<String,String> getNamespaces(boolean isRecursive,
-                                              boolean isFromRoot,
-                                              boolean isCheckUsage)
+                                              bool isFromRoot,
+                                              bool isCheckUsage)
   {
     if (_childList.size() > 0) {
       return _childList.get(0).getNamespaces(isRecursive, isFromRoot, isCheckUsage);
@@ -181,7 +181,7 @@ public class SelectedView : SimpleView
     return _childList.size();
   }
   
-  public override boolean issetField(Env env, string name)
+  public override bool issetField(Env env, string name)
   {    
     if (_childList.size() > 0) {
       SimpleView firstChild = _childList.get(0);
@@ -248,7 +248,7 @@ public class SelectedView : SimpleView
     throw new UnsupportedOperationException();
   }
 
-  public override boolean toXml(Env env, StringBuilder sb)
+  public override bool toXml(Env env, StringBuilder sb)
   {
     if (_childList.size() > 0) {
       SimpleView firstChild = _childList.get(0);
@@ -262,7 +262,7 @@ public class SelectedView : SimpleView
     }
   }
 
-  public override Value toDumpValue(Env env, QuercusClass cls, boolean isChildren)
+  public override Value toDumpValue(Env env, QuercusClass cls, bool isChildren)
   {
     int childSize = _childList.size();
 

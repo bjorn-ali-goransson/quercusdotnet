@@ -81,7 +81,7 @@ public class HashModule : AbstractQuercusModule {
   public Value hash(Env env,
                     string algorithm,
                     StringValue string,
-                    @Optional boolean isBinary)
+                    @Optional bool isBinary)
   {
     try {
       algorithm = getAlgorithm(algorithm);
@@ -149,7 +149,7 @@ public class HashModule : AbstractQuercusModule {
   public Value hash_file(Env env,
                          string algorithm,
                          Path path,
-                         @Optional boolean isBinary)
+                         @Optional bool isBinary)
   {
     try {
       algorithm = getAlgorithm(algorithm);
@@ -191,7 +191,7 @@ public class HashModule : AbstractQuercusModule {
    */
   public Value hash_final(Env env,
                           HashContext context,
-                          @Optional boolean isBinary)
+                          @Optional bool isBinary)
   {
     if (context == null)
       return BooleanValue.FALSE;
@@ -206,7 +206,7 @@ public class HashModule : AbstractQuercusModule {
                          string algorithm,
                          StringValue data,
                          StringValue key,
-                         @Optional boolean isBinary)
+                         @Optional bool isBinary)
   {
     HashContext context = hash_init(env, algorithm, HASH_HMAC, key);
 
@@ -222,7 +222,7 @@ public class HashModule : AbstractQuercusModule {
                               string algorithm,
                               Path path,
                               StringValue key,
-                              @Optional boolean isBinary)
+                              @Optional bool isBinary)
   {
     HashContext context = hash_init(env, algorithm, HASH_HMAC, key);
 
@@ -376,7 +376,7 @@ public class HashModule : AbstractQuercusModule {
   // XXX: hash_update
   // XXX: hash
 
-  private static Value hashToValue(Env env, byte []bytes, boolean isBinary)
+  private static Value hashToValue(Env env, byte []bytes, bool isBinary)
   {
     if (isBinary) {
       StringValue v = env.createBinaryBuilder();

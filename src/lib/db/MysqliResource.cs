@@ -73,7 +73,7 @@ public class MysqliResource : Mysqli {
                  int flags,
                  string driver,
                  string url,
-                 boolean isNewLink)
+                 bool isNewLink)
    : base(env,
           host, user, password,
           db, port, socket, flags, driver, url, isNewLink, false, null) {

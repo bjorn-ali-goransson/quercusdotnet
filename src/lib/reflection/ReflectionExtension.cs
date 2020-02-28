@@ -70,7 +70,7 @@ public class ReflectionExtension
 
   public static string export(Env env,
                               string name,
-                              @Optional boolean isReturn)
+                              @Optional bool isReturn)
   {
     return null;
   }

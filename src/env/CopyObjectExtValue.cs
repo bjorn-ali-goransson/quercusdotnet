@@ -87,7 +87,7 @@ public class CopyObjectExtValue : ObjectExtValue
   /**
    * Returns the value as an argument which may be a reference.
    */
-  public override Value getFieldArg(Env env, StringValue name, boolean isTop)
+  public override Value getFieldArg(Env env, StringValue name, bool isTop)
   {
     _root.setModified();
 

@@ -66,22 +66,22 @@ abstract public class JavaInvoker
   private final Annotation [][] _paramAnn;
   private final Annotation []_methodAnn;
 
-  private volatile boolean _isInit;
+  private volatile bool _isInit;
 
   private int _minArgumentLength;
   private int _maxArgumentLength;
 
-  private boolean _hasEnv;
-  private boolean _hasThis;
+  private bool _hasEnv;
+  private bool _hasThis;
   private Expr [] _defaultExprs;
   private Marshal []_marshalArgs;
-  private boolean _hasRestArgs;
+  private bool _hasRestArgs;
   private Marshal _unmarshalReturn;
 
-  private boolean _isRestReference;
+  private bool _isRestReference;
 
-  private boolean _isCallUsesVariableArgs;
-  private boolean _isCallUsesSymbolTable;
+  private bool _isCallUsesVariableArgs;
+  private bool _isCallUsesSymbolTable;
 
   /**
    * Creates the statically introspected function.
@@ -160,9 +160,9 @@ abstract public class JavaInvoker
       Annotation []methodAnn = getMethodAnn();
 
       try {
-        boolean callUsesVariableArgs = false;
-        boolean callUsesSymbolTable = false;
-        boolean returnNullAsFalse = false;
+        bool callUsesVariableArgs = false;
+        bool callUsesSymbolTable = false;
+        bool returnNullAsFalse = false;
 
         for (Annotation ann : methodAnn) {
           if (VariableArguments.class.isAssignableFrom(ann.annotationType()))
@@ -189,8 +189,8 @@ abstract public class JavaInvoker
         if (_hasThis)
           envOffset++;
 
-        boolean hasRestArgs = false;
-        boolean isRestReference = false;
+        bool hasRestArgs = false;
+        bool isRestReference = false;
 
         if (_param.length > 0
             && (_param[_param.length - 1].equals(Value[].class)
@@ -218,15 +218,15 @@ abstract public class JavaInvoker
         _minArgumentLength = _maxArgumentLength;
 
         for (int i = 0; i < argLength - envOffset; i++) {
-          boolean isOptional = false;
-          boolean isReference = false;
-          boolean isPassThru = false;
+          bool isOptional = false;
+          bool isReference = false;
+          bool isPassThru = false;
 
-          boolean isNotNull = false;
+          bool isNotNull = false;
 
-          boolean isExpectString = false;
-          boolean isExpectNumeric = false;
-          boolean isExpectBoolean = false;
+          bool isExpectString = false;
+          bool isExpectNumeric = false;
+          bool isExpectBoolean = false;
 
           Class<?> argType = _param[i + envOffset];
 
@@ -361,7 +361,7 @@ abstract public class JavaInvoker
   /**
    * Returns true if the environment is an argument.
    */
-  public boolean getHasEnv()
+  public bool getHasEnv()
   {
     if (! _isInit)
       init();
@@ -372,7 +372,7 @@ abstract public class JavaInvoker
   /**
    * Returns true if the environment has rest-style arguments.
    */
-  public boolean getHasRestArgs()
+  public bool getHasRestArgs()
   {
     if (! _isInit)
       init();
@@ -383,7 +383,7 @@ abstract public class JavaInvoker
   /**
    * Returns true if the rest argument is a reference.
    */
-  public boolean isRestReference()
+  public bool isRestReference()
   {
     if (! _isInit)
       init();
@@ -405,7 +405,7 @@ abstract public class JavaInvoker
   /**
    * Returns true if the call uses variable arguments.
    */
-  public override boolean isCallUsesVariableArgs()
+  public override bool isCallUsesVariableArgs()
   {
     if (! _isInit)
       init();
@@ -416,7 +416,7 @@ abstract public class JavaInvoker
   /**
    * Returns true if the call uses the symbol table
    */
-  public override boolean isCallUsesSymbolTable()
+  public override bool isCallUsesSymbolTable()
   {
     if (! _isInit)
       init();
@@ -427,7 +427,7 @@ abstract public class JavaInvoker
   /**
    * Returns true if the result is a boolean.
    */
-  public boolean isBoolean()
+  public bool isBoolean()
   {
     if (! _isInit)
       init();
@@ -438,7 +438,7 @@ abstract public class JavaInvoker
   /**
    * Returns true if the result is a string.
    */
-  public boolean isString()
+  public bool isString()
   {
     if (! _isInit)
       init();
@@ -449,7 +449,7 @@ abstract public class JavaInvoker
   /**
    * Returns true if the result is a long.
    */
-  public boolean isLong()
+  public bool isLong()
   {
     if (! _isInit)
       init();
@@ -460,7 +460,7 @@ abstract public class JavaInvoker
   /**
    * Returns true if the result is a double.
    */
-  public boolean isDouble()
+  public bool isDouble()
   {
     if (! _isInit)
       init();
@@ -810,7 +810,7 @@ abstract public class JavaInvoker
   //
   // Utility methods
   //
-  private boolean hasThis(Class<?> param, Annotation[]ann)
+  private bool hasThis(Class<?> param, Annotation[]ann)
   {
     if (! param.isAssignableFrom(ObjectValue.class))
       return false;

@@ -39,17 +39,17 @@ public enum FieldVisibility
   PROTECTED,
   PRIVATE;
 
-  public boolean isPublic()
+  public bool isPublic()
   {
     return this == PUBLIC;
   }
 
-  public boolean isProtected()
+  public bool isProtected()
   {
     return this == PROTECTED;
   }
 
-  public boolean isPrivate()
+  public bool isPrivate()
   {
     return this == PRIVATE;
   }

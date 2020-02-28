@@ -110,7 +110,7 @@ public class FileReadValue : FileValue {
   /**
    * Reads the optional linefeed character from a \r\n
    */
-  public boolean readOptionalLinefeed()
+  public bool readOptionalLinefeed()
     
   {
     if (_is != null) {
@@ -155,7 +155,7 @@ public class FileReadValue : FileValue {
   /**
    * Returns true on the EOF.
    */
-  public boolean isEOF()
+  public bool isEOF()
   {
     if (_is == null)
       return true;

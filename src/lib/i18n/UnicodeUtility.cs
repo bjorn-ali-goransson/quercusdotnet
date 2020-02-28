@@ -38,7 +38,7 @@ public class UnicodeUtility
   public static StringValue utf8Clean(Env env,
                                       StringValue str,
                                       string replacement,
-                                      boolean isIgnore)
+                                      bool isIgnore)
   {
     StringValue sb = str.createStringBuilder();
 
@@ -126,7 +126,7 @@ public class UnicodeUtility
                                     StringValue str,
                                     string charset,
                                     string replacement,
-                                    boolean isIgnoreErrors)
+                                    bool isIgnoreErrors)
   {
     Decoder decoder = Decoder.create(charset);
 
@@ -147,7 +147,7 @@ public class UnicodeUtility
                                    CharSequence str,
                                    string charset,
                                    string replacement,
-                                   boolean isIgnoreErrors)
+                                   bool isIgnoreErrors)
   {
     Encoder encoder = Encoder.create(charset);
 
@@ -163,10 +163,10 @@ public class UnicodeUtility
                                          string inCharset,
                                          string outCharset,
                                          string replacement,
-                                         boolean isIgnoreErrors)
+                                         bool isIgnoreErrors)
   {
-    boolean isStartUtf8 = false;
-    boolean isEndUtf8 = false;
+    bool isStartUtf8 = false;
+    bool isEndUtf8 = false;
 
     if (inCharset.equalsIgnoreCase("utf8")
         || inCharset.equalsIgnoreCase("utf-8"))

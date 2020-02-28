@@ -61,7 +61,7 @@ public class StreamResource : ResourceValue {
   /**
    * Reads the optional linefeed character from a \r\n
    */
-  public boolean readOptionalLinefeed()
+  public bool readOptionalLinefeed()
     
   {
     return false;
@@ -105,7 +105,7 @@ public class StreamResource : ResourceValue {
   /**
    * Returns true on the end of file.
    */
-  public boolean isEOF()
+  public bool isEOF()
   {
     return true;
   }

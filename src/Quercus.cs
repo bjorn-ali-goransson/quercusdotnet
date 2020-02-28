@@ -116,7 +116,7 @@ public class Quercus
     _fileName = name;
   }
 
-  protected boolean parseArgs(String []args)
+  protected bool parseArgs(String []args)
   {
     ArrayList<String> phpArgList = new ArrayList<String>();
 

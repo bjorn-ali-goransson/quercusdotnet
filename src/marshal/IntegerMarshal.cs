@@ -39,12 +39,12 @@ public class IntegerMarshal : Marshal
 {
   public readonly Marshal MARSHAL = new IntegerMarshal();
 
-  public boolean isLong()
+  public bool isLong()
   {
     return true;
   }
 
-  public boolean isReadOnly()
+  public bool isReadOnly()
   {
     return true;
   }

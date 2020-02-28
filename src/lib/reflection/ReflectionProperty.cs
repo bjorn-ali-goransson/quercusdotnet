@@ -66,7 +66,7 @@ public class ReflectionProperty
   protected static ReflectionProperty create(Env env,
                                              QuercusClass cls,
                                              StringValue propName,
-                                             boolean isStatic)
+                                             bool isStatic)
   {
     Property prop;
 
@@ -98,7 +98,7 @@ public class ReflectionProperty
   public static string export(Env env,
                               Value cls,
                               string name,
-                              @Optional boolean isReturn)
+                              @Optional bool isReturn)
   {
     return null;
   }
@@ -108,22 +108,22 @@ public class ReflectionProperty
     return _prop.getName();
   }
 
-  public boolean isPublic()
+  public bool isPublic()
   {
     return _prop.isPublic();
   }
 
-  public boolean isPrivate()
+  public bool isPrivate()
   {
     return _prop.isPrivate();
   }
 
-  public boolean isProtected()
+  public bool isProtected()
   {
     return _prop.isProtected();
   }
 
-  public boolean isStatic()
+  public bool isStatic()
   {
     return _prop.isStatic();
   }
@@ -131,7 +131,7 @@ public class ReflectionProperty
   /*
    * XXX: no documentation whatsoever
    */
-  public boolean isDefault()
+  public bool isDefault()
   {
     return true;
   }
@@ -196,26 +196,26 @@ public class ReflectionProperty
       _nameV = nameV;
     }
 
-    public boolean isStatic()
+    public bool isStatic()
     {
       return false;
     }
 
-    public boolean isPublic()
+    public bool isPublic()
     {
       ClassField field = _cls.getClassField(_nameV);
 
       return field.isPublic();
     }
 
-    public boolean isProtected()
+    public bool isProtected()
     {
       ClassField field = _cls.getClassField(_nameV);
 
       return field.isProtected();
     }
 
-    public boolean isPrivate()
+    public bool isPrivate()
     {
       ClassField field = _cls.getClassField(_nameV);
 
@@ -305,24 +305,24 @@ public class ReflectionProperty
     }
 
     @Override
-    public boolean isStatic()
+    public bool isStatic()
     {
       return true;
     }
 
-    public override boolean isPublic()
+    public override bool isPublic()
     {
       /// XXX: return actual visibility
       return true;
     }
 
-    public override boolean isProtected()
+    public override bool isProtected()
     {
       /// XXX: return actual visibility
       return false;
     }
 
-    public override boolean isPrivate()
+    public override bool isPrivate()
     {
       /// XXX: return actual visibility
       return false;

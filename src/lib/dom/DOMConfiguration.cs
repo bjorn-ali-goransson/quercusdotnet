@@ -39,7 +39,7 @@ public class DOMConfiguration
     super(impl, delegate);
   }
 
-  public boolean canSetParameter(String name, Object value)
+  public bool canSetParameter(String name, Object value)
   {
     return _delegate.canSetParameter(name, value);
   }

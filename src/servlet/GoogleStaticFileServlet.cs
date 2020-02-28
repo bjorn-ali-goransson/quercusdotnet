@@ -85,7 +85,7 @@ public class GoogleStaticFileServlet : GenericServlet {
     string mode
       = System.getProperty("com.google.appengine.tools.development.ApplicationPreparationMode");
 
-    boolean isGsDisabled = "true".equals(mode);
+    bool isGsDisabled = "true".equals(mode);
 
     if (! isGsDisabled) {
       string iniPath = getInitParameter("ini-file");
@@ -152,7 +152,7 @@ public class GoogleStaticFileServlet : GenericServlet {
     if (ifMatch == null) {
       string ifModified = req.getHeader("If-Modified-Since");
 
-      boolean isModified = true;
+      bool isModified = true;
 
       if (ifModified == null) {
       }
@@ -251,8 +251,8 @@ public class GoogleStaticFileServlet : GenericServlet {
 
   static class CacheEntry {
     private Path _path;
-    private boolean _isDirectory;
-    private boolean _canRead;
+    private bool _isDirectory;
+    private bool _canRead;
     private long _length;
     private long _lastModified = 0xdeadbabe1ee7d00dL;
     private string _relPath;
@@ -274,12 +274,12 @@ public class GoogleStaticFileServlet : GenericServlet {
       return _path;
     }
 
-    boolean canRead()
+    bool canRead()
     {
       return _canRead;
     }
 
-    boolean isDirectory()
+    bool isDirectory()
     {
       return _isDirectory;
     }
@@ -314,7 +314,7 @@ public class GoogleStaticFileServlet : GenericServlet {
       return _mimeType;
     }
 
-    boolean isModified()
+    bool isModified()
     {
       // don't want to use caching because current caching is too crude
       // XXX: improve caching

@@ -87,9 +87,9 @@ public class ClassesModule : AbstractQuercusModule {
   /**
    * bool class_alias ( string $original , string $alias [, bool $autoload = TRUE ] )
    */
-  public boolean class_alias(Env env,
+  public bool class_alias(Env env,
                              string original, string alias,
-                             @Optional("true") boolean isAutoLoad)
+                             @Optional("true") bool isAutoLoad)
   {
     QuercusClass aliasCls = env.findClass(alias, -1, false, true, true);
 
@@ -115,9 +115,9 @@ public class ClassesModule : AbstractQuercusModule {
   /**
    * returns true if the class exists.
    */
-  public static boolean class_exists(Env env,
+  public static bool class_exists(Env env,
                                      string className,
-                                     @Optional("true") boolean useAutoload)
+                                     @Optional("true") bool useAutoload)
   {
     if (className == null)
       return false;
@@ -312,9 +312,9 @@ public class ClassesModule : AbstractQuercusModule {
   /**
    * Returns true if the class exists.
    */
-  public boolean interface_exists(Env env,
+  public bool interface_exists(Env env,
                                   string interfaceName,
-                                  @Optional("true") boolean useAutoload)
+                                  @Optional("true") bool useAutoload)
   {
     QuercusClass cl =  env.findClass(interfaceName, -1, useAutoload, true, true);
 
@@ -325,7 +325,7 @@ public class ClassesModule : AbstractQuercusModule {
   /**
    * Returns true if the object implements the given class.
    */
-  public static boolean is_a(Env env, @ReadOnly Value value, string name)
+  public static bool is_a(Env env, @ReadOnly Value value, string name)
   {
     return value.isA(env, name);
   }
@@ -333,7 +333,7 @@ public class ClassesModule : AbstractQuercusModule {
   /**
    * Returns true if the argument is an object.
    */
-  public static boolean is_object(@ReadOnly Value value)
+  public static bool is_object(@ReadOnly Value value)
   {
     return value.isObject();
   }
@@ -341,7 +341,7 @@ public class ClassesModule : AbstractQuercusModule {
   /**
    * Returns true if the object implements the given class.
    */
-  public static boolean is_subclass_of(Env env,
+  public static bool is_subclass_of(Env env,
                                        @ReadOnly Value value,
                                        string name)
   {
@@ -361,7 +361,7 @@ public class ClassesModule : AbstractQuercusModule {
    * @param obj the object to test
    * @param methodName the name of the method
    */
-  public static boolean method_exists(Env env,
+  public static bool method_exists(Env env,
                                       Value obj,
                                       StringValue methodName)
   {
@@ -402,7 +402,7 @@ public class ClassesModule : AbstractQuercusModule {
         return BooleanValue.FALSE;
     }
     else if (obj.isObject()) {
-      boolean result = obj.isFieldExists(env, name);
+      bool result = obj.isFieldExists(env, name);
 
       return BooleanValue.create(result);
     }

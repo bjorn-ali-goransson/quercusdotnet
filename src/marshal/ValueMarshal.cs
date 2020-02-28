@@ -40,14 +40,14 @@ public class ValueMarshal : Marshal
   public readonly Marshal MARSHAL = new ValueMarshal(false);
   public readonly Marshal MARSHAL_PASS_THRU = new ValueMarshal(true);
 
-  private boolean _isPassThru;
+  private bool _isPassThru;
 
   protected ValueMarshal(boolean isPassThru)
   {
     _isPassThru = isPassThru;
   }
 
-  public boolean isReadOnly()
+  public bool isReadOnly()
   {
     return false;
   }
@@ -56,7 +56,7 @@ public class ValueMarshal : Marshal
    * Return true if is a Value.
    */
   @Override
-  public boolean isValue()
+  public bool isValue()
   {
     return true;
   }

@@ -117,7 +117,7 @@ public class FileInput : ReadStreamInput
   /**
    * Lock the shared advisory lock.
    */
-  public override boolean lock(boolean shared, boolean block)
+  public override bool lock(boolean shared, bool block)
   {
     return _is.lock(shared, block);
   }
@@ -125,7 +125,7 @@ public class FileInput : ReadStreamInput
   /**
    * Unlock the advisory lock.
    */
-  public override boolean unlock()
+  public override bool unlock()
   {
     return _is.unlock();
   }

@@ -54,7 +54,7 @@ public class ClassScope : Scope
   /**
    * Returns true if scope is within a class.
    */
-  public boolean isClass()
+  public bool isClass()
   {
     return true;
   }
@@ -63,7 +63,7 @@ public class ClassScope : Scope
    * Returns true for an abstract scope, e.g. an abstract class or an
    * interface.
    */
-  public boolean isAbstract()
+  public bool isAbstract()
   {
     return _cl.isAbstract() || _cl.isInterface() || _cl.isTrait();
   }
@@ -74,7 +74,7 @@ public class ClassScope : Scope
   @Override
   public void addFunction(StringValue name,
                           Function function,
-                          boolean isTop)
+                          bool isTop)
   {
     _cl.addFunction(name, function);
   }
@@ -121,7 +121,7 @@ public class ClassScope : Scope
                                       string parentName,
                                       ArrayList<String> ifaceList,
                                       int index,
-                                      boolean isTop)
+                                      bool isTop)
   {
     throw new UnsupportedOperationException();
   }

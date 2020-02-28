@@ -100,8 +100,8 @@ public class Postgres : JdbcConnectionResource
                                         int flags,
                                         string driver,
                                         string url,
-                                        boolean isNewLink,
-                                        boolean isEmulatePrepares)
+                                        bool isNewLink,
+                                        bool isEmulatePrepares)
   {
     if (isConnected()) {
       env.warning(L.l("Connection is already opened to '{0}'", this));
@@ -269,7 +269,7 @@ public class Postgres : JdbcConnectionResource
    * This function is overriden in Postgres to keep
    * statement references for php/430a
    */
-  protected override boolean keepStatementOpen()
+  protected override bool keepStatementOpen()
   {
     return true;
   }
@@ -399,7 +399,7 @@ public class Postgres : JdbcConnectionResource
    * Return true to indicate success in all cases.
    */
 
-  public boolean setClientEncoding(String encoding)
+  public bool setClientEncoding(String encoding)
   {
     return true;
   }

@@ -105,7 +105,7 @@ public class PDFImage : PDFObject {
     return _height;
   }
 
-  private boolean parseImage()
+  private bool parseImage()
     
   {
     _image = ImageIO.read(_is);
@@ -142,7 +142,7 @@ public class PDFImage : PDFObject {
     
   }
 
-  private boolean parseImageJpeg(ReadStream is)
+  private bool parseImageJpeg(ReadStream is)
     
   {
     int ch = is.read();
@@ -173,7 +173,7 @@ public class PDFImage : PDFObject {
       return true;
   }
 
-  private boolean parseGIF()
+  private bool parseGIF()
     
   {
     int width = (_is.read() & 0xff) + 256 * (_is.read() & 0xff);
@@ -261,7 +261,7 @@ public class PDFImage : PDFObject {
     */
   }
 
-  private boolean parseJPEG()
+  private bool parseJPEG()
     
   {
     if (_is.read() != 0xff ||

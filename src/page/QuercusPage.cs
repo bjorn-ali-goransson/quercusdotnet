@@ -67,7 +67,7 @@ abstract public class QuercusPage
   /**
    * Returns true if the page is modified.
    */
-  public boolean isModified()
+  public bool isModified()
   {
     return false;
   }
@@ -263,7 +263,7 @@ abstract public class QuercusPage
   /**
    * Sets a runtime function array after an env.
    */
-  public boolean setRuntimeFunction(AbstractFunction []funList)
+  public bool setRuntimeFunction(AbstractFunction []funList)
   {
     return false;
   }

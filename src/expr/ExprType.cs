@@ -39,12 +39,12 @@ public enum ExprType
   },
     
   LONG {
-    public override boolean isLong()
+    public override bool isLong()
     {
       return true;
     }
     
-    public override boolean isDouble()
+    public override bool isDouble()
     {
       return true;
     }
@@ -76,7 +76,7 @@ public enum ExprType
   },
     
   DOUBLE {
-    public override boolean isDouble()
+    public override bool isDouble()
     {
       return true;
     }
@@ -105,8 +105,8 @@ public enum ExprType
     }
   },
   
-  BOOLEAN {
-    public override boolean isBoolean()
+  bool {
+    public override bool isBoolean()
     {
       return true;
     }
@@ -131,7 +131,7 @@ public enum ExprType
   },
     
   string {
-    public override boolean isString()
+    public override bool isString()
     {
       return true;
     }
@@ -157,22 +157,22 @@ public enum ExprType
   
   VALUE;
 
-  public boolean isBoolean()
+  public bool isBoolean()
   {
     return false;
   }
 
-  public boolean isLong()
+  public bool isLong()
   {
     return false;
   }
 
-  public boolean isDouble()
+  public bool isDouble()
   {
     return false;
   }
   
-  public boolean isString()
+  public bool isString()
   {
     return false;
   }

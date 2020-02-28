@@ -158,7 +158,7 @@ public class CallbackClassMethod : Callback {
     out.print(']');
   }
 
-  public override boolean isValid(Env env)
+  public override bool isValid(Env env)
   {
     return true;
   }
@@ -188,7 +188,7 @@ public class CallbackClassMethod : Callback {
     return getMethod().getDeclComment(env);
   }
 
-  public override boolean isReturnsReference(Env env)
+  public override bool isReturnsReference(Env env)
   {
     return getMethod().isReturnsReference(env);
   }
@@ -203,7 +203,7 @@ public class CallbackClassMethod : Callback {
     return _qClass.getFunction(_methodName);
   }
 
-  public override boolean isInternal(Env env)
+  public override bool isInternal(Env env)
   {
     // return _fun instanceof JavaInvoker;
     return false;

@@ -60,7 +60,7 @@ public class ArgGetValue : ArgValue
    * foo($a[0][1])
    */
   @Override
-  public Value getArg(Value index, boolean isTop)
+  public Value getArg(Value index, bool isTop)
   {
     return new ArgGetValue(this, index); // php/3d1p
   }
@@ -69,7 +69,7 @@ public class ArgGetValue : ArgValue
    * Returns the arg object for a field reference, e.g.
    * foo($a[0]->x)
    */
-  public override Value getFieldArg(Env env, StringValue index, boolean isTop)
+  public override Value getFieldArg(Env env, StringValue index, bool isTop)
   {
     return new ArgGetFieldValue(env, this, index); // php/3d2p
   }

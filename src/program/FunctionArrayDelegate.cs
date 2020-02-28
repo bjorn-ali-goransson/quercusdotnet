@@ -118,12 +118,12 @@ public class FunctionArrayDelegate implements ArrayDelegate {
   /**
    * Returns true if the value is set
    */
-  public override boolean isset(Env env, ObjectValue qThis, Value key)
+  public override bool isset(Env env, ObjectValue qThis, Value key)
   {
     return get(env, qThis, key).isset();
   }
 
-  public override boolean isEmpty(Env env, ObjectValue qThis, Value key)
+  public override bool isEmpty(Env env, ObjectValue qThis, Value key)
   {
     return get(env, qThis, key).isEmpty();
   }

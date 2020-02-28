@@ -41,9 +41,9 @@ namespace QuercusDotNet.Expr{
 public class ImportExpr : Expr
 {
   protected final string _name;
-  protected final boolean _isWildcard;
+  protected final bool _isWildcard;
   
-  public ImportExpr(Location location, string name, boolean isWildcard)
+  public ImportExpr(Location location, string name, bool isWildcard)
   {
     super(location);
 

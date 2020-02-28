@@ -105,7 +105,7 @@ public class JdbcStatementResource
    * XXX: MySQL returns the table metadata on preparation of a statement,
    * but java.sql doesn't support this feature.
    */
-  public boolean bindResults(Env env, Value[] outParams)
+  public bool bindResults(Env env, Value[] outParams)
   {
     int size = outParams.length;
     int numColumns = getColumnCount(env);
@@ -155,7 +155,7 @@ public class JdbcStatementResource
   /**
    * Closes the result set, if any, and closes this statement.
    */
-  protected boolean close()
+  protected bool close()
   {
     try {
       JdbcResultResource rs = _rs;
@@ -184,7 +184,7 @@ public class JdbcStatementResource
    * @param offset the number of rows to move the cursor
    * @return true on success or false on failure
    */
-  protected boolean dataSeek(int offset)
+  protected bool dataSeek(int offset)
   {
     return _rs.setRowNumber(offset);
   }
@@ -214,7 +214,7 @@ public class JdbcStatementResource
     return _errorMessage;
   }
 
-  protected boolean execute(Env env) {
+  protected bool execute(Env env) {
     try {
       return execute(env, true);
     }
@@ -223,7 +223,7 @@ public class JdbcStatementResource
     }
   }
 
-  protected final boolean execute(Env env, boolean isCatchException)
+  protected final bool execute(Env env, bool isCatchException)
     
   {
     if (_stmt == null) {
@@ -264,13 +264,13 @@ public class JdbcStatementResource
     _errorCode = e.getErrorCode();
   }
 
-  protected boolean prepareForExecute(Env env)
+  protected bool prepareForExecute(Env env)
     
   {
     return true;
   }
 
-  protected boolean executeImpl(Env env)
+  protected bool executeImpl(Env env)
     
   {
     if (getStatementType() == StatementType.INSERT) {
@@ -307,7 +307,7 @@ public class JdbcStatementResource
    *
    * @return true on success or false on failure
    */
-  public boolean freeResult()
+  public bool freeResult()
   {
     JdbcResultResource rs = _rs;
     _rs = null;
@@ -427,7 +427,7 @@ public class JdbcStatementResource
     _errorCode = code;
   }
 
-  protected boolean isFetchFieldIndexBeforeFieldName()
+  protected bool isFetchFieldIndexBeforeFieldName()
   {
     return true;
   }

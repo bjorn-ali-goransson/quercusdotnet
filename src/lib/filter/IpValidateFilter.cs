@@ -52,16 +52,16 @@ public class IpValidateFilter : AbstractFilter implements ValidateFilter
       return BooleanValue.FALSE;
     }
 
-    boolean isIpV4 = (flags & FilterModule.FILTER_FLAG_IPV4) > 0;
-    boolean isIpV6 = (flags & FilterModule.FILTER_FLAG_IPV6) > 0;
+    bool isIpV4 = (flags & FilterModule.FILTER_FLAG_IPV4) > 0;
+    bool isIpV6 = (flags & FilterModule.FILTER_FLAG_IPV6) > 0;
 
     if (! isIpV4 && ! isIpV6) {
       isIpV4 = true;
       isIpV6 = true;
     }
 
-    boolean isRejectReserved = (flags & FilterModule.FILTER_FLAG_NO_RES_RANGE) > 0;
-    boolean isRejectPrivate = (flags & FilterModule.FILTER_FLAG_NO_PRIV_RANGE) > 0;
+    bool isRejectReserved = (flags & FilterModule.FILTER_FLAG_NO_RES_RANGE) > 0;
+    bool isRejectPrivate = (flags & FilterModule.FILTER_FLAG_NO_PRIV_RANGE) > 0;
 
     StringValue str = value.toStringValue(env);
 
@@ -94,9 +94,9 @@ public class IpValidateFilter : AbstractFilter implements ValidateFilter
     return BooleanValue.FALSE;
   }
 
-  private boolean isValidIp4(StringValue str,
-                             boolean isRejectReserved,
-                             boolean isRejectPrivate)
+  private bool isValidIp4(StringValue str,
+                             bool isRejectReserved,
+                             bool isRejectPrivate)
   {
     InputStream is = str.toInputStream();
 
@@ -154,7 +154,7 @@ public class IpValidateFilter : AbstractFilter implements ValidateFilter
     return true;
   }
 
-  private int parseIp4Part(InputStream is, boolean isLast)
+  private int parseIp4Part(InputStream is, bool isLast)
   {
     try {
       int value;
@@ -206,9 +206,9 @@ public class IpValidateFilter : AbstractFilter implements ValidateFilter
     }
   }
 
-  private static boolean isValidIp6(StringValue str,
-                                    boolean isRejectReserved,
-                                    boolean isRejectPrivate)
+  private static bool isValidIp6(StringValue str,
+                                    bool isRejectReserved,
+                                    bool isRejectPrivate)
   {
     // contributed by SSN
     // XXX: reserved, private

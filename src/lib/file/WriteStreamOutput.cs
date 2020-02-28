@@ -133,7 +133,7 @@ public class WriteStreamOutput : OutputStream implements BinaryOutput {
     return 0;
   }
 
-  public override boolean isEOF()
+  public override bool isEOF()
   {
     return false;
   }
@@ -143,7 +143,7 @@ public class WriteStreamOutput : OutputStream implements BinaryOutput {
     return 0;
   }
 
-  public override boolean setPosition(long offset)
+  public override bool setPosition(long offset)
   {
     return false;
   }

@@ -52,7 +52,7 @@ public class GZIPInputStream : java.util.zip.GZIPInputStream
    *
    * @return true if no more compressed data to read, false otherwise
    */
-  public boolean isEOS()
+  public bool isEOS()
   {
     return this.eos;
   }

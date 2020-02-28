@@ -68,7 +68,7 @@ public class WrappedDirectory : Directory {
     _wrapper = qClass.callNew(env, Value.NULL_ARGS);
   }
 
-  public boolean open(Env env, StringValue path, LongValue flags)
+  public bool open(Env env, StringValue path, LongValue flags)
   {
     if (env.isUnicodeSemantics())
       return _wrapper.callMethod(env, DIR_OPENDIR_U, path, flags).toBoolean();

@@ -67,7 +67,7 @@ public class MysqliStatement : JdbcPreparedStatementResource {
   }
 
   @Override
-  public boolean execute(Env env) {
+  public bool execute(Env env) {
     return super.execute(env);
   }
 
@@ -104,7 +104,7 @@ public class MysqliStatement : JdbcPreparedStatementResource {
    * @param params array of values (probably Vars)
    * @return true on success or false on failure
    */
-  public boolean bind_param(Env env,
+  public bool bind_param(Env env,
                             StringValue typeStr,
                             @Reference Value[] params)
   {
@@ -143,7 +143,7 @@ public class MysqliStatement : JdbcPreparedStatementResource {
    * @param outParams the output variables
    * @return true on success or false on failure
    */
-  public boolean bind_result(Env env,
+  public bool bind_result(Env env,
                              @Reference Value[] outParams)
   {
     return bindResults(env, outParams);
@@ -155,7 +155,7 @@ public class MysqliStatement : JdbcPreparedStatementResource {
    * @param env the PHP executing environment
    * @return true on success or false on failure
    */
-  public override boolean close()
+  public override bool close()
   {
     return super.close();
   }
@@ -303,7 +303,7 @@ public class MysqliStatement : JdbcPreparedStatementResource {
    * @param query SQL query
    * @return true on success or false on failure
    */
-  public override boolean prepare(Env env, string query)
+  public override bool prepare(Env env, string query)
   {
     return super.prepare(env, query);
   }
@@ -314,7 +314,7 @@ public class MysqliStatement : JdbcPreparedStatementResource {
    * @param env the PHP executing environment
    * @return true on success or false on failure
    */
-  public boolean reset(Env env)
+  public bool reset(Env env)
   {
     return true;
   }
@@ -384,7 +384,7 @@ public class MysqliStatement : JdbcPreparedStatementResource {
    * @param data the data to be sent
    * @return true on success or false on failure
    */
-  public boolean send_long_data(Env env,
+  public bool send_long_data(Env env,
                                 int paramNumber,
                                 string data)
   {
@@ -420,7 +420,7 @@ public class MysqliStatement : JdbcPreparedStatementResource {
    * @param env the PHP executing environment
    * @return true on success or false on failure
    */
-  public boolean store_result(Env env)
+  public bool store_result(Env env)
   {
     return true;
   }

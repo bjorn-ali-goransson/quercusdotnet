@@ -80,7 +80,7 @@ public class BinaryAssignListEachExpr : Expr {
    *
    * @return the expression value.
    */
-  public override boolean evalBoolean(Env env)
+  public override bool evalBoolean(Env env)
   {
     if (! _value.isVar()) {
       env.error(L.l("each() argument must be a variable at '{0}'", _value));

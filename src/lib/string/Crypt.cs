@@ -268,7 +268,7 @@ public class Crypt {
       return (char) (v + 0x61 - 0x26);
   }
 
-  private const boolean []KEY_SHIFTS = new boolean[] {
+  private const bool []KEY_SHIFTS = new boolean[] {
     false, false, true, true, true, true, true, true,
     false, true,  true, true, true, true, true, false
   };

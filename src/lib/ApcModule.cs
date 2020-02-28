@@ -83,7 +83,7 @@ public class ApcModule : AbstractQuercusModule
    */
   public Value apc_cache_info(Env env,
                               @Optional string type,
-                              @Optional boolean limited)
+                              @Optional bool limited)
   {
     ArrayValue value = new ArrayValueImpl();
 
@@ -144,7 +144,7 @@ public class ApcModule : AbstractQuercusModule
   /**
    * Clears the cache
    */
-  public boolean apc_clear_cache(Env env, @Optional string type)
+  public bool apc_clear_cache(Env env, @Optional string type)
   {
     if (_cache != null)
       _cache.clear();
@@ -155,7 +155,7 @@ public class ApcModule : AbstractQuercusModule
   /**
    * Preloads the specified file.
    */
-  public boolean apc_compile_file(Env env, StringValue name)
+  public bool apc_compile_file(Env env, StringValue name)
   {
     try {
       Path path = env.lookup(name);
@@ -175,10 +175,10 @@ public class ApcModule : AbstractQuercusModule
   /**
    * Defines constants
    */
-  public boolean apc_define_constants(Env env,
+  public bool apc_define_constants(Env env,
                                       string key,
                                       ArrayValue values,
-                                      @Optional("true") boolean caseSensitive)
+                                      @Optional("true") bool caseSensitive)
   {
     _constMap.put(key, values.copy(env));
 
@@ -188,7 +188,7 @@ public class ApcModule : AbstractQuercusModule
   /**
    * Deletes a value.
    */
-  public boolean apc_delete(Env env, string key)
+  public bool apc_delete(Env env, string key)
   {
     if (_cache == null)
       return false;
@@ -271,9 +271,9 @@ public class ApcModule : AbstractQuercusModule
   /**
    * Defines constants
    */
-  public boolean apc_load_constants(Env env,
+  public bool apc_load_constants(Env env,
                                     string key,
-                                    @Optional("true") boolean caseSensitive)
+                                    @Optional("true") bool caseSensitive)
   {
     ArrayValue array = (ArrayValue) _constMap.get(key);
 
@@ -382,7 +382,7 @@ public class ApcModule : AbstractQuercusModule
       return _hitCount;
     }
 
-    public boolean isValid(Env env)
+    public bool isValid(Env env)
     {
       if (env.getCurrentTime() <= _expire)
         return true;

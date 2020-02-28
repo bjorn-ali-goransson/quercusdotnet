@@ -40,7 +40,7 @@ public class DoubleValueMarshal
 {
   public readonly Marshal MARSHAL = new DoubleValueMarshal();
 
-  public boolean isReadOnly()
+  public bool isReadOnly()
   {
     return true;
   }
@@ -49,7 +49,7 @@ public class DoubleValueMarshal
    * Return true if is a Value.
    */
   @Override
-  public boolean isValue()
+  public bool isValue()
   {
     return true;
   }

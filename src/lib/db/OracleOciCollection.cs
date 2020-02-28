@@ -97,7 +97,7 @@ public class OracleOciCollection {
    *
    * @param value can be a string or a number
    */
-  public boolean append(Env env,
+  public bool append(Env env,
                         Value value)
   {
     try {
@@ -115,7 +115,7 @@ public class OracleOciCollection {
   /**
    * Assigns a value to the collection from another existing collection
    */
-  public boolean assign(Env env,
+  public bool assign(Env env,
                         OracleOciCollection fromCollection)
   {
     try {
@@ -136,7 +136,7 @@ public class OracleOciCollection {
    * @param index 1-based index
    * @param value can be a string or a number
    */
-  public boolean assignElem(Env env,
+  public bool assignElem(Env env,
                             int index,
                             Value value)
   {
@@ -159,7 +159,7 @@ public class OracleOciCollection {
   /**
    * Frees the resources associated with the collection object
    */
-  public boolean free(Env env)
+  public bool free(Env env)
   {
     try {
 
@@ -277,7 +277,7 @@ public class OracleOciCollection {
   /**
    * Trims num elements from the end of the collection
    */
-  public boolean trim(Env env,
+  public bool trim(Env env,
                       int num)
   {
     try {

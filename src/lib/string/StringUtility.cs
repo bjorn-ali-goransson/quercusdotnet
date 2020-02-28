@@ -51,9 +51,9 @@ public class StringUtility
   public static Value parseStr(Env env,
                                CharSequence str,
                                ArrayValue result,
-                               boolean isRef,
+                               bool isRef,
                                string encoding,
-                               boolean isReplaceSpacesWithUnderscores)
+                               bool isReplaceSpacesWithUnderscores)
   {
     return parseStr(env, str, result, isRef, encoding,
                     env.getIniBoolean("magic_quotes_gpc"),
@@ -64,10 +64,10 @@ public class StringUtility
   public static Value parseStr(Env env,
                                CharSequence str,
                                ArrayValue result,
-                               boolean isRef,
+                               bool isRef,
                                string encoding,
-                               boolean isMagicQuotes,
-                               boolean isReplaceSpacesWithUnderscores,
+                               bool isMagicQuotes,
+                               bool isReplaceSpacesWithUnderscores,
                                int []querySeparatorMap)
   {
     try {
@@ -178,7 +178,7 @@ public class StringUtility
     }
   }
 
-  private static boolean isSeparator(int []sep, int ch)
+  private static bool isSeparator(int []sep, int ch)
   {
     return (ch < sep.length && sep[ch] > 0);
   }

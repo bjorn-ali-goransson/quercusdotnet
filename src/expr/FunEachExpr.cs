@@ -46,7 +46,7 @@ namespace QuercusDotNet.Expr{
 public class FunEachExpr : AbstractUnaryExpr {
   private final L10N L = new L10N(FunEachExpr.class);
   
-  private boolean _isVar;
+  private bool _isVar;
   
   public FunEachExpr(Location location, Expr expr)
     

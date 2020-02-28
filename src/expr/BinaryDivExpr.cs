@@ -51,7 +51,7 @@ public class BinaryDivExpr : AbstractBinaryExpr {
   /**
    * Returns true for a double.
    */
-  public boolean isDouble()
+  public bool isDouble()
   {
     return true;
   }

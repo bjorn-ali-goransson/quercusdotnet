@@ -57,7 +57,7 @@ public class LiteralLongExpr : Expr {
   /**
    * Returns true for a literal expression.
    */
-  public boolean isLiteral()
+  public bool isLiteral()
   {
     return true;
   }
@@ -65,7 +65,7 @@ public class LiteralLongExpr : Expr {
   /**
    * Returns true for a long value.
    */
-  public boolean isLong()
+  public bool isLong()
   {
     return true;
   }

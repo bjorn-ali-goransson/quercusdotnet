@@ -281,7 +281,7 @@ public class OracleModule : AbstractQuercusModule {
    *
    * @return true on success of false on failure
    */
-  public static boolean oci_bind_array_by_name(Env env,
+  public static bool oci_bind_array_by_name(Env env,
                                                @NotNull OracleStatement stmt,
                                                @NotNull string name,
                                                @NotNull ArrayValue varArray,
@@ -472,7 +472,7 @@ public class OracleModule : AbstractQuercusModule {
    *    Used with oci_bind_by_name() to bind RAW values.
    *
    */
-  public static boolean oci_bind_by_name(Env env,
+  public static bool oci_bind_by_name(Env env,
                                          @NotNull OracleStatement stmt,
                                          @NotNull string placeholderName,
                                          Value variable,
@@ -613,7 +613,7 @@ public class OracleModule : AbstractQuercusModule {
   /**
    * Cancels reading from cursor
    */
-  public static boolean oci_cancel(Env env,
+  public static bool oci_cancel(Env env,
                                    @NotNull OracleStatement stmt)
   {
     return oci_free_statement(env, stmt);
@@ -622,7 +622,7 @@ public class OracleModule : AbstractQuercusModule {
   /**
    * Closes Oracle connection
    */
-  public static boolean oci_close(Env env,
+  public static bool oci_close(Env env,
                                   @NotNull Oracle conn)
   {
     if (conn == null) {
@@ -646,7 +646,7 @@ public class OracleModule : AbstractQuercusModule {
   /**
    * Commits outstanding statements
    */
-  public static boolean oci_commit(Env env,
+  public static bool oci_commit(Env env,
                                    @NotNull Oracle conn)
   {
     try {
@@ -692,7 +692,7 @@ public class OracleModule : AbstractQuercusModule {
   /**
    * Uses a PHP variable for the define-step during a SELECT
    */
-  public static boolean oci_define_by_name(Env env,
+  public static bool oci_define_by_name(Env env,
                                            @NotNull OracleStatement stmt,
                                            @NotNull string columnName,
                                            @NotNull @Reference Value variable,
@@ -765,7 +765,7 @@ public class OracleModule : AbstractQuercusModule {
   /**
    * Executes a statement
    */
-  public static boolean oci_execute(Env env,
+  public static bool oci_execute(Env env,
                                     @NotNull OracleStatement stmt,
                                     @Optional("0") int mode)
   {
@@ -891,7 +891,7 @@ public class OracleModule : AbstractQuercusModule {
   /**
    * Fetches the next row into result-buffer
    */
-  public static boolean oci_fetch(Env env,
+  public static bool oci_fetch(Env env,
                                   @NotNull OracleStatement stmt)
   {
     try {
@@ -947,7 +947,7 @@ public class OracleModule : AbstractQuercusModule {
    * @param fieldNameOrNumber field's index (1-based) or it's name
    * @return TRUE if the field is null or FALSE otherwise.
    */
-  public static boolean oci_field_is_null(Env env,
+  public static bool oci_field_is_null(Env env,
                                           @NotNull OracleStatement stmt,
                                           @NotNull Value fieldNameOrNumber)
   {
@@ -1166,7 +1166,7 @@ public class OracleModule : AbstractQuercusModule {
   /**
    *  Frees all resources associated with statement or cursor
    */
-  public static boolean oci_free_statement(Env env,
+  public static bool oci_free_statement(Env env,
                                            @NotNull OracleStatement stmt)
   {
     return stmt.close();
@@ -1184,7 +1184,7 @@ public class OracleModule : AbstractQuercusModule {
   /**
    * Copies large object
    */
-  public static boolean oci_lob_copy(Env env,
+  public static bool oci_lob_copy(Env env,
                                      @NotNull OracleOciLob lobTo,
                                      @NotNull OracleOciLob lobFrom,
                                      @Optional("-1") int length)
@@ -1201,7 +1201,7 @@ public class OracleModule : AbstractQuercusModule {
   /**
    * Compares two LOB/FILE locators for equality
    */
-  public static boolean oci_lob_is_equal(Env env,
+  public static bool oci_lob_is_equal(Env env,
                                          @NotNull OracleOciLob lob1,
                                          @NotNull OracleOciLob lob2)
   {
@@ -1449,7 +1449,7 @@ public class OracleModule : AbstractQuercusModule {
   /**
    * Changes password of Oracle's user
    */
-  public static boolean oci_password_change(Env env,
+  public static bool oci_password_change(Env env,
                                             @NotNull Oracle conn,
                                             @NotNull string username,
                                             @NotNull string oldPassword,
@@ -1559,7 +1559,7 @@ public class OracleModule : AbstractQuercusModule {
   /**
    * Sets number of rows to be prefetched
    */
-  public static boolean oci_set_prefetch(Env env,
+  public static bool oci_set_prefetch(Env env,
                                          @NotNull OracleStatement stmt,
                                          @Optional("1") int rows)
   {
@@ -1599,7 +1599,7 @@ public class OracleModule : AbstractQuercusModule {
   /**
    * Alias of oci_bind_by_name()
    */
-  public static boolean ocibindbyname(Env env,
+  public static bool ocibindbyname(Env env,
                                       @NotNull OracleStatement stmt,
                                       @NotNull string variable,
                                       @NotNull Value value,
@@ -1612,7 +1612,7 @@ public class OracleModule : AbstractQuercusModule {
   /**
    * Alias of oci_cancel()
    */
-  public static boolean ocicancel(Env env,
+  public static bool ocicancel(Env env,
                                   @NotNull OracleStatement stmt)
   {
     return oci_cancel(env, stmt);
@@ -1693,7 +1693,7 @@ public class OracleModule : AbstractQuercusModule {
   /**
    * Alias of oci_field_is_null()
    */
-  public static boolean ocicolumnisnull(Env env,
+  public static bool ocicolumnisnull(Env env,
                                         @NotNull OracleStatement stmt,
                                         @NotNull Value field)
   {
@@ -1763,7 +1763,7 @@ public class OracleModule : AbstractQuercusModule {
   /**
    * Alias of oci_commit()
    */
-  public static boolean ocicommit(Env env,
+  public static bool ocicommit(Env env,
                                   @NotNull Oracle conn)
   {
     return oci_commit(env, conn);
@@ -1772,7 +1772,7 @@ public class OracleModule : AbstractQuercusModule {
   /**
    * Alias of oci_define_by_name()
    */
-  public static boolean ocidefinebyname(Env env,
+  public static bool ocidefinebyname(Env env,
                                         @NotNull OracleStatement stmt,
                                         @NotNull string columnName,
                                         @NotNull Value variable,
@@ -1794,7 +1794,7 @@ public class OracleModule : AbstractQuercusModule {
   /**
    * Alias of oci_execute()
    */
-  public static boolean ociexecute(Env env,
+  public static bool ociexecute(Env env,
                                    @NotNull OracleStatement stmt,
                                    @Optional("0") int mode)
   {
@@ -1804,7 +1804,7 @@ public class OracleModule : AbstractQuercusModule {
   /**
    * Alias of oci_fetch()
    */
-  public static boolean ocifetch(Env env,
+  public static bool ocifetch(Env env,
                                  @NotNull OracleStatement stmt)
   {
     return oci_fetch(env, stmt);
@@ -1857,7 +1857,7 @@ public class OracleModule : AbstractQuercusModule {
   /**
    * Alias of oci_free_statement()
    */
-  public static boolean ocifreecursor(Env env,
+  public static bool ocifreecursor(Env env,
                                       @NotNull OracleStatement stmt)
   {
     return oci_free_statement(env, stmt);
@@ -1875,7 +1875,7 @@ public class OracleModule : AbstractQuercusModule {
   /**
    * Alias of oci_free_statement()
    */
-  public static boolean ocifreestatement(Env env,
+  public static bool ocifreestatement(Env env,
                                          @NotNull OracleStatement stmt)
   {
     return oci_free_statement(env, stmt);
@@ -1902,7 +1902,7 @@ public class OracleModule : AbstractQuercusModule {
   /**
    * Alias of oci_close()
    */
-  public static boolean ocilogoff(Env env,
+  public static bool ocilogoff(Env env,
                                   @NotNull Oracle conn)
   {
     return oci_close(env, conn);
@@ -2057,7 +2057,7 @@ public class OracleModule : AbstractQuercusModule {
   /**
    * Alias of oci_set_prefetch()
    */
-  public static boolean ocisetprefetch(Env env,
+  public static bool ocisetprefetch(Env env,
                                        @NotNull OracleStatement stmt,
                                        @Optional("1") int rows)
   {
@@ -2115,7 +2115,7 @@ public class OracleModule : AbstractQuercusModule {
   }
 
   private static Value connectInternal(Env env,
-                                       boolean reuseConnection,
+                                       bool reuseConnection,
                                        string username,
                                        string password,
                                        string db,

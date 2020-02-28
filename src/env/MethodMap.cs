@@ -106,7 +106,7 @@ public class MethodMap<V>
     return entry;
   }
 
-  public boolean containsKey(StringValue key)
+  public bool containsKey(StringValue key)
   {
     int hash = key.hashCodeCaseInsensitive();
 
@@ -134,7 +134,7 @@ public class MethodMap<V>
     return get(key, hash, true);
   }
 
-  public final V get(final StringValue key, int hash, boolean isStatic)
+  public final V get(final StringValue key, int hash, bool isStatic)
   {
     final int bucket = (hash & 0x7fffffff) % _prime;
 
@@ -213,7 +213,7 @@ public class MethodMap<V>
     return new ValueIterator(_head);
   }
 
-  private boolean match(char []a, char []b, int length)
+  private bool match(char []a, char []b, int length)
   {
     if (a.length != length)
       return false;
@@ -333,7 +333,7 @@ public class MethodMap<V>
       _next = current.getAbsoluteNext();
     }
 
-    public boolean hasNext()
+    public bool hasNext()
     {
       return _next != null;
     }

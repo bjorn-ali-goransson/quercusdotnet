@@ -59,12 +59,12 @@ public class FileInputOutput : AbstractBinaryOutput
 
   private RandomAccessStream _stream;
   private int _buffer;
-  private boolean _doUnread = false;
+  private bool _doUnread = false;
 
   private Reader _readEncoding;
   private string _readEncodingName;
 
-  private boolean _temporary;
+  private bool _temporary;
 
   public FileInputOutput(Env env, Path path)
     
@@ -72,14 +72,14 @@ public class FileInputOutput : AbstractBinaryOutput
     this(env, path, false, false, false);
   }
 
-  public FileInputOutput(Env env, Path path, boolean append, boolean truncate)
+  public FileInputOutput(Env env, Path path, bool append, bool truncate)
     
   {
     this(env, path, append, truncate, false);
   }
 
   public FileInputOutput(Env env, Path path,
-                          boolean append, boolean truncate, boolean temporary)
+                          bool append, bool truncate, bool temporary)
     
   {
     _env = env;
@@ -270,7 +270,7 @@ public class FileInputOutput : AbstractBinaryOutput
   /**
    * Reads the optional linefeed character from a \r\n
    */
-  public boolean readOptionalLinefeed()
+  public bool readOptionalLinefeed()
     
   {
     int ch = read();
@@ -297,7 +297,7 @@ public class FileInputOutput : AbstractBinaryOutput
   /**
    * Returns true on the EOF.
    */
-  public boolean isEOF()
+  public bool isEOF()
   {
     try {
       return _stream.getLength() <= _stream.getFilePointer();
@@ -414,7 +414,7 @@ public class FileInputOutput : AbstractBinaryOutput
   /**
    * Sets the current location in the stream
    */
-  public boolean setPosition(long offset)
+  public bool setPosition(long offset)
   {
     return _stream.seek(offset);
   }
@@ -460,7 +460,7 @@ public class FileInputOutput : AbstractBinaryOutput
   /**
    * Lock the shared advisory lock.
    */
-  public boolean lock(boolean shared, boolean block)
+  public bool lock(boolean shared, bool block)
   {
     return _stream.lock(shared, block);
   }
@@ -468,7 +468,7 @@ public class FileInputOutput : AbstractBinaryOutput
   /**
    * Unlock the advisory lock.
    */
-  public boolean unlock()
+  public bool unlock()
   {
     return _stream.unlock();
   }

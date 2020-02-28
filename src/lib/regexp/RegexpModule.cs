@@ -81,7 +81,7 @@ public class RegexpModule
   // #2526, possible JIT/OS problem with max comparison
   private const long LONG_MAX = Long.MAX_VALUE - 1;
 
-  public const boolean [] PREG_QUOTE = new boolean[256];
+  public const bool [] PREG_QUOTE = new boolean[256];
 
   private static LruCache<StringValue, RegexpCacheItem> _regexpCache
     = new LruCache<StringValue, RegexpCacheItem>(1024);
@@ -519,7 +519,7 @@ public class RegexpModule
       return LongValue.ZERO;
     }
 
-    boolean isOffsetCapture = (flags & PREG_OFFSET_CAPTURE) != 0;
+    bool isOffsetCapture = (flags & PREG_OFFSET_CAPTURE) != 0;
 
     if (regs != null) {
       if (isOffsetCapture) {
@@ -838,7 +838,7 @@ public class RegexpModule
   {
     StringValue sb = string.createStringBuilder();
 
-    boolean []extra = null;
+    bool []extra = null;
 
     if (delim != null && delim.length() > 0) {
       extra = new boolean[256];
@@ -1186,7 +1186,7 @@ public class RegexpModule
       return null;
 
     // check for e modifier in patternString
-    boolean isEval = regexp.isEval();
+    bool isEval = regexp.isEval();
 
     ArrayList<Replacement> replacementProgram
       = _replacementCache.get(replacement);
@@ -1271,7 +1271,7 @@ public class RegexpModule
                                       Ereg regexp,
                                       Value replacement,
                                       StringValue subject,
-                                      boolean isCaseInsensitive)
+                                      bool isCaseInsensitive)
   {
     StringValue replacementStr;
 
@@ -1328,7 +1328,7 @@ public class RegexpModule
                             StringValue subject,
                             long limit,
                             Value countV,
-                            boolean isEval)
+                            bool isEval)
   {
     if (limit < 0)
       limit = LONG_MAX;
@@ -1336,7 +1336,7 @@ public class RegexpModule
     StringValue result = subject.createStringBuilder();
 
     int tail = 0;
-    boolean isMatched = false;
+    bool isMatched = false;
 
     int replacementLen = replacementProgram.size();
 
@@ -1616,9 +1616,9 @@ public class RegexpModule
     int head = 0;
     long count = 0;
 
-    boolean allowEmpty = (flags & PREG_SPLIT_NO_EMPTY) == 0;
-    boolean isCaptureOffset = (flags & PREG_SPLIT_OFFSET_CAPTURE) != 0;
-    boolean isCaptureDelim = (flags & PREG_SPLIT_DELIM_CAPTURE) != 0;
+    bool allowEmpty = (flags & PREG_SPLIT_NO_EMPTY) == 0;
+    bool isCaptureOffset = (flags & PREG_SPLIT_OFFSET_CAPTURE) != 0;
+    bool isCaptureDelim = (flags & PREG_SPLIT_DELIM_CAPTURE) != 0;
 
     GroupNeighborMap neighborMap
       = new GroupNeighborMap(regexp.getPattern(), regexpState.groupCount());
@@ -1879,7 +1879,7 @@ public class RegexpModule
       Value entryValue = entry.getRawValue();
       Value entryKey = entry.getKey();
 
-      boolean found = regexpState.find(env, entryValue.toStringValue());
+      bool found = regexpState.find(env, entryValue.toStringValue());
 
       if (! found && flag == PREG_GREP_INVERT)
         matchArray.append(entryKey, entryValue);
@@ -1907,7 +1907,7 @@ public class RegexpModule
   }
 
   private static ArrayList<Replacement>
-    compileReplacement(Env env, StringValue replacement, boolean isEval)
+    compileReplacement(Env env, StringValue replacement, bool isEval)
   {
     ArrayList<Replacement> program = new ArrayList<Replacement>();
     StringBuilder text = new StringBuilder();
@@ -1996,7 +1996,7 @@ public class RegexpModule
    * Ereg has a different syntax so need to handle it differently from preg.
    */
   private static StringValue cleanEregRegexp(StringValue regexp,
-                                             boolean isComments)
+                                             bool isComments)
   {
     int len = regexp.length();
 
@@ -2353,9 +2353,9 @@ public class RegexpModule
         _neighborMap[i] = UNSET;
       }
 
-      boolean sawEscape = false;
-      boolean sawVerticalBar = false;
-      boolean isLiteral = false;
+      bool sawEscape = false;
+      bool sawVerticalBar = false;
+      bool isLiteral = false;
 
       int group = 0;
       int parent = UNSET;
@@ -2414,7 +2414,7 @@ public class RegexpModule
       }
     }
 
-    public boolean hasNeighbor(int group)
+    public bool hasNeighbor(int group)
     {
       return _neighborMap[group] != UNSET;
     }
@@ -2436,7 +2436,7 @@ public class RegexpModule
       _encoding = encoding;
     }
 
-    public boolean equals(Object o)
+    public bool equals(Object o)
     {
       if (! (o instanceof UnicodeEregKey))
         return false;

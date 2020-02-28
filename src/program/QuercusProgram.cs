@@ -68,7 +68,7 @@ public class QuercusProgram {
   private final AtomicBoolean _isCompiling
     = new AtomicBoolean();
 
-  private boolean _isCompilable = true;
+  private bool _isCompilable = true;
 
   private Throwable _compileException;
 
@@ -189,7 +189,7 @@ public class QuercusProgram {
   /**
    * Start compiling
    */
-  public boolean startCompiling()
+  public bool startCompiling()
   {
     return _isCompiling.compareAndSet(false, true);
   }
@@ -225,7 +225,7 @@ public class QuercusProgram {
   /**
    * Returns true if this page is being compiled.
    */
-  public boolean isCompiling()
+  public bool isCompiling()
   {
     return _isCompiling.get();
   }
@@ -241,7 +241,7 @@ public class QuercusProgram {
   /**
    * Returns true if the page can be compiled or it is unknown.
    */
-  public boolean isCompilable()
+  public bool isCompilable()
   {
     return _isCompilable;
   }
@@ -293,7 +293,7 @@ public class QuercusProgram {
   /**
    * Returns true if the function is modified.
    */
-  public boolean isModified()
+  public bool isModified()
   {
     return _topDepend.isModified();
   }
@@ -433,7 +433,7 @@ public class QuercusProgram {
   /**
    * Sets a runtime function array after an env.
    */
-  public boolean setRuntimeFunction(AbstractFunction []funList)
+  public bool setRuntimeFunction(AbstractFunction []funList)
   {
     synchronized (this) {
       if (_runtimeFunList == null) {
@@ -490,7 +490,7 @@ public class QuercusProgram {
   }
 
   class PageDependency implements Dependency {
-    public boolean isModified()
+    public bool isModified()
     {
       if (_compiledPage != null)
         return _compiledPage.isModified();
@@ -498,7 +498,7 @@ public class QuercusProgram {
         return _depend.isModified();
     }
 
-    public boolean logModified(Logger log)
+    public bool logModified(Logger log)
     {
       if (isModified()) {
         log.finer(_sourceFile + " is modified");

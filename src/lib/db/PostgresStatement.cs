@@ -70,7 +70,7 @@ public class PostgresStatement : JdbcPreparedStatementResource {
   }
 
   @Override
-  protected boolean prepareForExecute(Env env)
+  protected bool prepareForExecute(Env env)
     
   {
     int size = _preparedMapping.size();
@@ -99,7 +99,7 @@ public class PostgresStatement : JdbcPreparedStatementResource {
    * @param query SQL query
    * @return true on success or false on failure
    */
-  public override boolean prepare(Env env, string query)
+  public override bool prepare(Env env, string query)
   {
     string queryStr = query.toString();
 

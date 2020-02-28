@@ -47,12 +47,12 @@ public class ClassMarshal : Marshal {
 
   public readonly ClassMarshal MARSHAL = new ClassMarshal();
 
-  public boolean isString()
+  public bool isString()
   {
     return true;
   }
 
-  public boolean isReadOnly()
+  public bool isReadOnly()
   {
     return true;
   }

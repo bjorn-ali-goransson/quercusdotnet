@@ -71,7 +71,7 @@ public class DateTimeZone implements Cloneable
     return new DateTimeZone(id);
   }
 
-  public boolean isGmt()
+  public bool isGmt()
   {
     return _timeZone == GMT_TIME_ZONE;
   }
@@ -96,7 +96,7 @@ public class DateTimeZone implements Cloneable
 
   private static void addAbbreviation(ArrayValue array,
                                       TimeZone tz,
-                                      boolean isDST)
+                                      bool isDST)
   {
     ArrayValueImpl zone = new ArrayValueImpl();
 
@@ -179,7 +179,7 @@ public class DateTimeZone implements Cloneable
 
   protected static Value findTimeZone(StringValue abbr,
                                       int offset,
-                                      boolean isDST)
+                                      bool isDST)
   {
     ArrayValue array = listAbbreviations();
 
@@ -198,7 +198,7 @@ public class DateTimeZone implements Cloneable
   }
 
   protected static Value findTimeZone(int offset,
-                                      boolean isDST)
+                                      bool isDST)
   {
     string []zoneIDs = TimeZone.getAvailableIDs(offset * 1000);
 

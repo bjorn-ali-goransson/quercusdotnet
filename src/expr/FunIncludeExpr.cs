@@ -42,7 +42,7 @@ namespace QuercusDotNet.Expr{
  */
 public class FunIncludeExpr : AbstractUnaryExpr {
   protected Path _dir;
-  protected boolean _isRequire;
+  protected bool _isRequire;
   
   public FunIncludeExpr(Location location, Path sourceFile, Expr expr)
   {
@@ -54,7 +54,7 @@ public class FunIncludeExpr : AbstractUnaryExpr {
   public FunIncludeExpr(Location location,
                         Path sourceFile,
                         Expr expr,
-                        boolean isRequire)
+                        bool isRequire)
   {
     this(location, sourceFile, expr);
 
@@ -67,7 +67,7 @@ public class FunIncludeExpr : AbstractUnaryExpr {
     _dir = sourceFile.getParent();
   }
   
-  public FunIncludeExpr(Path sourceFile, Expr expr, boolean isRequire)
+  public FunIncludeExpr(Path sourceFile, Expr expr, bool isRequire)
   {
     this(sourceFile, expr);
 

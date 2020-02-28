@@ -40,7 +40,7 @@ public class BooleanObjectMarshal : Marshal
 {
   public readonly Marshal MARSHAL = new BooleanObjectMarshal();
 
-  public boolean isReadOnly()
+  public bool isReadOnly()
   {
     return true;
   }

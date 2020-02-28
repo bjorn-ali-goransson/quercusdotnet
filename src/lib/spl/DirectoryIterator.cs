@@ -125,7 +125,7 @@ public class DirectoryIterator
     return _index;
   }
 
-  public boolean isDot(Env env)
+  public bool isDot(Env env)
   {
     SplFileInfo current = getCurrent(env);
 
@@ -151,7 +151,7 @@ public class DirectoryIterator
     _index = 0;
   }
 
-  public override boolean valid(Env env)
+  public override bool valid(Env env)
   {
     return _index < _list.length;
   }
@@ -255,39 +255,39 @@ public class DirectoryIterator
     return getCurrent(env).getType(env);
   }
 
-  public override boolean isDir(Env env)
+  public override bool isDir(Env env)
   {
     return getCurrent(env).isDir(env);
   }
 
-  public override boolean isExecutable(Env env)
+  public override bool isExecutable(Env env)
   {
     return getCurrent(env).isExecutable(env);
   }
 
-  public override boolean isFile(Env env)
+  public override bool isFile(Env env)
   {
     return getCurrent(env).isFile(env);
   }
 
-  public override boolean isLink(Env env)
+  public override bool isLink(Env env)
   {
     return getCurrent(env).isLink(env);
   }
 
-  public override boolean isReadable(Env env)
+  public override bool isReadable(Env env)
   {
     return getCurrent(env).isReadable(env);
   }
 
-  public override boolean isWritable(Env env)
+  public override bool isWritable(Env env)
   {
     return getCurrent(env).isWritable(env);
   }
 
   public override SplFileObject openFile(Env env,
                                 @Optional("r") string mode,
-                                @Optional boolean isUseIncludePath,
+                                @Optional bool isUseIncludePath,
                                 @Optional Value context)
   {
     return getCurrent(env).openFile(env, mode, isUseIncludePath, context);

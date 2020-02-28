@@ -39,7 +39,7 @@ public class CharacterMarshal : Marshal
 {
   public readonly Marshal MARSHAL = new CharacterMarshal();
 
-  public boolean isReadOnly()
+  public bool isReadOnly()
   {
     return true;
   }

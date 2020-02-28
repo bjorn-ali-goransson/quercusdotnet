@@ -49,7 +49,7 @@ public class EmailValidateFilter
 
     EmailParser parser = new EmailParser(str);
 
-    boolean isValid = parser.parse();
+    bool isValid = parser.parse();
 
     if (isValid) {
       return value;
@@ -77,7 +77,7 @@ public class EmailValidateFilter
       return _offset;
     }
 
-    public boolean parse()
+    public bool parse()
     {
       int atSignPos = _s.indexOf('@');
 
@@ -100,7 +100,7 @@ public class EmailValidateFilter
       return _length <= _offset;
     }
 
-    private boolean parseLocalPart()
+    private bool parseLocalPart()
     {
       if (! parseWord()) {
         return false;
@@ -124,7 +124,7 @@ public class EmailValidateFilter
       return true;
     }
 
-    private boolean parseWord()
+    private bool parseWord()
     {
       int ch = peek();
 
@@ -136,7 +136,7 @@ public class EmailValidateFilter
       }
     }
 
-    private boolean parseAtom()
+    private bool parseAtom()
     {
       if (! parseAtomInner()) {
         return false;
@@ -151,7 +151,7 @@ public class EmailValidateFilter
       return true;
     }
 
-    private boolean parseAtomInner()
+    private bool parseAtomInner()
     {
       int ch = read();
 
@@ -180,7 +180,7 @@ public class EmailValidateFilter
       }
     }
 
-    private static boolean isSpecial(int ch)
+    private static bool isSpecial(int ch)
     {
       return ch == '('
              || ch == ')'
@@ -197,12 +197,12 @@ public class EmailValidateFilter
              || ch == ']';
     }
 
-    private static boolean isCtrl(int ch)
+    private static bool isCtrl(int ch)
     {
       return ch <= 0x1f || ch == 0xff;
     }
 
-    private boolean parseQuotedString()
+    private bool parseQuotedString()
     {
       int ch = read();
 
@@ -247,7 +247,7 @@ public class EmailValidateFilter
       return read() == '"';
     }
 
-    private boolean parseDomain()
+    private bool parseDomain()
     {
       if (! parseSubDomain()) {
         return false;
@@ -271,7 +271,7 @@ public class EmailValidateFilter
       return true;
     }
 
-    private boolean parseSubDomain()
+    private bool parseSubDomain()
     {
       int ch = peek();
 
@@ -283,7 +283,7 @@ public class EmailValidateFilter
       }
     }
 
-    private boolean parseDomainLiteral()
+    private bool parseDomainLiteral()
     {
       int ch = read();
 
@@ -311,7 +311,7 @@ public class EmailValidateFilter
       return read() == ']';
     }
 
-    private boolean parseDomainText()
+    private bool parseDomainText()
     {
       int ch = read();
 
@@ -341,7 +341,7 @@ public class EmailValidateFilter
       }
     }
 
-    private boolean parseLinearWhitespace()
+    private bool parseLinearWhitespace()
     {
       if (! parseLinearWhitespaceInner()) {
         return false;
@@ -356,9 +356,9 @@ public class EmailValidateFilter
       return true;
     }
 
-    private boolean parseLinearWhitespaceInner()
+    private bool parseLinearWhitespaceInner()
     {
-      boolean isSawCrLf = false;
+      bool isSawCrLf = false;
       int ch = read();
 
       if (ch == '\r') {
@@ -389,7 +389,7 @@ public class EmailValidateFilter
       }
     }
 
-    private boolean parseDomainRef()
+    private bool parseDomainRef()
     {
       return parseAtom();
     }

@@ -38,7 +38,7 @@ public class DOMStringList
     super(impl, delegate);
   }
 
-  public boolean contains(String str)
+  public bool contains(String str)
   {
     return _delegate.contains(str);
   }

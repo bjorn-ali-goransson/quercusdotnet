@@ -59,8 +59,8 @@ public class SQLite3 : JdbcConnectionResource
                                         int flags,
                                         string driver,
                                         string url,
-                                        boolean isNewLink,
-                                        boolean isEmulatePrepares)
+                                        bool isNewLink,
+                                        bool isEmulatePrepares)
   {
     try {
       if (driver == null) {
@@ -97,7 +97,7 @@ public class SQLite3 : JdbcConnectionResource
     return "sqlite";
   }
 
-  protected override boolean isSeekable()
+  protected override bool isSeekable()
   {
     return false;
   }

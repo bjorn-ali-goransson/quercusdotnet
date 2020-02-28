@@ -304,7 +304,7 @@ public class JavaMapAdapter
       _iterator = _map.entrySet().iterator();
     }
 
-    public boolean hasNext()
+    public bool hasNext()
     {
       return _iterator.hasNext();
     }
@@ -353,7 +353,7 @@ public class JavaMapAdapter
       _iterator = _map.values().iterator();
     }
 
-    public boolean hasNext()
+    public bool hasNext()
     {
       return _iterator.hasNext();
     }
@@ -379,7 +379,7 @@ public class JavaMapAdapter
       _iterator = _map.keySet().iterator();
     }
 
-    public boolean hasNext()
+    public bool hasNext()
     {
       return _iterator.hasNext();
     }

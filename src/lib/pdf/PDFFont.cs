@@ -150,7 +150,7 @@ public class PDFFont : PDFObject {
     return hash;
   }
 
-  public boolean equals(Object o)
+  public bool equals(Object o)
   {
     if (this == o)
       return true;

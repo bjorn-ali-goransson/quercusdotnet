@@ -39,7 +39,7 @@ namespace QuercusDotNet.Env{
 
 
 /**
- * Represents a PHP boolean value.
+ * Represents a PHP bool value.
  */
 @SuppressWarnings("serial")
 public class BooleanValue : Value
@@ -48,7 +48,7 @@ public class BooleanValue : Value
   public readonly BooleanValue TRUE = new BooleanValue(true);
   public readonly BooleanValue FALSE = new BooleanValue(false);
 
-  private final boolean _value;
+  private final bool _value;
 
   private BooleanValue(boolean value)
   {
@@ -92,7 +92,7 @@ public class BooleanValue : Value
   /**
    * Returns true for a BooleanValue
    */
-  public override boolean isBoolean()
+  public override bool isBoolean()
   {
     return true;
   }
@@ -100,7 +100,7 @@ public class BooleanValue : Value
   /**
    * Returns true for a scalar
    */
-  public boolean isScalar()
+  public bool isScalar()
   {
     return true;
   }
@@ -108,7 +108,7 @@ public class BooleanValue : Value
   /**
    * Converts to a boolean.
    */
-  public override final boolean toBoolean()
+  public override final bool toBoolean()
   {
     return this == TRUE;
   }
@@ -116,7 +116,7 @@ public class BooleanValue : Value
   /**
    * Returns true if the value is empty
    */
-  public override boolean isEmpty()
+  public override bool isEmpty()
   {
     return ! _value;
   }
@@ -236,7 +236,7 @@ public class BooleanValue : Value
   /**
    * Returns true for equality
    */
-  public override boolean eq(Value rValue)
+  public override bool eq(Value rValue)
   {
     return _value == rValue.toBoolean();
   }
@@ -246,7 +246,7 @@ public class BooleanValue : Value
    */
   public override int cmp(Value rValue)
   {
-    boolean rBool = rValue.toBoolean();
+    bool rBool = rValue.toBoolean();
 
     if (! _value && rBool)
       return -1;
@@ -345,7 +345,7 @@ public class BooleanValue : Value
   /**
    * Compare for equality.
    */
-  public override boolean equals(Object o)
+  public override bool equals(Object o)
   {
     if (this == o)
       return true;

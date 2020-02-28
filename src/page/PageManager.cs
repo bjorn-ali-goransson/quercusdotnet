@@ -57,11 +57,11 @@ public class PageManager
   private final QuercusContext _quercus;
 
   //private Path _pwd;
-  private boolean _isLazyCompile;
-  private boolean _isCompile;
-  private boolean _isCompileFailover = CurrentTime.isActive();
+  private bool _isLazyCompile;
+  private bool _isCompile;
+  private bool _isCompileFailover = CurrentTime.isActive();
 
-  private boolean _isRequireSource = true;
+  private bool _isRequireSource = true;
 
   private ConcurrentHashMap<String,Object> _programLockMap
     = new ConcurrentHashMap<String,Object>();
@@ -69,7 +69,7 @@ public class PageManager
   protected LruCache<Path,SoftReference<QuercusProgram>> _programCache
     = new LruCache<Path,SoftReference<QuercusProgram>>(1024);
 
-  private boolean _isClosed;
+  private bool _isClosed;
 
   /**
    * Constructor.
@@ -95,7 +95,7 @@ public class PageManager
   /**
    * true if the pages should be compiled.
    */
-  public boolean isCompile()
+  public bool isCompile()
   {
     return _isCompile;
   }
@@ -111,7 +111,7 @@ public class PageManager
   /**
    * true if the pages should be compiled lazily.
    */
-  public boolean isLazyCompile()
+  public bool isLazyCompile()
   {
     return _isLazyCompile;
   }
@@ -127,7 +127,7 @@ public class PageManager
   /**
    * true if interpreted pages should be used if pages fail to compile.
    */
-  public boolean isCompileFailover()
+  public bool isCompileFailover()
   {
     return _isCompileFailover;
   }
@@ -151,7 +151,7 @@ public class PageManager
   /**
    * true if compiled pages require their source
    */
-  public boolean isRequireSource()
+  public bool isRequireSource()
   {
     return _isRequireSource;
   }
@@ -176,7 +176,7 @@ public class PageManager
   /**
    * true if the manager is active.
    */
-  public boolean isActive()
+  public bool isActive()
   {
     return ! _isClosed;
   }
@@ -259,7 +259,7 @@ public class PageManager
 
       QuercusProgram  program = programRef != null ? programRef.get() : null;
 
-      boolean isModified = false;
+      bool isModified = false;
 
       if (program != null) {
         isModified = program.isModified();
@@ -308,7 +308,7 @@ public class PageManager
     }
   }
 
-  public boolean precompileExists(Path path)
+  public bool precompileExists(Path path)
   {
     return false;
   }

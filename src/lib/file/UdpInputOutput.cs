@@ -115,7 +115,7 @@ public class UdpInputOutput
   }
 
   @Override
-  public boolean isConnected()
+  public bool isConnected()
   {
     return _socket.isConnected();
   }
@@ -134,12 +134,12 @@ public class UdpInputOutput
   /**
    * Sets the current location in the file.
    */
-  public boolean setPosition(long offset)
+  public bool setPosition(long offset)
   {
     if (_stream == null)
       return false;
 
-    boolean result = _stream.setPosition(offset);
+    bool result = _stream.setPosition(offset);
 
     if (result)
       _isEOF = false;

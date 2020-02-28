@@ -52,11 +52,11 @@ class JsonDecoder {
   private int _len;
   private int _offset;
 
-  private boolean _isAssociative;
+  private bool _isAssociative;
 
   public Value jsonDecode(Env env,
                           StringValue s,
-                          boolean assoc)
+                          bool assoc)
   {
     _str = s;
     _len = _str.length();
@@ -80,7 +80,7 @@ class JsonDecoder {
    *
    * @return decoded PHP value
    */
-  private Value jsonDecodeImpl(Env env, boolean isTop)
+  private Value jsonDecodeImpl(Env env, bool isTop)
   {
     skipWhitespace();
 
@@ -249,7 +249,7 @@ class JsonDecoder {
       }
     }
 
-    boolean isDouble = false;
+    bool isDouble = false;
 
     // ((decimalPoint) [0-9]+)?
     if (_offset < _len && (ch = _str.charAt(_offset)) == '.') {
@@ -432,7 +432,7 @@ class JsonDecoder {
   /**
    * Returns a PHP string.
    */
-  private Value decodeString(Env env, boolean isQuoted)
+  private Value decodeString(Env env, bool isQuoted)
   {
     StringValue sb = env.createUnicodeBuilder();
 

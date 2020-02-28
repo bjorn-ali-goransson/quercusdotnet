@@ -55,7 +55,7 @@ public class GZIPOutputStream : DeflaterOutputStream {
   };
 
   private int _encodingMode;
-  private boolean _isGzip;
+  private bool _isGzip;
 
   /**
    * Writes gzip header to OutputStream upon construction.

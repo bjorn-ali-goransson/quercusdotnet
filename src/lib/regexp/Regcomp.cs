@@ -103,35 +103,35 @@ class Regcomp {
 
   RegexpNode _groupTail;
 
-  boolean _isLookbehind;
-  boolean _isOr;
+  bool _isLookbehind;
+  bool _isOr;
 
   Regcomp(int flags)
   {
     _flags = flags;
   }
 
-  boolean isGreedy()
+  bool isGreedy()
   {
     return (_flags & UNGREEDY) != UNGREEDY;
   }
 
-  boolean isIgnoreCase()
+  bool isIgnoreCase()
   {
     return (_flags & IGNORE_CASE) == IGNORE_CASE;
   }
 
-  boolean isIgnoreWs()
+  bool isIgnoreWs()
   {
     return (_flags & IGNORE_WS) == IGNORE_WS;
   }
 
-  boolean isMultiline()
+  bool isMultiline()
   {
     return (_flags & MULTILINE) == MULTILINE;
   }
 
-  boolean isDollarEndOnly()
+  bool isDollarEndOnly()
   {
     return (_flags & END_ONLY) == END_ONLY;
   }
@@ -374,7 +374,7 @@ class Regcomp {
           case 'U': case 'X': case '-':
             {
               int flags = _flags;
-              boolean isUnset = false;
+              bool isUnset = false;
 
               while ((ch = pattern.read()) > 0 && ch != ')') {
                 switch (ch) {
@@ -535,7 +535,7 @@ class Regcomp {
     }
   }
 
-  private static int setFlag(int flag, int modifier, boolean isUnset)
+  private static int setFlag(int flag, int modifier, bool isUnset)
   {
     if (isUnset) {
       return flag - (flag & modifier);
@@ -549,7 +549,7 @@ class Regcomp {
     
   {
     int ch = pattern.read();
-    boolean isPositive = (ch == '=');
+    bool isPositive = (ch == '=');
 
     RegexpNode groupTail = _groupTail;
     _groupTail = null;
@@ -581,7 +581,7 @@ class Regcomp {
     
   {
     int ch = pattern.read();
-    boolean isPositive = (ch == '=');
+    bool isPositive = (ch == '=');
 
     RegexpNode groupTail = _groupTail;
     _groupTail = null;
@@ -968,7 +968,7 @@ class Regcomp {
     
   {
     int first = pattern.peek();
-    boolean isNot = false;
+    bool isNot = false;
 
     if (first == '^') {
       pattern.read();
@@ -999,8 +999,8 @@ class Regcomp {
           break;
       }
 
-      boolean isChar = true;
-      boolean isDash = ch == '-';
+      bool isChar = true;
+      bool isDash = ch == '-';
 
       if (ch == '\\') {
         isChar = false;
@@ -1519,7 +1519,7 @@ class Regcomp {
    */
   private RegexpNode parseString(int ch,
                                  PeekStream pattern,
-                                 boolean isEscaped)
+                                 bool isEscaped)
     
   {
     CharBuffer cb = new CharBuffer();
@@ -1716,12 +1716,12 @@ class Regcomp {
   }
 
   private RegexpNode parseUnicodeProperty(PeekStream pattern,
-                                          boolean isNegated)
+                                          bool isNegated)
     
   {
     int ch = pattern.read();
 
-    boolean isBraced = false;
+    bool isBraced = false;
 
     if (ch == '{') {
       isBraced = true;
@@ -1753,7 +1753,7 @@ class Regcomp {
   }
 
   private RegexpNode parseUnicodeProperty(int ch, int ch2,
-                                          boolean isNegated)
+                                          bool isNegated)
     
   {
     byte category = 0;
@@ -1876,7 +1876,7 @@ class Regcomp {
   }
 
   private RegexpNode parseUnicodeProperty(int ch,
-                                          boolean isNegated)
+                                          bool isNegated)
     
   {
     switch (ch) {

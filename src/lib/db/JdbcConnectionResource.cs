@@ -85,12 +85,12 @@ public abstract class JdbcConnectionResource
   protected int _flags;
   protected string _socket;
 
-  protected boolean _isEmulatePrepares;
+  protected bool _isEmulatePrepares;
 
   private string _catalog;
-  private boolean _isCatalogOptimEnabled = false;
+  private bool _isCatalogOptimEnabled = false;
 
-  private boolean _isUsed;
+  private bool _isUsed;
 
   protected SqlParseToken _sqlParseToken = new SqlParseToken();
 
@@ -152,7 +152,7 @@ public abstract class JdbcConnectionResource
       return env.getEmptyString();
   }
 
-  public boolean isConnected()
+  public bool isConnected()
   {
     return _conn != null;
   }
@@ -192,7 +192,7 @@ public abstract class JdbcConnectionResource
     return _url;
   }
 
-  public boolean isEmulatePrepares()
+  public bool isEmulatePrepares()
   {
     return _isEmulatePrepares;
   }
@@ -206,7 +206,7 @@ public abstract class JdbcConnectionResource
    * @param port server port
    * @param dbname database name
    */
-  final protected boolean connectInternal(Env env,
+  final protected bool connectInternal(Env env,
                                           string host,
                                           string userName,
                                           string password,
@@ -216,8 +216,8 @@ public abstract class JdbcConnectionResource
                                           int flags,
                                           string driver,
                                           string url,
-                                          boolean isNewLink,
-                                          boolean isEmulatePrepares)
+                                          bool isNewLink,
+                                          bool isEmulatePrepares)
   {
     if (_conn != null) {
       throw new IllegalStateException(getClass().getSimpleName() + " attempt to open multiple connections");
@@ -267,8 +267,8 @@ public abstract class JdbcConnectionResource
                                                  int flags,
                                                  string driver,
                                                  string url,
-                                                 boolean isNewLink,
-                                                 boolean isEmulatePrepares);
+                                                 bool isNewLink,
+                                                 bool isEmulatePrepares);
 
   /**
    * Escape the given string for SQL statements.
@@ -404,7 +404,7 @@ public abstract class JdbcConnectionResource
    * Return true if the encoding was set, otherwise false.
    */
 
-  public boolean setClientEncoding(String encoding)
+  public bool setClientEncoding(String encoding)
   {
     return true;
   }
@@ -588,7 +588,7 @@ public abstract class JdbcConnectionResource
     closeStatement(stmt, false);
   }
 
-  private void closeStatement(Statement stmt, boolean isReuse)
+  private void closeStatement(Statement stmt, bool isReuse)
   {
     if (stmt == null)
       return;
@@ -682,7 +682,7 @@ public abstract class JdbcConnectionResource
       if (true || stmt == null) {
         // XXX: test for performance
 
-        boolean isSeekable = isSeekable();
+        bool isSeekable = isSeekable();
         if (isSeekable) {
           stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE,
                                       ResultSet.CONCUR_READ_ONLY);
@@ -776,7 +776,7 @@ public abstract class JdbcConnectionResource
     Connection conn = getConnection(env);
     Statement stmt;
 
-    boolean isSeekable = isSeekable();
+    bool isSeekable = isSeekable();
     if (isSeekable) {
       stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE,
                                   ResultSet.CONCUR_READ_ONLY);
@@ -788,7 +788,7 @@ public abstract class JdbcConnectionResource
     return stmt;
   }
 
-  private boolean checkSql(Env env, ConnectionEntry connEntry, string sql)
+  private bool checkSql(Env env, ConnectionEntry connEntry, string sql)
   {
     SqlParseToken tok = parseSqlToken(sql, null);
 
@@ -932,7 +932,7 @@ public abstract class JdbcConnectionResource
     return _rs;
   }
 
-  public boolean getAutoCommit()
+  public bool getAutoCommit()
   {
     clearErrors();
 
@@ -949,7 +949,7 @@ public abstract class JdbcConnectionResource
   /**
    * sets auto-commmit to true or false
    */
-  public boolean setAutoCommit(boolean mode)
+  public bool setAutoCommit(boolean mode)
   {
     clearErrors();
 
@@ -968,7 +968,7 @@ public abstract class JdbcConnectionResource
   /**
    * commits the transaction of the current connection
    */
-  public boolean commit()
+  public bool commit()
   {
     clearErrors();
 
@@ -989,7 +989,7 @@ public abstract class JdbcConnectionResource
    * NOTE: quercus doesn't seem to support the idea
    * of savepoints
    */
-  public boolean rollback()
+  public bool rollback()
   {
     clearErrors();
 
@@ -1071,7 +1071,7 @@ public abstract class JdbcConnectionResource
    * This function is overriden in Postgres to keep
    * statement references for php/430a
    */
-  protected boolean keepStatementOpen()
+  protected bool keepStatementOpen()
   {
     return false;
   }
@@ -1105,7 +1105,7 @@ public abstract class JdbcConnectionResource
   /**
    * Pings the database
    */
-  public boolean ping(Env env)
+  public bool ping(Env env)
   {
     try {
 
@@ -1152,7 +1152,7 @@ public abstract class JdbcConnectionResource
    * Returns true if this connection supports TYPE_SCROLL_INSENSITIVE.
    * http://bugs.caucho.com/view.php?id=3746
    */
-  protected boolean isSeekable()
+  protected bool isSeekable()
   {
     return true;
   }
@@ -1190,7 +1190,7 @@ public abstract class JdbcConnectionResource
       return hash;
     }
 
-    public boolean equals(Object o)
+    public bool equals(Object o)
     {
       if (this == o)
         return true;

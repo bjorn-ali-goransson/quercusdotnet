@@ -59,7 +59,7 @@ public class GoogleQuercus : QuercusContext
     string mode
       = System.getProperty("com.google.appengine.tools.development.ApplicationPreparationMode");
 
-    boolean isGsDisabled = "true".equals(mode);
+    bool isGsDisabled = "true".equals(mode);
 
     if (! isGsDisabled) {
       string gsBucket = getIniString("google.cloud_storage_bucket");

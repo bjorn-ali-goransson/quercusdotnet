@@ -22,7 +22,7 @@ public abstract class AbstractIteratorImpl<T> implements Iterator<T> {
     private final AbstractFunction _keyFun;
     private final AbstractFunction _rewindFun;
     private final AbstractFunction _validFun;
-    private boolean _needNext;
+    private bool _needNext;
 
     public AbstractIteratorImpl(Env env,
                                 ObjectValue obj)
@@ -46,7 +46,7 @@ public abstract class AbstractIteratorImpl<T> implements Iterator<T> {
       _needNext = false;
     }
 
-    public boolean hasNext()
+    public bool hasNext()
     {
       if (_needNext) {
         _nextFun.callMethod(_env, _qClass, _obj);

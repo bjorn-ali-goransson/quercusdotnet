@@ -78,7 +78,7 @@ public class GettextDomain
     return _path;
   }
   
-  public boolean setPath(Env env, StringValue directory)
+  public bool setPath(Env env, StringValue directory)
   {
     Path path = env.lookupPwd(directory);
     

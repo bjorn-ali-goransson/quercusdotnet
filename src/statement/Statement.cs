@@ -69,7 +69,7 @@ abstract public class Statement {
     return _location;
   }
 
-  public boolean isLoop()
+  public bool isLoop()
   {
     return false;
   }

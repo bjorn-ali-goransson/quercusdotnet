@@ -84,8 +84,8 @@ public class Oracle : JdbcConnectionResource {
                                         int flags,
                                         string driver,
                                         string url,
-                                        boolean isNewLink,
-                                        boolean isEmulatePrepares)
+                                        bool isNewLink,
+                                        bool isEmulatePrepares)
   {
     if (isConnected()) {
       env.warning(L.l("Connection is already opened to '{0}'", this));

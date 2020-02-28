@@ -263,7 +263,7 @@ public class ModuleInfo {
     }
   }
 
-  private static boolean hasCheckedException(Method method)
+  private static bool hasCheckedException(Method method)
   {
     for (Class exnCl : method.getExceptionTypes()) {
       if (! RuntimeException.class.isAssignableFrom(exnCl))

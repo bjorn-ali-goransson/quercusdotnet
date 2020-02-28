@@ -108,7 +108,7 @@ public class SplObjectStorage
     _objMap.put(hash, entry);
   }
 
-  public boolean contains(Env env, Value obj)
+  public bool contains(Env env, Value obj)
   {
     StringValue hash = getHash(env, obj);
 
@@ -160,7 +160,7 @@ public class SplObjectStorage
   // ArrayAccess
   //
 
-  public override boolean offsetExists(Env env, Value offset)
+  public override bool offsetExists(Env env, Value offset)
   {
     StringValue hash = offset.toObject(env).getObjectHash(env);
 
@@ -232,7 +232,7 @@ public class SplObjectStorage
     _iterCount = 0;
   }
 
-  public override boolean valid(Env env)
+  public override bool valid(Env env)
   {
     return _current != null;
   }

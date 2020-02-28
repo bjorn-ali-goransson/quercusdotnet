@@ -68,7 +68,7 @@ public class StaticFunction : JavaInvoker {
    * Returns true for a static function.
    */
   @Override
-  public boolean isStatic()
+  public bool isStatic()
   {
     return true;
   }

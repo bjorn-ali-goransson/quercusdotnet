@@ -113,7 +113,7 @@ abstract public class Expr {
   /**
    * Returns true for a reference.
    */
-  public boolean isRef()
+  public bool isRef()
   {
     return false;
   }
@@ -121,7 +121,7 @@ abstract public class Expr {
   /**
    * Returns true for a constant expression.
    */
-  public boolean isConstant()
+  public bool isConstant()
   {
     return isLiteral();
   }
@@ -129,7 +129,7 @@ abstract public class Expr {
   /**
    * Returns true for a literal expression.
    */
-  public boolean isLiteral()
+  public bool isLiteral()
   {
     return false;
   }
@@ -137,7 +137,7 @@ abstract public class Expr {
   /**
    * Returns true if a static true value.
    */
-  public boolean isTrue()
+  public bool isTrue()
   {
     return false;
   }
@@ -145,7 +145,7 @@ abstract public class Expr {
   /**
    * Returns true if a static false value.
    */
-  public boolean isFalse()
+  public bool isFalse()
   {
     return false;
   }
@@ -153,7 +153,7 @@ abstract public class Expr {
   /*
    * Returns true if this is an assign expr.
    */
-  public boolean isAssign()
+  public bool isAssign()
   {
     return false;
   }
@@ -161,7 +161,7 @@ abstract public class Expr {
   /**
    * Returns true for an expression that can be read (only $a[] uses this)
    */
-  public boolean canRead()
+  public bool canRead()
   {
     return true;
   }
@@ -169,7 +169,7 @@ abstract public class Expr {
   /**
    * Returns true if the expression evaluates to a boolean.
    */
-  public boolean isBoolean()
+  public bool isBoolean()
   {
     return false;
   }
@@ -177,7 +177,7 @@ abstract public class Expr {
   /**
    * Returns true if the expression evaluates to a long.
    */
-  public boolean isLong()
+  public bool isLong()
   {
     return false;
   }
@@ -185,7 +185,7 @@ abstract public class Expr {
   /**
    * Returns true if the expression evaluates to a double.
    */
-  public boolean isDouble()
+  public bool isDouble()
   {
     return false;
   }
@@ -193,7 +193,7 @@ abstract public class Expr {
   /**
    * Returns true if the expression evaluates to a number.
    */
-  public boolean isNumber()
+  public bool isNumber()
   {
     return isLong() || isDouble();
   }
@@ -201,7 +201,7 @@ abstract public class Expr {
   /**
    * Returns true if the expression evaluates to a string.
    */
-  public boolean isString()
+  public bool isString()
   {
     return false;
   }
@@ -209,7 +209,7 @@ abstract public class Expr {
   /**
    * Returns true if the expression evaluates to an array.
    */
-  public boolean isArray()
+  public bool isArray()
   {
     return false;
   }
@@ -217,7 +217,7 @@ abstract public class Expr {
   /**
    * Returns true if the expression is a var/left-hand-side.
    */
-  public boolean isVar()
+  public bool isVar()
   {
     return false;
   }
@@ -522,7 +522,7 @@ abstract public class Expr {
    *
    * @return the expression value.
    */
-  public Value evalArg(Env env, boolean isTop)
+  public Value evalArg(Env env, bool isTop)
   {
     return eval(env);
   }
@@ -768,7 +768,7 @@ abstract public class Expr {
    *
    * @return the expression value.
    */
-  public boolean evalBoolean(Env env)
+  public bool evalBoolean(Env env)
   {
     return eval(env).toBoolean();
   }
@@ -800,7 +800,7 @@ abstract public class Expr {
   /**
    * Evaluates the expression as an isset() statement.
    */
-  public boolean evalIsset(Env env)
+  public bool evalIsset(Env env)
   {
     return eval(env).isset();
   }
@@ -827,7 +827,7 @@ abstract public class Expr {
   /**
    * Evaluates as an empty() expression.
    */
-  public boolean evalEmpty(Env env)
+  public bool evalEmpty(Env env)
   {
     return eval(env).isEmpty();
   }
@@ -866,7 +866,7 @@ abstract public class Expr {
   }
 
   @Override
-  public boolean equals(Object obj)
+  public bool equals(Object obj)
   {
     if (this == obj) {
       return true;

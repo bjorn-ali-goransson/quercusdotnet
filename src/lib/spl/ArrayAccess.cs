@@ -37,7 +37,7 @@ namespace QuercusDotNet.lib.spl {
 @Delegates(ArrayAccessDelegate.class)
 public interface ArrayAccess
 {
-  public boolean offsetExists(Env env, Value offset);
+  public bool offsetExists(Env env, Value offset);
 
   public Value offsetSet(Env env, Value offset, Value value);
 

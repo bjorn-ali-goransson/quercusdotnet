@@ -284,7 +284,7 @@ public class SimpleUtil
     }
   }
 
-  public static boolean isSameNamespace(Node node, string namespace)
+  public static bool isSameNamespace(Node node, string namespace)
   {
     string prefix = getPrefix(node.getNodeName());
 
@@ -304,7 +304,7 @@ public class SimpleUtil
     return prefix;
   }
 
-  public static boolean hasNamespace(Node node, string prefix, string namespace)
+  public static bool hasNamespace(Node node, string prefix, string namespace)
   {
     if (namespace == null) {
       return true;

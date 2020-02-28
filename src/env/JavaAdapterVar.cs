@@ -114,7 +114,7 @@ public class JavaAdapterVar : Value
   /**
    * Returns true for an object.
    */
-  public override boolean isObject()
+  public override bool isObject()
   {
     return getValue().isObject();
   }
@@ -122,7 +122,7 @@ public class JavaAdapterVar : Value
   /**
    * Returns true for an object.
    */
-  public override boolean isResource()
+  public override bool isResource()
   {
     return getValue().isResource();
   }
@@ -130,7 +130,7 @@ public class JavaAdapterVar : Value
   /**
    * Returns true for a set type.
    */
-  public override boolean isset()
+  public override bool isset()
   {
     return getValue().isset();
   }
@@ -138,7 +138,7 @@ public class JavaAdapterVar : Value
   /**
    * Returns true for an implementation of a class
    */
-  public override boolean isA(Env env, string name)
+  public override bool isA(Env env, string name)
   {
     return getValue().isA(env, name);
   }
@@ -146,7 +146,7 @@ public class JavaAdapterVar : Value
   /**
    * True for a number
    */
-  public override boolean isNull()
+  public override bool isNull()
   {
     return getValue().isNull();
   }
@@ -154,7 +154,7 @@ public class JavaAdapterVar : Value
   /**
    * True for a long
    */
-  public override boolean isLongConvertible()
+  public override bool isLongConvertible()
   {
     return getValue().isLongConvertible();
   }
@@ -162,7 +162,7 @@ public class JavaAdapterVar : Value
   /**
    * True to a double.
    */
-  public override boolean isDoubleConvertible()
+  public override bool isDoubleConvertible()
   {
     return getValue().isDoubleConvertible();
   }
@@ -170,7 +170,7 @@ public class JavaAdapterVar : Value
   /**
    * True for a number
    */
-  public override boolean isNumberConvertible()
+  public override bool isNumberConvertible()
   {
     return getValue().isNumberConvertible();
   }
@@ -178,7 +178,7 @@ public class JavaAdapterVar : Value
   /**
    * Returns true for a long-value.
    */
-  public boolean isLong()
+  public bool isLong()
   {
     return getValue().isLong();
   }
@@ -186,7 +186,7 @@ public class JavaAdapterVar : Value
   /**
    * Returns true for a long-value.
    */
-  public boolean isDouble()
+  public bool isDouble()
   {
     return getValue().isDouble();
   }
@@ -194,7 +194,7 @@ public class JavaAdapterVar : Value
   /**
    * Returns true for is_numeric
    */
-  public override boolean isNumeric()
+  public override bool isNumeric()
   {
     return getValue().isNumeric();
   }
@@ -203,7 +203,7 @@ public class JavaAdapterVar : Value
    * Returns true for a scalar
    */
   /*
-  public boolean isScalar()
+  public bool isScalar()
   {
     return getValue().isScalar();
   }
@@ -212,7 +212,7 @@ public class JavaAdapterVar : Value
   /**
    * Returns true for a StringValue.
    */
-  public override boolean isString()
+  public override bool isString()
   {
     return getValue().isString();
   }
@@ -220,7 +220,7 @@ public class JavaAdapterVar : Value
   /**
    * Returns true for a BinaryValue.
    */
-  public override boolean isBinary()
+  public override bool isBinary()
   {
     return getValue().isBinary();
   }
@@ -228,7 +228,7 @@ public class JavaAdapterVar : Value
   /**
    * Returns true for a UnicodeValue.
    */
-  public override boolean isUnicode()
+  public override bool isUnicode()
   {
     return getValue().isUnicode();
   }
@@ -236,7 +236,7 @@ public class JavaAdapterVar : Value
   /**
    * Returns true for a BooleanValue
    */
-  public override boolean isBoolean()
+  public override bool isBoolean()
   {
     return getValue().isBoolean();
   }
@@ -244,7 +244,7 @@ public class JavaAdapterVar : Value
   /**
    * Returns true for a DefaultValue
    */
-  public override boolean isDefault()
+  public override bool isDefault()
   {
     return getValue().isDefault();
   }
@@ -261,7 +261,7 @@ public class JavaAdapterVar : Value
   /**
    * Converts to a boolean.
    */
-  public override boolean toBoolean()
+  public override bool toBoolean()
   {
     return getValue().toBoolean();
   }
@@ -588,7 +588,7 @@ public class JavaAdapterVar : Value
   /**
    * Returns true for an array.
    */
-  public override boolean isArray()
+  public override bool isArray()
   {
     return getValue().isArray();
   }
@@ -736,7 +736,7 @@ public class JavaAdapterVar : Value
   /**
    * Returns true for equality
    */
-  public override boolean eq(Value rValue)
+  public override bool eq(Value rValue)
   {
     return getValue().eq(rValue);
   }
@@ -744,7 +744,7 @@ public class JavaAdapterVar : Value
   /**
    * Returns true for equality
    */
-  public override boolean eql(Value rValue)
+  public override bool eql(Value rValue)
   {
     return getValue().eql(rValue);
   }
@@ -841,7 +841,7 @@ public class JavaAdapterVar : Value
   /**
    * Returns the array ref.
    */
-  public override Value getArg(Value index, boolean isTop)
+  public override Value getArg(Value index, bool isTop)
   {
     setRaw(getValue());
 
@@ -978,7 +978,7 @@ public class JavaAdapterVar : Value
   /**
    * Returns the array ref.
    */
-  public override Value getFieldArg(Env env, StringValue index, boolean isTop)
+  public override Value getFieldArg(Env env, StringValue index, bool isTop)
   {
     setRaw(getValue());
 
@@ -1096,7 +1096,7 @@ public class JavaAdapterVar : Value
   /**
    * Returns true if there are more elements.
    */
-  public override boolean hasCurrent()
+  public override bool hasCurrent()
   {
     return getValue().hasCurrent();
   }

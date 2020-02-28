@@ -45,7 +45,7 @@ public class CompiledAbstractClassDef
   }
 
   @Override
-  public boolean isAbstract()
+  public bool isAbstract()
   {
     return true;
   }

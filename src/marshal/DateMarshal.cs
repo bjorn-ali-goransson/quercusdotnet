@@ -42,7 +42,7 @@ public class DateMarshal : Marshal
 {
   public readonly Marshal MARSHAL = new DateMarshal();
   
-  public boolean isReadOnly()
+  public bool isReadOnly()
   {
     return true;
   }

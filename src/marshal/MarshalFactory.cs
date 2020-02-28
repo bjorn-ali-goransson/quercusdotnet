@@ -74,15 +74,15 @@ public class MarshalFactory {
   }
 
   public Marshal create(Class<?> argType,
-                        boolean isNotNull)
+                        bool isNotNull)
   {
     return create(argType, isNotNull, false, false);
   }
 
   public Marshal create(Class<?> argType,
-                        boolean isNotNull,
-                        boolean isNullAsFalse,
-                        boolean isOptional)
+                        bool isNotNull,
+                        bool isNullAsFalse,
+                        bool isOptional)
   {
     Marshal marshal;
 

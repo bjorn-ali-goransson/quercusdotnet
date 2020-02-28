@@ -38,7 +38,7 @@ public interface DateTimeInterface
 {
   public DateInterval diff(Env env,
                            DateTimeInterface dateTime,
-                           @Optional boolean isAbsolute);
+                           @Optional bool isAbsolute);
   
   public StringValue format(Env env, StringValue format);
   

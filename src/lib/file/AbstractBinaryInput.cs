@@ -56,7 +56,7 @@ public class AbstractBinaryInput
 
   // Set to true when EOF is read from the input stream.
 
-  private boolean _isEOF = false;
+  private bool _isEOF = false;
 
   protected AbstractBinaryInput(Env env)
   {
@@ -202,7 +202,7 @@ public class AbstractBinaryInput
   /**
    * Reads the optional linefeed character from a \r\n
    */
-  public boolean readOptionalLinefeed()
+  public bool readOptionalLinefeed()
     
   {
     if (_is == null)
@@ -251,7 +251,7 @@ public class AbstractBinaryInput
   /**
    * Returns true on the EOF.
    */
-  public boolean isEOF()
+  public bool isEOF()
   {
     if (_is == null)
       return true;
@@ -274,7 +274,7 @@ public class AbstractBinaryInput
   /**
    * Sets the current location in the file.
    */
-  public boolean setPosition(long offset)
+  public bool setPosition(long offset)
   {
     if (_is == null)
       return false;

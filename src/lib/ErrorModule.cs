@@ -117,7 +117,7 @@ public class ErrorModule : AbstractQuercusModule {
                                                      Throwable e,
                                                      int options)
   {
-    boolean isPrintArgs = (options & DEBUG_BACKTRACE_IGNORE_ARGS) == 0;
+    bool isPrintArgs = (options & DEBUG_BACKTRACE_IGNORE_ARGS) == 0;
 
     ArrayValue result = new ArrayValueImpl();
 
@@ -296,7 +296,7 @@ public class ErrorModule : AbstractQuercusModule {
       return null;
   }
 
-  private static void addInterpreted(Env env, ArrayValue result, int i, boolean isPrintArgs)
+  private static void addInterpreted(Env env, ArrayValue result, int i, bool isPrintArgs)
   {
     Expr expr = env.peekCall(i);
 
@@ -368,7 +368,7 @@ public class ErrorModule : AbstractQuercusModule {
       call.put(env.createString("function"), env.createString("include"));
     }
     else if (expr instanceof FunIncludeOnceExpr) {
-      boolean isRequire = ((FunIncludeOnceExpr) expr).isRequire();
+      bool isRequire = ((FunIncludeOnceExpr) expr).isRequire();
 
       ArrayValue call = new ArrayValueImpl();
       result.put(call);
@@ -508,7 +508,7 @@ public class ErrorModule : AbstractQuercusModule {
   /**
    * Send a message to the log.
    */
-  public static boolean error_log(Env env,
+  public static bool error_log(Env env,
                                   StringValue message,
                                   @Optional int type,
                                   @Optional StringValue destination,
@@ -600,7 +600,7 @@ public class ErrorModule : AbstractQuercusModule {
    *
    * @param env the quercus environment
    */
-  public static boolean restore_error_handler(Env env)
+  public static bool restore_error_handler(Env env)
   {
     env.restoreErrorHandler();
 
@@ -614,7 +614,7 @@ public class ErrorModule : AbstractQuercusModule {
    * @param fun the error handler
    * @param code errorMask error level
    */
-  public static boolean set_error_handler(Env env,
+  public static bool set_error_handler(Env env,
                                           Callable fun,
                                           @Optional("E_ALL") int errorMask)
   {

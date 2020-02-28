@@ -44,7 +44,7 @@ public class ByteObjectMarshal : Marshal
     return new Byte((byte) expr.evalLong(env));
   }
 
-  public boolean isReadOnly()
+  public bool isReadOnly()
   {
     return true;
   }

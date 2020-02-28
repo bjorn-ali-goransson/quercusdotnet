@@ -40,7 +40,7 @@ public class LongValueMarshal
 {
   public readonly Marshal MARSHAL = new LongValueMarshal();
 
-  public boolean isReadOnly()
+  public bool isReadOnly()
   {
     return true;
   }
@@ -49,7 +49,7 @@ public class LongValueMarshal
    * Return true if is a Value.
    */
   @Override
-  public boolean isValue()
+  public bool isValue()
   {
     return true;
   }

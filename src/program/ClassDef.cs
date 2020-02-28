@@ -165,7 +165,7 @@ abstract public class ClassDef implements InstanceInitializer {
   /**
    * Returns true if this class locally declares usage of this trait.
    */
-  public boolean hasTrait(String traitName)
+  public bool hasTrait(String traitName)
   {
     for (String trait : _traitList) {
       if (trait.equals(traitName)) {
@@ -291,7 +291,7 @@ abstract public class ClassDef implements InstanceInitializer {
   /**
    * Return true for an abstract class.
    */
-  public boolean isAbstract()
+  public bool isAbstract()
   {
     return false;
   }
@@ -299,7 +299,7 @@ abstract public class ClassDef implements InstanceInitializer {
   /**
    * Return true for an interface class.
    */
-  public boolean isInterface()
+  public bool isInterface()
   {
     return false;
   }
@@ -307,7 +307,7 @@ abstract public class ClassDef implements InstanceInitializer {
   /**
    * True for an trait class.
    */
-  public boolean isTrait()
+  public bool isTrait()
   {
     return false;
   }
@@ -315,7 +315,7 @@ abstract public class ClassDef implements InstanceInitializer {
   /**
    * Returns true for a final class.
    */
-  public boolean isFinal()
+  public bool isFinal()
   {
     return false;
   }
@@ -323,7 +323,7 @@ abstract public class ClassDef implements InstanceInitializer {
   /**
    * Returns true if the class has private/protected methods.
    */
-  public boolean hasNonPublicMethods()
+  public bool hasNonPublicMethods()
   {
     return false;
   }
@@ -382,7 +382,7 @@ abstract public class ClassDef implements InstanceInitializer {
   /**
    * Returns value for instanceof.
    */
-  public boolean isA(Env env, string name)
+  public bool isA(Env env, string name)
   {
     if (_name.equalsIgnoreCase(name)) {
       return true;

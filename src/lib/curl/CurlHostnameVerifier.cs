@@ -39,13 +39,13 @@ namespace QuercusDotNet.lib.curl {
 public class CurlHostnameVerifier
   implements HostnameVerifier
 {
-  private boolean _isVerifySSLPeer;
-  private boolean _isVerifySSLCommonName;
-  private boolean _isVerifySSLHostname;
+  private bool _isVerifySSLPeer;
+  private bool _isVerifySSLCommonName;
+  private bool _isVerifySSLHostname;
   
   private CurlHostnameVerifier(boolean verifyPeer,
-                               boolean commonName,
-                               boolean hostname)
+                               bool commonName,
+                               bool hostname)
   {
     _isVerifySSLPeer = verifyPeer;
     _isVerifySSLCommonName = commonName;
@@ -58,13 +58,13 @@ public class CurlHostnameVerifier
   }
   
   public static CurlHostnameVerifier create(boolean verifyPeer,
-                                            boolean commonName,
-                                            boolean hostname)
+                                            bool commonName,
+                                            bool hostname)
   {
     return new CurlHostnameVerifier(verifyPeer, commonName, hostname);
   }
   
-  public boolean verify(String hostname, SSLSession session)
+  public bool verify(String hostname, SSLSession session)
   {
     if (_isVerifySSLPeer == false
         && _isVerifySSLCommonName == false

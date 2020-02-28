@@ -79,16 +79,16 @@ public class JavaClassDef : ClassDef implements InstanceInitializer {
   private HashSet<String> _instanceOfSet;
   private HashSet<String> _instanceOfSetLowerCase;
 
-  private final boolean _isAbstract;
-  private final boolean _isInterface;
-  private final boolean _isDelegate;
-  private boolean _isPhpClass;
+  private final bool _isAbstract;
+  private final bool _isInterface;
+  private final bool _isDelegate;
+  private bool _isPhpClass;
 
   private string _resourceType;
 
   private JavaClassDef _componentDef;
 
-  protected volatile boolean _isInit;
+  protected volatile bool _isInit;
 
   private final HashMap<String, Value> _constMap
     = new HashMap<String, Value>();
@@ -174,7 +174,7 @@ public class JavaClassDef : ClassDef implements InstanceInitializer {
     moduleContext.addExtensionClass(extension, name);
   }
 
-  private void fillInstanceOfSet(Class<?> type, boolean isTop)
+  private void fillInstanceOfSet(Class<?> type, bool isTop)
   {
     if (type == null)
       return;
@@ -279,7 +279,7 @@ public class JavaClassDef : ClassDef implements InstanceInitializer {
     return _extension;
   }
 
-  public override boolean isA(Env env, string name)
+  public override bool isA(Env env, string name)
   {
     if (_instanceOfSet == null) {
       _instanceOfSet = new HashSet<String>();
@@ -302,7 +302,7 @@ public class JavaClassDef : ClassDef implements InstanceInitializer {
 
   protected void addInterfaces(HashSet<String> interfaceSet,
                                Class<?> type,
-                               boolean isTop)
+                               bool isTop)
   {
     if (type == null)
       return;
@@ -320,7 +320,7 @@ public class JavaClassDef : ClassDef implements InstanceInitializer {
     addInterfaces(interfaceSet, type.getSuperclass(), false);
   }
 
-  private boolean hasInterface(String name, Class<?> type)
+  private bool hasInterface(String name, Class<?> type)
   {
     Class<?>[] interfaces = type.getInterfaces();
 
@@ -337,22 +337,22 @@ public class JavaClassDef : ClassDef implements InstanceInitializer {
     return false;
   }
 
-  public override boolean isAbstract()
+  public override bool isAbstract()
   {
     return _isAbstract;
   }
 
-  public boolean isArray()
+  public bool isArray()
   {
     return false;
   }
 
-  public override boolean isInterface()
+  public override bool isInterface()
   {
     return _isInterface;
   }
 
-  public boolean isDelegate()
+  public bool isDelegate()
   {
     return _isDelegate;
   }
@@ -362,7 +362,7 @@ public class JavaClassDef : ClassDef implements InstanceInitializer {
     _isPhpClass = isPhpClass;
   }
 
-  public boolean isPhpClass()
+  public bool isPhpClass()
   {
     return _isPhpClass;
   }
@@ -829,7 +829,7 @@ public class JavaClassDef : ClassDef implements InstanceInitializer {
   /**
    * Creates a new instance.
    */
-  public override void initInstance(Env env, Value value, boolean isInitFieldValues)
+  public override void initInstance(Env env, Value value, bool isInitFieldValues)
   {
     if (value instanceof ObjectValue) {
       ObjectValue object = (ObjectValue) value;
@@ -993,7 +993,7 @@ public class JavaClassDef : ClassDef implements InstanceInitializer {
           Class<?>[] delegateClasses = ((Delegates) annotation).value();
 
           for (Class<?> cl : delegateClasses) {
-            boolean isDelegate = addDelegate(cl);
+            bool isDelegate = addDelegate(cl);
 
             if (! isDelegate)
               throw new IllegalArgumentException(
@@ -1013,10 +1013,10 @@ public class JavaClassDef : ClassDef implements InstanceInitializer {
     }
   }
 
-  private boolean addDelegate(Class<?> cl)
+  private bool addDelegate(Class<?> cl)
     
   {
-    boolean isDelegate = false;
+    bool isDelegate = false;
 
     if (TraversableDelegate.class.isAssignableFrom(cl)) {
       _traversableDelegate = (TraversableDelegate) cl.newInstance();
@@ -1036,7 +1036,7 @@ public class JavaClassDef : ClassDef implements InstanceInitializer {
     return isDelegate;
   }
 
-  private <T> boolean addDelegate(Class<T> cl,
+  private <T> bool addDelegate(Class<T> cl,
                                   ArrayList<T> delegates,
                                   Class<? : Object> delegateClass)
   {
@@ -1431,7 +1431,7 @@ public class JavaClassDef : ClassDef implements InstanceInitializer {
     return str.toStringValue(env);
   }
   
-  public boolean issetField(Env env, Object obj, StringValue name)
+  public bool issetField(Env env, Object obj, StringValue name)
   {
     if (_isset == null) {
       return false;
@@ -1449,7 +1449,7 @@ public class JavaClassDef : ClassDef implements InstanceInitializer {
     }
   }
 
-  public boolean jsonEncode(Env env,
+  public bool jsonEncode(Env env,
                             Object obj,
                             JsonEncodeContext context,
                             StringValue sb)
@@ -1473,7 +1473,7 @@ public class JavaClassDef : ClassDef implements InstanceInitializer {
    * @return false if printRImpl not implemented
    * 
    */
-  public boolean printRImpl(Env env,
+  public bool printRImpl(Env env,
                             Object obj,
                             WriteStream out,
                             int depth,
@@ -1496,7 +1496,7 @@ public class JavaClassDef : ClassDef implements InstanceInitializer {
     }
   }
 
-  public boolean varDumpImpl(Env env,
+  public bool varDumpImpl(Env env,
                              Value obj,
                              Object javaObj,
                              WriteStream out,
@@ -1592,7 +1592,7 @@ public class JavaClassDef : ClassDef implements InstanceInitializer {
       return LongValue.create(_index++);
     }
 
-    public boolean hasNext()
+    public bool hasNext()
     {
       return _iterator.hasNext();
     }
@@ -1636,7 +1636,7 @@ public class JavaClassDef : ClassDef implements InstanceInitializer {
       }
     }
 
-    public boolean hasNext()
+    public bool hasNext()
     {
       if (_iterator != null)
         return _iterator.hasNext();
@@ -1695,7 +1695,7 @@ public class JavaClassDef : ClassDef implements InstanceInitializer {
       }
     }
 
-    public boolean hasNext()
+    public bool hasNext()
     {
       if (_iterator != null)
         return _iterator.hasNext();

@@ -98,9 +98,9 @@ public class Mysqli : JdbcConnectionResource
   private ArrayList<JdbcResultResource> _resultValues
     = new ArrayList<JdbcResultResource>();
   private int _nextResultValue = 0;
-  private boolean _hasBeenUsed = true;
+  private bool _hasBeenUsed = true;
 
-  private boolean _isPersistent;
+  private bool _isPersistent;
 
   private LastSqlType _lastSql;
 
@@ -137,7 +137,7 @@ public class Mysqli : JdbcConnectionResource
 
   Mysqli(Env env, string host, string user, string pass, string db, int port,
          string socket, int flags, string driver, string url,
-         boolean isNewLink, boolean isEmulatePrepares, string initQuery)
+         bool isNewLink, bool isEmulatePrepares, string initQuery)
    : base(env) {
 
     if (host == null || host.length() == 0) {
@@ -159,7 +159,7 @@ public class Mysqli : JdbcConnectionResource
    : base(env) {
   }
 
-  public boolean isLastSqlDescribe()
+  public bool isLastSqlDescribe()
   {
     return _lastSql == LastSqlType.DESCRIBE;
   }
@@ -178,8 +178,8 @@ public class Mysqli : JdbcConnectionResource
                                         int flags,
                                         string driver,
                                         string url,
-                                        boolean isNewLink,
-                                        boolean isEmulatePrepares)
+                                        bool isNewLink,
+                                        bool isEmulatePrepares)
   {
     if (isConnected()) {
       env.warning(L.l("Connection is already opened to '{0}'", this));
@@ -264,10 +264,10 @@ public class Mysqli : JdbcConnectionResource
                                  int port,
                                  string dbname,
                                  string encoding,
-                                 boolean useInteractive,
-                                 boolean useCompression,
-                                 boolean useSsl,
-                                 boolean isEmulatePrepares)
+                                 bool useInteractive,
+                                 bool useCompression,
+                                 bool useSsl,
+                                 bool isEmulatePrepares)
   {
     StringBuilder urlBuilder = new StringBuilder();
 
@@ -379,7 +379,7 @@ public class Mysqli : JdbcConnectionResource
   /**
    * sets the autocommit mode
    */
-  public boolean autocommit(Env env, boolean isAutoCommit)
+  public bool autocommit(Env env, bool isAutoCommit)
   {
     return validateConnection(env).setAutoCommit(isAutoCommit);
   }
@@ -391,7 +391,7 @@ public class Mysqli : JdbcConnectionResource
    * @param password the new password
    * @param db the new database
    */
-  public boolean change_user(Env env,
+  public bool change_user(Env env,
                              string user,
                              string password,
                              string db)
@@ -796,7 +796,7 @@ public class Mysqli : JdbcConnectionResource
   /**
    * Check for more results in a multi-query
    */
-  public boolean more_results(Env env)
+  public bool more_results(Env env)
   {
     return ((Mysqli) validateConnection(env)).moreResults();
   }
@@ -805,7 +805,7 @@ public class Mysqli : JdbcConnectionResource
    * executes one or multiple queries which are
    * concatenated by a semicolon.
    */
-  public boolean multi_query(Env env, StringValue query)
+  public bool multi_query(Env env, StringValue query)
   {
     return ((Mysqli) validateConnection(env)).multiQuery(env, query);
   }
@@ -814,7 +814,7 @@ public class Mysqli : JdbcConnectionResource
    * prepares next result set from a previous call to
    * mysqli_multi_query
    */
-  public boolean next_result(Env env)
+  public bool next_result(Env env)
   {
     return ((Mysqli) validateConnection(env)).nextResult();
   }
@@ -822,7 +822,7 @@ public class Mysqli : JdbcConnectionResource
   /**
    * Sets a mysqli option.
    */
-  public boolean options(Env env, int option, Value value)
+  public bool options(Env env, int option, Value value)
   {
     if (option == MysqliModule.MYSQLI_READ_DEFAULT_FILE) {
       Path path = env.lookupPwd(value);
@@ -894,7 +894,7 @@ public class Mysqli : JdbcConnectionResource
   private const string toBinarySafeString2(StringValue str)
   {
     int len = str.length();
-    boolean isBinary = false;
+    bool isBinary = false;
 
     for (int i = 0; i < len; i++) {
       char ch = str.charAt(i);
@@ -929,7 +929,7 @@ public class Mysqli : JdbcConnectionResource
                                         int length, int index, char quoteChar)
   {
     int start = index;
-    boolean isBinary = false;
+    bool isBinary = false;
 
     for (; index < length; index++) {
       char ch = str.charAt(index);
@@ -1112,7 +1112,7 @@ public class Mysqli : JdbcConnectionResource
    * @param query the escaped query string (can contain
    * escape sequences like `\n' and `\Z')
    */
-  public boolean real_query(Env env,
+  public bool real_query(Env env,
                             StringValue query)
   {
     // Assume that the query argument contains just one query. Reuse the
@@ -1129,7 +1129,7 @@ public class Mysqli : JdbcConnectionResource
   {
     MysqliStatement stmt = new MysqliStatement((Mysqli) validateConnection(env));
 
-    boolean result = stmt.prepare(env, query);
+    bool result = stmt.prepare(env, query);
 
     if (! result) {
       stmt.close();
@@ -1149,7 +1149,7 @@ public class Mysqli : JdbcConnectionResource
   /**
    * Connects to the underlying database.
    */
-  public boolean real_connect(Env env,
+  public bool real_connect(Env env,
                               @Optional("localhost") StringValue host,
                               @Optional StringValue userName,
                               @Optional StringValue password,
@@ -1183,7 +1183,7 @@ public class Mysqli : JdbcConnectionResource
   /**
    * Rolls the current transaction back.
    */
-  public boolean rollback()
+  public bool rollback()
   {
     return super.rollback();
   }
@@ -1193,7 +1193,7 @@ public class Mysqli : JdbcConnectionResource
    *
    * @param dbname the name of the database to select.
    */
-  public boolean select_db(Env env, string db)
+  public bool select_db(Env env, string db)
   {
     try {
       if (isConnected()) {
@@ -1214,7 +1214,7 @@ public class Mysqli : JdbcConnectionResource
   /**
    * Sets a mysqli option
    */
-  public boolean set_opt(Env env, int option, Value value)
+  public bool set_opt(Env env, int option, Value value)
   {
     return options(env, option, value);
   }
@@ -1294,7 +1294,7 @@ public class Mysqli : JdbcConnectionResource
     return obj;
   }
 
-  public boolean set_charset(Env env, StringValue charset)
+  public bool set_charset(Env env, StringValue charset)
   {
     Connection conn = getConnection(env);
 
@@ -1540,7 +1540,7 @@ public class Mysqli : JdbcConnectionResource
    * is not the same as simply closing the connection. For
    * example, table locks are released by a KILL.
    */
-  public boolean kill(Env env, int threadId)
+  public bool kill(Env env, int threadId)
   {
     try {
       JdbcConnectionResource connV = validateConnection(env);
@@ -1550,7 +1550,7 @@ public class Mysqli : JdbcConnectionResource
         return false;
 
       Statement stmt = null;
-      boolean result = false;
+      bool result = false;
 
       try {
         stmt = conn.createStatement();
@@ -1585,7 +1585,7 @@ public class Mysqli : JdbcConnectionResource
   /**
    * Returns true for thread_safe
    */
-  public boolean thread_safe()
+  public bool thread_safe()
   {
     return true;
   }
@@ -1704,7 +1704,7 @@ public class Mysqli : JdbcConnectionResource
    * If so, more results will return true only if
    * there is another result.
    */
-  private boolean moreResults()
+  private bool moreResults()
   {
     return !_hasBeenUsed || _nextResultValue < _resultValues.size() - 1;
   }
@@ -1724,7 +1724,7 @@ public class Mysqli : JdbcConnectionResource
    * depending on the last query entered.  Not sure what
    * actual PHP intention is.
    */
-  private boolean multiQuery(Env env, StringValue sql)
+  private bool multiQuery(Env env, StringValue sql)
   {
     clearErrors();
 
@@ -1785,7 +1785,7 @@ public class Mysqli : JdbcConnectionResource
    * prepares the next resultset from
    * a multi_query
    */
-  private boolean nextResult()
+  private bool nextResult()
   {
     if (_nextResultValue + 1 < _resultValues.size()) {
       _hasBeenUsed = false;
@@ -1805,7 +1805,7 @@ public class Mysqli : JdbcConnectionResource
     StringBuilder queryBuffer = new StringBuilder(64);
     final string sql = sqlStr.toString();
     final int length = sql.length();
-    boolean inQuotes = false;
+    bool inQuotes = false;
     char c;
 
     for (int i = 0; i < length; i++) {
@@ -1971,7 +1971,7 @@ public class Mysqli : JdbcConnectionResource
   }
   */
 
-  public boolean close(Env env)
+  public bool close(Env env)
   {
     /*
     if (_isPersistent)

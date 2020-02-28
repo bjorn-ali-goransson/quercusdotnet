@@ -119,7 +119,7 @@ public class CallVarExpr : Expr {
    *
    * @return the expression value.
    */
-  public Value evalImpl(Env env, boolean isRef, boolean isCopy)
+  public Value evalImpl(Env env, bool isRef, bool isCopy)
   {
     Value value = _name.eval(env);
     

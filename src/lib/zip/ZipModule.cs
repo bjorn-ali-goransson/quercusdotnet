@@ -132,7 +132,7 @@ public class ZipModule : AbstractQuercusModule {
   /**
    * Closes the file.
    */
-  public boolean zip_close(@NotNull ZipDirectory directory)
+  public bool zip_close(@NotNull ZipDirectory directory)
   {
     if (directory == null)
       return false;
@@ -145,7 +145,7 @@ public class ZipModule : AbstractQuercusModule {
    *
    * @return true on success or false on failure
    */
-  public boolean zip_entry_open(Env env,
+  public bool zip_entry_open(Env env,
                                 @NotNull ZipDirectory directory,
                                 @NotNull QuercusZipEntry entry,
                                 @Optional string mode)
@@ -161,7 +161,7 @@ public class ZipModule : AbstractQuercusModule {
    *
    * @return true if successful, else false;
    */
-  public boolean zip_entry_close(Env env,
+  public bool zip_entry_close(Env env,
                                  @NotNull QuercusZipEntry entry)
   {
     try {

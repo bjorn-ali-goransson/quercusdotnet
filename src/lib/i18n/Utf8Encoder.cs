@@ -41,12 +41,12 @@ public class Utf8Encoder
   }
 
   @Override
-  public boolean isUtf8()
+  public bool isUtf8()
   {
     return true;
   }
 
-  public override boolean isEncodable(StringValue str, int start, int end)
+  public override bool isEncodable(StringValue str, int start, int end)
   {
     for (int i = start; i < end; i++) {
       char ch = str.charAt(i);

@@ -91,7 +91,7 @@ public class JMSQueue
     return env.wrapJava(queue);
   }
 
-  public boolean send(@NotNull Value value, @Optional JMSQueue replyTo)
+  public bool send(@NotNull Value value, @Optional JMSQueue replyTo)
     
   {
     Message message = null;

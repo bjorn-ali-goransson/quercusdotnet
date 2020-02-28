@@ -66,7 +66,7 @@ public class TcpInputOutput
   private int _errno;
 
   public TcpInputOutput(Env env, string host, int port,
-                        boolean isSecure,
+                        bool isSecure,
                         Domain domain)
     
   {
@@ -152,7 +152,7 @@ public class TcpInputOutput
   }
 
   @Override
-  public boolean isConnected()
+  public bool isConnected()
   {
     return _socket.isConnected();
   }

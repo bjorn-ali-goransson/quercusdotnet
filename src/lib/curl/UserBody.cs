@@ -70,7 +70,7 @@ public class UserBody : PostBody
     return (long) _length;
   }
 
-  public override boolean isChunked()
+  public override bool isChunked()
   {
     return _length < 0;
   }

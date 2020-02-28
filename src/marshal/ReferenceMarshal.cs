@@ -38,12 +38,12 @@ public class ReferenceMarshal : Marshal
 {
   public readonly Marshal MARSHAL = new ReferenceMarshal();
   
-  public boolean isReadOnly()
+  public bool isReadOnly()
   {
     return false;
   }
 
-  public boolean isReference()
+  public bool isReference()
   {
     return true;
   }

@@ -36,19 +36,19 @@ namespace QuercusDotNet.lib.db {
  * Extra ResultSet metadata for a Quercus Mysql connection.
  */
 public interface QuercusResultSetMetaData : ResultSetMetaData {
-  public boolean isPrimaryKey(int column);
+  public bool isPrimaryKey(int column);
 
-  public boolean isUniqueKey(int column);
+  public bool isUniqueKey(int column);
 
-  public boolean isUnsigned(int column);
+  public bool isUnsigned(int column);
 
-  public boolean isZeroFill(int column);
+  public bool isZeroFill(int column);
 
-  public boolean isMultipleKey(int column);
+  public bool isMultipleKey(int column);
 
-  public boolean isBlob(int column);
+  public bool isBlob(int column);
 
-  public boolean isNotNull(int column);
+  public bool isNotNull(int column);
 
   public int getLength(int column);
 }

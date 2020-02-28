@@ -64,7 +64,7 @@ public class MailModule : AbstractQuercusModule {
   /**
    * Send mail using JavaMail.
    */
-  public static boolean mail(Env env,
+  public static bool mail(Env env,
                              string to,
                              string subject,
                              StringValue message,

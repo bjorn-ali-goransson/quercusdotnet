@@ -44,7 +44,7 @@ public class BinaryOutputMarshal : Marshal
   public readonly Marshal MARSHAL = new BinaryOutputMarshal();
 
   @Override
-  public boolean isReadOnly()
+  public bool isReadOnly()
   {
     return true;
   }

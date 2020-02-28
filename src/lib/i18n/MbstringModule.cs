@@ -100,7 +100,7 @@ public class MbstringModule
    * Checks if the string is correctly encoded.
    * XXX: no args
    */
-  public boolean mb_check_encoding(Env env,
+  public bool mb_check_encoding(Env env,
                                    @Optional Value var,
                                    @Optional string encoding)
   {
@@ -255,7 +255,7 @@ public class MbstringModule
   public static Value mb_detect_encoding(Env env,
                                          StringValue str,
                                          @Optional Value encodingV,
-                                         @Optional boolean isStrict)
+                                         @Optional bool isStrict)
   {
     // XXX: strict
 
@@ -944,7 +944,7 @@ public class MbstringModule
     message = message.toBinaryValue(encoding);
     additionalHeaders = additionalHeaders.toBinaryValue(encoding);
 
-    boolean result = MailModule.mail(env,
+    bool result = MailModule.mail(env,
                                      to.toString(),
                                      subject.toString(),
                                      message,
@@ -1222,7 +1222,7 @@ public class MbstringModule
     StringBuilder sb = new StringBuilder();
 
     int strLen = str.length();
-    boolean isWordStart = true;
+    bool isWordStart = true;
 
     for (int i = 0; i < strLen; i++) {
       char ch = str.charAt(i);
@@ -1531,7 +1531,7 @@ public class MbstringModule
 
     ArrayValue _lastMatch;
     int _position;
-    boolean _isValidRegexp;
+    bool _isValidRegexp;
 
     EregSearch(Env env,
                StringValue string,
@@ -1566,7 +1566,7 @@ public class MbstringModule
         return _string.EMPTY;
     }
 
-    Value search(Env env, boolean isArrayReturn)
+    Value search(Env env, bool isArrayReturn)
     {
       if (_position < 0)
         return BooleanValue.FALSE;

@@ -97,7 +97,7 @@ public class ThisExpr : AbstractVarExpr {
    *
    * @return the expression value.
    */
-  public override Value evalArg(Env env, boolean isTop)
+  public override Value evalArg(Env env, bool isTop)
   {
     return env.getThis();
   }

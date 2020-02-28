@@ -84,7 +84,7 @@ public class ConditionalExpr : Expr {
    *
    * @return the expression value.
    */
-  public boolean evalBoolean(Env env)
+  public bool evalBoolean(Env env)
   {
     if (_test.evalBoolean(env))
       return _trueExpr.evalBoolean(env);

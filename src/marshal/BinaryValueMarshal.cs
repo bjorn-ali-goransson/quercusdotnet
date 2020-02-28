@@ -41,7 +41,7 @@ public class BinaryValueMarshal : Marshal
 {
   public readonly Marshal MARSHAL = new BinaryValueMarshal();
 
-  public boolean isReadOnly()
+  public bool isReadOnly()
   {
     return true;
   }
@@ -50,7 +50,7 @@ public class BinaryValueMarshal : Marshal
    * Return true if is a Value.
    */
   @Override
-  public boolean isValue()
+  public bool isValue()
   {
     return true;
   }

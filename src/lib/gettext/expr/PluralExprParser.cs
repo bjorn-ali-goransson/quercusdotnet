@@ -59,8 +59,8 @@ class PluralExprParser
   private int _peekToken;
   private int _integer;
 
-  private boolean _isError;
-  private boolean _isInitialized;
+  private bool _isError;
+  private bool _isInitialized;
 
   protected PluralExprParser(CharSequence expr)
   {
@@ -108,7 +108,7 @@ class PluralExprParser
   {
     int ch = consumeWhiteSpace();
 
-    boolean isNplurals;
+    bool isNplurals;
 
     if (ch == 'n'
         && read() == 'p'

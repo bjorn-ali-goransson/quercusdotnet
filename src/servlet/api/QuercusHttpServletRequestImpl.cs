@@ -189,7 +189,7 @@ public class QuercusHttpServletRequestImpl implements QuercusHttpServletRequest
     return _request.getRemoteUser();
   }
 
-  public override boolean isSecure()
+  public override bool isSecure()
   {
     return _request.isSecure();
   }

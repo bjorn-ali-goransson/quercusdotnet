@@ -93,7 +93,7 @@ public class AttributeView : SimpleView
     throw new UnsupportedOperationException();
   }
 
-  public override boolean toXml(Env env, StringBuilder sb)
+  public override bool toXml(Env env, StringBuilder sb)
   {
     sb.append(' ');
     sb.append(_attr.getNodeName());
@@ -107,7 +107,7 @@ public class AttributeView : SimpleView
     return true;
   }
 
-  public override Value toDumpValue(Env env, QuercusClass cls, boolean isChildren)
+  public override Value toDumpValue(Env env, QuercusClass cls, bool isChildren)
   {
     ObjectValue obj = env.createObject();
     obj.setClassName(cls.getName());

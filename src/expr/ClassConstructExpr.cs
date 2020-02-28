@@ -47,7 +47,7 @@ public class ClassConstructExpr : AbstractMethodExpr {
   protected final string _className;
   protected final Expr []_args;
 
-  protected boolean _isMethod;
+  protected bool _isMethod;
 
   public ClassConstructExpr(Location location,
                             string className,

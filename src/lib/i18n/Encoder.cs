@@ -39,8 +39,8 @@ abstract public class Encoder
 
   protected string _charset;
   protected string _replacement;
-  protected boolean _isIgnore;
-  protected boolean _isReplaceUnicode = false;
+  protected bool _isIgnore;
+  protected bool _isReplaceUnicode = false;
 
   protected Encoder(String charset)
   {
@@ -59,12 +59,12 @@ abstract public class Encoder
       return new GenericEncoder(charset);
   }
 
-  public boolean isUtf8()
+  public bool isUtf8()
   {
     return false;
   }
 
-  public boolean isIgnore()
+  public bool isIgnore()
   {
     return _isIgnore;
   }
@@ -88,7 +88,7 @@ abstract public class Encoder
   {
   }
 
-  abstract public boolean isEncodable(StringValue str,
+  abstract public bool isEncodable(StringValue str,
                                       int start, int end);
 
   public StringValue encode(StringValue sb, CharSequence str)
@@ -96,7 +96,7 @@ abstract public class Encoder
     return encode(sb, str, 0, str.length());
   }
 
-  public StringValue encode(StringValue sb, CharSequence str, boolean isReset)
+  public StringValue encode(StringValue sb, CharSequence str, bool isReset)
   {
     return encode(sb, str, 0, str.length(), isReset);
   }
@@ -105,7 +105,7 @@ abstract public class Encoder
                                      int start, int end);
 
   public final StringValue encode(StringValue sb, CharSequence str,
-                                  int start, int end, boolean isReset)
+                                  int start, int end, bool isReset)
   {
     if (isReset)
       reset();

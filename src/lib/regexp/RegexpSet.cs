@@ -61,7 +61,7 @@ class RegexpSet {
 
   static HashMap<String,RegexpSet> CLASS_MAP = null;
 
-  boolean []_bitset = new boolean[BITSET_CHARS];
+  bool []_bitset = new boolean[BITSET_CHARS];
   IntSet _range;
 
   /**
@@ -132,9 +132,9 @@ class RegexpSet {
    *
    * @return true if disjoint
    */
-  boolean mergeOverlap(RegexpSet next)
+  bool mergeOverlap(RegexpSet next)
   {
-    boolean isDisjoint = true;
+    bool isDisjoint = true;
 
     for (int i = 0; i < BITSET_CHARS; i++) {
       _bitset[i] = _bitset[i] & next._bitset[i];
@@ -166,7 +166,7 @@ class RegexpSet {
   /**
    *   Returns true if the character is in the set.
    */
-  boolean match(int ch)
+  bool match(int ch)
   {
     if (ch < 0)
       return false;

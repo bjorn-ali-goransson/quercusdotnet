@@ -75,7 +75,7 @@ public class GlobalScope : Scope {
   /*
    * Returns true if scope is global.
    */
-  public boolean isGlobal()
+  public bool isGlobal()
   {
     return true;
   }
@@ -85,7 +85,7 @@ public class GlobalScope : Scope {
    */
   public void addFunction(StringValue name,
                           Function function,
-                          boolean isTop)
+                          bool isTop)
   {
     if (isTop)
       _functionMap.put(name.toLowerCase(Locale.ENGLISH), function);
@@ -109,7 +109,7 @@ public class GlobalScope : Scope {
                                       string parentName,
                                       ArrayList<String> ifaceList,
                                       int index,
-                                      boolean isTop)
+                                      bool isTop)
   {
     InterpretedClassDef cl = null;
 

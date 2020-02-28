@@ -75,7 +75,7 @@ public class GaeUserService
     }
   }
 
-  public static boolean isUserAdmin()
+  public static bool isUserAdmin()
   {
     try {
       return getUserService().isUserAdmin();
@@ -86,7 +86,7 @@ public class GaeUserService
     }
   }
 
-  public static boolean isUserLoggedIn()
+  public static bool isUserLoggedIn()
   {
     return getUserService().isUserLoggedIn();
   }

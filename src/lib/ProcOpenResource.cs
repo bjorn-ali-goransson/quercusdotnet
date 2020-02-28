@@ -56,7 +56,7 @@ public class ProcOpenResource
   private Process _process;
 
   private string _command;
-  private boolean _isRunning = true;
+  private bool _isRunning = true;
   private int _exitCode = -1;
 
   public ProcOpenResource(Env env,
@@ -77,7 +77,7 @@ public class ProcOpenResource
     env.addCleanup(this);
   }
 
-  public boolean isRunning()
+  public bool isRunning()
   {
     if (! _isRunning)
       return false;
@@ -135,7 +135,7 @@ public class ProcOpenResource
     }
   }
 
-  public boolean terminate()
+  public bool terminate()
   {
     if (_in != null)
       _in.close();

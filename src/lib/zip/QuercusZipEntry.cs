@@ -81,7 +81,7 @@ public class QuercusZipEntry {
   /**
    * Opens this zip entry for reading.
    */
-  public boolean zip_entry_open(Env env, ZipDirectory directory)
+  public bool zip_entry_open(Env env, ZipDirectory directory)
   {
     try {
       // php/1u07.qa
@@ -102,7 +102,7 @@ public class QuercusZipEntry {
   /**
    * Closes the zip entry.
    */
-  public boolean zip_entry_close()
+  public bool zip_entry_close()
     
   {
     if (_in == null)

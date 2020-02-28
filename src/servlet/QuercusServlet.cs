@@ -73,19 +73,19 @@ public class QuercusServlet
   private QuercusContext _quercus;
   private QuercusServletImpl _impl;
 
-  private boolean _isCompile;
-  private boolean _isLazyCompile = true;
-  private boolean _isCompileFailover = true;
+  private bool _isCompile;
+  private bool _isLazyCompile = true;
+  private bool _isCompileFailover = true;
   private double _profileProbability;
-  private boolean _isRequireSource = true;
+  private bool _isRequireSource = true;
 
   private DataSource _database;
 
-  private boolean _isStrict;
-  private boolean _isLooseParse = true;
+  private bool _isStrict;
+  private bool _isLooseParse = true;
   private int _pageCacheSize = -1;
   private int _regexpCacheSize = -1;
-  private boolean _isConnectionPool = true;
+  private bool _isConnectionPool = true;
   private string _iniPath;
   private string _scriptEncoding;
   private string _mysqlVersion;

@@ -64,7 +64,7 @@ public class ExpectMarshal : Marshal
       return env.expectBoolean(value);
   }
 
-  public boolean isReadOnly()
+  public bool isReadOnly()
   {
     return false;
   }
@@ -73,7 +73,7 @@ public class ExpectMarshal : Marshal
    * Return true if is a Value.
    */
   @Override
-  public boolean isValue()
+  public bool isValue()
   {
     return true;
   }

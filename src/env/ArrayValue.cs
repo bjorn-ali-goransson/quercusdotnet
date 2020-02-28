@@ -127,7 +127,7 @@ abstract public class ArrayValue : Value {
   /**
    * Converts to a boolean.
    */
-  public override boolean toBoolean()
+  public override bool toBoolean()
   {
     return getSize() != 0;
   }
@@ -332,7 +332,7 @@ abstract public class ArrayValue : Value {
     return map;
   }
 
-  public override boolean isCallable(Env env, boolean isCheckSyntaxOnly, Value nameRef)
+  public override bool isCallable(Env env, bool isCheckSyntaxOnly, Value nameRef)
   {
     //XXX: refactor to use toCallable()
 
@@ -434,7 +434,7 @@ abstract public class ArrayValue : Value {
   /**
    * Converts to a callable object.
    */
-  public override Callable toCallable(Env env, boolean isOptional)
+  public override Callable toCallable(Env env, bool isOptional)
   {
     Value obj = get(LongValue.ZERO);
     Value nameV = get(LongValue.ONE);
@@ -563,7 +563,7 @@ abstract public class ArrayValue : Value {
   /**
    * Returns true for an array.
    */
-  public override boolean isArray()
+  public override bool isArray()
   {
     return true;
   }
@@ -624,12 +624,12 @@ abstract public class ArrayValue : Value {
   /**
    * Returns true if the value is empty
    */
-  public override boolean isEmpty()
+  public override bool isEmpty()
   {
     return getSize() == 0;
   }
 
-  public override boolean isEmpty(Env env, Value key)
+  public override bool isEmpty(Env env, Value key)
   {
     Value value = get(key);
 
@@ -681,7 +681,7 @@ abstract public class ArrayValue : Value {
   /**
    * Returns true for less than
    */
-  public override boolean lt(Value rValue)
+  public override bool lt(Value rValue)
   {
     // php/335h
     return cmpImpl(rValue, 1) < 0;
@@ -690,7 +690,7 @@ abstract public class ArrayValue : Value {
   /**
    * Returns true for less than or equal to
    */
-  public override boolean leq(Value rValue)
+  public override bool leq(Value rValue)
   {
     // php/335h
     return cmpImpl(rValue, 1) <= 0;
@@ -699,7 +699,7 @@ abstract public class ArrayValue : Value {
   /**
    * Returns true for greater than
    */
-  public override boolean gt(Value rValue)
+  public override bool gt(Value rValue)
   {
     // php/335h
     return cmpImpl(rValue, -1) > 0;
@@ -708,7 +708,7 @@ abstract public class ArrayValue : Value {
   /**
    * Returns true for greater than or equal to
    */
-  public override boolean geq(Value rValue)
+  public override bool geq(Value rValue)
   {
     // php/335h
     return cmpImpl(rValue, -1) >= 0;
@@ -731,7 +731,7 @@ abstract public class ArrayValue : Value {
   public final void put(StringValue keyBinary,
                         StringValue keyUnicode,
                         Value value,
-                        boolean isUnicode)
+                        bool isUnicode)
   {
     if (isUnicode)
       append(keyUnicode, value);
@@ -757,7 +757,7 @@ abstract public class ArrayValue : Value {
   /**
    * Slices.
    */
-  public ArrayValue slice(Env env, int start, int end, boolean isPreserveKeys)
+  public ArrayValue slice(Env env, int start, int end, bool isPreserveKeys)
   {
     ArrayValueImpl array = new ArrayValueImpl();
 
@@ -802,7 +802,7 @@ abstract public class ArrayValue : Value {
   /**
    * Returns the value as an argument which may be a reference.
    */
-  abstract override public Value getArg(Value index, boolean isTop);
+  abstract override public Value getArg(Value index, bool isTop);
 
   /**
    * Returns the field value, creating an object if it's unset.
@@ -896,7 +896,7 @@ abstract public class ArrayValue : Value {
   /**
    * Returns true if the value is set.
    */
-  public override boolean isset(Value key)
+  public override bool isset(Value key)
   {
     Value value = get(key);
 
@@ -907,7 +907,7 @@ abstract public class ArrayValue : Value {
   /**
    * Returns true if the key exists in the array.
    */
-  public override boolean keyExists(Value key)
+  public override bool keyExists(Value key)
   {
     Value value = get(key);
 
@@ -1005,7 +1005,7 @@ abstract public class ArrayValue : Value {
   /**
    * Convenience for lib.
    */
-  public void put(String key, boolean value)
+  public void put(String key, bool value)
   {
     // XXX: this needs an Env arg because of i18n
     put(StringValue.create(key),
@@ -1015,7 +1015,7 @@ abstract public class ArrayValue : Value {
   /**
    * Convenience for lib.
    */
-  public void put(Env env, string key, boolean value)
+  public void put(Env env, string key, bool value)
   {
     put(env.createString(key),
         value ? BooleanValue.TRUE : BooleanValue.FALSE);
@@ -1135,7 +1135,7 @@ abstract public class ArrayValue : Value {
   /**
    * Returns true if there are more elements.
    */
-  public override boolean hasCurrent()
+  public override bool hasCurrent()
   {
     return _current != null;
   }
@@ -1257,7 +1257,7 @@ abstract public class ArrayValue : Value {
    * @param strict  true if alphabetic keys should not be preserved
    */
   public void sort(Comparator<Map.Entry<Value, Value>> comparator,
-                   boolean resetKeys, boolean strict)
+                   bool resetKeys, bool strict)
   {
     Entry []entries;
 
@@ -1410,7 +1410,7 @@ abstract public class ArrayValue : Value {
    * @param base  the initial index
    * @param strict  if true, string keys are also reset
    */
-  public boolean keyReset(long base, boolean strict)
+  public bool keyReset(long base, bool strict)
   {
     Entry []entries;
 
@@ -1442,7 +1442,7 @@ abstract public class ArrayValue : Value {
    *
    * @return true if this is equal to rValue, false otherwise
    */
-  public override boolean eq(Value rValue)
+  public override bool eq(Value rValue)
   {
     if (rValue == this) {
       return true;
@@ -1488,7 +1488,7 @@ abstract public class ArrayValue : Value {
    *
    * @return true if this is equal to rValue, false otherwise
    */
-  public override boolean eql(Value rValue)
+  public override bool eql(Value rValue)
   {
     if (rValue == this) {
       return true;
@@ -2030,7 +2030,7 @@ abstract public class ArrayValue : Value {
       _current = head;
     }
 
-    public boolean hasNext()
+    public bool hasNext()
     {
       return _current != null;
     }
@@ -2062,7 +2062,7 @@ abstract public class ArrayValue : Value {
       _current = head;
     }
 
-    public boolean hasNext()
+    public bool hasNext()
     {
       return _current != null;
     }
@@ -2094,7 +2094,7 @@ abstract public class ArrayValue : Value {
       _current = head;
     }
 
-    public boolean hasNext()
+    public bool hasNext()
     {
       return _current != null;
     }

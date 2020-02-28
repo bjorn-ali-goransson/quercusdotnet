@@ -43,8 +43,8 @@ public class ZipDirectory
   private byte[] _tmpBuf;
   private ZipEntry _currentEntry;
 
-  private boolean _eof;
-  private boolean _ddescriptor;
+  private bool _eof;
+  private bool _ddescriptor;
 
   public ZipDirectory(BinaryInput in)
   {
@@ -181,7 +181,7 @@ public class ZipDirectory
     _currentEntry = null;
   }
 
-  public boolean zip_close()
+  public bool zip_close()
   {
     _in.close();
 

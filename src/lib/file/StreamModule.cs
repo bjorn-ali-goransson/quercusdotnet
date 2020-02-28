@@ -159,7 +159,7 @@ public class StreamModule : AbstractQuercusModule {
   /**
    * Set an options for a stream context.
    */
-  public static boolean stream_context_set_option(Env env,
+  public static bool stream_context_set_option(Env env,
                                                   Value resource,
                                                   StringValue wrapper,
                                                   StringValue option,
@@ -182,7 +182,7 @@ public class StreamModule : AbstractQuercusModule {
   /**
    * Sets parameters for the context
    */
-  public static boolean stream_context_set_params(Env env,
+  public static bool stream_context_set_params(Env env,
                                                   Value resource,
                                                   ArrayValue value)
   {
@@ -349,8 +349,8 @@ public class StreamModule : AbstractQuercusModule {
 
     ArrayValue array = new ArrayValueImpl();
 
-    boolean isTimeout = false;
-    boolean isSeekable = false;
+    bool isTimeout = false;
+    bool isSeekable = false;
     StringValue mode = env.getEmptyString();
 
     if (stream instanceof AbstractBinaryInputOutput) {
@@ -408,7 +408,7 @@ public class StreamModule : AbstractQuercusModule {
   /**
    * bool stream_is_local ( mixed $stream_or_url )
    */
-  public static boolean stream_is_local(Env env, Value stream)
+  public static bool stream_is_local(Env env, Value stream)
   {
     if (stream.isString()) {
       Path path = env.lookupPwd(stream);
@@ -420,7 +420,7 @@ public class StreamModule : AbstractQuercusModule {
     }
   }
 
-  public static boolean stream_register_wrapper(Env env,
+  public static bool stream_register_wrapper(Env env,
                                                 StringValue protocol,
                                                 string className,
                                                 @Optional int flags)
@@ -445,7 +445,7 @@ public class StreamModule : AbstractQuercusModule {
    * stream_set_blocking is stubbed since Quercus should wait for
    * any stream (unless a non-web-server Quercus is developed.)
    */
-  public static boolean stream_set_blocking(Env env,
+  public static bool stream_set_blocking(Env env,
                                             @NotNull Value stream,
                                             int mode)
   {
@@ -457,7 +457,7 @@ public class StreamModule : AbstractQuercusModule {
       return true;
   }
 
-  public static boolean stream_set_timeout(Env env,
+  public static bool stream_set_timeout(Env env,
                                            @NotNull Value stream,
                                            int seconds,
                                            @Optional("-1") int microseconds)
@@ -509,8 +509,8 @@ public class StreamModule : AbstractQuercusModule {
         env.stub("unsupported stream_socket_client flag");
       }
 
-      boolean isTcp = true;
-      boolean isSecure = false;
+      bool isTcp = true;
+      bool isSecure = false;
       remoteSocket = remoteSocket.trim();
 
       int typeIndex = remoteSocket.indexOf("://");
@@ -642,7 +642,7 @@ public class StreamModule : AbstractQuercusModule {
   /**
    * Register a wrapper for a protocol.
    */
-  public static boolean stream_wrapper_register(Env env,
+  public static bool stream_wrapper_register(Env env,
                                                 StringValue protocol,
                                                 string className,
                                                 @Optional int flags)
@@ -663,7 +663,7 @@ public class StreamModule : AbstractQuercusModule {
   /**
    * Register a wrapper for a protocol.
    */
-  public static boolean stream_wrapper_restore(Env env, StringValue name)
+  public static bool stream_wrapper_restore(Env env, StringValue name)
   {
     return env.restoreStreamWrapper(name);
   }
@@ -671,7 +671,7 @@ public class StreamModule : AbstractQuercusModule {
   /**
    * Register a wrapper for a protocol.
    */
-  public static boolean stream_wrapper_unregister(Env env, StringValue name)
+  public static bool stream_wrapper_unregister(Env env, StringValue name)
   {
     return env.unregisterStreamWrapper(name);
   }

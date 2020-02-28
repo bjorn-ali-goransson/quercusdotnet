@@ -40,7 +40,7 @@ public interface InstanceInitializer {
   /**
    * Creates a new instance.
    */
-  public void initInstance(Env env, Value obj, boolean isInitFieldValues);
+  public void initInstance(Env env, Value obj, bool isInitFieldValues);
 }
 
 }

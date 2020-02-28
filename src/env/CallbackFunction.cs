@@ -69,7 +69,7 @@ public class CallbackFunction : Callback {
   }
 
   @Override
-  public boolean isValid(Env env)
+  public bool isValid(Env env)
   {
     if (_fun != null) {
       return true;
@@ -180,7 +180,7 @@ public class CallbackFunction : Callback {
     return _fun;
   }
 
-  public override boolean isInternal(Env env)
+  public override bool isInternal(Env env)
   {
     return getFunction(env) instanceof JavaInvoker;
   }
@@ -205,7 +205,7 @@ public class CallbackFunction : Callback {
     return getFunction(env).getDeclComment(env);
   }
 
-  public override boolean isReturnsReference(Env env)
+  public override bool isReturnsReference(Env env)
   {
     return getFunction(env).isReturnsReference(env);
   }

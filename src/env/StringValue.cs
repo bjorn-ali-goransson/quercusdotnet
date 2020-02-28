@@ -175,7 +175,7 @@ abstract public class StringValue
   /**
    * Returns true for a long
    */
-  public boolean isLongConvertible()
+  public bool isLongConvertible()
   {
     return getValueType().isLongCmp();
   }
@@ -183,7 +183,7 @@ abstract public class StringValue
   /**
    * Returns true for a double
    */
-  public boolean isDoubleConvertible()
+  public bool isDoubleConvertible()
   {
     return getValueType().isNumberCmp();
   }
@@ -191,7 +191,7 @@ abstract public class StringValue
   /**
    * Returns true for a number
    */
-  public boolean isNumber()
+  public bool isNumber()
   {
     return false;
   }
@@ -199,7 +199,7 @@ abstract public class StringValue
   /**
    * Returns true for is_numeric
    */
-  public override boolean isNumeric()
+  public override bool isNumeric()
   {
     // php/120y
 
@@ -209,7 +209,7 @@ abstract public class StringValue
   /**
    * Returns true for a scalar
    */
-  public boolean isScalar()
+  public bool isScalar()
   {
     return true;
   }
@@ -217,7 +217,7 @@ abstract public class StringValue
   /**
    * Returns true for StringValue
    */
-  public override final boolean isString()
+  public override final bool isString()
   {
     return true;
   }
@@ -225,12 +225,12 @@ abstract public class StringValue
   /**
    * Returns true if the value is empty
    */
-  public override boolean isEmpty()
+  public override bool isEmpty()
   {
     return length() == 0 || length() == 1 && charAt(0) == '0';
   }
 
-  public override boolean isCallable(Env env, boolean isCheckSyntaxOnly, Value nameRef) {
+  public override bool isCallable(Env env, bool isCheckSyntaxOnly, Value nameRef) {
     if (nameRef != null) {
       nameRef.set(this);
     }
@@ -417,7 +417,7 @@ abstract public class StringValue
   /**
    * Returns true for equality
    */
-  public override boolean eq(Value rValue)
+  public override bool eq(Value rValue)
   {
     ValueType typeA = getValueType();
     ValueType typeB = rValue.getValueType();
@@ -494,7 +494,7 @@ abstract public class StringValue
 
     long value = 0;
     long sign = 1;
-    boolean isResultSet = false;
+    bool isResultSet = false;
     long result = 0;
 
     int end = offset + len;
@@ -572,7 +572,7 @@ abstract public class StringValue
 
     long value = 0;
     long sign = 1;
-    boolean isResultSet = false;
+    bool isResultSet = false;
     long result = 0;
 
     int end = offset + len;
@@ -651,7 +651,7 @@ abstract public class StringValue
 
     long value = 0;
     long sign = 1;
-    boolean isResultSet = false;
+    bool isResultSet = false;
     long result = 0;
 
     int offset = 0;
@@ -779,7 +779,7 @@ abstract public class StringValue
   /**
    * Converts to a boolean.
    */
-  public boolean toBoolean()
+  public bool toBoolean()
   {
     int length = length();
 
@@ -903,7 +903,7 @@ abstract public class StringValue
   /**
    * Converts to a callable object
    */
-  public override Callable toCallable(Env env, boolean isOptional)
+  public override Callable toCallable(Env env, bool isOptional)
   {
     // php/1h0o
     if (isEmpty()) {
@@ -976,7 +976,7 @@ abstract public class StringValue
   /**
    * Returns the character at an index
    */
-  public Value getArg(Value key, boolean isTop)
+  public Value getArg(Value key, bool isTop)
   {
     // php/03ma
     return charValueAt(key.toLong());
@@ -1487,7 +1487,7 @@ abstract public class StringValue
   }
 
   /**
-   * Append a Java boolean to the value.
+   * Append a Java bool to the value.
    */
   public StringValue append(boolean v)
   {
@@ -1580,7 +1580,7 @@ abstract public class StringValue
   }
 
   /**
-   * Append a Java boolean to the value.
+   * Append a Java bool to the value.
    */
   public StringValue appendUnicode(boolean v)
   {
@@ -2148,7 +2148,7 @@ abstract public class StringValue
   /**
    * Returns true if the region matches
    */
-  public boolean regionMatches(int offset,
+  public bool regionMatches(int offset,
                                char []mBuffer, int mOffset, int mLength)
   {
     int length = length();
@@ -2169,7 +2169,7 @@ abstract public class StringValue
   /**
    * Returns true if the region matches
    */
-  public boolean regionMatches(int offset,
+  public bool regionMatches(int offset,
                                StringValue match, int mOffset, int mLength)
   {
     int length = length();
@@ -2188,7 +2188,7 @@ abstract public class StringValue
   /**
    * Returns true if the region matches
    */
-  public boolean regionMatchesIgnoreCase(int offset,
+  public bool regionMatchesIgnoreCase(int offset,
                                          char []match,
                                          int mOffset,
                                          int mLength)
@@ -2212,7 +2212,7 @@ abstract public class StringValue
   /**
    * Returns true if the string begins with another string.
    */
-  public boolean startsWith(CharSequence head)
+  public bool startsWith(CharSequence head)
   {
     int len = length();
     int headLen = head.length();
@@ -2232,7 +2232,7 @@ abstract public class StringValue
   /**
    * Returns true if the string ends with another string.
    */
-  public boolean endsWith(CharSequence tail)
+  public bool endsWith(CharSequence tail)
   {
     int len = length();
     int tailLen = tail.length();
@@ -2314,7 +2314,7 @@ abstract public class StringValue
   {
     int length = length();
 
-    boolean isUpperCase = false;
+    bool isUpperCase = false;
 
     for (int i = 0; i < length; i++) {
       char ch = charAt(i);
@@ -2482,7 +2482,7 @@ abstract public class StringValue
   /**
    * Return true if the array value is set
    */
-  public boolean isset(Value indexV)
+  public bool isset(Value indexV)
   {
     int index = indexV.toInt();
     int len = length();
@@ -2590,7 +2590,7 @@ abstract public class StringValue
   /**
    * Test for equality
    */
-  public override boolean equals(Object o)
+  public override bool equals(Object o)
   {
     if (this == o) {
       return true;
@@ -2623,7 +2623,7 @@ abstract public class StringValue
   /**
    * Test for equality
    */
-  public boolean equalsIgnoreCase(Object o)
+  public bool equalsIgnoreCase(Object o)
   {
     if (this == o) {
       return true;
@@ -2659,7 +2659,7 @@ abstract public class StringValue
     return true;
   }
 
-  public boolean equalsString(CharSequence s)
+  public bool equalsString(CharSequence s)
   {
     if (this == s) {
       return true;
@@ -2684,7 +2684,7 @@ abstract public class StringValue
     return true;
   }
 
-  public boolean equalsStringIgnoreCase(CharSequence s)
+  public bool equalsStringIgnoreCase(CharSequence s)
   {
     if (this == s) {
       return true;

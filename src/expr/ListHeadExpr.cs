@@ -115,7 +115,7 @@ public class ListHeadExpr : Expr {
     return array.each();
   }
 
-  public boolean evalEachBoolean(Env env, Value value)
+  public bool evalEachBoolean(Env env, Value value)
   {
     if (! value.isArray()) {
       env.warning(L.l("variable passed to each must reference an array, saw {0}", value.getType()));

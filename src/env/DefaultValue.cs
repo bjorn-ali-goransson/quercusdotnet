@@ -57,7 +57,7 @@ public class DefaultValue : NullValue {
    * Returns true for a DefaultValue
    */
   @Override
-  public boolean isDefault()
+  public bool isDefault()
   {
     return true;
   }
@@ -65,7 +65,7 @@ public class DefaultValue : NullValue {
   /**
    * Converts to a boolean.
    */
-  public override boolean toBoolean()
+  public override bool toBoolean()
   {
     return false;
   }
@@ -97,7 +97,7 @@ public class DefaultValue : NullValue {
   /**
    * Converts to a callable
    */
-  public override Callable toCallable(Env env, boolean isOptional)
+  public override Callable toCallable(Env env, bool isOptional)
   {
     return null;
   }

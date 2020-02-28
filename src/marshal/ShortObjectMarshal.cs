@@ -39,7 +39,7 @@ public class ShortObjectMarshal : Marshal
 {
   public readonly Marshal MARSHAL = new ShortObjectMarshal();
   
-  public boolean isReadOnly()
+  public bool isReadOnly()
   {
     return true;
   }

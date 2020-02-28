@@ -142,7 +142,7 @@ public class OracleOciLob {
   /**
    * Appends data from the large object to another large object
    */
-  public boolean append(Env env,
+  public bool append(Env env,
                         OracleOciLob lobFrom)
   {
     try {
@@ -174,7 +174,7 @@ public class OracleOciLob {
   /**
    * Closes LOB descriptor
    */
-  public boolean close(Env env)
+  public bool close(Env env)
   {
     try {
 
@@ -201,7 +201,7 @@ public class OracleOciLob {
   /**
    * Tests for end-of-file on a large object's descriptor
    */
-  public boolean eof(Env env)
+  public bool eof(Env env)
   {
     try {
 
@@ -324,7 +324,7 @@ public class OracleOciLob {
   /**
    * Exports LOB's contents to a file
    */
-  public boolean export(Env env,
+  public bool export(Env env,
                         Path file,
                         @Optional("0") long start,
                         @Optional("-1") long length)
@@ -362,7 +362,7 @@ public class OracleOciLob {
   /**
    * Flushes/writes buffer of the LOB to the server
    */
-  public boolean flush(Env env,
+  public bool flush(Env env,
                        @Optional("-1") int flag)
   {
     try {
@@ -391,7 +391,7 @@ public class OracleOciLob {
   /**
    * Frees resources associated with the LOB descriptor
    */
-  public boolean free(Env env)
+  public bool free(Env env)
   {
     try {
 
@@ -408,7 +408,7 @@ public class OracleOciLob {
   /**
    * Returns current state of buffering for the large object
    */
-  public boolean getBuffering(Env env)
+  public bool getBuffering(Env env)
   {
     // XXX: we assume buffering is always turned on.
     return true;
@@ -418,7 +418,7 @@ public class OracleOciLob {
    * Imports file data to the LOB
    */
   @Name("import")
-  public boolean q_import(Env env, Path file)
+  public bool q_import(Env env, Path file)
   {
     try {
 
@@ -533,7 +533,7 @@ public class OracleOciLob {
   /**
    * Moves the internal pointer to the beginning of the large object
    */
-  public boolean rewind(Env env)
+  public bool rewind(Env env)
   {
     return seek(env, 0, OracleModule.OCI_SEEK_SET);
   }
@@ -542,7 +542,7 @@ public class OracleOciLob {
   /**
    * Saves data to the large object
    */
-  public boolean save(Env env,
+  public bool save(Env env,
                       @NotNull string data,
                       @Optional("0") long offset)
   {
@@ -589,7 +589,7 @@ public class OracleOciLob {
   /**
    * Alias of import()
    */
-  public boolean saveFile(Env env,
+  public bool saveFile(Env env,
                           Path file)
   {
     return q_import(env, file);
@@ -598,7 +598,7 @@ public class OracleOciLob {
   /**
    * Sets the internal pointer of the large object
    */
-  public boolean seek(Env env,
+  public bool seek(Env env,
                       long offset,
                       @Optional("-1") int whence)
   {
@@ -636,8 +636,8 @@ public class OracleOciLob {
   /**
    * Changes current state of buffering for the large object
    */
-  public boolean setBuffering(Env env,
-                              boolean onOff)
+  public bool setBuffering(Env env,
+                              bool onOff)
   {
     // XXX: we assume buffering is always turned on.
     return true;
@@ -720,7 +720,7 @@ public class OracleOciLob {
   /**
    * Truncates large object
    */
-  public boolean truncate(Env env,
+  public bool truncate(Env env,
                           @Optional("0") long length)
   {
     try {
@@ -801,7 +801,7 @@ public class OracleOciLob {
   /**
    * Writes temporary large object
    */
-  public boolean writeTemporary(Env env,
+  public bool writeTemporary(Env env,
                                 string data,
                                 @Optional("-1") int lobType)
   {
@@ -835,7 +835,7 @@ public class OracleOciLob {
   /**
    * Alias of export()
    */
-  public boolean writeToFile(Env env,
+  public bool writeToFile(Env env,
                              Path file,
                              @Optional("0") long start,
                              @Optional("-1") long length)
@@ -843,7 +843,7 @@ public class OracleOciLob {
     return export(env, file, start, length);
   }
 
-  private boolean appendInternalBlob(Env env,
+  private bool appendInternalBlob(Env env,
                                      OracleOciLob lobFrom)
   {
     try {
@@ -879,7 +879,7 @@ public class OracleOciLob {
     }
   }
 
-  private boolean appendInternalClob(Env env,
+  private bool appendInternalClob(Env env,
                                      OracleOciLob lobFrom)
   {
     try {

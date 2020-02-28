@@ -53,7 +53,7 @@ public class ClassVarMethodExpr : Expr {
   protected final Expr []_args;
 
   protected AbstractFunction _fun;
-  protected boolean _isMethod;
+  protected bool _isMethod;
 
   public ClassVarMethodExpr(Location location,
                             Expr className,

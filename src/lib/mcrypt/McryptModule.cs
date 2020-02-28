@@ -276,7 +276,7 @@ public class McryptModule : AbstractQuercusModule {
   /**
    * Returns true for block encoding modes
    */
-  public static boolean mcrypt_enc_is_block_algorithm(Mcrypt mcrypt)
+  public static bool mcrypt_enc_is_block_algorithm(Mcrypt mcrypt)
   {
     if (mcrypt != null)
       return mcrypt.is_block_algorithm();
@@ -287,7 +287,7 @@ public class McryptModule : AbstractQuercusModule {
   /**
    * Returns true for block encoding modes
    */
-  public static boolean mcrypt_enc_is_block_algorithm_mode(Mcrypt mcrypt)
+  public static bool mcrypt_enc_is_block_algorithm_mode(Mcrypt mcrypt)
   {
     if (mcrypt != null)
       return mcrypt.is_block_algorithm_mode();
@@ -298,7 +298,7 @@ public class McryptModule : AbstractQuercusModule {
   /**
    * Returns true for block output modes
    */
-  public static boolean mcrypt_enc_is_block_mode(Mcrypt mcrypt)
+  public static bool mcrypt_enc_is_block_mode(Mcrypt mcrypt)
   {
     if (mcrypt != null)
       return mcrypt.is_block_mode();
@@ -309,7 +309,7 @@ public class McryptModule : AbstractQuercusModule {
   /**
    * Returns true for block output modes
    */
-  public static boolean mcrypt_enc_self_test(Mcrypt mcrypt)
+  public static bool mcrypt_enc_self_test(Mcrypt mcrypt)
   {
     if (mcrypt != null)
       return true;
@@ -352,7 +352,7 @@ public class McryptModule : AbstractQuercusModule {
   /**
    * Initialize encrption
    */
-  public static boolean mcrypt_generic_deinit(Mcrypt mcrypt)
+  public static bool mcrypt_generic_deinit(Mcrypt mcrypt)
   {
     if (mcrypt == null)
       return false;
@@ -376,7 +376,7 @@ public class McryptModule : AbstractQuercusModule {
   /**
    * Closes the module
    */
-  public static boolean mcrypt_generic_end(Mcrypt mcrypt)
+  public static bool mcrypt_generic_end(Mcrypt mcrypt)
   {
     if (mcrypt == null)
       return false;
@@ -499,7 +499,7 @@ public class McryptModule : AbstractQuercusModule {
   /**
    * Closes the module
    */
-  public static boolean mcrypt_module_close(Mcrypt mcrypt)
+  public static bool mcrypt_module_close(Mcrypt mcrypt)
   {
     if (mcrypt == null)
       return false;
@@ -569,7 +569,7 @@ public class McryptModule : AbstractQuercusModule {
   /**
    * Returns true for block algorithms
    */
-  public static boolean mcrypt_module_is_block_algorithm(
+  public static bool mcrypt_module_is_block_algorithm(
       Env env,
       string cipher,
       @Optional string libDir) {
@@ -588,7 +588,7 @@ public class McryptModule : AbstractQuercusModule {
   /**
    * Returns true for block modes
    */
-  public static boolean mcrypt_module_is_block_algorithm_mode(
+  public static bool mcrypt_module_is_block_algorithm_mode(
       Env env,
       string mode,
       @Optional string libDir) {
@@ -606,7 +606,7 @@ public class McryptModule : AbstractQuercusModule {
   /**
    * Returns true for block modes
    */
-  public static boolean mcrypt_module_is_block_mode(Env env,
+  public static bool mcrypt_module_is_block_mode(Env env,
                                                     string mode,
                                                     @Optional string libDir)
   {
@@ -624,7 +624,7 @@ public class McryptModule : AbstractQuercusModule {
   /**
    * Returns true for block modes
    */
-  public static boolean mcrypt_module_self_test(Env env,
+  public static bool mcrypt_module_self_test(Env env,
                                                 string algorithm,
                                                 Path libDir)
   {

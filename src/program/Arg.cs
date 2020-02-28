@@ -43,12 +43,12 @@ public class Arg {
   private final StringValue _name;
   private final Expr _default;
 
-  private final boolean _isReference;
+  private final bool _isReference;
   private final string _expectedClass;
 
   public Arg(StringValue name,
              Expr defaultExpr,
-             boolean isReference,
+             bool isReference,
              string expectedClass)
   {
     _name = name;
@@ -88,7 +88,7 @@ public class Arg {
   /**
    * Returns true for a reference argument.
    */
-  public boolean isReference()
+  public bool isReference()
   {
     return _isReference;
   }
@@ -96,7 +96,7 @@ public class Arg {
   /**
    * Returns true if the argument is required.
    */
-  public boolean isRequired()
+  public bool isRequired()
   {
     return _default == ParamRequiredExpr.REQUIRED;
   }

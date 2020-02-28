@@ -684,7 +684,7 @@ public class CurlModule
       return BooleanValue.FALSE;
   }
 
-  private static boolean setOption(Env env,
+  private static bool setOption(Env env,
                                    CurlResource curl,
                                    int option,
                                    Value value)

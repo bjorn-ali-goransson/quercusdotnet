@@ -105,7 +105,7 @@ public class DateModule : AbstractQuercusModule {
   /**
    * Returns the days in a given month.
    */
-  public static boolean checkdate(Env env, int month, int day, int year)
+  public static bool checkdate(Env env, int month, int day, int year)
   {
     if (! (1 <= year && year <= 32767))
       return false;
@@ -282,7 +282,7 @@ public class DateModule : AbstractQuercusModule {
     return array;
   }
 
-  public Value gettimeofday(Env env, @Optional boolean isFloatReturn)
+  public Value gettimeofday(Env env, @Optional bool isFloatReturn)
   {
     long gmtTime = env.getExactTime();
 
@@ -386,7 +386,7 @@ public class DateModule : AbstractQuercusModule {
   private StringValue date(Env env,
                            StringValue format,
                            long time,
-                           boolean isGMT)
+                           bool isGMT)
   {
     if (format == null)
       return null;
@@ -813,7 +813,7 @@ public class DateModule : AbstractQuercusModule {
    */
   public ArrayValue localtime(Env env,
                               @NotNull @Optional("-1") long time,
-                              @Optional("false") boolean isAssociative)
+                              @Optional("false") bool isAssociative)
   {
     if (time < 0)
       time  = env.getCurrentTime();
@@ -878,7 +878,7 @@ public class DateModule : AbstractQuercusModule {
   /**
    * Returns the time including microseconds
    */
-  public static Value microtime(Env env, @Optional boolean getAsFloat)
+  public static Value microtime(Env env, @Optional bool getAsFloat)
   {
     double now = env.getMicroTime() * 1E-6;
 
@@ -1167,7 +1167,7 @@ public class DateModule : AbstractQuercusModule {
     return timeZone.getID();
   }
 
-  public static boolean date_default_timezone_set(Env env, string id)
+  public static bool date_default_timezone_set(Env env, string id)
   {
     env.setDefaultTimeZone(id);
 
@@ -1177,7 +1177,7 @@ public class DateModule : AbstractQuercusModule {
   public static DateInterval date_diff(Env env,
                                        DateTimeInterface dateA,
                                        DateTimeInterface dateB,
-                                       @Optional boolean isAbsolute)
+                                       @Optional bool isAbsolute)
   {
     return dateA.diff(env, dateB, isAbsolute);
   }
@@ -1343,7 +1343,7 @@ public class DateModule : AbstractQuercusModule {
 
   public static Value timezone_name_from_abbr(StringValue abbr,
                                               @Optional("-1") int gmtOffset,
-                                              @Optional boolean isDST)
+                                              @Optional bool isDST)
   {
     if (gmtOffset == -1)
       return DateTimeZone.findTimeZone(abbr);

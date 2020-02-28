@@ -87,7 +87,7 @@ public class ReflectionMethod : ReflectionFunctionAbstract
   public static string export(Env env,
                               Value cls,
                               string name,
-                              @Optional boolean isReturn)
+                              @Optional bool isReturn)
   {
     return null;
   }
@@ -115,42 +115,42 @@ public class ReflectionMethod : ReflectionFunctionAbstract
 
   }
 
-  public boolean isFinal()
+  public bool isFinal()
   {
     return getFunction().isFinal();
   }
 
-  public boolean isAbstract()
+  public bool isAbstract()
   {
     return getFunction().isAbstract();
   }
 
-  public boolean isPublic()
+  public bool isPublic()
   {
     return getFunction().isPublic();
   }
 
-  public boolean isPrivate()
+  public bool isPrivate()
   {
     return getFunction().isPrivate();
   }
 
-  public boolean isProtected()
+  public bool isProtected()
   {
     return getFunction().isProtected();
   }
 
-  public boolean isStatic()
+  public bool isStatic()
   {
     return getFunction().isStatic();
   }
 
-  public boolean isConstructor()
+  public bool isConstructor()
   {
     return false;
   }
 
-  public boolean isDestructor()
+  public bool isDestructor()
   {
     return false;
   }

@@ -58,7 +58,7 @@ abstract public class Scope {
    * Returns true for an abstract scope, e.g. an abstract class or an
    * interface.
    */
-  public boolean isAbstract()
+  public bool isAbstract()
   {
     return false;
   }
@@ -66,7 +66,7 @@ abstract public class Scope {
   /**
    * Returns true if scope is global.
    */
-  public boolean isGlobal()
+  public bool isGlobal()
   {
     return false;
   }
@@ -74,7 +74,7 @@ abstract public class Scope {
   /**
    * Returns true if scope is within a class.
    */
-  public boolean isClass()
+  public bool isClass()
   {
     return false;
   }
@@ -82,7 +82,7 @@ abstract public class Scope {
   /**
    * Returns true if scope is local to a function.
    */
-  public boolean isFunction()
+  public bool isFunction()
   {
     return false;
   }
@@ -90,7 +90,7 @@ abstract public class Scope {
   /**
    * Returns true if scope is local to an IF statement.
    */
-  public boolean isIf()
+  public bool isIf()
   {
     return false;
   }
@@ -98,7 +98,7 @@ abstract public class Scope {
   /**
    * Returns true if scope is local to a switch case statement.
    */
-  public boolean isSwitchCase()
+  public bool isSwitchCase()
   {
     return false;
   }
@@ -106,7 +106,7 @@ abstract public class Scope {
   /**
    * Returns true if scope is local to a while statement.
    */
-  public boolean isWhile()
+  public bool isWhile()
   {
     return false;
   }
@@ -114,7 +114,7 @@ abstract public class Scope {
   /**
    * Returns true if scope is local to a try statement.
    */
-  public boolean isTry()
+  public bool isTry()
   {
     return false;
   }
@@ -140,7 +140,7 @@ abstract public class Scope {
    */
   abstract public void addFunction(StringValue name,
                                    Function function,
-                                   boolean isTop);
+                                   bool isTop);
 
   /**
    *  Adds a function defined in a conditional block.
@@ -166,7 +166,7 @@ abstract public class Scope {
                                                string parent,
                                                ArrayList<String> ifaceList,
                                                int index,
-                                               boolean isTop);
+                                               bool isTop);
 
   /**
    *  Adds a conditional class.

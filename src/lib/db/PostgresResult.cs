@@ -53,7 +53,7 @@ public class PostgresResult : JdbcResultResource {
   private readonly L10N L = new L10N(PostgresResult.class);
 
   // See PostgresModule.pg_fetch_array()
-  private boolean _passedNullRow = false;
+  private bool _passedNullRow = false;
 
   private Postgres _conn;
   private Statement _stmt;
@@ -100,7 +100,7 @@ public class PostgresResult : JdbcResultResource {
    * Returns whether a NULL row parameter has been
    * passed in or not.
    */
-  public boolean getPassedNullRow()
+  public bool getPassedNullRow()
   {
     // After that, the flag is immutable.
     // See PostgresModule.pg_fetch_array

@@ -66,7 +66,7 @@ public class FunctionScope : Scope {
   /**
    * Returns true if scope is local to a function.
    */
-  public boolean isFunction()
+  public bool isFunction()
   {
     return true;
   }
@@ -76,7 +76,7 @@ public class FunctionScope : Scope {
    */
   public void addFunction(StringValue name,
                           Function function,
-                          boolean isTop)
+                          bool isTop)
   {
     name = name.toLowerCase(Locale.ENGLISH);
 
@@ -112,7 +112,7 @@ public class FunctionScope : Scope {
                                       string parentName,
                                       ArrayList<String> ifaceList,
                                       int index,
-                                      boolean isTop)
+                                      bool isTop)
   {
     InterpretedClassDef existingClass = _classMap.get(name);
 

@@ -39,7 +39,7 @@ public class FloatObjectMarshal : Marshal
 {
   public readonly Marshal MARSHAL = new FloatObjectMarshal();
 
-  public boolean isReadOnly()
+  public bool isReadOnly()
   {
     return true;
   }

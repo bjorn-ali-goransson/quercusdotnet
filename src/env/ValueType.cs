@@ -34,47 +34,47 @@ namespace QuercusDotNet.Env{
 
 @SuppressWarnings("serial")
 abstract public class ValueType implements Serializable {
-  public boolean isBoolean()
+  public bool isBoolean()
   {
     return false;
   }
 
-  public boolean isLong()
+  public bool isLong()
   {
     return false;
   }
 
-  public boolean isLongCmp()
+  public bool isLongCmp()
   {
     return false;
   }
 
-  public boolean isLongAdd()
+  public bool isLongAdd()
   {
     return false;
   }
 
-  public boolean isDouble()
+  public bool isDouble()
   {
     return false;
   }
 
-  public boolean isNumber()
+  public bool isNumber()
   {
     return false;
   }
 
-  public boolean isNumberCmp()
+  public bool isNumberCmp()
   {
     return false;
   }
 
-  public boolean isNumberAdd()
+  public bool isNumberAdd()
   {
     return false;
   }
 
-  public final boolean isDoubleCmp()
+  public final bool isDoubleCmp()
   {
     return isNumberCmp() && ! isLongCmp();
   }
@@ -87,9 +87,9 @@ abstract public class ValueType implements Serializable {
       }
     };
 
-  public readonly ValueType BOOLEAN = new ValueType()
+  public readonly ValueType bool = new ValueType()
     {
-      public boolean isBoolean()
+      public bool isBoolean()
       {
         return true;
       }
@@ -102,32 +102,32 @@ abstract public class ValueType implements Serializable {
 
   public readonly ValueType LONG = new ValueType()
     {
-      public boolean isLong()
+      public bool isLong()
       {
         return true;
       }
 
-      public boolean isLongCmp()
+      public bool isLongCmp()
       {
         return true;
       }
 
-      public boolean isLongAdd()
+      public bool isLongAdd()
       {
         return true;
       }
 
-      public boolean isNumber()
+      public bool isNumber()
       {
         return true;
       }
 
-      public boolean isNumberCmp()
+      public bool isNumberCmp()
       {
         return true;
       }
 
-      public boolean isNumberAdd()
+      public bool isNumberAdd()
       {
         return true;
       }
@@ -140,22 +140,22 @@ abstract public class ValueType implements Serializable {
 
   public readonly ValueType LONG_EQ = new ValueType()
     {
-      public boolean isLongCmp()
+      public bool isLongCmp()
       {
         return true;
       }
 
-      public boolean isLongAdd()
+      public bool isLongAdd()
       {
         return true;
       }
 
-      public boolean isNumberCmp()
+      public bool isNumberCmp()
       {
         return true;
       }
 
-      public boolean isNumberAdd()
+      public bool isNumberAdd()
       {
         return true;
       }
@@ -168,12 +168,12 @@ abstract public class ValueType implements Serializable {
 
   public readonly ValueType LONG_ADD = new ValueType()
     {
-      public boolean isLongAdd()
+      public bool isLongAdd()
       {
         return true;
       }
 
-      public boolean isNumberAdd()
+      public bool isNumberAdd()
       {
         return true;
       }
@@ -186,22 +186,22 @@ abstract public class ValueType implements Serializable {
 
   public readonly ValueType DOUBLE = new ValueType()
     {
-      public boolean isDouble()
+      public bool isDouble()
       {
         return true;
       }
 
-      public boolean isNumber()
+      public bool isNumber()
       {
         return true;
       }
 
-      public boolean isNumberCmp()
+      public bool isNumberCmp()
       {
         return true;
       }
 
-      public boolean isNumberAdd()
+      public bool isNumberAdd()
       {
         return true;
       }
@@ -214,12 +214,12 @@ abstract public class ValueType implements Serializable {
 
   public readonly ValueType DOUBLE_CMP = new ValueType()
     {
-      public boolean isNumberCmp()
+      public bool isNumberCmp()
       {
         return true;
       }
 
-      public boolean isNumberAdd()
+      public bool isNumberAdd()
       {
         return true;
       }

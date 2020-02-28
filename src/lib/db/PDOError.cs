@@ -47,7 +47,7 @@ public class PDOError
   private const string ERR_GENERAL = "HY000";
 
   private int _errmode;
-  private boolean _isError;
+  private bool _isError;
   private string _errorCode = ERR_NONE;
   private ArrayValue _errorInfo;
 
@@ -137,7 +137,7 @@ public class PDOError
     return _errmode;
   }
 
-  public boolean isError()
+  public bool isError()
   {
     return _isError;
   }
@@ -171,7 +171,7 @@ public class PDOError
    *
    * @return true on success, false on error.
    */
-  public boolean setErrmode(Env env, int value)
+  public bool setErrmode(Env env, int value)
   {
     switch (value) {
       case PDO.ERRMODE_SILENT:

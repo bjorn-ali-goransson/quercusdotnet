@@ -49,7 +49,7 @@ public class LiteralStringExpr : Expr {
   /**
    * Returns true for a literal expression.
    */
-  public boolean isLiteral()
+  public bool isLiteral()
   {
     return true;
   }
@@ -57,7 +57,7 @@ public class LiteralStringExpr : Expr {
   /**
    * Returns true if the expression evaluates to a string.
    */
-  public boolean isString()
+  public bool isString()
   {
     return true;
   }

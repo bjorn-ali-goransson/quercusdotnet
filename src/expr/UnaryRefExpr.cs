@@ -54,7 +54,7 @@ public class UnaryRefExpr : AbstractUnaryExpr {
   /**
    * Returns true for a reference.
    */
-  public boolean isRef()
+  public bool isRef()
   {
     return true;
   }
@@ -93,7 +93,7 @@ public class UnaryRefExpr : AbstractUnaryExpr {
    *
    * @return the expression value.
    */
-  public override Value evalArg(Env env, boolean isTop)
+  public override Value evalArg(Env env, bool isTop)
   {
     Value value = getExpr().evalVar(env);
     

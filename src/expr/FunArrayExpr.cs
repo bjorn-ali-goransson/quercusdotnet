@@ -77,7 +77,7 @@ public class FunArrayExpr : Expr {
   /**
    * Returns true if the expression evaluates to an array.
    */
-  public boolean isArray()
+  public bool isArray()
   {
     return true;
   }
@@ -85,7 +85,7 @@ public class FunArrayExpr : Expr {
   /**
    * Returns true for a constant array.
    */
-  public boolean isConstant()
+  public bool isConstant()
   {
     for (int i = 0; i < _keys.length; i++) {
       if (_keys[i] != null && ! _keys[i].isConstant())

@@ -60,7 +60,7 @@ public class StringBuilderValue
 
   private byte []_buffer;
   private int _length;
-  private boolean _isCopy;
+  private bool _isCopy;
 
   private int _hashCode;
 
@@ -77,7 +77,7 @@ public class StringBuilderValue
     _buffer = new byte[capacity];
   }
 
-  public StringBuilderValue(int capacity, boolean isAbsolute)
+  public StringBuilderValue(int capacity, bool isAbsolute)
   {
     if (! isAbsolute && capacity < MIN_LENGTH)
       capacity = MIN_LENGTH;
@@ -360,7 +360,7 @@ public class StringBuilderValue
   /**
    * Returns true for a scalar
    */
-  public override final boolean isScalar()
+  public override final bool isScalar()
   {
     return true;
   }
@@ -368,7 +368,7 @@ public class StringBuilderValue
   /**
    * Converts to a boolean.
    */
-  public override final boolean toBoolean()
+  public override final bool toBoolean()
   {
     if (_length == 0)
       return false;
@@ -545,7 +545,7 @@ public class StringBuilderValue
   /**
    * Returns true if the value is empty.
    */
-  public override final boolean isEmpty()
+  public override final bool isEmpty()
   {
     return _length == 0 || _length == 1 && _buffer[0] == '0';
   }
@@ -865,7 +865,7 @@ public class StringBuilderValue
   {
     int length = _length;
 
-    boolean isUpperCase = false;
+    bool isUpperCase = false;
 
     byte []srcBuffer = _buffer;
 
@@ -932,7 +932,7 @@ public class StringBuilderValue
   /**
    * Returns true if the region matches
    */
-  public boolean regionMatches(int offset,
+  public bool regionMatches(int offset,
                                char []mBuffer,
                                int mOffset,
                                int mLength)
@@ -957,7 +957,7 @@ public class StringBuilderValue
   /**
    * Returns true if the region matches
    */
-  public boolean regionMatchesIgnoreCase(int offset,
+  public bool regionMatchesIgnoreCase(int offset,
                                                      char []mBuffer,
                                                      int mOffset,
                                                      int mLength)
@@ -1448,7 +1448,7 @@ public class StringBuilderValue
   }
 
   /**
-   * Append a Java boolean to the value.
+   * Append a Java bool to the value.
    */
   public override final StringValue append(boolean v)
   {
@@ -1567,7 +1567,7 @@ public class StringBuilderValue
   /**
    * Return true if the array value is set
    */
-  public boolean isset(Value indexV)
+  public bool isset(Value indexV)
   {
     int index = indexV.toInt();
 
@@ -1792,7 +1792,7 @@ public class StringBuilderValue
   /**
    * Returns true for equality
    */
-  public override boolean eq(Value rValue)
+  public override bool eq(Value rValue)
   {
     rValue = rValue.toValue();
 
@@ -1875,7 +1875,7 @@ public class StringBuilderValue
     }
   }
 
-  public override boolean equals(Object o)
+  public override bool equals(Object o)
   {
     if (o == this) {
       return true;
@@ -1944,7 +1944,7 @@ public class StringBuilderValue
   /**
    * Test for equality
    */
-  public boolean equalsIgnoreCase(Object o)
+  public bool equalsIgnoreCase(Object o)
   {
     if (this == o) {
       return true;
@@ -1984,7 +1984,7 @@ public class StringBuilderValue
     return true;
   }
 
-  public override boolean eql(Value o)
+  public override bool eql(Value o)
   {
     o = o.toValue();
 

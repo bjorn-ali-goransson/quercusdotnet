@@ -75,7 +75,7 @@ public class QuercusScriptEngine
   private QuercusContext _quercus;
 
   private string _scriptEncoding = "utf-8";
-  private boolean _isUnicodeSemantics;
+  private bool _isUnicodeSemantics;
 
   public QuercusScriptEngine()
   {
@@ -98,7 +98,7 @@ public class QuercusScriptEngine
   }
 
   public QuercusScriptEngine(QuercusScriptEngineFactory factory,
-                             boolean isUnicodeSemantics)
+                             bool isUnicodeSemantics)
   {
     _factory = factory;
     _isUnicodeSemantics = isUnicodeSemantics;
@@ -117,7 +117,7 @@ public class QuercusScriptEngine
   /**
    * Returns true if unicode.semantics (PHP6) is on.
    */
-  public boolean isUnicodeSemantics()
+  public bool isUnicodeSemantics()
   {
     return _isUnicodeSemantics;
   }
@@ -151,7 +151,7 @@ public class QuercusScriptEngine
   }
 
   private static QuercusContext createQuercus(String scriptEncoding,
-                                              boolean isUnicodeSemantics)
+                                              bool isUnicodeSemantics)
   {
     QuercusContext quercus = new QuercusContext();
 

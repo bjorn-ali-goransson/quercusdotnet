@@ -128,7 +128,7 @@ public class BinaryBuilderValue
   /**
    * Returns true for a BinaryValue.
    */
-  public boolean isBinary()
+  public bool isBinary()
   {
     return true;
   }
@@ -486,7 +486,7 @@ public class BinaryBuilderValue
   }
 
   /**
-   * Append a Java boolean to the value.
+   * Append a Java bool to the value.
    */
   public override final StringValue appendUnicode(boolean v)
   {

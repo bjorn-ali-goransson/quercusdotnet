@@ -54,14 +54,14 @@ abstract public class AbstractJavaMethod : AbstractFunction
   /**
    * Returns true if the function can take in unlimited number of args.
    */
-  abstract public boolean getHasRestArgs();
+  abstract public bool getHasRestArgs();
 
   abstract public int getMarshalingCost(Value []args);
 
   abstract public int getMarshalingCost(Expr []args);
 
   @Override
-  public boolean isJavaMethod()
+  public bool isJavaMethod()
   {
     return true;
   }
@@ -101,7 +101,7 @@ abstract public class AbstractJavaMethod : AbstractFunction
    * Checks for the same method, e.g. for multiple interfaces declaring
    * the same method.
    */
-  private boolean isSameMethod(AbstractJavaMethod funA,
+  private bool isSameMethod(AbstractJavaMethod funA,
                                AbstractJavaMethod funB)
   {
     Class<?> []paramTypesA = funA.getJavaParameterTypes();

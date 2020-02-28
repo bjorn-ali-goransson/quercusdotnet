@@ -85,21 +85,21 @@ public class PhpProtocolWrapper : ProtocolWrapper {
     return BooleanValue.FALSE;
   }
 
-  public boolean unlink(Env env, StringValue path)
+  public bool unlink(Env env, StringValue path)
   {
     env.warning(L.l("unlink not supported by protocol"));
 
     return false;
   }
 
-  public boolean rename(Env env, StringValue path_from, StringValue path_to)
+  public bool rename(Env env, StringValue path_from, StringValue path_to)
   {
     env.warning(L.l("rename not supported by protocol"));
 
     return false;
   }
 
-  public boolean mkdir(Env env,
+  public bool mkdir(Env env,
                        StringValue path, LongValue mode, LongValue options)
   {
     env.warning(L.l("mkdir not supported by protocol"));
@@ -107,7 +107,7 @@ public class PhpProtocolWrapper : ProtocolWrapper {
     return false;
   }
 
-  public boolean rmdir(Env env, StringValue path, LongValue options)
+  public bool rmdir(Env env, StringValue path, LongValue options)
   {
     env.warning(L.l("rmdir not supported by protocol"));
 

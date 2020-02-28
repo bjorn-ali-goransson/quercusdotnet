@@ -56,24 +56,24 @@ public class FunctionInfo
 
   private Function _fun;
 
-  private boolean _hasThis; // if true, override default
-  private boolean _isGlobal;
-  private boolean _isClosure;
-  private boolean _isConstructor;
-  private boolean _isStaticClassMethod;
+  private bool _hasThis; // if true, override default
+  private bool _isGlobal;
+  private bool _isClosure;
+  private bool _isConstructor;
+  private bool _isStaticClassMethod;
 
-  private boolean _isPageMain;
-  private boolean _isPageStatic;
+  private bool _isPageMain;
+  private bool _isPageStatic;
 
-  private boolean _isReturnsReference;
-  private boolean _isVariableVar;
-  private boolean _isOutUsed;
+  private bool _isReturnsReference;
+  private bool _isVariableVar;
+  private bool _isOutUsed;
 
-  private boolean _isVariableArgs;
-  private boolean _isUsesSymbolTable;
-  private boolean _isUsesGlobal;
+  private bool _isVariableArgs;
+  private bool _isUsesSymbolTable;
+  private bool _isUsesGlobal;
 
-  private boolean _isReadOnly = true;
+  private bool _isReadOnly = true;
 
   public FunctionInfo(QuercusContext quercus, ClassDef classDef, string name)
   {
@@ -142,7 +142,7 @@ public class FunctionInfo
   /**
    * True for a global function (top-level script).
    */
-  public boolean isGlobal()
+  public bool isGlobal()
   {
     return _isGlobal;
   }
@@ -166,7 +166,7 @@ public class FunctionInfo
   /**
    * True for a closure function (top-level script).
    */
-  public boolean isClosure()
+  public bool isClosure()
   {
     return _isClosure;
   }
@@ -174,7 +174,7 @@ public class FunctionInfo
   /*
    * True for a final function.
    */
-  public boolean isFinal()
+  public bool isFinal()
   {
     return _fun.isFinal();
   }
@@ -182,7 +182,7 @@ public class FunctionInfo
   /**
    * True for a main function (top-level script).
    */
-  public boolean isPageMain()
+  public bool isPageMain()
   {
     return _isPageMain;
   }
@@ -198,7 +198,7 @@ public class FunctionInfo
   /**
    * True for a static function (top-level script).
    */
-  public boolean isPageStatic()
+  public bool isPageStatic()
   {
     return _isPageStatic;
   }
@@ -219,7 +219,7 @@ public class FunctionInfo
   /**
    * Return true if the function allows $this
    */
-  public boolean hasThis()
+  public bool hasThis()
   {
     // php/396z
     // return _hasThis || (_classDef != null && ! _fun.isStatic());
@@ -237,7 +237,7 @@ public class FunctionInfo
   /**
    * True for a method.
    */
-  public boolean isMethod()
+  public bool isMethod()
   {
     return _classDef != null;
   }
@@ -245,7 +245,7 @@ public class FunctionInfo
   /**
    * True for a static class method.
    */
-  public boolean isStaticClassMethod()
+  public bool isStaticClassMethod()
   {
     return _isStaticClassMethod;
   }
@@ -261,7 +261,7 @@ public class FunctionInfo
   /**
    * True for a constructor
    */
-  public boolean isConstructor()
+  public bool isConstructor()
   {
     return _isConstructor;
   }
@@ -277,7 +277,7 @@ public class FunctionInfo
   /**
    * True if the function returns a reference.
    */
-  public boolean isReturnsReference()
+  public bool isReturnsReference()
   {
     return _isReturnsReference;
   }
@@ -293,7 +293,7 @@ public class FunctionInfo
   /**
    * True if the function has variable vars.
    */
-  public boolean isVariableVar()
+  public bool isVariableVar()
   {
     return _isVariableVar;
   }
@@ -309,7 +309,7 @@ public class FunctionInfo
   /**
    * True if the function has variable numbers of arguments
    */
-  public boolean isVariableArgs()
+  public bool isVariableArgs()
   {
     return _isVariableArgs;
   }
@@ -325,7 +325,7 @@ public class FunctionInfo
   /**
    * True if the function uses the symbol table
    */
-  public boolean isUsesSymbolTable()
+  public bool isUsesSymbolTable()
   {
     return _isUsesSymbolTable;
   }
@@ -341,7 +341,7 @@ public class FunctionInfo
   /**
    * True if the global statement is used.
    */
-  public boolean isUsesGlobal()
+  public bool isUsesGlobal()
   {
     return _isUsesGlobal;
   }
@@ -357,7 +357,7 @@ public class FunctionInfo
   /**
    * Returns true if the out is used.
    */
-  public boolean isOutUsed()
+  public bool isOutUsed()
   {
     return _isOutUsed;
   }
@@ -373,7 +373,7 @@ public class FunctionInfo
   /**
    * Returns true for a read-only function, i.e. no values are changed.
    */
-  public boolean isReadOnly()
+  public bool isReadOnly()
   {
     return _isReadOnly;
   }

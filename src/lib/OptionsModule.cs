@@ -117,7 +117,7 @@ public class OptionsModule : AbstractQuercusModule {
       return BooleanValue.TRUE;
     }
 
-    boolean result;
+    bool result;
 
     if (value.isString()) {
       long errorReporting = 0;
@@ -181,22 +181,22 @@ public class OptionsModule : AbstractQuercusModule {
     }
   }
 
-  private static boolean isAssertActive(Env env)
+  private static bool isAssertActive(Env env)
   {
     return INI_ASSERT_ACTIVE.getAsBoolean(env);
   }
 
-  private static boolean isAssertWarn(Env env)
+  private static bool isAssertWarn(Env env)
   {
     return INI_ASSERT_WARNING.getAsBoolean(env);
   }
 
-  private static boolean isAssertBail(Env env)
+  private static bool isAssertBail(Env env)
   {
     return INI_ASSERT_BAIL.getAsBoolean(env);
   }
 
-  private static boolean isAssertQuietEval(Env env)
+  private static bool isAssertQuietEval(Env env)
   {
     return INI_ASSERT_QUIET_EVAL.getAsBoolean(env);
   }
@@ -247,7 +247,7 @@ public class OptionsModule : AbstractQuercusModule {
   /**
    * Stubs the dl.
    */
-  public static boolean dl(Env env, string dl)
+  public static bool dl(Env env, string dl)
   {
     env.stub("dl is stubbed for dl(" + dl + ")");
 
@@ -257,7 +257,7 @@ public class OptionsModule : AbstractQuercusModule {
   /**
    * Returns true if the given extension is loaded
    */
-  public static boolean extension_loaded(Env env, string ext)
+  public static bool extension_loaded(Env env, string ext)
   {
     return env.isExtensionLoaded(ext);
   }
@@ -289,7 +289,7 @@ public class OptionsModule : AbstractQuercusModule {
    * Returns the constants as an array
    */
   public static Value get_defined_constants(Env env,
-                                            @Optional boolean isCategorize)
+                                            @Optional bool isCategorize)
   {
     return env.getDefinedConstants();
   }
@@ -486,7 +486,7 @@ public class OptionsModule : AbstractQuercusModule {
    */
   public static Value ini_get_all(Env env,
                                   @Optional string extension,
-                                  @Optional("true") boolean isShowDetails)
+                                  @Optional("true") bool isShowDetails)
   {
     if (extension == null) {
       extension = "";
@@ -575,7 +575,7 @@ public class OptionsModule : AbstractQuercusModule {
   /**
    * Stub value for memory get usage.
    */
-  public static Value memory_get_peak_usage(Env env, @Optional boolean real)
+  public static Value memory_get_peak_usage(Env env, @Optional bool real)
   {
     return LongValue.create(Runtime.getRuntime().maxMemory());
   }
@@ -583,7 +583,7 @@ public class OptionsModule : AbstractQuercusModule {
   /**
    * Stub value for memory get usage.
    */
-  public static Value memory_get_usage(Env env, @Optional boolean real)
+  public static Value memory_get_usage(Env env, @Optional bool real)
   {
     return LongValue.create(Runtime.getRuntime().maxMemory());
   }
@@ -859,7 +859,7 @@ public class OptionsModule : AbstractQuercusModule {
   /**
    * Sets an environment name/value pair.
    */
-  public static boolean putenv(Env env, StringValue settings)
+  public static bool putenv(Env env, StringValue settings)
   {
     int eqIndex = settings.indexOf('=');
 
@@ -968,7 +968,7 @@ public class OptionsModule : AbstractQuercusModule {
   /**
    * JVM takes care of circular reference collection.
    */
-  public static boolean gc_enabled()
+  public static bool gc_enabled()
   {
     return true;
   }
@@ -1031,7 +1031,7 @@ public class OptionsModule : AbstractQuercusModule {
     return expand;
   }
 
-  private static boolean hasRequest(Env env)
+  private static bool hasRequest(Env env)
   {
     return env.getRequest() != null;
   }

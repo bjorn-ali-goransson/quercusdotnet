@@ -56,7 +56,7 @@ public class XmlReader
 
   private int _currentNodeType;
 
-  private boolean _hasAttribute;
+  private bool _hasAttribute;
 
   private XMLStreamReader _streamReader;
 
@@ -115,7 +115,7 @@ public class XmlReader
    * @param operation name of the operation being performed (i.e. read, etc.)
    * @return true if the stream is open, false otherwise
    */
-  private boolean streamIsOpen(Env env, string operation) {
+  private bool streamIsOpen(Env env, string operation) {
     if (! streamIsOpen()) {
       env.warning(L.l("Load Data before trying to " + operation));
 
@@ -130,7 +130,7 @@ public class XmlReader
    *
    * @return true if the stream is open, false otherwise
    */
-  private boolean streamIsOpen() {
+  private bool streamIsOpen() {
     return _streamReader != null;
   }
 
@@ -658,7 +658,7 @@ public class XmlReader
    * @param value
    * @return
    */
-  public BooleanValue setParserProperty(int property, boolean value) {
+  public BooleanValue setParserProperty(int property, bool value) {
     throw new UnsupportedOperationException(getClass().getName());
   }
 

@@ -56,7 +56,7 @@ public interface SocketInputOutput
 
   public void setTimeout(long timeout);
 
-  public boolean isConnected();
+  public bool isConnected();
 }
 
 }

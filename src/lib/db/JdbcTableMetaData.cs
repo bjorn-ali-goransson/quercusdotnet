@@ -137,7 +137,7 @@ public class JdbcTableMetaData {
     return _columnMap.get(name);
   }
 
-  public boolean isValid(Env env)
+  public bool isValid(Env env)
   {
     return env.getCurrentTime() - _lastModified <= _maxIdleTime;
   }

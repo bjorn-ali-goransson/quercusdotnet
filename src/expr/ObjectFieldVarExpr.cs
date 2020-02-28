@@ -89,7 +89,7 @@ public class ObjectFieldVarExpr : AbstractVarExpr {
    *
    * @return the expression value.
    */
-  public override Value evalArg(Env env, boolean isTop)
+  public override Value evalArg(Env env, bool isTop)
   {
     Value value = _objExpr.evalArg(env, false);
 
@@ -206,7 +206,7 @@ public class ObjectFieldVarExpr : AbstractVarExpr {
     return _objExpr + "->{" + _nameExpr + "}";
   }
 
-  public override boolean evalIsset(Env env)
+  public override bool evalIsset(Env env)
   {
       Value object = _objExpr.eval(env);
       return object.issetField(env, _nameExpr.evalStringValue(env));

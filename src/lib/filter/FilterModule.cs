@@ -160,7 +160,7 @@ public class FilterModule : AbstractQuercusModule
   public Value filter_input_array(Env env,
                                   int type,
                                   @Optional Value definition,
-                                  @Optional("true") boolean isAddEmpty)
+                                  @Optional("true") bool isAddEmpty)
   {
     ArrayValue inputArray;
 

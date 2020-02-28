@@ -105,7 +105,7 @@ public class XMLWriterModule : AbstractQuercusModule {
   /**
    * Ends an attribute
    */
-  public static boolean xmlwriter_end_attribute(@NotNull XMLWriter w)
+  public static bool xmlwriter_end_attribute(@NotNull XMLWriter w)
   {
     if (w == null)
       return false;
@@ -116,7 +116,7 @@ public class XMLWriterModule : AbstractQuercusModule {
   /**
    * Starts a CData section
    */
-  public static boolean xmlwriter_end_cdata(@NotNull XMLWriter w)
+  public static bool xmlwriter_end_cdata(@NotNull XMLWriter w)
   {
     if (w == null)
       return false;
@@ -127,7 +127,7 @@ public class XMLWriterModule : AbstractQuercusModule {
   /**
    * Starts a comment section
    */
-  public static boolean xmlwriter_end_comment(@NotNull XMLWriter w)
+  public static bool xmlwriter_end_comment(@NotNull XMLWriter w)
   {
     if (w == null)
       return false;
@@ -138,7 +138,7 @@ public class XMLWriterModule : AbstractQuercusModule {
   /**
    * Ends a pi section
    */
-  public static boolean xmlwriter_end_pi(@NotNull XMLWriter w)
+  public static bool xmlwriter_end_pi(@NotNull XMLWriter w)
   {
     if (w == null)
       return false;
@@ -149,7 +149,7 @@ public class XMLWriterModule : AbstractQuercusModule {
   /**
    * Ends the document
    */
-  public static boolean xmlwriter_end_document(@NotNull XMLWriter w)
+  public static bool xmlwriter_end_document(@NotNull XMLWriter w)
   {
     if (w == null)
       return false;
@@ -160,7 +160,7 @@ public class XMLWriterModule : AbstractQuercusModule {
   /**
    * Ends a DTD attribute list
    */
-  public static boolean xmlwriter_end_dtd_attlist(@NotNull XMLWriter w)
+  public static bool xmlwriter_end_dtd_attlist(@NotNull XMLWriter w)
   {
     if (w == null)
       return false;
@@ -171,7 +171,7 @@ public class XMLWriterModule : AbstractQuercusModule {
   /**
    * Ends a DTD element list
    */
-  public static boolean xmlwriter_end_dtd_element(@NotNull XMLWriter w)
+  public static bool xmlwriter_end_dtd_element(@NotNull XMLWriter w)
   {
     if (w == null)
       return false;
@@ -182,7 +182,7 @@ public class XMLWriterModule : AbstractQuercusModule {
   /**
    * Ends a DTD entity
    */
-  public static boolean xmlwriter_end_dtd_entity(@NotNull XMLWriter w)
+  public static bool xmlwriter_end_dtd_entity(@NotNull XMLWriter w)
   {
     if (w == null)
       return false;
@@ -193,7 +193,7 @@ public class XMLWriterModule : AbstractQuercusModule {
   /**
    * Ends a DTD
    */
-  public static boolean xmlwriter_end_dtd(@NotNull XMLWriter w)
+  public static bool xmlwriter_end_dtd(@NotNull XMLWriter w)
   {
     if (w == null)
       return false;
@@ -204,7 +204,7 @@ public class XMLWriterModule : AbstractQuercusModule {
   /**
    * Ends an element
    */
-  public static boolean xmlwriter_end_element(Env env,
+  public static bool xmlwriter_end_element(Env env,
                                               @NotNull XMLWriter w)
   {
     if (w == null)
@@ -216,7 +216,7 @@ public class XMLWriterModule : AbstractQuercusModule {
   /**
    * Ends an element
    */
-  public static boolean xmlwriter_end_element_ns(Env env,
+  public static bool xmlwriter_end_element_ns(Env env,
                                                  @NotNull XMLWriter w)
   {
     if (w == null)
@@ -228,7 +228,7 @@ public class XMLWriterModule : AbstractQuercusModule {
   /**
    * Ends an element
    */
-  public static boolean xmlwriter_full_end_element(Env env,
+  public static bool xmlwriter_full_end_element(Env env,
                                                    @NotNull XMLWriter w)
   {
     if (w == null)
@@ -240,8 +240,8 @@ public class XMLWriterModule : AbstractQuercusModule {
   /**
    * enables indentation
    */
-  public static boolean xmlwriter_set_indent(@NotNull XMLWriter w,
-                                             boolean isIndent)
+  public static bool xmlwriter_set_indent(@NotNull XMLWriter w,
+                                             bool isIndent)
   {
     if (w == null)
       return false;
@@ -252,7 +252,7 @@ public class XMLWriterModule : AbstractQuercusModule {
   /**
    * sets the indentation string
    */
-  public static boolean xmlwriter_set_indent_string(@NotNull XMLWriter w,
+  public static bool xmlwriter_set_indent_string(@NotNull XMLWriter w,
                                                     StringValue value)
   {
     if (w == null)
@@ -264,7 +264,7 @@ public class XMLWriterModule : AbstractQuercusModule {
   /**
    * Starts an attribute
    */
-  public static boolean xmlwriter_start_attribute(Env env,
+  public static bool xmlwriter_start_attribute(Env env,
                                                   @NotNull XMLWriter w,
                                                   StringValue name)
   {
@@ -277,7 +277,7 @@ public class XMLWriterModule : AbstractQuercusModule {
   /**
    * Starts an attribute with a namespace
    */
-  public static boolean xmlwriter_start_attribute_ns(Env env,
+  public static bool xmlwriter_start_attribute_ns(Env env,
                                                      @NotNull XMLWriter w,
                                                      StringValue prefix,
                                                      StringValue name,
@@ -292,7 +292,7 @@ public class XMLWriterModule : AbstractQuercusModule {
   /**
    * Starts a CData section
    */
-  public static boolean xmlwriter_start_cdata(@NotNull XMLWriter w)
+  public static bool xmlwriter_start_cdata(@NotNull XMLWriter w)
   {
     if (w == null)
       return false;
@@ -303,7 +303,7 @@ public class XMLWriterModule : AbstractQuercusModule {
   /**
    * Starts a comment section
    */
-  public static boolean xmlwriter_start_comment(@NotNull XMLWriter w)
+  public static bool xmlwriter_start_comment(@NotNull XMLWriter w)
   {
     if (w == null)
       return false;
@@ -314,7 +314,7 @@ public class XMLWriterModule : AbstractQuercusModule {
   /**
    * Starts the document
    */
-  public static boolean xmlwriter_start_document(
+  public static bool xmlwriter_start_document(
       Env env,
       @NotNull XMLWriter w,
       @Optional StringValue version,
@@ -329,7 +329,7 @@ public class XMLWriterModule : AbstractQuercusModule {
   /**
    * Starts a DTD attribute list
    */
-  public static boolean xmlwriter_start_dtd_attlist(@NotNull XMLWriter w,
+  public static bool xmlwriter_start_dtd_attlist(@NotNull XMLWriter w,
                                                     StringValue name)
   {
     if (w == null)
@@ -341,7 +341,7 @@ public class XMLWriterModule : AbstractQuercusModule {
   /**
    * Starts a DTD element list
    */
-  public static boolean xmlwriter_start_dtd_element(@NotNull XMLWriter w,
+  public static bool xmlwriter_start_dtd_element(@NotNull XMLWriter w,
                                                     StringValue name)
   {
     if (w == null)
@@ -353,7 +353,7 @@ public class XMLWriterModule : AbstractQuercusModule {
   /**
    * Starts a DTD entity
    */
-  public static boolean xmlwriter_start_dtd_entity(@NotNull XMLWriter w,
+  public static bool xmlwriter_start_dtd_entity(@NotNull XMLWriter w,
                                                    StringValue name)
   {
     if (w == null)
@@ -365,7 +365,7 @@ public class XMLWriterModule : AbstractQuercusModule {
   /**
    * Starts a DTD
    */
-  public static boolean xmlwriter_start_dtd(@NotNull XMLWriter w,
+  public static bool xmlwriter_start_dtd(@NotNull XMLWriter w,
                                             StringValue name,
                                             @Optional StringValue publicId,
                                             @Optional StringValue systemId)
@@ -379,7 +379,7 @@ public class XMLWriterModule : AbstractQuercusModule {
   /**
    * Starts an element
    */
-  public static boolean xmlwriter_start_element(Env env,
+  public static bool xmlwriter_start_element(Env env,
                                                 @NotNull XMLWriter w,
                                                 StringValue name)
   {
@@ -392,7 +392,7 @@ public class XMLWriterModule : AbstractQuercusModule {
   /**
    * Starts a namespaced element
    */
-  public static boolean xmlwriter_start_element_ns(Env env,
+  public static bool xmlwriter_start_element_ns(Env env,
                                                    @NotNull XMLWriter w,
                                                    StringValue prefix,
                                                    StringValue name,
@@ -407,7 +407,7 @@ public class XMLWriterModule : AbstractQuercusModule {
   /**
    * Starts a processing instruction section
    */
-  public static boolean xmlwriter_start_pi(Env env,
+  public static bool xmlwriter_start_pi(Env env,
                                            @NotNull XMLWriter w,
                                            StringValue target)
   {
@@ -420,7 +420,7 @@ public class XMLWriterModule : AbstractQuercusModule {
   /**
    * Writes text
    */
-  public static boolean xmlwriter_text(Env env,
+  public static bool xmlwriter_text(Env env,
                                        @NotNull XMLWriter w,
                                        StringValue text)
   {
@@ -433,7 +433,7 @@ public class XMLWriterModule : AbstractQuercusModule {
   /**
    * Writes a complete attribute
    */
-  public static boolean xmlwriter_write_attribute(Env env,
+  public static bool xmlwriter_write_attribute(Env env,
                                                   @NotNull XMLWriter w,
                                                   StringValue name,
                                                   StringValue value)
@@ -447,7 +447,7 @@ public class XMLWriterModule : AbstractQuercusModule {
   /**
    * Writes a complete attribute
    */
-  public static boolean xmlwriter_write_attribute_ns(Env env,
+  public static bool xmlwriter_write_attribute_ns(Env env,
                                                      @NotNull XMLWriter w,
                                                      StringValue prefix,
                                                      StringValue name,
@@ -463,7 +463,7 @@ public class XMLWriterModule : AbstractQuercusModule {
   /**
    * Writes a complete cdata
    */
-  public static boolean xmlwriter_write_cdata(Env env,
+  public static bool xmlwriter_write_cdata(Env env,
                                               @NotNull XMLWriter w,
                                               StringValue value)
   {
@@ -476,7 +476,7 @@ public class XMLWriterModule : AbstractQuercusModule {
   /**
    * Writes a complete comment
    */
-  public static boolean xmlwriter_write_comment(Env env,
+  public static bool xmlwriter_write_comment(Env env,
                                                 @NotNull XMLWriter w,
                                                 StringValue value)
   {
@@ -489,7 +489,7 @@ public class XMLWriterModule : AbstractQuercusModule {
   /**
    * Writes a DTD attribute list
    */
-  public static boolean xmlwriter_write_dtd_attlist(Env env,
+  public static bool xmlwriter_write_dtd_attlist(Env env,
                                                     @NotNull XMLWriter w,
                                                     StringValue name,
                                                     StringValue content)
@@ -503,7 +503,7 @@ public class XMLWriterModule : AbstractQuercusModule {
   /**
    * Writes a DTD element
    */
-  public static boolean xmlwriter_write_dtd_element(Env env,
+  public static bool xmlwriter_write_dtd_element(Env env,
                                                     @NotNull XMLWriter w,
                                                     StringValue name,
                                                     StringValue content)
@@ -517,7 +517,7 @@ public class XMLWriterModule : AbstractQuercusModule {
   /**
    * Writes a DTD entity
    */
-  public static boolean xmlwriter_write_dtd_entity(Env env,
+  public static bool xmlwriter_write_dtd_entity(Env env,
                                                    @NotNull XMLWriter w,
                                                    StringValue name,
                                                    StringValue content)
@@ -531,7 +531,7 @@ public class XMLWriterModule : AbstractQuercusModule {
   /**
    * Writes a DTD
    */
-  public static boolean xmlwriter_write_dtd(Env env,
+  public static bool xmlwriter_write_dtd(Env env,
                                             @NotNull XMLWriter w,
                                             StringValue name,
                                             @Optional StringValue publicId,
@@ -547,7 +547,7 @@ public class XMLWriterModule : AbstractQuercusModule {
   /**
    * Writes a complete element
    */
-  public static boolean xmlwriter_write_element(Env env,
+  public static bool xmlwriter_write_element(Env env,
                                                 @NotNull XMLWriter w,
                                                 StringValue name,
                                                 @Optional StringValue content)
@@ -561,7 +561,7 @@ public class XMLWriterModule : AbstractQuercusModule {
   /**
    * Writes a complete element
    */
-  public static boolean xmlwriter_write_element_ns(
+  public static bool xmlwriter_write_element_ns(
       Env env,
       @NotNull XMLWriter w,
       StringValue prefix,
@@ -577,7 +577,7 @@ public class XMLWriterModule : AbstractQuercusModule {
   /**
    * Writes a pi
    */
-  public static boolean xmlwriter_write_pi(Env env,
+  public static bool xmlwriter_write_pi(Env env,
                                            @NotNull XMLWriter w,
                                            StringValue name,
                                            StringValue value)
@@ -591,7 +591,7 @@ public class XMLWriterModule : AbstractQuercusModule {
   /**
    * Writes raw text
    */
-  public static boolean xmlwriter_write_raw(Env env,
+  public static bool xmlwriter_write_raw(Env env,
                                             @NotNull XMLWriter w,
                                             StringValue value)
   {

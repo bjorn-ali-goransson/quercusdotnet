@@ -313,9 +313,9 @@ public class Env
 
   private Closure _closure;
 
-  private final boolean _isUnicodeSemantics;
-  private boolean _isAllowUrlInclude;
-  private boolean _isAllowUrlFopen;
+  private final bool _isUnicodeSemantics;
+  private bool _isAllowUrlInclude;
+  private bool _isAllowUrlFopen;
 
   private HashMap<StringValue,Path> _lookupCache
     = new HashMap<StringValue,Path>();
@@ -365,7 +365,7 @@ public class Env
   private Path _tmpPath;
   private ArrayList<Path> _removePaths;
 
-  private final boolean _isStrict;
+  private final bool _isStrict;
 
   private QuercusHttpServletRequest _request;
   private QuercusHttpServletResponse _response;
@@ -419,7 +419,7 @@ public class Env
 
   private Env _oldThreadEnv;
 
-  private boolean _isTimeout;
+  private bool _isTimeout;
 
   private long _firstMicroTime;
   private long _firstNanoTime;
@@ -567,7 +567,7 @@ public class Env
     return getCurrent();
   }
 
-  private void fillGet(ArrayValue array, boolean isMagicQuotes)
+  private void fillGet(ArrayValue array, bool isMagicQuotes)
   {
     string queryString = getQueryString();
 
@@ -629,7 +629,7 @@ public class Env
 
   private void fillCookies(ArrayValue array,
                            QuercusCookie []cookies,
-                           boolean isMagicQuotes)
+                           bool isMagicQuotes)
   {
     for (int i = 0; cookies != null && i < cookies.length; i++) {
       QuercusCookie cookie = cookies[i];
@@ -648,7 +648,7 @@ public class Env
   protected void fillPost(ArrayValue postArray,
                           ArrayValue files,
                           QuercusHttpServletRequest request,
-                          boolean isMagicQuotes)
+                          bool isMagicQuotes)
   {
     if (request != null && request.getMethod().equals("POST")) {
       Post.fillPost(this,
@@ -723,7 +723,7 @@ public class Env
   /**
    * Returns true if unicode.semantics is on.
    */
-  public boolean isUnicodeSemantics()
+  public bool isUnicodeSemantics()
   {
     return _isUnicodeSemantics;
   }
@@ -1036,7 +1036,7 @@ public class Env
   /**
    * Returns true for strict mode.
    */
-  public final boolean isStrict()
+  public final bool isStrict()
   {
     return _isStrict;
   }
@@ -1044,7 +1044,7 @@ public class Env
   /*
    * Returns true if allowed to include urls.
    */
-  public boolean isAllowUrlInclude()
+  public bool isAllowUrlInclude()
   {
     return _isAllowUrlInclude;
   }
@@ -1052,7 +1052,7 @@ public class Env
   /**
    * Returns true if allowed to fopen urls.
    */
-  public boolean isAllowUrlFopen()
+  public bool isAllowUrlFopen()
   {
     return _isAllowUrlFopen;
   }
@@ -1214,7 +1214,7 @@ public class Env
    */
   public ConnectionEntry getConnection(String driver, string url,
                                        string userName, string password,
-                                       boolean isReuse)
+                                       bool isReuse)
     
   {
     // XXX: connections might not be reusable (see gallery2), because
@@ -1503,7 +1503,7 @@ public class Env
   /**
    * Returns the writer.
    */
-  public void pushOutputBuffer(Callable callback, int chunkSize, boolean erase)
+  public void pushOutputBuffer(Callable callback, int chunkSize, bool erase)
   {
     if (_outputBuffer == null) {
       _outputBuffer =
@@ -1519,7 +1519,7 @@ public class Env
   /**
    * Pops the output buffer
    */
-  public boolean popOutputBuffer()
+  public bool popOutputBuffer()
   {
     OutputBuffer outputBuffer = _outputBuffer;
 
@@ -1825,7 +1825,7 @@ public class Env
   /**
    * Create the session.
    */
-  public SessionArrayValue createSession(String sessionId, boolean create)
+  public SessionArrayValue createSession(String sessionId, bool create)
   {
     long now = _quercus.getCurrentTime();
 
@@ -1952,7 +1952,7 @@ public class Env
   /**
    * Returns an ini value.
    */
-  public boolean getIniBoolean(String name)
+  public bool getIniBoolean(String name)
   {
     return getIniDefinition(name).getAsBoolean(this);
   }
@@ -2041,8 +2041,8 @@ public class Env
    * Gets a value.
    */
   public Value getValue(StringValue name,
-                        boolean isAutoCreate,
-                        boolean isOutputNotice)
+                        bool isAutoCreate,
+                        bool isOutputNotice)
   {
     EnvVar var = getEnvVar(name, isAutoCreate, isOutputNotice);
 
@@ -2152,7 +2152,7 @@ public class Env
   /**
    * Gets a value.
    */
-  public Var getRef(StringValue name, boolean isAutoCreate)
+  public Var getRef(StringValue name, bool isAutoCreate)
   {
     EnvVar envVar = getEnvVar(name, isAutoCreate, true);
 
@@ -2205,8 +2205,8 @@ public class Env
    * @param var the current value of the variable
    */
   public final EnvVar getEnvVar(StringValue name,
-                                boolean isAutoCreate,
-                                boolean isOutputNotice)
+                                bool isAutoCreate,
+                                bool isOutputNotice)
   {
     EnvVar envVar = _map.get(name);
 
@@ -2259,8 +2259,8 @@ public class Env
    * @param isAutoCreate
    */
   public final EnvVar getGlobalEnvVar(StringValue name,
-                                      boolean isAutoCreate,
-                                      boolean isOutputNotice)
+                                      bool isAutoCreate,
+                                      bool isOutputNotice)
   {
     EnvVar envVar = _globalMap.get(name);
 
@@ -2340,7 +2340,7 @@ public class Env
     return _globalMap;
   }
 
-  public boolean isGlobalEnv()
+  public bool isGlobalEnv()
   {
     return _map == _globalMap;
   }
@@ -2552,7 +2552,7 @@ public class Env
     return value;
   }
 
-  private EnvVar getSuperGlobalRef(StringValue name, boolean isGlobal)
+  private EnvVar getSuperGlobalRef(StringValue name, bool isGlobal)
   {
     return getSuperGlobalRef(name, false, isGlobal);
   }
@@ -2561,8 +2561,8 @@ public class Env
    * Returns a superglobal.
    */
   private EnvVar getSuperGlobalRef(StringValue name,
-                                   boolean isCheckGlobal,
-                                   boolean isGlobal)
+                                   bool isCheckGlobal,
+                                   bool isGlobal)
   {
     int specialVarId;
 
@@ -2920,7 +2920,7 @@ public class Env
       return array;
     }
 
-    boolean isMagicQuotes = getIniBoolean("magic_quotes_gpc");
+    bool isMagicQuotes = getIniBoolean("magic_quotes_gpc");
 
     QuercusCookie []cookies = _request.getCookies();
     if (cookies != null) {
@@ -3066,8 +3066,8 @@ public class Env
    * Gets a value.
    */
   public Var getVar(StringValue name,
-                    boolean isAutoCreate,
-                    boolean isOutputNotice)
+                    bool isAutoCreate,
+                    bool isOutputNotice)
   {
     EnvVar envVar = getEnvVar(name, isAutoCreate, isOutputNotice);
 
@@ -3335,7 +3335,7 @@ public class Env
    * Returns true if <code>name</code> doesn't already exist on the
    * field __get() stack.
    */
-  public boolean pushFieldGet(Env.OVERLOADING_TYPES type, string className, StringValue fieldName)
+  public bool pushFieldGet(Env.OVERLOADING_TYPES type, string className, StringValue fieldName)
   {
     FieldGetEntry entry = new FieldGetEntry(className, fieldName);
 
@@ -3581,7 +3581,7 @@ public class Env
   /**
    * Returns a constant.
    */
-  public Value getConstant(String name, boolean isAutoCreateString)
+  public Value getConstant(String name, bool isAutoCreateString)
   {
     Value value = getConstantImpl(name);
 
@@ -3612,7 +3612,7 @@ public class Env
   /**
    * Returns true if the constant is defined.
    */
-  public boolean isDefined(String name)
+  public bool isDefined(String name)
   {
     return getConstantImpl(name) != null;
   }
@@ -3745,7 +3745,7 @@ public class Env
    */
   public Value addConstant(String name,
                            Value value,
-                           boolean isCaseInsensitive)
+                           bool isCaseInsensitive)
   {
     int id;
 
@@ -3762,7 +3762,7 @@ public class Env
    */
   public Value addConstant(StringValue name,
                            Value value,
-                           boolean isCaseInsensitive)
+                           bool isCaseInsensitive)
   {
     int id;
 
@@ -3779,7 +3779,7 @@ public class Env
    */
   public Value addConstant(int id,
                            Value value,
-                           boolean isCaseInsensitive)
+                           bool isCaseInsensitive)
   {
     if (_const.length <= id) {
       Value []newConst = new Value[id + 256];
@@ -3830,7 +3830,7 @@ public class Env
   /**
    * Returns true if an extension is loaded.
    */
-  public boolean isExtensionLoaded(String name)
+  public bool isExtensionLoaded(String name)
   {
     return getQuercus().isExtensionLoaded(name);
   }
@@ -3890,7 +3890,7 @@ public class Env
     return wrapperMap.get(name);
   }
 
-  public boolean unregisterStreamWrapper(StringValue name)
+  public bool unregisterStreamWrapper(StringValue name)
   {
     HashMap<StringValue,ProtocolWrapper> wrapperMap = getStreamWrappers();
 
@@ -3908,7 +3908,7 @@ public class Env
     return true;
   }
 
-  public boolean restoreStreamWrapper(StringValue name)
+  public bool restoreStreamWrapper(StringValue name)
   {
     if (_unregisteredWrappedStreamMap == null) {
       return false;
@@ -4617,7 +4617,7 @@ public class Env
    * Returns true for any special variables, i.e. which should not be
    * saved
    */
-  boolean isSpecialVar(StringValue name)
+  bool isSpecialVar(StringValue name)
   {
     if (QuercusContext.isSuperGlobal(name))
       return true;
@@ -4955,7 +4955,7 @@ public class Env
   }
 
   private JavaClassDef getJavaClassDefinition(String className,
-                                              boolean useImport)
+                                              bool useImport)
   {
     JavaClassDef def = null;
 
@@ -5057,7 +5057,7 @@ public class Env
    * @param isNullAsFalse what to return if <i>obj</i> is null, if true return
    * {@link BooleanValue.FALSE} otherwise return {@link NullValue.NULL)
    */
-  public Value wrapJava(Object obj, boolean isNullAsFalse)
+  public Value wrapJava(Object obj, bool isNullAsFalse)
   {
     if (obj == null) {
       if (isNullAsFalse)
@@ -5075,7 +5075,7 @@ public class Env
    * @param isNullAsFalse what to return if <i>obj</i> is null, if true return
    * {@link BooleanValue.FALSE} otherwise return {@link NullValue.NULL)
    */
-  public Value wrapJava(Object obj, JavaClassDef def, boolean isNullAsFalse)
+  public Value wrapJava(Object obj, JavaClassDef def, bool isNullAsFalse)
   {
     if (obj == null) {
       if (isNullAsFalse)
@@ -5175,9 +5175,9 @@ public class Env
    * @return the found class or null if no class found.
    */
   public QuercusClass findClass(String name,
-                                boolean useAutoload,
-                                boolean useImport,
-                                boolean useAliasMap)
+                                bool useAutoload,
+                                bool useImport,
+                                bool useAliasMap)
   {
     return findClass(name, -1, useAutoload, useImport, useAliasMap);
   }
@@ -5201,9 +5201,9 @@ public class Env
    * @return the found class or null if no class found.
    */
   public QuercusClass findClass(int id,
-                                boolean useAutoload,
-                                boolean useImport,
-                                boolean useAliasMap)
+                                bool useAutoload,
+                                bool useImport,
+                                bool useAliasMap)
   {
     return findClass(null, id, useAutoload, useImport, useAliasMap);
   }
@@ -5217,9 +5217,9 @@ public class Env
    */
   public QuercusClass findClass(String name,
                                 int id,
-                                boolean useAutoload,
-                                boolean useImport,
-                                boolean useAliasMap)
+                                bool useAutoload,
+                                bool useImport,
+                                bool useAliasMap)
   {
     if (id < 0) {
       id = _quercus.getClassId(name);
@@ -5267,9 +5267,9 @@ public class Env
 
   private QuercusClass findClassExt(String name,
                                     int id,
-                                    boolean useAutoload,
-                                    boolean useImport,
-                                    boolean useAliasMap)
+                                    bool useAutoload,
+                                    bool useImport,
+                                    bool useAliasMap)
   {
     if (id < 0) {
       id = _quercus.getClassId(name);
@@ -5466,9 +5466,9 @@ public class Env
    * @return the found class or null if no class found.
    */
   private QuercusClass createClassFromCache(int id,
-                                            boolean useAutoload,
-                                            boolean useImport,
-                                            boolean useAliasMap)
+                                            bool useAutoload,
+                                            bool useImport,
+                                            bool useAliasMap)
   {
     if (id < _classDef.length && _classDef[id] != null) {
       ClassDef classDef = _classDef[id];
@@ -5502,7 +5502,7 @@ public class Env
   /**
    * Registers an SPL autoload function.
    */
-  public void addAutoloadFunction(Callable fun, boolean isPrepend)
+  public void addAutoloadFunction(Callable fun, bool isPrepend)
   {
     if (fun == null)
       throw new NullPointerException();
@@ -5547,7 +5547,7 @@ public class Env
    *
    * @return true if matching php file was found and included.
    */
-  public boolean importPhpClass(String name)
+  public bool importPhpClass(String name)
   {
     if (_importMap == null)
       return false;
@@ -5707,7 +5707,7 @@ public class Env
   /**
    * Returns true if class has already been initialized.
    */
-  public boolean isInitializedClass(String name)
+  public bool isInitializedClass(String name)
   {
     return _initializedClassSet.contains(name);
   }
@@ -5869,7 +5869,7 @@ public class Env
    * Evaluates an included file.
    */
   public Value includeOnce(Path scriptPwd, StringValue include,
-                           boolean isRequire)
+                           bool isRequire)
   {
     return include(scriptPwd, include, isRequire, true);
   }
@@ -5878,7 +5878,7 @@ public class Env
    * Evaluates an included file.
    */
   public Value include(Path scriptPwd, StringValue include,
-                       boolean isRequire, boolean isOnce)
+                       bool isRequire, bool isOnce)
   {
     try {
       Path pwd = getPwd();
@@ -5944,7 +5944,7 @@ public class Env
   /**
    * Returns true if this path is likely to be a URL.
    */
-  private boolean isUrl(Path path)
+  private bool isUrl(Path path)
   {
     string scheme = path.getScheme();
 
@@ -6092,7 +6092,7 @@ public class Env
     return null;
   }
 
-  private boolean includeExists(Path path)
+  private bool includeExists(Path path)
   {
     if (path.canRead() && ! path.isDirectory())
       return true;
@@ -7162,7 +7162,7 @@ public class Env
   }
 
   /**
-   * Converts a boolean to the boolean value
+   * Converts a bool to the bool value
    */
   public static Value toValue(boolean value)
   {
@@ -7170,7 +7170,7 @@ public class Env
   }
 
   /**
-   * Converts a boolean to the boolean value
+   * Converts a bool to the bool value
    */
   public static Value toValue(long value)
   {
@@ -7573,7 +7573,7 @@ public class Env
     AbstractFunction []fun = _fun;
     _fun = null;
     if (fun != null) {
-      boolean isUsed = false;
+      bool isUsed = false;
 
       /**
        * Fix for Bug #4077
@@ -7686,7 +7686,7 @@ public class Env
       _fieldName = fieldName;
     }
 
-    public boolean equals(Object o)
+    public bool equals(Object o)
     {
       if (! (o instanceof FieldGetEntry))
         return false;
@@ -7732,7 +7732,7 @@ public class Env
       return _hash;
     }
 
-    public boolean equals(Object o)
+    public bool equals(Object o)
     {
       ClassKey key = (ClassKey) o;
 

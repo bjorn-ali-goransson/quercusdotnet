@@ -46,7 +46,7 @@ public class Big5Decoder
   }
 
   @Override
-  public boolean isDecodable(Env env, StringValue str)
+  public bool isDecodable(Env env, StringValue str)
   {
     if (str.isUnicode())
       return true;
@@ -78,7 +78,7 @@ public class Big5Decoder
     return true;
   }
 
-  private boolean isMalformed(CoderResult coder, ByteBuffer in)
+  private bool isMalformed(CoderResult coder, ByteBuffer in)
   {
     if (coder.isMalformed() || coder.isUnmappable()) {
       int errorPosition = in.position();
@@ -95,7 +95,7 @@ public class Big5Decoder
       return false;
   }
 
-  protected override boolean fill(UnicodeBuilderValue sb, ByteBuffer in,
+  protected override bool fill(UnicodeBuilderValue sb, ByteBuffer in,
                          CharBuffer out, CoderResult coder)
   {
     int len = out.position();

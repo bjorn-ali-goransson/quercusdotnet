@@ -59,7 +59,7 @@ public class Zlib {
   private ZlibOutputStream _gzout;
 
   private FileValue _fileValue;
-  private boolean _isGZIPInputStream;
+  private bool _isGZIPInputStream;
 
   /**
    * XXX: todo - implement additional read/write modes (a,etc)
@@ -74,7 +74,7 @@ public class Zlib {
    * @param mode (ie: "w9" or "r7f")
    * @param useIncludePath is always on
    */
-  public Zlib(Env env, string filename, string mode, boolean useIncludePath)
+  public Zlib(Env env, string filename, string mode, bool useIncludePath)
   {
     string filemode = getFileMode(mode);
     int compressionLevel = getCompressionLevel(mode);
@@ -169,7 +169,7 @@ public class Zlib {
    * Closes the gzip stream
    * @return true if successful, false otherwise
    */
-  public boolean gzclose()
+  public bool gzclose()
   {
     if (_fileValue == null) {
       return false;
@@ -314,7 +314,7 @@ public class Zlib {
    *
    * @return true if eof
    */
-  public boolean gzeof()
+  public bool gzeof()
   {
     if (_isGZIPInputStream)
       return ((GZIPInputStream)_in).isEOS();
@@ -377,7 +377,7 @@ public class Zlib {
    * @return always true
    * 
    */
-  public boolean gzrewind()
+  public bool gzrewind()
   {
     try {
       if (_in != null)

@@ -125,7 +125,7 @@ public class ConstStringValue
    : base(v1, v2, v3) {
   }
 
-  public boolean isStatic()
+  public bool isStatic()
   {
     return true;
   }

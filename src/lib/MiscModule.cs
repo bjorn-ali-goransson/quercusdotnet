@@ -96,8 +96,8 @@ public class MiscModule : AbstractQuercusModule {
     StringBuilder sb = new StringBuilder();
     int len = command.length();
 
-    boolean hasApos = false;
-    boolean hasQuot = false;
+    bool hasApos = false;
+    bool hasQuot = false;
 
     for (int i = 0; i < len; i++) {
       char ch = command.charAt(i);
@@ -144,7 +144,7 @@ public class MiscModule : AbstractQuercusModule {
    */
   public static StringValue escapeshellarg(Env env, StringValue arg)
   {
-    boolean isWindows = Path.isWindows();
+    bool isWindows = Path.isWindows();
 
     char quote;
     if (isWindows)
@@ -237,7 +237,7 @@ public class MiscModule : AbstractQuercusModule {
       string line = "";
 
       int ch;
-      boolean hasCr = false;
+      bool hasCr = false;
       while ((ch = is.read()) >= 0) {
         if (ch == '\n') {
           if (! hasCr) {
@@ -293,7 +293,7 @@ public class MiscModule : AbstractQuercusModule {
   public static Value get_browser(
                        Env env,
                        @Optional() string user_agent,
-                       @Optional() boolean return_array)
+                       @Optional() bool return_array)
   {
     if (user_agent == null
         || user_agent.length() == 0)
@@ -328,7 +328,7 @@ public class MiscModule : AbstractQuercusModule {
                        Env env,
                        ArrayValue browsers,
                        string user_agent,
-                       boolean return_array)
+                       bool return_array)
   {
     StringValue patternMatched = env.getEmptyString();
     string regExpMatched = null;
@@ -367,7 +367,7 @@ public class MiscModule : AbstractQuercusModule {
                        StringValue patternMatched,
                        string regExpMatched,
                        string user_agent,
-                       boolean return_array)
+                       bool return_array)
   {
     ArrayValue capabilities = browsers.get(patternMatched).toArrayValue(env);
 
@@ -873,7 +873,7 @@ public class MiscModule : AbstractQuercusModule {
   /**
    * Forcibly terminates the process opened by proc_open.
    */
-  public static boolean proc_terminate(Env env,
+  public static bool proc_terminate(Env env,
                                        @NotNull ProcOpenResource stream)
   {
     if (stream == null) {
@@ -907,7 +907,7 @@ public class MiscModule : AbstractQuercusModule {
   /**
    * Returns the disconnect ignore setting
    */
-  public static int ignore_user_abort(@Optional boolean set)
+  public static int ignore_user_abort(@Optional bool set)
   {
     return 0;
   }
@@ -915,7 +915,7 @@ public class MiscModule : AbstractQuercusModule {
   /**
    * Returns a unique id.
    */
-  public string uniqid(@Optional string prefix, @Optional boolean moreEntropy)
+  public string uniqid(@Optional string prefix, @Optional bool moreEntropy)
   {
     StringBuilder sb = new StringBuilder();
 
@@ -992,7 +992,7 @@ public class MiscModule : AbstractQuercusModule {
       char ch = format.charAt(i);
 
       int count = 0;
-      boolean isEnd = false;
+      bool isEnd = false;
 
       char ch1 = ' ';
       for (i++;
@@ -1072,7 +1072,7 @@ public class MiscModule : AbstractQuercusModule {
 
   private static ArrayList<PackSegment> parsePackFormat(Env env,
                                                         string format,
-                                                        boolean hasName)
+                                                        bool hasName)
   {
     ArrayList<PackSegment> segments = new ArrayList<PackSegment>();
 
@@ -1083,7 +1083,7 @@ public class MiscModule : AbstractQuercusModule {
       char ch = format.charAt(i++);
 
       int count = 0;
-      boolean isEnd = false;
+      bool isEnd = false;
 
       if (i < length && format.charAt(i) == '*') {
         count = Integer.MAX_VALUE;
@@ -1559,9 +1559,9 @@ public class MiscModule : AbstractQuercusModule {
     private final string _name;
     private final int _length;
     private final int _bytes;
-    private final boolean _isSigned;
+    private final bool _isSigned;
 
-    BigEndianPackSegment(int length, int bytes, boolean isSigned)
+    BigEndianPackSegment(int length, int bytes, bool isSigned)
     {
       _name = "";
       _length = length;
@@ -1569,7 +1569,7 @@ public class MiscModule : AbstractQuercusModule {
       _isSigned = isSigned;
     }
 
-    BigEndianPackSegment(String name, int length, int bytes, boolean isSigned)
+    BigEndianPackSegment(String name, int length, int bytes, bool isSigned)
     {
       _name = name;
       _length = length;

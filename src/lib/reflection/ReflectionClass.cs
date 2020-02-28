@@ -104,7 +104,7 @@ public class ReflectionClass
 
   public static string export(Env env,
                               Value cls,
-                              @Optional boolean isReturn)
+                              @Optional bool isReturn)
   {
     return null;
   }
@@ -140,29 +140,29 @@ public class ReflectionClass
     return name.substring(p + 1);
   }
 
-  public boolean inNamespace()
+  public bool inNamespace()
   {
     string name = getName();
 
     return name.contains("\\");
   }
 
-  public boolean isInternal()
+  public bool isInternal()
   {
     throw new UnimplementedException("ReflectionClass->isInternal()");
   }
 
-  public boolean isUserDefined()
+  public bool isUserDefined()
   {
     throw new UnimplementedException("ReflectionClass->isUserDefined()");
   }
 
-  public boolean isInstantiable()
+  public bool isInstantiable()
   {
     return ! _cls.isInterface();
   }
 
-  public boolean hasConstant(StringValue name)
+  public bool hasConstant(StringValue name)
   {
     return _cls.hasConstant(name);
   }
@@ -203,7 +203,7 @@ public class ReflectionClass
     }
   }
 
-  public boolean hasMethod(StringValue name)
+  public bool hasMethod(StringValue name)
   {
     MethodMap<AbstractFunction> map = _cls.getMethodMap();
 
@@ -237,7 +237,7 @@ public class ReflectionClass
     return array;
   }
 
-  public boolean hasProperty(StringValue name)
+  public bool hasProperty(StringValue name)
   {
     return _cls.getClassField(name) != null;
   }
@@ -346,17 +346,17 @@ public class ReflectionClass
               env.wrapJava(new ReflectionClass(cls)));
   }
 
-  public boolean isInterface()
+  public bool isInterface()
   {
     return _cls.isInterface();
   }
 
-  public boolean isAbstract()
+  public bool isAbstract()
   {
     return _cls.isAbstract();
   }
 
-  public boolean isFinal()
+  public bool isFinal()
   {
     return _cls.isFinal();
   }
@@ -371,7 +371,7 @@ public class ReflectionClass
     return flag;
   }
 
-  public boolean isInstance(Env env, ObjectValue obj)
+  public bool isInstance(Env env, ObjectValue obj)
   {
     return obj.isA(env, _name);
   }
@@ -402,7 +402,7 @@ public class ReflectionClass
       return new ReflectionClass(parent);
   }
 
-  public boolean isSubclassOf(Env env, Object obj)
+  public bool isSubclassOf(Env env, Object obj)
   {
     string clsName;
 
@@ -486,12 +486,12 @@ public class ReflectionClass
     return array;
   }
 
-  public boolean isIterateable()
+  public bool isIterateable()
   {
     return _cls.getTraversableDelegate() != null;
   }
 
-  public boolean implementsInterface(Env env, string name)
+  public bool implementsInterface(Env env, string name)
   {
     return _cls.implementsInterface(env, name);
   }

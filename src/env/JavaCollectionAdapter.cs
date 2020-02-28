@@ -216,7 +216,7 @@ public class JavaCollectionAdapter : JavaAdapter
       _iterator = _collection.iterator();
     }
 
-    public boolean hasNext()
+    public bool hasNext()
     {
       return _iterator.hasNext();
     }
@@ -294,7 +294,7 @@ public class JavaCollectionAdapter : JavaAdapter
       _iterator = _collection.iterator();
     }
 
-    public boolean hasNext()
+    public bool hasNext()
     {
       return _iterator.hasNext();
     }
@@ -342,7 +342,7 @@ public class JavaCollectionAdapter : JavaAdapter
       _iterator = _collection.iterator();
     }
 
-    public boolean hasNext()
+    public bool hasNext()
     {
       return _iterator.hasNext();
     }
@@ -370,7 +370,7 @@ public class JavaCollectionAdapter : JavaAdapter
       _iterator = _collection.iterator();
     }
 
-    public boolean hasNext()
+    public bool hasNext()
     {
       return _iterator.hasNext();
     }

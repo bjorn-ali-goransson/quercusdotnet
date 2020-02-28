@@ -54,7 +54,7 @@ public class GenericEncoder
   }
 
   @Override
-  public boolean isEncodable(StringValue str, int start, int end)
+  public bool isEncodable(StringValue str, int start, int end)
   {
     for (int i = start; i < end; i++) {
       if (! _encoder.canEncode(str.charAt(i))) {
@@ -99,7 +99,7 @@ public class GenericEncoder
     }
   }
 
-  protected boolean fill(StringValue sb, CharBuffer in,
+  protected bool fill(StringValue sb, CharBuffer in,
                          ByteBuffer out, CoderResult coder)
   {
     int len = out.position();

@@ -45,7 +45,7 @@ public class Big5Encoder
   }
 
   @Override
-  public boolean isEncodable(StringValue str, int start, int end)
+  public bool isEncodable(StringValue str, int start, int end)
   {
     for (int i = start; i < end; i++) {
       char ch = str.charAt(i);
@@ -60,7 +60,7 @@ public class Big5Encoder
     return false;
   }
 
-  protected override boolean fill(StringValue sb, CharBuffer in,
+  protected override bool fill(StringValue sb, CharBuffer in,
                          ByteBuffer out, CoderResult coder)
   {
     int len = out.position();

@@ -35,7 +35,7 @@ namespace QuercusDotNet.lib.spl {
 public interface RecursiveIterator
   : Iterator
 {
-  public boolean hasChildren(Env env);
+  public bool hasChildren(Env env);
   public RecursiveIterator getChildren(Env env);
 }
 }

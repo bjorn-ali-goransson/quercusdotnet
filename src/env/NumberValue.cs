@@ -42,8 +42,8 @@ public abstract class NumberValue : Value {
   public int cmp(Value rValue)
   {
     if (rValue.isBoolean() || rValue.isNull()) {
-      boolean lBool = toBoolean();
-      boolean rBool = rValue.toBoolean();
+      bool lBool = toBoolean();
+      bool rBool = rValue.toBoolean();
 
       if (! lBool && rBool) {
         return -1;

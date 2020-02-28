@@ -39,7 +39,7 @@ public class StringValueMarshal : Marshal
 {
   public readonly Marshal MARSHAL = new StringValueMarshal();
 
-  public boolean isReadOnly()
+  public bool isReadOnly()
   {
     return true;
   }
@@ -48,7 +48,7 @@ public class StringValueMarshal : Marshal
    * Return true if is a Value.
    */
   @Override
-  public boolean isValue()
+  public bool isValue()
   {
     return true;
   }

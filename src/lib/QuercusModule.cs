@@ -74,7 +74,7 @@ public class QuercusModule : AbstractQuercusModule
    * Returns true if this is the Professional version.
    */
   @Name("quercus_is_pro")
-  public static boolean is_pro(Env env)
+  public static bool is_pro(Env env)
   {
     return env.getQuercus().isPro();
   }
@@ -83,7 +83,7 @@ public class QuercusModule : AbstractQuercusModule
    * Returns true if pages will be compiled.
    */
   @Name("quercus_is_compile")
-  public static boolean is_compile(Env env)
+  public static bool is_compile(Env env)
   {
     return env.getQuercus().isCompile();
   }
@@ -92,7 +92,7 @@ public class QuercusModule : AbstractQuercusModule
    * Returns true if Quercus is running under Resin.
    */
   @Name("quercus_is_resin")
-  public static boolean is_resin(Env env)
+  public static bool is_resin(Env env)
   {
     return env.getQuercus().isResin();
   }
@@ -101,7 +101,7 @@ public class QuercusModule : AbstractQuercusModule
    * Returns true if a JDBC database has been explicitly set.
    */
   @Name("quercus_has_database")
-  public static boolean has_database(Env env)
+  public static bool has_database(Env env)
   {
     return env.getQuercus().getDatabase() != null;
   }
@@ -110,7 +110,7 @@ public class QuercusModule : AbstractQuercusModule
    * Returns true if there is an HttpRequest associated with this Env.
    */
   @Name("quercus_has_request")
-  public static boolean has_request(Env env)
+  public static bool has_request(Env env)
   {
     return env.getRequest() != null;
   }
@@ -176,7 +176,7 @@ public class QuercusModule : AbstractQuercusModule
    * Dumps the stack.
    */
   @Name("quercus_dump_stack")
-  public static boolean dump_stack(Env env)
+  public static bool dump_stack(Env env)
   {
     Thread.dumpStack();
 

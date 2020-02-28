@@ -97,7 +97,7 @@ public class PDOStatement
                                         PDO pdo,
                                         PDOError error,
                                         string query,
-                                        boolean isCatchException)
+                                        bool isCatchException)
     
   {
     PDOStatement stmt = new PDOStatement(env, pdo, error);
@@ -128,7 +128,7 @@ public class PDOStatement
                                         PDO pdo,
                                         PDOError error,
                                         string query,
-                                        boolean isCatchException)
+                                        bool isCatchException)
     
   {
     PDOStatement stmt = new PDOStatement(env, pdo, error);
@@ -136,7 +136,7 @@ public class PDOStatement
     stmt.init(pdo.getConnection().createStatement(env), query);
     
     try {
-      boolean result = stmt._stmt.execute(env, false);
+      bool result = stmt._stmt.execute(env, false);
     }
     catch (SQLException e) {      
       if (! isCatchException) {
@@ -250,7 +250,7 @@ public class PDOStatement
     return sb.toString();
   }
 
-  public boolean bindColumn(Env env,
+  public bool bindColumn(Env env,
                             Value column,
                             @Reference Value var,
                             @Optional("-1") int type)
@@ -303,7 +303,7 @@ public class PDOStatement
     }
   }
 
-  public boolean bindParam(Env env,
+  public bool bindParam(Env env,
                            @ReadOnly Value parameter,
                            @Reference Value value,
                            @Optional("PDO::PARAM_STR") int dataType,
@@ -318,7 +318,7 @@ public class PDOStatement
       throw new UnimplementedException("driverOptions");
     }
 
-    boolean isInputOutput = (dataType & PDO.PARAM_INPUT_OUTPUT) != 0;
+    bool isInputOutput = (dataType & PDO.PARAM_INPUT_OUTPUT) != 0;
 
     if (isInputOutput) {
       dataType = dataType & (~PDO.PARAM_INPUT_OUTPUT);
@@ -369,7 +369,7 @@ public class PDOStatement
     return true;
   }
 
-  public boolean bindValue(Env env,
+  public bool bindValue(Env env,
                            @ReadOnly Value parameter,
                            @ReadOnly Value value,
                            @Optional("PDO::PARAM_STR") int dataType)
@@ -386,7 +386,7 @@ public class PDOStatement
   /**
    * Closes the current cursor.
    */
-  public boolean closeCursor(Env env)
+  public bool closeCursor(Env env)
   {
     return _stmt.freeResult();
   }
@@ -399,7 +399,7 @@ public class PDOStatement
     return _stmt.getColumnCount(env);
   }
 
-  public boolean close()
+  public bool close()
   {
     return _stmt.close();
   }
@@ -436,7 +436,7 @@ public class PDOStatement
    *
    * @return true for success, false for failure
    */
-  public boolean execute(Env env, @Optional @ReadOnly Value inputParameters)
+  public bool execute(Env env, @Optional @ReadOnly Value inputParameters)
   {
     _error.clear();
 
@@ -563,8 +563,8 @@ public class PDOStatement
       effectiveFetchMode = fetchMode;
     }
 
-    boolean isGroup = (fetchMode & PDO.FETCH_GROUP) != 0;
-    boolean isUnique = (fetchMode & PDO.FETCH_UNIQUE) != 0;
+    bool isGroup = (fetchMode & PDO.FETCH_GROUP) != 0;
+    bool isUnique = (fetchMode & PDO.FETCH_UNIQUE) != 0;
 
     if (isGroup)
       throw new UnimplementedException("PDO.FETCH_GROUP");
@@ -741,8 +741,8 @@ public class PDOStatement
       }
     }
 
-    boolean isClasstype = (fetchMode & PDO.FETCH_CLASSTYPE) != 0;
-    boolean isSerialize = (fetchMode & PDO.FETCH_SERIALIZE) != 0;
+    bool isClasstype = (fetchMode & PDO.FETCH_CLASSTYPE) != 0;
+    bool isSerialize = (fetchMode & PDO.FETCH_SERIALIZE) != 0;
 
     fetchMode = fetchMode & (~(PDO.FETCH_CLASSTYPE | PDO.FETCH_SERIALIZE));
 
@@ -972,7 +972,7 @@ public class PDOStatement
     }
   }
 
-  public boolean nextRowset()
+  public bool nextRowset()
   {
     throw new UnimplementedException();
   }
@@ -1014,15 +1014,15 @@ public class PDOStatement
     return rs.getNumRows();
   }
 
-  public boolean setAttribute(Env env, int attribute, Value value)
+  public bool setAttribute(Env env, int attribute, Value value)
   {
     return setAttribute(env, attribute, value, false);
   }
 
-  public boolean setAttribute(Env env,
+  public bool setAttribute(Env env,
                               int attribute,
                               Value value,
-                              boolean isFromConstructor)
+                              bool isFromConstructor)
   {
     if (isFromConstructor) {
       switch (attribute) {
@@ -1037,7 +1037,7 @@ public class PDOStatement
     return false;
   }
 
-  private boolean setCursor(Env env, int attribute)
+  private bool setCursor(Env env, int attribute)
   {
     switch (attribute) {
       case PDO.CURSOR_FWDONLY:
@@ -1055,15 +1055,15 @@ public class PDOStatement
   /**
    * Sets the fetch mode, the default is {@link PDO.FETCH_BOTH}.
    */
-  public boolean setFetchMode(Env env, int fetchMode, Value[] args)
+  public bool setFetchMode(Env env, int fetchMode, Value[] args)
   {
     _fetchMode = PDO.FETCH_BOTH;
     _fetchModeArgs = NULL_VALUES;
 
     int fetchStyle = fetchMode;
 
-    boolean isGroup = (fetchMode & PDO.FETCH_GROUP) != 0;
-    boolean isUnique = (fetchMode & PDO.FETCH_UNIQUE) != 0;
+    bool isGroup = (fetchMode & PDO.FETCH_GROUP) != 0;
+    bool isUnique = (fetchMode & PDO.FETCH_UNIQUE) != 0;
 
     if (isGroup)
       throw new UnimplementedException("PDO.FETCH_GROUP");
@@ -1073,8 +1073,8 @@ public class PDOStatement
 
     fetchStyle = fetchStyle & (~(PDO.FETCH_GROUP | PDO.FETCH_UNIQUE));
 
-    boolean isClasstype = (fetchMode & PDO.FETCH_CLASSTYPE) != 0;
-    boolean isSerialize = (fetchMode & PDO.FETCH_SERIALIZE) != 0;
+    bool isClasstype = (fetchMode & PDO.FETCH_CLASSTYPE) != 0;
+    bool isSerialize = (fetchMode & PDO.FETCH_SERIALIZE) != 0;
 
     fetchStyle = fetchStyle & (~(PDO.FETCH_CLASSTYPE | PDO.FETCH_SERIALIZE));
 
