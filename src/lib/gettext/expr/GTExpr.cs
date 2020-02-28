@@ -1,3 +1,4 @@
+namespace QuercusDotNet.lib/gettext/expr{
 /*
  * Copyright (c) 1998-2012 Caucho Technology -- all rights reserved
  *
@@ -44,4 +45,5 @@ public class GTExpr extends BinaryExpr
     else
       return 0;
   }
+}
 }
