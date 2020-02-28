@@ -167,7 +167,7 @@ public class OracleOciLob {
       return true;
 
     } catch (Exception ex) {
-      log.log(Level.FINE, ex.toString(), ex);
+      log.log(Level.FINE, ex.ToString(), ex);
       return false;
     }
   }
@@ -194,7 +194,7 @@ public class OracleOciLob {
       return true;
 
     } catch (Exception ex) {
-      log.log(Level.FINE, ex.toString(), ex);
+      log.log(Level.FINE, ex.ToString(), ex);
       return false;
     }
   }
@@ -229,7 +229,7 @@ public class OracleOciLob {
       }
 
     } catch (Exception ex) {
-      log.log(Level.FINE, ex.toString(), ex);
+      log.log(Level.FINE, ex.ToString(), ex);
     }
 
     return false;
@@ -316,7 +316,7 @@ public class OracleOciLob {
       }
 
     } catch (Exception ex) {
-      log.log(Level.FINE, ex.toString(), ex);
+      log.log(Level.FINE, ex.ToString(), ex);
     }
 
     return null;
@@ -355,7 +355,7 @@ public class OracleOciLob {
       return true;
 
     } catch (Exception ex) {
-      log.log(Level.FINE, ex.toString(), ex);
+      log.log(Level.FINE, ex.ToString(), ex);
       return false;
     }
   }
@@ -383,7 +383,7 @@ public class OracleOciLob {
       return true;
 
     } catch (Exception ex) {
-      log.log(Level.FINE, ex.toString(), ex);
+      log.log(Level.FINE, ex.ToString(), ex);
       return false;
     }
   }
@@ -401,7 +401,7 @@ public class OracleOciLob {
       return true;
 
     } catch (Exception ex) {
-      log.log(Level.FINE, ex.toString(), ex);
+      log.log(Level.FINE, ex.ToString(), ex);
       return false;
     }
   }
@@ -468,7 +468,7 @@ public class OracleOciLob {
       return true;
 
     } catch (Exception ex) {
-      log.log(Level.FINE, ex.toString(), ex);
+      log.log(Level.FINE, ex.ToString(), ex);
       return false;
     }
   }
@@ -495,7 +495,7 @@ public class OracleOciLob {
       }
 
     } catch (Exception ex) {
-      log.log(Level.FINE, ex.toString(), ex);
+      log.log(Level.FINE, ex.ToString(), ex);
     }
 
     return null;
@@ -525,7 +525,7 @@ public class OracleOciLob {
       }
 
     } catch (Exception ex) {
-      log.log(Level.FINE, ex.toString(), ex);
+      log.log(Level.FINE, ex.ToString(), ex);
     }
 
     return null;
@@ -582,7 +582,7 @@ public class OracleOciLob {
       return true;
 
     } catch (Exception ex) {
-      log.log(Level.FINE, ex.toString(), ex);
+      log.log(Level.FINE, ex.ToString(), ex);
       return false;
     }
   }
@@ -629,7 +629,7 @@ public class OracleOciLob {
       return true;
 
     } catch (Exception ex) {
-      log.log(Level.FINE, ex.toString(), ex);
+      log.log(Level.FINE, ex.ToString(), ex);
       return false;
     }
   }
@@ -677,7 +677,7 @@ public class OracleOciLob {
       }
 
     } catch (Exception ex) {
-      log.log(Level.FINE, ex.toString(), ex);
+      log.log(Level.FINE, ex.ToString(), ex);
     }
 
     return null;
@@ -694,12 +694,12 @@ public class OracleOciLob {
       return LongValue.create(_currentPointer);
 
     } catch (Exception ex) {
-      log.log(Level.FINE, ex.toString(), ex);
+      log.log(Level.FINE, ex.ToString(), ex);
       return null;
     }
   }
 
-  public string toString() {
+  public string ToString() {
 
     string typeName = "UNKNOWN";
 
@@ -745,7 +745,7 @@ public class OracleOciLob {
       return true;
 
     } catch (Exception ex) {
-      log.log(Level.FINE, ex.toString(), ex);
+      log.log(Level.FINE, ex.ToString(), ex);
       return false;
     }
   }
@@ -793,7 +793,7 @@ public class OracleOciLob {
       }
 
     } catch (Exception ex) {
-      log.log(Level.FINE, ex.toString(), ex);
+      log.log(Level.FINE, ex.ToString(), ex);
     }
 
     return null;
@@ -828,7 +828,7 @@ public class OracleOciLob {
       return true;
 
     } catch (Exception ex) {
-      log.log(Level.FINE, ex.toString(), ex);
+      log.log(Level.FINE, ex.ToString(), ex);
       return false;
     }
   }
@@ -875,7 +875,7 @@ public class OracleOciLob {
       return true;
 
     } catch (Exception ex) {
-      log.log(Level.FINE, ex.toString(), ex);
+      log.log(Level.FINE, ex.ToString(), ex);
       return false;
     }
   }
@@ -911,7 +911,7 @@ public class OracleOciLob {
       return true;
 
     } catch (Exception ex) {
-      log.log(Level.FINE, ex.toString(), ex);
+      log.log(Level.FINE, ex.ToString(), ex);
       return false;
     }
   }
@@ -934,7 +934,7 @@ public class OracleOciLob {
 
       return bb;
     } catch (Exception ex) {
-      log.log(Level.FINE, ex.toString(), ex);
+      log.log(Level.FINE, ex.ToString(), ex);
       return null;
     }
   }
@@ -958,7 +958,7 @@ public class OracleOciLob {
 
       return sb;
     } catch (Exception ex) {
-      log.log(Level.FINE, ex.toString(), ex);
+      log.log(Level.FINE, ex.ToString(), ex);
       return null;
     }
   }

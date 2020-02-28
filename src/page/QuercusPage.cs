@@ -269,7 +269,7 @@ abstract public class QuercusPage
     return false;
   }
 
-  public string toString()
+  public string ToString()
   {
     return getClass().getSimpleName() + "[]";
   }

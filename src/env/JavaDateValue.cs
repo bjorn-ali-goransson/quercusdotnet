@@ -67,7 +67,7 @@ public class JavaDateValue : JavaValue {
   }
 
   /*
-  public override StringValue toString(Env env)
+  public override StringValue ToString(Env env)
   {
     return env.createString(toLong());
   }

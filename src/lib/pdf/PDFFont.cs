@@ -165,7 +165,7 @@ public class PDFFont : PDFObject {
             _opt.equals(font._opt));
   }
 
-  public string toString()
+  public string ToString()
   {
     return "PDFFont[" + _face.getFontName() + "," + _encoding + "," + _opt + "]";
   }

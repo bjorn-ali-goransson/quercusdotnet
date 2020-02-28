@@ -604,7 +604,7 @@ public class OracleModule : AbstractQuercusModule {
         stmt.resetByNameVariables();
       }
       catch (Exception e2) {
-        log.log(Level.FINE, e2.toString(), e2);
+        log.log(Level.FINE, e2.ToString(), e2);
       }
     }
 
@@ -934,7 +934,7 @@ public class OracleModule : AbstractQuercusModule {
         stmt.resetByNameVariables();
       }
       catch (Exception e2) {
-        log.log(Level.FINE, e2.toString(), e2);
+        log.log(Level.FINE, e2.ToString(), e2);
       }
 
       return false;
@@ -1191,7 +1191,7 @@ public class OracleModule : AbstractQuercusModule {
                                      @Optional("-1") int length)
   {
     try {
-      return lobTo.save(env, lobFrom.read(env, length).toString(), 0);
+      return lobTo.save(env, lobFrom.read(env, length).ToString(), 0);
     }
     catch (Exception e) {
       env.warning(e);
@@ -1533,7 +1533,7 @@ public class OracleModule : AbstractQuercusModule {
     try {
       return BooleanValue.create(conn.rollback());
     } catch (Exception ex) {
-      log.log(Level.FINE, ex.toString(), ex);
+      log.log(Level.FINE, ex.ToString(), ex);
       return BooleanValue.FALSE;
     }
   }

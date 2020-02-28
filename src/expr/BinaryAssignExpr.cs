@@ -118,7 +118,7 @@ public class BinaryAssignExpr : Expr {
     return _var.eval(env);
   }
 
-  public string toString()
+  public string ToString()
   {
     return _var + "=" + _value;
   }

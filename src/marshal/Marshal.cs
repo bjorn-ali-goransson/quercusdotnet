@@ -220,7 +220,7 @@ abstract public class Marshal {
 
   protected int getMarshalingCostImpl(Value value)
   {
-    throw new UnsupportedOperationException(getClass().toString());
+    throw new UnsupportedOperationException(getClass().ToString());
   }
 
   public int getMarshalingCost(Expr expr)
@@ -230,7 +230,7 @@ abstract public class Marshal {
 
   public Class getExpectedClass()
   {
-    throw new UnsupportedOperationException(getClass().toString());
+    throw new UnsupportedOperationException(getClass().ToString());
   }
 
   protected void unexpectedType(Env env,

@@ -61,7 +61,7 @@ public class GaeUserServiceModule : AbstractQuercusModule {
       ArrayValue array = attributesRequest.toArrayValue(env);
 
       for (Map.Entry<Value,Value> entrySet : array.entrySet()) {
-        attributeSet.add(entrySet.getValue().toString());
+        attributeSet.add(entrySet.getValue().ToString());
       }
     }
 

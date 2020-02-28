@@ -134,7 +134,7 @@ public class UrlRewriterCallback : CallbackFunction {
       // Return the buffer unmodified when no urls are rewritten
       // php/1k6x
 
-      Parser parser = rewriter.new Parser(buffer.toString(), env);
+      Parser parser = rewriter.new Parser(buffer.ToString(), env);
       result = parser.parse();
 
       if (result.isNull())
@@ -174,7 +174,7 @@ public class UrlRewriterCallback : CallbackFunction {
           && _env.getIni("session.use_trans_sid").toBoolean()) {
         _includeSessionInfo = true;
 
-        _sessionName = _env.getIni("session.name").toString();
+        _sessionName = _env.getIni("session.name").ToString();
         _sessionId = _env.getSession().getId();
 
         _javaSessionName = _env.getQuercus().getCookieName();
@@ -186,7 +186,7 @@ public class UrlRewriterCallback : CallbackFunction {
         return NullValue.NULL;
 
       string [] tagPairs =
-        _env.getIni("url_rewriter.tags").toString().split(",");
+        _env.getIni("url_rewriter.tags").ToString().split(",");
       HashMap<String,String> tags = new HashMap<String,String>();
 
       for (String tagPair : tagPairs) {
@@ -461,7 +461,7 @@ public class UrlRewriterCallback : CallbackFunction {
         newUri.append(uri.getFragment());
       }
 
-      return newUri.toString();
+      return newUri.ToString();
     }
   }
 }

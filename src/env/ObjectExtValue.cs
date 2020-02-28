@@ -1018,7 +1018,7 @@ public class ObjectExtValue : ObjectValue
       sb.append('"');
       sb.append(':');
 
-      StringValue value = fun.callMethod(env, qClass, this).toStringValue(env);
+      StringValue value = fun.callMethod(env, qClass, this).ToStringValue(env);
 
       sb.append(value.length());
       sb.append(':');
@@ -1109,9 +1109,9 @@ public class ObjectExtValue : ObjectValue
   /**
    * Converts to a string builder
    */
-  public override StringValue toStringBuilder(Env env)
+  public override StringValue ToStringBuilder(Env env)
   {
-    return toString(env).toStringBuilder(env);
+    return ToString(env).ToStringBuilder(env);
   }
 
   /**
@@ -1119,19 +1119,19 @@ public class ObjectExtValue : ObjectValue
    */
   public string toJavaString()
   {
-    return toString(Env.getInstance()).toString();
+    return ToString(Env.getInstance()).ToString();
   }
 
   /**
    * Converts to a string.
    * @param env
    */
-  public override StringValue toString(Env env)
+  public override StringValue ToString(Env env)
   {
-    AbstractFunction toString = _quercusClass.getToString();
+    AbstractFunction ToString = _quercusClass.getToString();
 
-    if (toString != null)
-      return toString.callMethod(env, _quercusClass, this).toStringValue();
+    if (ToString != null)
+      return ToString.callMethod(env, _quercusClass, this).ToStringValue();
     else
       return env.createString(_className + "[]");
   }
@@ -1142,7 +1142,7 @@ public class ObjectExtValue : ObjectValue
    */
   public override void print(Env env)
   {
-    env.print(toString(env));
+    env.print(ToString(env));
   }
 
   /**
@@ -1289,7 +1289,7 @@ public class ObjectExtValue : ObjectValue
         sb.append(',');
       }
 
-      entry.getKey().toStringValue(env).jsonEncode(env, context, sb);
+      entry.getKey().ToStringValue(env).jsonEncode(env, context, sb);
       sb.append(':');
       entry.getValue().jsonEncode(env, context, sb);
       length++;
@@ -1348,7 +1348,7 @@ public class ObjectExtValue : ObjectValue
     return entry != null;
   }
 
-  public override string toString()
+  public override string ToString()
   {
     if (CurrentTime.isTest())
       return getClass().getSimpleName() +  "[" + _className + "]";
@@ -1681,7 +1681,7 @@ public class ObjectExtValue : ObjectValue
         @out.print(' ');
     }
 
-    public override string toString()
+    public override string ToString()
     {
       return "ObjectExtValue.Entry[" + getKey() + "]";
     }

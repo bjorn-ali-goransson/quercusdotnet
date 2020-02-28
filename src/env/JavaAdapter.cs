@@ -132,7 +132,7 @@ abstract public class JavaAdapter : ArrayValue
 
       if (key instanceof StringValue) {
         // XXX: intern?
-        obj.putField(env, key.toString(), entry.getValue());
+        obj.putField(env, key.ToString(), entry.getValue());
       }
     }
 
@@ -157,7 +157,7 @@ abstract public class JavaAdapter : ArrayValue
         coll = (Collection) type.newInstance();
       }
       catch (Throwable e) {
-        log.log(Level.FINE, e.toString(), e);
+        log.log(Level.FINE, e.ToString(), e);
         env.warning(L.l("Can't assign array to {0}", type.getName()));
 
         return null;
@@ -192,7 +192,7 @@ abstract public class JavaAdapter : ArrayValue
         list = (List) type.newInstance();
       }
       catch (Throwable e) {
-        log.log(Level.FINE, e.toString(), e);
+        log.log(Level.FINE, e.ToString(), e);
         env.warning(L.l("Can't assign array to {0}", type.getName()));
 
         return null;
@@ -224,7 +224,7 @@ abstract public class JavaAdapter : ArrayValue
         map = (Map) type.newInstance();
       }
       catch (Throwable e) {
-        log.log(Level.FINE, e.toString(), e);
+        log.log(Level.FINE, e.ToString(), e);
 
         env.warning(L.l("Can't assign array to {0}", type.getName()));
 
@@ -904,7 +904,7 @@ abstract public class JavaAdapter : ArrayValue
   /**
    * Converts to a string.
    */
-  public string toString()
+  public string ToString()
   {
     return String.valueOf(_object);
   }

@@ -60,7 +60,7 @@ public class UnaryPlusExpr : AbstractUnaryExpr {
     return _expr.eval(env).pos();
   }
 
-  public string toString()
+  public string ToString()
   {
     return "+" + _expr;
   }

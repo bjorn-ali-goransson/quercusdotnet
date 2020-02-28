@@ -92,7 +92,7 @@ public class ClassVirtualConstExpr : Expr {
     return env.getCallingClass().getConstant(env, _name);
   }
 
-  public string toString()
+  public string ToString()
   {
     return "static::" + _name;
   }

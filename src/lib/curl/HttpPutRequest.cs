@@ -95,7 +95,7 @@ public class HttpPutRequest
 
         while (totalWritten < length) {
           StringValue str
-            = callback.call(env, fileV, lengthV).toStringValue(env);
+            = callback.call(env, fileV, lengthV).ToStringValue(env);
 
           int count = str.length();
 

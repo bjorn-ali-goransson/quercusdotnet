@@ -61,10 +61,10 @@ public class ToUnicodeExpr : ToStringExpr {
     if (value.isUnicode())
       return value;
     else
-      return value.toString(env).toUnicode(env);
+      return value.ToString(env).toUnicode(env);
   }
 
-  public string toString()
+  public string ToString()
   {
     return "((unicode) " + _expr + ")";
   }

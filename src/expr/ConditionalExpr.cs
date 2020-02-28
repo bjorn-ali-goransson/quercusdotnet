@@ -108,7 +108,7 @@ public class ConditionalExpr : Expr {
       return _falseExpr.evalCopy(env);
   }
 
-  public string toString()
+  public string ToString()
   {
     return "(" + _test + " ? " + _trueExpr + " : " + _falseExpr + ")";
   }

@@ -70,7 +70,7 @@ public class ArrayUnsetExpr : Expr {
     return array.remove(index);
   }
 
-  public string toString()
+  public string ToString()
   {
     return "unset(" + _expr + "[" + _index + "])";
   }

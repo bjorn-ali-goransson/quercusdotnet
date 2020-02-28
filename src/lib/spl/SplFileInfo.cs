@@ -55,7 +55,7 @@ public class SplFileInfo
 
     _parent = _path.getParent();
 
-    _fileName = fileName.toString();
+    _fileName = fileName.ToString();
   }
 
   protected SplFileInfo(Path parent, Path path, string fileName)
@@ -72,7 +72,7 @@ public class SplFileInfo
   {
     _path = env.lookupInclude(fileName);
 
-    _fileName = fileName.toString();
+    _fileName = fileName.ToString();
   }
   */
 
@@ -194,7 +194,7 @@ public class SplFileInfo
       sb.append(_fileName);
     }
 
-    return sb.toString();
+    return sb.ToString();
 
     /*
     if (".".equals(_fileName)) {
@@ -289,12 +289,12 @@ public class SplFileInfo
     _infoFileClassName = className;
   }
 
-  public string __toString(Env env)
+  public string __ToString(Env env)
   {
     return _path.getNativePath();
   }
 
-  public string toString()
+  public string ToString()
   {
     return getClass().getSimpleName() + "[" + _parent + "," + _fileName + "]";
   }

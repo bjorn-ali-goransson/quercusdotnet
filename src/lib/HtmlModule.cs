@@ -493,7 +493,7 @@ public class HtmlModule : AbstractQuercusModule {
         result.append(string, htmlEntityStart, len);
       }
     } catch (IOException e) {
-      log.log(Level.FINE, e.toString(), e);
+      log.log(Level.FINE, e.ToString(), e);
     }
 
     return result;

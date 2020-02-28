@@ -146,7 +146,7 @@ public class ClosureExpr : Expr {
     return new InterpretedClosure(env, _fun, qThis);
   }
 
-  public string toString()
+  public string ToString()
   {
     return getName() + "()";
   }

@@ -918,7 +918,7 @@ public class TokenModule : AbstractQuercusModule {
 
           readIdentifier();
 
-          int lexeme = _reservedMap.get(_lexeme.toString().toLowerCase(Locale.ENGLISH));
+          int lexeme = _reservedMap.get(_lexeme.ToString().toLowerCase(Locale.ENGLISH));
 
           if (lexeme > 0)
             return lexeme;

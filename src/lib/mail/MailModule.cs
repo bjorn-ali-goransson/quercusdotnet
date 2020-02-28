@@ -83,14 +83,14 @@ public class MailModule : AbstractQuercusModule {
       Properties props = new Properties();
 
       StringValue host = env.getIni("SMTP");
-      if (host != null && ! host.toString().equals(""))
-        props.put("mail.smtp.host", host.toString());
+      if (host != null && ! host.ToString().equals(""))
+        props.put("mail.smtp.host", host.ToString());
       else if (System.getProperty("mail.smtp.host") != null)
         props.put("mail.smtp.host", System.getProperty("mail.smtp.host"));
 
       StringValue port = env.getIni("smtp_port");
-      if (port != null && ! port.toString().equals(""))
-        props.put("mail.smtp.port", port.toString());
+      if (port != null && ! port.ToString().equals(""))
+        props.put("mail.smtp.port", port.ToString());
       else if (System.getProperty("mail.smtp.port") != null)
         props.put("mail.smtp.port", System.getProperty("mail.smtp.port"));
 
@@ -105,8 +105,8 @@ public class MailModule : AbstractQuercusModule {
       if (user == null)
         user = env.getIni("sendmail_from");
 
-      if (user != null && ! user.toString().equals("")) {
-        string userString = user.toString();
+      if (user != null && ! user.ToString().equals("")) {
+        string userString = user.ToString();
 
         props.put("mail.from", userString);
       }
@@ -128,7 +128,7 @@ public class MailModule : AbstractQuercusModule {
 
           props.put("mail.from", email);
         } catch (Exception e) {
-          log.log(Level.FINER, e.toString(), e);
+          log.log(Level.FINER, e.ToString(), e);
         }
       }
 
@@ -147,7 +147,7 @@ public class MailModule : AbstractQuercusModule {
         subject = "";
 
       msg.setSubject(subject);
-      msg.setContent(message.toString(), "text/plain");
+      msg.setContent(message.ToString(), "text/plain");
 
       ArrayList<Address> addrList = new ArrayList<Address>();
 
@@ -189,9 +189,9 @@ public class MailModule : AbstractQuercusModule {
                       to,
                       e.getMessage()));
 
-      log.log(Level.FINE, e.toString(), e);
+      log.log(Level.FINE, e.ToString(), e);
 
-      env.warning(e.toString());
+      env.warning(e.ToString());
 
       return false;
     } catch (MessagingException e) {
@@ -201,7 +201,7 @@ public class MailModule : AbstractQuercusModule {
                       to,
                       cause.getMessage()));
 
-      log.log(Level.FINE, cause.toString(), cause);
+      log.log(Level.FINE, cause.ToString(), cause);
 
       env.warning(cause.getMessage());
 
@@ -213,9 +213,9 @@ public class MailModule : AbstractQuercusModule {
                       to,
                       e));
 
-      log.log(Level.FINE, cause.toString(), cause);
+      log.log(Level.FINE, cause.ToString(), cause);
 
-      env.warning(cause.toString());
+      env.warning(cause.ToString());
 
       return false;
     } finally {
@@ -223,7 +223,7 @@ public class MailModule : AbstractQuercusModule {
         if (smtp != null)
           smtp.close();
       } catch (Exception e) {
-        log.log(Level.FINER, e.toString(), e);
+        log.log(Level.FINER, e.ToString(), e);
       }
     }
   }
@@ -258,7 +258,7 @@ public class MailModule : AbstractQuercusModule {
               sb.append("\"");
               sb.append(addrStr, closeBracket, addrStr.length());
 
-              addrStr = sb.toString();
+              addrStr = sb.ToString();
             }
           }
         }
@@ -342,7 +342,7 @@ public class MailModule : AbstractQuercusModule {
            i++) {
       }
 
-      string name = buffer.toString();
+      string name = buffer.ToString();
       buffer.clear();
 
       for (;
@@ -385,7 +385,7 @@ public class MailModule : AbstractQuercusModule {
         buffer.deleteCharAt(buffer.length() - 1);
       }
 
-      string value = buffer.toString();
+      string value = buffer.ToString();
 
       if (! "".equals(value))
         headerMap.put(name, value);

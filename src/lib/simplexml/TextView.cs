@@ -85,7 +85,7 @@ public class TextView : SimpleView
     throw new UnsupportedOperationException();
   }
 
-  public override string toString(Env env)
+  public override string ToString(Env env)
   {
     return _node.getTextContent();
   }
@@ -109,7 +109,7 @@ public class TextView : SimpleView
     return value;
   }
 
-  public override string toString()
+  public override string ToString()
   {
     return getClass().getSimpleName() + "[" + _node + "]";
   }

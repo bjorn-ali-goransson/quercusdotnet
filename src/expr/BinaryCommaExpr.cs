@@ -76,7 +76,7 @@ public class BinaryCommaExpr : AbstractBinaryExpr {
     return _right.evalBoolean(env);
   }
 
-  public string toString()
+  public string ToString()
   {
     return "(" + _left + ", " + _right + ")";
   }

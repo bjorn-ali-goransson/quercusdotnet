@@ -157,7 +157,7 @@ public class BooleanValue : Value
   /**
    * Converts to a string.
    */
-  public override string toString()
+  public override string ToString()
   {
     return _value ? "1" : "";
   }
@@ -165,7 +165,7 @@ public class BooleanValue : Value
   /**
    * Converts to a string builder
    */
-  public override StringValue toStringBuilder(Env env)
+  public override StringValue ToStringBuilder(Env env)
   {
     StringValue sb = env.createUnicodeBuilder();
 

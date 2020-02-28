@@ -58,7 +58,7 @@ public class FloatValidateFilter
       return value.toDoubleValue();
     }
     else {
-      string originalStr = value.toStringValue(env).toString();
+      string originalStr = value.ToStringValue(env).ToString();
       string str = originalStr;
 
       if ((flags & FilterModule.FILTER_FLAG_ALLOW_THOUSAND) > 0) {
@@ -75,7 +75,7 @@ public class FloatValidateFilter
             return BooleanValue.FALSE;
           }
 
-          str = str.replace(decimalSeparator.toString(), ".");
+          str = str.replace(decimalSeparator.ToString(), ".");
         }
       }
 

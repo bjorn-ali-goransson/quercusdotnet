@@ -65,7 +65,7 @@ public class ReflectionObject : ReflectionClass
     return null;
   }
 
-  public string toString()
+  public string ToString()
   {
     return getClass().getSimpleName() + "[" + getName() + "]";
   }

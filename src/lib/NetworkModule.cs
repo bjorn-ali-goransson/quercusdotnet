@@ -177,10 +177,10 @@ public class NetworkModule : AbstractQuercusModule {
 
       return stream;
     } catch (IOException e) {
-      log.log(Level.FINER, e.toString(), e);
+      log.log(Level.FINER, e.ToString(), e);
 
       if (errstr != null)
-        errstr.set(env.createString(e.toString()));
+        errstr.set(env.createString(e.ToString()));
 
       return null;
     }
@@ -280,7 +280,7 @@ public class NetworkModule : AbstractQuercusModule {
       ip = InetAddress.getByName(hostname);
     }
     catch (Exception e) {
-      log.log(Level.WARNING, e.toString(), e);
+      log.log(Level.WARNING, e.ToString(), e);
 
       return hostname;
     }
@@ -307,7 +307,7 @@ public class NetworkModule : AbstractQuercusModule {
       ip = InetAddress.getAllByName(hostname);
     }
     catch (Exception e) {
-      log.log(Level.WARNING, e.toString(), e);
+      log.log(Level.WARNING, e.ToString(), e);
 
       return BooleanValue.FALSE;
     }
@@ -362,7 +362,7 @@ public class NetworkModule : AbstractQuercusModule {
       splitIP = ip.split("\\.");
     }
     catch (Exception e) {
-      log.log(Level.WARNING, e.toString(), e);
+      log.log(Level.WARNING, e.ToString(), e);
 
       env.warning(L.l("regex expression invalid"));
 
@@ -383,7 +383,7 @@ public class NetworkModule : AbstractQuercusModule {
       host = InetAddress.getByAddress(addr);
     }
     catch (Exception e) {
-      log.log(Level.WARNING, e.toString(), e);
+      log.log(Level.WARNING, e.ToString(), e);
 
       return ip;
     }
@@ -552,7 +552,7 @@ public class NetworkModule : AbstractQuercusModule {
                 weight = Integer.valueOf(priorityPart);
               }
               catch (NumberFormatException ex) {
-                log.log(Level.FINE, ex.toString(), ex);
+                log.log(Level.FINE, ex.ToString(), ex);
               }
             }
           }
@@ -712,7 +712,7 @@ public class NetworkModule : AbstractQuercusModule {
                 target = hostPart;
               }
               catch (NumberFormatException ex) {
-                log.log(Level.FINE, ex.toString(), ex);
+                log.log(Level.FINE, ex.ToString(), ex);
               }
             }
           }
@@ -723,7 +723,7 @@ public class NetworkModule : AbstractQuercusModule {
               target = null;
             }
             catch (Exception e) {
-              log.log(Level.FINE, e.toString(), e);
+              log.log(Level.FINE, e.ToString(), e);
             }
           }
 
@@ -735,7 +735,7 @@ public class NetworkModule : AbstractQuercusModule {
       }
     }
     catch (NameNotFoundException ex) {
-      log.log(Level.FINER, ex.toString(), ex);
+      log.log(Level.FINER, ex.ToString(), ex);
     }
     catch (NamingException ex) {
       throw new QuercusModuleException(ex);

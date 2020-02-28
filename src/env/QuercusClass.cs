@@ -85,7 +85,7 @@ public class QuercusClass : NullValue {
   private AbstractFunction _callStatic;
 
   private AbstractFunction _invoke;
-  private AbstractFunction _toString;
+  private AbstractFunction _ToString;
   private AbstractFunction _isset;
   private AbstractFunction _unset;
 
@@ -330,7 +330,7 @@ public class QuercusClass : NullValue {
     _call = cacheClass._call;
     _callStatic = cacheClass._callStatic;
     _invoke = cacheClass._invoke;
-    _toString = cacheClass._toString;
+    _ToString = cacheClass._ToString;
 
     _arrayDelegate = cacheClass._arrayDelegate;
     _traversableDelegate = cacheClass._traversableDelegate;
@@ -670,19 +670,19 @@ public class QuercusClass : NullValue {
   }
 
   /**
-   * Sets the __toString
+   * Sets the __ToString
    */
   public void setToString(AbstractFunction fun)
   {
-    _toString = fun;
+    _ToString = fun;
   }
 
   /**
-   * Gets the __toString
+   * Gets the __ToString
    */
   public AbstractFunction getToString()
   {
-    return _toString;
+    return _ToString;
   }
 
   /**
@@ -2675,7 +2675,7 @@ public class QuercusClass : NullValue {
     return _unset;
   }
 
-  public string toString()
+  public string ToString()
   {
     return getClass().getSimpleName() + "[" + getName() + "]";
   }

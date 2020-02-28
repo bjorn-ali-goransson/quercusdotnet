@@ -165,7 +165,7 @@ public class FileReadValue : FileValue {
         // XXX: not quite right for sockets
         return  _is.available() <= 0;
       } catch (IOException e) {
-        log.log(Level.FINE, e.toString(), e);
+        log.log(Level.FINE, e.ToString(), e);
 
         return true;
       }
@@ -199,7 +199,7 @@ public class FileReadValue : FileValue {
    * Converts to a string.
    * @param env
    */
-  public string toString()
+  public string ToString()
   {
     return "File[" + getPath() + "]";
   }

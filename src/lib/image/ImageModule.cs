@@ -755,7 +755,7 @@ public class ImageModule : AbstractQuercusModule {
     } catch (Exception e) {
       env.warning(L.l("Can't open {0} as a jpeg image.\n{1}",
                       filename, e));
-      log.log(Level.FINE, e.toString(), e);
+      log.log(Level.FINE, e.ToString(), e);
 
       return null;
     }
@@ -1113,7 +1113,7 @@ public class ImageModule : AbstractQuercusModule {
 
       return bbox;
     } catch (Exception e) {
-      log.log(Level.WARNING, e.toString(), e);
+      log.log(Level.WARNING, e.ToString(), e);
 
       return NullValue.NULL;
     }
@@ -1182,7 +1182,7 @@ public class ImageModule : AbstractQuercusModule {
 
       return value;
     } catch (Exception e) {
-      log.log(Level.WARNING, e.toString(), e);
+      log.log(Level.WARNING, e.ToString(), e);
 
       return NullValue.NULL;
     }
@@ -1237,7 +1237,7 @@ public class ImageModule : AbstractQuercusModule {
       return true;
     }
     catch (IOException e) {
-      log.log(Level.FINE, e.toString(), e);
+      log.log(Level.FINE, e.ToString(), e);
 
       return false;
     }
@@ -1291,7 +1291,7 @@ public class ImageModule : AbstractQuercusModule {
       return true;
     }
     catch (IOException e) {
-      log.log(Level.FINE, e.toString(), e);
+      log.log(Level.FINE, e.ToString(), e);
 
       return false;
     }
@@ -1358,7 +1358,7 @@ public class ImageModule : AbstractQuercusModule {
       return true;
     }
     catch (IOException e) {
-      log.log(Level.FINE, e.toString(), e);
+      log.log(Level.FINE, e.ToString(), e);
 
       return false;
     }

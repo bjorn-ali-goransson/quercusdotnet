@@ -104,7 +104,7 @@ abstract public class CompiledFunctionRef_2 : CompiledFunctionRef {
 
   abstract public Value callRef(Env env, Value a1, Value a2);
 
-  public string toString()
+  public string ToString()
   {
     return "CompiledFunction_1[" + _name + "]";
   }

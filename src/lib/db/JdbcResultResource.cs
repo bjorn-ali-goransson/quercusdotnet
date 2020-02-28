@@ -147,7 +147,7 @@ public class JdbcResultResource
       }
     }
     catch (SQLException e) {
-      log.log(Level.FINE, e.toString(), e);
+      log.log(Level.FINE, e.ToString(), e);
     }
   }
 
@@ -225,7 +225,7 @@ public class JdbcResultResource
       }
     }
     catch (SQLException e) {
-      log.log(Level.FINE, e.toString(), e);
+      log.log(Level.FINE, e.ToString(), e);
       return NullValue.NULL;
     }
   }
@@ -326,7 +326,7 @@ public class JdbcResultResource
       return result;
     }
     catch (SQLException e) {
-      log.log(Level.FINE, e.toString(), e);
+      log.log(Level.FINE, e.ToString(), e);
       return BooleanValue.FALSE;
     }
   }
@@ -380,7 +380,7 @@ public class JdbcResultResource
         return NullValue.NULL;
       }
     } catch (SQLException e) {
-      log.log(Level.FINE, e.toString(), e);
+      log.log(Level.FINE, e.ToString(), e);
       return NullValue.NULL;
     }
   }
@@ -423,7 +423,7 @@ public class JdbcResultResource
       }
     }
     catch (SQLException e) {
-      log.log(Level.FINE, e.toString(), e);
+      log.log(Level.FINE, e.ToString(), e);
       return BooleanValue.FALSE;
     }
   }
@@ -469,7 +469,7 @@ public class JdbcResultResource
     if (fieldNumber < 0) {
       // fieldNameOrNumber @is the field name
       // Get column number (0-based).
-      fieldNumber = getColumnNumber(fieldNameOrNumber.toString());
+      fieldNumber = getColumnNumber(fieldNameOrNumber.ToString());
     }
 
     return fieldNumber;
@@ -631,7 +631,7 @@ public class JdbcResultResource
           try {
             bb.appendReadAll(@is, Long.MAX_VALUE / 2);
           } catch (RuntimeException e) {
-            log.log(Level.WARNING, e.toString(), e);
+            log.log(Level.WARNING, e.ToString(), e);
 
             return NullValue.NULL;
           }
@@ -660,7 +660,7 @@ public class JdbcResultResource
           try {
             bb.appendReadAll(@is, Long.MAX_VALUE / 2);
           } catch (RuntimeException e) {
-            log.log(Level.WARNING, e.toString(), e);
+            log.log(Level.WARNING, e.ToString(), e);
 
             return NullValue.NULL;
           }
@@ -698,12 +698,12 @@ public class JdbcResultResource
         }
       }
     } catch (IOException e) {
-      log.log(Level.FINE, e.toString(), e);
+      log.log(Level.FINE, e.ToString(), e);
 
       return NullValue.NULL;
     } catch (SQLException e) {
       // php/141e
-      log.log(Level.FINE, e.toString(), e);
+      log.log(Level.FINE, e.ToString(), e);
 
       return NullValue.NULL;
     }
@@ -811,7 +811,7 @@ public class JdbcResultResource
       }
     } catch (SQLException e) {
       if (log.isLoggable(Level.FINER))
-        log.log(Level.FINER, e.toString(), e);
+        log.log(Level.FINER, e.ToString(), e);
 
       // php/1f0a - mysql jdbc driver issue with zero timestamp
       return env.createString("0000-00-00 00:00:00");
@@ -834,7 +834,7 @@ public class JdbcResultResource
       else
         return env.createString(md.getCatalogName(fieldOffset + 1));
     } catch (SQLException e) {
-      log.log(Level.FINE, e.toString(), e);
+      log.log(Level.FINE, e.ToString(), e);
       return BooleanValue.FALSE;
     }
   }
@@ -871,7 +871,7 @@ public class JdbcResultResource
       else
         return true;
     } catch (SQLException e) {
-      log.log(Level.FINE, e.toString(), e);
+      log.log(Level.FINE, e.ToString(), e);
       return false;
     }
   }
@@ -919,7 +919,7 @@ public class JdbcResultResource
         return LongValue.create((long) md.getPrecision(fieldOffset + 1));
 
     } catch (SQLException e) {
-      log.log(Level.FINE, e.toString(), e);
+      log.log(Level.FINE, e.ToString(), e);
       return BooleanValue.FALSE;
     }
   }
@@ -944,7 +944,7 @@ public class JdbcResultResource
       else
         return env.createString(getColumnLabel(md, fieldOffset + 1));
     } catch (Exception e) {
-      log.log(Level.FINE, e.toString(), e);
+      log.log(Level.FINE, e.ToString(), e);
       return BooleanValue.FALSE;
     }
   }
@@ -966,7 +966,7 @@ public class JdbcResultResource
       else
         return env.createString(getColumnLabel(md, fieldOffset + 1));
     } catch (Exception e) {
-      log.log(Level.FINE, e.toString(), e);
+      log.log(Level.FINE, e.ToString(), e);
       return BooleanValue.FALSE;
     }
   }
@@ -994,7 +994,7 @@ public class JdbcResultResource
         else
           return LongValue.ZERO;
     } catch (Exception e) {
-      log.log(Level.FINE, e.toString(), e);
+      log.log(Level.FINE, e.ToString(), e);
       return BooleanValue.FALSE;
     }
   }
@@ -1026,7 +1026,7 @@ public class JdbcResultResource
         return LongValue.create((long) md.getScale(fieldOffset + 1));
 
     } catch (SQLException e) {
-      log.log(Level.FINE, e.toString(), e);
+      log.log(Level.FINE, e.ToString(), e);
       return BooleanValue.FALSE;
     }
   }
@@ -1056,7 +1056,7 @@ public class JdbcResultResource
           return env.createString(tableName);
       }
     } catch (SQLException e) {
-      log.log(Level.FINE, e.toString(), e);
+      log.log(Level.FINE, e.ToString(), e);
       return BooleanValue.FALSE;
     }
   }
@@ -1086,7 +1086,7 @@ public class JdbcResultResource
           return env.createString(tableName);
       }
     } catch (SQLException e) {
-      log.log(Level.FINE, e.toString(), e);
+      log.log(Level.FINE, e.ToString(), e);
       return BooleanValue.FALSE;
     }
   }
@@ -1114,7 +1114,7 @@ public class JdbcResultResource
         return env.createString(getFieldType(fieldOffset, jdbcType));
       }
     } catch (Exception e) {
-      log.log(Level.FINE, e.toString(), e);
+      log.log(Level.FINE, e.ToString(), e);
       return BooleanValue.FALSE;
     }
   }
@@ -1176,7 +1176,7 @@ public class JdbcResultResource
 
       return LongValue.create(md.getColumnType(fieldOffset + 1));
     } catch (Exception e) {
-      log.log(Level.FINE, e.toString(), e);
+      log.log(Level.FINE, e.ToString(), e);
       return BooleanValue.FALSE;
     }
   }
@@ -1200,12 +1200,12 @@ public class JdbcResultResource
       int numColumns = md.getColumnCount();
 
       for (int i = 1; i <= numColumns; i++) {
-        array.put(LongValue.create(_rs.getObject(i).toString().length()));
+        array.put(LongValue.create(_rs.getObject(i).ToString().length()));
       }
       result = array;
 
     } catch (SQLException e) {
-      log.log(Level.FINE, e.toString(), e);
+      log.log(Level.FINE, e.ToString(), e);
       return BooleanValue.FALSE;
     }
 
@@ -1260,7 +1260,7 @@ public class JdbcResultResource
       return result;
 
     } catch (Exception e) {
-      log.log(Level.FINE, e.toString(), e);
+      log.log(Level.FINE, e.ToString(), e);
       return NullValue.NULL;
     }
   }
@@ -1290,7 +1290,7 @@ public class JdbcResultResource
         return rs.getRow();
       }
       catch (Exception e) {
-        log.log(Level.FINE, e.toString(), e);
+        log.log(Level.FINE, e.ToString(), e);
         return -1;
       }
       finally {
@@ -1303,7 +1303,7 @@ public class JdbcResultResource
       }
     }
     catch (SQLException e) {
-      log.log(Level.FINE, e.toString(), e);
+      log.log(Level.FINE, e.ToString(), e);
       return -1;
     }
   }
@@ -1326,7 +1326,7 @@ public class JdbcResultResource
       if (field.isNumberConvertible())
         colNumber = field.toInt();
       else
-        colNumber = getColumnNumber(field.toString(), md);
+        colNumber = getColumnNumber(field.ToString(), md);
 
       if (colNumber < 0 || colNumber >= md.getColumnCount()) {
         env.invalidArgument("field", field);
@@ -1347,7 +1347,7 @@ public class JdbcResultResource
 
       return getColumnValue(env, colNumber + 1);
     } catch (SQLException e) {
-      log.log(Level.FINE, e.toString(), e);
+      log.log(Level.FINE, e.ToString(), e);
       return BooleanValue.FALSE;
     }
   }
@@ -1453,7 +1453,7 @@ public class JdbcResultResource
       }
     }
     catch (SQLException e) {
-      log.log(Level.FINE, e.toString(), e);
+      log.log(Level.FINE, e.ToString(), e);
       return false;
     }
 
@@ -1465,7 +1465,7 @@ public class JdbcResultResource
    *
    * @return a string representation for this object
    */
-  public string toString()
+  public string ToString()
   {
     if (_rs != null)
       return getClass()

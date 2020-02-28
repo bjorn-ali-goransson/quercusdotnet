@@ -97,7 +97,7 @@ public abstract class NumberValue : Value {
    */
   public override void jsonEncode(Env env, JsonEncodeContext context, StringValue sb)
   {
-    sb.append(toStringValue());
+    sb.append(ToStringValue());
   }
 }
 }

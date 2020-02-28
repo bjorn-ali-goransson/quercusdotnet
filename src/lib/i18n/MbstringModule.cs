@@ -111,7 +111,7 @@ public class MbstringModule
     Decoder decoder = Decoder.create(encoding);
 
     if (! var.isDefault())
-      return decoder.isDecodable(env, var.toStringValue());
+      return decoder.isDecodable(env, var.ToStringValue());
 
     else
       throw new UnimplementedException("mb_check_encoding() with no args");
@@ -299,11 +299,11 @@ public class MbstringModule
         Iterator<Value> iter = encodingV.getValueIterator(env);
 
         while (iter.hasNext()) {
-          list.add(iter.next().toString());
+          list.add(iter.next().ToString());
         }
       }
       else
-        parseCommaSeparatedList(list, encodingV.toString());
+        parseCommaSeparatedList(list, encodingV.ToString());
 
       env.setSpecialValue("mb.detect_order", list);
 
@@ -333,11 +333,11 @@ public class MbstringModule
       Iterator<Value> iter = encodingV.getValueIterator(env);
 
       while (iter.hasNext()) {
-        list.add(iter.next().toString());
+        list.add(iter.next().ToString());
       }
     }
     else {
-      string encodings = encodingV.toString();
+      string encodings = encodingV.ToString();
 
       if (encodings.equalsIgnoreCase("auto")) {
         list.add("ASCII");
@@ -347,7 +347,7 @@ public class MbstringModule
         list.add("SJIS");
       }
       else
-        parseCommaSeparatedList(list, encodingV.toString());
+        parseCommaSeparatedList(list, encodingV.ToString());
     }
 
     return list;
@@ -382,7 +382,7 @@ public class MbstringModule
     charset = getEncoding(env, charset);
 
     try {
-      string mime = QuercusMimeUtility.encodeMimeWord(str.toString(),
+      string mime = QuercusMimeUtility.encodeMimeWord(str.ToString(),
                                                       charset,
                                                       transferEncoding,
                                                       linefeed,
@@ -444,7 +444,7 @@ public class MbstringModule
     if (eregValue.isLong())
       eregStr = UnicodeBuilderValue.create((char) eregValue.toInt());
     else
-      eregStr = eregValue.toStringValue(env).convertToUnicode(env, encoding);
+      eregStr = eregValue.ToStringValue(env).convertToUnicode(env, encoding);
 
     replacement = replacement.convertToUnicode(env, encoding);
     subject = subject.convertToUnicode(env, encoding);
@@ -486,7 +486,7 @@ public class MbstringModule
     if (pattern.isLong())
       eregStr = UnicodeBuilderValue.create((char) pattern.toInt());
     else
-      eregStr = pattern.toStringValue(env).convertToUnicode(env, encoding);
+      eregStr = pattern.ToStringValue(env).convertToUnicode(env, encoding);
 
     replacement = replacement.convertToUnicode(env, encoding);
     subject = subject.convertToUnicode(env, encoding);
@@ -537,7 +537,7 @@ public class MbstringModule
         regs.put(entry.getKey(), bytes);
       }
 
-      val = LongValue.create(regs.get(LongValue.ZERO).toStringValue().length());
+      val = LongValue.create(regs.get(LongValue.ZERO).ToStringValue().length());
     }
 
     return val;
@@ -581,7 +581,7 @@ public class MbstringModule
 
     if (! rawRegexp.isDefault()) {
       regexp
-        = RegexpModule.createUnicodeEregi(env, rawRegexp.toStringValue(env));
+        = RegexpModule.createUnicodeEregi(env, rawRegexp.ToStringValue(env));
     }
 
     EregSearch ereg = new EregSearch(env, string, regexp, option);
@@ -601,7 +601,7 @@ public class MbstringModule
 
     if (! rawRegexp.isDefault()) {
       regexp
-        = RegexpModule.createUnicodeEregi(env, rawRegexp.toStringValue(env));
+        = RegexpModule.createUnicodeEregi(env, rawRegexp.ToStringValue(env));
     }
 
     EregSearch ereg = getEreg(env, regexp, option);
@@ -625,7 +625,7 @@ public class MbstringModule
 
     if (! rawRegexp.isDefault()) {
       regexp
-        = RegexpModule.createUnicodeEregi(env, rawRegexp.toStringValue(env));
+        = RegexpModule.createUnicodeEregi(env, rawRegexp.ToStringValue(env));
     }
 
     EregSearch ereg = getEreg(env, regexp, option);
@@ -667,7 +667,7 @@ public class MbstringModule
 
     if (! rawRegexp.isDefault()) {
       regexp
-        = RegexpModule.createUnicodeEregi(env, rawRegexp.toStringValue(env));
+        = RegexpModule.createUnicodeEregi(env, rawRegexp.ToStringValue(env));
     }
 
     EregSearch ereg = getEreg(env, regexp, option);
@@ -904,7 +904,7 @@ public class MbstringModule
   public static StringValue mb_preferred_mime_name(Env env,
                                                    StringValue encoding)
   {
-    string mimeName = Encoding.getMimeName(encoding.toString());
+    string mimeName = Encoding.getMimeName(encoding.ToString());
 
     return env.createString(mimeName);
   }
@@ -946,11 +946,11 @@ public class MbstringModule
     additionalHeaders = additionalHeaders.toBinaryValue(encoding);
 
     bool result = MailModule.mail(env,
-                                     to.toString(),
-                                     subject.toString(),
+                                     to.ToString(),
+                                     subject.ToString(),
                                      message,
-                                     additionalHeaders.toString(),
-                                     additionalParameters.toString());
+                                     additionalHeaders.ToString(),
+                                     additionalParameters.ToString());
 
     return BooleanValue.create(result);
   }
@@ -1208,7 +1208,7 @@ public class MbstringModule
     if (val == BooleanValue.FALSE)
       return str.EMPTY;
 
-    return encode(env, val.toStringValue(), encoding);
+    return encode(env, val.ToStringValue(), encoding);
   }
 
 
@@ -1347,7 +1347,7 @@ public class MbstringModule
     Value encoding = env.getIni("mbstring.internal_encoding");
 
     if (encoding.length() > 0)
-      return encoding.toString();
+      return encoding.ToString();
     else
       return env.getRuntimeEncoding();
   }
@@ -1370,7 +1370,7 @@ public class MbstringModule
     Value encoding = env.getIni("mbstring.http_output");
 
     if (encoding.length() != 0)
-      return encoding.toString();
+      return encoding.ToString();
     else
       return env.getOutputEncoding();
   }
@@ -1386,11 +1386,11 @@ public class MbstringModule
       Iterator<Value> iter = encodingV.getValueIterator(env);
 
       while (iter.hasNext()) {
-        list.add(iter.next().toString());
+        list.add(iter.next().ToString());
       }
     }
     else {
-      string encodings = encodingV.toString();
+      string encodings = encodingV.ToString();
 
       if (encodings.equals("auto")) {
         list.add("ASCII");
@@ -1442,7 +1442,7 @@ public class MbstringModule
     val = val.toValue();
 
     if (val.isString()) {
-      return decoder.decodeUnicode(val.toStringValue());
+      return decoder.decodeUnicode(val.ToStringValue());
     }
 
     else if (val.isArray()) {
@@ -1460,7 +1460,7 @@ public class MbstringModule
 
       for (Map.Entry<Value,Value> entry : obj.entrySet()) {
         obj.putThisField(env,
-                         entry.getKey().toStringValue(),
+                         entry.getKey().ToStringValue(),
                          decodeAll(env, entry.getValue(), decoder));
       }
 
@@ -1493,7 +1493,7 @@ public class MbstringModule
     if (val.isString()) {
       StringValue sb = env.createBinaryBuilder();
 
-      return encoder.encode(sb, val.toStringValue(), true);
+      return encoder.encode(sb, val.ToStringValue(), true);
     }
     else if (val.isArray()) {
       ArrayValue array = new ArrayValueImpl();
@@ -1510,7 +1510,7 @@ public class MbstringModule
 
       for (Map.Entry<Value,Value> entry : obj.entrySet()) {
         obj.putThisField(env,
-                         entry.getKey().toStringValue(),
+                         entry.getKey().ToStringValue(),
                          encodeAll(env, entry.getValue(), encoder));
       }
 
@@ -1580,7 +1580,7 @@ public class MbstringModule
       if (val == BooleanValue.FALSE)
         return BooleanValue.FALSE;
 
-      StringValue match = regs.get(LongValue.ZERO).toStringValue();
+      StringValue match = regs.get(LongValue.ZERO).ToStringValue();
 
       int matchIndex = _string.indexOf(match, _position);
       int matchLength = match.length();

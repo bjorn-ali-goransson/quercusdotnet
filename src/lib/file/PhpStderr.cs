@@ -56,7 +56,7 @@ public class PhpStderr : AbstractBinaryOutput {
     System.err.write(b);
   }
 
-  public string toString()
+  public string ToString()
   {
     return getClass().getSimpleName() + "[]";
   }

@@ -69,7 +69,7 @@ public class ImportExpr : Expr
     return NullValue.NULL;
   }
   
-  public string toString()
+  public string ToString()
   {
     if (_isWildcard)
       return "";

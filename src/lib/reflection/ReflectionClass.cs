@@ -95,7 +95,7 @@ public class ReflectionClass
     if (obj.isObject())
       cls = ((ObjectValue) obj.toValue()).getQuercusClass();
     else
-      cls = env.findClass(obj.toString());
+      cls = env.findClass(obj.ToString());
 
     if (cls == null)
       throw new ReflectionException(env, L.l("class '{0}' doesn't exist", obj));
@@ -411,7 +411,7 @@ public class ReflectionClass
       clsName = ((ReflectionClass) obj).getName();
     }
     else {
-      clsName = obj.toString();
+      clsName = obj.ToString();
     }
 
     // php/520p
@@ -512,7 +512,7 @@ public class ReflectionClass
     return _cls.getExtension();
   }
 
-  public string toString()
+  public string ToString()
   {
     return getClass().getSimpleName() + "[" + _name + "]";
   }

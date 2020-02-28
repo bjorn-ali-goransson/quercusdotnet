@@ -154,7 +154,7 @@ public class FileInput : ReadStreamInput
   /**
    * Converts to a string.
    */
-  public override string toString()
+  public override string ToString()
   {
     return getClass().getSimpleName() + "[" + getPath() + "]";
   }

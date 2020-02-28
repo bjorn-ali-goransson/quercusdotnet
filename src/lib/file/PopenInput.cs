@@ -87,7 +87,7 @@ public class PopenInput : ReadStreamInput
   /**
    * Converts to a string.
    */
-  public string toString()
+  public string ToString()
   {
     return "PopenInput[" + _process + "]";
   }

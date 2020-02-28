@@ -662,7 +662,7 @@ public class QuercusContext
           Value key = entry.getKey();
           Value value = entry.getValue();
 
-          _jdbcDriverContext.setProtocol(key.toString(), value.toString());
+          _jdbcDriverContext.setProtocol(key.ToString(), value.ToString());
         }
       }
     }
@@ -869,7 +869,7 @@ public class QuercusContext
     catch (ClassNotFoundException e) {
       throw new QuercusRuntimeException(L.l("`{0}' not valid: {1}",
                                             className,
-                                            e.toString()), e);
+                                            e.ToString()), e);
     }
   }
 
@@ -1426,7 +1426,7 @@ public class QuercusContext
       globalId = getFunctionId(name.substring(ns + 1));
     }
 
-    _functionMap[id] = new UndefinedFunction(id, name.toString(), globalId);
+    _functionMap[id] = new UndefinedFunction(id, name.ToString(), globalId);
   }
 
   /**
@@ -1728,7 +1728,7 @@ public class QuercusContext
    */
   public static bool isSuperGlobal(StringValue name)
   {
-    return _superGlobals.contains(name.toString());
+    return _superGlobals.contains(name.ToString());
   }
 
   /**
@@ -1852,7 +1852,7 @@ public class QuercusContext
         ArrayValue array = (ArrayValue) result;
 
         for (Map.Entry<Value,Value> entry : array.entrySet()) {
-          string key = entry.getKey().toString();
+          string key = entry.getKey().ToString();
           Value value = entry.getValue();
 
           setIni(key, value);
@@ -2162,7 +2162,7 @@ public class QuercusContext
       }
     }
 
-    setIni("include_path", sb.toString());
+    setIni("include_path", sb.ToString());
   }
 
   public void start()

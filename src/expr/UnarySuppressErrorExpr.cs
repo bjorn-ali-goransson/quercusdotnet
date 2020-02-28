@@ -149,7 +149,7 @@ public class UnarySuppressErrorExpr : AbstractUnaryExpr {
     }
   }
 
-  public string toString()
+  public string ToString()
   {
     return "@" + _expr;
   }

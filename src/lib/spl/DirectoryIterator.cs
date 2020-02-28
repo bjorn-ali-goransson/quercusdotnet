@@ -294,9 +294,9 @@ public class DirectoryIterator
     return getCurrent(env).openFile(env, mode, isUseIncludePath, context);
   }
 
-  public override string __toString(Env env)
+  public override string __ToString(Env env)
   {
-    return getCurrent(env).__toString(env);
+    return getCurrent(env).__ToString(env);
   }
   */
 }

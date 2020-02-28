@@ -1803,7 +1803,7 @@ public class QuercusParser {
         isConstructor = true;
       }
 
-      string name = nameV.toString();
+      string name = nameV.ToString();
 
       _function = getFactory().createFunctionInfo(_quercus, _classDef, name);
       _function.setPageStatic(oldTop);
@@ -2019,7 +2019,7 @@ public class QuercusParser {
         _peekToken = token;
 
         // php/0m51
-        expectedClass = parseNamespaceIdentifier().toString();
+        expectedClass = parseNamespaceIdentifier().ToString();
         token = parseToken();
       }
 
@@ -2195,7 +2195,7 @@ public class QuercusParser {
     StringValue nameV = parseIdentifier();
     nameV = resolveIdentifier(nameV);
 
-    string name = nameV.toString();
+    string name = nameV.ToString();
 
     string comment = _comment;
 
@@ -2207,13 +2207,13 @@ public class QuercusParser {
     if (token == : && (modifiers & M_TRAIT) == 0) {
       if ((modifiers & M_INTERFACE) != 0) {
         do {
-          ifaceList.add(parseNamespaceIdentifier().toString());
+          ifaceList.add(parseNamespaceIdentifier().ToString());
 
           token = parseToken();
         } while (token == ',');
       }
       else {
-        parentName = parseNamespaceIdentifier().toString();
+        parentName = parseNamespaceIdentifier().ToString();
 
         token = parseToken();
       }
@@ -2222,7 +2222,7 @@ public class QuercusParser {
     if (token == IMPLEMENTS
         && (modifiers & M_INTERFACE) == 0 && ((modifiers & M_TRAIT) == 0)) {
       do {
-        ifaceList.add(parseNamespaceIdentifier().toString());
+        ifaceList.add(parseNamespaceIdentifier().ToString());
 
         token = parseToken();
       } while (token == ',');
@@ -2475,7 +2475,7 @@ public class QuercusParser {
     } while (token == ',');
 
     for (StringValue traitName : traitList) {
-      _classDef.addTrait(traitName.toString());
+      _classDef.addTrait(traitName.ToString());
     }
 
     if (token == '{') {
@@ -2502,14 +2502,14 @@ public class QuercusParser {
         }
 
         if (token == INSTEADOF) {
-          string insteadofTraitName = parseNamespaceIdentifier().toString();
+          string insteadofTraitName = parseNamespaceIdentifier().ToString();
 
-          _classDef.addTraitInsteadOf(funName, traitNameV.toString(), insteadofTraitName);
+          _classDef.addTraitInsteadOf(funName, traitNameV.ToString(), insteadofTraitName);
         }
         else if (token == AS) {
           StringValue funNameAlias = parseIdentifier();
 
-          _classDef.addTraitAlias(funName, funNameAlias, traitNameV.toString());
+          _classDef.addTraitAlias(funName, funNameAlias, traitNameV.ToString());
         }
         else {
           throw error(L.l("expected 'insteadof' or 'as' at {0}",
@@ -3022,7 +3022,7 @@ public class QuercusParser {
       Expr classNameExpr = parseShiftExpr();
 
       if (classNameExpr instanceof ConstExpr) {
-        string className = classNameExpr.evalConstant().toString();
+        string className = classNameExpr.evalConstant().ToString();
 
         if (className.equals("self")) {
           className = getSelfClassName();
@@ -3267,7 +3267,7 @@ public class QuercusParser {
         Expr classNameExpr = parseShiftExpr();
 
         if (classNameExpr instanceof ConstExpr) {
-          string className = classNameExpr.evalConstant().toString();
+          string className = classNameExpr.evalConstant().ToString();
 
           if (className.equals("self")) {
             className = getSelfClassName();
@@ -3659,7 +3659,7 @@ public class QuercusParser {
     }
     case DOUBLE:
     {
-      double d = Double.parseDouble(_lexeme.toString());
+      double d = Double.parseDouble(_lexeme.ToString());
 
       return _factory.createLiteral(new DoubleValue(d));
     }
@@ -4039,7 +4039,7 @@ public class QuercusParser {
     if (name.startsWith("\\"))
       name = name.substring(1);
 
-    return _factory.createConst(name.toString());
+    return _factory.createConst(name.ToString());
   }
 
   /**
@@ -4125,14 +4125,14 @@ public class QuercusParser {
 
     // XX: unicode issues?
     if (nameExpr.isLiteral() || nameExpr instanceof ConstExpr) {
-      name = nameExpr.evalConstant().toString();
+      name = nameExpr.evalConstant().ToString();
 
       // php/0957
       if ("self".equals(name) && _classDef != null) {
         name = _classDef.getName();
       }
       else if ("parent".equals(name) && getParentClassName() != null) {
-        name = getParentClassName().toString();
+        name = getParentClassName().ToString();
       }
       else {
         // name = resolveIdentifier(name);
@@ -4404,7 +4404,7 @@ public class QuercusParser {
 
     //expect(';');
 
-    return _factory.createImport(getLocation(), sb.toString(), isWildcard);
+    return _factory.createImport(getLocation(), sb.ToString(), isWildcard);
   }
 
   /**
@@ -4940,7 +4940,7 @@ public class QuercusParser {
       return IDENTIFIER;
     }
 
-    string name = _lexeme.toString();
+    string name = _lexeme.ToString();
 
     int reserved = _reserved.get(name);
 
@@ -4978,7 +4978,7 @@ public class QuercusParser {
           _sb.append('*');
           _sb.append('/');
 
-          _comment = _sb.toString();
+          _comment = _sb.ToString();
 
           return;
         }
@@ -4988,7 +4988,7 @@ public class QuercusParser {
         }
       } while ((ch = read()) >= 0);
 
-      _comment = _sb.toString();
+      _comment = _sb.ToString();
     }
     else if (ch >= 0) {
       do {
@@ -5254,7 +5254,7 @@ public class QuercusParser {
       throw expect(L.l("nowdoc newline"), ch);
     }
 
-    string nowdocName = _sb.toString();
+    string nowdocName = _sb.ToString();
     _sb.setLength(0);
 
     while ((ch = read()) >= 0) {
@@ -5284,7 +5284,7 @@ public class QuercusParser {
       }
     }
 
-    _lexeme = createStringValue(_sb.toString());
+    _lexeme = createStringValue(_sb.ToString());
 
     return STRING;
   }
@@ -5340,7 +5340,7 @@ public class QuercusParser {
       _sb.append((char) ch);
     }
 
-    _heredocEnd = _sb.toString();
+    _heredocEnd = _sb.ToString();
 
     if (isQuoted && ch == '"') {
       ch = read();
@@ -5518,7 +5518,7 @@ public class QuercusParser {
         _sb.append((char) ch);
       }
 
-      Expr constExpr = _factory.createConst(_sb.toString());
+      Expr constExpr = _factory.createConst(_sb.ToString());
 
       tail = _factory.createArrayGet(getLocation(), tail, constExpr);
     }
@@ -6177,7 +6177,7 @@ public class QuercusParser {
       if (p > 0)
         shortFile = shortFile.substring(p + 1);
 
-      sb.append(_parserLocation.toString())
+      sb.append(_parserLocation.ToString())
         .append(msg)
         .append(" in");
 
@@ -6193,10 +6193,10 @@ public class QuercusParser {
           .append(sourceLines[i]);
       }
 
-      return new QuercusParseException(sb.toString());
+      return new QuercusParseException(sb.ToString());
     }
     else
-      return new QuercusParseException(_parserLocation.toString() + msg);
+      return new QuercusParseException(_parserLocation.ToString() + msg);
   }
 
   /**
@@ -6518,7 +6518,7 @@ public class QuercusParser {
     }
 
     @Override
-    public string toString()
+    public string ToString()
     {
       return _fileName + ":" + _lineNumber + ": ";
     }

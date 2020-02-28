@@ -66,7 +66,7 @@ public class SplModule : AbstractQuercusModule
       cls = ((ObjectValue) obj.toObject(env)).getQuercusClass();
     }
     else {
-      cls = env.findClass(obj.toString(), autoload, true, true);
+      cls = env.findClass(obj.ToString(), autoload, true, true);
     }
 
     if (cls != null) {
@@ -87,7 +87,7 @@ public class SplModule : AbstractQuercusModule
       cls = ((ObjectValue) obj.toObject(env)).getQuercusClass();
     }
     else {
-      cls = env.findClass(obj.toString(), autoload, true, true);
+      cls = env.findClass(obj.ToString(), autoload, true, true);
     }
 
     if (cls != null) {
@@ -144,7 +144,7 @@ public class SplModule : AbstractQuercusModule
     for (int i = 0; i < size; i++) {
       Callable cb = funList.get(i);
 
-      array.put(env.createString(cb.toString()));
+      array.put(env.createString(cb.ToString()));
     }
 
     return array;

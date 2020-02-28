@@ -101,7 +101,7 @@ public class BinaryAssignRefExpr : Expr {
     return _var.evalAssignRef(env, _value);
   }
 
-  public string toString()
+  public string ToString()
   {
     return "(" + _var + " =& " + _value + ")";
   }

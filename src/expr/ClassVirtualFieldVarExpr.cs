@@ -161,7 +161,7 @@ public class ClassVirtualFieldVarExpr : AbstractVarExpr {
               getLocation());
   }
 
-  public string toString()
+  public string ToString()
   {
     return "static::$" + _varName;
   }

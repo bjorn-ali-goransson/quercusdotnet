@@ -648,7 +648,7 @@ class Regcomp {
       if (ch != ')')
         throw error(L.l("expected ')'"));
 
-      string name = sb.toString();
+      string name = sb.ToString();
 
       Integer v = _groupNameReverseMap.get(new ConstStringValue(name));
 
@@ -676,7 +676,7 @@ class Regcomp {
       if (ch != closeChar)
         throw error(L.l("expected '{0}'", String.valueOf((char) closeChar)));
 
-      string name = sb.toString();
+      string name = sb.ToString();
 
       int group = _nGroup++;
 
@@ -699,7 +699,7 @@ class Regcomp {
       if (ch != ')')
         throw error(L.l("expected ')'"));
 
-      string name = sb.toString();
+      string name = sb.ToString();
       StringValue nameV = new ConstStringValue(name);
 
       Integer group = _groupNameReverseMap.get(nameV);
@@ -944,7 +944,7 @@ class Regcomp {
         cb.append((char) (v - 10 + 'a'));
     }
 
-    return cb.toString();
+    return cb.ToString();
   }
 
   private string badChar(int ch)
@@ -1049,7 +1049,7 @@ class Regcomp {
               sb.append((char) ch3);
             }
 
-            string name = sb.toString();
+            string name = sb.ToString();
 
             if (ch3 != '}')
               throw new IllegalRegexpException(L.l("expected '}' at "
@@ -1405,7 +1405,7 @@ class Regcomp {
           "expected character class closing bracket ']' at " + badChar(ch));
     }
 
-    string name = sb.toString();
+    string name = sb.ToString();
 
     RegexpSet set = RegexpSet.CLASS_MAP.get(name);
 

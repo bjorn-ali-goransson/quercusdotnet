@@ -286,7 +286,7 @@ public class MysqliModule : AbstractQuercusModule {
     Object error = env.getSpecialValue("mysqli.connectError");
 
     if (error != null)
-      return env.createString(error.toString());
+      return env.createString(error.ToString());
     else
       return env.getEmptyString();
   }
@@ -641,7 +641,7 @@ public class MysqliModule : AbstractQuercusModule {
    */
    public static int mysqli_get_client_version(Env env)
    {
-     return Mysqli.infoToVersion(mysqli_get_client_info(env).toString());
+     return Mysqli.infoToVersion(mysqli_get_client_info(env).ToString());
    }
 
   /**
@@ -947,7 +947,7 @@ public class MysqliModule : AbstractQuercusModule {
     try {
       value = conn.query(env, sql, MYSQLI_STORE_RESULT);
     } catch (Exception e) {
-      log.log(Level.FINE, e.toString(), e);
+      log.log(Level.FINE, e.ToString(), e);
     }
 
     if (value == null) {
@@ -994,7 +994,7 @@ public class MysqliModule : AbstractQuercusModule {
 
     StringValue sb = env.createStringBuilder();
 
-    escapeString(sb, unescapedString.toString());
+    escapeString(sb, unescapedString.ToString());
 
     return sb;
   }

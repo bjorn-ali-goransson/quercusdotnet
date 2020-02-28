@@ -112,11 +112,11 @@ abstract public class Statement {
         typedT.initCause(t);
       }
       catch (InstantiationException e) {
-        log.log(Level.WARNING, t.toString(), t);
+        log.log(Level.WARNING, t.ToString(), t);
         throw new RuntimeException(e);
       }
       catch (IllegalAccessException e) {
-        log.log(Level.WARNING, t.toString(), t);
+        log.log(Level.WARNING, t.ToString(), t);
         throw new RuntimeException(e);
       }
     }
@@ -156,7 +156,7 @@ abstract public class Statement {
       }
 
       QuercusExecutionException quercusEx
-        = new QuercusExecutionException(quercusExMessage.toString());
+        = new QuercusExecutionException(quercusExMessage.ToString());
 
       StackTraceElement[] quercusExStackTrace = quercusEx.getStackTrace();
       StackTraceElement[] rootCauseStackTrace = rootCause.getStackTrace();
@@ -191,7 +191,7 @@ abstract public class Statement {
       }
       catch (IllegalStateException ex) {
         // XXX: guard against reported bug that could not be reproduced
-        log.log(Level.FINE, ex.toString(), ex);
+        log.log(Level.FINE, ex.ToString(), ex);
       }
     }
 
@@ -237,7 +237,7 @@ abstract public class Statement {
     throw typedT;
   }
 
-  public string toString()
+  public string ToString()
   {
     return getClass().getSimpleName() + "[]";
   }

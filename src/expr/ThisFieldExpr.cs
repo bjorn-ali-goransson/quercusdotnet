@@ -326,7 +326,7 @@ public class ThisFieldExpr : AbstractVarExpr {
     obj.unsetThisField(_name);
   }
 
-  public string toString()
+  public string ToString()
   {
     return "$this->" + _name;
   }

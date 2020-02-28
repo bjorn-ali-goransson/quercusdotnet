@@ -390,7 +390,7 @@ public class Mcrypt {
       return algorithm;
   }
 
-  public string toString()
+  public string ToString()
   {
     return "Mcrypt[" + _algorithm + ", " + _mode + "]";
   }

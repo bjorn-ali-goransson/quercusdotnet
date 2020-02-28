@@ -169,17 +169,17 @@ public class ObjectExtJavaValue : ObjectExtValue
    * Converts to a string.
    * @param env
    */
-  public override StringValue toString(Env env)
+  public override StringValue ToString(Env env)
   {
-    AbstractFunction toString = _quercusClass.getToString();
+    AbstractFunction ToString = _quercusClass.getToString();
 
-    if (toString != null) {
-      return toString.callMethod(env, _quercusClass, this).toStringValue();
+    if (ToString != null) {
+      return ToString.callMethod(env, _quercusClass, this).ToStringValue();
     }
     else if (_javaClassDef.getToString() != null) {
       JavaValue value = new JavaValue(env, _object, _javaClassDef);
 
-      return _javaClassDef.toString(env, value);
+      return _javaClassDef.ToString(env, value);
     }
     else {
       return env.createString(_className + "[]");

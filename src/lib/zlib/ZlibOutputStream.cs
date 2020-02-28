@@ -262,7 +262,7 @@ public class ZlibOutputStream : AbstractBinaryOutput {
     }
   }
 
-  public string toString()
+  public string ToString()
   {
     return "ZlibOutputStream[]";
   }

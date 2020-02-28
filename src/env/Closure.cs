@@ -155,7 +155,7 @@ abstract public class Closure : Callback
    */
   abstract public Value call(Env env, Value []args);
 
-  public override string toString()
+  public override string ToString()
   {
     return getClass().getSimpleName() + "[" + _name + "]";
   }

@@ -168,9 +168,9 @@ public class ReflectionProperty
     return _prop.getComment(env);
   }
 
-  public string toString()
+  public string ToString()
   {
-    return getClass().getSimpleName() + "[" + _prop.toString() + "]";
+    return getClass().getSimpleName() + "[" + _prop.ToString() + "]";
   }
 
   static class Property
@@ -285,12 +285,12 @@ public class ReflectionProperty
       return def.getFieldComment(_nameV);
     }
 
-    public string toString()
+    public string ToString()
     {
       if (_cls.getName() != null)
         return _cls.getName() + "->" + _nameV;
       else
-        return _nameV.toString();
+        return _nameV.ToString();
     }
   }
 
@@ -363,12 +363,12 @@ public class ReflectionProperty
       return def.getStaticFieldComment(_name);
     }
 
-    public override string toString()
+    public override string ToString()
     {
       if (_cls.getName() != null)
         return _cls.getName() + "::" + _name;
       else
-        return _name.toString();
+        return _name.ToString();
     }
   }
 }

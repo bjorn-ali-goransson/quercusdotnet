@@ -33,7 +33,7 @@ public enum ExprType
         return type;
     }
     
-    public string toString()
+    public string ToString()
     {
       return "ExprType::INIT";
     }
@@ -70,7 +70,7 @@ public enum ExprType
         return VALUE;
     }
     
-    public string toString()
+    public string ToString()
     {
       return "ExprType::LONG";
     }
@@ -100,7 +100,7 @@ public enum ExprType
 	return VALUE;
     }
     
-    public string toString()
+    public string ToString()
     {
       return "ExprType::DOUBLE";
     }
@@ -125,7 +125,7 @@ public enum ExprType
         return VALUE;
     }
     
-    public string toString()
+    public string ToString()
     {
       return "ExprType::BOOLEAN";
     }
@@ -150,7 +150,7 @@ public enum ExprType
         return VALUE;
     }
     
-    public string toString()
+    public string ToString()
     {
       return "ExprType::STRING";
     }

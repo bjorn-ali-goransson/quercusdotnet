@@ -154,7 +154,7 @@ public class BinaryBuilderValue
   /**
    * Cost to convert to a String
    */
-  public override int toStringMarshalCost()
+  public override int ToStringMarshalCost()
   {
     return  Marshal.Marshal.COST_BINARY_TO_STRING;
   }
@@ -186,7 +186,7 @@ public class BinaryBuilderValue
   /**
    * Cost to convert to a string value
    */
-  public override int toStringValueMarshalCost()
+  public override int ToStringValueMarshalCost()
   {
     return  Marshal.Marshal.COST_IDENTICAL + 1;
   }
@@ -226,7 +226,7 @@ public class BinaryBuilderValue
   /**
    * Converts to a string builder
    */
-  public override StringValue toStringBuilder()
+  public override StringValue ToStringBuilder()
   {
     // XXX: can this just return this, or does it need to return a copy?
     return new BinaryBuilderValue(this);
@@ -340,7 +340,7 @@ public class BinaryBuilderValue
   /**
    * Converts to a string builder
    */
-  public override StringValue toStringBuilder(Env env)
+  public override StringValue ToStringBuilder(Env env)
   {
     return new BinaryBuilderValue(getBuffer(), 0, length());
   }
@@ -348,7 +348,7 @@ public class BinaryBuilderValue
   /**
    * Converts to a string builder
    */
-  public override StringValue toStringBuilder(Env env, Value value)
+  public override StringValue ToStringBuilder(Env env, Value value)
   {
     if (value.isUnicode()) {
       UnicodeBuilderValue sb = new UnicodeBuilderValue(this);
@@ -369,7 +369,7 @@ public class BinaryBuilderValue
   /**
    * Converts to a string builder
    */
-  public StringValue toStringBuilder(Env env, StringValue value)
+  public StringValue ToStringBuilder(Env env, StringValue value)
   {
     if (value.isUnicode()) {
       UnicodeBuilderValue sb = new UnicodeBuilderValue(this);
@@ -518,9 +518,9 @@ public class BinaryBuilderValue
   public override StringValue appendUnicode(Object v)
   {
     if (v instanceof String)
-      return appendUnicode(v.toString());
+      return appendUnicode(v.ToString());
     else
-      return append(v.toString());
+      return append(v.ToString());
   }
 
   /**
@@ -568,7 +568,7 @@ public class BinaryBuilderValue
 
     sb.append('"');
 
-    return sb.toString();
+    return sb.ToString();
   }
 
   public override void varDumpImpl(Env env,

@@ -171,7 +171,7 @@ public class ArrayModule
       Value keyValue = entry.getKey();
 
       if (keyValue instanceof StringValue) {
-        string key = keyValue.toString();
+        string key = keyValue.ToString();
 
         if (toCase == CASE_UPPER)
           key = key.toUpperCase(Locale.ENGLISH);
@@ -432,7 +432,7 @@ public class ArrayModule
       return NullValue.NULL;
     }
 
-    StringValue funName = arrays[arrays.length - 1].toStringValue(env);
+    StringValue funName = arrays[arrays.length - 1].ToStringValue(env);
     AbstractFunction func = env.findFunction(funName);
 
     if (func == null) {
@@ -494,7 +494,7 @@ public class ArrayModule
       return NullValue.NULL;
     }
 
-    StringValue funName = arrays[arrays.length - 1].toStringValue(env);
+    StringValue funName = arrays[arrays.length - 1].ToStringValue(env);
     AbstractFunction func = env.findFunction(funName);
 
     if (func == null) {
@@ -681,7 +681,7 @@ public class ArrayModule
         }
       }
       catch (Exception t) {
-        log.log(Level.WARNING, t.toString(), t);
+        log.log(Level.WARNING, t.ToString(), t);
         env.warning("An error occurred while invoking the filter callback");
 
         return NullValue.NULL;
@@ -859,7 +859,7 @@ public class ArrayModule
       return NullValue.NULL;
     }
 
-    StringValue funName = arrays[arrays.length - 1].toStringValue(env);
+    StringValue funName = arrays[arrays.length - 1].ToStringValue(env);
     AbstractFunction func = env.findFunction(funName);
 
     if (func == null) {
@@ -926,7 +926,7 @@ public class ArrayModule
       return NullValue.NULL;
     }
 
-    StringValue funName = arrays[arrays.length - 1].toStringValue(env);
+    StringValue funName = arrays[arrays.length - 1].ToStringValue(env);
     AbstractFunction func = env.findFunction(funName);
 
     if (func == null) {
@@ -1050,10 +1050,10 @@ public class ArrayModule
       return searchArray.keyExists(key);
     }
     else if (searchArray.isObject()) {
-      return searchArray.isFieldExists(env, key.toStringValue(env));
+      return searchArray.isFieldExists(env, key.ToStringValue(env));
     }
     else {
-      env.warning(L.l("'" + searchArray.toString()
+      env.warning(L.l("'" + searchArray.ToString()
                       + "' @is an unexpected argument, expected "
                       + "ArrayValue or ObjectValue"));
       return false;
@@ -1587,7 +1587,7 @@ public class ArrayModule
         result = callable.call(env, result, entry.getValue());
       }
       catch (Exception t) {
-        log.log(Level.WARNING, t.toString(), t);
+        log.log(Level.WARNING, t.ToString(), t);
         env.warning("An error occurred while invoking the reduction callback");
 
         return NullValue.NULL;
@@ -1994,7 +1994,7 @@ public class ArrayModule
             isFound = keyFound && valueFound;
           }
           catch (Exception t) {
-            log.log(Level.WARNING, t.toString(), t);
+            log.log(Level.WARNING, t.ToString(), t);
 
             env.warning("An error occurred while invoking the filter callback");
 
@@ -2086,7 +2086,7 @@ public class ArrayModule
             isFound = valueFound && keyFound;
           }
           catch (Throwable t) {
-            log.log(Level.WARNING, t.toString(), t);
+            log.log(Level.WARNING, t.ToString(), t);
 
             env.warning("An error occurred while invoking the filter callback");
 
@@ -2161,7 +2161,7 @@ public class ArrayModule
             isFound = cmp.call(env, entryValue, entry.getValue()).toLong() == 0;
           }
           catch (Exception t) {
-            log.log(Level.WARNING, t.toString(), t);
+            log.log(Level.WARNING, t.ToString(), t);
 
             env.warning("An error occurred while invoking the filter callback");
 
@@ -2245,7 +2245,7 @@ public class ArrayModule
             isFound = keyFound && valueFound;
           }
           catch (Throwable t) {
-            log.log(Level.WARNING, t.toString(), t);
+            log.log(Level.WARNING, t.ToString(), t);
 
             env.warning("An error occurred while invoking the filter callback");
 
@@ -2335,7 +2335,7 @@ public class ArrayModule
             isFound = valueFound && keyFound;
           }
           catch (Throwable t) {
-            log.log(Level.WARNING, t.toString(), t);
+            log.log(Level.WARNING, t.ToString(), t);
 
             env.warning("An error occurred while invoking the filter callback");
 
@@ -2408,7 +2408,7 @@ public class ArrayModule
             isFound = cmp.call(env, entryValue, entry.getValue()).toLong() == 0;
           }
           catch (Throwable t) {
-            log.log(Level.WARNING, t.toString(), t);
+            log.log(Level.WARNING, t.ToString(), t);
 
             env.warning("An error occurred while invoking the filter callback");
 
@@ -2458,7 +2458,7 @@ public class ArrayModule
 
       Value lastEntryValue = lastEntry.getValue();
 
-      if (! entryValue.toString().equals(lastEntryValue.toString()))
+      if (! entryValue.ToString().equals(lastEntryValue.ToString()))
         uniqueArray.put(entry.getKey(), entryValue);
 
       lastEntry = entry;
@@ -2566,7 +2566,7 @@ public class ArrayModule
       return true;
     }
     catch (Exception e) {
-      log.log(Level.WARNING, e.toString(), e);
+      log.log(Level.WARNING, e.ToString(), e);
       env.warning("An error occured while invoking the callback", e);
 
       return false;
@@ -2619,7 +2619,7 @@ public class ArrayModule
       return true;
     }
     catch (Exception e) {
-      log.log(Level.WARNING, e.toString(), e);
+      log.log(Level.WARNING, e.ToString(), e);
       env.warning("An error occured while invoking the callback", e);
 
       return false;
@@ -2719,7 +2719,7 @@ public class ArrayModule
 
     for (Value variableName : variables) {
       if (variableName.isString()) {
-        Var var = env.getRef(variableName.toStringValue(), false);
+        Var var = env.getRef(variableName.ToStringValue(), false);
 
         if (var != null)
           compactArray.put(variableName, var.toValue());
@@ -2814,7 +2814,7 @@ public class ArrayModule
 
       entryValue = array.get(entryKey);
 
-      StringValue symbolName = entryKey.toStringValue();
+      StringValue symbolName = entryKey.ToStringValue();
 
       if (validVariableName(symbolName)) {
         env.setValue(symbolName, entryValue);
@@ -2866,7 +2866,7 @@ public class ArrayModule
     string prefix = "";
 
     if (valuePrefix instanceof StringValue)
-      prefix = valuePrefix.toString() + "_";
+      prefix = valuePrefix.ToString() + "_";
 
     int completedSymbols = 0;
 
@@ -2878,7 +2878,7 @@ public class ArrayModule
       else
         entryValue = array.get(entryKey);
 
-      StringValue symbolName = entryKey.toStringValue();
+      StringValue symbolName = entryKey.ToStringValue();
 
       Value tableValue = env.getValue(symbolName);
 
@@ -3134,7 +3134,7 @@ public class ArrayModule
 
         if (entryValue instanceof StringValue)
           array.put(entry.getKey(),
-                    StringValue.create(entryValue.toString().trim()));
+                    StringValue.create(entryValue.ToString().trim()));
       }
     }
   }
@@ -3452,8 +3452,8 @@ public class ArrayModule
     public int compare(Map.Entry<Value, Value> aEntry,
                        Map.Entry<Value, Value> bEntry)
     {
-      string aElement = _getter.get(aEntry).toString();
-      string bElement = _getter.get(bEntry).toString();
+      string aElement = _getter.get(aEntry).ToString();
+      string bElement = _getter.get(bEntry).ToString();
 
       return aElement.compareTo(bElement) * _order;
     }
@@ -3514,8 +3514,8 @@ public class ArrayModule
     public int compare(Map.Entry<Value, Value> aEntry,
                        Map.Entry<Value, Value> bEntry)
     {
-      string aElement = _getter.get(aEntry).toString();
-      string bElement = _getter.get(bEntry).toString();
+      string aElement = _getter.get(aEntry).ToString();
+      string bElement = _getter.get(bEntry).ToString();
 
       return _collator.compare(aElement, bElement) * _order;
     }
@@ -3570,8 +3570,8 @@ public class ArrayModule
                        Map.Entry<Value, Value> bEntry)
     {
       try {
-        string aElement = _getter.get(aEntry).toString();
-        string bElement = _getter.get(bEntry).toString();
+        string aElement = _getter.get(aEntry).ToString();
+        string bElement = _getter.get(bEntry).ToString();
 
         if (! _isCaseSensitive) {
           aElement = aElement.toLowerCase(Locale.ENGLISH);
@@ -3724,7 +3724,7 @@ public class ArrayModule
 
         if (mode == SORT_STRING) {
           // php/173g
-          cmp = lValue.toString().compareTo(rValue.toString());
+          cmp = lValue.ToString().compareTo(rValue.ToString());
         }
         else if (mode == SORT_NUMERIC) {
           // php/173f
@@ -3799,7 +3799,7 @@ public class ArrayModule
         return _string.substring(start, _current);
       }
       catch (Exception e) {
-        log.log(Level.WARNING, e.toString(), e);
+        log.log(Level.WARNING, e.ToString(), e);
         return null;
       }
     }

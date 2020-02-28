@@ -253,7 +253,7 @@ public class ClassField
   }
 
   @Override
-  public string toString()
+  public string ToString()
   {
     string access = "";
 

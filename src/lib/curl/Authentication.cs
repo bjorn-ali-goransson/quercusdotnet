@@ -68,7 +68,7 @@ public class Authentication
     sb.append(':');
     sb.append(pass);
 
-    return basic(sb.toString());
+    return basic(sb.ToString());
   }
 
   public static string basic(String usernamePassword)
@@ -78,7 +78,7 @@ public class Authentication
     sb.append("Basic ");
     sb.append(Base64.encode(usernamePassword));
 
-    return sb.toString();
+    return sb.ToString();
   }
 
   /**
@@ -168,7 +168,7 @@ public class Authentication
                    algorithm);
 
     sb.append('"');
-    return sb.toString();
+    return sb.ToString();
   }
 
   /**
@@ -326,7 +326,7 @@ public class Authentication
       // discard quote
       read();
 
-      string key = _cb.toString();
+      string key = _cb.ToString();
       _cb.clear();
 
       return key;
@@ -339,7 +339,7 @@ public class Authentication
         _cb.append((char)ch);
       }
 
-      string value = _cb.toString();
+      string value = _cb.ToString();
       _cb.clear();
 
       return value;

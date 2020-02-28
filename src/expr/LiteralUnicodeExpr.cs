@@ -76,7 +76,7 @@ public class LiteralUnicodeExpr : Expr {
     return _value;
   }
 
-  public string toString()
+  public string ToString()
   {
     return "\"" + _value + "\"";
   }

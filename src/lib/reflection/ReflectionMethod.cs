@@ -80,7 +80,7 @@ public class ReflectionMethod : ReflectionFunctionAbstract
     if (obj.isObject())
       clsName = obj.getClassName();
     else
-      clsName = obj.toString();
+      clsName = obj.ToString();
 
     return new ReflectionMethod(clsName, env.getClass(clsName).getFunction(name));
   }
@@ -214,7 +214,7 @@ public class ReflectionMethod : ReflectionFunctionAbstract
     return (AbstractFunction) getCallable();
   }
 
-  public string toString()
+  public string ToString()
   {
     string name;
 

@@ -236,11 +236,11 @@ public class FileModule : AbstractQuercusModule {
       if (group instanceof LongValue)
         file.changeGroup(group.toInt());
       else
-        file.changeGroup(group.toString());
+        file.changeGroup(group.ToString());
 
       return true;
     } catch (IOException e) {
-      log.log(Level.FINE, e.toString(), e);
+      log.log(Level.FINE, e.ToString(), e);
 
       return false;
     }
@@ -289,11 +289,11 @@ public class FileModule : AbstractQuercusModule {
       if (user instanceof LongValue)
         file.changeOwner(user.toInt());
       else
-        file.changeOwner(user.toString());
+        file.changeOwner(user.ToString());
 
       return true;
     } catch (IOException e) {
-      log.log(Level.FINE, e.toString(), e);
+      log.log(Level.FINE, e.ToString(), e);
 
       return false;
     }
@@ -392,12 +392,12 @@ public class FileModule : AbstractQuercusModule {
       return true;
     }
     catch (IOException e) {
-      log.log(Level.FINE, e.toString(), e);
+      log.log(Level.FINE, e.ToString(), e);
 
       return false;
     }
     catch (SecurityException e) {
-      log.log(Level.FINE, e.toString(), e);
+      log.log(Level.FINE, e.ToString(), e);
 
       return false;
     }
@@ -1502,7 +1502,7 @@ public class FileModule : AbstractQuercusModule {
       lastCh = ch;
     }
 
-    return globRegex.toString();
+    return globRegex.ToString();
   }
 
   /**
@@ -1547,7 +1547,7 @@ public class FileModule : AbstractQuercusModule {
     if (globRegex == null)
       return false;
 
-    return string.matches(globRegex.toString());
+    return string.matches(globRegex.ToString());
   }
 
   private static ProtocolWrapper getProtocolWrapper(Env env,
@@ -1645,7 +1645,7 @@ public class FileModule : AbstractQuercusModule {
           else
             return new FileInput(env, path);
         } catch (IOException e) {
-          log.log(Level.FINE, e.toString(), e);
+          log.log(Level.FINE, e.ToString(), e);
 
           env.warning(L.l("{0} cannot be read", path.getFullPath()));
 
@@ -1665,7 +1665,7 @@ public class FileModule : AbstractQuercusModule {
             return new FileOutput(env, path);
         } catch (IOException e) {
 
-          log.log(Level.FINE, e.toString(), e);
+          log.log(Level.FINE, e.ToString(), e);
           env.warning(L.l("{0} cannot be written", path.getFullPath()));
 
           return null;
@@ -1680,7 +1680,7 @@ public class FileModule : AbstractQuercusModule {
             return new FileOutput(env, path, true);
         } catch (IOException e) {
 
-          log.log(Level.FINE, e.toString(), e);
+          log.log(Level.FINE, e.ToString(), e);
           env.warning(L.l("{0} cannot be written", path.getFullPath()));
 
           return null;
@@ -1705,16 +1705,16 @@ public class FileModule : AbstractQuercusModule {
       return null;
     }
     catch (IOException e) {
-      log.log(Level.FINE, e.toString(), e);
+      log.log(Level.FINE, e.ToString(), e);
 
-      env.warning(L.l("{0} can't be opened.\n{1}", filename, e.toString()));
+      env.warning(L.l("{0} can't be opened.\n{1}", filename, e.ToString()));
 
       return null;
     }
     catch (SecurityException e) {
-      log.log(Level.FINE, e.toString(), e);
+      log.log(Level.FINE, e.ToString(), e);
 
-      env.warning(L.l("{0} can't be opened.\n{1}", filename, e.toString()));
+      env.warning(L.l("{0} can't be opened.\n{1}", filename, e.ToString()));
 
       return null;
     }
@@ -1767,7 +1767,7 @@ public class FileModule : AbstractQuercusModule {
 
     // XXX: too restrictive for filters
     return ! "php".equals(scheme)
-           || path.toString().startsWith("php://filter");
+           || path.ToString().startsWith("php://filter");
   }
 
   /**
@@ -1832,7 +1832,7 @@ public class FileModule : AbstractQuercusModule {
         }
         isFirst = false;
 
-        StringValue s = data.toStringValue();
+        StringValue s = data.ToStringValue();
         int strlen = s.length();
 
         writeLength++;
@@ -2058,7 +2058,7 @@ public class FileModule : AbstractQuercusModule {
     try {
       compiledGlobRegex = Pattern.compile(globRegex);
     } catch (PatternSyntaxException e) {
-      log.log(Level.FINE, e.toString(), e);
+      log.log(Level.FINE, e.ToString(), e);
 
       return null;
     }
@@ -2068,7 +2068,7 @@ public class FileModule : AbstractQuercusModule {
     try {
       list = path.list();
     } catch (IOException e) {
-      log.log(Level.FINE, e.toString(), e);
+      log.log(Level.FINE, e.ToString(), e);
 
       return null;
     }
@@ -2099,7 +2099,7 @@ public class FileModule : AbstractQuercusModule {
                                               subPattern,
                                               flags,
                                               entryPath,
-                                              sb.toString(),
+                                              sb.ToString(),
                                               result);
 
             if ((flags & GLOB_ERR) != 0 && isNull)
@@ -2281,7 +2281,7 @@ public class FileModule : AbstractQuercusModule {
 
     for (StringBuilder path : basePathList) {
       path.append(suffix);
-      Value subresult = glob(env, path.toString(), flags);
+      Value subresult = glob(env, path.ToString(), flags);
 
       if (subresult.isArray() && subresult.getSize() > 0) {
         if (prefix.length() == 0 && suffix.length() == 0)
@@ -2379,7 +2379,7 @@ public class FileModule : AbstractQuercusModule {
                    + path.getNativePath()
                    + " ]; then echo 1; else echo 0; fi";
 
-      string result = MiscModule.shell_exec(env, cmd).toString();
+      string result = MiscModule.shell_exec(env, cmd).ToString();
 
       result = result.trim();
 
@@ -2559,12 +2559,12 @@ public class FileModule : AbstractQuercusModule {
       }
     }
     catch (IOException e) {
-      log.log(Level.FINE, e.toString(), e);
+      log.log(Level.FINE, e.ToString(), e);
 
       return false;
     }
     catch (SecurityException e) {
-      log.log(Level.FINE, e.toString(), e);
+      log.log(Level.FINE, e.ToString(), e);
 
       return false;
     }
@@ -2923,7 +2923,7 @@ public class FileModule : AbstractQuercusModule {
     try {
       return fromPath.renameTo(toPath);
     } catch (IOException e) {
-      log.log(Level.FINE, e.toString(), e);
+      log.log(Level.FINE, e.ToString(), e);
 
       return false;
     }
@@ -2984,7 +2984,7 @@ public class FileModule : AbstractQuercusModule {
 
       return path.remove();
     } catch (IOException e) {
-      log.log(Level.FINE, e.toString(), e);
+      log.log(Level.FINE, e.ToString(), e);
 
       return false;
     }
@@ -3071,7 +3071,7 @@ public class FileModule : AbstractQuercusModule {
       return wrapper.url_stat(env, filename, LongValue.ZERO);
     }
 
-    Path path = env.getPwd().lookup(filename.toString());
+    Path path = env.getPwd().lookup(filename.ToString());
 
     return statImpl(env, path);
   }
@@ -3079,7 +3079,7 @@ public class FileModule : AbstractQuercusModule {
   static Value statImpl(Env env, Path path)
   {
     if (! path.exists()) {
-      env.warning(L.l("stat failed for {0}", path.getFullPath().toString()));
+      env.warning(L.l("stat failed for {0}", path.getFullPath().ToString()));
       return BooleanValue.FALSE;
     }
 
@@ -3149,7 +3149,7 @@ public class FileModule : AbstractQuercusModule {
       dir.mkdirs();
     }
     catch (IOException e) {
-      log.log(Level.FINE, e.toString(), e);
+      log.log(Level.FINE, e.ToString(), e);
 
       return null;
     }
@@ -3163,7 +3163,7 @@ public class FileModule : AbstractQuercusModule {
 
       return path.getNativePath();
     } catch (IOException e) {
-      log.log(Level.FINE, e.toString(), e);
+      log.log(Level.FINE, e.ToString(), e);
 
       return null;
     }
@@ -3186,7 +3186,7 @@ public class FileModule : AbstractQuercusModule {
 
       return new FileInputOutput(env, file, false, false, true);
     } catch (IOException e) {
-      log.log(Level.FINE, e.toString(), e);
+      log.log(Level.FINE, e.ToString(), e);
 
       return null;
     }
@@ -3234,7 +3234,7 @@ public class FileModule : AbstractQuercusModule {
 
       return true;
     } catch (IOException e) {
-      log.log(Level.FINE, e.toString(), e);
+      log.log(Level.FINE, e.ToString(), e);
 
       return false;
     }
@@ -3274,7 +3274,7 @@ public class FileModule : AbstractQuercusModule {
 
       return path.remove();
     } catch (IOException e) {
-      log.log(Level.FINE, e.toString(), e);
+      log.log(Level.FINE, e.ToString(), e);
 
       return false;
     }

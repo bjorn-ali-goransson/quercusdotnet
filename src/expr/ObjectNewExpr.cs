@@ -100,7 +100,7 @@ public class ObjectNewExpr : Expr {
   }
 
   @Override
-  public string toString()
+  public string ToString()
   {
     return _name + "()";
   }

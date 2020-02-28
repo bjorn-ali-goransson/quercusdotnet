@@ -96,7 +96,7 @@ abstract public class ArrayValue : Value {
   /**
    * Cost to convert to a string
    */
-  public override int toStringMarshalCost()
+  public override int ToStringMarshalCost()
   {
     return  Marshal.Marshal.COST_INCOMPATIBLE;
   }
@@ -112,7 +112,7 @@ abstract public class ArrayValue : Value {
   /**
    * Cost to convert to a StringValue
    */
-  public override int toStringValueMarshalCost()
+  public override int ToStringValueMarshalCost()
   {
     return  Marshal.Marshal.COST_INCOMPATIBLE;
   }
@@ -155,7 +155,7 @@ abstract public class ArrayValue : Value {
   /**
    * Converts to a string.
    */
-  public override string toString()
+  public override string ToString()
   {
     return "Array";
   }
@@ -225,7 +225,7 @@ abstract public class ArrayValue : Value {
       Value key = entry.getKey();
 
       // php/03oe
-      obj.putField(env, key.toString(), entry.getValue());
+      obj.putField(env, key.ToString(), entry.getValue());
     }
 
     return obj;
@@ -249,7 +249,7 @@ abstract public class ArrayValue : Value {
         coll = (Collection) type.newInstance();
       }
       catch (Throwable e) {
-        log.log(Level.FINE, e.toString(), e);
+        log.log(Level.FINE, e.ToString(), e);
         env.warning(L.l("Can't assign array to {0}", type.getName()));
 
         return null;
@@ -284,7 +284,7 @@ abstract public class ArrayValue : Value {
         list = (List) type.newInstance();
       }
       catch (Throwable e) {
-        log.log(Level.FINE, e.toString(), e);
+        log.log(Level.FINE, e.ToString(), e);
         env.warning(L.l("Can't assign array to {0}", type.getName()));
 
         return null;
@@ -316,7 +316,7 @@ abstract public class ArrayValue : Value {
         map = (Map) type.newInstance();
       }
       catch (Throwable e) {
-        log.log(Level.FINE, e.toString(), e);
+        log.log(Level.FINE, e.ToString(), e);
 
         env.warning(L.l("Can't assign array to {0}",
                                     type.getName()));
@@ -375,12 +375,12 @@ abstract public class ArrayValue : Value {
     AbstractFunction fun;
 
     if (obj.isObject()) {
-      StringValue nameStr = nameV.toStringValue(env);
+      StringValue nameStr = nameV.ToStringValue(env);
 
       int p = nameStr.indexOf("::");
 
       if (p > 0) {
-        string name = nameStr.toString();
+        string name = nameStr.ToString();
 
         string clsName = name.substring(0, p);
         name = name.substring(p + 2);
@@ -403,14 +403,14 @@ abstract public class ArrayValue : Value {
       }
     }
     else {
-      string clsName = obj.toString();
+      string clsName = obj.ToString();
       QuercusClass cls = env.findClass(clsName);
 
       if (cls == null) {
         return false;
       }
 
-      StringValue nameStr = nameV.toStringValue(env);
+      StringValue nameStr = nameV.ToStringValue(env);
       fun = cls.findFunction(nameStr);
     }
 
@@ -447,7 +447,7 @@ abstract public class ArrayValue : Value {
       return super.toCallable(env, false);
     }
 
-    string name = nameV.toString();
+    string name = nameV.ToString();
 
     if (obj.isObject()) {
       AbstractFunction fun;
@@ -474,11 +474,11 @@ abstract public class ArrayValue : Value {
       return new CallbackObjectMethod((ObjectValue) obj, env.createString(name));
     }
     else {
-      QuercusClass cl = env.findClass(obj.toString());
+      QuercusClass cl = env.findClass(obj.ToString());
 
       if (cl == null) {
         env.warning(L.l("Callback: '{0}' @is not a valid callback string for {1}",
-                        obj.toString(), obj));
+                        obj.ToString(), obj));
 
         return super.toCallable(env, isOptional);
       }
@@ -1396,7 +1396,7 @@ abstract public class ArrayValue : Value {
       if (length > 0)
         sb.append(',');
 
-      entry.getKey().toStringValue(env).jsonEncode(env, context, sb);
+      entry.getKey().ToStringValue(env).jsonEncode(env, context, sb);
       sb.append(':');
       entry.getValue().jsonEncode(env, context, sb);
       length++;
@@ -1864,7 +1864,7 @@ abstract public class ArrayValue : Value {
         @out.print(' ');
     }
 
-    public override string toString()
+    public override string ToString()
     {
       return "ArrayValue.Entry[" + getKey() + "]";
     }

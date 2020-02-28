@@ -97,7 +97,7 @@ public class TraitParentClassConstExpr : Expr {
     return parent.getConstant(env, _name);
   }
 
-  public string toString()
+  public string ToString()
   {
     return "parent::" + _name;
   }

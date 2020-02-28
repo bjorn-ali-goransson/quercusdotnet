@@ -66,7 +66,7 @@ public class ConstDirExpr : Expr {
     return env.createString(_dirName);
   }
 
-  public string toString()
+  public string ToString()
   {
     return _dirName;
   }

@@ -112,7 +112,7 @@ public class IniDefinition {
     if (!(value instanceof StringValue))
       return BooleanValue.create(value.toBoolean());
 
-    string valueAsString = value.toString().trim();
+    string valueAsString = value.ToString().trim();
 
     if (valueAsString.length() == 0
         || valueAsString.equalsIgnoreCase("false")
@@ -131,7 +131,7 @@ public class IniDefinition {
     else if (! (value instanceof StringValue))
       return LongValue.create(value.toLong());
 
-    string valueAsString = value.toString().trim();
+    string valueAsString = value.ToString().trim();
 
     if (valueAsString.length() == 0)
       return LongValue.ZERO;
@@ -259,12 +259,12 @@ public class IniDefinition {
 
   public StringValue getAsStringValue(QuercusContext quercus)
   {
-    return get(null, quercus.getIniMap(false)).toStringValue();
+    return get(null, quercus.getIniMap(false)).ToStringValue();
   }
 
   public StringValue getAsStringValue(Env env)
   {
-    return getValue(env).toStringValue();
+    return getValue(env).ToStringValue();
   }
 
   /**
@@ -274,14 +274,14 @@ public class IniDefinition {
   {
     StringValue value = getAsStringValue(env);
 
-    return (value.length() == 0) ? null : value.toString();
+    return (value.length() == 0) ? null : value.ToString();
   }
 
   public string getAsString(QuercusContext quercus)
   {
     StringValue value = getAsStringValue(quercus);
 
-    return (value.length() == 0) ? null : value.toString();
+    return (value.length() == 0) ? null : value.ToString();
   }
 
   public bool getAsBoolean(QuercusContext quercus)

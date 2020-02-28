@@ -309,7 +309,7 @@ public class VarExpr
     return _var == var._var;
   }
 
-  public string toString()
+  public string ToString()
   {
     return "$" + _name;
   }

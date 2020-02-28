@@ -44,7 +44,7 @@ public class PhpStdin : AbstractBinaryInput
     super(env, new ReadStream(new VfsStream(System.in, null)));
   }
 
-  public string toString()
+  public string ToString()
   {
     return getClass().getSimpleName() + "[]";
   }

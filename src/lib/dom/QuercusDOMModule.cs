@@ -103,7 +103,7 @@ public class QuercusDOMModule
     DOMDocument document = DOMDocument.__construct(env, "1.0", null);
 
     Value xml = node.asXML(env, DefaultValue.DEFAULT);
-    document.loadXML(env, xml.toStringValue(env), DefaultValue.DEFAULT);
+    document.loadXML(env, xml.ToStringValue(env), DefaultValue.DEFAULT);
 
     return document.getDocumentElement();
   }

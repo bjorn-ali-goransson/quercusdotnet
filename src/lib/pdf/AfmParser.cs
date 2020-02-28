@@ -192,7 +192,7 @@ public class AfmParser {
     if (ch >= 0)
       _is.unread();
 
-    return sb.toString();
+    return sb.ToString();
   }
 
   private int parseInteger()
@@ -239,7 +239,7 @@ public class AfmParser {
     if (sb.length() == 0)
       return 0;
 
-    return Double.parseDouble(sb.toString());
+    return Double.parseDouble(sb.ToString());
   }
 
   private string parseIdentifier()
@@ -255,7 +255,7 @@ public class AfmParser {
 
     _is.unread();
 
-    return sb.toString();
+    return sb.ToString();
   }
 
   private void skipToEndOfLine()

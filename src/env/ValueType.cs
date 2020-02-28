@@ -82,7 +82,7 @@ abstract public class ValueType : Serializable {
 
   public readonly ValueType NULL = new ValueType()
     {
-      public string toString()
+      public string ToString()
       {
         return "ValueType.NULL";
       }
@@ -95,7 +95,7 @@ abstract public class ValueType : Serializable {
         return true;
       }
 
-      public string toString()
+      public string ToString()
       {
         return "ValueType.BOOLEAN";
       }
@@ -133,7 +133,7 @@ abstract public class ValueType : Serializable {
         return true;
       }
 
-      public string toString()
+      public string ToString()
       {
         return "ValueType.LONG";
       }
@@ -161,7 +161,7 @@ abstract public class ValueType : Serializable {
         return true;
       }
 
-      public string toString()
+      public string ToString()
       {
         return "ValueType.LONG_EQ";
       }
@@ -179,7 +179,7 @@ abstract public class ValueType : Serializable {
         return true;
       }
 
-      public string toString()
+      public string ToString()
       {
         return "ValueType.LONG_ADD";
       }
@@ -207,7 +207,7 @@ abstract public class ValueType : Serializable {
         return true;
       }
 
-      public string toString()
+      public string ToString()
       {
         return "ValueType.DOUBLE";
       }
@@ -225,7 +225,7 @@ abstract public class ValueType : Serializable {
         return true;
       }
 
-      public string toString()
+      public string ToString()
       {
         return "ValueType.DOUBLE_CMP";
       }
@@ -234,7 +234,7 @@ abstract public class ValueType : Serializable {
   public readonly ValueType string = new ValueType()
     {
 
-      public string toString()
+      public string ToString()
       {
         return "ValueType.STRING";
       }
@@ -243,7 +243,7 @@ abstract public class ValueType : Serializable {
   public readonly ValueType ARRAY = new ValueType()
     {
 
-      public string toString()
+      public string ToString()
       {
         return "ValueType.ARRAY";
       }
@@ -252,7 +252,7 @@ abstract public class ValueType : Serializable {
   public readonly ValueType OBJECT = new ValueType()
     {
 
-      public string toString()
+      public string ToString()
       {
         return "ValueType.OBJECT";
       }
@@ -261,7 +261,7 @@ abstract public class ValueType : Serializable {
   public readonly ValueType VALUE = new ValueType()
     {
 
-      public string toString()
+      public string ToString()
       {
         return "ValueType.VALUE";
       }

@@ -173,7 +173,7 @@ public class JdbcStatementResource
       return true;
     }
     catch (SQLException e) {
-      log.log(Level.FINE, e.toString(), e);
+      log.log(Level.FINE, e.ToString(), e);
 
       return false;
     }
@@ -433,7 +433,7 @@ public class JdbcStatementResource
     return true;
   }
 
-  public string toString()
+  public string ToString()
   {
     return getClass().getName() + "[" + _conn + "]";
   }

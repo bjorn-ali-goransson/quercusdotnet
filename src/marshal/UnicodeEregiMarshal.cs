@@ -48,12 +48,12 @@ public class UnicodeEregiMarshal : StringMarshal {
   public Object marshal(Env env, Expr expr, Class expectedClass)
   {
     return RegexpModule.createUnicodeEregi(env, 
-                                           expr.eval(env).toStringValue());
+                                           expr.eval(env).ToStringValue());
   }
 
   public Object marshal(Env env, Value value, Class expectedClass)
   {
-    return RegexpModule.createUnicodeEregi(env, value.toStringValue());
+    return RegexpModule.createUnicodeEregi(env, value.ToStringValue());
   }
 
   public Value unmarshal(Env env, Object value)

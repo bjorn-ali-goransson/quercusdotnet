@@ -65,7 +65,7 @@ public class ConditionalShortExpr : Expr {
       return _falseExpr.evalCopy(env); // php/03cl
   }
 
-  public string toString()
+  public string ToString()
   {
     return "(" + _test + " ?: " + _falseExpr + ")";
   }

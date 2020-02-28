@@ -112,7 +112,7 @@ public class StaticFunction : JavaInvoker {
     try {
       return _method.invoke(_quercusModule, javaArgs);
     } catch (IllegalArgumentException e) {
-      throw new IllegalArgumentException(toString(_method, javaArgs), e);
+      throw new IllegalArgumentException(ToString(_method, javaArgs), e);
     } catch (RuntimeException e) {
       throw e;
     } catch (InvocationTargetException e) {
@@ -133,7 +133,7 @@ public class StaticFunction : JavaInvoker {
     }
   }
 
-  private string toString(Method method, Object []javaArgs)
+  private string ToString(Method method, Object []javaArgs)
   {
     StringBuilder sb = new StringBuilder();
 
@@ -151,10 +151,10 @@ public class StaticFunction : JavaInvoker {
 
     sb.append(")");
 
-    return sb.toString();
+    return sb.ToString();
   }
 
-  public override string toString()
+  public override string ToString()
   {
     return getClass().getSimpleName() + "[" + _method + "]";
   }

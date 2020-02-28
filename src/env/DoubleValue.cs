@@ -225,9 +225,9 @@ public class DoubleValue : NumberValue
   /**
    * Converts to a string builder
    */
-  public override StringValue toStringBuilder(Env env)
+  public override StringValue ToStringBuilder(Env env)
   {
-    return env.createUnicodeBuilder().append(toString());
+    return env.createUnicodeBuilder().append(ToString());
   }
 
   /**
@@ -386,16 +386,16 @@ public class DoubleValue : NumberValue
   /**
    * Converts to a string.
    */
-  public override string toString()
+  public override string ToString()
   {
     // XXX: pass in Env
     Env env = Env.getInstance();
 
     if (env != null) {
-      return toString(env.getLocaleInfo().getNumeric());
+      return ToString(env.getLocaleInfo().getNumeric());
     }
     else {
-      return toString(LocaleInfo.getDefault().getNumeric());
+      return ToString(LocaleInfo.getDefault().getNumeric());
     }
   }
 
@@ -404,9 +404,9 @@ public class DoubleValue : NumberValue
    *
    * @param env
    */
-  public StringValue toString(Env env)
+  public StringValue ToString(Env env)
   {
-    string str = toString(env.getLocaleInfo().getNumeric());
+    string str = ToString(env.getLocaleInfo().getNumeric());
 
     return env.createStringBuilder().append(str);
   }
@@ -414,7 +414,7 @@ public class DoubleValue : NumberValue
   /**
    * Converts to a string.
    */
-  public string toString(QuercusLocale quercusLocale)
+  public string ToString(QuercusLocale quercusLocale)
   {
     long longValue = (long) _value;
 
@@ -473,7 +473,7 @@ public class DoubleValue : NumberValue
    */
   public Object toObject()
   {
-    return toString();
+    return ToString();
   }
 
   /**
@@ -482,7 +482,7 @@ public class DoubleValue : NumberValue
    */
   public void print(Env env)
   {
-    env.print(toString());
+    env.print(ToString());
   }
 
   /**
@@ -500,7 +500,7 @@ public class DoubleValue : NumberValue
    */
   protected override void varExportImpl(StringValue sb, int level)
   {
-    sb.append(toString());
+    sb.append(ToString());
   }
 
   //
@@ -554,7 +554,7 @@ public class DoubleValue : NumberValue
                           IdentityHashMap<Value, String> valueSet)
     
   {
-    @out.print("float(" + toString() + ")");
+    @out.print("float(" + ToString() + ")");
   }
 
   //

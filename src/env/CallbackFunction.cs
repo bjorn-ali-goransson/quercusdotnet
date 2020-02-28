@@ -169,7 +169,7 @@ public class CallbackFunction : Callback {
 
   public string getCallbackName()
   {
-    return _funName.toString();
+    return _funName.ToString();
   }
 
   public AbstractFunction getFunction(Env env)
@@ -224,7 +224,7 @@ public class CallbackFunction : Callback {
     sb.append("'' . \"\\0\" . '" + _funName.substring(1) + "'");
   }
 
-  public string toString()
+  public string ToString()
   {
     return getClass().getName() + '[' + _funName + ']';
   }

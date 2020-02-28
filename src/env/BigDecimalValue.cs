@@ -82,7 +82,7 @@ public class BigDecimalValue : JavaValue {
    */
   public override BigInteger toBigInteger()
   {
-    return new BigInteger(toString());
+    return new BigInteger(ToString());
   }
   
   /**
@@ -101,7 +101,7 @@ public class BigDecimalValue : JavaValue {
     return _val.longValue() == _val.doubleValue();
   }
   
-  public string toString()
+  public string ToString()
   {
     return "BigDecimal[" + _val.doubleValue() + "]";
   }

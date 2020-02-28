@@ -361,7 +361,7 @@ public class PDFWriter {
       println(String.valueOf(v));
   }
 
-  public string toString()
+  public string ToString()
   {
     return "PDF[]";
   }

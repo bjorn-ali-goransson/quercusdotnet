@@ -177,7 +177,7 @@ public class SimpleHandler : DefaultHandler2
     _entityName = null;
 
     if (_sb.length() > 0) {
-      string str = _sb.toString();
+      string str = _sb.ToString();
       _sb.setLength(0);
 
       if (log.isLoggable(Level.FINE)) {
@@ -310,7 +310,7 @@ public class SimpleHandler : DefaultHandler2
       log.log(Level.FINE, getClass().getSimpleName() + ".endEntity0: " + name);
     }
 
-    //_entityMap.put(name, _sb.toString());
+    //_entityMap.put(name, _sb.ToString());
   }
 
   // LexicalHandler end

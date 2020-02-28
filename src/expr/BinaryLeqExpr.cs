@@ -76,7 +76,7 @@ public class BinaryLeqExpr : AbstractBinaryExpr {
     return lValue.leq(rValue);
   }
 
-  public string toString()
+  public string ToString()
   {
     return "(" + _left + " <= " + _right + ")";
   }

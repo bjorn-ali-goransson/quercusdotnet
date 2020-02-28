@@ -105,7 +105,7 @@ public class ClassConstructExpr : AbstractMethodExpr {
     }
   }
 
-  public string toString()
+  public string ToString()
   {
     return _className + "::__construct()";
   }

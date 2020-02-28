@@ -172,7 +172,7 @@ public class UnserializeReader {
           throw new IOException(L.l("expected ';'"));
         }
 
-        Value value = new DoubleValue(Double.parseDouble(sb.toString()));
+        Value value = new DoubleValue(Double.parseDouble(sb.ToString()));
 
         if (_useReference)
           value = createReference(value);
@@ -244,7 +244,7 @@ public class UnserializeReader {
         }
 
         for (int i = 0; i < count; i++) {
-          StringValue key = unserializeKey(env).toStringValue();
+          StringValue key = unserializeKey(env).ToStringValue();
 
           FieldVisibility visibility = FieldVisibility.PUBLIC;
 

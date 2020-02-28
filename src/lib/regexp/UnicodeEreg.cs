@@ -41,7 +41,7 @@ public class UnicodeEreg : Ereg
     super(rawRegexp);
   }
 
-  public string toString()
+  public string ToString()
   {
     return "UnicodeEreg[" + _pattern + "]";
   }

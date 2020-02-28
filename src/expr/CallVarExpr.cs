@@ -142,7 +142,7 @@ public class CallVarExpr : Expr {
     }
   }
   
-  public string toString()
+  public string ToString()
   {
     return _name + "()";
   }

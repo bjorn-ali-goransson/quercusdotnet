@@ -351,7 +351,7 @@ abstract public class ObjectValue : Callback {
    */
   public override StringValue appendTo(UnicodeBuilderValue sb)
   {
-    return sb.append(toString(Env.getInstance()));
+    return sb.append(ToString(Env.getInstance()));
   }
 
   /**
@@ -359,7 +359,7 @@ abstract public class ObjectValue : Callback {
    */
   public override StringValue appendTo(StringBuilderValue sb)
   {
-    return sb.append(toString(Env.getInstance()));
+    return sb.append(ToString(Env.getInstance()));
   }
 
   /**
@@ -367,7 +367,7 @@ abstract public class ObjectValue : Callback {
    */
   public override StringValue appendTo(BinaryBuilderValue sb)
   {
-    return sb.appendBytes(toString(Env.getInstance()));
+    return sb.appendBytes(ToString(Env.getInstance()));
   }
 
   /**
@@ -375,7 +375,7 @@ abstract public class ObjectValue : Callback {
    */
   public override StringValue appendTo(LargeStringBuilderValue sb)
   {
-    return sb.append(toString(Env.getInstance()));
+    return sb.append(ToString(Env.getInstance()));
   }
 
   /**
@@ -393,7 +393,7 @@ abstract public class ObjectValue : Callback {
     else {
       // php/3d94
 
-      // return getField(Env.getInstance(), key.toStringValue());
+      // return getField(Env.getInstance(), key.ToStringValue());
       return env.error(L.l("Can't use object '{0}' as array", getName()));
     }
   }
@@ -556,7 +556,7 @@ abstract public class ObjectValue : Callback {
     CountDelegate delegate = _quercusClass.getCountDelegate();
 
     // php/066q vs. php/0906
-    //return getField(null, key.toString());
+    //return getField(null, key.ToString());
 
     if (delegate != null)
       return delegate.count(env, this);
@@ -683,7 +683,7 @@ abstract public class ObjectValue : Callback {
     }
     else {
       // php/03q0
-      return rValue.eq(this.toStringValue());
+      return rValue.eq(this.ToStringValue());
     }
   }
 
@@ -856,7 +856,7 @@ abstract public class ObjectValue : Callback {
       while (iter.hasNext()) {
         Map.Entry<Value,Value> entry = iter.next();
 
-        StringValue key = entry.getKey().toStringValue(env);
+        StringValue key = entry.getKey().ToStringValue(env);
         Value value = entry.getValue();
 
         if (! ClassField.isPublic(key)) {

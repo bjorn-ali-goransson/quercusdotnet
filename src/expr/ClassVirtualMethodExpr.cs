@@ -111,7 +111,7 @@ public class ClassVirtualMethodExpr : Expr {
     }
   }
 
-  public string toString()
+  public string ToString()
   {
     return "static::" + _methodName + "()";
   }

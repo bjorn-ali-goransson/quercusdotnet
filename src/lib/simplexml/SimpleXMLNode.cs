@@ -63,11 +63,11 @@ public abstract class SimpleXMLNode
   }
 
   /**
-   * public string __toString()
+   * public string __ToString()
    */
-  public StringValue __toString(Env env)
+  public StringValue __ToString(Env env)
   {
-    string str = _view.toString(env);
+    string str = _view.ToString(env);
     
     StringValue sb = env.createStringBuilder();
         
@@ -162,8 +162,8 @@ public abstract class SimpleXMLNode
     string encoding = _view.getEncoding();
     
     try {
-      name = nameV.toString(encoding);
-      value = valueV.toString(encoding);
+      name = nameV.ToString(encoding);
+      value = valueV.ToString(encoding);
     }
     catch (UnsupportedEncodingException e) {
       env.warning(e);
@@ -192,8 +192,8 @@ public abstract class SimpleXMLNode
     string encoding = _view.getEncoding();
     
     try {
-      name = nameV.toString(encoding);
-      value = valueV.toString(encoding);
+      name = nameV.ToString(encoding);
+      value = valueV.ToString(encoding);
     }
     catch (UnsupportedEncodingException e) {
       env.warning(e);
@@ -231,13 +231,13 @@ public abstract class SimpleXMLNode
       StringValue value = env.createStringBuilder();
 
       if (env.isUnicodeSemantics()) {
-        value.append(sb.toString());
+        value.append(sb.ToString());
       }
       else {
         byte []bytes;
 
         try {
-          bytes = sb.toString().getBytes(encoding);
+          bytes = sb.ToString().getBytes(encoding);
         }
         catch (UnsupportedEncodingException e) {
           log.log(Level.FINE, e.getMessage(), e);
@@ -259,7 +259,7 @@ public abstract class SimpleXMLNode
       try {
         os = path.openWrite();
 
-        byte []bytes = sb.toString().getBytes(encoding);
+        byte []bytes = sb.ToString().getBytes(encoding);
         os.write(bytes);
 
         return BooleanValue.TRUE;
@@ -287,7 +287,7 @@ public abstract class SimpleXMLNode
   {
     string namespace = null;
     if (! namespaceV.isNull()) {
-      namespace = namespaceV.toString();
+      namespace = namespaceV.ToString();
 
       if (namespace != null && namespace.length() == 0) {
         namespace = null;
@@ -313,14 +313,14 @@ public abstract class SimpleXMLNode
 
     if (! namespaceV.isNull()) {
       if (isPrefix) {
-        prefix = namespaceV.toString();
+        prefix = namespaceV.ToString();
 
         if (prefix != null && prefix.length() == 0) {
           prefix = null;
         }
       }
       else {
-        namespace = namespaceV.toString();
+        namespace = namespaceV.ToString();
 
         if (namespace != null && namespace.length() == 0) {
           namespace = null;

@@ -183,7 +183,7 @@ public class QuercusImage : ResourceValue
     StringValue gdFontPathKey = env.createString("GDFONTPATH");
 
     StringValue gdFontPath
-      = OptionsModule.getenv(env, gdFontPathKey).toStringValue();
+      = OptionsModule.getenv(env, gdFontPathKey).ToStringValue();
 
     int start = 0;
     int len = gdFontPath.length();

@@ -58,7 +58,7 @@ public class Directory
   {
     handle = this;
 
-    this.path = dir.toString();
+    this.path = dir.ToString();
 
     _list = dir.list();
   }
@@ -89,7 +89,7 @@ public class Directory
     close(Env.getInstance());
   }
 
-  public string toString()
+  public string ToString()
   {
     return getClass().getSimpleName() + "[" + path + "]";
   }

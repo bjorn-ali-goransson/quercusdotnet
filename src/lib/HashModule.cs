@@ -316,7 +316,7 @@ public class HashModule : AbstractQuercusModule {
         context.update(buffer, 0, len);
       }
     } catch (IOException e) {
-      log.log(Level.WARNING, e.toString(), e);
+      log.log(Level.WARNING, e.ToString(), e);
     } finally {
       TempBuffer.free(tempBuffer);
 
@@ -364,7 +364,7 @@ public class HashModule : AbstractQuercusModule {
         length -= len;
       }
     } catch (IOException e) {
-      log.log(Level.WARNING, e.toString(), e);
+      log.log(Level.WARNING, e.ToString(), e);
     } finally {
       TempBuffer.free(tempBuffer);
     }
@@ -483,13 +483,13 @@ public class HashModule : AbstractQuercusModule {
       try {
         return new HashDigestContext((MessageDigest) _digest.clone());
       } catch (Exception e) {
-        log.log(Level.FINE, e.toString(), e);
+        log.log(Level.FINE, e.ToString(), e);
 
         return null;
       }
     }
 
-    public string toString()
+    public string ToString()
     {
       return (getClass().getSimpleName() + "[" + _digest + "]");
     }
@@ -552,13 +552,13 @@ public class HashModule : AbstractQuercusModule {
       try {
         return new HashDigestContext((MessageDigest) _digest.clone());
       } catch (Exception e) {
-        log.log(Level.FINE, e.toString(), e);
+        log.log(Level.FINE, e.ToString(), e);
 
         return null;
       }
     }
 
-    public string toString()
+    public string ToString()
     {
       return (getClass().getSimpleName() + "[" + _digest + "]");
     }

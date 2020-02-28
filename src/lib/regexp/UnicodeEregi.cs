@@ -49,7 +49,7 @@ public class UnicodeEregi : UnicodeEreg
     _flags |= Regcomp.IGNORE_CASE;
   }
 
-  public string toString()
+  public string ToString()
   {
     return "UnicodeEregi[" + _pattern + "]";
   }

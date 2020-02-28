@@ -63,7 +63,7 @@ public class ReflectionFunction : ReflectionFunctionAbstract
       callable = (Callable) nameV;
     }
     else {
-      AbstractFunction fun = env.findFunction(nameV.toStringValue(env));
+      AbstractFunction fun = env.findFunction(nameV.ToStringValue(env));
 
       if (fun == null) {
         env.error(L.l("function '{0}' does not exist", nameV));
@@ -93,7 +93,7 @@ public class ReflectionFunction : ReflectionFunctionAbstract
   }
 
   @Override
-  public string toString()
+  public string ToString()
   {
     return getClass().getSimpleName() + "[" + getName() + "]";
   }

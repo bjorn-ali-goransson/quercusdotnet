@@ -136,19 +136,19 @@ public class Postgres : JdbcConnectionResource
       return jConn;
     }
     catch (SQLException e) {
-      env.warning("A link to the server could not be established. " + e.toString());
+      env.warning("A link to the server could not be established. " + e.ToString());
       env.setSpecialValue("postgres.connectErrno", LongValue.create(e.getErrorCode()));
       env.setSpecialValue("postgres.connectError", env.createString(e.getMessage()));
 
-      log.log(Level.FINE, e.toString(), e);
+      log.log(Level.FINE, e.ToString(), e);
 
       return null;
     }
     catch (Exception e) {
-      env.warning("A link to the server could not be established. " + e.toString());
+      env.warning("A link to the server could not be established. " + e.ToString());
       env.setSpecialValue("postgres.connectError", env.createString(e.getMessage()));
 
-      log.log(Level.FINE, e.toString(), e);
+      log.log(Level.FINE, e.ToString(), e);
       return null;
     }
   }
@@ -359,7 +359,7 @@ public class Postgres : JdbcConnectionResource
       _serverErrorMessage = method.invoke(e, new Object[] {});
     }
     catch (Exception ex) {
-      log.log(Level.FINE, ex.toString(), ex);
+      log.log(Level.FINE, ex.ToString(), ex);
     }
   }
 
@@ -371,7 +371,7 @@ public class Postgres : JdbcConnectionResource
     return _serverErrorMessage;
   }
 
-  public string toString()
+  public string ToString()
   {
     if (isConnected())
       return "Postgres[" + getHost() + "]";

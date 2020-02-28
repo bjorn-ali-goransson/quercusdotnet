@@ -84,7 +84,7 @@ public class FunIncludeExpr : AbstractUnaryExpr {
    */
   public Value eval(Env env)
   {
-    StringValue name = _expr.eval(env).toStringValue();
+    StringValue name = _expr.eval(env).ToStringValue();
       
     env.pushCall(this, NullValue.NULL, new Value[] { name });
     try {
@@ -94,9 +94,9 @@ public class FunIncludeExpr : AbstractUnaryExpr {
     }
   }
   
-  public string toString()
+  public string ToString()
   {
-    return _expr.toString();
+    return _expr.ToString();
   }
 }
 

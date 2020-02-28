@@ -61,7 +61,7 @@ public class ToBooleanExpr : AbstractUnaryExpr {
     return _expr.evalBoolean(env) ? BooleanValue.TRUE : BooleanValue.FALSE;
   }
 
-  public string toString()
+  public string ToString()
   {
     return "((bool) " + _expr + ")";
   }

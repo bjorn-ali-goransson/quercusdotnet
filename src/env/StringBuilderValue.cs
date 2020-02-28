@@ -266,7 +266,7 @@ public class StringBuilderValue
    */
   public string getValue()
   {
-    return toString();
+    return ToString();
   }
 
   /**
@@ -479,7 +479,7 @@ public class StringBuilderValue
   /**
    * Converts to a string.
    */
-  public override string toString()
+  public override string ToString()
   {
     if (_length == 1)
       return String.valueOf((char) (_buffer[0] & 0xff));
@@ -487,7 +487,7 @@ public class StringBuilderValue
       CharBuffer buf = CharBuffer.allocate();
       buf.append(_buffer, 0, _length);
 
-      string str = buf.toString();
+      string str = buf.ToString();
       buf.free();
 
       return str;
@@ -540,7 +540,7 @@ public class StringBuilderValue
    */
   public override Object toJavaObject()
   {
-    return toString();
+    return ToString();
   }
 
   /**
@@ -759,7 +759,7 @@ public class StringBuilderValue
     else if (indexL < len) {
       StringBuilderValue sb = createStringBuilder(_buffer, 0, len);
 
-      StringValue str = value.toStringValue();
+      StringValue str = value.ToStringValue();
 
       int index = (int) indexL;
 
@@ -786,7 +786,7 @@ public class StringBuilderValue
          sb._buffer[sb._length++] = ' ';
       }
 
-      StringValue str = value.toStringValue();
+      StringValue str = value.ToStringValue();
 
       if (value.length() == 0)
         sb._buffer[index] = 0;
@@ -853,7 +853,7 @@ public class StringBuilderValue
     CharBuffer buf = CharBuffer.allocate();
     buf.append(_buffer, start, end - start);
 
-    string str = buf.toString();
+    string str = buf.ToString();
     buf.free();
 
     return str;
@@ -1023,7 +1023,7 @@ public class StringBuilderValue
   /**
    * Converts to a string builder
    */
-  public override StringValue toStringBuilder()
+  public override StringValue ToStringBuilder()
   {
     return new StringBuilderValue(this);
   }
@@ -1031,7 +1031,7 @@ public class StringBuilderValue
   /**
    * Converts to a string builder
    */
-  public override StringValue toStringBuilder(Env env)
+  public override StringValue ToStringBuilder(Env env)
   {
     if (_length >= LARGE_BUILDER_THRESHOLD)
       return new LargeStringBuilderValue(this);
@@ -1042,7 +1042,7 @@ public class StringBuilderValue
   /**
    * Converts to a string builder
    */
-  public override StringValue toStringBuilder(Env env, Value value)
+  public override StringValue ToStringBuilder(Env env, Value value)
   {
     if (_length + value.length() >= LARGE_BUILDER_THRESHOLD) {
       LargeStringBuilderValue v = new LargeStringBuilderValue(this);
@@ -1063,7 +1063,7 @@ public class StringBuilderValue
   /**
    * Converts to a string builder
    */
-  public StringValue toStringBuilder(Env env, StringValue value)
+  public StringValue ToStringBuilder(Env env, StringValue value)
   {
     if (_length + value.length() >= LARGE_BUILDER_THRESHOLD) {
       LargeStringBuilderValue v = new LargeStringBuilderValue(this);
@@ -1637,7 +1637,7 @@ public class StringBuilderValue
 
     sb.append('"');
 
-    return sb.toString();
+    return sb.ToString();
   }
 
   public override void varDumpImpl(Env env,
@@ -1858,7 +1858,7 @@ public class StringBuilderValue
       return super.eq(rValue);
     }
     else {
-      string rString = rValue.toString();
+      string rString = rValue.ToString();
 
       int len = rString.length();
 

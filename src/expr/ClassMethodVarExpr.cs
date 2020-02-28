@@ -141,7 +141,7 @@ public class ClassMethodVarExpr : AbstractMethodExpr
     return cl.callStaticMethod(env, qThis, methodName, hash, args);
   }
 
-  public string toString()
+  public string ToString()
   {
     return _nameExpr + "()";
   }

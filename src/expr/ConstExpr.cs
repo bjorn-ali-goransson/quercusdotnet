@@ -142,7 +142,7 @@ public class ConstExpr : Expr {
     string specialClassName = getSpecialClassName();
 
     if ("self".equals(specialClassName)) {
-      if ("this".equals(name.toString())) {
+      if ("this".equals(name.ToString())) {
         return factory.createThis(parser.getClassDef());
       }
       else {
@@ -233,7 +233,7 @@ public class ConstExpr : Expr {
     return env.getClass(className);
   }
 
-  public string toString()
+  public string ToString()
   {
     return _var;
   }

@@ -129,7 +129,7 @@ abstract public class CompiledFunctionRef_3 : CompiledFunctionRef {
    */
   abstract public Value callRef(Env env, Value a1, Value a2, Value a3);
 
-  public string toString()
+  public string ToString()
   {
     return "CompiledFunctionRef_3[" + _name + "]";
   }

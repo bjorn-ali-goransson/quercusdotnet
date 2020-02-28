@@ -110,7 +110,7 @@ public class ProcOpenInput : ReadStreamInput
   /**
    * Converts to a string.
    */
-  public string toString()
+  public string ToString()
   {
     if (_out != null)
       return "ProcOpenInput[" + _out + "]";
@@ -144,7 +144,7 @@ public class ProcOpenInput : ReadStreamInput
       _in.close();
     }
     catch (IOException e) {
-      log.log(Level.FINE, e.toString(), e);
+      log.log(Level.FINE, e.ToString(), e);
       _env.warning(e);
     }
   }

@@ -122,9 +122,9 @@ public class UnaryRefExpr : AbstractUnaryExpr {
     */
   }
 
-  public string toString()
+  public string ToString()
   {
-    return _expr.toString();
+    return _expr.ToString();
   }
 }
 

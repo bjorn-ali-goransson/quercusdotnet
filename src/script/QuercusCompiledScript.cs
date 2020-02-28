@@ -162,7 +162,7 @@ public class QuercusCompiledScript : CompiledScript {
     return _engine;
   }
 
-  public string toString()
+  public string ToString()
   {
     return "QuercusCompiledScript[]";
   }

@@ -49,7 +49,7 @@ public class CtypeModule
     if (value instanceof LongValue)
       return isalnum(value.toInt());
     else if (value instanceof StringValue) {
-      string string = value.toString();
+      string string = value.ToString();
 
       if (string.length() == 0)
         return false;
@@ -70,7 +70,7 @@ public class CtypeModule
     if (value instanceof LongValue)
       return isalpha(value.toInt());
     else if (value instanceof StringValue) {
-      string string = value.toString();
+      string string = value.ToString();
 
       if (string.length() == 0)
         return false;
@@ -91,7 +91,7 @@ public class CtypeModule
     if (value instanceof LongValue)
       return iscntrl(value.toInt());
     else if (value instanceof StringValue) {
-      string string = value.toString();
+      string string = value.ToString();
 
       if (string.length() == 0)
         return false;
@@ -112,7 +112,7 @@ public class CtypeModule
     if (value instanceof LongValue)
       return isdigit(value.toInt());
     else if (value instanceof StringValue) {
-      string string = value.toString();
+      string string = value.ToString();
 
       if (string.length() == 0)
         return false;
@@ -134,7 +134,7 @@ public class CtypeModule
     if (value instanceof LongValue)
       return isgraph(value.toInt());
     else if (value instanceof StringValue) {
-      string string = value.toString();
+      string string = value.ToString();
 
       if (string.length() == 0)
         return false;
@@ -155,7 +155,7 @@ public class CtypeModule
     if (value instanceof LongValue)
       return islower(value.toInt());
     else if (value instanceof StringValue) {
-      string string = value.toString();
+      string string = value.ToString();
 
       if (string.length() == 0)
         return false;
@@ -177,7 +177,7 @@ public class CtypeModule
     if (value instanceof LongValue)
       return isprint(value.toInt());
     else if (value instanceof StringValue) {
-      string string = value.toString();
+      string string = value.ToString();
 
       if (string.length() == 0)
         return false;
@@ -198,7 +198,7 @@ public class CtypeModule
     if (value instanceof LongValue)
       return ispunct(value.toInt());
     else if (value instanceof StringValue) {
-      string string = value.toString();
+      string string = value.ToString();
 
       if (string.length() == 0)
         return false;
@@ -219,7 +219,7 @@ public class CtypeModule
     if (value instanceof LongValue)
       return isspace(value.toInt());
     else if (value instanceof StringValue) {
-      string string = value.toString();
+      string string = value.ToString();
 
       if (string.length() == 0)
         return false;
@@ -240,7 +240,7 @@ public class CtypeModule
     if (value instanceof LongValue)
       return isupper(value.toInt());
     else if (value instanceof StringValue) {
-      string string = value.toString();
+      string string = value.ToString();
 
       if (string.length() == 0)
         return false;
@@ -261,7 +261,7 @@ public class CtypeModule
     if (value instanceof LongValue)
       return isxdigit(value.toInt());
     else if (value instanceof StringValue) {
-      string string = value.toString();
+      string string = value.ToString();
 
       if (string.length() == 0)
         return false;

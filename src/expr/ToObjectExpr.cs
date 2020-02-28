@@ -60,7 +60,7 @@ public class ToObjectExpr : AbstractUnaryExpr {
     return _expr.eval(env).toObject(env);
   }
 
-  public string toString()
+  public string ToString()
   {
     return "((object) " + _expr + ")";
   }

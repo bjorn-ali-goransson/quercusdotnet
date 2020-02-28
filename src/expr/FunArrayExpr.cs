@@ -131,7 +131,7 @@ public class FunArrayExpr : Expr {
     return array;
   }
 
-  public string toString()
+  public string ToString()
   {
     return "array()";
   }

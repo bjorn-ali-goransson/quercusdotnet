@@ -61,7 +61,7 @@ public class ClassDefStatement : Statement {
     return null;
   }
 
-  public string toString()
+  public string ToString()
   {
     return getClass().getSimpleName() + "[" + _cl + "]";
   }

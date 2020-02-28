@@ -93,7 +93,7 @@ public class QuercusException : RuntimeException
         sb.append("   " + _quercusStackTrace.get(i) + "\n");
       }
 
-      return sb.toString();
+      return sb.ToString();
     }
     else
       return msg;
@@ -109,9 +109,9 @@ public class QuercusException : RuntimeException
     _quercusStackTrace = stackTrace;
   }
 
-  public string __toString()
+  public string __ToString()
   {
-    return toString();
+    return ToString();
   }
 }
 }

@@ -61,10 +61,10 @@ public class ToBinaryExpr : ToStringExpr {
     if (value.isBinary())
       return value;
     else
-      return value.toString(env).toBinaryValue(env);
+      return value.ToString(env).toBinaryValue(env);
   }
 
-  public string toString()
+  public string ToString()
   {
     return "((binary) " + _expr + ")";
   }

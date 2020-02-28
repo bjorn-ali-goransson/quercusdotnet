@@ -60,7 +60,7 @@ public class CharacterMarshal : Marshal
     if (value == null)
       return NullValue.NULL;
     else
-      return env.createString(value.toString());
+      return env.createString(value.ToString());
   }
 
   @Override

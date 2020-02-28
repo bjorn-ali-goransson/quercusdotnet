@@ -119,7 +119,7 @@ public class XMLWriter {
       
       _state = WriterState.TOP;
     } catch (IOException e) {
-      log.log(Level.WARNING, e.toString(), e);
+      log.log(Level.WARNING, e.ToString(), e);
     }
     
     return true;
@@ -762,7 +762,7 @@ public class XMLWriter {
   }
 
   @Override
-  public string toString()
+  public string ToString()
   {
     return getClass().getSimpleName() + "[]";
   }
@@ -836,7 +836,7 @@ public class XMLWriter {
       try {
         _out.print(v);
       } catch (IOException e) {
-        log.log(Level.WARNING, e.toString(), e);
+        log.log(Level.WARNING, e.ToString(), e);
       }
 
       return this;
@@ -854,7 +854,7 @@ public class XMLWriter {
       try {
         _out.print(text);
       } catch (IOException e) {
-        log.log(Level.WARNING, e.toString(), e);
+        log.log(Level.WARNING, e.ToString(), e);
       }
 
       return this;
@@ -865,7 +865,7 @@ public class XMLWriter {
       try {
         _out.close();
       } catch (IOException e) {
-        log.log(Level.WARNING, e.toString(), e);
+        log.log(Level.WARNING, e.ToString(), e);
       }
       
       return LongValue.create(1);

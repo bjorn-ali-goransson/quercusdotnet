@@ -485,19 +485,19 @@ public class UnicodeModule : AbstractQuercusModule {
       if (preferences != null) {
         Value tmp = env.createString("scheme");
         if ((tmp = preferences.get(tmp)).isset())
-          scheme = tmp.toString();
+          scheme = tmp.ToString();
 
         tmp = env.createString("line-break-chars");
         if ((tmp = preferences.get(tmp)).isset())
-          lineBreakChars = tmp.toString();
+          lineBreakChars = tmp.ToString();
 
         tmp = env.createString("input-charset");
         if ((tmp = preferences.get(tmp)).isset())
-          inCharset = tmp.toString();
+          inCharset = tmp.ToString();
 
         tmp = env.createString("output-charset");
         if ((tmp = preferences.get(tmp)).isset())
-          outCharset = tmp.toString();
+          outCharset = tmp.ToString();
 
         tmp = env.createString("line-length");
         if ((tmp = preferences.get(tmp)).isset()) {

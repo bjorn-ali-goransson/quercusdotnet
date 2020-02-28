@@ -74,9 +74,9 @@ public class QuercusLocale
     return DEFAULT_US;
   }
 
-  public string toString()
+  public string ToString()
   {
-    return _locale.toString();
+    return _locale.ToString();
   }
 }
 }

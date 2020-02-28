@@ -248,7 +248,7 @@ public abstract class JdbcConnectionResource
         if ("".equals(_catalog))
           _catalog = _conn.getConnection().getCatalog();
       } catch (SQLException e) {
-        log.log(Level.FINE, e.toString(), e);
+        log.log(Level.FINE, e.ToString(), e);
       }
     }
 
@@ -371,7 +371,7 @@ public abstract class JdbcConnectionResource
     }
     catch (SQLException e) {
       saveErrors(e);
-      log.log(Level.FINEST, e.toString(), e);
+      log.log(Level.FINEST, e.ToString(), e);
       return null;
     }
   }
@@ -427,7 +427,7 @@ public abstract class JdbcConnectionResource
 
       return _dmd.getDatabaseProductVersion();
     } catch (SQLException e) {
-      log.log(Level.FINE, e.toString(), e);
+      log.log(Level.FINE, e.ToString(), e);
       return null;
     }
   }
@@ -557,7 +557,7 @@ public abstract class JdbcConnectionResource
 
       return tableMd;
     } catch (SQLException e) {
-      log.log(Level.FINE, e.toString(), e);
+      log.log(Level.FINE, e.ToString(), e);
 
       return null;
     }
@@ -744,7 +744,7 @@ public abstract class JdbcConnectionResource
         //_warnings = stmt.getWarnings();
       } catch (SQLException e) {
         //saveErrors(e);
-        log.log(Level.FINEST, e.toString(), e);
+        log.log(Level.FINEST, e.ToString(), e);
         return BooleanValue.FALSE;
       }
     } catch (SQLException e) {
@@ -754,7 +754,7 @@ public abstract class JdbcConnectionResource
       if (keepStatementOpen()) {
         keepResourceValues(stmt);
       } else {
-        log.log(Level.FINEST, e.toString(), e);
+        log.log(Level.FINEST, e.ToString(), e);
         return BooleanValue.FALSE;
       }
     } catch (IllegalStateException e) {
@@ -824,7 +824,7 @@ public abstract class JdbcConnectionResource
                 try {
                   setCatalog(env, null);
                 } catch (SQLException e) {
-                  log.log(Level.FINEST, e.toString(), e);
+                  log.log(Level.FINEST, e.ToString(), e);
                 }
               }
             }
@@ -942,7 +942,7 @@ public abstract class JdbcConnectionResource
     }
     catch (SQLException e) {
       saveErrors(e);
-      log.log(Level.FINEST, e.toString(), e);
+      log.log(Level.FINEST, e.ToString(), e);
       return false;
     }
   }
@@ -959,7 +959,7 @@ public abstract class JdbcConnectionResource
     }
     catch (SQLException e) {
       saveErrors(e);
-      log.log(Level.FINEST, e.toString(), e);
+      log.log(Level.FINEST, e.ToString(), e);
       return false;
     }
 
@@ -977,7 +977,7 @@ public abstract class JdbcConnectionResource
       _conn.getConnection().commit();
     } catch (SQLException e) {
       saveErrors(e);
-      log.log(Level.FINEST, e.toString(), e);
+      log.log(Level.FINEST, e.ToString(), e);
       return false;
     }
 
@@ -998,7 +998,7 @@ public abstract class JdbcConnectionResource
       _conn.getConnection().rollback();
     } catch (SQLException e) {
       saveErrors(e);
-      log.log(Level.FINEST, e.toString(), e);
+      log.log(Level.FINEST, e.ToString(), e);
       return false;
     }
 
@@ -1051,7 +1051,7 @@ public abstract class JdbcConnectionResource
   /**
    * Converts to a string.
    */
-  public string toString()
+  public string ToString()
   {
     if (_conn != null)
       return getClass().getSimpleName() + "[" + _conn.getConnection() + "]";
@@ -1113,8 +1113,8 @@ public abstract class JdbcConnectionResource
       return isConnected() && ! getConnection(env).isClosed();
 
     } catch (SQLException e) {
-      log.log(Level.FINE, e.toString(), e);
-      env.warning(e.toString(), e);
+      log.log(Level.FINE, e.ToString(), e);
+      env.warning(e.ToString(), e);
 
       return false;
     }
@@ -1144,7 +1144,7 @@ public abstract class JdbcConnectionResource
 
     _errorMessage = e.getMessage();
     if (_errorMessage == null || "".equals(_errorMessage))
-      _errorMessage = e.toString();
+      _errorMessage = e.ToString();
 
     _errorCode = e.getErrorCode();
   }

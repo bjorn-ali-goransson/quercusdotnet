@@ -129,7 +129,7 @@ public class ClassMethodExpr : AbstractMethodExpr {
     }
   }
 
-  public string toString()
+  public string ToString()
   {
     return _className + "::" + _methodName + "()";
   }

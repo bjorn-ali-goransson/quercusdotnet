@@ -97,7 +97,7 @@ public class PDOError
    */
   public void error(Env env, Throwable exception)
   {
-    log.log(Level.FINE, exception.toString(), exception);
+    log.log(Level.FINE, exception.ToString(), exception);
 
     string errorCode;
     string errorMessage;

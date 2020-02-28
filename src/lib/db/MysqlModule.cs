@@ -216,13 +216,13 @@ public class MysqlModule : AbstractQuercusModule {
 
         stmt = sqlConn.createStatement();
         stmt.setEscapeProcessing(false);
-        stmt.executeUpdate("CREATE DATABASE " + name.toString());
+        stmt.executeUpdate("CREATE DATABASE " + name.ToString());
       } finally {
         if (stmt != null)
           stmt.close();
       }
     } catch (SQLException e) {
-      log.log(Level.FINE, e.toString(), e);
+      log.log(Level.FINE, e.ToString(), e);
       return false;
     }
 
@@ -357,7 +357,7 @@ public class MysqlModule : AbstractQuercusModule {
 
   public static StringValue mysql_escape_string(Env env, Value val)
   {
-    StringValue unescapedString = val.toStringValue();
+    StringValue unescapedString = val.ToStringValue();
 
     StringValue sb = unescapedString.createStringBuilder();
 
@@ -416,7 +416,7 @@ public class MysqlModule : AbstractQuercusModule {
                                                      Value val,
                                                      @Optional Mysqli conn)
   {
-    StringValue unescapedString = val.toStringValue();
+    StringValue unescapedString = val.ToStringValue();
 
     if (conn == null)
       conn = getConnection(env);
@@ -602,7 +602,7 @@ public class MysqlModule : AbstractQuercusModule {
 
       return fieldResult;
     } catch (SQLException e) {
-      log.log(Level.FINE, e.toString(), e);
+      log.log(Level.FINE, e.ToString(), e);
       return BooleanValue.FALSE;
     }
   }
@@ -713,7 +713,7 @@ public class MysqlModule : AbstractQuercusModule {
       return BooleanValue.FALSE;
 
     string sql = "SHOW FULL COLUMNS FROM "
-        + fieldTable.toString() + " LIKE \'" + fieldName.toString() + "\'";
+        + fieldTable.ToString() + " LIKE \'" + fieldName.ToString() + "\'";
 
     Mysqli conn = getConnection(env);
 
@@ -1122,7 +1122,7 @@ public class MysqlModule : AbstractQuercusModule {
       hostStr = env.getIniString("mysql.default_host");
     }
     else {
-      hostStr = host.toString();
+      hostStr = host.ToString();
     }
 
     if (hostStr == null || hostStr.length() == 0) {
@@ -1186,8 +1186,8 @@ public class MysqlModule : AbstractQuercusModule {
       */
     }
 
-    Mysqli mysqli = new MysqliResource(env, hostStr, userName.toString(),
-                                       password.toString(), "",
+    Mysqli mysqli = new MysqliResource(env, hostStr, userName.ToString(),
+                                       password.ToString(), "",
                                        port, socketStr, flags,
                                        null, url, isNewLink);
 

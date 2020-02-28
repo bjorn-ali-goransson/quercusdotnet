@@ -61,7 +61,7 @@ public class BoundColumn
       _columnAsName = null;
     }
     else {
-      _columnAsName = column.toString();
+      _columnAsName = column.ToString();
     }
 
     _var = var;

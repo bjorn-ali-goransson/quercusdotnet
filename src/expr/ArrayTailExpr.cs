@@ -203,7 +203,7 @@ public class ArrayTailExpr : AbstractVarExpr {
     throw new UnsupportedOperationException();
   }
 
-  public string toString()
+  public string ToString()
   {
     return _expr + "[]";
   }

@@ -79,13 +79,13 @@ abstract class GettextParser
         case '\t':
         case '\r':
         case '\n':
-          return metadata.substring(i, j).toString();
+          return metadata.substring(i, j).ToString();
         default:
           continue; 
       }
     }
 
-    return metadata.substring(i, j).toString();
+    return metadata.substring(i, j).ToString();
   }
 
   /**

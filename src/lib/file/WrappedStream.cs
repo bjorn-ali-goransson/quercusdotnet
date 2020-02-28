@@ -250,7 +250,7 @@ public class WrappedStream : BinaryInput, BinaryOutput {
     if (output.length() == 0)
       return -1;
 
-    byte []outputBytes = output.toString().getBytes();
+    byte []outputBytes = output.ToString().getBytes();
 
     if (outputBytes.length < length)
       length = outputBytes.length;
@@ -276,7 +276,7 @@ public class WrappedStream : BinaryInput, BinaryOutput {
     if (output.length() == 0)
       return -1;
 
-    byte []outputBytes = output.toString().getBytes();
+    byte []outputBytes = output.ToString().getBytes();
 
     if (outputBytes.length < length)
       length = outputBytes.length;

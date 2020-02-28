@@ -447,7 +447,7 @@ public class FunctionInfo
     return name;
   }
 
-  public string toString()
+  public string ToString()
   {
     return "FunctionInfo[" + _name + "]";
   }

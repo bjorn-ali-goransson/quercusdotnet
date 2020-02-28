@@ -67,10 +67,10 @@ public class ToStringExpr : AbstractUnaryExpr {
    */
   public Value eval(Env env)
   {
-    return _expr.eval(env).toString(env);
+    return _expr.eval(env).ToString(env);
   }
 
-  public string toString()
+  public string ToString()
   {
     return "((string) " + _expr + ")";
   }

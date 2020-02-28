@@ -733,7 +733,7 @@ abstract public class Expr {
     Value value = eval(env);
 
     if (value.isObject())
-      return value.toString(env).toJavaString();
+      return value.ToString(env).toJavaString();
     else
       return value.toJavaString();
   }
@@ -747,7 +747,7 @@ abstract public class Expr {
    */
   public StringValue evalStringValue(Env env)
   {
-    return eval(env).toStringValue(env);
+    return eval(env).ToStringValue(env);
   }
 
   /**
@@ -885,7 +885,7 @@ abstract public class Expr {
     return evalConstant().equals(expr.evalConstant());
   }
 
-  public string toString()
+  public string ToString()
   {
     return "Expr[]";
   }

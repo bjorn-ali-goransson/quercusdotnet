@@ -369,7 +369,7 @@ public class JavaOverloadMethod : AbstractJavaMethod {
     return "unknown";
   }
 
-  public string toString()
+  public string ToString()
   {
     return getClass().getSimpleName() + "[" + getName() + "]";
   }

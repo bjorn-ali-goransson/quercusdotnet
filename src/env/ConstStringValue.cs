@@ -317,10 +317,10 @@ public class ConstStringValue
     }
   }
 
-  public string toString()
+  public string ToString()
   {
     if (_string == null)
-      _string = super.toString();
+      _string = super.ToString();
 
     return _string;
   }

@@ -179,7 +179,7 @@ public class FileOutput : AbstractBinaryOutput
       if (os != null)
         os.close();
     } catch (IOException e) {
-      log.log(Level.FINE, e.toString(), e);
+      log.log(Level.FINE, e.ToString(), e);
     }
   }
 
@@ -236,7 +236,7 @@ public class FileOutput : AbstractBinaryOutput
    * Converts to a string.
    * @param env
    */
-  public string toString()
+  public string ToString()
   {
     return "FileOutput[" + getPath() + "]";
   }

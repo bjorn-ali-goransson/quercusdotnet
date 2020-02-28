@@ -248,7 +248,7 @@ public class PDOStatement
       }
     }
 
-    return sb.toString();
+    return sb.ToString();
   }
 
   public bool bindColumn(Env env,
@@ -652,7 +652,7 @@ public class PDOStatement
       return fetchBoth(env, rs);
     }
 
-    className = _fetchModeArgs[0].toString();
+    className = _fetchModeArgs[0].ToString();
 
     if (_fetchModeArgs.length == 2) {
       if (_fetchModeArgs[1].isArray()) {
@@ -987,7 +987,7 @@ public class PDOStatement
       index = Integer.valueOf(parameter.toInt() - 1);
     }
     else {
-      string name = parameter.toString();
+      string name = parameter.ToString();
 
       if (name.length() > 1 && name.charAt(0) == ':') {
         name = name.substring(1);
@@ -1098,7 +1098,7 @@ public class PDOStatement
         if (args.length < 1 || args.length > 2)
           return false;
 
-        if (env.findClass(args[0].toString()) == null)
+        if (env.findClass(args[0].ToString()) == null)
           return false;
 
         if (args.length == 2 && !(args[1].isNull() || args[1].isArray())) {
@@ -1136,7 +1136,7 @@ public class PDOStatement
     return true;
   }
 
-  public string toString()
+  public string ToString()
   {
     string query = _stmt.getQuery();
 

@@ -97,7 +97,7 @@ public class NullAsFalseMarshal : Marshal
     return (result == null || result.isNull()) ? BooleanValue.FALSE : result;
   }
 
-  public string toString()
+  public string ToString()
   {
     return "NullAsFalseMarshal[" + _marshal + "]";
   }

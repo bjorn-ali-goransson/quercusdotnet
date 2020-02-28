@@ -133,9 +133,9 @@ public class DocumentView : SimpleView
     return _element.getNamespaces(isRecursive, isFromRoot, isCheckUsage);
   }
 
-  public override string toString(Env env)
+  public override string ToString(Env env)
   {
-    return _element.toString(env);
+    return _element.ToString(env);
   }
 
   public override Iterator<Map.Entry<IteratorIndex,SimpleView>> getIterator()
@@ -160,7 +160,7 @@ public class DocumentView : SimpleView
     return _element.toDumpValue(env, cls, true);
   }
 
-  public override string toString()
+  public override string ToString()
   {
     return getClass().getSimpleName() + "[" + _element + "]";
   }

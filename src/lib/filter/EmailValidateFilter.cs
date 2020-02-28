@@ -46,7 +46,7 @@ public class EmailValidateFilter
   @Override
   public Value filter(Env env, Value value, Value flagV)
   {
-    StringValue str = value.toStringValue(env);
+    StringValue str = value.ToStringValue(env);
 
     EmailParser parser = new EmailParser(str);
 

@@ -258,7 +258,7 @@ public class ReadStreamInput : InputStream : BinaryInput {
         // XXX: not quite right for sockets
         return  _is.available() <= 0;
       } catch (IOException e) {
-        log.log(Level.FINE, e.toString(), e);
+        log.log(Level.FINE, e.ToString(), e);
 
         return true;
       }
@@ -361,7 +361,7 @@ public class ReadStreamInput : InputStream : BinaryInput {
   /**
    * Converts to a string.
    */
-  public override string toString()
+  public override string ToString()
   {
     return getClass().getSimpleName() + "[" + _is.getPath() + "]";
   }

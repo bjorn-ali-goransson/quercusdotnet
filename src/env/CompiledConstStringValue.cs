@@ -48,7 +48,7 @@ public class CompiledConstStringValue
 
     setLongValue(s.toLongValue());
     setDoubleValue(s.toDoubleValue());
-    setString(s.toString());
+    setString(s.ToString());
 
     setValueType(s.getValueType());
     _compiledHashCode = s.hashCode();

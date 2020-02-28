@@ -163,7 +163,7 @@ public class VarVarExpr : AbstractVarExpr {
     return value.toAutoArray();
   }
 
-  public string toString()
+  public string ToString()
   {
     return "$" + _var;
   }

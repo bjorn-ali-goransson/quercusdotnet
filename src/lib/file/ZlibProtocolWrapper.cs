@@ -57,12 +57,12 @@ public class ZlibProtocolWrapper : ProtocolWrapper {
       = UrlModule.parse_url(env, path, UrlModule.PHP_URL_PATH);
     
     if (! pathComponent.isset()) {
-      log.info(L.l("no path component found in '{0}'", path.toString()));
+      log.info(L.l("no path component found in '{0}'", path.ToString()));
       return null;
     }
 
-    return ZlibModule.gzopen(env, pathComponent.toStringValue(),
-                             mode.toString(),
+    return ZlibModule.gzopen(env, pathComponent.ToStringValue(),
+                             mode.ToString(),
                              useIncludePath);
   }
 

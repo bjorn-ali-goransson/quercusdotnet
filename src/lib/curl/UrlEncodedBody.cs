@@ -49,7 +49,7 @@ public class UrlEncodedBody : PostBody
 
   public UrlEncodedBody (Env env, Value body)
   {
-    _body = body.toStringValue(env);
+    _body = body.ToStringValue(env);
     _length = _body.length();
   }
 

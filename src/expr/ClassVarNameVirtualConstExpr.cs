@@ -90,7 +90,7 @@ public class ClassVarNameVirtualConstExpr : Expr {
     return env.getCallingClass().getConstant(env, name);
   }
 
-  public override string toString()
+  public override string ToString()
   {
     return "static::{" + _name + "}";
   }

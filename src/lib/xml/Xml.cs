@@ -187,14 +187,14 @@ public class Xml {
     }
     else {
       if (! startElementHandler.isEmpty()) {
-        StringValue name = startElementHandler.toStringValue(env);
+        StringValue name = startElementHandler.ToStringValue(env);
         CallbackObjectMethod callback = new CallbackObjectMethod(_obj, name);
 
         _startElementHandler = callback;
       }
 
       if (! endElementHandler.isEmpty()) {
-        StringValue name = endElementHandler.toStringValue(env);
+        StringValue name = endElementHandler.ToStringValue(env);
         CallbackObjectMethod callback = new CallbackObjectMethod(_obj, name);
 
         _endElementHandler = callback;
@@ -416,23 +416,23 @@ public class Xml {
       }
       catch (SAXParseException e) {
         XmlModule.recordError(env, XmlModule.LIBXML_ERR_FATAL, 0,
-                              e.getColumnNumber(), e.toString(), "",
+                              e.getColumnNumber(), e.ToString(), "",
                               e.getLineNumber());
 
         _errorCode = XmlModule.XML_ERROR_SYNTAX;
-        _errorString = e.toString();
+        _errorString = e.ToString();
 
         log.log(Level.FINE, e.getMessage(), e);
         return 0;
       }
       catch (Exception e) {
         XmlModule.recordError(env, XmlModule.LIBXML_ERR_FATAL, 0,
-                              0, e.toString(), "", 0);
+                              0, e.ToString(), "", 0);
 
         _errorCode = XmlModule.XML_ERROR_SYNTAX;
-        _errorString = e.toString();
+        _errorString = e.ToString();
 
-        log.log(Level.FINE, e.toString(), e);
+        log.log(Level.FINE, e.ToString(), e);
         return 0;
       }
       finally {
@@ -467,7 +467,7 @@ public class Xml {
       return 0;
 
     if (_xmlString == null)
-      _xmlString = data.toStringBuilder(env);
+      _xmlString = data.ToStringBuilder(env);
 
     InputSource is;
 
@@ -481,23 +481,23 @@ public class Xml {
       saxParser.parse(@is, new StructHandler(env, valueArray, indexArray));
     } catch (SAXException e) {
       _errorCode = XmlModule.XML_ERROR_SYNTAX;
-      _errorString = e.toString();
+      _errorString = e.ToString();
 
-      log.log(Level.FINE, e.toString(), e);
+      log.log(Level.FINE, e.ToString(), e);
 
       return 0;
     } catch (IOException e) {
       _errorCode = XmlModule.XML_ERROR_SYNTAX;
-      _errorString = e.toString();
+      _errorString = e.ToString();
 
-      log.log(Level.FINE, e.toString(), e);
+      log.log(Level.FINE, e.ToString(), e);
 
       return 0;
     } catch (Exception e) {
       _errorCode = XmlModule.XML_ERROR_SYNTAX;
-      _errorString = e.toString();
+      _errorString = e.ToString();
 
-      log.log(Level.FINE, e.toString(), e);
+      log.log(Level.FINE, e.ToString(), e);
 
       return 0;
     }
@@ -532,7 +532,7 @@ public class Xml {
         _xmlOptionSkipWhite = value.toBoolean();
         return true;
       case XmlModule.XML_OPTION_TARGET_ENCODING:
-        _outputEncoding = value.toString();
+        _outputEncoding = value.ToString();
         return true;
       default:
         return false;
@@ -560,7 +560,7 @@ public class Xml {
     }
   }
 
-  public string toString()
+  public string ToString()
   {
     return "Xml[]";
   }
@@ -905,7 +905,7 @@ public class Xml {
             log.finer(this + " startElement " + qName);
         }
       } catch (Exception t) {
-        log.log(Level.FINE, t.toString(), t);
+        log.log(Level.FINE, t.ToString(), t);
         throw new SAXException(L.l(t.getMessage()));
       }
     }
@@ -950,7 +950,7 @@ public class Xml {
             log.finer(this + " endElement " + sName);
         }
       } catch (Exception t) {
-        log.log(Level.FINE, t.toString(), t);
+        log.log(Level.FINE, t.ToString(), t);
         throw new SAXException(L.l(t.getMessage()));
       }
     }
@@ -1004,7 +1004,7 @@ public class Xml {
             log.finer(this + " characters '" + value + "'");
         }
       } catch (Exception t) {
-        log.log(Level.FINE, t.toString(), t);
+        log.log(Level.FINE, t.ToString(), t);
         throw new SAXException(L.l(t.getMessage()));
       }
     }
@@ -1030,7 +1030,7 @@ public class Xml {
             log.finer(this + " processingInstruction " + target);
         }
       } catch (Exception t) {
-        log.log(Level.FINE, t.toString(), t);
+        log.log(Level.FINE, t.ToString(), t);
         throw new SAXException(L.l(t.getMessage()));
       }
     }
@@ -1056,7 +1056,7 @@ public class Xml {
             log.finer(this + " startPrefixMapping " + prefix + " " + uri);
         }
       } catch (Exception t) {
-        log.log(Level.FINE, t.toString(), t);
+        log.log(Level.FINE, t.ToString(), t);
         throw new SAXException(L.l(t.getMessage()));
       }
     }
@@ -1078,7 +1078,7 @@ public class Xml {
             log.finer(this + " endPrefixMapping");
         }
       } catch (Exception t) {
-        log.log(Level.FINE, t.toString(), t);
+        log.log(Level.FINE, t.ToString(), t);
         throw new SAXException(L.l(t.getMessage()));
       }
     }
@@ -1101,7 +1101,7 @@ public class Xml {
             log.finer(this + " notation " + name);
         }
       } catch (Exception t) {
-        log.log(Level.FINE, t.toString(), t);
+        log.log(Level.FINE, t.ToString(), t);
         throw new SAXException(L.l(t.getMessage()));
       }
     }
@@ -1138,7 +1138,7 @@ public class Xml {
             log.finer(this + " unparsedEntity " + name);
         }
       } catch (Exception t) {
-        log.log(Level.FINE, t.toString(), t);
+        log.log(Level.FINE, t.ToString(), t);
         throw new SAXException(L.l(t.getMessage()));
       }
     }

@@ -61,7 +61,7 @@ public class ToDoubleExpr : AbstractUnaryExpr {
     return new DoubleValue(_expr.evalDouble(env));
   }
 
-  public string toString()
+  public string ToString()
   {
     return "((float) " + _expr + ")";
   }

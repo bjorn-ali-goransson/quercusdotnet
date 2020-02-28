@@ -178,7 +178,7 @@ public class ReflectionExtension
     return array;
   }
 
-  public string toString()
+  public string ToString()
   {
     return getClass().getSimpleName() + "[" + _name + "]";
   }

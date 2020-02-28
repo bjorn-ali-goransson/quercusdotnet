@@ -113,7 +113,7 @@ public class QuercusMimeUtility
                               string charset)
     
   {
-    string decodedStr = MimeUtility.decodeText(word.toString());
+    string decodedStr = MimeUtility.decodeText(word.ToString());
 
     StringValue str
       = env.createString(MimeUtility.unfold(decodedStr));
@@ -164,14 +164,14 @@ public class QuercusMimeUtility
     CharSequence nameUnicode = decoder.decode(env, name);
 
     decoder.reset();
-    string valueUnicode = decoder.decode(env, value).toString();
+    string valueUnicode = decoder.decode(env, value).ToString();
 
     StringValue sb = env.createUnicodeBuilder();
     sb.append(UnicodeUtility.encode(env, nameUnicode, outCharset));
     sb.append(':');
     sb.append(' ');
 
-    string word = encodeMimeWord(valueUnicode.toString(),
+    string word = encodeMimeWord(valueUnicode.ToString(),
                                  outCharset,
                                  scheme,
                                  lineBreakChars,

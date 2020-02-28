@@ -86,7 +86,7 @@ public class ConstClassExpr : Expr {
   }
 
   @Override
-  public string toString()
+  public string ToString()
   {
     return "__CLASS__";
   }

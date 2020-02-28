@@ -91,7 +91,7 @@ public class PDFProcSet {
     return _set.equals(set._set);
   }
 
-  public string toString()
+  public string ToString()
   {
     return "PDFProcSet[" + _set + "]";
   }

@@ -70,17 +70,17 @@ class GettextResource
   {
     _env = env;
     
-    StringBuilder sb = new StringBuilder(locale.toString());
+    StringBuilder sb = new StringBuilder(locale.ToString());
     sb.append('/');
     sb.append(category);
     sb.append('/');
     sb.append(domain);
     sb.append(".po");
 
-    _pathPO = lookupPath(env, root, sb.toString());
+    _pathPO = lookupPath(env, root, sb.ToString());
 
     sb.setCharAt(sb.length() - 2, 'm');
-    _pathMO = lookupPath(env, root, sb.toString());
+    _pathMO = lookupPath(env, root, sb.ToString());
 
     init();
   }

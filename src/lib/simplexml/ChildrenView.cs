@@ -151,7 +151,7 @@ public class ChildrenView : SimpleView
 
   public override SimpleView getField(Env env, Value indexV)
   {
-    string nodeName = indexV.toStringValue(env).toString();
+    string nodeName = indexV.ToStringValue(env).ToString();
 
     ArrayList<SimpleView> childList = new ArrayList<SimpleView>();
 
@@ -213,12 +213,12 @@ public class ChildrenView : SimpleView
     }
   }
 
-  public override string toString(Env env)
+  public override string ToString(Env env)
   {
     if (_childList.size() > 0) {
       SimpleView firstChild = _childList.get(0);
 
-      return firstChild.toString(env);
+      return firstChild.ToString(env);
     }
     else {
       return "";
@@ -311,7 +311,7 @@ public class ChildrenView : SimpleView
     return obj;
   }
 
-  public override string toString()
+  public override string ToString()
   {
     int size = _childList.size();
     SimpleView firstChild = null;

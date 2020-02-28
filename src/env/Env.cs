@@ -455,10 +455,10 @@ public class Env
     _isAllowUrlFopen = quercus.isAllowUrlFopen();
 
     _variablesOrder
-      = _quercus.getIniValue("variables_order").toStringValue(this);
+      = _quercus.getIniValue("variables_order").ToStringValue(this);
 
     StringValue querySeparators
-      = _quercus.getIniValue("arg_separator.input").toStringValue(this);
+      = _quercus.getIniValue("arg_separator.input").ToStringValue(this);
 
     int len = querySeparators.length();
     if (len == 0)
@@ -593,7 +593,7 @@ public class Env
 
       _request.setCharacterEncoding(encoding);
     } catch (Exception e) {
-      log.log(Level.FINE, e.toString(), e);
+      log.log(Level.FINE, e.ToString(), e);
     }
 
     ArrayList<String> keys = new ArrayList<String>();
@@ -743,7 +743,7 @@ public class Env
         return getQuercus().getScriptEncoding();
     }
 
-    return encoding.toString();
+    return encoding.ToString();
   }
 
   /**
@@ -762,7 +762,7 @@ public class Env
     }
 
     if (encoding.length() > 0) {
-      return encoding.toString();
+      return encoding.ToString();
     }
     else {
       return "utf-8";
@@ -802,7 +802,7 @@ public class Env
     }
 
     if (encoding.length() > 0) {
-      return encoding.toString();
+      return encoding.ToString();
     }
     else {
       return "utf-8";
@@ -1102,7 +1102,7 @@ public class Env
       try {
         _out.setEncoding(encoding);
       } catch (Exception e) {
-        log.log(Level.WARNING, e.toString(), e);
+        log.log(Level.WARNING, e.ToString(), e);
       }
     }
 
@@ -1624,7 +1624,7 @@ public class Env
           _uploadPath.mkdirs();
       }
       catch (IOException e) {
-        log.log(Level.FINE, e.toString(), e);
+        log.log(Level.FINE, e.ToString(), e);
       }
 
       _uploadPath = _uploadPath.createRoot();
@@ -1671,7 +1671,7 @@ public class Env
         }
       }
       catch (IOException e) {
-        log.log(Level.FINE, e.toString(), e);
+        log.log(Level.FINE, e.ToString(), e);
       }
     }
 
@@ -2981,14 +2981,14 @@ public class Env
     if (envVar != null)
       return envVar;
 
-    Object value = _scriptContext.getAttribute(name.toString());
+    Object value = _scriptContext.getAttribute(name.ToString());
 
     if (value == null) {
       Bindings bindings
         = _scriptContext.getBindings(ScriptContext.ENGINE_SCOPE);
 
       if (bindings != null)
-        value = bindings.get(name.toString());
+        value = bindings.get(name.ToString());
     }
 
     if (value == null) {
@@ -2996,7 +2996,7 @@ public class Env
       = _scriptContext.getBindings(ScriptContext.GLOBAL_SCOPE);
 
       if (bindings != null)
-        value = bindings.get(name.toString());
+        value = bindings.get(name.ToString());
     }
 
     if (value != null) {
@@ -3055,7 +3055,7 @@ public class Env
         sb.append(ch);
     }
 
-    return sb.toString();
+    return sb.ToString();
   }
 
   public Var getVar(String name)
@@ -3481,7 +3481,7 @@ public class Env
       return "\n  " + String.valueOf(location);
     }
 
-    return sb.toString();
+    return sb.ToString();
   }
 
   public ArrayList<String> getStackTrace()
@@ -3501,11 +3501,11 @@ public class Env
         loc = "";
 
       if (_callThisStack[i] != null
-          && ! "".equals(_callThisStack[i].toString())) {
-        entry = _callThisStack[i] + "." + _callStack[i].toString() + loc;
+          && ! "".equals(_callThisStack[i].ToString())) {
+        entry = _callThisStack[i] + "." + _callStack[i].ToString() + loc;
       }
       else
-        entry = _callStack[i].toString() + loc;
+        entry = _callStack[i].ToString() + loc;
 
       trace.add(entry);
     }
@@ -3694,7 +3694,7 @@ public class Env
 
     Value nameValue = _quercus.getConstantName(id);
 
-    string name = nameValue.toString();
+    string name = nameValue.ToString();
 
     int ns = name.lastIndexOf('\\');
     if (ns >= 0) {
@@ -4092,7 +4092,7 @@ public class Env
       return ((CallbackFunction) name).getFunction(this);
     }
 
-    return getFunction(name.toStringValue());
+    return getFunction(name.ToStringValue());
   }
 
   /*
@@ -4157,7 +4157,7 @@ public class Env
     }
 
     AbstractFunction fun
-      = getQuercus().parseFunction(name.toString(), args, code);
+      = getQuercus().parseFunction(name.ToString(), args, code);
 
     _anonymousFunMap.put(name, fun);
     return fun;
@@ -4207,7 +4207,7 @@ public class Env
     
   {
     if (log.isLoggable(Level.FINER)) {
-      log.finer(code.toString());
+      log.finer(code.ToString());
     }
 
     QuercusContext quercus = getQuercus();
@@ -4229,7 +4229,7 @@ public class Env
     
   {
     StringValue prepend
-      = _quercus.getIniValue("auto_prepend_file").toStringValue(this);
+      = _quercus.getIniValue("auto_prepend_file").ToStringValue(this);
 
     if (prepend.length() > 0) {
       Path prependPath = lookup(prepend);
@@ -4245,7 +4245,7 @@ public class Env
     executeTop();
 
     StringValue append
-      = _quercus.getIniValue("auto_append_file").toStringValue(this);
+      = _quercus.getIniValue("auto_append_file").ToStringValue(this);
 
     if (append.length() > 0) {
       Path appendPath = lookup(append);
@@ -4269,7 +4269,7 @@ public class Env
     try {
       return executePageTop(_page);
     } catch (QuercusLanguageException e) {
-      log.log(Level.FINER, e.toString(), e);
+      log.log(Level.FINER, e.ToString(), e);
 
       if (getExceptionHandler() != null) {
         try {
@@ -4970,7 +4970,7 @@ public class Env
     }
     catch (Throwable e) {
       if (log.isLoggable(Level.FINEST)) {
-        log.log(Level.FINEST, e.toString(), e);
+        log.log(Level.FINEST, e.ToString(), e);
       }
 
       if (useImport) {
@@ -5017,7 +5017,7 @@ public class Env
             return def;
           }
         } catch (Exception e) {
-          log.log(Level.ALL, e.toString(), e);
+          log.log(Level.ALL, e.ToString(), e);
         }
       }
     }
@@ -5336,7 +5336,7 @@ public class Env
           }
         }
         catch (Exception e) {
-          log.log(Level.FINER, e.toString(), e);
+          log.log(Level.FINER, e.ToString(), e);
         }
       }
     }
@@ -5572,7 +5572,7 @@ public class Env
     }
 
     if (url != null) {
-      includeOnce(createString(url.toString()));
+      includeOnce(createString(url.ToString()));
       return true;
     }
     else {
@@ -5758,7 +5758,7 @@ public class Env
       if (value.isEmpty())
         return null;
 
-      string s = value.toString();
+      string s = value.ToString();
 
       int p = s.indexOf("::");
 
@@ -5786,7 +5786,7 @@ public class Env
           L.l("'{0}' ({1}) @is an unknown callback name",
           nameV, nameV.getClass().getSimpleName()));
 
-      string name = nameV.toString();
+      string name = nameV.ToString();
 
       if (obj.isObject()) {
         AbstractFunction fun;
@@ -5809,7 +5809,7 @@ public class Env
 
           if (cls == null)
             throw new IllegalStateException(L.l("can't find class '{0}'",
-                                                obj.toString()));
+                                                obj.ToString()));
 
           // fun = cls.getFunction(name);
         }
@@ -5817,11 +5817,11 @@ public class Env
         return new CallbackObjectMethod(this, obj, createString(name));
       }
       else {
-        QuercusClass cl = findClass(obj.toString());
+        QuercusClass cl = findClass(obj.ToString());
 
         if (cl == null) {
           warning(L.l("Callback: '{0}' @is not a valid callback string for {1}",
-                      obj.toString(), obj));
+                      obj.ToString(), obj));
 
           return null;
         }
@@ -5962,8 +5962,8 @@ public class Env
 
     // XXX: too restrictive for filters
     return ! "php".equals(scheme)
-           || "php://input".equals(path.toString())
-           || path.toString().startsWith("php://filter");
+           || "php://input".equals(path.ToString())
+           || path.ToString().startsWith("php://filter");
   }
 
   /**
@@ -5974,7 +5974,7 @@ public class Env
     if (! relPathV.isset())
       return null;
 
-    StringValue relPath = relPathV.toStringValue();
+    StringValue relPath = relPathV.ToStringValue();
 
     if (relPath.length() == 0)
       return null;
@@ -6194,12 +6194,12 @@ public class Env
             _cb.append(path.charAt(i));
           }
 
-          return _cb.toString();
+          return _cb.ToString();
         }
       }
     }
 
-    return path.toString();
+    return path.ToString();
   }
 
   /**
@@ -6251,12 +6251,12 @@ public class Env
       return exit();
 
     try {
-      getOut().print(msg.toString());
+      getOut().print(msg.ToString());
     } catch (IOException e) {
-      log.log(Level.WARNING, e.toString(), e);
+      log.log(Level.WARNING, e.ToString(), e);
     }
 
-    throw new QuercusExitException(msg.toString()
+    throw new QuercusExitException(msg.ToString()
                                    + "\n" + getStackTraceAsString());
   }
 
@@ -6276,7 +6276,7 @@ public class Env
     try {
       getOut().print(msg);
     } catch (IOException e) {
-      log.log(Level.WARNING, e.toString(), e);
+      log.log(Level.WARNING, e.ToString(), e);
     }
 
     throw new QuercusDieException(msg + "\n" + getStackTraceAsString());
@@ -6517,7 +6517,7 @@ public class Env
    */
   public Value error(String msg, Throwable e)
   {
-    log.log(Level.WARNING, e.toString(), e);
+    log.log(Level.WARNING, e.ToString(), e);
 
     return error(msg);
   }
@@ -6527,9 +6527,9 @@ public class Env
    */
   public Value error(Throwable e)
   {
-    log.log(Level.WARNING, e.toString(), e);
+    log.log(Level.WARNING, e.ToString(), e);
 
-    return error(e.toString());
+    return error(e.ToString());
   }
 
   /**
@@ -6572,7 +6572,7 @@ public class Env
 
     string prefix = location.getMessagePrefix();
 
-    string fullMsg = e.toString() + getFunctionLocation();
+    string fullMsg = e.ToString() + getFunctionLocation();
 
     error(B_ERROR, fullMsg, location);
 
@@ -6592,7 +6592,7 @@ public class Env
       if (log.isLoggable(Level.FINER)) {
         QuercusException e = new QuercusException(getExceptionLocation(msg));
 
-        log.log(Level.FINER, e.toString(), e);
+        log.log(Level.FINER, e.ToString(), e);
       }
     }
 
@@ -6629,7 +6629,7 @@ public class Env
       if (log.isLoggable(Level.FINER)) {
         QuercusException e = new QuercusException(msg);
 
-        log.log(Level.FINER, e.toString(), e);
+        log.log(Level.FINER, e.ToString(), e);
       }
     }
 
@@ -6641,7 +6641,7 @@ public class Env
    */
   public Value warning(String msg, Throwable e)
   {
-    log.log(Level.FINE, e.toString(), e);
+    log.log(Level.FINE, e.ToString(), e);
 
     return warning(msg);
   }
@@ -6651,7 +6651,7 @@ public class Env
    */
   public Value warning(String msg, Location location, Throwable e)
   {
-    log.log(Level.FINE, e.toString(), e);
+    log.log(Level.FINE, e.ToString(), e);
 
     return warning(msg, location);
   }
@@ -6661,7 +6661,7 @@ public class Env
    */
   public Value warning(Throwable e)
   {
-    return warning(e.toString(), e);
+    return warning(e.ToString(), e);
   }
 
   /**
@@ -6669,7 +6669,7 @@ public class Env
    */
   public Value warning(Throwable e, Location location)
   {
-    return warning(e.toString(), location, e);
+    return warning(e.ToString(), location, e);
   }
 
   /**
@@ -6680,7 +6680,7 @@ public class Env
     if (log.isLoggable(Level.FINER)) {
       QuercusException e = new QuercusException(msg);
 
-      log.log(Level.FINER, e.toString(), e);
+      log.log(Level.FINER, e.ToString(), e);
     }
 
     return error(B_STRICT, msg, getLocation());
@@ -6715,9 +6715,9 @@ public class Env
    */
   public Value notice(Throwable e)
   {
-    log.log(Level.FINE, e.toString(), e);
+    log.log(Level.FINE, e.ToString(), e);
 
-    return notice(e.toString());
+    return notice(e.ToString());
   }
 
   /**
@@ -6725,7 +6725,7 @@ public class Env
    */
   public Value notice(String msg, Throwable e)
   {
-    log.log(Level.FINE, e.toString(), e);
+    log.log(Level.FINE, e.ToString(), e);
 
     return notice(msg);
   }
@@ -6856,7 +6856,7 @@ public class Env
 
     if (_prevExceptionHandler != null) {
       //
-      return ((Value) _prevExceptionHandler).toStringValue();
+      return ((Value) _prevExceptionHandler).ToStringValue();
     }
     else
       return NullValue.NULL;
@@ -6901,7 +6901,7 @@ public class Env
     if (log.isLoggable(Level.FINEST)) {
       QuercusException e = new QuercusException(location.getMessagePrefix() + msg);
 
-      log.log(Level.FINEST, e.toString(), e);
+      log.log(Level.FINEST, e.ToString(), e);
     }
 
     if ((errorMask & mask) != 0) {
@@ -6980,7 +6980,7 @@ public class Env
           log.info(fullMsg);
       }
       catch (IOException e) {
-        log.log(Level.FINE, e.toString(), e);
+        log.log(Level.FINE, e.ToString(), e);
       }
     }
 
@@ -6990,7 +6990,7 @@ public class Env
       exn.fillInStackTrace();
 
       if (log.isLoggable(Level.FINER)) {
-        log.log(Level.FINER, exn.toString(), exn);
+        log.log(Level.FINER, exn.ToString(), exn);
       }
 
       throw exn;
@@ -7099,7 +7099,7 @@ public class Env
       return result;
     }
     catch (IOException e) {
-      log.log(Level.FINE, e.toString(), e);
+      log.log(Level.FINE, e.ToString(), e);
     }
     finally {
       if (@is != null)
@@ -7371,7 +7371,7 @@ public class Env
   }
   */
 
-  public string toString()
+  public string ToString()
   {
     return "Env[]";
   }
@@ -7499,7 +7499,7 @@ public class Env
           _shutdownList.get(i).call(this);
         }
         catch (Throwable e) {
-          log.log(Level.FINE, e.toString(), e);
+          log.log(Level.FINE, e.ToString(), e);
         }
       }
     }
@@ -7507,7 +7507,7 @@ public class Env
     try {
       sessionWriteClose();
     } catch (Throwable e) {
-      log.log(Level.FINE, e.toString(), e);
+      log.log(Level.FINE, e.ToString(), e);
     }
 
     int count = 0;
@@ -7536,7 +7536,7 @@ public class Env
             obj.cleanup(this);
         }
         catch (Throwable e) {
-          log.log(Level.FINER, e.toString(), e);
+          log.log(Level.FINER, e.ToString(), e);
         }
       }
     }
@@ -7553,7 +7553,7 @@ public class Env
             envCleanup.cleanup();
         }
         catch (Throwable e) {
-          log.log(Level.FINER, e.toString(), e);
+          log.log(Level.FINER, e.ToString(), e);
         }
       }
     }
@@ -7567,7 +7567,7 @@ public class Env
         path.remove();
       }
       catch (IOException e) {
-        log.log(Level.FINER, e.toString(), e);
+        log.log(Level.FINER, e.ToString(), e);
       }
     }
 
@@ -7756,7 +7756,7 @@ public class Env
     }
 
     @Override
-    public string toString()
+    public string ToString()
     {
       return (getClass().getSimpleName()
               + "[" + _defRef.get() + ","

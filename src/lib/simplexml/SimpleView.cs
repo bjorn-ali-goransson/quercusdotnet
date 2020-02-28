@@ -164,7 +164,7 @@ public abstract class SimpleView
     throw new UnsupportedOperationException(getClass().getSimpleName());
   }
 
-  public abstract string toString(Env env);
+  public abstract string ToString(Env env);
 
   public abstract bool toXml(Env env, StringBuilder sb);
 

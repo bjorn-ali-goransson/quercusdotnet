@@ -108,11 +108,11 @@ public class JMSQueue
         if (entry.getValue() instanceof BinaryValue) {
           byte []bytes = ((BinaryValue) entry.getValue()).toBytes();
 
-          ((MapMessage) message).setBytes(entry.getKey().toString(), bytes);
+          ((MapMessage) message).setBytes(entry.getKey().ToString(), bytes);
         } else {
           // every primitive except for bytes can be translated from a string
-          ((MapMessage) message).setString(entry.getKey().toString(),
-                                           entry.getValue().toString());
+          ((MapMessage) message).setString(entry.getKey().ToString(),
+                                           entry.getValue().ToString());
         }
       }
     } else if (value instanceof BinaryValue) {
@@ -133,7 +133,7 @@ public class JMSQueue
     } else if (value.toJavaObject() instanceof String) {
       message = _session.createTextMessage();
 
-      ((TextMessage) message).setText(value.toString());
+      ((TextMessage) message).setText(value.ToString());
     } else if (value.toJavaObject() instanceof Serializable) {
       message = _session.createObjectMessage();
 
@@ -197,7 +197,7 @@ public class JMSQueue
       ArrayValue array = new ArrayValueImpl();
 
       while (mapNames.hasMoreElements()) {
-        string name = mapNames.nextElement().toString();
+        string name = mapNames.nextElement().ToString();
 
         Object object = mapMessage.getObject(name);
 

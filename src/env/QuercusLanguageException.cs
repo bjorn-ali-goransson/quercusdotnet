@@ -54,7 +54,7 @@ public class QuercusLanguageException : QuercusException
 
   public QuercusLanguageException(Value value)
   {
-    super(value.toString());
+    super(value.ToString());
 
     _value = value;
   }
@@ -96,7 +96,7 @@ public class QuercusLanguageException : QuercusException
     string msg;
 
     if (field != null)
-      msg = field.toString();
+      msg = field.ToString();
     else
       msg = getMessage();
 
@@ -114,7 +114,7 @@ public class QuercusLanguageException : QuercusException
     if (file.isNull() || line.isNull())
       return Location.UNKNOWN;
     else
-      return new Location(file.toString(), line.toInt(), null, null);
+      return new Location(file.ToString(), line.toInt(), null, null);
   }
 
   public int getLine(Env env)

@@ -101,7 +101,7 @@ public class ExprFactory {
 
       return (ExprFactory) cl.newInstance();
     } catch (Exception e) {
-      log.log(Level.FINEST, e.toString(), e);
+      log.log(Level.FINEST, e.ToString(), e);
 
       _isPro = false;
 
@@ -1138,7 +1138,7 @@ public class ExprFactory {
                                     StringValue methodName,
                                     ArrayList<Expr> args)
   {
-    if ("__construct".equals(methodName.toString())) {
+    if ("__construct".equals(methodName.ToString())) {
       return new ClassConstructExpr(loc, className, args);
     }
     else {

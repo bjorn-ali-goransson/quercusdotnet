@@ -87,7 +87,7 @@ public class BinaryAppendExpr : Expr
   {
     Value value = _value.eval(env);
 
-    StringValue sb = value.toStringBuilder(env);
+    StringValue sb = value.ToStringBuilder(env);
 
     for (BinaryAppendExpr ptr = _next; ptr != null; ptr = ptr._next) {
       Value ptrValue = ptr._value.eval(env);
@@ -102,13 +102,13 @@ public class BinaryAppendExpr : Expr
   {
     Value value = _value.eval(env);
 
-    StringValue sb = value.toStringBuilder(env);
+    StringValue sb = value.ToStringBuilder(env);
 
     for (BinaryAppendExpr ptr = _next; ptr != null; ptr = ptr._next) {
       sb = sb.appendUnicode(ptr._value.eval(env));
     }
 
-    return sb.toString();
+    return sb.ToString();
   }
 
   /**
@@ -130,7 +130,7 @@ public class BinaryAppendExpr : Expr
       return null;
   }
 
-  public string toString()
+  public string ToString()
   {
     if (_next != null)
       return "(" + _value + " . " + _next + ")";

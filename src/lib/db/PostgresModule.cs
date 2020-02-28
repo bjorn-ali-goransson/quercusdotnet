@@ -137,7 +137,7 @@ public class PostgresModule : AbstractQuercusModule {
 
       return result.getAffectedRows();
     } catch (Exception ex) {
-      log.log(Level.FINE, ex.toString(), ex);
+      log.log(Level.FINE, ex.ToString(), ex);
       return 0;
     }
   }
@@ -169,7 +169,7 @@ public class PostgresModule : AbstractQuercusModule {
 
       return true;
     } catch (Exception ex) {
-      log.log(Level.FINE, ex.toString(), ex);
+      log.log(Level.FINE, ex.ToString(), ex);
       return false;
     }
   }
@@ -188,7 +188,7 @@ public class PostgresModule : AbstractQuercusModule {
       return conn.getClientEncoding();
 
     } catch (Exception ex) {
-      log.log(Level.FINE, ex.toString(), ex);
+      log.log(Level.FINE, ex.ToString(), ex);
       return null;
     }
   }
@@ -210,7 +210,7 @@ public class PostgresModule : AbstractQuercusModule {
 
       return true;
     } catch (Exception ex) {
-      log.log(Level.FINE, ex.toString(), ex);
+      log.log(Level.FINE, ex.ToString(), ex);
     }
 
     return false;
@@ -280,7 +280,7 @@ public class PostgresModule : AbstractQuercusModule {
       return postgres;
 
     } catch (Exception ex) {
-      log.log(Level.FINE, ex.toString(), ex);
+      log.log(Level.FINE, ex.ToString(), ex);
       return null;
     }
   }
@@ -313,7 +313,7 @@ public class PostgresModule : AbstractQuercusModule {
         buffer.append(ch);
       }
 
-      string name = buffer.toString();
+      string name = buffer.ToString();
       buffer.clear();
 
       // skip until '='
@@ -384,7 +384,7 @@ public class PostgresModule : AbstractQuercusModule {
         }
       }
 
-      string value = buffer.toString();
+      string value = buffer.ToString();
 
       if (name.length() > 0)
         map.put(name, value);
@@ -436,7 +436,7 @@ public class PostgresModule : AbstractQuercusModule {
       return true;
 
     } catch (Exception ex) {
-      log.log(Level.FINE, ex.toString(), ex);
+      log.log(Level.FINE, ex.ToString(), ex);
       return false;
     }
   }
@@ -456,7 +456,7 @@ public class PostgresModule : AbstractQuercusModule {
       return ping ? PGSQL_CONNECTION_OK : PGSQL_CONNECTION_BAD;
 
     } catch (Exception ex) {
-      log.log(Level.FINE, ex.toString(), ex);
+      log.log(Level.FINE, ex.ToString(), ex);
       return PGSQL_CONNECTION_BAD;
     }
   }
@@ -577,7 +577,7 @@ public class PostgresModule : AbstractQuercusModule {
       return newArray;
 
     } catch (Exception ex) {
-      log.log(Level.FINE, ex.toString(), ex);
+      log.log(Level.FINE, ex.ToString(), ex);
       return null;
     }
   }
@@ -635,7 +635,7 @@ public class PostgresModule : AbstractQuercusModule {
         // line =
 //         "\\N\tNUMBER1col\t\\N\t\\N\tNUM" +
 //             "BER2col\tNUMBER3col\tNUMBER4col\t\\N\n";
-        string line = array.get(LongValue.create(i)).toString();
+        string line = array.get(LongValue.create(i)).ToString();
         line = line.substring(0, line.length() - 1);
 
         // "INSERT INTO " + tableName + " VALUES("
@@ -669,14 +669,14 @@ public class PostgresModule : AbstractQuercusModule {
           }
 
           // Insert record
-          pg_query(env, conn, sb.toString());
+          pg_query(env, conn, sb.ToString());
         }
       }
 
       return true;
 
     } catch (Exception ex) {
-      log.log(Level.FINE, ex.toString(), ex);
+      log.log(Level.FINE, ex.ToString(), ex);
       return false;
     }
   }
@@ -739,7 +739,7 @@ public class PostgresModule : AbstractQuercusModule {
           if (fieldValue instanceof NullValue) {
             sb.append(nullAs);
           } else {
-            sb.append(fieldValue.toString());
+            sb.append(fieldValue.ToString());
           }
         }
 
@@ -754,7 +754,7 @@ public class PostgresModule : AbstractQuercusModule {
       return newArray;
 
     } catch (Exception e) {      
-      log.log(Level.FINE, e.toString(), e);
+      log.log(Level.FINE, e.ToString(), e);
       return null;
     }
   }
@@ -773,7 +773,7 @@ public class PostgresModule : AbstractQuercusModule {
       return conn.getDbName();
 
     } catch (Exception e) {
-      log.log(Level.FINE, e.toString(), e);
+      log.log(Level.FINE, e.ToString(), e);
       return null;
     }
   }
@@ -814,9 +814,9 @@ public class PostgresModule : AbstractQuercusModule {
         } else {
           condition.append(" AND ");
         }
-        condition.append(k.toString());
+        condition.append(k.ToString());
         condition.append("='");
-        condition.append(v.toString());
+        condition.append(v.ToString());
         condition.append("'");
       }
 
@@ -826,12 +826,12 @@ public class PostgresModule : AbstractQuercusModule {
       query.append(" WHERE ");
       query.append(condition);
 
-      pg_query(env, conn, query.toString());
+      pg_query(env, conn, query.ToString());
 
       return true;
 
     } catch (Exception ex) {
-      log.log(Level.FINE, ex.toString(), ex);
+      log.log(Level.FINE, ex.ToString(), ex);
       return false;
     }
   }
@@ -868,7 +868,7 @@ public class PostgresModule : AbstractQuercusModule {
       return Postgres.pgRealEscapeString(env.createString(s));
 
     } catch (Exception ex) {
-      log.log(Level.FINE, ex.toString(), ex);
+      log.log(Level.FINE, ex.ToString(), ex);
       return null;
     }
   }
@@ -900,7 +900,7 @@ public class PostgresModule : AbstractQuercusModule {
       return conn.realEscapeString(data);
 
     } catch (Exception ex) {
-      log.log(Level.FINE, ex.toString(), ex);
+      log.log(Level.FINE, ex.ToString(), ex);
       return null;
     }
   }
@@ -924,7 +924,7 @@ public class PostgresModule : AbstractQuercusModule {
       return executeInternal(env, conn, pstmt, params);
 
     } catch (Exception ex) {
-      log.log(Level.FINE, ex.toString(), ex);
+      log.log(Level.FINE, ex.ToString(), ex);
       conn.setResultResource(null);
       return null;
     }
@@ -959,7 +959,7 @@ public class PostgresModule : AbstractQuercusModule {
       }
 
     } catch (Exception ex) {
-      log.log(Level.FINE, ex.toString(), ex);
+      log.log(Level.FINE, ex.ToString(), ex);
     }
 
     return null;
@@ -993,7 +993,7 @@ public class PostgresModule : AbstractQuercusModule {
       }
 
     } catch (Exception ex) {
-      log.log(Level.FINE, ex.toString(), ex);
+      log.log(Level.FINE, ex.ToString(), ex);
     }
 
     return null;
@@ -1052,7 +1052,7 @@ public class PostgresModule : AbstractQuercusModule {
       return result.fetchArray(env, resultType);
 
     } catch (Exception e) {
-      log.log(Level.FINE, e.toString(), e);
+      log.log(Level.FINE, e.ToString(), e);
       return BooleanValue.FALSE;
     }
   }
@@ -1077,7 +1077,7 @@ public class PostgresModule : AbstractQuercusModule {
 
     }
     catch (Exception e) {
-      log.log(Level.FINE, e.toString(), e);
+      log.log(Level.FINE, e.ToString(), e);
       return null;
     }
   }
@@ -1109,7 +1109,7 @@ public class PostgresModule : AbstractQuercusModule {
         return resultValue;
 
     } catch (Exception ex) {
-      log.log(Level.FINE, ex.toString(), ex);
+      log.log(Level.FINE, ex.ToString(), ex);
       return BooleanValue.FALSE;
     }
   }
@@ -1152,7 +1152,7 @@ public class PostgresModule : AbstractQuercusModule {
       return fetchRow.get(LongValue.create(fieldNumber));
 
     } catch (Exception ex) {
-      log.log(Level.FINE, ex.toString(), ex);
+      log.log(Level.FINE, ex.ToString(), ex);
       return BooleanValue.FALSE;
     }
   }
@@ -1186,7 +1186,7 @@ public class PostgresModule : AbstractQuercusModule {
       return result.fetchRow(env);
 
     } catch (Exception e) {
-      log.log(Level.FINE, e.toString(), e);
+      log.log(Level.FINE, e.ToString(), e);
       return null;
     }
   }
@@ -1240,7 +1240,7 @@ public class PostgresModule : AbstractQuercusModule {
         return LongValue.ZERO;
 
     } catch (Exception ex) {
-      log.log(Level.FINE, ex.toString(), ex);
+      log.log(Level.FINE, ex.ToString(), ex);
       return null;
     }
   }
@@ -1271,7 +1271,7 @@ public class PostgresModule : AbstractQuercusModule {
       return result.getFieldName(env, fieldNumber);
 
     } catch (Exception ex) {
-      log.log(Level.FINE, ex.toString(), ex);
+      log.log(Level.FINE, ex.ToString(), ex);
       return BooleanValue.FALSE;
     }
   }
@@ -1301,7 +1301,7 @@ public class PostgresModule : AbstractQuercusModule {
 
       return result.getColumnNumber(fieldName);
     } catch (Exception ex) {
-      log.log(Level.FINE, ex.toString(), ex);
+      log.log(Level.FINE, ex.ToString(), ex);
       return -1;
     }
   }
@@ -1330,7 +1330,7 @@ public class PostgresModule : AbstractQuercusModule {
 
       int row = rowNumber.toInt();
 
-      if (fieldNameOrNumber.toString().equals("-1")) {
+      if (fieldNameOrNumber.ToString().equals("-1")) {
         fieldNameOrNumber = rowNumber;
         row = -1;
       }
@@ -1352,7 +1352,7 @@ public class PostgresModule : AbstractQuercusModule {
       // See php/430p
       result.getResultSet().previous();
 
-      int len = value.toString().length();
+      int len = value.ToString().length();
 
       // XXX: check this...
       // if (typeName.equals("money")) {
@@ -1362,7 +1362,7 @@ public class PostgresModule : AbstractQuercusModule {
       return len;
 
     } catch (Exception ex) {
-      log.log(Level.FINE, ex.toString(), ex);
+      log.log(Level.FINE, ex.ToString(), ex);
       return -1;
     }
   }
@@ -1461,7 +1461,7 @@ public class PostgresModule : AbstractQuercusModule {
       return LongValue.create(size);
 
     } catch (Exception ex) {
-      log.log(Level.FINE, ex.toString(), ex);
+      log.log(Level.FINE, ex.ToString(), ex);
       return null;
     }
   }
@@ -1531,7 +1531,7 @@ public class PostgresModule : AbstractQuercusModule {
       }
 
     } catch (Exception ex) {
-      log.log(Level.FINE, ex.toString(), ex);
+      log.log(Level.FINE, ex.ToString(), ex);
     }
 
     return null;
@@ -1558,7 +1558,7 @@ public class PostgresModule : AbstractQuercusModule {
       return (StringValue) StringValue.create(typeName);
 
     } catch (Exception ex) {
-      log.log(Level.FINE, ex.toString(), ex);
+      log.log(Level.FINE, ex.ToString(), ex);
       return null;
     }
   }
@@ -1588,7 +1588,7 @@ public class PostgresModule : AbstractQuercusModule {
 
       return true;
     } catch (Exception ex) {
-      log.log(Level.FINE, ex.toString(), ex);
+      log.log(Level.FINE, ex.ToString(), ex);
 
       return true;
     }
@@ -1666,7 +1666,7 @@ public class PostgresModule : AbstractQuercusModule {
       return arrayValue;
 
     } catch (Exception ex) {
-      log.log(Level.FINE, ex.toString(), ex);
+      log.log(Level.FINE, ex.ToString(), ex);
       return null;
     }
   }
@@ -1695,7 +1695,7 @@ public class PostgresModule : AbstractQuercusModule {
       return pid.toInt();
 
     } catch (Exception ex) {
-      log.log(Level.FINE, ex.toString(), ex);
+      log.log(Level.FINE, ex.ToString(), ex);
       return -1;
     }
   }
@@ -1784,7 +1784,7 @@ public class PostgresModule : AbstractQuercusModule {
       return result;
 
     } catch (Exception ex) {
-      log.log(Level.FINE, ex.toString(), ex);
+      log.log(Level.FINE, ex.ToString(), ex);
       return null;
     }
   }
@@ -1803,7 +1803,7 @@ public class PostgresModule : AbstractQuercusModule {
       return conn.getHost();
 
     } catch (Exception ex) {
-      log.log(Level.FINE, ex.toString(), ex);
+      log.log(Level.FINE, ex.ToString(), ex);
       return null;
     }
   }
@@ -1839,8 +1839,8 @@ public class PostgresModule : AbstractQuercusModule {
           values.append("','");
           names.append(",");
         }
-        values.append(v.toString());
-        names.append(k.toString());
+        values.append(v.ToString());
+        names.append(k.ToString());
       }
 
       StringBuilder query = new StringBuilder();
@@ -1852,12 +1852,12 @@ public class PostgresModule : AbstractQuercusModule {
       query.append(values);
       query.append("')");
 
-      pg_query(env, conn, query.toString());
+      pg_query(env, conn, query.ToString());
 
       return true;
 
     } catch (Exception ex) {
-      log.log(Level.FINE, ex.toString(), ex);
+      log.log(Level.FINE, ex.ToString(), ex);
       return false;
     }
   }
@@ -1877,7 +1877,7 @@ public class PostgresModule : AbstractQuercusModule {
       return conn.error(env);
 
     } catch (Exception ex) {
-      log.log(Level.FINE, ex.toString(), ex);
+      log.log(Level.FINE, ex.ToString(), ex);
       return null;
     }
   }
@@ -1906,12 +1906,12 @@ public class PostgresModule : AbstractQuercusModule {
       SQLWarning warning = conn.getWarnings();
 
       if (warning != null)
-        return warning.toString();
+        return warning.ToString();
       else
         return null;
 
     } catch (Exception ex) {
-      log.log(Level.FINE, ex.toString(), ex);
+      log.log(Level.FINE, ex.ToString(), ex);
       return null;
     }
   }
@@ -1938,13 +1938,13 @@ public class PostgresModule : AbstractQuercusModule {
       Method method = cl.getDeclaredMethod("getLastOID", null);
 
       int oid = Integer.parseInt(
-          method.invoke(stmt, new Object[] {}).toString());
+          method.invoke(stmt, new Object[] {}).ToString());
 
       if (oid > 0)
         return "" + oid;
 
     } catch (Exception ex) {
-      log.log(Level.FINE, ex.toString(), ex);
+      log.log(Level.FINE, ex.ToString(), ex);
     }
 
     return null;
@@ -1974,7 +1974,7 @@ public class PostgresModule : AbstractQuercusModule {
       return true;
 
     } catch (Exception ex) {
-      log.log(Level.FINE, ex.toString(), ex);
+      log.log(Level.FINE, ex.ToString(), ex);
       return false;
     }
   }
@@ -2025,14 +2025,14 @@ public class PostgresModule : AbstractQuercusModule {
 
       Object oidObj = method.invoke(lobManager, new Object[] {});
 
-      oid = Integer.parseInt(oidObj.toString());
+      oid = Integer.parseInt(oidObj.ToString());
 
       // oid = lobManager.create();
 
       return LongValue.create(oid);
 
     } catch (Exception ex) {
-      log.log(Level.FINE, ex.toString(), ex);
+      log.log(Level.FINE, ex.ToString(), ex);
       return null;
     }
   }
@@ -2106,7 +2106,7 @@ public class PostgresModule : AbstractQuercusModule {
       return true;
 
     } catch (Exception ex) {
-      log.log(Level.FINE, ex.toString(), ex);
+      log.log(Level.FINE, ex.ToString(), ex);
       return false;
     }
   }
@@ -2156,7 +2156,7 @@ public class PostgresModule : AbstractQuercusModule {
       }
 
     } catch (Exception ex) {
-      log.log(Level.FINE, ex.toString(), ex);
+      log.log(Level.FINE, ex.ToString(), ex);
     }
 
     return null;
@@ -2229,7 +2229,7 @@ public class PostgresModule : AbstractQuercusModule {
 
     } catch (Exception ex) {
       env.warning(L.l("Unable to open PostgreSQL large object"));
-      log.log(Level.FINE, ex.toString(), ex);
+      log.log(Level.FINE, ex.ToString(), ex);
       return null;
     }
   }
@@ -2261,7 +2261,7 @@ public class PostgresModule : AbstractQuercusModule {
       }
 
     } catch (Exception ex) {
-      log.log(Level.FINE, ex.toString(), ex);
+      log.log(Level.FINE, ex.ToString(), ex);
     }
 
     return null;
@@ -2308,7 +2308,7 @@ public class PostgresModule : AbstractQuercusModule {
         @is.close();
       }
     } catch (Exception ex) {
-      log.log(Level.FINE, ex.toString(), ex);
+      log.log(Level.FINE, ex.ToString(), ex);
       return null;
     }
   }
@@ -2358,7 +2358,7 @@ public class PostgresModule : AbstractQuercusModule {
       return true;
 
     } catch (Exception ex) {
-      log.log(Level.FINE, ex.toString(), ex);
+      log.log(Level.FINE, ex.ToString(), ex);
       return false;
     }
   }
@@ -2376,10 +2376,10 @@ public class PostgresModule : AbstractQuercusModule {
 
       Object obj = method.invoke(largeObject, new Object[] {});
 
-      return Integer.parseInt(obj.toString());
+      return Integer.parseInt(obj.ToString());
 
     } catch (Exception ex) {
-      log.log(Level.FINE, ex.toString(), ex);
+      log.log(Level.FINE, ex.ToString(), ex);
       return -1;
     }
   }
@@ -2417,7 +2417,7 @@ public class PostgresModule : AbstractQuercusModule {
       return true;
 
     } catch (Exception ex) {
-      log.log(Level.FINE, ex.toString(), ex);
+      log.log(Level.FINE, ex.ToString(), ex);
       return false;
     }
   }
@@ -2463,7 +2463,7 @@ public class PostgresModule : AbstractQuercusModule {
       return LongValue.create(written);
 
     } catch (Exception ex) {
-      log.log(Level.FINE, ex.toString(), ex);
+      log.log(Level.FINE, ex.ToString(), ex);
       return null;
     }
   }
@@ -2503,7 +2503,7 @@ public class PostgresModule : AbstractQuercusModule {
       return result.getFieldCount();
 
     } catch (Exception ex) {
-      log.log(Level.FINE, ex.toString(), ex);
+      log.log(Level.FINE, ex.ToString(), ex);
       return -1;
     }
   }
@@ -2539,7 +2539,7 @@ public class PostgresModule : AbstractQuercusModule {
       }
 
     } catch (Exception ex) {
-      log.log(Level.FINE, ex.toString(), ex);
+      log.log(Level.FINE, ex.ToString(), ex);
     }
 
     return LongValue.create(numRows);
@@ -2582,7 +2582,7 @@ public class PostgresModule : AbstractQuercusModule {
       if (value == null || value.isNull())
         return BooleanValue.FALSE;
 
-      if (paramName.toString().equals("server_encoding")) {
+      if (paramName.ToString().equals("server_encoding")) {
         if (value.equals(env.createString("UNICODE")))
           value = env.createString("UTF8");
       }
@@ -2590,7 +2590,7 @@ public class PostgresModule : AbstractQuercusModule {
       return value;
 
     } catch (Exception ex) {
-      log.log(Level.FINE, ex.toString(), ex);
+      log.log(Level.FINE, ex.ToString(), ex);
       return BooleanValue.FALSE;
     }
   }
@@ -2631,7 +2631,7 @@ public class PostgresModule : AbstractQuercusModule {
       return pg_query(env, conn, "SELECT 1") != null;
 
     } catch (Exception ex) {
-      log.log(Level.FINE, ex.toString(), ex);
+      log.log(Level.FINE, ex.ToString(), ex);
       return false;
     }
   }
@@ -2653,7 +2653,7 @@ public class PostgresModule : AbstractQuercusModule {
       return (StringValue) StringValue.create(conn.getPort());
 
     } catch (Exception ex) {
-      log.log(Level.FINE, ex.toString(), ex);
+      log.log(Level.FINE, ex.ToString(), ex);
       return null;
     }
   }
@@ -2677,7 +2677,7 @@ public class PostgresModule : AbstractQuercusModule {
 
       return pstmt;
     } catch (Exception ex) {
-      log.log(Level.FINE, ex.toString(), ex);
+      log.log(Level.FINE, ex.ToString(), ex);
       return null;
     }
   }
@@ -2710,7 +2710,7 @@ public class PostgresModule : AbstractQuercusModule {
       return true;
 
     } catch (Exception ex) {
-      log.log(Level.FINE, ex.toString(), ex);
+      log.log(Level.FINE, ex.ToString(), ex);
       return false;
     }
 
@@ -2737,7 +2737,7 @@ public class PostgresModule : AbstractQuercusModule {
       return null;
 
     } catch (Exception ex) {
-      log.log(Level.FINE, ex.toString(), ex);
+      log.log(Level.FINE, ex.ToString(), ex);
       return null;
     }
   }
@@ -2812,7 +2812,7 @@ public class PostgresModule : AbstractQuercusModule {
       return result;
 
     } catch (Exception ex) {
-      log.log(Level.FINE, ex.toString(), ex);
+      log.log(Level.FINE, ex.ToString(), ex);
     }
 
     return null;
@@ -2912,10 +2912,10 @@ public class PostgresModule : AbstractQuercusModule {
           return NullValue.NULL;
       }
 
-      return StringValue.create(errorField.toString());
+      return StringValue.create(errorField.ToString());
 
     } catch (Exception ex) {
-      log.log(Level.FINE, ex.toString(), ex);
+      log.log(Level.FINE, ex.ToString(), ex);
       return NullValue.NULL;
     }
   }
@@ -2933,7 +2933,7 @@ public class PostgresModule : AbstractQuercusModule {
       else
         return null;
     } catch (Exception ex) {
-      log.log(Level.FINE, ex.toString(), ex);
+      log.log(Level.FINE, ex.ToString(), ex);
       return null;
     }
   }
@@ -2952,7 +2952,7 @@ public class PostgresModule : AbstractQuercusModule {
       return result.seek(env, offset);
 
     } catch (Exception ex) {
-      log.log(Level.FINE, ex.toString(), ex);
+      log.log(Level.FINE, ex.ToString(), ex);
       return false;
     }
   }
@@ -2988,7 +2988,7 @@ public class PostgresModule : AbstractQuercusModule {
       }
 
     } catch (Exception ex) {
-      log.log(Level.FINE, ex.toString(), ex);
+      log.log(Level.FINE, ex.ToString(), ex);
     }
 
     return -1;
@@ -3020,9 +3020,9 @@ public class PostgresModule : AbstractQuercusModule {
         } else {
           whereClause.append(" AND ");
         }
-        whereClause.append(k.toString()).append("='")
-            .append(v.toString()).append("'");
-        // string pi = conn.realEscapeString(p).toString();
+        whereClause.append(k.ToString()).append("='")
+            .append(v.ToString()).append("'");
+        // string pi = conn.realEscapeString(p).ToString();
         // pi = pi.replaceAll("\\\\", "\\\\\\\\");
       }
 
@@ -3030,12 +3030,12 @@ public class PostgresModule : AbstractQuercusModule {
       query.append("SELECT * FROM ").append(tableName)
           .append(" WHERE ").append(whereClause);
 
-      PostgresResult result = pg_query(env, conn, query.toString());
+      PostgresResult result = pg_query(env, conn, query.ToString());
 
       return pg_fetch_all(env, result);
 
     } catch (Exception ex) {
-      log.log(Level.FINE, ex.toString(), ex);
+      log.log(Level.FINE, ex.ToString(), ex);
       return null;
     }
   }
@@ -3062,7 +3062,7 @@ public class PostgresModule : AbstractQuercusModule {
       }
 
     } catch (Exception ex) {
-      log.log(Level.FINE, ex.toString(), ex);
+      log.log(Level.FINE, ex.ToString(), ex);
     }
 
     return false;
@@ -3090,7 +3090,7 @@ public class PostgresModule : AbstractQuercusModule {
       }
 
     } catch (Exception ex) {
-      log.log(Level.FINE, ex.toString(), ex);
+      log.log(Level.FINE, ex.ToString(), ex);
     }
 
     return false;
@@ -3116,8 +3116,8 @@ public class PostgresModule : AbstractQuercusModule {
       int sz = arrayImpl.size();
 
       for (int i=0; i<sz; i++) {
-        StringValue p = arrayImpl.get(LongValue.create(i)).toStringValue();
-        string pi = conn.realEscapeString(p).toString();
+        StringValue p = arrayImpl.get(LongValue.create(i)).ToStringValue();
+        string pi = conn.realEscapeString(p).ToString();
         pi = pi.replaceAll("\\\\", "\\\\\\\\");
         query = query.replaceAll("\\$"+(i+1), "\\'"+pi+"\\'");
       }
@@ -3128,7 +3128,7 @@ public class PostgresModule : AbstractQuercusModule {
       */
 
     } catch (Exception ex) {
-      log.log(Level.FINE, ex.toString(), ex);
+      log.log(Level.FINE, ex.ToString(), ex);
       return false;
     }
   }
@@ -3155,7 +3155,7 @@ public class PostgresModule : AbstractQuercusModule {
       return true;
 
     } catch (Exception ex) {
-      log.log(Level.FINE, ex.toString(), ex);
+      log.log(Level.FINE, ex.ToString(), ex);
     }
 
     return false;
@@ -3196,7 +3196,7 @@ public class PostgresModule : AbstractQuercusModule {
 
       Value arr = pg_fetch_row(env, result, LongValue.ZERO);
 
-      string prevVerbosity = arr.get(LongValue.ZERO).toString();
+      string prevVerbosity = arr.get(LongValue.ZERO).ToString();
 
       switch (intVerbosity) {
       case PGSQL_ERRORS_TERSE:
@@ -3220,7 +3220,7 @@ public class PostgresModule : AbstractQuercusModule {
       }
 
     } catch (Exception ex) {
-      log.log(Level.FINE, ex.toString(), ex);
+      log.log(Level.FINE, ex.ToString(), ex);
       return -1;
     }
   }
@@ -3280,7 +3280,7 @@ public class PostgresModule : AbstractQuercusModule {
       return new String((byte[]) method.invoke(cl, new Object[] {dataBytes}));
 
     } catch (Exception ex) {
-      log.log(Level.FINE, ex.toString(), ex);
+      log.log(Level.FINE, ex.ToString(), ex);
       return null;
     }
   }
@@ -3332,9 +3332,9 @@ public class PostgresModule : AbstractQuercusModule {
         } else {
           values.append(", ");
         }
-        values.append(k.toString());
+        values.append(k.ToString());
         values.append("='");
-        values.append(v.toString());
+        values.append(v.ToString());
         values.append("'");
       }
 
@@ -3350,9 +3350,9 @@ public class PostgresModule : AbstractQuercusModule {
         } else {
           whereClause.append(" AND ");
         }
-        whereClause.append(k.toString());
+        whereClause.append(k.ToString());
         whereClause.append("='");
-        whereClause.append(v.toString());
+        whereClause.append(v.ToString());
         whereClause.append("'");
       }
 
@@ -3364,12 +3364,12 @@ public class PostgresModule : AbstractQuercusModule {
       query.append(" WHERE ");
       query.append(whereClause);
 
-      pg_query(env, conn, query.toString());
+      pg_query(env, conn, query.ToString());
 
       return true;
 
     } catch (Exception ex) {
-      log.log(Level.FINE, ex.toString(), ex);
+      log.log(Level.FINE, ex.ToString(), ex);
       return false;
     }
   }
@@ -3397,7 +3397,7 @@ public class PostgresModule : AbstractQuercusModule {
 
       return result;
     } catch (Exception ex) {
-      log.log(Level.FINE, ex.toString(), ex);
+      log.log(Level.FINE, ex.ToString(), ex);
       return null;
     }
   }
@@ -3452,7 +3452,7 @@ public class PostgresModule : AbstractQuercusModule {
       }
 
     } catch (Exception ex) {
-      log.log(Level.FINE, ex.toString(), ex);
+      log.log(Level.FINE, ex.ToString(), ex);
       return null;
     }
   }
@@ -3483,7 +3483,7 @@ public class PostgresModule : AbstractQuercusModule {
       return written;
 
     } catch (Exception ex) {
-      log.log(Level.FINE, ex.toString(), ex);
+      log.log(Level.FINE, ex.ToString(), ex);
       return -1;
     }
   }

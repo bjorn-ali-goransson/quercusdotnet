@@ -201,7 +201,7 @@ public class SessionModule : AbstractQuercusModule
     string oldValue;
 
     if (sessionIdValue != null) {
-      oldValue = sessionIdValue.toString();
+      oldValue = sessionIdValue.ToString();
     }
     else {
       oldValue = "";
@@ -324,7 +324,7 @@ public class SessionModule : AbstractQuercusModule
     nameV = nameV.toValue();
 
     if (nameV instanceof StringValue) {
-      string name = nameV.toString();
+      string name = nameV.ToString();
 
       Value var = env.getGlobalVar(name);
 
@@ -374,11 +374,11 @@ public class SessionModule : AbstractQuercusModule
     env.setIni("session.cookie_lifetime", String.valueOf(lifetime));
 
     if (path.isset()) {
-      env.setIni("session.cookie_path", path.toString());
+      env.setIni("session.cookie_path", path.ToString());
     }
 
     if (domain.isset()) {
-      env.setIni("session.cookie_domain", domain.toString());
+      env.setIni("session.cookie_domain", domain.ToString());
     }
 
     if (isSecure.isset()) {
@@ -448,12 +448,12 @@ public class SessionModule : AbstractQuercusModule
 
     env.removeConstant("SID");
 
-    string cookieName = env.getIni("session.name").toString();
+    string cookieName = env.getIni("session.name").ToString();
     bool generateCookie = true;
     bool create = false;
 
     if (callback != null) {
-      string savePath = env.getIni("session.save_path").toString();
+      string savePath = env.getIni("session.save_path").ToString();
 
       if (savePath == null || "".equals(savePath))
         callback.open(env, env.getWorkDir().getPath(), cookieName);
@@ -466,7 +466,7 @@ public class SessionModule : AbstractQuercusModule
     //
     if (env.getIni("session.use_cookies").toBoolean()) {
       if (sessionIdValue != null)
-        sessionId = sessionIdValue.toString();
+        sessionId = sessionIdValue.ToString();
 
       if (sessionId == null || "".equals(sessionId)) {
         QuercusCookie []cookies = env.getRequest().getCookies();
@@ -492,7 +492,7 @@ public class SessionModule : AbstractQuercusModule
         && ! env.getIniBoolean("session.use_only_cookies")) {
       if (sessionId == null) {
         if (sessionIdValue != null)
-          sessionId = sessionIdValue.toString();
+          sessionId = sessionIdValue.ToString();
 
         if (sessionId == null || "".equals(sessionId))
           sessionId = env.getRequest().getParameter(cookieName);
@@ -579,7 +579,7 @@ public class SessionModule : AbstractQuercusModule
   {
     QuercusHttpServletResponse response = env.getResponse();
 
-    string cookieName = env.getIni("session.name").toString();
+    string cookieName = env.getIni("session.name").ToString();
 
     StringValue cookieValue
       = env.createString(cookieName + '=' + sessionId);
@@ -597,7 +597,7 @@ public class SessionModule : AbstractQuercusModule
     }
     else {
       Value path = env.getIni("session.cookie_path");
-      cookie.setPath(path.toString());
+      cookie.setPath(path.ToString());
 
       Value maxAge = env.getIni("session.cookie_lifetime");
 
@@ -609,7 +609,7 @@ public class SessionModule : AbstractQuercusModule
       // this @is for 3rd party servlet containers that don't check the domain
       // before sending the cookie
       if (domain.length() > 0) {
-        cookie.setDomain(domain.toString());
+        cookie.setDomain(domain.ToString());
       }
 
       Value secure = env.getIni("session.cookie_secure");

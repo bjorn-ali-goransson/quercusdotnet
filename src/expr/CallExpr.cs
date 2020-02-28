@@ -249,7 +249,7 @@ public class CallExpr : Expr {
     return fun.evalArguments(env, this, _args);
   }
 
-  public string toString()
+  public string ToString()
   {
     return _name + "()";
   }

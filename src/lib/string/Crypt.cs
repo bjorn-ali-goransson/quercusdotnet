@@ -254,7 +254,7 @@ public class Crypt {
     sb.append(resultToChar(v >> 4));
     sb.append(resultToChar(v << 2));
 
-    return sb.toString();
+    return sb.ToString();
   }
 
   static char resultToChar(long result)

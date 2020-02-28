@@ -642,7 +642,7 @@ public class PDO : EnvCleanup {
       }
     }
 
-    return buf.toString();
+    return buf.ToString();
   }
 
   /**
@@ -707,7 +707,7 @@ public class PDO : EnvCleanup {
 
       case MYSQL_ATTR_INIT_COMMAND:
       {
-        return setInitQuery(value.toString());
+        return setInitQuery(value.ToString());
       }
 
     }
@@ -822,7 +822,7 @@ public class PDO : EnvCleanup {
       return false;
     }
 
-    _statementClassName = className.toStringValue(env).toString();
+    _statementClassName = className.ToStringValue(env).ToString();
 
     Value argV = value.get(LongValue.ONE);
 
@@ -1056,7 +1056,7 @@ public class PDO : EnvCleanup {
 
       ds = (DataSource) ic.lookup(dsn);
     } catch (NamingException e) {
-      log.log(Level.FINE, e.toString(), e);
+      log.log(Level.FINE, e.ToString(), e);
     }
 
     if (ds == null) {
@@ -1102,7 +1102,7 @@ public class PDO : EnvCleanup {
     }
 
     try {
-      DataSource ds = env.getDataSource(driver, dsn.toString());
+      DataSource ds = env.getDataSource(driver, dsn.ToString());
 
       return new DataSourceConnection(env, ds, user, pass);
     }
@@ -1143,7 +1143,7 @@ public class PDO : EnvCleanup {
         sb.append(ch);
       }
 
-      string name = sb.toString();
+      string name = sb.ToString();
       sb.setLength(0);
 
       for (; i < length && ((ch = dsn.charAt(i)) == ' ' || ch == '='); i++) {
@@ -1153,7 +1153,7 @@ public class PDO : EnvCleanup {
         sb.append(ch);
       }
 
-      string value = sb.toString();
+      string value = sb.ToString();
       sb.setLength(0);
 
       attr.put(name, value);
@@ -1162,7 +1162,7 @@ public class PDO : EnvCleanup {
     return attr;
   }
 
-  public string toString()
+  public string ToString()
   {
     // do not show password!
     if (_dsn == null)
@@ -1211,7 +1211,7 @@ public class PDO : EnvCleanup {
 
     str.append("]");
 
-    return str.toString();
+    return str.ToString();
   }
 }
 }

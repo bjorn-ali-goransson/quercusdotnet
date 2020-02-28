@@ -1172,7 +1172,7 @@ public class PDF
     return true;
   }
 
-  public string toString()
+  public string ToString()
   {
     return "PDF[]";
   }

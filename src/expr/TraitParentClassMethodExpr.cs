@@ -126,7 +126,7 @@ public class TraitParentClassMethodExpr : AbstractMethodExpr {
     }
   }
 
-  public string toString()
+  public string ToString()
   {
     return "parent::" + _methodName + "()";
   }

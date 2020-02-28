@@ -70,7 +70,7 @@ public class InternalAutoloadCallback
       return null;
     }
 
-    string urlStr = url.toString();
+    string urlStr = url.ToString();
 
     // for JBoss, #5606
     // XXX: use this for resin and no-resin?

@@ -282,7 +282,7 @@ public class ApcModule : AbstractQuercusModule
       return false;
 
     for (Map.Entry<Value,Value> entry : array.entrySet()) {
-      env.addConstant(entry.getKey().toStringValue(env),
+      env.addConstant(entry.getKey().ToStringValue(env),
                       entry.getValue().copy(env),
                       ! caseSensitive);
     }

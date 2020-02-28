@@ -101,7 +101,7 @@ abstract public class Value : java.io.Serializable
       return cls;
     }
 
-    string name = toString();
+    string name = ToString();
 
     return env.getClass(name);
   }
@@ -365,7 +365,7 @@ abstract public class Value : java.io.Serializable
   /**
    * Cost to convert to a string
    */
-  public int toStringMarshalCost()
+  public int ToStringMarshalCost()
   {
     return  Marshal.Marshal.COST_TO_STRING;
   }
@@ -405,7 +405,7 @@ abstract public class Value : java.io.Serializable
   /**
    * Cost to convert to a StringValue
    */
-  public int toStringValueMarshalCost()
+  public int ToStringValueMarshalCost()
   {
     return  Marshal.Marshal.COST_TO_STRING + 1;
   }
@@ -479,7 +479,7 @@ abstract public class Value : java.io.Serializable
     else if (isNumberConvertible() || rValue.isNumberConvertible())
       return toDouble() == rValue.toDouble();
     else
-      return toString().equals(rValue.toString());
+      return ToString().equals(rValue.ToString());
   }
 
   /**
@@ -618,7 +618,7 @@ abstract public class Value : java.io.Serializable
 
   public static double toDouble(CharSequence s)
   {
-    return StringValue.toDouble(s.toString());
+    return StringValue.toDouble(s.ToString());
   }
 
   /**
@@ -658,7 +658,7 @@ abstract public class Value : java.io.Serializable
    */
   public char toChar()
   {
-    string s = toString();
+    string s = ToString();
 
     if (s == null || s.length() < 1)
       return 0;
@@ -671,9 +671,9 @@ abstract public class Value : java.io.Serializable
    *
    * @param env
    */
-  public StringValue toString(Env env)
+  public StringValue ToString(Env env)
   {
-    return toStringValue(env);
+    return ToStringValue(env);
   }
 
   /**
@@ -825,7 +825,7 @@ abstract public class Value : java.io.Serializable
    */
   public string toJavaString()
   {
-    return toString();
+    return ToString();
   }
 
   /**
@@ -887,7 +887,7 @@ abstract public class Value : java.io.Serializable
   public URL toJavaURL(Env env)
   {
     try {
-      return new URL(toString());
+      return new URL(ToString());
     }
     catch (MalformedURLException e) {
       env.warning(e.getMessage());
@@ -900,7 +900,7 @@ abstract public class Value : java.io.Serializable
    */
   public Enum toJavaEnum(Env env, Class cls)
   {
-    string s = toString();
+    string s = ToString();
 
     if (s == null) {
       return null;
@@ -921,7 +921,7 @@ abstract public class Value : java.io.Serializable
    */
   public BigDecimal toBigDecimal()
   {
-    return new BigDecimal(toString());
+    return new BigDecimal(ToString());
   }
 
   /**
@@ -929,7 +929,7 @@ abstract public class Value : java.io.Serializable
    */
   public BigInteger toBigInteger()
   {
-    return new BigInteger(toString());
+    return new BigInteger(ToString());
   }
 
   /**
@@ -1076,17 +1076,17 @@ abstract public class Value : java.io.Serializable
   /**
    * Converts to a StringValue.
    */
-  public StringValue toStringValue()
+  public StringValue ToStringValue()
   {
-    return toStringValue(Env.getInstance());
+    return ToStringValue(Env.getInstance());
   }
 
   /**
    * Converts to a StringValue.
    */
-  public StringValue toStringValue(Env env)
+  public StringValue ToStringValue(Env env)
   {
-    return toStringBuilder(env);
+    return ToStringBuilder(env);
   }
 
   /**
@@ -1115,7 +1115,7 @@ abstract public class Value : java.io.Serializable
   public StringValue toUnicodeValue(Env env)
   {
     // php/0ci0
-    return new UnicodeBuilderValue(env.createString(toString()));
+    return new UnicodeBuilderValue(env.createString(ToString()));
   }
 
   /**
@@ -1176,21 +1176,21 @@ abstract public class Value : java.io.Serializable
    */
   public InputStream toInputStream()
   {
-    return new CharSequenceInputStream(toString());
+    return new CharSequenceInputStream(ToString());
   }
 
   /**
    * Converts to a string builder
    */
-  public StringValue toStringBuilder()
+  public StringValue ToStringBuilder()
   {
-    return toStringBuilder(Env.getInstance());
+    return ToStringBuilder(Env.getInstance());
   }
 
   /**
    * Converts to a string builder
    */
-  public StringValue toStringBuilder(Env env)
+  public StringValue ToStringBuilder(Env env)
   {
     return env.createUnicodeBuilder().appendUnicode(this);
   }
@@ -1198,17 +1198,17 @@ abstract public class Value : java.io.Serializable
   /**
    * Converts to a string builder
    */
-  public StringValue toStringBuilder(Env env, Value value)
+  public StringValue ToStringBuilder(Env env, Value value)
   {
-    return toStringBuilder(env).appendUnicode(value);
+    return ToStringBuilder(env).appendUnicode(value);
   }
 
   /**
    * Converts to a string builder
    */
-  public StringValue toStringBuilder(Env env, StringValue value)
+  public StringValue ToStringBuilder(Env env, StringValue value)
   {
-    return toStringBuilder(env).appendUnicode(value);
+    return ToStringBuilder(env).appendUnicode(value);
   }
 
   /**
@@ -1216,7 +1216,7 @@ abstract public class Value : java.io.Serializable
    */
   public StringValue copyStringBuilder()
   {
-    return toStringBuilder();
+    return ToStringBuilder();
   }
 
   /**
@@ -1258,9 +1258,9 @@ abstract public class Value : java.io.Serializable
   {
     if (! isOptional) {
       env.warning(L.l("Callable: '{0}' @is not a valid callable argument",
-                      toString()));
+                      ToString()));
 
-      return new CallbackError(toString());
+      return new CallbackError(ToString());
     }
     else {
       return null;
@@ -1277,7 +1277,7 @@ abstract public class Value : java.io.Serializable
    */
   public StringValue appendTo(UnicodeBuilderValue sb)
   {
-    return sb.append(toString());
+    return sb.append(ToString());
   }
 
   /**
@@ -1285,7 +1285,7 @@ abstract public class Value : java.io.Serializable
    */
   public StringValue appendTo(StringBuilderValue sb)
   {
-    return sb.append(toString());
+    return sb.append(ToString());
   }
 
   /**
@@ -1293,7 +1293,7 @@ abstract public class Value : java.io.Serializable
    */
   public StringValue appendTo(BinaryBuilderValue sb)
   {
-    return sb.appendBytes(toString());
+    return sb.appendBytes(ToString());
   }
 
   /**
@@ -1301,7 +1301,7 @@ abstract public class Value : java.io.Serializable
    */
   public StringValue appendTo(LargeStringBuilderValue sb)
   {
-    return sb.append(toString());
+    return sb.append(ToString());
   }
 
   /**
@@ -2218,7 +2218,7 @@ abstract public class Value : java.io.Serializable
    */
   public int length()
   {
-    return toStringValue().length();
+    return ToStringValue().length();
   }
 
   //
@@ -2940,7 +2940,7 @@ abstract public class Value : java.io.Serializable
    */
   public void print(Env env)
   {
-    env.print(toString(env));
+    env.print(ToString(env));
   }
 
   /**
@@ -2950,7 +2950,7 @@ abstract public class Value : java.io.Serializable
   public void print(Env env, WriteStream out)
   {
     try {
-      @out.print(toString(env));
+      @out.print(ToString(env));
     } catch (IOException e) {
       throw new QuercusRuntimeException(e);
     }
@@ -3093,12 +3093,12 @@ abstract public class Value : java.io.Serializable
 
   public string toInternString()
   {
-    return toString().intern();
+    return ToString().intern();
   }
 
   public string toDebugString()
   {
-    return toString();
+    return ToString();
   }
 
   public void varDump(Env env,
@@ -3128,7 +3128,7 @@ abstract public class Value : java.io.Serializable
                              IdentityHashMap<Value, String> valueSet)
     
   {
-    @out.print("resource(" + toString() + ")");
+    @out.print("resource(" + ToString() + ")");
   }
 
   public void printR(Env env,
@@ -3158,7 +3158,7 @@ abstract public class Value : java.io.Serializable
                             IdentityHashMap<Value, String> valueSet)
     
   {
-    @out.print(toString());
+    @out.print(ToString());
   }
 
   protected void printDepth(WriteStream @out, int depth)

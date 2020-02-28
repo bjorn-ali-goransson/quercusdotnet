@@ -84,7 +84,7 @@ public class BinaryAndExpr : AbstractBinaryExpr {
     return _left.evalBoolean(env) && _right.evalBoolean(env);
   }
 
-  public string toString()
+  public string ToString()
   {
     return "(" + _left + " && " + _right + ")";
   }

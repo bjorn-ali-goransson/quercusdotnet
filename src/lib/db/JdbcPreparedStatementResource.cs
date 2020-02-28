@@ -203,10 +203,10 @@ public class JdbcPreparedStatementResource
       else if (type == ColumnType.BLOB) {
         // XXX: blob needs to be redone
         // Currently treated as a string
-        _preparedStmt.setString(i + 1, value.toString());
+        _preparedStmt.setString(i + 1, value.ToString());
       }
       else if (type == ColumnType.STRING) {        
-        _preparedStmt.setString(i + 1, value.toString());
+        _preparedStmt.setString(i + 1, value.ToString());
       }
       else if (type == ColumnType.LOB) {
         setLobParameter(env, i + 1, value);
@@ -470,7 +470,7 @@ public class JdbcPreparedStatementResource
         // See php/43p8.
         string typeName = pmd.getParameterTypeName(i);
         if (typeName.equals("money")) {
-          string s = param.toString();
+          string s = param.ToString();
 
           if (s.length() == 0) {
             throw new IllegalArgumentException(

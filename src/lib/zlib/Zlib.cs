@@ -217,7 +217,7 @@ public class Zlib {
       int ch = _in.read();
 
       if (ch >= 0)
-        return env.createString(Character.toString((char) ch));
+        return env.createString(Character.ToString((char) ch));
       else
         return BooleanValue.FALSE;
     } catch (IOException e) {
@@ -485,7 +485,7 @@ public class Zlib {
     return Deflater.DEFAULT_STRATEGY;
   }
 
-  public string toString()
+  public string ToString()
   {
     return "Zlib[]";
   }

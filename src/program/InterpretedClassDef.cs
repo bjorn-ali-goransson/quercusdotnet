@@ -90,7 +90,7 @@ public class InterpretedClassDef : ClassDef
   protected AbstractFunction _unserializeFun;
 
   protected AbstractFunction _invoke;
-  protected AbstractFunction _toString;
+  protected AbstractFunction _ToString;
 
   protected int _parseIndex;
 
@@ -298,8 +298,8 @@ public class InterpretedClassDef : ClassDef
     if (_invoke != null)
       cl.setInvoke(_invoke);
 
-    if (_toString != null)
-      cl.setToString(_toString);
+    if (_ToString != null)
+      cl.setToString(_ToString);
 
     if (_isset != null)
       cl.setIsset(_isset);
@@ -434,8 +434,8 @@ public class InterpretedClassDef : ClassDef
     else if (name.equalsString("__invoke")) {
       _invoke = fun;
     }
-    else if (name.equalsString("__toString")) {
-      _toString = fun;
+    else if (name.equalsString("__ToString")) {
+      _ToString = fun;
     }
     else if (name.equalsString("__isset")) {
       _isset = fun;
@@ -459,7 +459,7 @@ public class InterpretedClassDef : ClassDef
    */
   public void addStaticValue(Value name, Expr value)
   {
-    _staticFieldMap.put(name.toStringValue(), new StaticFieldEntry(value));
+    _staticFieldMap.put(name.ToStringValue(), new StaticFieldEntry(value));
   }
 
   /**
@@ -467,7 +467,7 @@ public class InterpretedClassDef : ClassDef
    */
   public void addStaticValue(Value name, Expr value, string comment)
   {
-    _staticFieldMap.put(name.toStringValue(), new StaticFieldEntry(value, comment));
+    _staticFieldMap.put(name.ToStringValue(), new StaticFieldEntry(value, comment));
   }
 
   /**

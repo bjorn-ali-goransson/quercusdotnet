@@ -367,7 +367,7 @@ public class Function : AbstractFunction {
             && arg.getDefault() instanceof ParamRequiredExpr) {
           env.checkTypeHint(var,
                             arg.getExpectedClass(),
-                            arg.getName().toString(),
+                            arg.getName().ToString(),
                             getName());
         }
 
@@ -479,7 +479,7 @@ public class Function : AbstractFunction {
     return _info.isUsesSymbolTable() || _info.isVariableVar();
   }
 
-  public string toString()
+  public string ToString()
   {
     return getClass().getSimpleName() + "[" + _name + "]";
   }

@@ -48,7 +48,7 @@ public class PhpProtocolWrapper : ProtocolWrapper {
   public BinaryStream fopen(Env env, StringValue pathV, StringValue mode,
                             LongValue options)
   {
-    string path = pathV.toString();
+    string path = pathV.ToString();
 
     if (path.equals("php://output")) {
       return new PhpBinaryOutput(env);

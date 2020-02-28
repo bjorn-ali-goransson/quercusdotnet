@@ -212,7 +212,7 @@ public class LongValue : NumberValue
   /**
    * Converts to a string.
    */
-  public override string toString()
+  public override string ToString()
   {
     return String.valueOf(_value);
   }
@@ -220,7 +220,7 @@ public class LongValue : NumberValue
   /**
    * Converts to a string builder
    */
-  public override StringValue toStringBuilder(Env env)
+  public override StringValue ToStringBuilder(Env env)
   {
     return env.createUnicodeBuilder().append(_value);
   }
@@ -458,10 +458,10 @@ public class LongValue : NumberValue
   public override void jsonEncode(Env env, JsonEncodeContext context, StringValue sb)
   {
     if (_value > Integer.MAX_VALUE && context.isBigIntAsString()) {
-      toStringValue(env).jsonEncode(env, context, sb);
+      ToStringValue(env).jsonEncode(env, context, sb);
     }
     else {
-      sb.append(toStringValue(env));
+      sb.append(ToStringValue(env));
     }
   }
 

@@ -124,8 +124,8 @@ public class Mysqli : JdbcConnectionResource
   {
     super(env);
 
-    connectInternal(env, host.toString(), user.toString(), password.toString(),
-                    db, port, socket.toString(),
+    connectInternal(env, host.ToString(), user.ToString(), password.ToString(),
+                    db, port, socket.ToString(),
                     0, null, null, true, false);
   }
 
@@ -220,7 +220,7 @@ public class Mysqli : JdbcConnectionResource
         string encoding;
 
         if (_charset != null) {
-          encoding = _charset.toString();
+          encoding = _charset.ToString();
         }
         else {
           //encoding = driverContext.getDefaultEncoding();
@@ -245,7 +245,7 @@ public class Mysqli : JdbcConnectionResource
       return jConn;
     } catch (SQLException e) {
       env.warning(L.l("A link to the server could not be established.\n  "
-                      + "url={0}\n  driver={1}\n  {2}", url, driver, e.toString()), e);
+                      + "url={0}\n  driver={1}\n  {2}", url, driver, e.ToString()), e);
 
       env.setSpecialValue("mysqli.connectErrno", LongValue.create(e.getErrorCode()));
       env.setSpecialValue("mysqli.connectError", env.createString(e.getMessage()));
@@ -253,8 +253,8 @@ public class Mysqli : JdbcConnectionResource
       return null;
     } catch (Exception e) {
       env.warning(L.l("A link to the server could not be established.\n  url={0}\n  "
-                      + "driver={1}\n  {2}", url, driver, e.toString()), e);
-      env.setSpecialValue("mysqli.connectError", env.createString(e.toString()));
+                      + "driver={1}\n  {2}", url, driver, e.ToString()), e);
+      env.setSpecialValue("mysqli.connectError", env.createString(e.ToString()));
 
       return null;
     }
@@ -357,7 +357,7 @@ public class Mysqli : JdbcConnectionResource
     // php/141p
     //urlBuilder.append("&useOldAliasMetadataBehavior=true");
 
-    return urlBuilder.toString();
+    return urlBuilder.ToString();
   }
 
   /**
@@ -783,7 +783,7 @@ public class Mysqli : JdbcConnectionResource
           stmt.close();
       }
     } catch (SQLException e) {
-      log.log(Level.FINE, e.toString(), e);
+      log.log(Level.FINE, e.ToString(), e);
       return BooleanValue.FALSE;
     }
   }
@@ -839,7 +839,7 @@ public class Mysqli : JdbcConnectionResource
           Value charset = clientArray.get(env.createString("default-character-set"));
 
           if (! charset.isNull()) {
-            _charset = charset.toStringValue();
+            _charset = charset.ToStringValue();
           }
         }
 
@@ -888,7 +888,7 @@ public class Mysqli : JdbcConnectionResource
       sb.append(ch);
     }
 
-    return sb.toString();
+    return sb.ToString();
   }
 
   /*
@@ -907,7 +907,7 @@ public class Mysqli : JdbcConnectionResource
     }
 
     if (! isBinary) {
-      return str.toString();
+      return str.ToString();
     }
 
     StringBuilder sb = new StringBuilder();
@@ -923,7 +923,7 @@ public class Mysqli : JdbcConnectionResource
       }
     }
 
-    return sb.toString();
+    return sb.ToString();
   }
 
   private const int appendString(StringBuilder sb, StringValue str,
@@ -1091,11 +1091,11 @@ public class Mysqli : JdbcConnectionResource
     } catch (SQLException e) {
       saveErrors(e);
 
-      log.log(Level.FINER, e.toString(), e);
+      log.log(Level.FINER, e.ToString(), e);
 
       return BooleanValue.FALSE;
     } catch (IllegalStateException e) {
-      log.log(Level.FINEST, e.toString(), e);
+      log.log(Level.FINEST, e.ToString(), e);
 
       // #2184, some drivers return this on closed connection
       saveErrors(new SQLExceptionWrapper(e));
@@ -1160,12 +1160,12 @@ public class Mysqli : JdbcConnectionResource
                               @Optional int flags)
   {
     return connectInternal(env,
-                           host.toString(),
-                           userName.toString(),
-                           password.toString(),
-                           dbname.toString(),
+                           host.ToString(),
+                           userName.ToString(),
+                           password.ToString(),
+                           dbname.ToString(),
                            port,
-                           socket.toString(),
+                           socket.ToString(),
                            flags,
                            null,
                            null,
@@ -1205,7 +1205,7 @@ public class Mysqli : JdbcConnectionResource
       else
         return false;
     } catch (SQLException e) {
-      log.log(Level.FINE, e.toString(), e);
+      log.log(Level.FINE, e.ToString(), e);
       // php/142d - php doesn't issue a warning if the database is
       // unselectable.  modx depends on this behavior.
       return false;
@@ -1259,7 +1259,7 @@ public class Mysqli : JdbcConnectionResource
     string charset;
 
     if (_charset != null) {
-      charset = _charset.toString();
+      charset = _charset.ToString();
     }
     else {
       charset = "latin1";
@@ -1267,7 +1267,7 @@ public class Mysqli : JdbcConnectionResource
     }
 
     if (_collation != null) {
-      collation = _collation.toString();
+      collation = _collation.ToString();
     }
     else {
       collation = MysqlCharset.getDefaultCollation(charset);
@@ -1312,7 +1312,7 @@ public class Mysqli : JdbcConnectionResource
       sb.append("SET NAMES ");
       sb.append(charset);
 
-      stmt.executeUpdate(sb.toString());
+      stmt.executeUpdate(sb.ToString());
       stmt.close();
 
       _charset = charset;
@@ -1433,7 +1433,7 @@ public class Mysqli : JdbcConnectionResource
           stmt.close();
       }
     } catch (SQLException e) {
-      log.log(Level.FINE, e.toString(), e);
+      log.log(Level.FINE, e.ToString(), e);
       return BooleanValue.FALSE;
     }
   }
@@ -1461,10 +1461,10 @@ public class Mysqli : JdbcConnectionResource
         str.append(rs.getString(2));
       }
 
-      return new StringValueImpl(str.toString());
+      return new StringValueImpl(str.ToString());
     } catch (SQLException e) {
       saveErrors(e);
-      log.log(Level.WARNING, e.toString(), e);
+      log.log(Level.WARNING, e.ToString(), e);
       return BooleanValue.FALSE;
     }
   }
@@ -1531,7 +1531,7 @@ public class Mysqli : JdbcConnectionResource
           stmt.close();
       }
     } catch (SQLException e) {
-      log.log(Level.FINE, e.toString(), e);
+      log.log(Level.FINE, e.ToString(), e);
       return BooleanValue.FALSE;
     }
   }
@@ -1578,7 +1578,7 @@ public class Mysqli : JdbcConnectionResource
       return result;
     }
     catch (SQLException e) {
-      log.log(Level.FINE, e.toString(), e);
+      log.log(Level.FINE, e.ToString(), e);
       return false;
     }
   }
@@ -1691,7 +1691,7 @@ public class Mysqli : JdbcConnectionResource
       }
     } catch (SQLException e) {
       saveErrors(e);
-      log.log(Level.FINE, e.toString(), e);
+      log.log(Level.FINE, e.ToString(), e);
       return null;
     }
   }
@@ -1765,12 +1765,12 @@ public class Mysqli : JdbcConnectionResource
         setWarnings(stmt.getWarnings());
       } catch (SQLException e) {
         saveErrors(e);
-        log.log(Level.FINE, e.toString(), e);
+        log.log(Level.FINE, e.ToString(), e);
         return false;
       }
     } catch (SQLException e) {
       saveErrors(e);
-      log.log(Level.FINE, e.toString(), e);
+      log.log(Level.FINE, e.ToString(), e);
       return false;
     }
 
@@ -1804,7 +1804,7 @@ public class Mysqli : JdbcConnectionResource
   {
     ArrayList<String> result = new ArrayList<String>();
     StringBuilder queryBuffer = new StringBuilder(64);
-    string sql = sqlStr.toString();
+    string sql = sqlStr.ToString();
     int length = sql.length();
     bool inQuotes = false;
     char c;
@@ -1836,14 +1836,14 @@ public class Mysqli : JdbcConnectionResource
       }
 
       if (c == ';') {
-        result.add(queryBuffer.toString().trim());
+        result.add(queryBuffer.ToString().trim());
         queryBuffer = new StringBuilder(64);
       } else
         queryBuffer.append(c);
     }
 
     if (queryBuffer.length() > 0)
-      result.add(queryBuffer.toString().trim());
+      result.add(queryBuffer.ToString().trim());
 
     return result;
   }
@@ -1898,7 +1898,7 @@ public class Mysqli : JdbcConnectionResource
     try {
       databaseMetaData = conn.getMetaData();
     } catch (SQLException e) {
-      log.log(Level.FINEST, e.toString(), e);
+      log.log(Level.FINEST, e.ToString(), e);
     }
 
     // If getMetaData() returns null or raises a SQLException,
@@ -1912,7 +1912,7 @@ public class Mysqli : JdbcConnectionResource
     try {
       fullVersion = databaseMetaData.getDriverVersion();
     } catch (SQLException e) {
-      log.log(Level.FINEST, e.toString(), e);
+      log.log(Level.FINEST, e.ToString(), e);
     }
 
     // If getDriverVersion() returns null or raises a SQLException,
@@ -1987,7 +1987,7 @@ public class Mysqli : JdbcConnectionResource
   /**
    * Converts to a string.
    */
-  public string toString()
+  public string ToString()
   {
     if (_conn != null && _conn.getConnection() != null) {
       Class<?> cls = _conn.getConnection().getClass();
@@ -1995,7 +1995,7 @@ public class Mysqli : JdbcConnectionResource
       Method []methods = cls.getDeclaredMethods();
 
       for (int i = 0; i < methods.length; i++) {
-        if (methods[i].getName().equals("toString")
+        if (methods[i].getName().equals("ToString")
             && methods[i].getParameterTypes().length == 0)
           return "Mysqli[" + _conn.getConnection() + "]";
       }
@@ -2025,7 +2025,7 @@ public class Mysqli : JdbcConnectionResource
           = _resultSetMetaDataClass.getMethod("getColumnCharacterSet",
                                               new Class[] { int.class });
       } catch (Exception e) {
-        log.log(Level.FINER, e.toString(), e);
+        log.log(Level.FINER, e.ToString(), e);
       }
     }
 

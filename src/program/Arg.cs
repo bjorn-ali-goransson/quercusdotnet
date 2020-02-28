@@ -110,7 +110,7 @@ public class Arg {
     return _expectedClass;
   }
 
-  public string toString()
+  public string ToString()
   {
     return "Arg[" + _expectedClass + " $" + _name + "]";
   }

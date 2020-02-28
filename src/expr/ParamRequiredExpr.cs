@@ -67,7 +67,7 @@ public class ParamRequiredExpr : Expr {
     return NullValue.NULL;
   }
 
-  public string toString()
+  public string ToString()
   {
     return "required";
   }

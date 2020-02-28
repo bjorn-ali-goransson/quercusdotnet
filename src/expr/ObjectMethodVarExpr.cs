@@ -103,7 +103,7 @@ public class ObjectMethodVarExpr : Expr {
       values[i] = _args[i].evalArg(env, true);
     }
 
-    StringValue methodName = _name.eval(env).toStringValue(env);
+    StringValue methodName = _name.eval(env).ToStringValue(env);
 
     Value obj = _objExpr.eval(env);
 
@@ -118,7 +118,7 @@ public class ObjectMethodVarExpr : Expr {
     }
   }
 
-  public string toString()
+  public string ToString()
   {
     return _objExpr + "->" + _name + "()";
   }

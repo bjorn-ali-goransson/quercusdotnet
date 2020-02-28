@@ -111,7 +111,7 @@ public class DateTime : DateTimeInterface, Cloneable
       timeStr = env.createString("now");
     }
     else {
-      timeStr = time.toStringValue(env);
+      timeStr = time.ToStringValue(env);
     }
 
     if (timeZone == null)
@@ -325,11 +325,11 @@ public class DateTime : DateTimeInterface, Cloneable
     _qDate.setGMTTime(time);
   }
 
-  public override string toString()
+  public override string ToString()
   {
     Env env = Env.getInstance();
 
-    return format(env, env.createString("now")).toString();
+    return format(env, env.createString("now")).ToString();
   }
 }
 }

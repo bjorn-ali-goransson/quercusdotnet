@@ -82,7 +82,7 @@ public class HttpModule : AbstractQuercusModule {
       return NullValue.NULL;
     }
 
-    string header = headerStr.toString();
+    string header = headerStr.ToString();
     int len = header.length();
 
     if (header.startsWith("HTTP/")) {
@@ -264,7 +264,7 @@ public class HttpModule : AbstractQuercusModule {
       }
     }
 
-    QuercusCookie cookie = new QuercusCookieImpl(name, sb.toString());
+    QuercusCookie cookie = new QuercusCookieImpl(name, sb.ToString());
 
     int maxAge = 0;
 
@@ -339,7 +339,7 @@ public class HttpModule : AbstractQuercusModule {
       cookieHeader.append("; HttpOnly");
     }
 
-    getHeaders(env).add(cookieHeader.toString());
+    getHeaders(env).add(cookieHeader.ToString());
 
     return true;
   }

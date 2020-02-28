@@ -188,7 +188,7 @@ public class NullValue : Value
    * Converts to a string.
    * @param env
    */
-  public override string toString()
+  public override string ToString()
   {
     return "";
   }
@@ -196,7 +196,7 @@ public class NullValue : Value
   /**
    * Converts to a string builder
    */
-  public override StringValue toStringBuilder(Env env)
+  public override StringValue ToStringBuilder(Env env)
   {
     return env.createUnicodeBuilder();
   }
@@ -426,7 +426,7 @@ public class NullValue : Value
   /**
    * Converts to a StringValue.
    */
-  public StringValue toStringValue()
+  public StringValue ToStringValue()
   {
     Env env = Env.getInstance();
 
@@ -503,7 +503,7 @@ public class NullValue : Value
   public override bool eq(Value rValue)
   {
     if (rValue.isString())
-      return toString().equals(rValue.toString());
+      return ToString().equals(rValue.ToString());
     else
       return toBoolean() == rValue.toBoolean();
   }
@@ -533,7 +533,7 @@ public class NullValue : Value
         return 1;
     }
     else
-      return "".compareTo(rValue.toString());
+      return "".compareTo(rValue.ToString());
   }
 
   /**

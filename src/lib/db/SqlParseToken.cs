@@ -81,7 +81,7 @@ public class SqlParseToken
     return _token.equalsIgnoreCase(token);
   }
 
-  public string toString()
+  public string ToString()
   {
     if (_token == null)
       _token = _query.substring(_start, _end);
@@ -97,7 +97,7 @@ public class SqlParseToken
 
   public string toUnquotedString()
   {
-    string tok = toString();
+    string tok = ToString();
 
     // Extract database name if back quoted : "DROP DATABASE `DBNAME`"
 

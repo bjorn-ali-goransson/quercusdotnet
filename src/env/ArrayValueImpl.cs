@@ -306,7 +306,7 @@ public class ArrayValueImpl : ArrayValue
    * Converts to a string.
    * @param env
    */
-  public StringValue toString(Env env)
+  public StringValue ToString(Env env)
   {
     return env.createString("Array");
   }

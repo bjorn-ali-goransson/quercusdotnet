@@ -160,7 +160,7 @@ public class QuercusServletImpl : HttpServlet
       }
       catch (FileNotFoundException e) {
         // php/2001
-        log.log(Level.FINER, e.toString(), e);
+        log.log(Level.FINER, e.ToString(), e);
 
         response.sendError(HttpServletResponse.SC_NOT_FOUND);
 
@@ -198,7 +198,7 @@ public class QuercusServletImpl : HttpServlet
         // env.setGlobalValue("servletContext", env.wrapJava(_servletContext));
 
         StringValue prepend
-          = quercus.getIniValue("auto_prepend_file").toStringValue(env);
+          = quercus.getIniValue("auto_prepend_file").ToStringValue(env);
         if (prepend.length() > 0) {
           Path prependPath = env.lookup(prepend);
 
@@ -213,7 +213,7 @@ public class QuercusServletImpl : HttpServlet
         env.executeTop();
 
         StringValue append
-          = quercus.getIniValue("auto_append_file").toStringValue(env);
+          = quercus.getIniValue("auto_append_file").ToStringValue(env);
         if (append.length() > 0) {
           Path appendPath = env.lookup(append);
 
@@ -233,15 +233,15 @@ public class QuercusServletImpl : HttpServlet
         throw e;
       }
       catch (QuercusLineRuntimeException e) {
-        log.log(Level.FINE, e.toString(), e);
+        log.log(Level.FINE, e.ToString(), e);
 
         ws.println(e.getMessage());
         //  return;
       }
       catch (QuercusValueException e) {
-        log.log(Level.FINE, e.toString(), e);
+        log.log(Level.FINE, e.ToString(), e);
 
-        ws.println(e.toString());
+        ws.println(e.ToString());
 
         //  return;
       }
@@ -270,15 +270,15 @@ public class QuercusServletImpl : HttpServlet
     }
     catch (QuercusDieException e) {
       // normal exit
-      log.log(Level.FINE, e.toString(), e);
+      log.log(Level.FINE, e.ToString(), e);
     }
     catch (QuercusExitException e) {
       // normal exit
-      log.log(Level.FINER, e.toString(), e);
+      log.log(Level.FINER, e.ToString(), e);
     }
     catch (QuercusErrorException e) {
       // error exit
-      log.log(Level.FINE, e.toString(), e);
+      log.log(Level.FINE, e.ToString(), e);
     }
     catch (RuntimeException e) {
       throw e;
@@ -334,7 +334,7 @@ public class QuercusServletImpl : HttpServlet
       sb.append(pathInfo);
     }
 
-    string scriptPath = sb.toString();
+    string scriptPath = sb.ToString();
 
     path = pwd.lookupChild(scriptPath);
 

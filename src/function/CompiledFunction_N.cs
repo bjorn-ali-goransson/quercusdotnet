@@ -108,7 +108,7 @@ abstract public class CompiledFunction_N : CompiledFunction {
 
   abstract public Value callImpl(Env env, Value []args);
 
-  public string toString()
+  public string ToString()
   {
     return "CompiledFunction_N[" + _name + "]";
   }

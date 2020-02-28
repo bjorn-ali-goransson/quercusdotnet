@@ -119,7 +119,7 @@ public class Location {
     return _fileName == null || _lineNumber <= 0;
   }
 
-  public string toString()
+  public string ToString()
   {
     return "Location[" + _fileName + ":" + _lineNumber + "]";
   }

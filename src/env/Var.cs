@@ -336,9 +336,9 @@ public class Var : Value
   // Conversions
   //
 
-  public override string toString()
+  public override string ToString()
   {
-    return _value.toString();
+    return _value.ToString();
   }
 
   /**
@@ -385,9 +385,9 @@ public class Var : Value
    * Converts to a string.
    * @param env
    */
-  public override StringValue toString(Env env)
+  public override StringValue ToString(Env env)
   {
-    return _value.toString(env);
+    return _value.ToString(env);
   }
 
   /**
@@ -460,9 +460,9 @@ public class Var : Value
   public override string toJavaString()
   {
     if (_value.isObject())
-      return toString(Env.getInstance()).toString();
+      return ToString(Env.getInstance()).ToString();
     else
-      return toString();
+      return ToString();
   }
 
   /**
@@ -670,9 +670,9 @@ public class Var : Value
   /**
    * Cost to convert to a string
    */
-  public override int toStringMarshalCost()
+  public override int ToStringMarshalCost()
   {
-    return _value.toStringMarshalCost();
+    return _value.ToStringMarshalCost();
   }
 
   /**
@@ -710,9 +710,9 @@ public class Var : Value
   /**
    * Cost to convert to a StringValue
    */
-  public override int toStringValueMarshalCost()
+  public override int ToStringValueMarshalCost()
   {
-    return _value.toStringValueMarshalCost();
+    return _value.ToStringValueMarshalCost();
   }
 
   /**
@@ -852,14 +852,14 @@ public class Var : Value
     return _value.toKey();
   }
 
-  public override StringValue toStringValue()
+  public override StringValue ToStringValue()
   {
-    return _value.toStringValue();
+    return _value.ToStringValue();
   }
 
-  public override StringValue toStringValue(Env env)
+  public override StringValue ToStringValue(Env env)
   {
-    return _value.toStringValue(env);
+    return _value.ToStringValue(env);
   }
 
   public override StringValue toBinaryValue(Env env)
@@ -877,30 +877,30 @@ public class Var : Value
     return _value.toUnicodeValue(env);
   }
 
-  public override StringValue toStringBuilder()
+  public override StringValue ToStringBuilder()
   {
-    return _value.toStringBuilder();
+    return _value.ToStringBuilder();
   }
 
-  public override StringValue toStringBuilder(Env env)
+  public override StringValue ToStringBuilder(Env env)
   {
-    return _value.toStringBuilder(env);
-  }
-
-  /**
-   * Converts to a string builder
-   */
-  public override StringValue toStringBuilder(Env env, Value value)
-  {
-    return _value.toStringBuilder(env, value);
+    return _value.ToStringBuilder(env);
   }
 
   /**
    * Converts to a string builder
    */
-  public StringValue toStringBuilder(Env env, StringValue value)
+  public override StringValue ToStringBuilder(Env env, Value value)
   {
-    return _value.toStringBuilder(env, value);
+    return _value.ToStringBuilder(env, value);
+  }
+
+  /**
+   * Converts to a string builder
+   */
+  public StringValue ToStringBuilder(Env env, StringValue value)
+  {
+    return _value.ToStringBuilder(env, value);
   }
 
   public override java.io.InputStream toInputStream()

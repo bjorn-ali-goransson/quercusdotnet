@@ -321,11 +321,11 @@ public class ModuleContext
         catch (ClassNotFoundException e) {
           throw new ClassNotFoundException(L.l("'{0}' @is not a known Java class: {1}",
                                                className,
-                                               e.toString()), e);
+                                               e.ToString()), e);
         } catch (NoClassDefFoundError e) {
           throw new ClassNotFoundException(L.l("'{0}' cannot be as a Java class: {1}",
                                                className,
-                                               e.toString()), e);
+                                               e.ToString()), e);
         }
 
         def = JavaClassDef.create(this, className, type);
@@ -510,7 +510,7 @@ public class ModuleContext
 
           parseServicesModule(rs);
         } catch (Throwable e) {
-          log.log(Level.FINE, e.toString(), e);
+          log.log(Level.FINE, e.ToString(), e);
         } finally {
           if (rs != null)
             rs.close();
@@ -520,7 +520,7 @@ public class ModuleContext
       }
 
     } catch (Exception e) {
-      log.log(Level.FINE, e.toString(), e);
+      log.log(Level.FINE, e.ToString(), e);
     } finally {
       setContextClassLoader(oldLoader);
     }
@@ -554,17 +554,17 @@ public class ModuleContext
           }
           catch (ClassNotFoundException e) {
             throw new ClassNotFoundException(L.l(
-              "'{0}' not valid {1}", className, e.toString()));
+              "'{0}' not valid {1}", className, e.ToString()));
           }
 
           introspectPhpModuleClass(cl);
         } catch (Throwable e) {
           if (className.startsWith("com.caucho")) {
-            log.log(Level.FINER, e.toString(), e);
+            log.log(Level.FINER, e.ToString(), e);
           }
           else {
-            log.info("Failed loading " + className + "\n" + e.toString());
-            log.log(Level.INFO, e.toString(), e);
+            log.info("Failed loading " + className + "\n" + e.ToString());
+            log.log(Level.INFO, e.ToString(), e);
           }
         }
       }
@@ -698,7 +698,7 @@ public class ModuleContext
 
           parseClassServicesModule(rs);
         } catch (Throwable e) {
-          log.log(Level.FINE, e.toString(), e);
+          log.log(Level.FINE, e.ToString(), e);
         } finally {
           if (rs != null)
             rs.close();
@@ -708,7 +708,7 @@ public class ModuleContext
       }
 
     } catch (Exception e) {
-      log.log(Level.FINE, e.toString(), e);
+      log.log(Level.FINE, e.ToString(), e);
     }
   }
 
@@ -804,8 +804,8 @@ public class ModuleContext
 
         introspectJavaClass(phpClassName, cl, extension, javaClassDefClass);
       } catch (Exception e) {
-        log.log(Level.FINE, "Failed loading " + className + "\n" + e.toString());
-        log.log(Level.FINE, e.toString(), e);
+        log.log(Level.FINE, "Failed loading " + className + "\n" + e.ToString());
+        log.log(Level.FINE, e.ToString(), e);
       }
     }
   }
@@ -928,7 +928,7 @@ public class ModuleContext
   }
 
   @Override
-  public string toString()
+  public string ToString()
   {
     return getClass().getSimpleName() + "[" + _loader + "]";
   }

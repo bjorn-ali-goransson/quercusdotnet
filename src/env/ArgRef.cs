@@ -142,9 +142,9 @@ public class ArgRef : Value
    * Converts to a string.
    * @param env
    */
-  public override StringValue toString(Env env)
+  public override StringValue ToString(Env env)
   {
-    return _var.toString(env);
+    return _var.ToString(env);
   }
 
   /**
@@ -253,9 +253,9 @@ public class ArgRef : Value
     return _var;
   }
 
-  public override StringValue toStringValue()
+  public override StringValue ToStringValue()
   {
-    return _var.toStringValue();
+    return _var.ToStringValue();
   }
 
   public override StringValue toBinaryValue(Env env)
@@ -268,14 +268,14 @@ public class ArgRef : Value
     return _var.toUnicodeValue(env);
   }
 
-  public override StringValue toStringBuilder()
+  public override StringValue ToStringBuilder()
   {
-    return _var.toStringBuilder();
+    return _var.ToStringBuilder();
   }
 
-  public override StringValue toStringBuilder(Env env)
+  public override StringValue ToStringBuilder(Env env)
   {
-    return _var.toStringBuilder(env);
+    return _var.ToStringBuilder(env);
   }
 
   public override java.io.InputStream toInputStream()

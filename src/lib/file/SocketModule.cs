@@ -255,7 +255,7 @@ public class SocketModule : AbstractQuercusModule {
                                     @Optional("0") int port)
   {
     try {
-      InetAddress []addresses = InetAddress.getAllByName(address.toString());
+      InetAddress []addresses = InetAddress.getAllByName(address.ToString());
 
       if (addresses == null || addresses.length < 1) {
         //XXX: socket.setError();
@@ -283,7 +283,7 @@ public class SocketModule : AbstractQuercusModule {
                                        StringValue address, @Optional int port)
   {
     try {
-      InetAddress []addresses = InetAddress.getAllByName(address.toString());
+      InetAddress []addresses = InetAddress.getAllByName(address.ToString());
 
       if (addresses == null || addresses.length < 1) {
         //XXX: socket.setError();
@@ -373,7 +373,7 @@ public class SocketModule : AbstractQuercusModule {
       else
         return LongValue.create(result);
     } catch (IOException e) {
-      log.log(Level.FINER, e.toString(), e);
+      log.log(Level.FINER, e.ToString(), e);
 
       return BooleanValue.FALSE;
     }

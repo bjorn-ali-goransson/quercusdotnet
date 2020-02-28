@@ -104,10 +104,10 @@ public class JMSModule : AbstractQuercusModule
       Context context = (Context) new InitialContext().lookup("java:comp/env");
 
       ConnectionFactory connectionFactory = 
-        (ConnectionFactory) context.lookup(factoryName.toString());
+        (ConnectionFactory) context.lookup(factoryName.ToString());
 
       if (connectionFactory == null)
-        log.warning("Couldn't find factory " + factoryName.toString());
+        log.warning("Couldn't find factory " + factoryName.ToString());
 
       return connectionFactory;
     } catch (RuntimeException e) {

@@ -124,7 +124,7 @@ public class JavaClassDef : ClassDef : InstanceInitializer {
   private JavaMethod __call;
   private JavaMethod __callStatic;
 
-  private JavaMethod __toString;
+  private JavaMethod __ToString;
 
   private Method _printRImpl;
   private Method _varDumpImpl;
@@ -466,7 +466,7 @@ public class JavaClassDef : ClassDef : InstanceInitializer {
    */
   public Value getField(Env env, Value qThis, StringValue nameV)
   {
-    string name = nameV.toString();
+    string name = nameV.ToString();
 
     AbstractJavaMethod get = _getMap.get(name);
 
@@ -516,7 +516,7 @@ public class JavaClassDef : ClassDef : InstanceInitializer {
                         StringValue nameV,
                         Value value)
   {
-    string name = nameV.toString();
+    string name = nameV.ToString();
 
     AbstractJavaMethod setter = _setMap.get(name);
     if (setter != null) {
@@ -776,8 +776,8 @@ public class JavaClassDef : ClassDef : InstanceInitializer {
       cl.setCallStatic(__callStatic);
     }
 
-    if (__toString != null) {
-      cl.addMethod(_moduleContext.createString("__toString"), __toString);
+    if (__ToString != null) {
+      cl.addMethod(_moduleContext.createString("__ToString"), __ToString);
     }
 
     if (_arrayDelegate != null)
@@ -1242,7 +1242,7 @@ public class JavaClassDef : ClassDef : InstanceInitializer {
         sb.append(s.charAt(i));
       }
 
-      return sb.toString();
+      return sb.ToString();
     }
   }
 
@@ -1280,7 +1280,7 @@ public class JavaClassDef : ClassDef : InstanceInitializer {
         else
           _constJavaMap.put(field.getName().intern(), obj);
       } catch (Throwable e) {
-        log.log(Level.FINEST, e.toString(), e);
+        log.log(Level.FINEST, e.ToString(), e);
       }
     }
   }
@@ -1330,7 +1330,7 @@ public class JavaClassDef : ClassDef : InstanceInitializer {
           _constJavaMap.put(name.intern(), obj);
       }
       catch (Throwable e) {
-        log.log(Level.FINEST, e.toString(), e);
+        log.log(Level.FINEST, e.ToString(), e);
       }
     }
   }
@@ -1376,9 +1376,9 @@ public class JavaClassDef : ClassDef : InstanceInitializer {
         __call = new JavaMethod(moduleContext, this, method);
       } else if ("__callStatic".equals(method.getName())) {
         __callStatic = new JavaMethod(moduleContext, this, method);
-      } else if ("__toString".equals(method.getName())) {
-        __toString = new JavaMethod(moduleContext, this, method);
-        _functionMap.put(_moduleContext.createString(method.getName()), __toString);
+      } else if ("__ToString".equals(method.getName())) {
+        __ToString = new JavaMethod(moduleContext, this, method);
+        _functionMap.put(_moduleContext.createString(method.getName()), __ToString);
       } else if ("__destruct".equals(method.getName())) {
         __destruct = new JavaMethod(moduleContext, this, method);
         _functionMap.put(_moduleContext.createString(method.getName()), __destruct);
@@ -1416,20 +1416,20 @@ public class JavaClassDef : ClassDef : InstanceInitializer {
 
   public JavaMethod getToString()
   {
-    return __toString;
+    return __ToString;
   }
 
-  public StringValue toString(Env env,
+  public StringValue ToString(Env env,
                               JavaValue value)
   {
-    if (__toString == null) {
+    if (__ToString == null) {
       return null;
     }
 
     QuercusClass cls = getQuercusClass();
-    Value str = __toString.callMethod(env, cls, value, Expr.NULL_ARGS);
+    Value str = __ToString.callMethod(env, cls, value, Expr.NULL_ARGS);
 
-    return str.toStringValue(env);
+    return str.ToStringValue(env);
   }
   
   public bool issetField(Env env, Object obj, StringValue name)

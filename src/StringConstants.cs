@@ -42,7 +42,7 @@ public class StringConstants
   public readonly StringValue __SET = new ConstStringValue("__set");
   public readonly StringValue __CALL = new ConstStringValue("__call");
   public readonly StringValue __CALL_STATIC = new ConstStringValue("__callStatic");
-  public readonly StringValue __TOSTRING = new ConstStringValue("__toString");
+  public readonly StringValue __TOSTRING = new ConstStringValue("__ToString");
 
 
 }

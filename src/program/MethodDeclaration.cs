@@ -96,7 +96,7 @@ public class MethodDeclaration : Function
     throw new UnsupportedOperationException();
   }
 
-  public string toString()
+  public string ToString()
   {
     return getClass().getSimpleName() + "[" + getName() + "]";
   }

@@ -180,7 +180,7 @@ public class MathModule : AbstractQuercusModule {
     if (isLong)
       return Long.valueOf(result);
     else
-      return new BigInteger(str.toString(), base);
+      return new BigInteger(str.ToString(), base);
   }
 
   private static StringValue intToBase(Env env, long num, int base)

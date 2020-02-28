@@ -83,7 +83,7 @@ public class BinaryInstanceOfExpr : AbstractUnaryExpr {
     return obj.isA(env, _right);
   }
 
-  public string toString()
+  public string ToString()
   {
     return "(" + _expr + " instanceof " + _right + ")";
   }

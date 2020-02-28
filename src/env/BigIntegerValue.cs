@@ -74,7 +74,7 @@ public class BigIntegerValue : JavaValue {
    */
   public override BigDecimal toBigDecimal()
   {
-    return new BigDecimal(toString());
+    return new BigDecimal(ToString());
   }
   
   /**
@@ -101,9 +101,9 @@ public class BigIntegerValue : JavaValue {
     return true;
   }
   
-  public string toString()
+  public string ToString()
   {
-    return "BigInteger[" + _val.toString() + "]";
+    return "BigInteger[" + _val.ToString() + "]";
   }
 }
 

@@ -44,7 +44,7 @@ public class EmailSanitizeFilter
   {
     StringValue sb = env.createStringBuilder();
 
-    StringValue str = value.toStringValue(env);
+    StringValue str = value.ToStringValue(env);
     int len = str.length();
 
     for (int i = 0; i < len; i++) {

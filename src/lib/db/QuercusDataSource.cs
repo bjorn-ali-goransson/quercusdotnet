@@ -133,7 +133,7 @@ public class QuercusDataSource : DataSource {
     throw new UnsupportedOperationException();
   }
 
-  public override string toString() {
+  public override string ToString() {
     return getClass().getSimpleName() + "[" + _ds
                                       + "," + _user + "]";
   }

@@ -189,7 +189,7 @@ public class ZipDirectory
     return true;
   }
 
-  public string toString()
+  public string ToString()
   {
     return "ZipDirectory[]";
   }

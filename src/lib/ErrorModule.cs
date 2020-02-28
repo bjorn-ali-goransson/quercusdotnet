@@ -440,7 +440,7 @@ public class ErrorModule : AbstractQuercusModule {
       }
     }
 
-    return sb.toString();
+    return sb.ToString();
   }
 
   private static string unmangleFunction(String className)
@@ -548,7 +548,7 @@ public class ErrorModule : AbstractQuercusModule {
         string date = QDate.formatGMT(env.getCurrentTime(), format);
 
         os.print(date);
-        os.print(message.toString());
+        os.print(message.ToString());
         os.print('\n');
 
         return true;
@@ -571,7 +571,7 @@ public class ErrorModule : AbstractQuercusModule {
       // message sent to PHP's system logger
       StringValue dest = ErrorModule.INI_ERROR_LOG.getAsStringValue(env);
       if(dest.equalsString("syslog")) {
-        log.warning(message.toString());
+        log.warning(message.ToString());
 
         return true;
       }

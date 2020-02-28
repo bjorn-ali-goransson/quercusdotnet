@@ -411,7 +411,7 @@ class JsonDecoder {
       if (_len <= _offset || _str.charAt(_offset++) != ':')
         return errorReturn(env, "expected ':'");
 
-      object.putField(env, name.toString(), jsonDecodeImpl(env, false));
+      object.putField(env, name.ToString(), jsonDecodeImpl(env, false));
 
       skipWhitespace();
 
@@ -552,7 +552,7 @@ class JsonDecoder {
   {
     int end = Math.min(_len, _offset + 1);
 
-    string token = _str.substring(_offset, end).toString();
+    string token = _str.substring(_offset, end).ToString();
 
     if (message != null) {
       log.fine(L.l("error parsing '{0}': {1}\n  [{2}]",
@@ -585,7 +585,7 @@ class JsonDecoder {
     for (; tail < len && s.charAt(tail) != '\n'; tail++) {
     }
 
-    return s.substring(head, tail).toString();
+    return s.substring(head, tail).ToString();
   }
 
   private void skipWhitespace()

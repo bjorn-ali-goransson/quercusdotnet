@@ -115,7 +115,7 @@ public class WrappedDirectory : Directory {
    * Converts to a string.
    * @param env
    */
-  public string toString()
+  public string ToString()
   {
     return getClass().getSimpleName() + "[" + _wrapper + "]";
   }

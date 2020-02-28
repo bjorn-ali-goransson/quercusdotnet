@@ -512,7 +512,7 @@ public class OutputModule : AbstractQuercusModule
     Value _SERVER = env.getGlobalVar("_SERVER");
 
     string [] acceptedList
-      = _SERVER.get(env.createString("HTTP_ACCEPT_ENCODING")).toString().split(",");
+      = _SERVER.get(env.createString("HTTP_ACCEPT_ENCODING")).ToString().split(",");
 
     for (String accepted : acceptedList) {
       accepted = accepted.trim();

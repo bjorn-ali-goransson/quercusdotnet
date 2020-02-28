@@ -101,7 +101,7 @@ public class SimpleXMLElement : SimpleXMLNode
       string namespace = null;
 
       if (! namespaceV.isNull()) {
-        namespace = namespaceV.toString();
+        namespace = namespaceV.ToString();
       }
 
       Document doc = parse2(env, data, options, dataIsUrl, namespace, isPrefix);
@@ -185,7 +185,7 @@ public class SimpleXMLElement : SimpleXMLNode
     Document document = null;
 
     if (dataIsUrl) {
-      Path path = env.lookup(data.toStringValue());
+      Path path = env.lookup(data.ToStringValue());
 
       // PHP 
       if (path == null) {
@@ -205,7 +205,7 @@ public class SimpleXMLElement : SimpleXMLNode
     }
     else {
       if (data.isUnicode()) {
-        document = builder.parse(new InputSource(data.toStringValue().toSimpleReader()));
+        document = builder.parse(new InputSource(data.ToStringValue().toSimpleReader()));
       }
       else {
         document = builder.parse(data.toInputStream());
@@ -292,7 +292,7 @@ public class SimpleXMLElement : SimpleXMLNode
   @Isset
   public bool issetField(Env env, StringValue name)
   {
-    return _view.issetField(env, name.toString());
+    return _view.issetField(env, name.ToString());
   }
 
   /**
@@ -348,7 +348,7 @@ public class SimpleXMLElement : SimpleXMLNode
   }
 
   @Override
-  public string toString()
+  public string ToString()
   {
     return getClass().getSimpleName() + "[" + _view + "]";
   }

@@ -76,7 +76,7 @@ public class GaeUser
   }
 
   @Override
-  public string toString()
+  public string ToString()
   {
     return getClass() + "[" + _user + "]";
   }

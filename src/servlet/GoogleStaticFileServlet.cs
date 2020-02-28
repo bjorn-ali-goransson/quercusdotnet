@@ -168,7 +168,7 @@ public class GoogleStaticFileServlet : GenericServlet {
         try {
           ifModifiedTime = date.parseDate(ifModified);
         } catch (Exception e) {
-          log.log(Level.FINER, e.toString(), e);
+          log.log(Level.FINER, e.ToString(), e);
 
           ifModifiedTime = 0;
         }
@@ -243,7 +243,7 @@ public class GoogleStaticFileServlet : GenericServlet {
       sb.append(pathInfo);
     }
 
-    string scriptPath = sb.toString();
+    string scriptPath = sb.ToString();
 
     Path path = pwd.lookupChild(scriptPath);
 
@@ -341,7 +341,7 @@ public class GoogleStaticFileServlet : GenericServlet {
       sb.append('"');
       Base64.encode(sb, _path.getCrc64());
       sb.append('"');
-      _etag = sb.toString();
+      _etag = sb.ToString();
 
       QDate cal = QDate.allocateGmtDate();
 

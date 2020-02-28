@@ -124,7 +124,7 @@ public class FileValue : StreamResource {
    * Converts to a string.
    * @param env
    */
-  public string toString()
+  public string ToString()
   {
     return "File[" + _path + "]";
   }

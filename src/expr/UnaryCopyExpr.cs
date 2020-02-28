@@ -73,9 +73,9 @@ public class UnaryCopyExpr : AbstractUnaryExpr {
     return eval(env);
   }
 
-  public string toString()
+  public string ToString()
   {
-    return _expr.toString();
+    return _expr.ToString();
   }
 }
 

@@ -110,7 +110,7 @@ public class FileWriteValue : FileValue {
       if (_os != null)
         _os.flush();
     } catch (IOException e) {
-      log.log(Level.FINE, e.toString(), e);
+      log.log(Level.FINE, e.ToString(), e);
     }
   }
 
@@ -127,7 +127,7 @@ public class FileWriteValue : FileValue {
       if (os != null)
         os.close();
     } catch (IOException e) {
-      log.log(Level.FINE, e.toString(), e);
+      log.log(Level.FINE, e.ToString(), e);
     }
   }
 
@@ -135,7 +135,7 @@ public class FileWriteValue : FileValue {
    * Converts to a string.
    * @param env
    */
-  public string toString()
+  public string ToString()
   {
     return "File[" + getPath() + "]";
   }

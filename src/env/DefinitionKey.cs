@@ -72,7 +72,7 @@ public class DefinitionKey {
     return (_crc == key._crc && page.equals(keyPage));
   }
 
-  public string toString()
+  public string ToString()
   {
     QuercusPage page = _includePageRef.get();
     

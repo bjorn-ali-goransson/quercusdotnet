@@ -121,22 +121,22 @@ public class Oracle : JdbcConnectionResource {
 
     } catch (SQLException e) {
       env.warning(
-          "A link to the server could not be established. " + e.toString());
+          "A link to the server could not be established. " + e.ToString());
       env.setSpecialValue(
           "oracle.connectErrno", LongValue.create(e.getErrorCode()));
       env.setSpecialValue(
           "oracle.connectError", env.createString(e.getMessage()));
 
-      log.log(Level.FINE, e.toString(), e);
+      log.log(Level.FINE, e.ToString(), e);
 
       return null;
     } catch (Exception e) {
       env.warning(
-          "A link to the server could not be established. " + e.toString());
+          "A link to the server could not be established. " + e.ToString());
       env.setSpecialValue(
           "oracle.connectError", env.createString(e.getMessage()));
 
-      log.log(Level.FINE, e.toString(), e);
+      log.log(Level.FINE, e.ToString(), e);
       return null;
     }
   }
@@ -170,7 +170,7 @@ public class Oracle : JdbcConnectionResource {
   }
 
 
-  public string toString()
+  public string ToString()
   {
     if (isConnected())
       return "Oracle[" + getHost() + "]";

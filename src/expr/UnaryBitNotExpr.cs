@@ -71,7 +71,7 @@ public class UnaryBitNotExpr : AbstractUnaryExpr {
     return LongValue.create(~ lValue);
   }
 
-  public string toString()
+  public string ToString()
   {
     return "(~ " + _expr + ")";
   }

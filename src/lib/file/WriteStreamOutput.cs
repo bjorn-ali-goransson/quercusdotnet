@@ -163,7 +163,7 @@ public class WriteStreamOutput : OutputStream : BinaryOutput {
       try {
         os.flush();
       } catch (Exception e) {
-        log.log(Level.FINE, e.toString(), e);
+        log.log(Level.FINE, e.ToString(), e);
       }
     }
   }
@@ -177,7 +177,7 @@ public class WriteStreamOutput : OutputStream : BinaryOutput {
       try {
         os.close();
       } catch (Exception e) {
-        log.log(Level.FINE, e.toString(), e);
+        log.log(Level.FINE, e.ToString(), e);
       }
     }
   }
@@ -186,7 +186,7 @@ public class WriteStreamOutput : OutputStream : BinaryOutput {
   /**
    * Converts to a string.
    */
-  public string toString()
+  public string ToString()
   {
     return "WriteStreamOutput[" + _os + "]";
   }

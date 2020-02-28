@@ -358,7 +358,7 @@ public class AbstractBinaryInput
   /**
    * Converts to a string.
    */
-  public string toString()
+  public string ToString()
   {
     if (_is != null)
       return "AbstractBinaryInput[" + _is.getPath() + "]";

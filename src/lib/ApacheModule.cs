@@ -92,7 +92,7 @@ public class ApacheModule : AbstractQuercusModule {
     }
 
     if (oldValue != null) {
-      return oldValue.toStringValue(env);
+      return oldValue.ToStringValue(env);
     }
     else {
       return NullValue.NULL;

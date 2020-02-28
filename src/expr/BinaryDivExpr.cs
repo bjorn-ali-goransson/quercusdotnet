@@ -72,7 +72,7 @@ public class BinaryDivExpr : AbstractBinaryExpr {
     return lValue.div(rValue);
   }
 
-  public string toString()
+  public string ToString()
   {
     return "(" + _left + " / " + _right + ")";
   }

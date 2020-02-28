@@ -44,7 +44,7 @@ class PeekStream {
 
   string getPattern()
   {
-    return toString();
+    return ToString();
   }
 
   int getPosition() { return -1; }

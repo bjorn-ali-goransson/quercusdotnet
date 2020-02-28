@@ -110,7 +110,7 @@ public class FileInputOutput : AbstractBinaryOutput
     try {
       return _stream.getOutputStream();
     } catch (IOException e) {
-      log.log(Level.FINE, e.toString(), e);
+      log.log(Level.FINE, e.ToString(), e);
 
       return null;
     }
@@ -124,7 +124,7 @@ public class FileInputOutput : AbstractBinaryOutput
     try {
       return _stream.getInputStream();
     } catch (IOException e) {
-      log.log(Level.FINE, e.toString(), e);
+      log.log(Level.FINE, e.ToString(), e);
 
       return null;
     }
@@ -394,7 +394,7 @@ public class FileInputOutput : AbstractBinaryOutput
           _path.remove();
       }
     } catch (IOException e) {
-      log.log(Level.FINE, e.toString(), e);
+      log.log(Level.FINE, e.ToString(), e);
     }
   }
 
@@ -406,7 +406,7 @@ public class FileInputOutput : AbstractBinaryOutput
     try {
       return _stream.getFilePointer();
     } catch (IOException e) {
-      log.log(Level.FINE, e.toString(), e);
+      log.log(Level.FINE, e.ToString(), e);
 
       return -1;
     }
@@ -432,7 +432,7 @@ public class FileInputOutput : AbstractBinaryOutput
         try {
           position = _stream.getLength() + offset;
         } catch (IOException e) {
-          log.log(Level.FINE, e.toString(), e);
+          log.log(Level.FINE, e.ToString(), e);
 
           return getPosition();
         }
@@ -483,7 +483,7 @@ public class FileInputOutput : AbstractBinaryOutput
    * Converts to a string.
    * @param env
    */
-  public string toString()
+  public string ToString()
   {
     return "FileInputOutput[" + getPath() + "]";
   }

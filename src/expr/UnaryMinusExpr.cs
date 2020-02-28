@@ -60,7 +60,7 @@ public class UnaryMinusExpr : AbstractUnaryExpr {
     return _expr.eval(env).neg();
   }
 
-  public string toString()
+  public string ToString()
   {
     return "-" + _expr;
   }

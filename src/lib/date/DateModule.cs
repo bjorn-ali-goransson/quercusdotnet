@@ -1049,7 +1049,7 @@ public class DateModule : AbstractQuercusModule {
         }
       }
 
-      format = sb.toString();
+      format = sb.ToString();
     }
 
     return QDate.formatLocal(time, format);

@@ -65,7 +65,7 @@ public class ObjectMethodExpr : AbstractMethodExpr {
 
   public string getName()
   {
-    return _methodName.toString();
+    return _methodName.ToString();
   }
 
   /**
@@ -87,7 +87,7 @@ public class ObjectMethodExpr : AbstractMethodExpr {
     return eval(env, obj, methodName, hash, _args);
   }
 
-  public string toString()
+  public string ToString()
   {
     return _objExpr + "->" + _methodName + "()";
   }

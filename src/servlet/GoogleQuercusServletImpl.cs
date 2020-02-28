@@ -81,7 +81,7 @@ public class GoogleQuercusServletImpl : QuercusServletImpl
   protected override void handleThrowable(HttpServletResponse response, Throwable e)
     
   {
-    log.log(Level.WARNING, e.toString(), e);
+    log.log(Level.WARNING, e.ToString(), e);
 
     OutputStream os = response.getOutputStream();
     WriteStream @out = Vfs.openWrite(os);

@@ -83,7 +83,7 @@ public class FunIncludeOnceExpr : AbstractUnaryExpr {
    */
   public Value eval(Env env)
   {
-    StringValue name = _expr.eval(env).toStringValue();
+    StringValue name = _expr.eval(env).ToStringValue();
 
     // return env.include(_dir, name);
     
@@ -107,9 +107,9 @@ public class FunIncludeOnceExpr : AbstractUnaryExpr {
     return _isRequire;
   }
   
-  public string toString()
+  public string ToString()
   {
-    return _expr.toString();
+    return _expr.ToString();
   }
 }
 

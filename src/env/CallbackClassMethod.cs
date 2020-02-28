@@ -166,7 +166,7 @@ public class CallbackClassMethod : Callback {
 
   public override string getCallbackName()
   {
-    return _qClass.getName() + "::" +  _methodName.toString();
+    return _qClass.getName() + "::" +  _methodName.ToString();
   }
 
   public override string getDeclFileName(Env env)

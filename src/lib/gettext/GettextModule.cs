@@ -260,7 +260,7 @@ public class GettextModule
                                 @Optional Value domain)
   {
     if (! domain.isNull()) {
-      string name = domain.toString();
+      string name = domain.ToString();
       
       setCurrentDomain(env, name);
       
@@ -459,7 +459,7 @@ public class GettextModule
     byte []bytes = null;
     
     try {
-      bytes = msg.toString().getBytes(charset);
+      bytes = msg.ToString().getBytes(charset);
     }
     catch (UnsupportedEncodingException e) {
       throw new QuercusModuleException(e);

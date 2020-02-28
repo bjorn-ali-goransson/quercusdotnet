@@ -73,7 +73,7 @@ public class GlobalArrayValue : ArrayValueImpl {
    */
   public ArrayValue append(Value key, Value value)
   {
-    _env.setGlobalValue(key.toStringValue(), value);
+    _env.setGlobalValue(key.ToStringValue(), value);
 
     return this;
   }
@@ -83,7 +83,7 @@ public class GlobalArrayValue : ArrayValueImpl {
    */
   public Value get(Value key)
   {
-    return _env.getGlobalValue(key.toStringValue());
+    return _env.getGlobalValue(key.ToStringValue());
   }
   
   /**
@@ -91,9 +91,9 @@ public class GlobalArrayValue : ArrayValueImpl {
    */
   public override Var getVar(Value key)
   {
-    // return _env.getGlobalRef(key.toStringValue());
+    // return _env.getGlobalRef(key.ToStringValue());
 
-    return _env.getGlobalVar(key.toStringValue());
+    return _env.getGlobalVar(key.ToStringValue());
   }
 
   /**
@@ -119,7 +119,7 @@ public class GlobalArrayValue : ArrayValueImpl {
    */
   public override Value remove(Value key)
   {
-    return _env.unsetGlobalVar(key.toStringValue());
+    return _env.unsetGlobalVar(key.ToStringValue());
   }
   
   public override void clear()
@@ -147,7 +147,7 @@ public class GlobalArrayValue : ArrayValueImpl {
    */
   public Value containsKey(Value key)
   {
-    EnvVar var = _env.getGlobalEnv().get(key.toStringValue());
+    EnvVar var = _env.getGlobalEnv().get(key.ToStringValue());
 
     if (var != null)
       return var.get();
@@ -168,7 +168,7 @@ public class GlobalArrayValue : ArrayValueImpl {
    */
   public bool keyExists(Value key)
   {
-    EnvVar var = _env.getGlobalEnv().get(key.toStringValue());
+    EnvVar var = _env.getGlobalEnv().get(key.ToStringValue());
     
     return var != null;
   }

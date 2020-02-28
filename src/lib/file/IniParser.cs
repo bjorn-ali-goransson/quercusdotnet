@@ -249,7 +249,7 @@ public class IniParser {
               var.append((char) ch);
             }
 
-            Value value = env.getIni(var.toString());
+            Value value = env.getIni(var.ToString());
 
             if (value != null) {
               sb.append(value);
@@ -264,7 +264,7 @@ public class IniParser {
         else if (ch == '"') {
           StringValue result = env.createStringBuilder();
 
-          string value = sb.toString().trim();
+          string value = sb.ToString().trim();
 
           result.append(getIniConstant(env, value));
 
@@ -281,7 +281,7 @@ public class IniParser {
         }
       }
 
-      string value = sb.toString().trim();
+      string value = sb.ToString().trim();
 
       return getIniConstant(env, value);
     }

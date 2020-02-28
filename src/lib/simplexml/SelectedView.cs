@@ -218,12 +218,12 @@ public class SelectedView : SimpleView
     }
   }
 
-  public override string toString(Env env)
+  public override string ToString(Env env)
   {
     if (_childList.size() > 0) {
       SimpleView firstChild = _childList.get(0);
 
-      return firstChild.toString(env);
+      return firstChild.ToString(env);
     }
     else {
       return "";
@@ -328,7 +328,7 @@ public class SelectedView : SimpleView
     return obj;
   }
 
-  public override string toString()
+  public override string ToString()
   {
     SimpleView firstChild = null;
 

@@ -584,7 +584,7 @@ public class Post
                           bool addSlashes)
   {
     if (addSlashes && value.isString()) {
-      value = StringModule.addslashes(value.toStringValue());
+      value = StringModule.addslashes(value.ToStringValue());
     }
 
     if (key == null)
@@ -618,7 +618,7 @@ public class Post
         sb.append(ch);
       }
 
-      return sb.toString();
+      return sb.ToString();
     }
     else if (ch == '"') {
       StringBuilder sb = new StringBuilder();
@@ -627,7 +627,7 @@ public class Post
         sb.append(ch);
       }
 
-      return sb.toString();
+      return sb.ToString();
     }
     else {
       StringBuilder sb = new StringBuilder();
@@ -641,7 +641,7 @@ public class Post
         sb.append(ch);
       }
 
-      return sb.toString();
+      return sb.ToString();
     }
   }
 
@@ -705,7 +705,7 @@ public class Post
         value.append(ch);
     }
 
-    return value.toString();
+    return value.ToString();
   }
 
   private static void putRequestMap(Env env,

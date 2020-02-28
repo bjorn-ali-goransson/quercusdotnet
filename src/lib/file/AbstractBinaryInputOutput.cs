@@ -130,7 +130,7 @@ abstract public class AbstractBinaryInputOutput
       _isTimeout = true;
       _isEOF = true;
 
-      log.log(Level.FINER, e.toString(), e);
+      log.log(Level.FINER, e.ToString(), e);
 
       return -1;
     }
@@ -157,7 +157,7 @@ abstract public class AbstractBinaryInputOutput
       _isTimeout = true;
       _isEOF = true;
 
-      log.log(Level.FINER, e.toString(), e);
+      log.log(Level.FINER, e.ToString(), e);
 
       return -1;
     }
@@ -194,7 +194,7 @@ abstract public class AbstractBinaryInputOutput
       _isTimeout = true;
       _isEOF = true;
 
-      log.log(Level.FINER, e.toString(), e);
+      log.log(Level.FINER, e.ToString(), e);
 
       return _env.getEmptyString();
     }
@@ -301,7 +301,7 @@ abstract public class AbstractBinaryInputOutput
       if (@is != null)
         @is.close();
     } catch (IOException e) {
-      log.log(Level.FINE, e.toString(), e);
+      log.log(Level.FINE, e.ToString(), e);
     }
   }
 
@@ -410,7 +410,7 @@ abstract public class AbstractBinaryInputOutput
       if (os != null)
         os.close();
     } catch (IOException e) {
-      log.log(Level.FINE, e.toString(), e);
+      log.log(Level.FINE, e.ToString(), e);
     }
   }
 
@@ -445,7 +445,7 @@ abstract public class AbstractBinaryInputOutput
   /**
    * Converts to a string.
    */
-  public string toString()
+  public string ToString()
   {
     if (_is != null)
       return getClass().getSimpleName() + "[]";

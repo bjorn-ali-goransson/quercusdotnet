@@ -99,7 +99,7 @@ public class HttpInputOutput : AbstractBinaryOutput
       Value options
       = context.getOptions().get(env.createString(path.getScheme()));
 
-    string method = options.get(env.createString("method")).toString();
+    string method = options.get(env.createString("method")).ToString();
     
     if (method.equals("POST")) {
       ReadWritePair pair = path.openReadWrite();
@@ -131,13 +131,13 @@ public class HttpInputOutput : AbstractBinaryOutput
     while (iter.hasNext()) {
       Map.Entry<Value,Value> entry = iter.next();
     
-      string optionName = entry.getKey().toString();
+      string optionName = entry.getKey().ToString();
       Value optionValue = entry.getValue();
 
       if (optionName.equals("method"))
-        _httpStream.setMethod(optionValue.toString());
+        _httpStream.setMethod(optionValue.ToString());
       else if (optionName.equals("header")) {
-        string option = optionValue.toString();
+        string option = optionValue.ToString();
         
         int start = 0;
         int len = option.length();
@@ -166,7 +166,7 @@ public class HttpInputOutput : AbstractBinaryOutput
         }
       }
       else if (optionName.equals("user_agent"))
-        _httpStream.setAttribute("User-Agent", optionValue.toString());
+        _httpStream.setAttribute("User-Agent", optionValue.ToString());
       else if (optionName.equals("content"))
         _bodyStart = optionValue.toBinaryValue(env).toBytes();
       else if (optionName.equals("proxy"))
@@ -419,11 +419,11 @@ public class HttpInputOutput : AbstractBinaryOutput
       if (os != null)
         os.close();
     } catch (IOException e) {
-      log.log(Level.FINE, e.toString(), e);
+      log.log(Level.FINE, e.ToString(), e);
     }
   }
   
-  public string toString()
+  public string ToString()
   {
     return "HttpInputOutput[" + _path + "]";
   }

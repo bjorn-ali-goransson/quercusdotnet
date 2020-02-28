@@ -64,7 +64,7 @@ public class IpValidateFilter : AbstractFilter : ValidateFilter
     bool isRejectReserved = (flags & FilterModule.FILTER_FLAG_NO_RES_RANGE) > 0;
     bool isRejectPrivate = (flags & FilterModule.FILTER_FLAG_NO_PRIV_RANGE) > 0;
 
-    StringValue str = value.toStringValue(env);
+    StringValue str = value.ToStringValue(env);
 
     if (isIpV4) {
       int pos = str.indexOf('.');
@@ -215,7 +215,7 @@ public class IpValidateFilter : AbstractFilter : ValidateFilter
     // XXX: reserved, private
 
     try {
-      InetAddress ip = InetAddress.getByName(str.toString());
+      InetAddress ip = InetAddress.getByName(str.ToString());
 
       return ip instanceof Inet6Address;
     }

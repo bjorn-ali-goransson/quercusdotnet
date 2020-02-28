@@ -324,7 +324,7 @@ public class MysqliResult : JdbcResultResource {
                                            fieldMysqlType,
                                            fieldScale);
     } catch (SQLException e) {
-      log.log(Level.FINE, e.toString(), e);
+      log.log(Level.FINE, e.ToString(), e);
 
       return BooleanValue.FALSE;
     }
@@ -462,7 +462,7 @@ public class MysqliResult : JdbcResultResource {
 
       result.putField(env, "charsetnr", LongValue.ZERO);
     } catch (SQLException e) {
-      log.log(Level.FINE, e.toString(), e);
+      log.log(Level.FINE, e.ToString(), e);
       return BooleanValue.FALSE;
     }
 
@@ -668,7 +668,7 @@ public class MysqliResult : JdbcResultResource {
 
       result.putField(env, "charsetnr", LongValue.ZERO);
     } catch (SQLException e) {
-      log.log(Level.FINE, e.toString(), e);
+      log.log(Level.FINE, e.ToString(), e);
       return BooleanValue.FALSE;
     }
 
@@ -772,9 +772,9 @@ public class MysqliResult : JdbcResultResource {
         flags.append("timestamp");
       }
 
-      return env.createString(flags.toString());
+      return env.createString(flags.ToString());
     } catch (SQLException e) {
-      log.log(Level.FINE, e.toString(), e);
+      log.log(Level.FINE, e.ToString(), e);
       return BooleanValue.FALSE;
     }
   }
@@ -792,7 +792,7 @@ public class MysqliResult : JdbcResultResource {
 
       return md.getColumnTypeName(fieldOffset + 1);
     } catch (SQLException e) {
-      log.log(Level.FINE, e.toString(), e);
+      log.log(Level.FINE, e.ToString(), e);
       return null;
     }
   }
@@ -913,7 +913,7 @@ public class MysqliResult : JdbcResultResource {
 
       return array;
     } catch (SQLException e) {
-      log.log(Level.FINE,  e.toString(), e);
+      log.log(Level.FINE,  e.ToString(), e);
       return BooleanValue.FALSE;
     }
   }
@@ -977,7 +977,7 @@ public class MysqliResult : JdbcResultResource {
       if (getColumnCharacterSetMethod != null)
         encoding = (String) getColumnCharacterSetMethod.invoke(md, column);
     } catch (Exception e) {
-      log.log(Level.FINE, e.toString(), e);
+      log.log(Level.FINE, e.ToString(), e);
     }
     
     if (encoding == null) {

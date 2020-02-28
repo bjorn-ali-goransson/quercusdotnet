@@ -125,7 +125,7 @@ public class PopenOutput : AbstractBinaryOutput
       if (_os != null)
         _os.flush();
     } catch (IOException e) {
-      log.log(Level.FINE, e.toString(), e);
+      log.log(Level.FINE, e.ToString(), e);
     }
   }
 
@@ -148,7 +148,7 @@ public class PopenOutput : AbstractBinaryOutput
 
       return _process.waitFor();
     } catch (Exception e) {
-      log.log(Level.FINE, e.toString(), e);
+      log.log(Level.FINE, e.ToString(), e);
 
       return -1;
     } finally {
@@ -177,7 +177,7 @@ public class PopenOutput : AbstractBinaryOutput
    * Converts to a string.
    * @param env
    */
-  public string toString()
+  public string ToString()
   {
     return "PopenOutput[" + _process + "]";
   }

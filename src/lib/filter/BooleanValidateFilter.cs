@@ -73,7 +73,7 @@ public class BooleanValidateFilter
       return BooleanValue.create(value.toLong() == 1);
     }
     else {
-      string str = value.toStringValue(env).toString();
+      string str = value.ToStringValue(env).ToString();
       str = str.toLowerCase().trim();
 
       if ("on".equals(str) || "yes".equals(str) || "true".equals(str)) {

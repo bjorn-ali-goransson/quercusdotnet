@@ -300,7 +300,7 @@ public class LazyMethod : AbstractFunction
     throw new UnsupportedOperationException(getClass().getName());
   }
 
-  public override string toString()
+  public override string ToString()
   {
     return getClass().getSimpleName() + "[" + _name + "]";
   }

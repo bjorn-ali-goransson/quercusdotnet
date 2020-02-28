@@ -217,7 +217,7 @@ public class QuercusProgram {
         try {
           wait(120000);
         } catch (Exception e) {
-          log.log(Level.WARNING, e.toString(), e);
+          log.log(Level.WARNING, e.ToString(), e);
         }
       }
     }
@@ -257,7 +257,7 @@ public class QuercusProgram {
       return;
     }
 
-    string msg = e.toString();
+    string msg = e.ToString();
 
     // XXX: temp for memory issues
     if (msg != null && msg.length() > 4096) {
@@ -462,7 +462,7 @@ public class QuercusProgram {
           if (timeout > 0)
             wait(timeout);
         } catch (Exception e) {
-          log.log(Level.FINER, e.toString(), e);
+          log.log(Level.FINER, e.ToString(), e);
         }
       }
     }
@@ -485,7 +485,7 @@ public class QuercusProgram {
     }
   }
 
-  public string toString()
+  public string ToString()
   {
     return getClass().getSimpleName() + "[" + _sourceFile + "]";
   }

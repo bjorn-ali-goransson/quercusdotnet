@@ -283,19 +283,19 @@ public class MhashModule : AbstractQuercusModule {
       }
       catch (NoSuchAlgorithmException ex) {
         if (log.isLoggable(Level.FINE))
-          log.log(Level.FINE, ex.toString(), ex);
+          log.log(Level.FINE, ex.ToString(), ex);
 
         return null;
       }
       catch (NoSuchProviderException ex) {
         if (log.isLoggable(Level.FINE))
-          log.log(Level.FINE, ex.toString(), ex);
+          log.log(Level.FINE, ex.ToString(), ex);
 
         return null;
       }
     }
 
-    public string toString()
+    public string ToString()
     {
       return
         "MhashAlgorithm[name=" + _name

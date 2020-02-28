@@ -567,7 +567,7 @@ public class DOMDocument
           os.close();
         }
         catch (Exception ex) {
-          log.log(Level.FINE, ex.toString(), ex);
+          log.log(Level.FINE, ex.ToString(), ex);
         }
       }
     }

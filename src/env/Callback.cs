@@ -185,7 +185,7 @@ abstract public class Callback : Value : Callable {
    */
   abstract public bool isInternal(Env env);
 
-  public string toString()
+  public string ToString()
   {
     return getClass().getSimpleName() + "[" + getCallbackName() + "]";
   }

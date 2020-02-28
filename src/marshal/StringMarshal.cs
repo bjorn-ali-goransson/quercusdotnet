@@ -73,7 +73,7 @@ public class StringMarshal : Marshal {
 
   protected override int getMarshalingCostImpl(Value argValue)
   {
-    return argValue.toStringMarshalCost();
+    return argValue.ToStringMarshalCost();
     /*
     if (argValue.isString()) {
       if (argValue.isUnicode())

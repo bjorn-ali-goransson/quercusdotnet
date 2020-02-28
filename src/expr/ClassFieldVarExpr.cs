@@ -136,7 +136,7 @@ public class ClassFieldVarExpr : AbstractVarExpr {
               getLocation());
   }
 
-  public string toString()
+  public string ToString()
   {
     return _className + "::$" + _varName;
   }

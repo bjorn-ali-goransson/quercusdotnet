@@ -87,7 +87,7 @@ public class ResourceValue : Value
   /**
    * Converts to a string.
    */
-  public override string toString()
+  public override string ToString()
   {
     if (ResourceValue.class.equals(getClass())) {
       return ResourceValue.class.getSimpleName() + "[]";
@@ -104,7 +104,7 @@ public class ResourceValue : Value
                              IdentityHashMap<Value, String> valueSet)
     
   {
-    @out.print("resource(" + toString(env) + ")");
+    @out.print("resource(" + ToString(env) + ")");
   }
 
   protected override void printRImpl(Env env,
@@ -113,7 +113,7 @@ public class ResourceValue : Value
                             IdentityHashMap<Value, String> valueSet)
     
   {
-    @out.print("resource(" + toString(env) + ")");
+    @out.print("resource(" + ToString(env) + ")");
   }
 }
 

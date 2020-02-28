@@ -328,7 +328,7 @@ public class LazyClassDef : CompiledClassDef
   }
 
   @Override
-  public string toString()
+  public string ToString()
   {
     return getClass().getSimpleName()
            + "@"

@@ -97,7 +97,7 @@ public class Memcache {
     if (keys.isArray())
       return BooleanValue.FALSE;
 
-    string key = keys.toString();
+    string key = keys.ToString();
 
     Value value = _cache.get(key);
 
@@ -179,7 +179,7 @@ public class Memcache {
     return true;
   }
 
-  public string toString()
+  public string ToString()
   {
     return "Memcache[]";
   }

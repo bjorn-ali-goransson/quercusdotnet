@@ -89,7 +89,7 @@ public class LargeStringBuilderValue
    */
   public string getValue()
   {
-    return toString();
+    return ToString();
   }
 
   /**
@@ -181,7 +181,7 @@ public class LargeStringBuilderValue
   /**
    * Converts to a string.
    */
-  public override string toString()
+  public override string ToString()
   {
     char []buffer = new char[_length];
 
@@ -198,13 +198,13 @@ public class LargeStringBuilderValue
    */
   public override Object toJavaObject()
   {
-    return toString();
+    return ToString();
   }
 
   /**
    * Converts to a string builder
    */
-  public override StringValue toStringBuilder()
+  public override StringValue ToStringBuilder()
   {
     // XXX: can this just return this, or does it need to return a copy?
 
@@ -441,7 +441,7 @@ public class LargeStringBuilderValue
   /**
    * Converts to a string builder
    */
-  public override StringValue toStringBuilder(Env env)
+  public override StringValue ToStringBuilder(Env env)
   {
     return new LargeStringBuilderValue(_bufferList, _length);
   }
@@ -734,7 +734,7 @@ public class LargeStringBuilderValue
     sb.append("s:");
     sb.append(_length);
     sb.append(":\"");
-    sb.append(toString());
+    sb.append(ToString());
     sb.append("\";");
   }
 
@@ -810,7 +810,7 @@ public class LargeStringBuilderValue
 
     sb.append('"');
 
-    return sb.toString();
+    return sb.ToString();
   }
 
   public override void varDumpImpl(Env env,

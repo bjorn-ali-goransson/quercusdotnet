@@ -129,14 +129,14 @@ public class SessionArrayValue : ArrayValueWrapper
     
     synchronized (array) {
       for (Map.Entry<Value,Value> entry : array.entrySet()) {
-        sb.append(entry.getKey().toString());
+        sb.append(entry.getKey().ToString());
         sb.append("|");
 
         entry.getValue().serialize(env, sb, serializeMap);
       }
     }
 
-    return sb.toString();
+    return sb.ToString();
   }
 
   /**

@@ -65,7 +65,7 @@ public class ConstFileExpr : Expr {
     return env.createString(_fileName);
   }
 
-  public string toString()
+  public string ToString()
   {
     return _fileName;
   }

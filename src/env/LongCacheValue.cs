@@ -106,7 +106,7 @@ public class LongCacheValue : LongValue
   /**
    * Converts to a StringValue.
    */
-  public override StringValue toStringValue(Env env)
+  public override StringValue ToStringValue(Env env)
   {
     if (_strValue == null) {
       _strValue = env.createString(toLong());

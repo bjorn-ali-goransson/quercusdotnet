@@ -339,7 +339,7 @@ public class DOMNode<T : Node>
     return _delegate.setUserData(key, data, null);
   }
 
-  public string toString()
+  public string ToString()
   {
     return getClass().getSimpleName();
   }

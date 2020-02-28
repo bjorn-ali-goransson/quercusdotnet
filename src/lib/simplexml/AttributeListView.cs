@@ -71,7 +71,7 @@ public class AttributeListView : SimpleView
   public override SimpleView getIndex(Env env, Value indexV)
   {
     if (indexV.isString()) {
-      string nodeName = indexV.toString();
+      string nodeName = indexV.ToString();
 
       for (AttributeView view : _attrList) {
         if (view.getNodeName().equals(nodeName)) {
@@ -100,7 +100,7 @@ public class AttributeListView : SimpleView
 
   public override SimpleView getField(Env env, Value indexV)
   {
-    string name = indexV.toString();
+    string name = indexV.ToString();
     
     for (AttributeView attr : _attrList) {
       if (attr.getNodeName().equals(name)) {
@@ -116,9 +116,9 @@ public class AttributeListView : SimpleView
     throw new UnsupportedOperationException();
   }
 
-  public override string toString(Env env)
+  public override string ToString(Env env)
   {
-    return _attrList.get(0).toString(env);
+    return _attrList.get(0).ToString(env);
   }
   
   public override bool issetField(Env env, string name)
@@ -190,13 +190,13 @@ public class AttributeListView : SimpleView
     Set<Map.Entry<Value,Value>> set = getEntrySet(env, cls);
 
     for (Map.Entry<Value,Value> entry : set) {
-      obj.putField(env, entry.getKey().toString(), entry.getValue());
+      obj.putField(env, entry.getKey().ToString(), entry.getValue());
     }
 
     return obj;
   }
 
-  public override string toString()
+  public override string ToString()
   {
     return getClass().getSimpleName() + "[" + _attrList + "]";
   }

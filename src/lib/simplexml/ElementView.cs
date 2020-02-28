@@ -372,7 +372,7 @@ public class ElementView : SimpleView
   public override SimpleView getIndex(Env env, Value indexV)
   {
     if (indexV.isString()) {
-      string name = indexV.toString();
+      string name = indexV.ToString();
 
       Attr attr = getAttribute(name);
 
@@ -414,7 +414,7 @@ public class ElementView : SimpleView
 
   public override SimpleView setIndex(Env env, Value indexV, Value value)
   {
-    string str = value.toString();
+    string str = value.ToString();
 
 
     Node node = _node;
@@ -424,7 +424,7 @@ public class ElementView : SimpleView
       node.setTextContent(str);
     }
     else {
-      Attr attr = doc.createAttribute(indexV.toString());
+      Attr attr = doc.createAttribute(indexV.ToString());
       attr.setValue(str);
 
       NamedNodeMap attrMap = node.getAttributes();
@@ -436,7 +436,7 @@ public class ElementView : SimpleView
 
   public override SimpleView getField(Env env, Value indexV)
   {
-    string nodeName = indexV.toStringValue(env).toString();
+    string nodeName = indexV.ToStringValue(env).ToString();
 
     ArrayList<SimpleView> childList = new ArrayList<SimpleView>();
 
@@ -490,7 +490,7 @@ public class ElementView : SimpleView
 
   public override SimpleView setField(Env env, Value indexV, Value value)
   {
-    string name = indexV.toString();
+    string name = indexV.ToString();
 
     Node child = getChild(name);
 
@@ -498,12 +498,12 @@ public class ElementView : SimpleView
       Document doc = _node.getOwnerDocument();
 
       Element e = doc.createElement(name);
-      e.setTextContent(value.toString());
+      e.setTextContent(value.ToString());
 
       _node.appendChild(e);
     }
     else {
-      child.setTextContent(value.toString());
+      child.setTextContent(value.ToString());
     }
 
     return this;
@@ -541,7 +541,7 @@ public class ElementView : SimpleView
     return false;
   }
 
-  public override string toString(Env env)
+  public override string ToString(Env env)
   {
     StringBuilder sb = new StringBuilder();
 
@@ -569,7 +569,7 @@ public class ElementView : SimpleView
       child = child.getNextSibling();
     }
 
-    return sb.toString();
+    return sb.ToString();
   }
 
   public override Iterator<Map.Entry<IteratorIndex,SimpleView>> getIterator()
@@ -614,7 +614,7 @@ public class ElementView : SimpleView
     }
 
     if (elementList.size() == 0) {
-      string text = toString(env);
+      string text = ToString(env);
 
       if (text != null) {
         map.put(LongValue.ZERO, env.createString(text));
@@ -714,7 +714,7 @@ public class ElementView : SimpleView
     }
 
     if (elementList.size() == 0) {
-      string text = toString(env);
+      string text = ToString(env);
 
       if (text != null && text.length() > 0) {
         if (isChildren) {
@@ -760,7 +760,7 @@ public class ElementView : SimpleView
     }
   }
 
-  public override string toString()
+  public override string ToString()
   {
     StringBuilder sb = new StringBuilder();
 

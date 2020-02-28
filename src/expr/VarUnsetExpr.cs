@@ -84,7 +84,7 @@ public class VarUnsetExpr : Expr {
     return _var == expr._var;
   }
 
-  public string toString()
+  public string ToString()
   {
     return "unset(" + _var + ")";
   }

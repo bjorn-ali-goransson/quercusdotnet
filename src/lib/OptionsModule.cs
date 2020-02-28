@@ -129,7 +129,7 @@ public class OptionsModule : AbstractQuercusModule {
 
       try {
         QuercusContext quercus = env.getQuercus();
-        QuercusProgram program = quercus.parseCode(value.toStringValue(env));
+        QuercusProgram program = quercus.parseCode(value.ToStringValue(env));
 
         program = program.createExprReturn();
         Value v = program.execute(env);
@@ -156,7 +156,7 @@ public class OptionsModule : AbstractQuercusModule {
     }
     else {
       if (message.isDefault()) {
-        message = value.toStringValue(env);
+        message = value.ToStringValue(env);
       }
 
       Value callback = getAssertCallback(env);
@@ -547,7 +547,7 @@ public class OptionsModule : AbstractQuercusModule {
     Value value = env.getConfigVar(name);
 
     if (value != null)
-      env.setIni(name, value.toStringValue());
+      env.setIni(name, value.ToStringValue());
 
     return NullValue.NULL;
   }
@@ -599,7 +599,7 @@ public class OptionsModule : AbstractQuercusModule {
     Path path = env.getQuercus().getIniFile();
 
     if (path != null) {
-      return env.createString(path.toString());
+      return env.createString(path.ToString());
     }
     else {
       return BooleanValue.FALSE;
@@ -646,7 +646,7 @@ public class OptionsModule : AbstractQuercusModule {
 
         return addr.getHostName();
       } catch (Exception e) {
-        log.log(Level.FINER, e.toString(), e);
+        log.log(Level.FINER, e.ToString(), e);
 
         return "localhost";
       }
@@ -708,7 +708,7 @@ public class OptionsModule : AbstractQuercusModule {
           sb.append((char) ch);
         }
 
-        return sb.toString();
+        return sb.ToString();
       }
     }
     catch (IOException e) {
@@ -836,7 +836,7 @@ public class OptionsModule : AbstractQuercusModule {
   private static void phpinfoVariable(Env env, Value value)
   {
     if (value.isString()) {
-      env.println(escape(env, value).toString());
+      env.println(escape(env, value).ToString());
     }
     else {
       if (hasRequest(env))
@@ -1008,7 +1008,7 @@ public class OptionsModule : AbstractQuercusModule {
           sb.append((char) ch);
         }
 
-        string s = sb.toString();
+        string s = sb.ToString();
 
         if (s.equals("dev"))
           s = "a";
@@ -1062,14 +1062,14 @@ public class OptionsModule : AbstractQuercusModule {
         Value key = escape(env, entry.getKey());
         Value val = escape(env, entry.getValue());
 
-        result.putField(env, key.toString(), val);
+        result.putField(env, key.ToString(), val);
       }
 
       return result;
     }
     else {
       return HtmlModule.htmlspecialchars(env,
-                                         value.toStringValue(),
+                                         value.ToStringValue(),
                                          HtmlModule.ENT_COMPAT,
                                          null,
                                          true);

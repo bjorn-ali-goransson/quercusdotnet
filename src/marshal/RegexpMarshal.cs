@@ -55,7 +55,7 @@ public class RegexpMarshal : StringMarshal {
 
   public override Object marshal(Env env, Value value, Class expectedClass)
   {
-    return RegexpModule.createRegexp(value.toStringValue(env));
+    return RegexpModule.createRegexp(value.ToStringValue(env));
   }
 
   public override Value unmarshal(Env env, Object value)

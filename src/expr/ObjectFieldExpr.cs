@@ -234,7 +234,7 @@ public class ObjectFieldExpr : AbstractVarExpr {
     obj.unsetArray(env, _name, index);
   }
 
-  public override string toString()
+  public override string ToString()
   {
     return _objExpr + "->" + _name;
   }

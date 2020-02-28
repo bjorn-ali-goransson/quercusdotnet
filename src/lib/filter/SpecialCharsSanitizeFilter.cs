@@ -44,7 +44,7 @@ public class SpecialCharsSanitizeFilter
   protected Value filterImpl(Env env, Value value,
                              int flags, ArrayValue options)
   {
-    StringValue str = value.toStringValue(env);
+    StringValue str = value.ToStringValue(env);
     StringValue sb = str.createStringBuilder();
 
     int len = str.length();

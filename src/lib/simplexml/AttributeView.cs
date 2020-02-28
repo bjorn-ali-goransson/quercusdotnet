@@ -84,7 +84,7 @@ public class AttributeView : SimpleView
     throw new UnsupportedOperationException();
   }
 
-  public override string toString(Env env)
+  public override string ToString(Env env)
   {
     return _attr.getNodeValue();
   }
@@ -120,7 +120,7 @@ public class AttributeView : SimpleView
     return obj;
   }
 
-  public override string toString()
+  public override string ToString()
   {
     return getClass().getSimpleName() + "[" + _attr + "]";
   }

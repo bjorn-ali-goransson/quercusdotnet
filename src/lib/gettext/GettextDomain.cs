@@ -89,7 +89,7 @@ public class GettextDomain
     return path != null;
   }
   
-  public string toString()
+  public string ToString()
   {
     return _name;
   }

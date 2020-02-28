@@ -291,26 +291,26 @@ class RegexpNode {
   }
 
   @Override
-  public string toString()
+  public string ToString()
   {
     Map<RegexpNode,Integer> map = new IdentityHashMap<RegexpNode,Integer>();
 
     StringBuilder sb = new StringBuilder();
 
-    toString(sb, map);
+    ToString(sb, map);
 
-    return sb.toString();
+    return sb.ToString();
   }
 
-  protected void toString(StringBuilder sb, Map<RegexpNode,Integer> map)
+  protected void ToString(StringBuilder sb, Map<RegexpNode,Integer> map)
   {
-    if (toStringAdd(sb, map))
+    if (ToStringAdd(sb, map))
       return;
 
-    sb.append(toStringName()).append("[]");
+    sb.append(ToStringName()).append("[]");
   }
 
-  protected bool toStringAdd(StringBuilder sb, Map<RegexpNode,Integer> map)
+  protected bool ToStringAdd(StringBuilder sb, Map<RegexpNode,Integer> map)
   {
     Integer v = map.get(this);
 
@@ -324,7 +324,7 @@ class RegexpNode {
     return false;
   }
 
-  protected string toStringName()
+  protected string ToStringName()
   {
     string name = getClass().getName();
     int p = name.lastIndexOf('$');
@@ -680,17 +680,17 @@ class RegexpNode {
       return -1;
     }
 
-    protected override void toString(StringBuilder sb, Map<RegexpNode,Integer> map)
+    protected override void ToString(StringBuilder sb, Map<RegexpNode,Integer> map)
     {
-      if (toStringAdd(sb, map))
+      if (ToStringAdd(sb, map))
         return;
 
-      sb.append(toStringName());
+      sb.append(ToStringName());
       sb.append("[").append(_min).append(", ").append(_max).append(", ");
 
-      _node.toString(sb, map);
+      _node.ToString(sb, map);
       sb.append(", ");
-      _next.toString(sb, map);
+      _next.ToString(sb, map);
       sb.append("]");
     }
   }
@@ -799,7 +799,7 @@ class RegexpNode {
       return -1;
     }
 
-    public override string toString()
+    public override string ToString()
     {
       return "CharUngreedyLoop[" + _min + ", "
           + _max + ", " + _node + ", " + _next + "]";
@@ -888,16 +888,16 @@ class RegexpNode {
         return _next.match(string, length, offset, state);
     }
 
-    protected override void toString(StringBuilder sb, Map<RegexpNode,Integer> map)
+    protected override void ToString(StringBuilder sb, Map<RegexpNode,Integer> map)
     {
-      if (toStringAdd(sb, map))
+      if (ToStringAdd(sb, map))
         return;
 
-      sb.append(toStringName());
+      sb.append(ToStringName());
       sb.append("[");
-      _head.toString(sb, map);
+      _head.ToString(sb, map);
       sb.append(", ");
-      _next.toString(sb, map);
+      _next.ToString(sb, map);
       sb.append("]");
     }
   }
@@ -982,7 +982,7 @@ class RegexpNode {
         return _tail.match(string, length, offset, state);
     }
 
-    public override string toString()
+    public override string ToString()
     {
       return getClass().getSimpleName() + "[" + _conditional
                                         + "," + _first
@@ -1026,7 +1026,7 @@ class RegexpNode {
         return _tail.match(string, length, offset, state);
     }
 
-    public override string toString()
+    public override string ToString()
     {
       return getClass().getSimpleName() + "[" + _group
                                         + "," + _first
@@ -1284,16 +1284,16 @@ class RegexpNode {
       }
     }
 
-    protected override void toString(StringBuilder sb, Map<RegexpNode,Integer> map)
+    protected override void ToString(StringBuilder sb, Map<RegexpNode,Integer> map)
     {
-      if (toStringAdd(sb, map))
+      if (ToStringAdd(sb, map))
         return;
 
-      sb.append(toStringName());
+      sb.append(ToStringName());
       sb.append("[");
       sb.append(_group);
       sb.append(", ");
-      _node.toString(sb, map);
+      _node.ToString(sb, map);
       sb.append("]");
     }
   }
@@ -1410,16 +1410,16 @@ class RegexpNode {
       }
     }
 
-    protected override void toString(StringBuilder sb, Map<RegexpNode,Integer> map)
+    protected override void ToString(StringBuilder sb, Map<RegexpNode,Integer> map)
     {
-      if (toStringAdd(sb, map))
+      if (ToStringAdd(sb, map))
         return;
 
-      sb.append(toStringName());
+      sb.append(ToStringName());
       sb.append("[");
       sb.append(_group);
       sb.append(", ");
-      _next.toString(sb, map);
+      _next.ToString(sb, map);
       sb.append("]");
     }
   }
@@ -1648,7 +1648,7 @@ class RegexpNode {
       }
     }
 
-    public override string toString()
+    public override string ToString()
     {
       return "LoopHead[" + _min + ", " + _max + ", " + _node + "]";
     }
@@ -1738,7 +1738,7 @@ class RegexpNode {
       return match;
     }
 
-    public override string toString()
+    public override string ToString()
     {
       return "LoopTail[" + _next + "]";
     }
@@ -1848,7 +1848,7 @@ class RegexpNode {
         return -1;
     }
 
-    public override string toString()
+    public override string ToString()
     {
       return "LoopHeadUngreedy[" + _min + ", " + _max + ", " + _node + "]";
     }
@@ -1938,7 +1938,7 @@ class RegexpNode {
         return -1;
     }
 
-    public override string toString()
+    public override string ToString()
     {
       return "LoopTailUngreedy[" + _next + "]";
     }
@@ -2064,24 +2064,24 @@ class RegexpNode {
       return -1;
     }
 
-    protected override void toString(StringBuilder sb, Map<RegexpNode,Integer> map)
+    protected override void ToString(StringBuilder sb, Map<RegexpNode,Integer> map)
     {
-      if (toStringAdd(sb, map))
+      if (ToStringAdd(sb, map))
         return;
 
-      sb.append(toStringName());
+      sb.append(ToStringName());
       sb.append("[");
-      _left.toString(sb, map);
+      _left.ToString(sb, map);
 
       for (Or ptr = _right; ptr != null; ptr = ptr._right) {
         sb.append(",");
-        ptr._left.toString(sb, map);
+        ptr._left.ToString(sb, map);
       }
 
       sb.append("]");
     }
 
-    public override string toString()
+    public override string ToString()
     {
       StringBuilder sb = new StringBuilder();
       sb.append("Or[");
@@ -2092,7 +2092,7 @@ class RegexpNode {
         sb.append(ptr._left);
       }
       sb.append("]");
-      return sb.toString();
+      return sb.ToString();
     }
   }
 
@@ -2187,7 +2187,7 @@ class RegexpNode {
       return _next.match(string, strlen, offset, state);
     }
 
-    public override string toString()
+    public override string ToString()
     {
       return "PossessiveLoop[" + _min + ", "
           + _max + ", " + _node + ", " + _next + "]";
@@ -2924,9 +2924,9 @@ class RegexpNode {
         return -1;
     }
 
-    protected override void toString(StringBuilder sb, Map<RegexpNode,Integer> map)
+    protected override void ToString(StringBuilder sb, Map<RegexpNode,Integer> map)
     {
-      sb.append(toStringName());
+      sb.append(ToStringName());
       sb.append("[");
       sb.append(_buffer, 0, _length);
       sb.append("]");

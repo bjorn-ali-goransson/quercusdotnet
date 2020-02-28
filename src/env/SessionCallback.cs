@@ -96,7 +96,7 @@ public class SessionCallback : Value {
     } catch (RuntimeException e) {
       throw e;
     } catch (Throwable e) {
-      log.log(Level.FINE, e.toString(), e);
+      log.log(Level.FINE, e.ToString(), e);
     }
   }
 
@@ -107,7 +107,7 @@ public class SessionCallback : Value {
     } catch (RuntimeException e) {
       throw e;
     } catch (Throwable e) {
-      log.log(Level.FINE, e.toString(), e);
+      log.log(Level.FINE, e.ToString(), e);
     }
   }
 
@@ -118,12 +118,12 @@ public class SessionCallback : Value {
     } catch (RuntimeException e) {
       throw e;
     } catch (Throwable e) {
-      log.log(Level.FINE, e.toString(), e);
+      log.log(Level.FINE, e.ToString(), e);
     }
   }
 
   @Override
-  public string toString()
+  public string ToString()
   {
     return getClass().getSimpleName() + "[" + _open + ","
                                             + _close  + ","

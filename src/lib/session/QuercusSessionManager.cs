@@ -373,7 +373,7 @@ public class QuercusSessionManager
       Base64.encode(sb, RandomUtil.getRandomLong());
       Base64.encode(sb, env.getCurrentTime());
 
-      id = sb.toString();
+      id = sb.ToString();
     } while (getSession(env, id, 0) != null);
 
     if (id == null || id.equals(""))
@@ -513,7 +513,7 @@ public class QuercusSessionManager
         session.reset(now);
       }
     } catch (Exception e) {
-      log.log(Level.FINE, e.toString(), e);
+      log.log(Level.FINE, e.ToString(), e);
       session.reset(now);
     }
 
@@ -565,7 +565,7 @@ public class QuercusSessionManager
 
           session.invalidate();
         } catch (Throwable e) {
-          log.log(Level.FINER, e.toString(), e);
+          log.log(Level.FINER, e.ToString(), e);
         }
       }
     } finally {

@@ -101,7 +101,7 @@ public class JavaValue : ObjectValue
    */
   public long toLong()
   {
-    return StringValue.parseLong(toString(Env.getInstance()));
+    return StringValue.parseLong(ToString(Env.getInstance()));
   }
 
   /**
@@ -109,7 +109,7 @@ public class JavaValue : ObjectValue
    */
   public double toDouble()
   {
-    return toDouble(toString(Env.getInstance()).toString());
+    return toDouble(ToString(Env.getInstance()).ToString());
   }
 
   /**
@@ -153,12 +153,12 @@ public class JavaValue : ObjectValue
       return Double.parseDouble(s);
   }
 
-  public override StringValue toString(Env env)
+  public override StringValue ToString(Env env)
   {
-    StringValue value = _classDef.toString(env, this);
+    StringValue value = _classDef.ToString(env, this);
 
     if (value == null) {
-      value = env.createString(toString());
+      value = env.createString(ToString());
     }
 
     return value;
@@ -191,7 +191,7 @@ public class JavaValue : ObjectValue
     Set<? : Map.Entry<Value,Value>> entrySet = entrySet();
 
     if (entrySet == null) {
-      @out.print("resource(" + toString(env) + ")"); // XXX:
+      @out.print("resource(" + ToString(env) + ")"); // XXX:
       return;
     }
 
@@ -223,7 +223,7 @@ public class JavaValue : ObjectValue
 
     try {
       if (! _classDef.varDumpImpl(env, this, _object, @out, depth, valueSet))
-        @out.print("resource(" + toString(env) + ")"); // XXX:
+        @out.print("resource(" + ToString(env) + ")"); // XXX:
     }
     finally {
       env.setThis(oldThis);
@@ -540,7 +540,7 @@ public class JavaValue : ObjectValue
   /**
    * Converts to a string.
    */
-  public string toString()
+  public string ToString()
   {
     if (_object != null) {
       return String.valueOf(_object);

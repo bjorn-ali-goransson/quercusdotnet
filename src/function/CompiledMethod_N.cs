@@ -103,7 +103,7 @@ abstract public class CompiledMethod_N : CompiledMethod {
   abstract public Value callMethodImpl(Env env, QuercusClass qClass, Value qThis,
                                        Value []args);
 
-  public string toString()
+  public string ToString()
   {
     return "CompiledMethod_N[" + _name + "]";
   }

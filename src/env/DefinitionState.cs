@@ -244,7 +244,7 @@ public class DefinitionState {
 
     copyOnWrite();
     _funMap.put(name, fun);
-    _crc = Crc64.generate(_crc, name.toString());
+    _crc = Crc64.generate(_crc, name.ToString());
 
     if (_lowerFunMap != null) {
       _lowerFunMap.put(name.toLowerCase(Locale.ENGLISH), fun);
@@ -278,7 +278,7 @@ public class DefinitionState {
 
     copyOnWrite();
     _funMap.put(name, fun);
-    _crc = Crc64.generate(_crc, name.toString());
+    _crc = Crc64.generate(_crc, name.ToString());
 
     if (_lowerFunMap != null)
       _lowerFunMap.put(lowerName, fun);

@@ -121,7 +121,7 @@ abstract public class BufferedBinaryInputOutput
       _isTimeout = true;
       _isEOF = true;
 
-      log.log(Level.FINER, e.toString(), e);
+      log.log(Level.FINER, e.ToString(), e);
 
       return -1;
     }
@@ -150,7 +150,7 @@ abstract public class BufferedBinaryInputOutput
       _isTimeout = true;
       _isEOF = true;
 
-      log.log(Level.FINER, e.toString(), e);
+      log.log(Level.FINER, e.ToString(), e);
 
       return -1;
     }
@@ -167,7 +167,7 @@ abstract public class BufferedBinaryInputOutput
       _isTimeout = true;
       _isEOF = true;
 
-      log.log(Level.FINER, e.toString(), e);
+      log.log(Level.FINER, e.ToString(), e);
     }
   }
 
@@ -185,7 +185,7 @@ abstract public class BufferedBinaryInputOutput
       _isTimeout = true;
       _isEOF = true;
 
-      log.log(Level.FINER, e.toString(), e);
+      log.log(Level.FINER, e.ToString(), e);
 
       return _env.getEmptyString();
     }
@@ -227,7 +227,7 @@ abstract public class BufferedBinaryInputOutput
   /**
    * Converts to a string.
    */
-  public string toString()
+  public string ToString()
   {
     if (_is != null)
       return "BufferedBinaryInputOutput[" + _is.getPath() + "]";

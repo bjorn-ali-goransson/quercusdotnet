@@ -67,7 +67,7 @@ public class UnaryUnsetExpr : Expr {
     return NullValue.NULL;
   }
 
-  public string toString()
+  public string ToString()
   {
     return "unset(" + _var + ")";
   }

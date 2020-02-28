@@ -436,7 +436,7 @@ abstract public class ClassDef : InstanceInitializer {
   }
 
   @Override
-  public string toString()
+  public string ToString()
   {
     return getClass().getSimpleName()
            + "@"

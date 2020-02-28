@@ -102,7 +102,7 @@ public class PostgresStatement : JdbcPreparedStatementResource {
    */
   public override bool prepare(Env env, string query)
   {
-    string queryStr = query.toString();
+    string queryStr = query.ToString();
 
     _preparedMapping.clear();
 

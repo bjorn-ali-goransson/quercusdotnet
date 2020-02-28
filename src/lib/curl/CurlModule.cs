@@ -872,14 +872,14 @@ public class CurlModule
         break;
 
       case CURLOPT_COOKIE:
-        curl.setCookie(value.toString());
+        curl.setCookie(value.ToString());
         break;
       case CURLOPT_COOKIEFILE:
         // XXX: Netscape cookie format support
         ReadStream in = null;
 
         try {
-          Path path = env.getPwd().lookup(value.toString());
+          Path path = env.getPwd().lookup(value.ToString());
 
           if (path.exists()) {
             in = path.openRead();
@@ -891,7 +891,7 @@ public class CurlModule
               sb.append((char)ch);
             }
 
-            curl.setCookie(sb.toString());
+            curl.setCookie(sb.ToString());
           }
         }
         catch (IOException e) {
@@ -904,13 +904,13 @@ public class CurlModule
         break;
       case CURLOPT_COOKIEJAR:
         //XXX: Netscape cookie file format
-        curl.setCookieFilename(value.toString());
+        curl.setCookieFilename(value.ToString());
         break;
       case CURLOPT_CUSTOMREQUEST:
-        curl.setRequestMethod(value.toString());
+        curl.setRequestMethod(value.ToString());
         break;
       case CURLOPT_ENCODING:
-        string encoding = value.toString();
+        string encoding = value.ToString();
         if (encoding.length() == 0)
           encoding = "gzip, deflate, identity";
         curl.setRequestProperty("Accept-Encoding", encoding);
@@ -921,10 +921,10 @@ public class CurlModule
         break;
       case CURLOPT_PROXY:
         curl.setIsProxying(true);
-        curl.setProxyURL(value.toString());
+        curl.setProxyURL(value.ToString());
         break;
       case CURLOPT_PROXYUSERPWD:
-        string proxyUserPwd = value.toString();
+        string proxyUserPwd = value.ToString();
         i = proxyUserPwd.indexOf(':');
 
         if (i >= 0)
@@ -933,20 +933,20 @@ public class CurlModule
         curl.setProxyPassword(proxyUserPwd.substring(i + 1));
         break;
       case CURLOPT_RANGE:
-        curl.setRequestProperty("Range", "bytes=" + value.toString());
+        curl.setRequestProperty("Range", "bytes=" + value.ToString());
         break;
       case CURLOPT_REFERER:
-        curl.setRequestProperty("Referer", value.toString());
+        curl.setRequestProperty("Referer", value.ToString());
         break;
       case CURLOPT_URL:
-        setURL(curl, value.toString());
-        //curl.setURL(value.toString());
+        setURL(curl, value.ToString());
+        //curl.setURL(value.ToString());
         break;
       case CURLOPT_USERAGENT:
-        curl.setRequestProperty("User-Agent", value.toString());
+        curl.setRequestProperty("User-Agent", value.ToString());
         break;
       case CURLOPT_USERPWD:
-        string userpwd = value.toString();
+        string userpwd = value.ToString();
         i = userpwd.indexOf(':');
 
         if (i >= 0)
@@ -965,7 +965,7 @@ public class CurlModule
         ArrayValue array = value.toArrayValue(env);
 
         for (Map.Entry<Value,Value> entry : array.entrySet()) {
-          string header = entry.getValue().toString();
+          string header = entry.getValue().ToString();
 
           string name = header;
           string body = "";

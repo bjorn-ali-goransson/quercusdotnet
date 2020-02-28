@@ -277,7 +277,7 @@ public class VariableModule : AbstractQuercusModule {
       ArrayValue array = (ArrayValue) value;
 
       for (Map.Entry<Value,Value> entry : array.entrySet()) {
-        string key = entry.getKey().toString();
+        string key = entry.getKey().ToString();
 
         env.setGlobalValue(prefix + key,
                          array.getVar(entry.getKey()));
@@ -309,7 +309,7 @@ public class VariableModule : AbstractQuercusModule {
     if (! v.isString())
       return v.toLong();
 
-    StringValue s = v.toStringValue();
+    StringValue s = v.ToStringValue();
 
     int len = s.length();
     long value = 0;
@@ -601,7 +601,7 @@ public class VariableModule : AbstractQuercusModule {
 
     v.serialize(env, sb, new SerializeMap());
 
-    return sb.toString();
+    return sb.ToString();
   }
 
   /**
@@ -622,7 +622,7 @@ public class VariableModule : AbstractQuercusModule {
       return true;
     }
     else if ("string".equals(type)) {
-      var.set(value.toStringValue());
+      var.set(value.ToStringValue());
       return true;
     }
     else if ("int".equals(type) || "integer".equals(type)) {
@@ -665,7 +665,7 @@ public class VariableModule : AbstractQuercusModule {
    */
   public static Value strval(Env env, @ReadOnly Value v)
   {
-    return v.toString(env);
+    return v.ToString(env);
   }
 
   /**
@@ -853,7 +853,7 @@ public class VariableModule : AbstractQuercusModule {
       @out.print("float(" + v.toDouble() + ")");
     }
     else if (v instanceof StringValue) {
-      @out.print("string(" + v.toString() + ")");
+      @out.print("string(" + v.ToString() + ")");
     }
     else if (v instanceof NullValue) {
       @out.print("NULL");

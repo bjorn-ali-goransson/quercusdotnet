@@ -68,7 +68,7 @@ public class BinaryNeqExpr : AbstractBinaryExpr {
     return ! lValue.eq(rValue);
   }
 
-  public string toString()
+  public string ToString()
   {
     return "(" + _left + " != " + _right + ")";
   }

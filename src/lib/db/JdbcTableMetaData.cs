@@ -93,7 +93,7 @@ public class JdbcTableMetaData {
           column.setPrimaryKey(true);
         }
       } catch (SQLException e) {
-        log.log(Level.FINE, e.toString(), e);
+        log.log(Level.FINE, e.ToString(), e);
       } finally {
         rs.close();
       }
@@ -108,7 +108,7 @@ public class JdbcTableMetaData {
         column.setIndex(true);
       }
     } catch (Exception e) {
-      log.log(Level.FINE, e.toString(), e);
+      log.log(Level.FINE, e.ToString(), e);
     } finally {
       rs.close();
     }
@@ -143,7 +143,7 @@ public class JdbcTableMetaData {
     return env.getCurrentTime() - _lastModified <= _maxIdleTime;
   }
 
-  public string toString()
+  public string ToString()
   {
     return "JdbcTableMetaData[" + getName() + "]";
   }

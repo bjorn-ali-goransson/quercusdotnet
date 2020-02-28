@@ -51,10 +51,10 @@ public class VarTempExpr : VarExpr {
    */
   public string getJavaVar()
   {
-    return getName().toString();
+    return getName().ToString();
   }
 
-  public string toString()
+  public string ToString()
   {
     return "$quercus_" + getName();
   }

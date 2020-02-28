@@ -62,7 +62,7 @@ public class BinarySubExpr : AbstractBinaryExpr {
     return lValue.sub(rValue);
   }
 
-  public string toString()
+  public string ToString()
   {
     return "(" + _left + " + " + _right + ")";
   }

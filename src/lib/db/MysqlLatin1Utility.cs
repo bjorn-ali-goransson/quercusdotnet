@@ -83,7 +83,7 @@ public class MysqlLatin1Utility
         sb.append((char) b);
     }
     
-    return sb.toString();
+    return sb.ToString();
   }
   
   public static byte[] encode(String s)

@@ -163,7 +163,7 @@ public class ThisExpr : AbstractVarExpr {
     return env.getThis().getQuercusClass();
   }
 
-  public string toString()
+  public string ToString()
   {
     return "$this";
   }

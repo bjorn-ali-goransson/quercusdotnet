@@ -152,7 +152,7 @@ public class CallbackObjectMethod : Callback {
 
   public override string getCallbackName()
   {
-    return _methodName.toString();
+    return _methodName.ToString();
   }
 
   public override bool isInternal(Env env)
@@ -204,7 +204,7 @@ public class CallbackObjectMethod : Callback {
     return NullValue.NULL;
   }
 
-  public override string toString()
+  public override string ToString()
   {
     return getClass().getSimpleName() + "[" + _obj.getClassName()
                                       + "::" + _methodName + "]";

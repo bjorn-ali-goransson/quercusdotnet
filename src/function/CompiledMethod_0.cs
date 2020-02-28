@@ -80,7 +80,7 @@ abstract public class CompiledMethod_0 : CompiledMethod {
                                    QuercusClass qClass,
                                    Value qThis);
 
-  public string toString()
+  public string ToString()
   {
     return "CompiledMethod_0[" + _name + "]";
   }

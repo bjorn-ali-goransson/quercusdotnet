@@ -141,9 +141,9 @@ public class LiteralExpr : Expr {
     return env.getClass(className);
   }
 
-  public string toString()
+  public string ToString()
   {
-    return _value.toString();
+    return _value.ToString();
   }
 }
 

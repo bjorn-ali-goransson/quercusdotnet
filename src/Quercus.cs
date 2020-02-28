@@ -215,11 +215,11 @@ public class Quercus
     try {
       env.execute();
     } catch (QuercusDieException e) {
-      log.log(Level.FINER, e.toString(), e);
+      log.log(Level.FINER, e.ToString(), e);
     } catch (QuercusExitException e) {
-      log.log(Level.FINER, e.toString(), e);
+      log.log(Level.FINER, e.ToString(), e);
     } catch (QuercusErrorException e) {
-      log.log(Level.FINER, e.toString(), e);
+      log.log(Level.FINER, e.ToString(), e);
     } finally {
       env.close();
 
@@ -243,11 +243,11 @@ public class Quercus
     try {
       env.execute();
     } catch (QuercusDieException e) {
-      log.log(Level.FINER, e.toString(), e);
+      log.log(Level.FINER, e.ToString(), e);
     } catch (QuercusExitException e) {
-      log.log(Level.FINER, e.toString(), e);
+      log.log(Level.FINER, e.ToString(), e);
     } catch (QuercusErrorException e) {
-      log.log(Level.FINER, e.toString(), e);
+      log.log(Level.FINER, e.ToString(), e);
     } finally {
       env.close();
 

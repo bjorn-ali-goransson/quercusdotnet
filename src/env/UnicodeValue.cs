@@ -71,7 +71,7 @@ abstract public class UnicodeValue : StringValue {
 
     sb.append('"');
 
-    return sb.toString();
+    return sb.ToString();
   }
 
   public override void varDumpImpl(Env env,
@@ -125,7 +125,7 @@ abstract public class UnicodeValue : StringValue {
   /**
    * Converts to a string builder
    */
-  public override StringValue toStringBuilder()
+  public override StringValue ToStringBuilder()
   {
     UnicodeBuilderValue sb = new UnicodeBuilderValue();
 
@@ -156,7 +156,7 @@ abstract public class UnicodeValue : StringValue {
       //XXX: refactor so that env @is passed in
       string charset = Env.getInstance().getRuntimeEncoding();
       
-      return new ByteArrayInputStream(toString().getBytes(charset));
+      return new ByteArrayInputStream(ToString().getBytes(charset));
     }
     catch (UnsupportedEncodingException e) {
       throw new QuercusRuntimeException(e);
@@ -168,9 +168,9 @@ abstract public class UnicodeValue : StringValue {
     return toSimpleReader();
   }
   
-  public override string toString(String charset)
+  public override string ToString(String charset)
   {
-    return toString();
+    return ToString();
   }
 
   /**
@@ -195,14 +195,14 @@ abstract public class UnicodeValue : StringValue {
       else if (rValue.isLongConvertible())
         return toLong() ==  rValue.toLong();
       else
-        return equals(rValue.toStringValue());
+        return equals(rValue.ToStringValue());
     }
     else if (rValue.isString() && rValue.length() == 0)
       return length() == 0;
     else if (rValue.isNumberConvertible())
       return toDouble() == rValue.toDouble();
     else
-      return equals(rValue.toStringValue());
+      return equals(rValue.ToStringValue());
   }
   */
 }

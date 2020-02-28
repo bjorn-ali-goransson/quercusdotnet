@@ -74,7 +74,7 @@ public class UndefinedFunction : AbstractFunction {
     return env.error(L.l("'{0}' @is an unknown function.", _name));
   }
 
-  public string toString()
+  public string ToString()
   {
     return "UndefinedFunction[" + _name + "]";
   }

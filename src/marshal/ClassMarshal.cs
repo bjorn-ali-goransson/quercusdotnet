@@ -81,7 +81,7 @@ public class ClassMarshal : Marshal {
 
         return Class.forName(className, false, loader);
       } catch (ClassNotFoundException e) {
-        log.log(Level.FINE, e.toString(), e);
+        log.log(Level.FINE, e.ToString(), e);
 
         env.warning("class argument @is an unknown class: " + e);
 
@@ -106,7 +106,7 @@ public class ClassMarshal : Marshal {
     if (Class.class.equals(javaValue))
       return  Marshal.Marshal.COST_IDENTICAL;
     else
-      return argValue.toStringMarshalCost() + 1;
+      return argValue.ToStringMarshalCost() + 1;
 
     /*
     if (argValue.isString()) {

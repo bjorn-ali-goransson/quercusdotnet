@@ -86,7 +86,7 @@ public class IconvUtility {
       try {
         in = str.toReader(inCharset);
       } catch (IOException e) {
-        log.log(Level.WARNING, e.toString(), e);
+        log.log(Level.WARNING, e.ToString(), e);
     
         in = str.toReader("utf-8");
       }
@@ -97,7 +97,7 @@ public class IconvUtility {
       try {
         @out.setEncoding(outCharset);
       } catch (IOException e) {
-        log.log(Level.WARNING, e.toString(), e);
+        log.log(Level.WARNING, e.ToString(), e);
     
         @out.setEncoding("utf-8");
       }
@@ -145,7 +145,7 @@ public class IconvUtility {
     
   {
     StringValue str = env.createString(
-            MimeUtility.unfold(MimeUtility.decodeText(word.toString())));
+            MimeUtility.unfold(MimeUtility.decodeText(word.ToString())));
 
     return str.toBinaryValue(charset);
   }
@@ -199,7 +199,7 @@ public class IconvUtility {
     sb.append(' ');
 
     string word = encodeMimeWord(
-            value.toString(), outCharset, scheme, lineBreakChars, lineLength);
+            value.ToString(), outCharset, scheme, lineBreakChars, lineLength);
 
     sb.append(MimeUtility.fold(sb.length(), word));
 

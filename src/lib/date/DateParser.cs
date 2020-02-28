@@ -724,7 +724,7 @@ public class DateParser
 
         unread();
 
-        string s = _sb.toString();
+        string s = _sb.ToString();
 
         return parseString(s);
       }

@@ -380,7 +380,7 @@ public class ZlibModule : AbstractQuercusModule {
       return LongValue.create(length);
 
     } catch (IOException e) {
-      log.log(Level.FINE, e.toString(), e);
+      log.log(Level.FINE, e.ToString(), e);
 
       return BooleanValue.FALSE;
 
@@ -414,7 +414,7 @@ public class ZlibModule : AbstractQuercusModule {
     if (!val.isset())
       return BooleanValue.FALSE;
 
-    string s = val.toString();
+    string s = val.ToString();
     if (s.contains("gzip"))
       return env.createString("gzip");
     else if (s.contains("deflate"))

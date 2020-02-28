@@ -956,7 +956,7 @@ public class CurlResource : ResourceValue
     return curl;
   }
 
-  public string toString()
+  public string ToString()
   {
     return "CurlResource[" + _requestMethod + " " + _URL + "]";
   }

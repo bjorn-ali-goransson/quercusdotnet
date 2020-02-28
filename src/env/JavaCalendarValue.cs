@@ -68,9 +68,9 @@ public class JavaCalendarValue : JavaValue {
     return _calendar;
   }
   
-  public string toString()
+  public string ToString()
   {
-    return _calendar.getTime().toString();
+    return _calendar.getTime().ToString();
   }
 }
 }

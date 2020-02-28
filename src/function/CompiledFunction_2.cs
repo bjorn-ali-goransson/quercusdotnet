@@ -100,7 +100,7 @@ abstract public class CompiledFunction_2 : CompiledFunction {
     return call(env, a0, _args[1].eval(env));
   }
 
-  public string toString()
+  public string ToString()
   {
     return "CompiledFunction_1[" + _name + "]";
   }

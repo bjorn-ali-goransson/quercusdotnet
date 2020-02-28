@@ -49,7 +49,7 @@ public class Eregi : Ereg
     _flags |= Regcomp.IGNORE_CASE;
   }
 
-  public string toString()
+  public string ToString()
   {
     return "Eregi[" + _pattern + "]";
   }

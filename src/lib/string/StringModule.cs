@@ -373,7 +373,7 @@ public class StringModule : AbstractQuercusModule {
       sb.append(end);
     }
 
-    return sb.toString();
+    return sb.ToString();
   }
 
   /**
@@ -720,11 +720,11 @@ public class StringModule : AbstractQuercusModule {
     if ((piecesV.isArray() && glueV.isArray())
          || glueV.isArray()) {
       pieces = glueV.toArrayValue(env);
-      glue = piecesV.toStringValue(env);
+      glue = piecesV.ToStringValue(env);
     }
     else if (piecesV.isArray()) {
       pieces = piecesV.toArrayValue(env);
-      glue = glueV.toStringValue(env);
+      glue = glueV.ToStringValue(env);
     }
     else {
       env.warning(L.l("neither argument to implode @is an array: {0}, {1}",
@@ -939,7 +939,7 @@ public class StringModule : AbstractQuercusModule {
 
       }
       catch (IOException e) {
-        log.log(Level.FINE, e.toString(), e);
+        log.log(Level.FINE, e.ToString(), e);
 
         return BooleanValue.FALSE;
       }
@@ -1331,7 +1331,7 @@ public class StringModule : AbstractQuercusModule {
       }
     }
 
-    return result.toString();
+    return result.ToString();
   }
 
   /**
@@ -1384,7 +1384,7 @@ public class StringModule : AbstractQuercusModule {
     char point = '.';
 
     if (! pointValue.isNull()) {
-      string pointString = pointValue.toString();
+      string pointString = pointValue.ToString();
 
       point =  (pointString.length() == 0) ? 0 : pointString.charAt(0);
     }
@@ -1392,7 +1392,7 @@ public class StringModule : AbstractQuercusModule {
     char group = ',';
 
     if (! groupValue.isNull()) {
-      string groupString = groupValue.toString();
+      string groupString = groupValue.ToString();
 
       group = (groupString.length() == 0) ? 0 : groupString.charAt(0);
     }
@@ -1405,7 +1405,7 @@ public class StringModule : AbstractQuercusModule {
       for (int i = 0; i < decimals; i++)
         patternBuilder.append('0');
 
-      pattern = patternBuilder.toString();
+      pattern = patternBuilder.ToString();
     }
     else {
       pattern = group == 0 ? "###0" : "#,##0";
@@ -1558,7 +1558,7 @@ public class StringModule : AbstractQuercusModule {
       }
     }
 
-    return sb.toString();
+    return sb.ToString();
   }
 
   /**
@@ -1654,28 +1654,28 @@ public class StringModule : AbstractQuercusModule {
       for (Value value : ((ArrayValue) localeArg).values()) {
         QuercusLocale locale = setLocale(localeInfo,
                                          category,
-                                         value.toString());
+                                         value.ToString());
 
         if (locale != null)
-          return env.createString(locale.toString());
+          return env.createString(locale.ToString());
       }
     }
     else {
       QuercusLocale locale = setLocale(localeInfo,
                                        category,
-                                       localeArg.toString());
+                                       localeArg.ToString());
 
       if (locale != null)
-        return env.createString(locale.toString());
+        return env.createString(locale.ToString());
     }
 
     for (int i = 0; i < fallback.length; i++) {
       QuercusLocale locale = setLocale(localeInfo,
                                        category,
-                                       fallback[i].toString());
+                                       fallback[i].ToString());
 
       if (locale != null)
-        return env.createString(locale.toString());
+        return env.createString(locale.ToString());
     }
 
     return BooleanValue.FALSE;
@@ -1741,7 +1741,7 @@ public class StringModule : AbstractQuercusModule {
       sb.append(ch);
     }
 
-    language = sb.toString();
+    language = sb.ToString();
     sb.clear();
 
     while (i < len && (ch = localeName.charAt(i)) != '.' && ch != '@') {
@@ -1753,7 +1753,7 @@ public class StringModule : AbstractQuercusModule {
     if (ch == '.')
       i++;
 
-    country = sb.toString();
+    country = sb.ToString();
     sb.clear();
 
     while (i < len && (ch = localeName.charAt(i)) != '@') {
@@ -1763,7 +1763,7 @@ public class StringModule : AbstractQuercusModule {
     }
 
     if (sb.length() > 0)
-      charset = sb.toString();
+      charset = sb.ToString();
 
     if (i + 1 < len)
       variant = localeName.substring(i + 1);
@@ -1881,7 +1881,7 @@ public class StringModule : AbstractQuercusModule {
         return hashToValue(env, digest, rawOutput);
       }
       catch (IOException e) {
-        log.log(Level.FINE, e.toString(), e);
+        log.log(Level.FINE, e.ToString(), e);
 
         return BooleanValue.FALSE;
       }
@@ -2169,7 +2169,7 @@ public class StringModule : AbstractQuercusModule {
                   padChar,
                   ch == 'S',
                   width,
-                  format.substring(head, j).toString(),
+                  format.substring(head, j).ToString(),
                   argIndex));
               sb.setLength(0);
             i = j;
@@ -2189,7 +2189,7 @@ public class StringModule : AbstractQuercusModule {
                   padChar,
                   ch == 'C',
                   width,
-                  format.substring(head, j).toString(),
+                  format.substring(head, j).ToString(),
                   argIndex));
               sb.setLength(0);
             i = j;
@@ -2213,7 +2213,7 @@ public class StringModule : AbstractQuercusModule {
             sb.append(ch);
 
             //segments.add(UnsignedLongPrintfSegment.create(
-            env, sb.toString(), index++));
+            env, sb.ToString(), index++));
             sb.setLength(0);
             i = j;
             break loop;
@@ -2250,7 +2250,7 @@ public class StringModule : AbstractQuercusModule {
 
             index++;
 
-            segments.add(LongPrintfSegment.create(env, sb.toString(), argIndex));
+            segments.add(LongPrintfSegment.create(env, sb.ToString(), argIndex));
             sb.setLength(0);
             i = j;
             break loop;
@@ -2299,7 +2299,7 @@ public class StringModule : AbstractQuercusModule {
 
             index++;
 
-            segments.add(new DoublePrintfSegment(sb.toString(),
+            segments.add(new DoublePrintfSegment(sb.ToString(),
                                                  isLeft && padChar == '0',
                                                  argIndex,
                                                  locale));
@@ -2601,7 +2601,7 @@ public class StringModule : AbstractQuercusModule {
     if (sb.length() == 0)
       return;
 
-    segmentList.add(new ScanfConstant(sb.toString()));
+    segmentList.add(new ScanfConstant(sb.ToString()));
 
     sb.setLength(0);
   }
@@ -3026,7 +3026,7 @@ public class StringModule : AbstractQuercusModule {
     if (i == 0)
       val = 0;
     else
-      val = Double.parseDouble(s.substring(start, i).toString());
+      val = Double.parseDouble(s.substring(start, i).ToString());
 
     sscanfPut(obj, DoubleValue.create(val), isAssign);
 
@@ -3179,7 +3179,7 @@ public class StringModule : AbstractQuercusModule {
           Value result = strReplaceImpl(env,
                                         search,
                                         replace,
-                                        value.toStringValue(env),
+                                        value.ToStringValue(env),
                                         count,
                                         isInsensitive);
 
@@ -3190,7 +3190,7 @@ public class StringModule : AbstractQuercusModule {
       return resultArray;
     }
     else {
-      StringValue subjectString = subject.toStringValue(env);
+      StringValue subjectString = subject.ToStringValue(env);
 
       if (subjectString.length() == 0) {
         return env.getEmptyString();
@@ -3221,7 +3221,7 @@ public class StringModule : AbstractQuercusModule {
                                       bool isInsensitive)
   {
     if (! search.isArray()) {
-      StringValue searchString = search.toStringValue(env);
+      StringValue searchString = search.ToStringValue(env);
 
       if (searchString.length() == 0) {
         return subject;
@@ -3233,7 +3233,7 @@ public class StringModule : AbstractQuercusModule {
 
       subject = strReplaceImpl(env,
                                searchString,
-                               replace.toStringValue(env),
+                               replace.ToStringValue(env),
                                subject,
                                count,
                                isInsensitive);
@@ -3254,8 +3254,8 @@ public class StringModule : AbstractQuercusModule {
         }
 
         subject = strReplaceImpl(env,
-                                 searchItem.toStringValue(env),
-                                 replaceItem.toStringValue(env),
+                                 searchItem.ToStringValue(env),
+                                 replaceItem.ToStringValue(env),
                                  subject,
                                  count,
                                  isInsensitive);
@@ -3270,8 +3270,8 @@ public class StringModule : AbstractQuercusModule {
         Value searchItem = searchIter.next();
 
         subject = strReplaceImpl(env,
-                                 searchItem.toStringValue(env),
-                                 replace.toStringValue(env),
+                                 searchItem.ToStringValue(env),
+                                 replace.ToStringValue(env),
                                  subject,
                                  count,
                                  isInsensitive);
@@ -3685,7 +3685,7 @@ public class StringModule : AbstractQuercusModule {
     HashSet<StringValue> allowedTagMap = null;
 
     if (! allowTags.isDefault())
-      allowedTagMap = getAllowedTags(allowTags.toStringValue(env));
+      allowedTagMap = getAllowedTags(allowTags.ToStringValue(env));
 
     int len = string.length();
 
@@ -3891,7 +3891,7 @@ public class StringModule : AbstractQuercusModule {
       result.append((char) ch);
     }
 
-    return result.toString();
+    return result.ToString();
   }
 
   /**
@@ -3915,7 +3915,7 @@ public class StringModule : AbstractQuercusModule {
     }
 
     if (needleV.isString())
-      needle = needleV.toStringValue(env);
+      needle = needleV.ToStringValue(env);
     else
       needle = StringValue.create((char) needleV.toInt());
 
@@ -3974,7 +3974,7 @@ public class StringModule : AbstractQuercusModule {
     CharSequence needleLower;
 
     if (needleV.isString()) {
-      needleLower = needleV.toStringValue(env).toLowerCase();
+      needleLower = needleV.ToStringValue(env).toLowerCase();
     }
     else {
       char lower = Character.toLowerCase((char) needleV.toLong());
@@ -4228,7 +4228,7 @@ public class StringModule : AbstractQuercusModule {
     }
 
     if (needleV.isString())
-      needle = needleV.toStringValue(env);
+      needle = needleV.ToStringValue(env);
     else
       needle = StringValue.create((char) needleV.toInt());
 
@@ -4254,7 +4254,7 @@ public class StringModule : AbstractQuercusModule {
     CharSequence needle;
 
     if (needleV.isString())
-      needle = needleV.toStringValue(env);
+      needle = needleV.ToStringValue(env);
     else
       needle = String.valueOf((char) needleV.toLong());
 
@@ -4299,7 +4299,7 @@ public class StringModule : AbstractQuercusModule {
     string needle;
 
     if (needleV.isString())
-      needle = needleV.toString();
+      needle = needleV.ToString();
     else
       needle = String.valueOf((char) needleV.toInt());
 
@@ -4342,7 +4342,7 @@ public class StringModule : AbstractQuercusModule {
     StringValue needle;
 
     if (needleV.isString())
-      needle = needleV.toStringValue(env);
+      needle = needleV.ToStringValue(env);
     else
       needle = StringValue.create((char) needleV.toInt());
 
@@ -4452,7 +4452,7 @@ public class StringModule : AbstractQuercusModule {
     string needle;
 
     if (needleV.isString()) {
-      needle = needleV.toString();
+      needle = needleV.ToString();
     }
     else {
       needle = String.valueOf((char) needleV.toLong());
@@ -4540,7 +4540,7 @@ public class StringModule : AbstractQuercusModule {
     else {
       string = string1;
       offset = 0;
-      characters = string2.toStringValue(env);
+      characters = string2.ToStringValue(env);
 
       env.setSpecialValue("caucho.strtok_string", string);
       //env.setSpecialValue("caucho.strtok_token", string2);
@@ -4628,7 +4628,7 @@ public class StringModule : AbstractQuercusModule {
       return strtrArray(env, string, fromV.toArrayValue(env));
     }
 
-    StringValue from = fromV.toStringValue(env);
+    StringValue from = fromV.ToStringValue(env);
 
     int len = from.length();
 
@@ -4682,8 +4682,8 @@ public class StringModule : AbstractQuercusModule {
     bool []charSet = new boolean[256];
 
     for (i = 0; i < size; i++) {
-      fromList[i] = entryArray[i].getKey().toStringValue(env);
-      toList[i] = entryArray[i].getValue().toStringValue(env);
+      fromList[i] = entryArray[i].getKey().ToStringValue(env);
+      toList[i] = entryArray[i].getValue().ToStringValue(env);
 
       charSet[fromList[i].charAt(0)] = true;
     }
@@ -4813,8 +4813,8 @@ public class StringModule : AbstractQuercusModule {
       return BooleanValue.FALSE;
     }
 
-    mainStr = substr(env, mainStr, offset, lenV).toStringValue(env);
-    str = substr(env, str, 0, lenV).toStringValue(env);
+    mainStr = substr(env, mainStr, offset, lenV).ToStringValue(env);
+    str = substr(env, str, 0, lenV).ToStringValue(env);
 
     if (isCaseInsensitive)
       return LongValue.create(strcasecmp(mainStr, str));
@@ -4828,9 +4828,9 @@ public class StringModule : AbstractQuercusModule {
                                    @Optional int offset,
                                    @Optional("-1") int length)
   {
-    string haystack = haystackV.toString();
+    string haystack = haystackV.ToString();
 
-    string needle = needleV.toString();
+    string needle = needleV.ToString();
 
     if (needle.length() == 0) {
       env.warning(L.l("empty substr"));
@@ -4918,7 +4918,7 @@ public class StringModule : AbstractQuercusModule {
           start = startIterator.next().toInt();
 
         Value result = substrReplaceImpl(
-            value.toStringValue(env), replacement, start, length);
+            value.ToStringValue(env), replacement, start, length);
 
         resultArray.append(result);
       }
@@ -4933,7 +4933,7 @@ public class StringModule : AbstractQuercusModule {
         start = startIterator.next().toInt();
 
       return substrReplaceImpl(
-          subjectV.toStringValue(env), replacement, start, length);
+          subjectV.ToStringValue(env), replacement, start, length);
     }
   }
 
@@ -4983,7 +4983,7 @@ public class StringModule : AbstractQuercusModule {
     if (characters == null || characters.equals(""))
       trim = TRIM_WHITESPACE;
     else
-      trim = parseCharsetBitmap(env, characters.toString());
+      trim = parseCharsetBitmap(env, characters.ToString());
 
     int len = string.length();
 
@@ -5068,7 +5068,7 @@ public class StringModule : AbstractQuercusModule {
       }
     }
 
-    return sb.toString();
+    return sb.ToString();
   }
 
   /**
@@ -5152,7 +5152,7 @@ public class StringModule : AbstractQuercusModule {
     else
       width = widthV.toInt();
 
-    string string = value.toString();
+    string string = value.ToString();
 
     if (cutV instanceof UnexpectedValue) {
       env.warning(L.l("cut must be a boolean, but {0} given",
@@ -5178,7 +5178,7 @@ public class StringModule : AbstractQuercusModule {
     string breakString = "\n";
 
     if (! breakV.isDefault())
-      breakString = breakV.toString();
+      breakString = breakV.ToString();
 
     if (breakString == null || breakString.length() == 0) {
       env.warning(L.l("break string cannot be empty"));
@@ -5829,7 +5829,7 @@ public class StringModule : AbstractQuercusModule {
 
     protected StringValue toValue(Env env, Value []args)
     {
-      return args[_index].toStringValue(env);
+      return args[_index].ToStringValue(env);
     }
 
     public override bool apply(Env env, StringValue sb, Value []args)
@@ -5895,7 +5895,7 @@ public class StringModule : AbstractQuercusModule {
       if (v.isLongConvertible())
         return env.createString((char) v.toLong());
       else
-        return v.charValueAt(0).toStringValue(env);
+        return v.charValueAt(0).ToStringValue(env);
     }
   }
 
@@ -6222,7 +6222,7 @@ public class StringModule : AbstractQuercusModule {
       if (i == 0)
         val = 0;
       else
-        val = Double.parseDouble(s.substring(start, i).toString());
+        val = Double.parseDouble(s.substring(start, i).ToString());
 
       sscanfPut(var, DoubleValue.create(val), isReturnArray);
 

@@ -225,7 +225,7 @@ public class UnicodeBuilderValue
    */
   public string getValue()
   {
-    return toString();
+    return ToString();
   }
 
   /**
@@ -247,7 +247,7 @@ public class UnicodeBuilderValue
   /**
    * Converts to a string builder
    */
-  public override StringValue toStringBuilder()
+  public override StringValue ToStringBuilder()
   {
     return new UnicodeBuilderValue(this);
   }
@@ -255,7 +255,7 @@ public class UnicodeBuilderValue
   /**
    * Converts to a string builder
    */
-  public override StringValue toStringBuilder(Env env)
+  public override StringValue ToStringBuilder(Env env)
   {
     return new UnicodeBuilderValue(this);
   }
@@ -263,7 +263,7 @@ public class UnicodeBuilderValue
   /**
    * Converts to a string builder
    */
-  public override StringValue toStringBuilder(Env env, Value value)
+  public override StringValue ToStringBuilder(Env env, Value value)
   {
     UnicodeBuilderValue v = new UnicodeBuilderValue(this);
 
@@ -315,7 +315,7 @@ public class UnicodeBuilderValue
     /*
     Env env = Env.getInstance();
     string charset = (env != null
-                      ? env.getRuntimeEncoding().toString()
+                      ? env.getRuntimeEncoding().ToString()
                       : null);
     */
 
@@ -708,7 +708,7 @@ public class UnicodeBuilderValue
     else if (indexL < len) {
       UnicodeBuilderValue sb = new UnicodeBuilderValue(_buffer, 0, len);
 
-      StringValue str = value.toStringValue();
+      StringValue str = value.ToStringValue();
 
       int index = (int) indexL;
 
@@ -733,7 +733,7 @@ public class UnicodeBuilderValue
          sb._buffer[sb._length++] = ' ';
       }
 
-      StringValue str = value.toStringValue();
+      StringValue str = value.ToStringValue();
 
       if (value.length() == 0)
         sb._buffer[index] = 0;
@@ -1267,7 +1267,7 @@ public class UnicodeBuilderValue
       return super.eq(rValue);
     }
     else {
-      string rString = rValue.toString();
+      string rString = rValue.ToString();
 
       int len = rString.length();
 
@@ -1402,7 +1402,7 @@ public class UnicodeBuilderValue
     }
   }
 
-  public string toString()
+  public string ToString()
   {
     return String.valueOf(_buffer, 0, _length);
   }

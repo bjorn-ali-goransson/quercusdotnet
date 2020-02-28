@@ -166,7 +166,7 @@ public class QuercusScriptEngineFactory : ScriptEngineFactory
     }
     sb.append(");");
 
-    return sb.toString();
+    return sb.ToString();
   }
 
   /**
@@ -193,7 +193,7 @@ public class QuercusScriptEngineFactory : ScriptEngineFactory
 
     sb.append("?>\n");
 
-    return sb.toString();
+    return sb.ToString();
   }
 
   /**
@@ -204,7 +204,7 @@ public class QuercusScriptEngineFactory : ScriptEngineFactory
     return new QuercusScriptEngine(this);
   }
 
-  public string toString()
+  public string ToString()
   {
     return getClass().getSimpleName() + "[]";
   }

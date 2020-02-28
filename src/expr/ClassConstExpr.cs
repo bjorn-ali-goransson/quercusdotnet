@@ -100,7 +100,7 @@ public class ClassConstExpr : Expr {
     return env.getClass(_className).getConstant(env, _name);
   }
 
-  public string toString()
+  public string ToString()
   {
     return _className + "::" + _name;
   }

@@ -71,7 +71,7 @@ public class BinaryLeftShiftExpr : AbstractBinaryExpr {
     return lValue.lshift(rValue);
   }
 
-  public string toString()
+  public string ToString()
   {
     return "(" + _left + " << " + _right + ")";
   }

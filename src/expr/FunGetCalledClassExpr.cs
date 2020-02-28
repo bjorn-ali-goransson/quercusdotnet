@@ -74,7 +74,7 @@ public class FunGetCalledClassExpr : Expr {
     return BooleanValue.FALSE;
   }
 
-  public string toString()
+  public string ToString()
   {
     return "get_called_class()";
   }

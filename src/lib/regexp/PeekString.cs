@@ -86,7 +86,7 @@ class PeekString : PeekStream {
     return _index;
   }
 
-  public string toString()
+  public string ToString()
   {
     return "PeekString[" + _string + "]";
   }

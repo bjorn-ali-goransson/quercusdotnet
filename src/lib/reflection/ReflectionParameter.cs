@@ -186,7 +186,7 @@ public class ReflectionParameter
     return _arg.getDefault().eval(env);
   }
 
-  public string toString()
+  public string ToString()
   {
     return getClass().getSimpleName() + "[" + _fun.getCallbackName()
                                       + "(" + _arg.getName() + ")]";

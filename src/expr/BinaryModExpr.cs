@@ -79,7 +79,7 @@ public class BinaryModExpr : AbstractBinaryExpr {
     return lValue.mod(rValue);
   }
 
-  public string toString()
+  public string ToString()
   {
     return "(" + _left + " % " + _right + ")";
   }

@@ -193,7 +193,7 @@ public class CurlHttpRequest
       return false;
     }
 
-    _curl.setHeader(header.toStringValue());
+    _curl.setHeader(header.ToStringValue());
 
     Value body = getBody(env, env.createBinaryBuilder());
 
@@ -201,7 +201,7 @@ public class CurlHttpRequest
       return false;
     }
 
-    _curl.setBody(body.toStringValue());
+    _curl.setBody(body.ToStringValue());
 
     _curl.setContentLength(_conn.getContentLength());
 

@@ -56,12 +56,12 @@ public class StringValueMarshal : Marshal
 
   public Object marshal(Env env, Expr expr, Class expectedClass)
   {
-    return expr.eval(env).toStringValue(env);
+    return expr.eval(env).ToStringValue(env);
   }
 
   public Object marshal(Env env, Value value, Class expectedClass)
   {
-    return value.toStringValue(env);
+    return value.ToStringValue(env);
   }
 
   public Value unmarshal(Env env, Object value)
@@ -69,7 +69,7 @@ public class StringValueMarshal : Marshal
     if (value instanceof StringValue)
       return (StringValue) value;
     else if (value instanceof Value)
-      return ((Value) value).toStringValue(env);
+      return ((Value) value).ToStringValue(env);
     else if (value != null)
       return env.createString(String.valueOf(value));
     else
@@ -78,7 +78,7 @@ public class StringValueMarshal : Marshal
 
   protected override int getMarshalingCostImpl(Value argValue)
   {
-    return argValue.toStringValueMarshalCost();
+    return argValue.ToStringValueMarshalCost();
 
     /*
     if (argValue.isString()) {

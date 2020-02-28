@@ -63,7 +63,7 @@ public class ClassesModule : AbstractQuercusModule {
       return obj.callMethod(env, name, args);
     }
     else {
-      QuercusClass cls = env.getClass(obj.toString());
+      QuercusClass cls = env.getClass(obj.ToString());
 
       Value result
         = cls.callMethod(env, env.getThis(), name, name.hashCode(), args);
@@ -183,7 +183,7 @@ public class ClassesModule : AbstractQuercusModule {
     if (cls.isObject())
       cl = ((ObjectValue) cls).getQuercusClass();
     else
-      cl = env.findClass(cls.toString());
+      cl = env.findClass(cls.ToString());
 
     if (cl == null)
       return NullValue.NULL;
@@ -221,7 +221,7 @@ public class ClassesModule : AbstractQuercusModule {
     if (obj instanceof ObjectValue)
       cl = ((ObjectValue) obj).getQuercusClass();
     else
-      cl = env.findClass(obj.toString());
+      cl = env.findClass(obj.ToString());
 
     if (cl == null)
       return BooleanValue.FALSE;
@@ -295,7 +295,7 @@ public class ClassesModule : AbstractQuercusModule {
         return env.createString(parent);
     }
     else if (value.isString()) {
-      string className = value.toString();
+      string className = value.ToString();
 
       QuercusClass cl = env.findClass(className);
 
@@ -347,7 +347,7 @@ public class ClassesModule : AbstractQuercusModule {
                                        string name)
   {
     if (value.isString()) {
-      QuercusClass cl = env.findClass(value.toString());
+      QuercusClass cl = env.findClass(value.ToString());
 
       return cl.isA(env, name) && ! cl.getName().equalsIgnoreCase(name);
     }
@@ -376,7 +376,7 @@ public class ClassesModule : AbstractQuercusModule {
 
 
     if (qClass == null) {
-      qClass = env.findClass(obj.toString());
+      qClass = env.findClass(obj.ToString());
     }
 
     if (qClass != null) {
@@ -395,7 +395,7 @@ public class ClassesModule : AbstractQuercusModule {
                                       StringValue name)
   {
     if (obj.isString()) {
-      QuercusClass cls = env.findClass(obj.toString());
+      QuercusClass cls = env.findClass(obj.ToString());
 
       if (cls != null && cls.getClassField(name) != null)
         return BooleanValue.TRUE;

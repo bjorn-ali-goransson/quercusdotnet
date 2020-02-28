@@ -146,7 +146,7 @@ public class ConnectionEntry : EnvCleanup
         cleanup();
       }
     } catch (SQLException e) {
-      log.log(Level.WARNING, e.toString(), e);
+      log.log(Level.WARNING, e.ToString(), e);
     }
   }
 
@@ -160,7 +160,7 @@ public class ConnectionEntry : EnvCleanup
       conn.close();
   }
 
-  public string toString()
+  public string ToString()
   {
     return getClass().getSimpleName() + "[ds=" + _ds + ", user=" + _user + "]";
   }

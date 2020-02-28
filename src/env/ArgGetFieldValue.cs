@@ -178,9 +178,9 @@ public class ArgGetFieldValue : ArgValue {
     return _obj.getFieldObject(_env, _name).getFieldVar(_env, name);
   }
 
-  public override StringValue toStringValue()
+  public override StringValue ToStringValue()
   {
-    return toValue().toStringValue();
+    return toValue().ToStringValue();
   }
 
   public override string toJavaString()

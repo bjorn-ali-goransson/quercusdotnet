@@ -259,7 +259,7 @@ public class ModuleInfo {
         _staticFunctions.put(functionName, methods);
 
       } catch (Exception e) {
-        log.log(Level.FINE, e.toString(), e);
+        log.log(Level.FINE, e.ToString(), e);
       }
     }
   }
@@ -304,7 +304,7 @@ public class ModuleInfo {
   }
 
   @Override
-  public string toString()
+  public string ToString()
   {
     return getClass().getSimpleName() + "[" + _name + "]";
   }

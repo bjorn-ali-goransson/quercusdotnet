@@ -152,7 +152,7 @@ public class XmlReader
         return LongValue.create(0);
     }
     catch (IllegalStateException ex) {
-      log.log(Level.WARNING, ex.toString(), ex);
+      log.log(Level.WARNING, ex.ToString(), ex);
 
       return NullValue.NULL;
     }
@@ -199,7 +199,7 @@ public class XmlReader
           _hasAttribute ||  _streamReader.getAttributeCount() > 0);
     }
     catch (IllegalStateException ex) {
-      log.log(Level.WARNING, ex.toString(), ex);
+      log.log(Level.WARNING, ex.ToString(), ex);
 
       return NullValue.NULL;
     }
@@ -296,15 +296,15 @@ public class XmlReader
         name = "#comment";
       else {
         if (prefix == null || prefix.length() == 0)
-          name = _streamReader.getName().toString();
+          name = _streamReader.getName().ToString();
         else
-          name = prefix + ":" + _streamReader.getLocalName().toString();
+          name = prefix + ":" + _streamReader.getLocalName().ToString();
       }
 
       return StringValue.create(name);
     }
     catch (IllegalStateException ex) {
-      log.log(Level.WARNING, ex.toString(), ex);
+      log.log(Level.WARNING, ex.ToString(), ex);
 
       return NullValue.NULL;
     }
@@ -403,7 +403,7 @@ public class XmlReader
       _streamReader.close();
     }
     catch (XMLStreamException ex) {
-      log.log(Level.WARNING, ex.toString(), ex);
+      log.log(Level.WARNING, ex.ToString(), ex);
 
       return BooleanValue.FALSE;
     }
@@ -548,7 +548,7 @@ public class XmlReader
           path.getNativePath(), path.openRead());
     }
     catch (XMLStreamException ex) {
-      log.log(Level.WARNING, ex.toString(), ex);
+      log.log(Level.WARNING, ex.ToString(), ex);
 
       env.warning(L.l("XML input file '{0}' cannot be opened for reading.",
                       path));
@@ -556,7 +556,7 @@ public class XmlReader
       return BooleanValue.FALSE;
     }
     catch (IOException ex) {
-      log.log(Level.WARNING, ex.toString(), ex);
+      log.log(Level.WARNING, ex.ToString(), ex);
 
       env.warning(L.l("Unable to open source data"));
 
@@ -587,7 +587,7 @@ public class XmlReader
   private void updateAttribute(Env env) {
     _hasAttribute = false;
 
-    string key = getName(env).toString() + _depth;
+    string key = getName(env).ToString() + _depth;
 
     if (_currentNodeType == XMLStreamConstants.START_ELEMENT
         && _streamReader.getAttributeCount() > 0) {
@@ -639,9 +639,9 @@ public class XmlReader
 
     }
     catch (XMLStreamException ex) {
-      log.log(Level.WARNING, ex.toString(), ex);
+      log.log(Level.WARNING, ex.ToString(), ex);
 
-      env.warning(L.l("Unable to read :" + ex.toString()));
+      env.warning(L.l("Unable to read :" + ex.ToString()));
 
       return BooleanValue.FALSE;
     }

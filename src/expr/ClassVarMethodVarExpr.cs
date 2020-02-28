@@ -125,7 +125,7 @@ public class ClassVarMethodVarExpr : Expr
                          args);
   }
 
-  public string toString()
+  public string ToString()
   {
     return _className + "::" + _methodName + "()";
   }

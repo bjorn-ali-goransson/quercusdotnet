@@ -254,9 +254,9 @@ public class JavaAdapterVar : Value
   // Conversions
   //
 
-  public override string toString()
+  public override string ToString()
   {
-    return getValue().toString();
+    return getValue().ToString();
   }
 
   /**
@@ -287,9 +287,9 @@ public class JavaAdapterVar : Value
    * Converts to a string.
    * @param env
    */
-  public override StringValue toString(Env env)
+  public override StringValue ToString(Env env)
   {
-    return getValue().toString(env);
+    return getValue().ToString(env);
   }
 
   /**
@@ -512,9 +512,9 @@ public class JavaAdapterVar : Value
     return getValue().toKey();
   }
 
-  public override StringValue toStringValue()
+  public override StringValue ToStringValue()
   {
-    return getValue().toStringValue();
+    return getValue().ToStringValue();
   }
 
   public override StringValue toBinaryValue(Env env)
@@ -527,17 +527,17 @@ public class JavaAdapterVar : Value
     return getValue().toUnicodeValue(env);
   }
 
-  public override StringValue toStringBuilder()
+  public override StringValue ToStringBuilder()
   {
-    return getValue().toStringBuilder();
+    return getValue().ToStringBuilder();
   }
 
   /**
    * Converts to a string builder
    */
-  public override StringValue toStringBuilder(Env env)
+  public override StringValue ToStringBuilder(Env env)
   {
-    return getValue().toStringBuilder(env);
+    return getValue().ToStringBuilder(env);
   }
 
   //

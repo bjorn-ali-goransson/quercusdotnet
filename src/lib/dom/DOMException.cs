@@ -63,7 +63,7 @@ public class DOMException
   @Override
   public Value toValue(Env env)
   {
-    return env.createException("DOMException", getValue().toString());
+    return env.createException("DOMException", getValue().ToString());
   }
 }
 }

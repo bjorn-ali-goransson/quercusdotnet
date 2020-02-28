@@ -108,7 +108,7 @@ public class OracleOciCollection {
       return true;
 
     } catch (Exception ex) {
-      log.log(Level.FINE, ex.toString(), ex);
+      log.log(Level.FINE, ex.ToString(), ex);
       return false;
     }
   }
@@ -126,7 +126,7 @@ public class OracleOciCollection {
       return true;
 
     } catch (Exception ex) {
-      log.log(Level.FINE, ex.toString(), ex);
+      log.log(Level.FINE, ex.ToString(), ex);
       return false;
     }
   }
@@ -152,7 +152,7 @@ public class OracleOciCollection {
       return true;
 
     } catch (Exception ex) {
-      log.log(Level.FINE, ex.toString(), ex);
+      log.log(Level.FINE, ex.ToString(), ex);
       return false;
     }
   }
@@ -171,7 +171,7 @@ public class OracleOciCollection {
       return true;
 
     } catch (Exception ex) {
-      log.log(Level.FINE, ex.toString(), ex);
+      log.log(Level.FINE, ex.ToString(), ex);
       return false;
     }
   }
@@ -208,7 +208,7 @@ public class OracleOciCollection {
       return _collection;
 
     } catch (Exception ex) {
-      log.log(Level.FINE, ex.toString(), ex);
+      log.log(Level.FINE, ex.ToString(), ex);
       return null;
     }
   }
@@ -228,7 +228,7 @@ public class OracleOciCollection {
       return env.wrapJava(_javaCollection.get(index - 1));
 
     } catch (Exception ex) {
-      log.log(Level.FINE, ex.toString(), ex);
+      log.log(Level.FINE, ex.ToString(), ex);
       return BooleanValue.FALSE;
     }
   }
@@ -254,7 +254,7 @@ public class OracleOciCollection {
       return LongValue.create(0);
 
     } catch (Exception ex) {
-      log.log(Level.FINE, ex.toString(), ex);
+      log.log(Level.FINE, ex.ToString(), ex);
       return null;
     }
   }
@@ -270,7 +270,7 @@ public class OracleOciCollection {
       return LongValue.create(_javaCollection.size());
 
     } catch (Exception ex) {
-      log.log(Level.FINE, ex.toString(), ex);
+      log.log(Level.FINE, ex.ToString(), ex);
       return null;
     }
   }
@@ -304,12 +304,12 @@ public class OracleOciCollection {
       return true;
 
     } catch (Exception ex) {
-      log.log(Level.FINE, ex.toString(), ex);
+      log.log(Level.FINE, ex.ToString(), ex);
       return false;
     }
   }
 
-  public string toString() {
+  public string ToString() {
     return "OracleOciCollection()";
   }
 }

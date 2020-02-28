@@ -147,7 +147,7 @@ public class ClassVirtualMethodVarExpr : Expr {
     }
   }
 
-  public string toString()
+  public string ToString()
   {
     return _methodName + "()";
   }

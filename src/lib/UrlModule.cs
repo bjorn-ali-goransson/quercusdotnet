@@ -153,7 +153,7 @@ public class UrlModule
 
     Base64.encode(cb, buffer, 0, strlen - offset);
 
-    return cb.toString();
+    return cb.ToString();
   }
 
   /**
@@ -236,7 +236,7 @@ public class UrlModule
       request.append("\r\n");
 
       OutputStreamWriter writer = new OutputStreamWriter(out);
-      writer.write(request.toString());
+      writer.write(request.ToString());
       writer.flush();
 
       LineNumberReader reader = new LineNumberReader(new InputStreamReader(in));
@@ -435,7 +435,7 @@ public class UrlModule
       } else {
         result.append(newPath);
         result.append("=");
-        result.append(urlencode(entry.getValue().toStringValue()));
+        result.append(urlencode(entry.getValue().ToStringValue()));
       }
     }
   }
@@ -450,7 +450,7 @@ public class UrlModule
       path.append(oldPath);
       //path.append('[');
       path.append("%5B");
-      urlencode(path, key.toStringValue());
+      urlencode(path, key.ToStringValue());
       //path.append(']');
       path.append("%5D");
 
@@ -458,12 +458,12 @@ public class UrlModule
     }
     else if (key.isLongConvertible() && numeric_prefix != null) {
       urlencode(path, numeric_prefix);
-      urlencode(path, key.toStringValue());
+      urlencode(path, key.ToStringValue());
 
       return path;
     }
     else {
-      urlencode(path, key.toStringValue());
+      urlencode(path, key.ToStringValue());
 
       return path;
     }
@@ -491,7 +491,7 @@ public class UrlModule
         if (keyValue.isLongConvertible())
           key = prefix + keyValue;
         else
-          key = keyValue.toString();
+          key = keyValue.ToString();
 
         if (v instanceof ArrayValue)
           http_build_query(sb, key, (ArrayValue) v);
@@ -501,12 +501,12 @@ public class UrlModule
 
           sb.append(key);
           sb.append('=');
-          urlencode(sb, v.toString());
+          urlencode(sb, v.ToString());
         }
       }
     }
 
-    return sb.toString();
+    return sb.ToString();
   }
   */
 
@@ -532,7 +532,7 @@ public class UrlModule
 
         sb.append(key);
         sb.append('=');
-        urlencode(sb, v.toString());
+        urlencode(sb, v.ToString());
       }
     }
   }
@@ -818,7 +818,7 @@ public class UrlModule
         sb.append(ch);
     }
 
-    return sb.toString();
+    return sb.ToString();
   }
 
   /**
@@ -847,7 +847,7 @@ public class UrlModule
       }
     }
 
-    return sb.toString();
+    return sb.ToString();
   }
 
   enum ParseUrlState {
@@ -945,7 +945,7 @@ public class UrlModule
         sb.append(ch);
     }
 
-    return sb.toString();
+    return sb.ToString();
   }
 
   private static string getNextTag(BinaryInput input)
@@ -966,7 +966,7 @@ public class UrlModule
       tag.append((char) ch);
     }
 
-    return tag.toString();
+    return tag.ToString();
   }
 
   /**
@@ -999,13 +999,13 @@ public class UrlModule
     consumeWhiteSpace(input);
 
     if (input.isEOF())
-      return new String[] { attribute.toString() };
+      return new String[] { attribute.ToString() };
 
     ch = input.read();
     if (ch != '=') {
       input.unread();
 
-      return new String[] { attribute.toString() };
+      return new String[] { attribute.ToString() };
     }
 
     consumeWhiteSpace(input);
@@ -1015,7 +1015,7 @@ public class UrlModule
     bool quoted = false;
 
     if (input.isEOF())
-      return new String[] { attribute.toString() };
+      return new String[] { attribute.ToString() };
 
     ch = input.read();
 
@@ -1038,7 +1038,7 @@ public class UrlModule
       value.append((char) ch);
     }
 
-    return new String[] { attribute.toString(), value.toString() };
+    return new String[] { attribute.ToString(), value.ToString() };
   }
 
   private static void consumeWhiteSpace(BinaryInput input)

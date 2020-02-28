@@ -94,7 +94,7 @@ public class QuercusZipEntry {
       return true;
 
     } catch (IOException e) {
-      env.warning(e.toString());
+      env.warning(e.ToString());
 
       return false;
     }
@@ -173,11 +173,11 @@ public class QuercusZipEntry {
       case java.util.zip.ZipEntry.STORED:
         return "stored";
       default:
-        return method.toString();
+        return method.ToString();
     }
   }
 
-  public string toString()
+  public string ToString()
   {
     return "QuercusZipEntry[" + _entry.getName() + "]";
   }

@@ -314,7 +314,7 @@ public class DOMImplementation
     return wrapper;
   }
 
-  public string toString()
+  public string ToString()
   {
     return getClass().getSimpleName();
   }

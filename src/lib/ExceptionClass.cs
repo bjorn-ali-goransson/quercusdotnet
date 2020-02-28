@@ -89,7 +89,7 @@ public class ExceptionClass
   /**
    * Returns a string representation of this Exception.
    */
-  public static Value __toString(Env env, @This ObjectValue value)
+  public static Value __ToString(Env env, @This ObjectValue value)
   {
     StringValue sb = env.createUnicodeBuilder();
 

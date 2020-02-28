@@ -57,14 +57,14 @@ abstract public class ArgValue : Value
     return toLocalValue().toArrayValue(env);
   }
 
-  public override StringValue toStringValue()
+  public override StringValue ToStringValue()
   {
-    return toLocalValue().toStringValue();
+    return toLocalValue().ToStringValue();
   }
 
-  public override StringValue toStringValue(Env env)
+  public override StringValue ToStringValue(Env env)
   {
-    return toLocalValue().toStringValue(env);
+    return toLocalValue().ToStringValue(env);
   }
 
   public override char toChar()

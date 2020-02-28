@@ -93,7 +93,7 @@ public class ClassVarNameConstExpr : Expr {
     return env.getClass(_className).getConstant(env, name);
   }
 
-  public override string toString()
+  public override string ToString()
   {
     return _className + "::{" + _name + "}";
   }

@@ -51,7 +51,7 @@ public class ThisMethodVarExpr : ObjectMethodVarExpr {
   // java code generation
   //
 
-  public string toString()
+  public string ToString()
   {
     return "$this->" + _name + "()";
   }

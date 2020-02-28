@@ -319,7 +319,7 @@ public class ProfileReport
   }
 
   @Override
-  public string toString()
+  public string ToString()
   {
     return getClass().getSimpleName() + "[]";
   }

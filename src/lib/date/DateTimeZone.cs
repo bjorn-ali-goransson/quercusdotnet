@@ -218,7 +218,7 @@ public class DateTimeZone : Cloneable
     return this;
   }
 
-  public string toString()
+  public string ToString()
   {
     return _timeZone.getID();
   }

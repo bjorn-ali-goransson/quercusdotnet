@@ -89,7 +89,7 @@ public class ArrayIsSetExpr : Expr {
     return array.get(index) != UnsetValue.UNSET;
   }
 
-  public string toString()
+  public string ToString()
   {
     return "isset(" + _expr + "[" + _index + "])";
   }

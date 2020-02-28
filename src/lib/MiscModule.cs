@@ -125,7 +125,7 @@ public class MiscModule : AbstractQuercusModule {
       }
     }
 
-    string result = sb.toString();
+    string result = sb.ToString();
 
     if (hasApos) {
       int p = result.lastIndexOf('\'');
@@ -242,7 +242,7 @@ public class MiscModule : AbstractQuercusModule {
       while ((ch = @is.read()) >= 0) {
         if (ch == '\n') {
           if (! hasCr) {
-            line = sb.toString();
+            line = sb.ToString();
             sb.setLength(0);
             if (output != null)
               output.put(env.createString(line));
@@ -250,7 +250,7 @@ public class MiscModule : AbstractQuercusModule {
           hasCr = false;
         }
         else if (ch == '\r') {
-          line = sb.toString();
+          line = sb.ToString();
           sb.setLength(0);
           output.put(env.createString(line));
           hasCr = true;
@@ -260,7 +260,7 @@ public class MiscModule : AbstractQuercusModule {
       }
 
       if (sb.length() > 0) {
-        line = sb.toString();
+        line = sb.ToString();
         sb.setLength(0);
         output.put(env.createString(line));
       }
@@ -311,7 +311,7 @@ public class MiscModule : AbstractQuercusModule {
       return BooleanValue.FALSE;
     }
 
-    Path path = env.lookup(browscap.toStringValue());
+    Path path = env.lookup(browscap.ToStringValue());
     if (path == null) {
       env.warning(L.l("Browscap file not found."));
       return BooleanValue.FALSE;
@@ -335,9 +335,9 @@ public class MiscModule : AbstractQuercusModule {
     string regExpMatched = null;
 
     for (Map.Entry<Value,Value> entry : browsers.entrySet()) {
-      StringValue pattern = entry.getKey().toStringValue();
+      StringValue pattern = entry.getKey().ToStringValue();
 
-      if (pattern.toString().equals(user_agent)) {
+      if (pattern.ToString().equals(user_agent)) {
         patternMatched = pattern;
         regExpMatched = null;
         break;
@@ -391,7 +391,7 @@ public class MiscModule : AbstractQuercusModule {
 
     ObjectValue object = env.createObject();
     for (Map.Entry<Value,Value> entry : capabilities.entrySet()) {
-      object.putField(env, entry.getKey().toString(), entry.getValue());
+      object.putField(env, entry.getKey().ToString(), entry.getValue());
     }
 
     return object;
@@ -497,7 +497,7 @@ public class MiscModule : AbstractQuercusModule {
       }
     }
 
-    return sb.toString();
+    return sb.ToString();
   }
 
   /**
@@ -773,9 +773,9 @@ public class MiscModule : AbstractQuercusModule {
         Value key = entry.getKey();
         Value val = entry.getValue();
 
-        string type = val.get(LongValue.ZERO).toString();
-        StringValue name = val.get(LongValue.ONE).toStringValue();
-        string mode = val.get(LongValue.create(2)).toString();
+        string type = val.get(LongValue.ZERO).ToString();
+        StringValue name = val.get(LongValue.ONE).ToStringValue();
+        string mode = val.get(LongValue.create(2)).ToString();
 
         // input to the command
         if (key.equals(LongValue.ZERO)) {
@@ -928,7 +928,7 @@ public class MiscModule : AbstractQuercusModule {
     if (moreEntropy)
       addUnique(sb);
 
-    return sb.toString();
+    return sb.ToString();
   }
 
   private void addUnique(StringBuilder sb)
@@ -1123,7 +1123,7 @@ public class MiscModule : AbstractQuercusModule {
             sb.append(ch1);
         }
 
-        name = sb.toString();
+        name = sb.ToString();
       }
 
       switch (ch) {
@@ -1323,7 +1323,7 @@ public class MiscModule : AbstractQuercusModule {
         return i;
       }
 
-      StringValue s = arg.toStringValue(env);
+      StringValue s = arg.ToStringValue(env);
 
       bb.append(s);
 
@@ -1395,7 +1395,7 @@ public class MiscModule : AbstractQuercusModule {
         return i;
       }
 
-      StringValue s = arg.toStringValue();
+      StringValue s = arg.ToStringValue();
 
       int strlen = s.length();
 
@@ -1498,7 +1498,7 @@ public class MiscModule : AbstractQuercusModule {
         return i;
       }
 
-      StringValue s = arg.toStringValue();
+      StringValue s = arg.ToStringValue();
 
       int strlen = s.length();
 

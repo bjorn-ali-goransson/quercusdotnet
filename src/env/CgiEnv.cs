@@ -57,14 +57,14 @@ public class CgiEnv
   {
     Value serverEnv = getGlobalValue("_SERVER");
 
-    return serverEnv.get(createString("QUERY_STRING")).toString();
+    return serverEnv.get(createString("QUERY_STRING")).ToString();
   }
 
   protected override string getContentType()
   {
     Value serverEnv = getGlobalValue("_SERVER");
 
-    return serverEnv.get(createString("CONTENT_TYPE")).toString();
+    return serverEnv.get(createString("CONTENT_TYPE")).ToString();
   }
 
   protected override ArrayValue getCookies()
@@ -73,7 +73,7 @@ public class CgiEnv
     bool isMagicQuotes = getIniBoolean("magic_quotes_gpc");
 
     Value serverEnv = getGlobalValue("_SERVER");
-    string cookies = serverEnv.get(createString("HTTP_COOKIE")).toString();
+    string cookies = serverEnv.get(createString("HTTP_COOKIE")).ToString();
 
     int i = 0;
     int j = 0;
@@ -244,7 +244,7 @@ public class CgiEnv
       if (end <= j)
     break;
       else if (ch == ';' || ch == ',') {
-        cookies.append(createString(cbName.toString()), getEmptyString());
+        cookies.append(createString(cbName.ToString()), getEmptyString());
         continue;
       }
       else if (ch != '=') {
@@ -282,8 +282,8 @@ public class CgiEnv
           //log.warning("bad cookie: " + rawCookie);
         }
         else {
-          cookies.append(createString(cbName.toString()),
-                         createString(cbValue.toString()));
+          cookies.append(createString(cbName.ToString()),
+                         createString(cbValue.ToString()));
         }
       }
     }
@@ -299,9 +299,9 @@ public class CgiEnv
 
     Value serverEnv = getGlobalValue("_SERVER");
 
-    string method = serverEnv.get(createString("REQUEST_METHOD")).toString();
+    string method = serverEnv.get(createString("REQUEST_METHOD")).ToString();
     string contentType
-      = serverEnv.get(createString("CONTENT_TYPE")).toString();
+      = serverEnv.get(createString("CONTENT_TYPE")).ToString();
 
     int contentLength = Integer.MAX_VALUE;
     Value contentLengthV = serverEnv.get(createString("CONTENT_LENGTH"));

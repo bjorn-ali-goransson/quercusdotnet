@@ -74,7 +74,7 @@ abstract public class CompiledFunction_0 : CompiledFunction {
     return call(env);
   }
 
-  public string toString()
+  public string ToString()
   {
     return "CompiledFunction_0[" + _name + "]";
   }

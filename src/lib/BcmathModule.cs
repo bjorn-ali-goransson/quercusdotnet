@@ -76,13 +76,13 @@ public class BcmathModule : AbstractQuercusModule {
   {
     try {
       if (value instanceof StringValue)
-        return new BigDecimal(value.toString());
+        return new BigDecimal(value.ToString());
       if (value instanceof DoubleValue)
         return new BigDecimal(value.toDouble());
       else if (value instanceof LongValue)
         return new BigDecimal(value.toLong());
       else
-        return new BigDecimal(value.toString());
+        return new BigDecimal(value.ToString());
     }
     catch (NumberFormatException ex) {
       return BigDecimal.ZERO;
@@ -206,7 +206,7 @@ public class BcmathModule : AbstractQuercusModule {
       return null;
     }
     
-    return bcmodImpl(base, mod).toString();
+    return bcmodImpl(base, mod).ToString();
   }
   
   private static BigInteger bcmodImpl(BigDecimal base, BigDecimal mod)
@@ -339,7 +339,7 @@ public class BcmathModule : AbstractQuercusModule {
       
       BigDecimal pow = bcpowImpl(base, expI, scale);
       
-      return bcmodImpl(pow, modulus).toString();
+      return bcmodImpl(pow, modulus).ToString();
     }
     else {
       BigInteger baseI = base.toBigInteger();
@@ -348,7 +348,7 @@ public class BcmathModule : AbstractQuercusModule {
 
       BigInteger result = baseI.modPow(expI, modulusI);
 
-      return result.toString();
+      return result.ToString();
     }
   }
 
@@ -412,7 +412,7 @@ public class BcmathModule : AbstractQuercusModule {
     else {
       BigInteger integerPart = value.toBigInteger();
 
-      int length = integerPart.toString().length();
+      int length = integerPart.ToString().length();
 
       if ((length % 2) == 0)
         length--;

@@ -122,7 +122,7 @@ abstract public class StringValue
     if (value == null)
       return NullValue.NULL;
     else
-      return new StringBuilderValue(value.toString());
+      return new StringBuilderValue(value.ToString());
   }
 
   /*
@@ -139,7 +139,7 @@ abstract public class StringValue
     try {
       StringValue sb = createStringBuilder();
 
-      byte []bytes = unicodeStr.toString().getBytes(charset);
+      byte []bytes = unicodeStr.ToString().getBytes(charset);
 
       sb.append(bytes);
       return sb;
@@ -348,7 +348,7 @@ abstract public class StringValue
   /**
    * Cost to convert to a String
    */
-  public override int toStringMarshalCost()
+  public override int ToStringMarshalCost()
   {
     return  Marshal.Marshal.COST_EQUAL;
   }
@@ -364,7 +364,7 @@ abstract public class StringValue
   /**
    * Cost to convert to a StringValue
    */
-  public int toStringValueMarshalCost()
+  public int ToStringValueMarshalCost()
   {
     return  Marshal.Marshal.COST_IDENTICAL;
   }
@@ -397,7 +397,7 @@ abstract public class StringValue
           return 1;
       }
       else {
-        return toString().compareTo(rValue.toString());
+        return ToString().compareTo(rValue.ToString());
       }
     }
     else {
@@ -442,7 +442,7 @@ abstract public class StringValue
       return super.eq(rValue);
     }
     else {
-      return toString().equals(rValue.toString());
+      return ToString().equals(rValue.ToString());
     }
   }
 
@@ -451,7 +451,7 @@ abstract public class StringValue
    */
   public int cmpString(StringValue rValue)
   {
-    return toString().compareTo(rValue.toString());
+    return ToString().compareTo(rValue.ToString());
   }
 
   // Conversions
@@ -459,7 +459,7 @@ abstract public class StringValue
   /**
    * Converts to a string value.
    */
-  public override StringValue toStringValue()
+  public override StringValue ToStringValue()
   {
     return this;
   }
@@ -467,7 +467,7 @@ abstract public class StringValue
   /**
    * Converts to a string value.
    */
-  public override StringValue toStringValue(Env env)
+  public override StringValue ToStringValue(Env env)
   {
     return this;
   }
@@ -702,7 +702,7 @@ abstract public class StringValue
    */
   public double toDouble()
   {
-    return toDouble(toString());
+    return toDouble(ToString());
   }
 
   /**
@@ -851,7 +851,7 @@ abstract public class StringValue
    */
   public Object toJavaObject()
   {
-    return toString();
+    return ToString();
   }
 
   /**
@@ -919,7 +919,7 @@ abstract public class StringValue
       StringValue className = substring(0, p);
       StringValue methodName = substring(p + 2);
 
-      QuercusClass cl = env.findClass(className.toString());
+      QuercusClass cl = env.findClass(className.ToString());
 
       if (cl == null) {
         env.warning(L.l("can't find class {0}", className));
@@ -1064,7 +1064,7 @@ abstract public class StringValue
         }
       }
 
-      return createStringBuilder().append(tail.toString());
+      return createStringBuilder().append(tail.ToString());
     }
     else if (getValueType().isLongAdd()) {
       return LongValue.create(toLong() + incr);
@@ -1155,7 +1155,7 @@ abstract public class StringValue
   public override Value bitXor(Value rValue)
   {
     if (rValue.isString()) {
-      StringValue rStr = rValue.toStringValue();
+      StringValue rStr = rValue.ToStringValue();
 
       int len = Math.min(length(), rValue.length());
       StringValue sb = createStringBuilder();
@@ -1181,7 +1181,7 @@ abstract public class StringValue
     sb.append("s:");
     sb.append(length());
     sb.append(":\"");
-    sb.append(toString());
+    sb.append(ToString());
     sb.append("\";");
   }
 
@@ -1466,7 +1466,7 @@ abstract public class StringValue
       return append(unicodeStr);
 
     try {
-      byte []bytes = unicodeStr.toString().getBytes(charset);
+      byte []bytes = unicodeStr.ToString().getBytes(charset);
 
       append(bytes);
       return this;
@@ -1984,7 +1984,7 @@ abstract public class StringValue
    */
   public int length()
   {
-    return toString().length();
+    return ToString().length();
   }
 
   /**
@@ -1992,7 +1992,7 @@ abstract public class StringValue
    */
   public char charAt(int index)
   {
-    return toString().charAt(index);
+    return ToString().charAt(index);
   }
 
   /**
@@ -2000,7 +2000,7 @@ abstract public class StringValue
    */
   public CharSequence subSequence(int start, int end)
   {
-    return new StringBuilderValue(toString().substring(start, end));
+    return new StringBuilderValue(ToString().substring(start, end));
   }
 
   /**
@@ -2272,7 +2272,7 @@ abstract public class StringValue
    */
   public string stringSubstring(int begin, int end)
   {
-    return substring(begin, end).toString();
+    return substring(begin, end).ToString();
   }
 
   /**
@@ -2418,7 +2418,7 @@ abstract public class StringValue
     return new InputStreamReader(new ByteArrayInputStream(bytes), charset);
   }
   
-  public string toString(String charset)
+  public string ToString(String charset)
     
   {
     byte []bytes = toBytes();
@@ -2475,7 +2475,7 @@ abstract public class StringValue
   /**
    * Converts to a string builder
    */
-  public override StringValue toStringBuilder(Env env)
+  public override StringValue ToStringBuilder(Env env)
   {
     return createStringBuilder().append(this);
   }

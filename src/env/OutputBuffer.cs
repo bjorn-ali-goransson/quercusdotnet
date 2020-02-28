@@ -90,13 +90,13 @@ public class OutputBuffer {
       }
       catch (UnsupportedEncodingException e) {
         if (log.isLoggable(Level.WARNING))
-          log.log(Level.WARNING, e.toString(), e);
+          log.log(Level.WARNING, e.ToString(), e);
         try {
           _out.setEncoding("UTF-8");
         }
         catch (UnsupportedEncodingException e2) {
           if (log.isLoggable(Level.WARNING))
-            log.log(Level.WARNING, e.toString(), e2);
+            log.log(Level.WARNING, e.ToString(), e2);
         }
       }
     }
@@ -139,7 +139,7 @@ public class OutputBuffer {
 
       return bb;
     } catch (IOException e) {
-      _env.error(e.toString(), e);
+      _env.error(e.ToString(), e);
 
       return BooleanValue.FALSE;
     }
@@ -155,7 +155,7 @@ public class OutputBuffer {
 
       return (long)_tempStream.getLength();
     } catch (IOException e) {
-      _env.error(e.toString(), e);
+      _env.error(e.ToString(), e);
 
       return -1L;
     }
@@ -215,7 +215,7 @@ public class OutputBuffer {
       _state &= ~(OutputModule.PHP_OUTPUT_HANDLER_CONT);
       
     } catch (IOException e) {
-      _env.error(e.toString(), e);
+      _env.error(e.ToString(), e);
     }
   }
 
@@ -261,7 +261,7 @@ public class OutputBuffer {
       if (@out != null)
         @out.close();
     } catch (IOException e) {
-      log.log(Level.FINER, e.toString(), e);
+      log.log(Level.FINER, e.ToString(), e);
     }
 
     if (tempStream != null)
@@ -306,7 +306,7 @@ public class OutputBuffer {
 
       _tempStream.clearWrite();
     } catch (IOException e) {
-      _env.error(e.toString(), e);
+      _env.error(e.ToString(), e);
     }
   }
 

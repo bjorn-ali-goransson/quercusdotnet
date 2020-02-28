@@ -462,7 +462,7 @@ public class PDFStream {
       // TODO: replace other unprintable chars with octal value
     }
     
-    return cb.toString();
+    return cb.ToString();
   }
 }
 }

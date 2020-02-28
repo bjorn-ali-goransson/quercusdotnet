@@ -126,7 +126,7 @@ public class PDFPage {
       }
       sb.append(">>");
       
-      _resources.put(name, sb.toString());
+      _resources.put(name, sb.ToString());
     }
   }
 

@@ -175,7 +175,7 @@ public class TcpInputOutput
       if (_socket != null)
         _socket.setSoTimeout((int) timeout);
     } catch (Exception e) {
-      log.log(Level.FINER, e.toString(), e);
+      log.log(Level.FINER, e.ToString(), e);
     }
   }
 
@@ -218,11 +218,11 @@ public class TcpInputOutput
       if (s != null)
         s.close();
     } catch (IOException e) {
-      log.log(Level.FINE, e.toString(), e);
+      log.log(Level.FINE, e.ToString(), e);
     }
   }
 
-  public string toString()
+  public string ToString()
   {
     if (_socket != null)
       return "TcpInputOutput[" + _socket.getInetAddress()

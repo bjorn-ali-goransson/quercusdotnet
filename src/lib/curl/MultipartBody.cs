@@ -71,8 +71,8 @@ public class MultipartBody : PostBody
     while (iter.hasNext()) {
       Map.Entry<Value,Value> entry = iter.next();
 
-      StringValue key = entry.getKey().toString(env);
-      StringValue value = entry.getValue().toString(env);
+      StringValue key = entry.getKey().ToString(env);
+      StringValue value = entry.getValue().ToString(env);
 
       if (value.length() > 0 && value.charAt(0) == '@') {
         StringValue fileName = value.substring(1);
@@ -87,10 +87,10 @@ public class MultipartBody : PostBody
           return;
         }
 
-        _postItems.add(new PathEntry(env, key.toString(), path));
+        _postItems.add(new PathEntry(env, key.ToString(), path));
       }
       else
-        _postItems.add(new UrlEncodedEntry(env, key.toString(), value));
+        _postItems.add(new UrlEncodedEntry(env, key.ToString(), value));
     }
 
     _length = getContentLength(_postItems, _boundary);
@@ -190,7 +190,7 @@ public class MultipartBody : PostBody
         sb.append(contentType);
       }
 
-      return sb.toString();
+      return sb.ToString();
     }
 
     void write(Env env, OutputStream os)
@@ -239,7 +239,7 @@ public class MultipartBody : PostBody
     void writeData(Env env, OutputStream os)
       
     {
-      os.write(_value.toString().getBytes());
+      os.write(_value.ToString().getBytes());
     }
   }
 

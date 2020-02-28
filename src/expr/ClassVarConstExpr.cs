@@ -88,7 +88,7 @@ public class ClassVarConstExpr : Expr
     return cls.getConstant(env, _name);
   }
 
-  public string toString()
+  public string ToString()
   {
     return _className + "::" + _name;
   }

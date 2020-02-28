@@ -67,7 +67,7 @@ public class FunGetClassExpr : Expr {
     return env.createString(_className);
   }
 
-  public string toString()
+  public string ToString()
   {
     return "get_class()";
   }

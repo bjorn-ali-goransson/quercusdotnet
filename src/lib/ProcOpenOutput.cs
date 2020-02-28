@@ -123,7 +123,7 @@ public class ProcOpenOutput : AbstractBinaryOutput
       if (_os != null)
         _os.flush();
     } catch (IOException e) {
-      log.log(Level.FINE, e.toString(), e);
+      log.log(Level.FINE, e.ToString(), e);
     }
   }
 
@@ -158,7 +158,7 @@ public class ProcOpenOutput : AbstractBinaryOutput
         os.close();
     }
     catch (IOException e) {
-      log.log(Level.FINE, e.toString(), e);
+      log.log(Level.FINE, e.ToString(), e);
     }
   }
 
@@ -166,7 +166,7 @@ public class ProcOpenOutput : AbstractBinaryOutput
    * Converts to a string.
    * @param env
    */
-  public string toString()
+  public string ToString()
   {
     return "ProcOpenOutput[pipe]";
   }
