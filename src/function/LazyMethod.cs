@@ -43,12 +43,12 @@ namespace QuercusDotNet.Function{
 @SuppressWarnings("serial")
 public class LazyMethod : AbstractFunction
 {
-  private final QuercusClass _quercusClass;
-  private final LazyMethod _parent;
+  private QuercusClass _quercusClass;
+  private LazyMethod _parent;
 
-  private final string _name;
-  private final Class<?> _pageClass;
-  private final string _className;
+  private string _name;
+  private Class<?> _pageClass;
+  private string _className;
 
   private AbstractFunction _fun;
 

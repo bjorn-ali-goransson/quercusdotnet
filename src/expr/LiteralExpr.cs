@@ -41,7 +41,7 @@ namespace QuercusDotNet.Expr{
  * Represents a literal expression.
  */
 public class LiteralExpr : Expr {
-  private final Value _value;
+  private Value _value;
 
   public LiteralExpr(Value value)
   {

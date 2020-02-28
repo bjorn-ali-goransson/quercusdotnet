@@ -46,8 +46,8 @@ namespace QuercusDotNet.Expr{
 public class ListHeadExpr : Expr {
   private readonly L10N L = new L10N(ListHeadExpr.class);
 
-  protected final Expr []_varList;
-  protected final Value []_keyList;
+  protected Expr []_varList;
+  protected Value []_keyList;
 
   private string _varName;
 

@@ -48,8 +48,8 @@ public class ZipEntryInputStream : ReadStreamInput
 {
   private readonly L10N L = new L10N(ZipEntryInputStream.class);
 
-  private final BinaryInput _in;
-  private final long _position;
+  private BinaryInput _in;
+  private long _position;
 
   public ZipEntryInputStream(BinaryInput in, long position)
     

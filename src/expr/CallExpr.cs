@@ -48,9 +48,9 @@ namespace QuercusDotNet.Expr{
 public class CallExpr : Expr {
   private readonly L10N L = new L10N(CallExpr.class);
 
-  protected final StringValue _name;
-  protected final StringValue _nsName;
-  protected final Expr []_args;
+  protected StringValue _name;
+  protected StringValue _nsName;
+  protected Expr []_args;
 
   private int _funId;
 

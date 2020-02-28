@@ -40,7 +40,7 @@ namespace QuercusDotNet.Expr{
  * Represents a PHP instanceof expression.
  */
 public class BinaryInstanceOfExpr : AbstractUnaryExpr {
-  protected final string _right;
+  protected string _right;
 
   public BinaryInstanceOfExpr(Location location, Expr left, string right)
   {

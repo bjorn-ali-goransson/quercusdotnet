@@ -373,9 +373,9 @@ public class PDFImage : PDFObject {
   }
 
   static class GIFDecode {
-    private final int _codeSize;
-    private final int _clearCode;
-    private final int _endOfCode;
+    private int _codeSize;
+    private int _clearCode;
+    private int _endOfCode;
 
     private ReadStream _is;
     private int _blockSize;

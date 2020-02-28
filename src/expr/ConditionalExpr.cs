@@ -39,9 +39,9 @@ namespace QuercusDotNet.Expr{
  * Represents a conditional expression.
  */
 public class ConditionalExpr : Expr {
-  protected final Expr _test;
-  protected final Expr _trueExpr;
-  protected final Expr _falseExpr;
+  protected Expr _test;
+  protected Expr _trueExpr;
+  protected Expr _falseExpr;
 
   public ConditionalExpr(Location location,
                          Expr test,

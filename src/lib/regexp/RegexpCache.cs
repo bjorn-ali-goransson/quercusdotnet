@@ -38,7 +38,7 @@ namespace QuercusDotNet.lib.regexp {
  */
 public class RegexpCache
 {
-  private final Regexp []_cache;
+  private Regexp []_cache;
   private int _head;
 
   private const int MAX_SIZE = 4;

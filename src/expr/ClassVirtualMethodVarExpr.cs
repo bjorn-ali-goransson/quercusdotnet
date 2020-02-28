@@ -52,8 +52,8 @@ public class ClassVirtualMethodVarExpr : Expr {
   private const L10N L
     = new L10N(ClassVirtualMethodVarExpr.class);
 
-  protected final Expr _methodName;
-  protected final Expr []_args;
+  protected Expr _methodName;
+  protected Expr []_args;
 
   protected Expr []_fullArgs;
 

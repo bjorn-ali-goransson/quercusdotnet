@@ -53,7 +53,7 @@ abstract public class AbstractFunction : Callback {
   public const Arg []NULL_ARGS = new Arg[0];
   private const Value []NULL_ARG_VALUES = new Value[0];
 
-  private final Location _location;
+  private Location _location;
 
   private bool _isGlobal = true;
   protected bool _isStatic = false;
@@ -156,7 +156,7 @@ abstract public class AbstractFunction : Callback {
     return false;
   }
 
-  public final string getCompilationName()
+  public string getCompilationName()
   {
     string compName = getName() + "_" + _parseIndex;
 
@@ -211,7 +211,7 @@ abstract public class AbstractFunction : Callback {
   /**
    * Returns true for a global function.
    */
-  public final bool isGlobal()
+  public bool isGlobal()
   {
     return _isGlobal;
   }
@@ -241,14 +241,14 @@ abstract public class AbstractFunction : Callback {
   }
 
   /**
-   * Returns true for a final function.
+   * Returns true for a function.
    */
   public bool isFinal()
   {
     return _isFinal;
   }
 
-  public final void setFinal(bool isFinal)
+  public void setFinal(bool isFinal)
   {
     _isFinal = isFinal;
   }
@@ -280,7 +280,7 @@ abstract public class AbstractFunction : Callback {
   /**
    * True for a constructor.
    */
-  public final void setConstructor(bool isConstructor)
+  public void setConstructor(bool isConstructor)
   {
     _isConstructor = isConstructor;
   }
@@ -325,17 +325,17 @@ abstract public class AbstractFunction : Callback {
     return _visibility == Visibility.PRIVATE;
   }
 
-  public final void setVisibility(Visibility v)
+  public void setVisibility(Visibility v)
   {
     _visibility = v;
   }
 
-  public final void setParseIndex(int index)
+  public void setParseIndex(int index)
   {
     _parseIndex = index;
   }
 
-  public final Location getLocation()
+  public Location getLocation()
   {
     return _location;
   }
@@ -343,7 +343,7 @@ abstract public class AbstractFunction : Callback {
   /**
    * Returns true for a global function.
    */
-  public final void setGlobal(bool isGlobal)
+  public void setGlobal(bool isGlobal)
   {
     _isGlobal = isGlobal;
   }

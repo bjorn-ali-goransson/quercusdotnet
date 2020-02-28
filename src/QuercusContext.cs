@@ -115,9 +115,9 @@ public class QuercusContext
 
   private static IniDefinitions _ini = new IniDefinitions();
 
-  private final PageManager _pageManager;
-  private final ClassLoader _loader;
-  private final QuercusSessionManager _sessionManager;
+  private PageManager _pageManager;
+  private ClassLoader _loader;
+  private QuercusSessionManager _sessionManager;
 
   private ModuleContext _moduleContext;
 
@@ -160,7 +160,7 @@ public class QuercusContext
   private HashMap<String, Class<?>> _javaInitClassMap
     = new HashMap<String, Class<?>>();
 
-  private final IniDefinitions _iniDefinitions = new IniDefinitions();
+  private IniDefinitions _iniDefinitions = new IniDefinitions();
 
   private Path _iniFile;
   private HashMap<String, Value> _iniMap;
@@ -336,12 +336,12 @@ public class QuercusContext
     return "JSESSIONID";
   }
 
-  public final long getDependencyCheckInterval()
+  public long getDependencyCheckInterval()
   {
     return _dependencyCheckInterval;
   }
 
-  public final void setDependencyCheckInterval(long ms)
+  public void setDependencyCheckInterval(long ms)
   {
     _dependencyCheckInterval = ms;
   }
@@ -426,7 +426,7 @@ public class QuercusContext
   /**
    * Returns the context for this class loader.
    */
-  public final ModuleContext getLocalContext()
+  public ModuleContext getLocalContext()
   {
     return getLocalContext(_loader);
   }
@@ -1105,7 +1105,7 @@ public class QuercusContext
   /**
    * Returns the relative path.
    */
-  public final string getClassName(Path path)
+  public string getClassName(Path path)
   {
     if (path == null)
       return "tmp.eval";
@@ -2251,10 +2251,10 @@ public class QuercusContext
   }
 
   static class IncludeKey {
-    private final StringValue _include;
-    private final string _includePath;
-    private final Path _pwd;
-    private final Path _scriptPwd;
+    private StringValue _include;
+    private string _includePath;
+    private Path _pwd;
+    private Path _scriptPwd;
 
     IncludeKey(StringValue include,
                string includePath,
@@ -2296,7 +2296,7 @@ public class QuercusContext
 
   class EnvTimeoutThread : Thread {
     private volatile bool _isRunnable = true;
-    private final long _timeout = _envTimeout;
+    private long _timeout = _envTimeout;
 
     private long _quantumCount;
 

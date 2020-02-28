@@ -50,7 +50,7 @@ abstract public class Statement {
   public const int BREAK_FALL_THROUGH = 0x1;
   public const int RETURN = 0x2;
 
-  private final Location _location;
+  private Location _location;
 
   private Statement _parent;
   private string _loopLabel;
@@ -65,7 +65,7 @@ abstract public class Statement {
     _location = location;
   }
 
-  public final Location getLocation()
+  public Location getLocation()
   {
     return _location;
   }
@@ -75,12 +75,12 @@ abstract public class Statement {
     return false;
   }
 
-  final public Statement getParent()
+  public Statement getParent()
   {
     return _parent;
   }
 
-  final public void setParent(Statement parent)
+  public void setParent(Statement parent)
   {
     _parent = parent;
   }
@@ -95,13 +95,13 @@ abstract public class Statement {
     return FALL_THROUGH;
   }
 
-  final protected void rethrow(Throwable t)
+  protected void rethrow(Throwable t)
     
   {
     rethrow(t, Throwable.class);
   }
 
-  final protected <E : Throwable> void rethrow(Throwable t, Class<E> cl)
+  protected <E : Throwable> void rethrow(Throwable t, Class<E> cl)
     
   {
     E typedT;

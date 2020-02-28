@@ -391,7 +391,7 @@ public class BinaryBuilderValue
    * Append a Java buffer to the value.
    */
   // @Override
-  public final StringValue append(BinaryBuilderValue sb, int head, int tail)
+  public StringValue append(BinaryBuilderValue sb, int head, int tail)
   {
     int length = tail - head;
 
@@ -413,7 +413,7 @@ public class BinaryBuilderValue
   /**
    * Append a Java buffer to the value.
    */
-  public override final StringValue appendUnicode(char []buf, int offset, int length)
+  public override StringValue appendUnicode(char []buf, int offset, int length)
   {
     UnicodeBuilderValue sb = new UnicodeBuilderValue();
 
@@ -426,7 +426,7 @@ public class BinaryBuilderValue
   /**
    * Append a Java string to the value.
    */
-  public override final StringValue appendUnicode(String s)
+  public override StringValue appendUnicode(String s)
   {
     UnicodeBuilderValue sb = new UnicodeBuilderValue();
 
@@ -439,7 +439,7 @@ public class BinaryBuilderValue
   /**
    * Append a Java string to the value.
    */
-  public override final StringValue appendUnicode(String s, int start, int end)
+  public override StringValue appendUnicode(String s, int start, int end)
   {
     UnicodeBuilderValue sb = new UnicodeBuilderValue();
 
@@ -452,7 +452,7 @@ public class BinaryBuilderValue
   /**
    * Append a value to the value.
    */
-  public override final StringValue appendUnicode(Value value)
+  public override StringValue appendUnicode(Value value)
   {
     value = value.toValue();
 
@@ -476,7 +476,7 @@ public class BinaryBuilderValue
   /**
    * Append a Java char to the value.
    */
-  public override final StringValue appendUnicode(char ch)
+  public override StringValue appendUnicode(char ch)
   {
     UnicodeBuilderValue sb = new UnicodeBuilderValue();
 
@@ -489,7 +489,7 @@ public class BinaryBuilderValue
   /**
    * Append a Java bool to the value.
    */
-  public override final StringValue appendUnicode(bool v)
+  public override StringValue appendUnicode(bool v)
   {
     return append(v ? "true" : "false");
   }

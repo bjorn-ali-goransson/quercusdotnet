@@ -45,8 +45,8 @@ namespace QuercusDotNet.Statement{
 public class ContinueStatement : Statement {
   //public readonly ContinueStatement CONTINUE = new ContinueStatement();
   
-  protected final Expr _target;
-  protected final ArrayList<String> _loopLabelList;
+  protected Expr _target;
+  protected ArrayList<String> _loopLabelList;
   
   public ContinueStatement(Location location,
                            Expr target,

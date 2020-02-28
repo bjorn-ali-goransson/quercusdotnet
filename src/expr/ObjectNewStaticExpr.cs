@@ -45,7 +45,7 @@ namespace QuercusDotNet.Expr{
  */
 public class ObjectNewStaticExpr : Expr {
   private readonly L10N L = new L10N(ObjectNewStaticExpr.class);
-  protected final Expr []_args;
+  protected Expr []_args;
 
   public ObjectNewStaticExpr(Location location, ArrayList<Expr> args)
   {

@@ -1484,7 +1484,7 @@ public class ArrayModule
   /**
    * Appends a value to the array
    *
-   * @return the number of elements in the final array
+   * @return the number of elements in the array
    */
   public static int array_push(Env env,
                                @Reference Value array,
@@ -3660,9 +3660,9 @@ public class ArrayModule
     : Comparator<LongValue>
   {
 
-    private final Env _env;
-    private final Value []_rows;
-    private final Value []_arrays;
+    private Env _env;
+    private Value []_rows;
+    private Value []_arrays;
 
     public MultiSortComparator(Env env, Value[] rows, Value[] arrays)
     {

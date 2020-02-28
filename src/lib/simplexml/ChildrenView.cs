@@ -49,10 +49,10 @@ namespace QuercusDotNet.lib.simplexml {
 
 public class ChildrenView : SimpleView
 {
-  private final SimpleView _parent;
+  private SimpleView _parent;
 
-  private final ArrayList<SimpleView> _childList;
-  private final ArrayList<AttributeView> _attrList;
+  private ArrayList<SimpleView> _childList;
+  private ArrayList<AttributeView> _attrList;
 
   public ChildrenView(SimpleView parent,
                       ArrayList<SimpleView> childList,

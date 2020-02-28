@@ -44,9 +44,9 @@ namespace QuercusDotNet.Marshal{
 public class JavaMarshal : Marshal {
   private readonly L10N L = new L10N(JavaMarshal.class);
 
-  protected final JavaClassDef _def;
-  protected final bool _isNotNull;
-  protected final bool _isUnmarshalNullAsFalse;
+  protected JavaClassDef _def;
+  protected bool _isNotNull;
+  protected bool _isUnmarshalNullAsFalse;
 
   public JavaMarshal(JavaClassDef def,
                       bool isNotNull)

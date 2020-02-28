@@ -40,10 +40,10 @@ namespace QuercusDotNet.Env{
  */
 public class DefinitionKey {
   // crc of the current definition
-  private final long _crc;
+  private long _crc;
 
   // the including page
-  private final WeakReference<QuercusPage> _includePageRef;
+  private WeakReference<QuercusPage> _includePageRef;
 
   DefinitionKey(long crc, QuercusPage includePage)
   {

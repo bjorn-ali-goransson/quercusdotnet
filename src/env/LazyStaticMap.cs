@@ -39,8 +39,8 @@ namespace QuercusDotNet.Env{
  * Represents the Quercus static environment.
  */
 public class LazyStaticMap : AbstractMap<StringValue,Var> {
-  private final IntMap _intMap;
-  private final Value []_values;
+  private IntMap _intMap;
+  private Value []_values;
   
   private HashMap<StringValue,Var> _extMap = new HashMap<StringValue,Var>();
 

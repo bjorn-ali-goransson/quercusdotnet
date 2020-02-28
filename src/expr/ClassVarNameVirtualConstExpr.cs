@@ -44,7 +44,7 @@ namespace QuercusDotNet.Expr{
  * Represents a PHP parent::{$foo} constant call expression.
  */
 public class ClassVarNameVirtualConstExpr : Expr {
-  protected final Expr _name;
+  protected Expr _name;
 
   public ClassVarNameVirtualConstExpr(Location location, Expr name)
   {

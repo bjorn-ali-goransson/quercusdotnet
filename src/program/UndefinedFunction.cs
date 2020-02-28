@@ -43,9 +43,9 @@ namespace QuercusDotNet.Program{
 public class UndefinedFunction : AbstractFunction {
   private readonly L10N L = new L10N(UndefinedFunction.class);
 
-  private final int _id;
-  private final string _name;
-  private final int _globalId;
+  private int _id;
+  private string _name;
+  private int _globalId;
 
   public UndefinedFunction(int id, string name, int globalId)
   {

@@ -38,8 +38,8 @@ namespace QuercusDotNet.Expr{
  * Represents a conditional expression.
  */
 public class ConditionalShortExpr : Expr {
-  protected final Expr _test;
-  protected final Expr _falseExpr;
+  protected Expr _test;
+  protected Expr _falseExpr;
 
   public ConditionalShortExpr(Expr test, Expr falseExpr)
   {

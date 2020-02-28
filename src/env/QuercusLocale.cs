@@ -39,8 +39,8 @@ public class QuercusLocale
   private const QuercusLocale DEFAULT_US
     = new QuercusLocale(Locale.US, "utf-8");
 
-  private final Locale _locale;
-  private final string _charset;
+  private Locale _locale;
+  private string _charset;
 
   private DecimalFormatSymbols _format;
 

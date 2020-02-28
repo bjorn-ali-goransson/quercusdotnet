@@ -47,10 +47,10 @@ public class IniDefinition {
 
   public static IniDefinition NULL = new Null();
 
-  private final string _name;
-  private final int _scope;
-  private final Value _deflt;
-  private final Type _type;
+  private string _name;
+  private int _scope;
+  private Value _deflt;
+  private Type _type;
 
   public enum Type { BOOLEAN, STRING, LONG, ARRAY };
 

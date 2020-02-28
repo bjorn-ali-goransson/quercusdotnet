@@ -218,7 +218,7 @@ abstract public class StringValue
   /**
    * Returns true for StringValue
    */
-  public override final bool isString()
+  public override bool isString()
   {
     return true;
   }
@@ -645,7 +645,7 @@ abstract public class StringValue
 
   static long parseLong(CharSequence string)
   {
-    final int len = string.length();
+    int len = string.length();
 
     if (len == 0)
       return 0;
@@ -830,7 +830,7 @@ abstract public class StringValue
   /**
    * Converts to an object.
    */
-  final override public Value toAutoObject(Env env)
+  override public Value toAutoObject(Env env)
   {
     return env.createObject();
   }
@@ -2018,7 +2018,7 @@ abstract public class StringValue
   /**
    * Returns the first index of the match string, starting from the head.
    */
-  public final int indexOf(CharSequence match)
+  public int indexOf(CharSequence match)
   {
     return indexOf(match, 0);
   }
@@ -2081,7 +2081,7 @@ abstract public class StringValue
   /**
    * Returns the last index of the match string, starting from the head.
    */
-  public final int lastIndexOf(char match)
+  public int lastIndexOf(char match)
   {
     return lastIndexOf(match, Integer.MAX_VALUE);
   }
@@ -2303,7 +2303,7 @@ abstract public class StringValue
       buffer[offset + i] = charAt(stringOffset + i);
   }
 
-  public final StringValue toLowerCase()
+  public StringValue toLowerCase()
   {
     return toLowerCase(Locale.ENGLISH);
   }
@@ -2772,7 +2772,7 @@ abstract public class StringValue
     
 
   class StringValueInputStream : java.io.InputStream {
-    private final int _length;
+    private int _length;
     private int _index;
 
     StringValueInputStream()

@@ -61,7 +61,7 @@ public class MysqliResult : JdbcResultResource {
   // nam 2013-10-03: box, hack for now
   public int num_rows;
 
-  private final Mysqli _conn;
+  private Mysqli _conn;
 
   /**
    * Constructor for MysqliResult
@@ -711,7 +711,7 @@ public class MysqliResult : JdbcResultResource {
         }
       }
 
-      final bool isTimestamp = (jdbcType == Types.TIMESTAMP)
+      bool isTimestamp = (jdbcType == Types.TIMESTAMP)
           && mysqlType.equals("TIMESTAMP");
 
       if (isInResultString(2, "blob")

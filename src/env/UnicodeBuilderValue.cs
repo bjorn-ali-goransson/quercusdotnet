@@ -207,7 +207,7 @@ public class UnicodeBuilderValue
    * @param env
    * @param charset
    */
-  public final StringValue convertToUnicode(Env env, string charset)
+  public StringValue convertToUnicode(Env env, string charset)
   {
     return this;
   }
@@ -215,7 +215,7 @@ public class UnicodeBuilderValue
   /**
    * Returns true for UnicodeValue
    */
-  public override final bool isUnicode()
+  public override bool isUnicode()
   {
     return true;
   }
@@ -223,7 +223,7 @@ public class UnicodeBuilderValue
   /**
    * Returns the value.
    */
-  public final string getValue()
+  public string getValue()
   {
     return toString();
   }
@@ -283,7 +283,7 @@ public class UnicodeBuilderValue
   /**
    * Converts to a UnicodeValue.
    */
-  public override final StringValue toUnicodeValue()
+  public override StringValue toUnicodeValue()
   {
     return this;
   }
@@ -291,7 +291,7 @@ public class UnicodeBuilderValue
   /**
    * Converts to a UnicodeValue.
    */
-  public override final StringValue toUnicodeValue(Env env)
+  public override StringValue toUnicodeValue(Env env)
   {
     return this;
   }
@@ -299,7 +299,7 @@ public class UnicodeBuilderValue
   /**
    * Converts to a UnicodeValue in desired charset.
    */
-  public override final StringValue toUnicodeValue(Env env, string charset)
+  public override StringValue toUnicodeValue(Env env, string charset)
   {
     return this;
   }
@@ -307,7 +307,7 @@ public class UnicodeBuilderValue
   /**
    * Append a buffer to the value.
    */
-  public final StringValue append(byte []buf, int offset, int length)
+  public StringValue append(byte []buf, int offset, int length)
   {
     if (_buffer.length < _length + length)
       ensureCapacity(_length + length);
@@ -521,7 +521,7 @@ public class UnicodeBuilderValue
   /**
    * Returns true if the value @is empty.
    */
-  public override final bool isEmpty()
+  public override bool isEmpty()
   {
     return _length == 0 || _length == 1 && _buffer[0] == '0';
   }
@@ -567,7 +567,7 @@ public class UnicodeBuilderValue
    * Each character becomes one byte, characters with values above 255 are
    * not correctly preserved.
    */
-  public final byte[] toBytes()
+  public byte[] toBytes()
   {
     byte[] bytes = new byte[_length];
 
@@ -585,7 +585,7 @@ public class UnicodeBuilderValue
   /**
    * Returns the character at an index
    */
-  public final Value get(Value key)
+  public Value get(Value key)
   {
     return charValueAt(key.toLong());
   }
@@ -614,7 +614,7 @@ public class UnicodeBuilderValue
   /**
    * Returns the buffer.
    */
-  public final char []getBuffer()
+  public char []getBuffer()
   {
     return _buffer;
   }
@@ -622,7 +622,7 @@ public class UnicodeBuilderValue
   /**
    * Sets the length.
    */
-  public override final void setLength(int length)
+  public override void setLength(int length)
   {
     _length = length;
   }
@@ -630,7 +630,7 @@ public class UnicodeBuilderValue
   /**
    * Returns the current capacity.
    */
-  public final int getBufferLength()
+  public int getBufferLength()
   {
     return _buffer.length;
   }
@@ -751,7 +751,7 @@ public class UnicodeBuilderValue
   /**
    * Returns the length of the string.
    */
-  public final int length()
+  public int length()
   {
     return _length;
   }
@@ -1028,7 +1028,7 @@ public class UnicodeBuilderValue
   /**
    * Converts to a boolean.
    */
-  public override final bool toBoolean()
+  public override bool toBoolean()
   {
     if (_length == 0)
       return false;

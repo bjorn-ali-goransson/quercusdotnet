@@ -43,7 +43,7 @@ public class JavaCalendarValue : JavaValue {
   private const Logger log
     = Logger.getLogger(JavaCalendarValue.class.getName());
   
-  private final Calendar _calendar;
+  private Calendar _calendar;
   
   public JavaCalendarValue(Env env, Calendar calendar, JavaClassDef def)
   {

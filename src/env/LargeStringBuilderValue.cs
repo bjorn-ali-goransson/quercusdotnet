@@ -299,7 +299,7 @@ public class LargeStringBuilderValue
     }
   }
 
-  public override final void setLength(int len)
+  public override void setLength(int len)
   {
     _length = len;
   }
@@ -449,7 +449,7 @@ public class LargeStringBuilderValue
   /**
    * Append a Java buffer to the value.
    */
-  public override final StringValue appendUnicode(char []buf, int offset, int length)
+  public override StringValue appendUnicode(char []buf, int offset, int length)
   {
     return append(buf, offset, length);
   }
@@ -493,7 +493,7 @@ public class LargeStringBuilderValue
   /**
    * Append a Java buffer to the value.
    */
-  public override final StringValue append(char []buf, int offset, int length)
+  public override StringValue append(char []buf, int offset, int length)
   {
     ensureCapacity(_length + length);
 
@@ -509,7 +509,7 @@ public class LargeStringBuilderValue
   /**
    * Append a buffer to the value.
    */
-  public final StringValue append(byte []buf, int offset, int length)
+  public StringValue append(byte []buf, int offset, int length)
   {
     ensureCapacity(_length + length);
 
@@ -534,7 +534,7 @@ public class LargeStringBuilderValue
   /**
    * Append a double to the value.
    */
-  public final StringValue append(byte []buf)
+  public StringValue append(byte []buf)
   {
     return append(buf, 0, buf.length);
   }
@@ -542,7 +542,7 @@ public class LargeStringBuilderValue
   /**
    * Append a Java byte to the value without conversions.
    */
-  public override final StringValue append(char v)
+  public override StringValue append(char v)
   {
     if (_length % SIZE == 0)
       ensureCapacity(_length + 1);
@@ -557,7 +557,7 @@ public class LargeStringBuilderValue
   /**
    * Append a Java byte to the value without conversions.
    */
-  public final StringValue append(byte v)
+  public StringValue append(byte v)
   {
     if (_length % SIZE == 0)
       ensureCapacity(_length + 1);
@@ -572,7 +572,7 @@ public class LargeStringBuilderValue
   /**
    * Append a Java bool to the value.
    */
-  public override final StringValue append(bool v)
+  public override StringValue append(bool v)
   {
     return append(v ? "true" : "false");
   }
@@ -598,7 +598,7 @@ public class LargeStringBuilderValue
   /**
    * Append a Java value to the value.
    */
-  public override final StringValue append(Value v)
+  public override StringValue append(Value v)
   {
     v.appendTo(this);
 

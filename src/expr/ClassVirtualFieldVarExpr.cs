@@ -51,7 +51,7 @@ public class ClassVirtualFieldVarExpr : AbstractVarExpr {
   private const L10N L
     = new L10N(ClassVirtualFieldVarExpr.class);
 
-  protected final Expr _varName;
+  protected Expr _varName;
 
   public ClassVirtualFieldVarExpr(Location location, Expr varName)
   {

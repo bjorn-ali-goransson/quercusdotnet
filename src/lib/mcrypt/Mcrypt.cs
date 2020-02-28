@@ -51,10 +51,10 @@ public class Mcrypt {
   private const Logger log =
     Logger.getLogger(Mcrypt.class.getName());
 
-  private final string _algorithm;
-  private final string _mode;
+  private string _algorithm;
+  private string _mode;
 
-  private final Cipher _cipher;
+  private Cipher _cipher;
 
   private Key _key;
   private IvParameterSpec _iv;

@@ -249,7 +249,7 @@ public class Env
   private const LruCache<String,StringValue> _internStringMap
     = new LruCache<String,StringValue>(4096);
 
-  protected final QuercusContext _quercus;
+  protected QuercusContext _quercus;
 
   private QuercusPage _page;
 
@@ -314,7 +314,7 @@ public class Env
 
   private Closure _closure;
 
-  private final bool _isUnicodeSemantics;
+  private bool _isUnicodeSemantics;
   private bool _isAllowUrlInclude;
   private bool _isAllowUrlFopen;
 
@@ -366,7 +366,7 @@ public class Env
   private Path _tmpPath;
   private ArrayList<Path> _removePaths;
 
-  private final bool _isStrict;
+  private bool _isStrict;
 
   private QuercusHttpServletRequest _request;
   private QuercusHttpServletResponse _response;
@@ -1037,7 +1037,7 @@ public class Env
   /**
    * Returns true for strict mode.
    */
-  public final bool isStrict()
+  public bool isStrict()
   {
     return _isStrict;
   }
@@ -1201,7 +1201,7 @@ public class Env
     return _quercus.getDatabase();
   }
 
-  protected final DataSource findDatabase(String driver, string url)
+  protected DataSource findDatabase(String driver, string url)
     
   {
     return _quercus.findDatabase(driver, url);
@@ -1338,7 +1338,7 @@ public class Env
   /**
    * Flushes the output buffer.
    */
-  public final void flush()
+  public void flush()
   {
     try {
       getOut().flush();
@@ -1350,7 +1350,7 @@ public class Env
   /**
    * Prints a string
    */
-  public final void print(String v)
+  public void print(String v)
   {
     try {
       getOut().print(v);
@@ -1362,7 +1362,7 @@ public class Env
   /**
    * Prints a character buffer.
    */
-  public final void print(char []buffer, int offset, int length)
+  public void print(char []buffer, int offset, int length)
   {
     try {
       getOut().print(buffer, offset, length);
@@ -1374,7 +1374,7 @@ public class Env
   /**
    * Prints a char
    */
-  public final void print(char v)
+  public void print(char v)
   {
     try {
       getOut().print(v);
@@ -1386,7 +1386,7 @@ public class Env
   /**
    * Prints a long
    */
-  public final void print(long v)
+  public void print(long v)
   {
     try {
       getOut().print(v);
@@ -1398,7 +1398,7 @@ public class Env
   /**
    * Prints a double
    */
-  public final void print(double v)
+  public void print(double v)
   {
     try {
       long longV = (long) v;
@@ -1415,7 +1415,7 @@ public class Env
   /**
    * Prints an object
    */
-  public final void print(Object v)
+  public void print(Object v)
   {
     try {
       getOut().print(v);
@@ -1427,7 +1427,7 @@ public class Env
   /**
    * Prints a value
    */
-  public final void print(Value v)
+  public void print(Value v)
   {
     v.print(this);
   }
@@ -1435,7 +1435,7 @@ public class Env
   /**
    * Prints a string
    */
-  public final void println()
+  public void println()
   {
     try {
       getOut().println();
@@ -1447,7 +1447,7 @@ public class Env
   /**
    * Prints a string
    */
-  public final void println(String v)
+  public void println(String v)
   {
     try {
       getOut().println(v);
@@ -1459,7 +1459,7 @@ public class Env
   /**
    * Prints a string
    */
-  public final void println(Value v)
+  public void println(Value v)
   {
     try {
       v.print(this);
@@ -1472,7 +1472,7 @@ public class Env
   /**
    * Prints and object.
    */
-  public final void println(Object v)
+  public void println(Object v)
   {
     try {
       getOut().println(v);
@@ -1484,7 +1484,7 @@ public class Env
   /**
    * Prints a byte buffer.
    */
-  public final void write(byte []buffer, int offset, int length)
+  public void write(byte []buffer, int offset, int length)
   {
     try {
       getOut().write(buffer, offset, length);
@@ -2103,7 +2103,7 @@ public class Env
    * @param name the variable name
    * @param var the current value of the variable
    */
-  public final Var getVar(StringValue name, Value value)
+  public Var getVar(StringValue name, Value value)
   {
     if (value != null)
       return (Var) value;
@@ -2117,7 +2117,7 @@ public class Env
    * @param name the variable name
    * @param value the current value of the variable
    */
-  public final Var getGlobalVar(StringValue name, Value value)
+  public Var getGlobalVar(StringValue name, Value value)
   {
     if (value != null)
       return (Var) value;
@@ -2183,12 +2183,12 @@ public class Env
     return envVar.getVar();
   }
 
-  public final EnvVar getEnvVar(StringValue name)
+  public EnvVar getEnvVar(StringValue name)
   {
     return getEnvVar(name, true, true);
   }
 
-  public final EnvVar getLazyEnvVar(StringValue name)
+  public EnvVar getLazyEnvVar(StringValue name)
   {
     EnvVar var = getEnvVar(name, false, false);
 
@@ -2205,7 +2205,7 @@ public class Env
    * @param name the variable name
    * @param var the current value of the variable
    */
-  public final EnvVar getEnvVar(StringValue name,
+  public EnvVar getEnvVar(StringValue name,
                                 bool isAutoCreate,
                                 bool isOutputNotice)
   {
@@ -2248,7 +2248,7 @@ public class Env
    *
    * @param name the variable name
    */
-  public final EnvVar getGlobalEnvVar(StringValue name)
+  public EnvVar getGlobalEnvVar(StringValue name)
   {
     return getGlobalEnvVar(name, true, false);
   }
@@ -2259,7 +2259,7 @@ public class Env
    * @param name the variable name
    * @param isAutoCreate
    */
-  public final EnvVar getGlobalEnvVar(StringValue name,
+  public EnvVar getGlobalEnvVar(StringValue name,
                                       bool isAutoCreate,
                                       bool isOutputNotice)
   {
@@ -2349,7 +2349,7 @@ public class Env
   /**
    * Gets a static variable name.
    */
-  public final StringValue createStaticName()
+  public StringValue createStaticName()
   {
     return _quercus.createStaticName();
   }
@@ -2359,7 +2359,7 @@ public class Env
    *
    * @param name the variable name
    */
-  public final Var getStaticVar(StringValue name)
+  public Var getStaticVar(StringValue name)
   {
     Var var = _staticMap.get(name);
 
@@ -2376,7 +2376,7 @@ public class Env
    *
    * @param name the variable name
    */
-  public final Value getStaticValue(StringValue name)
+  public Value getStaticValue(StringValue name)
   {
     Var var = _staticMap.get(name);
 
@@ -2392,7 +2392,7 @@ public class Env
    *
    * @param name the variable name
    */
-  public final Var setStaticRef(StringValue name, Value value)
+  public Var setStaticRef(StringValue name, Value value)
   {
     if (value.isVar()) {
       Var var = (Var) value;
@@ -2420,7 +2420,7 @@ public class Env
    * @param name the variable name
    */
   /*
-  public final Var getStaticClassVar(Value qThis,
+  public Var getStaticClassVar(Value qThis,
                                      string className,
                                      string name)
   {
@@ -2443,7 +2443,7 @@ public class Env
    *
    * @param name the variable name
    */
-  public final Var unsetVar(StringValue name)
+  public Var unsetVar(StringValue name)
   {
     EnvVar envVar = _map.get(name);
 
@@ -2459,7 +2459,7 @@ public class Env
    * @param name the variable name
    * @param value the current value of the variable
    */
-  public final Var setVar(String name, Value value)
+  public Var setVar(String name, Value value)
   {
     throw new UnsupportedOperationException();
 
@@ -2486,7 +2486,7 @@ public class Env
    *
    * @param name the variable name
    */
-  public final Var unsetLocalVar(StringValue name)
+  public Var unsetLocalVar(StringValue name)
   {
     EnvVar envVar = _map.get(name);
 
@@ -2501,7 +2501,7 @@ public class Env
    *
    * @param name the variable name
    */
-  public final Var unsetGlobalVar(StringValue name)
+  public Var unsetGlobalVar(StringValue name)
   {
     EnvVar envVar = _globalMap.get(name);
 
@@ -3516,7 +3516,7 @@ public class Env
   /**
    * Pushes a new environment.
    */
-  public final Value []setFunctionArgs(Value []args)
+  public Value []setFunctionArgs(Value []args)
   {
     Value []oldArgs = _functionArgs;
 
@@ -3535,7 +3535,7 @@ public class Env
   /**
    * Pushes a new environment.
    */
-  public final Value []setFunctionArgsNoCopy(Value []args)
+  public Value []setFunctionArgsNoCopy(Value []args)
   {
     Value []oldArgs = _functionArgs;
 
@@ -3550,7 +3550,7 @@ public class Env
   /**
    * Pushes a new environment.
    */
-  public final void restoreFunctionArgs(Value []args)
+  public void restoreFunctionArgs(Value []args)
   {
     _functionArgs = args;
   }
@@ -3558,7 +3558,7 @@ public class Env
   /**
    * Returns the function args.
    */
-  public final Value []getFunctionArgs()
+  public Value []getFunctionArgs()
   {
     return _functionArgs;
   }
@@ -7109,7 +7109,7 @@ public class Env
     return null;
   }
 
-  public final Location setLocation(Location newLocation)
+  public Location setLocation(Location newLocation)
   {
     Location location = _location;
     _location = newLocation;
@@ -7117,7 +7117,7 @@ public class Env
     return location;
   }
 
-  protected final Location getLocationImpl()
+  protected Location getLocationImpl()
   {
     return _location;
   }
@@ -7678,8 +7678,8 @@ public class Env
   }
 
   static class FieldGetEntry {
-    private final string _className;
-    private final StringValue _fieldName;
+    private string _className;
+    private StringValue _fieldName;
 
     FieldGetEntry(String className, StringValue fieldName)
     {
@@ -7700,10 +7700,10 @@ public class Env
   }
 
   static class ClassKey {
-    private final WeakReference<ClassDef> _defRef;
-    private final WeakReference<QuercusClass> _parentRef;
+    private WeakReference<ClassDef> _defRef;
+    private WeakReference<QuercusClass> _parentRef;
 
-    private final int _hash;
+    private int _hash;
 
     ClassKey(ClassDef def, QuercusClass parent)
     {

@@ -80,7 +80,7 @@ abstract public class Encoder
     _replacement = replacement;
   }
 
-  public final void setReplaceUnicode(bool isReplaceUnicode)
+  public void setReplaceUnicode(bool isReplaceUnicode)
   {
     _isReplaceUnicode = isReplaceUnicode;
   }
@@ -105,7 +105,7 @@ abstract public class Encoder
   abstract public StringValue encode(StringValue sb, CharSequence str,
                                      int start, int end);
 
-  public final StringValue encode(StringValue sb, CharSequence str,
+  public StringValue encode(StringValue sb, CharSequence str,
                                   int start, int end, bool isReset)
   {
     if (isReset)

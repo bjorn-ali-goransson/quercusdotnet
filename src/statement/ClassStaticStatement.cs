@@ -46,8 +46,8 @@ namespace QuercusDotNet.Statement{
 public class ClassStaticStatement
   : Statement
 {
-  protected final VarExpr _var;
-  protected final Expr _initValue;
+  protected VarExpr _var;
+  protected Expr _initValue;
   protected StringValue _staticName;
 
   /**

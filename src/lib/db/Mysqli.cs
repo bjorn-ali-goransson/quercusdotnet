@@ -1804,8 +1804,8 @@ public class Mysqli : JdbcConnectionResource
   {
     ArrayList<String> result = new ArrayList<String>();
     StringBuilder queryBuffer = new StringBuilder(64);
-    final string sql = sqlStr.toString();
-    final int length = sql.length();
+    string sql = sqlStr.toString();
+    int length = sql.length();
     bool inQuotes = false;
     char c;
 

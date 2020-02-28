@@ -69,32 +69,32 @@ abstract public class Decoder
     return false;
   }
 
-  public final bool isIgnoreErrors()
+  public bool isIgnoreErrors()
   {
     return _isIgnoreErrors;
   }
 
-  public final void setIgnoreErrors(bool isIgnore)
+  public void setIgnoreErrors(bool isIgnore)
   {
     _isIgnoreErrors = isIgnore;
   }
 
-  public final bool hasError()
+  public bool hasError()
   {
     return _hasError;
   }
 
-  public final void setReplacement(CharSequence replacement)
+  public void setReplacement(CharSequence replacement)
   {
     _replacement = replacement;
   }
 
-  public final void setReplaceUnicode(bool isReplaceUnicode)
+  public void setReplaceUnicode(bool isReplaceUnicode)
   {
     _isReplaceUnicode = isReplaceUnicode;
   }
 
-  public final void setAllowMalformedOut(bool isAllowMalformedOut)
+  public void setAllowMalformedOut(bool isAllowMalformedOut)
   {
     _isAllowMalformedOut = isAllowMalformedOut;
   }
@@ -104,7 +104,7 @@ abstract public class Decoder
     _hasError = false;
   }
 
-  public final CharSequence decode(Env env, StringValue str)
+  public CharSequence decode(Env env, StringValue str)
   {
     if (str.isUnicode()) {
       return str;
@@ -117,7 +117,7 @@ abstract public class Decoder
     return sb;
   }
 
-  public final StringValue decodeUnicode(StringValue str)
+  public StringValue decodeUnicode(StringValue str)
   {
     UnicodeBuilderValue sb = new UnicodeBuilderValue();
 

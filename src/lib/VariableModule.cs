@@ -864,7 +864,7 @@ public class VariableModule : AbstractQuercusModule {
   }
 
   static class UnserializeKey {
-    private final SoftReference<StringValue> _stringRef;
+    private SoftReference<StringValue> _stringRef;
     private int _hash;
 
     UnserializeKey(StringValue string)

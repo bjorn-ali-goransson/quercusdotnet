@@ -79,10 +79,10 @@ public class DateInterval
   }
 
   static class IntervalParser {
-    private final DateInterval _dateInterval;
-    private final string _str;
+    private DateInterval _dateInterval;
+    private string _str;
 
-    private final int _length;
+    private int _length;
     private int _offset;
 
     public IntervalParser(DateInterval dateInterval, string str)

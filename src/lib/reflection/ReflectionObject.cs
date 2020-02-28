@@ -39,7 +39,7 @@ namespace QuercusDotNet.lib.reflection {
 
 public class ReflectionObject : ReflectionClass
 {
-  final private void __clone()
+  private void __clone()
   {
   }
 

@@ -40,7 +40,7 @@ namespace QuercusDotNet.Program{
 
 public class TraitAliasMap
 {
-  private final HashMap<StringValue,TraitAlias> _aliasMap
+  private HashMap<StringValue,TraitAlias> _aliasMap
     = new HashMap<StringValue,TraitAlias>();
 
   public void put(StringValue funName,
@@ -73,8 +73,8 @@ public class TraitAliasMap
   }
 
   static class TraitAlias {
-    private final string _traitName;
-    private final StringValue _funNameAlias;
+    private string _traitName;
+    private StringValue _funNameAlias;
 
     public TraitAlias(String traitName, StringValue funNameAlias)
     {

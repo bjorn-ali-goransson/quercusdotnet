@@ -83,7 +83,7 @@ public class ReflectionClass
     return _cls;
   }
 
-  final private ReflectionClass __clone()
+  private ReflectionClass __clone()
   {
     return new ReflectionClass(_cls);
   }

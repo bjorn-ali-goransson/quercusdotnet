@@ -56,8 +56,8 @@ public class QuercusCompiledScript : CompiledScript {
   private const Logger log
     = Logger.getLogger(QuercusCompiledScript.class.getName());
 
-  private final QuercusScriptEngine _engine;
-  private final QuercusProgram _program;
+  private QuercusScriptEngine _engine;
+  private QuercusProgram _program;
 
   QuercusCompiledScript(QuercusScriptEngine engine, QuercusProgram program)
   {

@@ -41,7 +41,7 @@ namespace QuercusDotNet.Expr{
  */
 public class BinaryAppendExpr : Expr
 {
-  private final Expr _value;
+  private Expr _value;
   private BinaryAppendExpr _next;
 
   protected BinaryAppendExpr(Expr value, BinaryAppendExpr next)

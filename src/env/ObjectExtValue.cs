@@ -165,7 +165,7 @@ public class ObjectExtValue : ObjectValue
   /**
    * Gets a field value.
    */
-  public override final Value getField(Env env, StringValue name)
+  public override Value getField(Env env, StringValue name)
   {
     Value returnValue = getFieldExt(env, name);
 
@@ -1377,7 +1377,7 @@ public class ObjectExtValue : ObjectValue
   public static class KeyValueIterator
     : Iterator<Map.Entry<Value,Value>>
   {
-    private final Iterator<Entry> _iter;
+    private Iterator<Entry> _iter;
 
     KeyValueIterator(Iterator<Entry> iter)
     {
@@ -1403,7 +1403,7 @@ public class ObjectExtValue : ObjectValue
   public static class ValueIterator
     : Iterator<Value>
   {
-    private final Iterator<Entry> _iter;
+    private Iterator<Entry> _iter;
 
     ValueIterator(Iterator<Entry> iter)
     {
@@ -1429,7 +1429,7 @@ public class ObjectExtValue : ObjectValue
   public static class KeyIterator
     : Iterator<Value>
   {
-    private final Iterator<StringValue> _iter;
+    private Iterator<StringValue> _iter;
 
     KeyIterator(Iterator<StringValue> iter)
     {
@@ -1456,7 +1456,7 @@ public class ObjectExtValue : ObjectValue
     : Map.Entry<Value,Value>,
                Comparable<Map.Entry<Value, Value>>
   {
-    private final StringValue _key;
+    private StringValue _key;
 
     private Value _value;
 

@@ -45,10 +45,10 @@ namespace QuercusDotNet.Env{
 public class CallbackObjectMethod : Callback {
   private readonly L10N L = new L10N(CallbackObjectMethod.class);
 
-  private final ObjectValue _obj;
+  private ObjectValue _obj;
 
-  private final StringValue _methodName;
-  private final int _hash;
+  private StringValue _methodName;
+  private int _hash;
 
   public CallbackObjectMethod(ObjectValue obj, StringValue methodName)
   {

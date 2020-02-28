@@ -49,11 +49,11 @@ public class DOMImplementation
 {
   private static L10N L = new L10N(DOMImplementation.class);
 
-  private final IdentityHashMap<Object, Object> _wrapperMap =
+  private IdentityHashMap<Object, Object> _wrapperMap =
       new IdentityHashMap<Object, Object>();
-  private final DOMFactory _factory;
+  private DOMFactory _factory;
 
-  final org.w3c.dom.DOMImplementation _delegate;
+  org.w3c.dom.DOMImplementation _delegate;
 
   static DOMImplementation get(Env env)
   {

@@ -41,7 +41,7 @@ namespace QuercusDotNet.lib.spl {
 
 public class SplFileObject : SplFileInfo
 {
-  private final BinaryStream _stream;
+  private BinaryStream _stream;
 
   public SplFileObject(Env env,
                        StringValue fileName,

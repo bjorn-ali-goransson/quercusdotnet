@@ -48,10 +48,10 @@ namespace QuercusDotNet.Expr{
 public class ClassVirtualMethodExpr : Expr {
   private readonly L10N L = new L10N(ClassVirtualMethodExpr.class);
 
-  protected final StringValue _methodName;
+  protected StringValue _methodName;
 
-  private final int _hash;
-  protected final Expr []_args;
+  private int _hash;
+  protected Expr []_args;
 
   protected bool _isMethod;
 

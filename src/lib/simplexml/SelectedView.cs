@@ -52,11 +52,11 @@ namespace QuercusDotNet.lib.simplexml {
 
 public class SelectedView : SimpleView
 {
-  private final SimpleView _parent;
-  private final string _nodeName;
+  private SimpleView _parent;
+  private string _nodeName;
 
-  private final ArrayList<SimpleView> _childList;
-  private final ArrayList<AttributeView> _attrList;
+  private ArrayList<SimpleView> _childList;
+  private ArrayList<AttributeView> _attrList;
 
   public SelectedView(SimpleView parent,
                       string nodeName,

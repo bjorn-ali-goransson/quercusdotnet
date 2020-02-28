@@ -43,8 +43,8 @@ namespace QuercusDotNet.Expr{
  * Represents the array function
  */
 public class FunArrayExpr : Expr {
-  protected final Expr []_keys;
-  protected final Expr []_values;
+  protected Expr []_keys;
+  protected Expr []_values;
 
   public FunArrayExpr(Location location,
                       ArrayList<Expr> keyList,

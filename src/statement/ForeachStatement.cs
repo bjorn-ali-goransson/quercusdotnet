@@ -48,16 +48,16 @@ namespace QuercusDotNet.Statement{
 public class ForeachStatement
   : Statement
 {
-  protected final Expr _objExpr;
+  protected Expr _objExpr;
 
-  protected final AbstractVarExpr _key;
+  protected AbstractVarExpr _key;
 
-  protected final AbstractVarExpr _value;
-  protected final bool _isRef;
+  protected AbstractVarExpr _value;
+  protected bool _isRef;
 
-  protected final Statement _block;
+  protected Statement _block;
 
-  protected final string _label;
+  protected string _label;
 
   public ForeachStatement(Location location,
                           Expr objExpr,

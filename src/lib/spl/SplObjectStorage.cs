@@ -365,7 +365,7 @@ public class SplObjectStorage
   }
 
   static class ObjectEntry {
-    private final StringValue _hash;
+    private StringValue _hash;
 
     private Value _obj;
     private Value _value;

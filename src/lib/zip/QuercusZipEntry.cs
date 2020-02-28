@@ -48,9 +48,9 @@ public class QuercusZipEntry {
     Logger.getLogger(QuercusZipEntry.class.getName());
   private readonly L10N L = new L10N(QuercusZipEntry.class);
 
-  private final ZipEntry _entry;
-  private final BinaryInput _binaryInput;
-  private final long _position;
+  private ZipEntry _entry;
+  private BinaryInput _binaryInput;
+  private long _position;
 
   private ZipEntryInputStream _in;
 

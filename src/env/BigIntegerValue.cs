@@ -44,7 +44,7 @@ public class BigIntegerValue : JavaValue {
   private const Logger log
     = Logger.getLogger(JavaURLValue.class.getName());
 
-  private final BigInteger _val;
+  private BigInteger _val;
 
   public BigIntegerValue(Env env, BigInteger val, JavaClassDef def)
   {

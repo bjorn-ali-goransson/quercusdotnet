@@ -42,7 +42,7 @@ namespace QuercusDotNet.Expr{
  * Represents the exit expression
  */
 public class FunExitExpr : Expr {
-  protected final Expr _value;
+  protected Expr _value;
 
   public FunExitExpr(Location location, Expr value)
   {

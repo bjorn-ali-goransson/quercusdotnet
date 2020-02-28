@@ -47,8 +47,8 @@ public class RecursiveIteratorIterator
   public const int CHILD_FIRST = 2;
   public const int CATCH_GET_CHILD = 16;
 
-  private final ArrayList<RecursiveIterator> _iterStack;
-  private final int _mode;
+  private ArrayList<RecursiveIterator> _iterStack;
+  private int _mode;
 
   public RecursiveIteratorIterator(Env env,
                                    Value value,
@@ -130,7 +130,7 @@ public class RecursiveIteratorIterator
   }
 
   static class RecursiveIteratorProxy : RecursiveIterator {
-    private final Value _obj;
+    private Value _obj;
 
     private const StringValue HAS_CHILDREN
       = new ConstStringValue("hasChildren");

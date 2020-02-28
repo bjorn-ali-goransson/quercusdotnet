@@ -53,7 +53,7 @@ public class GoogleQuercusServletImpl : QuercusServletImpl
   private const Logger log
     = Logger.getLogger(GoogleQuercusServletImpl.class.getName());
 
-  protected final string _gsBucket;
+  protected string _gsBucket;
 
   public GoogleQuercusServletImpl(String gsBucket)
    : base() {

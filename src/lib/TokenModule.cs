@@ -521,8 +521,8 @@ public class TokenModule : AbstractQuercusModule {
 
   static class Token {
     private Env _env;
-    private final StringValue _s;
-    private final int _length;
+    private StringValue _s;
+    private int _length;
     private int _i;
     private bool _inPhp;
 

@@ -44,7 +44,7 @@ namespace QuercusDotNet.Statement{
 public class ClassDefStatement : Statement {
   private readonly L10N L = new L10N(ClassDefStatement.class);
   
-  protected final InterpretedClassDef _cl;
+  protected InterpretedClassDef _cl;
 
   public ClassDefStatement(Location location, InterpretedClassDef cl)
   {

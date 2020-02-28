@@ -49,8 +49,8 @@ abstract public class AbstractBinaryInputOutput
   private const Logger log
     = Logger.getLogger(AbstractBinaryInputOutput.class.getName());
 
-  protected final Env _env;
-  protected final LineReader _lineReader;
+  protected Env _env;
+  protected LineReader _lineReader;
 
   private InputStream _is;
   private OutputStream _os;

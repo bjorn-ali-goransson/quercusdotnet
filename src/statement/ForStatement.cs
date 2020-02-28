@@ -42,11 +42,11 @@ namespace QuercusDotNet.Statement{
  * Represents a for statement.
  */
 public class ForStatement : Statement {
-  protected final Expr _init;
-  protected final Expr _test;
-  protected final Expr _incr;
-  protected final Statement _block;
-  protected final string _label;
+  protected Expr _init;
+  protected Expr _test;
+  protected Expr _incr;
+  protected Statement _block;
+  protected string _label;
 
   public ForStatement(Location location, Expr init, Expr test, Expr incr,
                       Statement block, string label)

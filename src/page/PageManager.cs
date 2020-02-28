@@ -55,7 +55,7 @@ public class PageManager
 
   protected readonly L10N L = new L10N(PageManager.class);
 
-  private final QuercusContext _quercus;
+  private QuercusContext _quercus;
 
   //private Path _pwd;
   private bool _isLazyCompile;

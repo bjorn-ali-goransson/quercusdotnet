@@ -43,11 +43,11 @@ namespace QuercusDotNet.Expr{
  * A parent::bar(...) method call expression.
  */
 public class TraitParentClassMethodExpr : AbstractMethodExpr {
-  protected final string _traitName;
-  protected final StringValue _methodName;
+  protected string _traitName;
+  protected StringValue _methodName;
 
-  protected final int _hash;
-  protected final Expr []_args;
+  protected int _hash;
+  protected Expr []_args;
 
   protected bool _isMethod;
 

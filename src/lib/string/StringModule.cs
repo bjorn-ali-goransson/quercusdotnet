@@ -5334,7 +5334,7 @@ public class StringModule : AbstractQuercusModule {
   }
 
   static class TextPrintfSegment : PrintfSegment {
-    private final char []_text;
+    private char []_text;
 
     TextPrintfSegment(StringBuilder text)
     {
@@ -5353,9 +5353,9 @@ public class StringModule : AbstractQuercusModule {
   }
 
   static class LongPrintfSegment : PrintfSegment {
-    private final string _format;
-    private final int _index;
-    private final QuercusLocale _locale;
+    private string _format;
+    private int _index;
+    private QuercusLocale _locale;
 
     private LongPrintfSegment(String format, int index, QuercusLocale locale)
     {
@@ -5437,9 +5437,9 @@ public class StringModule : AbstractQuercusModule {
   }
 
   static class HexPrintfSegment : PrintfSegment {
-    private final int _index;
-    private final int _min;
-    private final char _pad;
+    private int _index;
+    private int _min;
+    private char _pad;
     private bool _isUpper;
 
     HexPrintfSegment(int index, int min, int pad, bool isUpper)
@@ -5526,9 +5526,9 @@ public class StringModule : AbstractQuercusModule {
   }
 
   static class UnsignedPrintfSegment : PrintfSegment {
-    private final int _index;
-    private final int _min;
-    private final char _pad;
+    private int _index;
+    private int _min;
+    private char _pad;
 
     UnsignedPrintfSegment(int index, int min, int pad)
     {
@@ -5626,9 +5626,9 @@ public class StringModule : AbstractQuercusModule {
   }
 
   static class BinaryPrintfSegment : PrintfSegment {
-    private final int _index;
-    private final int _min;
-    private final char _pad;
+    private int _index;
+    private int _min;
+    private char _pad;
 
     BinaryPrintfSegment(int index, int min, int pad)
     {
@@ -5706,10 +5706,10 @@ public class StringModule : AbstractQuercusModule {
   }
 
   static class DoublePrintfSegment : PrintfSegment {
-    private final string _format;
-    private final bool _isLeftZero;
-    private final int _index;
-    private final QuercusLocale _locale;
+    private string _format;
+    private bool _isLeftZero;
+    private int _index;
+    private QuercusLocale _locale;
 
     DoublePrintfSegment(String format,
                         bool isLeftZero,
@@ -5770,13 +5770,13 @@ public class StringModule : AbstractQuercusModule {
   }
 
   static class StringPrintfSegment : PrintfSegment {
-    protected final char []_prefix;
-    protected final int _min;
-    protected final int _max;
-    protected final bool _isLeft;
-    protected final bool _isUpper;
-    protected final char _pad;
-    protected final int _index;
+    protected char []_prefix;
+    protected int _min;
+    protected int _max;
+    protected bool _isLeft;
+    protected bool _isUpper;
+    protected char _pad;
+    protected int _index;
 
     StringPrintfSegment(StringBuilder prefix,
                         bool isLeft, int pad, bool isUpper,
@@ -5970,8 +5970,8 @@ public class StringModule : AbstractQuercusModule {
   }
 
   static class ScanfConstant : ScanfSegment {
-    private final string _string;
-    private final int _strlen;
+    private string _string;
+    private int _strlen;
 
     private ScanfConstant(String string)
     {
@@ -6140,7 +6140,7 @@ public class StringModule : AbstractQuercusModule {
   }
 
   static class ScanfScientific : ScanfSegment {
-    private final int _maxLen;
+    private int _maxLen;
 
     ScanfScientific(int maxLen)
     {
@@ -6231,7 +6231,7 @@ public class StringModule : AbstractQuercusModule {
   }
 
   static class ScanfHex : ScanfSegment {
-    private final int _maxLen;;
+    private int _maxLen;;
 
     ScanfHex(int maxLen)
     {
@@ -6310,9 +6310,9 @@ public class StringModule : AbstractQuercusModule {
   }
 
   static class ScanfInteger : ScanfSegment {
-    private final int _maxLen;
-    private final int _base;
-    private final bool _isUnsigned;
+    private int _maxLen;
+    private int _base;
+    private bool _isUnsigned;
 
     ScanfInteger(int maxLen, int base, bool isUnsigned)
     {
@@ -6400,7 +6400,7 @@ public class StringModule : AbstractQuercusModule {
   }
 
   static class ScanfIntegerWithBaseDetection : ScanfSegment {
-    private final int _maxLen;
+    private int _maxLen;
 
     ScanfIntegerWithBaseDetection(int maxLen)
     {
@@ -6550,7 +6550,7 @@ public class StringModule : AbstractQuercusModule {
 
 
   static class ScanfString : ScanfSegment {
-    private final int _maxLen;
+    private int _maxLen;
 
     ScanfString(int maxLen)
     {

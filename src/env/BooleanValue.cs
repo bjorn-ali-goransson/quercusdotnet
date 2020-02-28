@@ -49,7 +49,7 @@ public class BooleanValue : Value
   public readonly BooleanValue TRUE = new BooleanValue(true);
   public readonly BooleanValue FALSE = new BooleanValue(false);
 
-  private final bool _value;
+  private bool _value;
 
   private BooleanValue(bool value)
   {
@@ -109,7 +109,7 @@ public class BooleanValue : Value
   /**
    * Converts to a boolean.
    */
-  public override final bool toBoolean()
+  public override bool toBoolean()
   {
     return this == TRUE;
   }

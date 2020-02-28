@@ -46,7 +46,7 @@ namespace QuercusDotNet.Expr{
 public class ThisExpr : AbstractVarExpr {
   private readonly L10N L = new L10N(Expr.class);
 
-  protected final InterpretedClassDef _classDef;
+  protected InterpretedClassDef _classDef;
 
   public ThisExpr(InterpretedClassDef classDef)
   {

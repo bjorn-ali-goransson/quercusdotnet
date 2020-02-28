@@ -64,7 +64,7 @@ public class ElementView : SimpleView
   private const Logger log
     = Logger.getLogger(ElementView.class.getName());
 
-  private final Node _node;
+  private Node _node;
 
   public ElementView(Node node)
   {

@@ -35,8 +35,8 @@ namespace QuercusDotNet.lib.pdf {
  * font character
  */
 public class FontChar {
-  private final int _code;
-  private final double _width;
+  private int _code;
+  private double _width;
 
   FontChar(int code, double width)
   {

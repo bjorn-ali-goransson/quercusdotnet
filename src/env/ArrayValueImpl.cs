@@ -1214,12 +1214,12 @@ public class ArrayValueImpl : ArrayValue
       return NullValue.NULL;
   }
 
-  public final Entry getHead()
+  public Entry getHead()
   {
     return _head;
   }
 
-  protected final Entry getTail()
+  protected Entry getTail()
   {
     return _tail;
   }

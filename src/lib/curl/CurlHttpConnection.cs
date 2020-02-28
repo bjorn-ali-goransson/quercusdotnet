@@ -198,7 +198,7 @@ public class CurlHttpConnection
     _conn.setRequestProperty(key, value);
   }
 
-  protected final Proxy getProxy()
+  protected Proxy getProxy()
   {
     if (_proxyURL == null || _proxyURL.getPort() < 0)
       return null;
@@ -209,17 +209,17 @@ public class CurlHttpConnection
     return new Proxy(Proxy.Type.valueOf(_proxyType), address);
   }
 
-  protected final URL getURL()
+  protected URL getURL()
   {
     return _url;
   }
 
-  protected final URLConnection getConnection()
+  protected URLConnection getConnection()
   {
     return _conn;
   }
 
-  protected final HttpURLConnection getHttpConnection()
+  protected HttpURLConnection getHttpConnection()
   {
     if (_httpConn == null)
       throw new ClassCastException(_conn + " @is not a HttpURLConnection");
@@ -227,7 +227,7 @@ public class CurlHttpConnection
     return _httpConn;
   }
 
-  protected final void setConnection(URLConnection conn)
+  protected void setConnection(URLConnection conn)
   {
     _conn = conn;
 
@@ -326,7 +326,7 @@ public class CurlHttpConnection
   /**
    * Returns the authorization response.
    */
-  private final string getAuthorization(URL url,
+  private string getAuthorization(URL url,
                                         string requestMethod,
                                         string header,
                                         string clientField,

@@ -45,7 +45,7 @@ namespace QuercusDotNet.Parser{
  */
 public class ClassScope : Scope
 {
-  private final InterpretedClassDef _cl;
+  private InterpretedClassDef _cl;
 
   public ClassScope(InterpretedClassDef cl)
   {

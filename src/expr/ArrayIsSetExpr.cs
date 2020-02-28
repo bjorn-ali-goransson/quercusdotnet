@@ -41,8 +41,8 @@ namespace QuercusDotNet.Expr{
  * Represents a PHP array @is set expression.
  */
 public class ArrayIsSetExpr : Expr {
-  protected final Expr _expr;
-  protected final Expr _index;
+  protected Expr _expr;
+  protected Expr _index;
 
   public ArrayIsSetExpr(Location location, Expr expr, Expr index)
   {

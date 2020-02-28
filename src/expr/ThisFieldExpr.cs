@@ -46,7 +46,7 @@ namespace QuercusDotNet.Expr{
  * Represents a PHP field reference.
  */
 public class ThisFieldExpr : AbstractVarExpr {
-  protected final ThisExpr _qThis;
+  protected ThisExpr _qThis;
 
   protected StringValue _name;
 

@@ -41,17 +41,17 @@ namespace QuercusDotNet.lib.db {
  * Represents a JDBC column metadata
  */
 public class JdbcColumnMetaData {
-  private final JdbcTableMetaData _table;
+  private JdbcTableMetaData _table;
 
-  private final string _name;
+  private string _name;
 
-  private final int _jdbcType;
+  private int _jdbcType;
 
-  private final int _length;
+  private int _length;
 
-  private final bool _isNotNull;
-  private final bool _isUnsigned;
-  private final bool _isZeroFill;
+  private bool _isNotNull;
+  private bool _isUnsigned;
+  private bool _isZeroFill;
 
   private bool _isPrimaryKey;
   private bool _isIndex;

@@ -338,7 +338,7 @@ public class OutputModule : AbstractQuercusModule
     //   1 if the stream has been flushed (PHP_OUTPUT_HANDLER_CONT)
     //   2 if the stream was flushed at the end (PHP_OUTPUT_HANDLER_END)
     // However, there @is no way to access the buffer after it has ended,
-    // so the final case doesn't seem to be an issue!  (Even calling
+    // so the case doesn't seem to be an issue!  (Even calling
     // ob_get_status() in the handler on a ob_end_flush() does not
     // invoke this state.)
     LongValue status = ob.haveFlushed() ? LongValue.ONE : LongValue.ZERO;

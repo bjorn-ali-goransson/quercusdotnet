@@ -40,8 +40,8 @@ namespace QuercusDotNet.Env{
 @SuppressWarnings("serial")
 public class InterpretedClosure : Closure
 {
-  private final AbstractFunction _fun;
-  private final Value []_args;
+  private AbstractFunction _fun;
+  private Value []_args;
 
   public InterpretedClosure(Env env, AbstractFunction fun, Value qThis)
   {

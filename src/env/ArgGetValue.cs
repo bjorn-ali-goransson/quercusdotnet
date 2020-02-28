@@ -41,8 +41,8 @@ namespace QuercusDotNet.Env{
 public class ArgGetValue : ArgValue
   : Serializable
 {
-  private final Value _obj;
-  private final Value _index;
+  private Value _obj;
+  private Value _index;
 
   public ArgGetValue(Value obj, Value index)
   {

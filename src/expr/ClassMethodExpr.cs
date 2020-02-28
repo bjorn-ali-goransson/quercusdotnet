@@ -46,11 +46,11 @@ namespace QuercusDotNet.Expr{
 public class ClassMethodExpr : AbstractMethodExpr {
   private readonly L10N L = new L10N(ClassMethodExpr.class);
 
-  protected final string _className;
-  protected final StringValue _methodName;
+  protected string _className;
+  protected StringValue _methodName;
 
-  protected final int _hash;
-  protected final Expr []_args;
+  protected int _hash;
+  protected Expr []_args;
 
   protected bool _isMethod;
 

@@ -62,8 +62,8 @@ public class EmailValidateFilter
 
   static class EmailParser
   {
-    private final StringValue _s;
-    private final int _length;
+    private StringValue _s;
+    private int _length;
 
     private int _offset;
 

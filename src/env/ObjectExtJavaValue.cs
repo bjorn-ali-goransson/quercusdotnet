@@ -49,7 +49,7 @@ public class ObjectExtJavaValue : ObjectExtValue
   : Serializable
 {
   private Object _object;
-  private final JavaClassDef _javaClassDef;
+  private JavaClassDef _javaClassDef;
 
   public ObjectExtJavaValue(Env env,
                             QuercusClass cl,

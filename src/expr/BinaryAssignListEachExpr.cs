@@ -43,8 +43,8 @@ namespace QuercusDotNet.Expr{
 public class BinaryAssignListEachExpr : Expr {
   private readonly L10N L = new L10N(BinaryAssignListEachExpr.class);
   
-  protected final ListHeadExpr _listHead;
-  protected final Expr _value;
+  protected ListHeadExpr _listHead;
+  protected Expr _value;
   
   public BinaryAssignListEachExpr(ListHeadExpr listHead, Expr value)
   {

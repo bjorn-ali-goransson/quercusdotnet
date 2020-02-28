@@ -713,7 +713,7 @@ public class ExprFactory {
   /**
    * Creates an append expression
    */
-  public final Expr createAppend(Expr left, Expr right)
+  public Expr createAppend(Expr left, Expr right)
   {
     BinaryAppendExpr leftAppend;
 
@@ -974,7 +974,7 @@ public class ExprFactory {
   /**
    * Creates a list expression.
    */
-  public final Expr createList(QuercusParser parser,
+  public Expr createList(QuercusParser parser,
                                ListHeadExpr head, Expr value)
   {
     bool isSuppress = value instanceof UnarySuppressErrorExpr;
@@ -1368,7 +1368,7 @@ public class ExprFactory {
     return new ExprStatement(loc, expr);
   }
 
-  public final Statement createBlock(Location loc,
+  public Statement createBlock(Location loc,
                                      ArrayList<Statement> statementList)
   {
     if (statementList.size() == 1)
@@ -1381,7 +1381,7 @@ public class ExprFactory {
     return createBlockImpl(loc, statements);
   }
 
-  public final Statement createBlock(Location loc, Statement []statementList)
+  public Statement createBlock(Location loc, Statement []statementList)
   {
     if (statementList.length == 1)
       return statementList[0];
@@ -1396,7 +1396,7 @@ public class ExprFactory {
   /**
    * Creates an expr statement
    */
-  public final BlockStatement createBlockImpl(Location loc,
+  public BlockStatement createBlockImpl(Location loc,
                                               ArrayList<Statement> statementList
   )
   {

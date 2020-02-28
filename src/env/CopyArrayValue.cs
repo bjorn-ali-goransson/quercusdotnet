@@ -44,7 +44,7 @@ public class CopyArrayValue : ArrayValue {
   private const Logger log
     = Logger.getLogger(CopyArrayValue.class.getName());
 
-  private final ConstArrayValue _constArray;
+  private ConstArrayValue _constArray;
   private ArrayValue _copyArray;
 
   public CopyArrayValue(ConstArrayValue constArray)

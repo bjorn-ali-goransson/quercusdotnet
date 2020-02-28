@@ -36,12 +36,12 @@ namespace QuercusDotNet {
 public class Location {
   public readonly Location UNKNOWN = new Location();
 
-  private final string _fileName;
-  private final string _userPath;
+  private string _fileName;
+  private string _userPath;
 
-  private final int _lineNumber;
-  private final string _className;
-  private final string _functionName;
+  private int _lineNumber;
+  private string _className;
+  private string _functionName;
 
   public Location(String fileName,
                   int lineNumber, string className,

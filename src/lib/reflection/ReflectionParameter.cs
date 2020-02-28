@@ -65,7 +65,7 @@ public class ReflectionParameter
     _clsName = clsName;
   }
 
-  final private void __clone()
+  private void __clone()
   {
   }
 

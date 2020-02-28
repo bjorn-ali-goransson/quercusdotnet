@@ -42,9 +42,9 @@ namespace QuercusDotNet.Statement{
  * Represents a do ... while statement.
  */
 public class DoStatement : Statement {
-  protected final Expr _test;
-  protected final Statement _block;
-  protected final string _label;
+  protected Expr _test;
+  protected Statement _block;
+  protected string _label;
 
   public DoStatement(Location location,
                      Expr test,

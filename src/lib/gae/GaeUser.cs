@@ -35,7 +35,7 @@ namespace QuercusDotNet.lib.gae {
 
 public class GaeUser
 {
-  private final User _user;
+  private User _user;
 
   public GaeUser(User user)
   {

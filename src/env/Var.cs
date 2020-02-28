@@ -758,7 +758,7 @@ public class Var : Value
   /**
    * Returns to the value value.
    */
-  public final Value getRawValue()
+  public Value getRawValue()
   {
     return _value;
   }
@@ -767,7 +767,7 @@ public class Var : Value
    * Converts to a raw value.
    */
 
-  public override final Value toValue()
+  public override Value toValue()
   {
     return _value;
   }

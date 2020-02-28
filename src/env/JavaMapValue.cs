@@ -43,7 +43,7 @@ public class JavaMapValue : JavaValue {
   private const Logger log
     = Logger.getLogger(JavaMapValue.class.getName());
   
-  private final Map _map;
+  private Map _map;
 
   public JavaMapValue(Env env, Map map, JavaClassDef def)
   {

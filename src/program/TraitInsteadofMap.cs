@@ -44,7 +44,7 @@ public class TraitInsteadofMap
   public const int USE_EXISTING_TRAIT = 0;
   public const int NULL = -1;
 
-  private final HashMap<StringValue,TraitInsteadof> _insteadofMap
+  private HashMap<StringValue,TraitInsteadof> _insteadofMap
     = new HashMap<StringValue,TraitInsteadof>();
 
   public void put(StringValue funName,
@@ -78,8 +78,8 @@ public class TraitInsteadofMap
   }
 
   static class TraitInsteadof {
-    private final string _traitName;
-    private final string _insteadofTraitName;
+    private string _traitName;
+    private string _insteadofTraitName;
 
     public TraitInsteadof(String traitName, string insteadofTraitName)
     {

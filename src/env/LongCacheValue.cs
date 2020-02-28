@@ -38,7 +38,7 @@ namespace QuercusDotNet.Env{
 public class LongCacheValue : LongValue
 {
   private transient LongValue _prev;
-  private transient final LongValue _next;
+  private transient LongValue _next;
   
   private transient StringValue _strValue;
   

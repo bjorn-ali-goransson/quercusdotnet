@@ -48,8 +48,8 @@ namespace QuercusDotNet.Expr{
 public class ObjectFieldExpr : AbstractVarExpr {
   private readonly L10N L = new L10N(ObjectFieldExpr.class);
 
-  protected final Expr _objExpr;
-  protected final StringValue _name;
+  protected Expr _objExpr;
+  protected StringValue _name;
 
   public ObjectFieldExpr(Location location, Expr objExpr, StringValue name)
   {

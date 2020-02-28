@@ -38,7 +38,7 @@ namespace QuercusDotNet.Env{
  */
 public class ArrayCopyValueImpl : ArrayValueImpl
 {
-  private final CopyRoot _root;
+  private CopyRoot _root;
 
   /**
    * Copy for unserialization.

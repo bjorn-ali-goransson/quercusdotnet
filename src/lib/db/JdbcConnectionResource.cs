@@ -117,7 +117,7 @@ public abstract class JdbcConnectionResource
     return stmt;
   }
   
-  protected final JdbcStatementResource createStatement(Env env)
+  protected JdbcStatementResource createStatement(Env env)
     
   {
     JdbcStatementResource stmt = createStatementResource(env);
@@ -207,7 +207,7 @@ public abstract class JdbcConnectionResource
    * @param port server port
    * @param dbname database name
    */
-  final protected bool connectInternal(Env env,
+  protected bool connectInternal(Env env,
                                           string host,
                                           string userName,
                                           string password,
@@ -281,7 +281,7 @@ public abstract class JdbcConnectionResource
   {
     StringValue buf = env.createUnicodeBuilder();
 
-    final int strLength = str.length();
+    int strLength = str.length();
 
     for (int i = 0; i < strLength; i++) {
       char c = str.charAt(i);
@@ -435,7 +435,7 @@ public abstract class JdbcConnectionResource
   /**
    * Returns the connection
    */
-  public final Connection getConnection(Env env)
+  public Connection getConnection(Env env)
   {
     _isUsed = true;
 
@@ -887,7 +887,7 @@ public abstract class JdbcConnectionResource
       return null;
     }
 
-    final int len = sql.length();
+    int len = sql.length();
     int i, start;
 
     // Start at index 0, or where we left off last time
@@ -1159,10 +1159,10 @@ public abstract class JdbcConnectionResource
   }
 
   static class TableKey {
-    private final string _url;
-    private final string _catalog;
-    private final string _schema;
-    private final string _table;
+    private string _url;
+    private string _catalog;
+    private string _schema;
+    private string _table;
 
     TableKey(String url, string catalog, string schema, string table)
     {

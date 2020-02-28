@@ -55,9 +55,9 @@ namespace QuercusDotNet.Program{
 abstract public class ClassDef : InstanceInitializer {
   private readonly L10N L = new L10N(ClassDef.class);
 
-  private final Location _location;
-  private final string _name;
-  private final string _parentName;
+  private Location _location;
+  private string _name;
+  private string _parentName;
 
   private string []_ifaceList;
   private string []_traitList;
@@ -177,12 +177,12 @@ abstract public class ClassDef : InstanceInitializer {
     return false;
   }
 
-  public final TraitInsteadofMap getTraitInsteadofMap()
+  public TraitInsteadofMap getTraitInsteadofMap()
   {
     return _traitInsteadofMap;
   }
 
-  public final TraitAliasMap getTraitAliasMap()
+  public TraitAliasMap getTraitAliasMap()
   {
     return _traitAliasMap;
   }
@@ -314,7 +314,7 @@ abstract public class ClassDef : InstanceInitializer {
   }
 
   /**
-   * Returns true for a final class.
+   * Returns true for a class.
    */
   public bool isFinal()
   {
@@ -466,9 +466,9 @@ abstract public class ClassDef : InstanceInitializer {
 
 
   public static class FieldEntry {
-    private final Expr _value;
-    private final FieldVisibility _visibility;
-    private final string _comment;
+    private Expr _value;
+    private FieldVisibility _visibility;
+    private string _comment;
 
     public FieldEntry(Expr value, FieldVisibility visibility)
     {
@@ -501,8 +501,8 @@ abstract public class ClassDef : InstanceInitializer {
   }
 
   public static class StaticFieldEntry {
-    private final Expr _value;
-    private final string _comment;
+    private Expr _value;
+    private string _comment;
 
     public StaticFieldEntry(Expr value)
     {

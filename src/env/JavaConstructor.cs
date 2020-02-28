@@ -46,8 +46,8 @@ namespace QuercusDotNet.Env{
 public class JavaConstructor : JavaInvoker {
   private readonly L10N L = new L10N(JavaConstructor.class);
 
-  private final Constructor<?> _constructor;
-  private final int _argLength;
+  private Constructor<?> _constructor;
+  private int _argLength;
 
   /**
    * Creates the statically introspected function.

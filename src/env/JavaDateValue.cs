@@ -40,7 +40,7 @@ namespace QuercusDotNet.Env{
  * Represents a Quercus java Date value.
  */
 public class JavaDateValue : JavaValue {
-  private final Date _date;
+  private Date _date;
 
   public JavaDateValue(Env env, Date date, JavaClassDef def)
   {

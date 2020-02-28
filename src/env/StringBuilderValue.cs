@@ -264,7 +264,7 @@ public class StringBuilderValue
   /**
    * Returns the value.
    */
-  public final string getValue()
+  public string getValue()
   {
     return toString();
   }
@@ -361,7 +361,7 @@ public class StringBuilderValue
   /**
    * Returns true for a scalar
    */
-  public override final bool isScalar()
+  public override bool isScalar()
   {
     return true;
   }
@@ -369,7 +369,7 @@ public class StringBuilderValue
   /**
    * Converts to a boolean.
    */
-  public override final bool toBoolean()
+  public override bool toBoolean()
   {
     if (_length == 0)
       return false;
@@ -471,7 +471,7 @@ public class StringBuilderValue
   /**
    * Convert to an input stream.
    */
-  public override final InputStream toInputStream()
+  public override InputStream toInputStream()
   {
     return new BuilderInputStream();
   }
@@ -497,7 +497,7 @@ public class StringBuilderValue
   /**
    * Converts to a BinaryValue.
    */
-  public override final StringValue toBinaryValue(Env env)
+  public override StringValue toBinaryValue(Env env)
   {
     return this;
   }
@@ -505,7 +505,7 @@ public class StringBuilderValue
   /**
    * Converts to a BinaryValue in desired charset.
    */
-  public override final StringValue toBinaryValue(String charset)
+  public override StringValue toBinaryValue(String charset)
   {
     return this;
   }
@@ -538,7 +538,7 @@ public class StringBuilderValue
   /**
    * Converts to an object.
    */
-  public override final Object toJavaObject()
+  public override Object toJavaObject()
   {
     return toString();
   }
@@ -546,7 +546,7 @@ public class StringBuilderValue
   /**
    * Returns true if the value @is empty.
    */
-  public override final bool isEmpty()
+  public override bool isEmpty()
   {
     return _length == 0 || _length == 1 && _buffer[0] == '0';
   }
@@ -554,7 +554,7 @@ public class StringBuilderValue
   /**
    * Writes to a stream
    */
-  public override final void writeTo(OutputStream os)
+  public override void writeTo(OutputStream os)
   {
     try {
       os.write(_buffer, 0, _length);
@@ -646,7 +646,7 @@ public class StringBuilderValue
    * Each character becomes one byte, characters with values above 255 are
    * not correctly preserved.
    */
-  public final byte[] toBytes()
+  public byte[] toBytes()
   {
     byte[] bytes = new byte[_length];
 
@@ -662,7 +662,7 @@ public class StringBuilderValue
   /**
    * Returns the character at an index
    */
-  public final Value get(Value key)
+  public Value get(Value key)
   {
     return charValueAt(key.toLong());
   }
@@ -715,7 +715,7 @@ public class StringBuilderValue
   /**
    * Returns the length of the string.
    */
-  public override final int length()
+  public override int length()
   {
     return _length;
   }
@@ -723,7 +723,7 @@ public class StringBuilderValue
   /**
    * Returns the character at a particular location
    */
-  public override final char charAt(int index)
+  public override char charAt(int index)
   {
     if (index < 0 || _length <= index)
       return 0;
@@ -802,8 +802,8 @@ public class StringBuilderValue
    */
   public int indexOf(char match)
   {
-    final int length = _length;
-    final byte []buffer = _buffer;
+    int length = _length;
+    byte []buffer = _buffer;
 
     for (int head = 0; head < length; head++) {
       if (buffer[head] == match)
@@ -1088,7 +1088,7 @@ public class StringBuilderValue
   /**
    * Append a Java string to the value.
    */
-  public override final StringValue append(String s)
+  public override StringValue append(String s)
   {
     int sublen = s.length();
 
@@ -1110,7 +1110,7 @@ public class StringBuilderValue
   /**
    * Append a Java string to the value.
    */
-  public override final StringValue append(String s, int start, int end)
+  public override StringValue append(String s, int start, int end)
   {
     int sublen = end - start;
 
@@ -1131,7 +1131,7 @@ public class StringBuilderValue
   /**
    * Append a Java char to the value.
    */
-  public override final StringValue append(char ch)
+  public override StringValue append(char ch)
   {
     if (_buffer.length < _length + 1)
       ensureCapacity(_length + 1);
@@ -1141,7 +1141,7 @@ public class StringBuilderValue
     return this;
   }
 
-  public override final void write(int ch)
+  public override void write(int ch)
   {
     if (_buffer.length < _length + 1)
       ensureCapacity(_length + 1);
@@ -1153,7 +1153,7 @@ public class StringBuilderValue
   /**
    * Append a Java buffer to the value.
    */
-  public override final StringValue append(char []buf, int offset, int length)
+  public override StringValue append(char []buf, int offset, int length)
   {
     int end = _length + length;
 
@@ -1175,7 +1175,7 @@ public class StringBuilderValue
   /**
    * Append a Java buffer to the value.
    */
-  public override final StringValue append(char []buf)
+  public override StringValue append(char []buf)
   {
     int length = buf.length;
 
@@ -1239,7 +1239,7 @@ public class StringBuilderValue
   /**
    * Append a Java buffer to the value.
    */
-  public override final StringValue append(CharSequence buf, int head, int tail)
+  public override StringValue append(CharSequence buf, int head, int tail)
   {
     int length = tail - head;
 
@@ -1289,7 +1289,7 @@ public class StringBuilderValue
   /**
    * Append a Java value to the value.
    */
-  public override final StringValue append(Value v)
+  public override StringValue append(Value v)
   {
     /*
     if (v.length() == 0)
@@ -1310,9 +1310,9 @@ public class StringBuilderValue
   /**
    * Returns the first index of the match string, starting from the head.
    */
-  public override final int indexOf(CharSequence match, int head)
+  public override int indexOf(CharSequence match, int head)
   {
-    final int matchLength = match.length();
+    int matchLength = match.length();
 
     if (matchLength <= 0) {
       return -1;
@@ -1321,10 +1321,10 @@ public class StringBuilderValue
       return -1;
     }
 
-    final int length = _length;
-    final int end = length - matchLength;
-    final char first = match.charAt(0);
-    final byte []buffer = _buffer;
+    int length = _length;
+    int end = length - matchLength;
+    char first = match.charAt(0);
+    byte []buffer = _buffer;
 
     loop:
     for (; head <= end; head++) {
@@ -1366,7 +1366,7 @@ public class StringBuilderValue
   /**
    * Append a buffer to the value.
    */
-  public final StringValue append(byte []buf, int offset, int length)
+  public StringValue append(byte []buf, int offset, int length)
   {
     int end = _length + length;
 
@@ -1380,7 +1380,7 @@ public class StringBuilderValue
     return this;
   }
 
-  public override final void write(byte []buf, int offset, int length)
+  public override void write(byte []buf, int offset, int length)
   {
     append(buf, offset, length);
   }
@@ -1388,7 +1388,7 @@ public class StringBuilderValue
   /**
    * Append a double to the value.
    */
-  public final StringValue append(byte []buf)
+  public StringValue append(byte []buf)
   {
     return append(buf, 0, buf.length);
   }
@@ -1396,7 +1396,7 @@ public class StringBuilderValue
   /**
    * Append a buffer to the value.
    */
-  public override final StringValue appendUtf8(byte []buf, int offset, int length)
+  public override StringValue appendUtf8(byte []buf, int offset, int length)
   {
     if (_buffer.length < _length + length)
       ensureCapacity(_length + length);
@@ -1438,7 +1438,7 @@ public class StringBuilderValue
   /**
    * Append a Java byte to the value without conversions.
    */
-  public override final StringValue appendByte(int v)
+  public override StringValue appendByte(int v)
   {
     if (_buffer.length < _length + 1)
       ensureCapacity(_length + 1);
@@ -1451,7 +1451,7 @@ public class StringBuilderValue
   /**
    * Append a Java bool to the value.
    */
-  public override final StringValue append(bool v)
+  public override StringValue append(bool v)
   {
     return append(v ? "true" : "false");
   }
@@ -1492,7 +1492,7 @@ public class StringBuilderValue
   /**
    * Append Java bytes to the value without conversions.
    */
-  public override final StringValue appendBytes(byte []bytes, int offset, int end)
+  public override StringValue appendBytes(byte []bytes, int offset, int end)
   {
     int len = end - offset;
 
@@ -1544,7 +1544,7 @@ public class StringBuilderValue
   /**
    * Returns the buffer.
    */
-  public final byte []getBuffer()
+  public byte []getBuffer()
   {
     return _buffer;
   }
@@ -1552,7 +1552,7 @@ public class StringBuilderValue
   /**
    * Sets the length.
    */
-  public final void setLength(int offset)
+  public void setLength(int offset)
   {
     _length = offset;
   }
@@ -1560,7 +1560,7 @@ public class StringBuilderValue
   /**
    * Returns the current capacity.
    */
-  public final int getBufferLength()
+  public int getBufferLength()
   {
     return _buffer.length;
   }

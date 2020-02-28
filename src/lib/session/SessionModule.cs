@@ -577,7 +577,7 @@ public class SessionModule : AbstractQuercusModule
    */
   private static void generateSessionCookie(Env env, string sessionId)
   {
-    final QuercusHttpServletResponse response = env.getResponse();
+    QuercusHttpServletResponse response = env.getResponse();
 
     string cookieName = env.getIni("session.name").toString();
 

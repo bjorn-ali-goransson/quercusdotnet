@@ -46,7 +46,7 @@ namespace QuercusDotNet.Env{
  */
 public class InternalAutoloadCallback
 {
-  private final string _prefix;
+  private string _prefix;
 
   public InternalAutoloadCallback(String prefix)
   {

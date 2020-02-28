@@ -35,8 +35,8 @@ namespace QuercusDotNet.Env{
  * Represents a PHP shutdown function.
  */
 public class Shutdown {
-  private final Callable _callback;
-  private final Value []_args;
+  private Callable _callback;
+  private Value []_args;
 
   public Shutdown(Callable callback, Value []args)
   {

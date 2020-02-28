@@ -37,7 +37,7 @@ namespace QuercusDotNet.servlet.api {
 
 public class QuercusRequestDispatcherImpl : QuercusRequestDispatcher
 {
-  private final RequestDispatcher _dispatcher;
+  private RequestDispatcher _dispatcher;
 
   public QuercusRequestDispatcherImpl(RequestDispatcher dispatcher)
   {

@@ -44,7 +44,7 @@ public class BigDecimalValue : JavaValue {
   private const Logger log
     = Logger.getLogger(JavaURLValue.class.getName());
 
-  private final BigDecimal _val;
+  private BigDecimal _val;
 
   public BigDecimalValue(Env env, BigDecimal val, JavaClassDef def)
   {

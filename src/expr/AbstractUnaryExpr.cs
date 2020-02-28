@@ -37,7 +37,7 @@ namespace QuercusDotNet.Expr{
  * Represents a PHP bool negation
  */
 abstract public class AbstractUnaryExpr : Expr {
-  protected final Expr _expr;
+  protected Expr _expr;
 
   protected AbstractUnaryExpr(Location location, Expr expr)
   {
@@ -53,7 +53,7 @@ abstract public class AbstractUnaryExpr : Expr {
   /**
    * Returns the child expression.
    */
-  public final Expr getExpr()
+  public Expr getExpr()
   {
     return _expr;
   }

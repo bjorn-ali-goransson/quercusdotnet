@@ -44,7 +44,7 @@ public enum ColumnType {
   NULL(Types.NULL),
   LOB(Types.LONGVARCHAR);
 
-  private final int _type;
+  private int _type;
 
   private ColumnType(int type)
   {

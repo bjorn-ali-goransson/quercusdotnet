@@ -33,12 +33,12 @@ namespace QuercusDotNet.Env{
 
 public class JsonEncodeContext
 {
-  private final bool _isEscapeTag;
-  private final bool _isEscapeAmp;
-  private final bool _isEscapeApos;
-  private final bool _isEscapeQuote;
-  private final bool _isCheckNumeric;
-  private final bool _isBigIntAsString;
+  private bool _isEscapeTag;
+  private bool _isEscapeAmp;
+  private bool _isEscapeApos;
+  private bool _isEscapeQuote;
+  private bool _isCheckNumeric;
+  private bool _isBigIntAsString;
 
   public JsonEncodeContext(bool isEscapeTag,
                            bool isEscapeAmp,

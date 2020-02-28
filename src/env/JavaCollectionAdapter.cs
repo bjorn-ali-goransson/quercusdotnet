@@ -236,7 +236,7 @@ public class JavaCollectionAdapter : JavaAdapter
   public static class CollectionEntry
     : Map.Entry<Object,Object>
   {
-    private final int _key;
+    private int _key;
     private Object _value;
 
     public CollectionEntry(int key, Object value)

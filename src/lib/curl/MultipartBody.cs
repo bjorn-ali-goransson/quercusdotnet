@@ -153,8 +153,8 @@ public class MultipartBody : PostBody
   }
 
   static abstract class MultipartEntry {
-    final string _name;
-    final string _header;
+    string _name;
+    string _header;
 
     MultipartEntry(Env env, string name, string header)
     {
@@ -162,7 +162,7 @@ public class MultipartBody : PostBody
       _header = header;
     }
 
-    final string getName()
+    string getName()
     {
       return _name;
     }
@@ -193,7 +193,7 @@ public class MultipartBody : PostBody
       return sb.toString();
     }
 
-    final void write(Env env, OutputStream os)
+    void write(Env env, OutputStream os)
       
     {
       int len = _header.length();
@@ -210,7 +210,7 @@ public class MultipartBody : PostBody
       writeData(env, os);
     }
 
-    final long getLength()
+    long getLength()
     {
       return _header.length() + 4 + getLengthImpl();
     }

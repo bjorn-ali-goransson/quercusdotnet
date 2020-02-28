@@ -50,7 +50,7 @@ namespace QuercusDotNet.Env{
 public class SessionArrayValue : ArrayValueWrapper
   : CacheListener, Serializable
 {
-  static protected final Logger log
+  static protected Logger log
     = Logger.getLogger(SessionArrayValue.class.getName());
 
   private string _id;

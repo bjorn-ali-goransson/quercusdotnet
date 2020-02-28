@@ -46,12 +46,12 @@ namespace QuercusDotNet.Env{
 public class CallbackClassMethod : Callback {
   private readonly L10N L = new L10N(CallbackClassMethod.class);
 
-  private final QuercusClass _qClass;
+  private QuercusClass _qClass;
 
-  private final StringValue _methodName;
-  private final int _hash;
+  private StringValue _methodName;
+  private int _hash;
 
-  private final Value _qThis;
+  private Value _qThis;
 
   public CallbackClassMethod(QuercusClass qClass,
                              StringValue methodName,

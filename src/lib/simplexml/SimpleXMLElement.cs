@@ -354,7 +354,7 @@ public class SimpleXMLElement : SimpleXMLNode
   }
 
   class ViewIterator : Iterator<Map.Entry<Value,SimpleXMLElement>> {
-    private final Iterator<Map.Entry<IteratorIndex,SimpleView>> _iter;
+    private Iterator<Map.Entry<IteratorIndex,SimpleView>> _iter;
 
     ViewIterator(Iterator<Map.Entry<IteratorIndex,SimpleView>> iter)
     {

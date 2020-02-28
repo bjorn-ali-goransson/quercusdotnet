@@ -49,8 +49,8 @@ public class UnserializeReader {
   private const LruCache<StringKey,StringValue> _keyCache
     = new LruCache<StringKey,StringValue>(4096);
 
-  private final char []_buffer;
-  private final int _length;
+  private char []_buffer;
+  private int _length;
 
   private int _index;
   private StringKey _key = new StringKey();
@@ -725,7 +725,7 @@ public class UnserializeReader {
     return s;
   }
 
-  public final void expect(int expectCh)
+  public void expect(int expectCh)
     
   {
     if (_length <= _index)
@@ -752,7 +752,7 @@ public class UnserializeReader {
     }
   }
 
-  public final long readInt()
+  public long readInt()
   {
     int ch = read();
 
@@ -776,7 +776,7 @@ public class UnserializeReader {
     return sign * value;
   }
 
-  public final bool isValidString(int len)
+  public bool isValidString(int len)
   {
     if (_index + len >= _buffer.length)
       return false;
@@ -784,7 +784,7 @@ public class UnserializeReader {
     return true;
   }
 
-  public final string readString(int len)
+  public string readString(int len)
   {
     string s = new String(_buffer, _index, len);
 
@@ -793,7 +793,7 @@ public class UnserializeReader {
     return s;
   }
 
-  public final StringValue readStringValue(Env env, int len)
+  public StringValue readStringValue(Env env, int len)
   {
     StringValue s = env.createString(_buffer, _index, len);
 
@@ -802,7 +802,7 @@ public class UnserializeReader {
     return s;
   }
 
-  public final StringValue readUnicodeValue(Env env, int len)
+  public StringValue readUnicodeValue(Env env, int len)
   {
     StringValue s = new UnicodeBuilderValue(_buffer, _index, len);
 
@@ -811,7 +811,7 @@ public class UnserializeReader {
     return s;
   }
 
-  public final int read()
+  public int read()
   {
     if (_index < _length)
       return _buffer[_index++];
@@ -819,7 +819,7 @@ public class UnserializeReader {
       return -1;
   }
 
-  public final int read(char []buffer, int offset, int length)
+  public int read(char []buffer, int offset, int length)
   {
     System.arraycopy(_buffer, _index, buffer, offset, length);
 
@@ -828,7 +828,7 @@ public class UnserializeReader {
     return length;
   }
 
-  public final void unread()
+  public void unread()
   {
     _index--;
   }

@@ -47,10 +47,10 @@ namespace QuercusDotNet.Expr{
 public class ClassConstructorExpr : Expr {
   private readonly L10N L = new L10N(ClassConstructorExpr.class);
 
-  protected final string _className;
-  protected final StringValue _nameV;
+  protected string _className;
+  protected StringValue _nameV;
 
-  protected final Expr []_args;
+  protected Expr []_args;
 
   public ClassConstructorExpr(Location location,
                               string className,

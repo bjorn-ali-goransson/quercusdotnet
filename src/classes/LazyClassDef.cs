@@ -53,9 +53,9 @@ namespace QuercusDotNet.Classes{
  */
 public class LazyClassDef : CompiledClassDef
 {
-  private final string _name;
-  private final Class<?> _pageClass;
-  private final string _className;
+  private string _name;
+  private Class<?> _pageClass;
+  private string _className;
 
   private CompiledClassDef _def;
 
@@ -177,7 +177,7 @@ public class LazyClassDef : CompiledClassDef
   }
 
   /**
-   * Returns true for a final class.
+   * Returns true for a class.
    */
   @Override
   public bool isFinal()

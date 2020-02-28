@@ -45,7 +45,7 @@ namespace QuercusDotNet.lib.simplexml {
 
 public class TextView : SimpleView
 {
-  private final Node _node;
+  private Node _node;
 
   public TextView(Node node)
   {

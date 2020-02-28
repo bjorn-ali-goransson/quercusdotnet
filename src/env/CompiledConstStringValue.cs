@@ -40,7 +40,7 @@ namespace QuercusDotNet.Env{
 public class CompiledConstStringValue
   : ConstStringValue
 {
-  private final int _compiledHashCode;
+  private int _compiledHashCode;
 
   public CompiledConstStringValue(StringValue s)
   {
@@ -160,7 +160,7 @@ public class CompiledConstStringValue
     return toDoubleValue().toDouble();
   }
 
-  public override final int hashCode()
+  public override int hashCode()
   {
     return _compiledHashCode;
   }

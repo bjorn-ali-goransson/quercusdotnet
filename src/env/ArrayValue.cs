@@ -487,7 +487,7 @@ abstract public class ArrayValue : Value {
     }
   }
 
-  public final Value callCallback(Env env, Callable callback, Value key)
+  public Value callCallback(Env env, Callable callback, Value key)
   {
     Value result;
     Value value = getRaw(key);
@@ -511,7 +511,7 @@ abstract public class ArrayValue : Value {
     return result;
   }
 
-  public final Value callCallback(Env env, Callable callback, Value key,
+  public Value callCallback(Env env, Callable callback, Value key,
                                   Value a2)
   {
     Value result;
@@ -536,7 +536,7 @@ abstract public class ArrayValue : Value {
     return result;
   }
 
-  public final Value callCallback(Env env, Callable callback, Value key,
+  public Value callCallback(Env env, Callable callback, Value key,
                                   Value a2, Value a3)
   {
     Value result;
@@ -729,7 +729,7 @@ abstract public class ArrayValue : Value {
   /**
    * Adds a new value.
    */
-  public final void put(StringValue keyBinary,
+  public void put(StringValue keyBinary,
                         StringValue keyUnicode,
                         Value value,
                         bool isUnicode)
@@ -1604,7 +1604,7 @@ abstract public class ArrayValue : Value {
   public static class Entry
     : Map.Entry<Value,Value>, Serializable
   {
-    private final Value _key;
+    private Value _key;
 
     private Value _value;
     // Var _var;
@@ -1633,32 +1633,32 @@ abstract public class ArrayValue : Value {
       _value = entry._value.copyArrayItem();
     }
 
-    public final Entry getNext()
+    public Entry getNext()
     {
       return _next;
     }
 
-    public final void setNext(final Entry next)
+    public void setNext(final Entry next)
     {
       _next = next;
     }
 
-    public final Entry getPrev()
+    public Entry getPrev()
     {
       return _prev;
     }
 
-    public final void setPrev(final Entry prev)
+    public void setPrev(final Entry prev)
     {
       _prev = prev;
     }
 
-    public final Entry getNextHash()
+    public Entry getNextHash()
     {
       return _nextHash;
     }
 
-    public final void setNextHash(Entry next)
+    public void setNextHash(Entry next)
     {
       _nextHash = next;
     }

@@ -34,8 +34,8 @@ namespace QuercusDotNet.lib.dom {
 
 
 public class DOMWrapper<T> {
-  private final DOMImplementation _impl;
-  final T _delegate;
+  private DOMImplementation _impl;
+  T _delegate;
 
   protected static DOMImplementation getImpl(Env env)
   {

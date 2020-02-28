@@ -207,7 +207,7 @@ abstract public class Marshal {
     throw new UnsupportedOperationException(getClass().getName());
   }
 
-  public final int getMarshalingCost(Value value)
+  public int getMarshalingCost(Value value)
   {
     Class<?> expectedClass = getExpectedClass();
 

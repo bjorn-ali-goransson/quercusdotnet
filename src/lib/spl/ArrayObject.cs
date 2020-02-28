@@ -53,7 +53,7 @@ public class ArrayObject
   public const int STD_PROP_LIST = 0x00000001;
   public const int ARRAY_AS_PROPS = 0x00000002;
 
-  private final Env _env;
+  private Env _env;
   private Value _value;
   private int _flags;
   private QuercusClass _iteratorClass;

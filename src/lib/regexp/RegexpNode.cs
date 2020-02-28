@@ -140,12 +140,12 @@ class RegexpNode {
    * Returns a copy of this node that @is suitable for recursion.
    * Needed because concat() modifies original backing nodes.
    */
-  final RegexpNode copy()
+  RegexpNode copy()
   {
     return copy(new HashMap<RegexpNode,RegexpNode>());
   }
 
-  final RegexpNode copy(HashMap<RegexpNode,RegexpNode> state)
+  RegexpNode copy(HashMap<RegexpNode,RegexpNode> state)
   {
     RegexpNode copy = state.get(this);
 
@@ -479,7 +479,7 @@ class RegexpNode {
   const RegexpNode NOT_S_WORD = RegexpSet.WORD.createNotNode();
 
   static class AsciiSet : AbstractCharNode {
-    private final bool []_set;
+    private bool []_set;
 
     AsciiSet()
     {
@@ -529,7 +529,7 @@ class RegexpNode {
   }
 
   static class AsciiNotSet : AbstractCharNode {
-    private final bool []_set;
+    private bool []_set;
 
     AsciiNotSet()
     {
@@ -575,7 +575,7 @@ class RegexpNode {
   }
 
   static class CharLoop : RegexpNode {
-    private final RegexpNode _node;
+    private RegexpNode _node;
     private RegexpNode _next = N_END;
 
     private int _min;
@@ -696,7 +696,7 @@ class RegexpNode {
   }
 
   static class CharUngreedyLoop : RegexpNode {
-    private final RegexpNode _node;
+    private RegexpNode _node;
     private RegexpNode _next = N_END;
 
     private int _min;
@@ -807,7 +807,7 @@ class RegexpNode {
   }
 
  static class Concat : RegexpNode {
-    private final RegexpNode _head;
+    private RegexpNode _head;
     private RegexpNode _next;
 
     Concat(RegexpNode head, RegexpNode next)
@@ -949,7 +949,7 @@ class RegexpNode {
   }
 
   static class GenericConditionalHead : ConditionalHead {
-    private final RegexpNode _conditional;
+    private RegexpNode _conditional;
 
     GenericConditionalHead(RegexpNode conditional)
     {
@@ -992,7 +992,7 @@ class RegexpNode {
   }
 
   static class GroupConditionalHead : ConditionalHead {
-    private final int _group;
+    private int _group;
 
     GroupConditionalHead(int group)
     {
@@ -1142,8 +1142,8 @@ class RegexpNode {
   }
 
   static class Group : RegexpNode {
-    private final RegexpNode _node;
-    private final int _group;
+    private RegexpNode _node;
+    private int _group;
 
     Group(RegexpNode node, int group)
     {
@@ -1301,7 +1301,7 @@ class RegexpNode {
   static class GroupTail : RegexpNode {
     private GroupHead _head;
     private RegexpNode _next;
-    private final int _group;
+    private int _group;
 
     private GroupTail(int group)
     {
@@ -1425,7 +1425,7 @@ class RegexpNode {
   }
 
   static class GroupRef : RegexpNode {
-    private final int _group;
+    private int _group;
 
     GroupRef(int group)
     {
@@ -1449,7 +1449,7 @@ class RegexpNode {
   }
 
   static class Lookahead : RegexpNode {
-    private final RegexpNode _head;
+    private RegexpNode _head;
 
     Lookahead(RegexpNode head)
     {
@@ -1466,7 +1466,7 @@ class RegexpNode {
   }
 
   static class NotLookahead : RegexpNode {
-    private final RegexpNode _head;
+    private RegexpNode _head;
 
     NotLookahead(RegexpNode head)
     {
@@ -1483,7 +1483,7 @@ class RegexpNode {
   }
 
   static class Lookbehind : RegexpNode {
-    private final RegexpNode _head;
+    private RegexpNode _head;
 
     Lookbehind(RegexpNode head)
     {
@@ -1504,7 +1504,7 @@ class RegexpNode {
   }
 
   static class NotLookbehind : RegexpNode {
-    private final RegexpNode _head;
+    private RegexpNode _head;
 
     NotLookbehind(RegexpNode head)
     {
@@ -1535,7 +1535,7 @@ class RegexpNode {
   }
 
   static class LoopHead : RegexpNode {
-    private final int _index;
+    private int _index;
 
     RegexpNode _node;
     private RegexpNode _tail;
@@ -1655,7 +1655,7 @@ class RegexpNode {
   }
 
   static class LoopTail : RegexpNode {
-    private final int _index;
+    private int _index;
 
     private LoopHead _head;
     private RegexpNode _next;
@@ -1745,7 +1745,7 @@ class RegexpNode {
   }
 
   static class LoopHeadUngreedy : RegexpNode {
-    private final int _index;
+    private int _index;
 
     RegexpNode _node;
     private LoopTailUngreedy _tail;
@@ -1855,7 +1855,7 @@ class RegexpNode {
   }
 
   static class LoopTailUngreedy : RegexpNode {
-    private final int _index;
+    private int _index;
 
     private LoopHeadUngreedy _head;
     private RegexpNode _next;
@@ -1969,7 +1969,7 @@ class RegexpNode {
   }
 
  static class Or : RegexpNode {
-    private final RegexpNode _left;
+    private RegexpNode _left;
     private Or _right;
 
     private Or(RegexpNode left, Or right)
@@ -2312,7 +2312,7 @@ class RegexpNode {
   readonly PropNot PROP_NOT_Zs = new PropNot(Character.SPACE_SEPARATOR);
 
   private static class Prop : AbstractCharNode {
-    private final int _category;
+    private int _category;
 
     Prop(int category)
     {
@@ -2333,7 +2333,7 @@ class RegexpNode {
   }
 
   private static class PropNot : AbstractCharNode {
-    private final int _category;
+    private int _category;
 
     PropNot(int category)
     {
@@ -2640,7 +2640,7 @@ class RegexpNode {
   }
 
   static class Recursive : RegexpNode {
-    private final int _group;
+    private int _group;
     private RegexpNode _top;
 
     Recursive(int group)
@@ -2673,7 +2673,7 @@ class RegexpNode {
   }
 
   static class GroupNumberRecursive : RegexpNode {
-    private final int _group;
+    private int _group;
     private RegexpNode _top;
 
     GroupNumberRecursive(int group)
@@ -2700,7 +2700,7 @@ class RegexpNode {
   }
 
   static class GroupNameRecursive : RegexpNode {
-    private final StringValue _name;
+    private StringValue _name;
     private RegexpNode _top;
 
     GroupNameRecursive(StringValue name)
@@ -2727,8 +2727,8 @@ class RegexpNode {
   }
 
   static class Subroutine : RegexpNode {
-    private final int _group;
-    private final RegexpNode _node;
+    private int _group;
+    private RegexpNode _node;
 
     Subroutine(int group, RegexpNode node)
     {
@@ -2747,8 +2747,8 @@ class RegexpNode {
   }
 
   static class Set : AbstractCharNode {
-    private final bool []_asciiSet;
-    private final IntSet _range;
+    private bool []_asciiSet;
+    private IntSet _range;
 
     Set(bool []set, IntSet range)
     {
@@ -2782,8 +2782,8 @@ class RegexpNode {
 
 
   static class NotSet : AbstractCharNode {
-    private final bool []_asciiSet;
-    private final IntSet _range;
+    private bool []_asciiSet;
+    private IntSet _range;
 
     NotSet(bool []set, IntSet range)
     {
@@ -2806,8 +2806,8 @@ class RegexpNode {
   }
 
   static class StringNode : RegexpNode {
-    private final char []_buffer;
-    private final int _length;
+    private char []_buffer;
+    private int _length;
 
     StringNode(CharBuffer value)
     {
@@ -2913,7 +2913,7 @@ class RegexpNode {
     // match function
     //
 
-    final override int match(StringValue string,
+    override int match(StringValue string,
                     int strlen,
                     int offset,
                     RegexpState state)
@@ -2934,8 +2934,8 @@ class RegexpNode {
   }
 
   static class StringIgnoreCase : RegexpNode {
-    private final char []_buffer;
-    private final int _length;
+    private char []_buffer;
+    private int _length;
 
     StringIgnoreCase(CharBuffer value)
     {

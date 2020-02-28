@@ -79,7 +79,7 @@ public class ReflectionProperty
     return new ReflectionProperty(prop);
   }
 
-  final private void __clone()
+  private void __clone()
   {
   }
 
@@ -175,8 +175,8 @@ public class ReflectionProperty
 
   static class Property
   {
-    final QuercusClass _cls;
-    final StringValue _nameV;
+    QuercusClass _cls;
+    StringValue _nameV;
 
     QuercusClass _declaringClass;
 
@@ -223,7 +223,7 @@ public class ReflectionProperty
       return field.isPrivate();
     }
 
-    public final StringValue getName()
+    public StringValue getName()
     {
       return _nameV;
     }
@@ -243,7 +243,7 @@ public class ReflectionProperty
       // XXX: protected and private always accessible through Reflection
     }
 
-    public final ReflectionClass getDeclaringClass(Env env)
+    public ReflectionClass getDeclaringClass(Env env)
     {
       QuercusClass cls = getDeclaringClass(env, _cls);
 
@@ -253,7 +253,7 @@ public class ReflectionProperty
         return null;
     }
 
-    protected final QuercusClass getDeclaringClass(Env env, QuercusClass cls)
+    protected QuercusClass getDeclaringClass(Env env, QuercusClass cls)
     {
       if (_declaringClass == null)
         _declaringClass = getDeclaringClassImpl(env, cls);

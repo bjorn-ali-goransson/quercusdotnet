@@ -61,8 +61,8 @@ public class ModuleInfo {
   private const Logger log
     = Logger.getLogger(ModuleInfo.class.getName());
 
-  private final string _name;
-  private final QuercusModule _module;
+  private string _name;
+  private QuercusModule _module;
 
   private HashSet<String> _extensionSet
     = new HashSet<String>();

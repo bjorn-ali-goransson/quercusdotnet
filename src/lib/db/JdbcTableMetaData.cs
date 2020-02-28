@@ -46,15 +46,15 @@ public class JdbcTableMetaData {
   private const Logger log
     = Logger.getLogger(JdbcTableMetaData.class.getName());
 
-  private final string _catalog;
-  private final string _schema;
-  private final string _name;
+  private string _catalog;
+  private string _schema;
+  private string _name;
 
-  private final long _lastModified;
+  private long _lastModified;
 
   private long _maxIdleTime = 10000L;
 
-  private final HashMap<String,JdbcColumnMetaData> _columnMap
+  private HashMap<String,JdbcColumnMetaData> _columnMap
     = new HashMap<String,JdbcColumnMetaData>();
 
   public JdbcTableMetaData(Env env,

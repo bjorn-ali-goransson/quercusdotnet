@@ -14,15 +14,15 @@ namespace QuercusDotNet.lib.spl {
 public abstract class AbstractIteratorImpl<T> : Iterator<T> {
     private readonly L10N L = new L10N(AbstractIteratorImpl.class);
 
-    protected final Env _env;
-    protected final ObjectValue _obj;
-    protected final QuercusClass _qClass;
+    protected Env _env;
+    protected ObjectValue _obj;
+    protected QuercusClass _qClass;
 
-    private final AbstractFunction _nextFun;
-    private final AbstractFunction _currentFun;
-    private final AbstractFunction _keyFun;
-    private final AbstractFunction _rewindFun;
-    private final AbstractFunction _validFun;
+    private AbstractFunction _nextFun;
+    private AbstractFunction _currentFun;
+    private AbstractFunction _keyFun;
+    private AbstractFunction _rewindFun;
+    private AbstractFunction _validFun;
     private bool _needNext;
 
     public AbstractIteratorImpl(Env env,

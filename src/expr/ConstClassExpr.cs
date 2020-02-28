@@ -42,7 +42,7 @@ namespace QuercusDotNet.Expr{
  * If within a trait scope, __CLASS__ needs to look up the current class.
  */
 public class ConstClassExpr : Expr {
-  protected final StringValue _funName;
+  protected StringValue _funName;
 
   public ConstClassExpr(Location location, StringValue funName)
   {

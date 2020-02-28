@@ -51,7 +51,7 @@ public class ReflectionFunction : ReflectionFunctionAbstract
     super(callable);
   }
 
-  final private void __clone()
+  private void __clone()
   {
   }
 

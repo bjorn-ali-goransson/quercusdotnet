@@ -51,7 +51,7 @@ public class MethodDeclaration : Function
     MethodDeclaration.class.getName());
   private readonly L10N L = new L10N(MethodDeclaration.class);
 
-  private final ClassDef _qClass;
+  private ClassDef _qClass;
 
   public MethodDeclaration(ExprFactory exprFactory,
                            Location location,

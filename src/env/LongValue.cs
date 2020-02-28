@@ -53,7 +53,7 @@ public class LongValue : NumberValue
 
   public const LongCacheValue []STATIC_VALUES;
 
-  private final long _value;
+  private long _value;
 
   public LongValue(long value)
   {
@@ -551,7 +551,7 @@ public class LongValue : NumberValue
   /**
    * Returns the hash code
    */
-  public override final int hashCode()
+  public override int hashCode()
   {
     long v = _value;
 

@@ -43,7 +43,7 @@ namespace QuercusDotNet.lib.curl {
 
 public class UserBody : PostBody
 {
-  private final CurlResource _curl;
+  private CurlResource _curl;
 
   private Callable _callback;
   private Value _fileV;

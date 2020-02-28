@@ -94,7 +94,7 @@ public class CurlHttpRequest
   /**
    * Opens the connection.
    */
-  protected final void create(Env env)
+  protected void create(Env env)
     
   {
     URL url = getURL(env, _curl.getURL(), _curl.getPort());
@@ -215,7 +215,7 @@ public class CurlHttpRequest
   /**
    * Perform this request.
    */
-  public final bool execute(Env env)
+  public bool execute(Env env)
   {
     try {
       create(env);
@@ -262,17 +262,17 @@ public class CurlHttpRequest
     }
   }
 
-  protected final CurlResource getCurlResource()
+  protected CurlResource getCurlResource()
   {
     return _curl;
   }
 
-  protected final CurlHttpConnection getHttpConnection()
+  protected CurlHttpConnection getHttpConnection()
   {
     return _conn;
   }
 
-  protected final void error(Env env, int code, string error)
+  protected void error(Env env, int code, string error)
   {
     log.log(Level.FINE, error);
 
@@ -283,7 +283,7 @@ public class CurlHttpRequest
     _curl.setErrorCode(code);
   }
 
-  protected final void error(Env env, int code, string error, Throwable e)
+  protected void error(Env env, int code, string error, Throwable e)
   {
     log.log(Level.FINE, error, e);
 
@@ -297,7 +297,7 @@ public class CurlHttpRequest
   /**
    * Returns a valid URL or null on error.
    */
-  protected final URL getURL(Env env, string urlString, int port)
+  protected URL getURL(Env env, string urlString, int port)
     
   {
     if (urlString == null)
@@ -319,7 +319,7 @@ public class CurlHttpRequest
   /**
    * Returns the server response header.
    */
-  private final Value getHeader(Env env, StringValue bb)
+  private Value getHeader(Env env, StringValue bb)
   {
     string httpStatus = _conn.getHeaderField(0);
 
@@ -409,7 +409,7 @@ public class CurlHttpRequest
   /**
    * Returns the server response body.
    */
-  private final Value getBody(Env env, StringValue bb)
+  private Value getBody(Env env, StringValue bb)
     
   {
     InputStream in;

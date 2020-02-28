@@ -46,8 +46,8 @@ namespace QuercusDotNet.Expr{
 public class VarExpr
   : AbstractVarExpr
 {
-  private final VarInfo _var;
-  protected final StringValue _name;
+  private VarInfo _var;
+  protected StringValue _name;
 
   private VarState _varState = VarState.INIT;
 

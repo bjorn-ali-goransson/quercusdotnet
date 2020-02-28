@@ -42,11 +42,11 @@ namespace QuercusDotNet.Expr{
  * Represents a PHP function expression.
  */
 public class ObjectMethodExpr : AbstractMethodExpr {
-  protected final Expr _objExpr;
+  protected Expr _objExpr;
 
-  protected final StringValue _methodName;
+  protected StringValue _methodName;
 
-  protected final Expr []_args;
+  protected Expr []_args;
 
   public ObjectMethodExpr(Location location,
                           Expr objExpr,

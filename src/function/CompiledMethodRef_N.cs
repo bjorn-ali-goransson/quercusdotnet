@@ -50,7 +50,7 @@ abstract public class CompiledMethodRef_N : CompiledMethodRef {
     = Logger.getLogger(CompiledMethodRef_N.class.getName());
   private readonly L10N L = new L10N(CompiledMethodRef_N.class);
 
-  private final int _requiredArgs;
+  private int _requiredArgs;
 
   public CompiledMethodRef_N(String name, Arg []defaultArgs)
   {
@@ -71,7 +71,7 @@ abstract public class CompiledMethodRef_N : CompiledMethodRef {
   }
 
   @Override
-  public final Value callMethodRef(Env env, QuercusClass qClass, Value qThis,
+  public Value callMethodRef(Env env, QuercusClass qClass, Value qThis,
                                    Value []argValues)
   {
     /*

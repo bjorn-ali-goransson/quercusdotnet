@@ -49,7 +49,7 @@ abstract public class CompiledMethod_N : CompiledMethod {
     = Logger.getLogger(CompiledMethod_N.class.getName());
   private readonly L10N L = new L10N(CompiledMethod_N.class);
 
-  private final int _requiredArgs;
+  private int _requiredArgs;
 
   public CompiledMethod_N(String name, Arg []defaultArgs)
   {
@@ -70,7 +70,7 @@ abstract public class CompiledMethod_N : CompiledMethod {
   }
 
   @Override
-  public final Value callMethod(Env env, QuercusClass qClass, Value qThis,
+  public Value callMethod(Env env, QuercusClass qClass, Value qThis,
                                 Value []args)
   {
     /*

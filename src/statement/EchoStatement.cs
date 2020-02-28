@@ -40,7 +40,7 @@ namespace QuercusDotNet.Statement{
  * Represents an echo statement in a PHP program.
  */
 public class EchoStatement : Statement {
-  protected final Expr _expr;
+  protected Expr _expr;
 
   /**
    * Creates the echo statement.

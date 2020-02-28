@@ -46,10 +46,10 @@ public class PDFFont : PDFObject {
 
   private int _id;
 
-  private final Font _face;
+  private Font _face;
 
-  private final string _encoding;
-  private final string _opt;
+  private string _encoding;
+  private string _opt;
 
   PDFFont(Font face, string encoding, string opt)
   {

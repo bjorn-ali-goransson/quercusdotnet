@@ -57,9 +57,9 @@ public class GettextModule
   private LruCache<Object,GettextResource> _cache
     = new LruCache<Object,GettextResource>(16);
 
-  private final Logger log
+  private Logger log
     = Logger.getLogger(GettextModule.class.getName());
-  private final L10N L = new L10N(GettextModule.class);
+  private L10N L = new L10N(GettextModule.class);
 
   public string []getLoadedExtensions()
   {

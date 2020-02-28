@@ -279,7 +279,7 @@ public class Postgres : JdbcConnectionResource
   {
     StringValue buf = str.createStringBuilder(str.length());
 
-    final int strLength = str.length();
+    int strLength = str.length();
 
     for (int i = 0; i < strLength; i++) {
       char c = str.charAt(i);

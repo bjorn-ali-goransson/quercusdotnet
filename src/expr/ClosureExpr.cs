@@ -45,10 +45,10 @@ namespace QuercusDotNet.Expr{
  * Represents a PHP closure expression.
  */
 public class ClosureExpr : Expr {
-  protected final Function _fun;
-  protected final bool _isInClassScope;
+  protected Function _fun;
+  protected bool _isInClassScope;
 
-  protected final ArrayList<VarExpr> _useArgs;
+  protected ArrayList<VarExpr> _useArgs;
 
   public ClosureExpr(Location location, Function fun,
                      ArrayList<VarExpr> useArgs, bool isInClassScope)

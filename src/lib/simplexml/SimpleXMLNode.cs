@@ -42,8 +42,8 @@ public abstract class SimpleXMLNode
 
   private readonly L10N L = new L10N(SimpleXMLNode.class);
 
-  protected final QuercusClass _cls;
-  protected final SimpleView _view;
+  protected QuercusClass _cls;
+  protected SimpleView _view;
 
   private SimpleNamespaceContext _xpathNamespaceContext;
 
@@ -218,7 +218,7 @@ public abstract class SimpleXMLNode
   /**
    * public mixed SimpleXMLElement::asXML([ string $filename ])
    */
-  public final Value asXML(Env env, @Optional Value filename)
+  public Value asXML(Env env, @Optional Value filename)
   {
     StringBuilder sb = new StringBuilder();
     if (! _view.toXml(env, sb)) {

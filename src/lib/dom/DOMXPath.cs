@@ -223,9 +223,9 @@ public class DOMXPath
   }
 
   static class ExpressionCache {
-    private final XPathFactory _factory = XPathFactory.newInstance();
+    private XPathFactory _factory = XPathFactory.newInstance();
 
-    private final LruCache<String,ExpressionEntry> _xpathCache
+    private LruCache<String,ExpressionEntry> _xpathCache
       = new LruCache<String,ExpressionEntry>(1024);
 
     XPathExpression compile(String pattern)

@@ -48,8 +48,8 @@ namespace QuercusDotNet.Expr{
 public class CallVarExpr : Expr {
   private readonly L10N L = new L10N(CallExpr.class);
   
-  protected final Expr _name;
-  protected final Expr []_args;
+  protected Expr _name;
+  protected Expr []_args;
 
   public CallVarExpr(Location location, Expr name, ArrayList<Expr> args)
   {

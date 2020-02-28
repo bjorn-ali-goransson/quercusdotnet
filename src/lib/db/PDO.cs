@@ -149,11 +149,11 @@ public class PDO : EnvCleanup {
 
   public const int PARAM_INPUT_OUTPUT = 0x80000000;
 
-  private final string _dsn;
+  private string _dsn;
 
   private JdbcConnectionResource _conn;
 
-  private final PDOError _error;
+  private PDOError _error;
 
   private PDOStatement _lastPDOStatement;
   private PDOStatement _lastExecutedStatement;
@@ -602,7 +602,7 @@ public class PDO : EnvCleanup {
   {
     StringBuilder buf = new StringBuilder();
 
-    final int strLength = str.length();
+    int strLength = str.length();
 
     for (int i = 0; i < strLength; i++) {
       char c = str.charAt(i);

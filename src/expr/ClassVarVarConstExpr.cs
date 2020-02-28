@@ -45,8 +45,8 @@ namespace QuercusDotNet.Expr{
  */
 public class ClassVarVarConstExpr : Expr
 {
-  protected final Expr _className;
-  protected final Expr _name;
+  protected Expr _className;
+  protected Expr _name;
 
   public ClassVarVarConstExpr(Expr className, Expr name)
   {

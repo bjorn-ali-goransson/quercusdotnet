@@ -39,14 +39,14 @@ namespace QuercusDotNet.Program{
 
 public class ClassField
 {
-  private final StringValue _name;
-  private final StringValue _canonicalName;
-  private final string _declaringClassName;
+  private StringValue _name;
+  private StringValue _canonicalName;
+  private string _declaringClassName;
 
   private Expr _initValue;
   private bool _isTraitField;
 
-  private final string _comment;
+  private string _comment;
 
   public ClassField(StringValue name,
                     StringValue canonicalName,

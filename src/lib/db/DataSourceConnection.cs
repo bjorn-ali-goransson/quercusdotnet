@@ -40,7 +40,7 @@ namespace QuercusDotNet.lib.db {
 
 public class DataSourceConnection : JdbcConnectionResource
 {
-  private final ConnectionEntry _conn;
+  private ConnectionEntry _conn;
 
   public DataSourceConnection(Env env, DataSource ds)
   {

@@ -48,7 +48,7 @@ abstract public class CompiledFunctionRef_N : CompiledFunctionRef {
     = Logger.getLogger(CompiledFunctionRef_N.class.getName());
   private readonly L10N L = new L10N(CompiledFunctionRef_N.class);
 
-  private final int _requiredArgs;
+  private int _requiredArgs;
 
   public CompiledFunctionRef_N(String name, Arg []defaultArgs)
   {
@@ -79,7 +79,7 @@ abstract public class CompiledFunctionRef_N : CompiledFunctionRef {
     return args;
   }
 
-  public final Value callRef(Env env, Value []argValues)
+  public Value callRef(Env env, Value []argValues)
   {
     /*
     Value []args = argValues;

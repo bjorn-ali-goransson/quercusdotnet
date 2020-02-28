@@ -48,7 +48,7 @@ public class ClassVirtualConstExpr : Expr {
   private const L10N L
     = new L10N(ClassVirtualMethodExpr.class);
 
-  protected final StringValue _name;
+  protected StringValue _name;
 
   public ClassVirtualConstExpr(Location location, StringValue name)
   {

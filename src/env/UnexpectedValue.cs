@@ -33,7 +33,7 @@ namespace QuercusDotNet.Env{
 
 public class UnexpectedValue : NullValue
 {
-  private final Value _value;
+  private Value _value;
   
   public UnexpectedValue(Value value)  
   {

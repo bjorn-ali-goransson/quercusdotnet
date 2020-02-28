@@ -44,13 +44,13 @@ namespace QuercusDotNet.Statement{
  * Represents a switch statement.
  */
 public class SwitchStatement : Statement {
-  protected final Expr _value;
+  protected Expr _value;
 
-  protected final Expr[][] _cases;
-  protected final BlockStatement[] _blocks;
+  protected Expr[][] _cases;
+  protected BlockStatement[] _blocks;
 
-  protected final Statement _defaultBlock;
-  protected final string _label;
+  protected Statement _defaultBlock;
+  protected string _label;
 
   public SwitchStatement(Location location,
                          Expr value,

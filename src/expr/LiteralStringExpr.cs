@@ -40,7 +40,7 @@ namespace QuercusDotNet.Expr{
  * Represents a PHP string literal expression.
  */
 public class LiteralStringExpr : Expr {
-  protected final StringValue _value;
+  protected StringValue _value;
 
   public LiteralStringExpr(StringValue value)
   {

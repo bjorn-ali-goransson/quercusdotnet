@@ -62,7 +62,7 @@ public class SimpleHandler : DefaultHandler2
 
   private StringBuilder _sb = new StringBuilder();
 
-  private final DOMImplementation _impl;
+  private DOMImplementation _impl;
   private Document _doc;
   private Node _node;
 

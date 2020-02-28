@@ -99,10 +99,10 @@ public class MysqlCharset
 
   static class CharsetEntry
   {
-    private final string _name;
-    private final string _defaultCollation;
-    private final string _description;
-    private final int _maxBytes;
+    private string _name;
+    private string _defaultCollation;
+    private string _description;
+    private int _maxBytes;
 
     public CharsetEntry(String name, string defaultCollation,
                         string description, int maxBytes)

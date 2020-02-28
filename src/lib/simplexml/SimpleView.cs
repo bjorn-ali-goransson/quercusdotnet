@@ -64,14 +64,14 @@ namespace QuercusDotNet.lib.simplexml {
  */
 public abstract class SimpleView
 {
-  private final Document _doc;
+  private Document _doc;
 
   public SimpleView(Document doc)
   {
     _doc = doc;
   }
 
-  public final Document getOwnerDocument()
+  public Document getOwnerDocument()
   {
     return _doc;
   }
@@ -86,7 +86,7 @@ public abstract class SimpleView
     throw new UnsupportedOperationException(getClass().getSimpleName());
   }
 
-  public final string getEncoding()
+  public string getEncoding()
   {
     Document doc = _doc;
 

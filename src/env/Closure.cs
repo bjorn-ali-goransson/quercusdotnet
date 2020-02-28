@@ -39,7 +39,7 @@ namespace QuercusDotNet.Env{
 @SuppressWarnings("serial")
 abstract public class Closure : Callback
 {
-  private final string _name;
+  private string _name;
   private Value _qThis;
 
   private HashMap<StringValue,Var> _staticVarMap;
@@ -67,7 +67,7 @@ abstract public class Closure : Callback
     return true;
   }
 
-  public final Value getThis()
+  public Value getThis()
   {
     return _qThis;
   }

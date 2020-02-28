@@ -977,7 +977,7 @@ public class MbstringModule
    * boundaries.
    */
   public static StringValue mb_strcut(Env env,
-                                      final StringValue str,
+                                      StringValue str,
                                       int start,
                                       @Optional("7fffffff") int length,
                                       @Optional string encoding)
@@ -1011,7 +1011,7 @@ public class MbstringModule
    * Truncates the string.
    */
   public static StringValue mb_strimwidth(Env env,
-                                          final StringValue str,
+                                          StringValue str,
                                           int start,
                                           int width,
                                           @Optional StringValue trimmarker,

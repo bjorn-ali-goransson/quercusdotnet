@@ -49,8 +49,8 @@ namespace QuercusDotNet.Statement{
  * Represents sequence of statements.
  */
 public class TryStatement : Statement {
-  protected final Statement _block;
-  protected final ArrayList<Catch> _catchList = new ArrayList<Catch>();
+  protected Statement _block;
+  protected ArrayList<Catch> _catchList = new ArrayList<Catch>();
 
   public TryStatement(Location location, Statement block)
   {
@@ -151,9 +151,9 @@ public class TryStatement : Statement {
   }
 
   public static class Catch {
-    private final StringValue _id;
-    private final AbstractVarExpr _lhs;
-    private final Statement _block;
+    private StringValue _id;
+    private AbstractVarExpr _lhs;
+    private Statement _block;
 
     Catch(StringValue id, AbstractVarExpr lhs, Statement block)
     {

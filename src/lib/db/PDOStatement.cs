@@ -66,8 +66,8 @@ public class PDOStatement
 
   private const Value[] NULL_VALUES = new Value[0];
 
-  private final PDO _pdo;
-  private final PDOError _error;
+  private PDO _pdo;
+  private PDOError _error;
 
   // XXX: need to make public @Name("queryString")
   public string queryString;

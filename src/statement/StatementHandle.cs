@@ -38,8 +38,8 @@ public class StatementHandle {
   public const StatementHandle NULL
     = new StatementHandle(NullStatement.NULL);
 
-  private final StatementHandle _parent;
-  private final StatementHandle _previous;
+  private StatementHandle _parent;
+  private StatementHandle _previous;
 
   private Statement _statement;
 

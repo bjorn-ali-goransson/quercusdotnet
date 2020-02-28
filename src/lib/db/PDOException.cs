@@ -38,8 +38,8 @@ namespace QuercusDotNet.lib.db {
 public class PDOException
   : QuercusLanguageException
 {
-  private final string _code;
-  private final string _message;
+  private string _code;
+  private string _message;
 
   private Location _location;
 

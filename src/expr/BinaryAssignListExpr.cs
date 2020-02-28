@@ -38,8 +38,8 @@ namespace QuercusDotNet.Expr{
  * Represents a PHP list assignment expression.
  */
 public class BinaryAssignListExpr : Expr {
-  protected final ListHeadExpr _listHead;
-  protected final Expr _value;
+  protected ListHeadExpr _listHead;
+  protected Expr _value;
 
   protected BinaryAssignListExpr(ListHeadExpr head, Expr value)
   {

@@ -51,7 +51,7 @@ public class Regexp {
   public const int FAIL = -1;
   public const int SUCCESS = 0;
 
-  final StringValue _rawRegexp;
+  StringValue _rawRegexp;
   StringValue _pattern;
   int _flags;
 

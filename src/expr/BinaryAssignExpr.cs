@@ -40,8 +40,8 @@ namespace QuercusDotNet.Expr{
  * Represents a PHP assignment expression.
  */
 public class BinaryAssignExpr : Expr {
-  protected final AbstractVarExpr _var;
-  protected final Expr _value;
+  protected AbstractVarExpr _var;
+  protected Expr _value;
 
   public BinaryAssignExpr(Location location, AbstractVarExpr var, Expr value)
   {

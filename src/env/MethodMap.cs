@@ -46,8 +46,8 @@ public class MethodMap<V>
 {
   private readonly L10N L = new L10N(MethodMap.class);
 
-  private final QuercusClass _quercusClass;
-  private final ClassDef _classDef;
+  private QuercusClass _quercusClass;
+  private ClassDef _classDef;
 
   private Entry<V> []_entries = new Entry[16];
   private int _prime = Primes.getBiggestPrime(_entries.length);
@@ -111,12 +111,12 @@ public class MethodMap<V>
   {
     int hash = key.hashCodeCaseInsensitive();
 
-    final int bucket = (hash & 0x7fffffff) % _prime;
+    int bucket = (hash & 0x7fffffff) % _prime;
 
     for (Entry<V> entry = _entries[bucket];
          entry != null;
          entry = entry.getNext()) {
-      final StringValue entryKey = entry.getKey();
+      StringValue entryKey = entry.getKey();
 
       if (key == entryKey || key.equalsIgnoreCase(entryKey))
         return true;
@@ -125,24 +125,24 @@ public class MethodMap<V>
     return false;
   }
 
-  public final V get(final StringValue key, int hash)
+  public V get(final StringValue key, int hash)
   {
     return get(key, hash, false);
   }
 
-  public final V getStatic(final StringValue key, int hash)
+  public V getStatic(final StringValue key, int hash)
   {
     return get(key, hash, true);
   }
 
-  public final V get(final StringValue key, int hash, bool isStatic)
+  public V get(final StringValue key, int hash, bool isStatic)
   {
-    final int bucket = (hash & 0x7fffffff) % _prime;
+    int bucket = (hash & 0x7fffffff) % _prime;
 
     for (Entry<V> entry = _entries[bucket];
          entry != null;
          entry = entry.getNext()) {
-      final StringValue entryKey = entry.getKey();
+      StringValue entryKey = entry.getKey();
 
       if (key == entryKey || key.equalsIgnoreCase(entryKey))
         return entry._value;
@@ -270,7 +270,7 @@ public class MethodMap<V>
   }
 
  static class Entry<V> {
-    private final StringValue _key;
+    private StringValue _key;
     private V _value;
 
     private Entry<V> _next;
@@ -282,12 +282,12 @@ public class MethodMap<V>
       _value = value;
     }
 
-    public final StringValue getKey()
+    public StringValue getKey()
     {
       return _key;
     }
 
-    public final V getValue()
+    public V getValue()
     {
       return _value;
     }

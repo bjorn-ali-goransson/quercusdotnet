@@ -43,8 +43,8 @@ namespace QuercusDotNet.Expr{
 public class BinaryCharAtExpr : AbstractVarExpr {
   private readonly L10N L = new L10N(BinaryCharAtExpr.class);
 
-  protected final Expr _objExpr;
-  protected final Expr _indexExpr;
+  protected Expr _objExpr;
+  protected Expr _indexExpr;
 
   public BinaryCharAtExpr(Location location, Expr objExpr, Expr indexExpr)
   {

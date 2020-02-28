@@ -38,7 +38,7 @@ namespace QuercusDotNet.Env{
  */
 public class CopyRoot : EnvCleanup
 {
-  private final UnserializeCacheEntry _entry;
+  private UnserializeCacheEntry _entry;
   
   private Value _root;
   private bool _isModified;

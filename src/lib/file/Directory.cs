@@ -84,7 +84,7 @@ public class Directory
   {
   }
 
-  public final void cleanup()
+  public void cleanup()
   {
     close(Env.getInstance());
   }

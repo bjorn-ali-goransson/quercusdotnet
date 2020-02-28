@@ -48,7 +48,7 @@ public class DoubleValue : NumberValue
 {
   public readonly DoubleValue ZERO = new DoubleValue(0);
 
-  private final double _value;
+  private double _value;
 
   public DoubleValue(double value)
   {

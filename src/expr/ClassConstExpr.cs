@@ -47,8 +47,8 @@ namespace QuercusDotNet.Expr{
 public class ClassConstExpr : Expr {
   private readonly L10N L = new L10N(ClassMethodExpr.class);
 
-  protected final string _className;
-  protected final StringValue _name;
+  protected string _className;
+  protected StringValue _name;
 
   public ClassConstExpr(Location location, string className, StringValue name)
   {

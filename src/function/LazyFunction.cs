@@ -48,10 +48,10 @@ public class LazyFunction : AbstractFunction
     = Logger.getLogger(LazyFunction.class.getName());
   private readonly L10N L = new L10N(LazyFunction.class);
 
-  private final QuercusContext _quercus;
-  private final string _name;
-  private final Class<?> _pageClass;
-  private final string _className;
+  private QuercusContext _quercus;
+  private string _name;
+  private Class<?> _pageClass;
+  private string _className;
 
   private AbstractFunction _fun;
 

@@ -44,7 +44,7 @@ namespace QuercusDotNet.lib.db {
  * oracle result set class (postgres has NO object oriented API)
  */
 public class OracleResult : JdbcResultResource {
-  private final Oracle _conn;
+  private Oracle _conn;
 
   /**
    * Constructor for OracleResult

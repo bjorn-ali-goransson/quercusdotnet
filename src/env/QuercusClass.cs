@@ -63,9 +63,9 @@ public class QuercusClass : NullValue {
   private const Logger log
     = Logger.getLogger(QuercusClass.class.getName());
 
-  private final JavaClassDef _javaClassDef;
-  private final ClassDef _classDef;
-  private final string _className;
+  private JavaClassDef _javaClassDef;
+  private ClassDef _classDef;
+  private string _className;
 
   private QuercusClass _parent;
 
@@ -97,21 +97,21 @@ public class QuercusClass : NullValue {
   private AbstractFunction _serializeFun;
   private AbstractFunction _unserializeFun;
 
-  private final ArrayList<InstanceInitializer> _initializers;
+  private ArrayList<InstanceInitializer> _initializers;
 
-  private final MethodMap<AbstractFunction> _methodMap;
-  private final HashMap<StringValue,Expr> _constMap;
-  private final HashMap<StringValue,Object> _constJavaMap;
-  private final LinkedHashMap<StringValue,ClassField> _fieldMap;
-  private final HashMap<String,ArrayList<StaticField>> _staticFieldExprMap;
-  private final HashMap<StringValue,StringValue> _staticFieldNameMap;
+  private MethodMap<AbstractFunction> _methodMap;
+  private HashMap<StringValue,Expr> _constMap;
+  private HashMap<StringValue,Object> _constJavaMap;
+  private LinkedHashMap<StringValue,ClassField> _fieldMap;
+  private HashMap<String,ArrayList<StaticField>> _staticFieldExprMap;
+  private HashMap<StringValue,StringValue> _staticFieldNameMap;
 
-  private final HashSet<String> _instanceofSet;
-  private final HashMap<StringValue,String> _traitMethodBindingClassMap;
+  private HashSet<String> _instanceofSet;
+  private HashMap<StringValue,String> _traitMethodBindingClassMap;
 
   private bool _isModified;
 
-  private final ModuleContext _moduleContext;
+  private ModuleContext _moduleContext;
 
   public QuercusClass(ModuleContext moduleContext,
                       ClassDef classDef,
@@ -532,7 +532,7 @@ public class QuercusClass : NullValue {
   /**
    * Gets the array delegate (see ArrayAccess)
    */
-  public final ArrayDelegate getArrayDelegate()
+  public ArrayDelegate getArrayDelegate()
   {
     return _arrayDelegate;
   }
@@ -548,7 +548,7 @@ public class QuercusClass : NullValue {
   /**
    * Gets the traversable delegate
    */
-  public final TraversableDelegate getTraversableDelegate()
+  public TraversableDelegate getTraversableDelegate()
   {
     return _traversableDelegate;
   }
@@ -564,7 +564,7 @@ public class QuercusClass : NullValue {
   /**
    * Gets the count delegate
    */
-  public final CountDelegate getCountDelegate()
+  public CountDelegate getCountDelegate()
   {
     return _countDelegate;
   }
@@ -1575,7 +1575,7 @@ public class QuercusClass : NullValue {
   /**
    * Finds the matching function.
    */
-  public final AbstractFunction getFunction(StringValue methodName)
+  public AbstractFunction getFunction(StringValue methodName)
   {
     return _methodMap.get(methodName, methodName.hashCodeCaseInsensitive());
   }
@@ -1583,7 +1583,7 @@ public class QuercusClass : NullValue {
   /**
    * Finds the matching function.
    */
-  public final AbstractFunction findFunction(String methodName)
+  public AbstractFunction findFunction(String methodName)
   {
     StringValue nameV = _moduleContext.createString(methodName);
 
@@ -1593,7 +1593,7 @@ public class QuercusClass : NullValue {
   /**
    * Finds the matching function.
    */
-  public final AbstractFunction findFunction(StringValue methodName)
+  public AbstractFunction findFunction(StringValue methodName)
   {
     return _methodMap.getRaw(methodName);
   }
@@ -1601,7 +1601,7 @@ public class QuercusClass : NullValue {
   /**
    * Finds the matching function.
    */
-  public final AbstractFunction getFunction(StringValue methodName, int hash)
+  public AbstractFunction getFunction(StringValue methodName, int hash)
   {
     return _methodMap.get(methodName, methodName.hashCode());
   }
@@ -1642,7 +1642,7 @@ public class QuercusClass : NullValue {
     return fun.callMethod(env, this, qThis, args);
   }
 
-  public final Value callMethod(Env env, Value qThis, StringValue methodName,
+  public Value callMethod(Env env, Value qThis, StringValue methodName,
                                 Value []args)
   {
     return callMethod(env, qThis,
@@ -1664,7 +1664,7 @@ public class QuercusClass : NullValue {
     return fun.callMethod(env, this, qThis);
   }
 
-  public final Value callMethod(Env env, Value qThis, StringValue methodName)
+  public Value callMethod(Env env, Value qThis, StringValue methodName)
   {
     return callMethod(env, qThis,
                       methodName, methodName.hashCodeCaseInsensitive());
@@ -1685,7 +1685,7 @@ public class QuercusClass : NullValue {
     return fun.callMethod(env, this, qThis, a1);
   }
 
-  public final Value callMethod(Env env, Value qThis, StringValue methodName,
+  public Value callMethod(Env env, Value qThis, StringValue methodName,
                                 Value a1)
   {
     return callMethod(env, qThis,
@@ -1708,7 +1708,7 @@ public class QuercusClass : NullValue {
     return fun.callMethod(env, this, qThis, a1, a2);
   }
 
-  public final Value callMethod(Env env, Value qThis, StringValue methodName,
+  public Value callMethod(Env env, Value qThis, StringValue methodName,
                                 Value a1, Value a2)
   {
     return callMethod(env, qThis,
@@ -1731,7 +1731,7 @@ public class QuercusClass : NullValue {
     return fun.callMethod(env, this, qThis, a1, a2, a3);
   }
 
-  public final Value callMethod(Env env, Value qThis, StringValue methodName,
+  public Value callMethod(Env env, Value qThis, StringValue methodName,
                                 Value a1, Value a2, Value a3)
   {
     return callMethod(env, qThis,
@@ -1754,7 +1754,7 @@ public class QuercusClass : NullValue {
     return fun.callMethod(env, this, qThis, a1, a2, a3, a4);
   }
 
-  public final Value callMethod(Env env, Value qThis, StringValue methodName,
+  public Value callMethod(Env env, Value qThis, StringValue methodName,
                                 Value a1, Value a2, Value a3, Value a4)
   {
     return callMethod(env, qThis,
@@ -1777,7 +1777,7 @@ public class QuercusClass : NullValue {
     return fun.callMethod(env, this, qThis, a1, a2, a3, a4, a5);
   }
 
-  public final Value callMethod(Env env, Value qThis, StringValue methodName,
+  public Value callMethod(Env env, Value qThis, StringValue methodName,
                                 Value a1, Value a2, Value a3, Value a4,
                                 Value a5)
   {
@@ -1801,7 +1801,7 @@ public class QuercusClass : NullValue {
     return fun.callMethodRef(env, this, qThis, args);
   }
 
-  public final Value callMethodRef(Env env, Value qThis, StringValue methodName,
+  public Value callMethodRef(Env env, Value qThis, StringValue methodName,
                                    Value []args)
   {
     return callMethodRef(env, qThis,
@@ -1823,7 +1823,7 @@ public class QuercusClass : NullValue {
     return fun.callMethodRef(env, this, qThis);
   }
 
-  public final Value callMethodRef(Env env, Value qThis, StringValue methodName)
+  public Value callMethodRef(Env env, Value qThis, StringValue methodName)
   {
     return callMethodRef(env, qThis,
                          methodName, methodName.hashCodeCaseInsensitive());
@@ -1844,7 +1844,7 @@ public class QuercusClass : NullValue {
     return fun.callMethodRef(env, this, qThis, a1);
   }
 
-  public final Value callMethodRef(Env env, Value qThis, StringValue methodName,
+  public Value callMethodRef(Env env, Value qThis, StringValue methodName,
                                    Value a1)
   {
     return callMethodRef(env, qThis,
@@ -1867,7 +1867,7 @@ public class QuercusClass : NullValue {
     return fun.callMethodRef(env, this, qThis, a1, a2);
   }
 
-  public final Value callMethodRef(Env env, Value qThis, StringValue methodName,
+  public Value callMethodRef(Env env, Value qThis, StringValue methodName,
                                    Value a1, Value a2)
   {
     return callMethodRef(env, qThis,
@@ -1890,7 +1890,7 @@ public class QuercusClass : NullValue {
     return fun.callMethodRef(env, this, qThis, a1, a2, a3);
   }
 
-  public final Value callMethodRef(Env env, Value qThis, StringValue methodName,
+  public Value callMethodRef(Env env, Value qThis, StringValue methodName,
                                    Value a1, Value a2, Value a3)
   {
     return callMethodRef(env, qThis,
@@ -1914,7 +1914,7 @@ public class QuercusClass : NullValue {
                              a1, a2, a3, a4);
   }
 
-  public final Value callMethodRef(Env env, Value qThis, StringValue methodName,
+  public Value callMethodRef(Env env, Value qThis, StringValue methodName,
                                    Value a1, Value a2, Value a3, Value a4)
   {
     return callMethodRef(env, qThis,
@@ -1938,7 +1938,7 @@ public class QuercusClass : NullValue {
                              a1, a2, a3, a4, a5);
   }
 
-  public final Value callMethodRef(Env env, Value qThis, StringValue methodName,
+  public Value callMethodRef(Env env, Value qThis, StringValue methodName,
                                    Value a1, Value a2, Value a3, Value a4,
                                    Value a5)
   {
@@ -2535,7 +2535,7 @@ public class QuercusClass : NullValue {
   /**
    * Finds the matching function.
    */
-  public final AbstractFunction getStaticFunction(String name)
+  public AbstractFunction getStaticFunction(String name)
   {
     AbstractFunction fun = findStaticFunction(name);
     /*
@@ -2556,7 +2556,7 @@ public class QuercusClass : NullValue {
   /**
    * Finds the matching constant
    */
-  public final Value getConstant(Env env, StringValue name)
+  public Value getConstant(Env env, StringValue name)
   {
     Expr expr = _constMap.get(name);
 
@@ -2575,7 +2575,7 @@ public class QuercusClass : NullValue {
   /**
    * Returns true if the constant exists.
    */
-  public final bool hasConstant(StringValue name)
+  public bool hasConstant(StringValue name)
   {
     if (_constMap.get(name) != null)
       return true;
@@ -2586,7 +2586,7 @@ public class QuercusClass : NullValue {
   /**
    * Returns the constants defined in this class.
    */
-  public final HashMap<StringValue, Value> getConstantMap(Env env)
+  public HashMap<StringValue, Value> getConstantMap(Env env)
   {
     HashMap<StringValue, Value> map = new HashMap<StringValue, Value>();
 

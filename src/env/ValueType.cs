@@ -75,7 +75,7 @@ abstract public class ValueType : Serializable {
     return false;
   }
 
-  public final bool isDoubleCmp()
+  public bool isDoubleCmp()
   {
     return isNumberCmp() && ! isLongCmp();
   }

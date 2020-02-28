@@ -45,10 +45,10 @@ namespace QuercusDotNet.Expr{
 public class ObjectMethodVarExpr : Expr {
   private readonly L10N L = new L10N(ObjectMethodVarExpr.class);
 
-  protected final Expr _objExpr;
+  protected Expr _objExpr;
 
-  protected final Expr _name;
-  protected final Expr []_args;
+  protected Expr _name;
+  protected Expr []_args;
 
   protected Expr []_fullArgs;
 

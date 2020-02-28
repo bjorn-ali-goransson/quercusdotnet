@@ -35,9 +35,9 @@ namespace QuercusDotNet.Env{
  * Represents an field-get argument which might be a call to a reference.
  */
 public class ArgGetFieldValue : ArgValue {
-  private final Env _env;
-  private final Value _obj;
-  private final StringValue _name;
+  private Env _env;
+  private Value _obj;
+  private StringValue _name;
 
   public ArgGetFieldValue(Env env, Value obj, StringValue name)
   {

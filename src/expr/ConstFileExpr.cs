@@ -40,7 +40,7 @@ namespace QuercusDotNet.Expr{
  * For portability of compiled code.
  */
 public class ConstFileExpr : Expr {
-  protected final string _fileName;
+  protected string _fileName;
 
   public ConstFileExpr(Location location, string fileName)
   {

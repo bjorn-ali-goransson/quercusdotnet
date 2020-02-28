@@ -47,7 +47,7 @@ abstract public class CompiledFunction_N : CompiledFunction {
     = Logger.getLogger(CompiledFunction_N.class.getName());
   private readonly L10N L = new L10N(CompiledFunction_N.class);
 
-  private final int _requiredArgs;
+  private int _requiredArgs;
 
   public CompiledFunction_N(String name, Arg []defaultArgs)
   {
@@ -78,7 +78,7 @@ abstract public class CompiledFunction_N : CompiledFunction {
     return args;
   }
 
-  public final Value call(Env env, Value []argValues)
+  public Value call(Env env, Value []argValues)
   {
     /*
     Value []args = argValues;

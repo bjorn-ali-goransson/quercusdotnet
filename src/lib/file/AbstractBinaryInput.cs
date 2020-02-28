@@ -51,7 +51,7 @@ public class AbstractBinaryInput
     = Logger.getLogger(AbstractBinaryInput.class.getName());
 
   private Env _env;
-  private final LineReader _lineReader;
+  private LineReader _lineReader;
 
   private ReadStream _is;
 

@@ -217,7 +217,7 @@ public class Utf8Decoder
     int _peek = -1;
 
     int _index;
-    final int _len;
+    int _len;
     StringValue _str;
 
     public Utf8Reader(StringValue str)

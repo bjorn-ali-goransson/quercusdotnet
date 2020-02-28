@@ -39,11 +39,11 @@ namespace QuercusDotNet.lib.db {
 
 
 public class QuercusDataSource : DataSource {
-  private final DataSource _ds;
-  private final string _user;
-  private final string _pass;
+  private DataSource _ds;
+  private string _user;
+  private string _pass;
 
-  private final bool _isAllowPerConnectionUserPass;
+  private bool _isAllowPerConnectionUserPass;
 
   /**
    * @param ds

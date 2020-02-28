@@ -43,7 +43,7 @@ namespace QuercusDotNet.servlet.api {
 
 public class QuercusHttpServletRequestImpl : QuercusHttpServletRequest
 {
-  private final HttpServletRequest _request;
+  private HttpServletRequest _request;
 
   public QuercusHttpServletRequestImpl(HttpServletRequest request)
   {

@@ -44,15 +44,15 @@ namespace QuercusDotNet.Program{
  */
 public class FunctionInfo
 {
-  private final QuercusContext _quercus;
+  private QuercusContext _quercus;
 
-  private final ClassDef _classDef;
-  private final string _name;
+  private ClassDef _classDef;
+  private string _name;
 
-  private final HashMap<StringValue,VarInfo> _varMap
+  private HashMap<StringValue,VarInfo> _varMap
     = new HashMap<StringValue,VarInfo>();
 
-  private final ArrayList<String> _tempVarList
+  private ArrayList<String> _tempVarList
     = new ArrayList<String>();
 
   private Function _fun;
@@ -173,7 +173,7 @@ public class FunctionInfo
   }
 
   /*
-   * True for a final function.
+   * True for a function.
    */
   public bool isFinal()
   {

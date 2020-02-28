@@ -91,8 +91,8 @@ public class IteratorDelegate : TraversableDelegate
   public static class EntryImpl
     : Map.Entry<Value, Value>
   {
-    private final Value _key;
-    private final Value _value;
+    private Value _key;
+    private Value _value;
 
     public EntryImpl(Value key, Value value)
     {

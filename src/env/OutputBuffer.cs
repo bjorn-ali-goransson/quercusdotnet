@@ -50,16 +50,16 @@ public class OutputBuffer {
   private bool _haveFlushed;
   private Callable _callback;
   
-  private final bool _erase;
-  private final int _chunkSize;
-  private final int _level;
+  private bool _erase;
+  private int _chunkSize;
+  private int _level;
 
-  private final OutputBuffer _next;
+  private OutputBuffer _next;
 
   private TempStream _tempStream;
   private WriteStream _out;
 
-  private final Env _env;
+  private Env _env;
 
   OutputBuffer(OutputBuffer next, Env env, Callable callback, 
                int chunkSize, bool erase)

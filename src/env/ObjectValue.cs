@@ -55,7 +55,7 @@ abstract public class ObjectValue : Callback {
   protected string _className;
   protected string _incompleteObjectName;
 
-  private final int _objectId;
+  private int _objectId;
 
   protected ObjectValue(Env env)
   {
@@ -122,7 +122,7 @@ abstract public class ObjectValue : Callback {
     _incompleteObjectName = null;
   }
 
-  public final void cleanup(Env env)
+  public void cleanup(Env env)
   {
     QuercusClass qClass = getQuercusClass();
     AbstractFunction fun = qClass.getDestructor();
@@ -744,7 +744,7 @@ abstract public class ObjectValue : Callback {
   /**
    * Finds the method name.
    */
-  public override final AbstractFunction findFunction(StringValue methodName)
+  public override AbstractFunction findFunction(StringValue methodName)
   {
     return _quercusClass.findFunction(methodName);
   }

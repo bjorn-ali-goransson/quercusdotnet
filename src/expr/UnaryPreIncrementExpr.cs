@@ -39,7 +39,7 @@ namespace QuercusDotNet.Expr{
  * Represents a PHP pre increment expression.
  */
 public class UnaryPreIncrementExpr : AbstractUnaryExpr {
-  protected final int _incr;
+  protected int _incr;
 
   public UnaryPreIncrementExpr(Location location, Expr expr, int incr)
   {

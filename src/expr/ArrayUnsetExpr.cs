@@ -39,8 +39,8 @@ namespace QuercusDotNet.Expr{
  * Represents a PHP array unset expression.
  */
 public class ArrayUnsetExpr : Expr {
-  protected final Expr _expr;
-  protected final Expr _index;
+  protected Expr _expr;
+  protected Expr _index;
 
   public ArrayUnsetExpr(Location location, Expr expr, Expr index)
   {

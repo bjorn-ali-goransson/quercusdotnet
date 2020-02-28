@@ -52,7 +52,7 @@ namespace QuercusDotNet.Env{
 public class DefinitionState {
   private readonly L10N L = new L10N(DefinitionState.class);
 
-  private final QuercusContext _quercus;
+  private QuercusContext _quercus;
 
   private bool _isStrict;
 
@@ -121,7 +121,7 @@ public class DefinitionState {
   /**
    * Returns true for strict mode.
    */
-  public final bool isStrict()
+  public bool isStrict()
   {
     return _isStrict;
   }
@@ -383,8 +383,8 @@ public class DefinitionState {
   }
 
   static class ClassKey {
-    private final WeakReference<ClassDef> _defRef;
-    private final WeakReference<QuercusClass> _parentRef;
+    private WeakReference<ClassDef> _defRef;
+    private WeakReference<QuercusClass> _parentRef;
 
     ClassKey(ClassDef def, QuercusClass parent)
     {

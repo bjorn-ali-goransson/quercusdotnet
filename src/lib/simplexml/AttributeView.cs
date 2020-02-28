@@ -44,7 +44,7 @@ namespace QuercusDotNet.lib.simplexml {
 
 public class AttributeView : SimpleView
 {
-  private final Attr _attr;
+  private Attr _attr;
 
   public AttributeView(Attr attr)
   {

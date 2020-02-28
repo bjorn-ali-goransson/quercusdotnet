@@ -40,9 +40,9 @@ namespace QuercusDotNet.Statement{
  * Represents an if statement.
  */
 public class IfStatement : Statement {
-  private final Expr _test;
-  private final Statement _trueBlock;
-  private final Statement _falseBlock;
+  private Expr _test;
+  private Statement _trueBlock;
+  private Statement _falseBlock;
 
   public IfStatement(Location location,
                      Expr test,

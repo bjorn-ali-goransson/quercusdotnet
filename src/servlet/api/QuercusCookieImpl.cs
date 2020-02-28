@@ -35,7 +35,7 @@ namespace QuercusDotNet.servlet.api {
 
 public class QuercusCookieImpl : QuercusCookie
 {
-  private final Cookie _cookie;
+  private Cookie _cookie;
 
   public QuercusCookieImpl(Cookie cookie)
   {

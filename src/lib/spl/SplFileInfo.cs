@@ -41,7 +41,7 @@ namespace QuercusDotNet.lib.spl {
 
 public class SplFileInfo
 {
-  private final Path _parent;
+  private Path _parent;
 
   protected Path _path;
   private string _openFileClassName;

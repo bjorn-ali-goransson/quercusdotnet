@@ -40,8 +40,8 @@ namespace QuercusDotNet.Profile{
  */
 public class ProfileMethod
 {
-  private final int _id;
-  private final string _name;
+  private int _id;
+  private string _name;
   
   private long _count;
   

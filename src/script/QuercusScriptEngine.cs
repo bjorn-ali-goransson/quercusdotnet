@@ -72,7 +72,7 @@ public class QuercusScriptEngine
   private const Logger log
     = Logger.getLogger(QuercusScriptEngine.class.getName());
 
-  private final QuercusScriptEngineFactory _factory;
+  private QuercusScriptEngineFactory _factory;
   private QuercusContext _quercus;
 
   private string _scriptEncoding = "utf-8";

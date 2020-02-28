@@ -562,10 +562,10 @@ public class JavaValue : ObjectValue
   /**
    * Converts to a java object.
    */
-  public override final Object toJavaObject(Env env, Class<?> type)
+  public override Object toJavaObject(Env env, Class<?> type)
   {
-    final Object object = _object;
-    final Class<?> objectClass = _object.getClass();
+    Object object = _object;
+    Class<?> objectClass = _object.getClass();
 
     if (type == objectClass || type.isAssignableFrom(objectClass)) {
       return object;

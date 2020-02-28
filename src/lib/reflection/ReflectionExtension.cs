@@ -59,7 +59,7 @@ public class ReflectionExtension
     _name = extension;
   }
 
-  final private void __clone()
+  private void __clone()
   {
 
   }

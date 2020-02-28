@@ -1003,7 +1003,7 @@ public class MysqliModule : AbstractQuercusModule {
   {
     char c;
 
-    final int strLength = unescapedString.length();
+    int strLength = unescapedString.length();
 
     for (int i = 0; i < strLength; i++) {
       c = unescapedString.charAt(i);

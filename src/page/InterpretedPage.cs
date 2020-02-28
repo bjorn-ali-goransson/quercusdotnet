@@ -48,7 +48,7 @@ namespace QuercusDotNet.Page{
  */
 public class InterpretedPage : QuercusPage
 {
-  private final QuercusProgram _program;
+  private QuercusProgram _program;
 
   public InterpretedPage(QuercusProgram program)
   {

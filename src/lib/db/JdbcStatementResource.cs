@@ -224,7 +224,7 @@ public class JdbcStatementResource
     }
   }
 
-  protected final bool execute(Env env, bool isCatchException)
+  protected bool execute(Env env, bool isCatchException)
     
   {
     if (_stmt == null) {
@@ -407,7 +407,7 @@ public class JdbcStatementResource
     _rs = createResultSet(rs);
   }
 
-  protected final JdbcConnectionResource getConnection()
+  protected JdbcConnectionResource getConnection()
   {
     return _conn;
   }

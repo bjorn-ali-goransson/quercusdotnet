@@ -36,10 +36,10 @@ namespace QuercusDotNet.Profile{
  */
 public class ProfileItem
 {
-  private final string _name;
-  private final string _parent;
-  private final long _count;
-  private final long _micros;
+  private string _name;
+  private string _parent;
+  private long _count;
+  private long _micros;
 
   public ProfileItem(String name, string parent, long count, long micros)
   {

@@ -100,7 +100,7 @@ abstract public class CompiledClosure : Closure {
   }
 
   public abstract static class CompiledClosure_1 : CompiledClosure {
-    private final Expr _default0;
+    private Expr _default0;
 
     public CompiledClosure_1(String name, Value qThis, Expr default0)
      : base(name, qThis) {
@@ -130,8 +130,8 @@ abstract public class CompiledClosure : Closure {
   }
 
   public abstract static class CompiledClosure_2 : CompiledClosure {
-    private final Expr _default0;
-    private final Expr _default1;
+    private Expr _default0;
+    private Expr _default1;
 
     public CompiledClosure_2(String name, Value qThis,
                              Expr default0, Expr default1)
@@ -174,9 +174,9 @@ abstract public class CompiledClosure : Closure {
   }
 
   public abstract static class CompiledClosure_3 : CompiledClosure {
-    private final Expr _default0;
-    private final Expr _default1;
-    private final Expr _default2;
+    private Expr _default0;
+    private Expr _default1;
+    private Expr _default2;
 
     public CompiledClosure_3(String name, Value qThis,
                              Expr default0, Expr default1, Expr default2)
@@ -242,10 +242,10 @@ abstract public class CompiledClosure : Closure {
   }
 
   public abstract static class CompiledClosure_4 : CompiledClosure {
-    private final Expr _default0;
-    private final Expr _default1;
-    private final Expr _default2;
-    private final Expr _default3;
+    private Expr _default0;
+    private Expr _default1;
+    private Expr _default2;
+    private Expr _default3;
 
     public CompiledClosure_4(String name, Value qThis,
                              Expr default0, Expr default1,
@@ -335,11 +335,11 @@ abstract public class CompiledClosure : Closure {
   }
 
   public abstract static class CompiledClosure_5 : CompiledClosure {
-    private final Expr _default0;
-    private final Expr _default1;
-    private final Expr _default2;
-    private final Expr _default3;
-    private final Expr _default4;
+    private Expr _default0;
+    private Expr _default1;
+    private Expr _default2;
+    private Expr _default3;
+    private Expr _default4;
 
     public CompiledClosure_5(String name, Value qThis,
                              Expr default0, Expr default1,
@@ -458,8 +458,8 @@ abstract public class CompiledClosure : Closure {
   }
 
   public abstract static class CompiledClosure_N : CompiledClosure {
-    private final Expr []_defaultArgs;
-    private final int _requiredArgs;
+    private Expr []_defaultArgs;
+    private int _requiredArgs;
 
     public CompiledClosure_N(String name, Value qThis, Expr []defaultArgs)
      : base(name, qThis) {
@@ -479,7 +479,7 @@ abstract public class CompiledClosure : Closure {
       _requiredArgs = requiredArgs;
     }
 
-    public override final Value call(Env env, Value []argValues)
+    public override Value call(Env env, Value []argValues)
     {
       if (argValues.length < _requiredArgs) {
         env.warning("required argument missing");

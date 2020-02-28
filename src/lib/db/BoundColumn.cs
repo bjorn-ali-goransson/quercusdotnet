@@ -39,8 +39,8 @@ namespace QuercusDotNet.lib.db {
 
 public class BoundColumn
 {
-  private final string _columnAsName;
-  private final Value _var;
+  private string _columnAsName;
+  private Value _var;
 
   private int _column;
   private ColumnType _type;

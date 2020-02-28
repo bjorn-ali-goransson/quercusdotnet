@@ -188,7 +188,7 @@ public class HashModule : AbstractQuercusModule {
   }
 
   /**
-   * Returns the final hash value
+   * Returns the hash value
    */
   public Value hash_final(Env env,
                           HashContext context,

@@ -57,15 +57,15 @@ abstract public class JavaInvoker
 
   private const Value []NULL_VALUES = new Value[0];
 
-  private final ModuleContext _moduleContext;
-  private final JavaClassDef _classDef;
+  private ModuleContext _moduleContext;
+  private JavaClassDef _classDef;
 
-  private final string _name;
-  protected final Method _method;
-  private final Class<?> [] _param;
-  private final Class<?> _retType;
-  private final Annotation [][] _paramAnn;
-  private final Annotation []_methodAnn;
+  private string _name;
+  protected Method _method;
+  private Class<?> [] _param;
+  private Class<?> _retType;
+  private Annotation [][] _paramAnn;
+  private Annotation []_methodAnn;
 
   private volatile bool _isInit;
 

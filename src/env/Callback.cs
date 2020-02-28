@@ -53,7 +53,7 @@ abstract public class Callback : Value : Callable {
    * @param key index of a1 in the array
    * @param a1 need to make a reference to this variable
    */
-  final override public Value callArray(Env env,
+  override public Value callArray(Env env,
                                ArrayValue array,
                                Value key,
                                Value a1)
@@ -91,7 +91,7 @@ abstract public class Callback : Value : Callable {
    * @param key index of a1 in the array
    * @param a1 need to make a reference to this variable
    */
-  final override public Value callArray(Env env,
+  override public Value callArray(Env env,
                                ArrayValue array,
                                Value key,
                                Value a1,
@@ -130,7 +130,7 @@ abstract public class Callback : Value : Callable {
    * @param key index of a1 in the array
    * @param a1 need to make a reference to this variable
    */
-  final override public Value callArray(Env env,
+  override public Value callArray(Env env,
                                ArrayValue array,
                                Value key,
                                Value a1,

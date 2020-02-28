@@ -39,7 +39,7 @@ namespace QuercusDotNet.Expr{
 public class ExprHandle {
   public readonly ExprHandle NULL = new ExprHandle();
   
-  private final StatementHandle _statement;
+  private StatementHandle _statement;
   
   private Expr _expr;
 

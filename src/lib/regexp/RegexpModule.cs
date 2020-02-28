@@ -2450,7 +2450,7 @@ public class RegexpModule
   }
 
   static class RegexpCacheItem {
-    private final StringValue _pattern;
+    private StringValue _pattern;
 
     private Regexp _regexp;
     private IllegalRegexpException _exn;

@@ -227,7 +227,7 @@ public class MiscModule : AbstractQuercusModule {
       processBuilder.redirectErrorStream(false);
       // XXX: security issues?
       processBuilder.directory(new File(env.getShellPwd()));
-      final Process process = processBuilder.start();
+      Process process = processBuilder.start();
 
       InputStream @is = process.getInputStream();
       InputStream es = process.getErrorStream();
@@ -621,7 +621,7 @@ public class MiscModule : AbstractQuercusModule {
       processBuilder.redirectErrorStream(false);
       // XXX: security issues?
       processBuilder.directory(new File(env.getShellPwd()));
-      final Process process = processBuilder.start();
+      Process process = processBuilder.start();
 
       InputStream @is = process.getInputStream();
       InputStream es = process.getErrorStream();
@@ -689,7 +689,7 @@ public class MiscModule : AbstractQuercusModule {
       processBuilder.redirectErrorStream(true);
       // XXX: security issues?
       processBuilder.directory(new File(env.getShellPwd()));
-      final Process process = processBuilder.start();
+      Process process = processBuilder.start();
 
       try {
         InputStream @is = process.getInputStream();
@@ -1210,9 +1210,9 @@ public class MiscModule : AbstractQuercusModule {
   }
 
   static class SpacePackSegment : PackSegment {
-    private final StringValue _name;
-    private final int _length;
-    private final byte _pad;
+    private StringValue _name;
+    private int _length;
+    private byte _pad;
 
     SpacePackSegment(Env env, int length, byte pad)
     {
@@ -1294,8 +1294,8 @@ public class MiscModule : AbstractQuercusModule {
 
   static class SpaceEndPackSegment : PackSegment
   {
-    private final StringValue _name;
-    private final byte _pad;
+    private StringValue _name;
+    private byte _pad;
 
     SpaceEndPackSegment(Env env, byte pad)
     {
@@ -1360,8 +1360,8 @@ public class MiscModule : AbstractQuercusModule {
   }
 
   static class HexPackSegment : PackSegment {
-    private final Value _name;
-    private final int _length;
+    private Value _name;
+    private int _length;
 
     HexPackSegment(Env env, int length)
     {
@@ -1469,8 +1469,8 @@ public class MiscModule : AbstractQuercusModule {
   }
 
   static class RevHexPackSegment : PackSegment {
-    private final StringValue _name;
-    private final int _length;
+    private StringValue _name;
+    private int _length;
 
     RevHexPackSegment(int length)
     {
@@ -1557,10 +1557,10 @@ public class MiscModule : AbstractQuercusModule {
   }
 
   static class BigEndianPackSegment : PackSegment {
-    private final string _name;
-    private final int _length;
-    private final int _bytes;
-    private final bool _isSigned;
+    private string _name;
+    private int _length;
+    private int _bytes;
+    private bool _isSigned;
 
     BigEndianPackSegment(int length, int bytes, bool isSigned)
     {
@@ -1662,9 +1662,9 @@ public class MiscModule : AbstractQuercusModule {
   }
 
   static class LittleEndianPackSegment : PackSegment {
-    private final string _name;
-    private final int _length;
-    private final int _bytes;
+    private string _name;
+    private int _length;
+    private int _bytes;
 
     LittleEndianPackSegment(int length, int bytes)
     {
@@ -1748,8 +1748,8 @@ public class MiscModule : AbstractQuercusModule {
   }
 
   static class DoublePackSegment : PackSegment {
-    private final string _name;
-    private final int _length;
+    private string _name;
+    private int _length;
 
     DoublePackSegment(int length)
     {
@@ -1831,8 +1831,8 @@ public class MiscModule : AbstractQuercusModule {
   }
 
   static class FloatPackSegment : PackSegment {
-    private final string _name;
-    private final int _length;
+    private string _name;
+    private int _length;
 
     FloatPackSegment(int length)
     {
@@ -1914,8 +1914,8 @@ public class MiscModule : AbstractQuercusModule {
   }
 
   static class NullPackSegment : PackSegment {
-    private final string _name;
-    private final int _length;
+    private string _name;
+    private int _length;
 
     NullPackSegment(int length)
     {
@@ -1950,7 +1950,7 @@ public class MiscModule : AbstractQuercusModule {
   }
 
   static class PositionPackSegment : PackSegment {
-    private final int _length;
+    private int _length;
 
     PositionPackSegment(int length)
     {

@@ -49,9 +49,9 @@ public class ClassVarMethodVarExpr : Expr
 {
   private readonly L10N L = new L10N(ClassVarMethodVarExpr.class);
 
-  protected final Expr _className;
-  protected final Expr _methodName;
-  protected final Expr []_args;
+  protected Expr _className;
+  protected Expr _methodName;
+  protected Expr []_args;
 
   protected Expr []_fullArgs;
 

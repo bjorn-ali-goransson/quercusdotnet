@@ -37,8 +37,8 @@ namespace QuercusDotNet.Expr{
  * Common analysis for a PHP binary expression.
  */
 abstract public class AbstractBinaryExpr : Expr {
-  protected final Expr _left;
-  protected final Expr _right;
+  protected Expr _left;
+  protected Expr _right;
 
   protected AbstractBinaryExpr(Location location, Expr left, Expr right)
   {
@@ -56,7 +56,7 @@ abstract public class AbstractBinaryExpr : Expr {
   /**
    * Returns the left expression.
    */
-  public final Expr getLeft()
+  public Expr getLeft()
   {
     return _left;
   }
@@ -64,7 +64,7 @@ abstract public class AbstractBinaryExpr : Expr {
   /**
    * Returns the right expression.
    */
-  public final Expr getRight()
+  public Expr getRight()
   {
     return _right;
   }

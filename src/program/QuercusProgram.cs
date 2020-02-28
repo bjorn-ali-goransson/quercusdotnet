@@ -66,7 +66,7 @@ public class QuercusProgram {
 
   private Path _sourceFile;
 
-  private final AtomicBoolean _isCompiling
+  private AtomicBoolean _isCompiling
     = new AtomicBoolean();
 
   private bool _isCompilable = true;
@@ -91,9 +91,9 @@ public class QuercusProgram {
   // runtime function list for compilation
   private AbstractFunction []_runtimeFunList;
 
-  private final BasicDependencyContainer _depend;
+  private BasicDependencyContainer _depend;
 
-  private final BasicDependencyContainer _topDepend;
+  private BasicDependencyContainer _topDepend;
 
   /**
    * Creates a new quercus program
@@ -380,7 +380,7 @@ public class QuercusProgram {
   }
 
   /**
-   * Creates a return for the final expr.
+   * Creates a return for the expr.
    */
   public QuercusProgram createExprReturn()
   {

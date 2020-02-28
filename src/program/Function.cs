@@ -56,12 +56,12 @@ namespace QuercusDotNet.Program{
  */
 @SuppressWarnings("serial")
 public class Function : AbstractFunction {
-  protected final FunctionInfo _info;
-  protected final bool _isReturnsReference;
+  protected FunctionInfo _info;
+  protected bool _isReturnsReference;
 
-  protected final string _name;
-  protected final Arg []_args;
-  protected final Statement _statement;
+  protected string _name;
+  protected Arg []_args;
+  protected Statement _statement;
 
   protected bool _hasReturn;
 

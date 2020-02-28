@@ -281,7 +281,7 @@ public class UrlRewriterCallback : CallbackFunction {
      * attribute @is not the one sought, and 1 if the attribute was found.
      *
      * The _index pointer will refer to the end position for the value
-     * in the _input in the final case, but only those characters up to
+     * in the _input in the case, but only those characters up to
      * the beginning of the value will have been copied to the output.
      */
     private int getNextAttribute(String attribute)

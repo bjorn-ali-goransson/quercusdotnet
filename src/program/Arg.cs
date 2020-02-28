@@ -41,11 +41,11 @@ namespace QuercusDotNet.Program{
  * Represents a formal argument.
  */
 public class Arg {
-  private final StringValue _name;
-  private final Expr _default;
+  private StringValue _name;
+  private Expr _default;
 
-  private final bool _isReference;
-  private final string _expectedClass;
+  private bool _isReference;
+  private string _expectedClass;
 
   public Arg(StringValue name,
              Expr defaultExpr,

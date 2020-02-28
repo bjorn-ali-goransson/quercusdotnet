@@ -194,7 +194,7 @@ public class ServerArrayValue : ArrayValueImpl
   private const StringValue REQUEST_TIME_FLOAT_VU
     = new UnicodeBuilderValue("REQUEST_TIME_FLOAT");
 
-  private final Env _env;
+  private Env _env;
 
   private bool _isFilled;
 

@@ -38,9 +38,9 @@ namespace QuercusDotNet.Expr{
  * Information about a variable's use in a function.
  */
 public class VarInfo {
-  private final FunctionInfo _function;
+  private FunctionInfo _function;
 
-  private final StringValue _name;
+  private StringValue _name;
 
   public VarInfo(StringValue name, FunctionInfo function)
   {

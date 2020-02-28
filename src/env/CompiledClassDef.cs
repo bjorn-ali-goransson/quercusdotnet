@@ -50,13 +50,13 @@ namespace QuercusDotNet.Env{
  * Represents a PHP class value.
  */
 public class CompiledClassDef : ClassDef {
-  private final ArrayList<String> _fieldNames
+  private ArrayList<String> _fieldNames
     = new ArrayList<String>();
 
-  private final IdentityIntMap _fieldMap2
+  private IdentityIntMap _fieldMap2
     = new IdentityIntMap();
 
-  protected final LinkedHashMap<StringValue,ClassField> _fieldMap
+  protected LinkedHashMap<StringValue,ClassField> _fieldMap
     = new LinkedHashMap<StringValue,ClassField>();
 
   //protected ArrayValue _extFields = new ArrayValueImpl();
@@ -135,7 +135,7 @@ public class CompiledClassDef : ClassDef {
   }
 
   /**
-   * Returns true for a final class.
+   * Returns true for a class.
    */
   public override bool isFinal()
   {

@@ -70,19 +70,19 @@ public class JavaClassDef : ClassDef : InstanceInitializer {
     = Logger.getLogger(JavaClassDef.class.getName());
   private readonly L10N L = new L10N(JavaClassDef.class);
 
-  private final ModuleContext _moduleContext;
+  private ModuleContext _moduleContext;
 
-  private final string _name;
-  private final Class<?> _type;
+  private string _name;
+  private Class<?> _type;
 
   private QuercusClass _quercusClass;
 
   private HashSet<String> _instanceOfSet;
   private HashSet<String> _instanceOfSetLowerCase;
 
-  private final bool _isAbstract;
-  private final bool _isInterface;
-  private final bool _isDelegate;
+  private bool _isAbstract;
+  private bool _isInterface;
+  private bool _isDelegate;
   private bool _isPhpClass;
 
   private string _resourceType;
@@ -91,24 +91,24 @@ public class JavaClassDef : ClassDef : InstanceInitializer {
 
   protected volatile bool _isInit;
 
-  private final HashMap<String, Value> _constMap
+  private HashMap<String, Value> _constMap
     = new HashMap<String, Value>();
 
-  private final HashMap<String, Object> _constJavaMap
+  private HashMap<String, Object> _constJavaMap
     = new HashMap<String, Object>();
 
-  private final MethodMap<AbstractJavaMethod> _functionMap
+  private MethodMap<AbstractJavaMethod> _functionMap
     = new MethodMap<AbstractJavaMethod>(null, this);
 
-  private final HashMap<String, AbstractJavaMethod> _getMap
+  private HashMap<String, AbstractJavaMethod> _getMap
     = new HashMap<String, AbstractJavaMethod>();
 
-  private final HashMap<String, AbstractJavaMethod> _setMap
+  private HashMap<String, AbstractJavaMethod> _setMap
     = new HashMap<String, AbstractJavaMethod>();
 
   // _fieldMap stores all public non-static fields
   // used by getField and setField
-  private final HashMap<String, FieldMarshalPair> _fieldMap
+  private HashMap<String, FieldMarshalPair> _fieldMap
     = new HashMap<String, FieldMarshalPair> ();
 
   private AbstractJavaMethod _cons;
@@ -863,7 +863,7 @@ public class JavaClassDef : ClassDef : InstanceInitializer {
     return null;
   }
 
-  public override final void init()
+  public override void init()
   {
     if (_isInit)
       return;

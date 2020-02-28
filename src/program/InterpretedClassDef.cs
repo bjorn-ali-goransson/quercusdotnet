@@ -65,16 +65,16 @@ public class InterpretedClassDef : ClassDef
   // true if defined in the top scope of a page
   private bool _isTopScope;
 
-  protected final LinkedHashMap<StringValue,AbstractFunction> _functionMap
+  protected LinkedHashMap<StringValue,AbstractFunction> _functionMap
     = new LinkedHashMap<StringValue,AbstractFunction>();
 
-  protected final LinkedHashMap<StringValue,ClassField> _fieldMap
+  protected LinkedHashMap<StringValue,ClassField> _fieldMap
     = new LinkedHashMap<StringValue,ClassField>();
 
-  protected final LinkedHashMap<StringValue,StaticFieldEntry> _staticFieldMap
+  protected LinkedHashMap<StringValue,StaticFieldEntry> _staticFieldMap
     = new LinkedHashMap<StringValue,StaticFieldEntry>();
 
-  protected final HashMap<StringValue,Expr> _constMap
+  protected HashMap<StringValue,Expr> _constMap
     = new HashMap<StringValue,Expr>();
 
   protected AbstractFunction _constructor;
@@ -183,7 +183,7 @@ public class InterpretedClassDef : ClassDef
   }
 
   /**
-   * True for a final class.
+   * True for a class.
    */
   public void setFinal(bool isFinal)
   {
@@ -191,7 +191,7 @@ public class InterpretedClassDef : ClassDef
   }
 
   /**
-   * Returns true for a final class.
+   * Returns true for a class.
    */
   public bool isFinal()
   {

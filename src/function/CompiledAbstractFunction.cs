@@ -37,8 +37,8 @@ namespace QuercusDotNet.Function{
 @SuppressWarnings("serial")
 public abstract class CompiledAbstractFunction : AbstractFunction
 {
-  protected final string _name;
-  protected final Arg []_args;
+  protected string _name;
+  protected Arg []_args;
 
   public CompiledAbstractFunction(String name,
                                   Arg []args)
@@ -49,12 +49,12 @@ public abstract class CompiledAbstractFunction : AbstractFunction
   }
 
   @Override
-  public final string getName()
+  public string getName()
   {
     return _name;
   }
 
-  public override final Arg []getArgs(Env env)
+  public override Arg []getArgs(Env env)
   {
     return _args;
   }

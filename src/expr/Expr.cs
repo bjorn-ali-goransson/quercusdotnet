@@ -53,7 +53,7 @@ abstract public class Expr {
   public const int COMPILE_ARG_MAX = 5;
   public const Expr[] NULL_ARGS = new Expr[0];
 
-  private final Location _location;
+  private Location _location;
 
   public Expr(Location location)
   {
@@ -68,7 +68,7 @@ abstract public class Expr {
   /**
    * Returns the location.
    */
-  final public Location getLocation()
+  public Location getLocation()
   {
     return _location;
   }

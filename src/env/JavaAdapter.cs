@@ -262,7 +262,7 @@ abstract public class JavaAdapter : ArrayValue
   /**
    * Adds a new value.
    */
-  public override final Value put(Value value)
+  public override Value put(Value value)
   {
     return put(createTailKey(), value);
   }
@@ -270,7 +270,7 @@ abstract public class JavaAdapter : ArrayValue
   /**
    * Adds a new value.
    */
-  public override final Value put(Value key, Value value)
+  public override Value put(Value key, Value value)
   {
     return putImpl(key, value);
   }
