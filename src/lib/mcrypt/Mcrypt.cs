@@ -1,3 +1,4 @@
+namespace QuercusDotNet.lib/mcrypt{
 /*
  * Copyright (c) 1998-2012 Caucho Technology -- all rights reserved
  *
@@ -392,4 +393,5 @@ public class Mcrypt {
   {
     return "Mcrypt[" + _algorithm + ", " + _mode + "]";
   }
+}
 }

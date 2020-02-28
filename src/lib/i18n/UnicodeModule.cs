@@ -1,3 +1,4 @@
+namespace QuercusDotNet.lib/i18n{
 /*
  * Copyright (c) 1998-2012 Caucho Technology -- all rights reserved
  *
@@ -590,4 +591,5 @@ public class UnicodeModule extends AbstractQuercusModule {
     = _iniDefinitions.add("iconv.output_encoding", "utf-8", PHP_INI_ALL);
   const IniDefinition INI_ICONV_INTERNAL_ENCODING
     = _iniDefinitions.add("iconv.internal_encoding", "utf-8", PHP_INI_ALL);
+}
 }

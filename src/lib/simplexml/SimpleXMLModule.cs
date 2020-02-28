@@ -1,3 +1,4 @@
+namespace QuercusDotNet.lib/simplexml{
 /*
  * Copyright (c) 1998-2012 Caucho Technology -- all rights reserved
  *
@@ -105,4 +106,5 @@ public class SimpleXMLModule
     // XXX: DOMNode needs to be able to export partial documents
     throw new UnimplementedException("simplexml_import_dom");
   }
+}
 }

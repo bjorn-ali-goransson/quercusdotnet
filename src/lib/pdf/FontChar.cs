@@ -1,3 +1,4 @@
+namespace QuercusDotNet.lib/pdf{
 /*
  * Copyright (c) 1998-2012 Caucho Technology -- all rights reserved
  *
@@ -51,4 +52,5 @@ public class FontChar {
   {
     return _width;
   }
+}
 }

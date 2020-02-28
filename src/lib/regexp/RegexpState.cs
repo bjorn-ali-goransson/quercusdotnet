@@ -1,3 +1,4 @@
+namespace QuercusDotNet.lib/regexp{
 /*
  * Copyright (c) 1998-2012 Caucho Technology -- all rights reserved
  *
@@ -481,4 +482,5 @@ public class RegexpState {
   {
     return getClass().getSimpleName() + "[" + _regexp + "]";
   }
+}
 }

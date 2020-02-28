@@ -1,3 +1,4 @@
+namespace QuercusDotNet.lib/regexp{
 /*
  * Copyright (c) 1998-2012 Caucho Technology -- all rights reserved
  *
@@ -1922,4 +1923,5 @@ class Regcomp {
     _characterClassMap.put("xdigit", RegexpNode.RC_XDIGIT);
   }
   */
+}
 }

@@ -1,3 +1,4 @@
+namespace QuercusDotNet.lib/file{
 /*
  * Copyright (c) 1998-2012 Caucho Technology -- all rights reserved
  *
@@ -162,4 +163,5 @@ public class ByteArrayBinaryStream extends AbstractBinaryInputOutput
     System.arraycopy(_buffer, 0, buffer, 0, _length);
     _buffer = buffer;
   }
+}
 }

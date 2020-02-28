@@ -1,3 +1,4 @@
+namespace QuercusDotNet.lib/curl{
 /*
  * Copyright (c) 1998-2012 Caucho Technology -- all rights reserved
  *
@@ -91,4 +92,5 @@ abstract public class PostBody
   abstract public long getContentLength();
   abstract public string getContentType();
   abstract public void writeTo(Env env, OutputStream os)
+}
 }

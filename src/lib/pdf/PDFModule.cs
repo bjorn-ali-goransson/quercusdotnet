@@ -1,3 +1,4 @@
+namespace QuercusDotNet.lib/pdf{
 /*
  * Copyright (c) 1998-2012 Caucho Technology -- all rights reserved
  *
@@ -1941,4 +1942,5 @@ public class PDFModule extends AbstractQuercusModule {
     
     return utf8string;
   }
+}
 }

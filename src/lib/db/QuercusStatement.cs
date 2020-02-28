@@ -1,3 +1,4 @@
+namespace QuercusDotNet.lib/db{
 /*
  * Copyright (c) 1998-2012 Caucho Technology -- all rights reserved
  *
@@ -43,4 +44,5 @@
  * Extra Statement metadata for a Quercus Mysql connection.
  */
 public interface QuercusStatement extends Statement {
+}
 }

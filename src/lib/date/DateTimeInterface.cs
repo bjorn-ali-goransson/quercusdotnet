@@ -1,3 +1,4 @@
+namespace QuercusDotNet.lib/date{
 /*
  * Copyright (c) 1998-2014 Caucho Technology -- all rights reserved
  *
@@ -46,4 +47,5 @@ public interface DateTimeInterface
   public long getTimestamp();
   
   public DateTimeZone getTimeZone();
+}
 }

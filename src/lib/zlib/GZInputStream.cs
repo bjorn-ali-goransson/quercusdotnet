@@ -1,3 +1,4 @@
+namespace QuercusDotNet.lib/zlib{
 /*
  * Copyright (c) 1998-2012 Caucho Technology -- all rights reserved
  *
@@ -364,4 +365,5 @@ public class GZInputStream extends InputStream
 
     inflater.end();
   }
+}
 }

@@ -1,3 +1,4 @@
+namespace QuercusDotNet.lib/json{
 /*
  * Copyright (c) 1998-2012 Caucho Technology -- all rights reserved
  *
@@ -601,4 +602,5 @@ class JsonDecoder {
       }
     }
   }
+}
 }

@@ -1,3 +1,4 @@
+namespace QuercusDotNet.lib/simplexml{
 /*
  * Copyright (c) 1998-2013 Caucho Technology -- all rights reserved
  *
@@ -380,4 +381,5 @@ public class SimpleHandler extends DefaultHandler2
       log.log(Level.FINE, getClass().getSimpleName() + ".fatalError0: " + e);
     }
   }
+}
 }

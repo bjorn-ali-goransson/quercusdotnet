@@ -1,3 +1,4 @@
+namespace QuercusDotNet.lib/mail{
 /*
  * Copyright (c) 1998-2012 Caucho Technology -- all rights reserved
  *
@@ -393,3 +394,4 @@ public class MailModule extends AbstractQuercusModule {
   }
 }
 
+}

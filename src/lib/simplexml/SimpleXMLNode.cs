@@ -1,3 +1,4 @@
+namespace QuercusDotNet.lib/simplexml{
 
 
 
@@ -435,4 +436,5 @@ public abstract class SimpleXMLNode
       return new JavaValue(env, this, _cls.getJavaClassDef());
     }
   }
+}
 }

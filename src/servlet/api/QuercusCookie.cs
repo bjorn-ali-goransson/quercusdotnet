@@ -1,3 +1,4 @@
+namespace QuercusDotNet.servlet/api{
 /*
  * Copyright (c) 1998-2014 Caucho Technology -- all rights reserved
  *
@@ -42,4 +43,5 @@ public interface QuercusCookie
   public void setHttpOnly(boolean isHttpOnly);
 
   public <T> T toCookie(Class<T> cls);
+}
 }

@@ -1,3 +1,4 @@
+namespace QuercusDotNet.lib/regexp{
 /*
  * Copyright (c) 1998-2012 Caucho Technology -- all rights reserved
  *
@@ -88,4 +89,5 @@ class PeekString extends PeekStream {
   {
     return "PeekString[" + _string + "]";
   }
+}
 }

@@ -1,3 +1,4 @@
+namespace QuercusDotNet.lib/image{
 /*
  * Copyright (c) 1998-2010 Caucho Technology -- all rights reserved
  *
@@ -102,4 +103,5 @@ public class ImageInfo
   {
     _mimeType = mimeType;
   }
+}
 }

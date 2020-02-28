@@ -1,3 +1,4 @@
+namespace QuercusDotNet.lib/pdf{
 /*
  * Copyright (c) 1998-2012 Caucho Technology -- all rights reserved
  *
@@ -75,4 +76,5 @@ public class PDFOutline
   {
     return _rootDestinations;
   }
+}
 }

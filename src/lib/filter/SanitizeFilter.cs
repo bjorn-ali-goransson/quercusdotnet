@@ -1,3 +1,4 @@
+namespace QuercusDotNet.lib/filter{
 /*
  * Copyright (c) 1998-2012 Caucho Technology -- all rights reserved
  *
@@ -31,4 +32,5 @@
 
 public interface SanitizeFilter extends Filter
 {
+}
 }

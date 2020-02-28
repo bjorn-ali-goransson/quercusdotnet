@@ -1,3 +1,4 @@
+namespace QuercusDotNet.lib/spl{
 /*
  * Copyright (c) 1998-2012 Caucho Technology -- all rights reserved
  *
@@ -36,4 +37,5 @@ public interface RecursiveIterator
 {
   public boolean hasChildren(Env env);
   public RecursiveIterator getChildren(Env env);
+}
 }

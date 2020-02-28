@@ -1,3 +1,4 @@
+namespace QuercusDotNet.lib/gae{
 /*
  * Copyright (c) 1998-2012 Caucho Technology -- all rights reserved
  *
@@ -78,4 +79,5 @@ public class GaeUser
   {
     return getClass() + "[" + _user + "]";
   }
+}
 }

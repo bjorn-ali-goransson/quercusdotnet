@@ -1,3 +1,4 @@
+namespace QuercusDotNet.lib/spl{
 
 
 
@@ -77,4 +78,4 @@ public abstract class AbstractIteratorImpl<T> implements Iterator<T> {
     {
       throw new UnsupportedOperationException();
     }
-}
+}}

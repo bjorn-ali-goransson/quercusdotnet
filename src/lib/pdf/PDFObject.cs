@@ -1,3 +1,4 @@
+namespace QuercusDotNet.lib/pdf{
 /*
  * Copyright (c) 1998-2012 Caucho Technology -- all rights reserved
  *
@@ -45,4 +46,5 @@ abstract public class PDFObject {
    */
   abstract public void writeObject(PDFWriter out)
     
+}
 }

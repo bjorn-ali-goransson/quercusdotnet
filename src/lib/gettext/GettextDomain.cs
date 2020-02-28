@@ -1,3 +1,4 @@
+namespace QuercusDotNet.lib/gettext{
 /*
  * Copyright (c) 1998-2012 Caucho Technology -- all rights reserved
  *
@@ -91,4 +92,5 @@ public class GettextDomain
   {
     return _name;
   }
+}
 }

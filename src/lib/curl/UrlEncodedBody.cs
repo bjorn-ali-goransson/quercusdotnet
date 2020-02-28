@@ -1,3 +1,4 @@
+namespace QuercusDotNet.lib/curl{
 /*
  * Copyright (c) 1998-2012 Caucho Technology -- all rights reserved
  *
@@ -74,4 +75,5 @@ public class UrlEncodedBody extends PostBody
       os.write(_body.charAt(i));
     }
   }
+}
 }

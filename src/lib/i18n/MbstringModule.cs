@@ -1,3 +1,4 @@
+namespace QuercusDotNet.lib/i18n{
 /*
  * Copyright (c) 1998-2012 Caucho Technology -- all rights reserved
  *
@@ -1604,4 +1605,5 @@ public class MbstringModule
     = _iniDefinitions.add("mbstring.http_input", "pass", PHP_INI_ALL);
   const IniDefinition INI_MBSTRING_HTTP_OUTPUT
     = _iniDefinitions.add("mbstring.http_output", "pass", PHP_INI_ALL);
+}
 }

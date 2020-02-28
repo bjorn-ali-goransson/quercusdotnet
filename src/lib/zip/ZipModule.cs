@@ -1,3 +1,4 @@
+namespace QuercusDotNet.lib/zip{
 /*
  * Copyright (c) 1998-2012 Caucho Technology -- all rights reserved
  *
@@ -218,4 +219,5 @@ public class ZipModule extends AbstractQuercusModule {
 
     return entry.zip_entry_compressedsize();
   }
+}
 }

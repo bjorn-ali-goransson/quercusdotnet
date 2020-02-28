@@ -1,3 +1,4 @@
+namespace QuercusDotNet.lib/zlib{
 /*
  * Copyright (c) 1998-2012 Caucho Technology -- all rights reserved
  *
@@ -119,4 +120,5 @@ public class ZlibInputStream extends ReadStreamInput
   {
     return getClass().getSimpleName() + "[" + _in + "]";
   }
+}
 }

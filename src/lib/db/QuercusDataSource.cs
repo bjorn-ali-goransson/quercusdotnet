@@ -1,3 +1,4 @@
+namespace QuercusDotNet.lib/db{
 /*
  * Copyright (c) 1998-2012 Caucho Technology -- all rights reserved
  *
@@ -135,4 +136,5 @@ public class QuercusDataSource implements DataSource {
     return getClass().getSimpleName() + "[" + _ds
                                       + "," + _user + "]";
   }
+}
 }

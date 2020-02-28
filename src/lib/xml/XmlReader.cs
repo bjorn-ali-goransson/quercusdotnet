@@ -1,3 +1,4 @@
+namespace QuercusDotNet.lib/xml{
 /*
  * Copyright (c) 1998-2012 Caucho Technology -- all rights reserved
  *
@@ -734,4 +735,5 @@ public class XmlReader
     _constConvertMap.put(-1, DOC_TYPE);
     _constConvertMap.put(-1, XML_DECLARATION);
   }
+}
 }

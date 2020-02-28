@@ -1,3 +1,4 @@
+namespace QuercusDotNet.lib/date{
 /*
  * Copyright (c) 1998-2012 Caucho Technology -- all rights reserved
  *
@@ -220,4 +221,5 @@ public class DateTimeZone implements Cloneable
   {
     return _timeZone.getID();
   }
+}
 }

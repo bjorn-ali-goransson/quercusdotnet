@@ -1,3 +1,4 @@
+namespace QuercusDotNet.lib/image{
 /*
  * Copyright (c) 1998-2010 Caucho Technology -- all rights reserved
  *
@@ -499,4 +500,5 @@ public class QuercusImage extends ResourceValue
       queue.add(y);
     }
   }
+}
 }

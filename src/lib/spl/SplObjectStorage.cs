@@ -1,3 +1,4 @@
+namespace QuercusDotNet.lib/spl{
 /*
  * Copyright (c) 1998-2014 Caucho Technology -- all rights reserved
  *
@@ -424,4 +425,5 @@ public class SplObjectStorage
       _next = entry;
     }
   }
+}
 }

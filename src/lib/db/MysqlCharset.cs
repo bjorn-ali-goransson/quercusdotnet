@@ -1,3 +1,4 @@
+namespace QuercusDotNet.lib/db{
 /*
  * Copyright (c) 1998-2013 Caucho Technology -- all rights reserved
  *
@@ -347,4 +348,5 @@ public class MysqlCharset
     _charsetEntryMap.put("utf8", new CharsetEntry("utf8", "utf8_general_ci", "UTF-8 Unicode", 3));
     _charsetEntryMap.put("utf8mb4", new CharsetEntry("utf8mb4", "utf8mb4_general_ci", "UTF-8 Unicode", 4));
   }
+}
 }

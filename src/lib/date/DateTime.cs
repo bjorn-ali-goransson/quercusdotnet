@@ -1,3 +1,4 @@
+namespace QuercusDotNet.lib/date{
 /*
  * Copyright (c) 1998-2012 Caucho Technology -- all rights reserved
  *
@@ -329,4 +330,5 @@ public class DateTime implements DateTimeInterface, Cloneable
 
     return format(env, env.createString("now")).toString();
   }
+}
 }

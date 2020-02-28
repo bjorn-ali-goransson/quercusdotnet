@@ -1,3 +1,4 @@
+namespace QuercusDotNet.lib/file{
 /*
  * Copyright (c) 1998-2012 Caucho Technology -- all rights reserved
  *
@@ -46,4 +47,5 @@ public class PhpStdin extends AbstractBinaryInput
   {
     return getClass().getSimpleName() + "[]";
   }
+}
 }

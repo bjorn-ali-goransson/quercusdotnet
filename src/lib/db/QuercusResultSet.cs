@@ -1,3 +1,4 @@
+namespace QuercusDotNet.lib/db{
 /*
  * Copyright (c) 1998-2012 Caucho Technology -- all rights reserved
  *
@@ -42,4 +43,5 @@ public interface QuercusResultSet extends ResultSet
 
   public void getString(int column, byte []buffer, int offset)
     
+}
 }

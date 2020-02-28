@@ -1,3 +1,4 @@
+namespace QuercusDotNet.lib/reflection{
 /*
  * Copyright (c) 1998-2012 Caucho Technology -- all rights reserved
  *
@@ -189,4 +190,5 @@ public class ReflectionParameter
     return getClass().getSimpleName() + "[" + _fun.getCallbackName()
                                       + "(" + _arg.getName() + ")]";
   }
+}
 }

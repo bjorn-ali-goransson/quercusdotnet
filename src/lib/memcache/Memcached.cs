@@ -1,3 +1,4 @@
+namespace QuercusDotNet.lib/memcache{
 /*
  * Copyright (c) 1998-2013 Caucho Technology -- all rights reserved
  *
@@ -102,4 +103,5 @@ public class Memcached
   {
     return false;
   }
+}
 }

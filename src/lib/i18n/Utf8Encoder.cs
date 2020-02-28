@@ -1,3 +1,4 @@
+namespace QuercusDotNet.lib/i18n{
 /*
  * Copyright (c) 1998-2012 Caucho Technology -- all rights reserved
  *
@@ -123,4 +124,5 @@ public class Utf8Encoder
     return sb;
   }
 
+}
 }

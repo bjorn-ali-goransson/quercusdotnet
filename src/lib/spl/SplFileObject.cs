@@ -1,3 +1,4 @@
+namespace QuercusDotNet.lib/spl{
 /*
  * Copyright (c) 1998-2012 Caucho Technology -- all rights reserved
  *
@@ -55,4 +56,5 @@ public class SplFileObject extends SplFileInfo
 
     _stream = FileModule.fopen(env, fileName, mode, isUseIncludePath, contextV);
   }
+}
 }

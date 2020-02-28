@@ -1,3 +1,4 @@
+namespace QuercusDotNet.lib/spl{
 /*
  * Copyright (c) 1998-2012 Caucho Technology -- all rights reserved
  *
@@ -38,4 +39,5 @@ public interface SeekableIterator
    * Seeks to the given offset.
    */
   public void seek(Env env, int index);
+}
 }

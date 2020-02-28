@@ -1,3 +1,4 @@
+namespace QuercusDotNet.lib/db{
 /*
  * Copyright (c) 1998-2012 Caucho Technology -- all rights reserved
  *
@@ -1489,4 +1490,5 @@ public class MysqliModule extends AbstractQuercusModule {
   //@todo mysqli_ssl_set
   //@todo mysqli_stmt_send_long_data
   //@todo mysqli_thread_safe
+}
 }

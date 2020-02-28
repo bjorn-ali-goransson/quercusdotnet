@@ -1,3 +1,4 @@
+namespace QuercusDotNet.servlet/api{
 /*
  * Copyright (c) 1998-2014 Caucho Technology -- all rights reserved
  *
@@ -34,4 +35,5 @@ public interface QuercusServletContext
   public string getMimeType(String name);
 
   public <T> T toServletContext(Class<T> cls);
+}
 }

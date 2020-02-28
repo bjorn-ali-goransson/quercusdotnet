@@ -1,3 +1,4 @@
+namespace QuercusDotNet.lib/filter{
 /*
  * Copyright (c) 1998-2012 Caucho Technology -- all rights reserved
  *
@@ -35,4 +36,5 @@
 public interface Filter
 {
   public Value filter(Env env, Value value, Value flagV);
+}
 }

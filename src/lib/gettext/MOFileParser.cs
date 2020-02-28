@@ -1,3 +1,4 @@
+namespace QuercusDotNet.lib/gettext{
 /*
  * Copyright (c) 1998-2012 Caucho Technology -- all rights reserved
  *
@@ -239,4 +240,5 @@ class MOFileParser extends GettextParser
     if (_in != null)
       _in.close();
   }
+}
 }

@@ -1,3 +1,4 @@
+namespace QuercusDotNet.lib/db{
 /*
  * Copyright (c) 1998-2012 Caucho Technology -- all rights reserved
  *
@@ -215,4 +216,5 @@ public class PDOError
   {
     error(env, "IM001", 0, L.l("attribute value `{0}' is not supported", value));
   }
+}
 }

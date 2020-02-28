@@ -1,3 +1,4 @@
+namespace QuercusDotNet.lib/spl{
 /*
  * Copyright (c) 1998-2012 Caucho Technology -- all rights reserved
  *
@@ -35,4 +36,5 @@
 @Delegates(CountableDelegate.class)
 public interface Countable {
   public int count(Env env);
+}
 }

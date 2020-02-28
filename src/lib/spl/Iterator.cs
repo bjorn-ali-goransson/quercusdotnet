@@ -1,3 +1,4 @@
+namespace QuercusDotNet.lib/spl{
 /*
  * Copyright (c) 1998-2012 Caucho Technology -- all rights reserved
  *
@@ -61,4 +62,5 @@ public interface Iterator
    * Returns true if the iterator currently points to a valid row.
    */
   public boolean valid(Env env);
+}
 }

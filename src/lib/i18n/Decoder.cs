@@ -1,3 +1,4 @@
+namespace QuercusDotNet.lib/i18n{
 /*
  * Copyright (c) 1998-2012 Caucho Technology -- all rights reserved
  *
@@ -127,4 +128,5 @@ abstract public class Decoder
   public abstract void decodeUnicode(StringValue str, UnicodeBuilderValue sb);
 
   abstract public boolean isDecodable(Env env, StringValue str);
+}
 }

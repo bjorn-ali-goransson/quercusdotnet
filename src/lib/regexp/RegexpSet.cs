@@ -1,3 +1,4 @@
+namespace QuercusDotNet.lib/regexp{
 /*
  * Copyright (c) 1998-2012 Caucho Technology -- all rights reserved
  *
@@ -318,4 +319,5 @@ class RegexpSet {
     CLASS_MAP.put("upper", PUPPER); //php/4ekb
     CLASS_MAP.put("xdigit", PXDIGIT); //php/4ekc
   }
+}
 }

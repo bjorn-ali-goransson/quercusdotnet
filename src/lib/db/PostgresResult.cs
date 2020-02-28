@@ -1,3 +1,4 @@
+namespace QuercusDotNet.lib/db{
 /*
  * Copyright (c) 1998-2012 Caucho Technology -- all rights reserved
  *
@@ -157,4 +158,5 @@ public class PostgresResult extends JdbcResultResource {
   {
     return env.getQuercus().getStatement(_stmt);
   }
+}
 }

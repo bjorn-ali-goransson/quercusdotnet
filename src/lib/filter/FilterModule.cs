@@ -1,3 +1,4 @@
+namespace QuercusDotNet.lib/filter{
 /*
  * Copyright (c) 1998-2014 Caucho Technology -- all rights reserved
  *
@@ -241,4 +242,5 @@ public class FilterModule extends AbstractQuercusModule
     _filterMap.put(FILTER_SANITIZE_EMAIL, new EmailSanitizeFilter());
     _filterMap.put(FILTER_SANITIZE_SPECIAL_CHARS, new SpecialCharsSanitizeFilter());
   }
+}
 }

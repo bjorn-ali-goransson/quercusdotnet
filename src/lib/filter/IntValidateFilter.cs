@@ -1,3 +1,4 @@
+namespace QuercusDotNet.lib/filter{
 /*
  * Copyright (c) 1998-2012 Caucho Technology -- all rights reserved
  *
@@ -71,4 +72,5 @@ public class IntValidateFilter extends AbstractFilter implements ValidateFilter
       return BooleanValue.FALSE;
     }
   }
+}
 }

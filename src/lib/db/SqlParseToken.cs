@@ -1,3 +1,4 @@
+namespace QuercusDotNet.lib/db{
 /*
  * Copyright (c) 1998-2012 Caucho Technology -- all rights reserved
  *
@@ -107,4 +108,5 @@ public class SqlParseToken
 
     return tok;
   }
+}
 }

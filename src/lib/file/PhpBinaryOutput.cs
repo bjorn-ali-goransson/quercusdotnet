@@ -1,3 +1,4 @@
+namespace QuercusDotNet.lib/file{
 /*
  * Copyright (c) 1998-2012 Caucho Technology -- all rights reserved
  *
@@ -57,4 +58,5 @@ public class PhpBinaryOutput extends AbstractBinaryOutput {
   {
     _env.getOut().write(b);
   }
+}
 }

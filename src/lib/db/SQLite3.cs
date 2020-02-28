@@ -1,3 +1,4 @@
+namespace QuercusDotNet.lib/db{
 /*
  * Copyright (c) 1998-2013 Caucho Technology -- all rights reserved
  *
@@ -100,4 +101,5 @@ public class SQLite3 extends JdbcConnectionResource
   {
     return false;
   }
+}
 }

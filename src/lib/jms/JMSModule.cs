@@ -1,3 +1,4 @@
+namespace QuercusDotNet.lib/jms{
 /*
  * Copyright (c) 1998-2012 Caucho Technology -- all rights reserved
  *
@@ -120,3 +121,4 @@ public class JMSModule extends AbstractQuercusModule
       "jms.connection_factory",  "jms/ConnectionFactory", PHP_INI_SYSTEM);
 }
 
+}

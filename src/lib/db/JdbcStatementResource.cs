@@ -1,3 +1,4 @@
+namespace QuercusDotNet.lib/db{
 /*
  * Copyright (c) 1998-2010 Caucho Technology -- all rights reserved
  *
@@ -435,4 +436,5 @@ public class JdbcStatementResource
   {
     return getClass().getName() + "[" + _conn + "]";
   }
+}
 }

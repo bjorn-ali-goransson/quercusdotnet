@@ -1,3 +1,4 @@
+namespace QuercusDotNet.lib/db{
 /*
  * Copyright (c) 1998-2012 Caucho Technology -- all rights reserved
  *
@@ -50,4 +51,5 @@ public interface QuercusResultSetMetaData extends ResultSetMetaData {
   public boolean isNotNull(int column);
 
   public int getLength(int column);
+}
 }

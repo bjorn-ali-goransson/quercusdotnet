@@ -1,3 +1,4 @@
+namespace QuercusDotNet.lib/xml{
 /*
  * Copyright (c) 1998-2012 Caucho Technology -- all rights reserved
  *
@@ -606,3 +607,4 @@ public class XmlModule extends AbstractQuercusModule {
   // @todo xml_set_external_entity_ref_handler
 }
 
+}

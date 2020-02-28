@@ -1,3 +1,4 @@
+namespace QuercusDotNet.lib/reflection{
 /*
  * Copyright (c) 1998-2012 Caucho Technology -- all rights reserved
  *
@@ -224,4 +225,5 @@ public class ReflectionMethod extends ReflectionFunctionAbstract
 
     return getClass().getSimpleName() + "[" + name + "]";
   }
+}
 }

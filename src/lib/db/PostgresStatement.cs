@@ -1,3 +1,4 @@
+namespace QuercusDotNet.lib/db{
 /*
  * Copyright (c) 1998-2012 Caucho Technology -- all rights reserved
  *
@@ -129,4 +130,5 @@ public class PostgresStatement extends JdbcPreparedStatementResource {
     // Prepare the JDBC query
     return super.prepare(env, queryStr);
   }
+}
 }

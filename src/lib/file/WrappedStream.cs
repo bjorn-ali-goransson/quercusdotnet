@@ -1,3 +1,4 @@
+namespace QuercusDotNet.lib/file{
 /*
  * Copyright (c) 1998-2012 Caucho Technology -- all rights reserved
  *
@@ -519,4 +520,5 @@ public class WrappedStream implements BinaryInput, BinaryOutput {
         _wrapper.callMethod(_env, STREAM_WRITE, LongValue.create(b));
     }
   }
+}
 }

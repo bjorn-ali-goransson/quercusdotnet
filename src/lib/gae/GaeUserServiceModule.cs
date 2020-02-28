@@ -1,3 +1,4 @@
+namespace QuercusDotNet.lib/gae{
 /*
  * Copyright (c) 1998-2012 Caucho Technology -- all rights reserved
  *
@@ -86,4 +87,5 @@ public class GaeUserServiceModule extends AbstractQuercusModule {
   public static boolean gae_users_is_user_logged_in(Env env) {
     return GaeUserService.isUserLoggedIn();
   }
+}
 }
