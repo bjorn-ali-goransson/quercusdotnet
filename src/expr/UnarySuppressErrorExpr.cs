@@ -1,3 +1,4 @@
+namespace QuercusDotNet.Expr{
 /*
  * Copyright (c) 1998-2012 Caucho Technology -- all rights reserved
  *
@@ -154,3 +155,4 @@ public class UnarySuppressErrorExpr extends AbstractUnaryExpr {
   }
 }
 
+}

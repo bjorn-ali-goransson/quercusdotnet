@@ -1,3 +1,4 @@
+namespace QuercusDotNet.Env{
 /*
  * Copyright (c) 1998-2012 Caucho Technology -- all rights reserved
  *
@@ -82,4 +83,5 @@ public class ChainedMap<K,V> implements VarMap<K,V> {
     else
       return null;
   }
+}
 }

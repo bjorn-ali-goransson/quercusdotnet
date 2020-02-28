@@ -1,3 +1,4 @@
+namespace QuercusDotNet.Marshal{
 /*
  * Copyright (c) 1998-2012 Caucho Technology -- all rights reserved
  *
@@ -82,4 +83,5 @@ public class LongObjectMarshal extends Marshal
   {
     return Long.class;
   }
+}
 }

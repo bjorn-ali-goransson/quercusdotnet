@@ -1,3 +1,4 @@
+namespace QuercusDotNet.lib{
 /*
  * Copyright (c) 1998-2012 Caucho Technology -- all rights reserved
  *
@@ -470,4 +471,5 @@ public class BcmathModule extends AbstractQuercusModule {
 
   public const IniDefinition INI_BCMATH_SCALE = _iniDefinitions.add(
       "bcmath.scale", 0, PHP_INI_ALL);
+}
 }

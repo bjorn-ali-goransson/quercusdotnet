@@ -1,3 +1,4 @@
+namespace QuercusDotNet.Env{
 /*
  * Copyright (c) 1998-2012 Caucho Technology -- all rights reserved
  *
@@ -38,4 +39,5 @@ public interface CountDelegate
    * Returns the object's count
    */
   public int count(Env env, ObjectValue qThis);
+}
 }

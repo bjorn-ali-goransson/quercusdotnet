@@ -1,3 +1,4 @@
+namespace QuercusDotNet.Env{
 /*
  * Copyright (c) 1998-2012 Caucho Technology -- all rights reserved
  *
@@ -615,4 +616,5 @@ public class LongValue extends NumberValue
     ONE = create(1);
     MINUS_ONE = create(-1);
   }
+}
 }

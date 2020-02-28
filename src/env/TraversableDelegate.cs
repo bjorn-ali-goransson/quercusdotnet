@@ -1,3 +1,4 @@
+namespace QuercusDotNet.Env{
 /*
  * Copyright (c) 1998-2012 Caucho Technology -- all rights reserved
  *
@@ -51,4 +52,5 @@ public interface TraversableDelegate {
    * Returns an iterator over the object's values.
    */
   public Iterator<Value> getValueIterator(Env env, ObjectValue qThis);
+}
 }

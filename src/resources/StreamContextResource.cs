@@ -1,3 +1,4 @@
+namespace QuercusDotNet.Resources{
 /*
  * Copyright (c) 1998-2012 Caucho Technology -- all rights reserved
  *
@@ -103,3 +104,4 @@ public class StreamContextResource extends ResourceValue {
   }
 }
 
+}

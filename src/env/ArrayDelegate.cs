@@ -1,3 +1,4 @@
+namespace QuercusDotNet.Env{
 /*
  * Copyright (c) 1998-2012 Caucho Technology -- all rights reserved
  *
@@ -68,4 +69,5 @@ public interface ArrayDelegate {
    * Returns the array count
    */
   public long count(Env env, ObjectValue qThis);
+}
 }

@@ -1,3 +1,4 @@
+namespace QuercusDotNet.lib{
 /*
  * Copyright (c) 1998-2012 Caucho Technology -- all rights reserved
  *
@@ -667,4 +668,5 @@ public class MathModule extends AbstractQuercusModule {
   {
     return Math.tanh(value);
   }
+}
 }

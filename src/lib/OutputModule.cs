@@ -1,3 +1,4 @@
+namespace QuercusDotNet.lib{
 /*
  * Copyright (c) 1998-2012 Caucho Technology -- all rights reserved
  *
@@ -589,4 +590,5 @@ public class OutputModule extends AbstractQuercusModule
     = _iniDefinitions.add("output_handler", "", PHP_INI_PERDIR);
   const IniDefinition INI_IMPLICIT_FLUSH
     = _iniDefinitions.add("implicit_flush", false, PHP_INI_ALL);
+}
 }

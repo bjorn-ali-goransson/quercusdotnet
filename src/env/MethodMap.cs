@@ -1,3 +1,4 @@
+namespace QuercusDotNet.Env{
 /*
  * Copyright (c) 1998-2012 Caucho Technology -- all rights reserved
  *
@@ -356,4 +357,5 @@ public class MethodMap<V>
       throw new UnsupportedOperationException();
     }
   }
+}
 }

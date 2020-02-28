@@ -1,3 +1,4 @@
+namespace QuercusDotNet.lib{
 /*
  * Copyright (c) 1998-2012 Caucho Technology -- all rights reserved
  *
@@ -1085,4 +1086,5 @@ public class TokenModule extends AbstractQuercusModule {
     = _iniDefinitions.add("highlight.default", "#0000BB", PHP_INI_ALL);
   const IniDefinition INI_HIGHLIGHT_HTML
     = _iniDefinitions.add("highlight.html", "#000000", PHP_INI_ALL);
+}
 }

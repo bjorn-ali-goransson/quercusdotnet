@@ -1,3 +1,4 @@
+namespace QuercusDotNet.Annotation{
 /*
  * Copyright (c) 1998-2012 Caucho Technology -- all rights reserved
  *
@@ -40,4 +41,5 @@
 @Target(ElementType.METHOD)
 @Retention(RetentionPolicy.RUNTIME)
 public interface VariableArguments {
+}
 }

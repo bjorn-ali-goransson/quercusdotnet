@@ -1,3 +1,4 @@
+namespace QuercusDotNet.Annotation{
 /*
  * Copyright (c) 1998-2012 Caucho Technology -- all rights reserved
  *
@@ -47,4 +48,5 @@ public interface UsesSymbolTable {
    * XXX: the default may change to false for 3.2.1
    */
   public boolean replace() default true;
+}
 }

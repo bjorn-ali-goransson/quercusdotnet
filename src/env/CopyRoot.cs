@@ -1,3 +1,4 @@
+namespace QuercusDotNet.Env{
 /*
  * Copyright (c) 1998-2012 Caucho Technology -- all rights reserved
  *
@@ -103,4 +104,5 @@ public class CopyRoot implements EnvCleanup
     if (! _isModified)
       _entry.free(this);
   }
+}
 }

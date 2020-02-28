@@ -1,3 +1,4 @@
+namespace QuercusDotNet.Env{
 /*
  * Copyright (c) 1998-2012 Caucho Technology -- all rights reserved
  *
@@ -159,3 +160,4 @@ abstract public class Closure extends Callback
   }
 }
 
+}

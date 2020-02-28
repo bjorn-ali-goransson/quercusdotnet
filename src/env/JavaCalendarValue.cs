@@ -1,3 +1,4 @@
+namespace QuercusDotNet.Env{
 /*
  * Copyright (c) 1998-2012 Caucho Technology -- all rights reserved
  *
@@ -70,4 +71,5 @@ public class JavaCalendarValue extends JavaValue {
   {
     return _calendar.getTime().toString();
   }
+}
 }

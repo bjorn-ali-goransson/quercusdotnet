@@ -1,3 +1,4 @@
+namespace QuercusDotNet.Annotation{
 /*
  * Copyright (c) 1998-2012 Caucho Technology -- all rights reserved
  *
@@ -41,4 +42,5 @@
 @Target(ElementType.PARAMETER)
 @Retention(RetentionPolicy.RUNTIME)
 public interface PassThru {
+}
 }

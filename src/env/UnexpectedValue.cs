@@ -1,3 +1,4 @@
+namespace QuercusDotNet.Env{
 /*
  * Copyright (c) 1998-2012 Caucho Technology -- all rights reserved
  *
@@ -42,4 +43,5 @@ public class UnexpectedValue extends NullValue
   {
     return _value.getType();
   }
+}
 }

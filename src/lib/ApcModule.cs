@@ -1,3 +1,4 @@
+namespace QuercusDotNet.lib{
 /*
  * Copyright (c) 1998-2012 Caucho Technology -- all rights reserved
  *
@@ -448,4 +449,5 @@ public class ApcModule extends AbstractQuercusModule
   const IniDefinition INI_APC_LOCALCACHE_SIZE
     = _iniDefinitions.add(
       "apc.localcache.size", "" + _defaultSize, PHP_INI_SYSTEM);
+}
 }

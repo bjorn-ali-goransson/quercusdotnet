@@ -1,3 +1,4 @@
+namespace QuercusDotNet.Env{
 /*
  * Copyright (c) 1998-2012 Caucho Technology -- all rights reserved
  *
@@ -217,4 +218,5 @@ abstract public class AbstractJavaMethod extends AbstractFunction
     return callMethod(env, qClass, qThis,
                       new Value[] {a1, a2, a3, a4, a5});
   }
+}
 }

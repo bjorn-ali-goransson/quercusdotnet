@@ -1,3 +1,4 @@
+namespace QuercusDotNet.Env{
 /*
  * Copyright (c) 1998-2012 Caucho Technology -- all rights reserved
  *
@@ -120,4 +121,5 @@ public class LongCacheValue extends LongValue
   {
     return new LongValue(toLong());
   }
+}
 }

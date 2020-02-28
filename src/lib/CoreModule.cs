@@ -1,3 +1,4 @@
+namespace QuercusDotNet.lib{
 /*
  * Copyright (c) 1998-2012 Caucho Technology -- all rights reserved
  *
@@ -70,4 +71,5 @@ public class CoreModule extends AbstractQuercusModule
     CONST_MAP.put(new StringBuilderValue("FALSE"), BooleanValue.FALSE);
     CONST_MAP.put(new StringBuilderValue("NULL"), NullValue.NULL);
   }
+}
 }

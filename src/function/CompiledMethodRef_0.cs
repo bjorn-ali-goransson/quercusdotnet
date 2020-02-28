@@ -1,3 +1,4 @@
+namespace QuercusDotNet.Function{
 /*
  * Copyright (c) 1998-2012 Caucho Technology -- all rights reserved
  *
@@ -59,3 +60,4 @@ abstract public class CompiledMethodRef_0 extends CompiledMethodRef {
   abstract override public Value callMethodRef(Env env, QuercusClass qClass, Value qThis);
 }
 
+}

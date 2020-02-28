@@ -1,3 +1,4 @@
+namespace QuercusDotNet.Parser{
 /*
  * Copyright (c) 1998-2014 Caucho Technology -- all rights reserved
  *
@@ -6591,4 +6592,5 @@ public class QuercusParser {
     _insensitiveReserved.put("namespace", NAMESPACE);
     _insensitiveReserved.put("use", USE);
   }
+}
 }

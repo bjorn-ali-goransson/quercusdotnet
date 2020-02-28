@@ -1,3 +1,4 @@
+namespace QuercusDotNet.Annotation{
 /*
  * Copyright (c) 1998-2012 Caucho Technology -- all rights reserved
  *
@@ -42,4 +43,5 @@
 public interface Optional {
   public const string NOT_SET = "caucho-not-set";
   public string value() default NOT_SET;
+}
 }

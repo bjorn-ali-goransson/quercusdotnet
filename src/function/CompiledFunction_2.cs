@@ -1,3 +1,4 @@
+namespace QuercusDotNet.Function{
 /*
  * Copyright (c) 1998-2012 Caucho Technology -- all rights reserved
  *
@@ -104,3 +105,4 @@ abstract public class CompiledFunction_2 extends CompiledFunction {
   }
 }
 
+}

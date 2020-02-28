@@ -1,3 +1,4 @@
+namespace QuercusDotNet.lib{
 /*
  * Copyright (c) 1998-2014 Caucho Technology -- all rights reserved
  *
@@ -1163,3 +1164,4 @@ public class OptionsModule extends AbstractQuercusModule {
     = _iniDefinitions.add("short_open_tag", true, PHP_INI_ALL);
 }
 
+}

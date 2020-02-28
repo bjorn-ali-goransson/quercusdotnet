@@ -1,3 +1,4 @@
+namespace QuercusDotNet.Program{
 /*
  * Copyright (c) 1998-2012 Caucho Technology -- all rights reserved
  *
@@ -42,3 +43,4 @@ public interface InstanceInitializer {
   public void initInstance(Env env, Value obj, boolean isInitFieldValues);
 }
 
+}

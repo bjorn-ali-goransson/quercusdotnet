@@ -1,3 +1,4 @@
+namespace QuercusDotNet.lib{
 /*
  * Copyright (c) 1998-2013 Caucho Technology -- all rights reserved
  *
@@ -63,4 +64,5 @@ public class Array2Module extends AbstractQuercusModule
       return value;
     }
   }
+}
 }
