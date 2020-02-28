@@ -1,4 +1,4 @@
-namespace QuercusDotNet.lib/gae{
+namespace QuercusDotNet.lib.gae {
 /*
  * Copyright (c) 1998-2012 Caucho Technology -- all rights reserved
  *

@@ -1,4 +1,4 @@
-namespace QuercusDotNet.lib/simplexml{
+namespace QuercusDotNet.lib.simplexml {
 
 
 

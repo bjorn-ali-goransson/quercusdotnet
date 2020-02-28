@@ -1,4 +1,4 @@
-namespace QuercusDotNet.lib/spl{
+namespace QuercusDotNet.lib.spl {
 
 
 

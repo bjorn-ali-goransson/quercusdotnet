@@ -1,4 +1,4 @@
-namespace QuercusDotNet.lib/mail{
+namespace QuercusDotNet.lib.mail {
 /*
  * Copyright (c) 1998-2012 Caucho Technology -- all rights reserved
  *

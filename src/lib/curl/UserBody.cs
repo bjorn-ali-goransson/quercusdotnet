@@ -1,4 +1,4 @@
-namespace QuercusDotNet.lib/curl{
+namespace QuercusDotNet.lib.curl {
 /*
  * Copyright (c) 1998-2014 Caucho Technology -- all rights reserved
  *

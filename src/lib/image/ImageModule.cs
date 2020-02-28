@@ -1,4 +1,4 @@
-namespace QuercusDotNet.lib/image{
+namespace QuercusDotNet.lib.image {
 /*
  * Copyright (c) 1998-2012 Caucho Technology -- all rights reserved
  *

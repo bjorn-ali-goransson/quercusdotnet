@@ -1,4 +1,4 @@
-namespace QuercusDotNet.lib/zip{
+namespace QuercusDotNet.lib.zip {
 /*
  * Copyright (c) 1998-2012 Caucho Technology -- all rights reserved
  *
