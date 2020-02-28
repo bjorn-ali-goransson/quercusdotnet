@@ -1,3 +1,4 @@
+namespace QuercusDotNet {
 /*
  * Copyright (c) 1998-2012 Caucho Technology -- all rights reserved
  *
@@ -2401,3 +2402,4 @@ public class QuercusContext
     = _ini.add("unicode.script_encoding", null, IniDefinition.PHP_INI_ALL);
 }
 
+}

@@ -1,3 +1,4 @@
+namespace QuercusDotNet {
 /*
  * Copyright (c) 1998-2012 Caucho Technology -- all rights reserved
  *
@@ -201,4 +202,5 @@ public class QuercusEngine
       _out.write(buffer, offset, length);
     }
   }
+}
 }

@@ -1,3 +1,4 @@
+namespace QuercusDotNet {
 ﻿using System;
 
 namespace QuercusDotNet
@@ -9,4 +10,5 @@ namespace QuercusDotNet
             Console.WriteLine("Hello World!");
         }
     }
+}
 }
