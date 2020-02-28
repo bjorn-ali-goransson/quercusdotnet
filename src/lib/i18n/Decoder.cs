@@ -74,7 +74,7 @@ abstract public class Decoder
     return _isIgnoreErrors;
   }
 
-  public final void setIgnoreErrors(boolean isIgnore)
+  public final void setIgnoreErrors(bool isIgnore)
   {
     _isIgnoreErrors = isIgnore;
   }
@@ -89,12 +89,12 @@ abstract public class Decoder
     _replacement = replacement;
   }
 
-  public final void setReplaceUnicode(boolean isReplaceUnicode)
+  public final void setReplaceUnicode(bool isReplaceUnicode)
   {
     _isReplaceUnicode = isReplaceUnicode;
   }
 
-  public final void setAllowMalformedOut(boolean isAllowMalformedOut)
+  public final void setAllowMalformedOut(bool isAllowMalformedOut)
   {
     _isAllowMalformedOut = isAllowMalformedOut;
   }

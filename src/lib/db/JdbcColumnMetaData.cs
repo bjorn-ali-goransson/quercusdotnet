@@ -125,7 +125,7 @@ public class JdbcColumnMetaData {
   /**
    * Set true for a primary key.
    */
-  void setPrimaryKey(boolean isPrimaryKey)
+  void setPrimaryKey(bool isPrimaryKey)
   {
     _isPrimaryKey = isPrimaryKey;
   }
@@ -141,7 +141,7 @@ public class JdbcColumnMetaData {
   /**
    * Set true for an index
    */
-  void setIndex(boolean isIndex)
+  void setIndex(bool isIndex)
   {
     _isIndex = isIndex;
   }
@@ -157,7 +157,7 @@ public class JdbcColumnMetaData {
   /**
    * Set true for a unique column
    */
-  void setUnique(boolean isUnique)
+  void setUnique(bool isUnique)
   {
     _isUnique = isUnique;
   }

@@ -62,7 +62,7 @@ public class ConnectionEntry : EnvCleanup
     _password = password;
   }
 
-  public void connect(boolean isReuse)
+  public void connect(bool isReuse)
     
   {
     if (_conn != null)

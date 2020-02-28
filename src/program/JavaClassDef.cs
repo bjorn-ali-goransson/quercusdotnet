@@ -358,7 +358,7 @@ public class JavaClassDef : ClassDef : InstanceInitializer {
     return _isDelegate;
   }
 
-  public void setPhpClass(boolean isPhpClass)
+  public void setPhpClass(bool isPhpClass)
   {
     _isPhpClass = isPhpClass;
   }

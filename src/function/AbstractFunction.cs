@@ -227,7 +227,7 @@ abstract public class AbstractFunction : Callback {
   /**
    * Sets true if function @is static.
    */
-  public void setStatic(boolean isStatic)
+  public void setStatic(bool isStatic)
   {
     _isStatic = isStatic;
   }
@@ -248,7 +248,7 @@ abstract public class AbstractFunction : Callback {
     return _isFinal;
   }
 
-  public final void setFinal(boolean isFinal)
+  public final void setFinal(bool isFinal)
   {
     _isFinal = isFinal;
   }
@@ -256,7 +256,7 @@ abstract public class AbstractFunction : Callback {
   /**
    * Sets true if function @is a closure.
    */
-  public void setClosure(boolean isClosure)
+  public void setClosure(bool isClosure)
   {
     _isClosure = isClosure;
   }
@@ -280,7 +280,7 @@ abstract public class AbstractFunction : Callback {
   /**
    * True for a constructor.
    */
-  public final void setConstructor(boolean isConstructor)
+  public final void setConstructor(bool isConstructor)
   {
     _isConstructor = isConstructor;
   }
@@ -296,7 +296,7 @@ abstract public class AbstractFunction : Callback {
   /**
    * True for a trait method.
    */
-  public void setTraitMethod(boolean isTraitMethod)
+  public void setTraitMethod(bool isTraitMethod)
   {
     _isTraitMethod = isTraitMethod;
   }
@@ -343,7 +343,7 @@ abstract public class AbstractFunction : Callback {
   /**
    * Returns true for a global function.
    */
-  public final void setGlobal(boolean isGlobal)
+  public final void setGlobal(bool isGlobal)
   {
     _isGlobal = isGlobal;
   }

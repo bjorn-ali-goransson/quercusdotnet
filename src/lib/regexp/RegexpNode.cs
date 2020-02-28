@@ -261,7 +261,7 @@ class RegexpNode {
     return false;
   }
 
-  bool []firstSet(boolean []firstSet)
+  bool []firstSet(bool []firstSet)
   {
     return null;
   }
@@ -368,7 +368,7 @@ class RegexpNode {
       return _ch;
     }
 
-    bool override []firstSet(boolean []firstSet)
+    bool override []firstSet(bool []firstSet)
     {
       if (firstSet != null && _ch < firstSet.length) {
         firstSet[_ch] = true;
@@ -486,12 +486,12 @@ class RegexpNode {
       _set = new boolean[128];
     }
 
-    AsciiSet(boolean []set)
+    AsciiSet(bool []set)
     {
       _set = set;
     }
 
-    bool override []firstSet(boolean []firstSet)
+    bool override []firstSet(bool []firstSet)
     {
       if (firstSet == null)
         return null;
@@ -536,7 +536,7 @@ class RegexpNode {
       _set = new boolean[128];
     }
 
-    AsciiNotSet(boolean []set)
+    AsciiNotSet(bool []set)
     {
       _set = set;
     }
@@ -631,7 +631,7 @@ class RegexpNode {
       return _min;
     }
 
-    bool override []firstSet(boolean []firstSet)
+    bool override []firstSet(bool []firstSet)
     {
       firstSet = _node.firstSet(firstSet);
 
@@ -752,7 +752,7 @@ class RegexpNode {
       return _min;
     }
 
-    bool override []firstSet(boolean []firstSet)
+    bool override []firstSet(bool []firstSet)
     {
       firstSet = _node.firstSet(firstSet);
 
@@ -848,7 +848,7 @@ class RegexpNode {
       return _head.firstChar();
     }
 
-    bool override []firstSet(boolean []firstSet)
+    bool override []firstSet(bool []firstSet)
     {
       firstSet = _head.firstSet(firstSet);
 
@@ -1253,7 +1253,7 @@ class RegexpNode {
       return _node.firstChar();
     }
 
-    bool override []firstSet(boolean []firstSet)
+    bool override []firstSet(bool []firstSet)
     {
       return _node.firstSet(firstSet);
     }
@@ -1601,7 +1601,7 @@ class RegexpNode {
       return _min * _node.minLength() + _tail.minLength();
     }
 
-    bool override []firstSet(boolean []firstSet)
+    bool override []firstSet(bool []firstSet)
     {
       firstSet = _node.firstSet(firstSet);
 
@@ -2036,7 +2036,7 @@ class RegexpNode {
         return -1;
     }
 
-    bool override []firstSet(boolean []firstSet)
+    bool override []firstSet(bool []firstSet)
     {
       if (_right == null)
         return _left.firstSet(firstSet);
@@ -2750,7 +2750,7 @@ class RegexpNode {
     private final bool []_asciiSet;
     private final IntSet _range;
 
-    Set(boolean []set, IntSet range)
+    Set(bool []set, IntSet range)
     {
       _asciiSet = set;
       _range = range;
@@ -2785,7 +2785,7 @@ class RegexpNode {
     private final bool []_asciiSet;
     private final IntSet _range;
 
-    NotSet(boolean []set, IntSet range)
+    NotSet(bool []set, IntSet range)
     {
       _asciiSet = set;
       _range = range;
@@ -2893,7 +2893,7 @@ class RegexpNode {
         return -1;
     }
 
-    bool override []firstSet(boolean []firstSet)
+    bool override []firstSet(bool []firstSet)
     {
       if (firstSet != null && _length > 0 && _buffer[0] < firstSet.length) {
         firstSet[_buffer[0]] = true;
@@ -3025,7 +3025,7 @@ class RegexpNode {
         return -1;
     }
 
-    bool override []firstSet(boolean []firstSet)
+    bool override []firstSet(bool []firstSet)
     {
       if (_length > 0 && firstSet != null) {
         char lower = Character.toLowerCase(_buffer[0]);

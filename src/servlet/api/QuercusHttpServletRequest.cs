@@ -59,7 +59,7 @@ public interface QuercusHttpServletRequest
   public InputStream getInputStream()
     
 
-  public QuercusHttpSession getSession(boolean isCreate);
+  public QuercusHttpSession getSession(bool isCreate);
 
   public string getLocalAddr();
   public string getServerName();

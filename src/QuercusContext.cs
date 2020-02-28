@@ -486,7 +486,7 @@ public class QuercusContext
     return false;
   }
 
-  public void setUnicodeSemantics(boolean isUnicode)
+  public void setUnicodeSemantics(bool isUnicode)
   {
     _isUnicodeSemantics = Boolean.valueOf(isUnicode);
   }
@@ -523,7 +523,7 @@ public class QuercusContext
   /**
    * Set true if pages should be compiled.
    */
-  public void setCompile(boolean isCompile)
+  public void setCompile(bool isCompile)
   {
     _pageManager.setCompile(isCompile);
   }
@@ -531,7 +531,7 @@ public class QuercusContext
   /**
    * Set true if pages should be compiled.
    */
-  public void setLazyCompile(boolean isCompile)
+  public void setLazyCompile(bool isCompile)
   {
     _pageManager.setLazyCompile(isCompile);
   }
@@ -539,7 +539,7 @@ public class QuercusContext
   /**
    * true if interpreted pages should be used if pages fail to compile.
    */
-  public void setCompileFailover(boolean isCompileFailover)
+  public void setCompileFailover(bool isCompileFailover)
   {
     _pageManager.setCompileFailover(isCompileFailover);
   }
@@ -736,7 +736,7 @@ public class QuercusContext
   /**
    * Sets the strict mode.
    */
-  public void setStrict(boolean isStrict)
+  public void setStrict(bool isStrict)
   {
     _isStrict = isStrict;
   }
@@ -752,7 +752,7 @@ public class QuercusContext
   /**
    * Sets the loose mode.
    */
-  public void setLooseParse(boolean isLoose)
+  public void setLooseParse(bool isLoose)
   {
     _isLooseParse = isLoose;
   }
@@ -800,7 +800,7 @@ public class QuercusContext
   /**
    * Set to true if compiled pages need to be backed by php source files.
    */
-  public void setRequireSource(boolean isRequireSource)
+  public void setRequireSource(bool isRequireSource)
   {
     _isRequireSource = isRequireSource;
   }
@@ -816,7 +816,7 @@ public class QuercusContext
   /**
    * Turns connection pooling on or off.
    */
-  public void setConnectionPool(boolean isEnable)
+  public void setConnectionPool(bool isEnable)
   {
     _isConnectionPool = isEnable;
   }
@@ -995,7 +995,7 @@ public class QuercusContext
   /**
    * Returns a map of the ini values that have been explicitly set.
    */
-  public HashMap<String, Value> getIniMap(boolean create)
+  public HashMap<String, Value> getIniMap(bool create)
   {
     if (_iniMap == null && create)
       _iniMap = new HashMap<String, Value>();

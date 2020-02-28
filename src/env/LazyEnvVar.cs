@@ -77,7 +77,7 @@ public class LazyEnvVar : EnvVar {
     return getEnvVar(false).setVar(var);
   }
 
-  private EnvVar getEnvVar(boolean isOutputNotice)
+  private EnvVar getEnvVar(bool isOutputNotice)
   {
     if (_var == null) {
       _var = Env.getInstance().getEnvVar(_name, true, isOutputNotice);

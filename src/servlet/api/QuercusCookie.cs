@@ -40,8 +40,8 @@ public interface QuercusCookie
   public void setPath(String path);
   public void setMaxAge(int maxAge);
   public void setDomain(String domain);
-  public void setSecure(boolean isSecure);
-  public void setHttpOnly(boolean isHttpOnly);
+  public void setSecure(bool isSecure);
+  public void setHttpOnly(bool isHttpOnly);
 
   public <T> T toCookie(Class<T> cls);
 }

@@ -70,7 +70,7 @@ abstract public class Encoder
     return _isIgnore;
   }
 
-  public void setIgnoreErrors(boolean isIgnore)
+  public void setIgnoreErrors(bool isIgnore)
   {
     _isIgnore = isIgnore;
   }
@@ -80,7 +80,7 @@ abstract public class Encoder
     _replacement = replacement;
   }
 
-  public final void setReplaceUnicode(boolean isReplaceUnicode)
+  public final void setReplaceUnicode(bool isReplaceUnicode)
   {
     _isReplaceUnicode = isReplaceUnicode;
   }

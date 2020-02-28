@@ -63,7 +63,7 @@ public class ToBooleanExpr : AbstractUnaryExpr {
 
   public string toString()
   {
-    return "((boolean) " + _expr + ")";
+    return "((bool) " + _expr + ")";
   }
 }
 

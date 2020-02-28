@@ -48,7 +48,7 @@ public class LineReader
     this(FileModule.INI_AUTO_DETECT_LINE_ENDINGS.getAsBoolean(env));
   }
 
-  private LineReader(boolean isAutoDetectLineEndings)
+  private LineReader(bool isAutoDetectLineEndings)
   {
     if (!isAutoDetectLineEndings)
       _isMacLineEnding = Boolean.FALSE;

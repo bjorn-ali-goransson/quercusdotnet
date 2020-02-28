@@ -488,7 +488,7 @@ public class ObjectExtValue : ObjectValue
     return null;
   }
 
-  public override void setFieldInit(boolean isInit)
+  public override void setFieldInit(bool isInit)
   {
     _isFieldInit = isInit;
   }

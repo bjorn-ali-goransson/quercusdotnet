@@ -724,42 +724,42 @@ public class DOMDocument
     _delegate.setDocumentURI(documentURI);
   }
 
-  public void setFormatOutput(boolean formatOutput)
+  public void setFormatOutput(bool formatOutput)
   {
     throw new UnimplementedException();
   }
 
-  public void setPreserveWhiteSpace(boolean preserveWhiteSpace)
+  public void setPreserveWhiteSpace(bool preserveWhiteSpace)
   {
     throw new UnimplementedException();
   }
 
-  public void setRecover(boolean recover)
+  public void setRecover(bool recover)
   {
     throw new UnimplementedException();
   }
 
-  public void setResolveExternals(boolean resolveExternals)
+  public void setResolveExternals(bool resolveExternals)
   {
     throw new UnimplementedException();
   }
 
-  public void setStrictErrorChecking(boolean strictErrorChecking)
+  public void setStrictErrorChecking(bool strictErrorChecking)
   {
     _delegate.setStrictErrorChecking(strictErrorChecking);
   }
 
-  public void setSubstituteEntities(boolean substituteEntities)
+  public void setSubstituteEntities(bool substituteEntities)
   {
     throw new UnimplementedException();
   }
 
-  public void setValidateOnParse(boolean validateOnParse)
+  public void setValidateOnParse(bool validateOnParse)
   {
     throw new UnimplementedException();
   }
 
-  public void setXmlStandalone(boolean xmlStandalone)
+  public void setXmlStandalone(bool xmlStandalone)
     
   {
     _delegate.setXmlStandalone(xmlStandalone);

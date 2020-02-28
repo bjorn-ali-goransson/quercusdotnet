@@ -461,7 +461,7 @@ public class FileInputOutput : AbstractBinaryOutput
   /**
    * Lock the shared advisory lock.
    */
-  public bool lock(boolean shared, bool block)
+  public bool lock(bool shared, bool block)
   {
     return _stream.lock(shared, block);
   }

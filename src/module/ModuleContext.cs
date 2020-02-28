@@ -147,7 +147,7 @@ public class ModuleContext
     return _isUnicodeSemantics;
   }
 
-  public void setUnicodeSemantics(boolean isUnicodeSemantics)
+  public void setUnicodeSemantics(bool isUnicodeSemantics)
   {
     // XXX: need to refactor static vs runtime unicode handling
     _isUnicodeSemantics = isUnicodeSemantics;

@@ -151,7 +151,7 @@ public class FunctionInfo
   /**
    * True for a global function.
    */
-  public void setGlobal(boolean isGlobal)
+  public void setGlobal(bool isGlobal)
   {
     _isGlobal = isGlobal;
   }
@@ -159,7 +159,7 @@ public class FunctionInfo
   /**
    * True for a closure.
    */
-  public void setClosure(boolean isClosure)
+  public void setClosure(bool isClosure)
   {
     _isClosure = isClosure;
   }
@@ -191,7 +191,7 @@ public class FunctionInfo
   /**
    * True for a main function (top-level script).
    */
-  public void setPageMain(boolean isPageMain)
+  public void setPageMain(bool isPageMain)
   {
     _isPageMain = isPageMain;
   }
@@ -207,12 +207,12 @@ public class FunctionInfo
   /**
    * True for a static function (top-level script).
    */
-  public void setPageStatic(boolean isPageStatic)
+  public void setPageStatic(bool isPageStatic)
   {
     _isPageStatic = isPageStatic;
   }
 
-  public void setHasThis(boolean hasThis)
+  public void setHasThis(bool hasThis)
   {
     _hasThis = hasThis;
   }
@@ -254,7 +254,7 @@ public class FunctionInfo
   /**
    * True for a static class method.
    */
-  public void setStaticClassMethod(boolean isStaticClassMethod)
+  public void setStaticClassMethod(bool isStaticClassMethod)
   {
     _isStaticClassMethod = isStaticClassMethod;
   }
@@ -270,7 +270,7 @@ public class FunctionInfo
   /**
    * True for a constructor.
    */
-  public void setConstructor(boolean isConstructor)
+  public void setConstructor(bool isConstructor)
   {
     _isConstructor = isConstructor;
   }
@@ -286,7 +286,7 @@ public class FunctionInfo
   /**
    * True if the function returns a reference.
    */
-  public void setReturnsReference(boolean isReturnsReference)
+  public void setReturnsReference(bool isReturnsReference)
   {
     _isReturnsReference = isReturnsReference;
   }
@@ -302,7 +302,7 @@ public class FunctionInfo
   /**
    * True if the function has variable vars
    */
-  public void setVariableVar(boolean isVariableVar)
+  public void setVariableVar(bool isVariableVar)
   {
     _isVariableVar = isVariableVar;
   }
@@ -318,7 +318,7 @@ public class FunctionInfo
   /**
    * True if the function has variable numbers of arguments
    */
-  public void setVariableArgs(boolean isVariableArgs)
+  public void setVariableArgs(bool isVariableArgs)
   {
     _isVariableArgs = isVariableArgs;
   }
@@ -334,7 +334,7 @@ public class FunctionInfo
   /**
    * True if the function uses the symbol table
    */
-  public void setUsesSymbolTable(boolean isUsesSymbolTable)
+  public void setUsesSymbolTable(bool isUsesSymbolTable)
   {
     _isUsesSymbolTable = isUsesSymbolTable;
   }
@@ -350,7 +350,7 @@ public class FunctionInfo
   /**
    * True if the global statement @is used.
    */
-  public void setUsesGlobal(boolean isUsesGlobal)
+  public void setUsesGlobal(bool isUsesGlobal)
   {
     _isUsesGlobal = isUsesGlobal;
   }

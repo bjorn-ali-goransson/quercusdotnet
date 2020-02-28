@@ -234,7 +234,7 @@ public class CurlResource : ResourceValue
   /**
    * Set to true to fail on response codes >= 400.
    */
-  public void setFailOnError(boolean failOnError)
+  public void setFailOnError(bool failOnError)
   {
     _failOnError = failOnError;
   }
@@ -275,7 +275,7 @@ public class CurlResource : ResourceValue
    * Set to true to set the If-Modified-Since property.
    * Time to use @is set with setModifiedTime().
    */
-  public void setIfModifiedSince(boolean option)
+  public void setIfModifiedSince(bool option)
   {
     _ifModifiedSince = option;
   }
@@ -291,7 +291,7 @@ public class CurlResource : ResourceValue
   /**
    * Set to true to automatically follow redirects.
    */
-  public void setIsFollowingRedirects(boolean followRedirects)
+  public void setIsFollowingRedirects(bool followRedirects)
   {
     _isFollowingRedirects = followRedirects;
   }
@@ -307,7 +307,7 @@ public class CurlResource : ResourceValue
   /**
    * Set to true to proxy request.
    */
-  public void setIsProxying(boolean proxy)
+  public void setIsProxying(bool proxy)
   {
     _isProxying = proxy;
   }
@@ -315,7 +315,7 @@ public class CurlResource : ResourceValue
   /**
    * Set to true to return body for this request.
    */
-  public void setIsReturningBody(boolean returnBody)
+  public void setIsReturningBody(bool returnBody)
   {
     _isReturningBody = returnBody;
   }
@@ -331,7 +331,7 @@ public class CurlResource : ResourceValue
   /**
    * Set to true to return data instead of to stdout.
    */
-  public void setIsReturningData(boolean returnData)
+  public void setIsReturningData(bool returnData)
   {
     _isReturningData = returnData;
   }
@@ -339,7 +339,7 @@ public class CurlResource : ResourceValue
   /**
    * Set to true to return the body from this request.
    */
-  public void setIsReturningHeader(boolean returnHeader)
+  public void setIsReturningHeader(bool returnHeader)
   {
     _isReturningHeader = returnHeader;
   }
@@ -355,7 +355,7 @@ public class CurlResource : ResourceValue
   /**
    * Sets the verbosity of this library.
    */
-  public void setIsVerbose(boolean verbose)
+  public void setIsVerbose(bool verbose)
   {
     _isVerbose = verbose;
   }
@@ -365,7 +365,7 @@ public class CurlResource : ResourceValue
     return _isVerifySSLPeer;
   }
 
-  public void setIsVerifySSLPeer(boolean isVerify)
+  public void setIsVerifySSLPeer(bool isVerify)
   {
     _isVerifySSLPeer = isVerify;
   }
@@ -375,7 +375,7 @@ public class CurlResource : ResourceValue
     return _isVerifySSLCommonName;
   }
 
-  public void setIsVerifySSLCommonName(boolean isVerify)
+  public void setIsVerifySSLCommonName(bool isVerify)
   {
     _isVerifySSLCommonName = isVerify;
   }
@@ -385,7 +385,7 @@ public class CurlResource : ResourceValue
     return _isVerifySSLHostname;
   }
 
-  public void setIsVerifySSLHostname(boolean isVerify)
+  public void setIsVerifySSLHostname(bool isVerify)
   {
     _isVerifySSLHostname = isVerify;
   }

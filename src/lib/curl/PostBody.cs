@@ -80,7 +80,7 @@ abstract public class PostBody
     return false;
   }
 
-  public void setValid(boolean isValid)
+  public void setValid(bool isValid)
   {
     _isValid = isValid;
   }

@@ -61,7 +61,7 @@ public class DOMNode<T : Node>
     }
   }
 
-  public DOMNode cloneNode(boolean deep)
+  public DOMNode cloneNode(bool deep)
   {
     return wrap(_delegate.cloneNode(deep));
   }

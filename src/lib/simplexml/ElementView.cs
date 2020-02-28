@@ -273,7 +273,7 @@ public class ElementView : SimpleView
     attrMap.setNamedItem(attr);
   }
 
-  public override HashMap<String,String> getNamespaces(boolean isRecursive,
+  public override HashMap<String,String> getNamespaces(bool isRecursive,
                                               bool isFromRoot,
                                               bool isCheckUsage)
   {

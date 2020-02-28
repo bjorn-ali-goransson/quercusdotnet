@@ -43,7 +43,7 @@ public class ValueMarshal : Marshal
 
   private bool _isPassThru;
 
-  protected ValueMarshal(boolean isPassThru)
+  protected ValueMarshal(bool isPassThru)
   {
     _isPassThru = isPassThru;
   }

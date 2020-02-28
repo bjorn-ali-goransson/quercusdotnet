@@ -950,7 +950,7 @@ public abstract class JdbcConnectionResource
   /**
    * sets auto-commmit to true or false
    */
-  public bool setAutoCommit(boolean mode)
+  public bool setAutoCommit(bool mode)
   {
     clearErrors();
 

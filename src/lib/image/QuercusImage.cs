@@ -109,7 +109,7 @@ public class QuercusImage : ResourceValue
     }
   }
 
-  public void setInterlace(boolean isInterlace)
+  public void setInterlace(bool isInterlace)
   {
     _isInterlace = isInterlace;
   }
@@ -358,7 +358,7 @@ public class QuercusImage : ResourceValue
     return _brush;
   }
 
-  public void setToFill(boolean isToFill)
+  public void setToFill(bool isToFill)
   {
     _isToFill = isToFill;
   }

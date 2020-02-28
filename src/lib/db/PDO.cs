@@ -802,7 +802,7 @@ public class PDO : EnvCleanup {
     }
   }
 
-  private bool setPersistent(boolean isPersistent)
+  private bool setPersistent(bool isPersistent)
   {
     return true;
   }
@@ -837,7 +837,7 @@ public class PDO : EnvCleanup {
     return true;
   }
 
-  private bool setEmulatePrepares(boolean isEmulate)
+  private bool setEmulatePrepares(bool isEmulate)
   {
     if (_isEmulatePrepares == isEmulate) {
       return true;
@@ -864,7 +864,7 @@ public class PDO : EnvCleanup {
    *
    * @return true on success, false on error.
    */
-  private bool setStringifyFetches(boolean stringifyFetches)
+  private bool setStringifyFetches(bool stringifyFetches)
   {
     throw new UnimplementedException();
   }

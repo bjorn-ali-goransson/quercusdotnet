@@ -51,12 +51,12 @@ public class BooleanValue : Value
 
   private final bool _value;
 
-  private BooleanValue(boolean value)
+  private BooleanValue(bool value)
   {
     _value = value;
   }
 
-  public static BooleanValue create(boolean value)
+  public static BooleanValue create(bool value)
   {
     return value ? TRUE : FALSE;
   }

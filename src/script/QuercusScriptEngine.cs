@@ -83,7 +83,7 @@ public class QuercusScriptEngine
     this(new QuercusScriptEngineFactory());
   }
 
-  public QuercusScriptEngine(boolean isUnicodeSemantics)
+  public QuercusScriptEngine(bool isUnicodeSemantics)
   {
     this(new QuercusScriptEngineFactory(), isUnicodeSemantics);
   }
@@ -126,7 +126,7 @@ public class QuercusScriptEngine
   /**
    * True to turn on unicode.semantics (PHP6).
    */
-  public void setUnicodeSemantics(boolean isUnicodeSemantics)
+  public void setUnicodeSemantics(bool isUnicodeSemantics)
   {
     _isUnicodeSemantics = isUnicodeSemantics;
   }

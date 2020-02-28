@@ -3386,7 +3386,7 @@ public class QuercusParser {
    *      ::= term '(' a1, ..., an ')'
    * </pre>
    */
-  private Expr parseTerm(boolean isParseCall)
+  private Expr parseTerm(bool isParseCall)
     
   {
     Expr term = parseTermBase();
@@ -5322,7 +5322,7 @@ public class QuercusParser {
   /**
    * Parses the next heredoc token.
    */
-  private int parseHeredocToken(boolean isQuoted)
+  private int parseHeredocToken(bool isQuoted)
     
   {
     _sb.setLength(0);
@@ -5860,7 +5860,7 @@ public class QuercusParser {
     return value;
   }
 
-  private int parseUnicodeEscape(boolean isLongForm)
+  private int parseUnicodeEscape(bool isLongForm)
     
   {
     int codePoint = parseHexEscape();

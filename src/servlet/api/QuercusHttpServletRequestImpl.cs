@@ -144,7 +144,7 @@ public class QuercusHttpServletRequestImpl : QuercusHttpServletRequest
     return _request.getInputStream();
   }
 
-  public override QuercusHttpSession getSession(boolean isCreate)
+  public override QuercusHttpSession getSession(bool isCreate)
   {
     HttpSession session = _request.getSession(isCreate);
 

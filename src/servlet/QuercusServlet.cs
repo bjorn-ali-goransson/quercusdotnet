@@ -116,7 +116,7 @@ public class QuercusServlet
     checkJavaVersion();
   }
 
-  protected QuercusServletImpl getQuercusServlet(boolean isResin)
+  protected QuercusServletImpl getQuercusServlet(bool isResin)
   {
     QuercusServletImpl impl = null;
 
@@ -211,7 +211,7 @@ public class QuercusServlet
   /**
    * Set true if the source php @is required
    */
-  public void setRequireSource(boolean isRequireSource)
+  public void setRequireSource(bool isRequireSource)
   {
     _isRequireSource = isRequireSource;
   }
@@ -236,7 +236,7 @@ public class QuercusServlet
   /**
    * Sets the strict mode.
    */
-  public void setStrict(boolean isStrict)
+  public void setStrict(bool isStrict)
   {
     _isStrict = isStrict;
   }
@@ -244,7 +244,7 @@ public class QuercusServlet
   /**
    * Sets the strict mode.
    */
-  public void setLooseParse(boolean isLooseParse)
+  public void setLooseParse(bool isLooseParse)
   {
     _isLooseParse = isLooseParse;
   }
@@ -276,7 +276,7 @@ public class QuercusServlet
   /**
    * Turns connection pooling on or off.
    */
-  public void setConnectionPool(boolean isEnable)
+  public void setConnectionPool(bool isEnable)
   {
     _isConnectionPool = isEnable;
   }

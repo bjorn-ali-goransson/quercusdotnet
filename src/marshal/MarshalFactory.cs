@@ -94,7 +94,7 @@ public class MarshalFactory {
 
     if (marshal != null) {
     }
-    else if (boolean.class.equals(argType)) {
+    else if (bool.class.equals(argType)) {
       marshal = BooleanMarshal.MARSHAL;
     }
     else if (Boolean.class.equals(argType)) {

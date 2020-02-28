@@ -152,7 +152,7 @@ public class ReflectionProperty
     _prop.setValue(env, obj, value);
   }
 
-  public void setAccessible(boolean isAccessible)
+  public void setAccessible(bool isAccessible)
   {
     _prop.setAccessible(isAccessible);
   }
@@ -238,7 +238,7 @@ public class ReflectionProperty
       obj.putField(env, _nameV, value);
     }
 
-    public void setAccessible(boolean isAccessible)
+    public void setAccessible(bool isAccessible)
     {
       // XXX: protected and private always accessible through Reflection
     }

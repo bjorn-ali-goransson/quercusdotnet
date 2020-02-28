@@ -234,7 +234,7 @@ public class QuercusProgram {
   /**
    * Set to false if page cannot be compiled.
    */
-  public void setCompilable(boolean isCompilable)
+  public void setCompilable(bool isCompilable)
   {
     _isCompilable = isCompilable;
   }

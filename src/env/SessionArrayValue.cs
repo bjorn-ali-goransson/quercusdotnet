@@ -295,7 +295,7 @@ public class SessionArrayValue : ArrayValueWrapper
     return _isValid;
   }
 
-  public void setValid(boolean isValid)
+  public void setValid(bool isValid)
   {
     _isValid = isValid;
   }

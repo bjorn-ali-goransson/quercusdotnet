@@ -204,7 +204,7 @@ public class ReflectionMethod : ReflectionFunctionAbstract
     return array;
   }
 
-  public void setAccessible(boolean isAccessible)
+  public void setAccessible(bool isAccessible)
   {
     // XXX: always accessible from Reflection for quercus
   }

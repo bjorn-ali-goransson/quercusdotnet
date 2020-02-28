@@ -40,7 +40,7 @@ public class JsonEncodeContext
   private final bool _isCheckNumeric;
   private final bool _isBigIntAsString;
 
-  public JsonEncodeContext(boolean isEscapeTag,
+  public JsonEncodeContext(bool isEscapeTag,
                            bool isEscapeAmp,
                            bool isEscapeApos,
                            bool isEscapeQuote,

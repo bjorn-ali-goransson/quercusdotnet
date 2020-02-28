@@ -136,7 +136,7 @@ public class InterpretedClassDef : ClassDef
   /**
    * true for an abstract class.
    */
-  public void setAbstract(boolean isAbstract)
+  public void setAbstract(bool isAbstract)
   {
     _isAbstract = isAbstract;
   }
@@ -153,7 +153,7 @@ public class InterpretedClassDef : ClassDef
   /**
    * true for an interface class.
    */
-  public void setInterface(boolean isInterface)
+  public void setInterface(bool isInterface)
   {
     _isInterface = isInterface;
   }
@@ -169,7 +169,7 @@ public class InterpretedClassDef : ClassDef
   /**
    * true for an trait class.
    */
-  public void setTrait(boolean isTrait)
+  public void setTrait(bool isTrait)
   {
     _isTrait = isTrait;
   }
@@ -185,7 +185,7 @@ public class InterpretedClassDef : ClassDef
   /**
    * True for a final class.
    */
-  public void setFinal(boolean isFinal)
+  public void setFinal(bool isFinal)
   {
     _isFinal = isFinal;
   }
@@ -233,7 +233,7 @@ public class InterpretedClassDef : ClassDef
   /**
    * True if defined at the top-level scope
    */
-  public void setTopScope(boolean isTopScope)
+  public void setTopScope(bool isTopScope)
   {
     _isTopScope = isTopScope;
   }

@@ -489,7 +489,7 @@ public class BinaryBuilderValue
   /**
    * Append a Java bool to the value.
    */
-  public override final StringValue appendUnicode(boolean v)
+  public override final StringValue appendUnicode(bool v)
   {
     return append(v ? "true" : "false");
   }

@@ -43,7 +43,7 @@ public class CallableMarshal : Marshal
 
   protected bool _isOptional;
 
-  protected CallableMarshal(boolean isOptional)
+  protected CallableMarshal(bool isOptional)
   {
     _isOptional = isOptional;
   }

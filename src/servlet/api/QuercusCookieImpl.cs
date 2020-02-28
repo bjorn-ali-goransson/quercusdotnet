@@ -78,12 +78,12 @@ public class QuercusCookieImpl : QuercusCookie
     _cookie.setDomain(domain);
   }
 
-  public override void setSecure(boolean isSecure)
+  public override void setSecure(bool isSecure)
   {
     _cookie.setSecure(isSecure);
   }
 
-  public override void setHttpOnly(boolean isHttpOnly)
+  public override void setHttpOnly(bool isHttpOnly)
   {
     _cookie.setHttpOnly(isHttpOnly);
   }

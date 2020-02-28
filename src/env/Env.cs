@@ -1901,7 +1901,7 @@ public class Env
   /**
    * Returns a map of the ini values that have been explicitly set.
    */
-  public HashMap<String, Value> getIniMap(boolean create)
+  public HashMap<String, Value> getIniMap(bool create)
   {
     if (_iniMap == null && create)
       _iniMap = new HashMap<String,Value>();
@@ -7165,7 +7165,7 @@ public class Env
   /**
    * Converts a bool to the bool value
    */
-  public static Value toValue(boolean value)
+  public static Value toValue(bool value)
   {
     return value ? BooleanValue.TRUE : BooleanValue.FALSE;
   }

@@ -376,7 +376,7 @@ public class HttpInputOutput : AbstractBinaryOutput
       _is.unread();
   }
 
-  public override bool lock(boolean shared, bool block)
+  public override bool lock(bool shared, bool block)
   {
     return false;
   }

@@ -167,12 +167,12 @@ public class CurlHttpConnection
     _conn.setConnectTimeout(time);
   }
 
-  public void setDoOutput(boolean doOutput)
+  public void setDoOutput(bool doOutput)
   {
     _conn.setDoOutput(doOutput);
   }
 
-  public void setInstanceFollowRedirects(boolean isToFollowRedirects)
+  public void setInstanceFollowRedirects(bool isToFollowRedirects)
   {
     getHttpConnection().setInstanceFollowRedirects(isToFollowRedirects);
   }

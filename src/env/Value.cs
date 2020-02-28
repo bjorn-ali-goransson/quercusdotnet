@@ -580,7 +580,7 @@ abstract public class Value : java.io.Serializable
   // Conversions
   //
 
-  public static long toLong(boolean b)
+  public static long toLong(bool b)
   {
     return b ? 1 : 0;
   }
@@ -600,7 +600,7 @@ abstract public class Value : java.io.Serializable
     return StringValue.parseLong(s);
   }
 
-  public static double toDouble(boolean b)
+  public static double toDouble(bool b)
   {
     return b ? 1.0 : 0.0;
   }
@@ -2409,7 +2409,7 @@ abstract public class Value : java.io.Serializable
     return putField(env, name, result);
   }
 
-  public void setFieldInit(boolean isInit)
+  public void setFieldInit(bool isInit)
   {
   }
 

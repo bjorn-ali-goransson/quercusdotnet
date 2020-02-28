@@ -44,7 +44,7 @@ public class CurlHostnameVerifier
   private bool _isVerifySSLCommonName;
   private bool _isVerifySSLHostname;
   
-  private CurlHostnameVerifier(boolean verifyPeer,
+  private CurlHostnameVerifier(bool verifyPeer,
                                bool commonName,
                                bool hostname)
   {
@@ -58,7 +58,7 @@ public class CurlHostnameVerifier
     return new CurlHostnameVerifier(true, true, true);
   }
   
-  public static CurlHostnameVerifier create(boolean verifyPeer,
+  public static CurlHostnameVerifier create(bool verifyPeer,
                                             bool commonName,
                                             bool hostname)
   {

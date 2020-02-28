@@ -141,7 +141,7 @@ public abstract class SimpleView
     throw new UnsupportedOperationException(getClass().getSimpleName());
   }
 
-  public HashMap<String,String> getNamespaces(boolean isRecursive,
+  public HashMap<String,String> getNamespaces(bool isRecursive,
                                               bool isFromRoot,
                                               bool isCheckUsage)
   {

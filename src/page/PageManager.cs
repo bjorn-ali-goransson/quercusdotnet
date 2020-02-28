@@ -104,7 +104,7 @@ public class PageManager
   /**
    * true if the pages should be compiled.
    */
-  public void setCompile(boolean isCompile)
+  public void setCompile(bool isCompile)
   {
     _isCompile = isCompile;
   }
@@ -120,7 +120,7 @@ public class PageManager
   /**
    * true if the pages should be compiled.
    */
-  public void setLazyCompile(boolean isCompile)
+  public void setLazyCompile(bool isCompile)
   {
     _isLazyCompile = isCompile;
   }
@@ -136,7 +136,7 @@ public class PageManager
   /**
    * true if interpreted pages should be used if pages fail to compile.
    */
-  public void setCompileFailover(boolean isCompileFailover)
+  public void setCompileFailover(bool isCompileFailover)
   {
     _isCompileFailover = isCompileFailover;
   }
@@ -144,7 +144,7 @@ public class PageManager
   /**
    * true if compiled pages require their source
    */
-  public void setRequireSource(boolean isRequireSource)
+  public void setRequireSource(bool isRequireSource)
   {
     _isRequireSource = isRequireSource;
   }

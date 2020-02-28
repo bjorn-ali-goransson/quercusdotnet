@@ -1451,7 +1451,7 @@ public class StringBuilderValue
   /**
    * Append a Java bool to the value.
    */
-  public override final StringValue append(boolean v)
+  public override final StringValue append(bool v)
   {
     return append(v ? "true" : "false");
   }

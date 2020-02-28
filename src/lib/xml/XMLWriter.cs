@@ -295,7 +295,7 @@ public class XMLWriter {
   /**
    * enables indentation
    */
-  public bool setIndent(boolean isIndent)
+  public bool setIndent(bool isIndent)
   {
     return false;
   }

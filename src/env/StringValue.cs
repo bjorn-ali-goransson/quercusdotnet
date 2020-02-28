@@ -1490,7 +1490,7 @@ abstract public class StringValue
   /**
    * Append a Java bool to the value.
    */
-  public StringValue append(boolean v)
+  public StringValue append(bool v)
   {
     return append(v ? "true" : "false");
   }
@@ -1583,7 +1583,7 @@ abstract public class StringValue
   /**
    * Append a Java bool to the value.
    */
-  public StringValue appendUnicode(boolean v)
+  public StringValue appendUnicode(bool v)
   {
     return append(v ? "true" : "false");
   }

@@ -133,7 +133,7 @@ public class QuercusSessionManager
   /**
    * True if sessions should always be saved.
    */
-  public void setAlwaysSaveSession(boolean save)
+  public void setAlwaysSaveSession(bool save)
   {
     _alwaysSaveSession = save;
   }
@@ -149,7 +149,7 @@ public class QuercusSessionManager
   /**
    * True if sessions should always be loadd.
    */
-  public void setAlwaysLoadSession(boolean load)
+  public void setAlwaysLoadSession(bool load)
   {
     _alwaysLoadSession = load ? SET_TRUE : SET_FALSE;
   }
@@ -165,7 +165,7 @@ public class QuercusSessionManager
   /**
    * True if sessions should only be saved on shutdown.
    */
-  public void setSaveOnlyOnShutdown(boolean save)
+  public void setSaveOnlyOnShutdown(bool save)
   {
     _saveOnlyOnShutdown = save;
   }
@@ -173,7 +173,7 @@ public class QuercusSessionManager
   /**
    * True if sessions should only be saved on shutdown.
    */
-  public void setSaveOnShutdown(boolean save)
+  public void setSaveOnShutdown(bool save)
   {
     log.warning
         ("<save-on-shutdown> @is deprecated.  "
@@ -327,7 +327,7 @@ public class QuercusSessionManager
   /**
    * Sets module session id generation.
    */
-  public void setCookieAppendServerIndex(boolean isAppend)
+  public void setCookieAppendServerIndex(bool isAppend)
   {
     _isAppendServerIndex = isAppend;
   }
