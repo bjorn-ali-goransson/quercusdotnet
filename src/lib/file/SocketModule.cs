@@ -58,7 +58,7 @@ namespace QuercusDotNet.lib.file {
  * Information and actions for about sockets
  */
 public class SocketModule : AbstractQuercusModule {
-  private const L10N L = new L10N(SocketModule.class);
+  private readonly L10N L = new L10N(SocketModule.class);
   private const Logger log
     = Logger.getLogger(SocketModule.class.getName());
 

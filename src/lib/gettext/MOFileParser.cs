@@ -50,7 +50,7 @@ class MOFileParser : GettextParser
 {
   private const Logger log
     = Logger.getLogger(MOFileParser.class.getName());
-  private const L10N L = new L10N(MOFileParser.class);
+  private readonly L10N L = new L10N(MOFileParser.class);
 
   private Env _env;
   private ReadStream _in;

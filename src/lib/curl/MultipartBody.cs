@@ -51,7 +51,7 @@ namespace QuercusDotNet.lib.curl {
 
 public class MultipartBody : PostBody
 {
-  private const L10N L = new L10N(CurlHttpRequest.class);
+  private readonly L10N L = new L10N(CurlHttpRequest.class);
 
   private ArrayList<MultipartEntry> _postItems
     = new ArrayList<MultipartEntry>();

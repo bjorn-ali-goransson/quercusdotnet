@@ -44,7 +44,7 @@ namespace QuercusDotNet.lib.date {
  */
 public class DateTime implements DateTimeInterface, Cloneable
 {
-  private const L10N L = new L10N(DateTime.class);
+  private readonly L10N L = new L10N(DateTime.class);
   
   public const string ATOM = "Y-m-d\\TH:i:sP";
   public const string COOKIE = "l, d-M-y H:i:s T";

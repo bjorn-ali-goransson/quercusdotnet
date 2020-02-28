@@ -36,7 +36,7 @@ namespace QuercusDotNet.Expr{
  * A handle to a top expression
  */
 public class ExprHandle {
-  public const ExprHandle NULL = new ExprHandle();
+  public readonly ExprHandle NULL = new ExprHandle();
   
   private final StatementHandle _statement;
   

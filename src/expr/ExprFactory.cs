@@ -80,7 +80,7 @@ namespace QuercusDotNet.Expr{
  * Factory for creating PHP expressions and statements
  */
 public class ExprFactory {
-  private const L10N L = new L10N(ExprFactory.class);
+  private readonly L10N L = new L10N(ExprFactory.class);
   private const Logger log
     = Logger.getLogger(ExprFactory.class.getName());
 

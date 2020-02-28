@@ -44,7 +44,7 @@ namespace QuercusDotNet.Program{
 public class ObjectMethod : Function {
   private const Logger log = Logger.getLogger(
     ObjectMethod.class.getName());
-  private const L10N L = new L10N(ObjectMethod.class);
+  private readonly L10N L = new L10N(ObjectMethod.class);
 
   private ClassDef _quercusClass;
 

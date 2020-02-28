@@ -35,7 +35,7 @@ namespace QuercusDotNet {
 public class UnimplementedException
   : UnsupportedOperationException
 {
-  private const L10N L = new L10N(UnimplementedException.class);
+  private readonly L10N L = new L10N(UnimplementedException.class);
 
   private const string MESSAGE
     = "{0} has not been implemented. "

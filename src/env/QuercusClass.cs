@@ -58,7 +58,7 @@ namespace QuercusDotNet.Env{
  */
 @SuppressWarnings("serial")
 public class QuercusClass : NullValue {
-  private const L10N L = new L10N(QuercusClass.class);
+  private readonly L10N L = new L10N(QuercusClass.class);
   private const Logger log
     = Logger.getLogger(QuercusClass.class.getName());
 

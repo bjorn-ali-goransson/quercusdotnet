@@ -52,7 +52,7 @@ namespace QuercusDotNet.Program{
  * Represents a Quercus class definition
  */
 abstract public class ClassDef implements InstanceInitializer {
-  private const L10N L = new L10N(ClassDef.class);
+  private readonly L10N L = new L10N(ClassDef.class);
 
   private final Location _location;
   private final string _name;

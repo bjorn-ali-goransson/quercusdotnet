@@ -40,7 +40,7 @@ namespace QuercusDotNet.Marshal{
 
 public class InputStreamMarshal : Marshal
 {
-  public const Marshal MARSHAL = new InputStreamMarshal();
+  public readonly Marshal MARSHAL = new InputStreamMarshal();
 
   public boolean isReadOnly()
   {

@@ -49,7 +49,7 @@ namespace QuercusDotNet.lib.filter {
 
 public class FilterModule : AbstractQuercusModule
 {
-  private const L10N L = new L10N(FilterModule.class);
+  private readonly L10N L = new L10N(FilterModule.class);
 
   public const int INPUT_POST = 0;
   public const int INPUT_GET = 1;

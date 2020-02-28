@@ -43,7 +43,7 @@ namespace QuercusDotNet.Expr{
  * Represents a PHP function expression of the form "new static()".
  */
 public class ObjectNewStaticExpr : Expr {
-  private const L10N L = new L10N(ObjectNewStaticExpr.class);
+  private readonly L10N L = new L10N(ObjectNewStaticExpr.class);
   protected final Expr []_args;
 
   public ObjectNewStaticExpr(Location location, ArrayList<Expr> args)

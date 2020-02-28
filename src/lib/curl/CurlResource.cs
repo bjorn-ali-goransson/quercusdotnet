@@ -51,7 +51,7 @@ public class CurlResource : ResourceValue
 {
   private const Logger log
     = Logger.getLogger(CurlResource.class.getName());
-  private const L10N L = new L10N(CurlResource.class);
+  private readonly L10N L = new L10N(CurlResource.class);
 
   private string _requestMethod = "GET";
   private int _responseCode;

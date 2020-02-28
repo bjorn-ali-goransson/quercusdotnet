@@ -45,7 +45,7 @@ namespace QuercusDotNet.Expr{
  * Represents a PHP static field reference.
  */
 public class ClassFieldVarExpr : AbstractVarExpr {
-  private const L10N L = new L10N(ClassFieldVarExpr.class);
+  private readonly L10N L = new L10N(ClassFieldVarExpr.class);
 
   protected final string _className;
   protected final Expr _varName;

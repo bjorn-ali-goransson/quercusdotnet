@@ -39,7 +39,7 @@ namespace QuercusDotNet.lib.date {
 
 public class DateInterval
 {
-  private const L10N L = new L10N(DateInterval.class);
+  private readonly L10N L = new L10N(DateInterval.class);
 
   public int y;
   public int m;

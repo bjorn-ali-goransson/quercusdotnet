@@ -39,7 +39,7 @@ namespace QuercusDotNet.Marshal{
  * Code for marshaling (PHP to Java) and unmarshaling (Java to PHP) arguments.
  */
 abstract public class Marshal {
-  protected const L10N L = new L10N(Marshal.class);
+  protected readonly L10N L = new L10N(Marshal.class);
 
   // scale to describe cost of marshaling an argument
 

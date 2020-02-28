@@ -44,7 +44,7 @@ namespace QuercusDotNet.lib.pdf {
 public class PDFWriter {
   private const Logger log
     = Logger.getLogger(PDFWriter.class.getName());
-  private const L10N L = new L10N(PDFWriter.class);
+  private readonly L10N L = new L10N(PDFWriter.class);
 
   private long _offset;
   private WriteStream _out;

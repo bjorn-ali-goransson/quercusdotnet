@@ -52,7 +52,7 @@ namespace QuercusDotNet.lib/i18n{
 public class UnicodeModule : AbstractQuercusModule {
   private const Logger log = Logger.getLogger(
       UnicodeModule.class.getName());
-  private const L10N L = new L10N(UnicodeModule.class);
+  private readonly L10N L = new L10N(UnicodeModule.class);
 
   public const int U_INVALID_STOP = 0;
   public const int U_INVALID_SKIP = 1;
@@ -65,7 +65,7 @@ public class UnicodeModule : AbstractQuercusModule {
   public const int ICONV_MIME_DECODE_STRICT = 1;
   public const int ICONV_MIME_DECODE_CONTINUE_ON_ERROR = 2;
 
-  private const IniDefinitions _iniDefinitions = new IniDefinitions();
+  private readonly IniDefinitions _iniDefinitions = new IniDefinitions();
 
   /**
    * Returns the extensions implemented by the module.

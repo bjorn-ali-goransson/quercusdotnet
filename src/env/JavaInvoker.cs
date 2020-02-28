@@ -52,7 +52,7 @@ namespace QuercusDotNet.Env{
 abstract public class JavaInvoker
   : AbstractJavaMethod
 {
-  private const L10N L = new L10N(JavaInvoker.class);
+  private readonly L10N L = new L10N(JavaInvoker.class);
 
   private const Value []NULL_VALUES = new Value[0];
 

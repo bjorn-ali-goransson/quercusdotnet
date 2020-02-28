@@ -45,8 +45,8 @@ namespace QuercusDotNet.Env{
 public class BooleanValue : Value
   implements Serializable
 {
-  public const BooleanValue TRUE = new BooleanValue(true);
-  public const BooleanValue FALSE = new BooleanValue(false);
+  public readonly BooleanValue TRUE = new BooleanValue(true);
+  public readonly BooleanValue FALSE = new BooleanValue(false);
 
   private final boolean _value;
 

@@ -54,7 +54,7 @@ namespace QuercusDotNet.Parser{
  * Parses a PHP program.
  */
 public class QuercusParser {
-  private const L10N L = new L10N(QuercusParser.class);
+  private readonly L10N L = new L10N(QuercusParser.class);
 
   private const int M_STATIC = 0x1;
   private const int M_PUBLIC = 0x2;
@@ -184,8 +184,8 @@ public class QuercusParser {
 
   private const int LAST_IDENTIFIER_LEXEME = 1024;
 
-  private const IntMap _insensitiveReserved = new IntMap();
-  private const IntMap _reserved = new IntMap();
+  private readonly IntMap _insensitiveReserved = new IntMap();
+  private readonly IntMap _reserved = new IntMap();
 
   private QuercusContext _quercus;
 

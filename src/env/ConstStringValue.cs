@@ -41,7 +41,7 @@ namespace QuercusDotNet.Env{
 public class ConstStringValue
   : StringBuilderValue
 {
-  public const ConstStringValue EMPTY = new ConstStringValue();
+  public readonly ConstStringValue EMPTY = new ConstStringValue();
 
   private LongValue _longValue;
   private DoubleValue _doubleValue;

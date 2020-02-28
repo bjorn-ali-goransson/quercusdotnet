@@ -49,7 +49,7 @@ namespace QuercusDotNet.lib.db {
 public class JdbcStatementResource
 {
   private const Logger log = Log.open(JdbcStatementResource.class);
-  private const L10N L = new L10N(JdbcStatementResource.class);
+  private readonly L10N L = new L10N(JdbcStatementResource.class);
 
   private JdbcConnectionResource _conn;
   private JdbcResultResource _rs;

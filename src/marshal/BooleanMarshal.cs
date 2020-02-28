@@ -40,7 +40,7 @@ namespace QuercusDotNet.Marshal{
  * Code for marshaling (PHP to Java) and unmarshaling (Java to PHP) arguments.
  */
 public class BooleanMarshal : Marshal {
-  public const BooleanMarshal MARSHAL = new BooleanMarshal();
+  public readonly BooleanMarshal MARSHAL = new BooleanMarshal();
 
   public boolean isBoolean()
   {

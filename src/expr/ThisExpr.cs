@@ -43,7 +43,7 @@ namespace QuercusDotNet.Expr{
  * Represents the 'this' expression.
  */
 public class ThisExpr : AbstractVarExpr {
-  private const L10N L = new L10N(Expr.class);
+  private readonly L10N L = new L10N(Expr.class);
 
   protected final InterpretedClassDef _classDef;
 

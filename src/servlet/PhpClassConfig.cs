@@ -39,7 +39,7 @@ namespace QuercusDotNet.servlet{
  * Custom class configuration.
  */
 public class PhpClassConfig {
-  private const L10N L = new L10N(PhpClassConfig.class);
+  private readonly L10N L = new L10N(PhpClassConfig.class);
   
   private Class _type;
   private string _name;

@@ -70,7 +70,7 @@ namespace QuercusDotNet.lib.xml {
 @ResourceType("xml")
 public class Xml {
   private const Logger log = Logger.getLogger(Xml.class.getName());
-  private const L10N L = new L10N(Xml.class);
+  private readonly L10N L = new L10N(Xml.class);
 
   /**
    * XML_OPTION_CASE_FOLDING is enabled by default

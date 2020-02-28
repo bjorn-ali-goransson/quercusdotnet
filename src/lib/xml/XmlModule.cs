@@ -50,7 +50,7 @@ namespace QuercusDotNet.lib.xml {
  * PHP XML
  */
 public class XmlModule : AbstractQuercusModule {
-  private const L10N L = new L10N(XmlModule.class);
+  private readonly L10N L = new L10N(XmlModule.class);
 
   public const int XML_OPTION_CASE_FOLDING = 0x0;
   public const int XML_OPTION_SKIP_TAGSTART = 0x1;

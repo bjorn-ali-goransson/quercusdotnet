@@ -32,7 +32,7 @@ namespace QuercusDotNet.Env{
 public class UnsetBinaryValue
   : BinaryBuilderValue
 {
-  public const UnsetBinaryValue UNSET = new UnsetBinaryValue();
+  public readonly UnsetBinaryValue UNSET = new UnsetBinaryValue();
   
   private UnsetBinaryValue()
   {

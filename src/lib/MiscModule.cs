@@ -64,7 +64,7 @@ namespace QuercusDotNet.lib{
  * PHP misc functions.
  */
 public class MiscModule : AbstractQuercusModule {
-  private const L10N L = new L10N(MiscModule.class);
+  private readonly L10N L = new L10N(MiscModule.class);
   private const Logger log
     = Logger.getLogger(MiscModule.class.getName());
 

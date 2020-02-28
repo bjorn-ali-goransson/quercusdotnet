@@ -38,7 +38,7 @@ namespace QuercusDotNet.Marshal{
 
 public class UnicodeValueMarshal : Marshal
 {
-  public const Marshal MARSHAL = new UnicodeValueMarshal();
+  public readonly Marshal MARSHAL = new UnicodeValueMarshal();
   
   public boolean isReadOnly()
   {

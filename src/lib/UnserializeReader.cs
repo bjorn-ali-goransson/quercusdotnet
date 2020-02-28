@@ -41,7 +41,7 @@ namespace QuercusDotNet.lib{
 
 
 public class UnserializeReader {
-  private const L10N L = new L10N(UnserializeReader.class);
+  private readonly L10N L = new L10N(UnserializeReader.class);
   private const Logger log
     = Logger.getLogger(UnserializeReader.class.getName());
 

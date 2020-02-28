@@ -40,7 +40,7 @@ namespace QuercusDotNet.Marshal{
 
 public class CalendarMarshal : Marshal
 {
-  public const Marshal MARSHAL = new CalendarMarshal();
+  public readonly Marshal MARSHAL = new CalendarMarshal();
 
   public Object marshal(Env env, Expr expr, Class expectedClass)
   {

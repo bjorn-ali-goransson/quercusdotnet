@@ -49,13 +49,13 @@ abstract public class ArrayValue : Value {
   private const Logger log
     = Logger.getLogger(ArrayValue.class.getName());
 
-  protected const StringValue KEY = new ConstStringValue("key");
-  protected const StringValue VALUE = new ConstStringValue("value");
+  protected readonly StringValue KEY = new ConstStringValue("key");
+  protected readonly StringValue VALUE = new ConstStringValue("value");
 
-  public const GetKey GET_KEY = new GetKey();
-  public const GetValue GET_VALUE = new GetValue();
+  public readonly GetKey GET_KEY = new GetKey();
+  public readonly GetValue GET_VALUE = new GetValue();
 
-  public const StringValue ARRAY = new ConstStringValue("Array");
+  public readonly StringValue ARRAY = new ConstStringValue("Array");
 
   private Entry _current;
 
@@ -2120,7 +2120,7 @@ abstract public class ArrayValue : Value {
   public static class ValueComparator
     implements Comparator<Map.Entry<Value,Value>>
   {
-    public const ValueComparator CMP = new ValueComparator();
+    public readonly ValueComparator CMP = new ValueComparator();
 
     private ValueComparator()
     {
@@ -2148,7 +2148,7 @@ abstract public class ArrayValue : Value {
   public static class KeyComparator
     implements Comparator<Map.Entry<Value,Value>>
   {
-    public const KeyComparator CMP = new KeyComparator();
+    public readonly KeyComparator CMP = new KeyComparator();
 
     private KeyComparator()
     {
@@ -2179,7 +2179,7 @@ abstract public class ArrayValue : Value {
 
   public static class GetKey : AbstractGet
   {
-    public const GetKey GET = new GetKey();
+    public readonly GetKey GET = new GetKey();
 
     private GetKey()
     {
@@ -2192,7 +2192,7 @@ abstract public class ArrayValue : Value {
   }
 
   public static class GetValue : AbstractGet {
-    public const GetValue GET = new GetValue();
+    public readonly GetValue GET = new GetValue();
 
     private GetValue()
     {

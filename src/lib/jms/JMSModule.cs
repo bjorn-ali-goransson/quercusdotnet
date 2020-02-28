@@ -54,9 +54,9 @@ public class JMSModule : AbstractQuercusModule
   private const Logger log
     = Logger.getLogger(JMSModule.class.getName());
 
-  private const L10N L = new L10N(JMSModule.class);
+  private readonly L10N L = new L10N(JMSModule.class);
 
-  private const IniDefinitions _iniDefinitions = new IniDefinitions();
+  private readonly IniDefinitions _iniDefinitions = new IniDefinitions();
 
   /**
    * Returns the default php.ini values.

@@ -49,7 +49,7 @@ namespace QuercusDotNet.lib{
  * Quercus tokenizer 
  */
 public class TokenModule : AbstractQuercusModule {
-  private const L10N L = new L10N(TokenModule.class);
+  private readonly L10N L = new L10N(TokenModule.class);
   private const Logger log
     = Logger.getLogger(TokenModule.class.getName());
 
@@ -174,9 +174,9 @@ public class TokenModule : AbstractQuercusModule {
   public const int T_FUNC_C = 373;
   public const int T_CLASS_C = 374;
 
-  private const IntMap _reservedMap = new IntMap();
+  private readonly IntMap _reservedMap = new IntMap();
 
-  private const IniDefinitions _iniDefinitions = new IniDefinitions();
+  private readonly IniDefinitions _iniDefinitions = new IniDefinitions();
 
   public string []getLoadedExtensions()
   {

@@ -39,7 +39,7 @@ namespace QuercusDotNet.Marshal{
  * Code for marshaling (PHP to Java) and unmarshaling (Java to PHP) arguments.
  */
 public class StringMarshal : Marshal {
-  public const StringMarshal MARSHAL = new StringMarshal();
+  public readonly StringMarshal MARSHAL = new StringMarshal();
 
   @Override
   public boolean isString()

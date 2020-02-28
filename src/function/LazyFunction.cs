@@ -45,7 +45,7 @@ public class LazyFunction : AbstractFunction
 {
   private const Logger log
     = Logger.getLogger(LazyFunction.class.getName());
-  private const L10N L = new L10N(LazyFunction.class);
+  private readonly L10N L = new L10N(LazyFunction.class);
 
   private final QuercusContext _quercus;
   private final string _name;

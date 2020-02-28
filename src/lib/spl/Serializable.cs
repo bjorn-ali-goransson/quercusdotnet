@@ -37,8 +37,8 @@ namespace QuercusDotNet.lib.spl {
 
 public interface Serializable
 {
-  public const StringValue SERIALIZE = new ConstStringValue("serialize");
-  public const StringValue UNSERIALIZE = new ConstStringValue("unserialize");
+  public readonly StringValue SERIALIZE = new ConstStringValue("serialize");
+  public readonly StringValue UNSERIALIZE = new ConstStringValue("unserialize");
 
   public Value serialize(Env env);
 

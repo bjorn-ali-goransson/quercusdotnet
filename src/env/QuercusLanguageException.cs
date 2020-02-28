@@ -39,9 +39,9 @@ namespace QuercusDotNet.Env{
  */
 public class QuercusLanguageException : QuercusException
 {
-  private const StringValue FILE = new ConstStringValue("file");
-  private const StringValue LINE = new ConstStringValue("line");
-  private const StringValue MESSAGE = new ConstStringValue("message");
+  private readonly StringValue FILE = new ConstStringValue("file");
+  private readonly StringValue LINE = new ConstStringValue("line");
+  private readonly StringValue MESSAGE = new ConstStringValue("message");
 
   private ArrayValue _trace;
   private Value _value;

@@ -46,7 +46,7 @@ namespace QuercusDotNet.Expr{
  */
 public class ClassMethodVarExpr : AbstractMethodExpr
 {
-  private const L10N L = new L10N(ClassMethodVarExpr.class);
+  private readonly L10N L = new L10N(ClassMethodVarExpr.class);
 
   protected final string _className;
   protected final Expr _nameExpr;

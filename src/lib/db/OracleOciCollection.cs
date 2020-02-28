@@ -52,7 +52,7 @@ namespace QuercusDotNet.lib.db {
 public class OracleOciCollection {
   private const Logger log = Logger.getLogger(
       OracleOciCollection.class.getName());
-  private const L10N L = new L10N(OracleOciCollection.class);
+  private readonly L10N L = new L10N(OracleOciCollection.class);
 
   // The Oracle array descriptor
   private Object _arrayDescriptor;

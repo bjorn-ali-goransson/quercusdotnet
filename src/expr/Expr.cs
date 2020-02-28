@@ -47,7 +47,7 @@ namespace QuercusDotNet.Expr{
  * Represents a PHP expression.
  */
 abstract public class Expr {
-  private const L10N L = new L10N(Expr.class);
+  private readonly L10N L = new L10N(Expr.class);
 
   public const int COMPILE_ARG_MAX = 5;
   public const Expr[] NULL_ARGS = new Expr[0];

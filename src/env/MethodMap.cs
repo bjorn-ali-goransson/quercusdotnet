@@ -43,7 +43,7 @@ namespace QuercusDotNet.Env{
  */
 public class MethodMap<V>
 {
-  private const L10N L = new L10N(MethodMap.class);
+  private readonly L10N L = new L10N(MethodMap.class);
 
   private final QuercusClass _quercusClass;
   private final ClassDef _classDef;

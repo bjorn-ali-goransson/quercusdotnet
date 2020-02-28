@@ -43,7 +43,7 @@ namespace QuercusDotNet.Env{
  */
 @SuppressWarnings("serial")
 public class CallbackClassMethod : Callback {
-  private const L10N L = new L10N(CallbackClassMethod.class);
+  private readonly L10N L = new L10N(CallbackClassMethod.class);
 
   private final QuercusClass _qClass;
 

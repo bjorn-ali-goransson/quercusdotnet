@@ -49,7 +49,7 @@ public class XmlReader
 {
   private const Logger log
     = Logger.getLogger(XmlReader.class.getName());
-  private const L10N L = new L10N(XmlReader.class);
+  private readonly L10N L = new L10N(XmlReader.class);
 
   private int _depth;
   private int _lastNodeType;

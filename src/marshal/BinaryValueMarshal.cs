@@ -39,7 +39,7 @@ namespace QuercusDotNet.Marshal{
 
 public class BinaryValueMarshal : Marshal
 {
-  public const Marshal MARSHAL = new BinaryValueMarshal();
+  public readonly Marshal MARSHAL = new BinaryValueMarshal();
 
   public boolean isReadOnly()
   {

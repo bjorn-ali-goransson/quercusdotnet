@@ -51,7 +51,7 @@ namespace QuercusDotNet.Page{
  */
 abstract public class QuercusPage
 {
-  private const L10N L = new L10N(QuercusPage.class);
+  private readonly L10N L = new L10N(QuercusPage.class);
 
   private HashMap<StringValue,AbstractFunction> _funMap
     = new HashMap<StringValue,AbstractFunction>();

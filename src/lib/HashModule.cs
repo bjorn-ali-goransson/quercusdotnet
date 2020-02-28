@@ -54,7 +54,7 @@ namespace QuercusDotNet.lib{
  * and SHA512.
  */
 public class HashModule : AbstractQuercusModule {
-  private const L10N L = new L10N(HashModule.class);
+  private readonly L10N L = new L10N(HashModule.class);
   private const Logger log
     = Logger.getLogger(HashModule.class.getName());
 

@@ -42,7 +42,7 @@ namespace QuercusDotNet.Env{
 public class UnicodeBuilderValue
   : UnicodeValue
 {
-  public const UnicodeBuilderValue EMPTY = new UnicodeBuilderValue("");
+  public readonly UnicodeBuilderValue EMPTY = new UnicodeBuilderValue("");
 
   private const UnicodeBuilderValue []CHAR_STRINGS;
 

@@ -51,11 +51,11 @@ namespace QuercusDotNet.lib.session {
  */
 public class SessionModule : AbstractQuercusModule
   implements ModuleStartupListener {
-  private const L10N L = new L10N(SessionModule.class);
+  private readonly L10N L = new L10N(SessionModule.class);
   private const Logger log
     = Logger.getLogger(SessionModule.class.getName());
 
-  private const IniDefinitions _iniDefinitions = new IniDefinitions();
+  private readonly IniDefinitions _iniDefinitions = new IniDefinitions();
 
   public const int PHP_SESSION_DISABLED = 0;
   public const int PHP_SESSION_NONE = 1;

@@ -109,7 +109,7 @@ namespace QuercusDotNet.Env{
  */
 public class Env
 {
-  private const L10N L = new L10N(Env.class);
+  private readonly L10N L = new L10N(Env.class);
   private const Logger log = Logger.getLogger(Env.class.getName());
 
   public const int B_ERROR = 0;

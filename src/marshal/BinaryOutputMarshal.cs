@@ -41,7 +41,7 @@ namespace QuercusDotNet.Marshal{
 
 public class BinaryOutputMarshal : Marshal
 {
-  public const Marshal MARSHAL = new BinaryOutputMarshal();
+  public readonly Marshal MARSHAL = new BinaryOutputMarshal();
 
   @Override
   public boolean isReadOnly()

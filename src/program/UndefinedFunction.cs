@@ -40,7 +40,7 @@ namespace QuercusDotNet.Program{
  */
 @SuppressWarnings("serial")
 public class UndefinedFunction : AbstractFunction {
-  private const L10N L = new L10N(UndefinedFunction.class);
+  private readonly L10N L = new L10N(UndefinedFunction.class);
 
   private final int _id;
   private final string _name;

@@ -41,7 +41,7 @@ namespace QuercusDotNet.lib.pdf {
 public class PDFFont : PDFObject {
   private const Logger log
     = Logger.getLogger(PDFFont.class.getName());
-  private const L10N L = new L10N(PDFFont.class);
+  private readonly L10N L = new L10N(PDFFont.class);
 
   private int _id;
 

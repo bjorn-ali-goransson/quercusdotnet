@@ -46,7 +46,7 @@ namespace QuercusDotNet.lib{
  * PHP math routines.
  */
 public class BcmathModule : AbstractQuercusModule {
-  private const L10N L = new L10N(BcmathModule.class);
+  private readonly L10N L = new L10N(BcmathModule.class);
 
   private const BigDecimal DECIMAL_TWO
     = new BigDecimal(2);
@@ -56,7 +56,7 @@ public class BcmathModule : AbstractQuercusModule {
   
   private const int SQRT_MAX_ITERATIONS = 50;
 
-  private const IniDefinitions _iniDefinitions = new IniDefinitions();
+  private readonly IniDefinitions _iniDefinitions = new IniDefinitions();
 
   public string []getLoadedExtensions()
   {

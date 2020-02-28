@@ -33,7 +33,7 @@ namespace QuercusDotNet {
  * Records the source file location of a statement or expression.
  */
 public class Location {
-  public const Location UNKNOWN = new Location();
+  public readonly Location UNKNOWN = new Location();
 
   private final string _fileName;
   private final string _userPath;

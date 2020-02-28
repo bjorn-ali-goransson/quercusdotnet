@@ -49,7 +49,7 @@ namespace QuercusDotNet.lib.pdf {
 public class PDF
 {
   private const Logger log = Logger.getLogger(PDF.class.getName());
-  private const L10N L = new L10N(PDF.class);
+  private readonly L10N L = new L10N(PDF.class);
 
   private const double KAPPA = 0.5522847498;
 

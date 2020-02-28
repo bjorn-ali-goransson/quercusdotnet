@@ -66,7 +66,7 @@ namespace QuercusDotNet.servlet{
 public class QuercusServlet
   : HttpServlet
 {
-  private const L10N L = new L10N(QuercusServlet.class);
+  private readonly L10N L = new L10N(QuercusServlet.class);
   private const Logger log
     = Logger.getLogger(QuercusServlet.class.getName());
 

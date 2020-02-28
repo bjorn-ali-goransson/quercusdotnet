@@ -84,7 +84,7 @@ namespace QuercusDotNet.lib.db {
  */
 public class OracleModule : AbstractQuercusModule {
   private const Logger log = Log.open(OracleModule.class);
-  private const L10N L = new L10N(OracleModule.class);
+  private readonly L10N L = new L10N(OracleModule.class);
 
   // WARNING: Do not change order or constant values.
   // They are mapped to oracle types below.

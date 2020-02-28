@@ -50,7 +50,7 @@ namespace QuercusDotNet.lib/i18n{
 
 public class QuercusMimeUtility
 {
-  private const L10N L = new L10N(QuercusMimeUtility.class);
+  private readonly L10N L = new L10N(QuercusMimeUtility.class);
   private const Logger log
     = Logger.getLogger(QuercusMimeUtility.class.getName());
   /*

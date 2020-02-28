@@ -60,11 +60,11 @@ namespace QuercusDotNet.lib{
  */
 public class OutputModule : AbstractQuercusModule
   implements ModuleStartupListener {
-  private const L10N L = new L10N(OutputModule.class);
+  private readonly L10N L = new L10N(OutputModule.class);
   private const Logger log = Logger.getLogger(
       OutputModule.class.getName());
 
-  private const IniDefinitions _iniDefinitions = new IniDefinitions();
+  private readonly IniDefinitions _iniDefinitions = new IniDefinitions();
 
   // ob_gzhandler related variables/types
   private enum Encoding { NONE, GZIP, DEFLATE };

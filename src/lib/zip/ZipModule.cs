@@ -54,7 +54,7 @@ namespace QuercusDotNet.lib.zip {
 public class ZipModule : AbstractQuercusModule {
   private const Logger log
     = Logger.getLogger(ZipModule.class.getName());
-  private const L10N L = new L10N(ZipModule.class);
+  private readonly L10N L = new L10N(ZipModule.class);
 
   public string []getLoadedExtensions()
   {

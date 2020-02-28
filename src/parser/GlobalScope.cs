@@ -45,7 +45,7 @@ namespace QuercusDotNet.Parser{
  * Parse scope.
  */
 public class GlobalScope : Scope {
-  private const L10N L = new L10N(GlobalScope.class);
+  private readonly L10N L = new L10N(GlobalScope.class);
 
   private ExprFactory _exprFactory;
 

@@ -55,7 +55,7 @@ public class RegexpModule
   private const Logger log =
     Logger.getLogger(RegexpModule.class.getName());
 
-  private const L10N L = new L10N(RegexpModule.class);
+  private readonly L10N L = new L10N(RegexpModule.class);
 
   public const int PREG_REPLACE_EVAL = 0x01;
   public const int PCRE_UTF8 = 0x02;

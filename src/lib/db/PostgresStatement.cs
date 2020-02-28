@@ -52,7 +52,7 @@ namespace QuercusDotNet.lib.db {
 public class PostgresStatement : JdbcPreparedStatementResource {
   private const Logger log = Logger.getLogger(
       PostgresStatement.class.getName());
-  private const L10N L = new L10N(PostgresStatement.class);
+  private readonly L10N L = new L10N(PostgresStatement.class);
 
   // Map JDBC ?,?,? to any unsorted or duplicated params.
   // Ex: INSERT INTO test VALUES($2, $1) is mapped as [0]->2, [1]->1

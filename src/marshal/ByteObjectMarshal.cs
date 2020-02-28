@@ -37,7 +37,7 @@ namespace QuercusDotNet.Marshal{
 
 public class ByteObjectMarshal : Marshal
 {
-  public const Marshal MARSHAL = new ByteObjectMarshal();
+  public readonly Marshal MARSHAL = new ByteObjectMarshal();
 
   public Object marshal(Env env, Expr expr, Class expectedClass)
   {

@@ -55,11 +55,11 @@ namespace QuercusDotNet.lib{
  * PHP error handling.
  */
 public class ErrorModule : AbstractQuercusModule {
-  private const L10N L = new L10N(ErrorModule.class);
+  private readonly L10N L = new L10N(ErrorModule.class);
   private const Logger log
     = Logger.getLogger(ErrorModule.class.getName());
 
-  private const IniDefinitions _iniDefinitions = new IniDefinitions();
+  private readonly IniDefinitions _iniDefinitions = new IniDefinitions();
 
   public const int E_ERROR = Env.E_ERROR;
   public const int E_WARNING = Env.E_WARNING;

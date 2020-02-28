@@ -50,7 +50,7 @@ namespace QuercusDotNet.lib.db {
 public class PostgresResult : JdbcResultResource {
   private const Logger log
     = Logger.getLogger(PostgresResult.class.getName());
-  private const L10N L = new L10N(PostgresResult.class);
+  private readonly L10N L = new L10N(PostgresResult.class);
 
   // See PostgresModule.pg_fetch_array()
   private boolean _passedNullRow = false;

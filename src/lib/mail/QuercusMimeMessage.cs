@@ -45,7 +45,7 @@ public class QuercusMimeMessage : MimeMessage {
   private const Logger log =
     Logger.getLogger(QuercusMimeMessage.class.getName());
 
-  private const L10N L = new L10N(QuercusMimeMessage.class);
+  private readonly L10N L = new L10N(QuercusMimeMessage.class);
 
   private string _messageId;
 

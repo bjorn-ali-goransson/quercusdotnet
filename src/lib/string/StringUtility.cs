@@ -46,7 +46,7 @@ namespace QuercusDotNet.lib.string {
 
 public class StringUtility
 {
-  private const L10N L = new L10N(StringModule.class);
+  private readonly L10N L = new L10N(StringModule.class);
 
   public static Value parseStr(Env env,
                                CharSequence str,

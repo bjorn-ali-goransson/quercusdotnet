@@ -70,7 +70,7 @@ namespace QuercusDotNet.lib{
 public class VariableModule : AbstractQuercusModule {
   private const Logger log
     = Logger.getLogger(VariableModule.class.getName());
-  private const L10N L = new L10N(VariableModule.class);
+  private readonly L10N L = new L10N(VariableModule.class);
 
   private static final
     LruCache<UnserializeKey,UnserializeCacheEntry> _unserializeCache

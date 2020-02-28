@@ -40,7 +40,7 @@ namespace QuercusDotNet.lib.db {
 
 public class PDOError
 {
-  private const L10N L = new L10N(PDOError.class);
+  private readonly L10N L = new L10N(PDOError.class);
   private const Logger log = Logger.getLogger(PDOError.class.getName());
 
   private const string ERR_NONE = PDO.ERR_NONE;

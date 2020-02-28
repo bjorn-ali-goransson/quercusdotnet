@@ -52,9 +52,9 @@ public class ApcModule : AbstractQuercusModule
 {
   private const Logger log
     = Logger.getLogger(ApcModule.class.getName());
-  private const L10N L = new L10N(ApcModule.class);
+  private readonly L10N L = new L10N(ApcModule.class);
 
-  private const IniDefinitions _iniDefinitions = new IniDefinitions();
+  private readonly IniDefinitions _iniDefinitions = new IniDefinitions();
 
   private const int _defaultSize = 4096;
 

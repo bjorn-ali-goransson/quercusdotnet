@@ -40,7 +40,7 @@ namespace QuercusDotNet.Statement{
  * Represents a function definition
  */
 public class FunctionDefStatement : Statement {
-  private const L10N L = new L10N(FunctionDefStatement.class);
+  private readonly L10N L = new L10N(FunctionDefStatement.class);
 
   protected Function _fun;
 

@@ -48,7 +48,7 @@ namespace QuercusDotNet.lib.db {
  */
 public class MysqliModule : AbstractQuercusModule {
   private const Logger log = Log.open(MysqliModule.class);
-  private const L10N L = new L10N(MysqliModule.class);
+  private readonly L10N L = new L10N(MysqliModule.class);
 
   public const int MYSQLI_ASSOC = JdbcResultResource.FETCH_ASSOC;
   public const int MYSQLI_NUM = JdbcResultResource.FETCH_NUM;

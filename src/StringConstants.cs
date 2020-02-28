@@ -35,13 +35,13 @@ namespace QuercusDotNet {
 
 public class StringConstants
 {
-  public const StringValue __CONSTRUCT = new ConstStringValue("__construct");
-  public const StringValue __INVOKE = new ConstStringValue("__invoke");
-  public const StringValue __GET = new ConstStringValue("__get");
-  public const StringValue __SET = new ConstStringValue("__set");
-  public const StringValue __CALL = new ConstStringValue("__call");
-  public const StringValue __CALL_STATIC = new ConstStringValue("__callStatic");
-  public const StringValue __TOSTRING = new ConstStringValue("__toString");
+  public readonly StringValue __CONSTRUCT = new ConstStringValue("__construct");
+  public readonly StringValue __INVOKE = new ConstStringValue("__invoke");
+  public readonly StringValue __GET = new ConstStringValue("__get");
+  public readonly StringValue __SET = new ConstStringValue("__set");
+  public readonly StringValue __CALL = new ConstStringValue("__call");
+  public readonly StringValue __CALL_STATIC = new ConstStringValue("__callStatic");
+  public readonly StringValue __TOSTRING = new ConstStringValue("__toString");
 
 
 }

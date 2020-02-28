@@ -53,7 +53,7 @@ namespace QuercusDotNet.Env{
  */
 public class Post
 {
-  private const L10N L = new L10N(Post.class);
+  private readonly L10N L = new L10N(Post.class);
 
   static void fillPost(Env env,
                        ArrayValue postArray,

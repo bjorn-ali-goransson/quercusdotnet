@@ -45,7 +45,7 @@ namespace QuercusDotNet.lib.zip {
  */
 public class ZipEntryInputStream : ReadStreamInput
 {
-  private const L10N L = new L10N(ZipEntryInputStream.class);
+  private readonly L10N L = new L10N(ZipEntryInputStream.class);
 
   private final BinaryInput _in;
   private final long _position;

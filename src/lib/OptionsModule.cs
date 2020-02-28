@@ -59,7 +59,7 @@ namespace QuercusDotNet.lib{
  * PHP options
  */
 public class OptionsModule : AbstractQuercusModule {
-  private const L10N L = new L10N(OptionsModule.class);
+  private readonly L10N L = new L10N(OptionsModule.class);
   private const Logger log
     = Logger.getLogger(OptionsModule.class.getName());
 
@@ -94,7 +94,7 @@ public class OptionsModule : AbstractQuercusModule {
   public const int INFO_LICENSE = 64;
   public const int INFO_ALL = -1;
 
-  private const IniDefinitions _iniDefinitions = new IniDefinitions();
+  private readonly IniDefinitions _iniDefinitions = new IniDefinitions();
 
   /**
    * Returns the default php.ini values.

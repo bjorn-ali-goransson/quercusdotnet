@@ -84,7 +84,7 @@ namespace QuercusDotNet.lib.image {
 public class ImageModule : AbstractQuercusModule {
   private const Logger log
     = Logger.getLogger(ImageModule.class.getName());
-  private const L10N L = new L10N(ImageModule.class);
+  private readonly L10N L = new L10N(ImageModule.class);
 
   public const long IMG_GIF = 0x1;
   public const long IMG_JPG = 0x2;

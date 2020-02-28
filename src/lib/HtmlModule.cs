@@ -64,7 +64,7 @@ public class HtmlModule : AbstractQuercusModule {
   private const Logger log
   = Logger.getLogger(HtmlModule.class.getName());
 
-  private const L10N L = new L10N(HtmlModule.class);
+  private readonly L10N L = new L10N(HtmlModule.class);
 
   public const int HTML_SPECIALCHARS = 0;
   public const int HTML_ENTITIES = 1;

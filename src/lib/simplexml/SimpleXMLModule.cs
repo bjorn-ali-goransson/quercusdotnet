@@ -55,7 +55,7 @@ public class SimpleXMLModule
 {
   private const Logger log
     = Logger.getLogger(SimpleXMLModule.class.getName());
-  private const L10N L = new L10N(SimpleXMLModule.class);
+  private readonly L10N L = new L10N(SimpleXMLModule.class);
 
   public string []getLoadedExtensions()
   {

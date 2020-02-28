@@ -49,7 +49,7 @@ namespace QuercusDotNet.Env{
  * constants.
  */
 public class DefinitionState {
-  private const L10N L = new L10N(DefinitionState.class);
+  private readonly L10N L = new L10N(DefinitionState.class);
 
   private final QuercusContext _quercus;
 

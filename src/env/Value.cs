@@ -61,7 +61,7 @@ namespace QuercusDotNet.Env{
 @SuppressWarnings("serial")
 abstract public class Value implements java.io.Serializable
 {
-  protected const L10N L = new L10N(Value.class);
+  protected readonly L10N L = new L10N(Value.class);
 
   private const Value []NULL_ARG_VALUES = new Value[0];
 

@@ -37,7 +37,7 @@ namespace QuercusDotNet.Marshal{
 
 public class IntegerObjectMarshal : Marshal
 {
-  public const Marshal MARSHAL = new IntegerObjectMarshal();
+  public readonly Marshal MARSHAL = new IntegerObjectMarshal();
   
   public boolean isReadOnly()
   {

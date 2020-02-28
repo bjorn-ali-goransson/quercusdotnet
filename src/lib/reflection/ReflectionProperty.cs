@@ -44,7 +44,7 @@ namespace QuercusDotNet.lib.reflection {
 public class ReflectionProperty
   implements Reflector
 {
-  private const L10N L = new L10N(ReflectionProperty.class);
+  private readonly L10N L = new L10N(ReflectionProperty.class);
 
   public const int IS_STATIC = 1;
   public const int IS_PUBLIC = 256;

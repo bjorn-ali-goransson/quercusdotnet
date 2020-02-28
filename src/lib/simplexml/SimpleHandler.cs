@@ -55,7 +55,7 @@ public class SimpleHandler : DefaultHandler2
 {
   private const Logger log
     = Logger.getLogger(SimpleHandler.class.getName());
-  private const L10N L = new L10N(SimpleHandler.class);
+  private readonly L10N L = new L10N(SimpleHandler.class);
 
   private HashMap<String,String> _entityMap = new HashMap<String,String>();
 

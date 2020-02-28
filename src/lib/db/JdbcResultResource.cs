@@ -62,7 +62,7 @@ public class JdbcResultResource
 {
   private const Logger log
     = Logger.getLogger(JdbcResultResource.class.getName());
-  private const L10N L = new L10N(JdbcResultResource.class);
+  private readonly L10N L = new L10N(JdbcResultResource.class);
 
   public const int FETCH_ASSOC = 0x1;
   public const int FETCH_NUM = 0x2;

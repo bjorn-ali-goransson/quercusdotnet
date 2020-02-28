@@ -37,7 +37,7 @@ namespace QuercusDotNet.Marshal{
 
 public class DoubleMarshal : Marshal
 {
-  public const DoubleMarshal MARSHAL = new DoubleMarshal();
+  public readonly DoubleMarshal MARSHAL = new DoubleMarshal();
 
   public boolean isDouble()
   {

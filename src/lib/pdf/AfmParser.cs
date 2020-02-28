@@ -45,7 +45,7 @@ namespace QuercusDotNet.lib.pdf {
  * parses afm
  */
 public class AfmParser {
-  private const L10N L = new L10N(AfmParser.class);
+  private readonly L10N L = new L10N(AfmParser.class);
   
   private const string END_OF_FILE = "end of file";
 

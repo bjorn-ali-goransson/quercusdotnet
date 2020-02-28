@@ -44,7 +44,7 @@ namespace QuercusDotNet.lib.pdf {
 public class PDFPage {
   private const Logger log
     = Logger.getLogger(PDFStream.class.getName());
-  private const L10N L = new L10N(PDFStream.class);
+  private readonly L10N L = new L10N(PDFStream.class);
 
   private int _parent;
   private int _id;

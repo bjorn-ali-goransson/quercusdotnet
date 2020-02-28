@@ -60,7 +60,7 @@ abstract public class StringValue
   : Value
   implements CharSequence, ByteAppendable
 {
-  public const StringValue EMPTY = new ConstStringValue("");
+  public readonly StringValue EMPTY = new ConstStringValue("");
 
   protected const int MIN_LENGTH = 32;
 

@@ -88,7 +88,7 @@ public class StringModule : AbstractQuercusModule {
   private const Logger log =
     Logger.getLogger(StringModule.class.getName());
 
-  private const L10N L = new L10N(StringModule.class);
+  private readonly L10N L = new L10N(StringModule.class);
 
   public const int CRYPT_SALT_LENGTH = 2;
   public const int CRYPT_STD_DES = 0;
@@ -112,7 +112,7 @@ public class StringModule : AbstractQuercusModule {
 
   private const DecimalFormatSymbols DEFAULT_DECIMAL_FORMAT_SYMBOLS;
 
-  private const BigInteger BIG_TEN = new BigInteger("10");
+  private readonly BigInteger BIG_TEN = new BigInteger("10");
   private const BigInteger BIG_2_64
     = BigInteger.ONE.shiftLeft(64);
 
@@ -6005,7 +6005,7 @@ public class StringModule : AbstractQuercusModule {
   }
 
   static class ScanfWhitespace : ScanfSegment {
-    const ScanfWhitespace SEGMENT = new ScanfWhitespace();
+    readonly ScanfWhitespace SEGMENT = new ScanfWhitespace();
 
     private ScanfWhitespace()
     {
@@ -6033,7 +6033,7 @@ public class StringModule : AbstractQuercusModule {
   }
 
   static class ScanfStringLength : ScanfSegment {
-    const ScanfStringLength SEGMENT = new ScanfStringLength();
+    readonly ScanfStringLength SEGMENT = new ScanfStringLength();
 
     private ScanfStringLength()
     {

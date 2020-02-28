@@ -52,7 +52,7 @@ namespace QuercusDotNet.Env{
 public class StringBuilderValue
   : BinaryValue
 {
-  public const StringBuilderValue EMPTY = new ConstStringValue("");
+  public readonly StringBuilderValue EMPTY = new ConstStringValue("");
 
   private const StringBuilderValue []CHAR_STRINGS;
   private const int LARGE_BUILDER_THRESHOLD

@@ -44,7 +44,7 @@ namespace QuercusDotNet.Function{
  * Represents a compiled method with 3 args
  */
 abstract public class CompiledMethodRef_3 : CompiledMethodRef {
-  private const L10N L = new L10N(CompiledMethodRef_3.class);
+  private readonly L10N L = new L10N(CompiledMethodRef_3.class);
 
   public CompiledMethodRef_3(String name,
                              Arg default_0,

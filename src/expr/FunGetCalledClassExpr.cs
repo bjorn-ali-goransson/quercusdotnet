@@ -40,7 +40,7 @@ namespace QuercusDotNet.Expr{
  * Represents returns the current called class.
  */
 public class FunGetCalledClassExpr : Expr {
-  private const L10N L = new L10N(FunGetCalledClassExpr.class);
+  private readonly L10N L = new L10N(FunGetCalledClassExpr.class);
 
   public FunGetCalledClassExpr(Location location)
   {

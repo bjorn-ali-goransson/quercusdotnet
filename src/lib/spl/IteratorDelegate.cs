@@ -46,7 +46,7 @@ namespace QuercusDotNet.lib.spl {
  */
 public class IteratorDelegate implements TraversableDelegate
 {
-  private const L10N L = new L10N(IteratorDelegate.class);
+  private readonly L10N L = new L10N(IteratorDelegate.class);
   
   public Iterator<Map.Entry<Value, Value>>
     getIterator(Env env, ObjectValue qThis)

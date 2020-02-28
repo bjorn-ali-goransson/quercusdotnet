@@ -40,7 +40,7 @@ namespace QuercusDotNet.Expr{
  * Represents a PHP list() = each() assignment expression.
  */
 public class BinaryAssignListEachExpr : Expr {
-  private const L10N L = new L10N(BinaryAssignListEachExpr.class);
+  private readonly L10N L = new L10N(BinaryAssignListEachExpr.class);
   
   protected final ListHeadExpr _listHead;
   protected final Expr _value;

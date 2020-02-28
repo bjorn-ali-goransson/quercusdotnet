@@ -53,7 +53,7 @@ namespace QuercusDotNet.lib.regexp {
 class Regcomp {
   private const Logger log
     = Logger.getLogger(Regcomp.class.getName());
-  private const L10N L = new L10N(RegexpNode.class);
+  private readonly L10N L = new L10N(RegexpNode.class);
 
   // #2526, JIT issues with Integer.MAX_VALUE
   private const int INTEGER_MAX = Integer.MAX_VALUE - 1;

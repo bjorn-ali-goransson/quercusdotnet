@@ -44,7 +44,7 @@ namespace QuercusDotNet.Expr{
  * Represents a PHP A::A consturctor call
  */
 public class ClassConstructorExpr : Expr {
-  private const L10N L = new L10N(ClassConstructorExpr.class);
+  private readonly L10N L = new L10N(ClassConstructorExpr.class);
 
   protected final string _className;
   protected final StringValue _nameV;

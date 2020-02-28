@@ -39,7 +39,7 @@ namespace QuercusDotNet.Env{
  */
 abstract public class AbstractJavaMethod : AbstractFunction
 {
-  private const L10N L = new L10N(AbstractJavaMethod.class);
+  private readonly L10N L = new L10N(AbstractJavaMethod.class);
 
   /**
    * Returns the minimally required number of arguments.

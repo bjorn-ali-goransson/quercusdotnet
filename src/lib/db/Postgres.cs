@@ -53,7 +53,7 @@ namespace QuercusDotNet.lib.db {
 public class Postgres : JdbcConnectionResource
 {
   private const Logger log = Logger.getLogger(Postgres.class.getName());
-  private const L10N L = new L10N(Postgres.class);
+  private readonly L10N L = new L10N(Postgres.class);
 
   PostgresResult _asyncResult;
   PostgresStatement _asyncStmt;

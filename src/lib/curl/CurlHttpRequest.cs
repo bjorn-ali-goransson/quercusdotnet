@@ -63,7 +63,7 @@ public class CurlHttpRequest
 {
   private const Logger log
     = Logger.getLogger(CurlHttpRequest.class.getName());
-  private const L10N L = new L10N(CurlHttpRequest.class);
+  private readonly L10N L = new L10N(CurlHttpRequest.class);
 
   private CurlResource _curl;
   private CurlHttpConnection _conn;

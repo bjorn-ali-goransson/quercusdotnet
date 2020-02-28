@@ -67,7 +67,7 @@ public class QuercusScriptEngine
   : AbstractScriptEngine
   implements Compilable
 {
-  private const L10N L = new L10N(QuercusScriptEngine.class);
+  private readonly L10N L = new L10N(QuercusScriptEngine.class);
   private const Logger log
     = Logger.getLogger(QuercusScriptEngine.class.getName());
 

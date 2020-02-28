@@ -46,7 +46,7 @@ public class BreakStatement : Statement {
   protected final Expr _target;
   protected final ArrayList<String> _loopLabelList;
   
-  //public const BreakStatement BREAK = new BreakStatement();
+  //public readonly BreakStatement BREAK = new BreakStatement();
   
   public BreakStatement(Location location,
                         Expr target,

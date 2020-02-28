@@ -51,7 +51,7 @@ namespace QuercusDotNet.lib.pdf {
 public class PDFImage : PDFObject {
   private const Logger log
     = Logger.getLogger(PDFImage.class.getName());
-  private const L10N L = new L10N(PDFImage.class);
+  private readonly L10N L = new L10N(PDFImage.class);
 
   private Path _path;
   private ReadStream _is;

@@ -45,7 +45,7 @@ namespace QuercusDotNet.Function{
 abstract public class CompiledFunctionRef_N : CompiledFunctionRef {
   private const Logger log
     = Logger.getLogger(CompiledFunctionRef_N.class.getName());
-  private const L10N L = new L10N(CompiledFunctionRef_N.class);
+  private readonly L10N L = new L10N(CompiledFunctionRef_N.class);
 
   private final int _requiredArgs;
 

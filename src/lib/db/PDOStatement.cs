@@ -61,7 +61,7 @@ namespace QuercusDotNet.lib.db {
 public class PDOStatement
   implements Iterable<Value>, EnvCleanup
 {
-  private const L10N L = new L10N(PDOStatement.class);
+  private readonly L10N L = new L10N(PDOStatement.class);
 
   private const Value[] NULL_VALUES = new Value[0];
 

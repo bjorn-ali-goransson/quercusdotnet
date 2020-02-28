@@ -43,7 +43,7 @@ namespace QuercusDotNet.lib{
  */
 public class Array2Module : AbstractQuercusModule
 {
-  private const L10N L = new L10N(ArrayModule.class);
+  private readonly L10N L = new L10N(ArrayModule.class);
 
   public static Value array_lookup(Env env,
                                    Value obj, Value key,

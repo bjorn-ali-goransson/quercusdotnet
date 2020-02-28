@@ -70,7 +70,7 @@ namespace QuercusDotNet.lib{
 public class ArrayModule
   : AbstractQuercusModule
 {
-  private const L10N L = new L10N(ArrayModule.class);
+  private readonly L10N L = new L10N(ArrayModule.class);
 
   private const Logger log =
     Logger.getLogger(ArrayModule.class.getName());

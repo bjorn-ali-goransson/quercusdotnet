@@ -38,7 +38,7 @@ namespace QuercusDotNet.Env{
 public class UnsetValue : NullValue
   implements Serializable
 {
-  public const UnsetValue UNSET = new UnsetValue();
+  public readonly UnsetValue UNSET = new UnsetValue();
 
   private UnsetValue()
   {

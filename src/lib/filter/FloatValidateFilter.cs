@@ -41,7 +41,7 @@ public class FloatValidateFilter
   : AbstractFilter
   implements ValidateFilter
 {
-  private const L10N L = new L10N(FloatValidateFilter.class);
+  private readonly L10N L = new L10N(FloatValidateFilter.class);
 
   @Override
   protected Value filterImpl(Env env, Value value,

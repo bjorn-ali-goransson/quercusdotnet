@@ -60,7 +60,7 @@ namespace QuercusDotNet.lib.db {
 public class OracleOciLob {
   private const Logger log = Logger.getLogger(
       OracleOciLob.class.getName());
-  private const L10N L = new L10N(OracleOciLob.class);
+  private readonly L10N L = new L10N(OracleOciLob.class);
 
   // The large object
   private Object _lob;

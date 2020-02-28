@@ -54,7 +54,7 @@ namespace QuercusDotNet.lib.db {
 public class MysqliStatement : JdbcPreparedStatementResource {
   private const Logger log = Logger
     .getLogger(MysqliStatement.class.getName());
-  private const L10N L = new L10N(MysqliStatement.class);
+  private readonly L10N L = new L10N(MysqliStatement.class);
 
   /**
    * Constructor for MysqliStatement

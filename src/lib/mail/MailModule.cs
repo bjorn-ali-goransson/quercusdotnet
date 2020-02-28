@@ -59,7 +59,7 @@ public class MailModule : AbstractQuercusModule {
   private const Logger log =
     Logger.getLogger(MailModule.class.getName());
 
-  private const L10N L = new L10N(MailModule.class);
+  private readonly L10N L = new L10N(MailModule.class);
 
   /**
    * Send mail using JavaMail.

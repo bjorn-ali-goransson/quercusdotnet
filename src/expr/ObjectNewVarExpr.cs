@@ -44,7 +44,7 @@ namespace QuercusDotNet.Expr{
  * Represents a PHP function expression of the form "new $a()".
  */
 public class ObjectNewVarExpr : Expr {
-  private const L10N L = new L10N(ObjectNewExpr.class);
+  private readonly L10N L = new L10N(ObjectNewExpr.class);
   
   protected final Expr _name;
   protected final Expr []_args;

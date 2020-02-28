@@ -11,7 +11,7 @@ namespace QuercusDotNet.lib.spl {
 
 
 public abstract class AbstractIteratorImpl<T> implements Iterator<T> {
-    private const L10N L = new L10N(AbstractIteratorImpl.class);
+    private readonly L10N L = new L10N(AbstractIteratorImpl.class);
 
     protected final Env _env;
     protected final ObjectValue _obj;

@@ -49,7 +49,7 @@ namespace QuercusDotNet.lib.reflection {
 public class ReflectionExtension
   implements Reflector
 {
-  private const L10N L = new L10N(ReflectionExtension.class);
+  private readonly L10N L = new L10N(ReflectionExtension.class);
 
   private string _name;
 

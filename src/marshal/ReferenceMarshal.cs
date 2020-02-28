@@ -36,7 +36,7 @@ namespace QuercusDotNet.Marshal{
 
 public class ReferenceMarshal : Marshal
 {
-  public const Marshal MARSHAL = new ReferenceMarshal();
+  public readonly Marshal MARSHAL = new ReferenceMarshal();
   
   public boolean isReadOnly()
   {

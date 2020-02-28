@@ -59,7 +59,7 @@ namespace QuercusDotNet.lib.db {
  */
 public class PDO implements EnvCleanup {
   private const Logger log = Logger.getLogger(PDO.class.getName());
-  private const L10N L = new L10N(PDO.class);
+  private readonly L10N L = new L10N(PDO.class);
 
   public const int ATTR_AUTOCOMMIT = 0;
   public const int ATTR_PREFETCH = 1;

@@ -47,7 +47,7 @@ namespace QuercusDotNet.lib.db {
  */
 public class Oracle : JdbcConnectionResource {
   private const Logger log = Logger.getLogger(Oracle.class.getName());
-  private const L10N L = new L10N(Oracle.class);
+  private readonly L10N L = new L10N(Oracle.class);
 
   public Oracle(Env env,
                 @Optional("localhost") string host,

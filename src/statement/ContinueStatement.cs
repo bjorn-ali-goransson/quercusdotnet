@@ -42,7 +42,7 @@ namespace QuercusDotNet.Statement{
  * Represents a continue expression statement in a PHP program.
  */
 public class ContinueStatement : Statement {
-  //public const ContinueStatement CONTINUE = new ContinueStatement();
+  //public readonly ContinueStatement CONTINUE = new ContinueStatement();
   
   protected final Expr _target;
   protected final ArrayList<String> _loopLabelList;

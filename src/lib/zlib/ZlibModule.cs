@@ -62,7 +62,7 @@ namespace QuercusDotNet.lib.zlib {
 public class ZlibModule : AbstractQuercusModule {
   private const Logger log
     = Logger.getLogger(ZlibModule.class.getName());
-  private const L10N L = new L10N(ZlibModule.class);
+  private readonly L10N L = new L10N(ZlibModule.class);
 
   public const int FORCE_GZIP = 0x1;
   public const int FORCE_DEFLATE = 0x2;

@@ -37,8 +37,8 @@ namespace QuercusDotNet.Marshal{
 
 public class ValueMarshal : Marshal
 {
-  public const Marshal MARSHAL = new ValueMarshal(false);
-  public const Marshal MARSHAL_PASS_THRU = new ValueMarshal(true);
+  public readonly Marshal MARSHAL = new ValueMarshal(false);
+  public readonly Marshal MARSHAL_PASS_THRU = new ValueMarshal(true);
 
   private boolean _isPassThru;
 

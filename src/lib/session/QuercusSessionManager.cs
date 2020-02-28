@@ -61,7 +61,7 @@ namespace QuercusDotNet.lib.session {
 public class QuercusSessionManager
   implements AlarmListener
 {
-  private const L10N L = new L10N(QuercusSessionManager.class);
+  private readonly L10N L = new L10N(QuercusSessionManager.class);
   private const Logger log
     = Logger.getLogger(QuercusSessionManager.class.getName());
 

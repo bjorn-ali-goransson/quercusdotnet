@@ -124,7 +124,7 @@ class RegexpNode {
   public const int FAIL = -1;
   public const int SUCCESS = 0;
 
-  const RegexpNode N_END = new End();
+  readonly RegexpNode N_END = new End();
 
   const RegexpNode ANY_CHAR;
 
@@ -387,15 +387,15 @@ class RegexpNode {
     }
   }
 
-  const AnchorBegin ANCHOR_BEGIN = new AnchorBegin();
+  readonly AnchorBegin ANCHOR_BEGIN = new AnchorBegin();
   const AnchorBeginOrNewline ANCHOR_BEGIN_OR_NEWLINE
     = new AnchorBeginOrNewline();
 
   const AnchorBeginRelative ANCHOR_BEGIN_RELATIVE
    = new AnchorBeginRelative();
 
-  const AnchorEnd ANCHOR_END = new AnchorEnd();
-  const AnchorEndOnly ANCHOR_END_ONLY = new AnchorEndOnly();
+  readonly AnchorEnd ANCHOR_END = new AnchorEnd();
+  readonly AnchorEndOnly ANCHOR_END_ONLY = new AnchorEndOnly();
   const AnchorEndOrNewline ANCHOR_END_OR_NEWLINE
     = new AnchorEndOrNewline();
 
@@ -1109,7 +1109,7 @@ class RegexpNode {
     }
   }
 
-  const EmptyNode EMPTY = new EmptyNode();
+  readonly EmptyNode EMPTY = new EmptyNode();
 
   /**
    * Matches an empty production
@@ -2193,122 +2193,122 @@ class RegexpNode {
     }
   }
 
-  const PropC PROP_C = new PropC();
-  const PropNotC PROP_NOT_C = new PropNotC();
+  readonly PropC PROP_C = new PropC();
+  readonly PropNotC PROP_NOT_C = new PropNotC();
 
-  const Prop PROP_Cc = new Prop(Character.CONTROL);
-  const PropNot PROP_NOT_Cc = new PropNot(Character.CONTROL);
+  readonly Prop PROP_Cc = new Prop(Character.CONTROL);
+  readonly PropNot PROP_NOT_Cc = new PropNot(Character.CONTROL);
 
-  const Prop PROP_Cf = new Prop(Character.FORMAT);
-  const PropNot PROP_NOT_Cf = new PropNot(Character.FORMAT);
+  readonly Prop PROP_Cf = new Prop(Character.FORMAT);
+  readonly PropNot PROP_NOT_Cf = new PropNot(Character.FORMAT);
 
-  const Prop PROP_Cn = new Prop(Character.UNASSIGNED);
-  const PropNot PROP_NOT_Cn = new PropNot(Character.UNASSIGNED);
+  readonly Prop PROP_Cn = new Prop(Character.UNASSIGNED);
+  readonly PropNot PROP_NOT_Cn = new PropNot(Character.UNASSIGNED);
 
-  const Prop PROP_Co = new Prop(Character.PRIVATE_USE);
-  const PropNot PROP_NOT_Co = new PropNot(Character.PRIVATE_USE);
+  readonly Prop PROP_Co = new Prop(Character.PRIVATE_USE);
+  readonly PropNot PROP_NOT_Co = new PropNot(Character.PRIVATE_USE);
 
-  const Prop PROP_Cs = new Prop(Character.SURROGATE);
-  const PropNot PROP_NOT_Cs = new PropNot(Character.SURROGATE);
+  readonly Prop PROP_Cs = new Prop(Character.SURROGATE);
+  readonly PropNot PROP_NOT_Cs = new PropNot(Character.SURROGATE);
 
-  const PropL PROP_L = new PropL();
-  const PropNotL PROP_NOT_L = new PropNotL();
+  readonly PropL PROP_L = new PropL();
+  readonly PropNotL PROP_NOT_L = new PropNotL();
 
-  const Prop PROP_Ll = new Prop(Character.LOWERCASE_LETTER);
-  const PropNot PROP_NOT_Ll = new PropNot(Character.LOWERCASE_LETTER);
+  readonly Prop PROP_Ll = new Prop(Character.LOWERCASE_LETTER);
+  readonly PropNot PROP_NOT_Ll = new PropNot(Character.LOWERCASE_LETTER);
 
-  const Prop PROP_Lm = new Prop(Character.MODIFIER_LETTER);
-  const PropNot PROP_NOT_Lm = new PropNot(Character.MODIFIER_LETTER);
+  readonly Prop PROP_Lm = new Prop(Character.MODIFIER_LETTER);
+  readonly PropNot PROP_NOT_Lm = new PropNot(Character.MODIFIER_LETTER);
 
-  const Prop PROP_Lo = new Prop(Character.OTHER_LETTER);
-  const PropNot PROP_NOT_Lo = new PropNot(Character.OTHER_LETTER);
+  readonly Prop PROP_Lo = new Prop(Character.OTHER_LETTER);
+  readonly PropNot PROP_NOT_Lo = new PropNot(Character.OTHER_LETTER);
 
-  const Prop PROP_Lt = new Prop(Character.TITLECASE_LETTER);
-  const PropNot PROP_NOT_Lt = new PropNot(Character.TITLECASE_LETTER);
+  readonly Prop PROP_Lt = new Prop(Character.TITLECASE_LETTER);
+  readonly PropNot PROP_NOT_Lt = new PropNot(Character.TITLECASE_LETTER);
 
-  const Prop PROP_Lu = new Prop(Character.UPPERCASE_LETTER);
-  const PropNot PROP_NOT_Lu = new PropNot(Character.UPPERCASE_LETTER);
+  readonly Prop PROP_Lu = new Prop(Character.UPPERCASE_LETTER);
+  readonly PropNot PROP_NOT_Lu = new PropNot(Character.UPPERCASE_LETTER);
 
-  const PropM PROP_M = new PropM();
-  const PropNotM PROP_NOT_M = new PropNotM();
+  readonly PropM PROP_M = new PropM();
+  readonly PropNotM PROP_NOT_M = new PropNotM();
 
-  const Prop PROP_Mc = new Prop(Character.COMBINING_SPACING_MARK);
+  readonly Prop PROP_Mc = new Prop(Character.COMBINING_SPACING_MARK);
   const PropNot PROP_NOT_Mc
     = new PropNot(Character.COMBINING_SPACING_MARK);
 
-  const Prop PROP_Me = new Prop(Character.ENCLOSING_MARK);
-  const PropNot PROP_NOT_Me = new PropNot(Character.ENCLOSING_MARK);
+  readonly Prop PROP_Me = new Prop(Character.ENCLOSING_MARK);
+  readonly PropNot PROP_NOT_Me = new PropNot(Character.ENCLOSING_MARK);
 
-  const Prop PROP_Mn = new Prop(Character.NON_SPACING_MARK);
-  const PropNot PROP_NOT_Mn = new PropNot(Character.NON_SPACING_MARK);
+  readonly Prop PROP_Mn = new Prop(Character.NON_SPACING_MARK);
+  readonly PropNot PROP_NOT_Mn = new PropNot(Character.NON_SPACING_MARK);
 
-  const PropN PROP_N = new PropN();
-  const PropNotN PROP_NOT_N = new PropNotN();
+  readonly PropN PROP_N = new PropN();
+  readonly PropNotN PROP_NOT_N = new PropNotN();
 
-  const Prop PROP_Nd = new Prop(Character.DECIMAL_DIGIT_NUMBER);
+  readonly Prop PROP_Nd = new Prop(Character.DECIMAL_DIGIT_NUMBER);
   const PropNot PROP_NOT_Nd
     = new PropNot(Character.DECIMAL_DIGIT_NUMBER);
 
-  const Prop PROP_Nl = new Prop(Character.LETTER_NUMBER);
-  const PropNot PROP_NOT_Nl = new PropNot(Character.LETTER_NUMBER);
+  readonly Prop PROP_Nl = new Prop(Character.LETTER_NUMBER);
+  readonly PropNot PROP_NOT_Nl = new PropNot(Character.LETTER_NUMBER);
 
-  const Prop PROP_No = new Prop(Character.OTHER_NUMBER);
-  const PropNot PROP_NOT_No = new PropNot(Character.OTHER_NUMBER);
+  readonly Prop PROP_No = new Prop(Character.OTHER_NUMBER);
+  readonly PropNot PROP_NOT_No = new PropNot(Character.OTHER_NUMBER);
 
-  const PropP PROP_P = new PropP();
-  const PropNotP PROP_NOT_P = new PropNotP();
+  readonly PropP PROP_P = new PropP();
+  readonly PropNotP PROP_NOT_P = new PropNotP();
 
-  const Prop PROP_Pc = new Prop(Character.CONNECTOR_PUNCTUATION);
+  readonly Prop PROP_Pc = new Prop(Character.CONNECTOR_PUNCTUATION);
   const PropNot PROP_NOT_Pc
     = new PropNot(Character.CONNECTOR_PUNCTUATION);
 
-  const Prop PROP_Pd = new Prop(Character.DASH_PUNCTUATION);
-  const PropNot PROP_NOT_Pd = new PropNot(Character.DASH_PUNCTUATION);
+  readonly Prop PROP_Pd = new Prop(Character.DASH_PUNCTUATION);
+  readonly PropNot PROP_NOT_Pd = new PropNot(Character.DASH_PUNCTUATION);
 
-  const Prop PROP_Pe = new Prop(Character.END_PUNCTUATION);
-  const PropNot PROP_NOT_Pe = new PropNot(Character.END_PUNCTUATION);
+  readonly Prop PROP_Pe = new Prop(Character.END_PUNCTUATION);
+  readonly PropNot PROP_NOT_Pe = new PropNot(Character.END_PUNCTUATION);
 
-  const Prop PROP_Pf = new Prop(Character.FINAL_QUOTE_PUNCTUATION);
+  readonly Prop PROP_Pf = new Prop(Character.FINAL_QUOTE_PUNCTUATION);
   const PropNot PROP_NOT_Pf
     = new PropNot(Character.FINAL_QUOTE_PUNCTUATION);
 
-  const Prop PROP_Pi = new Prop(Character.INITIAL_QUOTE_PUNCTUATION);
+  readonly Prop PROP_Pi = new Prop(Character.INITIAL_QUOTE_PUNCTUATION);
   const PropNot PROP_NOT_Pi
     = new PropNot(Character.INITIAL_QUOTE_PUNCTUATION);
 
-  const Prop PROP_Po = new Prop(Character.OTHER_PUNCTUATION);
-  const PropNot PROP_NOT_Po = new PropNot(Character.OTHER_PUNCTUATION);
+  readonly Prop PROP_Po = new Prop(Character.OTHER_PUNCTUATION);
+  readonly PropNot PROP_NOT_Po = new PropNot(Character.OTHER_PUNCTUATION);
 
-  const Prop PROP_Ps = new Prop(Character.START_PUNCTUATION);
-  const PropNot PROP_NOT_Ps = new PropNot(Character.START_PUNCTUATION);
+  readonly Prop PROP_Ps = new Prop(Character.START_PUNCTUATION);
+  readonly PropNot PROP_NOT_Ps = new PropNot(Character.START_PUNCTUATION);
 
-  const PropS PROP_S = new PropS();
-  const PropNotS PROP_NOT_S = new PropNotS();
+  readonly PropS PROP_S = new PropS();
+  readonly PropNotS PROP_NOT_S = new PropNotS();
 
-  const Prop PROP_Sc = new Prop(Character.CURRENCY_SYMBOL);
-  const PropNot PROP_NOT_Sc = new PropNot(Character.CURRENCY_SYMBOL);
+  readonly Prop PROP_Sc = new Prop(Character.CURRENCY_SYMBOL);
+  readonly PropNot PROP_NOT_Sc = new PropNot(Character.CURRENCY_SYMBOL);
 
-  const Prop PROP_Sk = new Prop(Character.MODIFIER_SYMBOL);
-  const PropNot PROP_NOT_Sk = new PropNot(Character.MODIFIER_SYMBOL);
+  readonly Prop PROP_Sk = new Prop(Character.MODIFIER_SYMBOL);
+  readonly PropNot PROP_NOT_Sk = new PropNot(Character.MODIFIER_SYMBOL);
 
-  const Prop PROP_Sm = new Prop(Character.MATH_SYMBOL);
-  const PropNot PROP_NOT_Sm = new PropNot(Character.MATH_SYMBOL);
+  readonly Prop PROP_Sm = new Prop(Character.MATH_SYMBOL);
+  readonly PropNot PROP_NOT_Sm = new PropNot(Character.MATH_SYMBOL);
 
-  const Prop PROP_So = new Prop(Character.OTHER_SYMBOL);
-  const PropNot PROP_NOT_So = new PropNot(Character.OTHER_SYMBOL);
+  readonly Prop PROP_So = new Prop(Character.OTHER_SYMBOL);
+  readonly PropNot PROP_NOT_So = new PropNot(Character.OTHER_SYMBOL);
 
-  const PropZ PROP_Z = new PropZ();
-  const PropNotZ PROP_NOT_Z = new PropNotZ();
+  readonly PropZ PROP_Z = new PropZ();
+  readonly PropNotZ PROP_NOT_Z = new PropNotZ();
 
-  const Prop PROP_Zl = new Prop(Character.LINE_SEPARATOR);
-  const PropNot PROP_NOT_Zl = new PropNot(Character.LINE_SEPARATOR);
+  readonly Prop PROP_Zl = new Prop(Character.LINE_SEPARATOR);
+  readonly PropNot PROP_NOT_Zl = new PropNot(Character.LINE_SEPARATOR);
 
-  const Prop PROP_Zp = new Prop(Character.PARAGRAPH_SEPARATOR);
+  readonly Prop PROP_Zp = new Prop(Character.PARAGRAPH_SEPARATOR);
   const PropNot PROP_NOT_Zp
     = new PropNot(Character.PARAGRAPH_SEPARATOR);
 
-  const Prop PROP_Zs = new Prop(Character.SPACE_SEPARATOR);
-  const PropNot PROP_NOT_Zs = new PropNot(Character.SPACE_SEPARATOR);
+  readonly Prop PROP_Zs = new Prop(Character.SPACE_SEPARATOR);
+  readonly PropNot PROP_NOT_Zs = new PropNot(Character.SPACE_SEPARATOR);
 
   private static class Prop : AbstractCharNode {
     private final int _category;
@@ -3059,10 +3059,10 @@ class RegexpNode {
     }
   }
 
-  const StringBegin STRING_BEGIN = new StringBegin();
-  const StringEnd STRING_END = new StringEnd();
-  const StringFirst STRING_FIRST = new StringFirst();
-  const StringNewline STRING_NEWLINE = new StringNewline();
+  readonly StringBegin STRING_BEGIN = new StringBegin();
+  readonly StringEnd STRING_END = new StringEnd();
+  readonly StringFirst STRING_FIRST = new StringFirst();
+  readonly StringNewline STRING_NEWLINE = new StringNewline();
 
   private static class StringBegin : RegexpNode {
     int override match(StringValue string, int strlen, int offset, RegexpState state)
@@ -3105,8 +3105,8 @@ class RegexpNode {
     }
   }
 
-  const Word WORD = new Word();
-  const NotWord NOT_WORD = new NotWord();
+  readonly Word WORD = new Word();
+  readonly NotWord NOT_WORD = new NotWord();
 
   private static class Word : RegexpNode {
     int override match(StringValue string, int strlen, int offset, RegexpState state)

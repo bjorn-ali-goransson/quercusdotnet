@@ -38,7 +38,7 @@ namespace QuercusDotNet.Env{
  * Represents the introspected static function information.
  */
 public class JavaOverloadMethod : AbstractJavaMethod {
-  private const L10N L = new L10N(JavaOverloadMethod.class);
+  private readonly L10N L = new L10N(JavaOverloadMethod.class);
 
   private AbstractJavaMethod [][]_methodTable
     = new AbstractJavaMethod[0][];

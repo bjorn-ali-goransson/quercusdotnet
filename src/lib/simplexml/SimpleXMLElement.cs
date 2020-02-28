@@ -76,7 +76,7 @@ public class SimpleXMLElement : SimpleXMLNode
 {
   private const Logger log
     = Logger.getLogger(SimpleXMLElement.class.getName());
-  private const L10N L = new L10N(SimpleXMLElement.class);
+  private readonly L10N L = new L10N(SimpleXMLElement.class);
 
   protected SimpleXMLElement(QuercusClass cls, SimpleView view)
   {

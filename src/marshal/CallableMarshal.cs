@@ -37,8 +37,8 @@ namespace QuercusDotNet.Marshal{
 
 public class CallableMarshal : Marshal
 {
-  public const Marshal MARSHAL = new CallableMarshal(false);
-  public const Marshal MARSHAL_OPTIONAL = new CallableMarshal(true);
+  public readonly Marshal MARSHAL = new CallableMarshal(false);
+  public readonly Marshal MARSHAL_OPTIONAL = new CallableMarshal(true);
 
   protected boolean _isOptional;
 

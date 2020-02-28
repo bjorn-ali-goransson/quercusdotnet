@@ -48,7 +48,7 @@ namespace QuercusDotNet.lib.jms {
  */
 public class JMSQueue
 {
-  private const L10N L = new L10N(JMSQueue.class);
+  private readonly L10N L = new L10N(JMSQueue.class);
   private const Logger log = Logger.getLogger(JMSQueue.class.getName());
 
   private Connection _connection;

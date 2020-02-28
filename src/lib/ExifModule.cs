@@ -52,7 +52,7 @@ namespace QuercusDotNet.lib{
  * PHP exif
  */
 public class ExifModule : AbstractQuercusModule {
-  private const L10N L = new L10N(ExifModule.class);
+  private readonly L10N L = new L10N(ExifModule.class);
 
   /**
    *  Reads the EXIF headers from JPEG or TIFF

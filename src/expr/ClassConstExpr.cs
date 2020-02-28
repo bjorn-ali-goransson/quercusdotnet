@@ -44,7 +44,7 @@ namespace QuercusDotNet.Expr{
  * Represents a PHP parent::FOO constant call expression.
  */
 public class ClassConstExpr : Expr {
-  private const L10N L = new L10N(ClassMethodExpr.class);
+  private readonly L10N L = new L10N(ClassMethodExpr.class);
 
   protected final string _className;
   protected final StringValue _name;

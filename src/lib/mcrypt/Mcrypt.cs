@@ -45,7 +45,7 @@ namespace QuercusDotNet.lib.mcrypt {
  * Encryption class
  */
 public class Mcrypt {
-  private const L10N L = new L10N(Mcrypt.class);
+  private readonly L10N L = new L10N(Mcrypt.class);
 
   private const Logger log =
     Logger.getLogger(Mcrypt.class.getName());

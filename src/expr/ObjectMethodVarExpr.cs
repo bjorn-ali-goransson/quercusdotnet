@@ -42,7 +42,7 @@ namespace QuercusDotNet.Expr{
  * A "$foo->$bar(...)" method call
  */
 public class ObjectMethodVarExpr : Expr {
-  private const L10N L = new L10N(ObjectMethodVarExpr.class);
+  private readonly L10N L = new L10N(ObjectMethodVarExpr.class);
 
   protected final Expr _objExpr;
 

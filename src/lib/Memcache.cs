@@ -44,7 +44,7 @@ namespace QuercusDotNet.lib{
  */
 public class Memcache {
   private const Logger log = Logger.getLogger(Memcache.class.getName());
-  private const L10N L = new L10N(Memcache.class);
+  private readonly L10N L = new L10N(Memcache.class);
 
   private Cache _cache;
 

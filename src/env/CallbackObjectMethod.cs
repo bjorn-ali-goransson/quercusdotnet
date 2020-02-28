@@ -42,7 +42,7 @@ namespace QuercusDotNet.Env{
  * Represents a call to an object's method
  */
 public class CallbackObjectMethod : Callback {
-  private const L10N L = new L10N(CallbackObjectMethod.class);
+  private readonly L10N L = new L10N(CallbackObjectMethod.class);
 
   private final ObjectValue _obj;
 

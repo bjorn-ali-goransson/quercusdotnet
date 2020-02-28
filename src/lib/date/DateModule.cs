@@ -50,7 +50,7 @@ namespace QuercusDotNet.lib.date {
  * Date functions.
  */
 public class DateModule : AbstractQuercusModule {
-  private const L10N L = new L10N(DateModule.class);
+  private readonly L10N L = new L10N(DateModule.class);
   private const Logger log
     = Logger.getLogger(DateModule.class.getName());
 

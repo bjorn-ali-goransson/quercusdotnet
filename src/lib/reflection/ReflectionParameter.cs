@@ -43,7 +43,7 @@ namespace QuercusDotNet.lib.reflection {
 public class ReflectionParameter
   implements Reflector
 {
-  private const L10N L = new L10N(ReflectionParameter.class);
+  private readonly L10N L = new L10N(ReflectionParameter.class);
 
   private string _clsName;
   private Callable _fun;

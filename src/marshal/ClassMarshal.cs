@@ -45,7 +45,7 @@ public class ClassMarshal : Marshal {
   private const Logger log
     = Logger.getLogger(ClassMarshal.class.getName());
 
-  public const ClassMarshal MARSHAL = new ClassMarshal();
+  public readonly ClassMarshal MARSHAL = new ClassMarshal();
 
   public boolean isString()
   {

@@ -42,7 +42,7 @@ namespace QuercusDotNet.Expr{
  * A Foo::__construct(...) method call expression.
  */
 public class ClassConstructExpr : AbstractMethodExpr {
-  private const L10N L = new L10N(ClassConstructExpr.class);
+  private readonly L10N L = new L10N(ClassConstructExpr.class);
 
   protected final string _className;
   protected final Expr []_args;

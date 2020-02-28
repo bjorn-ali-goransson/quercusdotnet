@@ -45,7 +45,7 @@ namespace QuercusDotNet.lib.json {
 
 
 class JsonDecoder {
-  private const L10N L = new L10N(JsonDecoder.class);
+  private readonly L10N L = new L10N(JsonDecoder.class);
   private const Logger log = Logger.getLogger(JsonDecoder.class.getName());
 
   private StringValue _str;

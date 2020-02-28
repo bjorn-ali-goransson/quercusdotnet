@@ -52,7 +52,7 @@ public class PageManager
   private const Logger log
     = Logger.getLogger(PageManager.class.getName());
 
-  protected const L10N L = new L10N(PageManager.class);
+  protected readonly L10N L = new L10N(PageManager.class);
 
   private final QuercusContext _quercus;
 

@@ -45,7 +45,7 @@ namespace QuercusDotNet.lib.zip {
 public class QuercusZipEntry {
   private const Logger log =
     Logger.getLogger(QuercusZipEntry.class.getName());
-  private const L10N L = new L10N(QuercusZipEntry.class);
+  private readonly L10N L = new L10N(QuercusZipEntry.class);
 
   private final ZipEntry _entry;
   private final BinaryInput _binaryInput;

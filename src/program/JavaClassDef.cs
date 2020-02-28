@@ -67,7 +67,7 @@ namespace QuercusDotNet.Program{
 public class JavaClassDef : ClassDef implements InstanceInitializer {
   private const Logger log
     = Logger.getLogger(JavaClassDef.class.getName());
-  private const L10N L = new L10N(JavaClassDef.class);
+  private readonly L10N L = new L10N(JavaClassDef.class);
 
   private final ModuleContext _moduleContext;
 

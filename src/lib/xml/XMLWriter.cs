@@ -52,9 +52,9 @@ namespace QuercusDotNet.lib.xml {
 public class XMLWriter {
   private const Logger log
     = Logger.getLogger(XMLWriter.class.getName());
-  private const L10N L = new L10N(XMLWriter.class);
+  private readonly L10N L = new L10N(XMLWriter.class);
 
-  private const XMLWriterStream NULL_STREAM = new XMLWriterStream();
+  private readonly XMLWriterStream NULL_STREAM = new XMLWriterStream();
 
   private XMLWriterStream _s = NULL_STREAM;
 

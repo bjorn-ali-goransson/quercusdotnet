@@ -39,7 +39,7 @@ public abstract class SimpleXMLNode
   private const Logger log
     = Logger.getLogger(SimpleXMLNode.class.getName());
 
-  private const L10N L = new L10N(SimpleXMLNode.class);
+  private readonly L10N L = new L10N(SimpleXMLNode.class);
 
   protected final QuercusClass _cls;
   protected final SimpleView _view;

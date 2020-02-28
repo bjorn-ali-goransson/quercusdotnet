@@ -45,7 +45,7 @@ namespace QuercusDotNet.Env{
 public class DoubleValue : NumberValue
   implements Serializable
 {
-  public const DoubleValue ZERO = new DoubleValue(0);
+  public readonly DoubleValue ZERO = new DoubleValue(0);
 
   private final double _value;
 

@@ -39,7 +39,7 @@ namespace QuercusDotNet.Marshal{
 
 public class ArrayValueMarshal : Marshal
 {
-  public const Marshal MARSHAL = new ArrayValueMarshal();
+  public readonly Marshal MARSHAL = new ArrayValueMarshal();
   
   public boolean isReference()
   {

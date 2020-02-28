@@ -52,7 +52,7 @@ namespace QuercusDotNet.lib.db {
 public abstract class JdbcConnectionResource
   implements EnvCleanup
 {
-  private const L10N L = new L10N(JdbcConnectionResource.class);
+  private readonly L10N L = new L10N(JdbcConnectionResource.class);
   private const Logger log
     = Logger.getLogger(JdbcConnectionResource.class.getName());
 

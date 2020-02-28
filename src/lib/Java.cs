@@ -40,7 +40,7 @@ namespace QuercusDotNet.lib{
  * Java object facade.
  */
 public class Java {
-  private const L10N L = new L10N(Java.class);
+  private readonly L10N L = new L10N(Java.class);
   
   /**
    * Create a new Java API object.

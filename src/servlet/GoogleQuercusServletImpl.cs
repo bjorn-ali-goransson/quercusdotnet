@@ -48,7 +48,7 @@ namespace QuercusDotNet.servlet{
  */
 public class GoogleQuercusServletImpl : QuercusServletImpl
 {
-  private const L10N L = new L10N(GoogleQuercusServletImpl.class);
+  private readonly L10N L = new L10N(GoogleQuercusServletImpl.class);
   private const Logger log
     = Logger.getLogger(GoogleQuercusServletImpl.class.getName());
 

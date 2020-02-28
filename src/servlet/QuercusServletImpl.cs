@@ -73,7 +73,7 @@ namespace QuercusDotNet.servlet{
 @SuppressWarnings("serial")
 public class QuercusServletImpl : HttpServlet
 {
-  private const L10N L = new L10N(QuercusServletImpl.class);
+  private readonly L10N L = new L10N(QuercusServletImpl.class);
   private const Logger log
     = Logger.getLogger(QuercusServletImpl.class.getName());
 

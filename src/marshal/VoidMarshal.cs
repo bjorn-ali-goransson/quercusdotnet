@@ -37,7 +37,7 @@ namespace QuercusDotNet.Marshal{
 
 public class VoidMarshal : Marshal
 {
-  public const Marshal MARSHAL = new VoidMarshal();
+  public readonly Marshal MARSHAL = new VoidMarshal();
   
   public Object marshal(Env env, Expr expr, Class expectedClass)
   {

@@ -42,7 +42,7 @@ namespace QuercusDotNet.Module{
 
 
 public class IniDefinitions {
-  public const IniDefinitions EMPTY = new IniDefinitions();
+  public readonly IniDefinitions EMPTY = new IniDefinitions();
 
   private HashMap<String, IniDefinition> _defaultMap;
 

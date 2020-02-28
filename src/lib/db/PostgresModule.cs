@@ -65,7 +65,7 @@ namespace QuercusDotNet.lib.db {
 public class PostgresModule : AbstractQuercusModule {
 
   private const Logger log = Log.open(PostgresModule.class);
-  private const L10N L = new L10N(PostgresModule.class);
+  private readonly L10N L = new L10N(PostgresModule.class);
 
   public const int PGSQL_ASSOC = 0x01;
   public const int PGSQL_NUM = 0x02;

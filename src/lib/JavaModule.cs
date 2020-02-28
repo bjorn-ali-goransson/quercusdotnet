@@ -47,7 +47,7 @@ public class JavaModule : AbstractQuercusModule {
   private const Logger log =
     Logger.getLogger(JavaModule.class.getName());
 
-  private const L10N L = new L10N(JavaModule.class);
+  private readonly L10N L = new L10N(JavaModule.class);
 
   /**
    * Call the Java constructor and return the wrapped Java object.

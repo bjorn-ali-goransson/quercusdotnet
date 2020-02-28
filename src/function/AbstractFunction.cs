@@ -47,7 +47,7 @@ namespace QuercusDotNet.Function{
  */
 @SuppressWarnings("serial")
 abstract public class AbstractFunction : Callback {
-  private const L10N L = new L10N(AbstractFunction.class);
+  private readonly L10N L = new L10N(AbstractFunction.class);
 
   public const Arg []NULL_ARGS = new Arg[0];
   private const Value []NULL_ARG_VALUES = new Value[0];

@@ -56,7 +56,7 @@ namespace QuercusDotNet.lib.reflection {
 public class ReflectionClass
   implements Reflector
 {
-  private const L10N L = new L10N(ReflectionClass.class);
+  private readonly L10N L = new L10N(ReflectionClass.class);
 
   public static int IS_IMPLICIT_ABSTRACT = 16;
   public static int IS_EXPLICIT_ABSTRACT = 32;

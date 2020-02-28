@@ -37,7 +37,7 @@ namespace QuercusDotNet.Marshal{
 
 public class LongMarshal : Marshal
 {
-  public const Marshal MARSHAL = new LongMarshal();
+  public readonly Marshal MARSHAL = new LongMarshal();
 
   public boolean isLong()
   {

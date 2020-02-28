@@ -52,7 +52,7 @@ namespace QuercusDotNet.Env{
 public class NullValue : Value
   implements Serializable
 {
-  public const NullValue NULL = new NullValue();
+  public readonly NullValue NULL = new NullValue();
 
   protected NullValue()
   {

@@ -45,7 +45,7 @@ namespace QuercusDotNet.Expr{
  * A "foo(...)" function call.
  */
 public class CallExpr : Expr {
-  private const L10N L = new L10N(CallExpr.class);
+  private readonly L10N L = new L10N(CallExpr.class);
 
   protected final StringValue _name;
   protected final StringValue _nsName;

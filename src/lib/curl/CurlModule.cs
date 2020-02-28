@@ -54,7 +54,7 @@ public class CurlModule
 {
   private const Logger log
     = Logger.getLogger(CurlModule.class.getName());
-  private const L10N L = new L10N(CurlModule.class);
+  private readonly L10N L = new L10N(CurlModule.class);
 
   public const int CURLAUTH_ANY                        = -17;
   public const int CURLAUTH_ANYSAFE                    = -18;

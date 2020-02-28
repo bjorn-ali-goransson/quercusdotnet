@@ -60,7 +60,7 @@ namespace QuercusDotNet.lib.db {
 public class JdbcPreparedStatementResource
   : JdbcStatementResource
 {
-  private const L10N L = new L10N(JdbcPreparedStatementResource.class);
+  private readonly L10N L = new L10N(JdbcPreparedStatementResource.class);
 
   private PreparedStatement _preparedStmt;
 

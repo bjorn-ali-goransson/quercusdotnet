@@ -43,7 +43,7 @@ public class ReflectionFunction : ReflectionFunctionAbstract
 {
   public const int IS_DEPRECATED = 1024 * 256; //262144;  //2^18
 
-  protected const L10N L = new L10N(ReflectionFunction.class);
+  protected readonly L10N L = new L10N(ReflectionFunction.class);
 
   protected ReflectionFunction(Callable callable)
   {

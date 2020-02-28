@@ -48,7 +48,7 @@ public class MethodDeclaration : Function
 {
   private const Logger log = Logger.getLogger(
     MethodDeclaration.class.getName());
-  private const L10N L = new L10N(MethodDeclaration.class);
+  private readonly L10N L = new L10N(MethodDeclaration.class);
 
   private final ClassDef _qClass;
 

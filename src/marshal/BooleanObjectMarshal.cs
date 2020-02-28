@@ -38,7 +38,7 @@ namespace QuercusDotNet.Marshal{
 
 public class BooleanObjectMarshal : Marshal
 {
-  public const Marshal MARSHAL = new BooleanObjectMarshal();
+  public readonly Marshal MARSHAL = new BooleanObjectMarshal();
 
   public boolean isReadOnly()
   {

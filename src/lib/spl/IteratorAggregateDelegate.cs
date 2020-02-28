@@ -49,7 +49,7 @@ namespace QuercusDotNet.lib.spl {
 public class IteratorAggregateDelegate
   implements TraversableDelegate
 {
-  private const L10N L = new L10N(IteratorAggregateDelegate.class);
+  private readonly L10N L = new L10N(IteratorAggregateDelegate.class);
 
   private const StringBuilderValue GET_ITERATOR
     = new ConstStringValue("getIterator");

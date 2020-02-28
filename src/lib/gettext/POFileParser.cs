@@ -50,7 +50,7 @@ class POFileParser : GettextParser
 {
   private const Logger log
     = Logger.getLogger(POFileParser.class.getName());
-  private const L10N L = new L10N(POFileParser.class);
+  private readonly L10N L = new L10N(POFileParser.class);
 
   // Parsing constants and variables
   private const int MSGID = 256;

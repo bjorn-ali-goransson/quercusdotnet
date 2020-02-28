@@ -68,7 +68,7 @@ namespace QuercusDotNet.lib.file {
  * Information and actions for about files
  */
 public class FileModule : AbstractQuercusModule {
-  private const L10N L = new L10N(FileModule.class);
+  private readonly L10N L = new L10N(FileModule.class);
   private const Logger log
     = Logger.getLogger(FileModule.class.getName());
 
@@ -119,7 +119,7 @@ public class FileModule : AbstractQuercusModule {
   public const int SEEK_CUR = BinaryStream.SEEK_CUR;
   public const int SEEK_END = BinaryStream.SEEK_END;
 
-  private const IniDefinitions _iniDefinitions = new IniDefinitions();
+  private readonly IniDefinitions _iniDefinitions = new IniDefinitions();
 
   private const HashMap<StringValue,Value> _constMap
     = new HashMap<StringValue,Value>();

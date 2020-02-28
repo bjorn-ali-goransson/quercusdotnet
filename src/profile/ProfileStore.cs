@@ -38,7 +38,7 @@ namespace QuercusDotNet.Profile{
  */
 public class ProfileStore
 {
-  private const AtomicLong _idSequence = new AtomicLong();
+  private readonly AtomicLong _idSequence = new AtomicLong();
   
   private const ArrayList<ProfileReport> _reportList
     = new ArrayList<ProfileReport>();

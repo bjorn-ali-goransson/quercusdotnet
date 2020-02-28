@@ -45,7 +45,7 @@ public class Regexp {
   private const Logger log
     = Logger.getLogger(Regexp.class.getName());
 
-  private const L10N L = new L10N(Regexp.class);
+  private readonly L10N L = new L10N(Regexp.class);
 
   public const int FAIL = -1;
   public const int SUCCESS = 0;

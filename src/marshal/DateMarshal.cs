@@ -40,7 +40,7 @@ namespace QuercusDotNet.Marshal{
 
 public class DateMarshal : Marshal
 {
-  public const Marshal MARSHAL = new DateMarshal();
+  public readonly Marshal MARSHAL = new DateMarshal();
   
   public boolean isReadOnly()
   {

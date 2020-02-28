@@ -41,7 +41,7 @@ namespace QuercusDotNet.Marshal{
 
 public class BinaryInputMarshal : Marshal
 {
-  public const Marshal MARSHAL = new BinaryInputMarshal();
+  public readonly Marshal MARSHAL = new BinaryInputMarshal();
   
   public boolean isReadOnly()
   {
