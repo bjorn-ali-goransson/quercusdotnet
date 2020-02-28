@@ -51,9 +51,9 @@
  * mysqli object oriented API facade
  */
 public class MysqliStatement extends JdbcPreparedStatementResource {
-  private static final Logger log = Logger
+  private const Logger log = Logger
     .getLogger(MysqliStatement.class.getName());
-  private static final L10N L = new L10N(MysqliStatement.class);
+  private const L10N L = new L10N(MysqliStatement.class);
 
   /**
    * Constructor for MysqliStatement

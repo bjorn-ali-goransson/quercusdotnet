@@ -36,7 +36,7 @@
 
 public class QuercusTimer
 {
-  private static final Logger log
+  private const Logger log
     = Logger.getLogger(QuercusTimer.class.getName());
 
   private TimerThread _timerThread;

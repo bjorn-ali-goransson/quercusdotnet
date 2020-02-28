@@ -43,7 +43,7 @@
  */
 public class CountableDelegate implements CountDelegate
 {
-  private static final StringValue COUNT_METHOD
+  private const StringValue COUNT_METHOD
     = new ConstStringValue("count");
   
   @Override

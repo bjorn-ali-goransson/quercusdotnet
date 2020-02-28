@@ -41,13 +41,13 @@
 
 
 public class Regexp {
-  private static final Logger log
+  private const Logger log
     = Logger.getLogger(Regexp.class.getName());
 
-  private static final L10N L = new L10N(Regexp.class);
+  private const L10N L = new L10N(Regexp.class);
 
-  public static final int FAIL = -1;
-  public static final int SUCCESS = 0;
+  public const int FAIL = -1;
+  public const int SUCCESS = 0;
 
   final StringValue _rawRegexp;
   StringValue _pattern;

@@ -40,9 +40,9 @@
 public class ReflectionFunction extends ReflectionFunctionAbstract
   implements Reflector
 {
-  public static final int IS_DEPRECATED = 1024 * 256; //262144;  //2^18
+  public const int IS_DEPRECATED = 1024 * 256; //262144;  //2^18
 
-  protected static final L10N L = new L10N(ReflectionFunction.class);
+  protected const L10N L = new L10N(ReflectionFunction.class);
 
   protected ReflectionFunction(Callable callable)
   {

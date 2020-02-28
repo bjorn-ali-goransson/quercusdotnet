@@ -56,7 +56,7 @@
  */
 public class ModuleInfo {
   private static L10N L = new L10N(ModuleInfo.class);
-  private static final Logger log
+  private const Logger log
     = Logger.getLogger(ModuleInfo.class.getName());
 
   private final string _name;

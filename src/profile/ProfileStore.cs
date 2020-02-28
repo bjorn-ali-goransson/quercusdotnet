@@ -37,9 +37,9 @@
  */
 public class ProfileStore
 {
-  private static final AtomicLong _idSequence = new AtomicLong();
+  private const AtomicLong _idSequence = new AtomicLong();
   
-  private static final ArrayList<ProfileReport> _reportList
+  private const ArrayList<ProfileReport> _reportList
     = new ArrayList<ProfileReport>();
 
   public static long generateId()

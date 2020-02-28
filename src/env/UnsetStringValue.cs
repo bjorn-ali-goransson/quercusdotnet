@@ -31,7 +31,7 @@
 public class UnsetStringValue
   extends StringBuilderValue
 {
-  public static final UnsetStringValue UNSET = new UnsetStringValue();
+  public const UnsetStringValue UNSET = new UnsetStringValue();
   
   private UnsetStringValue()
   {

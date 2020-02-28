@@ -52,7 +52,7 @@
  */
 public class Post
 {
-  private static final L10N L = new L10N(Post.class);
+  private const L10N L = new L10N(Post.class);
 
   static void fillPost(Env env,
                        ArrayValue postArray,

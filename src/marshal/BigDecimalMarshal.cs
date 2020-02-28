@@ -45,7 +45,7 @@
  * Code for marshalling arguments.
  */
 public class BigDecimalMarshal extends Marshal {
-  public static final Marshal MARSHAL = new BigDecimalMarshal();
+  public const Marshal MARSHAL = new BigDecimalMarshal();
 
   public Object marshal(Env env, Expr expr, Class argClass)
   {

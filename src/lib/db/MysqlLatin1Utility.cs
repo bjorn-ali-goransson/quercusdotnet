@@ -50,7 +50,7 @@ public class MysqlLatin1Utility
         '\u02DC', '\u2122', '\u0161', '\u203A',
         '\u0153', '\u009D', '\u017E', '\u0178'};
   
-  private static final byte []UNICODE_MAP = new byte[0x2400];
+  private const byte []UNICODE_MAP = new byte[0x2400];
   
   static {
     for (int i = 0; i < UNICODE_MAP.length; i++)

@@ -45,7 +45,7 @@
  * Represents a variable class field reference $class::${"b"}.
  */
 public class ClassVarFieldVarExpr extends AbstractVarExpr {
-  private static final L10N L = new L10N(ClassVarFieldVarExpr.class);
+  private const L10N L = new L10N(ClassVarFieldVarExpr.class);
 
   protected final Expr _className;
   protected final Expr _varName;

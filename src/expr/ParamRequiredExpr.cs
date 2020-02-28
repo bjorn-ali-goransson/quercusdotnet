@@ -39,7 +39,7 @@
  * Represents a PHP required expression.
  */
 public class ParamRequiredExpr extends Expr {
-  public static final ParamRequiredExpr REQUIRED
+  public const ParamRequiredExpr REQUIRED
     = new ParamRequiredExpr(Location.UNKNOWN);
 
   protected ParamRequiredExpr(Location location)

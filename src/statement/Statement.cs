@@ -42,11 +42,11 @@
  * Represents a PHP statement
  */
 abstract public class Statement {
-  private static final Logger log = Logger.getLogger(Statement.class.getName());
+  private const Logger log = Logger.getLogger(Statement.class.getName());
 
-  public static final int FALL_THROUGH = 0;
-  public static final int BREAK_FALL_THROUGH = 0x1;
-  public static final int RETURN = 0x2;
+  public const int FALL_THROUGH = 0;
+  public const int BREAK_FALL_THROUGH = 0x1;
+  public const int RETURN = 0x2;
 
   private final Location _location;
 

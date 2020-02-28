@@ -67,9 +67,9 @@
  * Information about PHP variables.
  */
 public class VariableModule extends AbstractQuercusModule {
-  private static final Logger log
+  private const Logger log
     = Logger.getLogger(VariableModule.class.getName());
-  private static final L10N L = new L10N(VariableModule.class);
+  private const L10N L = new L10N(VariableModule.class);
 
   private static final
     LruCache<UnserializeKey,UnserializeCacheEntry> _unserializeCache

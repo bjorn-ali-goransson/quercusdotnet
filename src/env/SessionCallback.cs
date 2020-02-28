@@ -38,7 +38,7 @@
  * Represents a PHP session callback.
  */
 public class SessionCallback extends Value {
-  private static final Logger log
+  private const Logger log
     = Logger.getLogger(SessionCallback.class.getName());
 
   private Callable _open;

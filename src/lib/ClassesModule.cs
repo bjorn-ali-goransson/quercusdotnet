@@ -47,7 +47,7 @@
  * Quercus class information
  */
 public class ClassesModule extends AbstractQuercusModule {
-  private static final L10N L = new L10N(ClassesModule.class);
+  private const L10N L = new L10N(ClassesModule.class);
 
   /**
    * Calls an object method.

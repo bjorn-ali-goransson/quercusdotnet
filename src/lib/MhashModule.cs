@@ -56,37 +56,37 @@
  * and SHA512.
  */
 public class MhashModule extends AbstractQuercusModule {
-  private static final L10N L = new L10N(MhashModule.class);
-  private static final Logger log
+  private const L10N L = new L10N(MhashModule.class);
+  private const Logger log
     = Logger.getLogger(MhashModule.class.getName());
 
-  public static final int MHASH_CRC32 = 0;
-  public static final int MHASH_MD5 = 1;
-  public static final int MHASH_SHA1 = 2;
-  public static final int MHASH_HAVAL256 = 3;
-  public static final int MHASH_RIPEMD160 = 5;
-  public static final int MHASH_TIGER = 7;
-  public static final int MHASH_GOST = 8;
-  public static final int MHASH_CRC32B = 9;
-  public static final int MHASH_HAVAL224 = 10;
-  public static final int MHASH_HAVAL192 = 11;
-  public static final int MHASH_HAVAL160 = 12;
-  public static final int MHASH_HAVAL128 = 13;
-  public static final int MHASH_TIGER128 = 14;
-  public static final int MHASH_TIGER160 = 15;
-  public static final int MHASH_MD4 = 16;
-  public static final int MHASH_SHA256 = 17;
-  public static final int MHASH_ADLER32 = 18;
-  public static final int MHASH_SHA224 = 19;
-  public static final int MHASH_SHA512 = 20;
-  public static final int MHASH_SHA384 = 21;
-  public static final int MHASH_WHIRLPOOL = 22;
-  public static final int MHASH_RIPEMD128 = 23;
-  public static final int MHASH_RIPEMD256 = 24;
-  public static final int MHASH_RIPEMD320 = 25;
-  public static final int MHASH_SNEFRU128 = 26;
-  public static final int MHASH_SNEFRU256 = 27;
-  public static final int MHASH_MD2 = 28;
+  public const int MHASH_CRC32 = 0;
+  public const int MHASH_MD5 = 1;
+  public const int MHASH_SHA1 = 2;
+  public const int MHASH_HAVAL256 = 3;
+  public const int MHASH_RIPEMD160 = 5;
+  public const int MHASH_TIGER = 7;
+  public const int MHASH_GOST = 8;
+  public const int MHASH_CRC32B = 9;
+  public const int MHASH_HAVAL224 = 10;
+  public const int MHASH_HAVAL192 = 11;
+  public const int MHASH_HAVAL160 = 12;
+  public const int MHASH_HAVAL128 = 13;
+  public const int MHASH_TIGER128 = 14;
+  public const int MHASH_TIGER160 = 15;
+  public const int MHASH_MD4 = 16;
+  public const int MHASH_SHA256 = 17;
+  public const int MHASH_ADLER32 = 18;
+  public const int MHASH_SHA224 = 19;
+  public const int MHASH_SHA512 = 20;
+  public const int MHASH_SHA384 = 21;
+  public const int MHASH_WHIRLPOOL = 22;
+  public const int MHASH_RIPEMD128 = 23;
+  public const int MHASH_RIPEMD256 = 24;
+  public const int MHASH_RIPEMD320 = 25;
+  public const int MHASH_SNEFRU128 = 26;
+  public const int MHASH_SNEFRU256 = 27;
+  public const int MHASH_MD2 = 28;
 
   private HashMap<Integer, MhashAlgorithm> _algorithmMap
     = new HashMap<Integer, MhashAlgorithm>();

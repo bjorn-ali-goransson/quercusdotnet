@@ -35,7 +35,7 @@
  * A handle to a top expression
  */
 public class ExprHandle {
-  public static final ExprHandle NULL = new ExprHandle();
+  public const ExprHandle NULL = new ExprHandle();
   
   private final StatementHandle _statement;
   

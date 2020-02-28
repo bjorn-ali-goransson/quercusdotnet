@@ -31,7 +31,7 @@
 public class UnsetUnicodeValue
   extends UnicodeValueImpl
 {
-  public static final UnsetUnicodeValue UNSET = new UnsetUnicodeValue();
+  public const UnsetUnicodeValue UNSET = new UnsetUnicodeValue();
   
   private UnsetUnicodeValue()
   {

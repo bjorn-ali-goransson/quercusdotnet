@@ -49,9 +49,9 @@
  */
 @ResourceType("mysql result")
 public class MysqliResult extends JdbcResultResource {
-  private static final Logger log
+  private const Logger log
     = Logger.getLogger(MysqliResult.class.getName());
-  private static final L10N L
+  private const L10N L
     = new L10N(MysqliResult.class);
 
   private int _resultSetSize;

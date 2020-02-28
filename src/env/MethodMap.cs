@@ -42,7 +42,7 @@
  */
 public class MethodMap<V>
 {
-  private static final L10N L = new L10N(MethodMap.class);
+  private const L10N L = new L10N(MethodMap.class);
 
   private final QuercusClass _quercusClass;
   private final ClassDef _classDef;

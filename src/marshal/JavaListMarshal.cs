@@ -39,7 +39,7 @@
  * Code for marshalling arguments.
  */
 public class JavaListMarshal extends JavaMarshal {
-  private static final L10N L = new L10N(JavaMarshal.class);
+  private const L10N L = new L10N(JavaMarshal.class);
 
   public JavaListMarshal(JavaClassDef def,
                       boolean isNotNull)

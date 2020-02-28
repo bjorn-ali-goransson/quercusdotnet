@@ -44,7 +44,7 @@
  * Represents a PHP static field reference.
  */
 public class ClassVirtualFieldExpr extends AbstractVarExpr {
-  private static final L10N L = new L10N(ClassVirtualFieldExpr.class);
+  private const L10N L = new L10N(ClassVirtualFieldExpr.class);
 
   protected final StringValue _varName;
 

@@ -39,7 +39,7 @@
  * Represents a Quercus java BigInteger value.
  */
 public class BigIntegerValue extends JavaValue {
-  private static final Logger log
+  private const Logger log
     = Logger.getLogger(JavaURLValue.class.getName());
 
   private final BigInteger _val;

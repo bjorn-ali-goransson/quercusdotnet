@@ -44,7 +44,7 @@
 abstract public class AbstractBinaryInputOutput
   implements BinaryInput, BinaryOutput
 {
-  private static final Logger log
+  private const Logger log
     = Logger.getLogger(AbstractBinaryInputOutput.class.getName());
 
   protected final Env _env;

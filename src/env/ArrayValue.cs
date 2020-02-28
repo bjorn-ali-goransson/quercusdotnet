@@ -45,16 +45,16 @@
  * Represents a PHP array value.
  */
 abstract public class ArrayValue extends Value {
-  private static final Logger log
+  private const Logger log
     = Logger.getLogger(ArrayValue.class.getName());
 
-  protected static final StringValue KEY = new ConstStringValue("key");
-  protected static final StringValue VALUE = new ConstStringValue("value");
+  protected const StringValue KEY = new ConstStringValue("key");
+  protected const StringValue VALUE = new ConstStringValue("value");
 
-  public static final GetKey GET_KEY = new GetKey();
-  public static final GetValue GET_VALUE = new GetValue();
+  public const GetKey GET_KEY = new GetKey();
+  public const GetValue GET_VALUE = new GetValue();
 
-  public static final StringValue ARRAY = new ConstStringValue("Array");
+  public const StringValue ARRAY = new ConstStringValue("Array");
 
   private Entry _current;
 
@@ -2119,7 +2119,7 @@ abstract public class ArrayValue extends Value {
   public static class ValueComparator
     implements Comparator<Map.Entry<Value,Value>>
   {
-    public static final ValueComparator CMP = new ValueComparator();
+    public const ValueComparator CMP = new ValueComparator();
 
     private ValueComparator()
     {
@@ -2147,7 +2147,7 @@ abstract public class ArrayValue extends Value {
   public static class KeyComparator
     implements Comparator<Map.Entry<Value,Value>>
   {
-    public static final KeyComparator CMP = new KeyComparator();
+    public const KeyComparator CMP = new KeyComparator();
 
     private KeyComparator()
     {
@@ -2178,7 +2178,7 @@ abstract public class ArrayValue extends Value {
 
   public static class GetKey extends AbstractGet
   {
-    public static final GetKey GET = new GetKey();
+    public const GetKey GET = new GetKey();
 
     private GetKey()
     {
@@ -2191,7 +2191,7 @@ abstract public class ArrayValue extends Value {
   }
 
   public static class GetValue extends AbstractGet {
-    public static final GetValue GET = new GetValue();
+    public const GetValue GET = new GetValue();
 
     private GetValue()
     {

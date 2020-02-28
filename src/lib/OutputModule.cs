@@ -59,11 +59,11 @@
  */
 public class OutputModule extends AbstractQuercusModule
   implements ModuleStartupListener {
-  private static final L10N L = new L10N(OutputModule.class);
-  private static final Logger log = Logger.getLogger(
+  private const L10N L = new L10N(OutputModule.class);
+  private const Logger log = Logger.getLogger(
       OutputModule.class.getName());
 
-  private static final IniDefinitions _iniDefinitions = new IniDefinitions();
+  private const IniDefinitions _iniDefinitions = new IniDefinitions();
 
   // ob_gzhandler related variables/types
   private enum Encoding { NONE, GZIP, DEFLATE };
@@ -73,9 +73,9 @@ public class OutputModule extends AbstractQuercusModule
     public OutputStream _outputStream;
   }
 
-  public static final int PHP_OUTPUT_HANDLER_START = 1;
-  public static final int PHP_OUTPUT_HANDLER_CONT = 2;
-  public static final int PHP_OUTPUT_HANDLER_END = 4;
+  public const int PHP_OUTPUT_HANDLER_START = 1;
+  public const int PHP_OUTPUT_HANDLER_CONT = 2;
+  public const int PHP_OUTPUT_HANDLER_END = 4;
 
   /**
    * Returns the default php.ini values.
@@ -583,10 +583,10 @@ public class OutputModule extends AbstractQuercusModule
     return result;
   }
 
-  static final IniDefinition INI_OUTPUT_BUFFERING
+  const IniDefinition INI_OUTPUT_BUFFERING
     = _iniDefinitions.add("output_buffering", false, PHP_INI_PERDIR);
-  static final IniDefinition INI_OUTPUT_HANDLER
+  const IniDefinition INI_OUTPUT_HANDLER
     = _iniDefinitions.add("output_handler", "", PHP_INI_PERDIR);
-  static final IniDefinition INI_IMPLICIT_FLUSH
+  const IniDefinition INI_IMPLICIT_FLUSH
     = _iniDefinitions.add("implicit_flush", false, PHP_INI_ALL);
 }

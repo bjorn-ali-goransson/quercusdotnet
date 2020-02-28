@@ -46,95 +46,95 @@
  * Quercus mysql routines.
  */
 public class MysqliModule extends AbstractQuercusModule {
-  private static final Logger log = Log.open(MysqliModule.class);
-  private static final L10N L = new L10N(MysqliModule.class);
+  private const Logger log = Log.open(MysqliModule.class);
+  private const L10N L = new L10N(MysqliModule.class);
 
-  public static final int MYSQLI_ASSOC = JdbcResultResource.FETCH_ASSOC;
-  public static final int MYSQLI_NUM = JdbcResultResource.FETCH_NUM;
-  public static final int MYSQLI_BOTH = JdbcResultResource.FETCH_BOTH;
+  public const int MYSQLI_ASSOC = JdbcResultResource.FETCH_ASSOC;
+  public const int MYSQLI_NUM = JdbcResultResource.FETCH_NUM;
+  public const int MYSQLI_BOTH = JdbcResultResource.FETCH_BOTH;
 
-  public static final int MYSQLI_USE_RESULT = 0x0;
-  public static final int MYSQLI_STORE_RESULT = 0x1;
+  public const int MYSQLI_USE_RESULT = 0x0;
+  public const int MYSQLI_STORE_RESULT = 0x1;
 
   // Used by mysqli_fetch_field.
-  public static final int NOT_NULL_FLAG = 0x1;
-  public static final int PRI_KEY_FLAG = 0x2;
-  public static final int UNIQUE_KEY_FLAG = 0x4;
-  public static final int MULTIPLE_KEY_FLAG = 0x8;
-  public static final int BLOB_FLAG = 0x10;
-  public static final int UNSIGNED_FLAG = 0x20;
-  public static final int ZEROFILL_FLAG = 0x40;
-  public static final int BINARY_FLAG = 0x80;
+  public const int NOT_NULL_FLAG = 0x1;
+  public const int PRI_KEY_FLAG = 0x2;
+  public const int UNIQUE_KEY_FLAG = 0x4;
+  public const int MULTIPLE_KEY_FLAG = 0x8;
+  public const int BLOB_FLAG = 0x10;
+  public const int UNSIGNED_FLAG = 0x20;
+  public const int ZEROFILL_FLAG = 0x40;
+  public const int BINARY_FLAG = 0x80;
 
   // Sent to new clients
-  public static final int ENUM_FLAG = 0x100;
-  public static final int AUTO_INCREMENT_FLAG = 0x200;
-  public static final int TIMESTAMP_FLAG = 0x400;
-  public static final int SET_FLAG = 0x800;
-  public static final int NUM_FLAG = 0x8000;
-  public static final int PART_KEY_FLAG = 0x4000; //Intern: Part of some key???
-  public static final int GROUP_FLAG = 0x8000;    //Intern: Group field???
-  public static final int UNIQUE_FLAG = 0x10000;   //Intern: Used by sql_yacc???
-  public static final int BINCMP_FLAG = 0x20000;  //Intern: Used by sql_yacc???
+  public const int ENUM_FLAG = 0x100;
+  public const int AUTO_INCREMENT_FLAG = 0x200;
+  public const int TIMESTAMP_FLAG = 0x400;
+  public const int SET_FLAG = 0x800;
+  public const int NUM_FLAG = 0x8000;
+  public const int PART_KEY_FLAG = 0x4000; //Intern: Part of some key???
+  public const int GROUP_FLAG = 0x8000;    //Intern: Group field???
+  public const int UNIQUE_FLAG = 0x10000;   //Intern: Used by sql_yacc???
+  public const int BINCMP_FLAG = 0x20000;  //Intern: Used by sql_yacc???
 
   // The following are numerical respresentations
   // of types returned by mysqli_fetch_field.
   // These are defined in mysql's mysql_com.h header.
 
-  public static final int MYSQLI_TYPE_DECIMAL = 0x0;
-  public static final int MYSQLI_TYPE_TINY = 0x1;
-  public static final int MYSQLI_TYPE_SHORT = 0x2;
-  public static final int MYSQLI_TYPE_LONG = 0x3;
-  public static final int MYSQLI_TYPE_FLOAT = 0x4;
-  public static final int MYSQLI_TYPE_DOUBLE = 0x5;
-  public static final int MYSQLI_TYPE_NULL = 0x6;
-  public static final int MYSQLI_TYPE_TIMESTAMP = 0x7;
-  public static final int MYSQLI_TYPE_LONGLONG = 0x8;
-  public static final int MYSQLI_TYPE_INT24 = 0x9;
-  public static final int MYSQLI_TYPE_DATE = 0xA;
-  public static final int MYSQLI_TYPE_TIME = 0xB;
-  public static final int MYSQLI_TYPE_DATETIME = 0xC;
-  public static final int MYSQLI_TYPE_YEAR = 0xD;
-  public static final int MYSQLI_TYPE_NEWDATE = 0xE;
+  public const int MYSQLI_TYPE_DECIMAL = 0x0;
+  public const int MYSQLI_TYPE_TINY = 0x1;
+  public const int MYSQLI_TYPE_SHORT = 0x2;
+  public const int MYSQLI_TYPE_LONG = 0x3;
+  public const int MYSQLI_TYPE_FLOAT = 0x4;
+  public const int MYSQLI_TYPE_DOUBLE = 0x5;
+  public const int MYSQLI_TYPE_NULL = 0x6;
+  public const int MYSQLI_TYPE_TIMESTAMP = 0x7;
+  public const int MYSQLI_TYPE_LONGLONG = 0x8;
+  public const int MYSQLI_TYPE_INT24 = 0x9;
+  public const int MYSQLI_TYPE_DATE = 0xA;
+  public const int MYSQLI_TYPE_TIME = 0xB;
+  public const int MYSQLI_TYPE_DATETIME = 0xC;
+  public const int MYSQLI_TYPE_YEAR = 0xD;
+  public const int MYSQLI_TYPE_NEWDATE = 0xE;
 
   // Mysql defines the constant MYSQL_TYPE_VARCHAR = 0xF
   // but there is no MYSQLI_TYPE_VARCHAR flag.
 
-  public static final int MYSQLI_TYPE_BIT = 0x10;
-  public static final int MYSQLI_TYPE_NEWDECIMAL = 0xF6;
-  public static final int MYSQLI_TYPE_ENUM = 0xF7;
-  public static final int MYSQLI_TYPE_SET = 0xF8;
-  public static final int MYSQLI_TYPE_TINY_BLOB = 0xF9;
-  public static final int MYSQLI_TYPE_MEDIUM_BLOB = 0xFA;
-  public static final int MYSQLI_TYPE_LONG_BLOB = 0xFB;
-  public static final int MYSQLI_TYPE_BLOB = 0xFC;
-  public static final int MYSQLI_TYPE_VAR_STRING = 0xFD;
-  public static final int MYSQLI_TYPE_STRING = 0xFE;
-  public static final int MYSQLI_TYPE_GEOMETRY = 0xFF;
+  public const int MYSQLI_TYPE_BIT = 0x10;
+  public const int MYSQLI_TYPE_NEWDECIMAL = 0xF6;
+  public const int MYSQLI_TYPE_ENUM = 0xF7;
+  public const int MYSQLI_TYPE_SET = 0xF8;
+  public const int MYSQLI_TYPE_TINY_BLOB = 0xF9;
+  public const int MYSQLI_TYPE_MEDIUM_BLOB = 0xFA;
+  public const int MYSQLI_TYPE_LONG_BLOB = 0xFB;
+  public const int MYSQLI_TYPE_BLOB = 0xFC;
+  public const int MYSQLI_TYPE_VAR_STRING = 0xFD;
+  public const int MYSQLI_TYPE_STRING = 0xFE;
+  public const int MYSQLI_TYPE_GEOMETRY = 0xFF;
 
-  public static final int MYSQLI_TYPE_CHAR = MYSQLI_TYPE_TINY;
-  public static final int MYSQLI_TYPE_INTERVAL = MYSQLI_TYPE_ENUM;
+  public const int MYSQLI_TYPE_CHAR = MYSQLI_TYPE_TINY;
+  public const int MYSQLI_TYPE_INTERVAL = MYSQLI_TYPE_ENUM;
 
-  public static final int MYSQL_CLIENT_COMPRESS = (1 << 5);
+  public const int MYSQL_CLIENT_COMPRESS = (1 << 5);
 
   // The next constant is NOT exported by this module,
   // but the PHP documentation states that 128 can be passed
   // in the client_flags parameter to mysql_connect().
   // This flag will be ignored by Mysqli.connectImpl().
 
-  private static final int MYSQL_CLIENT_LOCAL_FILES = (1 << 7);
+  private const int MYSQL_CLIENT_LOCAL_FILES = (1 << 7);
 
-  public static final int MYSQL_CLIENT_IGNORE_SPACE = (1 << 8);
-  public static final int MYSQL_CLIENT_INTERACTIVE = (1 << 10);
-  public static final int MYSQL_CLIENT_SSL = (1 << 11);
+  public const int MYSQL_CLIENT_IGNORE_SPACE = (1 << 8);
+  public const int MYSQL_CLIENT_INTERACTIVE = (1 << 10);
+  public const int MYSQL_CLIENT_SSL = (1 << 11);
 
   // mysqli_options option flags
 
-  public static final int MYSQLI_READ_DEFAULT_GROUP = 0x0;
-  public static final int MYSQLI_READ_DEFAULT_FILE = 0x1;
-  public static final int MYSQLI_OPT_CONNECT_TIMEOUT = 0x2;
-  public static final int MYSQLI_OPT_LOCAL_INFILE = 0x3;
-  public static final int MYSQLI_INIT_COMMAND = 0x4;
+  public const int MYSQLI_READ_DEFAULT_GROUP = 0x0;
+  public const int MYSQLI_READ_DEFAULT_FILE = 0x1;
+  public const int MYSQLI_OPT_CONNECT_TIMEOUT = 0x2;
+  public const int MYSQLI_OPT_LOCAL_INFILE = 0x3;
+  public const int MYSQLI_INIT_COMMAND = 0x4;
 
   public MysqliModule()
   {

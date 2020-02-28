@@ -46,150 +46,150 @@
 @SuppressWarnings("serial")
 public class ServerArrayValue extends ArrayValueImpl
 {
-  private static final StringValue SERVER_ADDR_V
+  private const StringValue SERVER_ADDR_V
     = new ConstStringValue("SERVER_ADDR");
-  private static final StringValue SERVER_ADDR_VU
+  private const StringValue SERVER_ADDR_VU
     = new UnicodeBuilderValue("SERVER_ADDR");
 
-  private static final StringValue SERVER_NAME_V
+  private const StringValue SERVER_NAME_V
     = new ConstStringValue("SERVER_NAME");
-  private static final StringValue SERVER_NAME_VU
+  private const StringValue SERVER_NAME_VU
     = new UnicodeBuilderValue("SERVER_NAME");
 
-  private static final StringValue SERVER_PORT_V
+  private const StringValue SERVER_PORT_V
     = new ConstStringValue("SERVER_PORT");
-  private static final StringValue SERVER_PORT_VU
+  private const StringValue SERVER_PORT_VU
     = new UnicodeBuilderValue("SERVER_PORT");
 
-  private static final StringValue REMOTE_HOST_V
+  private const StringValue REMOTE_HOST_V
     = new ConstStringValue("REMOTE_HOST");
-  private static final StringValue REMOTE_HOST_VU
+  private const StringValue REMOTE_HOST_VU
     = new UnicodeBuilderValue("REMOTE_HOST");
 
-  private static final StringValue REMOTE_ADDR_V
+  private const StringValue REMOTE_ADDR_V
     = new ConstStringValue("REMOTE_ADDR");
-  private static final StringValue REMOTE_ADDR_VU
+  private const StringValue REMOTE_ADDR_VU
     = new UnicodeBuilderValue("REMOTE_ADDR");
 
-  private static final StringValue REMOTE_PORT_V
+  private const StringValue REMOTE_PORT_V
     = new ConstStringValue("REMOTE_PORT");
-  private static final StringValue REMOTE_PORT_VU
+  private const StringValue REMOTE_PORT_VU
     = new UnicodeBuilderValue("REMOTE_PORT");
 
-  private static final StringValue DOCUMENT_ROOT_V
+  private const StringValue DOCUMENT_ROOT_V
     = new ConstStringValue("DOCUMENT_ROOT");
-  private static final StringValue DOCUMENT_ROOT_VU
+  private const StringValue DOCUMENT_ROOT_VU
     = new UnicodeBuilderValue("DOCUMENT_ROOT");
 
-  private static final StringValue SERVER_SOFTWARE_V
+  private const StringValue SERVER_SOFTWARE_V
     = new ConstStringValue("SERVER_SOFTWARE");
-  private static final StringValue SERVER_SOFTWARE_VU
+  private const StringValue SERVER_SOFTWARE_VU
     = new UnicodeBuilderValue("SERVER_SOFTWARE");
 
-  private static final StringValue SERVER_PROTOCOL_V
+  private const StringValue SERVER_PROTOCOL_V
     = new ConstStringValue("SERVER_PROTOCOL");
-  private static final StringValue SERVER_PROTOCOL_VU
+  private const StringValue SERVER_PROTOCOL_VU
     = new UnicodeBuilderValue("SERVER_PROTOCOL");
 
-  private static final StringValue REQUEST_METHOD_V
+  private const StringValue REQUEST_METHOD_V
     = new ConstStringValue("REQUEST_METHOD");
-  private static final StringValue REQUEST_METHOD_VU
+  private const StringValue REQUEST_METHOD_VU
     = new UnicodeBuilderValue("REQUEST_METHOD");
 
-  private static final StringValue QUERY_STRING_V
+  private const StringValue QUERY_STRING_V
     = new ConstStringValue("QUERY_STRING");
-  private static final StringValue QUERY_STRING_VU
+  private const StringValue QUERY_STRING_VU
     = new UnicodeBuilderValue("QUERY_STRING");
 
-  private static final StringValue REQUEST_URI_V
+  private const StringValue REQUEST_URI_V
     = new ConstStringValue("REQUEST_URI");
-  private static final StringValue REQUEST_URI_VU
+  private const StringValue REQUEST_URI_VU
     = new UnicodeBuilderValue("REQUEST_URI");
 
-  private static final StringValue REQUEST_TIME_V
+  private const StringValue REQUEST_TIME_V
     = new ConstStringValue("REQUEST_TIME");
-  private static final StringValue REQUEST_TIME_VU
+  private const StringValue REQUEST_TIME_VU
     = new UnicodeBuilderValue("REQUEST_TIME");
 
-  private static final StringValue SCRIPT_URL_V
+  private const StringValue SCRIPT_URL_V
     = new ConstStringValue("SCRIPT_URL");
-  private static final StringValue SCRIPT_URL_VU
+  private const StringValue SCRIPT_URL_VU
     = new UnicodeBuilderValue("SCRIPT_URL");
 
-  private static final StringValue SCRIPT_NAME_V
+  private const StringValue SCRIPT_NAME_V
     = new ConstStringValue("SCRIPT_NAME");
-  private static final StringValue SCRIPT_NAME_VU
+  private const StringValue SCRIPT_NAME_VU
     = new UnicodeBuilderValue("SCRIPT_NAME");
 
-  private static final StringValue SCRIPT_FILENAME_V
+  private const StringValue SCRIPT_FILENAME_V
     = new ConstStringValue("SCRIPT_FILENAME");
-  private static final StringValue SCRIPT_FILENAME_VU
+  private const StringValue SCRIPT_FILENAME_VU
     = new UnicodeBuilderValue("SCRIPT_FILENAME");
 
-  private static final StringValue PATH_INFO_V
+  private const StringValue PATH_INFO_V
     = new ConstStringValue("PATH_INFO");
-  private static final StringValue PATH_INFO_VU
+  private const StringValue PATH_INFO_VU
     = new UnicodeBuilderValue("PATH_INFO");
 
-  private static final StringValue PATH_TRANSLATED_V
+  private const StringValue PATH_TRANSLATED_V
     = new ConstStringValue("PATH_TRANSLATED");
-  private static final StringValue PATH_TRANSLATED_VU
+  private const StringValue PATH_TRANSLATED_VU
     = new UnicodeBuilderValue("PATH_TRANSLATED");
 
-  private static final StringValue PHP_SELF_V
+  private const StringValue PHP_SELF_V
     = new ConstStringValue("PHP_SELF");
-  private static final StringValue PHP_SELF_VU
+  private const StringValue PHP_SELF_VU
     = new UnicodeBuilderValue("PHP_SELF");
 
-  private static final StringValue PHP_AUTH_USER_V
+  private const StringValue PHP_AUTH_USER_V
     = new ConstStringValue("PHP_AUTH_USER");
-  private static final StringValue PHP_AUTH_USER_VU
+  private const StringValue PHP_AUTH_USER_VU
     = new UnicodeBuilderValue("PHP_AUTH_USER");
 
-  private static final StringValue PHP_AUTH_PW_V
+  private const StringValue PHP_AUTH_PW_V
     = new ConstStringValue("PHP_AUTH_PW");
-  private static final StringValue PHP_AUTH_PW_VU
+  private const StringValue PHP_AUTH_PW_VU
     = new UnicodeBuilderValue("PHP_AUTH_PW");
 
-  private static final StringValue PHP_AUTH_DIGEST_V
+  private const StringValue PHP_AUTH_DIGEST_V
     = new ConstStringValue("PHP_AUTH_DIGEST");
-  private static final StringValue PHP_AUTH_DIGEST_VU
+  private const StringValue PHP_AUTH_DIGEST_VU
     = new UnicodeBuilderValue("PHP_AUTH_DIGEST");
 
-  private static final StringValue AUTH_TYPE_V
+  private const StringValue AUTH_TYPE_V
     = new ConstStringValue("AUTH_TYPE");
-  private static final StringValue AUTH_TYPE_VU
+  private const StringValue AUTH_TYPE_VU
     = new UnicodeBuilderValue("AUTH_TYPE");
 
-  private static final StringValue HTTPS_V
+  private const StringValue HTTPS_V
     = new ConstStringValue("HTTPS");
-  private static final StringValue HTTPS_VU
+  private const StringValue HTTPS_VU
     = new UnicodeBuilderValue("HTTPS");
 
-  private static final StringValue HTTP_X_SSL_REQUEST_V
+  private const StringValue HTTP_X_SSL_REQUEST_V
     = new ConstStringValue("HTTP_X_SSL_REQUEST");
-  private static final StringValue HTTP_X_SSL_REQUEST_VU
+  private const StringValue HTTP_X_SSL_REQUEST_VU
     = new UnicodeBuilderValue("HTTP_X_SSL_REQUEST");
 
-  private static final StringValue HTTP_HOST_V
+  private const StringValue HTTP_HOST_V
     = new ConstStringValue("HTTP_HOST");
-  private static final StringValue HTTP_HOST_VU
+  private const StringValue HTTP_HOST_VU
     = new UnicodeBuilderValue("HTTP_HOST");
 
-  private static final StringValue CONTENT_LENGTH_V
+  private const StringValue CONTENT_LENGTH_V
     = new ConstStringValue("CONTENT_LENGTH");
-  private static final StringValue CONTENT_LENGTH_VU
+  private const StringValue CONTENT_LENGTH_VU
     = new UnicodeBuilderValue("CONTENT_LENGTH");
 
-  private static final StringValue CONTENT_TYPE_V
+  private const StringValue CONTENT_TYPE_V
     = new ConstStringValue("CONTENT_TYPE");
-  private static final StringValue CONTENT_TYPE_VU
+  private const StringValue CONTENT_TYPE_VU
     = new UnicodeBuilderValue("CONTENT_TYPE");
 
-  private static final StringValue REQUEST_TIME_FLOAT_V
+  private const StringValue REQUEST_TIME_FLOAT_V
     = new ConstStringValue("REQUEST_TIME_FLOAT");
 
-  private static final StringValue REQUEST_TIME_FLOAT_VU
+  private const StringValue REQUEST_TIME_FLOAT_VU
     = new UnicodeBuilderValue("REQUEST_TIME_FLOAT");
 
   private final Env _env;

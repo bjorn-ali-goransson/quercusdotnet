@@ -38,7 +38,7 @@
  * Represents a PHP default expression.
  */
 public class ParamDefaultExpr extends Expr {
-  public static final ParamDefaultExpr DEFAULT = new ParamDefaultExpr();
+  public const ParamDefaultExpr DEFAULT = new ParamDefaultExpr();
 
   public ParamDefaultExpr(Location location)
   {

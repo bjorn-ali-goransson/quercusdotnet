@@ -41,9 +41,9 @@
  * pdf object oriented API facade
  */
 public class PDFWriter {
-  private static final Logger log
+  private const Logger log
     = Logger.getLogger(PDFWriter.class.getName());
-  private static final L10N L = new L10N(PDFWriter.class);
+  private const L10N L = new L10N(PDFWriter.class);
 
   private long _offset;
   private WriteStream _out;

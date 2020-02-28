@@ -37,7 +37,7 @@
  */
 @SuppressWarnings("serial")
 public class CallbackFunction extends Callback {
-  // public static final CallbackFunction INVALID_CALLBACK
+  // public const CallbackFunction INVALID_CALLBACK
   // = new CallbackFunction(null, "Invalid Callback");
 
   private StringValue _funName;

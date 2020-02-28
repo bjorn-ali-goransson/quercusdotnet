@@ -38,7 +38,7 @@
 
 public class BinaryValueMarshal extends Marshal
 {
-  public static final Marshal MARSHAL = new BinaryValueMarshal();
+  public const Marshal MARSHAL = new BinaryValueMarshal();
 
   public boolean isReadOnly()
   {

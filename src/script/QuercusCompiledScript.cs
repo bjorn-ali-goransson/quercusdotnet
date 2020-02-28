@@ -51,7 +51,7 @@
  * Script engine
  */
 public class QuercusCompiledScript extends CompiledScript {
-  private static final Logger log
+  private const Logger log
     = Logger.getLogger(QuercusCompiledScript.class.getName());
 
   private final QuercusScriptEngine _engine;

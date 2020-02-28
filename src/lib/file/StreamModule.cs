@@ -61,34 +61,34 @@
  * Handling the PHP Stream API
  */
 public class StreamModule extends AbstractQuercusModule {
-  private static final L10N L = new L10N(StreamModule.class);
-  private static final Logger log
+  private const L10N L = new L10N(StreamModule.class);
+  private const Logger log
     = Logger.getLogger(StreamModule.class.getName());
 
-  public static final int STREAM_FILTER_READ = 1;
-  public static final int STREAM_FILTER_WRITE = 2;
-  public static final int STREAM_FILTER_ALL = 3;
+  public const int STREAM_FILTER_READ = 1;
+  public const int STREAM_FILTER_WRITE = 2;
+  public const int STREAM_FILTER_ALL = 3;
 
-  public static final int PSFS_PASS_ON = 2;
-  public static final int PSFS_FEED_ME = 1;
-  public static final int PSFS_ERR_FATAL = 0;
+  public const int PSFS_PASS_ON = 2;
+  public const int PSFS_FEED_ME = 1;
+  public const int PSFS_ERR_FATAL = 0;
 
-  public static final int STREAM_USE_PATH = 1;
-  public static final int STREAM_REPORT_ERRORS = 8;
+  public const int STREAM_USE_PATH = 1;
+  public const int STREAM_REPORT_ERRORS = 8;
 
-  public static final int STREAM_CLIENT_ASYNC_CONNECT = 2;
-  public static final int STREAM_CLIENT_CONNECT = 4;
-  public static final int STREAM_CLIENT_PERSISTENT = 1;
+  public const int STREAM_CLIENT_ASYNC_CONNECT = 2;
+  public const int STREAM_CLIENT_CONNECT = 4;
+  public const int STREAM_CLIENT_PERSISTENT = 1;
 
-  public static final int STREAM_SERVER_BIND = 4;
-  public static final int STREAM_SERVER_LISTEN = 8;
+  public const int STREAM_SERVER_BIND = 4;
+  public const int STREAM_SERVER_LISTEN = 8;
 
-  public static final int STREAM_URL_STAT_LINK = 1;
-  public static final int STREAM_URL_STAT_QUIET = 2;
+  public const int STREAM_URL_STAT_LINK = 1;
+  public const int STREAM_URL_STAT_QUIET = 2;
 
-  public static final int PHP_STREAM_META_TOUCH = 1;
+  public const int PHP_STREAM_META_TOUCH = 1;
 
-  private static final HashMap<StringValue,Value> _constMap
+  private const HashMap<StringValue,Value> _constMap
     = new HashMap<StringValue,Value>();
 
   /**

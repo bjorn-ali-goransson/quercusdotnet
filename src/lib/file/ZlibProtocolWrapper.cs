@@ -37,9 +37,9 @@
 
 
 public class ZlibProtocolWrapper extends ProtocolWrapper {
-  private static final Logger log
+  private const Logger log
     = Logger.getLogger(ZlibProtocolWrapper.class.getName());
-  private static final L10N L = new L10N(ZlibProtocolWrapper.class);
+  private const L10N L = new L10N(ZlibProtocolWrapper.class);
 
   public ZlibProtocolWrapper()
   {

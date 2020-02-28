@@ -37,7 +37,7 @@
  * Represents the introspected static function information.
  */
 public class JavaOverloadMethod extends AbstractJavaMethod {
-  private static final L10N L = new L10N(JavaOverloadMethod.class);
+  private const L10N L = new L10N(JavaOverloadMethod.class);
 
   private AbstractJavaMethod [][]_methodTable
     = new AbstractJavaMethod[0][];

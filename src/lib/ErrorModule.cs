@@ -54,31 +54,31 @@
  * PHP error handling.
  */
 public class ErrorModule extends AbstractQuercusModule {
-  private static final L10N L = new L10N(ErrorModule.class);
-  private static final Logger log
+  private const L10N L = new L10N(ErrorModule.class);
+  private const Logger log
     = Logger.getLogger(ErrorModule.class.getName());
 
-  private static final IniDefinitions _iniDefinitions = new IniDefinitions();
+  private const IniDefinitions _iniDefinitions = new IniDefinitions();
 
-  public static final int E_ERROR = Env.E_ERROR;
-  public static final int E_WARNING = Env.E_WARNING;
-  public static final int E_PARSE = Env.E_PARSE;
-  public static final int E_NOTICE = Env.E_NOTICE;
-  public static final int E_CORE_ERROR = Env.E_CORE_ERROR;
-  public static final int E_CORE_WARNING = Env.E_CORE_WARNING;
-  public static final int E_COMPILE_ERROR = Env.E_COMPILE_ERROR;
-  public static final int E_COMPILE_WARNING = Env.E_COMPILE_WARNING;
-  public static final int E_USER_ERROR = Env.E_USER_ERROR;
-  public static final int E_USER_WARNING = Env.E_USER_WARNING;
-  public static final int E_USER_NOTICE = Env.E_USER_NOTICE;
-  public static final int E_ALL = Env.E_ALL;
-  public static final int E_STRICT = Env.E_STRICT;
-  public static final int E_RECOVERABLE_ERROR = Env.E_RECOVERABLE_ERROR;
-  public static final int E_DEPRECATED = Env.E_DEPRECATED;
-  public static final int E_USER_DEPRECATED = Env.E_USER_DEPRECATED;
+  public const int E_ERROR = Env.E_ERROR;
+  public const int E_WARNING = Env.E_WARNING;
+  public const int E_PARSE = Env.E_PARSE;
+  public const int E_NOTICE = Env.E_NOTICE;
+  public const int E_CORE_ERROR = Env.E_CORE_ERROR;
+  public const int E_CORE_WARNING = Env.E_CORE_WARNING;
+  public const int E_COMPILE_ERROR = Env.E_COMPILE_ERROR;
+  public const int E_COMPILE_WARNING = Env.E_COMPILE_WARNING;
+  public const int E_USER_ERROR = Env.E_USER_ERROR;
+  public const int E_USER_WARNING = Env.E_USER_WARNING;
+  public const int E_USER_NOTICE = Env.E_USER_NOTICE;
+  public const int E_ALL = Env.E_ALL;
+  public const int E_STRICT = Env.E_STRICT;
+  public const int E_RECOVERABLE_ERROR = Env.E_RECOVERABLE_ERROR;
+  public const int E_DEPRECATED = Env.E_DEPRECATED;
+  public const int E_USER_DEPRECATED = Env.E_USER_DEPRECATED;
 
-  public static final int DEBUG_BACKTRACE_PROVIDE_OBJECT = 1;
-  public static final int DEBUG_BACKTRACE_IGNORE_ARGS = 2;
+  public const int DEBUG_BACKTRACE_PROVIDE_OBJECT = 1;
+  public const int DEBUG_BACKTRACE_IGNORE_ARGS = 2;
 
   /**
    * Returns the default php.ini values.
@@ -692,37 +692,37 @@ public class ErrorModule extends AbstractQuercusModule {
     return trigger_error(env, msg, code);
   }
 
-  static final IniDefinition INI_ERROR_REPORING
+  const IniDefinition INI_ERROR_REPORING
     = _iniDefinitions.add("error_reporting", Env.E_DEFAULT, PHP_INI_ALL);
-  static final IniDefinition INI_DISPLAY_ERRORS
+  const IniDefinition INI_DISPLAY_ERRORS
     = _iniDefinitions.add("display_errors", "1", PHP_INI_ALL);
-  static final IniDefinition INI_DISPLAY_STARTUP_ERRORS
+  const IniDefinition INI_DISPLAY_STARTUP_ERRORS
     = _iniDefinitions.add("display_startup_errors", false, PHP_INI_ALL);
-  static final IniDefinition INI_LOG_ERRORS
+  const IniDefinition INI_LOG_ERRORS
     = _iniDefinitions.add("log_errors", false, PHP_INI_ALL);
-  static final IniDefinition INI_LOG_ERRORS_MAX_LEN
+  const IniDefinition INI_LOG_ERRORS_MAX_LEN
     = _iniDefinitions.add("log_errors_max_len", 1024, PHP_INI_ALL);
-  static final IniDefinition INI_IGNORE_REPEATED_ERRORS
+  const IniDefinition INI_IGNORE_REPEATED_ERRORS
     = _iniDefinitions.add("ignore_repeated_errors", false, PHP_INI_ALL);
-  static final IniDefinition INI_IGNORE_REPEATED_SOURCE
+  const IniDefinition INI_IGNORE_REPEATED_SOURCE
     = _iniDefinitions.add("ignore_repeated_source", false, PHP_INI_ALL);
-  static final IniDefinition INI_REPORT_MEMLEAKS
+  const IniDefinition INI_REPORT_MEMLEAKS
     = _iniDefinitions.add("report_memleaks", true, PHP_INI_ALL);
-  static final IniDefinition INI_TRACK_ERRORS
+  const IniDefinition INI_TRACK_ERRORS
     = _iniDefinitions.add("track_errors", false, PHP_INI_ALL);
-  static final IniDefinition INI_HTML_ERRORS
+  const IniDefinition INI_HTML_ERRORS
     = _iniDefinitions.add("html_errors", true, PHP_INI_ALL);
-  static final IniDefinition INI_DOCREF_ROOT
+  const IniDefinition INI_DOCREF_ROOT
     = _iniDefinitions.add("docref_root", "", PHP_INI_ALL);
-  static final IniDefinition INI_DOCREF_EXT
+  const IniDefinition INI_DOCREF_EXT
     = _iniDefinitions.add("docref_ext", "", PHP_INI_ALL);
-  static final IniDefinition INI_ERROR_PREPEND_STRING
+  const IniDefinition INI_ERROR_PREPEND_STRING
     = _iniDefinitions.add("error_prepend_string", null, PHP_INI_ALL);
-  static final IniDefinition INI_ERROR_APPEND_STRING
+  const IniDefinition INI_ERROR_APPEND_STRING
     = _iniDefinitions.add("error_append_string", null, PHP_INI_ALL);
-  static final IniDefinition INI_ERROR_LOG
+  const IniDefinition INI_ERROR_LOG
     = _iniDefinitions.add("error_log", null, PHP_INI_ALL);
-  static final IniDefinition INI_WARN_PLUS_OVERLOADING
+  const IniDefinition INI_WARN_PLUS_OVERLOADING
     = _iniDefinitions.add("warn_plus_overloading", null, PHP_INI_ALL);
 }
 

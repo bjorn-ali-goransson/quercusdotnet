@@ -57,9 +57,9 @@
  * Quercus Oracle OCI-Lob object oriented API.
  */
 public class OracleOciLob {
-  private static final Logger log = Logger.getLogger(
+  private const Logger log = Logger.getLogger(
       OracleOciLob.class.getName());
-  private static final L10N L = new L10N(OracleOciLob.class);
+  private const L10N L = new L10N(OracleOciLob.class);
 
   // The large object
   private Object _lob;

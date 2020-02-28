@@ -42,8 +42,8 @@
  * memcache object oriented API facade
  */
 public class Memcache {
-  private static final Logger log = Logger.getLogger(Memcache.class.getName());
-  private static final L10N L = new L10N(Memcache.class);
+  private const Logger log = Logger.getLogger(Memcache.class.getName());
+  private const L10N L = new L10N(Memcache.class);
 
   private Cache _cache;
 

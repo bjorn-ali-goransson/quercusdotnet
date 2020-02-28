@@ -44,7 +44,7 @@
 public class JavaMapAdapter
   extends JavaAdapter
 {
-  private static final Logger log
+  private const Logger log
     = Logger.getLogger(JavaMapAdapter.class.getName());
   
   private Map<Object,Object> _map;

@@ -40,10 +40,10 @@
 public class RecursiveIteratorIterator
   implements OuterIterator, Traversable, Iterator
 {
-  public static final int LEAVES_ONLY = 0;
-  public static final int SELF_FIRST = 1;
-  public static final int CHILD_FIRST = 2;
-  public static final int CATCH_GET_CHILD = 16;
+  public const int LEAVES_ONLY = 0;
+  public const int SELF_FIRST = 1;
+  public const int CHILD_FIRST = 2;
+  public const int CATCH_GET_CHILD = 16;
 
   private final ArrayList<RecursiveIterator> _iterStack;
   private final int _mode;
@@ -130,25 +130,25 @@ public class RecursiveIteratorIterator
   static class RecursiveIteratorProxy implements RecursiveIterator {
     private final Value _obj;
 
-    private static final StringValue HAS_CHILDREN
+    private const StringValue HAS_CHILDREN
       = new ConstStringValue("hasChildren");
 
-    private static final StringValue GET_CHILDREN
+    private const StringValue GET_CHILDREN
       = new ConstStringValue("getChildren");
 
-    private static final StringValue VALID
+    private const StringValue VALID
       = new ConstStringValue("valid");
 
-    private static final StringValue CURRENT
+    private const StringValue CURRENT
       = new ConstStringValue("current");
 
-    private static final StringValue KEY
+    private const StringValue KEY
       = new ConstStringValue("key");
 
-    private static final StringValue NEXT
+    private const StringValue NEXT
       = new ConstStringValue("next");
 
-    private static final StringValue REWIND
+    private const StringValue REWIND
       = new ConstStringValue("rewind");
 
     RecursiveIteratorProxy(Value obj)

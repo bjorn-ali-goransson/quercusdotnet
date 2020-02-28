@@ -36,7 +36,7 @@
 
 public class ByteObjectMarshal extends Marshal
 {
-  public static final Marshal MARSHAL = new ByteObjectMarshal();
+  public const Marshal MARSHAL = new ByteObjectMarshal();
 
   public Object marshal(Env env, Expr expr, Class expectedClass)
   {

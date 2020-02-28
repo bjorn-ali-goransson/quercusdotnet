@@ -41,9 +41,9 @@
  * Represents sequence of statements.
  */
 public class ObjectMethod extends Function {
-  private static final Logger log = Logger.getLogger(
+  private const Logger log = Logger.getLogger(
     ObjectMethod.class.getName());
-  private static final L10N L = new L10N(ObjectMethod.class);
+  private const L10N L = new L10N(ObjectMethod.class);
 
   private ClassDef _quercusClass;
 

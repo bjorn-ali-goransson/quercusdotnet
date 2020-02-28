@@ -48,9 +48,9 @@
  * deals with an image
  */
 public class PDFImage extends PDFObject {
-  private static final Logger log
+  private const Logger log
     = Logger.getLogger(PDFImage.class.getName());
-  private static final L10N L = new L10N(PDFImage.class);
+  private const L10N L = new L10N(PDFImage.class);
 
   private Path _path;
   private ReadStream _is;

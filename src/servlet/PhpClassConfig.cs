@@ -38,7 +38,7 @@
  * Custom class configuration.
  */
 public class PhpClassConfig {
-  private static final L10N L = new L10N(PhpClassConfig.class);
+  private const L10N L = new L10N(PhpClassConfig.class);
   
   private Class _type;
   private string _name;

@@ -44,9 +44,9 @@
  * parses afm
  */
 public class AfmParser {
-  private static final L10N L = new L10N(AfmParser.class);
+  private const L10N L = new L10N(AfmParser.class);
   
-  private static final string END_OF_FILE = "end of file";
+  private const string END_OF_FILE = "end of file";
 
   private ReadStream _is;
 

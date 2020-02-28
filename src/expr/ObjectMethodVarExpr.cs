@@ -41,7 +41,7 @@
  * A "$foo->$bar(...)" method call
  */
 public class ObjectMethodVarExpr extends Expr {
-  private static final L10N L = new L10N(ObjectMethodVarExpr.class);
+  private const L10N L = new L10N(ObjectMethodVarExpr.class);
 
   protected final Expr _objExpr;
 

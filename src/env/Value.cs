@@ -60,12 +60,12 @@
 @SuppressWarnings("serial")
 abstract public class Value implements java.io.Serializable
 {
-  protected static final L10N L = new L10N(Value.class);
+  protected const L10N L = new L10N(Value.class);
 
-  private static final Value []NULL_ARG_VALUES = new Value[0];
+  private const Value []NULL_ARG_VALUES = new Value[0];
 
-  public static final Value []NULL_VALUE_ARRAY = new Value[0];
-  public static final Value []NULL_ARGS = new Value[0];
+  public const Value []NULL_VALUE_ARRAY = new Value[0];
+  public const Value []NULL_ARGS = new Value[0];
 
   //
   // Properties

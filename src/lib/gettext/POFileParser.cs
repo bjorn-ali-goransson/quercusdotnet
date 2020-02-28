@@ -47,16 +47,16 @@
  */
 class POFileParser extends GettextParser
 {
-  private static final Logger log
+  private const Logger log
     = Logger.getLogger(POFileParser.class.getName());
-  private static final L10N L = new L10N(POFileParser.class);
+  private const L10N L = new L10N(POFileParser.class);
 
   // Parsing constants and variables
-  private static final int MSGID = 256;
-  private static final int MSGID_PLURAL = 257;
-  private static final int MSGSTR = 258;
+  private const int MSGID = 256;
+  private const int MSGID_PLURAL = 257;
+  private const int MSGSTR = 258;
 
-  private static final int UNKNOWN = 260;
+  private const int UNKNOWN = 260;
 
   private Env _env;
   private ReadStream _in;

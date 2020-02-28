@@ -50,12 +50,12 @@
 @ClassImplementation
 public class JMSModule extends AbstractQuercusModule
 {
-  private static final Logger log
+  private const Logger log
     = Logger.getLogger(JMSModule.class.getName());
 
-  private static final L10N L = new L10N(JMSModule.class);
+  private const L10N L = new L10N(JMSModule.class);
 
-  private static final IniDefinitions _iniDefinitions = new IniDefinitions();
+  private const IniDefinitions _iniDefinitions = new IniDefinitions();
 
   /**
    * Returns the default php.ini values.
@@ -115,7 +115,7 @@ public class JMSModule extends AbstractQuercusModule
     }
   }
 
-  static final IniDefinition INI_JMS_CONNECTION_FACTORY
+  const IniDefinition INI_JMS_CONNECTION_FACTORY
     = _iniDefinitions.add(
       "jms.connection_factory",  "jms/ConnectionFactory", PHP_INI_SYSTEM);
 }

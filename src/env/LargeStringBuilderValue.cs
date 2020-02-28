@@ -46,9 +46,9 @@
 public class LargeStringBuilderValue
   extends StringValue
 {
-  public static final StringValue EMPTY = StringBuilderValue.EMPTY;
+  public const StringValue EMPTY = StringBuilderValue.EMPTY;
 
-  public static final int SIZE = 4 * 1024;
+  public const int SIZE = 4 * 1024;
 
   protected byte [][]_bufferList;
   protected int _length;

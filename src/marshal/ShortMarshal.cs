@@ -36,7 +36,7 @@
 
 public class ShortMarshal extends Marshal
 {
-  public static final Marshal MARSHAL = new ShortMarshal();
+  public const Marshal MARSHAL = new ShortMarshal();
   
   public boolean isLong()
   {

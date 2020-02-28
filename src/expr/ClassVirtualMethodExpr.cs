@@ -44,7 +44,7 @@
  * XXX: better name?
  */
 public class ClassVirtualMethodExpr extends Expr {
-  private static final L10N L = new L10N(ClassVirtualMethodExpr.class);
+  private const L10N L = new L10N(ClassVirtualMethodExpr.class);
 
   protected final StringValue _methodName;
 

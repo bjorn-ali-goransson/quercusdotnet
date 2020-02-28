@@ -41,7 +41,7 @@
  * Represents a JDBC column metadata
  */
 public class JdbcTableMetaData {
-  private static final Logger log
+  private const Logger log
     = Logger.getLogger(JdbcTableMetaData.class.getName());
 
   private final string _catalog;

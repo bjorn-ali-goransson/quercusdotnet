@@ -36,8 +36,8 @@
 
 public class CallableMarshal extends Marshal
 {
-  public static final Marshal MARSHAL = new CallableMarshal(false);
-  public static final Marshal MARSHAL_OPTIONAL = new CallableMarshal(true);
+  public const Marshal MARSHAL = new CallableMarshal(false);
+  public const Marshal MARSHAL_OPTIONAL = new CallableMarshal(true);
 
   protected boolean _isOptional;
 

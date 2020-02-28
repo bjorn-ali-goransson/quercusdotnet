@@ -43,7 +43,7 @@
  * Represents a PHP parent::FOO constant call expression.
  */
 public class ClassVirtualConstExpr extends Expr {
-  private static final L10N L
+  private const L10N L
     = new L10N(ClassVirtualMethodExpr.class);
 
   protected final StringValue _name;

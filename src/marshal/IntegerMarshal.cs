@@ -36,7 +36,7 @@
 
 public class IntegerMarshal extends Marshal
 {
-  public static final Marshal MARSHAL = new IntegerMarshal();
+  public const Marshal MARSHAL = new IntegerMarshal();
 
   public boolean isLong()
   {

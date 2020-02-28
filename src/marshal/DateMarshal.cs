@@ -39,7 +39,7 @@
 
 public class DateMarshal extends Marshal
 {
-  public static final Marshal MARSHAL = new DateMarshal();
+  public const Marshal MARSHAL = new DateMarshal();
   
   public boolean isReadOnly()
   {

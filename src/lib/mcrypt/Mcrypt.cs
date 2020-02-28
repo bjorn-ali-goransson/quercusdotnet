@@ -44,9 +44,9 @@
  * Encryption class
  */
 public class Mcrypt {
-  private static final L10N L = new L10N(Mcrypt.class);
+  private const L10N L = new L10N(Mcrypt.class);
 
-  private static final Logger log =
+  private const Logger log =
     Logger.getLogger(Mcrypt.class.getName());
 
   private final string _algorithm;

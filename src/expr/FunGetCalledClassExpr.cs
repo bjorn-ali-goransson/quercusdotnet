@@ -39,7 +39,7 @@
  * Represents returns the current called class.
  */
 public class FunGetCalledClassExpr extends Expr {
-  private static final L10N L = new L10N(FunGetCalledClassExpr.class);
+  private const L10N L = new L10N(FunGetCalledClassExpr.class);
 
   public FunGetCalledClassExpr(Location location)
   {

@@ -37,10 +37,10 @@
 class GroupState
 {
   // number of items to store per long
-  static final int BIT_WIDTH = 32;
+  const int BIT_WIDTH = 32;
   
   // maximum number of groups
-  static final int MAX_SIZE = 99;
+  const int MAX_SIZE = 99;
 
   private long []_set;
 

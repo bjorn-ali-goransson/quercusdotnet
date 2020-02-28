@@ -42,9 +42,9 @@
  */
 public class LazyFunction extends AbstractFunction
 {
-  private static final Logger log
+  private const Logger log
     = Logger.getLogger(LazyFunction.class.getName());
-  private static final L10N L = new L10N(LazyFunction.class);
+  private const L10N L = new L10N(LazyFunction.class);
 
   private final QuercusContext _quercus;
   private final string _name;

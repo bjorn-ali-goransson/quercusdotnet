@@ -105,7 +105,7 @@
 public class QuercusContext
 {
   private static L10N L = new L10N(QuercusContext.class);
-  private static final Logger log
+  private const Logger log
     = Logger.getLogger(QuercusContext.class.getName());
 
   private static HashSet<String> _superGlobals
@@ -236,7 +236,7 @@ public class QuercusContext
 
   // how long to sleep the env timeout thread,
   // for fast, complete tomcat undeploys
-  protected static final long ENV_TIMEOUT_UPDATE_INTERVAL = 1000L;
+  protected const long ENV_TIMEOUT_UPDATE_INTERVAL = 1000L;
 
   private long _dependencyCheckInterval = 2000L;
 
@@ -2375,29 +2375,29 @@ public class QuercusContext
     */
   }
 
-  public static final IniDefinition INI_INCLUDE_PATH
+  public const IniDefinition INI_INCLUDE_PATH
     = _ini.add("include_path", ".", IniDefinition.PHP_INI_ALL);
-  public static final IniDefinition INI_REGISTER_LONG_ARRAYS
+  public const IniDefinition INI_REGISTER_LONG_ARRAYS
     = _ini.add("register_long_arrays", true, IniDefinition.PHP_INI_PERDIR);
-  public static final IniDefinition INI_ALWAYS_POPULATE_RAW_POST_DATA
+  public const IniDefinition INI_ALWAYS_POPULATE_RAW_POST_DATA
     = _ini.add("always_populate_raw_post_data", false, IniDefinition.PHP_INI_PERDIR);
 
   // unicode ini
-  public static final IniDefinition INI_UNICODE_SEMANTICS
+  public const IniDefinition INI_UNICODE_SEMANTICS
     = _ini.add("unicode.semantics", false, IniDefinition.PHP_INI_SYSTEM);
-  public static final IniDefinition INI_UNICODE_FALLBACK_ENCODING
+  public const IniDefinition INI_UNICODE_FALLBACK_ENCODING
     = _ini.add("unicode.fallback_encoding", "utf-8", IniDefinition.PHP_INI_ALL);
-  public static final IniDefinition INI_UNICODE_FROM_ERROR_MODE
+  public const IniDefinition INI_UNICODE_FROM_ERROR_MODE
     = _ini.add("unicode.from_error_mode", "2", IniDefinition.PHP_INI_ALL);
-  public static final IniDefinition INI_UNICODE_FROM_ERROR_SUBST_CHAR
+  public const IniDefinition INI_UNICODE_FROM_ERROR_SUBST_CHAR
     = _ini.add("unicode.from_error_subst_char", "3f", IniDefinition.PHP_INI_ALL);
-  public static final IniDefinition INI_UNICODE_HTTP_INPUT_ENCODING
+  public const IniDefinition INI_UNICODE_HTTP_INPUT_ENCODING
     = _ini.add("unicode.http_input_encoding", null, IniDefinition.PHP_INI_ALL);
-  public static final IniDefinition INI_UNICODE_OUTPUT_ENCODING
+  public const IniDefinition INI_UNICODE_OUTPUT_ENCODING
     = _ini.add("unicode.output_encoding", null, IniDefinition.PHP_INI_ALL);
-  public static final IniDefinition INI_UNICODE_RUNTIME_ENCODING
+  public const IniDefinition INI_UNICODE_RUNTIME_ENCODING
     = _ini.add("unicode.runtime_encoding", null, IniDefinition.PHP_INI_ALL);
-  public static final IniDefinition INI_UNICODE_SCRIPT_ENCODING
+  public const IniDefinition INI_UNICODE_SCRIPT_ENCODING
     = _ini.add("unicode.script_encoding", null, IniDefinition.PHP_INI_ALL);
 }
 

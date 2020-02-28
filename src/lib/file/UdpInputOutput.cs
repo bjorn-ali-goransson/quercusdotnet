@@ -46,7 +46,7 @@ public class UdpInputOutput
   extends AbstractBinaryInputOutput
   implements SocketInputOutput
 {
-  private static final Logger log
+  private const Logger log
     = Logger.getLogger(UdpInputOutput.class.getName());
 
   private DatagramSocket _socket;

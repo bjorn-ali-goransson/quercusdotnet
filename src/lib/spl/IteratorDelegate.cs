@@ -45,7 +45,7 @@
  */
 public class IteratorDelegate implements TraversableDelegate
 {
-  private static final L10N L = new L10N(IteratorDelegate.class);
+  private const L10N L = new L10N(IteratorDelegate.class);
   
   public Iterator<Map.Entry<Value, Value>>
     getIterator(Env env, ObjectValue qThis)

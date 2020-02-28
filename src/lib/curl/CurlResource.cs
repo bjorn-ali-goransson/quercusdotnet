@@ -48,9 +48,9 @@
 @ResourceType("curl")
 public class CurlResource extends ResourceValue
 {
-  private static final Logger log
+  private const Logger log
     = Logger.getLogger(CurlResource.class.getName());
-  private static final L10N L = new L10N(CurlResource.class);
+  private const L10N L = new L10N(CurlResource.class);
 
   private string _requestMethod = "GET";
   private int _responseCode;

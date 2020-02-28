@@ -60,9 +60,9 @@
 public class PDOStatement
   implements Iterable<Value>, EnvCleanup
 {
-  private static final L10N L = new L10N(PDOStatement.class);
+  private const L10N L = new L10N(PDOStatement.class);
 
-  private static final Value[] NULL_VALUES = new Value[0];
+  private const Value[] NULL_VALUES = new Value[0];
 
   private final PDO _pdo;
   private final PDOError _error;

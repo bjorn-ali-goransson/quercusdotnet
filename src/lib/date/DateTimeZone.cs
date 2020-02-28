@@ -46,7 +46,7 @@
  */
 public class DateTimeZone implements Cloneable
 {
-  private static final TimeZone GMT_TIME_ZONE = TimeZone.getTimeZone("GMT");
+  private const TimeZone GMT_TIME_ZONE = TimeZone.getTimeZone("GMT");
 
   private TimeZone _timeZone;
 

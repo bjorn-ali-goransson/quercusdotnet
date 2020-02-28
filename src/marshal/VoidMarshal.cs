@@ -36,7 +36,7 @@
 
 public class VoidMarshal extends Marshal
 {
-  public static final Marshal MARSHAL = new VoidMarshal();
+  public const Marshal MARSHAL = new VoidMarshal();
   
   public Object marshal(Env env, Expr expr, Class expectedClass)
   {

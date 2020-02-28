@@ -41,9 +41,9 @@
  * Represents a compiled function with 5 args
  */
 abstract public class CompiledFunction_5 extends CompiledFunction {
-  private static final Logger log
+  private const Logger log
     = Logger.getLogger(CompiledFunction_5.class.getName());
-  private static final L10N L = new L10N(CompiledFunction_5.class);
+  private const L10N L = new L10N(CompiledFunction_5.class);
 
   public CompiledFunction_5(String name,
                             Arg default_0,

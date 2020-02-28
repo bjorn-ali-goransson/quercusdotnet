@@ -36,7 +36,7 @@
  */
 public class MethodIntern
 {
-  private static final ConcurrentHashMap<String,StringValue> _internMap
+  private const ConcurrentHashMap<String,StringValue> _internMap
     = new ConcurrentHashMap<String,StringValue>();
 
   public static StringValue intern(String name)

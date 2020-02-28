@@ -41,12 +41,12 @@
  * Represents a quercus module.
  */
 public class AbstractQuercusModule implements QuercusModule {
-  protected static final int PHP_INI_USER = IniDefinition.PHP_INI_USER;
-  protected static final int PHP_INI_PERDIR = IniDefinition.PHP_INI_PERDIR;
-  protected static final int PHP_INI_SYSTEM = IniDefinition.PHP_INI_SYSTEM;
-  protected static final int PHP_INI_ALL = IniDefinition.PHP_INI_ALL;
+  protected const int PHP_INI_USER = IniDefinition.PHP_INI_USER;
+  protected const int PHP_INI_PERDIR = IniDefinition.PHP_INI_PERDIR;
+  protected const int PHP_INI_SYSTEM = IniDefinition.PHP_INI_SYSTEM;
+  protected const int PHP_INI_ALL = IniDefinition.PHP_INI_ALL;
 
-  private static final HashMap<StringValue,Value> NULL_MAP
+  private const HashMap<StringValue,Value> NULL_MAP
     = new HashMap<StringValue,Value>();
 
   public Map<StringValue,Value> getConstMap()

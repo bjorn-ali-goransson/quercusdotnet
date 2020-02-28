@@ -35,7 +35,7 @@
 
 public class JavaCharacterArrayMarshal extends JavaArrayMarshal
 {
-  public static final Marshal MARSHAL
+  public const Marshal MARSHAL
     = new JavaCharacterArrayMarshal();
 
   @Override

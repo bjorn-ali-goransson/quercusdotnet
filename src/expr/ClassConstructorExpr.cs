@@ -43,7 +43,7 @@
  * Represents a PHP A::A consturctor call
  */
 public class ClassConstructorExpr extends Expr {
-  private static final L10N L = new L10N(ClassConstructorExpr.class);
+  private const L10N L = new L10N(ClassConstructorExpr.class);
 
   protected final string _className;
   protected final StringValue _nameV;

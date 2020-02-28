@@ -55,10 +55,10 @@
  * PHP functions implemented from the mail module
  */
 public class MailModule extends AbstractQuercusModule {
-  private static final Logger log =
+  private const Logger log =
     Logger.getLogger(MailModule.class.getName());
 
-  private static final L10N L = new L10N(MailModule.class);
+  private const L10N L = new L10N(MailModule.class);
 
   /**
    * Send mail using JavaMail.

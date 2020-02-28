@@ -38,94 +38,94 @@
 
 
 class RegexpNode {
-  static final int RC_END = 0;
-  static final int RC_NULL = 1;
-  static final int RC_STRING = 2;
-  static final int RC_SET = 3;
-  static final int RC_NSET = 4;
-  static final int RC_BEG_GROUP = 5;
-  static final int RC_END_GROUP = 6;
+  const int RC_END = 0;
+  const int RC_NULL = 1;
+  const int RC_STRING = 2;
+  const int RC_SET = 3;
+  const int RC_NSET = 4;
+  const int RC_BEG_GROUP = 5;
+  const int RC_END_GROUP = 6;
 
-  static final int RC_GROUP_REF = 7;
-  static final int RC_LOOP = 8;
-  static final int RC_LOOP_INIT = 9;
-  static final int RC_LOOP_SHORT = 10;
-  static final int RC_LOOP_UNIQUE = 11;
-  static final int RC_LOOP_SHORT_UNIQUE = 12;
-  static final int RC_LOOP_LONG = 13;
+  const int RC_GROUP_REF = 7;
+  const int RC_LOOP = 8;
+  const int RC_LOOP_INIT = 9;
+  const int RC_LOOP_SHORT = 10;
+  const int RC_LOOP_UNIQUE = 11;
+  const int RC_LOOP_SHORT_UNIQUE = 12;
+  const int RC_LOOP_LONG = 13;
 
-  static final int RC_OR = 64;
-  static final int RC_OR_UNIQUE = 65;
-  static final int RC_POS_LOOKAHEAD = 66;
-  static final int RC_NEG_LOOKAHEAD = 67;
-  static final int RC_POS_LOOKBEHIND = 68;
-  static final int RC_NEG_LOOKBEHIND = 69;
-  static final int RC_LOOKBEHIND_OR = 70;
+  const int RC_OR = 64;
+  const int RC_OR_UNIQUE = 65;
+  const int RC_POS_LOOKAHEAD = 66;
+  const int RC_NEG_LOOKAHEAD = 67;
+  const int RC_POS_LOOKBEHIND = 68;
+  const int RC_NEG_LOOKBEHIND = 69;
+  const int RC_LOOKBEHIND_OR = 70;
 
-  static final int RC_WORD = 73;
-  static final int RC_NWORD = 74;
-  static final int RC_BLINE = 75;
-  static final int RC_ELINE = 76;
-  static final int RC_BSTRING = 77;
-  static final int RC_ESTRING = 78;
-  static final int RC_ENSTRING = 79;
-  static final int RC_GSTRING = 80;
+  const int RC_WORD = 73;
+  const int RC_NWORD = 74;
+  const int RC_BLINE = 75;
+  const int RC_ELINE = 76;
+  const int RC_BSTRING = 77;
+  const int RC_ESTRING = 78;
+  const int RC_ENSTRING = 79;
+  const int RC_GSTRING = 80;
 
   // conditionals
-  static final int RC_COND = 81;
+  const int RC_COND = 81;
 
   // ignore case
-  static final int RC_STRING_I = 128;
-  static final int RC_SET_I = 129;
-  static final int RC_NSET_I = 130;
-  static final int RC_GROUP_REF_I = 131;
+  const int RC_STRING_I = 128;
+  const int RC_SET_I = 129;
+  const int RC_NSET_I = 130;
+  const int RC_GROUP_REF_I = 131;
 
-  static final int RC_LEXEME = 256;
+  const int RC_LEXEME = 256;
 
   // unicode properties
-  static final int RC_UNICODE = 512;
-  static final int RC_NUNICODE = 513;
+  const int RC_UNICODE = 512;
+  const int RC_NUNICODE = 513;
 
   // unicode properties sets
-  static final int RC_C = 1024;
-  static final int RC_L = 1025;
-  static final int RC_M = 1026;
-  static final int RC_N = 1027;
-  static final int RC_P = 1028;
-  static final int RC_S = 1029;
-  static final int RC_Z = 1030;
+  const int RC_C = 1024;
+  const int RC_L = 1025;
+  const int RC_M = 1026;
+  const int RC_N = 1027;
+  const int RC_P = 1028;
+  const int RC_S = 1029;
+  const int RC_Z = 1030;
 
   // negated unicode properties sets
-  static final int RC_NC = 1031;
-  static final int RC_NL = 1032;
-  static final int RC_NM = 1033;
-  static final int RC_NN = 1034;
-  static final int RC_NP = 1035;
+  const int RC_NC = 1031;
+  const int RC_NL = 1032;
+  const int RC_NM = 1033;
+  const int RC_NN = 1034;
+  const int RC_NP = 1035;
 
   // POSIX character classes
-  static final int RC_CHAR_CLASS = 2048;
-  static final int RC_ALNUM = 1;
-  static final int RC_ALPHA = 2;
-  static final int RC_BLANK = 3;
-  static final int RC_CNTRL = 4;
-  static final int RC_DIGIT = 5;
-  static final int RC_GRAPH = 6;
-  static final int RC_LOWER = 7;
-  static final int RC_PRINT = 8;
-  static final int RC_PUNCT = 9;
-  static final int RC_SPACE = 10;
-  static final int RC_UPPER = 11;
-  static final int RC_XDIGIT = 12;
+  const int RC_CHAR_CLASS = 2048;
+  const int RC_ALNUM = 1;
+  const int RC_ALPHA = 2;
+  const int RC_BLANK = 3;
+  const int RC_CNTRL = 4;
+  const int RC_DIGIT = 5;
+  const int RC_GRAPH = 6;
+  const int RC_LOWER = 7;
+  const int RC_PRINT = 8;
+  const int RC_PUNCT = 9;
+  const int RC_SPACE = 10;
+  const int RC_UPPER = 11;
+  const int RC_XDIGIT = 12;
 
   // #2526, possible JIT/OS issue with Integer.MAX_VALUE
-  private static final int INTEGER_MAX = Integer.MAX_VALUE - 1;
+  private const int INTEGER_MAX = Integer.MAX_VALUE - 1;
 
-  public static final int FAIL = -1;
-  public static final int SUCCESS = 0;
+  public const int FAIL = -1;
+  public const int SUCCESS = 0;
 
-  static final RegexpNode N_END = new End();
+  const RegexpNode N_END = new End();
 
-  static final RegexpNode ANY_CHAR;
+  const RegexpNode ANY_CHAR;
 
   /**
    * Creates a node with a code
@@ -386,16 +386,16 @@ class RegexpNode {
     }
   }
 
-  static final AnchorBegin ANCHOR_BEGIN = new AnchorBegin();
-  static final AnchorBeginOrNewline ANCHOR_BEGIN_OR_NEWLINE
+  const AnchorBegin ANCHOR_BEGIN = new AnchorBegin();
+  const AnchorBeginOrNewline ANCHOR_BEGIN_OR_NEWLINE
     = new AnchorBeginOrNewline();
 
-  static final AnchorBeginRelative ANCHOR_BEGIN_RELATIVE
+  const AnchorBeginRelative ANCHOR_BEGIN_RELATIVE
    = new AnchorBeginRelative();
 
-  static final AnchorEnd ANCHOR_END = new AnchorEnd();
-  static final AnchorEndOnly ANCHOR_END_ONLY = new AnchorEndOnly();
-  static final AnchorEndOrNewline ANCHOR_END_OR_NEWLINE
+  const AnchorEnd ANCHOR_END = new AnchorEnd();
+  const AnchorEndOnly ANCHOR_END_ONLY = new AnchorEndOnly();
+  const AnchorEndOrNewline ANCHOR_END_OR_NEWLINE
     = new AnchorEndOrNewline();
 
   static class AnchorBegin extends NullableNode {
@@ -464,17 +464,17 @@ class RegexpNode {
     }
   }
 
-  static final RegexpNode DIGIT = RegexpSet.DIGIT.createNode();
-  static final RegexpNode NOT_DIGIT = RegexpSet.DIGIT.createNotNode();
+  const RegexpNode DIGIT = RegexpSet.DIGIT.createNode();
+  const RegexpNode NOT_DIGIT = RegexpSet.DIGIT.createNotNode();
 
-  static final RegexpNode DOT = RegexpSet.DOT.createNotNode();
-  static final RegexpNode NOT_DOT = RegexpSet.DOT.createNode();
+  const RegexpNode DOT = RegexpSet.DOT.createNotNode();
+  const RegexpNode NOT_DOT = RegexpSet.DOT.createNode();
 
-  static final RegexpNode SPACE = RegexpSet.SPACE.createNode();
-  static final RegexpNode NOT_SPACE = RegexpSet.SPACE.createNotNode();
+  const RegexpNode SPACE = RegexpSet.SPACE.createNode();
+  const RegexpNode NOT_SPACE = RegexpSet.SPACE.createNotNode();
 
-  static final RegexpNode S_WORD = RegexpSet.WORD.createNode();
-  static final RegexpNode NOT_S_WORD = RegexpSet.WORD.createNotNode();
+  const RegexpNode S_WORD = RegexpSet.WORD.createNode();
+  const RegexpNode NOT_S_WORD = RegexpSet.WORD.createNotNode();
 
   static class AsciiSet extends AbstractCharNode {
     private final boolean []_set;
@@ -2192,122 +2192,122 @@ class RegexpNode {
     }
   }
 
-  static final PropC PROP_C = new PropC();
-  static final PropNotC PROP_NOT_C = new PropNotC();
+  const PropC PROP_C = new PropC();
+  const PropNotC PROP_NOT_C = new PropNotC();
 
-  static final Prop PROP_Cc = new Prop(Character.CONTROL);
-  static final PropNot PROP_NOT_Cc = new PropNot(Character.CONTROL);
+  const Prop PROP_Cc = new Prop(Character.CONTROL);
+  const PropNot PROP_NOT_Cc = new PropNot(Character.CONTROL);
 
-  static final Prop PROP_Cf = new Prop(Character.FORMAT);
-  static final PropNot PROP_NOT_Cf = new PropNot(Character.FORMAT);
+  const Prop PROP_Cf = new Prop(Character.FORMAT);
+  const PropNot PROP_NOT_Cf = new PropNot(Character.FORMAT);
 
-  static final Prop PROP_Cn = new Prop(Character.UNASSIGNED);
-  static final PropNot PROP_NOT_Cn = new PropNot(Character.UNASSIGNED);
+  const Prop PROP_Cn = new Prop(Character.UNASSIGNED);
+  const PropNot PROP_NOT_Cn = new PropNot(Character.UNASSIGNED);
 
-  static final Prop PROP_Co = new Prop(Character.PRIVATE_USE);
-  static final PropNot PROP_NOT_Co = new PropNot(Character.PRIVATE_USE);
+  const Prop PROP_Co = new Prop(Character.PRIVATE_USE);
+  const PropNot PROP_NOT_Co = new PropNot(Character.PRIVATE_USE);
 
-  static final Prop PROP_Cs = new Prop(Character.SURROGATE);
-  static final PropNot PROP_NOT_Cs = new PropNot(Character.SURROGATE);
+  const Prop PROP_Cs = new Prop(Character.SURROGATE);
+  const PropNot PROP_NOT_Cs = new PropNot(Character.SURROGATE);
 
-  static final PropL PROP_L = new PropL();
-  static final PropNotL PROP_NOT_L = new PropNotL();
+  const PropL PROP_L = new PropL();
+  const PropNotL PROP_NOT_L = new PropNotL();
 
-  static final Prop PROP_Ll = new Prop(Character.LOWERCASE_LETTER);
-  static final PropNot PROP_NOT_Ll = new PropNot(Character.LOWERCASE_LETTER);
+  const Prop PROP_Ll = new Prop(Character.LOWERCASE_LETTER);
+  const PropNot PROP_NOT_Ll = new PropNot(Character.LOWERCASE_LETTER);
 
-  static final Prop PROP_Lm = new Prop(Character.MODIFIER_LETTER);
-  static final PropNot PROP_NOT_Lm = new PropNot(Character.MODIFIER_LETTER);
+  const Prop PROP_Lm = new Prop(Character.MODIFIER_LETTER);
+  const PropNot PROP_NOT_Lm = new PropNot(Character.MODIFIER_LETTER);
 
-  static final Prop PROP_Lo = new Prop(Character.OTHER_LETTER);
-  static final PropNot PROP_NOT_Lo = new PropNot(Character.OTHER_LETTER);
+  const Prop PROP_Lo = new Prop(Character.OTHER_LETTER);
+  const PropNot PROP_NOT_Lo = new PropNot(Character.OTHER_LETTER);
 
-  static final Prop PROP_Lt = new Prop(Character.TITLECASE_LETTER);
-  static final PropNot PROP_NOT_Lt = new PropNot(Character.TITLECASE_LETTER);
+  const Prop PROP_Lt = new Prop(Character.TITLECASE_LETTER);
+  const PropNot PROP_NOT_Lt = new PropNot(Character.TITLECASE_LETTER);
 
-  static final Prop PROP_Lu = new Prop(Character.UPPERCASE_LETTER);
-  static final PropNot PROP_NOT_Lu = new PropNot(Character.UPPERCASE_LETTER);
+  const Prop PROP_Lu = new Prop(Character.UPPERCASE_LETTER);
+  const PropNot PROP_NOT_Lu = new PropNot(Character.UPPERCASE_LETTER);
 
-  static final PropM PROP_M = new PropM();
-  static final PropNotM PROP_NOT_M = new PropNotM();
+  const PropM PROP_M = new PropM();
+  const PropNotM PROP_NOT_M = new PropNotM();
 
-  static final Prop PROP_Mc = new Prop(Character.COMBINING_SPACING_MARK);
-  static final PropNot PROP_NOT_Mc
+  const Prop PROP_Mc = new Prop(Character.COMBINING_SPACING_MARK);
+  const PropNot PROP_NOT_Mc
     = new PropNot(Character.COMBINING_SPACING_MARK);
 
-  static final Prop PROP_Me = new Prop(Character.ENCLOSING_MARK);
-  static final PropNot PROP_NOT_Me = new PropNot(Character.ENCLOSING_MARK);
+  const Prop PROP_Me = new Prop(Character.ENCLOSING_MARK);
+  const PropNot PROP_NOT_Me = new PropNot(Character.ENCLOSING_MARK);
 
-  static final Prop PROP_Mn = new Prop(Character.NON_SPACING_MARK);
-  static final PropNot PROP_NOT_Mn = new PropNot(Character.NON_SPACING_MARK);
+  const Prop PROP_Mn = new Prop(Character.NON_SPACING_MARK);
+  const PropNot PROP_NOT_Mn = new PropNot(Character.NON_SPACING_MARK);
 
-  static final PropN PROP_N = new PropN();
-  static final PropNotN PROP_NOT_N = new PropNotN();
+  const PropN PROP_N = new PropN();
+  const PropNotN PROP_NOT_N = new PropNotN();
 
-  static final Prop PROP_Nd = new Prop(Character.DECIMAL_DIGIT_NUMBER);
-  static final PropNot PROP_NOT_Nd
+  const Prop PROP_Nd = new Prop(Character.DECIMAL_DIGIT_NUMBER);
+  const PropNot PROP_NOT_Nd
     = new PropNot(Character.DECIMAL_DIGIT_NUMBER);
 
-  static final Prop PROP_Nl = new Prop(Character.LETTER_NUMBER);
-  static final PropNot PROP_NOT_Nl = new PropNot(Character.LETTER_NUMBER);
+  const Prop PROP_Nl = new Prop(Character.LETTER_NUMBER);
+  const PropNot PROP_NOT_Nl = new PropNot(Character.LETTER_NUMBER);
 
-  static final Prop PROP_No = new Prop(Character.OTHER_NUMBER);
-  static final PropNot PROP_NOT_No = new PropNot(Character.OTHER_NUMBER);
+  const Prop PROP_No = new Prop(Character.OTHER_NUMBER);
+  const PropNot PROP_NOT_No = new PropNot(Character.OTHER_NUMBER);
 
-  static final PropP PROP_P = new PropP();
-  static final PropNotP PROP_NOT_P = new PropNotP();
+  const PropP PROP_P = new PropP();
+  const PropNotP PROP_NOT_P = new PropNotP();
 
-  static final Prop PROP_Pc = new Prop(Character.CONNECTOR_PUNCTUATION);
-  static final PropNot PROP_NOT_Pc
+  const Prop PROP_Pc = new Prop(Character.CONNECTOR_PUNCTUATION);
+  const PropNot PROP_NOT_Pc
     = new PropNot(Character.CONNECTOR_PUNCTUATION);
 
-  static final Prop PROP_Pd = new Prop(Character.DASH_PUNCTUATION);
-  static final PropNot PROP_NOT_Pd = new PropNot(Character.DASH_PUNCTUATION);
+  const Prop PROP_Pd = new Prop(Character.DASH_PUNCTUATION);
+  const PropNot PROP_NOT_Pd = new PropNot(Character.DASH_PUNCTUATION);
 
-  static final Prop PROP_Pe = new Prop(Character.END_PUNCTUATION);
-  static final PropNot PROP_NOT_Pe = new PropNot(Character.END_PUNCTUATION);
+  const Prop PROP_Pe = new Prop(Character.END_PUNCTUATION);
+  const PropNot PROP_NOT_Pe = new PropNot(Character.END_PUNCTUATION);
 
-  static final Prop PROP_Pf = new Prop(Character.FINAL_QUOTE_PUNCTUATION);
-  static final PropNot PROP_NOT_Pf
+  const Prop PROP_Pf = new Prop(Character.FINAL_QUOTE_PUNCTUATION);
+  const PropNot PROP_NOT_Pf
     = new PropNot(Character.FINAL_QUOTE_PUNCTUATION);
 
-  static final Prop PROP_Pi = new Prop(Character.INITIAL_QUOTE_PUNCTUATION);
-  static final PropNot PROP_NOT_Pi
+  const Prop PROP_Pi = new Prop(Character.INITIAL_QUOTE_PUNCTUATION);
+  const PropNot PROP_NOT_Pi
     = new PropNot(Character.INITIAL_QUOTE_PUNCTUATION);
 
-  static final Prop PROP_Po = new Prop(Character.OTHER_PUNCTUATION);
-  static final PropNot PROP_NOT_Po = new PropNot(Character.OTHER_PUNCTUATION);
+  const Prop PROP_Po = new Prop(Character.OTHER_PUNCTUATION);
+  const PropNot PROP_NOT_Po = new PropNot(Character.OTHER_PUNCTUATION);
 
-  static final Prop PROP_Ps = new Prop(Character.START_PUNCTUATION);
-  static final PropNot PROP_NOT_Ps = new PropNot(Character.START_PUNCTUATION);
+  const Prop PROP_Ps = new Prop(Character.START_PUNCTUATION);
+  const PropNot PROP_NOT_Ps = new PropNot(Character.START_PUNCTUATION);
 
-  static final PropS PROP_S = new PropS();
-  static final PropNotS PROP_NOT_S = new PropNotS();
+  const PropS PROP_S = new PropS();
+  const PropNotS PROP_NOT_S = new PropNotS();
 
-  static final Prop PROP_Sc = new Prop(Character.CURRENCY_SYMBOL);
-  static final PropNot PROP_NOT_Sc = new PropNot(Character.CURRENCY_SYMBOL);
+  const Prop PROP_Sc = new Prop(Character.CURRENCY_SYMBOL);
+  const PropNot PROP_NOT_Sc = new PropNot(Character.CURRENCY_SYMBOL);
 
-  static final Prop PROP_Sk = new Prop(Character.MODIFIER_SYMBOL);
-  static final PropNot PROP_NOT_Sk = new PropNot(Character.MODIFIER_SYMBOL);
+  const Prop PROP_Sk = new Prop(Character.MODIFIER_SYMBOL);
+  const PropNot PROP_NOT_Sk = new PropNot(Character.MODIFIER_SYMBOL);
 
-  static final Prop PROP_Sm = new Prop(Character.MATH_SYMBOL);
-  static final PropNot PROP_NOT_Sm = new PropNot(Character.MATH_SYMBOL);
+  const Prop PROP_Sm = new Prop(Character.MATH_SYMBOL);
+  const PropNot PROP_NOT_Sm = new PropNot(Character.MATH_SYMBOL);
 
-  static final Prop PROP_So = new Prop(Character.OTHER_SYMBOL);
-  static final PropNot PROP_NOT_So = new PropNot(Character.OTHER_SYMBOL);
+  const Prop PROP_So = new Prop(Character.OTHER_SYMBOL);
+  const PropNot PROP_NOT_So = new PropNot(Character.OTHER_SYMBOL);
 
-  static final PropZ PROP_Z = new PropZ();
-  static final PropNotZ PROP_NOT_Z = new PropNotZ();
+  const PropZ PROP_Z = new PropZ();
+  const PropNotZ PROP_NOT_Z = new PropNotZ();
 
-  static final Prop PROP_Zl = new Prop(Character.LINE_SEPARATOR);
-  static final PropNot PROP_NOT_Zl = new PropNot(Character.LINE_SEPARATOR);
+  const Prop PROP_Zl = new Prop(Character.LINE_SEPARATOR);
+  const PropNot PROP_NOT_Zl = new PropNot(Character.LINE_SEPARATOR);
 
-  static final Prop PROP_Zp = new Prop(Character.PARAGRAPH_SEPARATOR);
-  static final PropNot PROP_NOT_Zp
+  const Prop PROP_Zp = new Prop(Character.PARAGRAPH_SEPARATOR);
+  const PropNot PROP_NOT_Zp
     = new PropNot(Character.PARAGRAPH_SEPARATOR);
 
-  static final Prop PROP_Zs = new Prop(Character.SPACE_SEPARATOR);
-  static final PropNot PROP_NOT_Zs = new PropNot(Character.SPACE_SEPARATOR);
+  const Prop PROP_Zs = new Prop(Character.SPACE_SEPARATOR);
+  const PropNot PROP_NOT_Zs = new PropNot(Character.SPACE_SEPARATOR);
 
   private static class Prop extends AbstractCharNode {
     private final int _category;
@@ -3058,10 +3058,10 @@ class RegexpNode {
     }
   }
 
-  static final StringBegin STRING_BEGIN = new StringBegin();
-  static final StringEnd STRING_END = new StringEnd();
-  static final StringFirst STRING_FIRST = new StringFirst();
-  static final StringNewline STRING_NEWLINE = new StringNewline();
+  const StringBegin STRING_BEGIN = new StringBegin();
+  const StringEnd STRING_END = new StringEnd();
+  const StringFirst STRING_FIRST = new StringFirst();
+  const StringNewline STRING_NEWLINE = new StringNewline();
 
   private static class StringBegin extends RegexpNode {
     int override match(StringValue string, int strlen, int offset, RegexpState state)
@@ -3104,8 +3104,8 @@ class RegexpNode {
     }
   }
 
-  static final Word WORD = new Word();
-  static final NotWord NOT_WORD = new NotWord();
+  const Word WORD = new Word();
+  const NotWord NOT_WORD = new NotWord();
 
   private static class Word extends RegexpNode {
     int override match(StringValue string, int strlen, int offset, RegexpState state)

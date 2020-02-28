@@ -36,7 +36,7 @@ public class UnimplementedException
 {
   private const L10N L = new L10N(UnimplementedException.class);
 
-  private static final string MESSAGE
+  private const string MESSAGE
     = "{0} has not been implemented. "
       + "A more recent version of Quercus may be available "
       + "at http://www.caucho.com/download "

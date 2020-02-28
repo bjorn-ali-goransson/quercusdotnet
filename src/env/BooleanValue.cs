@@ -44,8 +44,8 @@
 public class BooleanValue extends Value
   implements Serializable
 {
-  public static final BooleanValue TRUE = new BooleanValue(true);
-  public static final BooleanValue FALSE = new BooleanValue(false);
+  public const BooleanValue TRUE = new BooleanValue(true);
+  public const BooleanValue FALSE = new BooleanValue(false);
 
   private final boolean _value;
 

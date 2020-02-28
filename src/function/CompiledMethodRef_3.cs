@@ -43,7 +43,7 @@
  * Represents a compiled method with 3 args
  */
 abstract public class CompiledMethodRef_3 extends CompiledMethodRef {
-  private static final L10N L = new L10N(CompiledMethodRef_3.class);
+  private const L10N L = new L10N(CompiledMethodRef_3.class);
 
   public CompiledMethodRef_3(String name,
                              Arg default_0,

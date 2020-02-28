@@ -56,8 +56,8 @@
 
 
 public class GoogleStaticFileServlet extends GenericServlet {
-  private static final L10N L = new L10N(GoogleStaticFileServlet.class);
-  private static final Logger log
+  private const L10N L = new L10N(GoogleStaticFileServlet.class);
+  private const Logger log
     = Logger.getLogger(GoogleStaticFileServlet.class.getName());
 
   private string _gsBucket;

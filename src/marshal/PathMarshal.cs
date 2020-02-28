@@ -38,7 +38,7 @@
 
 public class PathMarshal extends Marshal
 {
-  public static final Marshal MARSHAL = new PathMarshal();
+  public const Marshal MARSHAL = new PathMarshal();
   
   public boolean isReadOnly()
   {

@@ -36,10 +36,10 @@
  */
 public class MysqlCharset
 {
-  private static final HashMap<String,Integer> _collationIndexMap
+  private const HashMap<String,Integer> _collationIndexMap
     = new HashMap<String,Integer>();
 
-  private static final HashMap<String,CharsetEntry> _charsetEntryMap
+  private const HashMap<String,CharsetEntry> _charsetEntryMap
     = new HashMap<String,CharsetEntry>();
 
   public static int getCollationIndex(String collation)

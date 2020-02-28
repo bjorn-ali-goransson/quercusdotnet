@@ -43,10 +43,10 @@
  * Java functions
  */
 public class JavaModule extends AbstractQuercusModule {
-  private static final Logger log =
+  private const Logger log =
     Logger.getLogger(JavaModule.class.getName());
 
-  private static final L10N L = new L10N(JavaModule.class);
+  private const L10N L = new L10N(JavaModule.class);
 
   /**
    * Call the Java constructor and return the wrapped Java object.

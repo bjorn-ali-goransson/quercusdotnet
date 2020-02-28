@@ -57,7 +57,7 @@
  * Code for marshaling (PHP to Java) and unmarshaling (Java to PHP) arguments.
  */
 public class MarshalFactory {
-  private static final HashMap<Class<?>,Marshal> _marshalMap
+  private const HashMap<Class<?>,Marshal> _marshalMap
     = new HashMap<Class<?>,Marshal>();
 
   protected ModuleContext _moduleContext;

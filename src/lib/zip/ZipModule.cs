@@ -51,9 +51,9 @@
  * PHP Zip
  */
 public class ZipModule extends AbstractQuercusModule {
-  private static final Logger log
+  private const Logger log
     = Logger.getLogger(ZipModule.class.getName());
-  private static final L10N L = new L10N(ZipModule.class);
+  private const L10N L = new L10N(ZipModule.class);
 
   public string []getLoadedExtensions()
   {

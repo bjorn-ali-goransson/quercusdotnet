@@ -34,7 +34,7 @@
 
 abstract public class Encoder
 {
-  protected static final int ERROR_CHARACTER = 0xFFFE;
+  protected const int ERROR_CHARACTER = 0xFFFE;
 
   protected string _charset;
   protected string _replacement;

@@ -52,9 +52,9 @@
 
 public class SimpleHandler extends DefaultHandler2
 {
-  private static final Logger log
+  private const Logger log
     = Logger.getLogger(SimpleHandler.class.getName());
-  private static final L10N L = new L10N(SimpleHandler.class);
+  private const L10N L = new L10N(SimpleHandler.class);
 
   private HashMap<String,String> _entityMap = new HashMap<String,String>();
 

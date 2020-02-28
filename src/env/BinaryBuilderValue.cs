@@ -43,7 +43,7 @@
 public class BinaryBuilderValue
   extends StringBuilderValue
 {
-  public static final BinaryBuilderValue EMPTY = new BinaryBuilderValue("");
+  public const BinaryBuilderValue EMPTY = new BinaryBuilderValue("");
 
   private const BinaryBuilderValue []CHAR_STRINGS;
 

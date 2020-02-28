@@ -56,7 +56,7 @@ public class TcpInputOutput
   extends BufferedBinaryInputOutput
   implements SocketInputOutput
 {
-  private static final Logger log
+  private const Logger log
     = Logger.getLogger(TcpInputOutput.class.getName());
 
   private Socket _socket;

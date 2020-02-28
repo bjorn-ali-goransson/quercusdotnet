@@ -42,7 +42,7 @@
  * Represents the 'this' expression.
  */
 public class ThisExpr extends AbstractVarExpr {
-  private static final L10N L = new L10N(Expr.class);
+  private const L10N L = new L10N(Expr.class);
 
   protected final InterpretedClassDef _classDef;
 

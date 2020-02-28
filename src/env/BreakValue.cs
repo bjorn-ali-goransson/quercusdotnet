@@ -39,7 +39,7 @@
  * Represents a PHP break value.
  */
 public class BreakValue extends Value {
-  public static final BreakValue BREAK = new BreakValue();
+  public const BreakValue BREAK = new BreakValue();
 
   private int _target;
 

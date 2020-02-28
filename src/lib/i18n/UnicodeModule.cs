@@ -49,22 +49,22 @@
  * Unicode handling.  Also includes iconv, etc.
  */
 public class UnicodeModule extends AbstractQuercusModule {
-  private static final Logger log = Logger.getLogger(
+  private const Logger log = Logger.getLogger(
       UnicodeModule.class.getName());
-  private static final L10N L = new L10N(UnicodeModule.class);
+  private const L10N L = new L10N(UnicodeModule.class);
 
-  public static final int U_INVALID_STOP = 0;
-  public static final int U_INVALID_SKIP = 1;
-  public static final int U_INVALID_SUBSTITUTE = 2;
-  public static final int U_INVALID_ESCAPE = 3;
+  public const int U_INVALID_STOP = 0;
+  public const int U_INVALID_SKIP = 1;
+  public const int U_INVALID_SUBSTITUTE = 2;
+  public const int U_INVALID_ESCAPE = 3;
 
-  public static final string ICONV_IMPL = "QuercusIconv";
-  public static final string ICONV_VERSION = "1.0";
+  public const string ICONV_IMPL = "QuercusIconv";
+  public const string ICONV_VERSION = "1.0";
 
-  public static final int ICONV_MIME_DECODE_STRICT = 1;
-  public static final int ICONV_MIME_DECODE_CONTINUE_ON_ERROR = 2;
+  public const int ICONV_MIME_DECODE_STRICT = 1;
+  public const int ICONV_MIME_DECODE_CONTINUE_ON_ERROR = 2;
 
-  private static final IniDefinitions _iniDefinitions = new IniDefinitions();
+  private const IniDefinitions _iniDefinitions = new IniDefinitions();
 
   /**
    * Returns the extensions implemented by the module.
@@ -584,10 +584,10 @@ public class UnicodeModule extends AbstractQuercusModule {
     }
   }
 
-  static final IniDefinition INI_ICONV_INPUT_ENCODING
+  const IniDefinition INI_ICONV_INPUT_ENCODING
     = _iniDefinitions.add("iconv.input_encoding", "utf-8", PHP_INI_ALL);
-  static final IniDefinition INI_ICONV_OUTPUT_ENCODING
+  const IniDefinition INI_ICONV_OUTPUT_ENCODING
     = _iniDefinitions.add("iconv.output_encoding", "utf-8", PHP_INI_ALL);
-  static final IniDefinition INI_ICONV_INTERNAL_ENCODING
+  const IniDefinition INI_ICONV_INTERNAL_ENCODING
     = _iniDefinitions.add("iconv.internal_encoding", "utf-8", PHP_INI_ALL);
 }

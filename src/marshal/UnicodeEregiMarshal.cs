@@ -41,7 +41,7 @@
  * Code for marshaling (PHP to Java) and unmarshaling (Java to PHP) arguments.
  */
 public class UnicodeEregiMarshal extends StringMarshal {
-  public static final UnicodeEregiMarshal MARSHAL = new UnicodeEregiMarshal();
+  public const UnicodeEregiMarshal MARSHAL = new UnicodeEregiMarshal();
 
   public Object marshal(Env env, Expr expr, Class expectedClass)
   {

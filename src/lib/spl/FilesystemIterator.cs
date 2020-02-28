@@ -38,18 +38,18 @@
 
 public class FilesystemIterator extends DirectoryIterator
 {
-  public static final int CURRENT_AS_PATHNAME = 32;
-  public static final int CURRENT_AS_FILEINFO = 0;
-  public static final int CURRENT_AS_SELF = 16;
-  public static final int CURRENT_MODE_MASK = 240;
+  public const int CURRENT_AS_PATHNAME = 32;
+  public const int CURRENT_AS_FILEINFO = 0;
+  public const int CURRENT_AS_SELF = 16;
+  public const int CURRENT_MODE_MASK = 240;
 
-  public static final int KEY_AS_PATHNAME = 0;
-  public static final int KEY_AS_FILENAME = 256;
-  public static final int FOLLOW_SYMLINKS = 512;
-  public static final int KEY_MODE_MASK = 3840;
-  public static final int NEW_CURRENT_AND_KEY = 256;
-  public static final int SKIP_DOTS = 4096;
-  public static final int UNIX_PATHS = 8192;
+  public const int KEY_AS_PATHNAME = 0;
+  public const int KEY_AS_FILENAME = 256;
+  public const int FOLLOW_SYMLINKS = 512;
+  public const int KEY_MODE_MASK = 3840;
+  public const int NEW_CURRENT_AND_KEY = 256;
+  public const int SKIP_DOTS = 4096;
+  public const int UNIX_PATHS = 8192;
 
   private int _flags;
 

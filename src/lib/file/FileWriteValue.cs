@@ -40,7 +40,7 @@
  * Represents a PHP open file
  */
 public class FileWriteValue extends FileValue {
-  private static final Logger log
+  private const Logger log
     = Logger.getLogger(FileReadValue.class.getName());
 
   private WriteStream _os;

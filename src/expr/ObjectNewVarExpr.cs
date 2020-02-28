@@ -43,7 +43,7 @@
  * Represents a PHP function expression of the form "new $a()".
  */
 public class ObjectNewVarExpr extends Expr {
-  private static final L10N L = new L10N(ObjectNewExpr.class);
+  private const L10N L = new L10N(ObjectNewExpr.class);
   
   protected final Expr _name;
   protected final Expr []_args;

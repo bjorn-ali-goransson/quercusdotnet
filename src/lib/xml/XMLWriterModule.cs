@@ -46,9 +46,9 @@
  * XMLWriter
  */
 public class XMLWriterModule extends AbstractQuercusModule {
-  private static final Logger log
+  private const Logger log
     = Logger.getLogger(XMLWriterModule.class.getName());
-  private static final L10N L = new L10N(XMLWriterModule.class);
+  private const L10N L = new L10N(XMLWriterModule.class);
 
   public string []getLoadedExtensions()
   {

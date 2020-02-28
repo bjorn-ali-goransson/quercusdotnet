@@ -82,75 +82,75 @@
  *
  */
 public class OracleModule extends AbstractQuercusModule {
-  private static final Logger log = Log.open(OracleModule.class);
-  private static final L10N L = new L10N(OracleModule.class);
+  private const Logger log = Log.open(OracleModule.class);
+  private const L10N L = new L10N(OracleModule.class);
 
   // WARNING: Do not change order or constant values.
   // They are mapped to oracle types below.
   // See arrayPhpToOracleType.
-  public static final int OCI_B_BFILE                    = 0x01;
-  public static final int OCI_B_CFILEE                   = 0x02;
-  public static final int OCI_B_CLOB                     = 0x03;
-  public static final int OCI_B_BLOB                     = 0x04;
-  public static final int OCI_B_ROWID                    = 0x05;
-  public static final int OCI_B_CURSOR                   = 0x06;
-  public static final int OCI_B_NTY                      = 0x07;
-  public static final int OCI_B_BIN                      = 0x08;
-  public static final int OCI_DTYPE_FILE                 = 0x09;
-  public static final int OCI_DTYPE_LOB                  = 0x0A;
-  public static final int OCI_DTYPE_ROWID                = 0x0B;
-  public static final int OCI_D_FILE                     = 0x0C;
-  public static final int OCI_D_LOB                      = 0x0D;
-  public static final int OCI_D_ROWID                    = 0x0E;
-  public static final int OCI_SYSDATE                    = 0x0F;
-  public static final int OCI_TEMP_CLOB                  = 0x10;
-  public static final int OCI_TEMP_BLOB                  = 0x11;
-  public static final int SQLT_BFILEE                    = 0x12;
-  public static final int SQLT_CFILEE                    = 0x13;
-  public static final int SQLT_CLOB                      = 0x14;
-  public static final int SQLT_BLOB                      = 0x15;
-  public static final int SQLT_RDD                       = 0x16;
-  public static final int SQLT_NTY                       = 0x17;
-  public static final int SQLT_LNG                       = 0x18;
-  public static final int SQLT_LBI                       = 0x19;
-  public static final int SQLT_BIN                       = 0x1A;
-  public static final int SQLT_NUM                       = 0x1B;
-  public static final int SQLT_INT                       = 0x1C;
-  public static final int SQLT_AFC                       = 0x1D;
-  public static final int SQLT_CHR                       = 0x1E;
-  public static final int SQLT_VCS                       = 0x1F;
-  public static final int SQLT_AVC                       = 0x20;
-  public static final int SQLT_STR                       = 0x21;
-  public static final int SQLT_LVC                       = 0x22;
-  public static final int SQLT_FLT                       = 0x23;
-  public static final int SQLT_ODT                       = 0x24;
-  public static final int SQLT_BDOUBLE                   = 0x25;
-  public static final int SQLT_BFLOAT                    = 0x26;
-  public static final int SQLT_RSET                      = 0x27;
-  public static final int SQLT_FILE                      = 0x28;
-  public static final int SQLT_CFILE                     = 0x29;
+  public const int OCI_B_BFILE                    = 0x01;
+  public const int OCI_B_CFILEE                   = 0x02;
+  public const int OCI_B_CLOB                     = 0x03;
+  public const int OCI_B_BLOB                     = 0x04;
+  public const int OCI_B_ROWID                    = 0x05;
+  public const int OCI_B_CURSOR                   = 0x06;
+  public const int OCI_B_NTY                      = 0x07;
+  public const int OCI_B_BIN                      = 0x08;
+  public const int OCI_DTYPE_FILE                 = 0x09;
+  public const int OCI_DTYPE_LOB                  = 0x0A;
+  public const int OCI_DTYPE_ROWID                = 0x0B;
+  public const int OCI_D_FILE                     = 0x0C;
+  public const int OCI_D_LOB                      = 0x0D;
+  public const int OCI_D_ROWID                    = 0x0E;
+  public const int OCI_SYSDATE                    = 0x0F;
+  public const int OCI_TEMP_CLOB                  = 0x10;
+  public const int OCI_TEMP_BLOB                  = 0x11;
+  public const int SQLT_BFILEE                    = 0x12;
+  public const int SQLT_CFILEE                    = 0x13;
+  public const int SQLT_CLOB                      = 0x14;
+  public const int SQLT_BLOB                      = 0x15;
+  public const int SQLT_RDD                       = 0x16;
+  public const int SQLT_NTY                       = 0x17;
+  public const int SQLT_LNG                       = 0x18;
+  public const int SQLT_LBI                       = 0x19;
+  public const int SQLT_BIN                       = 0x1A;
+  public const int SQLT_NUM                       = 0x1B;
+  public const int SQLT_INT                       = 0x1C;
+  public const int SQLT_AFC                       = 0x1D;
+  public const int SQLT_CHR                       = 0x1E;
+  public const int SQLT_VCS                       = 0x1F;
+  public const int SQLT_AVC                       = 0x20;
+  public const int SQLT_STR                       = 0x21;
+  public const int SQLT_LVC                       = 0x22;
+  public const int SQLT_FLT                       = 0x23;
+  public const int SQLT_ODT                       = 0x24;
+  public const int SQLT_BDOUBLE                   = 0x25;
+  public const int SQLT_BFLOAT                    = 0x26;
+  public const int SQLT_RSET                      = 0x27;
+  public const int SQLT_FILE                      = 0x28;
+  public const int SQLT_CFILE                     = 0x29;
 
   // Reserved for future types and extensions
   // 0x30 - 0x4F
 
   // OCI Control Constants 0x50 - ...
-  public static final int OCI_DEFAULT                    = 0x50;
-  public static final int OCI_DESCRIBE_ONLY              = 0x51;
-  public static final int OCI_COMMIT_ON_SUCCESS          = 0x52;
-  public static final int OCI_EXACT_FETCH                = 0x53;
-  public static final int OCI_FETCHSTATEMENT_BY_COLUMN   = 0x54;
-  public static final int OCI_FETCHSTATEMENT_BY_ROW      = 0x55;
-  public static final int OCI_ASSOC                      = 0x56;
-  public static final int OCI_NUM                        = 0x57;
-  public static final int OCI_BOTH                       = 0x58;
-  public static final int OCI_RETURN_NULLS               = 0x59;
-  public static final int OCI_RETURN_LOBS                = 0x5A;
-  public static final int OCI_SYSOPER                    = 0x5B;
-  public static final int OCI_SYSDBA                     = 0x5C;
-  public static final int OCI_LOB_BUFFER_FREE            = 0x5D;
-  public static final int OCI_SEEK_SET                   = 0x5E;
-  public static final int OCI_SEEK_CUR                   = 0x5F;
-  public static final int OCI_SEEK_END                   = 0x6A;
+  public const int OCI_DEFAULT                    = 0x50;
+  public const int OCI_DESCRIBE_ONLY              = 0x51;
+  public const int OCI_COMMIT_ON_SUCCESS          = 0x52;
+  public const int OCI_EXACT_FETCH                = 0x53;
+  public const int OCI_FETCHSTATEMENT_BY_COLUMN   = 0x54;
+  public const int OCI_FETCHSTATEMENT_BY_ROW      = 0x55;
+  public const int OCI_ASSOC                      = 0x56;
+  public const int OCI_NUM                        = 0x57;
+  public const int OCI_BOTH                       = 0x58;
+  public const int OCI_RETURN_NULLS               = 0x59;
+  public const int OCI_RETURN_LOBS                = 0x5A;
+  public const int OCI_SYSOPER                    = 0x5B;
+  public const int OCI_SYSDBA                     = 0x5C;
+  public const int OCI_LOB_BUFFER_FREE            = 0x5D;
+  public const int OCI_SEEK_SET                   = 0x5E;
+  public const int OCI_SEEK_CUR                   = 0x5F;
+  public const int OCI_SEEK_END                   = 0x6A;
 
   // Cache class oracle.jdbc.OracleTypes to be used below.
   private static Class<?> classOracleTypes;

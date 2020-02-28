@@ -39,7 +39,7 @@
  * Represents a PHP array value.
  */
 public class CopyArrayValue extends ArrayValue {
-  private static final Logger log
+  private const Logger log
     = Logger.getLogger(CopyArrayValue.class.getName());
 
   private final ConstArrayValue _constArray;

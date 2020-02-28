@@ -42,7 +42,7 @@
  * Represents the introspected static function information.
  */
 public class JavaConstructor extends JavaInvoker {
-  private static final L10N L = new L10N(JavaConstructor.class);
+  private const L10N L = new L10N(JavaConstructor.class);
 
   private final Constructor<?> _constructor;
   private final int _argLength;

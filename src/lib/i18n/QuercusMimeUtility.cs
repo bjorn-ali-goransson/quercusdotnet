@@ -49,8 +49,8 @@
 
 public class QuercusMimeUtility
 {
-  private static final L10N L = new L10N(QuercusMimeUtility.class);
-  private static final Logger log
+  private const L10N L = new L10N(QuercusMimeUtility.class);
+  private const Logger log
     = Logger.getLogger(QuercusMimeUtility.class.getName());
   /*
    * Returns an array of decoded Mime headers/fields.

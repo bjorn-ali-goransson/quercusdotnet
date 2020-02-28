@@ -51,7 +51,7 @@
  * PHP exif
  */
 public class ExifModule extends AbstractQuercusModule {
-  private static final L10N L = new L10N(ExifModule.class);
+  private const L10N L = new L10N(ExifModule.class);
 
   /**
    *  Reads the EXIF headers from JPEG or TIFF

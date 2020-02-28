@@ -43,9 +43,9 @@
  * pdf object oriented API facade
  */
 public class PDFStream {
-  private static final Logger log
+  private const Logger log
     = Logger.getLogger(PDFStream.class.getName());
-  private static final L10N L = new L10N(PDFStream.class);
+  private const L10N L = new L10N(PDFStream.class);
 
   private int _id;
 

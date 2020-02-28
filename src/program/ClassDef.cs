@@ -63,7 +63,7 @@ abstract public class ClassDef implements InstanceInitializer {
   private TraitInsteadofMap _traitInsteadofMap;
   private TraitAliasMap _traitAliasMap;
 
-  protected static final String[] NULL_STRING_ARRAY = new String[0];
+  protected const String[] NULL_STRING_ARRAY = new String[0];
 
   protected ClassDef(Location location,
                      string name,

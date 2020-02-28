@@ -46,9 +46,9 @@
 
 public class XmlReader
 {
-  private static final Logger log
+  private const Logger log
     = Logger.getLogger(XmlReader.class.getName());
-  private static final L10N L = new L10N(XmlReader.class);
+  private const L10N L = new L10N(XmlReader.class);
 
   private int _depth;
   private int _lastNodeType;
@@ -59,34 +59,34 @@ public class XmlReader
 
   private XMLStreamReader _streamReader;
 
-  private static final HashMap<Integer, Integer> _constConvertMap
+  private const HashMap<Integer, Integer> _constConvertMap
     = new HashMap<Integer, Integer>();
 
   private  HashMap<String, Integer> _startElements;
 
-  public static final int NONE = 0;
-  public static final int ELEMENT = 1;
-  public static final int ATTRIBUTE = 2;
-  public static final int TEXT = 3;
-  public static final int CDATA = 4;
-  public static final int ENTITY_REF = 5;
-  public static final int ENTITY = 6;
-  public static final int PI = 7;
-  public static final int COMMENT = 8;
-  public static final int DOC = 9;
-  public static final int DOC_TYPE = 10;
-  public static final int DOC_FRAGMENT = 11;
-  public static final int NOTATION = 12;
-  public static final int WHITESPACE = 13;
-  public static final int SIGNIFICANT_WHITESPACE = 14;
-  public static final int END_ELEMENT = 15;
-  public static final int END_ENTITY = 16;
-  public static final int XML_DECLARATION = 17;
+  public const int NONE = 0;
+  public const int ELEMENT = 1;
+  public const int ATTRIBUTE = 2;
+  public const int TEXT = 3;
+  public const int CDATA = 4;
+  public const int ENTITY_REF = 5;
+  public const int ENTITY = 6;
+  public const int PI = 7;
+  public const int COMMENT = 8;
+  public const int DOC = 9;
+  public const int DOC_TYPE = 10;
+  public const int DOC_FRAGMENT = 11;
+  public const int NOTATION = 12;
+  public const int WHITESPACE = 13;
+  public const int SIGNIFICANT_WHITESPACE = 14;
+  public const int END_ELEMENT = 15;
+  public const int END_ENTITY = 16;
+  public const int XML_DECLARATION = 17;
 
-  public static final int LOADDTD = 1;
-  public static final int DEFAULTATTRS = 2;
-  public static final int VALIDATE = 3;
-  public static final int SUBST_ENTITIES = 4;
+  public const int LOADDTD = 1;
+  public const int DEFAULTATTRS = 2;
+  public const int VALIDATE = 3;
+  public const int SUBST_ENTITIES = 4;
 
   /**
    * Default constructor.

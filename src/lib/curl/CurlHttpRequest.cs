@@ -60,9 +60,9 @@
 public class CurlHttpRequest
   implements EnvCleanup
 {
-  private static final Logger log
+  private const Logger log
     = Logger.getLogger(CurlHttpRequest.class.getName());
-  private static final L10N L = new L10N(CurlHttpRequest.class);
+  private const L10N L = new L10N(CurlHttpRequest.class);
 
   private CurlResource _curl;
   private CurlHttpConnection _conn;
@@ -75,7 +75,7 @@ public class CurlHttpRequest
   /**
    * Returns a HttpRequest specific to the Http request method.
    */
-  public static final CurlHttpRequest getRequest(CurlResource curl)
+  public const CurlHttpRequest getRequest(CurlResource curl)
   {
     string requestMethod = curl.getRequestMethod();
 

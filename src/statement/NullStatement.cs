@@ -37,7 +37,7 @@
  * Represents a compiled PHP program.
  */
 public class NullStatement extends Statement {
-  public static final NullStatement NULL = new NullStatement();
+  public const NullStatement NULL = new NullStatement();
 
   protected NullStatement()
   {

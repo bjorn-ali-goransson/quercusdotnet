@@ -49,57 +49,57 @@
  * PHP XML
  */
 public class XmlModule extends AbstractQuercusModule {
-  private static final L10N L = new L10N(XmlModule.class);
+  private const L10N L = new L10N(XmlModule.class);
 
-  public static final int XML_OPTION_CASE_FOLDING = 0x0;
-  public static final int XML_OPTION_SKIP_TAGSTART = 0x1;
-  public static final int XML_OPTION_SKIP_WHITE = 0x2;
-  public static final int XML_OPTION_TARGET_ENCODING = 0x3;
+  public const int XML_OPTION_CASE_FOLDING = 0x0;
+  public const int XML_OPTION_SKIP_TAGSTART = 0x1;
+  public const int XML_OPTION_SKIP_WHITE = 0x2;
+  public const int XML_OPTION_TARGET_ENCODING = 0x3;
 
-  public static final int XML_ERROR_NONE = 0;
-  public static final int XML_ERROR_NO_MEMORY = 1;
-  public static final int XML_ERROR_SYNTAX = 2;
-  public static final int XML_ERROR_NO_ELEMENTS = 3;
-  public static final int XML_ERROR_INVALID_TOKEN = 4;
-  public static final int XML_ERROR_UNCLOSED_TOKEN = 5;
-  public static final int XML_ERROR_PARTIAL_CHAR = 6;
-  public static final int XML_ERROR_TAG_MISMATCH = 7;
-  public static final int XML_ERROR_DUPLICATE_ATTRIBUTE = 8;
-  public static final int XML_ERROR_JUNK_AFTER_DOC_ELEMENT = 9;
-  public static final int XML_ERROR_PARAM_ENTITY_REF = 10;
-  public static final int XML_ERROR_UNDEFINED_ENTITY = 11;
-  public static final int XML_ERROR_RECURSIVE_ENTITY_REF = 12;
-  public static final int XML_ERROR_ASYNC_ENTITY = 13;
-  public static final int XML_ERROR_BAD_CHAR_REF = 14;
-  public static final int XML_ERROR_BINARY_ENTITY_REF = 15;
-  public static final int XML_ERROR_ATTRIBUTE_EXTERNAL_ENTITY_REF = 16;
-  public static final int XML_ERROR_MISPLACED_XML_PI = 17;
-  public static final int XML_ERROR_UNKNOWN_ENCODING = 18;
-  public static final int XML_ERROR_INCORRECT_ENCODING = 19;
-  public static final int XML_ERROR_UNCLOSED_CDATA_SECTION = 20;
-  public static final int XML_ERROR_EXTERNAL_ENTITY_HANDLING = 21;
-  public static final int XML_ERROR_NOT_STANDALONE = 22;
-  public static final int XML_ERROR_UNEXPECTED_STATE = 23;
-  public static final int XML_ERROR_ENTITY_DECLARED_IN_PE = 24;
-  public static final int XML_ERROR_FEATURE_REQUIRES_XML_DTD = 25;
-  public static final int XML_ERROR_CANT_CHANGE_FEATURE_ONCE_PARSING = 26;
-  public static final int XML_ERROR_UNBOUND_PREFIX = 27;
-  public static final int XML_ERROR_UNDECLARING_PREFIX = 28;
-  public static final int XML_ERROR_INCOMPLETE_PE = 29;
-  public static final int XML_ERROR_XML_DECL = 30;
-  public static final int XML_ERROR_TEXT_DECL = 31;
-  public static final int XML_ERROR_PUBLICID = 32;
-  public static final int XML_ERROR_SUSPENDED = 33;
-  public static final int XML_ERROR_NOT_SUSPENDED = 34;
-  public static final int XML_ERROR_ABORTED = 35;
-  public static final int XML_ERROR_FINISHED = 36;
-  public static final int XML_ERROR_SUSPEND_PE = 37;
+  public const int XML_ERROR_NONE = 0;
+  public const int XML_ERROR_NO_MEMORY = 1;
+  public const int XML_ERROR_SYNTAX = 2;
+  public const int XML_ERROR_NO_ELEMENTS = 3;
+  public const int XML_ERROR_INVALID_TOKEN = 4;
+  public const int XML_ERROR_UNCLOSED_TOKEN = 5;
+  public const int XML_ERROR_PARTIAL_CHAR = 6;
+  public const int XML_ERROR_TAG_MISMATCH = 7;
+  public const int XML_ERROR_DUPLICATE_ATTRIBUTE = 8;
+  public const int XML_ERROR_JUNK_AFTER_DOC_ELEMENT = 9;
+  public const int XML_ERROR_PARAM_ENTITY_REF = 10;
+  public const int XML_ERROR_UNDEFINED_ENTITY = 11;
+  public const int XML_ERROR_RECURSIVE_ENTITY_REF = 12;
+  public const int XML_ERROR_ASYNC_ENTITY = 13;
+  public const int XML_ERROR_BAD_CHAR_REF = 14;
+  public const int XML_ERROR_BINARY_ENTITY_REF = 15;
+  public const int XML_ERROR_ATTRIBUTE_EXTERNAL_ENTITY_REF = 16;
+  public const int XML_ERROR_MISPLACED_XML_PI = 17;
+  public const int XML_ERROR_UNKNOWN_ENCODING = 18;
+  public const int XML_ERROR_INCORRECT_ENCODING = 19;
+  public const int XML_ERROR_UNCLOSED_CDATA_SECTION = 20;
+  public const int XML_ERROR_EXTERNAL_ENTITY_HANDLING = 21;
+  public const int XML_ERROR_NOT_STANDALONE = 22;
+  public const int XML_ERROR_UNEXPECTED_STATE = 23;
+  public const int XML_ERROR_ENTITY_DECLARED_IN_PE = 24;
+  public const int XML_ERROR_FEATURE_REQUIRES_XML_DTD = 25;
+  public const int XML_ERROR_CANT_CHANGE_FEATURE_ONCE_PARSING = 26;
+  public const int XML_ERROR_UNBOUND_PREFIX = 27;
+  public const int XML_ERROR_UNDECLARING_PREFIX = 28;
+  public const int XML_ERROR_INCOMPLETE_PE = 29;
+  public const int XML_ERROR_XML_DECL = 30;
+  public const int XML_ERROR_TEXT_DECL = 31;
+  public const int XML_ERROR_PUBLICID = 32;
+  public const int XML_ERROR_SUSPENDED = 33;
+  public const int XML_ERROR_NOT_SUSPENDED = 34;
+  public const int XML_ERROR_ABORTED = 35;
+  public const int XML_ERROR_FINISHED = 36;
+  public const int XML_ERROR_SUSPEND_PE = 37;
 
-  public static final int LIBXML_ERR_WARNING = 1;
-  public static final int LIBXML_ERR_ERROR = 2;
-  public static final int LIBXML_ERR_FATAL = 3;
+  public const int LIBXML_ERR_WARNING = 1;
+  public const int LIBXML_ERR_ERROR = 2;
+  public const int LIBXML_ERR_FATAL = 3;
 
-  public static final string LIBXML_DOTTED_VERSION = "2.9.0";
+  public const string LIBXML_DOTTED_VERSION = "2.9.0";
 
   public string []getLoadedExtensions()
   {

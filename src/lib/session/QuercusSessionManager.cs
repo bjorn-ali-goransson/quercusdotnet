@@ -60,8 +60,8 @@
 public class QuercusSessionManager
   implements AlarmListener
 {
-  private static final L10N L = new L10N(QuercusSessionManager.class);
-  private static final Logger log
+  private const L10N L = new L10N(QuercusSessionManager.class);
+  private const Logger log
     = Logger.getLogger(QuercusSessionManager.class.getName());
 
   private static int FALSE = 0;

@@ -45,7 +45,7 @@
 public class AbstractBinaryInput
   implements BinaryInput
 {
-  private static final Logger log
+  private const Logger log
     = Logger.getLogger(AbstractBinaryInput.class.getName());
 
   private Env _env;

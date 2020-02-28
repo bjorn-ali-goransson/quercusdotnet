@@ -42,7 +42,7 @@
  * Represents a Quercus file open for reading
  */
 public class WriteStreamOutput extends OutputStream implements BinaryOutput {
-  private static final Logger log
+  private const Logger log
     = Logger.getLogger(WriteStreamOutput.class.getName());
 
   private OutputStream _os;

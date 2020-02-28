@@ -78,7 +78,7 @@ abstract public class ValueType implements Serializable {
     return isNumberCmp() && ! isLongCmp();
   }
 
-  public static final ValueType NULL = new ValueType()
+  public const ValueType NULL = new ValueType()
     {
       public string toString()
       {
@@ -86,7 +86,7 @@ abstract public class ValueType implements Serializable {
       }
     };
 
-  public static final ValueType BOOLEAN = new ValueType()
+  public const ValueType BOOLEAN = new ValueType()
     {
       public boolean isBoolean()
       {
@@ -99,7 +99,7 @@ abstract public class ValueType implements Serializable {
       }
     };
 
-  public static final ValueType LONG = new ValueType()
+  public const ValueType LONG = new ValueType()
     {
       public boolean isLong()
       {
@@ -137,7 +137,7 @@ abstract public class ValueType implements Serializable {
       }
     };
 
-  public static final ValueType LONG_EQ = new ValueType()
+  public const ValueType LONG_EQ = new ValueType()
     {
       public boolean isLongCmp()
       {
@@ -165,7 +165,7 @@ abstract public class ValueType implements Serializable {
       }
     };
 
-  public static final ValueType LONG_ADD = new ValueType()
+  public const ValueType LONG_ADD = new ValueType()
     {
       public boolean isLongAdd()
       {
@@ -183,7 +183,7 @@ abstract public class ValueType implements Serializable {
       }
     };
 
-  public static final ValueType DOUBLE = new ValueType()
+  public const ValueType DOUBLE = new ValueType()
     {
       public boolean isDouble()
       {
@@ -211,7 +211,7 @@ abstract public class ValueType implements Serializable {
       }
     };
 
-  public static final ValueType DOUBLE_CMP = new ValueType()
+  public const ValueType DOUBLE_CMP = new ValueType()
     {
       public boolean isNumberCmp()
       {
@@ -229,7 +229,7 @@ abstract public class ValueType implements Serializable {
       }
     };
 
-  public static final ValueType string = new ValueType()
+  public const ValueType string = new ValueType()
     {
 
       public string toString()
@@ -238,7 +238,7 @@ abstract public class ValueType implements Serializable {
       }
     };
 
-  public static final ValueType ARRAY = new ValueType()
+  public const ValueType ARRAY = new ValueType()
     {
 
       public string toString()
@@ -247,7 +247,7 @@ abstract public class ValueType implements Serializable {
       }
     };
 
-  public static final ValueType OBJECT = new ValueType()
+  public const ValueType OBJECT = new ValueType()
     {
 
       public string toString()
@@ -256,7 +256,7 @@ abstract public class ValueType implements Serializable {
       }
     };
 
-  public static final ValueType VALUE = new ValueType()
+  public const ValueType VALUE = new ValueType()
     {
 
       public string toString()

@@ -51,9 +51,9 @@
 abstract public class JavaInvoker
   extends AbstractJavaMethod
 {
-  private static final L10N L = new L10N(JavaInvoker.class);
+  private const L10N L = new L10N(JavaInvoker.class);
 
-  private static final Value []NULL_VALUES = new Value[0];
+  private const Value []NULL_VALUES = new Value[0];
 
   private final ModuleContext _moduleContext;
   private final JavaClassDef _classDef;

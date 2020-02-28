@@ -39,7 +39,7 @@
 
 public class InputStreamMarshal extends Marshal
 {
-  public static final Marshal MARSHAL = new InputStreamMarshal();
+  public const Marshal MARSHAL = new InputStreamMarshal();
 
   public boolean isReadOnly()
   {

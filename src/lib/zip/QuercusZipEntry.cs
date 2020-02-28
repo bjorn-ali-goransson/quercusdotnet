@@ -42,9 +42,9 @@
 
 
 public class QuercusZipEntry {
-  private static final Logger log =
+  private const Logger log =
     Logger.getLogger(QuercusZipEntry.class.getName());
-  private static final L10N L = new L10N(QuercusZipEntry.class);
+  private const L10N L = new L10N(QuercusZipEntry.class);
 
   private final ZipEntry _entry;
   private final BinaryInput _binaryInput;

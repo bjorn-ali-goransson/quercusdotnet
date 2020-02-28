@@ -50,29 +50,29 @@
  * Regular expression compilation.
  */
 class Regcomp {
-  private static final Logger log
+  private const Logger log
     = Logger.getLogger(Regcomp.class.getName());
-  private static final L10N L = new L10N(RegexpNode.class);
+  private const L10N L = new L10N(RegexpNode.class);
 
   // #2526, JIT issues with Integer.MAX_VALUE
-  private static final int INTEGER_MAX = Integer.MAX_VALUE - 1;
+  private const int INTEGER_MAX = Integer.MAX_VALUE - 1;
 
-  static final int MULTILINE = 0x1;
-  static final int SINGLE_LINE = 0x2;
-  static final int IGNORE_CASE = 0x4;
-  static final int IGNORE_WS = 0x8;
-  static final int GLOBAL = 0x10;
+  const int MULTILINE = 0x1;
+  const int SINGLE_LINE = 0x2;
+  const int IGNORE_CASE = 0x4;
+  const int IGNORE_WS = 0x8;
+  const int GLOBAL = 0x10;
 
-  static final int ANCHORED = 0x20;
-  static final int END_ONLY = 0x40;
-  static final int UNGREEDY = 0x80;
-  static final int STRICT = 0x100;
-  static final int UTF8 = 0x200;
+  const int ANCHORED = 0x20;
+  const int END_ONLY = 0x40;
+  const int UNGREEDY = 0x80;
+  const int STRICT = 0x100;
+  const int UTF8 = 0x200;
 
-  static final HashMap<String,Integer> _characterClassMap
+  const HashMap<String,Integer> _characterClassMap
     = new HashMap<String,Integer>();
 
-  static final ConcurrentHashMap<String,RegexpSet> _unicodeBlockMap
+  const ConcurrentHashMap<String,RegexpSet> _unicodeBlockMap
     = new ConcurrentHashMap<String,RegexpSet>();
 
   private PeekStream _pattern;

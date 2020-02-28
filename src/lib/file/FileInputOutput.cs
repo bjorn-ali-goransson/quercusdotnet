@@ -49,7 +49,7 @@
 public class FileInputOutput extends AbstractBinaryOutput
   implements BinaryInput, BinaryOutput, LockableStream, EnvCleanup
 {
-  private static final Logger log
+  private const Logger log
     = Logger.getLogger(FileInputOutput.class.getName());
 
   private Env _env;

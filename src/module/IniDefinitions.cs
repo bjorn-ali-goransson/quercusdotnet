@@ -41,7 +41,7 @@
 
 
 public class IniDefinitions {
-  public static final IniDefinitions EMPTY = new IniDefinitions();
+  public const IniDefinitions EMPTY = new IniDefinitions();
 
   private HashMap<String, IniDefinition> _defaultMap;
 

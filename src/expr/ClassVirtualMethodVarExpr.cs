@@ -47,7 +47,7 @@
  * Represents a "static:$foo(...)" method
  */
 public class ClassVirtualMethodVarExpr extends Expr {
-  private static final L10N L
+  private const L10N L
     = new L10N(ClassVirtualMethodVarExpr.class);
 
   protected final Expr _methodName;

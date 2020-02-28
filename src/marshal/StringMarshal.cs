@@ -38,7 +38,7 @@
  * Code for marshaling (PHP to Java) and unmarshaling (Java to PHP) arguments.
  */
 public class StringMarshal extends Marshal {
-  public static final StringMarshal MARSHAL = new StringMarshal();
+  public const StringMarshal MARSHAL = new StringMarshal();
 
   @Override
   public boolean isString()

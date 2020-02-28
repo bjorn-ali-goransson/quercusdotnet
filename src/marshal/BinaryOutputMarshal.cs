@@ -40,7 +40,7 @@
 
 public class BinaryOutputMarshal extends Marshal
 {
-  public static final Marshal MARSHAL = new BinaryOutputMarshal();
+  public const Marshal MARSHAL = new BinaryOutputMarshal();
 
   @Override
   public boolean isReadOnly()

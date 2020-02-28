@@ -45,9 +45,9 @@
  */
 public class CoreModule extends AbstractQuercusModule
 {
-  public static final long PHP_INT_MAX = Long.MAX_VALUE;
+  public const long PHP_INT_MAX = Long.MAX_VALUE;
 
-  private static final HashMap<StringValue,Value> CONST_MAP
+  private const HashMap<StringValue,Value> CONST_MAP
     = new HashMap<StringValue,Value>();
 
   /**

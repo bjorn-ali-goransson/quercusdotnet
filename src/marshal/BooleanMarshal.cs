@@ -39,7 +39,7 @@
  * Code for marshaling (PHP to Java) and unmarshaling (Java to PHP) arguments.
  */
 public class BooleanMarshal extends Marshal {
-  public static final BooleanMarshal MARSHAL = new BooleanMarshal();
+  public const BooleanMarshal MARSHAL = new BooleanMarshal();
 
   public boolean isBoolean()
   {

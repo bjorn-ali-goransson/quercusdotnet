@@ -38,7 +38,7 @@
  * Represents a PHP null expression.
  */
 public class LiteralNullExpr extends Expr {
-  public static final LiteralNullExpr NULL
+  public const LiteralNullExpr NULL
     = new LiteralNullExpr(Location.UNKNOWN);
 
   private LiteralNullExpr(Location location)

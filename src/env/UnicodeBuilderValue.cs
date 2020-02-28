@@ -41,9 +41,9 @@
 public class UnicodeBuilderValue
   extends UnicodeValue
 {
-  public static final UnicodeBuilderValue EMPTY = new UnicodeBuilderValue("");
+  public const UnicodeBuilderValue EMPTY = new UnicodeBuilderValue("");
 
-  private static final UnicodeBuilderValue []CHAR_STRINGS;
+  private const UnicodeBuilderValue []CHAR_STRINGS;
 
   private char []_buffer;
   private int _length;

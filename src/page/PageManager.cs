@@ -48,10 +48,10 @@
  */
 public class PageManager
 {
-  private static final Logger log
+  private const Logger log
     = Logger.getLogger(PageManager.class.getName());
 
-  protected static final L10N L = new L10N(PageManager.class);
+  protected const L10N L = new L10N(PageManager.class);
 
   private final QuercusContext _quercus;
 

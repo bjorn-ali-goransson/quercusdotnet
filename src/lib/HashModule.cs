@@ -53,11 +53,11 @@
  * and SHA512.
  */
 public class HashModule extends AbstractQuercusModule {
-  private static final L10N L = new L10N(HashModule.class);
-  private static final Logger log
+  private const L10N L = new L10N(HashModule.class);
+  private const Logger log
     = Logger.getLogger(HashModule.class.getName());
 
-  public static final int HASH_HMAC = 1;
+  public const int HASH_HMAC = 1;
 
   private static HashMap<String,String> _algorithmMap
     = new HashMap<String,String>();

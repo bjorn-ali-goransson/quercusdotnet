@@ -38,7 +38,7 @@
  */
 abstract public class AbstractJavaMethod extends AbstractFunction
 {
-  private static final L10N L = new L10N(AbstractJavaMethod.class);
+  private const L10N L = new L10N(AbstractJavaMethod.class);
 
   /**
    * Returns the minimally required number of arguments.

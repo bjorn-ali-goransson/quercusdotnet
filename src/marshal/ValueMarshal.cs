@@ -36,8 +36,8 @@
 
 public class ValueMarshal extends Marshal
 {
-  public static final Marshal MARSHAL = new ValueMarshal(false);
-  public static final Marshal MARSHAL_PASS_THRU = new ValueMarshal(true);
+  public const Marshal MARSHAL = new ValueMarshal(false);
+  public const Marshal MARSHAL_PASS_THRU = new ValueMarshal(true);
 
   private boolean _isPassThru;
 

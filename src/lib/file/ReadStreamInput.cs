@@ -45,7 +45,7 @@
  * Represents a Quercus file open for reading
  */
 public class ReadStreamInput extends InputStream implements BinaryInput {
-  private static final Logger log
+  private const Logger log
     = Logger.getLogger(ReadStreamInput.class.getName());
 
   private Env _env;

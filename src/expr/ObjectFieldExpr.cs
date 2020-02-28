@@ -44,7 +44,7 @@
  * Represents a PHP field reference.
  */
 public class ObjectFieldExpr extends AbstractVarExpr {
-  private static final L10N L = new L10N(ObjectFieldExpr.class);
+  private const L10N L = new L10N(ObjectFieldExpr.class);
 
   protected final Expr _objExpr;
   protected final StringValue _name;

@@ -36,7 +36,7 @@
 
 public class StringValueMarshal extends Marshal
 {
-  public static final Marshal MARSHAL = new StringValueMarshal();
+  public const Marshal MARSHAL = new StringValueMarshal();
 
   public boolean isReadOnly()
   {

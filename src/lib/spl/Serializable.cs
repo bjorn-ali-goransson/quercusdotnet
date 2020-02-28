@@ -36,8 +36,8 @@
 
 public interface Serializable
 {
-  public static final StringValue SERIALIZE = new ConstStringValue("serialize");
-  public static final StringValue UNSERIALIZE = new ConstStringValue("unserialize");
+  public const StringValue SERIALIZE = new ConstStringValue("serialize");
+  public const StringValue UNSERIALIZE = new ConstStringValue("unserialize");
 
   public Value serialize(Env env);
 

@@ -10,7 +10,7 @@
 
 
 public abstract class AbstractIteratorImpl<T> implements Iterator<T> {
-    private static final L10N L = new L10N(AbstractIteratorImpl.class);
+    private const L10N L = new L10N(AbstractIteratorImpl.class);
 
     protected final Env _env;
     protected final ObjectValue _obj;

@@ -44,15 +44,15 @@
 public class ArrayValueImpl extends ArrayValue
   implements Serializable
 {
-  private static final int DEFAULT_SIZE = 16;
+  private const int DEFAULT_SIZE = 16;
 
-  private static final int SORT_REGULAR = 0;
-  private static final int SORT_NUMERIC = 1;
-  private static final int SORT_STRING = 2;
-  private static final int SORT_LOCALE_STRING = 5;
+  private const int SORT_REGULAR = 0;
+  private const int SORT_NUMERIC = 1;
+  private const int SORT_STRING = 2;
+  private const int SORT_LOCALE_STRING = 5;
 
   // save memory on short arrays
-  private static final int MIN_HASH = 4;
+  private const int MIN_HASH = 4;
 
   private Entry []_entries;
   private int _hashMask;

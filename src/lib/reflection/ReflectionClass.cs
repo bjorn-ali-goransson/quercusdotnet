@@ -55,7 +55,7 @@
 public class ReflectionClass
   implements Reflector
 {
-  private static final L10N L = new L10N(ReflectionClass.class);
+  private const L10N L = new L10N(ReflectionClass.class);
 
   public static int IS_IMPLICIT_ABSTRACT = 16;
   public static int IS_EXPLICIT_ABSTRACT = 32;

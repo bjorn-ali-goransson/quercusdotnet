@@ -41,7 +41,7 @@
  * Represents a PHP output buffer
  */
 public class OutputBuffer {
-  private static final Logger log
+  private const Logger log
     = Logger.getLogger(OutputBuffer.class.getName());
 
   private int _state;

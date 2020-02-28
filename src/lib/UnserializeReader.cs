@@ -40,11 +40,11 @@
 
 
 public class UnserializeReader {
-  private static final L10N L = new L10N(UnserializeReader.class);
-  private static final Logger log
+  private const L10N L = new L10N(UnserializeReader.class);
+  private const Logger log
     = Logger.getLogger(UnserializeReader.class.getName());
 
-  private static final LruCache<StringKey,StringValue> _keyCache
+  private const LruCache<StringKey,StringValue> _keyCache
     = new LruCache<StringKey,StringValue>(4096);
 
   private final char []_buffer;

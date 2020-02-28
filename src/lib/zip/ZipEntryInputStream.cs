@@ -44,7 +44,7 @@
  */
 public class ZipEntryInputStream extends ReadStreamInput
 {
-  private static final L10N L = new L10N(ZipEntryInputStream.class);
+  private const L10N L = new L10N(ZipEntryInputStream.class);
 
   private final BinaryInput _in;
   private final long _position;

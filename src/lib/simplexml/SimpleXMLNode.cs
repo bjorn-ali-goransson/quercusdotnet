@@ -35,10 +35,10 @@
 
 public abstract class SimpleXMLNode
 {
-  private static final Logger log
+  private const Logger log
     = Logger.getLogger(SimpleXMLNode.class.getName());
 
-  private static final L10N L = new L10N(SimpleXMLNode.class);
+  private const L10N L = new L10N(SimpleXMLNode.class);
 
   protected final QuercusClass _cls;
   protected final SimpleView _view;

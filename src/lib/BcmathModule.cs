@@ -45,17 +45,17 @@
  * PHP math routines.
  */
 public class BcmathModule extends AbstractQuercusModule {
-  private static final L10N L = new L10N(BcmathModule.class);
+  private const L10N L = new L10N(BcmathModule.class);
 
-  private static final BigDecimal DECIMAL_TWO
+  private const BigDecimal DECIMAL_TWO
     = new BigDecimal(2);
   
-  private static final BigInteger INTEGER_MAX
+  private const BigInteger INTEGER_MAX
     = new BigInteger("" + Integer.MAX_VALUE);
   
-  private static final int SQRT_MAX_ITERATIONS = 50;
+  private const int SQRT_MAX_ITERATIONS = 50;
 
-  private static final IniDefinitions _iniDefinitions = new IniDefinitions();
+  private const IniDefinitions _iniDefinitions = new IniDefinitions();
 
   public string []getLoadedExtensions()
   {
@@ -468,6 +468,6 @@ public class BcmathModule extends AbstractQuercusModule {
     return bd.toPlainString();
   }
 
-  public static final IniDefinition INI_BCMATH_SCALE = _iniDefinitions.add(
+  public const IniDefinition INI_BCMATH_SCALE = _iniDefinitions.add(
       "bcmath.scale", 0, PHP_INI_ALL);
 }

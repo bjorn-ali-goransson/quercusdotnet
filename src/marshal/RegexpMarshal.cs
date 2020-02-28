@@ -43,7 +43,7 @@
  * Code for marshaling (PHP to Java) and unmarshaling (Java to PHP) arguments.
  */
 public class RegexpMarshal extends StringMarshal {
-  public static final RegexpMarshal MARSHAL = new RegexpMarshal();
+  public const RegexpMarshal MARSHAL = new RegexpMarshal();
 
   @Override
   public Object marshal(Env env, Expr expr, Class expectedClass)

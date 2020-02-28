@@ -49,32 +49,32 @@
  * Date functions.
  */
 public class DateModule extends AbstractQuercusModule {
-  private static final L10N L = new L10N(DateModule.class);
-  private static final Logger log
+  private const L10N L = new L10N(DateModule.class);
+  private const Logger log
     = Logger.getLogger(DateModule.class.getName());
 
-  public static final int CAL_GREGORIAN = 0;
-  public static final int CAL_JULIAN = 1;
+  public const int CAL_GREGORIAN = 0;
+  public const int CAL_JULIAN = 1;
 
-  private static final string []_shortDayOfWeek = {
+  private const string []_shortDayOfWeek = {
     "Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"
   };
 
-  private static final string []_fullDayOfWeek = {
+  private const string []_fullDayOfWeek = {
     "Sunday", "Monday", "Tuesday", "Wednesday",
     "Thursday", "Friday", "Saturday"
   };
 
-  private static final string []_shortMonth = {
+  private const string []_shortMonth = {
     "Jan", "Feb", "Mar", "Apr", "May", "Jun",
     "Jul", "Aug", "Sep", "Oct", "Nov", "Dec",
   };
-  private static final string []_fullMonth = {
+  private const string []_fullMonth = {
     "January", "February", "March", "April", "May", "June",
     "July", "August", "September", "October", "November", "December",
   };
 
-  private static final HashMap<StringValue,Value> _constMap
+  private const HashMap<StringValue,Value> _constMap
     = new HashMap<StringValue,Value>();
 
 

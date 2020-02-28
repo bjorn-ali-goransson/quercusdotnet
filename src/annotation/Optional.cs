@@ -40,6 +40,6 @@
 @Target(ElementType.PARAMETER)
 @Retention(RetentionPolicy.RUNTIME)
 public interface Optional {
-  public static final string NOT_SET = "caucho-not-set";
+  public const string NOT_SET = "caucho-not-set";
   public string value() default NOT_SET;
 }

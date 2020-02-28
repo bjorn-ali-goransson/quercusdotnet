@@ -46,7 +46,7 @@
  * Code for marshalling arguments.
  */
 public class BigIntegerMarshal extends Marshal {
-  public static final Marshal MARSHAL = new BigIntegerMarshal();
+  public const Marshal MARSHAL = new BigIntegerMarshal();
 
   public Object marshal(Env env, Expr expr, Class argClass)
   {

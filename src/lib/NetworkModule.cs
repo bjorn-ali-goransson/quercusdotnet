@@ -61,65 +61,65 @@
  * Information about PHP network
  */
 public class NetworkModule extends AbstractQuercusModule {
-  private static final L10N L = new L10N(NetworkModule.class);
-  private static final Logger log
+  private const L10N L = new L10N(NetworkModule.class);
+  private const Logger log
     = Logger.getLogger(NetworkModule.class.getName());
 
-  private static final LinkedHashMap<String, LongValue> _protoToNum
+  private const LinkedHashMap<String, LongValue> _protoToNum
     = new LinkedHashMap<String, LongValue>();
-  private static final LinkedHashMap<String, ServiceNode> _servToNum
+  private const LinkedHashMap<String, ServiceNode> _servToNum
     = new LinkedHashMap<String, ServiceNode>();
 
-  public static final int LOG_EMERG = 0;
-  public static final int LOG_ALERT = 1;
-  public static final int LOG_CRIT = 2;
-  public static final int LOG_ERR = 3;
-  public static final int LOG_WARNING = 4;
-  public static final int LOG_NOTICE = 5;
-  public static final int LOG_INFO = 6;
-  public static final int LOG_DEBUG = 7;
+  public const int LOG_EMERG = 0;
+  public const int LOG_ALERT = 1;
+  public const int LOG_CRIT = 2;
+  public const int LOG_ERR = 3;
+  public const int LOG_WARNING = 4;
+  public const int LOG_NOTICE = 5;
+  public const int LOG_INFO = 6;
+  public const int LOG_DEBUG = 7;
 
-  public static final int LOG_PID = 1;
-  public static final int LOG_CONS = 2;
-  public static final int LOG_NDELAY = 8;
-  public static final int LOG_NOWAIT = 16;
-  public static final int LOG_ODELAY = 4;
-  public static final int LOG_PERROR = 32;
+  public const int LOG_PID = 1;
+  public const int LOG_CONS = 2;
+  public const int LOG_NDELAY = 8;
+  public const int LOG_NOWAIT = 16;
+  public const int LOG_ODELAY = 4;
+  public const int LOG_PERROR = 32;
 
-  public static final int LOG_AUTH = 32;
-  public static final int LOG_AUTHPRIV = 80;
-  public static final int LOG_CRON = 72;
-  public static final int LOG_DAEMON = 24;
-  public static final int LOG_KERN = 0;
-  public static final int LOG_LOCAL0 = 128;
-  public static final int LOG_LOCAL1 = 136;
-  public static final int LOG_LOCAL2 = 144;
-  public static final int LOG_LOCAL3 = 152;
-  public static final int LOG_LOCAL4 = 160;
-  public static final int LOG_LOCAL5 = 168;
-  public static final int LOG_LOCAL6 = 176;
-  public static final int LOG_LOCAL7 = 184;
-  public static final int LOG_LPR = 48;
-  public static final int LOG_MAIL = 16;
-  public static final int LOG_NEWS = 56;
-  public static final int LOG_SYSLOG = 40;
-  public static final int LOG_USER = 8;
-  public static final int LOG_UUCP = 64;
+  public const int LOG_AUTH = 32;
+  public const int LOG_AUTHPRIV = 80;
+  public const int LOG_CRON = 72;
+  public const int LOG_DAEMON = 24;
+  public const int LOG_KERN = 0;
+  public const int LOG_LOCAL0 = 128;
+  public const int LOG_LOCAL1 = 136;
+  public const int LOG_LOCAL2 = 144;
+  public const int LOG_LOCAL3 = 152;
+  public const int LOG_LOCAL4 = 160;
+  public const int LOG_LOCAL5 = 168;
+  public const int LOG_LOCAL6 = 176;
+  public const int LOG_LOCAL7 = 184;
+  public const int LOG_LPR = 48;
+  public const int LOG_MAIL = 16;
+  public const int LOG_NEWS = 56;
+  public const int LOG_SYSLOG = 40;
+  public const int LOG_USER = 8;
+  public const int LOG_UUCP = 64;
 
-  public static final int DNS_A = 1;
-  public static final int DNS_CNAME = 16;
-  public static final int DNS_HINFO = 4096;
-  public static final int DNS_MX = 16384;
-  public static final int DNS_NS = 2;
-  public static final int DNS_PTR = 2048;
-  public static final int DNS_SOA = 32;
-  public static final int DNS_TXT = 32768;
-  public static final int DNS_AAAA = 134217728;
-  public static final int DNS_SRV = 33554432;
-  public static final int DNS_NAPTR = 67108864;
-  public static final int DNS_A6 = 16777216;
-  public static final int DNS_ALL = 251713587;
-  public static final int DNS_ANY = 268435456;
+  public const int DNS_A = 1;
+  public const int DNS_CNAME = 16;
+  public const int DNS_HINFO = 4096;
+  public const int DNS_MX = 16384;
+  public const int DNS_NS = 2;
+  public const int DNS_PTR = 2048;
+  public const int DNS_SOA = 32;
+  public const int DNS_TXT = 32768;
+  public const int DNS_AAAA = 134217728;
+  public const int DNS_SRV = 33554432;
+  public const int DNS_NAPTR = 67108864;
+  public const int DNS_A6 = 16777216;
+  public const int DNS_ALL = 251713587;
+  public const int DNS_ANY = 268435456;
 
   /**
    * Opens a socket

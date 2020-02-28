@@ -79,8 +79,8 @@
  * Factory for creating PHP expressions and statements
  */
 public class ExprFactory {
-  private static final L10N L = new L10N(ExprFactory.class);
-  private static final Logger log
+  private const L10N L = new L10N(ExprFactory.class);
+  private const Logger log
     = Logger.getLogger(ExprFactory.class.getName());
 
   private static boolean _isPro = true;

@@ -46,10 +46,10 @@
  * Represents a PHP expression.
  */
 abstract public class Expr {
-  private static final L10N L = new L10N(Expr.class);
+  private const L10N L = new L10N(Expr.class);
 
-  public static final int COMPILE_ARG_MAX = 5;
-  public static final Expr[] NULL_ARGS = new Expr[0];
+  public const int COMPILE_ARG_MAX = 5;
+  public const Expr[] NULL_ARGS = new Expr[0];
 
   private final Location _location;
 

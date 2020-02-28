@@ -38,10 +38,10 @@
 public class IniDefinition {
   private L10N L = new L10N(IniDefinition.class);
 
-  public static final int PHP_INI_USER = 1;
-  public static final int PHP_INI_PERDIR = 2;
-  public static final int PHP_INI_SYSTEM = 4;
-  public static final int PHP_INI_ALL = 7;
+  public const int PHP_INI_USER = 1;
+  public const int PHP_INI_PERDIR = 2;
+  public const int PHP_INI_SYSTEM = 4;
+  public const int PHP_INI_ALL = 7;
 
   public static IniDefinition NULL = new Null();
 

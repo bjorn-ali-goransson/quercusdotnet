@@ -44,8 +44,8 @@
 
 
 class JsonDecoder {
-  private static final L10N L = new L10N(JsonDecoder.class);
-  private static final Logger log = Logger.getLogger(JsonDecoder.class.getName());
+  private const L10N L = new L10N(JsonDecoder.class);
+  private const Logger log = Logger.getLogger(JsonDecoder.class.getName());
 
   private StringValue _str;
   private int _len;

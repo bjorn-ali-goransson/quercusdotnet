@@ -56,41 +56,41 @@
  */
 public class MysqlModule extends AbstractQuercusModule {
 
-  private static final Logger log = Log.open(MysqlModule.class);
-  private static final L10N L = new L10N(MysqlModule.class);
+  private const Logger log = Log.open(MysqlModule.class);
+  private const L10N L = new L10N(MysqlModule.class);
 
-  public static final int MYSQL_ASSOC = JdbcResultResource.FETCH_ASSOC;
-  public static final int MYSQL_NUM = JdbcResultResource.FETCH_NUM;
-  public static final int MYSQL_BOTH = JdbcResultResource.FETCH_BOTH;
+  public const int MYSQL_ASSOC = JdbcResultResource.FETCH_ASSOC;
+  public const int MYSQL_NUM = JdbcResultResource.FETCH_NUM;
+  public const int MYSQL_BOTH = JdbcResultResource.FETCH_BOTH;
 
-  public static final int MYSQL_USE_RESULT = 0x0;
-  public static final int MYSQL_STORE_RESULT = 0x1;
+  public const int MYSQL_USE_RESULT = 0x0;
+  public const int MYSQL_STORE_RESULT = 0x1;
 
-  private static final StringValue SV_NAME
+  private const StringValue SV_NAME
     = new ConstStringValue("name");
-  private static final StringValue SV_TABLE
+  private const StringValue SV_TABLE
     = new ConstStringValue("table");
-  private static final StringValue SV_DEF
+  private const StringValue SV_DEF
     = new ConstStringValue("def");
-  private static final StringValue SV_MAX_LENGTH
+  private const StringValue SV_MAX_LENGTH
     = new ConstStringValue("max_length");
-  private static final StringValue SV_NOT_NULL
+  private const StringValue SV_NOT_NULL
     = new ConstStringValue("not_null");
-  private static final StringValue SV_PRIMARY_KEY
+  private const StringValue SV_PRIMARY_KEY
     = new ConstStringValue("primary_key");
-  private static final StringValue SV_MULTIPLE_KEY
+  private const StringValue SV_MULTIPLE_KEY
     = new ConstStringValue("multiple_key");
-  private static final StringValue SV_UNIQUE_KEY
+  private const StringValue SV_UNIQUE_KEY
     = new ConstStringValue("unique_key");
-  private static final StringValue SV_NUMERIC
+  private const StringValue SV_NUMERIC
     = new ConstStringValue("numeric");
-  private static final StringValue SV_BLOB
+  private const StringValue SV_BLOB
     = new ConstStringValue("blob");
-  private static final StringValue SV_TYPE
+  private const StringValue SV_TYPE
     = new ConstStringValue("type");
-  private static final StringValue SV_UNSIGNED
+  private const StringValue SV_UNSIGNED
     = new ConstStringValue("unsigned");
-  private static final StringValue SV_ZEROFILL
+  private const StringValue SV_ZEROFILL
     = new ConstStringValue("zerofill");
 
   public MysqlModule()

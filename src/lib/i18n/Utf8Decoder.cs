@@ -37,8 +37,8 @@
 public class Utf8Decoder
   extends Decoder
 {
-  private static final int ERROR_CHARACTER = 0xFFFE;
-  private static final int EOF = -1;
+  private const int ERROR_CHARACTER = 0xFFFE;
+  private const int EOF = -1;
 
   public Utf8Decoder(String charset)
   {

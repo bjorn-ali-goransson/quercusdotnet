@@ -68,16 +68,16 @@
 public class MbstringModule
   extends AbstractQuercusModule
 {
-  private static final Logger log
+  private const Logger log
     = Logger.getLogger(MbstringModule.class.getName());
 
-  private static final L10N L = new L10N(MbstringModule.class);
+  private const L10N L = new L10N(MbstringModule.class);
 
-  private static final IniDefinitions _iniDefinitions = new IniDefinitions();
+  private const IniDefinitions _iniDefinitions = new IniDefinitions();
 
-  public static final int MB_CASE_UPPER = 0;
-  public static final int MB_CASE_LOWER = 1;
-  public static final int MB_CASE_TITLE = 2;
+  public const int MB_CASE_UPPER = 0;
+  public const int MB_CASE_LOWER = 1;
+  public const int MB_CASE_TITLE = 2;
 
   /**
    * Returns the extensions implemented by the module.
@@ -1600,8 +1600,8 @@ public class MbstringModule
     }
   }
 
-  static final IniDefinition INI_MBSTRING_HTTP_INPUT
+  const IniDefinition INI_MBSTRING_HTTP_INPUT
     = _iniDefinitions.add("mbstring.http_input", "pass", PHP_INI_ALL);
-  static final IniDefinition INI_MBSTRING_HTTP_OUTPUT
+  const IniDefinition INI_MBSTRING_HTTP_OUTPUT
     = _iniDefinitions.add("mbstring.http_output", "pass", PHP_INI_ALL);
 }

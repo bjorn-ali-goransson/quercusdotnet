@@ -51,36 +51,36 @@
 public class RegexpModule
   extends AbstractQuercusModule
 {
-  private static final Logger log =
+  private const Logger log =
     Logger.getLogger(RegexpModule.class.getName());
 
-  private static final L10N L = new L10N(RegexpModule.class);
+  private const L10N L = new L10N(RegexpModule.class);
 
-  public static final int PREG_REPLACE_EVAL = 0x01;
-  public static final int PCRE_UTF8 = 0x02;
+  public const int PREG_REPLACE_EVAL = 0x01;
+  public const int PCRE_UTF8 = 0x02;
 
-  public static final int PREG_PATTERN_ORDER = 0x01;
-  public static final int PREG_SET_ORDER = 0x02;
-  public static final int PREG_OFFSET_CAPTURE = 0x100;
+  public const int PREG_PATTERN_ORDER = 0x01;
+  public const int PREG_SET_ORDER = 0x02;
+  public const int PREG_OFFSET_CAPTURE = 0x100;
 
-  public static final int PREG_SPLIT_NO_EMPTY = 0x01;
-  public static final int PREG_SPLIT_DELIM_CAPTURE = 0x02;
-  public static final int PREG_SPLIT_OFFSET_CAPTURE = 0x04;
+  public const int PREG_SPLIT_NO_EMPTY = 0x01;
+  public const int PREG_SPLIT_DELIM_CAPTURE = 0x02;
+  public const int PREG_SPLIT_OFFSET_CAPTURE = 0x04;
 
-  public static final int PREG_GREP_INVERT = 1;
+  public const int PREG_GREP_INVERT = 1;
 
-  public static final int PREG_NO_ERROR = 0;
-  public static final int PREG_INTERNAL_ERROR = 1;
-  public static final int PREG_BACKTRACK_LIMIT_ERROR = 2;
-  public static final int PREG_RECURSION_LIMIT_ERROR = 3;
-  public static final int PREG_BAD_UTF8_ERROR = 4;
-  public static final int PREG_BAD_UTF8_OFFSET_ERROR = 5;
-  public static final string PCRE_VERSION = "7.0 18-Dec-2006";
+  public const int PREG_NO_ERROR = 0;
+  public const int PREG_INTERNAL_ERROR = 1;
+  public const int PREG_BACKTRACK_LIMIT_ERROR = 2;
+  public const int PREG_RECURSION_LIMIT_ERROR = 3;
+  public const int PREG_BAD_UTF8_ERROR = 4;
+  public const int PREG_BAD_UTF8_OFFSET_ERROR = 5;
+  public const string PCRE_VERSION = "7.0 18-Dec-2006";
 
   // #2526, possible JIT/OS problem with max comparison
-  private static final long LONG_MAX = Long.MAX_VALUE - 1;
+  private const long LONG_MAX = Long.MAX_VALUE - 1;
 
-  public static final boolean [] PREG_QUOTE = new boolean[256];
+  public const boolean [] PREG_QUOTE = new boolean[256];
 
   private static LruCache<StringValue, RegexpCacheItem> _regexpCache
     = new LruCache<StringValue, RegexpCacheItem>(1024);

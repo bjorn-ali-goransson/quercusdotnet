@@ -59,28 +59,28 @@
  */
 public class JdbcResultResource
 {
-  private static final Logger log
+  private const Logger log
     = Logger.getLogger(JdbcResultResource.class.getName());
-  private static final L10N L = new L10N(JdbcResultResource.class);
+  private const L10N L = new L10N(JdbcResultResource.class);
 
-  public static final int FETCH_ASSOC = 0x1;
-  public static final int FETCH_NUM = 0x2;
-  public static final int FETCH_BOTH = FETCH_ASSOC | FETCH_NUM;
+  public const int FETCH_ASSOC = 0x1;
+  public const int FETCH_NUM = 0x2;
+  public const int FETCH_BOTH = FETCH_ASSOC | FETCH_NUM;
 
-  public static final string INTEGER = "int";
-  public static final string BLOB = "blob";
-  public static final string STRING = "string";
-  public static final string DATE = "date";
-  public static final string DATETIME = "datetime";
-  public static final string REAL = "real";
-  public static final string TIME = "time";
-  public static final string TIMESTAMP = "timestamp";
-  public static final string UNKNOWN = "unknown";
-  public static final string YEAR = "year";
+  public const string INTEGER = "int";
+  public const string BLOB = "blob";
+  public const string STRING = "string";
+  public const string DATE = "date";
+  public const string DATETIME = "datetime";
+  public const string REAL = "real";
+  public const string TIME = "time";
+  public const string TIMESTAMP = "timestamp";
+  public const string UNKNOWN = "unknown";
+  public const string YEAR = "year";
 
-  protected static final int COLUMN_CASE_NATURAL = 0;
-  protected static final int COLUMN_CASE_UPPER = 1;
-  protected static final int COLUMN_CASE_LOWER = 2;
+  protected const int COLUMN_CASE_NATURAL = 0;
+  protected const int COLUMN_CASE_UPPER = 1;
+  protected const int COLUMN_CASE_LOWER = 2;
 
   protected ResultSet _rs;
   private boolean _isValid;

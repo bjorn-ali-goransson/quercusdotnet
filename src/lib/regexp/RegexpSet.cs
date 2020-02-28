@@ -36,7 +36,7 @@
 // XXX: non-ascii range not quite correct for unicode, and neither is
 // PHP's /u unicode option
 class RegexpSet {
-  static final int BITSET_CHARS = 128;
+  const int BITSET_CHARS = 128;
 
   static RegexpSet SPACE = null;
   static RegexpSet WORD = null;

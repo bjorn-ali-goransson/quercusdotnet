@@ -284,7 +284,7 @@ public class Crypt {
     0x07, 0x27, 0x17, 0x37, 0x0f, 0x2f, 0x1f, 0x3f,
   };
 
-  private static final int []des_0 = new int[] {
+  private const int []des_0 = new int[] {
     0x02080800, 0x00080000, 0x02000002, 0x02080802,
     0x02000000, 0x00080802, 0x00080002, 0x02000002,
     0x00080802, 0x02080800, 0x02080000, 0x00000802,
@@ -303,7 +303,7 @@ public class Crypt {
     0x00000002, 0x02080002, 0x00000800, 0x00080802
   };
 
-  private static final int []des_1 = new int[] {
+  private const int []des_1 = new int[] {
     0x40108010, 0x00000000, 0x00108000, 0x40100000,
     0x40000010, 0x00008010, 0x40008000, 0x00108000,
     0x00008000, 0x40100010, 0x00000010, 0x40008000,
@@ -322,7 +322,7 @@ public class Crypt {
     0x40008010, 0x00000010, 0x40100000, 0x00108000,
   };
 
-  private static final int []des_2 = new int[] {
+  private const int []des_2 = new int[] {
     0x04000001, 0x04040100, 0x00000100, 0x04000101,
     0x00040001, 0x04000000, 0x04000101, 0x00040100,
     0x04000100, 0x00040000, 0x04040000, 0x00000001,
@@ -341,7 +341,7 @@ public class Crypt {
     0x04000001, 0x00040101, 0x00000100, 0x04040000,
   };
 
-  private static final int []des_3 = new int[] {
+  private const int []des_3 = new int[] {
     0x00401008, 0x10001000, 0x00000008, 0x10401008,
     0x00000000, 0x10400000, 0x10001008, 0x00400008,
     0x10401000, 0x10000008, 0x10000000, 0x00001008,
@@ -360,7 +360,7 @@ public class Crypt {
     0x00001008, 0x10000000, 0x10000008, 0x10401000,
   };
 
-  private static final int []des_4 = new int[] {
+  private const int []des_4 = new int[] {
     0x08000000, 0x00010000, 0x00000400, 0x08010420,
     0x08010020, 0x08000400, 0x00010420, 0x08010000,
     0x00010000, 0x00000020, 0x08000020, 0x00010400,
@@ -379,7 +379,7 @@ public class Crypt {
     0x00000020, 0x00010420, 0x08010000, 0x08000020,
   };
 
-  private static final int []des_5 = new int[] {
+  private const int []des_5 = new int[] {
     0x80000040, 0x00200040, 0x00000000, 0x80202000,
     0x00200040, 0x00002000, 0x80002040, 0x00200000,
     0x00002040, 0x80202040, 0x00202000, 0x80000000,
@@ -398,7 +398,7 @@ public class Crypt {
     0x80200000, 0x00002040, 0x00000040, 0x80200040,
   };
 
-  private static final int []des_6 = new int[] {
+  private const int []des_6 = new int[] {
     0x00004000, 0x00000200, 0x01000200, 0x01000004,
     0x01004204, 0x00004004, 0x00004200, 0x00000000,
     0x01000000, 0x01000204, 0x00000204, 0x01004000,
@@ -417,7 +417,7 @@ public class Crypt {
     0x01000004, 0x01004200, 0x01004000, 0x00004004,
   };
 
-  private static final int []des_7 = new int[] {
+  private const int []des_7 = new int[] {
     0x20800080, 0x20820000, 0x00020080, 0x00000000,
     0x20020000, 0x00800080, 0x20800000, 0x20820080,
     0x00000080, 0x20000000, 0x00820000, 0x00020080,
@@ -436,7 +436,7 @@ public class Crypt {
     0x20000000, 0x20800080, 0x00020000, 0x00820080,
   };
 
-  private static final int []skb_0 = new int[] {
+  private const int []skb_0 = new int[] {
     0x00000000,0x00000010,0x20000000,0x20000010,
     0x00010000,0x00010010,0x20010000,0x20010010,
     0x00000800,0x00000810,0x20000800,0x20000810,
@@ -455,7 +455,7 @@ public class Crypt {
     0x00090820,0x00090830,0x20090820,0x20090830,
   };
 
-  private static final int []skb_1 = new int[] {
+  private const int []skb_1 = new int[] {
     0x00000000,0x02000000,0x00002000,0x02002000,
     0x00200000,0x02200000,0x00202000,0x02202000,
     0x00000004,0x02000004,0x00002004,0x02002004,
@@ -474,7 +474,7 @@ public class Crypt {
     0x10200404,0x12200404,0x10202404,0x12202404,
   };
 
-  private static final int []skb_2 = new int[] {
+  private const int []skb_2 = new int[] {
     0x00000000,0x00000001,0x00040000,0x00040001,
     0x01000000,0x01000001,0x01040000,0x01040001,
     0x00000002,0x00000003,0x00040002,0x00040003,
@@ -493,7 +493,7 @@ public class Crypt {
     0x09000202,0x09000203,0x09040202,0x09040203,
   };
 
-  private static final int []skb_3 = new int[] {
+  private const int []skb_3 = new int[] {
     0x00000000,0x00100000,0x00000100,0x00100100,
     0x00000008,0x00100008,0x00000108,0x00100108,
     0x00001000,0x00101000,0x00001100,0x00101100,
@@ -512,7 +512,7 @@ public class Crypt {
     0x04021008,0x04121008,0x04021108,0x04121108,
   };
 
-  private static final int []skb_4 = new int[] {
+  private const int []skb_4 = new int[] {
     0x00000000,0x10000000,0x00010000,0x10010000,
     0x00000004,0x10000004,0x00010004,0x10010004,
     0x20000000,0x30000000,0x20010000,0x30010000,
@@ -531,7 +531,7 @@ public class Crypt {
     0x20101004,0x30101004,0x20111004,0x30111004,
   };
 
-  private static final int []skb_5 = new int[] {
+  private const int []skb_5 = new int[] {
     0x00000000,0x08000000,0x00000008,0x08000008,
     0x00000400,0x08000400,0x00000408,0x08000408,
     0x00020000,0x08020000,0x00020008,0x08020008,
@@ -550,7 +550,7 @@ public class Crypt {
     0x02020401,0x0A020401,0x02020409,0x0A020409,
   };
 
-  private static final int []skb_6 = new int[] {
+  private const int []skb_6 = new int[] {
     0x00000000,0x00000100,0x00080000,0x00080100,
     0x01000000,0x01000100,0x01080000,0x01080100,
     0x00000010,0x00000110,0x00080010,0x00080110,
@@ -569,7 +569,7 @@ public class Crypt {
     0x01200210,0x01200310,0x01280210,0x01280310,
   };
 
-  private static final int []skb_7 = new int[] {
+  private const int []skb_7 = new int[] {
     0x00000000,0x04000000,0x00040000,0x04040000,
     0x00000002,0x04000002,0x00040002,0x04040002,
     0x00002000,0x04002000,0x00042000,0x04042000,

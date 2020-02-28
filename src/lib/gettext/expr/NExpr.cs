@@ -31,7 +31,7 @@
 
 public class NExpr implements Expr
 {
-  public static final Expr N_EXPR = new NExpr();
+  public const Expr N_EXPR = new NExpr();
 
   private NExpr()
   {

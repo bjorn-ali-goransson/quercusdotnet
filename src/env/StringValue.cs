@@ -59,15 +59,15 @@ abstract public class StringValue
   extends Value
   implements CharSequence, ByteAppendable
 {
-  public static final StringValue EMPTY = new ConstStringValue("");
+  public const StringValue EMPTY = new ConstStringValue("");
 
-  protected static final int MIN_LENGTH = 32;
+  protected const int MIN_LENGTH = 32;
 
-  protected static final int IS_STRING = 0;
-  protected static final int IS_LONG = 1;
-  protected static final int IS_DOUBLE = 2;
+  protected const int IS_STRING = 0;
+  protected const int IS_LONG = 1;
+  protected const int IS_DOUBLE = 2;
 
-  private static final LruCache<StringValue,StringValue> _internMap
+  private const LruCache<StringValue,StringValue> _internMap
     = new LruCache<StringValue,StringValue>(8192);
 
   /**

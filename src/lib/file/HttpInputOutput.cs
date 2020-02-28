@@ -56,7 +56,7 @@
 public class HttpInputOutput extends AbstractBinaryOutput
   implements BinaryInput, BinaryOutput, LockableStream, EnvCleanup
 {
-  private static final Logger log
+  private const Logger log
     = Logger.getLogger(HttpInputOutput.class.getName());
 
   private Env _env;

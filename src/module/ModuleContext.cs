@@ -69,7 +69,7 @@
 public class ModuleContext
 {
   private static L10N L = new L10N(ModuleContext.class);
-  private static final Logger log
+  private const Logger log
     = Logger.getLogger(ModuleContext.class.getName());
 
   private ClassLoader _loader;

@@ -51,8 +51,8 @@
  */
 
 public class Zlib {
-  private static final Logger log = Logger.getLogger(Zlib.class.getName());
-  private static final L10N L = new L10N(Zlib.class);
+  private const Logger log = Logger.getLogger(Zlib.class.getName());
+  private const L10N L = new L10N(Zlib.class);
 
   private InputStream _in;
   private ZlibOutputStream _gzout;

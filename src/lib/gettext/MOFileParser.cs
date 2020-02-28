@@ -47,9 +47,9 @@
  */
 class MOFileParser extends GettextParser
 {
-  private static final Logger log
+  private const Logger log
     = Logger.getLogger(MOFileParser.class.getName());
-  private static final L10N L = new L10N(MOFileParser.class);
+  private const L10N L = new L10N(MOFileParser.class);
 
   private Env _env;
   private ReadStream _in;

@@ -38,7 +38,7 @@
 
 public class URLMarshal extends Marshal
 {
-  public static final Marshal MARSHAL = new URLMarshal();
+  public const Marshal MARSHAL = new URLMarshal();
   
   public boolean isReadOnly()
   {

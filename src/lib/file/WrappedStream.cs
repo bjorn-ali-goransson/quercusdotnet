@@ -44,38 +44,38 @@
  * A stream that has its operations mediated by a Quercus object.
  */
 public class WrappedStream implements BinaryInput, BinaryOutput {
-  private static final ConstStringValue STREAM_CLOSE
+  private const ConstStringValue STREAM_CLOSE
     = new ConstStringValue("stream_close");
-  private static final ConstStringValue STREAM_EOF
+  private const ConstStringValue STREAM_EOF
     = new ConstStringValue("stream_eof");
-  private static final ConstStringValue STREAM_FLUSH
+  private const ConstStringValue STREAM_FLUSH
     = new ConstStringValue("stream_flush");
-  private static final ConstStringValue STREAM_OPEN
+  private const ConstStringValue STREAM_OPEN
     = new ConstStringValue("stream_open");
-  private static final ConstStringValue STREAM_READ
+  private const ConstStringValue STREAM_READ
     = new ConstStringValue("stream_read");
-  private static final ConstStringValue STREAM_SEEK
+  private const ConstStringValue STREAM_SEEK
     = new ConstStringValue("stream_seek");
-  private static final ConstStringValue STREAM_TELL
+  private const ConstStringValue STREAM_TELL
     = new ConstStringValue("stream_tell");
-  private static final ConstStringValue STREAM_WRITE
+  private const ConstStringValue STREAM_WRITE
     = new ConstStringValue("stream_write");
 
-  private static final UnicodeBuilderValue STREAM_CLOSE_U
+  private const UnicodeBuilderValue STREAM_CLOSE_U
     = new UnicodeBuilderValue("stream_close");
-  private static final UnicodeBuilderValue STREAM_EOF_U
+  private const UnicodeBuilderValue STREAM_EOF_U
     = new UnicodeBuilderValue("stream_eof");
-  private static final UnicodeBuilderValue STREAM_FLUSH_U
+  private const UnicodeBuilderValue STREAM_FLUSH_U
     = new UnicodeBuilderValue("stream_flush");
-  private static final UnicodeBuilderValue STREAM_OPEN_U
+  private const UnicodeBuilderValue STREAM_OPEN_U
     = new UnicodeBuilderValue("stream_open");
-  private static final UnicodeBuilderValue STREAM_READ_U
+  private const UnicodeBuilderValue STREAM_READ_U
     = new UnicodeBuilderValue("stream_read");
-  private static final UnicodeBuilderValue STREAM_SEEK_U
+  private const UnicodeBuilderValue STREAM_SEEK_U
     = new UnicodeBuilderValue("stream_seek");
-  private static final UnicodeBuilderValue STREAM_TELL_U
+  private const UnicodeBuilderValue STREAM_TELL_U
     = new UnicodeBuilderValue("stream_tell");
-  private static final UnicodeBuilderValue STREAM_WRITE_U
+  private const UnicodeBuilderValue STREAM_WRITE_U
     = new UnicodeBuilderValue("stream_write");
 
   private byte []printBuffer = new byte[1];

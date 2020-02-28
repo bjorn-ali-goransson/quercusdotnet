@@ -35,9 +35,9 @@
 public class UnicodeValueImpl
   extends UnicodeBuilderValue
 {
-  protected static final int IS_STRING = 0;
-  protected static final int IS_LONG = 1;
-  protected static final int IS_DOUBLE = 2;
+  protected const int IS_STRING = 0;
+  protected const int IS_LONG = 1;
+  protected const int IS_DOUBLE = 2;
 
   public UnicodeValueImpl(String value)
   {

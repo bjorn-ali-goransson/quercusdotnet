@@ -37,7 +37,7 @@
  */
 @SuppressWarnings("serial")
 public class DefaultValue extends NullValue {
-  public static final DefaultValue DEFAULT
+  public const DefaultValue DEFAULT
     = new DefaultValue();
 
   private DefaultValue()

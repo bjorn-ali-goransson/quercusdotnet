@@ -68,8 +68,8 @@
  */
 @ResourceType("xml")
 public class Xml {
-  private static final Logger log = Logger.getLogger(Xml.class.getName());
-  private static final L10N L = new L10N(Xml.class);
+  private const Logger log = Logger.getLogger(Xml.class.getName());
+  private const L10N L = new L10N(Xml.class);
 
   /**
    * XML_OPTION_CASE_FOLDING is enabled by default

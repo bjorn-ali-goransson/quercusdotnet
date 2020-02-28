@@ -41,22 +41,22 @@
  * Represents a PHP directory listing
  */
 public class WrappedDirectory extends Directory {
-  private static final ConstStringValue DIR_CLOSEDIR
+  private const ConstStringValue DIR_CLOSEDIR
     = new ConstStringValue("dir_closedir");
-  private static final ConstStringValue DIR_OPENDIR
+  private const ConstStringValue DIR_OPENDIR
     = new ConstStringValue("dir_opendir");
-  private static final ConstStringValue DIR_READDIR
+  private const ConstStringValue DIR_READDIR
     = new ConstStringValue("dir_readdir");
-  private static final ConstStringValue DIR_REWINDDIR
+  private const ConstStringValue DIR_REWINDDIR
     = new ConstStringValue("dir_rewinddir");
 
-  private static final UnicodeBuilderValue DIR_CLOSEDIR_U
+  private const UnicodeBuilderValue DIR_CLOSEDIR_U
     = new UnicodeBuilderValue("dir_closedir");
-  private static final UnicodeBuilderValue DIR_OPENDIR_U
+  private const UnicodeBuilderValue DIR_OPENDIR_U
     = new UnicodeBuilderValue("dir_opendir");
-  private static final UnicodeBuilderValue DIR_READDIR_U
+  private const UnicodeBuilderValue DIR_READDIR_U
     = new UnicodeBuilderValue("dir_readdir");
-  private static final UnicodeBuilderValue DIR_REWINDDIR_U
+  private const UnicodeBuilderValue DIR_REWINDDIR_U
     = new UnicodeBuilderValue("dir_rewinddir");
 
   private Value _wrapper;

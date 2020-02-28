@@ -49,13 +49,13 @@
  */
 public class ApcModule extends AbstractQuercusModule
 {
-  private static final Logger log
+  private const Logger log
     = Logger.getLogger(ApcModule.class.getName());
-  private static final L10N L = new L10N(ApcModule.class);
+  private const L10N L = new L10N(ApcModule.class);
 
-  private static final IniDefinitions _iniDefinitions = new IniDefinitions();
+  private const IniDefinitions _iniDefinitions = new IniDefinitions();
 
-  private static final int _defaultSize = 4096;
+  private const int _defaultSize = 4096;
 
   private LruCache<String,Entry> _cache;
 
@@ -406,46 +406,46 @@ public class ApcModule extends AbstractQuercusModule
     }
   }
 
-  static final IniDefinition INI_APC_ENABLED
+  const IniDefinition INI_APC_ENABLED
     = _iniDefinitions.add("apc.enabled", true, PHP_INI_ALL);
-  static final IniDefinition INI_APC_SHM_SEGMENTS
+  const IniDefinition INI_APC_SHM_SEGMENTS
     = _iniDefinitions.add("apc.shm_segments", 1, PHP_INI_SYSTEM);
-  static final IniDefinition INI_APC_SHM_SIZE
+  const IniDefinition INI_APC_SHM_SIZE
     = _iniDefinitions.add("apc.shm_size", 30, PHP_INI_SYSTEM);
-  static final IniDefinition INI_APC_OPTIMIZATION
+  const IniDefinition INI_APC_OPTIMIZATION
     = _iniDefinitions.add("apc.optimization", false, PHP_INI_ALL);
-  static final IniDefinition INI_APC_NUM_FILES_HINT
+  const IniDefinition INI_APC_NUM_FILES_HINT
     = _iniDefinitions.add("apc.num_files_hint", 1000, PHP_INI_SYSTEM);
-  static final IniDefinition INI_APC_USER_ENTRIES_HINT
+  const IniDefinition INI_APC_USER_ENTRIES_HINT
     = _iniDefinitions.add(
       "apc.user_entries_hint", _defaultSize, PHP_INI_SYSTEM);
-  static final IniDefinition INI_APC_TTL
+  const IniDefinition INI_APC_TTL
     = _iniDefinitions.add("apc.ttl", 0, PHP_INI_SYSTEM);
-  static final IniDefinition INI_APC_USER_TTL
+  const IniDefinition INI_APC_USER_TTL
     = _iniDefinitions.add("apc.user_ttl", 0, PHP_INI_SYSTEM);
-  static final IniDefinition INI_APC_GC_TTL
+  const IniDefinition INI_APC_GC_TTL
     = _iniDefinitions.add("apc.gc_ttl", "3600", PHP_INI_SYSTEM);
-  static final IniDefinition INI_APC_CACHE_BY_DEFAULT
+  const IniDefinition INI_APC_CACHE_BY_DEFAULT
     = _iniDefinitions.add("apc.cache_by_default", true, PHP_INI_SYSTEM);
-  static final IniDefinition INI_APC_FILTERS
+  const IniDefinition INI_APC_FILTERS
     = _iniDefinitions.add("apc.filters", "", PHP_INI_SYSTEM);
-  static final IniDefinition INI_APC_MMAP_FILE_MASK
+  const IniDefinition INI_APC_MMAP_FILE_MASK
     = _iniDefinitions.add("apc.mmap_file_mask", "", PHP_INI_SYSTEM);
-  static final IniDefinition INI_APC_SLAM_DEFENSE
+  const IniDefinition INI_APC_SLAM_DEFENSE
     = _iniDefinitions.add("apc.slam_defense", false, PHP_INI_SYSTEM);
-  static final IniDefinition INI_APC_FILE_UPDATE_PROTECTION
+  const IniDefinition INI_APC_FILE_UPDATE_PROTECTION
     = _iniDefinitions.add("apc.file_update_protection", "2", PHP_INI_SYSTEM);
-  static final IniDefinition INI_APC_ENABLE_CLI
+  const IniDefinition INI_APC_ENABLE_CLI
     = _iniDefinitions.add("apc.enable_cli", false, PHP_INI_SYSTEM);
-  static final IniDefinition INI_APC_MAX_FILE_SIZE
+  const IniDefinition INI_APC_MAX_FILE_SIZE
     = _iniDefinitions.add("apc.max_file_size", "1M", PHP_INI_SYSTEM);
-  static final IniDefinition INI_APC_STAT
+  const IniDefinition INI_APC_STAT
     = _iniDefinitions.add("apc.stat", "1", PHP_INI_SYSTEM);
-  static final IniDefinition INI_APC_WRITE_LOCK
+  const IniDefinition INI_APC_WRITE_LOCK
     = _iniDefinitions.add("apc.write_lock", "1", PHP_INI_SYSTEM);
-  static final IniDefinition INI_APC_LOCALCACHE
+  const IniDefinition INI_APC_LOCALCACHE
     = _iniDefinitions.add("apc.localcache", "0", PHP_INI_SYSTEM);
-  static final IniDefinition INI_APC_LOCALCACHE_SIZE
+  const IniDefinition INI_APC_LOCALCACHE_SIZE
     = _iniDefinitions.add(
       "apc.localcache.size", "" + _defaultSize, PHP_INI_SYSTEM);
 }

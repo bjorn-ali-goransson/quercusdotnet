@@ -108,143 +108,143 @@
  */
 public class Env
 {
-  private static final L10N L = new L10N(Env.class);
-  private static final Logger log = Logger.getLogger(Env.class.getName());
+  private const L10N L = new L10N(Env.class);
+  private const Logger log = Logger.getLogger(Env.class.getName());
 
-  public static final int B_ERROR = 0;
-  public static final int B_WARNING = 1;
-  public static final int B_PARSE = 2;
-  public static final int B_NOTICE = 3;
-  public static final int B_CORE_ERROR = 4;
-  public static final int B_CORE_WARNING = 5;
-  public static final int B_COMPILE_ERROR = 6;
-  public static final int B_COMPILE_WARNING = 7;
-  public static final int B_USER_ERROR = 8;
-  public static final int B_USER_WARNING = 9;
-  public static final int B_USER_NOTICE = 10;
-  public static final int B_STRICT = 11;
-  public static final int B_RECOVERABLE_ERROR = 12;
-  public static final int B_DEPRECATED = 13;
-  public static final int B_USER_DEPRECATED = 14;
+  public const int B_ERROR = 0;
+  public const int B_WARNING = 1;
+  public const int B_PARSE = 2;
+  public const int B_NOTICE = 3;
+  public const int B_CORE_ERROR = 4;
+  public const int B_CORE_WARNING = 5;
+  public const int B_COMPILE_ERROR = 6;
+  public const int B_COMPILE_WARNING = 7;
+  public const int B_USER_ERROR = 8;
+  public const int B_USER_WARNING = 9;
+  public const int B_USER_NOTICE = 10;
+  public const int B_STRICT = 11;
+  public const int B_RECOVERABLE_ERROR = 12;
+  public const int B_DEPRECATED = 13;
+  public const int B_USER_DEPRECATED = 14;
 
-  public static final int B_LAST = B_RECOVERABLE_ERROR;
+  public const int B_LAST = B_RECOVERABLE_ERROR;
 
-  public static final int E_ERROR = 1 << B_ERROR;
-  public static final int E_WARNING = 1 << B_WARNING;
-  public static final int E_PARSE = 1 << B_PARSE;
-  public static final int E_NOTICE = 1 << B_NOTICE;
-  public static final int E_CORE_ERROR = 1 << B_CORE_ERROR;
-  public static final int E_CORE_WARNING = 1 << B_CORE_WARNING;
-  public static final int E_COMPILE_ERROR = 1 << B_COMPILE_ERROR;
-  public static final int E_COMPILE_WARNING = 1 << B_COMPILE_WARNING;
-  public static final int E_USER_ERROR = 1 << B_USER_ERROR;
-  public static final int E_USER_WARNING = 1 << B_USER_WARNING;
-  public static final int E_USER_NOTICE = 1 << B_USER_NOTICE;
-  public static final int E_ALL = 32767; //(0x1111 1111 1111 11)
-  public static final int E_STRICT = 1 << B_STRICT;
-  public static final int E_RECOVERABLE_ERROR = 1 << B_RECOVERABLE_ERROR;
-  public static final int E_DEPRECATED = 1 << B_DEPRECATED;
-  public static final int E_USER_DEPRECATED = 1 << B_USER_DEPRECATED;
+  public const int E_ERROR = 1 << B_ERROR;
+  public const int E_WARNING = 1 << B_WARNING;
+  public const int E_PARSE = 1 << B_PARSE;
+  public const int E_NOTICE = 1 << B_NOTICE;
+  public const int E_CORE_ERROR = 1 << B_CORE_ERROR;
+  public const int E_CORE_WARNING = 1 << B_CORE_WARNING;
+  public const int E_COMPILE_ERROR = 1 << B_COMPILE_ERROR;
+  public const int E_COMPILE_WARNING = 1 << B_COMPILE_WARNING;
+  public const int E_USER_ERROR = 1 << B_USER_ERROR;
+  public const int E_USER_WARNING = 1 << B_USER_WARNING;
+  public const int E_USER_NOTICE = 1 << B_USER_NOTICE;
+  public const int E_ALL = 32767; //(0x1111 1111 1111 11)
+  public const int E_STRICT = 1 << B_STRICT;
+  public const int E_RECOVERABLE_ERROR = 1 << B_RECOVERABLE_ERROR;
+  public const int E_DEPRECATED = 1 << B_DEPRECATED;
+  public const int E_USER_DEPRECATED = 1 << B_USER_DEPRECATED;
 
-  public static final int E_DEFAULT = E_ALL & ~E_NOTICE;
+  public const int E_DEFAULT = E_ALL & ~E_NOTICE;
 
-  private static final int _SERVER = 1;
-  private static final int _GET = 2;
-  private static final int _POST = 3;
-  private static final int _COOKIE = 4;
-  private static final int _GLOBAL = 5;
-  private static final int _REQUEST = 6;
-  private static final int _SESSION = 7;
-  private static final int HTTP_GET_VARS = 8;
-  private static final int HTTP_POST_VARS = 9;
-  private static final int HTTP_COOKIE_VARS = 10;
-  private static final int PHP_SELF = 11;
-  private static final int _FILES = 12;
-  private static final int HTTP_POST_FILES = 13;
-  private static final int _ENV = 14;
-  private static final int HTTP_SERVER_VARS = 15;
-  private static final int HTTP_RAW_POST_DATA = 16;
+  private const int _SERVER = 1;
+  private const int _GET = 2;
+  private const int _POST = 3;
+  private const int _COOKIE = 4;
+  private const int _GLOBAL = 5;
+  private const int _REQUEST = 6;
+  private const int _SESSION = 7;
+  private const int HTTP_GET_VARS = 8;
+  private const int HTTP_POST_VARS = 9;
+  private const int HTTP_COOKIE_VARS = 10;
+  private const int PHP_SELF = 11;
+  private const int _FILES = 12;
+  private const int HTTP_POST_FILES = 13;
+  private const int _ENV = 14;
+  private const int HTTP_SERVER_VARS = 15;
+  private const int HTTP_RAW_POST_DATA = 16;
 
-  private static final int ARGC = 17;
-  private static final int ARGV = 18;
+  private const int ARGC = 17;
+  private const int ARGV = 18;
 
-  private static final IntMap SPECIAL_VARS
+  private const IntMap SPECIAL_VARS
     = new IntMap();
 
-  private static final IntMap SPECIAL_VARS_U
+  private const IntMap SPECIAL_VARS_U
     = new IntMap();
 
-  private static final StringValue PHP_SELF_STRING
+  private const StringValue PHP_SELF_STRING
     = new ConstStringValue("PHP_SELF");
 
-  private static final StringValue PHP_SELF_STRING_U
+  private const StringValue PHP_SELF_STRING_U
     = new UnicodeBuilderValue("PHP_SELF");
 
-  private static final StringValue S_GET
+  private const StringValue S_GET
     = new ConstStringValue("_GET");
 
-  private static final StringValue S_GET_U
+  private const StringValue S_GET_U
     = new UnicodeBuilderValue("_GET");
 
-  private static final StringValue S_POST
+  private const StringValue S_POST
     = new ConstStringValue("_POST");
 
-  private static final StringValue S_POST_U
+  private const StringValue S_POST_U
     = new UnicodeBuilderValue("_POST");
 
-  private static final StringValue S_SESSION
+  private const StringValue S_SESSION
     = new ConstStringValue("_SESSION");
 
-  private static final StringValue S_SESSION_U
+  private const StringValue S_SESSION_U
     = new UnicodeBuilderValue("_SESSION");
 
-  private static final StringValue S_SERVER
+  private const StringValue S_SERVER
     = new ConstStringValue("_SERVER");
 
-  private static final StringValue S_SERVER_U
+  private const StringValue S_SERVER_U
     = new UnicodeBuilderValue("_SERVER");
 
-  private static final StringValue S_COOKIE
+  private const StringValue S_COOKIE
     = new ConstStringValue("_COOKIE");
 
-  private static final StringValue S_COOKIE_U
+  private const StringValue S_COOKIE_U
     = new UnicodeBuilderValue("_COOKIE");
 
-  private static final StringValue S_FILES
+  private const StringValue S_FILES
     = new ConstStringValue("_FILES");
 
-  private static final StringValue S_FILES_U
+  private const StringValue S_FILES_U
     = new UnicodeBuilderValue("_FILES");
 
-  private static final StringValue S_ARGV
+  private const StringValue S_ARGV
     = new ConstStringValue("argv");
 
-  private static final StringValue S_ARGV_U
+  private const StringValue S_ARGV_U
     = new UnicodeBuilderValue("argv");
 
-  public static final Value []EMPTY_VALUE = new Value[0];
+  public const Value []EMPTY_VALUE = new Value[0];
 
   private static ThreadLocal<Env> _threadEnv = new ThreadLocal<Env>();
 
-  private static final FreeList<AbstractFunction[]> _freeFunList
+  private const FreeList<AbstractFunction[]> _freeFunList
     = new FreeList<AbstractFunction[]>(256);
 
-  private static final FreeList<ClassDef[]> _freeClassDefList
+  private const FreeList<ClassDef[]> _freeClassDefList
     = new FreeList<ClassDef[]>(256);
 
-  private static final FreeList<QuercusClass[]> _freeClassList
+  private const FreeList<QuercusClass[]> _freeClassList
     = new FreeList<QuercusClass[]>(256);
 
-  private static final FreeList<Value[]> _freeConstList
+  private const FreeList<Value[]> _freeConstList
     = new FreeList<Value[]>(256);
 
-  private static final FreeList<QDate> _freeGmtDateList
+  private const FreeList<QDate> _freeGmtDateList
     = new FreeList<QDate>(256);
 
-  private static final FreeList<QDate> _freeLocalDateList
+  private const FreeList<QDate> _freeLocalDateList
     = new FreeList<QDate>(256);
 
-  private static final LruCache<String,StringValue> _internStringMap
+  private const LruCache<String,StringValue> _internStringMap
     = new LruCache<String,StringValue>(4096);
 
   protected final QuercusContext _quercus;
@@ -430,7 +430,7 @@ public class Env
   private StringValue _variablesOrder;
   private int []_querySeparatorMap;
 
-  public static final int []DEFAULT_QUERY_SEPARATOR_MAP;
+  public const int []DEFAULT_QUERY_SEPARATOR_MAP;
 
   private CharBuffer _cb = new CharBuffer();
 
@@ -2514,7 +2514,7 @@ public class Env
    *
    * @param var the current value of the variable
    */
-  public static final Value getLocalVar(Value var)
+  public const Value getLocalVar(Value var)
   {
     if (var == null)
       var = new Var();
@@ -2527,7 +2527,7 @@ public class Env
    *
    * @param var the current value of the variable
    */
-  public static final Value getLocalValue(Value var)
+  public const Value getLocalValue(Value var)
   {
     if (var != null)
       return var;
@@ -2540,7 +2540,7 @@ public class Env
    *
    * @param var the current value of the variable
    */
-  public static final Value setLocalVar(Value var, Value value)
+  public const Value setLocalVar(Value var, Value value)
   {
     value = value.toValue();
 

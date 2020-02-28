@@ -38,7 +38,7 @@
 
 public class DateInterval
 {
-  private static final L10N L = new L10N(DateInterval.class);
+  private const L10N L = new L10N(DateInterval.class);
 
   public int y;
   public int m;

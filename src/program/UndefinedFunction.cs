@@ -39,7 +39,7 @@
  */
 @SuppressWarnings("serial")
 public class UndefinedFunction extends AbstractFunction {
-  private static final L10N L = new L10N(UndefinedFunction.class);
+  private const L10N L = new L10N(UndefinedFunction.class);
 
   private final int _id;
   private final string _name;

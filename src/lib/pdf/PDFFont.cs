@@ -38,9 +38,9 @@
  * pdf object oriented API facade
  */
 public class PDFFont extends PDFObject {
-  private static final Logger log
+  private const Logger log
     = Logger.getLogger(PDFFont.class.getName());
-  private static final L10N L = new L10N(PDFFont.class);
+  private const L10N L = new L10N(PDFFont.class);
 
   private int _id;
 

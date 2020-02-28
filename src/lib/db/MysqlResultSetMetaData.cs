@@ -44,9 +44,9 @@
  */
 public class MysqlResultSetMetaData
 {
-  private static final Logger log
+  private const Logger log
     = Logger.getLogger(MysqlResultSetMetaData.class.getName());
-  private static final L10N L
+  private const L10N L
     = new L10N(MysqlResultSetMetaData.class);
 
   private ResultSetMetaData _resultSetMetaData;

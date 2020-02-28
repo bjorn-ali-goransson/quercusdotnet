@@ -40,7 +40,7 @@
 @SuppressWarnings("serial")
 public class GoogleQuercusServlet extends QuercusServlet
 {
-  private static final Logger log
+  private const Logger log
     = Logger.getLogger(GoogleQuercusServlet.class.getName());
 
   private string _gsBucket;

@@ -37,7 +37,7 @@
 
 
 public class PhpProtocolWrapper extends ProtocolWrapper {
-  private static final L10N L = new L10N(PhpProtocolWrapper.class);
+  private const L10N L = new L10N(PhpProtocolWrapper.class);
 
   public PhpProtocolWrapper()
   {

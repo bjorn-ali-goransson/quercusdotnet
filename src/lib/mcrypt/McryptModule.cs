@@ -50,34 +50,34 @@
  * PHP encryption
  */
 public class McryptModule extends AbstractQuercusModule {
-  private static final L10N L = new L10N(McryptModule.class);
+  private const L10N L = new L10N(McryptModule.class);
 
-  private static final Logger log =
+  private const Logger log =
     Logger.getLogger(McryptModule.class.getName());
 
-  public static final int MCRYPT_DEV_RANDOM = 0;
-  public static final int MCRYPT_DEV_URANDOM = 1;
-  public static final int MCRYPT_RAND = 2;
+  public const int MCRYPT_DEV_RANDOM = 0;
+  public const int MCRYPT_DEV_URANDOM = 1;
+  public const int MCRYPT_RAND = 2;
 
-  public static final int MCRYPT_ENCRYPT = 0;
-  public static final int MCRYPT_DECRYPT = 1;
+  public const int MCRYPT_ENCRYPT = 0;
+  public const int MCRYPT_DECRYPT = 1;
 
-  public static final string MCRYPT_MODE_ECB = "ecb";
-  public static final string MCRYPT_MODE_CBC = "cbc";
-  public static final string MCRYPT_MODE_CFB = "cfb";
-  public static final string MCRYPT_MODE_OFB = "ofb";
-  public static final string MCRYPT_MODE_NOFB = "nofb";
-  public static final string MCRYPT_MODE_STREAM = "stream";
+  public const string MCRYPT_MODE_ECB = "ecb";
+  public const string MCRYPT_MODE_CBC = "cbc";
+  public const string MCRYPT_MODE_CFB = "cfb";
+  public const string MCRYPT_MODE_OFB = "ofb";
+  public const string MCRYPT_MODE_NOFB = "nofb";
+  public const string MCRYPT_MODE_STREAM = "stream";
 
-  public static final string MCRYPT_ARCFOUR = "arcfour";
-  public static final string MCRYPT_BLOWFISH = "blowfish";
-  public static final string MCRYPT_DES = "des";
-  public static final string MCRYPT_3DES = "tripledes";
-  public static final string MCRYPT_TRIPLEDES = "tripledes";
-  public static final string MCRYPT_RC4 = "RC4";
-  public static final string MCRYPT_RIJNDAEL_128 = "rijndael-128";
-  public static final string MCRYPT_RIJNDAEL_192 = "rijndael-192";
-  public static final string MCRYPT_RIJNDAEL_256 = "rijndael-256";
+  public const string MCRYPT_ARCFOUR = "arcfour";
+  public const string MCRYPT_BLOWFISH = "blowfish";
+  public const string MCRYPT_DES = "des";
+  public const string MCRYPT_3DES = "tripledes";
+  public const string MCRYPT_TRIPLEDES = "tripledes";
+  public const string MCRYPT_RC4 = "RC4";
+  public const string MCRYPT_RIJNDAEL_128 = "rijndael-128";
+  public const string MCRYPT_RIJNDAEL_192 = "rijndael-192";
+  public const string MCRYPT_RIJNDAEL_256 = "rijndael-256";
 
   public string []getLoadedExtensions()
   {
@@ -453,7 +453,7 @@ public class McryptModule extends AbstractQuercusModule {
     }
   }
   
-  private static final string []ALGORITHMS = {
+  private const string []ALGORITHMS = {
     MCRYPT_ARCFOUR, MCRYPT_BLOWFISH,  MCRYPT_DES, MCRYPT_3DES,
     MCRYPT_RC4, MCRYPT_RIJNDAEL_128, MCRYPT_RIJNDAEL_192,
     MCRYPT_RIJNDAEL_256

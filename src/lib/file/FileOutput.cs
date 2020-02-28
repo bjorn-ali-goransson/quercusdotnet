@@ -51,7 +51,7 @@
 public class FileOutput extends AbstractBinaryOutput
     implements LockableStream, EnvCleanup
 {
-  private static final Logger log
+  private const Logger log
     = Logger.getLogger(FileOutput.class.getName());
 
   private Env _env;

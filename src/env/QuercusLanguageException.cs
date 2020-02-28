@@ -38,9 +38,9 @@
  */
 public class QuercusLanguageException extends QuercusException
 {
-  private static final StringValue FILE = new ConstStringValue("file");
-  private static final StringValue LINE = new ConstStringValue("line");
-  private static final StringValue MESSAGE = new ConstStringValue("message");
+  private const StringValue FILE = new ConstStringValue("file");
+  private const StringValue LINE = new ConstStringValue("line");
+  private const StringValue MESSAGE = new ConstStringValue("message");
 
   private ArrayValue _trace;
   private Value _value;

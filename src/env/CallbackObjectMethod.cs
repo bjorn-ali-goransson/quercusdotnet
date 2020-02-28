@@ -41,7 +41,7 @@
  * Represents a call to an object's method
  */
 public class CallbackObjectMethod extends Callback {
-  private static final L10N L = new L10N(CallbackObjectMethod.class);
+  private const L10N L = new L10N(CallbackObjectMethod.class);
 
   private final ObjectValue _obj;
 

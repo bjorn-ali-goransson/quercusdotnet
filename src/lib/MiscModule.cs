@@ -63,13 +63,13 @@
  * PHP misc functions.
  */
 public class MiscModule extends AbstractQuercusModule {
-  private static final L10N L = new L10N(MiscModule.class);
-  private static final Logger log
+  private const L10N L = new L10N(MiscModule.class);
+  private const Logger log
     = Logger.getLogger(MiscModule.class.getName());
 
-  public static final int CONNECTION_NORMAL = 0;
-  public static final int CONNECTION_ABORTED = 1;
-  public static final int CONNECTION_TIMEOUT = 2;
+  public const int CONNECTION_NORMAL = 0;
+  public const int CONNECTION_ABORTED = 1;
+  public const int CONNECTION_TIMEOUT = 2;
 
   /**
    * Return true on a client disconnect

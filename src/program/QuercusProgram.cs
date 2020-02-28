@@ -54,7 +54,7 @@
  * Represents a compiled Quercus program.
  */
 public class QuercusProgram {
-  private static final Logger log
+  private const Logger log
     = Logger.getLogger(QuercusProgram.class.getName());
 
   private QuercusContext _quercus;

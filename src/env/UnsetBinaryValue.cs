@@ -31,7 +31,7 @@
 public class UnsetBinaryValue
   extends BinaryBuilderValue
 {
-  public static final UnsetBinaryValue UNSET = new UnsetBinaryValue();
+  public const UnsetBinaryValue UNSET = new UnsetBinaryValue();
   
   private UnsetBinaryValue()
   {

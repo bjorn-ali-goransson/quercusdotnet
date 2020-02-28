@@ -36,7 +36,7 @@
 
 public class DoubleMarshal extends Marshal
 {
-  public static final DoubleMarshal MARSHAL = new DoubleMarshal();
+  public const DoubleMarshal MARSHAL = new DoubleMarshal();
 
   public boolean isDouble()
   {

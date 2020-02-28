@@ -39,23 +39,23 @@
 
 public class JsonModule extends AbstractQuercusModule
 {
-  public static final int JSON_ERROR_NONE = 0;
-  public static final int JSON_ERROR_DEPTH = 1;
-  public static final int JSON_ERROR_STATE_MISMATCH = 2;
-  public static final int JSON_ERROR_CTRL_CHAR = 3;
-  public static final int JSON_ERROR_SYNTAX = 4;
-  public static final int JSON_ERROR_UTF8 = 5;
+  public const int JSON_ERROR_NONE = 0;
+  public const int JSON_ERROR_DEPTH = 1;
+  public const int JSON_ERROR_STATE_MISMATCH = 2;
+  public const int JSON_ERROR_CTRL_CHAR = 3;
+  public const int JSON_ERROR_SYNTAX = 4;
+  public const int JSON_ERROR_UTF8 = 5;
 
-  public static final int JSON_HEX_TAG = 1;
-  public static final int JSON_HEX_AMP = 2;
-  public static final int JSON_HEX_APOS = 4;
-  public static final int JSON_HEX_QUOT = 8;
-  public static final int JSON_FORCE_OBJECT = 16;
-  public static final int JSON_NUMERIC_CHECK = 32;
-  public static final int JSON_BIGINT_AS_STRING = 64;
-  public static final int JSON_PRETTY_PRINT = 128;
-  public static final int JSON_UNESCAPED_SLASHES = 256;
-  public static final int JSON_UNESCAPED_UNICODE = 512;
+  public const int JSON_HEX_TAG = 1;
+  public const int JSON_HEX_AMP = 2;
+  public const int JSON_HEX_APOS = 4;
+  public const int JSON_HEX_QUOT = 8;
+  public const int JSON_FORCE_OBJECT = 16;
+  public const int JSON_NUMERIC_CHECK = 32;
+  public const int JSON_BIGINT_AS_STRING = 64;
+  public const int JSON_PRETTY_PRINT = 128;
+  public const int JSON_UNESCAPED_SLASHES = 256;
+  public const int JSON_UNESCAPED_UNICODE = 512;
 
   public string []getLoadedExtensions()
   {

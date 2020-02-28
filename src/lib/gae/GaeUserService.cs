@@ -38,7 +38,7 @@
 
 public class GaeUserService
 {
-  private static final UserService USER_SERVICE
+  private const UserService USER_SERVICE
     = UserServiceFactory.getUserService();
 
   protected static UserService getUserService() {

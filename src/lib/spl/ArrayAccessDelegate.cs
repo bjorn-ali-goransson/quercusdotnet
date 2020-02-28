@@ -38,13 +38,13 @@
  */
 public class ArrayAccessDelegate implements ArrayDelegate
 {
-  private static final StringValue OFFSET_GET
+  private const StringValue OFFSET_GET
     = new ConstStringValue("offsetGet");
-  private static final StringValue OFFSET_SET
+  private const StringValue OFFSET_SET
     = new ConstStringValue("offsetSet");
-  private static final StringValue OFFSET_UNSET
+  private const StringValue OFFSET_UNSET
     = new ConstStringValue("offsetUnset");
-  private static final StringValue OFFSET_EXISTS
+  private const StringValue OFFSET_EXISTS
     = new ConstStringValue("offsetExists");
 
   @Override

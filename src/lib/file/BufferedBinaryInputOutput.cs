@@ -46,7 +46,7 @@
 abstract public class BufferedBinaryInputOutput
   extends AbstractBinaryInputOutput
 {
-  private static final Logger log
+  private const Logger log
     = Logger.getLogger(BufferedBinaryInputOutput.class.getName());
 
   private ReadStream _is;

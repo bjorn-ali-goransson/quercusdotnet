@@ -37,7 +37,7 @@
 
 public class UnicodeValueMarshal extends Marshal
 {
-  public static final Marshal MARSHAL = new UnicodeValueMarshal();
+  public const Marshal MARSHAL = new UnicodeValueMarshal();
   
   public boolean isReadOnly()
   {

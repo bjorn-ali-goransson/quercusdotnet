@@ -41,7 +41,7 @@
  * A Foo::__construct(...) method call expression.
  */
 public class ClassConstructExpr extends AbstractMethodExpr {
-  private static final L10N L = new L10N(ClassConstructExpr.class);
+  private const L10N L = new L10N(ClassConstructExpr.class);
 
   protected final string _className;
   protected final Expr []_args;

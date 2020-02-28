@@ -84,38 +84,38 @@
  * PHP functions implemented from the string module
  */
 public class StringModule extends AbstractQuercusModule {
-  private static final Logger log =
+  private const Logger log =
     Logger.getLogger(StringModule.class.getName());
 
-  private static final L10N L = new L10N(StringModule.class);
+  private const L10N L = new L10N(StringModule.class);
 
-  public static final int CRYPT_SALT_LENGTH = 2;
-  public static final int CRYPT_STD_DES = 0;
-  public static final int CRYPT_EXT_DES = 0;
-  public static final int CRYPT_MD5 = 0;
-  public static final int CRYPT_BLOWFISH = 0;
+  public const int CRYPT_SALT_LENGTH = 2;
+  public const int CRYPT_STD_DES = 0;
+  public const int CRYPT_EXT_DES = 0;
+  public const int CRYPT_MD5 = 0;
+  public const int CRYPT_BLOWFISH = 0;
 
-  public static final int CHAR_MAX = 1;
+  public const int CHAR_MAX = 1;
 
-  public static final int LC_CTYPE = 1;
-  public static final int LC_NUMERIC = 2;
-  public static final int LC_TIME = 3;
-  public static final int LC_COLLATE = 4;
-  public static final int LC_MONETARY = 5;
-  public static final int LC_ALL = 6;
-  public static final int LC_MESSAGES = 7;
+  public const int LC_CTYPE = 1;
+  public const int LC_NUMERIC = 2;
+  public const int LC_TIME = 3;
+  public const int LC_COLLATE = 4;
+  public const int LC_MONETARY = 5;
+  public const int LC_ALL = 6;
+  public const int LC_MESSAGES = 7;
 
-  public static final int STR_PAD_LEFT = 1;
-  public static final int STR_PAD_RIGHT = 0;
-  public static final int STR_PAD_BOTH = 2;
+  public const int STR_PAD_LEFT = 1;
+  public const int STR_PAD_RIGHT = 0;
+  public const int STR_PAD_BOTH = 2;
 
-  private static final DecimalFormatSymbols DEFAULT_DECIMAL_FORMAT_SYMBOLS;
+  private const DecimalFormatSymbols DEFAULT_DECIMAL_FORMAT_SYMBOLS;
 
-  private static final BigInteger BIG_TEN = new BigInteger("10");
-  private static final BigInteger BIG_2_64
+  private const BigInteger BIG_TEN = new BigInteger("10");
+  private const BigInteger BIG_2_64
     = BigInteger.ONE.shiftLeft(64);
 
-  private static final FreeList<MessageDigest> _md5FreeList
+  private const FreeList<MessageDigest> _md5FreeList
     = new FreeList<MessageDigest>(16);
 
   /**
@@ -1590,7 +1590,7 @@ public class StringModule extends AbstractQuercusModule {
     return sb;
   }
 
-  private static final boolean[]TRIM_WHITESPACE = new boolean[256];
+  private const boolean[]TRIM_WHITESPACE = new boolean[256];
 
   static {
     TRIM_WHITESPACE['\0'] = true;
@@ -1933,7 +1933,7 @@ public class StringModule extends AbstractQuercusModule {
 
   // XXX: similar_text
 
-  private static final char []SOUNDEX_VALUES = "01230120022455012623010202"
+  private const char []SOUNDEX_VALUES = "01230120022455012623010202"
       .toCharArray();
 
   public static Value soundex(StringValue string)
@@ -6004,7 +6004,7 @@ public class StringModule extends AbstractQuercusModule {
   }
 
   static class ScanfWhitespace extends ScanfSegment {
-    static final ScanfWhitespace SEGMENT = new ScanfWhitespace();
+    const ScanfWhitespace SEGMENT = new ScanfWhitespace();
 
     private ScanfWhitespace()
     {
@@ -6032,7 +6032,7 @@ public class StringModule extends AbstractQuercusModule {
   }
 
   static class ScanfStringLength extends ScanfSegment {
-    static final ScanfStringLength SEGMENT = new ScanfStringLength();
+    const ScanfStringLength SEGMENT = new ScanfStringLength();
 
     private ScanfStringLength()
     {

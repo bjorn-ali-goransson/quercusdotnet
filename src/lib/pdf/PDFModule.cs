@@ -46,9 +46,9 @@
  * PHP PDF routines.
  */
 public class PDFModule extends AbstractQuercusModule {
-  private static final L10N L = new L10N(PDFModule.class);
+  private const L10N L = new L10N(PDFModule.class);
 
-  private static final Logger log =
+  private const Logger log =
     Logger.getLogger(PDFModule.class.getName());
 
   /**

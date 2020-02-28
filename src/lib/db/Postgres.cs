@@ -51,8 +51,8 @@
 @ResourceType("pgsql link")
 public class Postgres extends JdbcConnectionResource
 {
-  private static final Logger log = Logger.getLogger(Postgres.class.getName());
-  private static final L10N L = new L10N(Postgres.class);
+  private const Logger log = Logger.getLogger(Postgres.class.getName());
+  private const L10N L = new L10N(Postgres.class);
 
   PostgresResult _asyncResult;
   PostgresStatement _asyncStmt;

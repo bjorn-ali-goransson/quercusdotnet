@@ -45,7 +45,7 @@
 
 public class StringUtility
 {
-  private static final L10N L = new L10N(StringModule.class);
+  private const L10N L = new L10N(StringModule.class);
 
   public static Value parseStr(Env env,
                                CharSequence str,

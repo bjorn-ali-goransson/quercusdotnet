@@ -45,8 +45,8 @@
  * oracle connection class (oracle has NO object oriented API)
  */
 public class Oracle extends JdbcConnectionResource {
-  private static final Logger log = Logger.getLogger(Oracle.class.getName());
-  private static final L10N L = new L10N(Oracle.class);
+  private const Logger log = Logger.getLogger(Oracle.class.getName());
+  private const L10N L = new L10N(Oracle.class);
 
   public Oracle(Env env,
                 @Optional("localhost") string host,

@@ -72,8 +72,8 @@
 @SuppressWarnings("serial")
 public class QuercusServletImpl extends HttpServlet
 {
-  private static final L10N L = new L10N(QuercusServletImpl.class);
-  private static final Logger log
+  private const L10N L = new L10N(QuercusServletImpl.class);
+  private const Logger log
     = Logger.getLogger(QuercusServletImpl.class.getName());
 
   protected QuercusContext _quercus;

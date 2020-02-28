@@ -41,7 +41,7 @@
  * Represents a continue expression statement in a PHP program.
  */
 public class ContinueStatement extends Statement {
-  //public static final ContinueStatement CONTINUE = new ContinueStatement();
+  //public const ContinueStatement CONTINUE = new ContinueStatement();
   
   protected final Expr _target;
   protected final ArrayList<String> _loopLabelList;

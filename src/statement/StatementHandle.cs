@@ -33,7 +33,7 @@
  * A handle to a statement
  */
 public class StatementHandle {
-  public static final StatementHandle NULL
+  public const StatementHandle NULL
     = new StatementHandle(NullStatement.NULL);
 
   private final StatementHandle _parent;

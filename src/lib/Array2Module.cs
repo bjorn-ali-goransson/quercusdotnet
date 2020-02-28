@@ -42,7 +42,7 @@
  */
 public class Array2Module extends AbstractQuercusModule
 {
-  private static final L10N L = new L10N(ArrayModule.class);
+  private const L10N L = new L10N(ArrayModule.class);
 
   public static Value array_lookup(Env env,
                                    Value obj, Value key,

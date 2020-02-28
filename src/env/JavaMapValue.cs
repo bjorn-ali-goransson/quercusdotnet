@@ -38,7 +38,7 @@
  * Represents a Quercus java value.
  */
 public class JavaMapValue extends JavaValue {
-  private static final Logger log
+  private const Logger log
     = Logger.getLogger(JavaMapValue.class.getName());
   
   private final Map _map;

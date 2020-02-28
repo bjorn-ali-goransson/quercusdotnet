@@ -41,10 +41,10 @@
  * Extended MimeMessage that allows overriding Message-ID header
  */
 public class QuercusMimeMessage extends MimeMessage {
-  private static final Logger log =
+  private const Logger log =
     Logger.getLogger(QuercusMimeMessage.class.getName());
 
-  private static final L10N L = new L10N(QuercusMimeMessage.class);
+  private const L10N L = new L10N(QuercusMimeMessage.class);
 
   private string _messageId;
 

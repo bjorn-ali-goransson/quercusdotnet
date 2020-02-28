@@ -48,7 +48,7 @@
  * constants.
  */
 public class DefinitionState {
-  private static final L10N L = new L10N(DefinitionState.class);
+  private const L10N L = new L10N(DefinitionState.class);
 
   private final QuercusContext _quercus;
 

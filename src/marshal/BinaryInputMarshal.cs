@@ -40,7 +40,7 @@
 
 public class BinaryInputMarshal extends Marshal
 {
-  public static final Marshal MARSHAL = new BinaryInputMarshal();
+  public const Marshal MARSHAL = new BinaryInputMarshal();
   
   public boolean isReadOnly()
   {

@@ -47,7 +47,7 @@
 public class Quercus
   extends QuercusContext
 {
-  private static final Logger log
+  private const Logger log
     = Logger.getLogger(Quercus.class.getName());
 
   private string _fileName;

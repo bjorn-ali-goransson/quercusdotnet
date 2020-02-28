@@ -36,7 +36,7 @@
 
 public class FloatObjectMarshal extends Marshal
 {
-  public static final Marshal MARSHAL = new FloatObjectMarshal();
+  public const Marshal MARSHAL = new FloatObjectMarshal();
 
   public boolean isReadOnly()
   {

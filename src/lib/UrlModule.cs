@@ -69,57 +69,57 @@
 public class UrlModule
   extends AbstractQuercusModule
 {
-  private static final L10N L = new L10N(UrlModule.class);
-  private static final Logger log
+  private const L10N L = new L10N(UrlModule.class);
+  private const Logger log
     = Logger.getLogger(UrlModule.class.getName());
 
-  public static final int PHP_URL_SCHEME = 0;
-  public static final int PHP_URL_HOST = 1;
-  public static final int PHP_URL_PORT = 2;
-  public static final int PHP_URL_USER = 3;
-  public static final int PHP_URL_PASS = 4;
-  public static final int PHP_URL_PATH = 5;
-  public static final int PHP_URL_QUERY = 6;
-  public static final int PHP_URL_FRAGMENT = 7;
+  public const int PHP_URL_SCHEME = 0;
+  public const int PHP_URL_HOST = 1;
+  public const int PHP_URL_PORT = 2;
+  public const int PHP_URL_USER = 3;
+  public const int PHP_URL_PASS = 4;
+  public const int PHP_URL_PATH = 5;
+  public const int PHP_URL_QUERY = 6;
+  public const int PHP_URL_FRAGMENT = 7;
 
-  private static final StringValue SCHEME_V
+  private const StringValue SCHEME_V
     = new ConstStringValue("scheme");
-  private static final StringValue SCHEME_U
+  private const StringValue SCHEME_U
     = new UnicodeBuilderValue("scheme");
 
-  private static final StringValue USER_V
+  private const StringValue USER_V
     = new ConstStringValue("user");
-  private static final StringValue USER_U
+  private const StringValue USER_U
     = new UnicodeBuilderValue("user");
 
-  private static final StringValue PASS_V
+  private const StringValue PASS_V
     = new ConstStringValue("pass");
-  private static final StringValue PASS_U
+  private const StringValue PASS_U
     = new UnicodeBuilderValue("pass");
 
-  private static final StringValue HOST_V
+  private const StringValue HOST_V
     = new ConstStringValue("host");
-  private static final StringValue HOST_U
+  private const StringValue HOST_U
     = new UnicodeBuilderValue("host");
 
-  private static final StringValue PORT_V
+  private const StringValue PORT_V
     = new ConstStringValue("port");
-  private static final StringValue PORT_U
+  private const StringValue PORT_U
     = new UnicodeBuilderValue("port");
 
-  private static final StringValue PATH_V
+  private const StringValue PATH_V
     = new ConstStringValue("path");
-  private static final StringValue PATH_U
+  private const StringValue PATH_U
     = new UnicodeBuilderValue("path");
 
-  private static final StringValue QUERY_V
+  private const StringValue QUERY_V
     = new ConstStringValue("query");
-  private static final StringValue QUERY_U
+  private const StringValue QUERY_U
     = new UnicodeBuilderValue("query");
 
-  private static final StringValue FRAGMENT_V
+  private const StringValue FRAGMENT_V
     = new ConstStringValue("fragment");
-  private static final StringValue FRAGMENT_U
+  private const StringValue FRAGMENT_U
     = new UnicodeBuilderValue("fragment");
 
   /**

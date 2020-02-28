@@ -43,12 +43,12 @@
 public class ReflectionProperty
   implements Reflector
 {
-  private static final L10N L = new L10N(ReflectionProperty.class);
+  private const L10N L = new L10N(ReflectionProperty.class);
 
-  public static final int IS_STATIC = 1;
-  public static final int IS_PUBLIC = 256;
-  public static final int IS_PROTECTED = 512;
-  public static final int IS_PRIVATE = 1024;
+  public const int IS_STATIC = 1;
+  public const int IS_PUBLIC = 256;
+  public const int IS_PROTECTED = 512;
+  public const int IS_PRIVATE = 1024;
 
   private Property _prop;
 

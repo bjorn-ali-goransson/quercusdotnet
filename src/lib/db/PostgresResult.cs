@@ -47,9 +47,9 @@
  * postgres result set class (postgres has NO object oriented API)
  */
 public class PostgresResult extends JdbcResultResource {
-  private static final Logger log
+  private const Logger log
     = Logger.getLogger(PostgresResult.class.getName());
-  private static final L10N L = new L10N(PostgresResult.class);
+  private const L10N L = new L10N(PostgresResult.class);
 
   // See PostgresModule.pg_fetch_array()
   private boolean _passedNullRow = false;

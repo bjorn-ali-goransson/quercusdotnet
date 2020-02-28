@@ -42,7 +42,7 @@
 public class ReflectionParameter
   implements Reflector
 {
-  private static final L10N L = new L10N(ReflectionParameter.class);
+  private const L10N L = new L10N(ReflectionParameter.class);
 
   private string _clsName;
   private Callable _fun;

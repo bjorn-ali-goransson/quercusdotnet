@@ -48,134 +48,134 @@
  * Quercus tokenizer 
  */
 public class TokenModule extends AbstractQuercusModule {
-  private static final L10N L = new L10N(TokenModule.class);
-  private static final Logger log
+  private const L10N L = new L10N(TokenModule.class);
+  private const Logger log
     = Logger.getLogger(TokenModule.class.getName());
 
-  public static final int T_ABSTRACT = 256;
-  public static final int T_AND_EQUAL = 257;
-  public static final int T_ARRAY = 258;
-  public static final int T_ARRAY_CAST = 259;
-  public static final int T_AS = 260;
-  public static final int T_BAD_CHARACTER = 261;
-  public static final int T_BOOLEAN_AND = 262;
-  public static final int T_BOOLEAN_OR = 263;
-  public static final int T_BOOL_CAST = 264;
-  public static final int T_BREAK = 265;
-  public static final int T_CASE = 266;
-  public static final int T_CATCH = 267;
-  public static final int T_CHARACTER = 268;
-  public static final int T_CLASS = 269;
-  public static final int T_CLONE = 270;
-  public static final int T_CLOSE_TAG = 271;
-  public static final int T_COMMENT = 272;
-  public static final int T_CONCAT_EQUAL = 273;
-  public static final int T_CONST = 274;
-  public static final int T_CONSTANT_ENCAPSED_STRING = 275;
-  public static final int T_CONTINUE = 276;
-  public static final int T_CURLY_OPEN = 277;
-  public static final int T_DEC = 278;
-  public static final int T_DECLARE = 279;
-  public static final int T_DEFAULT = 280;
-  public static final int T_DIV_EQUAL = 281;
-  public static final int T_DNUMBER = 282;
-  public static final int T_DOC_COMMENT = 283;
-  public static final int T_DO = 284;
-  public static final int T_DOLLAR_OPEN_CURLY_BRACES = 285;
-  public static final int T_DOUBLE_ARROW = 286;
-  public static final int T_DOUBLE_CAST = 287;
-  public static final int T_DOUBLE_COLON = 288;
-  public static final int T_ECHO = 289;
-  public static final int T_ELSE = 290;
-  public static final int T_ELSEIF = 291;
-  public static final int T_EMPTY = 292;
-  public static final int T_ENCAPSED_AND_WHITESPACE = 293;
-  public static final int T_ENDDECLARE = 294;
-  public static final int T_ENDFOR = 295;
-  public static final int T_ENDFOREACH = 296;
-  public static final int T_ENDIF = 297;
-  public static final int T_ENDSWITCH = 298;
-  public static final int T_ENDWHILE = 299;
-  public static final int T_END_HEREDOC = 300;
-  public static final int T_EVAL = 301;
-  public static final int T_EXIT = 302;
-  public static final int T_EXTENDS = 303;
-  public static final int T_FILE = 304;
-  public static final int T_FINAL = 305;
-  public static final int T_FOR = 306;
-  public static final int T_FOREACH = 307;
-  public static final int T_FUNCTION = 308;
-  public static final int T_GLOBAL = 309;
-  public static final int T_HALT_COMPILER = 310;
-  public static final int T_IF = 311;
-  public static final int T_IMPLEMENTS = 312;
-  public static final int T_INC = 313;
-  public static final int T_INCLUDE = 314;
-  public static final int T_INCLUDE_ONCE = 315;
-  public static final int T_INLINE_HTML = 316;
-  public static final int T_INSTANCEOF = 317;
-  public static final int T_INT_CAST = 318;
-  public static final int T_INTERFACE = 319;
-  public static final int T_ISSET = 320;
-  public static final int T_IS_EQUAL = 321;
-  public static final int T_IS_GREATER_OR_EQUAL = 322;
-  public static final int T_IS_IDENTICAL = 323;
-  public static final int T_IS_NOT_EQUAL = 324;
-  public static final int T_IS_NOT_IDENTICAL = 325;
-  public static final int T_IS_SMALLER_OR_EQUAL = 326;
-  public static final int T_LINE = 327;
-  public static final int T_LIST = 328;
-  public static final int T_LNUMBER = 329;
-  public static final int T_LOGICAL_AND = 330;
-  public static final int T_LOGICAL_OR = 331;
-  public static final int T_LOGICAL_XOR = 332;
-  public static final int T_MINUS_EQUAL = 333;
-  public static final int T_ML_COMMENT = 334;
-  public static final int T_MOD_EQUAL = 335;
-  public static final int T_MUL_EQUAL = 336;
-  public static final int T_NEW = 337;
-  public static final int T_NUM_STRING = 338;
-  public static final int T_OBJECT_CAST = 339;
-  public static final int T_OBJECT_OPERATOR = 340;
-  public static final int T_OLD_FUNCTION = 341;
-  public static final int T_OPEN_TAG = 342;
-  public static final int T_OPEN_TAG_WITH_ECHO = 343;
-  public static final int T_OR_EQUAL = 344;
-  public static final int T_PAAMAYIM_NEKUDOTAYIM = T_DOUBLE_COLON;
-  public static final int T_PLUS_EQUAL = 345;
-  public static final int T_PRINT = 346;
-  public static final int T_PRIVATE = 347;
-  public static final int T_PUBLIC = 348;
-  public static final int T_PROTECTED = 349;
-  public static final int T_REQUIRE = 350;
-  public static final int T_REQUIRE_ONCE = 351;
-  public static final int T_RETURN = 352;
-  public static final int T_SL = 353;
-  public static final int T_SL_EQUAL = 354;
-  public static final int T_SR = 355;
-  public static final int T_SR_EQUAL = 356;
-  public static final int T_START_HEREDOC = 357;
-  public static final int T_STATIC = 358;
-  public static final int T_STRING = 359;
-  public static final int T_STRING_CAST = 360;
-  public static final int T_STRING_VARNAME = 361;
-  public static final int T_SWITCH = 362;
-  public static final int T_THROW = 363;
-  public static final int T_TRY = 364;
-  public static final int T_UNSET = 365;
-  public static final int T_UNSET_CAST = 366;
-  public static final int T_USE = 367;
-  public static final int T_VAR = 368;
-  public static final int T_VARIABLE = 369;
-  public static final int T_WHILE = 370;
-  public static final int T_WHITESPACE = 371;
-  public static final int T_XOR_EQUAL = 372;
-  public static final int T_FUNC_C = 373;
-  public static final int T_CLASS_C = 374;
+  public const int T_ABSTRACT = 256;
+  public const int T_AND_EQUAL = 257;
+  public const int T_ARRAY = 258;
+  public const int T_ARRAY_CAST = 259;
+  public const int T_AS = 260;
+  public const int T_BAD_CHARACTER = 261;
+  public const int T_BOOLEAN_AND = 262;
+  public const int T_BOOLEAN_OR = 263;
+  public const int T_BOOL_CAST = 264;
+  public const int T_BREAK = 265;
+  public const int T_CASE = 266;
+  public const int T_CATCH = 267;
+  public const int T_CHARACTER = 268;
+  public const int T_CLASS = 269;
+  public const int T_CLONE = 270;
+  public const int T_CLOSE_TAG = 271;
+  public const int T_COMMENT = 272;
+  public const int T_CONCAT_EQUAL = 273;
+  public const int T_CONST = 274;
+  public const int T_CONSTANT_ENCAPSED_STRING = 275;
+  public const int T_CONTINUE = 276;
+  public const int T_CURLY_OPEN = 277;
+  public const int T_DEC = 278;
+  public const int T_DECLARE = 279;
+  public const int T_DEFAULT = 280;
+  public const int T_DIV_EQUAL = 281;
+  public const int T_DNUMBER = 282;
+  public const int T_DOC_COMMENT = 283;
+  public const int T_DO = 284;
+  public const int T_DOLLAR_OPEN_CURLY_BRACES = 285;
+  public const int T_DOUBLE_ARROW = 286;
+  public const int T_DOUBLE_CAST = 287;
+  public const int T_DOUBLE_COLON = 288;
+  public const int T_ECHO = 289;
+  public const int T_ELSE = 290;
+  public const int T_ELSEIF = 291;
+  public const int T_EMPTY = 292;
+  public const int T_ENCAPSED_AND_WHITESPACE = 293;
+  public const int T_ENDDECLARE = 294;
+  public const int T_ENDFOR = 295;
+  public const int T_ENDFOREACH = 296;
+  public const int T_ENDIF = 297;
+  public const int T_ENDSWITCH = 298;
+  public const int T_ENDWHILE = 299;
+  public const int T_END_HEREDOC = 300;
+  public const int T_EVAL = 301;
+  public const int T_EXIT = 302;
+  public const int T_EXTENDS = 303;
+  public const int T_FILE = 304;
+  public const int T_FINAL = 305;
+  public const int T_FOR = 306;
+  public const int T_FOREACH = 307;
+  public const int T_FUNCTION = 308;
+  public const int T_GLOBAL = 309;
+  public const int T_HALT_COMPILER = 310;
+  public const int T_IF = 311;
+  public const int T_IMPLEMENTS = 312;
+  public const int T_INC = 313;
+  public const int T_INCLUDE = 314;
+  public const int T_INCLUDE_ONCE = 315;
+  public const int T_INLINE_HTML = 316;
+  public const int T_INSTANCEOF = 317;
+  public const int T_INT_CAST = 318;
+  public const int T_INTERFACE = 319;
+  public const int T_ISSET = 320;
+  public const int T_IS_EQUAL = 321;
+  public const int T_IS_GREATER_OR_EQUAL = 322;
+  public const int T_IS_IDENTICAL = 323;
+  public const int T_IS_NOT_EQUAL = 324;
+  public const int T_IS_NOT_IDENTICAL = 325;
+  public const int T_IS_SMALLER_OR_EQUAL = 326;
+  public const int T_LINE = 327;
+  public const int T_LIST = 328;
+  public const int T_LNUMBER = 329;
+  public const int T_LOGICAL_AND = 330;
+  public const int T_LOGICAL_OR = 331;
+  public const int T_LOGICAL_XOR = 332;
+  public const int T_MINUS_EQUAL = 333;
+  public const int T_ML_COMMENT = 334;
+  public const int T_MOD_EQUAL = 335;
+  public const int T_MUL_EQUAL = 336;
+  public const int T_NEW = 337;
+  public const int T_NUM_STRING = 338;
+  public const int T_OBJECT_CAST = 339;
+  public const int T_OBJECT_OPERATOR = 340;
+  public const int T_OLD_FUNCTION = 341;
+  public const int T_OPEN_TAG = 342;
+  public const int T_OPEN_TAG_WITH_ECHO = 343;
+  public const int T_OR_EQUAL = 344;
+  public const int T_PAAMAYIM_NEKUDOTAYIM = T_DOUBLE_COLON;
+  public const int T_PLUS_EQUAL = 345;
+  public const int T_PRINT = 346;
+  public const int T_PRIVATE = 347;
+  public const int T_PUBLIC = 348;
+  public const int T_PROTECTED = 349;
+  public const int T_REQUIRE = 350;
+  public const int T_REQUIRE_ONCE = 351;
+  public const int T_RETURN = 352;
+  public const int T_SL = 353;
+  public const int T_SL_EQUAL = 354;
+  public const int T_SR = 355;
+  public const int T_SR_EQUAL = 356;
+  public const int T_START_HEREDOC = 357;
+  public const int T_STATIC = 358;
+  public const int T_STRING = 359;
+  public const int T_STRING_CAST = 360;
+  public const int T_STRING_VARNAME = 361;
+  public const int T_SWITCH = 362;
+  public const int T_THROW = 363;
+  public const int T_TRY = 364;
+  public const int T_UNSET = 365;
+  public const int T_UNSET_CAST = 366;
+  public const int T_USE = 367;
+  public const int T_VAR = 368;
+  public const int T_VARIABLE = 369;
+  public const int T_WHILE = 370;
+  public const int T_WHITESPACE = 371;
+  public const int T_XOR_EQUAL = 372;
+  public const int T_FUNC_C = 373;
+  public const int T_CLASS_C = 374;
 
-  private static final IntMap _reservedMap = new IntMap();
+  private const IntMap _reservedMap = new IntMap();
 
-  private static final IniDefinitions _iniDefinitions = new IniDefinitions();
+  private const IniDefinitions _iniDefinitions = new IniDefinitions();
 
   public string []getLoadedExtensions()
   {
@@ -1073,16 +1073,16 @@ public class TokenModule extends AbstractQuercusModule {
   }
 
 
-  static final IniDefinition INI_HIGHLIGHT_STRING
+  const IniDefinition INI_HIGHLIGHT_STRING
     = _iniDefinitions.add("highlight.string", "#DD0000", PHP_INI_ALL);
-  static final IniDefinition INI_HIGHLIGHT_COMMENT
+  const IniDefinition INI_HIGHLIGHT_COMMENT
     = _iniDefinitions.add("highlight.comment", "#FF8000", PHP_INI_ALL);
-  static final IniDefinition INI_HIGHLIGHT_KEYWORD
+  const IniDefinition INI_HIGHLIGHT_KEYWORD
     = _iniDefinitions.add("highlight.keyword", "#007700", PHP_INI_ALL);
-  static final IniDefinition INI_HIGHLIGHT_BG
+  const IniDefinition INI_HIGHLIGHT_BG
     = _iniDefinitions.add("highlight.bg", "#ffffff", PHP_INI_ALL);
-  static final IniDefinition INI_HIGHLIGHT_DEFAULT
+  const IniDefinition INI_HIGHLIGHT_DEFAULT
     = _iniDefinitions.add("highlight.default", "#0000BB", PHP_INI_ALL);
-  static final IniDefinition INI_HIGHLIGHT_HTML
+  const IniDefinition INI_HIGHLIGHT_HTML
     = _iniDefinitions.add("highlight.html", "#000000", PHP_INI_ALL);
 }

@@ -36,7 +36,7 @@
 
 public class LongObjectMarshal extends Marshal
 {
-  public static final Marshal MARSHAL = new LongObjectMarshal();
+  public const Marshal MARSHAL = new LongObjectMarshal();
 
   public boolean isReadOnly()
   {

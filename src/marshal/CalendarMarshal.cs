@@ -39,7 +39,7 @@
 
 public class CalendarMarshal extends Marshal
 {
-  public static final Marshal MARSHAL = new CalendarMarshal();
+  public const Marshal MARSHAL = new CalendarMarshal();
 
   public Object marshal(Env env, Expr expr, Class expectedClass)
   {

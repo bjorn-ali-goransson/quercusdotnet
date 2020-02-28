@@ -44,7 +44,7 @@
  * Represents a Quercus open file
  */
 public class FileReadValue extends FileValue {
-  private static final Logger log
+  private const Logger log
     = Logger.getLogger(FileReadValue.class.getName());
 
   private ReadStream _is;

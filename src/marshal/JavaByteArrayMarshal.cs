@@ -34,7 +34,7 @@
 
 public class JavaByteArrayMarshal extends JavaArrayMarshal
 {
-  public static final Marshal MARSHAL
+  public const Marshal MARSHAL
     = new JavaByteArrayMarshal();
 
   @Override

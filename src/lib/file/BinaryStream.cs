@@ -37,9 +37,9 @@
  */
 @ResourceType("stream")
 public interface BinaryStream {
-  public static final int SEEK_SET = 0;
-  public static final int SEEK_CUR = 1;
-  public static final int SEEK_END = 2;
+  public const int SEEK_SET = 0;
+  public const int SEEK_CUR = 1;
+  public const int SEEK_END = 2;
 
   /**
    * All streams can be closed.

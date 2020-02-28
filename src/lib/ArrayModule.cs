@@ -69,83 +69,83 @@
 public class ArrayModule
   extends AbstractQuercusModule
 {
-  private static final L10N L = new L10N(ArrayModule.class);
+  private const L10N L = new L10N(ArrayModule.class);
 
-  private static final Logger log =
+  private const Logger log =
     Logger.getLogger(ArrayModule.class.getName());
 
-  public static final int CASE_UPPER = 2;
-  public static final int CASE_LOWER = 1;
+  public const int CASE_UPPER = 2;
+  public const int CASE_LOWER = 1;
 
-  public static final int SORT_REGULAR = 0;
-  public static final int SORT_NUMERIC = 1;
-  public static final int SORT_STRING = 2;
-  public static final int SORT_LOCALE_STRING = 5;
-  public static final int SORT_NORMAL = 1;
-  public static final int SORT_REVERSE = -1;
+  public const int SORT_REGULAR = 0;
+  public const int SORT_NUMERIC = 1;
+  public const int SORT_STRING = 2;
+  public const int SORT_LOCALE_STRING = 5;
+  public const int SORT_NORMAL = 1;
+  public const int SORT_REVERSE = -1;
 
-  public static final int SORT_DESC = 3;
-  public static final int SORT_ASC = 4;
+  public const int SORT_DESC = 3;
+  public const int SORT_ASC = 4;
 
-  public static final int EXTR_OVERWRITE = 0;
-  public static final int EXTR_SKIP = 1;
-  public static final int EXTR_PREFIX_SAME = 2;
-  public static final int EXTR_PREFIX_ALL = 3;
-  public static final int EXTR_PREFIX_INVALID = 4;
-  public static final int EXTR_IF_EXISTS = 6;
-  public static final int EXTR_PREFIX_IF_EXISTS = 5;
-  public static final int EXTR_REFS = 256;
+  public const int EXTR_OVERWRITE = 0;
+  public const int EXTR_SKIP = 1;
+  public const int EXTR_PREFIX_SAME = 2;
+  public const int EXTR_PREFIX_ALL = 3;
+  public const int EXTR_PREFIX_INVALID = 4;
+  public const int EXTR_IF_EXISTS = 6;
+  public const int EXTR_PREFIX_IF_EXISTS = 5;
+  public const int EXTR_REFS = 256;
 
-  public static final int COUNT_NORMAL = 0;
-  public static final int COUNT_RECURSIVE = 1;
+  public const int COUNT_NORMAL = 0;
+  public const int COUNT_RECURSIVE = 1;
 
-  public static final boolean CASE_SENSITIVE = true;
-  public static final boolean CASE_INSENSITIVE = false;
-  public static final boolean KEY_RESET = true;
-  public static final boolean NO_KEY_RESET = false;
-  public static final boolean STRICT = true;
-  public static final boolean NOT_STRICT = false;
+  public const boolean CASE_SENSITIVE = true;
+  public const boolean CASE_INSENSITIVE = false;
+  public const boolean KEY_RESET = true;
+  public const boolean NO_KEY_RESET = false;
+  public const boolean STRICT = true;
+  public const boolean NOT_STRICT = false;
 
-  private static final CompareString CS_VALUE_NORMAL
+  private const CompareString CS_VALUE_NORMAL
     = new CompareString(ArrayValue.GET_VALUE, SORT_NORMAL);
 
-  private static final CompareString CS_VALUE_REVERSE
+  private const CompareString CS_VALUE_REVERSE
     = new CompareString(ArrayValue.GET_VALUE, SORT_REVERSE);
 
-  private static final CompareString CS_KEY_NORMAL
+  private const CompareString CS_KEY_NORMAL
     = new CompareString(ArrayValue.GET_KEY, SORT_NORMAL);
 
-  private static final CompareString CS_KEY_REVERSE
+  private const CompareString CS_KEY_REVERSE
     = new CompareString(ArrayValue.GET_KEY, SORT_REVERSE);
 
-  private static final CompareNumeric CN_VALUE_NORMAL
+  private const CompareNumeric CN_VALUE_NORMAL
     = new CompareNumeric(ArrayValue.GET_VALUE, SORT_NORMAL);
 
-  private static final CompareNumeric CN_VALUE_REVERSE
+  private const CompareNumeric CN_VALUE_REVERSE
     = new CompareNumeric(ArrayValue.GET_VALUE, SORT_REVERSE);
 
-  private static final CompareNumeric CN_KEY_NORMAL
+  private const CompareNumeric CN_KEY_NORMAL
     = new CompareNumeric(ArrayValue.GET_KEY, SORT_NORMAL);
 
-  private static final CompareNumeric CN_KEY_REVERSE
+  private const CompareNumeric CN_KEY_REVERSE
     = new CompareNumeric(ArrayValue.GET_KEY, SORT_REVERSE);
 
-  private static final CompareNormal CNO_VALUE_NORMAL
+  private const CompareNormal CNO_VALUE_NORMAL
     = new CompareNormal(ArrayValue.GET_VALUE, SORT_NORMAL);
 
-  private static final CompareNormal CNO_VALUE_REVERSE
+  private const CompareNormal CNO_VALUE_REVERSE
     = new CompareNormal(ArrayValue.GET_VALUE, SORT_REVERSE);
 
-  private static final CompareNormal CNO_KEY_NORMAL
+  private const CompareNormal CNO_KEY_NORMAL
     = new CompareNormal(ArrayValue.GET_KEY, SORT_NORMAL);
 
-  private static final CompareNormal CNO_KEY_REVERSE
+  private const CompareNormal CNO_KEY_REVERSE
     = new CompareNormal(ArrayValue.GET_KEY, SORT_REVERSE);
 
-  private static final CompareNatural CNA_VALUE_NORMAL_SENSITIVE
+  private const CompareNatural CNA_VALUE_NORMAL_SENSITIVE
     = new CompareNatural(ArrayValue.GET_VALUE, SORT_NORMAL, CASE_SENSITIVE);
 
-  private static final CompareNatural CNA_VALUE_NORMAL_INSENSITIVE
+  private const CompareNatural CNA_VALUE_NORMAL_INSENSITIVE
     = new CompareNatural(ArrayValue.GET_VALUE, SORT_NORMAL, CASE_INSENSITIVE);
 
   public string []getLoadedExtensions()
@@ -3745,9 +3745,9 @@ public class ArrayModule
 
     private string _string;
 
-    private static final int SYMBOL = 1;
-    private static final int LETTER = 2;
-    private static final int DIGIT = 3;
+    private const int SYMBOL = 1;
+    private const int LETTER = 2;
+    private const int DIGIT = 3;
 
     StringParser(String string)
     {

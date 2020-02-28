@@ -48,7 +48,7 @@
 public class ReflectionExtension
   implements Reflector
 {
-  private static final L10N L = new L10N(ReflectionExtension.class);
+  private const L10N L = new L10N(ReflectionExtension.class);
 
   private string _name;
 

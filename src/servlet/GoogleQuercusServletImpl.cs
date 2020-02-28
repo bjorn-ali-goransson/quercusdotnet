@@ -47,8 +47,8 @@
  */
 public class GoogleQuercusServletImpl extends QuercusServletImpl
 {
-  private static final L10N L = new L10N(GoogleQuercusServletImpl.class);
-  private static final Logger log
+  private const L10N L = new L10N(GoogleQuercusServletImpl.class);
+  private const Logger log
     = Logger.getLogger(GoogleQuercusServletImpl.class.getName());
 
   protected final string _gsBucket;

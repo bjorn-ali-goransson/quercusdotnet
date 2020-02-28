@@ -42,7 +42,7 @@
  */
 @SuppressWarnings("serial")
 public class CallbackClassMethod extends Callback {
-  private static final L10N L = new L10N(CallbackClassMethod.class);
+  private const L10N L = new L10N(CallbackClassMethod.class);
 
   private final QuercusClass _qClass;
 

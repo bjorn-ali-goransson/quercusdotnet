@@ -38,7 +38,7 @@
 
 public class ArrayValueMarshal extends Marshal
 {
-  public static final Marshal MARSHAL = new ArrayValueMarshal();
+  public const Marshal MARSHAL = new ArrayValueMarshal();
   
   public boolean isReference()
   {

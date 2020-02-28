@@ -49,9 +49,9 @@
  * Quercus Oracle OCI-Collection object oriented API.
  */
 public class OracleOciCollection {
-  private static final Logger log = Logger.getLogger(
+  private const Logger log = Logger.getLogger(
       OracleOciCollection.class.getName());
-  private static final L10N L = new L10N(OracleOciCollection.class);
+  private const L10N L = new L10N(OracleOciCollection.class);
 
   // The Oracle array descriptor
   private Object _arrayDescriptor;

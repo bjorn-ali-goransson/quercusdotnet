@@ -41,10 +41,10 @@
  * Code for marshaling (PHP to Java) and unmarshaling (Java to PHP) arguments.
  */
 public class ClassMarshal extends Marshal {
-  private static final Logger log
+  private const Logger log
     = Logger.getLogger(ClassMarshal.class.getName());
 
-  public static final ClassMarshal MARSHAL = new ClassMarshal();
+  public const ClassMarshal MARSHAL = new ClassMarshal();
 
   public boolean isString()
   {

@@ -59,7 +59,7 @@
 public class JdbcPreparedStatementResource
   extends JdbcStatementResource
 {
-  private static final L10N L = new L10N(JdbcPreparedStatementResource.class);
+  private const L10N L = new L10N(JdbcPreparedStatementResource.class);
 
   private PreparedStatement _preparedStmt;
 

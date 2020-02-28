@@ -42,7 +42,7 @@
  * Represents a PHP function expression of the form "new static()".
  */
 public class ObjectNewStaticExpr extends Expr {
-  private static final L10N L = new L10N(ObjectNewStaticExpr.class);
+  private const L10N L = new L10N(ObjectNewStaticExpr.class);
   protected final Expr []_args;
 
   public ObjectNewStaticExpr(Location location, ArrayList<Expr> args)

@@ -36,7 +36,7 @@
 
 public class CharacterMarshal extends Marshal
 {
-  public static final Marshal MARSHAL = new CharacterMarshal();
+  public const Marshal MARSHAL = new CharacterMarshal();
 
   public boolean isReadOnly()
   {

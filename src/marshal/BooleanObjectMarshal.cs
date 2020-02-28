@@ -37,7 +37,7 @@
 
 public class BooleanObjectMarshal extends Marshal
 {
-  public static final Marshal MARSHAL = new BooleanObjectMarshal();
+  public const Marshal MARSHAL = new BooleanObjectMarshal();
 
   public boolean isReadOnly()
   {

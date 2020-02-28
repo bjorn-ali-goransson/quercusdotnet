@@ -41,7 +41,7 @@
 public class NullThisValue extends NullValue
   implements Serializable
 {
-  public static final NullThisValue NULL = new NullThisValue();
+  public const NullThisValue NULL = new NullThisValue();
 
   private NullThisValue()
   {

@@ -43,9 +43,9 @@
  * Represents a compiled method with 1 arg
  */
 abstract public class CompiledMethodRef_1 extends CompiledMethodRef {
-  private static final Logger log
+  private const Logger log
     = Logger.getLogger(CompiledMethodRef_1.class.getName());
-  private static final L10N L = new L10N(CompiledMethodRef_1.class);
+  private const L10N L = new L10N(CompiledMethodRef_1.class);
 
   public CompiledMethodRef_1(String name, Arg default_0)
   {

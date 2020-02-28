@@ -52,7 +52,7 @@
 abstract public class JavaAdapter extends ArrayValue
   implements Serializable
 {
-  private static final Logger log
+  private const Logger log
     = Logger.getLogger(JavaAdapter.class.getName());
 
   private WeakReference<Env> _envRef;

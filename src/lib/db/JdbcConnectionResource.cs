@@ -51,8 +51,8 @@
 public abstract class JdbcConnectionResource
   implements EnvCleanup
 {
-  private static final L10N L = new L10N(JdbcConnectionResource.class);
-  private static final Logger log
+  private const L10N L = new L10N(JdbcConnectionResource.class);
+  private const Logger log
     = Logger.getLogger(JdbcConnectionResource.class.getName());
 
   private static LruCache<TableKey,JdbcTableMetaData> _tableMetadataMap

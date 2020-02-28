@@ -33,26 +33,26 @@
 
 public class DateParser
 {
-  private static final int INT = 1;
-  private static final int PERIOD = 2;
-  private static final int AGO = 3;
-  private static final int AM = 4;
-  private static final int PM = 5;
-  private static final int MONTH = 6;
-  private static final int WEEKDAY = 7;
-  private static final int UTC = 8;
+  private const int INT = 1;
+  private const int PERIOD = 2;
+  private const int AGO = 3;
+  private const int AM = 4;
+  private const int PM = 5;
+  private const int MONTH = 6;
+  private const int WEEKDAY = 7;
+  private const int UTC = 8;
 
-  private static final int UNIT_YEAR = 1;
-  private static final int UNIT_MONTH = 2;
-  private static final int UNIT_FORTNIGHT = 3;
-  private static final int UNIT_WEEK = 4;
-  private static final int UNIT_DAY = 5;
-  private static final int UNIT_HOUR = 6;
-  private static final int UNIT_MINUTE = 7;
-  private static final int UNIT_SECOND = 8;
-  private static final int UNIT_NOW = 9;
+  private const int UNIT_YEAR = 1;
+  private const int UNIT_MONTH = 2;
+  private const int UNIT_FORTNIGHT = 3;
+  private const int UNIT_WEEK = 4;
+  private const int UNIT_DAY = 5;
+  private const int UNIT_HOUR = 6;
+  private const int UNIT_MINUTE = 7;
+  private const int UNIT_SECOND = 8;
+  private const int UNIT_NOW = 9;
 
-  private static final int NULL_VALUE = Integer.MAX_VALUE;
+  private const int NULL_VALUE = Integer.MAX_VALUE;
 
   private QDate _date;
 
@@ -72,9 +72,9 @@ public class DateParser
   private boolean _hasDate;
   private boolean _hasTime;
 
-  private static final long MINUTE = 60000L;
-  private static final long HOUR = 60 * MINUTE;
-  private static final long DAY = 24 * HOUR;
+  private const long MINUTE = 60000L;
+  private const long HOUR = 60 * MINUTE;
+  private const long DAY = 24 * HOUR;
 
   public DateParser(CharSequence s, QDate date)
   {

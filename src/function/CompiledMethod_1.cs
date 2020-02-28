@@ -42,9 +42,9 @@
  * Represents a compiled method with 1 arg
  */
 abstract public class CompiledMethod_1 extends CompiledMethod {
-  private static final Logger log
+  private const Logger log
     = Logger.getLogger(CompiledMethod_1.class.getName());
-  private static final L10N L = new L10N(CompiledMethod_1.class);
+  private const L10N L = new L10N(CompiledMethod_1.class);
 
   public CompiledMethod_1(String name, Arg default_0)
   {

@@ -36,7 +36,7 @@
 
 public class ByteMarshal extends Marshal
 {
-  public static final Marshal MARSHAL = new ByteMarshal();
+  public const Marshal MARSHAL = new ByteMarshal();
 
   public boolean isLong()
   {

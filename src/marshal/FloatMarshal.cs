@@ -36,7 +36,7 @@
 
 public class FloatMarshal extends Marshal
 {
-  public static final Marshal MARSHAL = new FloatMarshal();
+  public const Marshal MARSHAL = new FloatMarshal();
 
   public boolean isDouble()
   {

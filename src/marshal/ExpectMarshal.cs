@@ -41,11 +41,11 @@ public class ExpectMarshal extends Marshal
 
   private Type _type;
 
-  public static final Marshal MARSHAL_EXPECT_STRING
+  public const Marshal MARSHAL_EXPECT_STRING
     = new ExpectMarshal(Type.STRING);
-  public static final Marshal MARSHAL_EXPECT_NUMERIC
+  public const Marshal MARSHAL_EXPECT_NUMERIC
     = new ExpectMarshal(Type.NUMERIC);
-  public static final Marshal MARSHAL_EXPECT_BOOLEAN
+  public const Marshal MARSHAL_EXPECT_BOOLEAN
     = new ExpectMarshal(Type.BOOLEAN);
 
   protected ExpectMarshal(Type type)

@@ -81,56 +81,56 @@
  * PHP image
  */
 public class ImageModule extends AbstractQuercusModule {
-  private static final Logger log
+  private const Logger log
     = Logger.getLogger(ImageModule.class.getName());
-  private static final L10N L = new L10N(ImageModule.class);
+  private const L10N L = new L10N(ImageModule.class);
 
-  public static final long IMG_GIF = 0x1;
-  public static final long IMG_JPG = 0x2;
-  public static final long IMG_JPEG = 0x2;
-  public static final long IMG_PNG = 0x4;
-  public static final long IMG_WBMP = 0x8;
-  public static final long IMG_XPM = 0x10;
+  public const long IMG_GIF = 0x1;
+  public const long IMG_JPG = 0x2;
+  public const long IMG_JPEG = 0x2;
+  public const long IMG_PNG = 0x4;
+  public const long IMG_WBMP = 0x8;
+  public const long IMG_XPM = 0x10;
 
-  public static final int IMAGETYPE_GIF = 1;
-  public static final int IMAGETYPE_JPG = 2;
-  public static final int IMAGETYPE_JPEG = 2;
-  public static final int IMAGETYPE_PNG = 3;
-  public static final int IMAGETYPE_SWF = 4;
-  public static final int IMAGETYPE_PSD = 5;
-  public static final int IMAGETYPE_BMP = 6;
-  public static final int IMAGETYPE_TIFF_II = 7;
-  public static final int IMAGETYPE_TIFF_MM = 8;
-  public static final int IMAGETYPE_JPC = 9;
-  public static final int IMAGETYPE_JP2 = 10;
-  public static final int IMAGETYPE_JPX = 11;
-  public static final int IMAGETYPE_JB2 = 12;
-  public static final int IMAGETYPE_SWC = 13;
-  public static final int IMAGETYPE_IFF = 14;
-  public static final int IMAGETYPE_WBMP = 15;
-  public static final int IMAGETYPE_XBM = 16;
+  public const int IMAGETYPE_GIF = 1;
+  public const int IMAGETYPE_JPG = 2;
+  public const int IMAGETYPE_JPEG = 2;
+  public const int IMAGETYPE_PNG = 3;
+  public const int IMAGETYPE_SWF = 4;
+  public const int IMAGETYPE_PSD = 5;
+  public const int IMAGETYPE_BMP = 6;
+  public const int IMAGETYPE_TIFF_II = 7;
+  public const int IMAGETYPE_TIFF_MM = 8;
+  public const int IMAGETYPE_JPC = 9;
+  public const int IMAGETYPE_JP2 = 10;
+  public const int IMAGETYPE_JPX = 11;
+  public const int IMAGETYPE_JB2 = 12;
+  public const int IMAGETYPE_SWC = 13;
+  public const int IMAGETYPE_IFF = 14;
+  public const int IMAGETYPE_WBMP = 15;
+  public const int IMAGETYPE_XBM = 16;
 
-  public static final int IMG_COLOR_STYLED = -2;
-  public static final int IMG_COLOR_BRUSHED = -3;
+  public const int IMG_COLOR_STYLED = -2;
+  public const int IMG_COLOR_BRUSHED = -3;
 
-  private static final int PNG_IHDR = pngCode("IHDR");
+  private const int PNG_IHDR = pngCode("IHDR");
 
-  public static final int IMG_ARC_PIE = 0;
-  public static final int IMG_ARC_CHORD = 1;
-  public static final int IMG_ARC_NOFILL = 2;
-  public static final int IMG_ARC_EDGED = 4;
+  public const int IMG_ARC_PIE = 0;
+  public const int IMG_ARC_CHORD = 1;
+  public const int IMG_ARC_NOFILL = 2;
+  public const int IMG_ARC_EDGED = 4;
 
-  public static final int IMG_FILTER_NEGATE = 0;
-  public static final int IMG_FILTER_GRAYSCALE = 1;
-  public static final int IMG_FILTER_BRIGHTNESS = 2;
-  public static final int IMG_FILTER_CONTRAST = 3;
-  public static final int IMG_FILTER_COLORIZE = 4;
-  public static final int IMG_FILTER_EDGEDETECT = 5;
-  public static final int IMG_FILTER_EMBOSS = 6;
-  public static final int IMG_FILTER_GAUSSIAN_BLUR = 7;
-  public static final int IMG_FILTER_SELECTIVE_BLUR = 8;
-  public static final int IMG_FILTER_MEAN_REMOVAL = 9;
-  public static final int IMG_FILTER_SMOOTH = 10;
+  public const int IMG_FILTER_NEGATE = 0;
+  public const int IMG_FILTER_GRAYSCALE = 1;
+  public const int IMG_FILTER_BRIGHTNESS = 2;
+  public const int IMG_FILTER_CONTRAST = 3;
+  public const int IMG_FILTER_COLORIZE = 4;
+  public const int IMG_FILTER_EDGEDETECT = 5;
+  public const int IMG_FILTER_EMBOSS = 6;
+  public const int IMG_FILTER_GAUSSIAN_BLUR = 7;
+  public const int IMG_FILTER_SELECTIVE_BLUR = 8;
+  public const int IMG_FILTER_MEAN_REMOVAL = 9;
+  public const int IMG_FILTER_SMOOTH = 10;
 
   public string []getLoadedExtensions()
   {

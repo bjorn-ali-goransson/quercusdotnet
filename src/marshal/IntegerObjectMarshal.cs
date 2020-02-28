@@ -36,7 +36,7 @@
 
 public class IntegerObjectMarshal extends Marshal
 {
-  public static final Marshal MARSHAL = new IntegerObjectMarshal();
+  public const Marshal MARSHAL = new IntegerObjectMarshal();
   
   public boolean isReadOnly()
   {

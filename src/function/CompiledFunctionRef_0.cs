@@ -40,9 +40,9 @@
  * Represents a compiled function with 0 args
  */
 abstract public class CompiledFunctionRef_0 extends CompiledFunctionRef {
-  private static final Logger log
+  private const Logger log
     = Logger.getLogger(CompiledFunctionRef_0.class.getName());
-  private static final L10N L = new L10N(CompiledFunctionRef_0.class);
+  private const L10N L = new L10N(CompiledFunctionRef_0.class);
 
   public CompiledFunctionRef_0(String name)
   {

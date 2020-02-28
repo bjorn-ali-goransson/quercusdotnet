@@ -47,12 +47,12 @@
  */
 public class PDF
 {
-  private static final Logger log = Logger.getLogger(PDF.class.getName());
-  private static final L10N L = new L10N(PDF.class);
+  private const Logger log = Logger.getLogger(PDF.class.getName());
+  private const L10N L = new L10N(PDF.class);
 
-  private static final double KAPPA = 0.5522847498;
+  private const double KAPPA = 0.5522847498;
 
-  private static final int PAGE_GROUP_SIZE = 8;
+  private const int PAGE_GROUP_SIZE = 8;
 
   private static HashMap<String,Font> _faceMap = new HashMap<String,Font>();
 

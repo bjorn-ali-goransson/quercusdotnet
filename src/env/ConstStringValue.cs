@@ -40,7 +40,7 @@
 public class ConstStringValue
   extends StringBuilderValue
 {
-  public static final ConstStringValue EMPTY = new ConstStringValue();
+  public const ConstStringValue EMPTY = new ConstStringValue();
 
   private LongValue _longValue;
   private DoubleValue _doubleValue;

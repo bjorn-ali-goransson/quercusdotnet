@@ -34,13 +34,13 @@
 
 public class StringConstants
 {
-  public static final StringValue __CONSTRUCT = new ConstStringValue("__construct");
-  public static final StringValue __INVOKE = new ConstStringValue("__invoke");
-  public static final StringValue __GET = new ConstStringValue("__get");
-  public static final StringValue __SET = new ConstStringValue("__set");
-  public static final StringValue __CALL = new ConstStringValue("__call");
-  public static final StringValue __CALL_STATIC = new ConstStringValue("__callStatic");
-  public static final StringValue __TOSTRING = new ConstStringValue("__toString");
+  public const StringValue __CONSTRUCT = new ConstStringValue("__construct");
+  public const StringValue __INVOKE = new ConstStringValue("__invoke");
+  public const StringValue __GET = new ConstStringValue("__get");
+  public const StringValue __SET = new ConstStringValue("__set");
+  public const StringValue __CALL = new ConstStringValue("__call");
+  public const StringValue __CALL_STATIC = new ConstStringValue("__callStatic");
+  public const StringValue __TOSTRING = new ConstStringValue("__toString");
 
 
 }

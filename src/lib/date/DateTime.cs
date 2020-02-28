@@ -43,19 +43,19 @@
  */
 public class DateTime implements DateTimeInterface, Cloneable
 {
-  private static final L10N L = new L10N(DateTime.class);
+  private const L10N L = new L10N(DateTime.class);
   
-  public static final string ATOM = "Y-m-d\\TH:i:sP";
-  public static final string COOKIE = "l, d-M-y H:i:s T";
-  public static final string ISO8601 = "Y-m-d\\TH:i:sO";
-  public static final string RFC822 = "D, d M y H:i:s O";
-  public static final string RFC850 = "l, d-M-y H:i:s T";
-  public static final string RFC1036 = "D, d M y H:i:s O";
-  public static final string RFC1123 = "D, d M Y H:i:s O";
-  public static final string RFC2822 = "D, d M Y H:i:s O";
-  public static final string RFC3339 = "Y-m-d\\TH:i:sP";
-  public static final string RSS = "D, d M Y H:i:s O";
-  public static final string W3C = "Y-m-d\\TH:i:sP";
+  public const string ATOM = "Y-m-d\\TH:i:sP";
+  public const string COOKIE = "l, d-M-y H:i:s T";
+  public const string ISO8601 = "Y-m-d\\TH:i:sO";
+  public const string RFC822 = "D, d M y H:i:s O";
+  public const string RFC850 = "l, d-M-y H:i:s T";
+  public const string RFC1036 = "D, d M y H:i:s O";
+  public const string RFC1123 = "D, d M Y H:i:s O";
+  public const string RFC2822 = "D, d M Y H:i:s O";
+  public const string RFC3339 = "Y-m-d\\TH:i:sP";
+  public const string RSS = "D, d M Y H:i:s O";
+  public const string W3C = "Y-m-d\\TH:i:sP";
 
   private QDate _qDate;
   private DateTimeZone _dateTimeZone;

@@ -57,95 +57,95 @@
  * PDO object oriented API facade.
  */
 public class PDO implements EnvCleanup {
-  private static final Logger log = Logger.getLogger(PDO.class.getName());
-  private static final L10N L = new L10N(PDO.class);
+  private const Logger log = Logger.getLogger(PDO.class.getName());
+  private const L10N L = new L10N(PDO.class);
 
-  public static final int ATTR_AUTOCOMMIT = 0;
-  public static final int ATTR_PREFETCH = 1;
-  public static final int ATTR_TIMEOUT = 2;
-  public static final int ATTR_ERRMODE = 3;
-  public static final int ATTR_SERVER_VERSION = 4;
-  public static final int ATTR_CLIENT_VERSION = 5;
-  public static final int ATTR_SERVER_INFO = 6;
-  public static final int ATTR_CONNECTION_STATUS = 7;
-  public static final int ATTR_CASE = 8;
-  public static final int ATTR_CURSOR_NAME = 9;
-  public static final int ATTR_CURSOR = 10;
-  public static final int ATTR_ORACLE_NULLS = 11;
-  public static final int ATTR_PERSISTENT = 12;
-  public static final int ATTR_STATEMENT_CLASS = 13;
-  public static final int ATTR_FETCH_TABLE_NAMES = 14;
-  public static final int ATTR_FETCH_CATALOG_NAMES = 15;
-  public static final int ATTR_DRIVER_NAME = 16;
-  public static final int ATTR_STRINGIFY_FETCHES = 17;
-  public static final int ATTR_MAX_COLUMN_LEN = 18;
-  public static final int ATTR_DEFAULT_FETCH_MODE = 19;
-  public static final int ATTR_EMULATE_PREPARES = 20;
+  public const int ATTR_AUTOCOMMIT = 0;
+  public const int ATTR_PREFETCH = 1;
+  public const int ATTR_TIMEOUT = 2;
+  public const int ATTR_ERRMODE = 3;
+  public const int ATTR_SERVER_VERSION = 4;
+  public const int ATTR_CLIENT_VERSION = 5;
+  public const int ATTR_SERVER_INFO = 6;
+  public const int ATTR_CONNECTION_STATUS = 7;
+  public const int ATTR_CASE = 8;
+  public const int ATTR_CURSOR_NAME = 9;
+  public const int ATTR_CURSOR = 10;
+  public const int ATTR_ORACLE_NULLS = 11;
+  public const int ATTR_PERSISTENT = 12;
+  public const int ATTR_STATEMENT_CLASS = 13;
+  public const int ATTR_FETCH_TABLE_NAMES = 14;
+  public const int ATTR_FETCH_CATALOG_NAMES = 15;
+  public const int ATTR_DRIVER_NAME = 16;
+  public const int ATTR_STRINGIFY_FETCHES = 17;
+  public const int ATTR_MAX_COLUMN_LEN = 18;
+  public const int ATTR_DEFAULT_FETCH_MODE = 19;
+  public const int ATTR_EMULATE_PREPARES = 20;
 
-  public static final int MYSQL_ATTR_INIT_COMMAND = 1002;
+  public const int MYSQL_ATTR_INIT_COMMAND = 1002;
 
-  public static final int CASE_NATURAL = 0;
-  public static final int CASE_UPPER = 1;
-  public static final int CASE_LOWER = 2;
+  public const int CASE_NATURAL = 0;
+  public const int CASE_UPPER = 1;
+  public const int CASE_LOWER = 2;
 
-  public static final int CURSOR_FWDONLY = 0;
-  public static final int CURSOR_SCROLL = 1;
+  public const int CURSOR_FWDONLY = 0;
+  public const int CURSOR_SCROLL = 1;
 
-  public static final string ERR_NONE = "00000";
+  public const string ERR_NONE = "00000";
 
-  public static final int ERRMODE_SILENT = 0;
-  public static final int ERRMODE_WARNING = 1;
-  public static final int ERRMODE_EXCEPTION = 2;
+  public const int ERRMODE_SILENT = 0;
+  public const int ERRMODE_WARNING = 1;
+  public const int ERRMODE_EXCEPTION = 2;
 
-  public static final int FETCH_LAZY = 1;
-  public static final int FETCH_ASSOC = 2;
-  public static final int FETCH_NUM = 3;
-  public static final int FETCH_BOTH = 4;
-  public static final int FETCH_OBJ = 5;
-  public static final int FETCH_BOUND = 6;
-  public static final int FETCH_COLUMN = 7;
-  public static final int FETCH_CLASS = 8;
-  public static final int FETCH_INTO = 9;
-  public static final int FETCH_FUNC = 10;
-  public static final int FETCH_NAMED = 11;
-  public static final int FETCH_KEY_PAIR = 12;
+  public const int FETCH_LAZY = 1;
+  public const int FETCH_ASSOC = 2;
+  public const int FETCH_NUM = 3;
+  public const int FETCH_BOTH = 4;
+  public const int FETCH_OBJ = 5;
+  public const int FETCH_BOUND = 6;
+  public const int FETCH_COLUMN = 7;
+  public const int FETCH_CLASS = 8;
+  public const int FETCH_INTO = 9;
+  public const int FETCH_FUNC = 10;
+  public const int FETCH_NAMED = 11;
+  public const int FETCH_KEY_PAIR = 12;
 
-  public static final int FETCH_GROUP = 0x00010000;
-  public static final int FETCH_UNIQUE = 0x00030000;
-  public static final int FETCH_CLASSTYPE = 0x00040000;
-  public static final int FETCH_SERIALIZE = 0x00080000;
+  public const int FETCH_GROUP = 0x00010000;
+  public const int FETCH_UNIQUE = 0x00030000;
+  public const int FETCH_CLASSTYPE = 0x00040000;
+  public const int FETCH_SERIALIZE = 0x00080000;
 
-  public static final int FETCH_ORI_NEXT = 0;
-  public static final int FETCH_ORI_PRIOR = 1;
-  public static final int FETCH_ORI_FIRST = 2;
-  public static final int FETCH_ORI_LAST = 3;
-  public static final int FETCH_ORI_ABS = 4;
-  public static final int FETCH_ORI_REL = 5;
+  public const int FETCH_ORI_NEXT = 0;
+  public const int FETCH_ORI_PRIOR = 1;
+  public const int FETCH_ORI_FIRST = 2;
+  public const int FETCH_ORI_LAST = 3;
+  public const int FETCH_ORI_ABS = 4;
+  public const int FETCH_ORI_REL = 5;
 
-  public static final int FETCH_PROPS_LATE = 1048576;
+  public const int FETCH_PROPS_LATE = 1048576;
 
-  public static final int MYSQL_ATTR_USE_BUFFERED_QUERY = 1000;
+  public const int MYSQL_ATTR_USE_BUFFERED_QUERY = 1000;
 
-  public static final int NULL_NATURAL = 0;
-  public static final int NULL_EMPTY_STRING = 1;
-  public static final int NULL_TO_STRING = 2;
+  public const int NULL_NATURAL = 0;
+  public const int NULL_EMPTY_STRING = 1;
+  public const int NULL_TO_STRING = 2;
 
-  public static final int PARAM_NULL = 0;
-  public static final int PARAM_INT = 1;
-  public static final int PARAM_STR = 2;
-  public static final int PARAM_LOB = 3;
-  public static final int PARAM_STMT = 4;
-  public static final int PARAM_BOOL = 5;
+  public const int PARAM_NULL = 0;
+  public const int PARAM_INT = 1;
+  public const int PARAM_STR = 2;
+  public const int PARAM_LOB = 3;
+  public const int PARAM_STMT = 4;
+  public const int PARAM_BOOL = 5;
 
-  public static final int PARAM_EVT_ALLOC = 0;
-  public static final int PARAM_EVT_EXEC_POST = 3;
-  public static final int PARAM_EVT_EXEC_PRE = 2;
-  public static final int PARAM_EVT_FETCH_POST = 5;
-  public static final int PARAM_EVT_FETCH_PRE = 4;
-  public static final int PARAM_EVT_FREE = 1;
-  public static final int PARAM_EVT_NORMALIZE = 6;
+  public const int PARAM_EVT_ALLOC = 0;
+  public const int PARAM_EVT_EXEC_POST = 3;
+  public const int PARAM_EVT_EXEC_PRE = 2;
+  public const int PARAM_EVT_FETCH_POST = 5;
+  public const int PARAM_EVT_FETCH_PRE = 4;
+  public const int PARAM_EVT_FREE = 1;
+  public const int PARAM_EVT_NORMALIZE = 6;
 
-  public static final int PARAM_INPUT_OUTPUT = 0x80000000;
+  public const int PARAM_INPUT_OUTPUT = 0x80000000;
 
   private final string _dsn;
 

@@ -40,7 +40,7 @@ public class FloatValidateFilter
   extends AbstractFilter
   implements ValidateFilter
 {
-  private static final L10N L = new L10N(FloatValidateFilter.class);
+  private const L10N L = new L10N(FloatValidateFilter.class);
 
   @Override
   protected Value filterImpl(Env env, Value value,

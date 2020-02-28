@@ -39,7 +39,7 @@
  * Represents the character at expression
  */
 public class BinaryCharAtExpr extends AbstractVarExpr {
-  private static final L10N L = new L10N(BinaryCharAtExpr.class);
+  private const L10N L = new L10N(BinaryCharAtExpr.class);
 
   protected final Expr _objExpr;
   protected final Expr _indexExpr;

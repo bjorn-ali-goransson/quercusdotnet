@@ -38,9 +38,9 @@
 
 public class TraitInsteadofMap
 {
-  public static final int USE_NEW_TRAIT = 1;
-  public static final int USE_EXISTING_TRAIT = 0;
-  public static final int NULL = -1;
+  public const int USE_NEW_TRAIT = 1;
+  public const int USE_EXISTING_TRAIT = 0;
+  public const int NULL = -1;
 
   private final HashMap<StringValue,TraitInsteadof> _insteadofMap
     = new HashMap<StringValue,TraitInsteadof>();

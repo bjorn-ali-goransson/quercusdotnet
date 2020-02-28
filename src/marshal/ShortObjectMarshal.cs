@@ -36,7 +36,7 @@
 
 public class ShortObjectMarshal extends Marshal
 {
-  public static final Marshal MARSHAL = new ShortObjectMarshal();
+  public const Marshal MARSHAL = new ShortObjectMarshal();
   
   public boolean isReadOnly()
   {

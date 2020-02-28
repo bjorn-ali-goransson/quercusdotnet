@@ -33,7 +33,7 @@
  * Represents a PHP continue value.
  */
 public class ContinueValue extends Value {
-  public static final ContinueValue CONTINUE = new ContinueValue();
+  public const ContinueValue CONTINUE = new ContinueValue();
 
   private int _target;
   

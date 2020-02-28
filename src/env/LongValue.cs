@@ -42,14 +42,14 @@
 @SuppressWarnings("serial")
 public class LongValue extends NumberValue
 {
-  public static final LongValue MINUS_ONE;
-  public static final LongValue ZERO;
-  public static final LongValue ONE;
+  public const LongValue MINUS_ONE;
+  public const LongValue ZERO;
+  public const LongValue ONE;
 
-  public static final int STATIC_MIN = -1024;
-  public static final int STATIC_MAX = 16 * 1024;
+  public const int STATIC_MIN = -1024;
+  public const int STATIC_MAX = 16 * 1024;
 
-  public static final LongCacheValue []STATIC_VALUES;
+  public const LongCacheValue []STATIC_VALUES;
 
   private final long _value;
 

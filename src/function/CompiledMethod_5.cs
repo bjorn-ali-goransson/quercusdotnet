@@ -42,9 +42,9 @@
  * Represents a compiled method with 5 args
  */
 abstract public class CompiledMethod_5 extends CompiledMethod {
-  private static final Logger log
+  private const Logger log
     = Logger.getLogger(CompiledMethod_5.class.getName());
-  private static final L10N L = new L10N(CompiledMethod_5.class);
+  private const L10N L = new L10N(CompiledMethod_5.class);
 
   public CompiledMethod_5(String name,
                           Arg default_0,

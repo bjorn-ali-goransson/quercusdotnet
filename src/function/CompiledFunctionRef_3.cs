@@ -42,9 +42,9 @@
  * Represents a compiled function with 3 args
  */
 abstract public class CompiledFunctionRef_3 extends CompiledFunctionRef {
-  private static final Logger log
+  private const Logger log
     = Logger.getLogger(CompiledFunctionRef_3.class.getName());
-  private static final L10N L = new L10N(CompiledFunctionRef_3.class);
+  private const L10N L = new L10N(CompiledFunctionRef_3.class);
 
   public CompiledFunctionRef_3(String name,
                                Arg default_0,

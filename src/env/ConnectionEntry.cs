@@ -37,7 +37,7 @@
 
 public class ConnectionEntry implements EnvCleanup
 {
-  private static final Logger log
+  private const Logger log
     = Logger.getLogger(ConnectionEntry.class.getName());
 
   private Env _env;

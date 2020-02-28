@@ -39,7 +39,7 @@ public class RegexpCache
   private final Regexp []_cache;
   private int _head;
 
-  private static final int MAX_SIZE = 4;
+  private const int MAX_SIZE = 4;
 
   public RegexpCache()
   {

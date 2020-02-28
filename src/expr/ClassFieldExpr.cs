@@ -44,7 +44,7 @@
  * Represents a PHP class field reference A::$foo
  */
 public class ClassFieldExpr extends AbstractVarExpr {
-  private static final L10N L = new L10N(ClassFieldExpr.class);
+  private const L10N L = new L10N(ClassFieldExpr.class);
 
   protected final string _className;
   protected final StringValue _varName;

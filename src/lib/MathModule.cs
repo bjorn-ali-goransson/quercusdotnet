@@ -43,28 +43,28 @@
  * PHP math routines.
  */
 public class MathModule extends AbstractQuercusModule {
-  private static final L10N L = new L10N(MathModule.class);
+  private const L10N L = new L10N(MathModule.class);
 
-  public static final double M_PI = Math.PI;
-  public static final double M_E = Math.E;
+  public const double M_PI = Math.PI;
+  public const double M_E = Math.E;
 
-  public static final long RAND_MAX = Integer.MAX_VALUE;
+  public const long RAND_MAX = Integer.MAX_VALUE;
 
-  public static final double M_LOG2E = log2(Math.E);
-  public static final double M_LOG10E = Math.log10(Math.E);
-  public static final double M_LN2 = Math.log(2);
-  public static final double M_LN10 = Math.log(10);
-  public static final double M_PI_2 = Math.PI / 2;
-  public static final double M_PI_4 = Math.PI / 4;
-  public static final double M_1_PI = 1 / Math.PI;
-  public static final double M_2_PI = 2 / Math.PI;
-  public static final double M_SQRTPI = Math.sqrt(Math.PI);
-  public static final double M_2_SQRTPI = 2 / Math.sqrt(Math.PI);
-  public static final double M_SQRT2 = Math.sqrt(2);
-  public static final double M_SQRT3 = Math.sqrt(3);
-  public static final double M_SQRT1_2 = 1 / Math.sqrt(2);
-  public static final double M_LNPI = Math.log(Math.PI);
-  public static final double M_EULER = 0.57721566490153286061;
+  public const double M_LOG2E = log2(Math.E);
+  public const double M_LOG10E = Math.log10(Math.E);
+  public const double M_LN2 = Math.log(2);
+  public const double M_LN10 = Math.log(10);
+  public const double M_PI_2 = Math.PI / 2;
+  public const double M_PI_4 = Math.PI / 4;
+  public const double M_1_PI = 1 / Math.PI;
+  public const double M_2_PI = 2 / Math.PI;
+  public const double M_SQRTPI = Math.sqrt(Math.PI);
+  public const double M_2_SQRTPI = 2 / Math.sqrt(Math.PI);
+  public const double M_SQRT2 = Math.sqrt(2);
+  public const double M_SQRT3 = Math.sqrt(3);
+  public const double M_SQRT1_2 = 1 / Math.sqrt(2);
+  public const double M_LNPI = Math.log(Math.PI);
+  public const double M_EULER = 0.57721566490153286061;
 
   private static double log2(double v)
   {

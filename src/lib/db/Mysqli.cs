@@ -70,8 +70,8 @@
  */
 public class Mysqli extends JdbcConnectionResource
 {
-  private static final Logger log = Logger.getLogger(Mysqli.class.getName());
-  private static final L10N L = new L10N(Mysqli.class);
+  private const Logger log = Logger.getLogger(Mysqli.class.getName());
+  private const L10N L = new L10N(Mysqli.class);
 
   private static MysqlMetaDataMethod _lastMetaDataMethod;
 
@@ -873,7 +873,7 @@ public class Mysqli extends JdbcConnectionResource
     return realQuery(env, sql);
   }
 
-  private static final string toBinarySafeString(StringValue str)
+  private const string toBinarySafeString(StringValue str)
   {
     StringBuilder sb = new StringBuilder();
 
@@ -892,7 +892,7 @@ public class Mysqli extends JdbcConnectionResource
   }
 
   /*
-  private static final string toBinarySafeString2(StringValue str)
+  private const string toBinarySafeString2(StringValue str)
   {
     int len = str.length();
     boolean isBinary = false;
@@ -926,7 +926,7 @@ public class Mysqli extends JdbcConnectionResource
     return sb.toString();
   }
 
-  private static final int appendString(StringBuilder sb, StringValue str,
+  private const int appendString(StringBuilder sb, StringValue str,
                                         int length, int index, char quoteChar)
   {
     int start = index;

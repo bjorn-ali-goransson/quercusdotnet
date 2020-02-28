@@ -36,7 +36,7 @@
 
 public class DoubleObjectMarshal extends Marshal
 {
-  public static final Marshal MARSHAL = new DoubleObjectMarshal();
+  public const Marshal MARSHAL = new DoubleObjectMarshal();
 
   public boolean isReadOnly()
   {

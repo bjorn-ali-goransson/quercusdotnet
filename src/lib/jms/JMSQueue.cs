@@ -47,8 +47,8 @@
  */
 public class JMSQueue
 {
-  private static final L10N L = new L10N(JMSQueue.class);
-  private static final Logger log = Logger.getLogger(JMSQueue.class.getName());
+  private const L10N L = new L10N(JMSQueue.class);
+  private const Logger log = Logger.getLogger(JMSQueue.class.getName());
 
   private Connection _connection;
   private Session _session;

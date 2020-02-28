@@ -44,7 +44,7 @@
 public class DoubleValue extends NumberValue
   implements Serializable
 {
-  public static final DoubleValue ZERO = new DoubleValue(0);
+  public const DoubleValue ZERO = new DoubleValue(0);
 
   private final double _value;
 

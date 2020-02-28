@@ -59,12 +59,12 @@
  * PHP Zlib
  */
 public class ZlibModule extends AbstractQuercusModule {
-  private static final Logger log
+  private const Logger log
     = Logger.getLogger(ZlibModule.class.getName());
-  private static final L10N L = new L10N(ZlibModule.class);
+  private const L10N L = new L10N(ZlibModule.class);
 
-  public static final int FORCE_GZIP = 0x1;
-  public static final int FORCE_DEFLATE = 0x2;
+  public const int FORCE_GZIP = 0x1;
+  public const int FORCE_DEFLATE = 0x2;
 
   public string []getLoadedExtensions()
   {

@@ -48,8 +48,8 @@ public class ArrayObject
 {
   private static L10N L = new L10N(ArrayObject.class);
 
-  public static final int STD_PROP_LIST = 0x00000001;
-  public static final int ARRAY_AS_PROPS = 0x00000002;
+  public const int STD_PROP_LIST = 0x00000001;
+  public const int ARRAY_AS_PROPS = 0x00000002;
 
   private final Env _env;
   private Value _value;

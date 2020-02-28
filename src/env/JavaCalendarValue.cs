@@ -38,7 +38,7 @@
  * Represents a Quercus java Calendar value.
  */
 public class JavaCalendarValue extends JavaValue {
-  private static final Logger log
+  private const Logger log
     = Logger.getLogger(JavaCalendarValue.class.getName());
   
   private final Calendar _calendar;

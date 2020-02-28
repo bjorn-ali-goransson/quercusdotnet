@@ -41,7 +41,7 @@
 
 
 public class IconvUtility {
-  private static final Logger log
+  private const Logger log
     = Logger.getLogger(IconvUtility.class.getName());
 
   public static StringValue decodeEncode(Env env,

@@ -45,7 +45,7 @@
  */
 public class ClassMethodVarExpr extends AbstractMethodExpr
 {
-  private static final L10N L = new L10N(ClassMethodVarExpr.class);
+  private const L10N L = new L10N(ClassMethodVarExpr.class);
 
   protected final string _className;
   protected final Expr _nameExpr;

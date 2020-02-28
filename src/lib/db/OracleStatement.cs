@@ -46,7 +46,7 @@
  * this is essentially a JdbcStatementResource.
  */
 public class OracleStatement extends JdbcPreparedStatementResource {
-  private static final Logger log
+  private const Logger log
     = Logger.getLogger(OracleStatement.class.getName());
 
   private Oracle _conn;

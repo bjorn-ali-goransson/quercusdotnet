@@ -37,7 +37,7 @@
 public class UnsetValue extends NullValue
   implements Serializable
 {
-  public static final UnsetValue UNSET = new UnsetValue();
+  public const UnsetValue UNSET = new UnsetValue();
 
   private UnsetValue()
   {

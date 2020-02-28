@@ -47,8 +47,8 @@
 
 public class JdbcStatementResource
 {
-  private static final Logger log = Log.open(JdbcStatementResource.class);
-  private static final L10N L = new L10N(JdbcStatementResource.class);
+  private const Logger log = Log.open(JdbcStatementResource.class);
+  private const L10N L = new L10N(JdbcStatementResource.class);
 
   private JdbcConnectionResource _conn;
   private JdbcResultResource _rs;

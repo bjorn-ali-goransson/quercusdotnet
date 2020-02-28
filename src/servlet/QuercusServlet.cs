@@ -65,8 +65,8 @@
 public class QuercusServlet
   extends HttpServlet
 {
-  private static final L10N L = new L10N(QuercusServlet.class);
-  private static final Logger log
+  private const L10N L = new L10N(QuercusServlet.class);
+  private const Logger log
     = Logger.getLogger(QuercusServlet.class.getName());
 
   private QuercusContext _quercus;

@@ -44,9 +44,9 @@
  * Represents a compiled method with N args
  */
 abstract public class CompiledMethodRef_N extends CompiledMethodRef {
-  private static final Logger log
+  private const Logger log
     = Logger.getLogger(CompiledMethodRef_N.class.getName());
-  private static final L10N L = new L10N(CompiledMethodRef_N.class);
+  private const L10N L = new L10N(CompiledMethodRef_N.class);
 
   private final int _requiredArgs;
 

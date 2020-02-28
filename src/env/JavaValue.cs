@@ -53,7 +53,7 @@
 public class JavaValue extends ObjectValue
   implements Serializable
 {
-  private static final Logger log
+  private const Logger log
     = Logger.getLogger(JavaValue.class.getName());
 
   private JavaClassDef _classDef;

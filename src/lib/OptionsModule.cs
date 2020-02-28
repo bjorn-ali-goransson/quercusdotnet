@@ -58,42 +58,42 @@
  * PHP options
  */
 public class OptionsModule extends AbstractQuercusModule {
-  private static final L10N L = new L10N(OptionsModule.class);
-  private static final Logger log
+  private const L10N L = new L10N(OptionsModule.class);
+  private const Logger log
     = Logger.getLogger(OptionsModule.class.getName());
 
   // php/1a0q (phpMyAdmin)
-  public static final string PHP_OS
+  public const string PHP_OS
     = System.getProperty("os.name").toUpperCase(Locale.ENGLISH);
 
-  public static final string PHP_EOL
+  public const string PHP_EOL
     = System.getProperty("line.separator");
 
-  public static final int ASSERT_ACTIVE = 1;
-  public static final int ASSERT_CALLBACK = 2;
-  public static final int ASSERT_BAIL = 3;
-  public static final int ASSERT_WARNING = 4;
-  public static final int ASSERT_QUIET_EVAL = 5;
+  public const int ASSERT_ACTIVE = 1;
+  public const int ASSERT_CALLBACK = 2;
+  public const int ASSERT_BAIL = 3;
+  public const int ASSERT_WARNING = 4;
+  public const int ASSERT_QUIET_EVAL = 5;
 
-  public static final int CREDITS_GROUP = 1;
-  public static final int CREDITS_GENERAL = 2;
-  public static final int CREDITS_SAPI = 4;
-  public static final int CREDITS_MODULES = 8;
-  public static final int CREDITS_DOCS = 16;
-  public static final int CREDITS_FULLPAGE = 32;
-  public static final int CREDITS_QA = 64;
-  public static final int CREDITS_ALL = -1;
+  public const int CREDITS_GROUP = 1;
+  public const int CREDITS_GENERAL = 2;
+  public const int CREDITS_SAPI = 4;
+  public const int CREDITS_MODULES = 8;
+  public const int CREDITS_DOCS = 16;
+  public const int CREDITS_FULLPAGE = 32;
+  public const int CREDITS_QA = 64;
+  public const int CREDITS_ALL = -1;
 
-  public static final int INFO_GENERAL = 1;
-  public static final int INFO_CREDITS = 2;
-  public static final int INFO_CONFIGURATION = 4;
-  public static final int INFO_MODULES = 8;
-  public static final int INFO_ENVIRONMENT = 16;
-  public static final int INFO_VARIABLES = 32;
-  public static final int INFO_LICENSE = 64;
-  public static final int INFO_ALL = -1;
+  public const int INFO_GENERAL = 1;
+  public const int INFO_CREDITS = 2;
+  public const int INFO_CONFIGURATION = 4;
+  public const int INFO_MODULES = 8;
+  public const int INFO_ENVIRONMENT = 16;
+  public const int INFO_VARIABLES = 32;
+  public const int INFO_LICENSE = 64;
+  public const int INFO_ALL = -1;
 
-  private static final IniDefinitions _iniDefinitions = new IniDefinitions();
+  private const IniDefinitions _iniDefinitions = new IniDefinitions();
 
   /**
    * Returns the default php.ini values.
@@ -1109,57 +1109,57 @@ public class OptionsModule extends AbstractQuercusModule {
       return 1;
   }
 
-  static final IniDefinition INI_ASSERT_ACTIVE
+  const IniDefinition INI_ASSERT_ACTIVE
     = _iniDefinitions.add("assert.active", true, PHP_INI_ALL);
-  static final IniDefinition INI_ASSERT_BAIL
+  const IniDefinition INI_ASSERT_BAIL
     = _iniDefinitions.add("assert.bail", false, PHP_INI_ALL);
-  static final IniDefinition INI_ASSERT_WARNING
+  const IniDefinition INI_ASSERT_WARNING
     = _iniDefinitions.add("assert.warning", true, PHP_INI_ALL);
-  static final IniDefinition INI_ASSERT_CALLBACK
+  const IniDefinition INI_ASSERT_CALLBACK
     = _iniDefinitions.add("assert.callback", null, PHP_INI_ALL);
-  static final IniDefinition INI_ASSERT_QUIET_EVAL
+  const IniDefinition INI_ASSERT_QUIET_EVAL
     = _iniDefinitions.add("assert.quiet_eval", false, PHP_INI_ALL);
-  static final IniDefinition INI_ENABLE_DL
+  const IniDefinition INI_ENABLE_DL
     = _iniDefinitions.add("enable_dl", true, PHP_INI_SYSTEM);
-  static final IniDefinition INI_MAX_EXECUTION_TIME
+  const IniDefinition INI_MAX_EXECUTION_TIME
     = _iniDefinitions.add("max_execution_time", "600", PHP_INI_ALL);
-  static final IniDefinition INI_MAX_INPUT_TIME
+  const IniDefinition INI_MAX_INPUT_TIME
     = _iniDefinitions.add("max_input_time", "-1", PHP_INI_PERDIR);
-  static final IniDefinition INI_MAGIC_QUOTES_GPC
+  const IniDefinition INI_MAGIC_QUOTES_GPC
     = _iniDefinitions.add("magic_quotes_gpc", false, PHP_INI_PERDIR);
 
-  static final IniDefinition INI_TRACK_VARS
+  const IniDefinition INI_TRACK_VARS
     = _iniDefinitions.add("track_vars", "On", PHP_INI_ALL);
-  static final IniDefinition INI_ARG_SEPARATOR_OUTPUT
+  const IniDefinition INI_ARG_SEPARATOR_OUTPUT
     = _iniDefinitions.add("arg_separator.output", "&", PHP_INI_ALL);
-  static final IniDefinition INI_ARG_SEPARATOR_INPUT
+  const IniDefinition INI_ARG_SEPARATOR_INPUT
     = _iniDefinitions.add("arg_separator.input", "&", PHP_INI_ALL);
-  static final IniDefinition INI_VARIABLES_ORDER
+  const IniDefinition INI_VARIABLES_ORDER
     = _iniDefinitions.add("variables_order", "EGPCS", PHP_INI_ALL);
-  static final IniDefinition INI_AUTO_GLOBALS_JIT
+  const IniDefinition INI_AUTO_GLOBALS_JIT
     = _iniDefinitions.add("auto_globals_jit", "1", PHP_INI_ALL);
-  static final IniDefinition INI_REGISTER_ARGC_ARGV
+  const IniDefinition INI_REGISTER_ARGC_ARGV
     = _iniDefinitions.add("register_argc_argv", false, PHP_INI_ALL);
-  static final IniDefinition INI_POST_MAX_SIZE
+  const IniDefinition INI_POST_MAX_SIZE
     = _iniDefinitions.add("post_max_size", "8M", PHP_INI_ALL);
-  static final IniDefinition INI_GPC_ORDER
+  const IniDefinition INI_GPC_ORDER
     = _iniDefinitions.add("gpc_order", "GPC", PHP_INI_ALL);
-  static final IniDefinition INI_AUTO_PREPEND_FILE
+  const IniDefinition INI_AUTO_PREPEND_FILE
     = _iniDefinitions.add("auto_prepend_file", null, PHP_INI_ALL);
-  static final IniDefinition INI_AUTO_APPEND_FILE
+  const IniDefinition INI_AUTO_APPEND_FILE
     = _iniDefinitions.add("auto_append_file", null, PHP_INI_ALL);
-  static final IniDefinition INI_DEFAULT_MIMETYPE
+  const IniDefinition INI_DEFAULT_MIMETYPE
     = _iniDefinitions.add("default_mimetype", "text/html", PHP_INI_ALL);
-  static final IniDefinition INI_DEFAULT_CHARSET
+  const IniDefinition INI_DEFAULT_CHARSET
     = _iniDefinitions.add("default_charset", "", PHP_INI_ALL);
-  static final IniDefinition INI_ALWAYS_POPULATE_RAW_POST_DATA =
+  const IniDefinition INI_ALWAYS_POPULATE_RAW_POST_DATA =
     _iniDefinitions.add("always_populate_raw_post_data", false, PHP_INI_ALL);
-  static final IniDefinition INI_ALLOW_WEBDAV_METHODS
+  const IniDefinition INI_ALLOW_WEBDAV_METHODS
     = _iniDefinitions.add("allow_webdav_methods", false, PHP_INI_ALL);
-  static final IniDefinition INI_MEMORY_LIMIT
+  const IniDefinition INI_MEMORY_LIMIT
     = _iniDefinitions.add("memory_limit", "512M", PHP_INI_ALL);
 
-  static final IniDefinition INI_SHORT_OPEN_TAG
+  const IniDefinition INI_SHORT_OPEN_TAG
     = _iniDefinitions.add("short_open_tag", true, PHP_INI_ALL);
 }
 

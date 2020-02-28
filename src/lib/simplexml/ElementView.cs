@@ -59,7 +59,7 @@
 
 public class ElementView extends SimpleView
 {
-  private static final Logger log
+  private const Logger log
     = Logger.getLogger(ElementView.class.getName());
 
   private final Node _node;

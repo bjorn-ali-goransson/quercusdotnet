@@ -60,22 +60,22 @@
  * PHP functions implementing html code.
  */
 public class HtmlModule extends AbstractQuercusModule {
-  private static final Logger log
+  private const Logger log
   = Logger.getLogger(HtmlModule.class.getName());
 
-  private static final L10N L = new L10N(HtmlModule.class);
+  private const L10N L = new L10N(HtmlModule.class);
 
-  public static final int HTML_SPECIALCHARS = 0;
-  public static final int HTML_ENTITIES = 1;
+  public const int HTML_SPECIALCHARS = 0;
+  public const int HTML_ENTITIES = 1;
 
-  public static final int ENT_HTML_QUOTE_NONE = 0;
-  public static final int ENT_HTML_QUOTE_SINGLE = 1;
-  public static final int ENT_HTML_QUOTE_DOUBLE = 2;
+  public const int ENT_HTML_QUOTE_NONE = 0;
+  public const int ENT_HTML_QUOTE_SINGLE = 1;
+  public const int ENT_HTML_QUOTE_DOUBLE = 2;
 
-  public static final int ENT_COMPAT = ENT_HTML_QUOTE_DOUBLE;
-  public static final int ENT_QUOTES =
+  public const int ENT_COMPAT = ENT_HTML_QUOTE_DOUBLE;
+  public const int ENT_QUOTES =
       ENT_HTML_QUOTE_SINGLE | ENT_HTML_QUOTE_DOUBLE;
-  public static final int ENT_NOQUOTES = ENT_HTML_QUOTE_NONE;
+  public const int ENT_NOQUOTES = ENT_HTML_QUOTE_NONE;
 
   private static StringValue []HTML_SPECIALCHARS_MAP;
 

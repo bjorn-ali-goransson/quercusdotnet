@@ -51,10 +51,10 @@
 public class StringBuilderValue
   extends BinaryValue
 {
-  public static final StringBuilderValue EMPTY = new ConstStringValue("");
+  public const StringBuilderValue EMPTY = new ConstStringValue("");
 
-  private static final StringBuilderValue []CHAR_STRINGS;
-  private static final int LARGE_BUILDER_THRESHOLD
+  private const StringBuilderValue []CHAR_STRINGS;
+  private const int LARGE_BUILDER_THRESHOLD
     = LargeStringBuilderValue.SIZE;
 
   private byte []_buffer;
@@ -284,7 +284,7 @@ public class StringBuilderValue
     return getValueType(_buffer, 0, _length);
   }
 
-  public static final ValueType getValueType(byte []buffer,
+  public const ValueType getValueType(byte []buffer,
                                              int offset,
                                              int len)
   {
@@ -393,7 +393,7 @@ public class StringBuilderValue
     return toDouble(_buffer, 0, _length);
   }
 
-  public static final double toDouble(byte []buffer, int offset, int len)
+  public const double toDouble(byte []buffer, int offset, int len)
   {
     int start = offset;
     int i = offset;

@@ -50,15 +50,15 @@
  */
 public class SessionModule extends AbstractQuercusModule
   implements ModuleStartupListener {
-  private static final L10N L = new L10N(SessionModule.class);
-  private static final Logger log
+  private const L10N L = new L10N(SessionModule.class);
+  private const Logger log
     = Logger.getLogger(SessionModule.class.getName());
 
-  private static final IniDefinitions _iniDefinitions = new IniDefinitions();
+  private const IniDefinitions _iniDefinitions = new IniDefinitions();
 
-  public static final int PHP_SESSION_DISABLED = 0;
-  public static final int PHP_SESSION_NONE = 1;
-  public static final int PHP_SESSION_ACTIVE = 2;
+  public const int PHP_SESSION_DISABLED = 0;
+  public const int PHP_SESSION_NONE = 1;
+  public const int PHP_SESSION_ACTIVE = 2;
 
   /**
    * Returns the default php.ini values.
@@ -688,55 +688,55 @@ public class SessionModule extends AbstractQuercusModule
   }
 
 
-  static final IniDefinition INI_SESSION_SAVE_PATH
+  const IniDefinition INI_SESSION_SAVE_PATH
     = _iniDefinitions.add("session.save_path", "", PHP_INI_ALL);
-  static final IniDefinition INI_SESSION_NAME
+  const IniDefinition INI_SESSION_NAME
     = _iniDefinitions.add("session.name", "PHPSESSID", PHP_INI_ALL);
-  static final IniDefinition INI_SESSION_SAVE_HANDLER
+  const IniDefinition INI_SESSION_SAVE_HANDLER
     = _iniDefinitions.add("session.save_handler", "files", PHP_INI_ALL);
-  static final IniDefinition INI_SESSION_AUTO_START
+  const IniDefinition INI_SESSION_AUTO_START
     = _iniDefinitions.add("session.auto_start", false, PHP_INI_ALL);
-  static final IniDefinition INI_SESSION_GC_PROBABILITY_START
+  const IniDefinition INI_SESSION_GC_PROBABILITY_START
     = _iniDefinitions.add("session.gc_probability_start", true, PHP_INI_ALL);
-  static final IniDefinition INI_SESSION_GC_DIVISOR
+  const IniDefinition INI_SESSION_GC_DIVISOR
     = _iniDefinitions.add("session.gc_divisor", 100, PHP_INI_ALL);
-  static final IniDefinition INI_SESSION_GC_MAXLIFETIME
+  const IniDefinition INI_SESSION_GC_MAXLIFETIME
     = _iniDefinitions.add("session.gc_maxlifetime", 1440, PHP_INI_ALL);
-  static final IniDefinition INI_SESSION_SERIALIZE_HANDLER
+  const IniDefinition INI_SESSION_SERIALIZE_HANDLER
     = _iniDefinitions.add("session.serialize_handler", "quercus", PHP_INI_ALL);
-  static final IniDefinition INI_SESSION_COOKIE_LIFETIME
+  const IniDefinition INI_SESSION_COOKIE_LIFETIME
     = _iniDefinitions.add("session.cookie_lifetime", 0, PHP_INI_ALL);
-  static final IniDefinition INI_SESSION_COOKIE_PATH
+  const IniDefinition INI_SESSION_COOKIE_PATH
     = _iniDefinitions.add("session.cookie_path", "/", PHP_INI_ALL);
-  static final IniDefinition INI_SESSION_COOKIE_DOMAIN
+  const IniDefinition INI_SESSION_COOKIE_DOMAIN
     = _iniDefinitions.add("session.cookie_domain", "", PHP_INI_ALL);
-  static final IniDefinition INI_SESSION_COOKIE_SECURE
+  const IniDefinition INI_SESSION_COOKIE_SECURE
     = _iniDefinitions.add("session.cookie_secure", "", PHP_INI_ALL);
-  static final IniDefinition INI_SESSION_USE_COOKIES
+  const IniDefinition INI_SESSION_USE_COOKIES
     = _iniDefinitions.add("session.use_cookies", true, PHP_INI_ALL);
-  static final IniDefinition INI_SESSION_USE_ONLY_COOKIES
+  const IniDefinition INI_SESSION_USE_ONLY_COOKIES
     = _iniDefinitions.add("session.use_only_cookies", true, PHP_INI_ALL);
-  static final IniDefinition INI_SESSION_REFERER_CHECK
+  const IniDefinition INI_SESSION_REFERER_CHECK
     = _iniDefinitions.add("session.referer_check", "", PHP_INI_ALL);
-  static final IniDefinition INI_SESSION_ENTROPY_FILE
+  const IniDefinition INI_SESSION_ENTROPY_FILE
     = _iniDefinitions.add("session.entropy_file", "", PHP_INI_ALL);
-  static final IniDefinition INI_SESSION_ENTROPY_LENGTH
+  const IniDefinition INI_SESSION_ENTROPY_LENGTH
     = _iniDefinitions.add("session.entropy_length", false, PHP_INI_ALL);
-  static final IniDefinition INI_SESSION_CACHE_LIMITER
+  const IniDefinition INI_SESSION_CACHE_LIMITER
     = _iniDefinitions.add("session.cache_limiter", "nocache", PHP_INI_ALL);
-  static final IniDefinition INI_SESSION_CACHE_EXPIRE
+  const IniDefinition INI_SESSION_CACHE_EXPIRE
     = _iniDefinitions.add("session.cache_expire", 180, PHP_INI_ALL);
-  static final IniDefinition INI_SESSION_USE_TRANS_SID
+  const IniDefinition INI_SESSION_USE_TRANS_SID
     = _iniDefinitions.add("session.use_trans_sid", false, PHP_INI_ALL);
-  static final IniDefinition INI_SESSION_BUG_COMPAT_42
+  const IniDefinition INI_SESSION_BUG_COMPAT_42
     = _iniDefinitions.add("session.bug_compat_42", true, PHP_INI_ALL);
-  static final IniDefinition INI_SESSION_BUG_COMPAT_WARN
+  const IniDefinition INI_SESSION_BUG_COMPAT_WARN
     = _iniDefinitions.add("session.bug_compat_warn", true, PHP_INI_ALL);
-  static final IniDefinition INI_SESSION_HASH_FUNCTION
+  const IniDefinition INI_SESSION_HASH_FUNCTION
     = _iniDefinitions.add("session.hash_function", false, PHP_INI_ALL);
-  static final IniDefinition INI_SESSION_HASH_BITS_PER_CHARACTER
+  const IniDefinition INI_SESSION_HASH_BITS_PER_CHARACTER
     = _iniDefinitions.add("session.hash_bits_per_character", 4, PHP_INI_ALL);
-  static final IniDefinition INI_URL_REWRITER_TAGS
+  const IniDefinition INI_URL_REWRITER_TAGS
     = _iniDefinitions.add(
       "url_rewriter.tags",
       "a=href,area=href,frame=src,form=,fieldset=", PHP_INI_ALL);

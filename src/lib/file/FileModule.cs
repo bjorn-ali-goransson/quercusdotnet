@@ -67,60 +67,60 @@
  * Information and actions for about files
  */
 public class FileModule extends AbstractQuercusModule {
-  private static final L10N L = new L10N(FileModule.class);
-  private static final Logger log
+  private const L10N L = new L10N(FileModule.class);
+  private const Logger log
     = Logger.getLogger(FileModule.class.getName());
 
-  public static final string DIRECTORY_SEPARATOR
+  public const string DIRECTORY_SEPARATOR
     = String.valueOf(Path.getFileSeparatorChar());
 
-  public static final string PATH_SEPARATOR
+  public const string PATH_SEPARATOR
     = String.valueOf(Path.getPathSeparatorChar());
 
-  public static final int UPLOAD_ERR_OK = 0;
-  public static final int UPLOAD_ERR_INI_SIZE = 1;
-  public static final int UPLOAD_ERR_FORM_SIZE = 2;
-  public static final int UPLOAD_ERR_PARTIAL = 3;
-  public static final int UPLOAD_ERR_NO_FILE = 4;
-  public static final int UPLOAD_ERR_NO_TMP_DIR = 6;
-  public static final int UPLOAD_ERR_CANT_WRITE = 7;
-  public static final int UPLOAD_ERR_EXTENSION = 8;
+  public const int UPLOAD_ERR_OK = 0;
+  public const int UPLOAD_ERR_INI_SIZE = 1;
+  public const int UPLOAD_ERR_FORM_SIZE = 2;
+  public const int UPLOAD_ERR_PARTIAL = 3;
+  public const int UPLOAD_ERR_NO_FILE = 4;
+  public const int UPLOAD_ERR_NO_TMP_DIR = 6;
+  public const int UPLOAD_ERR_CANT_WRITE = 7;
+  public const int UPLOAD_ERR_EXTENSION = 8;
 
-  public static final int FILE_USE_INCLUDE_PATH = 1;
-  public static final int FILE_IGNORE_NEW_LINES = 2;
-  public static final int FILE_SKIP_EMPTY_LINES = 4;
-  public static final int FILE_APPEND = 8;
+  public const int FILE_USE_INCLUDE_PATH = 1;
+  public const int FILE_IGNORE_NEW_LINES = 2;
+  public const int FILE_SKIP_EMPTY_LINES = 4;
+  public const int FILE_APPEND = 8;
 
-  public static final int LOCK_SH = 1;
-  public static final int LOCK_EX = 2;
-  public static final int LOCK_UN = 3;
-  public static final int LOCK_NB = 4;
+  public const int LOCK_SH = 1;
+  public const int LOCK_EX = 2;
+  public const int LOCK_UN = 3;
+  public const int LOCK_NB = 4;
 
-  public static final int FNM_PATHNAME = 1;
-  public static final int FNM_NOESCAPE = 2;
-  public static final int FNM_PERIOD = 4;
-  public static final int FNM_CASEFOLD = 16;
+  public const int FNM_PATHNAME = 1;
+  public const int FNM_NOESCAPE = 2;
+  public const int FNM_PERIOD = 4;
+  public const int FNM_CASEFOLD = 16;
 
-  public static final int GLOB_MARK = 1;
-  public static final int GLOB_NOSORT = 2;
-  public static final int GLOB_NOCHECK = 4;
-  public static final int GLOB_NOESCAPE = 8;
-  public static final int GLOB_BRACE = 16;
-  public static final int GLOB_ONLYDIR = 32;
-  public static final int GLOB_ERR = 64;
+  public const int GLOB_MARK = 1;
+  public const int GLOB_NOSORT = 2;
+  public const int GLOB_NOCHECK = 4;
+  public const int GLOB_NOESCAPE = 8;
+  public const int GLOB_BRACE = 16;
+  public const int GLOB_ONLYDIR = 32;
+  public const int GLOB_ERR = 64;
 
-  public static final int PATHINFO_DIRNAME = 1;
-  public static final int PATHINFO_BASENAME = 2;
-  public static final int PATHINFO_EXTENSION = 4;
-  public static final int PATHINFO_FILENAME = 8;
+  public const int PATHINFO_DIRNAME = 1;
+  public const int PATHINFO_BASENAME = 2;
+  public const int PATHINFO_EXTENSION = 4;
+  public const int PATHINFO_FILENAME = 8;
 
-  public static final int SEEK_SET = BinaryStream.SEEK_SET;
-  public static final int SEEK_CUR = BinaryStream.SEEK_CUR;
-  public static final int SEEK_END = BinaryStream.SEEK_END;
+  public const int SEEK_SET = BinaryStream.SEEK_SET;
+  public const int SEEK_CUR = BinaryStream.SEEK_CUR;
+  public const int SEEK_END = BinaryStream.SEEK_END;
 
-  private static final IniDefinitions _iniDefinitions = new IniDefinitions();
+  private const IniDefinitions _iniDefinitions = new IniDefinitions();
 
-  private static final HashMap<StringValue,Value> _constMap
+  private const HashMap<StringValue,Value> _constMap
     = new HashMap<StringValue,Value>();
 
   /**
@@ -3316,30 +3316,30 @@ public class FileModule extends AbstractQuercusModule {
     addConstant(_constMap, "GLOB_ONLYDIR", GLOB_ONLYDIR);
   }
 
-  static final IniDefinition INI_ALLOW_URL_FOPEN
+  const IniDefinition INI_ALLOW_URL_FOPEN
     = _iniDefinitions.add("allow_url_fopen", true, PHP_INI_SYSTEM);
 
-  static final IniDefinition INI_USER_AGENT
+  const IniDefinition INI_USER_AGENT
     = _iniDefinitions.add("user_agent", null, PHP_INI_ALL);
 
-  static final IniDefinition INI_DEFAULT_SOCKET_TIMEOUT
+  const IniDefinition INI_DEFAULT_SOCKET_TIMEOUT
     = _iniDefinitions.add("default_socket_timeout", 60, PHP_INI_ALL);
 
-  static final IniDefinition INI_FROM
+  const IniDefinition INI_FROM
     = _iniDefinitions.add("from", "", PHP_INI_ALL);
 
-  static final IniDefinition INI_AUTO_DETECT_LINE_ENDINGS
+  const IniDefinition INI_AUTO_DETECT_LINE_ENDINGS
     = _iniDefinitions.add("auto_detect_line_endings", false, PHP_INI_ALL);
 
   // file uploads
 
-  static final IniDefinition INI_FILE_UPLOADS
+  const IniDefinition INI_FILE_UPLOADS
     = _iniDefinitions.add("file_uploads", true, PHP_INI_SYSTEM);
 
-  static final IniDefinition INI_UPLOAD_TMP_DIR
+  const IniDefinition INI_UPLOAD_TMP_DIR
     = _iniDefinitions.add("upload_tmp_dir", null, PHP_INI_SYSTEM);
 
-  static final IniDefinition INI_UPLOAD_MAX_FILESIZE
+  const IniDefinition INI_UPLOAD_MAX_FILESIZE
     = _iniDefinitions.add("upload_max_filesize", "2M", PHP_INI_SYSTEM);
 }
 

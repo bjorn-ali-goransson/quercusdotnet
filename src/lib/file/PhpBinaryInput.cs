@@ -44,7 +44,7 @@
  */
 public class PhpBinaryInput extends AbstractBinaryInput
 {
-  private static final Logger log
+  private const Logger log
     = Logger.getLogger(PhpBinaryInput.class.getName());
 
   public PhpBinaryInput(Env env)

@@ -49,9 +49,9 @@
  * this is essentially a JdbcStatementResource.
  */
 public class PostgresStatement extends JdbcPreparedStatementResource {
-  private static final Logger log = Logger.getLogger(
+  private const Logger log = Logger.getLogger(
       PostgresStatement.class.getName());
-  private static final L10N L = new L10N(PostgresStatement.class);
+  private const L10N L = new L10N(PostgresStatement.class);
 
   // Map JDBC ?,?,? to any unsorted or duplicated params.
   // Ex: INSERT INTO test VALUES($2, $1) is mapped as [0]->2, [1]->1

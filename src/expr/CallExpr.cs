@@ -44,7 +44,7 @@
  * A "foo(...)" function call.
  */
 public class CallExpr extends Expr {
-  private static final L10N L = new L10N(CallExpr.class);
+  private const L10N L = new L10N(CallExpr.class);
 
   protected final StringValue _name;
   protected final StringValue _nsName;

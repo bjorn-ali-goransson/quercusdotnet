@@ -37,8 +37,8 @@
  */
 public class ArrayValueComponent
 {
-  public static final int MAX_SIZE = 512;
-  public static final int MAX_DYNAMIC_SIZE = 1024;
+  public const int MAX_SIZE = 512;
+  public const int MAX_DYNAMIC_SIZE = 1024;
   
   protected Value []_keys;
   protected Value []_values;

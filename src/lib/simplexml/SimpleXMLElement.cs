@@ -73,9 +73,9 @@
  */
 public class SimpleXMLElement extends SimpleXMLNode
 {
-  private static final Logger log
+  private const Logger log
     = Logger.getLogger(SimpleXMLElement.class.getName());
-  private static final L10N L = new L10N(SimpleXMLElement.class);
+  private const L10N L = new L10N(SimpleXMLElement.class);
 
   protected SimpleXMLElement(QuercusClass cls, SimpleView view)
   {

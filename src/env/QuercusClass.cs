@@ -57,8 +57,8 @@
  */
 @SuppressWarnings("serial")
 public class QuercusClass extends NullValue {
-  private static final L10N L = new L10N(QuercusClass.class);
-  private static final Logger log
+  private const L10N L = new L10N(QuercusClass.class);
+  private const Logger log
     = Logger.getLogger(QuercusClass.class.getName());
 
   private final JavaClassDef _javaClassDef;
@@ -869,7 +869,7 @@ public class QuercusClass extends NullValue {
     }
   }
 
-  private static final void traitCollisionError(String className,
+  private const void traitCollisionError(String className,
                                                 StringValue funName,
                                                 string traitName,
                                                 string existingTraitName)
