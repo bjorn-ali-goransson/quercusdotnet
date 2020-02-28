@@ -3,17 +3,17 @@ namespace QuercusDotNet.lib.file {
 /*
  * Copyright (c) 1998-2010 Caucho Technology -- all rights reserved
  *
- * This file is part of Resin(R) Open Source
+ * This file @is part of Resin(R) Open Source
  *
  * Each copy or derived work must preserve the copyright notice and this
  * notice unmodified.
  *
- * Resin Open Source is free software; you can redistribute it and/or modify
+ * Resin Open Source @is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation; either version 2 of the License, or
  * (at your option) any later version.
  *
- * Resin Open Source is distributed in the hope that it will be useful,
+ * Resin Open Source @is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE, or any warranty
  * of NON-INFRINGEMENT.  See the GNU General Public License for more
@@ -45,7 +45,7 @@ namespace QuercusDotNet.lib.file {
 
 
 public class IniParser {
-  public static ArrayValue parse(Env env, ReadStream is, bool isProcessSections)
+  public static ArrayValue parse(Env env, ReadStream @is, bool isProcessSections)
     
   {
     ArrayValue top = new ArrayValueImpl();
@@ -74,8 +74,8 @@ public class IniParser {
         }
       }
       else {
-        is.unread();
-        parseIniLine(env, is, section);
+        @is.unread();
+        parseIniLine(env, @is, section);
       }
     }
 
@@ -92,7 +92,7 @@ public class IniParser {
     int quoteChar = -1;
     if (ch == '"' || ch == '\'') {
       quoteChar = ch;
-      ch = is.read();
+      ch = @is.read();
     }
 
     while (true) {
@@ -106,18 +106,18 @@ public class IniParser {
       }
 
       sb.append((char) ch);
-      ch = is.read();
+      ch = @is.read();
     }
 
     if (ch == quoteChar) {
-      for (ch = is.read(); ch >= 0 && ch != ']'; ch = is.read()) {
+      for (ch = @is.read(); ch >= 0 && ch != ']'; ch = @is.read()) {
       }
     }
 
     return sb;
   }
 
-  private static void parseIniLine(Env env, ReadStream is, ArrayValue section)
+  private static void parseIniLine(Env env, ReadStream @is, ArrayValue section)
     
   {
     StringValue name = parseIniName(env, is);
@@ -165,7 +165,7 @@ public class IniParser {
     int quoteChar = -1;
     if (ch == '"' || ch == '\'') {
       quoteChar = ch;
-      ch = is.read();
+      ch = @is.read();
     }
 
     while (true) {
@@ -177,15 +177,15 @@ public class IniParser {
       }
 
       sb.append((char) ch);
-      ch = is.read();
+      ch = @is.read();
     }
 
     if (ch == quoteChar) {
-      for (ch = is.read(); ch >= 0 && ch != ']'; ch = is.read()) {
+      for (ch = @is.read(); ch >= 0 && ch != ']'; ch = @is.read()) {
       }
     }
 
-    is.unread();
+    @is.unread();
 
     int len = sb.length();
     for (; len > 0; len--) {
@@ -221,7 +221,7 @@ public class IniParser {
 
       StringValue sb = env.createStringBuilder();
 
-      for (ch = is.read(); ch >= 0 && ch != quoteChar; ch = is.read()) {
+      for (ch = @is.read(); ch >= 0 && ch != quoteChar; ch = @is.read()) {
         sb.append((char) ch);
       }
 
@@ -232,20 +232,20 @@ public class IniParser {
     else {
       StringBuilder sb = new StringBuilder();
 
-      for (; ch >= 0 && ch != '\r' && ch != '\n'; ch = is.read()) {
+      for (; ch >= 0 && ch != '\r' && ch != '\n'; ch = @is.read()) {
         if (ch == ';') {
           skipToNewline(is);
           break;
         }
         else if (ch == '$') {
-          int peek = is.read();
+          int peek = @is.read();
 
           if (peek == '{') {
             StringBuilder var = new StringBuilder();
 
-            for (ch = is.read();
+            for (ch = @is.read();
                  ch >= 0 && ch != '\r' && ch != '\n' && ch != '}';
-                 ch = is.read()) {
+                 ch = @is.read()) {
               var.append((char) ch);
             }
 
@@ -257,7 +257,7 @@ public class IniParser {
           }
           else {
             sb.append('$');
-            is.unread();
+            @is.unread();
           }
 
         }
@@ -268,7 +268,7 @@ public class IniParser {
 
           result.append(getIniConstant(env, value));
 
-          for (ch = is.read(); ch >= 0 && ch != '"'; ch = is.read()) {
+          for (ch = @is.read(); ch >= 0 && ch != '"'; ch = @is.read()) {
             result.append((char) ch);
           }
 
@@ -333,7 +333,7 @@ public class IniParser {
   {
     int ch;
 
-    for (ch = is.read(); Character.isWhitespace(ch); ch = is.read()) {
+    for (ch = @is.read(); Character.isWhitespace(ch); ch = @is.read()) {
     }
 
     return ch;
@@ -345,7 +345,7 @@ public class IniParser {
     int ch;
 
     while (true) {
-      ch = is.read();
+      ch = @is.read();
 
       if (ch != ' ' && ch != '\t') {
         break;
@@ -361,7 +361,7 @@ public class IniParser {
     int ch;
 
     while (true) {
-      ch = is.read();
+      ch = @is.read();
 
       if (ch < 0 || ch == '\r' || ch == '\n') {
         break;

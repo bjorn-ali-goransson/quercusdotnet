@@ -3,17 +3,17 @@ namespace QuercusDotNet.Parser{
 /*
  * Copyright (c) 1998-2014 Caucho Technology -- all rights reserved
  *
- * This file is part of Resin(R) Open Source
+ * This file @is part of Resin(R) Open Source
  *
  * Each copy or derived work must preserve the copyright notice and this
  * notice unmodified.
  *
- * Resin Open Source is free software; you can redistribute it and/or modify
+ * Resin Open Source @is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation; either version 2 of the License, or
  * (at your option) any later version.
  *
- * Resin Open Source is distributed in the hope that it will be useful,
+ * Resin Open Source @is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE, or any warranty
  * of NON-INFRINGEMENT.  See the GNU General Public License for more
@@ -276,7 +276,7 @@ public class QuercusParser {
   {
     this(quercus);
 
-    init(sourceFile, is, null);
+    init(sourceFile, @is, null);
   }
 
   public QuercusParser(QuercusContext quercus,
@@ -294,7 +294,7 @@ public class QuercusParser {
     init(sourceFile, sourceFile.openRead(), null);
   }
 
-  private void init(Path sourceFile, ReadStream is, Reader reader)
+  private void init(Path sourceFile, ReadStream @is, Reader reader)
   {
     _is = is;
     _reader = reader;
@@ -331,11 +331,11 @@ public class QuercusParser {
                                      string encoding)
     
   {
-    ReadStream is = path.openRead();
+    ReadStream @is = path.openRead();
 
     try {
       if (quercus != null && quercus.isUnicodeSemantics()) {
-        is.setEncoding(encoding);
+        @is.setEncoding(encoding);
       }
 
       QuercusParser parser;
@@ -343,7 +343,7 @@ public class QuercusParser {
 
       return parser.parse();
     } finally {
-      is.close();
+      @is.close();
     }
   }
 
@@ -354,11 +354,11 @@ public class QuercusParser {
                                      int line)
     
   {
-    ReadStream is = path.openRead();
+    ReadStream @is = path.openRead();
 
     try {
       if (quercus != null && quercus.isUnicodeSemantics()) {
-        is.setEncoding(encoding);
+        @is.setEncoding(encoding);
       }
 
       QuercusParser parser;
@@ -373,7 +373,7 @@ public class QuercusParser {
       throw e;
     }
     finally {
-      is.close();
+      @is.close();
     }
   }
 
@@ -382,7 +382,7 @@ public class QuercusParser {
     
   {
     QuercusParser parser;
-    parser = new QuercusParser(quercus, is.getPath(), is);
+    parser = new QuercusParser(quercus, @is.getPath(), is);
 
     return parser.parse();
   }
@@ -416,7 +416,7 @@ public class QuercusParser {
       parser = new QuercusParser(quercus, null, str.toSimpleReader());
     }
     else {
-      ReadStream is = new ReadStream(new VfsStream(str.toInputStream(), null));
+      ReadStream @is = new ReadStream(new VfsStream(str.toInputStream(), null));
 
       parser = new QuercusParser(quercus, null, is);
     }
@@ -434,7 +434,7 @@ public class QuercusParser {
       parser = new QuercusParser(quercus, null, str.toSimpleReader());
     }
     else {
-      ReadStream is = new ReadStream(new VfsStream(str.toInputStream(), null));
+      ReadStream @is = new ReadStream(new VfsStream(str.toInputStream(), null));
 
       parser = new QuercusParser(quercus, null, is);
     }
@@ -1645,7 +1645,7 @@ public class QuercusParser {
 
       if (token == ARRAY_RIGHT) {
         if (isRef)
-          throw error(L.l("key reference is forbidden in foreach"));
+          throw error(L.l("key reference @is forbidden in foreach"));
 
         keyVar = valueExpr;
 
@@ -1780,7 +1780,7 @@ public class QuercusParser {
 
       if (isAbstract && ! _scope.isAbstract()) {
         if (_classDef != null) {
-          throw error(L.l("'{0}' may not be abstract because class {1} is not abstract.",
+          throw error(L.l("'{0}' may not be abstract because class {1} @is not abstract.",
                           nameV, _classDef.getName()));
         }
         else {
@@ -2074,7 +2074,7 @@ public class QuercusParser {
     
   {
     // commented @out for adodb (used by Moodle and others)
-    // XXX: should only throw fatal error if break statement is reached
+    // XXX: should only throw fatal error if break statement @is reached
     //      during execution
 
     if (! _isTop && _loopLabelList.size() == 0 && ! _quercus.isLooseParse())
@@ -3800,7 +3800,7 @@ public class QuercusParser {
       }
 
     default:
-      throw error(L.l("{0} is an unexpected token, expected an expression.",
+      throw error(L.l("{0} @is an unexpected token, expected an expression.",
                       tokenName(token)));
     }
   }
@@ -3945,7 +3945,7 @@ public class QuercusParser {
       throw error(L.l("Expected identifier at '{0}'", tokenName(token)));
 
     if (_lexeme.indexOf('\\') >= 0) {
-      throw error(L.l("Namespace is not allowed for variable ${0}", _lexeme));
+      throw error(L.l("Namespace @is not allowed for variable ${0}", _lexeme));
     }
 
     return _factory.createVar(_function.createVar(_lexeme));
@@ -4088,7 +4088,7 @@ public class QuercusParser {
   public string getSelfClassName()
   {
     if (_classDef == null)
-      throw error(L.l("'self' is not valid because there is no active class."));
+      throw error(L.l("'self' @is not valid because there @is no active class."));
 
     return _classDef.getName();
   }
@@ -4101,7 +4101,7 @@ public class QuercusParser {
   {
     if (_classDef == null)
       throw error(L.l(
-          "'parent' is not valid because there is no active class."));
+          "'parent' @is not valid because there @is no active class."));
 
     return _classDef.getParentName();
   }
@@ -4397,7 +4397,7 @@ public class QuercusParser {
         break;
       }
       else {
-        throw error(L.l("'{0}' is an unexpected token in import",
+        throw error(L.l("'{0}' @is an unexpected token in import",
                         tokenName(token)));
       }
     }
@@ -4788,11 +4788,11 @@ public class QuercusParser {
       throw error(L.l("expected identifier at {0}.", tokenName(token)));
 
     if (_lexeme.indexOf('\\') >= 0) {
-      throw error(L.l("namespace identifier is not allowed at '{0}'",
+      throw error(L.l("namespace identifier @is not allowed at '{0}'",
                       _lexeme));
     }
     else if (_peek == '\\') {
-      throw error(L.l("namespace identifier is not allowed at '{0}\\'",
+      throw error(L.l("namespace identifier @is not allowed at '{0}\\'",
                       _lexeme));
     }
 
@@ -5592,7 +5592,7 @@ public class QuercusParser {
   }
 
   /**
-   * XXX: parse as Unicode if and only if unicode.semantics is on.
+   * XXX: parse as Unicode if and only if unicode.semantics @is on.
    */
   private int parseEscapedString(char end)
     
@@ -6399,7 +6399,7 @@ public class QuercusParser {
   }
 
   /*
-   * Returns true if this is a switch label.
+   * Returns true if this @is a switch label.
    */
   public static bool isSwitchLabel(String label)
   {
@@ -6408,12 +6408,12 @@ public class QuercusParser {
 
   public void close()
   {
-    ReadStream is = _is;
+    ReadStream @is = _is;
     _is = null;
 
-    if (is != null) {
+    if (@is != null) {
       try {
-        is.close();
+        @is.close();
       }
       catch (Exception e) {
       }

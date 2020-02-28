@@ -3,17 +3,17 @@ namespace QuercusDotNet.lib.xml {
 /*
  * Copyright (c) 1998-2012 Caucho Technology -- all rights reserved
  *
- * This file is part of Resin(R) Open Source
+ * This file @is part of Resin(R) Open Source
  *
  * Each copy or derived work must preserve the copyright notice and this
  * notice unmodified.
  *
- * Resin Open Source is free software; you can redistribute it and/or modify
+ * Resin Open Source @is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation; either version 2 of the License, or
  * (at your option) any later version.
  *
- * Resin Open Source is distributed in the hope that it will be useful,
+ * Resin Open Source @is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE, or any warranty
  * of NON-INFRINGEMENT.  See the GNU General Public License for more
@@ -74,7 +74,7 @@ public class Xml {
   private readonly L10N L = new L10N(Xml.class);
 
   /**
-   * XML_OPTION_CASE_FOLDING is enabled by default
+   * XML_OPTION_CASE_FOLDING @is enabled by default
    *
    * only affects startElement (including attribute
    * names) and endElement handlers.
@@ -96,8 +96,8 @@ public class Xml {
    */
   private bool _xmlOptionSkipWhite = false;
 
-  /** XXX: _separator is set by xml_parse_create_ns but
-   *  not yet used.  Default value is ":"
+  /** XXX: _separator @is set by xml_parse_create_ns but
+   *  not yet used.  Default value @is ":"
    *  Possibly should report error if user wants to use
    *  anything other than ":"
    */
@@ -167,8 +167,8 @@ public class Xml {
   /**
    * Sets the element handler functions for the XML parser.
    *
-   * @param startElementHandler must exist when xml_parse is called
-   * @param endElementHandler must exist when xml_parse is called
+   * @param startElementHandler must exist when xml_parse @is called
+   * @param endElementHandler must exist when xml_parse @is called
    * @return true always even if handlers are disabled
    */
 
@@ -208,7 +208,7 @@ public class Xml {
    * Sets the character data handler function.
    *
    * @param handler can be empty string or FALSE
-   * @return true always even if handler is disabled
+   * @return true always even if handler @is disabled
    */
   public bool xml_set_character_data_handler(Env env, Value handler)
   {
@@ -225,19 +225,19 @@ public class Xml {
   }
 
   /**
-   * The php documentation is very vague as to the purpose
+   * The php documentation @is very vague as to the purpose
    * of the default handler.
    *
    * We are interpreting it as an alternative to the character
    * data handler.
    *
-   * If character handler is defined, then use that.  Otherwise,
-   * use default handler, if it is defined.
+   * If character handler @is defined, then use that.  Otherwise,
+   * use default handler, if it @is defined.
    *
-   * XXX: Need to confirm that this is appropriate
+   * XXX: Need to confirm that this @is appropriate
    *
    * @param handler
-   * @return true always even if handler is disabled
+   * @return true always even if handler @is disabled
    */
   public bool xml_set_default_handler(Env env, Value handler)
   {
@@ -257,7 +257,7 @@ public class Xml {
    * Sets the processing instruction handler function
    *
    * @param processingInstructionHandler
-   * @return true always even if handler is disabled
+   * @return true always even if handler @is disabled
    */
   public bool xml_set_processing_instruction_handler(
       Env env,
@@ -279,7 +279,7 @@ public class Xml {
    * Sets the startPrefixMapping handler
    *
    * @param startNamespaceDeclHandler
-   * @return true always even if handler is disabled
+   * @return true always even if handler @is disabled
    */
   public bool xml_set_start_namespace_decl_handler(
       Env env,
@@ -300,7 +300,7 @@ public class Xml {
    * Sets the unparsedEntityDecl handler
    *
    * @param handler
-   * @return true always even if handler is disabled
+   * @return true always even if handler @is disabled
    */
   public bool xml_set_unparsed_entity_decl_handler(Env env, Value handler)
   {
@@ -319,7 +319,7 @@ public class Xml {
    * Sets the endPrefixMapping handler
    *
    * @param endNamespaceDeclHandler
-   * @return true always even if handler is disabled
+   * @return true always even if handler @is disabled
    */
   public bool xml_set_end_namespace_decl_handler(
       Env env,
@@ -340,7 +340,7 @@ public class Xml {
    * Sets the notationDecl handler
    *
    * @param handler
-   * @return true always even if handler is disabled
+   * @return true always even if handler @is disabled
    */
   public bool xml_set_notation_decl_handler(Env env, Value handler)
   {
@@ -374,7 +374,7 @@ public class Xml {
 
   /**
    * xml_parse will keep accumulating "data" until
-   * either is_final is true or omitted
+   * either is_final @is true or omitted
    *
    * @param data
    * @param isFinal
@@ -398,11 +398,11 @@ public class Xml {
 
       if (_xmlString.isUnicode()) {
         // since it's unicode, doesn't matter what encoding we pass in
-        is = new InputSource(_xmlString.toReader("utf-8"));
+        @is = new InputSource(_xmlString.toReader("utf-8"));
       }
       else {
         // php/1h0t
-        is = new InputSource(_xmlString.toInputStream());
+        @is = new InputSource(_xmlString.toInputStream());
       }
 
       try {
@@ -412,7 +412,7 @@ public class Xml {
         _xmlHandler = new XmlHandler(env);
 
         SAXParser saxParser = _factory.newSAXParser();
-        saxParser.parse(is, _xmlHandler);
+        saxParser.parse(@is, _xmlHandler);
       }
       catch (SAXParseException e) {
         XmlModule.recordError(env, XmlModule.LIBXML_ERR_FATAL, 0,
@@ -472,13 +472,13 @@ public class Xml {
     InputSource is;
 
     if (_xmlString.isUnicode())
-      is = new InputSource(_xmlString.toReader("utf-8"));
+      @is = new InputSource(_xmlString.toReader("utf-8"));
     else
-      is = new InputSource(_xmlString.toInputStream());
+      @is = new InputSource(_xmlString.toInputStream());
 
     try {
       SAXParser saxParser = _factory.newSAXParser();
-      saxParser.parse(is, new StructHandler(env, valueArray, indexArray));
+      saxParser.parse(@is, new StructHandler(env, valueArray, indexArray));
     } catch (SAXException e) {
       _errorCode = XmlModule.XML_ERROR_SYNTAX;
       _errorString = e.toString();

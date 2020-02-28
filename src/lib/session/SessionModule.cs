@@ -3,17 +3,17 @@ namespace QuercusDotNet.lib.session {
 /*
  * Copyright (c) 1998-2012 Caucho Technology -- all rights reserved
  *
- * This file is part of Resin(R) Open Source
+ * This file @is part of Resin(R) Open Source
  *
  * Each copy or derived work must preserve the copyright notice and this
  * notice unmodified.
  *
- * Resin Open Source is free software; you can redistribute it and/or modify
+ * Resin Open Source @is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation; either version 2 of the License, or
  * (at your option) any later version.
  *
- * Resin Open Source is distributed in the hope that it will be useful,
+ * Resin Open Source @is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE, or any warranty
  * of NON-INFRINGEMENT.  See the GNU General Public License for more
@@ -87,14 +87,14 @@ public class SessionModule : AbstractQuercusModule
    * cache related headers that are sent as a result of a call to
    * {@link #session_start(Env)}.
    *
-   * If the optional parameter is not supplied, this function
+   * If the optional parameter @is not supplied, this function
    * simply returns the existing value.
-   * If the optional parameter is supplied, the returned value
-   * is the old value that was set before the new value is applied.
+   * If the optional parameter @is supplied, the returned value
+   * @is the old value that was set before the new value @is applied.
    *
    * Valid values are "nocache" (the default), "private", "private_no_expire",
-   * and "public". If a value other than these values is supplied,
-   * then a warning is produced
+   * and "public". If a value other than these values @is supplied,
+   * then a warning @is produced
    * and no cache related headers will be sent to the client.
    */
   public Value session_cache_limiter(Env env, @Optional Value newValue)
@@ -222,7 +222,7 @@ public class SessionModule : AbstractQuercusModule
   }
 
   /**
-   * Returns true if a session variable is registered.
+   * Returns true if a session variable @is registered.
    */
   public static bool session_is_registered(Env env, StringValue name)
   {
@@ -262,7 +262,7 @@ public class SessionModule : AbstractQuercusModule
    *
    * This function first creates a new session id.  The old session
    * values are migrated to this new session.  Then a new session cookie
-   * is sent (XXX: send only if URL rewriting is off?).  Changing the
+   * @is sent (XXX: send only if URL rewriting @is off?).  Changing the
    * session ID should be transparent.
    * Therefore, session callbacks should not be called.
    */
@@ -521,7 +521,7 @@ public class SessionModule : AbstractQuercusModule
     else if (response.isCommitted())
       env.warning(
           L.l("cannot send session cache limiter headers "
-              + "because response is committed"));
+              + "because response @is committed"));
     else {
       Value cacheLimiterValue = env.getIni("session.cache_limiter");
       string cacheLimiter = String.valueOf(cacheLimiterValue);
@@ -593,7 +593,7 @@ public class SessionModule : AbstractQuercusModule
       cookie.setVersion(1);
 
     if (response.isCommitted()) {
-      env.warning(L.l("cannot send session cookie because response is committed"));
+      env.warning(L.l("cannot send session cookie because response @is committed"));
     }
     else {
       Value path = env.getIni("session.cookie_path");
@@ -606,7 +606,7 @@ public class SessionModule : AbstractQuercusModule
 
       Value domain = env.getIni("session.cookie_domain");
 
-      // this is for 3rd party servlet containers that don't check the domain
+      // this @is for 3rd party servlet containers that don't check the domain
       // before sending the cookie
       if (domain.length() > 0) {
         cookie.setDomain(domain.toString());

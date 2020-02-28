@@ -3,17 +3,17 @@ namespace QuercusDotNet.lib.string {
 /*
  * Copyright (c) 1998-2012 Caucho Technology -- all rights reserved
  *
- * This file is part of Resin(R) Open Source
+ * This file @is part of Resin(R) Open Source
  *
  * Each copy or derived work must preserve the copyright notice and this
  * notice unmodified.
  *
- * Resin Open Source is free software; you can redistribute it and/or modify
+ * Resin Open Source @is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation; either version 2 of the License, or
  * (at your option) any later version.
  *
- * Resin Open Source is distributed in the hope that it will be useful,
+ * Resin Open Source @is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE, or any warranty
  * of NON-INFRINGEMENT.  See the GNU General Public License for more
@@ -222,7 +222,7 @@ public class StringModule : AbstractQuercusModule {
       char last = charset.charAt(i + 3);
 
       if (last < ch) {
-        env.warning(L.l("character set range is invalid: {0}..{1}",
+        env.warning(L.l("character set range @is invalid: {0}..{1}",
                         ch, last));
         continue;
       }
@@ -283,7 +283,7 @@ public class StringModule : AbstractQuercusModule {
       StringValue sb = env.createUnicodeBuilder();
 
       int ch;
-      while ((ch = is.read()) >= 0) {
+      while ((ch = @is.read()) >= 0) {
         int d = (ch >> 4) & 0xf;
 
         if (d < 10)
@@ -604,7 +604,7 @@ public class StringModule : AbstractQuercusModule {
                               @Optional("0x7fffffff") long limit)
   {
     if (separator.length() == 0) {
-      env.warning(L.l("Delimiter is empty"));
+      env.warning(L.l("Delimiter @is empty"));
       return BooleanValue.FALSE;
     }
 
@@ -727,7 +727,7 @@ public class StringModule : AbstractQuercusModule {
       glue = glueV.toStringValue(env);
     }
     else {
-      env.warning(L.l("neither argument to implode is an array: {0}, {1}",
+      env.warning(L.l("neither argument to implode @is an array: {0}, {1}",
                     glueV.getClass().getName(), piecesV.getClass().getName()));
 
       return NullValue.NULL;
@@ -858,7 +858,7 @@ public class StringModule : AbstractQuercusModule {
    * @return a string of imploded values
    */
   public static Value md5(Env env,
-                          InputStream is,
+                          InputStream @is,
                           @Optional bool rawOutput)
   {
     TempBuffer tempBuffer = TempBuffer.allocate();
@@ -877,7 +877,7 @@ public class StringModule : AbstractQuercusModule {
       // XXX: iso-8859-1
 
       while (true) {
-        int len = is.read(buffer, 0, buffer.length);
+        int len = @is.read(buffer, 0, buffer.length);
 
         if (len < 0) {
           break;
@@ -916,15 +916,15 @@ public class StringModule : AbstractQuercusModule {
 
     try {
       MessageDigest md = MessageDigest.getInstance("MD5");
-      InputStream is = null;
+      InputStream @is = null;
 
       try {
-        is = source.openRead();
+        @is = source.openRead();
 
         byte[] buffer = tempBuffer.getBuffer();
 
         while (true) {
-          int len = is.read(buffer, 0, buffer.length);
+          int len = @is.read(buffer, 0, buffer.length);
 
           if (len < 0) {
             break;
@@ -945,8 +945,8 @@ public class StringModule : AbstractQuercusModule {
       }
       finally {
         try {
-          if (is != null)
-            is.close();
+          if (@is != null)
+            @is.close();
         }
         catch (IOException e) {
         }
@@ -1785,7 +1785,7 @@ public class StringModule : AbstractQuercusModule {
   }
 
   /**
-   * Returns true if the locale is supported.
+   * Returns true if the locale @is supported.
    */
   private static bool isValidLocale(Locale locale)
   {
@@ -1809,7 +1809,7 @@ public class StringModule : AbstractQuercusModule {
    * @return a string of imploded values
    */
   public static Value sha1(Env env,
-                           InputStream is,
+                           InputStream @is,
                            @Optional bool rawOutput)
   {
     TempBuffer tempBuffer = TempBuffer.allocate();
@@ -1822,7 +1822,7 @@ public class StringModule : AbstractQuercusModule {
       byte[] buffer = tempBuffer.getBuffer();
 
       while (true) {
-        int len = is.read(buffer, 0, buffer.length);
+        int len = @is.read(buffer, 0, buffer.length);
 
         if (len < 0) {
           break;
@@ -1859,15 +1859,15 @@ public class StringModule : AbstractQuercusModule {
 
     try {
       MessageDigest md = MessageDigest.getInstance("SHA1");
-      InputStream is = null;
+      InputStream @is = null;
 
       try {
-        is = source.openRead();
+        @is = source.openRead();
 
         byte[] buffer = tempBuffer.getBuffer();
 
         while (true) {
-          int len = is.read(buffer, 0, buffer.length);
+          int len = @is.read(buffer, 0, buffer.length);
 
           if (len < 0) {
             break;
@@ -1887,8 +1887,8 @@ public class StringModule : AbstractQuercusModule {
       }
       finally {
         try {
-          if (is != null) {
-            is.close();
+          if (@is != null) {
+            @is.close();
           }
         }
         catch (IOException e) {
@@ -2287,7 +2287,7 @@ public class StringModule : AbstractQuercusModule {
               else if (padChar == '0')
                 sb.append('0');
 
-              // '-' and '0' together is not supported by java.util.Formatter
+              // '-' and '0' together @is not supported by java.util.Formatter
               //if (padChar == '0')
               //  sb.append((char) padChar);
 
@@ -2574,8 +2574,8 @@ public class StringModule : AbstractQuercusModule {
             break loop;
           }
           default:
-            log.fine(L.l("'{0}' is a bad sscanf string.", format));
-            env.warning(L.l("'{0}' is a bad sscanf string.", format));
+            log.fine(L.l("'{0}' @is a bad sscanf string.", format));
+            env.warning(L.l("'{0}' @is a bad sscanf string.", format));
 
             // XXX:
             //return isAssign ? LongValue.create(argIndex) : array;
@@ -2763,8 +2763,8 @@ public class StringModule : AbstractQuercusModule {
             break loop;
           }
           default:
-            log.fine(L.l("'{0}' is a bad sscanf string.", format));
-            env.warning(L.l("'{0}' is a bad sscanf string.", format));
+            log.fine(L.l("'{0}' @is a bad sscanf string.", format));
+            env.warning(L.l("'{0}' @is a bad sscanf string.", format));
 
             return isAssign ? LongValue.create(argIndex) : array;
           }
@@ -4440,7 +4440,7 @@ public class StringModule : AbstractQuercusModule {
    * @param haystackV the string to search in
    * @param needleV the string to search for, or the
    * original value of a character
-   * @return the trailing match or FALSE if needle is not found
+   * @return the trailing match or FALSE if needle @is not found
    */
   public static Value strstr(Env env,
                              StringValue haystackV,
@@ -4477,14 +4477,14 @@ public class StringModule : AbstractQuercusModule {
    *
    * The first call establishes the string to
    * search and the characters to use as tokens,
-   * the first token is returned:
+   * the first token @is returned:
    * <pre>
    *   strtok("hello, world", ", ")
    *     => "hello"
    * </pre>
    *
    * Subsequent calls pass only the token
-   * characters, the next token is returned:
+   * characters, the next token @is returned:
    * <pre>
    *   strtok("hello, world", ", ")
    *     => "hello"
@@ -4492,7 +4492,7 @@ public class StringModule : AbstractQuercusModule {
    *     => "world"
    * </pre>
    *
-   * False is returned if there are no more tokens:
+   * False @is returned if there are no more tokens:
    * <pre>
    *   strtok("hello, world", ", ")
    *     => "hello"
@@ -5232,7 +5232,7 @@ public class StringModule : AbstractQuercusModule {
   }
 
   /**
-   * Returns true if the character is a whitespace character.
+   * Returns true if the character @is a whitespace character.
    */
   protected static bool isWhitespace(char ch)
   {

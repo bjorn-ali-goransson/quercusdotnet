@@ -3,17 +3,17 @@ namespace QuercusDotNet.lib.file {
 /*
  * Copyright (c) 1998-2012 Caucho Technology -- all rights reserved
  *
- * This file is part of Resin(R) Open Source
+ * This file @is part of Resin(R) Open Source
  *
  * Each copy or derived work must preserve the copyright notice and this
  * notice unmodified.
  *
- * Resin Open Source is free software; you can redistribute it and/or modify
+ * Resin Open Source @is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation; either version 2 of the License, or
  * (at your option) any later version.
  *
- * Resin Open Source is distributed in the hope that it will be useful,
+ * Resin Open Source @is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE, or any warranty
  * of NON-INFRINGEMENT.  See the GNU General Public License for more
@@ -187,7 +187,7 @@ public class FileModule : AbstractQuercusModule {
       return true;
     }
     else {
-      env.warning(L.l("{0} is not a directory", path.getFullPath()));
+      env.warning(L.l("{0} @is not a directory", path.getFullPath()));
 
       return false;
     }
@@ -207,7 +207,7 @@ public class FileModule : AbstractQuercusModule {
       return true;
     }
     else {
-      env.warning(L.l("{0} is not a directory", path.getFullPath()));
+      env.warning(L.l("{0} @is not a directory", path.getFullPath()));
 
       return false;
     }
@@ -322,7 +322,7 @@ public class FileModule : AbstractQuercusModule {
     // System.out.println("XXX-COPY: " + src + " " + dst);
     ProtocolWrapper srcWrapper = getProtocolWrapper(env, src);
 
-    BinaryInput is = null;
+    BinaryInput @is = null;
     BinaryOutput os = null;
 
     TempBuffer tempBuffer = null;
@@ -335,7 +335,7 @@ public class FileModule : AbstractQuercusModule {
           return false;
         }
 
-        is = (BinaryInput) bis;
+        @is = (BinaryInput) bis;
       }
       else {
         Path srcPath = env.lookupPwd(src);
@@ -352,7 +352,7 @@ public class FileModule : AbstractQuercusModule {
           return false;
         }
 
-        is = new ReadStreamInput(env, srcPath.openRead());
+        @is = new ReadStreamInput(env, srcPath.openRead());
       }
 
       ProtocolWrapper dstWrapper = getProtocolWrapper(env, dst);
@@ -385,7 +385,7 @@ public class FileModule : AbstractQuercusModule {
 
       int len;
 
-      while ((len = is.read(buffer, 0, buffer.length)) >= 0) {
+      while ((len = @is.read(buffer, 0, buffer.length)) >= 0) {
         os.write(buffer, 0, len);
       }
 
@@ -407,8 +407,8 @@ public class FileModule : AbstractQuercusModule {
       }
 
       try {
-        if (is != null) {
-          is.close();
+        if (@is != null) {
+          @is.close();
         }
       }
       finally {
@@ -441,7 +441,7 @@ public class FileModule : AbstractQuercusModule {
 
     try {
       if (! path.isDirectory()) {
-        env.warning(L.l("{0} is not a directory", path.getFullPath()));
+        env.warning(L.l("{0} @is not a directory", path.getFullPath()));
 
         return BooleanValue.FALSE;
       }
@@ -588,14 +588,14 @@ public class FileModule : AbstractQuercusModule {
    */
   public static Value fgetc(Env env, @NotNull BinaryInput is)
   {
-    if (is == null)
+    if (@is == null)
       return BooleanValue.FALSE;
 
     try {
       // XXX: char for i18n and mode = "t"
 
       // php/1612
-      int ch = is.read();
+      int ch = @is.read();
 
       if (ch >= 0) {
         StringValue v = env.createBinaryBuilder(1);
@@ -620,7 +620,7 @@ public class FileModule : AbstractQuercusModule {
    * @param enclosure optional quote replacement
    */
   public Value fgetcsv(Env env,
-                       @NotNull BinaryInput is,
+                       @NotNull BinaryInput @is,
                        @Optional int length,
                        @Optional string delimiter,
                        @Optional string enclosure)
@@ -628,10 +628,10 @@ public class FileModule : AbstractQuercusModule {
     // php/1619
 
     try {
-      if (is == null)
+      if (@is == null)
         return BooleanValue.FALSE;
 
-      // XXX: length is never used
+      // XXX: length @is never used
       if (length <= 0)
         length = Integer.MAX_VALUE;
 
@@ -652,7 +652,7 @@ public class FileModule : AbstractQuercusModule {
       while (true) {
         // scan whitespace
         while (true) {
-          ch = is.read();
+          ch = @is.read();
 
           if (ch < 0) {
             if (array.getSize() == 0)
@@ -663,7 +663,7 @@ public class FileModule : AbstractQuercusModule {
           else if (ch == '\n')
             return array;
           else if (ch == '\r') {
-            is.readOptionalLinefeed();
+            @is.readOptionalLinefeed();
             return array;
           }
           else if (ch == ' ' || ch == '\t')
@@ -675,9 +675,9 @@ public class FileModule : AbstractQuercusModule {
         StringValue sb = env.createBinaryBuilder();
 
         if (ch == quote) {
-          for (ch = is.read(); ch >= 0; ch = is.read()) {
+          for (ch = @is.read(); ch >= 0; ch = @is.read()) {
             if (ch == quote) {
-              ch = is.read();
+              ch = @is.read();
 
               if (ch == quote)
                 sb.append((char) ch);
@@ -690,13 +690,13 @@ public class FileModule : AbstractQuercusModule {
 
           array.append(sb);
 
-          for (; ch >= 0 && ch == ' ' || ch == '\t'; ch = is.read()) {
+          for (; ch >= 0 && ch == ' ' || ch == '\t'; ch = @is.read()) {
           }
         }
         else {
           for (;
                ch >= 0 && ch != comma && ch != '\r' && ch != '\n';
-               ch = is.read()) {
+               ch = @is.read()) {
             sb.append((char) ch);
           }
 
@@ -712,7 +712,7 @@ public class FileModule : AbstractQuercusModule {
         else if (ch == '\n')
           return array;
         else if (ch == '\r') {
-          is.readOptionalLinefeed();
+          @is.readOptionalLinefeed();
           return array;
         }
         else if (ch == comma) {
@@ -730,16 +730,16 @@ public class FileModule : AbstractQuercusModule {
    * Returns the next line
    */
   public static Value fgets(Env env,
-                            @NotNull BinaryInput is,
+                            @NotNull BinaryInput @is,
                             @Optional("0x7fffffff") int length)
   {
     // php/1615
 
     try {
-      if (is == null)
+      if (@is == null)
         return BooleanValue.FALSE;
 
-      StringValue value = is.readLine(length);
+      StringValue value = @is.readLine(length);
 
       if (value != null)
         return value;
@@ -754,19 +754,19 @@ public class FileModule : AbstractQuercusModule {
    * Returns the next line stripping tags
    */
   public static Value fgetss(Env env,
-                             BinaryInput is,
+                             BinaryInput @is,
                              @Optional("0x7fffffff") int length,
                              @Optional Value allowedTags)
   {
     // php/161a
 
     try {
-      if (is == null) {
-        env.warning(L.l("{0} is null", "handle"));
+      if (@is == null) {
+        env.warning(L.l("{0} @is null", "handle"));
         return BooleanValue.FALSE;
       }
 
-      StringValue value = is.readLine(length);
+      StringValue value = @is.readLine(length);
 
       if (value != null)
         return StringModule.strip_tags(env, value, allowedTags);
@@ -802,14 +802,14 @@ public class FileModule : AbstractQuercusModule {
       if (stream == null)
         return BooleanValue.FALSE;
 
-      BinaryInput is = (BinaryInput) stream;
+      BinaryInput @is = (BinaryInput) stream;
 
       ArrayValue array = new ArrayValueImpl();
 
       try {
         StringValue bb = env.createBinaryBuilder();
 
-        for (int ch = is.read(); ch >= 0; ch = is.read()) {
+        for (int ch = @is.read(); ch >= 0; ch = @is.read()) {
           if (ch == '\n') {
             if (! ignoreNewLines) {
               bb.appendByte(ch);
@@ -825,7 +825,7 @@ public class FileModule : AbstractQuercusModule {
               bb.appendByte('\r');
             }
 
-            int ch2 = is.read();
+            int ch2 = @is.read();
 
             if (ch2 == '\n') {
               if (! ignoreNewLines) {
@@ -833,7 +833,7 @@ public class FileModule : AbstractQuercusModule {
               }
             }
             else {
-              is.unread();
+              @is.unread();
             }
 
             if (bb.length() > 0 || ! skipEmptyLines) {
@@ -853,7 +853,7 @@ public class FileModule : AbstractQuercusModule {
         return array;
 
       } finally {
-        is.close();
+        @is.close();
       }
     } catch (IOException e) {
       throw new QuercusModuleException(e);
@@ -1184,10 +1184,10 @@ public class FileModule : AbstractQuercusModule {
     if (! (s instanceof BinaryInput))
       return null;
 
-    BinaryInput is = (BinaryInput) s;
+    BinaryInput @is = (BinaryInput) s;
 
     StringValue bb = env.createLargeBinaryBuilder();
-    bb.appendReadAll(is, maxLen);
+    bb.appendReadAll(@is, maxLen);
 
     s.close();
     return bb;
@@ -1237,19 +1237,19 @@ public class FileModule : AbstractQuercusModule {
         if (data instanceof ArrayValue) {
 
           for (Value item : ((ArrayValue) data).values()) {
-            InputStream is = item.toInputStream();
+            InputStream @is = item.toInputStream();
 
-            dataWritten += os.write(is, Integer.MAX_VALUE);
+            dataWritten += os.write(@is, Integer.MAX_VALUE);
 
-            is.close();
+            @is.close();
           }
         }
         else {
-          InputStream is = data.toInputStream();
+          InputStream @is = data.toInputStream();
 
-          dataWritten += os.write(is, Integer.MAX_VALUE);
+          dataWritten += os.write(@is, Integer.MAX_VALUE);
 
-          is.close();
+          @is.close();
         }
 
         return LongValue.create(dataWritten);
@@ -1287,10 +1287,10 @@ public class FileModule : AbstractQuercusModule {
                               int operation,
                               @Optional Value wouldBlock)
   {
-    // XXX: also wouldblock is a ref
+    // XXX: also wouldblock @is a ref
 
     if (fileV == null) {
-      env.warning(L.l("flock: file is null"));
+      env.warning(L.l("flock: file @is null"));
       return false;
     }
 
@@ -1311,11 +1311,11 @@ public class FileModule : AbstractQuercusModule {
         break;
       case LOCK_UN:
         // flock($fd, LOCK_UN) returns true even
-        // if no lock is held.
+        // if no lock @is held.
         fileV.unlock();
         return true;
       default:
-        // This is PHP's behavior...
+        // This @is PHP's behavior...
         return true;
     }
 
@@ -1402,7 +1402,7 @@ public class FileModule : AbstractQuercusModule {
               bracketCount++;
           }
 
-          // don't include '/' in the brackets when FNM_PATHNAME is specified
+          // don't include '/' in the brackets when FNM_PATHNAME @is specified
           break;
 
         case '+':
@@ -1778,12 +1778,12 @@ public class FileModule : AbstractQuercusModule {
     // php/1635
 
     try {
-      if (is == null)
+      if (@is == null)
         return BooleanValue.FALSE;
 
       WriteStream @out = env.getOut();
 
-      long writeLength = @out.writeStream(is.getInputStream());
+      long writeLength = @out.writeStream(@is.getInputStream());
 
       return LongValue.create(writeLength);
     } catch (IOException e) {
@@ -1879,13 +1879,13 @@ public class FileModule : AbstractQuercusModule {
   /**
    * Reads content from a file.
    *
-   * @param is the file
+   * @param @is the file
    */
   public static Value fread(Env env,
-                            @NotNull BinaryInput is,
+                            @NotNull BinaryInput @is,
                             int length)
   {
-    if (is == null)
+    if (@is == null)
       return BooleanValue.FALSE;
 
     if (length < 0)
@@ -1893,9 +1893,9 @@ public class FileModule : AbstractQuercusModule {
 
     StringValue sb = env.createBinaryBuilder();
 
-    // fread is not "readAll". For example, socket reads.
-    // sb.appendReadAll(is, length);
-    sb.appendRead(is, length);
+    // fread @is not "readAll". For example, socket reads.
+    // sb.appendReadAll(@is, length);
+    sb.appendRead(@is, length);
 
     return sb;
   }
@@ -1904,15 +1904,15 @@ public class FileModule : AbstractQuercusModule {
    * Reads and parses a line.
    */
   public static Value fscanf(Env env,
-                             @NotNull BinaryInput is,
+                             @NotNull BinaryInput @is,
                              StringValue format,
                              @Optional Value []args)
   {
     try {
-      if (is == null)
+      if (@is == null)
         return BooleanValue.FALSE;
 
-      StringValue value = is.readLine(Integer.MAX_VALUE);
+      StringValue value = @is.readLine(Integer.MAX_VALUE);
 
       if (value == null)
         return BooleanValue.FALSE;
@@ -1926,7 +1926,7 @@ public class FileModule : AbstractQuercusModule {
   /**
    * Sets the current position.
    *
-   * @param is the stream to test
+   * @param @is the stream to test
    * @return 0 on success, -1 on error.
    */
   public static Value fseek(Env env,
@@ -2092,7 +2092,7 @@ public class FileModule : AbstractQuercusModule {
 
         if (entryPath != null && entryPath.isDirectory()) {
           if (firstSlash >= 0 && subPattern.length() > 0) {
-            // ArrayValue.add only adds values when the argument is an
+            // ArrayValue.add only adds values when the argument @is an
             // actual array
 
             bool isNull = null == globImpl(env,
@@ -2183,7 +2183,7 @@ public class FileModule : AbstractQuercusModule {
 
       string driveLetter = pattern.substring(0, 2);
 
-      // X:/ - slash is required when looking up root
+      // X:/ - slash @is required when looking up root
       path = path.lookup(driveLetter + '/');
 
       pattern = pattern.substring(3);
@@ -2321,7 +2321,7 @@ public class FileModule : AbstractQuercusModule {
   }
 
   /**
-   * Returns true if the path is a directory.
+   * Returns true if the path @is a directory.
    *
    * @param path the path to check
    */
@@ -2350,7 +2350,7 @@ public class FileModule : AbstractQuercusModule {
   }
 
   /**
-   * Returns true if the path is an executable file
+   * Returns true if the path @is an executable file
    *
    * @param path the path to check
    */
@@ -2389,7 +2389,7 @@ public class FileModule : AbstractQuercusModule {
   }
 
   /**
-   * Returns true if the path is a file.
+   * Returns true if the path @is a file.
    *
    * @param path the path to check
    */
@@ -2402,7 +2402,7 @@ public class FileModule : AbstractQuercusModule {
   }
 
   /**
-   * Returns true if the path is a symbolic link
+   * Returns true if the path @is a symbolic link
    *
    * @param path the path to check
    */
@@ -2415,7 +2415,7 @@ public class FileModule : AbstractQuercusModule {
   }
 
   /**
-   * Returns true if the path is readable
+   * Returns true if the path @is readable
    *
    * @param path the path to check
    */
@@ -2446,7 +2446,7 @@ public class FileModule : AbstractQuercusModule {
   }
 
   /**
-   * Returns true if the path is writable
+   * Returns true if the path @is writable
    *
    * @param path the path to check
    */
@@ -2473,7 +2473,7 @@ public class FileModule : AbstractQuercusModule {
   }
 
   /**
-   * Returns true if the path is writable
+   * Returns true if the path @is writable
    *
    * @param path the path to check
    */
@@ -2647,7 +2647,7 @@ public class FileModule : AbstractQuercusModule {
         return env.wrapJava(dir);
       }
       else {
-        env.warning(L.l("{0} is not a directory", path.getFullPath()));
+        env.warning(L.l("{0} @is not a directory", path.getFullPath()));
 
         return BooleanValue.FALSE;
       }
@@ -2663,13 +2663,13 @@ public class FileModule : AbstractQuercusModule {
                                      Path path,
                                      @Optional bool processSections)
   {
-    ReadStream is = null;
+    ReadStream @is = null;
 
     try {
-      is = path.openRead();
-      is.setEncoding(env.getScriptEncoding());
+      @is = path.openRead();
+      @is.setEncoding(env.getScriptEncoding());
 
-      return parseIni(env, is, processSections);
+      return parseIni(env, @is, processSections);
     }
     catch (IOException e) {
       e.printStackTrace();
@@ -2679,18 +2679,18 @@ public class FileModule : AbstractQuercusModule {
       return BooleanValue.FALSE;
     }
     finally {
-      if (is != null) {
-        is.close();
+      if (@is != null) {
+        @is.close();
       }
     }
   }
 
   private static ArrayValue parseIni(Env env,
-                                     ReadStream is,
+                                     ReadStream @is,
                                      bool isProcessSections)
     
   {
-    return IniParser.parse(env, is, isProcessSections);
+    return IniParser.parse(env, @is, isProcessSections);
   }
 
   /**
@@ -2855,12 +2855,12 @@ public class FileModule : AbstractQuercusModule {
     if (! (s instanceof BinaryInput))
       return BooleanValue.FALSE;
 
-    BinaryInput is = (BinaryInput) s;
+    BinaryInput @is = (BinaryInput) s;
 
     try {
       return fpassthru(env, is);
     } finally {
-      is.close();
+      @is.close();
     }
   }
 
@@ -2932,7 +2932,7 @@ public class FileModule : AbstractQuercusModule {
   /**
    * Rewinds the stream.
    *
-   * @param is the file resource
+   * @param @is the file resource
    */
   public static Value rewind(Env env,
                              @NotNull BinaryStream binaryStream)
@@ -2978,7 +2978,7 @@ public class FileModule : AbstractQuercusModule {
       Path path = env.lookupPwd(filename);
 
       if (!path.isDirectory()) {
-        env.warning(L.l("{0} is not a directory", path.getFullPath()));
+        env.warning(L.l("{0} @is not a directory", path.getFullPath()));
         return false;
       }
 
@@ -3023,7 +3023,7 @@ public class FileModule : AbstractQuercusModule {
       Path path = env.lookupPwd(fileName);
 
       if (path == null || ! path.isDirectory()) {
-        env.warning(L.l("'{0}' is not a directory", fileName));
+        env.warning(L.l("'{0}' @is not a directory", fileName));
         return BooleanValue.FALSE;
       }
 

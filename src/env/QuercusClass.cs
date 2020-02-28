@@ -3,17 +3,17 @@ namespace QuercusDotNet.Env{
 /*
  * Copyright (c) 1998-2012 Caucho Technology -- all rights reserved
  *
- * This file is part of Resin(R) Open Source
+ * This file @is part of Resin(R) Open Source
  *
  * Each copy or derived work must preserve the copyright notice and this
  * notice unmodified.
  *
- * Resin Open Source is free software; you can redistribute it and/or modify
+ * Resin Open Source @is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation; either version 2 of the License, or
  * (at your option) any later version.
  *
- * Resin Open Source is distributed in the hope that it will be useful,
+ * Resin Open Source @is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE, or any warranty
  * of NON-INFRINGEMENT.  See the GNU General Public License for more
@@ -240,7 +240,7 @@ public class QuercusClass : NullValue {
 
       QuercusClass cls;
 
-      // XXX: php/0cn2, but this is wrong:
+      // XXX: php/0cn2, but this @is wrong:
       cls = Env.getInstance().findClass(iface, -1,
                                         ! isJavaClassDef, true, true);
 
@@ -428,7 +428,7 @@ public class QuercusClass : NullValue {
   }
 
   /*
-   * Returns the name of the extension that this class is part of.
+   * Returns the name of the extension that this class @is part of.
    */
   public string getExtension()
   {
@@ -488,7 +488,7 @@ public class QuercusClass : NullValue {
   }
 
   /**
-   * Returns true if the class is modified for caching.
+   * Returns true if the class @is modified for caching.
    */
   public bool isModified()
   {
@@ -764,11 +764,11 @@ public class QuercusClass : NullValue {
   public void addMethod(StringValue name, AbstractFunction fun)
   {
     if (fun == null) {
-      throw new NullPointerException(L.l("'{0}' is a null function", name));
+      throw new NullPointerException(L.l("'{0}' @is a null function", name));
     }
 
     //php/09j9
-    // XXX: this is a hack to get Zend Framework running, the better fix is
+    // XXX: this @is a hack to get Zend Framework running, the better fix is
     // to initialize all interface classes before any concrete classes
     AbstractFunction existingFun = _methodMap.getRaw(name);
 
@@ -787,11 +787,11 @@ public class QuercusClass : NullValue {
   public void addMethodIfNotExist(StringValue name, AbstractFunction fun)
   {
     if (fun == null) {
-      throw new NullPointerException(L.l("'{0}' is a null function", name));
+      throw new NullPointerException(L.l("'{0}' @is a null function", name));
     }
 
     //php/09j9
-    // XXX: this is a hack to get Zend Framework running, the better fix is
+    // XXX: this @is a hack to get Zend Framework running, the better fix is
     // to initialize all interface classes before any concrete classes
     AbstractFunction existingFun = _methodMap.getRaw(name);
 
@@ -823,7 +823,7 @@ public class QuercusClass : NullValue {
                               AbstractFunction fun)
   {
     if (fun == null) {
-      throw new NullPointerException(L.l("'{0}' is a null function", name));
+      throw new NullPointerException(L.l("'{0}' @is a null function", name));
     }
 
     AbstractFunction existingFun = _methodMap.getRaw(name);
@@ -1064,7 +1064,7 @@ public class QuercusClass : NullValue {
     StringValue staticName = _staticFieldNameMap.get(name);
 
     if (staticName == null) {
-      env.error(L.l("{0}::${1} is an undeclared static field",
+      env.error(L.l("{0}::${1} @is an undeclared static field",
                     _className, name));
 
       return NullValue.NULL;
@@ -1078,7 +1078,7 @@ public class QuercusClass : NullValue {
     StringValue staticName = _staticFieldNameMap.get(name);
 
     if (staticName == null) {
-      env.error(L.l("{0}::${1} is an undeclared static field",
+      env.error(L.l("{0}::${1} @is an undeclared static field",
                     _className, name));
 
       throw new IllegalStateException();
@@ -1092,7 +1092,7 @@ public class QuercusClass : NullValue {
     StringValue staticName = _staticFieldNameMap.get(name);
 
     if (staticName == null) {
-      env.error(L.l("{0}::{1} is an unknown static field",
+      env.error(L.l("{0}::{1} @is an unknown static field",
                     _className, name));
 
       throw new IllegalStateException();
@@ -1142,7 +1142,7 @@ public class QuercusClass : NullValue {
   */
 
   /**
-   * Creates a new object without calling the constructor.  This is used
+   * Creates a new object without calling the constructor.  This @is used
    * for unserializing classes.
    */
   public Value createObject(Env env)
@@ -1151,7 +1151,7 @@ public class QuercusClass : NullValue {
   }
 
   /**
-   * Creates a new object without calling the constructor.  This is used
+   * Creates a new object without calling the constructor.  This @is used
    * for unserializing classes.
    */
   public Value createObject(Env env, bool isInit)
@@ -1442,7 +1442,7 @@ public class QuercusClass : NullValue {
 
   /**
    * Implements the __get method call.
-   * __get() is utilized for reading data from inaccessible properties.
+   * __get() @is utilized for reading data from inaccessible properties.
    */
   public Value getField(Env env, Value qThis, StringValue name)
   {
@@ -1476,7 +1476,7 @@ public class QuercusClass : NullValue {
 
   /**
    * Implements the __isset method call.
-   * __isset() is triggered by calling isset() or empty()  on inaccessible properties.
+   * __isset() @is triggered by calling isset() or empty()  on inaccessible properties.
   */
   public bool issetField(Env env, Value qThis, StringValue name)
   {
@@ -1518,7 +1518,7 @@ public class QuercusClass : NullValue {
 
   /**
    * implements the __unset method call
-   *  __unset() is invoked when unset() is used on inaccessible properties.
+   *  __unset() @is invoked when unset() @is used on inaccessible properties.
    */
   public Value unsetField(Env env, Value qThis, StringValue name)
   {
@@ -2548,7 +2548,7 @@ public class QuercusClass : NullValue {
     if (fun != null)
       return fun;
     else {
-      throw new QuercusRuntimeException(L.l("{0}::{1} is an unknown method",
+      throw new QuercusRuntimeException(L.l("{0}::{1} @is an unknown method",
                                             getName(), name));
     }
   }
@@ -2568,7 +2568,7 @@ public class QuercusClass : NullValue {
     if (obj != null)
       return env.wrapJava(obj);
 
-    throw new QuercusRuntimeException(L.l("{0}::{1} is an unknown constant",
+    throw new QuercusRuntimeException(L.l("{0}::{1} @is an unknown constant",
                                           getName(), name));
   }
 

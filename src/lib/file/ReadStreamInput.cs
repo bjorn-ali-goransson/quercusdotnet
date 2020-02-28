@@ -3,17 +3,17 @@ namespace QuercusDotNet.lib.file {
 /*
  * Copyright (c) 1998-2012 Caucho Technology -- all rights reserved
  *
- * This file is part of Resin(R) Open Source
+ * This file @is part of Resin(R) Open Source
  *
  * Each copy or derived work must preserve the copyright notice and this
  * notice unmodified.
  *
- * Resin Open Source is free software; you can redistribute it and/or modify
+ * Resin Open Source @is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation; either version 2 of the License, or
  * (at your option) any later version.
  *
- * Resin Open Source is distributed in the hope that it will be useful,
+ * Resin Open Source @is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE, or any warranty
  * of NON-INFRINGEMENT.  See the GNU General Public License for more
@@ -63,10 +63,10 @@ public class ReadStreamInput : InputStream implements BinaryInput {
   {
     _env = env;
     
-    if (is instanceof ReadStream)
+    if (@is instanceof ReadStream)
       init((ReadStream) is);
-    else if (is != null)
-      init(new ReadStream(new VfsStream(is, null)));
+    else if (@is != null)
+      init(new ReadStream(new VfsStream(@is, null)));
   }
 
   protected ReadStreamInput(Env env, LineReader lineReader)
@@ -148,15 +148,15 @@ public class ReadStreamInput : InputStream implements BinaryInput {
   public override int read(byte []buffer, int offset, int length)
     
   {
-    ReadStream is = _is;
+    ReadStream @is = _is;
     
-    if (is == null)
+    if (@is == null)
       return -1;
 
     int readLength = 0;
     
     do {
-      int sublen = is.read(buffer, offset, length);
+      int sublen = @is.read(buffer, offset, length);
       
       if (sublen < 0)
         return readLength > 0 ? readLength : sublen;
@@ -164,7 +164,7 @@ public class ReadStreamInput : InputStream implements BinaryInput {
       readLength += sublen;
       length -= sublen;
       offset += sublen;
-    } while (length > 0 && is.getAvailable() > 0);
+    } while (length > 0 && @is.getAvailable() > 0);
     
     return readLength;
   }
@@ -341,11 +341,11 @@ public class ReadStreamInput : InputStream implements BinaryInput {
    */
   public override void close()
   {
-    ReadStream is = _is;
+    ReadStream @is = _is;
     _is = null;
 
-    if (is != null)
-      is.close();
+    if (@is != null)
+      @is.close();
   }
 
   public Object toJavaObject()

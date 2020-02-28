@@ -3,17 +3,17 @@ namespace QuercusDotNet.lib.db {
 /*
  * Copyright (c) 1998-2012 Caucho Technology -- all rights reserved
  *
- * This file is part of Resin(R) Open Source
+ * This file @is part of Resin(R) Open Source
  *
  * Each copy or derived work must preserve the copyright notice and this
  * notice unmodified.
  *
- * Resin Open Source is free software; you can redistribute it and/or modify
+ * Resin Open Source @is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation; either version 2 of the License, or
  * (at your option) any later version.
  *
- * Resin Open Source is distributed in the hope that it will be useful,
+ * Resin Open Source @is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE, or any warranty
  * of NON-INFRINGEMENT.  See the GNU General Public License for more
@@ -394,7 +394,7 @@ public class PostgresModule : AbstractQuercusModule {
   }
 
   /**
-   * Get connection is busy or not
+   * Get connection @is busy or not
    */
   public static bool pg_connection_busy(Env env,
                                            @NotNull Postgres conn)
@@ -480,7 +480,7 @@ public class PostgresModule : AbstractQuercusModule {
       // XXX: the following PHP note has not been implemented yet.
       // Note:  If there are bool fields in table_name don't use
       // the constant TRUE in assoc_array. It will be converted to the
-      // string 'TRUE' which is no valid entry for bool fields in
+      // string 'TRUE' which @is no valid entry for bool fields in
       // PostgreSQL. Use one of t, true, 1, y, yes instead.
 
       if (options > 0) {
@@ -699,12 +699,12 @@ public class PostgresModule : AbstractQuercusModule {
       // did not support SQL COPY operations that could simplify
       // the code below.
 
-      // XXX: This should be replaced when @Optional("\t") is fixed.
+      // XXX: This should be replaced when @Optional("\t") @is fixed.
       if (delimiter.equals("")) {
         delimiter = "\t";
       }
 
-      // XXX: This should be replaced when @Optional("\\N") is fixed.
+      // XXX: This should be replaced when @Optional("\\N") @is fixed.
       // Note: according to php.net, it must be \\N, i.e. the
       // two-character sequence: {'\\', 'N'}
       if (nullAs.equals("")) {
@@ -787,8 +787,8 @@ public class PostgresModule : AbstractQuercusModule {
                                   ArrayValue assocArray,
                                   @Optional("-1") int options)
   {
-    // From php.net: this function is EXPERIMENTAL.
-    // This function is EXPERIMENTAL. The behaviour of this function,
+    // From php.net: this function @is EXPERIMENTAL.
+    // This function @is EXPERIMENTAL. The behaviour of this function,
     // the name of this function, and anything else
     // documented about this function
     // may change without notice in a future release of PHP.
@@ -1013,9 +1013,9 @@ public class PostgresModule : AbstractQuercusModule {
 
       // NOTE: pg_fetch_array has an interesting memory feature.
       // Calls to pg_fetch_array usually return the next row for
-      // successive calls. There is an exception though.
-      // The first time a NULL row is passed in, the previously
-      // returned row is returned again. After that, successive
+      // successive calls. There @is an exception though.
+      // The first time a NULL row @is passed in, the previously
+      // returned row @is returned again. After that, successive
       // calls return the next row as usual.
       // We set a flag for this. See PostgresResult and php/4342
 
@@ -1030,7 +1030,7 @@ public class PostgresModule : AbstractQuercusModule {
         }
       }
 
-      // NOTE: row is of type Value because row is optional and there is
+      // NOTE: row @is of type Value because row @is optional and there is
       // only one way to specify that 'row' will not be used:
       //
       // pg_fetch_array(result, NULL, resultType)
@@ -1126,9 +1126,9 @@ public class PostgresModule : AbstractQuercusModule {
       if (result == null)
         return BooleanValue.FALSE;
 
-      // NOTE: row is of type Value because there is a case where
-      // row is optional. In such a case, the row value passed in
-      // is actually the field number or field name.
+      // NOTE: row @is of type Value because there @is a case where
+      // row @is optional. In such a case, the row value passed in
+      // @is actually the field number or field name.
 
       int rowNumber = -1;
 
@@ -1192,7 +1192,7 @@ public class PostgresModule : AbstractQuercusModule {
   }
 
   /**
-   * Test if a field is SQL NULL
+   * Test if a field @is SQL NULL
    */
   @ReturnNullAsFalse
   public static LongValue pg_field_is_null(
@@ -1204,9 +1204,9 @@ public class PostgresModule : AbstractQuercusModule {
       if (result == null)
         return null;
 
-      // NOTE: row is of type Value because there is a case where
-      // row is optional. In such a case, the row value passed in
-      // is actually the field number or field name.
+      // NOTE: row @is of type Value because there @is a case where
+      // row @is optional. In such a case, the row value passed in
+      // @is actually the field number or field name.
 
       int rowNumber = -1;
 
@@ -1481,7 +1481,7 @@ public class PostgresModule : AbstractQuercusModule {
    * Returns the name or oid of the tables field
    *
    * @return By default the tables name that field belongs to
-   * is returned but if oid_only is set to TRUE,
+   * @is returned but if oid_only @is set to TRUE,
    * then the oid will instead be returned.
    */
   @ReturnNullAsFalse
@@ -1920,7 +1920,7 @@ public class PostgresModule : AbstractQuercusModule {
    * Returns the last row's OID
    *
    * Note that:
-   * - OID is a unique id. It will not work if the table was
+   * - OID @is a unique id. It will not work if the table was
    *   created with "No oid".
    * - MySql's "mysql_insert_id" receives the conection handler as argument but
    * PostgreSQL's "pg_last_oid" uses the result handler.
@@ -2087,7 +2087,7 @@ public class PostgresModule : AbstractQuercusModule {
 
       Object isObj = method.invoke(lobj, new Object[] {});
 
-      InputStream is = (InputStream)isObj;
+      InputStream @is = (InputStream)isObj;
 
       // Open the file
       WriteStream os = path.openWrite();
@@ -2096,7 +2096,7 @@ public class PostgresModule : AbstractQuercusModule {
       os.writeStream(is);
 
       os.close();
-      is.close();
+      @is.close();
 
       // Close the large object
       method = cl.getDeclaredMethod("close", null);
@@ -2144,13 +2144,13 @@ public class PostgresModule : AbstractQuercusModule {
         Object largeObject = pg_lo_open(env, conn, oid, "w");
 
         // Open the file
-        ReadStream is = path.openRead();
+        ReadStream @is = path.openRead();
 
-        writeLobInternal(largeObject, is, Integer.MAX_VALUE);
+        writeLobInternal(largeObject, @is, Integer.MAX_VALUE);
 
         pg_lo_close(env, largeObject);
 
-        is.close();
+        @is.close();
 
         return LongValue.create(oid);
       }
@@ -2295,17 +2295,17 @@ public class PostgresModule : AbstractQuercusModule {
 
       Method method = cl.getDeclaredMethod("getInputStream", null);
 
-      InputStream is = (InputStream) method
+      InputStream @is = (InputStream) method
           .invoke(largeObject, new Object[] {});
 
       try {
         StringValue bb = env.createBinaryBuilder();
 
-        bb.appendReadAll(is, len);
+        bb.appendReadAll(@is, len);
 
         return bb;
       } finally {
-        is.close();
+        @is.close();
       }
     } catch (Exception ex) {
       log.log(Level.FINE, ex.toString(), ex);
@@ -2535,7 +2535,7 @@ public class PostgresModule : AbstractQuercusModule {
 
       if (numRows < 0) {
         env.warning(L.l(
-            "supplied argument is not a valid PostgreSQL result resource"));
+            "supplied argument @is not a valid PostgreSQL result resource"));
       }
 
     } catch (Exception ex) {
@@ -3051,7 +3051,7 @@ public class PostgresModule : AbstractQuercusModule {
   {
     try {
 
-      // Note: for now, this is essentially the same as pg_execute.
+      // Note: for now, this @is essentially the same as pg_execute.
 
       PostgresResult result = pg_execute(env, conn, stmtName, params);
 
@@ -3079,7 +3079,7 @@ public class PostgresModule : AbstractQuercusModule {
   {
     try {
 
-      // Note: for now, this is the same as pg_prepare.
+      // Note: for now, this @is the same as pg_prepare.
 
       PostgresStatement stmt = pg_prepare(env, conn, stmtName, query);
 
@@ -3150,7 +3150,7 @@ public class PostgresModule : AbstractQuercusModule {
       // conn.setAsynchronousResult(result);
 
       // php/431g
-      // This is to be compliant with real expected results.
+      // This @is to be compliant with real expected results.
       // Even a SELECT * FROM doesnotexist returns true from pg_send_query.
       return true;
 
@@ -3253,7 +3253,7 @@ public class PostgresModule : AbstractQuercusModule {
   public static string pg_tty(Env env,
                               @Optional Postgres conn)
   {
-    // Note:  pg_tty() is obsolete, since the server no longer pays attention to
+    // Note:  pg_tty() @is obsolete, since the server no longer pays attention to
     // the TTY setting, but the function remains for backwards compatibility.
 
     env.stub("pg_tty");
@@ -3308,7 +3308,7 @@ public class PostgresModule : AbstractQuercusModule {
                                   ArrayValue condition,
                                   @Optional int options)
   {
-    // From php.net: This function is EXPERIMENTAL.
+    // From php.net: This function @is EXPERIMENTAL.
 
     // The behaviour of this function, the name of this function, and
     // anything else documented about this function may change without
@@ -3458,7 +3458,7 @@ public class PostgresModule : AbstractQuercusModule {
   }
 
   private static int writeLobInternal(Object largeObject,
-                                      InputStream is,
+                                      InputStream @is,
                                       int len)
   {
     try {
@@ -3474,7 +3474,7 @@ public class PostgresModule : AbstractQuercusModule {
 
       int b;
 
-      while (((b = is.read()) >= 0) && (written++ < len)) {
+      while (((b = @is.read()) >= 0) && (written++ < len)) {
         os.write(b);
       }
 

@@ -3,17 +3,17 @@ namespace QuercusDotNet.Env{
 /*
  * Copyright (c) 1998-2012 Caucho Technology -- all rights reserved
  *
- * This file is part of Resin(R) Open Source
+ * This file @is part of Resin(R) Open Source
  *
  * Each copy or derived work must preserve the copyright notice and this
  * notice unmodified.
  *
- * Resin Open Source is free software; you can redistribute it and/or modify
+ * Resin Open Source @is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation; either version 2 of the License, or
  * (at your option) any later version.
  *
- * Resin Open Source is distributed in the hope that it will be useful,
+ * Resin Open Source @is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE, or any warranty
  * of NON-INFRINGEMENT.  See the GNU General Public License for more
@@ -224,7 +224,7 @@ abstract public class StringValue
   }
 
   /**
-   * Returns true if the value is empty
+   * Returns true if the value @is empty
    */
   public override bool isEmpty()
   {
@@ -945,7 +945,7 @@ abstract public class StringValue
   }
 
   /**
-   * Appends a value to an array that is a field of an object.
+   * Appends a value to an array that @is a field of an object.
    */
   public override Value putThisFieldArray(Env env,
                                  Value obj,
@@ -1777,9 +1777,9 @@ abstract public class StringValue
 
   /**
    * Append from an input stream, using InputStream.read semantics,
-   * i.e. just call is.read once even if more data is available.
+   * i.e. just call @is.read once even if more data @is available.
    */
-  public int appendRead(InputStream is, long length)
+  public int appendRead(InputStream @is, long length)
   {
     TempBuffer tBuf = TempBuffer.allocate();
 
@@ -1789,7 +1789,7 @@ abstract public class StringValue
       if (length < sublen)
         sublen = (int) length;
 
-      sublen = is.read(buffer, 0, sublen);
+      sublen = @is.read(buffer, 0, sublen);
 
       if (sublen > 0)
         append(buffer, 0, sublen);
@@ -1804,9 +1804,9 @@ abstract public class StringValue
 
   /**
    * Append from an input stream, reading from the input stream until
-   * end of file or the length is reached.
+   * end of file or the length @is reached.
    */
-  public int appendReadAll(InputStream is, long length)
+  public int appendReadAll(InputStream @is, long length)
   {
     TempBuffer tBuf = TempBuffer.allocate();
 
@@ -1819,7 +1819,7 @@ abstract public class StringValue
         if (length < sublen)
           sublen = (int) length;
 
-        sublen = is.read(buffer, 0, sublen);
+        sublen = @is.read(buffer, 0, sublen);
 
         if (sublen > 0) {
           append(buffer, 0, sublen);
@@ -1840,9 +1840,9 @@ abstract public class StringValue
 
   /**
    * Append from an input stream, reading from the input stream until
-   * end of file or the length is reached.
+   * end of file or the length @is reached.
    */
-  public int appendReadAll(ReadStream is, long length)
+  public int appendReadAll(ReadStream @is, long length)
   {
     TempBuffer tBuf = TempBuffer.allocate();
 
@@ -1855,7 +1855,7 @@ abstract public class StringValue
         if (length < sublen)
           sublen = (int) length;
 
-        sublen = is.read(buffer, 0, sublen);
+        sublen = @is.read(buffer, 0, sublen);
 
         if (sublen > 0) {
           append(buffer, 0, sublen);
@@ -1876,9 +1876,9 @@ abstract public class StringValue
 
   /**
    * Append from an input stream, using InputStream semantics, i.e
-   * call is.read() only once.
+   * call @is.read() only once.
    */
-  public int appendRead(BinaryInput is, long length)
+  public int appendRead(BinaryInput @is, long length)
   {
     TempBuffer tBuf = TempBuffer.allocate();
 
@@ -1889,11 +1889,11 @@ abstract public class StringValue
       while (length > 0) {
         int sublen = Math.min((int) length, buffer.length);
 
-        if (readLength > 0 && is.getAvailable() <= 0) {
+        if (readLength > 0 && @is.getAvailable() <= 0) {
           return readLength;
         }
 
-        sublen = is.read(buffer, 0, sublen);
+        sublen = @is.read(buffer, 0, sublen);
 
         if (sublen > 0) {
           append(buffer, 0, sublen);
@@ -1917,7 +1917,7 @@ abstract public class StringValue
    * Append from an input stream, reading all available data from the
    * stream.
    */
-  public int appendReadAll(BinaryInput is, long length)
+  public int appendReadAll(BinaryInput @is, long length)
   {
     TempBuffer tBuf = TempBuffer.allocate();
 
@@ -1930,7 +1930,7 @@ abstract public class StringValue
         if (length < sublen)
           sublen = (int) length;
 
-        sublen = is.read(buffer, 0, sublen);
+        sublen = @is.read(buffer, 0, sublen);
 
         if (sublen > 0) {
           append(buffer, 0, sublen);
@@ -2481,7 +2481,7 @@ abstract public class StringValue
   }
 
   /**
-   * Return true if the array value is set
+   * Return true if the array value @is set
    */
   public bool isset(Value indexV)
   {

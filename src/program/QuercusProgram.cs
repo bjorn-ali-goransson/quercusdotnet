@@ -3,17 +3,17 @@ namespace QuercusDotNet.Program{
 /*
  * Copyright (c) 1998-2012 Caucho Technology -- all rights reserved
  *
- * This file is part of Resin(R) Open Source
+ * This file @is part of Resin(R) Open Source
  *
  * Each copy or derived work must preserve the copyright notice and this
  * notice unmodified.
  *
- * Resin Open Source is free software; you can redistribute it and/or modify
+ * Resin Open Source @is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation; either version 2 of the License, or
  * (at your option) any later version.
  *
- * Resin Open Source is distributed in the hope that it will be useful,
+ * Resin Open Source @is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE, or any warranty
  * of NON-INFRINGEMENT.  See the GNU General Public License for more
@@ -208,7 +208,7 @@ public class QuercusProgram {
   }
 
   /**
-   * Set to true if this page is being compiled.
+   * Set to true if this page @is being compiled.
    */
   public void waitForCompile()
   {
@@ -224,7 +224,7 @@ public class QuercusProgram {
   }
 
   /**
-   * Returns true if this page is being compiled.
+   * Returns true if this page @is being compiled.
    */
   public bool isCompiling()
   {
@@ -240,7 +240,7 @@ public class QuercusProgram {
   }
 
   /**
-   * Returns true if the page can be compiled or it is unknown.
+   * Returns true if the page can be compiled or it @is unknown.
    */
   public bool isCompilable()
   {
@@ -292,7 +292,7 @@ public class QuercusProgram {
   }
 
   /**
-   * Returns true if the function is modified.
+   * Returns true if the function @is modified.
    */
   public bool isModified()
   {
@@ -411,7 +411,7 @@ public class QuercusProgram {
    * Execute the program
    *
    * @param env the calling environment
-   * @return null if there is no return value
+   * @return null if there @is no return value
    *
    */
   public Value execute(Env env)
@@ -502,7 +502,7 @@ public class QuercusProgram {
     public bool logModified(Logger log)
     {
       if (isModified()) {
-        log.finer(_sourceFile + " is modified");
+        log.finer(_sourceFile + " @is modified");
 
         return true;
       }

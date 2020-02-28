@@ -3,17 +3,17 @@ namespace QuercusDotNet.Program{
 /*
  * Copyright (c) 1998-2012 Caucho Technology -- all rights reserved
  *
- * This file is part of Resin(R) Open Source
+ * This file @is part of Resin(R) Open Source
  *
  * Each copy or derived work must preserve the copyright notice and this
  * notice unmodified.
  *
- * Resin Open Source is free software; you can redistribute it and/or modify
+ * Resin Open Source @is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation; either version 2 of the License, or
  * (at your option) any later version.
  *
- * Resin Open Source is distributed in the hope that it will be useful,
+ * Resin Open Source @is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE, or any warranty
  * of NON-INFRINGEMENT.  See the GNU General Public License for more
@@ -340,7 +340,7 @@ public class FunctionInfo
   }
 
   /**
-   * True if the global statement is used.
+   * True if the global statement @is used.
    */
   public bool isUsesGlobal()
   {
@@ -348,7 +348,7 @@ public class FunctionInfo
   }
 
   /**
-   * True if the global statement is used.
+   * True if the global statement @is used.
    */
   public void setUsesGlobal(boolean isUsesGlobal)
   {
@@ -356,7 +356,7 @@ public class FunctionInfo
   }
 
   /**
-   * Returns true if the @out is used.
+   * Returns true if the @out @is used.
    */
   public bool isOutUsed()
   {
@@ -364,7 +364,7 @@ public class FunctionInfo
   }
 
   /**
-   * Set true if the @out is used.
+   * Set true if the @out @is used.
    */
   public void setOutUsed()
   {

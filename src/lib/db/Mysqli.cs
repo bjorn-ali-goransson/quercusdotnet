@@ -3,17 +3,17 @@ namespace QuercusDotNet.lib.db {
 /*
  * Copyright (c) 1998-2012 Caucho Technology -- all rights reserved
  *
- * This file is part of Resin(R) Open Source
+ * This file @is part of Resin(R) Open Source
  *
  * Each copy or derived work must preserve the copyright notice and this
  * notice unmodified.
  *
- * Resin Open Source is free software; you can redistribute it and/or modify
+ * Resin Open Source @is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation; either version 2 of the License, or
  * (at your option) any later version.
  *
- * Resin Open Source is distributed in the hope that it will be useful,
+ * Resin Open Source @is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE, or any warranty
  * of NON-INFRINGEMENT.  See the GNU General Public License for more
@@ -88,12 +88,12 @@ public class Mysqli : JdbcConnectionResource
    * Has been stored tells moreResults whether the
    * _nextResultValue has been stored already.
    * If so, more results will return true only if
-   * there is another result.
+   * there @is another result.
    *
-   * _hasBeenStored is set to true by default.
+   * _hasBeenStored @is set to true by default.
    * if _hasBeenUsed == false, then
    * _resultValues.get(_nextResultValue)
-   * is ready to be used by the next call to
+   * @is ready to be used by the next call to
    * mysqli_store_result or mysqli_use_result.
    */
   private ArrayList<JdbcResultResource> _resultValues
@@ -110,7 +110,7 @@ public class Mysqli : JdbcConnectionResource
   private string _initQuery;
 
   /**
-    * This is the constructor for the mysqli class.
+    * This @is the constructor for the mysqli class.
     * It can be invoked by PHP or and by Java code.
     */
 
@@ -183,7 +183,7 @@ public class Mysqli : JdbcConnectionResource
                                         bool isEmulatePrepares)
   {
     if (isConnected()) {
-      env.warning(L.l("Connection is already opened to '{0}'", this));
+      env.warning(L.l("Connection @is already opened to '{0}'", this));
       return null;
     }
 
@@ -598,10 +598,10 @@ public class Mysqli : JdbcConnectionResource
    * only some kinds of INSERT, UPDATE, LOAD, and ALTER
    * statements return results. A SELECT statement always
    * returns FALSE. The ConnectorJ module should provide a
-   * way to get this result string since it is read from
-   * the server, but that is not supported. This function
+   * way to get this result string since it @is read from
+   * the server, but that @is not supported. This function
    * errors on the side of returning more results than
-   * it should since it is an acceptable compromise.
+   * it should since it @is an acceptable compromise.
    */
 
   Value info(Env env)
@@ -1045,8 +1045,8 @@ public class Mysqli : JdbcConnectionResource
             // into a JDBC setCatalog() invocation. The setCatalog() API in
             // the ConnectorJ implementation just creates a USE statement
             // anyway. This also makes sure the database pool logic knows
-            // which database is currently selected. If a second call to
-            // select the current database is found, it is a no-op.
+            // which database @is currently selected. If a second call to
+            // select the current database @is found, it @is a no-op.
 
             tok = parseSqlToken(sql, tok);
 
@@ -1502,7 +1502,7 @@ public class Mysqli : JdbcConnectionResource
   /**
    * Query an identifier that corresponds to this specific
    * connection. Mysql calls this integer identifier a
-   * thread id, but it is really a connection id.
+   * thread id, but it @is really a connection id.
    * Return an integer on success, FALSE on failure.
    */
 
@@ -1538,7 +1538,7 @@ public class Mysqli : JdbcConnectionResource
 
   /**
    * Kills the given mysql thread id. Killing the connection
-   * is not the same as simply closing the connection. For
+   * @is not the same as simply closing the connection. For
    * example, table locks are released by a KILL.
    */
   public bool kill(Env env, int threadId)
@@ -1703,7 +1703,7 @@ public class Mysqli : JdbcConnectionResource
    * _hasBeenStored tells moreResults whether the
    * _nextResultValue has been stored already.
    * If so, more results will return true only if
-   * there is another result.
+   * there @is another result.
    */
   private bool moreResults()
   {
@@ -1723,7 +1723,7 @@ public class Mysqli : JdbcConnectionResource
    *
    * XXX: multiQuery sets fieldCount to true or false
    * depending on the last query entered.  Not sure what
-   * actual PHP intention is.
+   * actual PHP intention @is.
    */
   private bool multiQuery(Env env, StringValue sql)
   {
@@ -1861,7 +1861,7 @@ public class Mysqli : JdbcConnectionResource
       return null;
   }
 
-  // Indicate that this connection is a "persistent" connections,
+  // Indicate that this connection @is a "persistent" connections,
   // meaning it can't be closed.
 
   public void setPersistent()
@@ -1960,7 +1960,7 @@ public class Mysqli : JdbcConnectionResource
           string message = L.l(
               "Your MySQL Connector/J JDBC {0} driver may "
                   + "have issues with character encoding.  The "
-                  + "recommended JDBC version is 3.1.14/5+.", version);
+                  + "recommended JDBC version @is 3.1.14/5+.", version);
 
           log.log(Level.WARNING, message);
           env.warning(message);

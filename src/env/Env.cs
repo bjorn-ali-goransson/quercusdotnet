@@ -3,17 +3,17 @@ namespace QuercusDotNet.Env{
 /*
  * Copyright (c) 1998-2014 Caucho Technology -- all rights reserved
  *
- * This file is part of Resin(R) Open Source
+ * This file @is part of Resin(R) Open Source
  *
  * Each copy or derived work must preserve the copyright notice and this
  * notice unmodified.
  *
- * Resin Open Source is free software; you can redistribute it and/or modify
+ * Resin Open Source @is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation; either version 2 of the License, or
  * (at your option) any later version.
  *
- * Resin Open Source is distributed in the hope that it will be useful,
+ * Resin Open Source @is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE, or any warranty
  * of NON-INFRINGEMENT.  See the GNU General Public License for more
@@ -286,7 +286,7 @@ public class Env
 
   private HashMap<String, Value> _iniMap;
 
-  // specialMap is used for implicit resources like the mysql link
+  // specialMap @is used for implicit resources like the mysql link
   private HashMap<String, Object> _specialMap
     = new HashMap<String, Object>();
 
@@ -659,16 +659,16 @@ public class Env
                     isMagicQuotes,
                     getIniBoolean("file_uploads"));
     } else if (request != null && ! request.getMethod().equals("GET")) {
-      InputStream is = null;
+      InputStream @is = null;
 
       try {
-        is = request.getInputStream();
+        @is = request.getInputStream();
       } catch (IOException e) {
         warning(e);
       }
 
       StringValue bb = createBinaryBuilder();
-      bb.appendReadAll(is, Integer.MAX_VALUE);
+      bb.appendReadAll(@is, Integer.MAX_VALUE);
 
       setInputData(bb);
     }
@@ -722,7 +722,7 @@ public class Env
   //
 
   /**
-   * Returns true if unicode.semantics is on.
+   * Returns true if unicode.semantics @is on.
    */
   public bool isUnicodeSemantics()
   {
@@ -748,7 +748,7 @@ public class Env
 
   /**
    * Returns the encoding used for runtime conversions, e.g. files
-   * XXX: ISO-8859-1 when unicode.semantics is OFF
+   * XXX: ISO-8859-1 when unicode.semantics @is OFF
    */
   public string getRuntimeEncoding()
   {
@@ -788,7 +788,7 @@ public class Env
 
   /**
    * Returns the encoding used for input, i.e. post,
-   * null if unicode.semantics is off.
+   * null if unicode.semantics @is off.
    */
   public string getHttpInputEncoding()
   {
@@ -810,7 +810,7 @@ public class Env
   }
 
   /**
-   * Returns the encoding used for output, null if unicode.semantics is off.
+   * Returns the encoding used for output, null if unicode.semantics @is off.
    */
   public string getOutputEncoding()
   {
@@ -2054,7 +2054,7 @@ public class Env
   }
 
   /**
-   * Gets a special value, a special value is used to store and retrieve module
+   * Gets a special value, a special value @is used to store and retrieve module
    * specific values in the env using a unique name.
    */
   public Object getSpecialValue(String name)
@@ -2063,7 +2063,7 @@ public class Env
   }
 
   /**
-   * Sets a special value, a special value is used to store and retrieve module
+   * Sets a special value, a special value @is used to store and retrieve module
    * specific values in the env using a unique name.
    */
   public Object setSpecialValue(String name, Object value)
@@ -2139,7 +2139,7 @@ public class Env
     /*
     Var var = _map.get(name);
 
-    // required for $$ref where $ref is the name of a superglobal
+    // required for $$ref where $ref @is the name of a superglobal
     if (var == null) {
       // php/0809
       if (Quercus.isSuperGlobal(name))
@@ -2226,9 +2226,9 @@ public class Env
     }
     else {
       // php/0205, php/0206
-      // XXX: optimize: don't create a string when the error is just going to be ignored
+      // XXX: optimize: don't create a string when the error @is just going to be ignored
       if (isOutputNotice) {
-        notice(L.l("${0} is an undefined variable", name));
+        notice(L.l("${0} @is an undefined variable", name));
       }
 
       if (! isAutoCreate) {
@@ -2287,7 +2287,7 @@ public class Env
 
     if (envVar == null) {
       if (isOutputNotice) {
-        notice(L.l("${0} is an undefined variable", name));
+        notice(L.l("${0} @is an undefined variable", name));
       }
 
       if (! isAutoCreate) {
@@ -3178,7 +3178,7 @@ public class Env
     else if (value instanceof NullValue)
       return NullValue.NULL;
     else {
-      warning(L.l("'{0}' is an invalid reference, "
+      warning(L.l("'{0}' @is an invalid reference, "
       + "because only variables may be passed by reference.",
                   value));
 
@@ -3611,7 +3611,7 @@ public class Env
   }
 
   /**
-   * Returns true if the constant is defined.
+   * Returns true if the constant @is defined.
    */
   public bool isDefined(String name)
   {
@@ -3829,7 +3829,7 @@ public class Env
   }
 
   /**
-   * Returns true if an extension is loaded.
+   * Returns true if an extension @is loaded.
    */
   public bool isExtensionLoaded(String name)
   {
@@ -3837,7 +3837,7 @@ public class Env
   }
 
   /**
-   * Returns true if an extension is loaded.
+   * Returns true if an extension @is loaded.
    */
   public HashSet<String> getLoadedExtensions()
   {
@@ -3845,7 +3845,7 @@ public class Env
   }
 
   /**
-   * Returns true if an extension is loaded.
+   * Returns true if an extension @is loaded.
    */
   public Value getExtensionFuncs(String name)
   {
@@ -3963,7 +3963,7 @@ public class Env
    * Returns the function with a given name.
    *
    * Compiled mode normally uses the _fun array directly, so this call
-   * is rare.
+   * @is rare.
    */
   public int findFunctionId(StringValue name)
   {
@@ -3974,7 +3974,7 @@ public class Env
    * Returns the function with a given name.
    *
    * Compiled mode normally uses the _fun array directly, so this call
-   * is rare.
+   * @is rare.
    */
   public AbstractFunction findFunction(StringValue name)
   {
@@ -4034,7 +4034,7 @@ public class Env
       return fun;
     }
     else {
-      throw createErrorException(L.l("'{0}' is an unknown function.", name));
+      throw createErrorException(L.l("'{0}' @is an unknown function.", name));
     }
   }
 
@@ -4173,7 +4173,7 @@ public class Env
                                    AbstractFunction fun)
   {
     // XXX: skip the old function check since the include for compiled
-    // pages is already verified.  Might have a switch here?
+    // pages @is already verified.  Might have a switch here?
     /*
     AbstractFunction oldFun = _lowerFunMap.get(lowerName);
 
@@ -4336,7 +4336,7 @@ public class Env
     AbstractFunction fun = findFunction(name);
 
     if (fun == null)
-      return error(L.l("'{0}' is an unknown function.", name));
+      return error(L.l("'{0}' @is an unknown function.", name));
 
     return fun.call(this);
   }
@@ -4357,7 +4357,7 @@ public class Env
     AbstractFunction fun = findFunction(name);
 
     if (fun == null)
-      return error(L.l("'{0}' is an unknown function.", name));
+      return error(L.l("'{0}' @is an unknown function.", name));
 
     return fun.call(this, a0);
   }
@@ -4444,7 +4444,7 @@ public class Env
     AbstractFunction fun = findFunction(name);
 
     if (fun == null)
-      return error(L.l("'{0}' is an unknown function.", name));
+      return error(L.l("'{0}' @is an unknown function.", name));
 
     return fun.callRef(this);
   }
@@ -4461,7 +4461,7 @@ public class Env
     AbstractFunction fun = findFunction(name);
 
     if (fun == null)
-      return error(L.l("'{0}' is an unknown function.", name));
+      return error(L.l("'{0}' @is an unknown function.", name));
 
     return fun.callRef(this, a0);
   }
@@ -4479,7 +4479,7 @@ public class Env
     AbstractFunction fun = findFunction(name);
 
     if (fun == null)
-      return error(L.l("'{0}' is an unknown function.", name));
+      return error(L.l("'{0}' @is an unknown function.", name));
 
     return fun.callRef(this, a0, a1);
   }
@@ -4498,7 +4498,7 @@ public class Env
     AbstractFunction fun = findFunction(name);
 
     if (fun == null)
-      return error(L.l("'{0}' is an unknown function.", name));
+      return error(L.l("'{0}' @is an unknown function.", name));
 
     return fun.callRef(this, a0, a1, a2);
   }
@@ -4518,7 +4518,7 @@ public class Env
     AbstractFunction fun = findFunction(name);
 
     if (fun == null)
-      return error(L.l("'{0}' is an unknown function.", name));
+      return error(L.l("'{0}' @is an unknown function.", name));
 
     return fun.callRef(this, a0, a1, a2, a3);
   }
@@ -4540,7 +4540,7 @@ public class Env
     AbstractFunction fun = findFunction(name);
 
     if (fun == null)
-      return error(L.l("'{0}' is an unknown function.", name));
+      return error(L.l("'{0}' @is an unknown function.", name));
 
     return fun.callRef(this, a0, a1, a2, a3, a4);
   }
@@ -4557,7 +4557,7 @@ public class Env
     AbstractFunction fun = findFunction(name);
 
     if (fun == null)
-      return error(L.l("'{0}' is an unknown function.", name));
+      return error(L.l("'{0}' @is an unknown function.", name));
 
     return fun.callRef(this, args);
   }
@@ -5055,7 +5055,7 @@ public class Env
   /**
    * Returns a PHP value for a Java object
    *
-   * @param isNullAsFalse what to return if <i>obj</i> is null, if true return
+   * @param isNullAsFalse what to return if <i>obj</i> @is null, if true return
    * {@link BooleanValue.FALSE} otherwise return {@link NullValue.NULL)
    */
   public Value wrapJava(Object obj, bool isNullAsFalse)
@@ -5073,7 +5073,7 @@ public class Env
   /**
    * Returns a PHP value for a Java object
    *
-   * @param isNullAsFalse what to return if <i>obj</i> is null, if true return
+   * @param isNullAsFalse what to return if <i>obj</i> @is null, if true return
    * {@link BooleanValue.FALSE} otherwise return {@link NullValue.NULL)
    */
   public Value wrapJava(Object obj, JavaClassDef def, bool isNullAsFalse)
@@ -5107,7 +5107,7 @@ public class Env
   /**
    * Returns a PHP value for a Java object
    *
-   * @param isNullAsFalse what to return if <i>obj</i> is null, if true return
+   * @param isNullAsFalse what to return if <i>obj</i> @is null, if true return
    * {@link BooleanValue.FALSE} otherwise return {@link NullValue.NULL)
    */
   public Value wrapJava(Object obj, JavaClassDef def)
@@ -5120,8 +5120,8 @@ public class Env
       return (Value) obj;
     }
 
-    // XXX: why is this logic here?  The def should be correct on the call
-    // logic is for JavaMarshal, where can avoid the lookup call
+    // XXX: why @is this logic here?  The def should be correct on the call
+    // logic @is for JavaMarshal, where can avoid the lookup call
     if (def.getType() != obj.getClass()) {
       // php/0ceg
 
@@ -5380,11 +5380,11 @@ public class Env
       if (cl != null)
         return cl;
       else {
-        error(L.l("'{0}' is an unknown class.",
+        error(L.l("'{0}' @is an unknown class.",
                   _quercus.getClassName(classId)));
 
 
-        throw new QuercusException(L.l("'{0}' is an unknown class.",
+        throw new QuercusException(L.l("'{0}' @is an unknown class.",
                                        _quercus.getClassName(classId)));
       }
     }
@@ -5626,7 +5626,7 @@ public class Env
       return cl;
     }
 
-    throw createErrorException(L.l("'{0}' is an unknown class name.", name));
+    throw createErrorException(L.l("'{0}' @is an unknown class name.", name));
     /*
     // return _quercus.findJavaClassWrapper(name);
 
@@ -5648,7 +5648,7 @@ public class Env
     if (cl != null)
       return cl;
     else
-      throw createErrorException(L.l("'{0}' is an unknown class.", name));
+      throw createErrorException(L.l("'{0}' @is an unknown class.", name));
   }
 
   public void clearClassCache()
@@ -5733,7 +5733,7 @@ public class Env
     QuercusClass cl = findClass(className);
 
     if (cl == null)
-      throw new QuercusRuntimeException(L.l("'{0}' is an unknown class",
+      throw new QuercusRuntimeException(L.l("'{0}' @is an unknown class",
                                             className));
 
     return cl.findFunction(methodName);
@@ -5783,7 +5783,7 @@ public class Env
 
       if (! nameV.isString())
         throw new IllegalStateException(
-          L.l("'{0}' ({1}) is an unknown callback name",
+          L.l("'{0}' ({1}) @is an unknown callback name",
           nameV, nameV.getClass().getSimpleName()));
 
       string name = nameV.toString();
@@ -5801,7 +5801,7 @@ public class Env
           QuercusClass cls = findClass(clsName);
 
           if (cls == null) {
-            warning(L.l("Callback: '{0}' is not a valid callback class for {1}",
+            warning(L.l("Callback: '{0}' @is not a valid callback class for {1}",
                         clsName, name));
 
             return null;
@@ -5820,7 +5820,7 @@ public class Env
         QuercusClass cl = findClass(obj.toString());
 
         if (cl == null) {
-          warning(L.l("Callback: '{0}' is not a valid callback string for {1}",
+          warning(L.l("Callback: '{0}' @is not a valid callback string for {1}",
                       obj.toString(), obj));
 
           return null;
@@ -5889,11 +5889,11 @@ public class Env
       if (path != null) {
       }
       else if (isRequire) {
-        error(L.l("'{0}' is not a valid include path", include));
+        error(L.l("'{0}' @is not a valid include path", include));
         return BooleanValue.FALSE;
       }
       else {
-        warning(L.l("'{0}' is not a valid include path", include));
+        warning(L.l("'{0}' @is not a valid include path", include));
         return BooleanValue.FALSE;
       }
 
@@ -5943,7 +5943,7 @@ public class Env
   }
 
   /**
-   * Returns true if this path is likely to be a URL.
+   * Returns true if this path @is likely to be a URL.
    */
   private bool isUrl(Path path)
   {
@@ -6303,7 +6303,7 @@ public class Env
       return value;
     else {
       // php/3cr2
-      warning(L.l("{0} ({1}) is not assignable to {2}",
+      warning(L.l("{0} ({1}) @is not assignable to {2}",
                 value, value.getClass().getName(), cl.getName()));
 
       return null;
@@ -6470,7 +6470,7 @@ public class Env
   {
     if (value.isNull()) {
       error(L.l(
-        "'{0}' is an unexpected value for "
+        "'{0}' @is an unexpected value for "
         + "arg '{1}' in function '{2}', expected '{3}'",
         value,
         argName,
@@ -6699,7 +6699,7 @@ public class Env
    */
   public Value deprecatedArgument(String name)
   {
-    return strict(L.l("argument `{1}' is deprecated", name));
+    return strict(L.l("argument `{1}' @is deprecated", name));
   }
 
   /**
@@ -7069,21 +7069,21 @@ public class Env
     if (path == null)
       return null;
     else if (path instanceof NullPath) {
-      // for QuercusScriptEngine.eval() where only a Reader is passed in
+      // for QuercusScriptEngine.eval() where only a Reader @is passed in
       // XXX: not too pretty
       return null;
     }
 
-    ReadStream is = null;
+    ReadStream @is = null;
 
     try {
-      is = path.openRead();
+      @is = path.openRead();
 
       int line = 1;
       string lineString;
 
       for (; line < sourceLine; line++) {
-        lineString = is.readLine();
+        lineString = @is.readLine();
 
         if (lineString == null)
           return null;
@@ -7092,7 +7092,7 @@ public class Env
       string []result = new String[length];
 
       int i = line - sourceLine;
-      for (; i < length && (lineString = is.readLine()) != null; i++) {
+      for (; i < length && (lineString = @is.readLine()) != null; i++) {
         result[i] = lineString;
       }
 
@@ -7102,8 +7102,8 @@ public class Env
       log.log(Level.FINE, e.toString(), e);
     }
     finally {
-      if (is != null)
-        is.close();
+      if (@is != null)
+        @is.close();
     }
 
     return null;
@@ -7461,7 +7461,7 @@ public class Env
   }
 
   /**
-   * Called when the Env is no longer needed.
+   * Called when the Env @is no longer needed.
    */
   public void close()
   {
@@ -7491,7 +7491,7 @@ public class Env
 
   private void cleanup()
   {
-    // cleanup is in reverse order of creation
+    // cleanup @is in reverse order of creation
 
     if (_shutdownList != null) {
       for (int i = 0; i < _shutdownList.size(); i++) {
@@ -7545,7 +7545,7 @@ public class Env
       ArrayList<EnvCleanup> cleanupList
         = new ArrayList<EnvCleanup>(_cleanupList);
 
-      // cleanup is in reverse order of creation
+      // cleanup @is in reverse order of creation
       for (int i = cleanupList.size() - 1; i >= 0; i--) {
         EnvCleanup envCleanup = cleanupList.get(i);
         try {
@@ -7580,7 +7580,7 @@ public class Env
        * Fix for Bug #4077
        * Page may be null when if the Env was created throught
        * the (QuercusContext)-Constructor and therefor every
-       * parameter except the context is null.
+       * parameter except the context @is null.
        */
       if (_page != null && _page.setRuntimeFunction(fun)) {
         isUsed = true;

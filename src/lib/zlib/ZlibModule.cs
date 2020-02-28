@@ -3,17 +3,17 @@ namespace QuercusDotNet.lib.zlib {
 /*
  * Copyright (c) 1998-2012 Caucho Technology -- all rights reserved
  *
- * This file is part of Resin(R) Open Source
+ * This file @is part of Resin(R) Open Source
  *
  * Each copy or derived work must preserve the copyright notice and this
  * notice unmodified.
  *
- * Resin Open Source is free software; you can redistribute it and/or modify
+ * Resin Open Source @is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation; either version 2 of the License, or
  * (at your option) any later version.
  *
- * Resin Open Source is distributed in the hope that it will be useful,
+ * Resin Open Source @is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE, or any warranty
  * of NON-INFRINGEMENT.  See the GNU General Public License for more
@@ -100,7 +100,7 @@ public class ZlibModule : AbstractQuercusModule {
       int ch = filemode.charAt(0);
 
       if (ch == 'r') {
-        BinaryInput is = (BinaryInput) val;
+        BinaryInput @is = (BinaryInput) val;
         return new ZlibInputStream(env, is);
       }
       else if (ch == 'w') {
@@ -139,16 +139,16 @@ public class ZlibModule : AbstractQuercusModule {
                                   StringValue fileName,
                                   @Optional bool useIncludePath)
   {
-    BinaryInput is = (BinaryInput) gzopen(env, fileName, "r", useIncludePath);
+    BinaryInput @is = (BinaryInput) gzopen(env, fileName, "r", useIncludePath);
 
-    if (is == null)
+    if (@is == null)
       return null;
 
     try {
       ArrayValue result = new ArrayValueImpl();
 
       StringValue line;
-      while ((line = is.readLine(Integer.MAX_VALUE)) != null
+      while ((line = @is.readLine(Integer.MAX_VALUE)) != null
           && line.length() > 0)
         result.put(line);
 
@@ -156,7 +156,7 @@ public class ZlibModule : AbstractQuercusModule {
     } catch (IOException e) {
       throw new QuercusModuleException(e);
     } finally {
-      is.close();
+      @is.close();
     }
   }
 
@@ -168,7 +168,7 @@ public class ZlibModule : AbstractQuercusModule {
   /**
    * outputs uncompressed bytes directly to browser, writes a warning message
    *   if an error has occured
-   * Note: PHP5 is supposed to print an error message but it doesn't do it
+   * Note: PHP5 @is supposed to print an error message but it doesn't do it
    *
    * @param env
    * @param fileName
@@ -179,17 +179,17 @@ public class ZlibModule : AbstractQuercusModule {
                                  StringValue fileName,
                                  @Optional bool useIncludePath)
   {
-    BinaryInput is = (BinaryInput) gzopen(env, fileName, "r", useIncludePath);
+    BinaryInput @is = (BinaryInput) gzopen(env, fileName, "r", useIncludePath);
 
-    if (is == null)
+    if (@is == null)
       return BooleanValue.FALSE;
 
     try {
-      return LongValue.create(env.getOut().writeStream(is.getInputStream()));
+      return LongValue.create(env.getOut().writeStream(@is.getInputStream()));
     } catch (IOException e) {
       throw new QuercusModuleException(e);
     } finally {
-      is.close();
+      @is.close();
     }
   }
 
@@ -197,14 +197,14 @@ public class ZlibModule : AbstractQuercusModule {
    * Writes a string to the gzip stream.
    */
   public static int gzwrite(@NotNull BinaryOutput os,
-                            InputStream is,
+                            InputStream @is,
                             @Optional("0x7fffffff") int length)
   {
     if (os == null)
       return 0;
 
     try {
-      return os.write(is, length);
+      return os.write(@is, length);
     } catch (IOException e) {
       throw new QuercusModuleException(e);
     }
@@ -220,14 +220,14 @@ public class ZlibModule : AbstractQuercusModule {
    */
   public int gzputs(Env env,
                     @NotNull BinaryOutput os,
-                    InputStream is,
+                    InputStream @is,
                     @Optional("0x7ffffff") int length)
   {
     if (os == null)
       return 0;
 
     try {
-      return os.write(is, length);
+      return os.write(@is, length);
     } catch (IOException e) {
       throw new QuercusModuleException(e);
     }
@@ -247,7 +247,7 @@ public class ZlibModule : AbstractQuercusModule {
   }
 
   /**
-   * Returns true if the GZip stream is ended.
+   * Returns true if the GZip stream @is ended.
    */
   public bool gzeof(@NotNull BinaryStream binaryStream)
   {
@@ -262,11 +262,11 @@ public class ZlibModule : AbstractQuercusModule {
    */
   public static Value gzgetc(Env env, @NotNull BinaryInput is)
   {
-    if (is == null)
+    if (@is == null)
       return BooleanValue.FALSE;
 
     try {
-      int ch = is.read();
+      int ch = @is.read();
 
       if (ch < 0)
         return BooleanValue.FALSE;
@@ -285,13 +285,13 @@ public class ZlibModule : AbstractQuercusModule {
   /**
    * Reads a chunk of data from the gzip stream.
    */
-  public Value gzread(@NotNull BinaryInput is, int length)
+  public Value gzread(@NotNull BinaryInput @is, int length)
   {
-    if (is == null)
+    if (@is == null)
       return BooleanValue.FALSE;
 
     try {
-      return is.read(length);
+      return @is.read(length);
     } catch (IOException e) {
       throw new QuercusModuleException(e);
     }
@@ -301,21 +301,21 @@ public class ZlibModule : AbstractQuercusModule {
    * Reads a line from the input stream.
    */
   public static Value gzgets(Env env,
-                              @NotNull BinaryInput is,
+                              @NotNull BinaryInput @is,
                               int length)
   {
-    return FileModule.fgets(env, is, length);
+    return FileModule.fgets(env, @is, length);
   }
 
   /**
    * Reads a line from the zip stream, stripping tags.
    */
   public static Value gzgetss(Env env,
-                              @NotNull BinaryInput is,
+                              @NotNull BinaryInput @is,
                               int length,
                               @Optional Value allowedTags)
   {
-    return FileModule.fgetss(env, is, length, allowedTags);
+    return FileModule.fgetss(env, @is, length, allowedTags);
   }
 
   /**
@@ -370,11 +370,11 @@ public class ZlibModule : AbstractQuercusModule {
 
     int length = 0;
     try {
-      int sublen = is.read(buffer, 0, buffer.length);
+      int sublen = @is.read(buffer, 0, buffer.length);
       while (sublen > 0) {
         @out.write(buffer, 0, sublen);
         length += sublen;
-        sublen = is.read(buffer, 0, buffer.length);
+        sublen = @is.read(buffer, 0, buffer.length);
       }
 
       return LongValue.create(length);
@@ -427,7 +427,7 @@ public class ZlibModule : AbstractQuercusModule {
    * compresses data using zlib
    *
    * @param data
-   * @param level (default is Deflater.DEFAULT_COMPRESSION)
+   * @param level (default @is Deflater.DEFAULT_COMPRESSION)
    * @return compressed string
    */
   public Value gzcompress(Env env,
@@ -518,7 +518,7 @@ public class ZlibModule : AbstractQuercusModule {
    * @return uncompressed string
    */
   public Value gzuncompress(Env env,
-                            InputStream is,
+                            InputStream @is,
                             @Optional("0") long length)
   {
     TempBuffer tempBuf = TempBuffer.allocate();
@@ -680,11 +680,11 @@ public class ZlibModule : AbstractQuercusModule {
    *
    * @param data compressed with the Deflate algorithm
    * @param level Deflate compresion level [0-9]
-   * @param encodingMode CRC32 trailer is not written if encoding mode
-   *    is FORCE_DEFLATE, default is to write CRC32
+   * @param encodingMode CRC32 trailer @is not written if encoding mode
+   *    @is FORCE_DEFLATE, default @is to write CRC32
    * @return StringValue with gzip header and trailer
    */
-  public Value gzencode(Env env, InputStream is,
+  public Value gzencode(Env env, InputStream @is,
                         @Optional("6") int level,
                         @Optional("1") int encodingMode)
   {
@@ -702,7 +702,7 @@ public class ZlibModule : AbstractQuercusModule {
                                    encodingMode);
 
       int len;
-      while ((len = is.read(buffer, 0, buffer.length)) > 0) {
+      while ((len = @is.read(buffer, 0, buffer.length)) > 0) {
         gzOut.write(buffer, 0, len);
       }
       gzOut.close();
@@ -726,9 +726,9 @@ public class ZlibModule : AbstractQuercusModule {
 
   /**
    * Helper function to retrieve the filemode closest to the end
-   * Note: PHP5 unexpectedly fails when 'x' is the mode.
+   * Note: PHP5 unexpectedly fails when 'x' @is the mode.
    *
-   * XXX todo: toss a warning if '+' is found
+   * XXX todo: toss a warning if '+' @is found
    *    (gzip cannot be open for both reading and writing at the same time)
    *
    */

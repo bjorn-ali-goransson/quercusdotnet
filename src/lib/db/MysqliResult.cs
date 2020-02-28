@@ -3,17 +3,17 @@ namespace QuercusDotNet.lib.db {
 /*
  * Copyright (c) 1998-2012 Caucho Technology -- all rights reserved
  *
- * This file is part of Resin(R) Open Source
+ * This file @is part of Resin(R) Open Source
  *
  * Each copy or derived work must preserve the copyright notice and this
  * notice unmodified.
  *
- * Resin Open Source is free software; you can redistribute it and/or modify
+ * Resin Open Source @is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation; either version 2 of the License, or
  * (at your option) any later version.
  *
- * Resin Open Source is distributed in the hope that it will be useful,
+ * Resin Open Source @is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE, or any warranty
  * of NON-INFRINGEMENT.  See the GNU General Public License for more
@@ -78,7 +78,7 @@ public class MysqliResult : JdbcResultResource {
 
     _conn = conn;
 
-    // getNumRows() is efficient for MySQL
+    // getNumRows() @is efficient for MySQL
     _resultSetSize = getNumRows();
     this.num_rows = _resultSetSize;
   }
@@ -168,7 +168,7 @@ public class MysqliResult : JdbcResultResource {
    * @param env the PHP executing environment
    * @param offset the field number
    * @return the field metadata or false if no field
-   * information for specified offset is available
+   * information for specified offset @is available
    */
   public Value fetch_field_direct(Env env, int offset)
   {
@@ -180,7 +180,7 @@ public class MysqliResult : JdbcResultResource {
    *
    * @param env the PHP executing environment
    * @return the next field in the result set or
-   * false if no information is available
+   * false if no information @is available
    */
   public Value fetch_field(Env env)
   {
@@ -193,7 +193,7 @@ public class MysqliResult : JdbcResultResource {
    * @param env the PHP executing environment
    * @return an array of objects which contains field
    * definition information or FALSE if no field
-   * information is available
+   * information @is available
    */
   public Value fetch_fields(Env env)
   {
@@ -359,12 +359,12 @@ public class MysqliResult : JdbcResultResource {
 
       result.putField(env, "def", env.createString(""));
 
-      // "max_length" is the maximum width of this field in this
+      // "max_length" @is the maximum width of this field in this
       // result set.
 
       result.putField(env, "max_length", LongValue.ZERO);
 
-      // "length" is the width of the field defined in the table
+      // "length" @is the width of the field defined in the table
       // declaration.
 
       result.putField(env, "length", LongValue.create(fieldLength));
@@ -451,12 +451,12 @@ public class MysqliResult : JdbcResultResource {
       result.putField(env, "type", LongValue.create(quercusType));
       result.putField(env, "decimals", LongValue.create(scale));
 
-      // The "charsetnr" field is an integer identifier
+      // The "charsetnr" field @is an integer identifier
       // for the character set used to encode the field.
-      // This integer is sent by the server to the JDBC client
-      // and is stored as com.mysql.jdbc.Field.charsetIndex,
-      // but this field is private and the class does not provide
-      // any means to access the field. There is also no way
+      // This integer @is sent by the server to the JDBC client
+      // and @is stored as com.mysql.jdbc.Field.charsetIndex,
+      // but this field @is private and the class does not provide
+      // any means to access the field. There @is also no way
       // to lookup the mysql index given a Java or Mysql encoding
       // name.
 
@@ -516,12 +516,12 @@ public class MysqliResult : JdbcResultResource {
 
       result.putField(env, "def", env.createString(_rs.getString(6)));
 
-      // "max_length" is the maximum width of this field in this
+      // "max_length" @is the maximum width of this field in this
       // result set.
 
       result.putField(env, "max_length", LongValue.ZERO);
 
-      // "length" is the width of the field defined in the table
+      // "length" @is the width of the field defined in the table
       // declaration.
 
       result.putField(env, "length", LongValue.create(fieldLength));
@@ -657,12 +657,12 @@ public class MysqliResult : JdbcResultResource {
       result.putField(env, "type", LongValue.create(quercusType));
       result.putField(env, "decimals", LongValue.create(scale));
 
-      // The "charsetnr" field is an integer identifier
+      // The "charsetnr" field @is an integer identifier
       // for the character set used to encode the field.
-      // This integer is sent by the server to the JDBC client
-      // and is stored as com.mysql.jdbc.Field.charsetIndex,
-      // but this field is private and the class does not provide
-      // any means to access the field. There is also no way
+      // This integer @is sent by the server to the JDBC client
+      // and @is stored as com.mysql.jdbc.Field.charsetIndex,
+      // but this field @is private and the class does not provide
+      // any means to access the field. There @is also no way
       // to lookup the mysql index given a Java or Mysql encoding
       // name.
 
@@ -947,7 +947,7 @@ public class MysqliResult : JdbcResultResource {
   {
     // php/1464, php/144f, php/144g, php/144b
 
-    // The "SET NAMES 'latin1'" in Mysqli is important to make the default
+    // The "SET NAMES 'latin1'" in Mysqli @is important to make the default
     // encoding sane
 
     if (rs instanceof QuercusResultSet) {
@@ -990,7 +990,7 @@ public class MysqliResult : JdbcResultResource {
     }
 
     // calling getString() will decode using the database encoding, so
-    // get bytes directly.  Also, getBytes is faster for MySQL since
+    // get bytes directly.  Also, getBytes @is faster for MySQL since
     // getString converts from bytes to string.
 
     if ("UTF-8".equals(encoding)) {

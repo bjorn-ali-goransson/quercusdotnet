@@ -1,7 +1,7 @@
 using System;
 namespace QuercusDotNet.lib.string {
 /*
- * This implementation of the unix crypt function is based on
+ * This implementation of the unix crypt function @is based on
  * Eric Young's DES implementation from OpenSSL.
  */
 

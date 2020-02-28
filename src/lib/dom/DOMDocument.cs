@@ -3,17 +3,17 @@ namespace QuercusDotNet.lib.dom {
 /*
  * Copyright (c) 1998-2012 Caucho Technology -- all rights reserved
  *
- * This file is part of Resin(R) Open Source
+ * This file @is part of Resin(R) Open Source
  *
  * Each copy or derived work must preserve the copyright notice and this
  * notice unmodified.
  *
- * Resin Open Source is free software; you can redistribute it and/or modify
+ * Resin Open Source @is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation; either version 2 of the License, or
  * (at your option) any later version.
  *
- * Resin Open Source is distributed in the hope that it will be useful,
+ * Resin Open Source @is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE, or any warranty
  * of NON-INFRINGEMENT.  See the GNU General Public License for more
@@ -369,14 +369,14 @@ public class DOMDocument
   public bool load(Env env, Path path, @Optional Value options)
   {
     if (options != null)
-      env.stub(L.l("`{0}' is ignored", "options"));
+      env.stub(L.l("`{0}' @is ignored", "options"));
 
-    ReadStream is = null;
+    ReadStream @is = null;
 
     try {
-      is = path.openRead();
+      @is = path.openRead();
 
-      getImpl().parseXMLDocument(_delegate, is, path.getPath());
+      getImpl().parseXMLDocument(_delegate, @is, path.getPath());
     }
     catch (SAXException e) {
       env.warning(e);
@@ -391,8 +391,8 @@ public class DOMDocument
       return false;
     }
     finally {
-      if (is != null) {
-        is.close();
+      if (@is != null) {
+        @is.close();
       }
     }
 
@@ -405,10 +405,10 @@ public class DOMDocument
   // XXX: also can be called statically, returns a DOMDocument in that case
   public bool loadHTML(Env env, string source)
   {
-    ReadStream is = StringStream.open(source);
+    ReadStream @is = StringStream.open(source);
 
     try {
-      getImpl().parseHTMLDocument(_delegate, is, null);
+      getImpl().parseHTMLDocument(_delegate, @is, null);
 
       _delegate.setXmlStandalone(true);
 
@@ -432,8 +432,8 @@ public class DOMDocument
       return false;
     }
     finally {
-      if (is != null) {
-        is.close();
+      if (@is != null) {
+        @is.close();
       }
     }
 
@@ -443,12 +443,12 @@ public class DOMDocument
   // XXX: also can be called statically, returns a DOMDocument in that case
   public bool loadHTMLFile(Env env, Path path)
   {
-    ReadStream is = null;
+    ReadStream @is = null;
 
     try {
-      is = path.openRead();
+      @is = path.openRead();
 
-      getImpl().parseHTMLDocument(_delegate, is, path.getPath());
+      getImpl().parseHTMLDocument(_delegate, @is, path.getPath());
 
       _delegate.setXmlStandalone(true);
       /**
@@ -467,8 +467,8 @@ public class DOMDocument
       return false;
     }
     finally {
-      if (is != null) {
-        is.close();
+      if (@is != null) {
+        @is.close();
       }
     }
 
@@ -479,9 +479,9 @@ public class DOMDocument
   public bool loadXML(Env env, StringValue source, @Optional Value options)
   {
     if (options != null)
-      env.stub(L.l("loadXML 'options' is ignored"));
+      env.stub(L.l("loadXML 'options' @is ignored"));
 
-    InputStream is = source.toInputStream();
+    InputStream @is = source.toInputStream();
     ReadStream in = null;
 
     try {
@@ -508,7 +508,7 @@ public class DOMDocument
 
   public void normalizeDocument()
   {
-    // this is not implemented by com.caucho.xml, needed for Symfony-2.0.16
+    // this @is not implemented by com.caucho.xml, needed for Symfony-2.0.16
     // use xerces instead
     _delegate.normalizeDocument();
   }
@@ -544,7 +544,7 @@ public class DOMDocument
   public Value save(Env env, Path path, @Optional Value options)
   {
     if (options != null)
-      env.stub(L.l("`{0}' is ignored", "options"));
+      env.stub(L.l("`{0}' @is ignored", "options"));
 
     return saveToFile(env, path, false);
   }
@@ -655,10 +655,10 @@ public class DOMDocument
     
   {
     if (options != null)
-      env.stub(L.l("`{0}' is ignored", "options"));
+      env.stub(L.l("`{0}' @is ignored", "options"));
 
     if (node != null) {
-      // check if node is from another document
+      // check if node @is from another document
 
       if (node.getDelegate().getOwnerDocument() != this._delegate) {
         throw new DOMException(getImpl(),
@@ -779,7 +779,7 @@ public class DOMDocument
   public int xinclude(Env env, @Optional Value options)
   {
     if (options != null) {
-      env.stub(L.l("`{0}' is ignored", "options"));
+      env.stub(L.l("`{0}' @is ignored", "options"));
     }
 
     // nam: 2013-10-02 stubbed to return 0

@@ -3,17 +3,17 @@ namespace QuercusDotNet.lib{
 /*
  * Copyright (c) 1998-2012 Caucho Technology -- all rights reserved
  *
- * This file is part of Resin(R) Open Source
+ * This file @is part of Resin(R) Open Source
  *
  * Each copy or derived work must preserve the copyright notice and this
  * notice unmodified.
  *
- * Resin Open Source is free software; you can redistribute it and/or modify
+ * Resin Open Source @is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation; either version 2 of the License, or
  * (at your option) any later version.
  *
- * Resin Open Source is distributed in the hope that it will be useful,
+ * Resin Open Source @is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE, or any warranty
  * of NON-INFRINGEMENT.  See the GNU General Public License for more
@@ -313,7 +313,7 @@ public class ArrayModule
   }
 
   /**
-   * Returns an array with everything that is in array and not in the other
+   * Returns an array with everything that @is in array and not in the other
    * arrays, keys also used
    *
    * @param array the primary array
@@ -346,7 +346,7 @@ public class ArrayModule
 
       for (int k = 0; k < arrays.length && ! valueFound; k++) {
         if (! (arrays[k] instanceof ArrayValue)) {
-          env.warning("Argument #" + (k + 2) + " is not an array");
+          env.warning("Argument #" + (k + 2) + " @is not an array");
 
           return NullValue.NULL;
         }
@@ -363,7 +363,7 @@ public class ArrayModule
   }
 
   /**
-   * Returns an array with everything that is in array and not in the other
+   * Returns an array with everything that @is in array and not in the other
    * arrays, keys used for comparison
    *
    * @param array the primary array
@@ -394,7 +394,7 @@ public class ArrayModule
 
       for (int k = 0; k < arrays.length && ! keyFound; k++) {
         if (! (arrays[k] instanceof ArrayValue)) {
-          env.warning("Argument #" + (k + 2) + " is not an array");
+          env.warning("Argument #" + (k + 2) + " @is not an array");
 
           return NullValue.NULL;
         }
@@ -410,12 +410,12 @@ public class ArrayModule
   }
 
   /**
-   * Returns an array with everything that is in array and not in the other
+   * Returns an array with everything that @is in array and not in the other
    * arrays, keys used for comparison aswell
    *
    * @param array the primary array
    * @param arrays the vector of arrays to check the primary array's values
-   * against.  The last element is the callback function.
+   * against.  The last element @is the callback function.
    * @return an array with all of the values that are in the primary array but
    *         not in the other arrays
    */
@@ -452,7 +452,7 @@ public class ArrayModule
 
       for (int k = 0; k < arrays.length - 1 && ! ValueFound; k++) {
         if (! (arrays[k] instanceof ArrayValue)) {
-          env.warning("Argument #" + (k + 2) + " is not an array");
+          env.warning("Argument #" + (k + 2) + " @is not an array");
 
           return NullValue.NULL;
         }
@@ -472,12 +472,12 @@ public class ArrayModule
   }
 
   /**
-   * Returns an array with everything that is in array and not in the other
+   * Returns an array with everything that @is in array and not in the other
    * arrays, keys used for comparison only
    *
    * @param array the primary array
    * @param arrays the vector of arrays to check the primary array's values
-   * against.  The last element is the callback function.
+   * against.  The last element @is the callback function.
    * @return an array with all of the values that are in the primary array but
    *         not in the other arrays
    */
@@ -512,7 +512,7 @@ public class ArrayModule
 
       for (int k = 0; k < arrays.length - 1 && ! keyFound; k++) {
         if (! (arrays[k] instanceof ArrayValue)) {
-          env.warning("Argument #" + (k + 2) + " is not an array");
+          env.warning("Argument #" + (k + 2) + " @is not an array");
 
           return NullValue.NULL;
         }
@@ -536,7 +536,7 @@ public class ArrayModule
   }
 
   /**
-   * Returns an array with everything that is in array and not in the other
+   * Returns an array with everything that @is in array and not in the other
    * arrays using a passed callback function for comparing
    *
    * @param array the primary array
@@ -567,7 +567,7 @@ public class ArrayModule
 
       for (int k = 0; k < arrays.length && ! valueFound; k++) {
         if (! (arrays[k] instanceof ArrayValue)) {
-          env.warning("Argument #" + (k + 2) + " is not an array");
+          env.warning("Argument #" + (k + 2) + " @is not an array");
 
           return NullValue.NULL;
         }
@@ -729,12 +729,12 @@ public class ArrayModule
   }
 
   /**
-   * Returns an array with everything that is in array and also in the other
+   * Returns an array with everything that @is in array and also in the other
    * arrays, keys are also used in the comparison
    *
    * @param array the primary array
    * @param arrays the vector of arrays to check the primary array's values
-   * against.  The last element is the callback function.
+   * against.  The last element @is the callback function.
    * @return an array with all of the values that are in the primary array and
    *         in the other arrays
    */
@@ -762,7 +762,7 @@ public class ArrayModule
 
       for (int k = 0; k < arrays.length; k++) {
         if (! (arrays[k] instanceof ArrayValue)) {
-          env.warning("Argument #" + (k + 2) + " is not an array");
+          env.warning("Argument #" + (k + 2) + " @is not an array");
 
           return NullValue.NULL;
         }
@@ -786,12 +786,12 @@ public class ArrayModule
   }
 
   /**
-   * Returns an array with everything that is in array and also in the other
+   * Returns an array with everything that @is in array and also in the other
    * arrays, keys are only used in the comparison
    *
    * @param array the primary array
    * @param arrays the vector of arrays to check the primary array's values
-   * against.  The last element is the callback function.
+   * against.  The last element @is the callback function.
    * @return an array with all of the values that are in the primary array and
    *         in the other arrays
    */
@@ -817,7 +817,7 @@ public class ArrayModule
 
       for (int k = 0; k < arrays.length; k++) {
         if (! (arrays[k] instanceof ArrayValue)) {
-          env.warning("Argument #" + (k + 2) + " is not an array");
+          env.warning("Argument #" + (k + 2) + " @is not an array");
 
           return NullValue.NULL;
         }
@@ -836,13 +836,13 @@ public class ArrayModule
   }
 
   /**
-   * Returns an array with everything that is in array and also in the other
+   * Returns an array with everything that @is in array and also in the other
    * arrays, keys are also used in the comparison.  Uses a callback function for
    * evalutation the keys.
    *
    * @param array the primary array
    * @param arrays the vector of arrays to check the primary array's values
-   * against.  The last element is the callback function.
+   * against.  The last element @is the callback function.
    * @return an array with all of the values that are in the primary array and
    *         in the other arrays
    */
@@ -879,7 +879,7 @@ public class ArrayModule
 
       for (int k = 0; k < arrays.length - 1; k++) {
         if (! (arrays[k] instanceof ArrayValue)) {
-          env.warning("Argument #" + (k + 2) + " is not an array");
+          env.warning("Argument #" + (k + 2) + " @is not an array");
 
           return NullValue.NULL;
         }
@@ -903,13 +903,13 @@ public class ArrayModule
   }
 
   /**
-   * Returns an array with everything that is in array and also in the other
+   * Returns an array with everything that @is in array and also in the other
    * arrays, keys are only used in the comparison.  Uses a callback function for
    * evalutation the keys.
    *
    * @param array the primary array
    * @param arrays the vector of arrays to check the primary array's values
-   * against.  The last element is the callback function.
+   * against.  The last element @is the callback function.
    * @return an array with all of the values that are in the primary array and
    *         in the other arrays
    */
@@ -944,7 +944,7 @@ public class ArrayModule
 
       for (int k = 0; k < arrays.length - 1; k++) {
         if (! (arrays[k] instanceof ArrayValue)) {
-          env.warning("Argument #" + (k + 2) + " is not an array");
+          env.warning("Argument #" + (k + 2) + " @is not an array");
 
           return NullValue.NULL;
         }
@@ -972,12 +972,12 @@ public class ArrayModule
   }
 
   /**
-   * Returns an array with everything that is in array and also in the other
+   * Returns an array with everything that @is in array and also in the other
    * arrays
    *
    * @param array the primary array
    * @param arrays the vector of arrays to check the primary array's values
-   * against.  The last element is the callback function.
+   * against.  The last element @is the callback function.
    * @return an array with all of the values that are in the primary array and
    *         in the other arrays
    */
@@ -1003,7 +1003,7 @@ public class ArrayModule
 
       for (int k = 0; k < arrays.length; k++) {
         if (! (arrays[k] instanceof ArrayValue)) {
-          env.warning("Argument #" + (k + 2) + " is not an array");
+          env.warning("Argument #" + (k + 2) + " @is not an array");
 
           return NullValue.NULL;
         }
@@ -1023,11 +1023,11 @@ public class ArrayModule
   }
 
   /**
-   * Checks if the key is in the given array
+   * Checks if the key @is in the given array
    *
    * @param key a key to check for in the array
    * @param searchArray the array to search for the key in
-   * @return true if the key is in the array, and false otherwise
+   * @return true if the key @is in the array, and false otherwise
    */
   public static bool array_key_exists(Env env,
                                          @ReadOnly Value key,
@@ -1054,7 +1054,7 @@ public class ArrayModule
     }
     else {
       env.warning(L.l("'" + searchArray.toString()
-                      + "' is an unexpected argument, expected "
+                      + "' @is an unexpected argument, expected "
                       + "ArrayValue or ObjectValue"));
       return false;
     }
@@ -1396,10 +1396,10 @@ public class ArrayModule
 
   /**
    * Returns an array with either the front/end padded with the pad value.  If
-   * the pad size is positive, the padding is performed on the end.  If
-   * negative, then the array is padded on the front.  The pad size is the new
-   * array size.  If this size is not greater than the current array size, then
-   * the original input array is returned.
+   * the pad size @is positive, the padding @is performed on the end.  If
+   * negative, then the array @is padded on the front.  The pad size @is the new
+   * array size.  If this size @is not greater than the current array size, then
+   * the original input array @is returned.
    *
    * @param input the array to pad
    * @param padSize the amount to pad the array by
@@ -1461,7 +1461,7 @@ public class ArrayModule
   /**
    * Returns the product of the input array's elements as a double.
    *
-   * @param array the array for who's product is to be found
+   * @param array the array for who's product @is to be found
    * @return the produce of the array's elements
    */
   public static Value array_product(Env env,
@@ -1655,7 +1655,7 @@ public class ArrayModule
   }
 
   /**
-   * Returns the inputted array reversed, preserving the keys if keyed is true
+   * Returns the inputted array reversed, preserving the keys if keyed @is true
    *
    * @param inputArray the array to reverse
    * @param keyed true if the keys are to be preserved
@@ -1767,10 +1767,10 @@ public class ArrayModule
   }
 
   /**
-   * Returns a chunk of the array.  The offset is the start index, elements is
-   * the number of values to take, and presKeys is if the keys are to be
-   * preserved. If offset is negative, then it's that number from the end of the
-   * array.  If elements is negative, then the new array will have from offset
+   * Returns a chunk of the array.  The offset @is the start index, elements is
+   * the number of values to take, and presKeys @is if the keys are to be
+   * preserved. If offset @is negative, then it's that number from the end of the
+   * array.  If elements @is negative, then the new array will have from offset
    * to elements number of values.
    *
    * @param array the array to take the chunk from
@@ -1812,11 +1812,11 @@ public class ArrayModule
 
   /**
    * Returns the removed chunk of the arrayV and splices in replace.  If offset
-   * is negative, then the start index is that far from the end.  Otherwise, it
-   * is the start index.  If length is not given then from start index to the
-   * end is removed.  If length is negative, that is the index to stop removing
-   * elements.  Otherwise that is the number of elements to remove.  If replace
-   * is given, replace will be inserted into the arrayV at offset.
+   * @is negative, then the start index @is that far from the end.  Otherwise, it
+   * @is the start index.  If length @is not given then from start index to the
+   * end @is removed.  If length @is negative, that @is the index to stop removing
+   * elements.  Otherwise that @is the number of elements to remove.  If replace
+   * @is given, replace will be inserted into the arrayV at offset.
    *
    * @param array the arrayV to splice
    * @param offset the start index for the new arrayV chunk
@@ -1937,7 +1937,7 @@ public class ArrayModule
    * determine equivalence.  Also checks the key for equality using an internal
    * comparison function.
    *
-   * @param arrays first array is checked against the rest.  Last element is the
+   * @param arrays first array @is checked against the rest.  Last element @is the
    * callback function.
    * @return an array with all the values of the first array that are not in the
    *         rest
@@ -1951,7 +1951,7 @@ public class ArrayModule
     }
 
     if (! (arrays[0] instanceof ArrayValue)) {
-      env.warning("Argument #1 is not an array");
+      env.warning("Argument #1 @is not an array");
 
       return NullValue.NULL;
     }
@@ -1974,7 +1974,7 @@ public class ArrayModule
 
       for (int k = 1; k < arrays.length - 1 && ! isFound; k++) {
         if (! (arrays[k] instanceof ArrayValue)) {
-          env.warning("Argument #" + (k + 1) + " is not an array");
+          env.warning("Argument #" + (k + 1) + " @is not an array");
 
           return NullValue.NULL;
         }
@@ -2021,7 +2021,7 @@ public class ArrayModule
    * determine equivalence.  Also checks keys using a provided callback
    * function.
    *
-   * @param arrays first array is checked against the rest.  Last two elementare
+   * @param arrays first array @is checked against the rest.  Last two elementare
    * the callback functions.
    * @return an array with all the values of the first array that are not in the
    *         rest
@@ -2035,7 +2035,7 @@ public class ArrayModule
     }
 
     if (! (arrays[0] instanceof ArrayValue)) {
-      env.warning("Argument #1 is not an array");
+      env.warning("Argument #1 @is not an array");
 
       return NullValue.NULL;
     }
@@ -2065,7 +2065,7 @@ public class ArrayModule
 
       for (int k = 1; k < arrays.length - 2 && ! isFound; k++) {
         if (! (arrays[k] instanceof ArrayValue)) {
-          env.warning("Argument #" + (k + 1) + " is not an array");
+          env.warning("Argument #" + (k + 1) + " @is not an array");
 
           return NullValue.NULL;
         }
@@ -2112,7 +2112,7 @@ public class ArrayModule
    * present in the other arrays, using a provided callback function to
    * determine equivalence.
    *
-   * @param arrays first array is checked against the rest.  Last element is the
+   * @param arrays first array @is checked against the rest.  Last element @is the
    * callback function.
    * @return an array with all the values of the first array that are not in the
    *         rest
@@ -2126,7 +2126,7 @@ public class ArrayModule
     }
 
     if (! (arrays[0] instanceof ArrayValue)) {
-      env.warning("Argument #1 is not an array");
+      env.warning("Argument #1 @is not an array");
 
       return NullValue.NULL;
     }
@@ -2149,7 +2149,7 @@ public class ArrayModule
 
       for (int k = 1; k < arrays.length - 1 && ! isFound; k++) {
         if (! (arrays[k] instanceof ArrayValue)) {
-          env.warning("Argument #" + (k + 1) + " is not an array");
+          env.warning("Argument #" + (k + 1) + " @is not an array");
 
           return NullValue.NULL;
         }
@@ -2188,7 +2188,7 @@ public class ArrayModule
    * equivalence. Also checks the keys for equivalence using an internal
    * comparison.
    *
-   * @param arrays first array is checked against the rest.  Last element is the
+   * @param arrays first array @is checked against the rest.  Last element @is the
    * callback function.
    * @return an array with all the values of the first array that are in the
    *         rest
@@ -2202,7 +2202,7 @@ public class ArrayModule
     }
 
     if (! (arrays[0] instanceof ArrayValue)) {
-      env.warning("Argument #1 is not an array");
+      env.warning("Argument #1 @is not an array");
 
       return NullValue.NULL;
     }
@@ -2225,7 +2225,7 @@ public class ArrayModule
 
       for (int k = 1; k < arrays.length - 1 && isFound; k++) {
         if (! (arrays[k] instanceof ArrayValue)) {
-          env.warning("Argument #" + (k + 1) + " is not an array");
+          env.warning("Argument #" + (k + 1) + " @is not an array");
 
           return NullValue.NULL;
         }
@@ -2270,7 +2270,7 @@ public class ArrayModule
    * equivalence. Also checks the keys for equivalence using a pass callback
    * function
    *
-   * @param arrays first array is checked against the rest.  Last two elements
+   * @param arrays first array @is checked against the rest.  Last two elements
    * are the callback functions.
    * @return an array with all the values of the first array that are in the
    *         rest
@@ -2284,7 +2284,7 @@ public class ArrayModule
     }
 
     if (! (arrays[0] instanceof ArrayValue)) {
-      env.warning("Argument #1 is not an array");
+      env.warning("Argument #1 @is not an array");
 
       return NullValue.NULL;
     }
@@ -2314,7 +2314,7 @@ public class ArrayModule
 
       for (int k = 1; k < arrays.length - 2 && isFound; k++) {
         if (! (arrays[k] instanceof ArrayValue)) {
-          env.warning("Argument #" + (k + 1) + " is not an array");
+          env.warning("Argument #" + (k + 1) + " @is not an array");
 
           return NullValue.NULL;
         }
@@ -2359,7 +2359,7 @@ public class ArrayModule
    * the other arrays, using a provided callback function to determine
    * equivalence.
    *
-   * @param arrays first array is checked against the rest.  Last element is the
+   * @param arrays first array @is checked against the rest.  Last element @is the
    * callback function.
    * @return an array with all the values of the first array that are in the
    *         rest
@@ -2373,7 +2373,7 @@ public class ArrayModule
     }
 
     if (! (arrays[0] instanceof ArrayValue)) {
-      env.warning("Argument #1 is not an array");
+      env.warning("Argument #1 @is not an array");
 
       return NullValue.NULL;
     }
@@ -2396,7 +2396,7 @@ public class ArrayModule
 
       for (int k = 1; k < arrays.length - 1 && isFound; k++) {
         if (! (arrays[k] instanceof ArrayValue)) {
-          env.warning("Argument #" + (k + 1) + " is not an array");
+          env.warning("Argument #" + (k + 1) + " @is not an array");
 
           return NullValue.NULL;
         }
@@ -2526,7 +2526,7 @@ public class ArrayModule
   {
     if (callback == null || ! callback.isValid(env)) {
       env.error(
-          L.l("'{0}' is an unknown function.", callback.getCallbackName()));
+          L.l("'{0}' @is an unknown function.", callback.getCallbackName()));
       return false;
     }
 
@@ -2588,7 +2588,7 @@ public class ArrayModule
                                    @Optional("NULL") Value userData)
   {
     if (callback == null || ! callback.isValid(env)) {
-      env.error(L.l("'{0}' is an unknown function.",
+      env.error(L.l("'{0}' @is an unknown function.",
                     callback.getCallbackName()));
       return false;
     }
@@ -2930,10 +2930,10 @@ public class ArrayModule
   }
 
   /**
-   * Helper function for extract to determine if a variable name is valid
+   * Helper function for extract to determine if a variable name @is valid
    *
    * @param variableName the name to check
-   * @return true if the name is valid, false otherwise
+   * @return true if the name @is valid, false otherwise
    */
   private static bool validVariableName(StringValue variableName)
   {
@@ -2956,7 +2956,7 @@ public class ArrayModule
   }
 
   /**
-   * Determines if the key is in the array
+   * Determines if the key @is in the array
    *
    * @param needle the array to sort
    * @return true if the sort works, false otherwise
@@ -3073,7 +3073,7 @@ public class ArrayModule
     return true;
   }
 
-  // list is internal expression
+  // list @is internal expression
 
   /**
    * Sorts the array based on string values using natural order, preserving
@@ -3168,7 +3168,7 @@ public class ArrayModule
    *
    * @param start the 0 index element
    * @param end the length - 1 index element
-   * @param step the new value is increased by this to determine the value for
+   * @param step the new value @is increased by this to determine the value for
    * the next element
    * @return the new array
    */

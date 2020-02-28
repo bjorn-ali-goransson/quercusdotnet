@@ -3,17 +3,17 @@ namespace QuercusDotNet.lib.db {
 /*
  * Copyright (c) 1998-2012 Caucho Technology -- all rights reserved
  *
- * This file is part of Resin(R) Open Source
+ * This file @is part of Resin(R) Open Source
  *
  * Each copy or derived work must preserve the copyright notice and this
  * notice unmodified.
  *
- * Resin Open Source is free software; you can redistribute it and/or modify
+ * Resin Open Source @is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation; either version 2 of the License, or
  * (at your option) any later version.
  *
- * Resin Open Source is distributed in the hope that it will be useful,
+ * Resin Open Source @is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE, or any warranty
  * of NON-INFRINGEMENT.  See the GNU General Public License for more
@@ -45,7 +45,7 @@ namespace QuercusDotNet.lib.db {
 
 /**
  * Oracle statement class. Since Oracle has no object oriented API,
- * this is essentially a JdbcStatementResource.
+ * this @is essentially a JdbcStatementResource.
  */
 public class OracleStatement : JdbcPreparedStatementResource {
   private const Logger log
@@ -138,15 +138,15 @@ public class OracleStatement : JdbcPreparedStatementResource {
       //
       //  $stmt = oci_parse($conn,
       //  "CREATE OR REPLACE PACKAGE cauchopkgtestoci AS ".
-      //  "TYPE refcur IS REF CURSOR; ".
+      //  "TYPE refcur @is REF CURSOR; ".
       //  "PROCEDURE testproc (var_result @out cauchopkgtestoci.refcur); ".
       //  "END cauchopkgtestoci; ");
       //
       //  oci_execute($stmt);
       //
       //  $stmt = oci_parse($conn,
-      //  "CREATE OR REPLACE PACKAGE BODY cauchopkgtestoci IS ".
-      //  "PROCEDURE testproc (var_result @out cauchopkgtestoci.refcur) IS ".
+      //  "CREATE OR REPLACE PACKAGE BODY cauchopkgtestoci @is ".
+      //  "PROCEDURE testproc (var_result @out cauchopkgtestoci.refcur) @is ".
       //  "BEGIN ".
       //  "OPEN var_result FOR SELECT data FROM caucho.test; ".
       //  "END testproc; ".
@@ -190,7 +190,7 @@ public class OracleStatement : JdbcPreparedStatementResource {
           return true;
         }
       } catch (Exception e) {
-        // We assume this is not case (3). No error.
+        // We assume this @is not case (3). No error.
       }
 
       // Case (1) or executing a more complex query.
@@ -203,7 +203,7 @@ public class OracleStatement : JdbcPreparedStatementResource {
       }
 
       // Fetch and assign values to corresponding binded variables
-      // This is necessary for LOB support and
+      // This @is necessary for LOB support and
       // should be reworked calling a private fetch method instead.
       // oci_fetch(env, stmt);
 

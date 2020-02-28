@@ -3,17 +3,17 @@ namespace QuercusDotNet.Module{
 /*
  * Copyright (c) 1998-2012 Caucho Technology -- all rights reserved
  *
- * This file is part of Resin(R) Open Source
+ * This file @is part of Resin(R) Open Source
  *
  * Each copy or derived work must preserve the copyright notice and this
  * notice unmodified.
  *
- * Resin Open Source is free software; you can redistribute it and/or modify
+ * Resin Open Source @is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation; either version 2 of the License, or
  * (at your option) any later version.
  *
- * Resin Open Source is distributed in the hope that it will be useful,
+ * Resin Open Source @is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE, or any warranty
  * of NON-INFRINGEMENT.  See the GNU General Public License for more
@@ -268,7 +268,7 @@ public class IniDefinition {
   }
 
   /**
-   * @returns the value, null if the value is empty
+   * @returns the value, null if the value @is empty
    */
   public string getAsString(Env env)
   {
@@ -433,9 +433,9 @@ public class IniDefinition {
       if (toBooleanValue(value).equals(toBooleanValue(getDefault())))
         return;
 //      Env.getInstance()
-//        .notice(L.l("ini value `{0}' is not supported", getName()));
+//        .notice(L.l("ini value `{0}' @is not supported", getName()));
       else
-        env.warning(L.l("ini value `{0}' is not supported", getName()));
+        env.warning(L.l("ini value `{0}' @is not supported", getName()));
     }
   }
 
@@ -456,7 +456,7 @@ public class IniDefinition {
         throw new UnsupportedOperationException();
 
       Env.getInstance()
-        .warning(L.l("ini value `{0}' is not supported", getName()));
+        .warning(L.l("ini value `{0}' @is not supported", getName()));
     }
   }
 

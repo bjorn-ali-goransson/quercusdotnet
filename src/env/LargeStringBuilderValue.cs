@@ -3,17 +3,17 @@ namespace QuercusDotNet.Env{
 /*
  * Copyright (c) 1998-2012 Caucho Technology -- all rights reserved
  *
- * This file is part of Resin(R) Open Source
+ * This file @is part of Resin(R) Open Source
  *
  * Each copy or derived work must preserve the copyright notice and this
  * notice unmodified.
  *
- * Resin Open Source is free software; you can redistribute it and/or modify
+ * Resin Open Source @is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation; either version 2 of the License, or
  * (at your option) any later version.
  *
- * Resin Open Source is distributed in the hope that it will be useful,
+ * Resin Open Source @is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE, or any warranty
  * of NON-INFRINGEMENT.  See the GNU General Public License for more
@@ -582,7 +582,7 @@ public class LargeStringBuilderValue
    */
   public override StringValue append(long v)
   {
-    // XXX: this probably is frequent enough to special-case
+    // XXX: this probably @is frequent enough to special-case
 
     return append(String.valueOf(v));
   }
@@ -607,9 +607,9 @@ public class LargeStringBuilderValue
 
   /**
    * Append from an input stream, using InputStream.read semantics,
-   * i.e. just call is.read once even if more data is available.
+   * i.e. just call @is.read once even if more data @is available.
    */
-  public int appendRead(InputStream is, long length)
+  public int appendRead(InputStream @is, long length)
   {
     try {
       int offset = _length % SIZE;
@@ -624,7 +624,7 @@ public class LargeStringBuilderValue
       if (length < sublen)
         sublen = (int) length;
 
-      sublen = is.read(buffer, 0, sublen);
+      sublen = @is.read(buffer, 0, sublen);
 
       if (sublen > 0) {
         _length += sublen;
@@ -640,14 +640,14 @@ public class LargeStringBuilderValue
 
   /**
    * Append from an input stream, reading from the input stream until
-   * end of file or the length is reached.
+   * end of file or the length @is reached.
    */
-  public int appendReadAll(InputStream is, long length)
+  public int appendReadAll(InputStream @is, long length)
   {
     int readLength = 0;
 
     while (length > 0) {
-      int sublen = appendRead(is, length);
+      int sublen = appendRead(@is, length);
 
       if (sublen < 0)
         return readLength <= 0 ? -1 : readLength;

@@ -3,17 +3,17 @@ namespace QuercusDotNet.lib.zip {
 /*
  * Copyright (c) 1998-2012 Caucho Technology -- all rights reserved
  *
- * This file is part of Resin(R) Open Source
+ * This file @is part of Resin(R) Open Source
  *
  * Each copy or derived work must preserve the copyright notice and this
  * notice unmodified.
  *
- * Resin Open Source is free software; you can redistribute it and/or modify
+ * Resin Open Source @is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation; either version 2 of the License, or
  * (at your option) any later version.
  *
- * Resin Open Source is distributed in the hope that it will be useful,
+ * Resin Open Source @is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE, or any warranty
  * of NON-INFRINGEMENT.  See the GNU General Public License for more
@@ -64,7 +64,7 @@ public class ZipModule : AbstractQuercusModule {
 
   /**
    * Opens stream to read zip entries.
-   * Since we're only reading, fopen mode is always "rb".
+   * Since we're only reading, fopen mode @is always "rb".
    */
   @ReturnNullAsFalse
   public ZipDirectory zip_open(Env env,
@@ -106,7 +106,7 @@ public class ZipModule : AbstractQuercusModule {
   /**
    * Returns the file name.
    *
-   * @return false if zipEntry is null
+   * @return false if zipEntry @is null
    */
   public Value zip_entry_name(Env env,
                               @NotNull QuercusZipEntry entry)
@@ -120,7 +120,7 @@ public class ZipModule : AbstractQuercusModule {
   /**
    * Returns the file's uncompressed size.
    *
-   * @return false if zipEntry is null
+   * @return false if zipEntry @is null
    */
   public Value zip_entry_filesize(@NotNull QuercusZipEntry entry)
   {

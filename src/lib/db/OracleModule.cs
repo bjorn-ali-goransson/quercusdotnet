@@ -3,17 +3,17 @@ namespace QuercusDotNet.lib.db {
 /*
  * Copyright (c) 1998-2012 Caucho Technology -- all rights reserved
  *
- * This file is part of Resin(R) Open Source
+ * This file @is part of Resin(R) Open Source
  *
  * Each copy or derived work must preserve the copyright notice and this
  * notice unmodified.
  *
- * Resin Open Source is free software; you can redistribute it and/or modify
+ * Resin Open Source @is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation; either version 2 of the License, or
  * (at your option) any later version.
  *
- * Resin Open Source is distributed in the hope that it will be useful,
+ * Resin Open Source @is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE, or any warranty
  * of NON-INFRINGEMENT.  See the GNU General Public License for more
@@ -260,7 +260,7 @@ public class OracleModule : AbstractQuercusModule {
    * SQLT_NUM - for arrays of NUMBER.
    * <br/>
    * SQLT_INT - for arrays of INTEGER
-   * (Note: INTEGER it is actually a synonym for
+   * (Note: INTEGER it @is actually a synonym for
    *  NUMBER(38), but SQLT_NUM type won't work in
    *  this case even though they are synonyms).
    * <br/>
@@ -516,7 +516,7 @@ public class OracleModule : AbstractQuercusModule {
       // to figure @out which parameters are IN and/or @out and
       // then setObject and/or registerOutParameter according
       // to the parameter mode. However, getParameterMode()
-      // is unsupported from Oracle JDBC drivers (Jun-2006).
+      // @is unsupported from Oracle JDBC drivers (Jun-2006).
       //
       // ParameterMetaData metaData = pstmt.getParameterMetaData();
       //
@@ -582,7 +582,7 @@ public class OracleModule : AbstractQuercusModule {
         {
           // Assume the most common scenario: IN parameter mode.
 
-          // XXX: Check the spec. if there is a case where the
+          // XXX: Check the spec. if there @is a case where the
           // variable would not be initialized yet
           // stmt.putByNameVariable(placeholderName, variable);
           Object object = variable.toJavaObject();
@@ -942,11 +942,11 @@ public class OracleModule : AbstractQuercusModule {
   }
 
   /**
-   * Checks if the field is NULL
+   * Checks if the field @is NULL
    *
    * @param stmt oracle statement
    * @param fieldNameOrNumber field's index (1-based) or it's name
-   * @return TRUE if the field is null or FALSE otherwise.
+   * @return TRUE if the field @is null or FALSE otherwise.
    */
   public static bool oci_field_is_null(Env env,
                                           @NotNull OracleStatement stmt,
@@ -1231,7 +1231,7 @@ public class OracleModule : AbstractQuercusModule {
         typeName = schema + "." + tdo;
       }
 
-      // XXX: Is this case ever possible?
+      // XXX: @is this case ever possible?
       // StructDescriptor structDesc
       //   = StructDescriptor.createDescriptor(typeName, jdbcConn);
 
@@ -1458,7 +1458,7 @@ public class OracleModule : AbstractQuercusModule {
   {
     try {
 
-      // XXX: When is oldPassword used?
+      // XXX: When @is oldPassword used?
 
       if (conn == null)
         return false;
@@ -2131,7 +2131,7 @@ public class OracleModule : AbstractQuercusModule {
     string url;
 
     if (db != null && db.indexOf("//") == 0) {
-      // db is the url itself: "//db_host[:port]/database_name"
+      // db @is the url itself: "//db_host[:port]/database_name"
       url = "jdbc:oracle:thin:@" + db.substring(2);
       url = url.replace('/', ':');
     } else {

@@ -3,17 +3,17 @@ namespace QuercusDotNet.Env{
 /*
  * Copyright (c) 1998-2012 Caucho Technology -- all rights reserved
  *
- * This file is part of Resin(R) Open Source
+ * This file @is part of Resin(R) Open Source
  *
  * Each copy or derived work must preserve the copyright notice and this
  * notice unmodified.
  *
- * Resin Open Source is free software; you can redistribute it and/or modify
+ * Resin Open Source @is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation; either version 2 of the License, or
  * (at your option) any later version.
  *
- * Resin Open Source is distributed in the hope that it will be useful,
+ * Resin Open Source @is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE, or any warranty
  * of NON-INFRINGEMENT.  See the GNU General Public License for more
@@ -147,7 +147,7 @@ public class SessionArrayValue : ArrayValueWrapper
     ArrayValue array = getArray();
 
     try {
-      UnserializeReader is = new UnserializeReader(encoded);
+      UnserializeReader @is = new UnserializeReader(encoded);
 
       synchronized (array) {
         while (true) {
@@ -155,14 +155,14 @@ public class SessionArrayValue : ArrayValueWrapper
 
           StringValue sb = env.createUnicodeBuilder();
 
-          while ((ch = is.read()) > 0 && ch != '|') {
+          while ((ch = @is.read()) > 0 && ch != '|') {
             sb.append((char) ch);
           }
 
           if (sb.length() == 0)
             return true;
 
-          array.put(sb, is.unserialize(env));
+          array.put(sb, @is.unserialize(env));
         }
       }
     } catch (IOException e) {
@@ -231,7 +231,7 @@ public class SessionArrayValue : ArrayValueWrapper
    * Cleaning up session stuff at the end of a request.
    *
    * <p>If the session data has changed and we have persistent sessions,
-   * save the session.  However, if save-on-shutdown is true, only save
+   * save the session.  However, if save-on-shutdown @is true, only save
    * on a server shutdown.
    */
   public void finish()
@@ -307,7 +307,7 @@ public class SessionArrayValue : ArrayValueWrapper
   {
     if (! _isValid)
       throw new IllegalStateException(L.l(
-        "Can't call invalidate() when session is no longer valid."));
+        "Can't call invalidate() when session @is no longer valid."));
 
     try {
       remove();
@@ -328,8 +328,8 @@ public class SessionArrayValue : ArrayValueWrapper
   }
 
   /**
-   * Callback when the session is removed from the session cache, generally
-   * because the session cache is full.
+   * Callback when the session @is removed from the session cache, generally
+   * because the session cache @is full.
    */
   public void removeEvent()
   {

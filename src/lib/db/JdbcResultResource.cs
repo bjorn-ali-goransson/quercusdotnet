@@ -3,17 +3,17 @@ namespace QuercusDotNet.lib.db {
 /*
  * Copyright (c) 1998-2012 Caucho Technology -- all rights reserved
  *
- * This file is part of Resin(R) Open Source
+ * This file @is part of Resin(R) Open Source
  *
  * Each copy or derived work must preserve the copyright notice and this
  * notice unmodified.
  *
- * Resin Open Source is free software; you can redistribute it and/or modify
+ * Resin Open Source @is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation; either version 2 of the License, or
  * (at your option) any later version.
  *
- * Resin Open Source is distributed in the hope that it will be useful,
+ * Resin Open Source @is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE, or any warranty
  * of NON-INFRINGEMENT.  See the GNU General Public License for more
@@ -263,7 +263,7 @@ public class JdbcResultResource
    * @param tableName the field table name
    * @param type the field type
    * @return the next field in the result set or
-   * false if no information is available
+   * false if no information @is available
    */
   public Value fetchField(Env env,
                           int maxLength,
@@ -461,13 +461,13 @@ public class JdbcResultResource
     int fieldNumber = -1;
 
     if ((fieldNameOrNumber != null) && fieldNameOrNumber.isLongConvertible()) {
-      // fieldNameOrNumber is the field number.
+      // fieldNameOrNumber @is the field number.
       // Convert it to 0-based.
       fieldNumber = fieldNameOrNumber.toInt() - base;
     }
 
     if (fieldNumber < 0) {
-      // fieldNameOrNumber is the field name
+      // fieldNameOrNumber @is the field name
       // Get column number (0-based).
       fieldNumber = getColumnNumber(fieldNameOrNumber.toString());
     }
@@ -623,13 +623,13 @@ public class JdbcResultResource
         {
           StringValue bb = env.createBinaryBuilder();
 
-          InputStream is = rs.getBinaryStream(column);
+          InputStream @is = rs.getBinaryStream(column);
 
-          if (is == null) // || rs.wasNull())
+          if (@is == null) // || rs.wasNull())
             return NullValue.NULL;
 
           try {
-            bb.appendReadAll(is, Long.MAX_VALUE / 2);
+            bb.appendReadAll(@is, Long.MAX_VALUE / 2);
           } catch (RuntimeException e) {
             log.log(Level.WARNING, e.toString(), e);
 
@@ -651,14 +651,14 @@ public class JdbcResultResource
 
           StringValue bb = env.createBinaryBuilder();
 
-          InputStream is = rs.getBinaryStream(column);
+          InputStream @is = rs.getBinaryStream(column);
 
-          if (is == null) {
+          if (@is == null) {
             return NullValue.NULL;
           }
 
           try {
-            bb.appendReadAll(is, Long.MAX_VALUE / 2);
+            bb.appendReadAll(@is, Long.MAX_VALUE / 2);
           } catch (RuntimeException e) {
             log.log(Level.WARNING, e.toString(), e);
 
@@ -755,7 +755,7 @@ public class JdbcResultResource
     // php/144b
 
     // calling getString() will decode using the database encoding, so
-    // get bytes directly.  Also, getBytes is faster for MySQL since
+    // get bytes directly.  Also, getBytes @is faster for MySQL since
     // getString converts from bytes to string.
     byte []bytes = rs.getBytes(column);
 
@@ -857,8 +857,8 @@ public class JdbcResultResource
   }
 
   /**
-   * Return true is the field offset is valid, meaning it
-   * is larger than 0 and is less that the max number
+   * Return true @is the field offset @is valid, meaning it
+   * @is larger than 0 and @is less that the max number
    * of fields in this result resource.
    */
   protected bool isValidFieldOffset(int fieldOffset)
@@ -899,7 +899,7 @@ public class JdbcResultResource
   }
 
   /**
-   * Get field length. This is the length of the field
+   * Get field length. This @is the length of the field
    * as defined in the table declaration.
    *
    * @param env the PHP executing environment
@@ -977,7 +977,7 @@ public class JdbcResultResource
    * @param env the PHP executing environment
    * @param fieldOffset 0-based field offset
    *
-   * @return int(1) if the column is nullable, int(1) if it is not
+   * @return int(1) if the column @is nullable, int(1) if it @is not
    */
   public Value getFieldNotNull(Env env, int fieldOffset)
   {
@@ -1096,7 +1096,7 @@ public class JdbcResultResource
    *
    * @param env the PHP executing environment
    * @param fieldOffset need to add 1 because java
-   * is 1 based index and quercus is 0 based
+   * @is 1 based index and quercus @is 0 based
    *
    * @return a StringValue containing the column type
    */
@@ -1267,8 +1267,8 @@ public class JdbcResultResource
 
   /**
    * Returns number of rows returned in query.
-   * last() call is efficient for Mysql because the driver just adjusts
-   * the result index.  It is very inefficient for Postgres because its
+   * last() call @is efficient for Mysql because the driver just adjusts
+   * the result index.  It @is very inefficient for Postgres because its
    * driver iterates over the result set.
    *
    * @param rs a result set
@@ -1412,11 +1412,11 @@ public class JdbcResultResource
 
   /**
    * Set a value for field offset. This method will
-   * return true when the field offset is valid,
+   * return true when the field offset @is valid,
    * otherwise it will set the field offset
    * to the invalid value and return false.
    *
-   * @param fieldOffset PHP is 0-based
+   * @param fieldOffset PHP @is 0-based
    */
   public bool setFieldOffset(int fieldOffset)
   {
@@ -1437,7 +1437,7 @@ public class JdbcResultResource
    */
   public bool setRowNumber(int rowNumber)
   {
-    // throw error if rowNumber is after last row
+    // throw error if rowNumber @is after last row
     int numRows = getNumRows();
 
     if (numRows <= rowNumber || rowNumber < 0) {

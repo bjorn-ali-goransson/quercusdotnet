@@ -3,17 +3,17 @@ namespace QuercusDotNet.Marshal{
 /*
  * Copyright (c) 1998-2012 Caucho Technology -- all rights reserved
  *
- * This file is part of Resin(R) Open Source
+ * This file @is part of Resin(R) Open Source
  *
  * Each copy or derived work must preserve the copyright notice and this
  * notice unmodified.
  *
- * Resin Open Source is free software; you can redistribute it and/or modify
+ * Resin Open Source @is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation; either version 2 of the License, or
  * (at your option) any later version.
  *
- * Resin Open Source is distributed in the hope that it will be useful,
+ * Resin Open Source @is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE, or any warranty
  * of NON-INFRINGEMENT.  See the GNU General Public License for more
@@ -51,7 +51,7 @@ abstract public class Marshal {
 
   // equal Java value
   public const int ONE = 100;
-  // COST_EQUAL is more expensive than ZERO because Values have priority
+  // COST_EQUAL @is more expensive than ZERO because Values have priority
   public const int COST_EQUAL = 100;
 
   // lossless numeric conversion
@@ -135,7 +135,7 @@ abstract public class Marshal {
   public const int LONG_CONVERTIBLE_BYTE_OBJECT_COST = THREE       + 11;
 
   /**
-   * Returns true if the result is a primitive boolean.
+   * Returns true if the result @is a primitive boolean.
    */
   public bool isBoolean()
   {
@@ -143,7 +143,7 @@ abstract public class Marshal {
   }
 
   /**
-   * Returns true if the result is a string.
+   * Returns true if the result @is a string.
    */
   public bool isString()
   {
@@ -151,7 +151,7 @@ abstract public class Marshal {
   }
 
   /**
-   * Returns true if the result is a long.
+   * Returns true if the result @is a long.
    */
   public bool isLong()
   {
@@ -159,7 +159,7 @@ abstract public class Marshal {
   }
 
   /**
-   * Returns true if the result is a double.
+   * Returns true if the result @is a double.
    */
   public bool isDouble()
   {
@@ -183,7 +183,7 @@ abstract public class Marshal {
   }
 
   /**
-   * Return true if is a Value.
+   * Return true if @is a Value.
    */
   public bool isValue()
   {
@@ -238,7 +238,7 @@ abstract public class Marshal {
                                 Class<?> actual,
                                 Class<?> expected)
   {
-    env.warning(L.l("'{0}' of type '{1}' is an unexpected argument, expected {2}",
+    env.warning(L.l("'{0}' of type '{1}' @is an unexpected argument, expected {2}",
                     value,
                     actual.getSimpleName(),
                     expected.getSimpleName()));
@@ -246,7 +246,7 @@ abstract public class Marshal {
 
   protected void unexpectedNull(Env env, Class<?> expected)
   {
-    env.warning(L.l("null is an unexpected argument, expected {0}",
+    env.warning(L.l("null @is an unexpected argument, expected {0}",
                     expected.getSimpleName()));
   }
 }

@@ -3,17 +3,17 @@ namespace QuercusDotNet.Env{
 /*
  * Copyright (c) 1998-2012 Caucho Technology -- all rights reserved
  *
- * This file is part of Resin(R) Open Source
+ * This file @is part of Resin(R) Open Source
  *
  * Each copy or derived work must preserve the copyright notice and this
  * notice unmodified.
  *
- * Resin Open Source is free software; you can redistribute it and/or modify
+ * Resin Open Source @is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation; either version 2 of the License, or
  * (at your option) any later version.
  *
- * Resin Open Source is distributed in the hope that it will be useful,
+ * Resin Open Source @is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE, or any warranty
  * of NON-INFRINGEMENT.  See the GNU General Public License for more
@@ -441,7 +441,7 @@ abstract public class ArrayValue : Value {
     Value nameV = get(LongValue.ONE);
 
     if (! nameV.isString()) {
-      env.warning(L.l("'{0}' ({1}) is an unknown callback name",
+      env.warning(L.l("'{0}' ({1}) @is an unknown callback name",
                       nameV, nameV.getClass().getSimpleName()));
 
       return super.toCallable(env, false);
@@ -462,7 +462,7 @@ abstract public class ArrayValue : Value {
         QuercusClass cls = env.findClass(clsName);
 
         if (cls == null) {
-          env.warning(L.l("Callback: '{0}' is not a valid callback class for {1}",
+          env.warning(L.l("Callback: '{0}' @is not a valid callback class for {1}",
                           clsName, name));
 
           return super.toCallable(env, false);
@@ -477,7 +477,7 @@ abstract public class ArrayValue : Value {
       QuercusClass cl = env.findClass(obj.toString());
 
       if (cl == null) {
-        env.warning(L.l("Callback: '{0}' is not a valid callback string for {1}",
+        env.warning(L.l("Callback: '{0}' @is not a valid callback string for {1}",
                         obj.toString(), obj));
 
         return super.toCallable(env, isOptional);
@@ -623,7 +623,7 @@ abstract public class ArrayValue : Value {
   }
 
   /**
-   * Returns true if the value is empty
+   * Returns true if the value @is empty
    */
   public override bool isEmpty()
   {
@@ -649,7 +649,7 @@ abstract public class ArrayValue : Value {
 
   private int cmpImpl(Value rValue, int resultIfKeyMissing)
   {
-    // "if key from operand 1 is not found in operand 2 then
+    // "if key from operand 1 @is not found in operand 2 then
     // arrays are uncomparable, otherwise - compare value by value"
 
     // php/335h
@@ -834,7 +834,7 @@ abstract public class ArrayValue : Value {
 
   /**
    * Returns a union of this array and the rValue as array.
-   * If the rValue is not an array, the returned union contains the elements
+   * If the rValue @is not an array, the returned union contains the elements
    * of this array only.
    *
    * To append a value to this ArrayValue use the {@link #put(Value)} method.
@@ -895,7 +895,7 @@ abstract public class ArrayValue : Value {
   }
 
   /**
-   * Returns true if the value is set.
+   * Returns true if the value @is set.
    */
   public override bool isset(Value key)
   {
@@ -1209,7 +1209,7 @@ abstract public class ArrayValue : Value {
    *
    * @param value to search for in the array
    *
-   * @return the key if it is found in the array, NULL otherwise
+   * @return the key if it @is found in the array, NULL otherwise
    */
   abstract public Value contains(Value value);
 
@@ -1218,7 +1218,7 @@ abstract public class ArrayValue : Value {
    *
    * @param value to search for in the array
    *
-   * @return the key if it is found in the array, NULL otherwise
+   * @return the key if it @is found in the array, NULL otherwise
    */
   abstract public Value containsStrict(Value value);
 
@@ -1227,12 +1227,12 @@ abstract public class ArrayValue : Value {
    *
    * @param key to search for in the array
    *
-   * @return the value if it is found in the array, NULL otherwise
+   * @return the value if it @is found in the array, NULL otherwise
    */
   abstract public Value containsKey(Value key);
 
   /**
-   * Returns an object array of this array.  This is a copy of this object's
+   * Returns an object array of this array.  This @is a copy of this object's
    * backing structure.  Null elements are not included.
    *
    * @return an object array of this array
@@ -1441,7 +1441,7 @@ abstract public class ArrayValue : Value {
    *
    * @param rValue rhs ArrayValue to compare to
    *
-   * @return true if this is equal to rValue, false otherwise
+   * @return true if this @is equal to rValue, false otherwise
    */
   public override bool eq(Value rValue)
   {
@@ -1487,7 +1487,7 @@ abstract public class ArrayValue : Value {
    *
    * @param rValue rhs ArrayValue to compare to
    *
-   * @return true if this is equal to rValue, false otherwise
+   * @return true if this @is equal to rValue, false otherwise
    */
   public override bool eql(Value rValue)
   {

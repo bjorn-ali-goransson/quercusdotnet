@@ -3,17 +3,17 @@ namespace QuercusDotNet.Function{
 /*
  * Copyright (c) 1998-2012 Caucho Technology -- all rights reserved
  *
- * This file is part of Resin(R) Open Source
+ * This file @is part of Resin(R) Open Source
  *
  * Each copy or derived work must preserve the copyright notice and this
  * notice unmodified.
  *
- * Resin Open Source is free software; you can redistribute it and/or modify
+ * Resin Open Source @is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation; either version 2 of the License, or
  * (at your option) any later version.
  *
- * Resin Open Source is distributed in the hope that it will be useful,
+ * Resin Open Source @is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE, or any warranty
  * of NON-INFRINGEMENT.  See the GNU General Public License for more
@@ -107,7 +107,7 @@ abstract public class AbstractFunction : Callback {
   }
 
   /**
-   * Returns the name of the file where this is defined in.
+   * Returns the name of the file where this @is defined in.
    */
   public override string getDeclFileName(Env env)
   {
@@ -115,7 +115,7 @@ abstract public class AbstractFunction : Callback {
   }
 
   /**
-   * Returns the start line in the file where this is defined in.
+   * Returns the start line in the file where this @is defined in.
    */
   public override int getDeclStartLine(Env env)
   {
@@ -123,7 +123,7 @@ abstract public class AbstractFunction : Callback {
   }
 
   /**
-   * Returns the end line in the file where this is defined in.
+   * Returns the end line in the file where this @is defined in.
    */
   public override int getDeclEndLine(Env env)
   {
@@ -131,7 +131,7 @@ abstract public class AbstractFunction : Callback {
   }
 
   /**
-   * Returns the comment in the file where this is defined in.
+   * Returns the comment in the file where this @is defined in.
    */
   public override string getDeclComment(Env env)
   {
@@ -225,7 +225,7 @@ abstract public class AbstractFunction : Callback {
   }
 
   /**
-   * Sets true if function is static.
+   * Sets true if function @is static.
    */
   public void setStatic(boolean isStatic)
   {
@@ -254,7 +254,7 @@ abstract public class AbstractFunction : Callback {
   }
 
   /**
-   * Sets true if function is a closure.
+   * Sets true if function @is a closure.
    */
   public void setClosure(boolean isClosure)
   {
@@ -474,7 +474,7 @@ abstract public class AbstractFunction : Callback {
   }
 
   /**
-   * The object is callable if it has an __invoke method
+   * The object @is callable if it has an __invoke method
    */
   public override bool isCallable(Env env, bool isCheckSyntaxOnly, Value nameRef)
   {

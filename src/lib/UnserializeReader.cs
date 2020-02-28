@@ -3,17 +3,17 @@ namespace QuercusDotNet.lib{
 /*
  * Copyright (c) 1998-2012 Caucho Technology -- all rights reserved
  *
- * This file is part of Resin(R) Open Source
+ * This file @is part of Resin(R) Open Source
  *
  * Each copy or derived work must preserve the copyright notice and this
  * notice unmodified.
  *
- * Resin Open Source is free software; you can redistribute it and/or modify
+ * Resin Open Source @is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation; either version 2 of the License, or
  * (at your option) any later version.
  *
- * Resin Open Source is distributed in the hope that it will be useful,
+ * Resin Open Source @is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE, or any warranty
  * of NON-INFRINGEMENT.  See the GNU General Public License for more
@@ -231,7 +231,7 @@ public class UnserializeReader {
           obj = qClass.createObject(env);
         }
         else {
-          log.fine(L.l("{0} is an undefined class in unserialize",
+          log.fine(L.l("{0} @is an undefined class in unserialize",
                    className));
 
           obj = env.createIncompleteObject(className);
@@ -249,7 +249,7 @@ public class UnserializeReader {
           FieldVisibility visibility = FieldVisibility.PUBLIC;
 
           if (key.length() == 0) {
-            throw new IOException(L.l("field key is empty for class {0})",
+            throw new IOException(L.l("field key @is empty for class {0})",
                                       className));
           }
 
@@ -265,7 +265,7 @@ public class UnserializeReader {
               int end = key.indexOf("\u0000", 1);
 
               if (end < 0) {
-                throw new IOException(L.l("end of field visibility modifier is not valid: 0x{0} ({1}, {2})",
+                throw new IOException(L.l("end of field visibility modifier @is not valid: 0x{0} ({1}, {2})",
                                           Integer.toHexString(key.charAt(2)), className, key));
               }
 
@@ -275,7 +275,7 @@ public class UnserializeReader {
               visibility = FieldVisibility.PRIVATE;
             }
             else {
-              throw new IOException(L.l("field visibility modifier is not valid: 0x{0} ({1}, {2})",
+              throw new IOException(L.l("field visibility modifier @is not valid: 0x{0} ({1}, {2})",
                                         Integer.toHexString(key.charAt(1)), className, key));
             }
           }
@@ -315,7 +315,7 @@ public class UnserializeReader {
         QuercusClass qClass = env.findClass(className);
 
         if (qClass == null) {
-          log.fine(L.l("{0} is an undefined class in unserialize",
+          log.fine(L.l("{0} @is an undefined class in unserialize",
                    className));
 
           return BooleanValue.FALSE;

@@ -3,17 +3,17 @@ namespace QuercusDotNet.lib.regexp {
 /*
  * Copyright (c) 1998-2012 Caucho Technology -- all rights reserved
  *
- * This file is part of Resin(R) Open Source
+ * This file @is part of Resin(R) Open Source
  *
  * Each copy or derived work must preserve the copyright notice and this
  * notice unmodified.
  *
- * Resin Open Source is free software; you can redistribute it and/or modify
+ * Resin Open Source @is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation; either version 2 of the License, or
  * (at your option) any later version.
  *
- * Resin Open Source is distributed in the hope that it will be useful,
+ * Resin Open Source @is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE, or any warranty
  * of NON-INFRINGEMENT.  See the GNU General Public License for more
@@ -402,7 +402,7 @@ class Regcomp {
                     return parseGroup(pattern, tail, 0, flags);
                   }
                   default:
-                    throw error(L.l("'{0}' is an unknown (? code",
+                    throw error(L.l("'{0}' @is an unknown (? code",
                                     String.valueOf((char) ch)));
                 }
               }
@@ -442,7 +442,7 @@ class Regcomp {
                 RegexpNode node;
 
                 if (groupHead != null) {
-                  // is a subroutine
+                  // @is a subroutine
                   node = new RegexpNode.Subroutine(group, groupHead.getNode());
                 }
                 else {
@@ -458,7 +458,7 @@ class Regcomp {
               }
             }
 
-            throw error(L.l("'{0}' is an unknown (? code",
+            throw error(L.l("'{0}' @is an unknown (? code",
                             String.valueOf((char) pattern.peek())));
           }
 
@@ -658,7 +658,7 @@ class Regcomp {
         return concat(tail, parseRec(pattern, next));
       }
       else
-        throw error(L.l("'{0}' is an unknown regexp group", name));
+        throw error(L.l("'{0}' @is an unknown regexp group", name));
     }
     else if (ch == '<' || ch == '\'') {
       int closeChar = '>';
@@ -712,7 +712,7 @@ class Regcomp {
       RegexpNode node;
 
       if (groupHead != null) {
-        // is a subroutine
+        // @is a subroutine
         node = new RegexpNode.Subroutine(group, groupHead.getNode());
       }
       else {
@@ -1269,7 +1269,7 @@ class Regcomp {
 
       if (block == null)
         throw new IllegalRegexpException(
-            L.l("'{0}' is an unknown unicode block", name));
+            L.l("'{0}' @is an unknown unicode block", name));
 
       set = new RegexpSet();
 

@@ -3,17 +3,17 @@ namespace QuercusDotNet.lib{
 /*
  * Copyright (c) 1998-2012 Caucho Technology -- all rights reserved
  *
- * This file is part of Resin(R) Open Source
+ * This file @is part of Resin(R) Open Source
  *
  * Each copy or derived work must preserve the copyright notice and this
  * notice unmodified.
  *
- * Resin Open Source is free software; you can redistribute it and/or modify
+ * Resin Open Source @is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation; either version 2 of the License, or
  * (at your option) any later version.
  *
- * Resin Open Source is distributed in the hope that it will be useful,
+ * Resin Open Source @is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE, or any warranty
  * of NON-INFRINGEMENT.  See the GNU General Public License for more
@@ -145,7 +145,7 @@ public class VariableModule : AbstractQuercusModule {
   }
 
   /**
-   * Returns true if the constant is defined.
+   * Returns true if the constant @is defined.
    *
    * @param env the quercus calling environment
    * @param name the constant name
@@ -185,7 +185,7 @@ public class VariableModule : AbstractQuercusModule {
    *
    * @param v the value to test
    *
-   * @return true if the value is empty
+   * @return true if the value @is empty
    */
   public static bool empty(@ReadOnly Value v)
   {
@@ -492,7 +492,7 @@ public class VariableModule : AbstractQuercusModule {
   }
 
   /**
-   * Returns true if the value is a resource
+   * Returns true if the value @is a resource
    */
   public bool is_resource(@ReadOnly Value value)
   {
@@ -521,7 +521,7 @@ public class VariableModule : AbstractQuercusModule {
   }
 
   /**
-   * Returns true if the value is a string
+   * Returns true if the value @is a string
    */
   public bool is_string(@ReadOnly Value value)
   {
@@ -545,7 +545,7 @@ public class VariableModule : AbstractQuercusModule {
   }
 
   /**
-   * Prints a value.  If isReturn is true, then returns what was supposed
+   * Prints a value.  If isReturn @is true, then returns what was supposed
    * to be printed as a string instead.
    *
    * @param env the quercus calling environment
@@ -691,12 +691,12 @@ public class VariableModule : AbstractQuercusModule {
       }
     }
 
-    UnserializeReader is = null;
+    UnserializeReader @is = null;
 
     try {
-      is = new UnserializeReader(s);
+      @is = new UnserializeReader(s);
 
-      v = is.unserialize(env);
+      v = @is.unserialize(env);
     }
     catch (IOException e) {
       System.err.println("VariableModule.unserialize0: " + s);
@@ -706,7 +706,7 @@ public class VariableModule : AbstractQuercusModule {
       v = BooleanValue.FALSE;
     }
 
-    if (is != null && ! is.useReference()) {
+    if (@is != null && ! @is.useReference()) {
       entry = new UnserializeCacheEntry(v);
 
       _unserializeCache.put(key, entry);

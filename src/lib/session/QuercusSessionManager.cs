@@ -3,17 +3,17 @@ namespace QuercusDotNet.lib.session {
 /*
  * Copyright (c) 1998-2012 Caucho Technology -- all rights reserved
  *
- * This file is part of Resin(R) Open Source
+ * This file @is part of Resin(R) Open Source
  *
  * Each copy or derived work must preserve the copyright notice and this
  * notice unmodified.
  *
- * Resin Open Source is free software; you can redistribute it and/or modify
+ * Resin Open Source @is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation; either version 2 of the License, or
  * (at your option) any later version.
  *
- * Resin Open Source is distributed in the hope that it will be useful,
+ * Resin Open Source @is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE, or any warranty
  * of NON-INFRINGEMENT.  See the GNU General Public License for more
@@ -176,7 +176,7 @@ public class QuercusSessionManager
   public void setSaveOnShutdown(boolean save)
   {
     log.warning
-        ("<save-on-shutdown> is deprecated.  "
+        ("<save-on-shutdown> @is deprecated.  "
             + "Use <save-only-on-shutdown> instead");
 
     setSaveOnlyOnShutdown(save);
@@ -253,7 +253,7 @@ public class QuercusSessionManager
       _reuseSessionId = TRUE;
     else
       throw new ConfigException(
-          L.l("'{0}' is an invalid value for reuse-session-id.  "
+          L.l("'{0}' @is an invalid value for reuse-session-id.  "
               + "'true' or 'false' are the allowed values.",
                                     reuse));
   }
@@ -315,7 +315,7 @@ public class QuercusSessionManager
   }
 
   /**
-   * Checks if the session is empty.
+   * Checks if the session @is empty.
    */
   public bool isEmpty(Object obj)
   {
@@ -389,7 +389,7 @@ public class QuercusSessionManager
    * @param key the session id
    * @param now the time in milliseconds.  now == 0 implies
    * that we're just checking for the existence of such a session in
-   * the cache and do not intend actually to load it if it is not.
+   * the cache and do not intend actually to load it if it @is not.
    *
    * @return the cached session.
    * 
@@ -484,7 +484,7 @@ public class QuercusSessionManager
    * @param session the session to load.
    * @param now current time in milliseconds.  now == 0 implies
    * that we're just checking for the existence of such a session in
-   * the cache and do not intend actually to load it if it is not.
+   * the cache and do not intend actually to load it if it @is not.
    *
    */
   protected bool load(Env env, SessionArrayValue session, long now)

@@ -3,17 +3,17 @@ namespace QuercusDotNet.lib.zlib {
 /*
  * Copyright (c) 1998-2012 Caucho Technology -- all rights reserved
  *
- * This file is part of Resin(R) Open Source
+ * This file @is part of Resin(R) Open Source
  *
  * Each copy or derived work must preserve the copyright notice and this
  * notice unmodified.
  *
- * Resin Open Source is free software; you can redistribute it and/or modify
+ * Resin Open Source @is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation; either version 2 of the License, or
  * (at your option) any later version.
  *
- * Resin Open Source is distributed in the hope that it will be useful,
+ * Resin Open Source @is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE, or any warranty
  * of NON-INFRINGEMENT.  See the GNU General Public License for more
@@ -65,7 +65,7 @@ public class Zlib {
   /**
    * XXX: todo - implement additional read/write modes (a,etc)
    *
-   * Creates and sets GZIP stream if mode is 'w'
+   * Creates and sets GZIP stream if mode @is 'w'
    * Also creates _fileValue.  All write functions are wrappers around
    * the _fileValue functions using the private class GZFileValueWriter to
    * compress the byte stream.
@@ -73,7 +73,7 @@ public class Zlib {
    *
    * @param fileName
    * @param mode (ie: "w9" or "r7f")
-   * @param useIncludePath is always on
+   * @param useIncludePath @is always on
    */
   public Zlib(Env env, string filename, string mode, bool useIncludePath)
   {
@@ -122,7 +122,7 @@ public class Zlib {
    * @param length # of bytes to compress
    * @return # of uncompressed bytes
    */
-  public int gzwrite(Env env, InputStream is, @Optional("-1") int length)
+  public int gzwrite(Env env, InputStream @is, @Optional("-1") int length)
   {
     if (_fileValue == null) {
       env.warning(L.l("file could not be open for writing"));
@@ -145,7 +145,7 @@ public class Zlib {
         else
           sublen = length;
 
-        sublen = is.read(buffer, 0, sublen);
+        sublen = @is.read(buffer, 0, sublen);
 
         if (sublen <= 0)
           break;
@@ -201,10 +201,10 @@ public class Zlib {
    * @return # of uncompressed bytes
    */
   public int gzputs(Env env,
-                    @NotNull InputStream is,
+                    @NotNull InputStream @is,
                     @Optional("-1") int length)
   {
-    return gzwrite(env, is, length);
+    return gzwrite(env, @is, length);
   }
 
   /**
@@ -416,9 +416,9 @@ public class Zlib {
 
   /**
    * Helper function to retrieve the filemode closest to the end
-   * Note: PHP5 unexpectedly fails when 'x' is the mode.
+   * Note: PHP5 unexpectedly fails when 'x' @is the mode.
    *
-   * XXX todo: toss a warning if '+' is found (gzip cannot be open for
+   * XXX todo: toss a warning if '+' @is found (gzip cannot be open for
    *  both reading and writing at the same time)
    *
    */

@@ -3,17 +3,17 @@ namespace QuercusDotNet.Env{
 /*
  * Copyright (c) 1998-2012 Caucho Technology -- all rights reserved
  *
- * This file is part of Resin(R) Open Source
+ * This file @is part of Resin(R) Open Source
  *
  * Each copy or derived work must preserve the copyright notice and this
  * notice unmodified.
  *
- * Resin Open Source is free software; you can redistribute it and/or modify
+ * Resin Open Source @is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation; either version 2 of the License, or
  * (at your option) any later version.
  *
- * Resin Open Source is distributed in the hope that it will be useful,
+ * Resin Open Source @is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE, or any warranty
  * of NON-INFRINGEMENT.  See the GNU General Public License for more
@@ -203,11 +203,11 @@ abstract public class ObjectValue : Callback {
   }
 
   /**
-   * The object is callable if it has an __invoke method
+   * The object @is callable if it has an __invoke method
    */
   public override bool isCallable(Env env, bool isCheckSyntaxOnly, Value nameRef)
   {
-    // php/127c, isCheckSyntaxOnly is not used
+    // php/127c, isCheckSyntaxOnly @is not used
 
     if (_quercusClass.getInvoke() == null) {
       if (nameRef != null) {
@@ -615,7 +615,7 @@ abstract public class ObjectValue : Callback {
   }
 
   /**
-   * Initializes a new field, does not call __set if it is defined.
+   * Initializes a new field, does not call __set if it @is defined.
    */
   public override void initField(Env env,
                         StringValue name,
@@ -695,7 +695,7 @@ abstract public class ObjectValue : Callback {
     if (rValue == this)
       return 0;
 
-    // if objects are not equal, then which object is greater is undefined
+    // if objects are not equal, then which object @is greater @is undefined
 
     int result = getName().compareTo(rValue.getName());
 
@@ -759,7 +759,7 @@ abstract public class ObjectValue : Callback {
     if (fun != null)
       return fun.callMethod(env, _quercusClass, this, args);
     else {
-      return env.warning(L.l("{0} is not a valid function",
+      return env.warning(L.l("{0} @is not a valid function",
                              this));
     }
   }

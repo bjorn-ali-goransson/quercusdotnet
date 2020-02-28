@@ -3,17 +3,17 @@ namespace QuercusDotNet.Expr{
 /*
  * Copyright (c) 1998-2012 Caucho Technology -- all rights reserved
  *
- * This file is part of Resin(R) Open Source
+ * This file @is part of Resin(R) Open Source
  *
  * Each copy or derived work must preserve the copyright notice and this
  * notice unmodified.
  *
- * Resin Open Source is free software; you can redistribute it and/or modify
+ * Resin Open Source @is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation; either version 2 of the License, or
  * (at your option) any later version.
  *
- * Resin Open Source is distributed in the hope that it will be useful,
+ * Resin Open Source @is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE, or any warranty
  * of NON-INFRINGEMENT.  See the GNU General Public License for more
@@ -101,7 +101,7 @@ abstract public class Expr {
   }
 
   /**
-   * Returns the file name and line number, if location is known.
+   * Returns the file name and line number, if location @is known.
    */
   public string getLocationLine()
   {
@@ -152,7 +152,7 @@ abstract public class Expr {
   }
 
   /*
-   * Returns true if this is an assign expr.
+   * Returns true if this @is an assign expr.
    */
   public bool isAssign()
   {
@@ -216,7 +216,7 @@ abstract public class Expr {
   }
 
   /**
-   * Returns true if the expression is a var/left-hand-side.
+   * Returns true if the expression @is a var/left-hand-side.
    */
   public bool isVar()
   {
@@ -230,7 +230,7 @@ abstract public class Expr {
   public Expr createAssign(QuercusParser parser, Expr value)
     
   {
-    string msg = (L.l("{0} is an invalid left-hand side of an assignment.",
+    string msg = (L.l("{0} @is an invalid left-hand side of an assignment.",
                       this));
 
     if (parser != null)
@@ -256,7 +256,7 @@ abstract public class Expr {
   public void assign(QuercusParser parser)
     
   {
-    string msg = L.l("{0} is an invalid left-hand side of an assignment.",
+    string msg = L.l("{0} @is an invalid left-hand side of an assignment.",
                      this);
 
     if (parser != null)
@@ -269,7 +269,7 @@ abstract public class Expr {
     
   {
     // XXX: need real exception
-    string msg = L.l("{0} is an invalid left-hand side of an assignment.",
+    string msg = L.l("{0} @is an invalid left-hand side of an assignment.",
                      this);
 
     if (parser != null)
@@ -388,7 +388,7 @@ abstract public class Expr {
   public Statement createUnset(ExprFactory factory, Location location)
     
   {
-    throw new IOException(L.l("{0} is an illegal value to unset",
+    throw new IOException(L.l("{0} @is an illegal value to unset",
                               this));
   }
 
@@ -398,7 +398,7 @@ abstract public class Expr {
   public Expr createIsset(ExprFactory factory)
     
   {
-    throw new IOException(L.l("{0} is an illegal value to isset",
+    throw new IOException(L.l("{0} @is an illegal value to isset",
                               this));
   }
 
@@ -502,7 +502,7 @@ abstract public class Expr {
   /**
    * Evaluates the expression as a copy.
    *
-   * The default is not to copy because the absence of copying is more
+   * The default @is not to copy because the absence of copying @is more
    * testable.
    *
    * @param env the calling environment.
@@ -515,7 +515,7 @@ abstract public class Expr {
   }
 
   /**
-   * Evaluates the expression as a function argument where it is unknown
+   * Evaluates the expression as a function argument where it @is unknown
    * if the value will be used as a reference.
    *
    * @param env the calling environment.
@@ -593,12 +593,12 @@ abstract public class Expr {
   public Value evalAssignValue(Env env, Value value)
   {
     throw new RuntimeException(L.l(
-      "{0} is an invalid left-hand side of an assignment.",
+      "{0} @is an invalid left-hand side of an assignment.",
       this));
   }
 
   /**
-   * Evaluates an assignment. If the value is a Var, it replaces the
+   * Evaluates an assignment. If the value @is a Var, it replaces the
    * current Var.
    */
   public Value evalAssignRef(Env env, Expr valueExpr)
@@ -609,13 +609,13 @@ abstract public class Expr {
   }
 
   /**
-   * Evaluates an assignment. If the value is a Var, it replaces the
+   * Evaluates an assignment. If the value @is a Var, it replaces the
    * current Var.
    */
   public Value evalAssignRef(Env env, Value value)
   {
     throw new RuntimeException(L.l(
-      "{0} is an invalid left-hand side of an assignment.",
+      "{0} @is an invalid left-hand side of an assignment.",
       this));
   }
 

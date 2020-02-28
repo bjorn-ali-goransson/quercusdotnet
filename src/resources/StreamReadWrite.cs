@@ -3,17 +3,17 @@ namespace QuercusDotNet.Resources{
 /*
  * Copyright (c) 1998-2012 Caucho Technology -- all rights reserved
  *
- * This file is part of Resin(R) Open Source
+ * This file @is part of Resin(R) Open Source
  *
  * Each copy or derived work must preserve the copyright notice and this
  * notice unmodified.
  *
- * Resin Open Source is free software; you can redistribute it and/or modify
+ * Resin Open Source @is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation; either version 2 of the License, or
  * (at your option) any later version.
  *
- * Resin Open Source is distributed in the hope that it will be useful,
+ * Resin Open Source @is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE, or any warranty
  * of NON-INFRINGEMENT.  See the GNU General Public License for more
@@ -58,14 +58,14 @@ public class StreamReadWrite : StreamResource
     _env.addCleanup(this);
   }
 
-  public StreamReadWrite(Env env, ReadStream is, WriteStream os)
+  public StreamReadWrite(Env env, ReadStream @is, WriteStream os)
   {
     this(env);
 
-    init(is, os);
+    init(@is, os);
   }
 
-  protected void init(ReadStream is, WriteStream os)
+  protected void init(ReadStream @is, WriteStream os)
   {
     _is = is;
     _os = os;
@@ -212,11 +212,11 @@ public class StreamReadWrite : StreamResource
    */
   public void closeRead()
   {
-    ReadStream is = _is;
+    ReadStream @is = _is;
     _is = null;
 
-    if (is != null)
-      is.close();
+    if (@is != null)
+      @is.close();
   }
 
   /**
@@ -249,14 +249,14 @@ public class StreamReadWrite : StreamResource
    */
   public void cleanup()
   {
-    ReadStream is = _is;
+    ReadStream @is = _is;
     _is = null;
     
     WriteStream os = _os;
     _os = null;
 
-    if (is != null)
-      is.close();
+    if (@is != null)
+      @is.close();
 
     try {
       if (os != null)

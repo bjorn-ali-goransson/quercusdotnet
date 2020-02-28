@@ -3,17 +3,17 @@ namespace QuercusDotNet.lib{
 /*
  * Copyright (c) 1998-2012 Caucho Technology -- all rights reserved
  *
- * This file is part of Resin(R) Open Source
+ * This file @is part of Resin(R) Open Source
  *
  * Each copy or derived work must preserve the copyright notice and this
  * notice unmodified.
  *
- * Resin Open Source is free software; you can redistribute it and/or modify
+ * Resin Open Source @is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation; either version 2 of the License, or
  * (at your option) any later version.
  *
- * Resin Open Source is distributed in the hope that it will be useful,
+ * Resin Open Source @is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE, or any warranty
  * of NON-INFRINGEMENT.  See the GNU General Public License for more
@@ -106,7 +106,7 @@ public class HashModule : AbstractQuercusModule {
 
       return hashToValue(env, bytes, isBinary);
     } catch (NoSuchAlgorithmException e) {
-      env.error(L.l("'{0}' is an unknown algorithm", algorithm), e);
+      env.error(L.l("'{0}' @is an unknown algorithm", algorithm), e);
 
       return BooleanValue.FALSE;
     }
@@ -159,12 +159,12 @@ public class HashModule : AbstractQuercusModule {
 
       TempBuffer tempBuffer = TempBuffer.allocate();
       byte []buffer = tempBuffer.getBuffer();
-      ReadStream is = path.openRead();
+      ReadStream @is = path.openRead();
 
       try {
         int len;
 
-        while ((len = is.read(buffer, 0, buffer.length)) > 0) {
+        while ((len = @is.read(buffer, 0, buffer.length)) > 0) {
           digest.update(buffer, 0, len);
         }
 
@@ -174,14 +174,14 @@ public class HashModule : AbstractQuercusModule {
       } finally {
         TempBuffer.free(tempBuffer);
 
-        is.close();
+        @is.close();
       }
     } catch (NoSuchAlgorithmException e) {
-      env.error(L.l("'{0}' is an unknown algorithm", algorithm), e);
+      env.error(L.l("'{0}' @is an unknown algorithm", algorithm), e);
 
       return BooleanValue.FALSE;
     } catch (IOException e) {
-      env.error(L.l("'{0}' is an unknown file", path), e);
+      env.error(L.l("'{0}' @is an unknown file", path), e);
 
       return BooleanValue.FALSE;
     }
@@ -271,7 +271,7 @@ public class HashModule : AbstractQuercusModule {
         return new HashDigestContext(md);
       }
     } catch (Exception e) {
-      env.error(L.l("hash_init: '{0}' is an unknown algorithm",
+      env.error(L.l("hash_init: '{0}' @is an unknown algorithm",
                     algorithm));
 
       return null;
@@ -305,14 +305,14 @@ public class HashModule : AbstractQuercusModule {
 
     TempBuffer tempBuffer = TempBuffer.allocate();
     byte []buffer = tempBuffer.getBuffer();
-    ReadStream is = null;
+    ReadStream @is = null;
 
     try {
-      is = path.openRead();
+      @is = path.openRead();
 
       int len;
 
-      while ((len = is.read(buffer, 0, buffer.length)) > 0) {
+      while ((len = @is.read(buffer, 0, buffer.length)) > 0) {
         context.update(buffer, 0, len);
       }
     } catch (IOException e) {
@@ -320,8 +320,8 @@ public class HashModule : AbstractQuercusModule {
     } finally {
       TempBuffer.free(tempBuffer);
 
-      if (is != null)
-        is.close();
+      if (@is != null)
+        @is.close();
     }
 
     return BooleanValue.TRUE;
@@ -332,7 +332,7 @@ public class HashModule : AbstractQuercusModule {
    */
   public int hash_update_stream(Env env,
                                 HashContext context,
-                                InputStream is,
+                                InputStream @is,
                                 @Optional("-1") int length)
   {
     if (context == null)
@@ -353,7 +353,7 @@ public class HashModule : AbstractQuercusModule {
         if (length < sublen)
           sublen = length;
 
-        int len = is.read(buffer, 0, sublen);
+        int len = @is.read(buffer, 0, sublen);
 
         if (len < 0)
           return readLength;

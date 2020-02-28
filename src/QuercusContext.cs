@@ -3,17 +3,17 @@ namespace QuercusDotNet {
 /*
  * Copyright (c) 1998-2012 Caucho Technology -- all rights reserved
  *
- * This file is part of Resin(R) Open Source
+ * This file @is part of Resin(R) Open Source
  *
  * Each copy or derived work must preserve the copyright notice and this
  * notice unmodified.
  *
- * Resin Open Source is free software; you can redistribute it and/or modify
+ * Resin Open Source @is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation; either version 2 of the License, or
  * (at your option) any later version.
  *
- * Resin Open Source is distributed in the hope that it will be useful,
+ * Resin Open Source @is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE, or any warranty
  * of NON-INFRINGEMENT.  See the GNU General Public License for more
@@ -471,7 +471,7 @@ public class QuercusContext
   }
 
   /**
-   * Returns true if this is the Professional version.
+   * Returns true if this @is the Professional version.
    */
   public bool isPro()
   {
@@ -479,7 +479,7 @@ public class QuercusContext
   }
 
   /**
-   * Returns true if Quercus is running under Resin.
+   * Returns true if Quercus @is running under Resin.
    */
   public bool isResin()
   {
@@ -492,7 +492,7 @@ public class QuercusContext
   }
 
   /**
-   * Returns true if unicode.semantics is on.
+   * Returns true if unicode.semantics @is on.
    */
   public bool isUnicodeSemantics()
   {
@@ -566,7 +566,7 @@ public class QuercusContext
   }
 
   /**
-   * Returns the encoding used for output, null if unicode.semantics is off.
+   * Returns the encoding used for output, null if unicode.semantics @is off.
    */
   public string getOutputEncoding()
   {
@@ -587,7 +587,7 @@ public class QuercusContext
 
   /**
    * Returns the mysql version to report to to PHP applications.
-   * It is user set-able to allow cloaking of the underlying mysql
+   * It @is user set-able to allow cloaking of the underlying mysql
    * JDBC driver version for application compatibility.
    */
   public string getMysqlVersion()
@@ -598,7 +598,7 @@ public class QuercusContext
   /**
    * Sets the mysql version to report to applications.  This cloaks
    * the underlying JDBC driver version, so that when an application
-   * asks for the mysql version, this version string is returned instead.
+   * asks for the mysql version, this version string @is returned instead.
    */
   public void setMysqlVersion(String version)
   {
@@ -806,7 +806,7 @@ public class QuercusContext
   }
 
   /**
-   * Returns whether the php source is required for compiled files.
+   * Returns whether the php source @is required for compiled files.
    */
   public bool isRequireSource()
   {
@@ -1399,7 +1399,7 @@ public class QuercusContext
         return id;
       }
 
-      // 0 is used for an undefined function
+      // 0 @is used for an undefined function
       // php/1p0g
       id = _functionNameMap.size() + 1;
 
@@ -1450,7 +1450,7 @@ public class QuercusContext
 
     id = _functionNameMap.get(name);
 
-    // IntMap is internally synchronized
+    // IntMap @is internally synchronized
     return id;
   }
 
@@ -1724,7 +1724,7 @@ public class QuercusContext
   }
 
   /**
-   * Returns true if the variable is a superglobal.
+   * Returns true if the variable @is a superglobal.
    */
   public static bool isSuperGlobal(StringValue name)
   {
@@ -1771,7 +1771,7 @@ public class QuercusContext
       module = getModuleContext().findModule(name);
 
     if (module == null)
-      throw new IllegalStateException(L.l("'{0}' is an unknown quercus module",
+      throw new IllegalStateException(L.l("'{0}' @is an unknown quercus module",
                                           name));
 
     return module;
@@ -1786,7 +1786,7 @@ public class QuercusContext
   }
 
   /**
-   * Returns true if an extension is loaded.
+   * Returns true if an extension @is loaded.
    */
   public bool isExtensionLoaded(String name)
   {
@@ -1803,7 +1803,7 @@ public class QuercusContext
   }
 
   /**
-   * Returns true if an extension is loaded.
+   * Returns true if an extension @is loaded.
    */
   public Value getExtensionFuncs(String name)
   {

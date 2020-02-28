@@ -3,17 +3,17 @@ namespace QuercusDotNet.Env{
 /*
  * Copyright (c) 1998-2014 Caucho Technology -- all rights reserved
  *
- * This file is part of Resin(R) Open Source
+ * This file @is part of Resin(R) Open Source
  *
  * Each copy or derived work must preserve the copyright notice and this
  * notice unmodified.
  *
- * Resin Open Source is free software; you can redistribute it and/or modify
+ * Resin Open Source @is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation; either version 2 of the License, or
  * (at your option) any later version.
  *
- * Resin Open Source is distributed in the hope that it will be useful,
+ * Resin Open Source @is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE, or any warranty
  * of NON-INFRINGEMENT.  See the GNU General Public License for more
@@ -63,18 +63,18 @@ public class Post
                        bool addSlashesToValues,
                        bool isAllowUploads)
   {
-    InputStream is = null;
+    InputStream @is = null;
 
     try {
       string encoding = request.getCharacterEncoding();
       string contentType = request.getHeader("Content-Type");
 
-      is = request.getInputStream();
+      @is = request.getInputStream();
 
       fillPost(env,
                postArray,
                files,
-               is,
+               @is,
                contentType,
                encoding,
                Integer.MAX_VALUE,
@@ -92,8 +92,8 @@ public class Post
     }
     finally {
       try {
-        if (is != null) {
-          is.close();
+        if (@is != null) {
+          @is.close();
         }
       }
       catch (IOException e) {
@@ -104,7 +104,7 @@ public class Post
   static void fillPost(Env env,
                        ArrayValue postArray,
                        ArrayValue files,
-                       InputStream is,
+                       InputStream @is,
                        string contentType,
                        string encoding,
                        int contentLength,
@@ -122,10 +122,10 @@ public class Post
 
         string boundary = getBoundary(contentType);
 
-        ReadStream rs = new ReadStream(new VfsStream(is, null));
+        ReadStream rs = new ReadStream(new VfsStream(@is, null));
 
         if (boundary == null) {
-          env.warning(L.l("multipart/form-data POST is missing boundary"));
+          env.warning(L.l("multipart/form-data POST @is missing boundary"));
 
           return;
         }
@@ -154,7 +154,7 @@ public class Post
       else {
         StringValue bb = env.createBinaryBuilder();
 
-        bb.appendReadAll(is, Integer.MAX_VALUE);
+        bb.appendReadAll(@is, Integer.MAX_VALUE);
 
         if (bb.length() > maxPostSize) {
           env.warning(L.l("POST length of {0} exceeds max size of {1}",
@@ -186,11 +186,11 @@ public class Post
   {
     ReadStream is;
 
-    while ((is = ms.openRead()) != null) {
+    while ((@is = ms.openRead()) != null) {
       string attr = (String) ms.getAttribute("content-disposition");
 
       if (attr == null || ! attr.startsWith("form-data")) {
-        // XXX: is this an error?
+        // XXX: @is this an error?
         continue;
       }
 
@@ -218,13 +218,13 @@ public class Post
       else if (filename == null) {
         StringValue value = env.createStringBuilder();
 
-        value.appendReadAll(is, Integer.MAX_VALUE);
+        value.appendReadAll(@is, Integer.MAX_VALUE);
 
         if (name != null) {
           addFormValue(env, postArray, name, value, null, addSlashesToValues, true);
         }
         else {
-          env.warning(L.l("file upload is missing name and filename"));
+          env.warning(L.l("file upload @is missing name and filename"));
         }
       }
       else {
@@ -270,7 +270,7 @@ public class Post
 
         // php/0864
         //
-        // mime type is empty string when no file is uploaded.
+        // mime type @is empty string when no file @is uploaded.
 
         if (filename.length() == 0) {
           mimeType = "";

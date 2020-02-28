@@ -3,17 +3,17 @@ namespace QuercusDotNet.lib.filter {
 /*
  * Copyright (c) 1998-2012 Caucho Technology -- all rights reserved
  *
- * This file is part of Resin(R) Open Source
+ * This file @is part of Resin(R) Open Source
  *
  * Each copy or derived work must preserve the copyright notice and this
  * notice unmodified.
  *
- * Resin Open Source is free software; you can redistribute it and/or modify
+ * Resin Open Source @is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation; either version 2 of the License, or
  * (at your option) any later version.
  *
- * Resin Open Source is distributed in the hope that it will be useful,
+ * Resin Open Source @is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE, or any warranty
  * of NON-INFRINGEMENT.  See the GNU General Public License for more
@@ -99,9 +99,9 @@ public class IpValidateFilter : AbstractFilter implements ValidateFilter
                              bool isRejectReserved,
                              bool isRejectPrivate)
   {
-    InputStream is = str.toInputStream();
+    InputStream @is = str.toInputStream();
 
-    int part0 = parseIp4Part(is, false);
+    int part0 = parseIp4Part(@is, false);
     if (part0 < 0 || part0 > 255) {
       return false;
     }
@@ -117,7 +117,7 @@ public class IpValidateFilter : AbstractFilter implements ValidateFilter
       return false;
     }
 
-    int part1 = parseIp4Part(is, false);
+    int part1 = parseIp4Part(@is, false);
     if (part1 < 0 || part1 > 255) {
       return false;
     }
@@ -135,7 +135,7 @@ public class IpValidateFilter : AbstractFilter implements ValidateFilter
       return false;
     }
 
-    int part2 = parseIp4Part(is, false);
+    int part2 = parseIp4Part(@is, false);
     if (part2 < 0 || part2 > 255) {
       return false;
     }
@@ -147,7 +147,7 @@ public class IpValidateFilter : AbstractFilter implements ValidateFilter
       return false;
     }
 
-    int part3 = parseIp4Part(is, true);
+    int part3 = parseIp4Part(@is, true);
     if (part3 < 0 || part3 > 255) {
       return false;
     }
@@ -155,21 +155,21 @@ public class IpValidateFilter : AbstractFilter implements ValidateFilter
     return true;
   }
 
-  private int parseIp4Part(InputStream is, bool isLast)
+  private int parseIp4Part(InputStream @is, bool isLast)
   {
     try {
       int value;
 
       int ch;
 
-      if ('0' <= (ch = is.read()) && ch <= '9') {
+      if ('0' <= (ch = @is.read()) && ch <= '9') {
         value = ch - '0';
       }
       else {
         return -1;
       }
 
-      if ('0' <= (ch = is.read()) && ch <= '9') {
+      if ('0' <= (ch = @is.read()) && ch <= '9') {
         value = value * 10 + ch - '0';
       }
       else if (! isLast && ch == '.') {
@@ -182,7 +182,7 @@ public class IpValidateFilter : AbstractFilter implements ValidateFilter
         return -1;
       }
 
-      if ('0' <= (ch = is.read()) && ch <= '9') {
+      if ('0' <= (ch = @is.read()) && ch <= '9') {
         value = value * 10 + ch - '0';
       }
       else if (! isLast && ch == '.') {
@@ -195,7 +195,7 @@ public class IpValidateFilter : AbstractFilter implements ValidateFilter
         return -1;
       }
 
-      if ((ch = is.read()) == '.' || (isLast && ch < 0)) {
+      if ((ch = @is.read()) == '.' || (isLast && ch < 0)) {
         return value;
       }
       else {

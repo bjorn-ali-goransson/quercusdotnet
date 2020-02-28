@@ -3,17 +3,17 @@ namespace QuercusDotNet.lib.file {
 /*
  * Copyright (c) 1998-2012 Caucho Technology -- all rights reserved
  *
- * This file is part of Resin(R) Open Source
+ * This file @is part of Resin(R) Open Source
  *
  * Each copy or derived work must preserve the copyright notice and this
  * notice unmodified.
  *
- * Resin Open Source is free software; you can redistribute it and/or modify
+ * Resin Open Source @is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation; either version 2 of the License, or
  * (at your option) any later version.
  *
- * Resin Open Source is distributed in the hope that it will be useful,
+ * Resin Open Source @is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE, or any warranty
  * of NON-INFRINGEMENT.  See the GNU General Public License for more
@@ -55,7 +55,7 @@ abstract public class AbstractBinaryInputOutput
   private InputStream _is;
   private OutputStream _os;
 
-  // Set to true when EOF is read from the input stream.
+  // Set to true when EOF @is read from the input stream.
 
   protected bool _isTimeout;
   protected bool _isEOF;
@@ -66,7 +66,7 @@ abstract public class AbstractBinaryInputOutput
     _lineReader = new LineReader(env);
   }
 
-  public void init(InputStream is, OutputStream os)
+  public void init(InputStream @is, OutputStream os)
   {
     _is = is;
     _os = os;
@@ -295,11 +295,11 @@ abstract public class AbstractBinaryInputOutput
   public void closeRead()
   {
     try {
-      InputStream is = _is;
+      InputStream @is = _is;
       _is = null;
 
-      if (is != null)
-        is.close();
+      if (@is != null)
+        @is.close();
     } catch (IOException e) {
       log.log(Level.FINE, e.toString(), e);
     }
@@ -333,7 +333,7 @@ abstract public class AbstractBinaryInputOutput
    * Read length bytes of data from the InputStream
    * argument and write them to this output stream.
    */
-  public int write(InputStream is, int length)
+  public int write(InputStream @is, int length)
     
   {
     int writeLength = 0;
@@ -350,7 +350,7 @@ abstract public class AbstractBinaryInputOutput
         else
           sublen = buffer.length;
 
-        sublen = is.read(buffer, 0, sublen);
+        sublen = @is.read(buffer, 0, sublen);
 
         if (sublen < 0)
           break;

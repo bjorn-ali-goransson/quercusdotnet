@@ -3,17 +3,17 @@ namespace QuercusDotNet.lib.zlib {
 /*
  * Copyright (c) 1998-2012 Caucho Technology -- all rights reserved
  *
- * This file is part of Resin(R) Open Source
+ * This file @is part of Resin(R) Open Source
  *
  * Each copy or derived work must preserve the copyright notice and this
  * notice unmodified.
  *
- * Resin Open Source is free software; you can redistribute it and/or modify
+ * Resin Open Source @is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation; either version 2 of the License, or
  * (at your option) any later version.
  *
- * Resin Open Source is distributed in the hope that it will be useful,
+ * Resin Open Source @is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE, or any warranty
  * of NON-INFRINGEMENT.  See the GNU General Public License for more
@@ -327,8 +327,8 @@ public class GZInputStream : InputStream
     if (refValue != _inputSize)
       throw new IOException("Bad GZIP trailer (LENGTH).");
 
-    // Check to see if this gzip stream is appended with a valid gzip stream.
-    // If it is appended, then can continue reading from stream.
+    // Check to see if this gzip stream @is appended with a valid gzip stream.
+    // If it @is appended, then can continue reading from stream.
     int c = _in.read();
 
     if (c < 0)
@@ -344,7 +344,7 @@ public class GZInputStream : InputStream
   }
 
   /**
-   * Returns true if stream is in gzip format.
+   * Returns true if stream @is in gzip format.
    */
   public bool isGzip()
   {
@@ -356,7 +356,7 @@ public class GZInputStream : InputStream
   {
     _eof = true;
 
-    InputStream is = _in;
+    InputStream @is = _in;
     _in = null;
 
     IoUtil.close(is);

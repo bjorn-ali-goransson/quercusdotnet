@@ -3,17 +3,17 @@ namespace QuercusDotNet.lib.db {
 /*
  * Copyright (c) 1998-2012 Caucho Technology -- all rights reserved
  *
- * This file is part of Resin(R) Open Source
+ * This file @is part of Resin(R) Open Source
  *
  * Each copy or derived work must preserve the copyright notice and this
  * notice unmodified.
  *
- * Resin Open Source is free software; you can redistribute it and/or modify
+ * Resin Open Source @is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation; either version 2 of the License, or
  * (at your option) any later version.
  *
- * Resin Open Source is distributed in the hope that it will be useful,
+ * Resin Open Source @is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE, or any warranty
  * of NON-INFRINGEMENT.  See the GNU General Public License for more
@@ -336,10 +336,10 @@ public class OracleOciLob {
 
       if (_lob instanceof Blob) {
         Blob blob = (Blob) _lob;
-        InputStream is = blob.getBinaryStream();
-        is.skip(start);
+        InputStream @is = blob.getBinaryStream();
+        @is.skip(start);
         writeStream.writeStream(is);
-        is.close();
+        @is.close();
       } else if (_lob instanceof Clob) {
         Clob clob = (Clob) _lob;
         Reader reader = clob.getCharacterStream();
@@ -411,7 +411,7 @@ public class OracleOciLob {
    */
   public bool getBuffering(Env env)
   {
-    // XXX: we assume buffering is always turned on.
+    // XXX: we assume buffering @is always turned on.
     return true;
   }
 
@@ -640,7 +640,7 @@ public class OracleOciLob {
   public bool setBuffering(Env env,
                               bool onOff)
   {
-    // XXX: we assume buffering is always turned on.
+    // XXX: we assume buffering @is always turned on.
     return true;
   }
 
@@ -860,16 +860,16 @@ public class OracleOciLob {
       }
 
       Blob blobFrom = (Blob) lobFrom;
-      InputStream is = blobFrom.getBinaryStream();
+      InputStream @is = blobFrom.getBinaryStream();
 
       long nbytes;
       byte []buffer = new byte[128];
-      while ((nbytes = is.read(buffer)) > 0) {
+      while ((nbytes = @is.read(buffer)) > 0) {
         _outputStream.write(buffer, 0, (int) nbytes);
         _currentPointer += nbytes;
       }
 
-      is.close();
+      @is.close();
       // Keep this output stream open to be reused.
 
       return true;
@@ -922,15 +922,15 @@ public class OracleOciLob {
       StringValue bb = env.createBinaryBuilder();
 
       Blob blob = (Blob) _lob;
-      InputStream is = blob.getBinaryStream();
-      is.skip(_currentPointer);
+      InputStream @is = blob.getBinaryStream();
+      @is.skip(_currentPointer);
 
       if (length < 0)
         length = Integer.MAX_VALUE;
 
-      bb.appendReadAll(is, length);
+      bb.appendReadAll(@is, length);
 
-      is.close();
+      @is.close();
 
       return bb;
     } catch (Exception ex) {

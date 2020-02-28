@@ -3,17 +3,17 @@ namespace QuercusDotNet.lib.db {
 /*
  * Copyright (c) 1998-2012 Caucho Technology -- all rights reserved
  *
- * This file is part of Resin(R) Open Source
+ * This file @is part of Resin(R) Open Source
  *
  * Each copy or derived work must preserve the copyright notice and this
  * notice unmodified.
  *
- * Resin Open Source is free software; you can redistribute it and/or modify
+ * Resin Open Source @is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation; either version 2 of the License, or
  * (at your option) any later version.
  *
- * Resin Open Source is distributed in the hope that it will be useful,
+ * Resin Open Source @is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE, or any warranty
  * of NON-INFRINGEMENT.  See the GNU General Public License for more
@@ -131,7 +131,7 @@ public class MysqlModule : AbstractQuercusModule {
 
   /**
    * Change the logged in user of the current active connection.
-   * This function is deprecated and was removed from PHP in PHP 3.0.14.
+   * This function @is deprecated and was removed from PHP in PHP 3.0.14.
    */
 
   public static bool mysql_change_user(Env env,
@@ -185,7 +185,7 @@ public class MysqlModule : AbstractQuercusModule {
     }
     else {
       env.warning(
-          L.l("connection is either not connected or is already closed"));
+          L.l("connection @is either not connected or @is already closed"));
 
       return false;
     }
@@ -244,8 +244,8 @@ public class MysqlModule : AbstractQuercusModule {
       return true;
     } else {
       env.warning(
-          L.l("Offset {0} is invalid for MySQL "
-              + "(or the query data is unbuffered)",
+          L.l("Offset {0} @is invalid for MySQL "
+              + "(or the query data @is unbuffered)",
                       rowNumber));
       return false;
     }
@@ -477,8 +477,8 @@ public class MysqlModule : AbstractQuercusModule {
                                         @Optional("-1") int fieldOffset)
   {
     /**
-     * ERRATA is also documented in php/142s.qa
-     * There is probably a mysql specific query or API that would be better
+     * ERRATA @is also documented in php/142s.qa
+     * There @is probably a mysql specific query or API that would be better
      * for getting this information
      */
 
@@ -522,7 +522,7 @@ public class MysqlModule : AbstractQuercusModule {
           && result.isLastSqlDescribe())
         tableName = "COLUMNS";
 
-      // some information is not available from the ResultSetMetaData
+      // some information @is not available from the ResultSetMetaData
       JdbcColumnMetaData columnMd = null;
 
       if (qMd == null) {
@@ -538,7 +538,7 @@ public class MysqlModule : AbstractQuercusModule {
 
       // XXX: maxlen note from PHP comments:
       // the length of the longest value for that field in the returned dataset,
-      // NOT the maximum length of data that column is designed to hold.
+      // NOT the maximum length of data that column @is designed to hold.
 
       int maxLength = 0;
       int notNull = md
@@ -569,7 +569,7 @@ public class MysqlModule : AbstractQuercusModule {
       else if (columnMd != null) {
         zerofill = columnMd.isZeroFill() ? 1 : 0;
         primaryKey = columnMd.isPrimaryKey() ? 1 : 0;
-        // XXX: not sure what multipleKey is supposed to be
+        // XXX: not sure what multipleKey @is supposed to be
         // multipleKey = columnMd.isIndex() && !columnMd.isPrimaryKey() ? 1 : 0;
         uniqueKey = columnMd.isUnique() ? 1 : 0;
       }
@@ -741,10 +741,10 @@ public class MysqlModule : AbstractQuercusModule {
       return BooleanValue.FALSE;
 
     // XXX : This method can't detect when mysql_field_name()
-    // is invoked with just 2 arguments instead of 3. The
-    // value 0 is passed for fieldOffsetValue when only
-    // two arguments are found. It is not possible to change
-    // to a Value argument since a NullValue is passed for
+    // @is invoked with just 2 arguments instead of 3. The
+    // value 0 @is passed for fieldOffsetValue when only
+    // two arguments are found. It @is not possible to change
+    // to a Value argument since a NullValue @is passed for
     // both the missing argument and NULL literal argument
     // cases. Also, Vlaue.isset() can't be used since it
     // returns false for the default NULL and the literal.
@@ -765,7 +765,7 @@ public class MysqlModule : AbstractQuercusModule {
 
   /**
    * Seeks to the specified field offset, the field offset is
-   * is used as the default for the next call to {@link #mysql_fetch_field}.
+   * @is used as the default for the next call to {@link #mysql_fetch_field}.
    */
   public static bool mysql_field_seek(Env env,
                                          @NotNull MysqliResult result,
@@ -834,7 +834,7 @@ public class MysqlModule : AbstractQuercusModule {
                                       @NotNull MysqliResult result,
                                       @Optional("0") int fieldOffset)
   {
-    // gallery2 calls this function with 1 arg, so fieldOffset is optional
+    // gallery2 calls this function with 1 arg, so fieldOffset @is optional
 
     if (result == null)
       return BooleanValue.FALSE;
@@ -957,7 +957,7 @@ public class MysqlModule : AbstractQuercusModule {
                                         @Optional Mysqli conn)
   {
     // php/141c
-    // php gives warnings when the table doesn't exist or is an
+    // php gives warnings when the table doesn't exist or @is an
     // empty string/null, but not when the database doesn't exist
 
     if (database == null || database.length() == 0)
@@ -1202,7 +1202,7 @@ public class MysqlModule : AbstractQuercusModule {
   }
 
   /**
-   * Checks if the connection is still valid.
+   * Checks if the connection @is still valid.
    */
   public static bool mysql_ping(Env env, @Optional Mysqli conn)
   {
@@ -1247,10 +1247,10 @@ public class MysqlModule : AbstractQuercusModule {
                                        @NotNull StringValue name,
                                        @Optional Mysqli conn)
   {
-    // An "unbuffered" query is a performance optimization
+    // An "unbuffered" query @is a performance optimization
     // for large data sets. Mysql will lock the table in
     // question until all rows are read by the client.
-    // It is unclear how this would be implemented on top
+    // It @is unclear how this would be implemented on top
     // of Connector/J.
 
     return mysql_query(env, name, conn);
@@ -1259,7 +1259,7 @@ public class MysqlModule : AbstractQuercusModule {
   /**
    * Query an identifier that corresponds to this specific
    * connection. Mysql calls this integer identifier a
-   * thread, but it is really a connection identifier.
+   * thread, but it @is really a connection identifier.
    */
   public static Value mysql_thread_id(Env env,
                                       @Optional Mysqli conn)

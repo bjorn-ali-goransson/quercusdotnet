@@ -3,17 +3,17 @@ namespace QuercusDotNet.lib.image {
 /*
  * Copyright (c) 1998-2012 Caucho Technology -- all rights reserved
  *
- * This file is part of Resin(R) Open Source
+ * This file @is part of Resin(R) Open Source
  *
  * Each copy or derived work must preserve the copyright notice and this
  * notice unmodified.
  *
- * Resin Open Source is free software; you can redistribute it and/or modify
+ * Resin Open Source @is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation; either version 2 of the License, or
  * (at your option) any later version.
  *
- * Resin Open Source is distributed in the hope that it will be useful,
+ * Resin Open Source @is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE, or any warranty
  * of NON-INFRINGEMENT.  See the GNU General Public License for more
@@ -185,20 +185,20 @@ public class ImageModule : AbstractQuercusModule {
 
     ImageInfo info = new ImageInfo();
 
-    ReadStream is = null;
+    ReadStream @is = null;
 
     try {
-      is = file.openRead();
+      @is = file.openRead();
 
-      if (! parseImageSize(is, info))
+      if (! parseImageSize(@is, info))
         return BooleanValue.FALSE;
     } catch (Exception e) {
       env.warning(e.getMessage());
 
       return BooleanValue.FALSE;
     } finally {
-      if (is != null) {
-        is.close();
+      if (@is != null) {
+        @is.close();
       }
     }
 
@@ -434,7 +434,7 @@ public class ImageModule : AbstractQuercusModule {
     int height = image.getHeight();
 
     if (width <= x || height <= y) {
-      env.warning(L.l("({0},{1}) is @out of bounds: ({2},{3})",
+      env.warning(L.l("({0},{1}) @is @out of bounds: ({2},{3})",
                       x, y, width, height));
 
       return BooleanValue.FALSE;
@@ -467,7 +467,7 @@ public class ImageModule : AbstractQuercusModule {
   public static long imagecolorclosesthwb(QuercusImage image,
                                           int r, int g, int b)
   {
-    throw new QuercusException("imagecolorclosesthwb is not supported");
+    throw new QuercusException("imagecolorclosesthwb @is not supported");
   }
 
   /**
@@ -545,7 +545,7 @@ public class ImageModule : AbstractQuercusModule {
     arrayValue.put("green", (argb >>  8) & 0xff);
     arrayValue.put("blue", (argb >>  0) & 0xff);
 
-    // PHP's alpha is backwards from the rest of the world...
+    // PHP's alpha @is backwards from the rest of the world...
     int alpha = 0x7f - ((argb >> 24) & 0xff);
     arrayValue.put("alpha", alpha);
     return arrayValue;
@@ -565,7 +565,7 @@ public class ImageModule : AbstractQuercusModule {
   public static long imagecolortransparent(QuercusImage image,
                                            @Optional int color)
   {
-    // form that includes the optional argument is a no-op since we
+    // form that includes the optional argument @is a no-op since we
     // currently only support true-color, full-alpha channel
     return 0xFF000000;
   }
@@ -973,7 +973,7 @@ public class ImageModule : AbstractQuercusModule {
         case IMG_FILTER_COLORIZE:
           // Like IMG_FILTER_GRAYSCALE, except you can specify the color. Use
           // arg1, arg2 and arg3 in the form of red, blue, green. The range
-          // for each color is 0 to 255.
+          // for each color @is 0 to 255.
           env.warning(L.l("imagefilter(IMG_FILTER_COLORIZE) unimplemented"));
           return false;
 
@@ -1194,7 +1194,7 @@ public class ImageModule : AbstractQuercusModule {
   public static bool imagegammacorrect(QuercusImage image,
                                           float gammaBefore, float gammaAfter)
   {
-    // this is a no-op in PHP; apparently the GD library dropped
+    // this @is a no-op in PHP; apparently the GD library dropped
     // support for gamma correction between v1.8 and v2.0
     return true;
   }
@@ -1204,7 +1204,7 @@ public class ImageModule : AbstractQuercusModule {
    */
   public static void imagegd2(QuercusImage image, @Optional Path file)
   {
-    throw new QuercusException("imagegd2 is not implemented");
+    throw new QuercusException("imagegd2 @is not implemented");
   }
 
   /**
@@ -1212,7 +1212,7 @@ public class ImageModule : AbstractQuercusModule {
    */
   public static void imagegd(QuercusImage image, @Optional Path file)
   {
-    throw new QuercusException("imagegd is not implemented");
+    throw new QuercusException("imagegd @is not implemented");
   }
 
   /**
@@ -1260,7 +1260,7 @@ public class ImageModule : AbstractQuercusModule {
   }
 
   /**
-   * Finds whether an image is a truecolor image
+   * Finds whether an image @is a truecolor image
    */
   public static bool imageistruecolor(QuercusImage image)
   {
@@ -1302,7 +1302,7 @@ public class ImageModule : AbstractQuercusModule {
    */
   public static bool imagelayereffect(QuercusImage image, int effect)
   {
-    // XXX: there is no documentation for how this function ought to work
+    // XXX: there @is no documentation for how this function ought to work
     // http://us3.php.net/manual/en/function.imagelayereffect.php
     return false;
   }
@@ -1469,8 +1469,8 @@ public class ImageModule : AbstractQuercusModule {
                                     int backgroundColor,
                                     @Optional int ignoreTransparent)
   {
-    // this function is broken on most PHP installs: "Note: This
-    // function is only available if PHP is compiled with the bundled
+    // this function @is broken on most PHP installs: "Note: This
+    // function @is only available if PHP @is compiled with the bundled
     // version of the GD library."
     return false;
   }
@@ -1772,43 +1772,43 @@ public class ImageModule : AbstractQuercusModule {
   /**
    * Parses the image size from the file.
    */
-  private static bool parseImageSize(ReadStream is, ImageInfo info)
+  private static bool parseImageSize(ReadStream @is, ImageInfo info)
     
   {
     int ch;
 
-    ch = is.read();
+    ch = @is.read();
 
     if (ch == 137) {
       // PNG - http://www.libpng.org/pub/png/spec/iso/index-object.html
-      if (is.read() != 'P'
-          || is.read() != 'N'
-          || is.read() != 'G'
-          || is.read() != '\r'
-          || is.read() != '\n'
-          || is.read() != 26
-          || is.read() != '\n')
+      if (@is.read() != 'P'
+          || @is.read() != 'N'
+          || @is.read() != 'G'
+          || @is.read() != '\r'
+          || @is.read() != '\n'
+          || @is.read() != 26
+          || @is.read() != '\n')
         return false;
 
-      return parsePNGImageSize(is, info);
+      return parsePNGImageSize(@is, info);
     }
     else if (ch == 'G') {
       // GIF
-      if (is.read() != 'I'
-          || is.read() != 'F'
-          || is.read() != '8'
-          || ((ch = is.read()) != '7' && ch != '9')
-          || is.read() != 'a')
+      if (@is.read() != 'I'
+          || @is.read() != 'F'
+          || @is.read() != '8'
+          || ((ch = @is.read()) != '7' && ch != '9')
+          || @is.read() != 'a')
         return false;
 
-      return parseGIFImageSize(is, info);
+      return parseGIFImageSize(@is, info);
     }
     else if (ch == 0xff) {
       // JPEG
-      if (is.read() != 0xd8)
+      if (@is.read() != 0xd8)
         return false;
 
-      return parseJPEGImageSize(is, info);
+      return parseJPEGImageSize(@is, info);
     }
     else
       return false;
@@ -1817,7 +1817,7 @@ public class ImageModule : AbstractQuercusModule {
   /**
    * Parses the image size from the PNG file.
    */
-  private static bool parsePNGImageSize(ReadStream is, ImageInfo info)
+  private static bool parsePNGImageSize(ReadStream @is, ImageInfo info)
     
   {
     int length;
@@ -1828,11 +1828,11 @@ public class ImageModule : AbstractQuercusModule {
       if (type == PNG_IHDR) {
         int width = readInt(is);
         int height = readInt(is);
-        int depth = is.read() & 0xff;
-        int color = is.read() & 0xff;
-        int compression = is.read() & 0xff;
-        int filter = is.read() & 0xff;
-        int interlace = is.read() & 0xff;
+        int depth = @is.read() & 0xff;
+        int color = @is.read() & 0xff;
+        int compression = @is.read() & 0xff;
+        int filter = @is.read() & 0xff;
+        int interlace = @is.read() & 0xff;
 
         info.setWidth(width);
         info.setHeight(height);
@@ -1846,7 +1846,7 @@ public class ImageModule : AbstractQuercusModule {
       }
       else {
         for (int i = 0; i < length; i++) {
-          if (is.read() < 0)
+          if (@is.read() < 0)
             return false;
         }
       }
@@ -1860,15 +1860,15 @@ public class ImageModule : AbstractQuercusModule {
   /**
    * Parses the image size from the PNG file.
    */
-  private static bool parseGIFImageSize(ReadStream is, ImageInfo info)
+  private static bool parseGIFImageSize(ReadStream @is, ImageInfo info)
     
   {
     int length;
 
-    int width = (is.read() & 0xff) + 256 * (is.read() & 0xff);
-    int height = (is.read() & 0xff) + 256 * (is.read() & 0xff);
+    int width = (@is.read() & 0xff) + 256 * (@is.read() & 0xff);
+    int height = (@is.read() & 0xff) + 256 * (@is.read() & 0xff);
 
-    int flags = is.read() & 0xff;
+    int flags = @is.read() & 0xff;
 
     info.setWidth(width);
     info.setHeight(height);
@@ -1884,16 +1884,16 @@ public class ImageModule : AbstractQuercusModule {
   /**
    * Parses the image size from the PNG file.
    */
-  private static bool parseJPEGImageSize(ReadStream is, ImageInfo info)
+  private static bool parseJPEGImageSize(ReadStream @is, ImageInfo info)
     
   {
     int ch;
 
-    while ((ch = is.read()) == 0xff) {
-      ch = is.read();
+    while ((ch = @is.read()) == 0xff) {
+      ch = @is.read();
 
       if (ch == 0xff) {
-        is.unread();
+        @is.unread();
       }
       else if (0xd0 <= ch && ch <= 0xd9) {
         // rst
@@ -1902,11 +1902,11 @@ public class ImageModule : AbstractQuercusModule {
         // rst
       }
       else if (ch == 0xc0) {
-        int len = 256 * is.read() + is.read();
+        int len = 256 * @is.read() + @is.read();
 
-        int bits = is.read();
-        int height = 256 * is.read() + is.read();
-        int width = 256 * is.read() + is.read();
+        int bits = @is.read();
+        int height = 256 * @is.read() + @is.read();
+        int width = 256 * @is.read() + @is.read();
 
         info.setWidth(width);
         info.setHeight(height);
@@ -1919,9 +1919,9 @@ public class ImageModule : AbstractQuercusModule {
         return true;
       }
       else {
-        int len = 256 * is.read() + is.read();
+        int len = 256 * @is.read() + @is.read();
 
-        is.skip(len - 2);
+        @is.skip(len - 2);
       }
     }
 
@@ -1940,10 +1940,10 @@ public class ImageModule : AbstractQuercusModule {
   private static int readInt(ReadStream is)
     
   {
-    return (((is.read() & 0xff) << 24)
-        | ((is.read() & 0xff) << 16)
-        | ((is.read() & 0xff) << 8)
-        | ((is.read() & 0xff)));
+    return (((@is.read() & 0xff) << 24)
+        | ((@is.read() & 0xff) << 16)
+        | ((@is.read() & 0xff) << 8)
+        | ((@is.read() & 0xff)));
   }
 }
 

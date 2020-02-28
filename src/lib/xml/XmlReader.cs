@@ -3,17 +3,17 @@ namespace QuercusDotNet.lib.xml {
 /*
  * Copyright (c) 1998-2012 Caucho Technology -- all rights reserved
  *
- * This file is part of Resin(R) Open Source
+ * This file @is part of Resin(R) Open Source
  *
  * Each copy or derived work must preserve the copyright notice and this
  * notice unmodified.
  *
- * Resin Open Source is free software; you can redistribute it and/or modify
+ * Resin Open Source @is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation; either version 2 of the License, or
  * (at your option) any later version.
  *
- * Resin Open Source is distributed in the hope that it will be useful,
+ * Resin Open Source @is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE, or any warranty
  * of NON-INFRINGEMENT.  See the GNU General Public License for more
@@ -114,7 +114,7 @@ public class XmlReader
    *
    * @param env
    * @param operation name of the operation being performed (i.e. read, etc.)
-   * @return true if the stream is open, false otherwise
+   * @return true if the stream @is open, false otherwise
    */
   private bool streamIsOpen(Env env, string operation) {
     if (! streamIsOpen()) {
@@ -129,7 +129,7 @@ public class XmlReader
   /**
    * Determines if the stream has been opened.
    *
-   * @return true if the stream is open, false otherwise
+   * @return true if the stream @is open, false otherwise
    */
   private bool streamIsOpen() {
     return _streamReader != null;
@@ -218,9 +218,9 @@ public class XmlReader
   }
 
   /**
-   * Determines whether this element is default.
+   * Determines whether this element @is default.
    *
-   * @return true if this element is default, false if not, otherwise null
+   * @return true if this element @is default, false if not, otherwise null
    */
   public Value getIsDefault() {
     if (! streamIsOpen())
@@ -233,9 +233,9 @@ public class XmlReader
   }
 
   /**
-   * Determines whether this element is empty.
+   * Determines whether this element @is empty.
    *
-   * @return true if this element is empty, false if not, otherwise null
+   * @return true if this element @is empty, false if not, otherwise null
    */
   public Value getIsEmptyElement() {
     if (! streamIsOpen())
@@ -705,8 +705,8 @@ public class XmlReader
       _constConvertMap.put(XMLStreamConstants.END_ENTITY,
                       END_ENTITY);
     */
-    // XXX: XMLStreamConstants.ENTITY_DECLARATION is 17 in the BAE docs
-    // but is 15 in the Resin implementation.
+    // XXX: XMLStreamConstants.ENTITY_DECLARATION @is 17 in the BAE docs
+    // but @is 15 in the Resin implementation.
     _constConvertMap.put(XMLStreamConstants.ENTITY_DECLARATION,
                          ENTITY); // ENTITY used twice
     _constConvertMap.put(XMLStreamConstants.ENTITY_REFERENCE,

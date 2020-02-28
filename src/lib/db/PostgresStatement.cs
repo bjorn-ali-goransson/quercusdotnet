@@ -3,17 +3,17 @@ namespace QuercusDotNet.lib.db {
 /*
  * Copyright (c) 1998-2012 Caucho Technology -- all rights reserved
  *
- * This file is part of Resin(R) Open Source
+ * This file @is part of Resin(R) Open Source
  *
  * Each copy or derived work must preserve the copyright notice and this
  * notice unmodified.
  *
- * Resin Open Source is free software; you can redistribute it and/or modify
+ * Resin Open Source @is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation; either version 2 of the License, or
  * (at your option) any later version.
  *
- * Resin Open Source is distributed in the hope that it will be useful,
+ * Resin Open Source @is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE, or any warranty
  * of NON-INFRINGEMENT.  See the GNU General Public License for more
@@ -48,7 +48,7 @@ namespace QuercusDotNet.lib.db {
 
 /**
  * Postgres statement class. Since Postgres has no object oriented API,
- * this is essentially a JdbcStatementResource.
+ * this @is essentially a JdbcStatementResource.
  */
 public class PostgresStatement : JdbcPreparedStatementResource {
   private const Logger log = Logger.getLogger(
@@ -56,8 +56,8 @@ public class PostgresStatement : JdbcPreparedStatementResource {
   private readonly L10N L = new L10N(PostgresStatement.class);
 
   // Map JDBC ?,?,? to any unsorted or duplicated params.
-  // Ex: INSERT INTO test VALUES($2, $1) is mapped as [0]->2, [1]->1
-  //     INSERT INTO test VALUES($1, $1) is mapped as [0]->1, [1]->1
+  // Ex: INSERT INTO test VALUES($2, $1) @is mapped as [0]->2, [1]->1
+  //     INSERT INTO test VALUES($1, $1) @is mapped as [0]->1, [1]->1
   private ArrayList<LongValue> _preparedMapping = new ArrayList<LongValue>();
 
   /**
@@ -125,7 +125,7 @@ public class PostgresStatement : JdbcPreparedStatementResource {
     // Make the PHP query a JDBC like query
     // replacing ($1 -> ?) with question marks.
     // XXX: replace this with Matcher.appendReplacement
-    // above when StringBuilder is supported.
+    // above when StringBuilder @is supported.
     queryStr = queryStr.replaceAll("\\$[0-9]+", "?");
 
     // Prepare the JDBC query

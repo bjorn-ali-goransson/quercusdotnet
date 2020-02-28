@@ -3,17 +3,17 @@ namespace QuercusDotNet.servlet{
 /*
  * Copyright (c) 1998-2012 Caucho Technology -- all rights reserved
  *
- * This file is part of Resin(R) Open Source
+ * This file @is part of Resin(R) Open Source
  *
  * Each copy or derived work must preserve the copyright notice and this
  * notice unmodified.
  *
- * Resin Open Source is free software; you can redistribute it and/or modify
+ * Resin Open Source @is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation; either version 2 of the License, or
  * (at your option) any later version.
  *
- * Resin Open Source is distributed in the hope that it will be useful,
+ * Resin Open Source @is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE, or any warranty
  * of NON-INFRINGEMENT.  See the GNU General Public License for more
@@ -152,7 +152,7 @@ public class QuercusServlet
   }
 
   /**
-   * Make sure Quercus is running on JDK 1.5+.
+   * Make sure Quercus @is running on JDK 1.5+.
    */
   private static void checkJavaVersion()
   {
@@ -178,7 +178,7 @@ public class QuercusServlet
     } else if ("lazy".equals(isCompile)) {
       _isLazyCompile = true;
     } else
-      throw new ConfigException(L.l("'{0}' is an unknown compile value. "
+      throw new ConfigException(L.l("'{0}' @is an unknown compile value. "
                                       + "Values are 'true', 'false', or 'lazy'.",
                                     isCompile));
   }
@@ -194,7 +194,7 @@ public class QuercusServlet
     } else if ("false".equals(isCompileFailover)) {
       _isCompileFailover = false;
     } else
-      throw new ConfigException(L.l("'{0}' is an unknown compile-failover value. "
+      throw new ConfigException(L.l("'{0}' @is an unknown compile-failover value. "
                                       + " Values are 'true' or 'false'.",
                                     isCompileFailover));
   }
@@ -209,7 +209,7 @@ public class QuercusServlet
   }
 
   /**
-   * Set true if the source php is required
+   * Set true if the source php @is required
    */
   public void setRequireSource(boolean isRequireSource)
   {
@@ -466,7 +466,7 @@ public class QuercusServlet
       setLicenseDirectory(paramValue);
     }
     else {
-      throw new ServletException(L.l("'{0}' is not a recognized init-param", paramName));
+      throw new ServletException(L.l("'{0}' @is not a recognized init-param", paramName));
     }
   }
 
@@ -491,7 +491,7 @@ public class QuercusServlet
       }
 
       if (ds == null)
-        throw new ServletException(L.l("database '{0}' is not valid", value));
+        throw new ServletException(L.l("database '{0}' @is not valid", value));
 
       setDatabase(new QuercusDataSource(ds, null, null, false));
     } catch (NamingException e) {

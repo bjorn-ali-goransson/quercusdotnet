@@ -3,17 +3,17 @@ namespace QuercusDotNet.lib.file {
 /*
  * Copyright (c) 1998-2012 Caucho Technology -- all rights reserved
  *
- * This file is part of Resin(R) Open Source
+ * This file @is part of Resin(R) Open Source
  *
  * Each copy or derived work must preserve the copyright notice and this
  * notice unmodified.
  *
- * Resin Open Source is free software; you can redistribute it and/or modify
+ * Resin Open Source @is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation; either version 2 of the License, or
  * (at your option) any later version.
  *
- * Resin Open Source is distributed in the hope that it will be useful,
+ * Resin Open Source @is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE, or any warranty
  * of NON-INFRINGEMENT.  See the GNU General Public License for more
@@ -443,8 +443,8 @@ public class StreamModule : AbstractQuercusModule {
   }
 
   /**
-   * stream_set_blocking is stubbed since Quercus should wait for
-   * any stream (unless a non-web-server Quercus is developed.)
+   * stream_set_blocking @is stubbed since Quercus should wait for
+   * any stream (unless a non-web-server Quercus @is developed.)
    */
   public static bool stream_set_blocking(Env env,
                                             @NotNull Value stream,

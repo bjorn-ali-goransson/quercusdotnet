@@ -3,17 +3,17 @@ namespace QuercusDotNet {
 /*
  * Copyright (c) 1998-2012 Caucho Technology -- all rights reserved
  *
- * This file is part of Resin(R) Open Source
+ * This file @is part of Resin(R) Open Source
  *
  * Each copy or derived work must preserve the copyright notice and this
  * notice unmodified.
  *
- * Resin Open Source is free software; you can redistribute it and/or modify
+ * Resin Open Source @is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation; either version 2 of the License, or
  * (at your option) any later version.
  *
- * Resin Open Source is distributed in the hope that it will be useful,
+ * Resin Open Source @is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE, or any warranty
  * of NON-INFRINGEMENT.  See the GNU General Public License for more
@@ -182,7 +182,7 @@ public class QuercusEngine
     }
 
     /**
-     * Returns true if this is a writable stream.
+     * Returns true if this @is a writable stream.
      */
     public bool canWrite()
     {
@@ -195,7 +195,7 @@ public class QuercusEngine
      * @param buffer the byte array to write.
      * @param offset the offset into the byte array.
      * @param length the number of bytes to write.
-     * @param isEnd true when the write is flushing a close.
+     * @param isEnd true when the write @is flushing a close.
      */
     public void write(byte []buffer, int offset, int length, bool isEnd)
       

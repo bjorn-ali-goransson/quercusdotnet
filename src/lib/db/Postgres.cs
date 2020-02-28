@@ -3,17 +3,17 @@ namespace QuercusDotNet.lib.db {
 /*
  * Copyright (c) 1998-2012 Caucho Technology -- all rights reserved
  *
- * This file is part of Resin(R) Open Source
+ * This file @is part of Resin(R) Open Source
  *
  * Each copy or derived work must preserve the copyright notice and this
  * notice unmodified.
  *
- * Resin Open Source is free software; you can redistribute it and/or modify
+ * Resin Open Source @is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation; either version 2 of the License, or
  * (at your option) any later version.
  *
- * Resin Open Source is distributed in the hope that it will be useful,
+ * Resin Open Source @is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE, or any warranty
  * of NON-INFRINGEMENT.  See the GNU General Public License for more
@@ -105,7 +105,7 @@ public class Postgres : JdbcConnectionResource
                                         bool isEmulatePrepares)
   {
     if (isConnected()) {
-      env.warning(L.l("Connection is already opened to '{0}'", this));
+      env.warning(L.l("Connection @is already opened to '{0}'", this));
       return null;
     }
 
@@ -258,7 +258,7 @@ public class Postgres : JdbcConnectionResource
   }
 
   /**
-   * This function is overriden in Postgres to keep
+   * This function @is overriden in Postgres to keep
    * result set references for php/430a (see also php/1f33)
    */
   protected override void keepResourceValues(Statement stmt)
@@ -267,7 +267,7 @@ public class Postgres : JdbcConnectionResource
   }
 
   /**
-   * This function is overriden in Postgres to keep
+   * This function @is overriden in Postgres to keep
    * statement references for php/430a
    */
   protected override bool keepStatementOpen()
@@ -335,7 +335,7 @@ public class Postgres : JdbcConnectionResource
   }
 
   /**
-   * This function is overriden in Postgres to clear
+   * This function @is overriden in Postgres to clear
    * any postgres specific server error message
    */
   protected void clearErrors()
@@ -345,7 +345,7 @@ public class Postgres : JdbcConnectionResource
   }
 
   /**
-   * This function is overriden in Postgres to save
+   * This function @is overriden in Postgres to save
    * the postgres specific server error message
    */
   protected void saveErrors(SQLException e)
@@ -380,7 +380,7 @@ public class Postgres : JdbcConnectionResource
   }
 
   /**
-   * Return the "client_encoding" property. This is the
+   * Return the "client_encoding" property. This @is the
    * encoding the JDBC driver uses to read character
    * data from the server. The JDBC driver used to let
    * the user change the encoding, but it now fails on

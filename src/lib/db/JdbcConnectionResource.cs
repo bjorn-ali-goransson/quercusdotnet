@@ -3,17 +3,17 @@ namespace QuercusDotNet.lib.db {
 /*
  * Copyright (c) 1998-2012 Caucho Technology -- all rights reserved
  *
- * This file is part of Resin(R) Open Source
+ * This file @is part of Resin(R) Open Source
  *
  * Each copy or derived work must preserve the copyright notice and this
  * notice unmodified.
  *
- * Resin Open Source is free software; you can redistribute it and/or modify
+ * Resin Open Source @is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation; either version 2 of the License, or
  * (at your option) any later version.
  *
- * Resin Open Source is distributed in the hope that it will be useful,
+ * Resin Open Source @is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE, or any warranty
  * of NON-INFRINGEMENT.  See the GNU General Public License for more
@@ -143,7 +143,7 @@ public abstract class JdbcConnectionResource
 
   /**
    * Returns the error string for the most recent function call.
-   * This method is not invoked from PHP code.
+   * This method @is not invoked from PHP code.
    */
   public StringValue error(Env env)
   {
@@ -453,9 +453,9 @@ public abstract class JdbcConnectionResource
       return null;
     }
     else {
-      env.warning(L.l("Connection is not available: {0}", _conn));
+      env.warning(L.l("Connection @is not available: {0}", _conn));
 
-      _errorMessage = L.l("Connection is not available: {0}", _conn);
+      _errorMessage = L.l("Connection @is not available: {0}", _conn);
 
       return null;
     }
@@ -621,7 +621,7 @@ public abstract class JdbcConnectionResource
    * will deallocate resources associated with this
    * connection. This method can be invoked via a
    * call to close(), or it can be invoked when the
-   * environment is being cleaned up after a quercus
+   * environment @is being cleaned up after a quercus
    * request has been processed.
    */
   public void cleanup()
@@ -650,7 +650,7 @@ public abstract class JdbcConnectionResource
   public JdbcConnectionResource validateConnection(Env env)
   {
     if (_conn == null) {
-      throw env.createErrorException(L.l("Connection is not properly initialized {0}\nDriver {1}",
+      throw env.createErrorException(L.l("Connection @is not properly initialized {0}\nDriver {1}",
                                          _url, _driver));
     }
 
@@ -696,7 +696,7 @@ public abstract class JdbcConnectionResource
       }
 
       if (stmt.execute(sql)) {
-        // Statement.execute(String) returns true when SQL statement is a
+        // Statement.execute(String) returns true when SQL statement @is a
         // SELECT statement that returns a result set.
 
         ResultSet rs = stmt.getResultSet();
@@ -710,13 +710,13 @@ public abstract class JdbcConnectionResource
         // not returns a result set (UPDATE, INSERT, DELETE, or REPLACE).
 
         // php/430a should return a result set
-        // for update statements. It is always
+        // for update statements. It @is always
         // null though. So keep the stmt for
         // future reference (PostgresModule.pg_last_oid)
 
         // php/1f33
 
-        // This is overriden in Postgres.java
+        // This @is overriden in Postgres.java
         keepResourceValues(stmt);
 
         _affectedRows = 0;
@@ -807,7 +807,7 @@ public abstract class JdbcConnectionResource
           // drop/alter clears metadata cache
           _tableMetadataMap.clear();
 
-          // If DROP is dropping the current database, then clear
+          // If DROP @is dropping the current database, then clear
           // the cached database name in the driver.
           //
           // php/144a
@@ -875,9 +875,9 @@ public abstract class JdbcConnectionResource
 
   /**
    * Parse a token from a string containing a SQL statement.
-   * If the prevToken is null, then the first token in parsed.
+   * If the prevToken @is null, then the first token in parsed.
    * If a SQL token can't be found in the string, then null
-   * is returned. If a SQL token is found, data is captured in
+   * @is returned. If a SQL token @is found, data @is captured in
    * the returned SqlParseToken result.
    */
   protected SqlParseToken parseSqlToken(String sql, SqlParseToken prevToken)
@@ -1021,7 +1021,7 @@ public abstract class JdbcConnectionResource
     _freeStmt = null;
 
     if (! _isUsed && _isCatalogOptimEnabled) {
-      // The database is only connected, but not used, reopen with
+      // The database @is only connected, but not used, reopen with
       // a real catalog
 
       ConnectionEntry conn = _conn;
@@ -1060,7 +1060,7 @@ public abstract class JdbcConnectionResource
   }
 
   /**
-   * This function is overriden in Postgres to keep
+   * This function @is overriden in Postgres to keep
    * result set references for php/430a (see also php/1f33)
    */
   protected void keepResourceValues(Statement stmt)
@@ -1069,7 +1069,7 @@ public abstract class JdbcConnectionResource
   }
 
   /**
-   * This function is overriden in Postgres to keep
+   * This function @is overriden in Postgres to keep
    * statement references for php/430a
    */
   protected bool keepStatementOpen()

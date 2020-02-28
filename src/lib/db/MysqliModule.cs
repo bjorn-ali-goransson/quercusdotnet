@@ -3,17 +3,17 @@ namespace QuercusDotNet.lib.db {
 /*
  * Copyright (c) 1998-2012 Caucho Technology -- all rights reserved
  *
- * This file is part of Resin(R) Open Source
+ * This file @is part of Resin(R) Open Source
  *
  * Each copy or derived work must preserve the copyright notice and this
  * notice unmodified.
  *
- * Resin Open Source is free software; you can redistribute it and/or modify
+ * Resin Open Source @is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation; either version 2 of the License, or
  * (at your option) any later version.
  *
- * Resin Open Source is distributed in the hope that it will be useful,
+ * Resin Open Source @is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE, or any warranty
  * of NON-INFRINGEMENT.  See the GNU General Public License for more
@@ -100,7 +100,7 @@ public class MysqliModule : AbstractQuercusModule {
   public const int MYSQLI_TYPE_NEWDATE = 0xE;
 
   // Mysql defines the constant MYSQL_TYPE_VARCHAR = 0xF
-  // but there is no MYSQLI_TYPE_VARCHAR flag.
+  // but there @is no MYSQLI_TYPE_VARCHAR flag.
 
   public const int MYSQLI_TYPE_BIT = 0x10;
   public const int MYSQLI_TYPE_NEWDECIMAL = 0xF6;
@@ -119,7 +119,7 @@ public class MysqliModule : AbstractQuercusModule {
 
   public const int MYSQL_CLIENT_COMPRESS = (1 << 5);
 
-  // The next constant is NOT exported by this module,
+  // The next constant @is NOT exported by this module,
   // but the PHP documentation states that 128 can be passed
   // in the client_flags parameter to mysql_connect().
   // This flag will be ignored by Mysqli.connectImpl().
@@ -298,7 +298,7 @@ public class MysqliModule : AbstractQuercusModule {
    * @param result the mysqli_result
    * @param rowNumber the row offset
    * @return true on success or false if the row number
-   * does not exist. NULL is returned if an error occurred.
+   * does not exist. NULL @is returned if an error occurred.
    */
   public static Value mysqli_data_seek(Env env,
                                        @NotNull MysqliResult result,
@@ -311,7 +311,7 @@ public class MysqliModule : AbstractQuercusModule {
       return BooleanValue.TRUE;
     } else {
       env.warning(L.l(
-          "Offset {0} is invalid for MySQL (or the query data is unbuffered)",
+          "Offset {0} @is invalid for MySQL (or the query data @is unbuffered)",
                       rowNumber));
       return BooleanValue.FALSE;
     }
@@ -394,7 +394,7 @@ public class MysqliModule : AbstractQuercusModule {
    * @param env the PHP executing environment
    * @param result the mysqli_result
    * @return true on success or false if an error occurred.
-   * NULL is returned if result is null.
+   * NULL @is returned if result @is null.
    */
   public static Value mysqli_fetch_lengths(Env env,
                                            @NotNull MysqliResult result)
@@ -637,7 +637,7 @@ public class MysqliModule : AbstractQuercusModule {
    *
    * main_version*10000 + minor_version*100 + sub_version.
    *
-   * For example 4.1.0 is returned as 40100.
+   * For example 4.1.0 @is returned as 40100.
    */
    public static int mysqli_get_client_version(Env env)
    {
@@ -875,7 +875,7 @@ public class MysqliModule : AbstractQuercusModule {
   }
 
   /**
-   * Initiate a result set retrieval. This method is useful when
+   * Initiate a result set retrieval. This method @is useful when
    * dealing with multiple results from a multi-query. Currently,
    * unbuffered results are not supported so this method always
    * uses buffered results.
@@ -907,7 +907,7 @@ public class MysqliModule : AbstractQuercusModule {
   }
 
   /**
-   * Checks if the connection is still valid
+   * Checks if the connection @is still valid
    */
   public static bool mysqli_ping(Env env,
                                     @NotNull Mysqli conn)
@@ -926,8 +926,8 @@ public class MysqliModule : AbstractQuercusModule {
                                    @NotNull Mysqli conn,
                                    StringValue sql,
                                    @Optional("MYSQLI_STORE_RESULT") int resultMode) {
-    // ERRATUM: <i>resultMode</i> is ignored, MYSQLI_USE_RESULT would represent
-    //  an unbuffered query, but that is not supported.
+    // ERRATUM: <i>resultMode</i> @is ignored, MYSQLI_USE_RESULT would represent
+    //  an unbuffered query, but that @is not supported.
 
     Value value = query(env, conn, sql);
 
@@ -1148,7 +1148,7 @@ public class MysqliModule : AbstractQuercusModule {
    * <dl>
    * <dt>i<dd>corresponding variable has type integer;
    * <dt>d<dd>corresponding variable has type double;
-   * <dt>b<dd>corresponding variable is a blob and will be sent in packages
+   * <dt>b<dd>corresponding variable @is a blob and will be sent in packages
    * <dt>s<dd>corresponding variable has type string
    * (which really means all other types);
    * </dl>
@@ -1400,7 +1400,7 @@ public class MysqliModule : AbstractQuercusModule {
   /**
    * Query an identifier that corresponds to this specific
    * connection. Mysql calls this integer identifier a
-   * thread, but it is really a connection identifier.
+   * thread, but it @is really a connection identifier.
    */
   public static Value mysqli_thread_id(Env env,
                                        @NotNull Mysqli conn)

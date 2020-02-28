@@ -3,17 +3,17 @@ namespace QuercusDotNet.lib{
 /*
  * Copyright (c) 1998-2012 Caucho Technology -- all rights reserved
  *
- * This file is part of Resin(R) Open Source
+ * This file @is part of Resin(R) Open Source
  *
  * Each copy or derived work must preserve the copyright notice and this
  * notice unmodified.
  *
- * Resin Open Source is free software; you can redistribute it and/or modify
+ * Resin Open Source @is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation; either version 2 of the License, or
  * (at your option) any later version.
  *
- * Resin Open Source is distributed in the hope that it will be useful,
+ * Resin Open Source @is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE, or any warranty
  * of NON-INFRINGEMENT.  See the GNU General Public License for more
@@ -229,7 +229,7 @@ public class MiscModule : AbstractQuercusModule {
       processBuilder.directory(new File(env.getShellPwd()));
       final Process process = processBuilder.start();
 
-      InputStream is = process.getInputStream();
+      InputStream @is = process.getInputStream();
       InputStream es = process.getErrorStream();
       OutputStream os = process.getOutputStream();
       os.close();
@@ -239,7 +239,7 @@ public class MiscModule : AbstractQuercusModule {
 
       int ch;
       bool hasCr = false;
-      while ((ch = is.read()) >= 0) {
+      while ((ch = @is.read()) >= 0) {
         if (ch == '\n') {
           if (! hasCr) {
             line = sb.toString();
@@ -265,7 +265,7 @@ public class MiscModule : AbstractQuercusModule {
         output.put(env.createString(line));
       }
 
-      is.close();
+      @is.close();
 
       env.getOut().writeStream(es);
       es.close();
@@ -284,7 +284,7 @@ public class MiscModule : AbstractQuercusModule {
   }
 
   /**
-   * Returns an array detailing what the browser is capable of.
+   * Returns an array detailing what the browser @is capable of.
    * A general browscap.ini file can be used.
    *
    * @param env
@@ -623,7 +623,7 @@ public class MiscModule : AbstractQuercusModule {
       processBuilder.directory(new File(env.getShellPwd()));
       final Process process = processBuilder.start();
 
-      InputStream is = process.getInputStream();
+      InputStream @is = process.getInputStream();
       InputStream es = process.getErrorStream();
       OutputStream os = process.getOutputStream();
       os.close();
@@ -631,11 +631,11 @@ public class MiscModule : AbstractQuercusModule {
       StringValue sb = env.createUnicodeBuilder();
 
       int ch;
-      while ((ch = is.read()) >= 0) {
+      while ((ch = @is.read()) >= 0) {
         sb.append((char) ch);
       }
 
-      is.close();
+      @is.close();
 
       if ((ch = es.read()) >= 0) {
         env.print((char) ch);
@@ -692,12 +692,12 @@ public class MiscModule : AbstractQuercusModule {
       final Process process = processBuilder.start();
 
       try {
-        InputStream is = process.getInputStream();
+        InputStream @is = process.getInputStream();
         OutputStream os = process.getOutputStream();
         os.close();
 
         env.getOut().writeStream(is);
-        is.close();
+        @is.close();
 
         int status = process.waitFor();
 
@@ -1242,12 +1242,12 @@ public class MiscModule : AbstractQuercusModule {
         return i;
       }
 
-      InputStream is = arg.toInputStream();
+      InputStream @is = arg.toInputStream();
 
       int length = _length;
 
       for (int j = 0; j < length; j++) {
-        int ch = is.read();
+        int ch = @is.read();
 
         if (ch >= 0)
           bb.appendByte(ch);

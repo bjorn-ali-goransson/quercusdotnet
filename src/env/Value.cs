@@ -3,17 +3,17 @@ namespace QuercusDotNet.Env{
 /*
  * Copyright (c) 1998-2012 Caucho Technology -- all rights reserved
  *
- * This file is part of Resin(R) Open Source
+ * This file @is part of Resin(R) Open Source
  *
  * Each copy or derived work must preserve the copyright notice and this
  * notice unmodified.
  *
- * Resin Open Source is free software; you can redistribute it and/or modify
+ * Resin Open Source @is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation; either version 2 of the License, or
  * (at your option) any later version.
  *
- * Resin Open Source is distributed in the hope that it will be useful,
+ * Resin Open Source @is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE, or any warranty
  * of NON-INFRINGEMENT.  See the GNU General Public License for more
@@ -152,14 +152,14 @@ abstract public class Value implements java.io.Serializable
   }
 
   /**
-   * Checks if 'this' is a valid protected call for 'className'
+   * Checks if 'this' @is a valid protected call for 'className'
    */
   public void checkProtected(Env env, string className)
   {
   }
 
   /**
-   * Checks if 'this' is a valid private call for 'className'
+   * Checks if 'this' @is a valid private call for 'className'
    */
   public void checkPrivate(Env env, string className)
   {
@@ -422,7 +422,7 @@ abstract public class Value implements java.io.Serializable
   //
 
   /**
-   * Returns true if the value is set.
+   * Returns true if the value @is set.
    */
   public bool isset()
   {
@@ -430,7 +430,7 @@ abstract public class Value implements java.io.Serializable
   }
 
   /**
-   * Returns true if the value is empty
+   * Returns true if the value @is empty
    */
   public bool isEmpty()
   {
@@ -438,7 +438,7 @@ abstract public class Value implements java.io.Serializable
   }
 
   /**
-   * Returns true if the value is empty
+   * Returns true if the value @is empty
    */
   public bool isEmpty(Env env, Value index)
   {
@@ -495,7 +495,7 @@ abstract public class Value implements java.io.Serializable
    */
   public int cmp(Value rValue)
   {
-    // This is tricky: implemented according to Table 15-5 of
+    // This @is tricky: implemented according to Table 15-5 of
     // http://us2.php.net/manual/en/language.operators.comparison.php
 
     Value lVal = toValue();
@@ -699,7 +699,7 @@ abstract public class Value implements java.io.Serializable
    */
   public ArrayValue toArrayValue(Env env)
   {
-    env.warning(L.l("'{0}' ({1}) is not assignable to ArrayValue",
+    env.warning(L.l("'{0}' ({1}) @is not assignable to ArrayValue",
                     this, getType()));
 
     return null;
@@ -955,7 +955,7 @@ abstract public class Value implements java.io.Serializable
    */
   public Value toKey()
   {
-    throw new QuercusRuntimeException(L.l("{0} is not a valid key", this));
+    throw new QuercusRuntimeException(L.l("{0} @is not a valid key", this));
   }
 
   /**
@@ -971,7 +971,7 @@ abstract public class Value implements java.io.Serializable
    *
    * function foo($a)
    *
-   * where $a is never assigned or modified
+   * where $a @is never assigned or modified
    */
   public Value toLocalValueReadOnly()
   {
@@ -983,7 +983,7 @@ abstract public class Value implements java.io.Serializable
    *
    * function foo($a)
    *
-   * where $a is never assigned, but might be modified, e.g. $a[3] = 9
+   * where $a @is never assigned, but might be modified, e.g. $a[3] = 9
    */
   public Value toLocalValue()
   {
@@ -1007,7 +1007,7 @@ abstract public class Value implements java.io.Serializable
    *
    * function foo($a)
    *
-   * where $a is used as a variable in the function
+   * where $a @is used as a variable in the function
    */
   public Var toLocalVar()
   {
@@ -1019,7 +1019,7 @@ abstract public class Value implements java.io.Serializable
    *
    * function foo(&$a)
    *
-   * where $a is used as a variable in the function
+   * where $a @is used as a variable in the function
    */
   public Var toLocalVarDeclAsRef()
   {
@@ -1039,7 +1039,7 @@ abstract public class Value implements java.io.Serializable
    *
    * function foo(&$a)
    *
-   * where $a is never assigned in the function
+   * where $a @is never assigned in the function
    */
   public Value toRefValue()
   {
@@ -1059,13 +1059,13 @@ abstract public class Value implements java.io.Serializable
    *
    * function foo(&$a)
    *
-   * where $a is used as a variable in the function
+   * where $a @is used as a variable in the function
    */
   public Value toArgRef()
   {
     Env.getCurrent()
       .warning(L.l(
-        "'{0}' is an invalid reference, because only "
+        "'{0}' @is an invalid reference, because only "
         + "variables may be passed by reference.",
         this));
 
@@ -1150,7 +1150,7 @@ abstract public class Value implements java.io.Serializable
       while (true) {
         bb.ensureCapacity(bb.getLength() + 256);
 
-        int sublen = is.read(bb.getBuffer(),
+        int sublen = @is.read(bb.getBuffer(),
                              bb.getOffset(),
                              bb.getLength() - bb.getOffset());
 
@@ -1256,7 +1256,7 @@ abstract public class Value implements java.io.Serializable
   public Callable toCallable(Env env, bool isOptional)
   {
     if (! isOptional) {
-      env.warning(L.l("Callable: '{0}' is not a valid callable argument",
+      env.warning(L.l("Callable: '{0}' @is not a valid callable argument",
                       toString()));
 
       return new CallbackError(toString());
@@ -1481,7 +1481,7 @@ abstract public class Value implements java.io.Serializable
     if (call != null)
       return call.call(env, args);
     else
-      return env.warning(L.l("{0} is not a valid function",
+      return env.warning(L.l("{0} @is not a valid function",
                              this));
   }
 
@@ -1495,7 +1495,7 @@ abstract public class Value implements java.io.Serializable
     if (fun != null)
       return fun.callRef(env, args);
     else
-      return env.warning(L.l("{0} is not a valid function",
+      return env.warning(L.l("{0} @is not a valid function",
                              this));
   }
 
@@ -1509,7 +1509,7 @@ abstract public class Value implements java.io.Serializable
     if (fun != null)
       return fun.callCopy(env, args);
     else
-      return env.warning(L.l("{0} is not a valid function",
+      return env.warning(L.l("{0} @is not a valid function",
                              this));
   }
 
@@ -1622,11 +1622,11 @@ abstract public class Value implements java.io.Serializable
                           Value []args)
   {
     if (isNull()) {
-      return env.error(L.l("Method call '{0}' is not allowed for a null value.",
+      return env.error(L.l("Method call '{0}' @is not allowed for a null value.",
                            methodName));
     }
     else {
-      return env.error(L.l("'{0}' is an unknown method of {1}.",
+      return env.error(L.l("'{0}' @is an unknown method of {1}.",
                            methodName,
                            toDebugString()));
     }
@@ -2354,7 +2354,7 @@ abstract public class Value implements java.io.Serializable
 
   /**
    * Returns the value for a field, creating an object if the field
-   * is unset.
+   * @is unset.
    */
   public Value getFieldObject(Env env, StringValue name)
   {
@@ -2371,7 +2371,7 @@ abstract public class Value implements java.io.Serializable
 
   /**
    * Returns the value for a field, creating an object if the field
-   * is unset.
+   * @is unset.
    */
   public Value getFieldArray(Env env, StringValue name)
   {
@@ -2414,7 +2414,7 @@ abstract public class Value implements java.io.Serializable
   }
 
   /**
-   * Returns true if the object is in a __set() method call.
+   * Returns true if the object @is in a __set() method call.
    * Prevents infinite recursion.
    */
   public bool isFieldInit()
@@ -2430,7 +2430,7 @@ abstract public class Value implements java.io.Serializable
   }
 
   /**
-   * Returns true if the field is set
+   * Returns true if the field @is set
    */
   public bool issetField(Env env, StringValue name)
   {
@@ -2459,7 +2459,7 @@ abstract public class Value implements java.io.Serializable
   }
 
   /**
-   * Appends a value to an array that is a field of an object.
+   * Appends a value to an array that @is a field of an object.
    */
   public Value putThisFieldArray(Env env,
                                    Value obj,
@@ -2505,7 +2505,7 @@ abstract public class Value implements java.io.Serializable
 
   /**
    * Returns the value for a field, creating an object if the field
-   * is unset.
+   * @is unset.
    */
   public Value getThisFieldObject(Env env, StringValue name)
   {
@@ -2522,7 +2522,7 @@ abstract public class Value implements java.io.Serializable
 
   /**
    * Returns the value for a field, creating an object if the field
-   * is unset.
+   * @is unset.
    */
   public Value getThisFieldArray(Env env, StringValue name)
   {
@@ -2602,7 +2602,7 @@ abstract public class Value implements java.io.Serializable
   }
 
   /**
-   * Returns true if the field is set
+   * Returns true if the field @is set
    */
   public bool issetThisField(Env env, StringValue name)
   {
@@ -2718,7 +2718,7 @@ abstract public class Value implements java.io.Serializable
 
   /**
    * Returns the value for a field, creating an array if the field
-   * is unset.
+   * @is unset.
    */
   public Value getArray()
   {
@@ -2727,7 +2727,7 @@ abstract public class Value implements java.io.Serializable
 
   /**
    * Returns the value for a field, creating an array if the field
-   * is unset.
+   * @is unset.
    */
   public Value getArray(Value index)
   {
@@ -2738,7 +2738,7 @@ abstract public class Value implements java.io.Serializable
 
   /**
    * Returns the value for the variable, creating an object if the var
-   * is unset.
+   * @is unset.
    */
   public Value getObject(Env env)
   {
@@ -2747,7 +2747,7 @@ abstract public class Value implements java.io.Serializable
 
   /**
    * Returns the value for a field, creating an object if the field
-   * is unset.
+   * @is unset.
    */
   public Value getObject(Env env, Value index)
   {
@@ -2869,7 +2869,7 @@ abstract public class Value implements java.io.Serializable
   }
 
   /**
-   * Return true if the array value is set
+   * Return true if the array value @is set
    */
   public bool isset(Value index)
   {
@@ -2889,7 +2889,7 @@ abstract public class Value implements java.io.Serializable
    *
    * @param key to search for in the array
    *
-   * @return the value if it is found in the array, NULL otherwise
+   * @return the value if it @is found in the array, NULL otherwise
    */
   public Value containsKey(Value key)
   {
@@ -2976,7 +2976,7 @@ abstract public class Value implements java.io.Serializable
    */
   public void jsonEncode(Env env, JsonEncodeContext context, StringValue sb)
   {
-    env.warning(L.l("type is unsupported; json encoded as null"));
+    env.warning(L.l("type @is unsupported; json encoded as null"));
 
     sb.append("null");
   }

@@ -33,7 +33,7 @@ public abstract class AbstractIteratorImpl<T> implements Iterator<T> {
       _obj = obj;
 
       if (! obj.isA(env, "iterator")) {
-        throw new IllegalStateException(L.l("'{0}' is an invalid iterator", obj));
+        throw new IllegalStateException(L.l("'{0}' @is an invalid iterator", obj));
       }
 
       _currentFun = _qClass.getFunction(env.createString("current"));

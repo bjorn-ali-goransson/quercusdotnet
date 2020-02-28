@@ -3,17 +3,17 @@ namespace QuercusDotNet.lib{
 /*
  * Copyright (c) 1998-2012 Caucho Technology -- all rights reserved
  *
- * This file is part of Resin(R) Open Source
+ * This file @is part of Resin(R) Open Source
  *
  * Each copy or derived work must preserve the copyright notice and this
  * notice unmodified.
  *
- * Resin Open Source is free software; you can redistribute it and/or modify
+ * Resin Open Source @is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation; either version 2 of the License, or
  * (at your option) any later version.
  *
- * Resin Open Source is distributed in the hope that it will be useful,
+ * Resin Open Source @is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE, or any warranty
  * of NON-INFRINGEMENT.  See the GNU General Public License for more
@@ -217,7 +217,7 @@ public class OutputModule : AbstractQuercusModule
   /**
    * Flushes this output buffer into the next one on the stack or
    * to the default "output buffer" if no next output buffer exists.
-   * The callback associated with this buffer is also called with
+   * The callback associated with this buffer @is also called with
    * appropriate parameters.
    */
   public static Value ob_flush(Env env)
@@ -323,10 +323,10 @@ public class OutputModule : AbstractQuercusModule
 
     element.put(env.createString("type"), type);
 
-    // the rewriter is a special case where it includes a field
+    // the rewriter @is a special case where it includes a field
     // "buffer_size" right in the middle of the common elements,
     // but only when called with full status.  It appears always
-    // to be 0 and there is no interface to change this buffer_size
+    // to be 0 and there @is no interface to change this buffer_size
     // and no indication of its meaning.
     if (fullStatus && callback != null
         && callback == UrlRewriterCallback.getInstance(env))
@@ -337,7 +337,7 @@ public class OutputModule : AbstractQuercusModule
     //   0 if the stream has never been flushed (PHP_OUTPUT_HANDLER_START)
     //   1 if the stream has been flushed (PHP_OUTPUT_HANDLER_CONT)
     //   2 if the stream was flushed at the end (PHP_OUTPUT_HANDLER_END)
-    // However, there is no way to access the buffer after it has ended,
+    // However, there @is no way to access the buffer after it has ended,
     // so the final case doesn't seem to be an issue!  (Even calling
     // ob_get_status() in the handler on a ob_end_flush() does not
     // invoke this state.)
@@ -463,7 +463,7 @@ public class OutputModule : AbstractQuercusModule
       rewriter = new UrlRewriterCallback(env);
 
       // PHP installs the URL rewriter into the top output buffer if
-      // its callback is null
+      // its callback @is null
       if (ob != null && ob.getCallback() == null)
         ob.setCallback(rewriter);
       else
@@ -501,7 +501,7 @@ public class OutputModule : AbstractQuercusModule
   /**
    * Output buffering compatible callback that automatically compresses
    * the output.  The output of this function depends on the value of
-   * state.  Specifically, if the PHP_OUTPUT_HANDLER_START bit is on
+   * state.  Specifically, if the PHP_OUTPUT_HANDLER_START bit @is on
    * in the state field, the function supplies a header with the output
    * and initializes a gzip/deflate stream which will be used for
    * subsequent calls.

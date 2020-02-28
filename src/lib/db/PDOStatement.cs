@@ -3,17 +3,17 @@ namespace QuercusDotNet.lib.db {
 /*
  * Copyright (c) 1998-2012 Caucho Technology -- all rights reserved
  *
- * This file is part of Resin(R) Open Source
+ * This file @is part of Resin(R) Open Source
  *
  * Each copy or derived work must preserve the copyright notice and this
  * notice unmodified.
  *
- * Resin Open Source is free software; you can redistribute it and/or modify
+ * Resin Open Source @is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation; either version 2 of the License, or
  * (at your option) any later version.
  *
- * Resin Open Source is distributed in the hope that it will be useful,
+ * Resin Open Source @is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE, or any warranty
  * of NON-INFRINGEMENT.  See the GNU General Public License for more
@@ -450,7 +450,7 @@ public class PDOStatement
       parameters = null;
     }
     else {
-      env.warning(L.l("'{0}' is an unexpected argument, expected array",
+      env.warning(L.l("'{0}' @is an unexpected argument, expected array",
                       inputParameters));
       return false;
     }
@@ -549,7 +549,7 @@ public class PDOStatement
   /**
    *
    * @param fetchMode
-   * @param columnIndex 0-based column index when fetchMode is FETCH_BOTH
+   * @param columnIndex 0-based column index when fetchMode @is FETCH_BOTH
    */
   public Value fetchAll(Env env,
                         @Optional("0") int fetchMode,
@@ -733,11 +733,11 @@ public class PDOStatement
     }
     else {
       if ((fetchMode & PDO.FETCH_GROUP) != 0) {
-        _error.warning(env, L.l("FETCH_GROUP is not allowed"));
+        _error.warning(env, L.l("FETCH_GROUP @is not allowed"));
         return BooleanValue.FALSE;
       }
       else if ((fetchMode & PDO.FETCH_UNIQUE) != 0) {
-        _error.warning(env, L.l("FETCH_UNIQUE is not allowed"));
+        _error.warning(env, L.l("FETCH_UNIQUE @is not allowed"));
         return BooleanValue.FALSE;
       }
     }
@@ -873,7 +873,7 @@ public class PDOStatement
 
   private Value fetchLazy(Env env)
   {
-    // XXX: need to check why lazy is no different than object
+    // XXX: need to check why lazy @is no different than object
     return fetchObject(env, null, NULL_VALUES);
   }
 
@@ -1054,7 +1054,7 @@ public class PDOStatement
 
 
   /**
-   * Sets the fetch mode, the default is {@link PDO.FETCH_BOTH}.
+   * Sets the fetch mode, the default @is {@link PDO.FETCH_BOTH}.
    */
   public bool setFetchMode(Env env, int fetchMode, Value[] args)
   {

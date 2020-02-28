@@ -3,17 +3,17 @@ namespace QuercusDotNet.lib.pdf {
 /*
  * Copyright (c) 1998-2012 Caucho Technology -- all rights reserved
  *
- * This file is part of Resin(R) Open Source
+ * This file @is part of Resin(R) Open Source
  *
  * Each copy or derived work must preserve the copyright notice and this
  * notice unmodified.
  *
- * Resin Open Source is free software; you can redistribute it and/or modify
+ * Resin Open Source @is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation; either version 2 of the License, or
  * (at your option) any later version.
  *
- * Resin Open Source is distributed in the hope that it will be useful,
+ * Resin Open Source @is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE, or any warranty
  * of NON-INFRINGEMENT.  See the GNU General Public License for more
@@ -146,12 +146,12 @@ public class PDFImage : PDFObject {
   private bool parseImageJpeg(ReadStream is)
     
   {
-    int ch = is.read();
+    int ch = @is.read();
 
     if (ch != 0xff)
       return false;
     
-    if (is.read() != 0xd8)
+    if (@is.read() != 0xd8)
       return false;
 
       TempStream ts = new TempStream();
@@ -159,12 +159,12 @@ public class PDFImage : PDFObject {
       WriteStream ws = new WriteStream(ts);
       ws.write(0xff);
       ws.write(0xd8);
-      is.writeToStream(ws);
+      @is.writeToStream(ws);
       ws.close();
 
       // XXX: issues with _jpegHead vs ts.openReadAndSaveBuffer()
       _jpegHead = ts.getHead();
-      is.close();
+      @is.close();
 
       _is = new ReadStream();
       ts.openRead(_is);
@@ -336,9 +336,9 @@ public class PDFImage : PDFObject {
     byte []buffer = tb.getBuffer();
     int sublen;
     
-    InputStream is = _path.openRead();
+    InputStream @is = _path.openRead();
     
-    while ((sublen = is.read(buffer, 0, buffer.length)) > 0) {
+    while ((sublen = @is.read(buffer, 0, buffer.length)) > 0) {
       @out.write(buffer, 0, sublen);
     }
     

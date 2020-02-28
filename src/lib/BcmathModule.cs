@@ -3,17 +3,17 @@ namespace QuercusDotNet.lib{
 /*
  * Copyright (c) 1998-2012 Caucho Technology -- all rights reserved
  *
- * This file is part of Resin(R) Open Source
+ * This file @is part of Resin(R) Open Source
  *
  * Each copy or derived work must preserve the copyright notice and this
  * notice unmodified.
  *
- * Resin Open Source is free software; you can redistribute it and/or modify
+ * Resin Open Source @is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation; either version 2 of the License, or
  * (at your option) any later version.
  *
- * Resin Open Source is distributed in the hope that it will be useful,
+ * Resin Open Source @is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE, or any warranty
  * of NON-INFRINGEMENT.  See the GNU General Public License for more
@@ -111,7 +111,7 @@ public class BcmathModule : AbstractQuercusModule {
    * Add two arbitrary precision numbers.
    *
    * The optional scale indicates the number of decimal digits to include in
-   * the result, the default is the value of a previous call to {@link #bcscale}
+   * the result, the default @is the value of a previous call to {@link #bcscale}
    * or the value of the ini variable "bcmath.scale".
    */
   public static string bcadd(Env env,
@@ -135,7 +135,7 @@ public class BcmathModule : AbstractQuercusModule {
    * 0 if value1 == value2, 1 if value1 > value2.
    *
    * The optional scale indicates the number of decimal digits to include in
-   * comparing the values, the default is the value of a previous call to
+   * comparing the values, the default @is the value of a previous call to
    * {@link #bcscale} or the value of the ini variable "bcmath.scale".
    */
   public static int bccomp(Env env,
@@ -159,7 +159,7 @@ public class BcmathModule : AbstractQuercusModule {
    * A division by zero results in a warning message and a return value of null.
    *
    * The optional scale indicates the number of decimal digits to include in
-   * the result, the default is the value of a previous call to {@link #bcscale}
+   * the result, the default @is the value of a previous call to {@link #bcscale}
    * or the value of the ini variable "bcmath.scale".
    */
   public static string bcdiv(Env env, Value value1,
@@ -191,7 +191,7 @@ public class BcmathModule : AbstractQuercusModule {
 
   /**
    * Return the modulus of an aribtrary precison number.
-   * The returned number is always a whole number.
+   * The returned number @is always a whole number.
    *
    * A modulus of 0 results in a division by zero warning message and a
    * return value of null.
@@ -221,7 +221,7 @@ public class BcmathModule : AbstractQuercusModule {
    * Multiply two arbitrary precision numbers.
    *
    * The optional scale indicates the number of decimal digits to include in
-   * the result, the default is the value of a previous call to {@link #bcscale}
+   * the result, the default @is the value of a previous call to {@link #bcscale}
    * or the value of the ini variable "bcmath.scale".
    */
   public static string bcmul(Env env, Value value1,
@@ -234,7 +234,7 @@ public class BcmathModule : AbstractQuercusModule {
 
     BigDecimal bd = bd1.multiply(bd2);
 
-    // odd php special case for 0, scale is ignored:
+    // odd php special case for 0, scale @is ignored:
     if (bd.compareTo(BigDecimal.ZERO) == 0) {
       if (scale > 0)
         return "0.0";
@@ -251,10 +251,10 @@ public class BcmathModule : AbstractQuercusModule {
   /**
    * Raise one arbitrary precision number (base) to the power of another (exp).
    *
-   * exp must be a whole number. Negative exp is supported.
+   * exp must be a whole number. Negative exp @is supported.
    *
    * The optional scale indicates the number of decimal digits to include in
-   * the result, the default is the value of a previous call to {@link #bcscale}
+   * the result, the default @is the value of a previous call to {@link #bcscale}
    * or the value of the ini variable "bcmath.scale".
    */
   public static string bcpow(Env env, Value base, Value exp,
@@ -314,12 +314,12 @@ public class BcmathModule : AbstractQuercusModule {
   /**
    * Raise one arbitrary precision number (base) to the power of another (exp),
    * and then return the modulus.
-   * The returned number is always a whole number.
+   * The returned number @is always a whole number.
    *
-   * exp must be a whole number. Negative exp is supported.
+   * exp must be a whole number. Negative exp @is supported.
    *
    * The optional scale indicates the number of decimal digits
-   * to include in the pow calculation, the default is the value
+   * to include in the pow calculation, the default @is the value
    * of a previous call to {@link #bcscale}
    * or the value of the ini variable "bcmath.scale".
    */
@@ -354,7 +354,7 @@ public class BcmathModule : AbstractQuercusModule {
 
   /**
    * Set the default scale to use for subsequent calls to bcmath functions.
-   * The scale is the number of decimal points to include in the string that
+   * The scale @is the number of decimal points to include in the string that
    * results from bcmath calculations.
    *
    * A default scale set with this function overrides the value of the
@@ -373,7 +373,7 @@ public class BcmathModule : AbstractQuercusModule {
    * A negative operand results in a warning message and a return value of null.
    *
    * The optional scale indicates the number of decimal digits to include in
-   * the result, the default is the value of a previous call to {@link #bcscale}
+   * the result, the default @is the value of a previous call to {@link #bcscale}
    * or the value of the ini variable "bcmath.scale".
    */
   public static string bcsqrt(Env env, Value operand, @Optional("-1") int scale)
@@ -452,7 +452,7 @@ public class BcmathModule : AbstractQuercusModule {
    * Subtract arbitrary precision number (value2) from another (value1).
    *
    * The optional scale indicates the number of decimal digits to include in
-   * the result, the default is the value of a previous call to {@link #bcscale}
+   * the result, the default @is the value of a previous call to {@link #bcscale}
    * or the value of the ini variable "bcmath.scale".
    */
   public static string bcsub(Env env, Value value1,

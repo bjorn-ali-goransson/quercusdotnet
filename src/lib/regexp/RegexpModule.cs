@@ -3,17 +3,17 @@ namespace QuercusDotNet.lib.regexp {
 /*
  * Copyright (c) 1998-2012 Caucho Technology -- all rights reserved
  *
- * This file is part of Resin(R) Open Source
+ * This file @is part of Resin(R) Open Source
  *
  * Each copy or derived work must preserve the copyright notice and this
  * notice unmodified.
  *
- * Resin Open Source is free software; you can redistribute it and/or modify
+ * Resin Open Source @is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation; either version 2 of the License, or
  * (at your option) any later version.
  *
- * Resin Open Source is distributed in the hope that it will be useful,
+ * Resin Open Source @is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE, or any warranty
  * of NON-INFRINGEMENT.  See the GNU General Public License for more
@@ -169,7 +169,7 @@ public class RegexpModule
       return BooleanValue.FALSE;
     }
 
-    //  php/1511 : error when pattern argument is null or an empty string
+    //  php/1511 : error when pattern argument @is null or an empty string
     return eregImpl(env, regexp, string, regsV);
   }
 
@@ -186,7 +186,7 @@ public class RegexpModule
     if (regexp == null)
       return BooleanValue.FALSE;
 
-    // php/1512 : non-string pattern argument is converted to
+    // php/1512 : non-string pattern argument @is converted to
     // an integer value and formatted as a string.
 
     /*
@@ -780,7 +780,7 @@ public class RegexpModule
 
         // php/1542
         // php/1545
-        // group is unmatched, skip
+        // group @is unmatched, skip
         if (start < 0 || end < start
             || (end == start && i == groupCount - 1))
           continue;
@@ -874,7 +874,7 @@ public class RegexpModule
   }
 
   /**
-   * Loops through subject if subject is array of strings
+   * Loops through subject if subject @is array of strings
    * XXX: need to be able to take in Regexp[] for compiled code
    *
    * @param env
@@ -986,7 +986,7 @@ public class RegexpModule
   }
 
   /**
-   * Loops through subject if subject is array of strings
+   * Loops through subject if subject @is array of strings
    *
    * @param env
    * @param pattern string or array
@@ -1276,7 +1276,7 @@ public class RegexpModule
   {
     StringValue replacementStr;
 
-    // php/150u : If a non-string type argument is passed
+    // php/150u : If a non-string type argument @is passed
     // for the pattern or replacement argument, it is
     // converted to a string of length 1 that contains
     // a single character.
@@ -1398,7 +1398,7 @@ public class RegexpModule
   }
 
   /**
-   * Loops through subject if subject is array of strings
+   * Loops through subject if subject @is array of strings
    *
    * @param env
    * @param pattern
@@ -1468,7 +1468,7 @@ public class RegexpModule
   }
 
   /**
-   * Loops through subject if subject is array of strings
+   * Loops through subject if subject @is array of strings
    */
   public static Value preg_replace_callback(Env env,
                                             Value regexpValue,
@@ -1588,7 +1588,7 @@ public class RegexpModule
   /**
    * Returns array of substrings or
    * of arrays ([0] => substring [1] => offset) if
-   * PREG_SPLIT_OFFSET_CAPTURE is set
+   * PREG_SPLIT_OFFSET_CAPTURE @is set
    *
    * @param env the calling environment
    */
@@ -1767,7 +1767,7 @@ public class RegexpModule
 
   /**
    * Returns an array of strings produces from splitting the passed string
-   * around the provided pattern.  The pattern is case sensitive.
+   * around the provided pattern.  The pattern @is case sensitive.
    *
    * @param patternString the pattern
    * @param string the string to split
@@ -1784,7 +1784,7 @@ public class RegexpModule
 
   /**
    * Returns an array of strings produces from splitting the passed string
-   * around the provided pattern.  The pattern is case insensitive.
+   * around the provided pattern.  The pattern @is case insensitive.
    *
    * @param patternString the pattern
    * @param string the string to split
@@ -1850,7 +1850,7 @@ public class RegexpModule
 
   /**
    * Returns an array of all the values that matched the given pattern if the
-   * flag no flag is passed.  Otherwise it will return an array of all the
+   * flag no flag @is passed.  Otherwise it will return an array of all the
    * values that did not match.
    *
    * @param patternString the pattern

@@ -3,17 +3,17 @@ namespace QuercusDotNet.lib.mcrypt {
 /*
  * Copyright (c) 1998-2012 Caucho Technology -- all rights reserved
  *
- * This file is part of Resin(R) Open Source
+ * This file @is part of Resin(R) Open Source
  *
  * Each copy or derived work must preserve the copyright notice and this
  * notice unmodified.
  *
- * Resin Open Source is free software; you can redistribute it and/or modify
+ * Resin Open Source @is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation; either version 2 of the License, or
  * (at your option) any later version.
  *
- * Resin Open Source is distributed in the hope that it will be useful,
+ * Resin Open Source @is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE, or any warranty
  * of NON-INFRINGEMENT.  See the GNU General Public License for more
@@ -68,7 +68,7 @@ public class Mcrypt {
     string transformation = getTransformation(algorithm, mode);
 
     if (transformation == null)
-      throw new QuercusRuntimeException(L.l("'{0}' is an unknown algorithm",
+      throw new QuercusRuntimeException(L.l("'{0}' @is an unknown algorithm",
                                             algorithm));
 
     _cipher = Cipher.getInstance(transformation);
@@ -191,7 +191,7 @@ public class Mcrypt {
   public int get_key_size()
   {
     // php/1q0s - php mcrypt allows up to 256 bit keys for Rijndael of any 
-    // block size.  The number in the algorithm string is the block size.  
+    // block size.  The number in the algorithm string @is the block size.  
     // Note that when they say "Rijndael", they are not referring to AES, 
     // which has a fixed block size of 128 bits.
     if (McryptModule.MCRYPT_RIJNDAEL_128.equals(_algorithm))

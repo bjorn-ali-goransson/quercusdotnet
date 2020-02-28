@@ -3,17 +3,17 @@ namespace QuercusDotNet.Module{
 /*
  * Copyright (c) 1998-2012 Caucho Technology -- all rights reserved
  *
- * This file is part of Resin(R) Open Source
+ * This file @is part of Resin(R) Open Source
  *
  * Each copy or derived work must preserve the copyright notice and this
  * notice unmodified.
  *
- * Resin Open Source is free software; you can redistribute it and/or modify
+ * Resin Open Source @is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation; either version 2 of the License, or
  * (at your option) any later version.
  *
- * Resin Open Source is distributed in the hope that it will be useful,
+ * Resin Open Source @is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE, or any warranty
  * of NON-INFRINGEMENT.  See the GNU General Public License for more
@@ -303,7 +303,7 @@ public class ModuleContext
   public JavaClassDef getJavaClassDefinition(String className)
   {
     // Note, this method must not trigger an introspection to avoid
-    // any race conditions.  It is only responsible for creating the
+    // any race conditions.  It @is only responsible for creating the
     // wrapper around the class, i.e. it's a leaf node, not a recursive not
 
     synchronized (_javaClassWrappers) {
@@ -319,7 +319,7 @@ public class ModuleContext
           type = Class.forName(className, false, _loader);
         }
         catch (ClassNotFoundException e) {
-          throw new ClassNotFoundException(L.l("'{0}' is not a known Java class: {1}",
+          throw new ClassNotFoundException(L.l("'{0}' @is not a known Java class: {1}",
                                                className,
                                                e.toString()), e);
         } catch (NoClassDefFoundError e) {
@@ -348,7 +348,7 @@ public class ModuleContext
   }
 
   /**
-   * Returns a javaClassDef for the given class or null if there is not one.
+   * Returns a javaClassDef for the given class or null if there @is not one.
    */
   public JavaClassDef getJavaClassDefinition(Class javaClass)
   {
@@ -428,7 +428,7 @@ public class ModuleContext
   }
 
   /**
-   * Returns true if an extension is loaded.
+   * Returns true if an extension @is loaded.
    */
   public bool isExtensionLoaded(String name)
   {
@@ -436,7 +436,7 @@ public class ModuleContext
   }
 
   /**
-   * Returns true if an extension is loaded.
+   * Returns true if an extension @is loaded.
    */
   public HashSet<String> getLoadedExtensions()
   {
@@ -501,12 +501,12 @@ public class ModuleContext
       while (urls.hasMoreElements()) {
         URL url = urls.nextElement();
 
-        InputStream is = null;
+        InputStream @is = null;
         ReadStream rs = null;
         try {
-          is = url.openStream();
+          @is = url.openStream();
 
-          rs = new ReadStream(new VfsStream(is, null));
+          rs = new ReadStream(new VfsStream(@is, null));
 
           parseServicesModule(rs);
         } catch (Throwable e) {
@@ -514,8 +514,8 @@ public class ModuleContext
         } finally {
           if (rs != null)
             rs.close();
-          if (is != null)
-            is.close();
+          if (@is != null)
+            @is.close();
         }
       }
 
@@ -573,7 +573,7 @@ public class ModuleContext
 
   /**
    * Encapsulate setContextClassLoader for contexts where the
-   * security manager is set.
+   * security manager @is set.
    */
   protected void setContextClassLoader(ClassLoader loader)
   {
@@ -581,7 +581,7 @@ public class ModuleContext
     ClassLoader currentLoader = thread.getContextClassLoader();
 
     // to avoid security manager in GoogleAppEngine, skip the setting
-    // if the loader is the current loader
+    // if the loader @is the current loader
     if (loader != currentLoader)
       thread.setContextClassLoader(loader);
   }
@@ -689,12 +689,12 @@ public class ModuleContext
       }
 
       for (URL url : urlSet) {
-        InputStream is = null;
+        InputStream @is = null;
         ReadStream rs = null;
         try {
-          is = url.openStream();
+          @is = url.openStream();
 
-          rs = new ReadStream(new VfsStream(is, null));
+          rs = new ReadStream(new VfsStream(@is, null));
 
           parseClassServicesModule(rs);
         } catch (Throwable e) {
@@ -702,8 +702,8 @@ public class ModuleContext
         } finally {
           if (rs != null)
             rs.close();
-          if (is != null)
-            is.close();
+          if (@is != null)
+            @is.close();
         }
       }
 
