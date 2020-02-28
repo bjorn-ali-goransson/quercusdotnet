@@ -38,7 +38,7 @@ namespace QuercusDotNet.Expr{
 /**
  * Represents a PHP division expression.
  */
-public class BinaryDivExpr extends AbstractBinaryExpr {
+public class BinaryDivExpr : AbstractBinaryExpr {
   public BinaryDivExpr(Location location, Expr left, Expr right)
   {
     super(location, left, right);

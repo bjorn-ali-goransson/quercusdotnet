@@ -84,7 +84,7 @@ namespace QuercusDotNet.lib.string {
 /**
  * PHP functions implemented from the string module
  */
-public class StringModule extends AbstractQuercusModule {
+public class StringModule : AbstractQuercusModule {
   private const Logger log =
     Logger.getLogger(StringModule.class.getName());
 
@@ -4729,7 +4729,7 @@ public class StringModule extends AbstractQuercusModule {
   /*
    * Comparator for sorting in descending fashion based on length.
    */
-  static class StrtrComparator<T extends Map.Entry<Value,Value>>
+  static class StrtrComparator<T : Map.Entry<Value,Value>>
     implements Comparator<T>
   {
     public int compare(T a, T b)
@@ -5332,7 +5332,7 @@ public class StringModule extends AbstractQuercusModule {
     }
   }
 
-  static class TextPrintfSegment extends PrintfSegment {
+  static class TextPrintfSegment : PrintfSegment {
     private final char []_text;
 
     TextPrintfSegment(StringBuilder text)
@@ -5351,7 +5351,7 @@ public class StringModule extends AbstractQuercusModule {
     }
   }
 
-  static class LongPrintfSegment extends PrintfSegment {
+  static class LongPrintfSegment : PrintfSegment {
     private final string _format;
     private final int _index;
     private final QuercusLocale _locale;
@@ -5435,7 +5435,7 @@ public class StringModule extends AbstractQuercusModule {
     }
   }
 
-  static class HexPrintfSegment extends PrintfSegment {
+  static class HexPrintfSegment : PrintfSegment {
     private final int _index;
     private final int _min;
     private final char _pad;
@@ -5524,7 +5524,7 @@ public class StringModule extends AbstractQuercusModule {
     }
   }
 
-  static class UnsignedPrintfSegment extends PrintfSegment {
+  static class UnsignedPrintfSegment : PrintfSegment {
     private final int _index;
     private final int _min;
     private final char _pad;
@@ -5624,7 +5624,7 @@ public class StringModule extends AbstractQuercusModule {
     }
   }
 
-  static class BinaryPrintfSegment extends PrintfSegment {
+  static class BinaryPrintfSegment : PrintfSegment {
     private final int _index;
     private final int _min;
     private final char _pad;
@@ -5704,7 +5704,7 @@ public class StringModule extends AbstractQuercusModule {
     }
   }
 
-  static class DoublePrintfSegment extends PrintfSegment {
+  static class DoublePrintfSegment : PrintfSegment {
     private final string _format;
     private final boolean _isLeftZero;
     private final int _index;
@@ -5768,7 +5768,7 @@ public class StringModule extends AbstractQuercusModule {
     }
   }
 
-  static class StringPrintfSegment extends PrintfSegment {
+  static class StringPrintfSegment : PrintfSegment {
     protected final char []_prefix;
     protected final int _min;
     protected final int _max;
@@ -5875,7 +5875,7 @@ public class StringModule extends AbstractQuercusModule {
     }
   }
 
-  static class CharPrintfSegment extends StringPrintfSegment {
+  static class CharPrintfSegment : StringPrintfSegment {
     CharPrintfSegment(StringBuilder prefix,
                       boolean isLeft, int pad, boolean isUpper,
                       int width,
@@ -5968,7 +5968,7 @@ public class StringModule extends AbstractQuercusModule {
     }
   }
 
-  static class ScanfConstant extends ScanfSegment {
+  static class ScanfConstant : ScanfSegment {
     private final string _string;
     private final int _strlen;
 
@@ -6004,7 +6004,7 @@ public class StringModule extends AbstractQuercusModule {
     }
   }
 
-  static class ScanfWhitespace extends ScanfSegment {
+  static class ScanfWhitespace : ScanfSegment {
     const ScanfWhitespace SEGMENT = new ScanfWhitespace();
 
     private ScanfWhitespace()
@@ -6032,7 +6032,7 @@ public class StringModule extends AbstractQuercusModule {
     }
   }
 
-  static class ScanfStringLength extends ScanfSegment {
+  static class ScanfStringLength : ScanfSegment {
     const ScanfStringLength SEGMENT = new ScanfStringLength();
 
     private ScanfStringLength()
@@ -6056,7 +6056,7 @@ public class StringModule extends AbstractQuercusModule {
     }
   }
 
-  static class ScanfSet extends ScanfSegment {
+  static class ScanfSet : ScanfSegment {
     private IntSet _set;
 
     private ScanfSet(IntSet set)
@@ -6097,7 +6097,7 @@ public class StringModule extends AbstractQuercusModule {
     }
   }
 
-  static class ScanfSetNegated extends ScanfSegment {
+  static class ScanfSetNegated : ScanfSegment {
     private IntSet _set;
 
     private ScanfSetNegated(IntSet set)
@@ -6138,7 +6138,7 @@ public class StringModule extends AbstractQuercusModule {
     }
   }
 
-  static class ScanfScientific extends ScanfSegment {
+  static class ScanfScientific : ScanfSegment {
     private final int _maxLen;
 
     ScanfScientific(int maxLen)
@@ -6229,7 +6229,7 @@ public class StringModule extends AbstractQuercusModule {
     }
   }
 
-  static class ScanfHex extends ScanfSegment {
+  static class ScanfHex : ScanfSegment {
     private final int _maxLen;;
 
     ScanfHex(int maxLen)
@@ -6308,7 +6308,7 @@ public class StringModule extends AbstractQuercusModule {
     }
   }
 
-  static class ScanfInteger extends ScanfSegment {
+  static class ScanfInteger : ScanfSegment {
     private final int _maxLen;
     private final int _base;
     private final boolean _isUnsigned;
@@ -6398,7 +6398,7 @@ public class StringModule extends AbstractQuercusModule {
     }
   }
 
-  static class ScanfIntegerWithBaseDetection extends ScanfSegment {
+  static class ScanfIntegerWithBaseDetection : ScanfSegment {
     private final int _maxLen;
 
     ScanfIntegerWithBaseDetection(int maxLen)
@@ -6548,7 +6548,7 @@ public class StringModule extends AbstractQuercusModule {
   }
 
 
-  static class ScanfString extends ScanfSegment {
+  static class ScanfString : ScanfSegment {
     private final int _maxLen;
 
     ScanfString(int maxLen)

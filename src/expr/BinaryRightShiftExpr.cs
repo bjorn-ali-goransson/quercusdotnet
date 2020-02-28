@@ -37,7 +37,7 @@ namespace QuercusDotNet.Expr{
 /**
  * Represents a PHP right shift expression.
  */
-public class BinaryRightShiftExpr extends AbstractBinaryExpr {
+public class BinaryRightShiftExpr : AbstractBinaryExpr {
   public BinaryRightShiftExpr(Location location, Expr left, Expr right)
   {
     super(location, left, right);

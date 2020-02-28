@@ -38,7 +38,7 @@ namespace QuercusDotNet.lib.file {
 /**
  * Interface for a Quercus binary input stream
  */
-public interface BinaryInput extends BinaryStream {
+public interface BinaryInput : BinaryStream {
   /**
    * Returns an InputStream to the input.
    */

@@ -31,7 +31,7 @@ namespace QuercusDotNet.lib.spl {
 
 
 public interface OuterIterator
-  extends Iterator
+  : Iterator
 {
   public Iterator getInnerIterator();
 }

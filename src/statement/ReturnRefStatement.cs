@@ -40,7 +40,7 @@ namespace QuercusDotNet.Statement{
 /**
  * Represents a return expression statement in a PHP program.
  */
-public class ReturnRefStatement extends Statement {
+public class ReturnRefStatement : Statement {
   protected Expr _expr;
   
   /**

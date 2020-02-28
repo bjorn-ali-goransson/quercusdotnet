@@ -47,7 +47,7 @@ namespace QuercusDotNet.Statement{
 /**
  * Represents sequence of statements.
  */
-public class TryStatement extends Statement {
+public class TryStatement : Statement {
   protected final Statement _block;
   protected final ArrayList<Catch> _catchList = new ArrayList<Catch>();
 

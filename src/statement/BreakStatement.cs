@@ -42,7 +42,7 @@ namespace QuercusDotNet.Statement{
 /**
  * Represents a break expression statement in a PHP program.
  */
-public class BreakStatement extends Statement {
+public class BreakStatement : Statement {
   protected final Expr _target;
   protected final ArrayList<String> _loopLabelList;
   

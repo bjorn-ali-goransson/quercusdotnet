@@ -44,7 +44,7 @@ namespace QuercusDotNet.Expr{
  * Represents a PHP parent:: method call expression.
  * XXX: better name?
  */
-public class ClassVirtualMethodExpr extends Expr {
+public class ClassVirtualMethodExpr : Expr {
   private const L10N L = new L10N(ClassVirtualMethodExpr.class);
 
   protected final StringValue _methodName;

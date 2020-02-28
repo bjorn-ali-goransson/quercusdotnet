@@ -45,7 +45,7 @@ namespace QuercusDotNet.lib.reflection {
 
 
 
-public class ReflectionMethod extends ReflectionFunctionAbstract
+public class ReflectionMethod : ReflectionFunctionAbstract
   implements Reflector
 {
   private const L10N L = new L10N(ReflectionMethod.class);

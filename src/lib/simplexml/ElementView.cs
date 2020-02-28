@@ -58,7 +58,7 @@ namespace QuercusDotNet.lib.simplexml {
 
 
 
-public class ElementView extends SimpleView
+public class ElementView : SimpleView
 {
   private const Logger log
     = Logger.getLogger(ElementView.class.getName());

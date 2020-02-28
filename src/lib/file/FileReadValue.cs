@@ -44,7 +44,7 @@ namespace QuercusDotNet.lib.file {
 /**
  * Represents a Quercus open file
  */
-public class FileReadValue extends FileValue {
+public class FileReadValue : FileValue {
   private const Logger log
     = Logger.getLogger(FileReadValue.class.getName());
 

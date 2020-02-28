@@ -40,7 +40,7 @@ namespace QuercusDotNet.Env{
 
 
 public class CgiEnv
-  extends Env
+  : Env
 {
   public CgiEnv(QuercusContext quercus,
                 QuercusPage page,

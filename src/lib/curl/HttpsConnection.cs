@@ -45,7 +45,7 @@ namespace QuercusDotNet.lib.curl {
  * Represents a HttpURLConnection wrapper.
  */
 public class HttpsConnection
-  extends CurlHttpConnection
+  : CurlHttpConnection
 {
   protected HttpsConnection(URL url,
                             string username,

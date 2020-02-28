@@ -50,7 +50,7 @@ namespace QuercusDotNet.lib.db {
  * postgres connection class (postgres has NO object oriented API)
  */
 @ResourceType("pgsql link")
-public class Postgres extends JdbcConnectionResource
+public class Postgres : JdbcConnectionResource
 {
   private const Logger log = Logger.getLogger(Postgres.class.getName());
   private const L10N L = new L10N(Postgres.class);

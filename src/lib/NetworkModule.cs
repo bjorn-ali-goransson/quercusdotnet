@@ -61,7 +61,7 @@ namespace QuercusDotNet.lib{
 /**
  * Information about PHP network
  */
-public class NetworkModule extends AbstractQuercusModule {
+public class NetworkModule : AbstractQuercusModule {
   private const L10N L = new L10N(NetworkModule.class);
   private const Logger log
     = Logger.getLogger(NetworkModule.class.getName());

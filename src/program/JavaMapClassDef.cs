@@ -40,7 +40,7 @@ namespace QuercusDotNet.Program{
 /**
  * Represents an introspected Java class.
  */
-public class JavaMapClassDef extends JavaClassDef {
+public class JavaMapClassDef : JavaClassDef {
   JavaMapClassDef(ModuleContext moduleContext, string name, Class type)
   {
     super(moduleContext, name, type);

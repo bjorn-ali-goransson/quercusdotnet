@@ -1,6 +1,6 @@
 <?php
 
-class LengthException extends LogicException
+class LengthException : LogicException
 {
 }
 

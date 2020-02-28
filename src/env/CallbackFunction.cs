@@ -37,7 +37,7 @@ namespace QuercusDotNet.Env{
  * Represents a call to a function.
  */
 @SuppressWarnings("serial")
-public class CallbackFunction extends Callback {
+public class CallbackFunction : Callback {
   // public const CallbackFunction INVALID_CALLBACK
   // = new CallbackFunction(null, "Invalid Callback");
 

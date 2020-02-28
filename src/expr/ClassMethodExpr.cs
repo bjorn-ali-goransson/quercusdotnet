@@ -42,7 +42,7 @@ namespace QuercusDotNet.Expr{
 /**
  * A Foo::bar(...) method call expression.
  */
-public class ClassMethodExpr extends AbstractMethodExpr {
+public class ClassMethodExpr : AbstractMethodExpr {
   private const L10N L = new L10N(ClassMethodExpr.class);
 
   protected final string _className;

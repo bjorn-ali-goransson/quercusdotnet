@@ -48,7 +48,7 @@ namespace QuercusDotNet.lib.pdf {
 /**
  * deals with an image
  */
-public class PDFImage extends PDFObject {
+public class PDFImage : PDFObject {
   private const Logger log
     = Logger.getLogger(PDFImage.class.getName());
   private const L10N L = new L10N(PDFImage.class);

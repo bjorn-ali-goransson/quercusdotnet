@@ -45,7 +45,7 @@ namespace QuercusDotNet.Env{
  * used for large data like file reads.
  */
 public class LargeStringBuilderValue
-  extends StringValue
+  : StringValue
 {
   public const StringValue EMPTY = StringBuilderValue.EMPTY;
 
@@ -868,7 +868,7 @@ public class LargeStringBuilderValue
     */
   }
 
-  class BuilderInputStream extends InputStream {
+  class BuilderInputStream : InputStream {
     private int _index;
 
     /**
@@ -904,7 +904,7 @@ public class LargeStringBuilderValue
     }
   }
 
-  class BuilderOutputStream extends OutputStream {
+  class BuilderOutputStream : OutputStream {
     /**
      * Writes the next byte.
      */

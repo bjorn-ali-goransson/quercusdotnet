@@ -45,7 +45,7 @@ namespace QuercusDotNet.lib.curl {
  * Represents a PUT Http request.
  */
 public class HttpPutRequest
-  extends CurlHttpRequest
+  : CurlHttpRequest
 {
   public HttpPutRequest(CurlResource curlResource)
   {

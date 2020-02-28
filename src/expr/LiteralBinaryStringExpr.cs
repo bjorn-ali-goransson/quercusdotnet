@@ -35,7 +35,7 @@ namespace QuercusDotNet.Expr{
 /**
  * Represents a PHP string literal expression.
  */
-public class LiteralBinaryStringExpr extends LiteralStringExpr
+public class LiteralBinaryStringExpr : LiteralStringExpr
 {
   public LiteralBinaryStringExpr(BinaryValue value)
   {

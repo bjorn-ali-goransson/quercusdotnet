@@ -38,7 +38,7 @@ namespace QuercusDotNet.Statement{
 /**
  * Represents an if statement.
  */
-public class IfStatement extends Statement {
+public class IfStatement : Statement {
   private final Expr _test;
   private final Statement _trueBlock;
   private final Statement _falseBlock;

@@ -33,7 +33,7 @@ namespace QuercusDotNet.lib.dom {
 
 
 public class DOMNotation
-  extends DOMNode<Notation>
+  : DOMNode<Notation>
 {
   DOMNotation(DOMImplementation impl, Notation delegate)
   {

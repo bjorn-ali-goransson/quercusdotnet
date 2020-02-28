@@ -40,7 +40,7 @@ namespace QuercusDotNet.Expr{
  * Represents a PHP __CLASS__ expression for traits.
  * If within a trait scope, __CLASS__ needs to look up the current class.
  */
-public class ConstClassExpr extends Expr {
+public class ConstClassExpr : Expr {
   protected final StringValue _funName;
 
   public ConstClassExpr(Location location, StringValue funName)

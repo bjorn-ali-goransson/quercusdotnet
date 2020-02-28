@@ -36,7 +36,7 @@ namespace QuercusDotNet.lib.spl {
 
 @Delegates(IteratorDelegate.class)
 public interface Iterator
-  extends Traversable
+  : Traversable
 {
   /**
    * Returns the current value.

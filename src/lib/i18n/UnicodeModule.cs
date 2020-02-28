@@ -49,7 +49,7 @@ namespace QuercusDotNet.lib/i18n{
 /**
  * Unicode handling.  Also includes iconv, etc.
  */
-public class UnicodeModule extends AbstractQuercusModule {
+public class UnicodeModule : AbstractQuercusModule {
   private const Logger log = Logger.getLogger(
       UnicodeModule.class.getName());
   private const L10N L = new L10N(UnicodeModule.class);

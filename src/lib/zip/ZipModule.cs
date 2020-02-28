@@ -51,7 +51,7 @@ namespace QuercusDotNet.lib.zip {
 /**
  * PHP Zip
  */
-public class ZipModule extends AbstractQuercusModule {
+public class ZipModule : AbstractQuercusModule {
   private const Logger log
     = Logger.getLogger(ZipModule.class.getName());
   private const L10N L = new L10N(ZipModule.class);

@@ -37,7 +37,7 @@ namespace QuercusDotNet.Expr{
 /**
  * Represents a PHP string literal expression.
  */
-public class LiteralUnicodeExpr extends Expr {
+public class LiteralUnicodeExpr : Expr {
   protected final UnicodeValue _value;
 
   public LiteralUnicodeExpr(UnicodeValue value)

@@ -47,7 +47,7 @@ namespace QuercusDotNet.lib{
 /**
  * Quercus class information
  */
-public class ClassesModule extends AbstractQuercusModule {
+public class ClassesModule : AbstractQuercusModule {
   private const L10N L = new L10N(ClassesModule.class);
 
   /**

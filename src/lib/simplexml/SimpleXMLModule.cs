@@ -51,7 +51,7 @@ namespace QuercusDotNet.lib.simplexml {
  * PHP SimpleXML
  */
 public class SimpleXMLModule
-  extends AbstractQuercusModule
+  : AbstractQuercusModule
 {
   private const Logger log
     = Logger.getLogger(SimpleXMLModule.class.getName());

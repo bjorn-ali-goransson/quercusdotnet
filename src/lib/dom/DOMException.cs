@@ -36,7 +36,7 @@ namespace QuercusDotNet.lib.dom {
 
 
 public class DOMException
-  extends QuercusLanguageException
+  : QuercusLanguageException
 {
   private DOMImplementation _impl;
   private org.w3c.dom.DOMException _delegate;

@@ -43,7 +43,7 @@ namespace QuercusDotNet.Expr{
 /**
  * Represents a PHP each expression.
  */
-public class FunEachExpr extends AbstractUnaryExpr {
+public class FunEachExpr : AbstractUnaryExpr {
   private final L10N L = new L10N(FunEachExpr.class);
   
   private boolean _isVar;

@@ -37,7 +37,7 @@ namespace QuercusDotNet.Expr{
 /**
  * Represents a PHP clone
  */
-public class FunCloneExpr extends AbstractUnaryExpr {
+public class FunCloneExpr : AbstractUnaryExpr {
   public FunCloneExpr(Location location, Expr expr)
   {
     super(location, expr);

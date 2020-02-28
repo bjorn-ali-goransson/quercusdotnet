@@ -34,7 +34,7 @@ namespace QuercusDotNet.Env{
  * Represents a call to a function.
  */
 @SuppressWarnings("serial")
-abstract public class Callback extends Value implements Callable {
+abstract public class Callback : Value implements Callable {
 
   @Override
   public Callable toCallable(Env env, boolean isOptional)

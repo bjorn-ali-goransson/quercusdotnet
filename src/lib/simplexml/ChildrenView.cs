@@ -46,7 +46,7 @@ namespace QuercusDotNet.lib.simplexml {
 
 
 
-public class ChildrenView extends SimpleView
+public class ChildrenView : SimpleView
 {
   private final SimpleView _parent;
 

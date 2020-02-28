@@ -36,7 +36,7 @@ namespace QuercusDotNet.lib.db {
 /**
  * Extra ResultSet metadata for a Quercus Mysql connection.
  */
-public interface QuercusResultSet extends ResultSet
+public interface QuercusResultSet : ResultSet
 {
   public int getStringLength(int column)
     

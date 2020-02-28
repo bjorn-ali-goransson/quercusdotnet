@@ -43,7 +43,7 @@ namespace QuercusDotNet.lib.file {
  * Represents a PHP open file
  */
 abstract public class AbstractBinaryOutput
-  extends OutputStream
+  : OutputStream
   implements BinaryOutput
 {
   private int lockedShared = 0;

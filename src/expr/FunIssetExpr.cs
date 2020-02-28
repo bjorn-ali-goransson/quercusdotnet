@@ -38,7 +38,7 @@ namespace QuercusDotNet.Expr{
 /**
  * Represents a PHP isset call
  */
-public class FunIssetExpr extends AbstractUnaryExpr {
+public class FunIssetExpr : AbstractUnaryExpr {
   public FunIssetExpr(Location location, Expr expr)
   {
     super(location, expr);

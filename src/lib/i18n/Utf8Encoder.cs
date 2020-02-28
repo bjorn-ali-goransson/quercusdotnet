@@ -33,7 +33,7 @@ namespace QuercusDotNet.lib/i18n{
 
 
 public class Utf8Encoder
-  extends Encoder
+  : Encoder
 {
   public Utf8Encoder()
   {

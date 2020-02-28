@@ -43,7 +43,7 @@ namespace QuercusDotNet.lib.simplexml {
 
 
 
-public class DocumentView extends SimpleView
+public class DocumentView : SimpleView
 {
   private final ElementView _element;
 

@@ -171,7 +171,7 @@ public class QuercusEngine
     return value;
   }
 
-  class OutputStreamStream extends StreamImpl
+  class OutputStreamStream : StreamImpl
   {
     OutputStream _out;
 

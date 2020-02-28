@@ -44,7 +44,7 @@ namespace QuercusDotNet.lib.file {
  * Represents read/write stream
  */
 public class UdpInputOutput
-  extends AbstractBinaryInputOutput
+  : AbstractBinaryInputOutput
   implements SocketInputOutput
 {
   private const Logger log

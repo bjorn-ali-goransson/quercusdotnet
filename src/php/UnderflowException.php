@@ -1,6 +1,6 @@
 <?php
 
-class UnderflowException extends RuntimeException
+class UnderflowException : RuntimeException
 {
 }
 

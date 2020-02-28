@@ -55,7 +55,7 @@ namespace QuercusDotNet.lib.image {
 
 
 
-public class QuercusImage extends ResourceValue
+public class QuercusImage : ResourceValue
 {
   private static LruCache<StringValue,Font> _fontMap
     = new LruCache<StringValue,Font>(1024);

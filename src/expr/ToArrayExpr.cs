@@ -38,7 +38,7 @@ namespace QuercusDotNet.Expr{
 /**
  * Converts to an array
  */
-public class ToArrayExpr extends AbstractUnaryExpr {
+public class ToArrayExpr : AbstractUnaryExpr {
   public ToArrayExpr(Location location, Expr expr)
   {
     super(location, expr);

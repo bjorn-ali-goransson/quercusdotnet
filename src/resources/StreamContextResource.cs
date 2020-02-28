@@ -35,7 +35,7 @@ namespace QuercusDotNet.Resources{
 /**
  * Represents a PHP stream context.
  */
-public class StreamContextResource extends ResourceValue {
+public class StreamContextResource : ResourceValue {
   private ArrayValue _options;
   private ArrayValue _parameters;
   

@@ -38,7 +38,7 @@ namespace QuercusDotNet.Expr{
 /**
  * Represents a PHP array[] reference expression.
  */
-public class ArrayTailExpr extends AbstractVarExpr {
+public class ArrayTailExpr : AbstractVarExpr {
   protected final Expr _expr;
 
   public ArrayTailExpr(Location location, Expr expr)

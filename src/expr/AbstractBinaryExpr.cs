@@ -35,7 +35,7 @@ namespace QuercusDotNet.Expr{
 /**
  * Common analysis for a PHP binary expression.
  */
-abstract public class AbstractBinaryExpr extends Expr {
+abstract public class AbstractBinaryExpr : Expr {
   protected final Expr _left;
   protected final Expr _right;
 

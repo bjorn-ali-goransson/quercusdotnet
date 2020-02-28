@@ -44,7 +44,7 @@ namespace QuercusDotNet.Expr{
 /**
  * A "$foo(...)" function call.
  */
-public class CallVarExpr extends Expr {
+public class CallVarExpr : Expr {
   private const L10N L = new L10N(CallExpr.class);
   
   protected final Expr _name;

@@ -37,7 +37,7 @@ namespace QuercusDotNet.Expr{
 /**
  * Represents a PHP method call expression from $this.
  */
-public class ThisMethodVarExpr extends ObjectMethodVarExpr {
+public class ThisMethodVarExpr : ObjectMethodVarExpr {
   public ThisMethodVarExpr(Location location,
                         ThisExpr qThis,
                         Expr methodName,

@@ -30,7 +30,7 @@ namespace QuercusDotNet.Env{
 
 
 public class UnsetStringValue
-  extends StringBuilderValue
+  : StringBuilderValue
 {
   public const UnsetStringValue UNSET = new UnsetStringValue();
   

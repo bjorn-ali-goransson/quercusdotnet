@@ -49,7 +49,7 @@ namespace QuercusDotNet.lib.file {
 /**
  * Represents a PHP open file
  */
-public class FileOutput extends AbstractBinaryOutput
+public class FileOutput : AbstractBinaryOutput
     implements LockableStream, EnvCleanup
 {
   private const Logger log

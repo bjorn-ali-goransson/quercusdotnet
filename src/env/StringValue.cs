@@ -57,7 +57,7 @@ namespace QuercusDotNet.Env{
  * Represents a Quercus string value.
  */
 abstract public class StringValue
-  extends Value
+  : Value
   implements CharSequence, ByteAppendable
 {
   public const StringValue EMPTY = new ConstStringValue("");
@@ -2770,7 +2770,7 @@ abstract public class StringValue
                                    IdentityHashMap<Value, String> valueSet)
     
 
-  class StringValueInputStream extends java.io.InputStream {
+  class StringValueInputStream : java.io.InputStream {
     private final int _length;
     private int _index;
 
@@ -2830,7 +2830,7 @@ abstract public class StringValue
     return value;
   }
 
-  static class SimpleStringValueReader extends Reader
+  static class SimpleStringValueReader : Reader
   {
     StringValue _str;
     int _index;

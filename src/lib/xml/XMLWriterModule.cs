@@ -46,7 +46,7 @@ namespace QuercusDotNet.lib.xml {
 /**
  * XMLWriter
  */
-public class XMLWriterModule extends AbstractQuercusModule {
+public class XMLWriterModule : AbstractQuercusModule {
   private const Logger log
     = Logger.getLogger(XMLWriterModule.class.getName());
   private const L10N L = new L10N(XMLWriterModule.class);

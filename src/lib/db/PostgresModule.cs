@@ -62,7 +62,7 @@ namespace QuercusDotNet.lib.db {
 /**
  * Quercus postgres routines.
  */
-public class PostgresModule extends AbstractQuercusModule {
+public class PostgresModule : AbstractQuercusModule {
 
   private const Logger log = Log.open(PostgresModule.class);
   private const L10N L = new L10N(PostgresModule.class);

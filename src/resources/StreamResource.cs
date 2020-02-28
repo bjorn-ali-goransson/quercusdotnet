@@ -39,7 +39,7 @@ namespace QuercusDotNet.Resources{
 /**
  * Represents a PHP open stream
  */
-public class StreamResource extends ResourceValue {
+public class StreamResource : ResourceValue {
   /**
    * Reads the next byte, returning -1 on eof.
    */

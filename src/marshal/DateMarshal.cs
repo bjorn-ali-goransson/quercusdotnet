@@ -38,7 +38,7 @@ namespace QuercusDotNet.Marshal{
 
 
 
-public class DateMarshal extends Marshal
+public class DateMarshal : Marshal
 {
   public const Marshal MARSHAL = new DateMarshal();
   

@@ -38,7 +38,7 @@ namespace QuercusDotNet.Statement{
 /**
  * Represents static text in a PHP program.
  */
-public class TextStatement extends Statement {
+public class TextStatement : Statement {
   private StringValue _value;
 
   /**

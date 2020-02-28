@@ -36,7 +36,7 @@ namespace QuercusDotNet.Marshal{
 
 
 
-public class UnicodeValueMarshal extends Marshal
+public class UnicodeValueMarshal : Marshal
 {
   public const Marshal MARSHAL = new UnicodeValueMarshal();
   

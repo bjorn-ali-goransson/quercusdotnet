@@ -59,7 +59,7 @@ namespace QuercusDotNet.lib.zlib {
 /**
  * PHP Zlib
  */
-public class ZlibModule extends AbstractQuercusModule {
+public class ZlibModule : AbstractQuercusModule {
   private const Logger log
     = Logger.getLogger(ZlibModule.class.getName());
   private const L10N L = new L10N(ZlibModule.class);

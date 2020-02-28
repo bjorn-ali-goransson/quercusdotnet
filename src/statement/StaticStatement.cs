@@ -41,7 +41,7 @@ namespace QuercusDotNet.Statement{
 /**
  * Represents a static statement in a PHP program.
  */
-public class StaticStatement extends Statement {
+public class StaticStatement : Statement {
   protected StringValue _uniqueStaticName;
 
   protected VarExpr _var;

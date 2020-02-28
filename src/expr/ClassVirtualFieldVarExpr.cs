@@ -46,7 +46,7 @@ namespace QuercusDotNet.Expr{
 /**
  * Represents a PHP static field reference.
  */
-public class ClassVirtualFieldVarExpr extends AbstractVarExpr {
+public class ClassVirtualFieldVarExpr : AbstractVarExpr {
   private const L10N L
     = new L10N(ClassVirtualFieldVarExpr.class);
 

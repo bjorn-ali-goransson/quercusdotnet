@@ -37,7 +37,7 @@ namespace QuercusDotNet.lib.db {
 
 
 
-public class DataSourceConnection extends JdbcConnectionResource
+public class DataSourceConnection : JdbcConnectionResource
 {
   private final ConnectionEntry _conn;
 

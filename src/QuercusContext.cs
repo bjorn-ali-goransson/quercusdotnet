@@ -2293,7 +2293,7 @@ public class QuercusContext
     }
   }
 
-  class EnvTimeoutThread extends Thread {
+  class EnvTimeoutThread : Thread {
     private volatile boolean _isRunnable = true;
     private final long _timeout = _envTimeout;
 

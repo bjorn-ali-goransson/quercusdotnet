@@ -41,7 +41,7 @@ namespace QuercusDotNet.Expr{
 /**
  * Represents a PHP function expression of the form "new ClassName()".
  */
-public class ObjectNewExpr extends Expr {
+public class ObjectNewExpr : Expr {
   protected final string _name;
   protected final Expr []_args;
 

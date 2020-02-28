@@ -40,7 +40,7 @@ namespace QuercusDotNet.lib.file {
 /**
  * Represents a PHP open file
  */
-public class FileWriteValue extends FileValue {
+public class FileWriteValue : FileValue {
   private const Logger log
     = Logger.getLogger(FileReadValue.class.getName());
 

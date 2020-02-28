@@ -37,7 +37,7 @@ namespace QuercusDotNet.Expr{
 /**
  * Represents a PHP multiplication expression.
  */
-public class BinaryMulExpr extends AbstractBinaryExpr {
+public class BinaryMulExpr : AbstractBinaryExpr {
   public BinaryMulExpr(Location location, Expr left, Expr right)
   {
     super(location, left, right);

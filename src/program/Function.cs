@@ -54,7 +54,7 @@ namespace QuercusDotNet.Program{
  * Represents sequence of statements.
  */
 @SuppressWarnings("serial")
-public class Function extends AbstractFunction {
+public class Function : AbstractFunction {
   protected final FunctionInfo _info;
   protected final boolean _isReturnsReference;
 

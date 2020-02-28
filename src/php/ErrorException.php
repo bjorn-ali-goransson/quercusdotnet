@@ -1,6 +1,6 @@
 <?php
 
-class ErrorException extends Exception
+class ErrorException : Exception
 {
   protected $severity;
 

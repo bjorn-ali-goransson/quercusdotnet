@@ -34,7 +34,7 @@ namespace QuercusDotNet.Marshal{
 
 
 
-public class ExpectMarshal extends Marshal
+public class ExpectMarshal : Marshal
 {
   protected enum Type {
     STRING, NUMERIC, BOOLEAN

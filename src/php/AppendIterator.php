@@ -1,7 +1,7 @@
 <?php
 
 class AppendIterator
-  extends IteratorIterator
+  : IteratorIterator
   implements OuterIterator
 {
   var $iters = new ArrayIterator();

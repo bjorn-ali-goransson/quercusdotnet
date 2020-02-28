@@ -34,7 +34,7 @@ namespace QuercusDotNet.Env{
 
 
 public class StringBuilderOutputStream
-  extends OutputStream {
+  : OutputStream {
   
   private StringValue _sb;
 

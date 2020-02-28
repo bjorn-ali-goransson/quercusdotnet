@@ -38,7 +38,7 @@ namespace QuercusDotNet.Statement{
 /**
  * Represents a global statement in a PHP program.
  */
-public class GlobalStatement extends Statement {
+public class GlobalStatement : Statement {
   protected VarExpr _var;
   
   /**

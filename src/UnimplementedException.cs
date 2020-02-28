@@ -33,7 +33,7 @@ namespace QuercusDotNet {
 
 @SuppressWarnings("serial")
 public class UnimplementedException
-  extends UnsupportedOperationException
+  : UnsupportedOperationException
 {
   private const L10N L = new L10N(UnimplementedException.class);
 

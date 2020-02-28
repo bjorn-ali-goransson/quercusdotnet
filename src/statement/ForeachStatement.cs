@@ -45,7 +45,7 @@ namespace QuercusDotNet.Statement{
  * Represents a foreach statement.
  */
 public class ForeachStatement
-  extends Statement
+  : Statement
 {
   protected final Expr _objExpr;
 

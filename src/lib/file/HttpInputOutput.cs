@@ -54,7 +54,7 @@ namespace QuercusDotNet.lib.file {
 
 
 
-public class HttpInputOutput extends AbstractBinaryOutput
+public class HttpInputOutput : AbstractBinaryOutput
   implements BinaryInput, BinaryOutput, LockableStream, EnvCleanup
 {
   private const Logger log

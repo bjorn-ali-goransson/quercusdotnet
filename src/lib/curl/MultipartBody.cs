@@ -49,7 +49,7 @@ namespace QuercusDotNet.lib.curl {
 
 
 
-public class MultipartBody extends PostBody
+public class MultipartBody : PostBody
 {
   private const L10N L = new L10N(CurlHttpRequest.class);
 
@@ -219,7 +219,7 @@ public class MultipartBody extends PostBody
     abstract void writeData(Env env, OutputStream os)
   }
 
-  static class UrlEncodedEntry extends MultipartEntry {
+  static class UrlEncodedEntry : MultipartEntry {
     StringValue _value;
 
     UrlEncodedEntry(Env env, string name, StringValue value)
@@ -242,7 +242,7 @@ public class MultipartBody extends PostBody
     }
   }
 
-  static class PathEntry extends MultipartEntry {
+  static class PathEntry : MultipartEntry {
     Path _path;
 
     PathEntry(Env env, string name, Path path)

@@ -38,7 +38,7 @@ namespace QuercusDotNet.Expr{
 /**
  * Represents a PHP function expression.
  */
-abstract public class AbstractMethodExpr extends Expr {
+abstract public class AbstractMethodExpr : Expr {
   protected AbstractMethodExpr(Location location)
   {
     super(location);

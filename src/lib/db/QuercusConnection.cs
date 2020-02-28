@@ -35,6 +35,6 @@ namespace QuercusDotNet.lib.db {
 /**
  * Extra connection metadata for a Quercus Mysql connection.
  */
-public interface QuercusConnection extends Connection {
+public interface QuercusConnection : Connection {
 }
 }

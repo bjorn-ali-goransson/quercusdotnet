@@ -41,7 +41,7 @@ namespace QuercusDotNet.Env{
  * Represents a Quercus java URL value.
  */
 @SuppressWarnings("serial")
-public class JavaURLValue extends JavaValue {
+public class JavaURLValue : JavaValue {
   private final URL _url;
 
   public JavaURLValue(Env env, URL url, JavaClassDef def)

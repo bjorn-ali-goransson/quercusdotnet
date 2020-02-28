@@ -37,7 +37,7 @@ namespace QuercusDotNet.Expr{
 /**
  * Represents a PHP mod expression.
  */
-public class BinaryModExpr extends AbstractBinaryExpr {
+public class BinaryModExpr : AbstractBinaryExpr {
   public BinaryModExpr(Location location, Expr left, Expr right)
   {
     super(location, left, right);

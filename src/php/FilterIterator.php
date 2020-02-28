@@ -1,6 +1,6 @@
 <?php
 
-abstract class FilterIterator extends IteratorIterator
+abstract class FilterIterator : IteratorIterator
 {
   function __construct($iter)
   {

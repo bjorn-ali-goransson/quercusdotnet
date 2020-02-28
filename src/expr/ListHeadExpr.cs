@@ -42,7 +42,7 @@ namespace QuercusDotNet.Expr{
 /**
  * Represents a list assignment expression.
  */
-public class ListHeadExpr extends Expr {
+public class ListHeadExpr : Expr {
   private const L10N L = new L10N(ListHeadExpr.class);
 
   protected final Expr []_varList;

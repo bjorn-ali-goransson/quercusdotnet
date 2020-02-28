@@ -50,7 +50,7 @@ namespace QuercusDotNet.lib.mcrypt {
 /**
  * PHP encryption
  */
-public class McryptModule extends AbstractQuercusModule {
+public class McryptModule : AbstractQuercusModule {
   private const L10N L = new L10N(McryptModule.class);
 
   private const Logger log =

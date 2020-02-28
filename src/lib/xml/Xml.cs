@@ -567,7 +567,7 @@ public class Xml {
   /**
    * handler solely for xml_parse_into_struct
    */
-  class StructHandler extends DefaultHandler {
+  class StructHandler : DefaultHandler {
     private ArrayValueImpl _valueArray;
     private ArrayValueImpl _indexArray;
 
@@ -784,7 +784,7 @@ public class Xml {
     }
   }
 
-  class XmlHandler extends DefaultHandler {
+  class XmlHandler : DefaultHandler {
     private Locator _locator;
 
     private Env _env;

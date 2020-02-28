@@ -35,7 +35,7 @@ namespace QuercusDotNet.lib.db {
 /**
  * SQLException wrapper
  */
-public class SQLExceptionWrapper extends SQLException {
+public class SQLExceptionWrapper : SQLException {
   private Throwable _cause;
 
   public SQLExceptionWrapper(Throwable cause)

@@ -67,7 +67,7 @@ namespace QuercusDotNet.lib{
 /**
  * Information about PHP variables.
  */
-public class VariableModule extends AbstractQuercusModule {
+public class VariableModule : AbstractQuercusModule {
   private const Logger log
     = Logger.getLogger(VariableModule.class.getName());
   private const L10N L = new L10N(VariableModule.class);

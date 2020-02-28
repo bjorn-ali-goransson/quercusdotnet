@@ -33,7 +33,7 @@ namespace QuercusDotNet.lib.dom {
 
 
 public class DOMCDATASection
-  extends DOMCharacterData<CDATASection>
+  : DOMCharacterData<CDATASection>
 {
   DOMCDATASection(DOMImplementation impl, CDATASection delegate)
   {

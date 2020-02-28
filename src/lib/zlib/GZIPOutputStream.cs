@@ -42,7 +42,7 @@ namespace QuercusDotNet.lib.zlib {
  *
  * @see java.util.zip.GZIPOutputStream
  */
-public class GZIPOutputStream extends DeflaterOutputStream {
+public class GZIPOutputStream : DeflaterOutputStream {
   private CRC32 _crc32;
 
   private byte[] _header = {

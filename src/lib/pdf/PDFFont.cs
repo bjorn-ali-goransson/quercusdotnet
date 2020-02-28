@@ -38,7 +38,7 @@ namespace QuercusDotNet.lib.pdf {
 /**
  * pdf object oriented API facade
  */
-public class PDFFont extends PDFObject {
+public class PDFFont : PDFObject {
   private const Logger log
     = Logger.getLogger(PDFFont.class.getName());
   private const L10N L = new L10N(PDFFont.class);

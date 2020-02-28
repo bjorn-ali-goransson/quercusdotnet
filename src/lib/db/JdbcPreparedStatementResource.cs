@@ -58,7 +58,7 @@ namespace QuercusDotNet.lib.db {
  * Represents a JDBC Statement value.
  */
 public class JdbcPreparedStatementResource
-  extends JdbcStatementResource
+  : JdbcStatementResource
 {
   private const L10N L = new L10N(JdbcPreparedStatementResource.class);
 

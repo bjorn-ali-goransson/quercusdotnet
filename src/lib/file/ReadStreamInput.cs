@@ -45,7 +45,7 @@ namespace QuercusDotNet.lib.file {
 /**
  * Represents a Quercus file open for reading
  */
-public class ReadStreamInput extends InputStream implements BinaryInput {
+public class ReadStreamInput : InputStream implements BinaryInput {
   private const Logger log
     = Logger.getLogger(ReadStreamInput.class.getName());
 

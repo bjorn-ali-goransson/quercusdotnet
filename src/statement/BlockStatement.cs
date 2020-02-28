@@ -39,7 +39,7 @@ namespace QuercusDotNet.Statement{
 /**
  * Represents sequence of statements.
  */
-public class BlockStatement extends Statement {
+public class BlockStatement : Statement {
   protected Statement []_statements;
 
   public BlockStatement(Location location, Statement []statements)

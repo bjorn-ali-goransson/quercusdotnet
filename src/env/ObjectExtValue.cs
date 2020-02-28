@@ -51,7 +51,7 @@ namespace QuercusDotNet.Env{
  * Represents a PHP object value.
  */
 @SuppressWarnings("serial")
-public class ObjectExtValue extends ObjectValue
+public class ObjectExtValue : ObjectValue
   implements Serializable
 {
   private MethodMap<AbstractFunction> _methodMap;
@@ -1176,7 +1176,7 @@ public class ObjectExtValue extends ObjectValue
     return this;
   }
 
-  public override Set<? extends Map.Entry<Value,Value>> entrySet()
+  public override Set<? : Map.Entry<Value,Value>> entrySet()
   {
     return new EntrySet();
   }
@@ -1359,7 +1359,7 @@ public class ObjectExtValue extends ObjectValue
              + "[" + _className + "]";
   }
 
-  public class EntrySet extends AbstractSet<Map.Entry<Value,Value>> {
+  public class EntrySet : AbstractSet<Map.Entry<Value,Value>> {
     EntrySet()
     {
     }

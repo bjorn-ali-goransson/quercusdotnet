@@ -42,7 +42,7 @@ namespace QuercusDotNet.Expr{
 /**
  * Represents a PHP method call expression from $this.
  */
-public class ThisMethodExpr extends ObjectMethodExpr {
+public class ThisMethodExpr : ObjectMethodExpr {
   protected final InterpretedClassDef _classDef;
 
   protected final int _hashCodeInsensitive;

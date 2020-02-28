@@ -1,6 +1,6 @@
 <?php
 
-class RuntimeException extends Exception
+class RuntimeException : Exception
 {
 }
 

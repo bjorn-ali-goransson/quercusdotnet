@@ -43,7 +43,7 @@ namespace QuercusDotNet.Expr{
 /**
  * Represents a PHP parent::FOO constant call expression.
  */
-public class ClassVirtualConstExpr extends Expr {
+public class ClassVirtualConstExpr : Expr {
   private const L10N L
     = new L10N(ClassVirtualMethodExpr.class);
 

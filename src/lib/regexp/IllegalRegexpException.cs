@@ -30,7 +30,7 @@ namespace QuercusDotNet.lib.regexp {
 
 
 
-public class IllegalRegexpException extends Exception {
+public class IllegalRegexpException : Exception {
   IllegalRegexpException(String msg) {
     super(msg);
   }

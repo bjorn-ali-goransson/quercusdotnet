@@ -34,7 +34,7 @@ namespace QuercusDotNet.Marshal{
 
 
 
-public class JavaByteObjectArrayMarshal extends JavaArrayMarshal
+public class JavaByteObjectArrayMarshal : JavaArrayMarshal
 {
   public const Marshal MARSHAL
     = new JavaByteObjectArrayMarshal();

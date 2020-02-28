@@ -37,7 +37,7 @@ namespace QuercusDotNet.Env{
 /**
  * Represents a PHP array value.
  */
-public class ArrayValueWrapper extends ArrayValue {
+public class ArrayValueWrapper : ArrayValue {
   private ArrayValue _array;
 
   protected ArrayValueWrapper(ArrayValue array)

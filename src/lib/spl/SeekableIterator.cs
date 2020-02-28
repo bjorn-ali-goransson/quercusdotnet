@@ -33,7 +33,7 @@ namespace QuercusDotNet.lib.spl {
 
 
 public interface SeekableIterator
-  extends Iterator
+  : Iterator
 {
   /**
    * Seeks to the given offset.

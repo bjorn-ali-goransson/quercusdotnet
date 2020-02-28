@@ -47,7 +47,7 @@ namespace QuercusDotNet.lib.curl {
 
 
 @ResourceType("curl")
-public class CurlResource extends ResourceValue
+public class CurlResource : ResourceValue
 {
   private const Logger log
     = Logger.getLogger(CurlResource.class.getName());

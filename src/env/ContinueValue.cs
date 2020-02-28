@@ -33,7 +33,7 @@ namespace QuercusDotNet.Env{
 /**
  * Represents a PHP continue value.
  */
-public class ContinueValue extends Value {
+public class ContinueValue : Value {
   public const ContinueValue CONTINUE = new ContinueValue();
 
   private int _target;

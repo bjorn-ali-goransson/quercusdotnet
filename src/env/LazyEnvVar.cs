@@ -34,7 +34,7 @@ namespace QuercusDotNet.Env{
  * For compiled code and error reporting.
  * XXX: Need to instantiate vars when they're used, not at the top of the method.
  */
-public class LazyEnvVar extends EnvVar {
+public class LazyEnvVar : EnvVar {
   private final StringValue _name;
 
   private EnvVar _var;

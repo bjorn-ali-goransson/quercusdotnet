@@ -67,7 +67,7 @@ namespace QuercusDotNet.lib/i18n{
 
 
 public class MbstringModule
-  extends AbstractQuercusModule
+  : AbstractQuercusModule
 {
   private const Logger log
     = Logger.getLogger(MbstringModule.class.getName());

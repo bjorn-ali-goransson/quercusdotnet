@@ -43,7 +43,7 @@ namespace QuercusDotNet.Function{
 /**
  * Represents a compiled method with 5 args
  */
-abstract public class CompiledMethodRef_5 extends CompiledMethodRef {
+abstract public class CompiledMethodRef_5 : CompiledMethodRef {
   private const Logger log
     = Logger.getLogger(CompiledMethodRef_5.class.getName());
   private const L10N L = new L10N(CompiledMethodRef_5.class);

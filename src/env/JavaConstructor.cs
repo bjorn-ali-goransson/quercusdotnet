@@ -42,7 +42,7 @@ namespace QuercusDotNet.Env{
 /**
  * Represents the introspected static function information.
  */
-public class JavaConstructor extends JavaInvoker {
+public class JavaConstructor : JavaInvoker {
   private const L10N L = new L10N(JavaConstructor.class);
 
   private final Constructor<?> _constructor;

@@ -36,7 +36,7 @@ namespace QuercusDotNet.lib{
 
 
 public class CtypeModule
-  extends AbstractQuercusModule
+  : AbstractQuercusModule
 {
   public string []getLoadedExtensions()
   {

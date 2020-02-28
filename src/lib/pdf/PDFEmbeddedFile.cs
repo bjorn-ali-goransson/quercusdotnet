@@ -39,7 +39,7 @@ namespace QuercusDotNet.lib.pdf {
 /**
  * deals with an image
  */
-public class PDFEmbeddedFile extends PDFObject {
+public class PDFEmbeddedFile : PDFObject {
   private Path _path;
   
   private int _id;

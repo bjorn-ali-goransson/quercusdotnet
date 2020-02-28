@@ -38,7 +38,7 @@ namespace QuercusDotNet.Env{
 /**
  * Represents a PHP session callback.
  */
-public class SessionCallback extends Value {
+public class SessionCallback : Value {
   private const Logger log
     = Logger.getLogger(SessionCallback.class.getName());
 

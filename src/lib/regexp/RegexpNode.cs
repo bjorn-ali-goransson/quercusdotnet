@@ -337,7 +337,7 @@ class RegexpNode {
   /**
    * A node with exactly one character matches.
    */
-  static class AbstractCharNode extends RegexpNode {
+  static class AbstractCharNode : RegexpNode {
     RegexpNode override createLoop(Regcomp parser, int min, int max)
     {
       return new CharLoop(this, min, max);
@@ -354,7 +354,7 @@ class RegexpNode {
     }
   }
 
-  static class CharNode extends AbstractCharNode {
+  static class CharNode : AbstractCharNode {
     private char _ch;
 
     CharNode(char ch)
@@ -399,7 +399,7 @@ class RegexpNode {
   const AnchorEndOrNewline ANCHOR_END_OR_NEWLINE
     = new AnchorEndOrNewline();
 
-  static class AnchorBegin extends NullableNode {
+  static class AnchorBegin : NullableNode {
     boolean override isAnchorBegin()
     {
       return true;
@@ -414,7 +414,7 @@ class RegexpNode {
     }
   }
 
-  private static class AnchorBeginOrNewline extends NullableNode {
+  private static class AnchorBeginOrNewline : NullableNode {
     int override match(StringValue string, int strlen, int offset, RegexpState state)
     {
       if (offset == 0 || string.charAt(offset - 1) == '\n')
@@ -424,7 +424,7 @@ class RegexpNode {
     }
   }
 
-  static class AnchorBeginRelative extends NullableNode {
+  static class AnchorBeginRelative : NullableNode {
     int override match(StringValue string, int strlen, int offset, RegexpState state)
     {
       if (offset == state._start)
@@ -434,7 +434,7 @@ class RegexpNode {
     }
   }
 
-  private static class AnchorEnd extends NullableNode {
+  private static class AnchorEnd : NullableNode {
     int override match(StringValue string, int strlen, int offset, RegexpState state)
     {
       if (offset == strlen
@@ -445,7 +445,7 @@ class RegexpNode {
     }
   }
 
-  private static class AnchorEndOnly extends NullableNode {
+  private static class AnchorEndOnly : NullableNode {
     int override match(StringValue string, int length, int offset, RegexpState state)
     {
       if (offset == length)
@@ -455,7 +455,7 @@ class RegexpNode {
     }
   }
 
-  private static class AnchorEndOrNewline extends NullableNode {
+  private static class AnchorEndOrNewline : NullableNode {
     int override match(StringValue string, int length, int offset, RegexpState state)
     {
       if (offset == length || string.charAt(offset) == '\n')
@@ -477,7 +477,7 @@ class RegexpNode {
   const RegexpNode S_WORD = RegexpSet.WORD.createNode();
   const RegexpNode NOT_S_WORD = RegexpSet.WORD.createNotNode();
 
-  static class AsciiSet extends AbstractCharNode {
+  static class AsciiSet : AbstractCharNode {
     private final boolean []_set;
 
     AsciiSet()
@@ -527,7 +527,7 @@ class RegexpNode {
     }
   }
 
-  static class AsciiNotSet extends AbstractCharNode {
+  static class AsciiNotSet : AbstractCharNode {
     private final boolean []_set;
 
     AsciiNotSet()
@@ -573,7 +573,7 @@ class RegexpNode {
     }
   }
 
-  static class CharLoop extends RegexpNode {
+  static class CharLoop : RegexpNode {
     private final RegexpNode _node;
     private RegexpNode _next = N_END;
 
@@ -694,7 +694,7 @@ class RegexpNode {
     }
   }
 
-  static class CharUngreedyLoop extends RegexpNode {
+  static class CharUngreedyLoop : RegexpNode {
     private final RegexpNode _node;
     private RegexpNode _next = N_END;
 
@@ -805,7 +805,7 @@ class RegexpNode {
     }
   }
 
- static class Concat extends RegexpNode {
+ static class Concat : RegexpNode {
     private final RegexpNode _head;
     private RegexpNode _next;
 
@@ -901,7 +901,7 @@ class RegexpNode {
     }
   }
 
-  abstract static class ConditionalHead extends RegexpNode {
+  abstract static class ConditionalHead : RegexpNode {
     protected RegexpNode _first;
     protected RegexpNode _second;
     protected RegexpNode _tail = new ConditionalTail(this);
@@ -947,7 +947,7 @@ class RegexpNode {
     }
   }
 
-  static class GenericConditionalHead extends ConditionalHead {
+  static class GenericConditionalHead : ConditionalHead {
     private final RegexpNode _conditional;
 
     GenericConditionalHead(RegexpNode conditional)
@@ -990,7 +990,7 @@ class RegexpNode {
     }
   }
 
-  static class GroupConditionalHead extends ConditionalHead {
+  static class GroupConditionalHead : ConditionalHead {
     private final int _group;
 
     GroupConditionalHead(int group)
@@ -1034,7 +1034,7 @@ class RegexpNode {
     }
   }
 
-  static class ConditionalTail extends RegexpNode {
+  static class ConditionalTail : RegexpNode {
     private RegexpNode _head;
     private RegexpNode _next;
 
@@ -1114,7 +1114,7 @@ class RegexpNode {
   /**
    * Matches an empty production
    */
-  static class EmptyNode extends RegexpNode {
+  static class EmptyNode : RegexpNode {
     // needed for php/4e6b
 
     EmptyNode()
@@ -1128,7 +1128,7 @@ class RegexpNode {
     }
   }
 
-  static class End extends RegexpNode {
+  static class End : RegexpNode {
     RegexpNode override concat(RegexpNode next)
     {
       return next;
@@ -1140,7 +1140,7 @@ class RegexpNode {
     }
   }
 
-  static class Group extends RegexpNode {
+  static class Group : RegexpNode {
     private final RegexpNode _node;
     private final int _group;
 
@@ -1170,7 +1170,7 @@ class RegexpNode {
     }
   }
 
-  static class GroupHead extends RegexpNode {
+  static class GroupHead : RegexpNode {
     private RegexpNode _node;
     private GroupTail _tail;
     private int _group;
@@ -1297,7 +1297,7 @@ class RegexpNode {
     }
   }
 
-  static class GroupTail extends RegexpNode {
+  static class GroupTail : RegexpNode {
     private GroupHead _head;
     private RegexpNode _next;
     private final int _group;
@@ -1423,7 +1423,7 @@ class RegexpNode {
     }
   }
 
-  static class GroupRef extends RegexpNode {
+  static class GroupRef : RegexpNode {
     private final int _group;
 
     GroupRef(int group)
@@ -1447,7 +1447,7 @@ class RegexpNode {
     }
   }
 
-  static class Lookahead extends RegexpNode {
+  static class Lookahead : RegexpNode {
     private final RegexpNode _head;
 
     Lookahead(RegexpNode head)
@@ -1464,7 +1464,7 @@ class RegexpNode {
     }
   }
 
-  static class NotLookahead extends RegexpNode {
+  static class NotLookahead : RegexpNode {
     private final RegexpNode _head;
 
     NotLookahead(RegexpNode head)
@@ -1481,7 +1481,7 @@ class RegexpNode {
     }
   }
 
-  static class Lookbehind extends RegexpNode {
+  static class Lookbehind : RegexpNode {
     private final RegexpNode _head;
 
     Lookbehind(RegexpNode head)
@@ -1502,7 +1502,7 @@ class RegexpNode {
     }
   }
 
-  static class NotLookbehind extends RegexpNode {
+  static class NotLookbehind : RegexpNode {
     private final RegexpNode _head;
 
     NotLookbehind(RegexpNode head)
@@ -1526,14 +1526,14 @@ class RegexpNode {
   /**
    * A nullable node can match an empty string.
    */
-  abstract static class NullableNode extends RegexpNode {
+  abstract static class NullableNode : RegexpNode {
     boolean override isNullable()
     {
       return true;
     }
   }
 
-  static class LoopHead extends RegexpNode {
+  static class LoopHead : RegexpNode {
     private final int _index;
 
     RegexpNode _node;
@@ -1653,7 +1653,7 @@ class RegexpNode {
     }
   }
 
-  static class LoopTail extends RegexpNode {
+  static class LoopTail : RegexpNode {
     private final int _index;
 
     private LoopHead _head;
@@ -1743,7 +1743,7 @@ class RegexpNode {
     }
   }
 
-  static class LoopHeadUngreedy extends RegexpNode {
+  static class LoopHeadUngreedy : RegexpNode {
     private final int _index;
 
     RegexpNode _node;
@@ -1853,7 +1853,7 @@ class RegexpNode {
     }
   }
 
-  static class LoopTailUngreedy extends RegexpNode {
+  static class LoopTailUngreedy : RegexpNode {
     private final int _index;
 
     private LoopHeadUngreedy _head;
@@ -1943,7 +1943,7 @@ class RegexpNode {
     }
   }
 
-  static class Not extends RegexpNode {
+  static class Not : RegexpNode {
     private RegexpNode _node;
 
     private Not(RegexpNode node)
@@ -1967,7 +1967,7 @@ class RegexpNode {
     }
   }
 
- static class Or extends RegexpNode {
+ static class Or : RegexpNode {
     private final RegexpNode _left;
     private Or _right;
 
@@ -2095,7 +2095,7 @@ class RegexpNode {
     }
   }
 
-  static class PossessiveLoop extends RegexpNode {
+  static class PossessiveLoop : RegexpNode {
     private RegexpNode _node;
     private RegexpNode _next = N_END;
 
@@ -2310,7 +2310,7 @@ class RegexpNode {
   const Prop PROP_Zs = new Prop(Character.SPACE_SEPARATOR);
   const PropNot PROP_NOT_Zs = new PropNot(Character.SPACE_SEPARATOR);
 
-  private static class Prop extends AbstractCharNode {
+  private static class Prop : AbstractCharNode {
     private final int _category;
 
     Prop(int category)
@@ -2331,7 +2331,7 @@ class RegexpNode {
     }
   }
 
-  private static class PropNot extends AbstractCharNode {
+  private static class PropNot : AbstractCharNode {
     private final int _category;
 
     PropNot(int category)
@@ -2352,7 +2352,7 @@ class RegexpNode {
     }
   }
 
-  static class PropC extends AbstractCharNode {
+  static class PropC : AbstractCharNode {
     int override match(StringValue string, int strlen, int offset, RegexpState state)
     {
       if (offset < strlen) {
@@ -2373,7 +2373,7 @@ class RegexpNode {
     }
   }
 
-  static class PropNotC extends AbstractCharNode {
+  static class PropNotC : AbstractCharNode {
     int override match(StringValue string, int strlen, int offset, RegexpState state)
     {
       if (offset < strlen) {
@@ -2394,7 +2394,7 @@ class RegexpNode {
     }
   }
 
-  static class PropL extends AbstractCharNode {
+  static class PropL : AbstractCharNode {
     int override match(StringValue string, int strlen, int offset, RegexpState state)
     {
       if (offset < strlen) {
@@ -2415,7 +2415,7 @@ class RegexpNode {
     }
   }
 
-  static class PropNotL extends AbstractCharNode {
+  static class PropNotL : AbstractCharNode {
     int override match(StringValue string, int strlen, int offset, RegexpState state)
     {
       if (offset < strlen) {
@@ -2436,7 +2436,7 @@ class RegexpNode {
     }
   }
 
-  static class PropM extends AbstractCharNode {
+  static class PropM : AbstractCharNode {
     int override match(StringValue string, int strlen, int offset, RegexpState state)
     {
       if (offset < strlen) {
@@ -2455,7 +2455,7 @@ class RegexpNode {
     }
   }
 
-  static class PropNotM extends AbstractCharNode {
+  static class PropNotM : AbstractCharNode {
     int override match(StringValue string, int strlen, int offset, RegexpState state)
     {
       if (offset < strlen) {
@@ -2474,7 +2474,7 @@ class RegexpNode {
     }
   }
 
-  static class PropN extends AbstractCharNode {
+  static class PropN : AbstractCharNode {
     int override match(StringValue string, int strlen, int offset, RegexpState state)
     {
       if (offset < strlen) {
@@ -2493,7 +2493,7 @@ class RegexpNode {
     }
   }
 
-  static class PropNotN extends AbstractCharNode {
+  static class PropNotN : AbstractCharNode {
     int override match(StringValue string, int strlen, int offset, RegexpState state)
     {
       if (offset < strlen) {
@@ -2513,7 +2513,7 @@ class RegexpNode {
     }
   }
 
-  static class PropP extends AbstractCharNode {
+  static class PropP : AbstractCharNode {
     int override match(StringValue string, int strlen, int offset, RegexpState state)
     {
       if (offset < strlen) {
@@ -2537,7 +2537,7 @@ class RegexpNode {
     }
   }
 
-  static class PropNotP extends AbstractCharNode {
+  static class PropNotP : AbstractCharNode {
     int override match(StringValue string, int strlen, int offset, RegexpState state)
     {
       if (offset < strlen) {
@@ -2560,7 +2560,7 @@ class RegexpNode {
     }
   }
 
-  static class PropS extends AbstractCharNode {
+  static class PropS : AbstractCharNode {
     int override match(StringValue string, int strlen, int offset, RegexpState state)
     {
       if (offset < strlen) {
@@ -2580,7 +2580,7 @@ class RegexpNode {
     }
   }
 
-  static class PropNotS extends AbstractCharNode {
+  static class PropNotS : AbstractCharNode {
     int override match(StringValue string, int strlen, int offset, RegexpState state)
     {
       if (offset < strlen) {
@@ -2600,7 +2600,7 @@ class RegexpNode {
     }
   }
 
-  static class PropZ extends AbstractCharNode {
+  static class PropZ : AbstractCharNode {
     int override match(StringValue string, int strlen, int offset, RegexpState state)
     {
       if (offset < strlen) {
@@ -2619,7 +2619,7 @@ class RegexpNode {
     }
   }
 
-  static class PropNotZ extends AbstractCharNode {
+  static class PropNotZ : AbstractCharNode {
     int override match(StringValue string, int strlen, int offset, RegexpState state)
     {
       if (offset < strlen) {
@@ -2638,7 +2638,7 @@ class RegexpNode {
     }
   }
 
-  static class Recursive extends RegexpNode {
+  static class Recursive : RegexpNode {
     private final int _group;
     private RegexpNode _top;
 
@@ -2671,7 +2671,7 @@ class RegexpNode {
     }
   }
 
-  static class GroupNumberRecursive extends RegexpNode {
+  static class GroupNumberRecursive : RegexpNode {
     private final int _group;
     private RegexpNode _top;
 
@@ -2698,7 +2698,7 @@ class RegexpNode {
     }
   }
 
-  static class GroupNameRecursive extends RegexpNode {
+  static class GroupNameRecursive : RegexpNode {
     private final StringValue _name;
     private RegexpNode _top;
 
@@ -2725,7 +2725,7 @@ class RegexpNode {
     }
   }
 
-  static class Subroutine extends RegexpNode {
+  static class Subroutine : RegexpNode {
     private final int _group;
     private final RegexpNode _node;
 
@@ -2745,7 +2745,7 @@ class RegexpNode {
     }
   }
 
-  static class Set extends AbstractCharNode {
+  static class Set : AbstractCharNode {
     private final boolean []_asciiSet;
     private final IntSet _range;
 
@@ -2780,7 +2780,7 @@ class RegexpNode {
 
 
 
-  static class NotSet extends AbstractCharNode {
+  static class NotSet : AbstractCharNode {
     private final boolean []_asciiSet;
     private final IntSet _range;
 
@@ -2804,7 +2804,7 @@ class RegexpNode {
     }
   }
 
-  static class StringNode extends RegexpNode {
+  static class StringNode : RegexpNode {
     private final char []_buffer;
     private final int _length;
 
@@ -2932,7 +2932,7 @@ class RegexpNode {
     }
   }
 
-  static class StringIgnoreCase extends RegexpNode {
+  static class StringIgnoreCase : RegexpNode {
     private final char []_buffer;
     private final int _length;
 
@@ -3064,7 +3064,7 @@ class RegexpNode {
   const StringFirst STRING_FIRST = new StringFirst();
   const StringNewline STRING_NEWLINE = new StringNewline();
 
-  private static class StringBegin extends RegexpNode {
+  private static class StringBegin : RegexpNode {
     int override match(StringValue string, int strlen, int offset, RegexpState state)
     {
       if (offset == state._start)
@@ -3074,7 +3074,7 @@ class RegexpNode {
     }
   }
 
-  private static class StringEnd extends RegexpNode {
+  private static class StringEnd : RegexpNode {
     int override match(StringValue string, int strlen, int offset, RegexpState state)
     {
       if (offset == strlen)
@@ -3084,7 +3084,7 @@ class RegexpNode {
     }
   }
 
-  private static class StringFirst extends RegexpNode {
+  private static class StringFirst : RegexpNode {
     int override match(StringValue string, int strlen, int offset, RegexpState state)
     {
       if (offset == state._first)
@@ -3094,7 +3094,7 @@ class RegexpNode {
     }
   }
 
-  private static class StringNewline extends RegexpNode {
+  private static class StringNewline : RegexpNode {
     int override match(StringValue string, int strlen, int offset, RegexpState state)
     {
       if (offset == strlen
@@ -3108,7 +3108,7 @@ class RegexpNode {
   const Word WORD = new Word();
   const NotWord NOT_WORD = new NotWord();
 
-  private static class Word extends RegexpNode {
+  private static class Word : RegexpNode {
     int override match(StringValue string, int strlen, int offset, RegexpState state)
     {
       if ((state._start < offset
@@ -3121,7 +3121,7 @@ class RegexpNode {
     }
   }
 
-  private static class NotWord extends RegexpNode {
+  private static class NotWord : RegexpNode {
     int override match(StringValue string, int strlen, int offset, RegexpState state)
     {
       if ((state._start < offset

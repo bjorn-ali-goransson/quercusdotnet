@@ -40,7 +40,7 @@ namespace QuercusDotNet.Env{
  * Represents a PHP string value.
  */
 public class UnicodeBuilderValue
-  extends UnicodeValue
+  : UnicodeValue
 {
   public const UnicodeBuilderValue EMPTY = new UnicodeBuilderValue("");
 

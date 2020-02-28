@@ -49,7 +49,7 @@ namespace QuercusDotNet.servlet{
  * Servlet to call PHP through javax.script.
  */
 @SuppressWarnings("serial")
-public class GoogleStoreServlet extends GenericServlet
+public class GoogleStoreServlet : GenericServlet
 {
   private string _gsBucket;
   private Path _path;

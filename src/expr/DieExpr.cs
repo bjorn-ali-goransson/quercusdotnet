@@ -40,7 +40,7 @@ namespace QuercusDotNet.Expr{
 /**
  * Represents the die expression
  */
-public class DieExpr extends Expr {
+public class DieExpr : Expr {
   protected Expr _value;
 
   public DieExpr(Location location, Expr value)

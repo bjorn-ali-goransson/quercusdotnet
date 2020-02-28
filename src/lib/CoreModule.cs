@@ -44,7 +44,7 @@ namespace QuercusDotNet.lib{
 /**
  * To represent "core" constants and functions.
  */
-public class CoreModule extends AbstractQuercusModule
+public class CoreModule : AbstractQuercusModule
 {
   public const long PHP_INT_MAX = Long.MAX_VALUE;
 

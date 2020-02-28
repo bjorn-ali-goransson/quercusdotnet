@@ -43,7 +43,7 @@ namespace QuercusDotNet.Expr{
 /**
  * Represents a PHP variable expression.
  */
-public class VarVarExpr extends AbstractVarExpr {
+public class VarVarExpr : AbstractVarExpr {
   protected final Expr _var;
 
   public VarVarExpr(Location location, Expr var)

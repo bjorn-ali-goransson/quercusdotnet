@@ -64,7 +64,7 @@ namespace QuercusDotNet.Script{
  * Script engine
  */
 public class QuercusScriptEngine
-  extends AbstractScriptEngine
+  : AbstractScriptEngine
   implements Compilable
 {
   private const L10N L = new L10N(QuercusScriptEngine.class);

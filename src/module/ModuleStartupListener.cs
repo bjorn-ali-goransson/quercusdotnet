@@ -36,7 +36,7 @@ namespace QuercusDotNet.Module{
  * A module with some startup code that needs to be run before each
  * script is executed.
  */
-public interface ModuleStartupListener extends QuercusModule {
+public interface ModuleStartupListener : QuercusModule {
   public void startup(Env env);
 }
 }

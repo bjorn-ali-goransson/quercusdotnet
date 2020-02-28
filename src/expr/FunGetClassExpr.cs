@@ -38,7 +38,7 @@ namespace QuercusDotNet.Expr{
 /**
  * Represents returns the current class.
  */
-public class FunGetClassExpr extends Expr {
+public class FunGetClassExpr : Expr {
   private string _className;
 
   public FunGetClassExpr(QuercusParser parser)

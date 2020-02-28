@@ -53,7 +53,7 @@ namespace QuercusDotNet.lib{
  * digests. Typical java installations support MD2, MD5, SHA1, SHA256, SHA384,
  * and SHA512.
  */
-public class HashModule extends AbstractQuercusModule {
+public class HashModule : AbstractQuercusModule {
   private const L10N L = new L10N(HashModule.class);
   private const Logger log
     = Logger.getLogger(HashModule.class.getName());
@@ -437,7 +437,7 @@ public class HashModule extends AbstractQuercusModule {
     abstract HashContext copy();
   }
 
-  public static class HashDigestContext extends HashContext
+  public static class HashDigestContext : HashContext
   {
     private MessageDigest _digest;
 
@@ -494,7 +494,7 @@ public class HashModule extends AbstractQuercusModule {
     }
   }
 
-  public static class HashMacContext extends HashContext
+  public static class HashMacContext : HashContext
   {
     private Mac _digest;
 
@@ -582,7 +582,7 @@ public class HashModule extends AbstractQuercusModule {
 
   }
 
-  static class Adler32MessageDigest extends MessageDigest
+  static class Adler32MessageDigest : MessageDigest
   {
     private Adler32 _adler;
 

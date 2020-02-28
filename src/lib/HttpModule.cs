@@ -50,7 +50,7 @@ namespace QuercusDotNet.lib{
 /**
  * PHP HTTP functions
  */
-public class HttpModule extends AbstractQuercusModule {
+public class HttpModule : AbstractQuercusModule {
   private const L10N L = new L10N(HttpModule.class);
 
   private static ArrayList<String> getHeaders(Env env)

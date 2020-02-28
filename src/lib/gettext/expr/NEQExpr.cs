@@ -30,7 +30,7 @@ namespace QuercusDotNet.lib/gettext/expr{
 
 
 
-public class NEQExpr extends BinaryExpr
+public class NEQExpr : BinaryExpr
 {
   public NEQExpr(Expr _left, Expr _right)
   {

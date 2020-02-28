@@ -37,7 +37,7 @@ namespace QuercusDotNet.Expr{
 /**
  * Represents a PHP array unset expression.
  */
-public class ArrayUnsetExpr extends Expr {
+public class ArrayUnsetExpr : Expr {
   protected final Expr _expr;
   protected final Expr _index;
 

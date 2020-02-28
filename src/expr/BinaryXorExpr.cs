@@ -38,7 +38,7 @@ namespace QuercusDotNet.Expr{
 /**
  * Represents a logical xor expression.
  */
-public class BinaryXorExpr extends AbstractBinaryExpr {
+public class BinaryXorExpr : AbstractBinaryExpr {
   public BinaryXorExpr(Location location, Expr left, Expr right)
   {
     super(location, left, right);

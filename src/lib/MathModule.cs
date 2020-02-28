@@ -43,7 +43,7 @@ namespace QuercusDotNet.lib{
 /**
  * PHP math routines.
  */
-public class MathModule extends AbstractQuercusModule {
+public class MathModule : AbstractQuercusModule {
   private const L10N L = new L10N(MathModule.class);
 
   public const double M_PI = Math.PI;

@@ -32,7 +32,7 @@ namespace QuercusDotNet.lib.regexp {
 
 
 
-class PeekString extends PeekStream {
+class PeekString : PeekStream {
   CharSequence _string;
   int _length;
   int _index;

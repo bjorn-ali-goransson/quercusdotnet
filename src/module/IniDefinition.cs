@@ -404,7 +404,7 @@ public class IniDefinition {
   }
 
   static public class Unsupported
-    extends IniDefinition
+    : IniDefinition
   {
     private L10N L = new L10N(Unsupported.class);
 
@@ -439,7 +439,7 @@ public class IniDefinition {
   }
 
   static private class Null
-    extends Unsupported
+    : Unsupported
   {
     private L10N L = new L10N(Unsupported.class);
 
@@ -461,7 +461,7 @@ public class IniDefinition {
   }
 
   static public class Runtime
-    extends IniDefinition
+    : IniDefinition
   {
     public Runtime(String name)
     {

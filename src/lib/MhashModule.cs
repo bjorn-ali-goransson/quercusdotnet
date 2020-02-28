@@ -56,7 +56,7 @@ namespace QuercusDotNet.lib{
  * digests. Typical java installations support MD2, MD5, SHA1, SHA256, SHA384,
  * and SHA512.
  */
-public class MhashModule extends AbstractQuercusModule {
+public class MhashModule : AbstractQuercusModule {
   private const L10N L = new L10N(MhashModule.class);
   private const Logger log
     = Logger.getLogger(MhashModule.class.getName());

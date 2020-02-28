@@ -81,7 +81,7 @@ namespace QuercusDotNet.lib.image {
 /**
  * PHP image
  */
-public class ImageModule extends AbstractQuercusModule {
+public class ImageModule : AbstractQuercusModule {
   private const Logger log
     = Logger.getLogger(ImageModule.class.getName());
   private const L10N L = new L10N(ImageModule.class);

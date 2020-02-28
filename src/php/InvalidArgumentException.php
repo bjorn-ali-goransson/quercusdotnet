@@ -1,6 +1,6 @@
 <?php
 
-class InvalidArgumentException extends LogicException
+class InvalidArgumentException : LogicException
 {
 }
 

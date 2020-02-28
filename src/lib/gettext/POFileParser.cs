@@ -46,7 +46,7 @@ namespace QuercusDotNet.lib.gettext {
 /**
  * Parses Gettext PO files.
  */
-class POFileParser extends GettextParser
+class POFileParser : GettextParser
 {
   private const Logger log
     = Logger.getLogger(POFileParser.class.getName());

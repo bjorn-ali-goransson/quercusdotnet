@@ -33,7 +33,7 @@ namespace QuercusDotNet.lib.dom {
 
 
 public class DOMNamedNodeMap
-  extends DOMWrapper<NamedNodeMap>
+  : DOMWrapper<NamedNodeMap>
 {
   DOMNamedNodeMap(DOMImplementation impl, NamedNodeMap delegate)
   {

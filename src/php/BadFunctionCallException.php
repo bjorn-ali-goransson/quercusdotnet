@@ -1,6 +1,6 @@
 <?php
 
-class BadFunctionCallException extends LogicException
+class BadFunctionCallException : LogicException
 {
 }
 

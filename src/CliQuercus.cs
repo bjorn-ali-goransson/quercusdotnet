@@ -39,7 +39,7 @@ namespace QuercusDotNet {
 
 
 
-public class CliQuercus extends Quercus
+public class CliQuercus : Quercus
 {
   @Override
   public Env createEnv(QuercusPage page,

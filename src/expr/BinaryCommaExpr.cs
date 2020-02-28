@@ -37,7 +37,7 @@ namespace QuercusDotNet.Expr{
 /**
  * A "($foo, $bar)" comma expression (evaluates all and returns first).
  */
-public class BinaryCommaExpr extends AbstractBinaryExpr {
+public class BinaryCommaExpr : AbstractBinaryExpr {
   public BinaryCommaExpr(Location location, Expr left, Expr right)
   {
     super(location, left, right);

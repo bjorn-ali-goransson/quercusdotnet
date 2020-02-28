@@ -37,7 +37,7 @@ namespace QuercusDotNet.lib.file {
 /**
  * Represents a Quercus output stream
  */
-public interface BinaryOutput extends BinaryStream {
+public interface BinaryOutput : BinaryStream {
   /**
    * Returns an OutputStream.
    */

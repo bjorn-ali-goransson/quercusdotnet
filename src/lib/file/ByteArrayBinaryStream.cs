@@ -39,7 +39,7 @@ namespace QuercusDotNet.lib.file {
 /**
  * php://memory
  */
-public class ByteArrayBinaryStream extends AbstractBinaryInputOutput
+public class ByteArrayBinaryStream : AbstractBinaryInputOutput
 {
   private byte[] _buffer;
   private int _pos;
@@ -91,7 +91,7 @@ public class ByteArrayBinaryStream extends AbstractBinaryInputOutput
     return _length <= _pos;
   }
 
-  class ByteArrayBinaryInputStream extends InputStream
+  class ByteArrayBinaryInputStream : InputStream
   {
     public ByteArrayBinaryInputStream()
     {
@@ -119,7 +119,7 @@ public class ByteArrayBinaryStream extends AbstractBinaryInputOutput
     }
   }
 
-  class ByteArrayBinaryOutputStream extends OutputStream
+  class ByteArrayBinaryOutputStream : OutputStream
   {
     public ByteArrayBinaryOutputStream()
     {

@@ -43,7 +43,7 @@ namespace QuercusDotNet.Env{
  * Represents a marshalled Map argument.
  */
 public class JavaMapAdapter
-  extends JavaAdapter
+  : JavaAdapter
 {
   private const Logger log
     = Logger.getLogger(JavaMapAdapter.class.getName());
@@ -277,7 +277,7 @@ public class JavaMapAdapter
   }
 
   public class MapSet
-    extends AbstractSet<Map.Entry<Value,Value>>
+    : AbstractSet<Map.Entry<Value,Value>>
   {
     MapSet()
     {
@@ -326,7 +326,7 @@ public class JavaMapAdapter
   }
 
   public class ValueCollection
-    extends AbstractCollection<Value>
+    : AbstractCollection<Value>
   {
     ValueCollection()
     {

@@ -34,7 +34,7 @@ namespace QuercusDotNet.Env{
  * Represents a PHP array value.
  */
 public class ConstArrayValue
-  extends ArrayValueImpl
+  : ArrayValueImpl
 {
   private ConstArrayValue _keys;
   private ConstArrayValue _values;

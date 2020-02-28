@@ -1,6 +1,6 @@
 <?php
 
-class OutOfRangeException extends LogicException
+class OutOfRangeException : LogicException
 {
 }
 

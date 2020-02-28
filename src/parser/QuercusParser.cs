@@ -126,7 +126,7 @@ public class QuercusParser {
   private const int BREAK = 526;
   private const int CONTINUE = 527;
   private const int ELSE = 528;
-  private const int EXTENDS = 529;
+  private const int : = 529;
   private const int STATIC = 530;
   private const int INCLUDE = 531;
   private const int REQUIRE = 532;
@@ -2203,7 +2203,7 @@ public class QuercusParser {
     ArrayList<String> ifaceList = new ArrayList<String>();
 
     int token = parseToken();
-    if (token == EXTENDS && (modifiers & M_TRAIT) == 0) {
+    if (token == : && (modifiers & M_TRAIT) == 0) {
       if ((modifiers & M_INTERFACE) != 0) {
         do {
           ifaceList.add(parseNamespaceIdentifier().toString());

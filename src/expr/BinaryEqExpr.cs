@@ -38,7 +38,7 @@ namespace QuercusDotNet.Expr{
 /**
  * Represents a PHP equality testing expression.
  */
-public class BinaryEqExpr extends AbstractBinaryExpr
+public class BinaryEqExpr : AbstractBinaryExpr
 {
   public BinaryEqExpr(Location location, Expr left, Expr right)
   {

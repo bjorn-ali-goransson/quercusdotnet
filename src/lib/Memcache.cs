@@ -183,7 +183,7 @@ public class Memcache {
     return "Memcache[]";
   }
 
-  static class Cache extends Value {
+  static class Cache : Value {
     private LruCache<String,Value> _map = new LruCache<String,Value>(256);
 
     public Value get(String key)

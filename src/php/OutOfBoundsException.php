@@ -1,6 +1,6 @@
 <?php
 
-class OutOfBoundsException extends RuntimeException
+class OutOfBoundsException : RuntimeException
 {
 }
 

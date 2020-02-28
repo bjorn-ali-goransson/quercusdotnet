@@ -1,6 +1,6 @@
 <?php
 
-class LogicException extends Exception
+class LogicException : Exception
 {
 }
 

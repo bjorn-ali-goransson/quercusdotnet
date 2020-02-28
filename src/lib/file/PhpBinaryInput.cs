@@ -43,7 +43,7 @@ namespace QuercusDotNet.lib.file {
 /*
  * php://input
  */
-public class PhpBinaryInput extends AbstractBinaryInput
+public class PhpBinaryInput : AbstractBinaryInput
 {
   private const Logger log
     = Logger.getLogger(PhpBinaryInput.class.getName());

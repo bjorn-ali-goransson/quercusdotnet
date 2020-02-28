@@ -33,7 +33,7 @@ namespace QuercusDotNet.Env{
 
 
 public class CompiledInterfaceDef
-  extends CompiledClassDef
+  : CompiledClassDef
 {
   public CompiledInterfaceDef(String name,
                               string parent,

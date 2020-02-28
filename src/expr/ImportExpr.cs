@@ -38,7 +38,7 @@ namespace QuercusDotNet.Expr{
 /**
  * Represents a PHP import statement
  */
-public class ImportExpr extends Expr
+public class ImportExpr : Expr
 {
   protected final string _name;
   protected final boolean _isWildcard;

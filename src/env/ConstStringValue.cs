@@ -39,7 +39,7 @@ namespace QuercusDotNet.Env{
  * For compiled code.
  */
 public class ConstStringValue
-  extends StringBuilderValue
+  : StringBuilderValue
 {
   public const ConstStringValue EMPTY = new ConstStringValue();
 

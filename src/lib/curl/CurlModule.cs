@@ -50,7 +50,7 @@ namespace QuercusDotNet.lib.curl {
 
 
 public class CurlModule
-  extends AbstractQuercusModule
+  : AbstractQuercusModule
 {
   private const Logger log
     = Logger.getLogger(CurlModule.class.getName());

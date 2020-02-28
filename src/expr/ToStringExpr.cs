@@ -39,7 +39,7 @@ namespace QuercusDotNet.Expr{
 /**
  * Converts to an string
  */
-public class ToStringExpr extends AbstractUnaryExpr {
+public class ToStringExpr : AbstractUnaryExpr {
   public ToStringExpr(Location location, Expr expr)
   {
     super(location, expr);

@@ -37,7 +37,7 @@ namespace QuercusDotNet.Script{
 
 
 
-public class EncoderStream extends StreamImpl
+public class EncoderStream : StreamImpl
 {
   private Encoder _encoder;
   private Reader _reader;

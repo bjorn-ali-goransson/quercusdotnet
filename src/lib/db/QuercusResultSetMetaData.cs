@@ -35,7 +35,7 @@ namespace QuercusDotNet.lib.db {
 /**
  * Extra ResultSet metadata for a Quercus Mysql connection.
  */
-public interface QuercusResultSetMetaData extends ResultSetMetaData {
+public interface QuercusResultSetMetaData : ResultSetMetaData {
   public boolean isPrimaryKey(int column);
 
   public boolean isUniqueKey(int column);

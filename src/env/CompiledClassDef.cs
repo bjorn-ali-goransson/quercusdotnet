@@ -48,7 +48,7 @@ namespace QuercusDotNet.Env{
 /**
  * Represents a PHP class value.
  */
-public class CompiledClassDef extends ClassDef {
+public class CompiledClassDef : ClassDef {
   private final ArrayList<String> _fieldNames
     = new ArrayList<String>();
 

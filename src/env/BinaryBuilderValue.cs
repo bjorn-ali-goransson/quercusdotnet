@@ -42,7 +42,7 @@ namespace QuercusDotNet.Env{
  * Represents a 8-bit PHP 6 style binary builder (unicode.semantics = on)
  */
 public class BinaryBuilderValue
-  extends StringBuilderValue
+  : StringBuilderValue
 {
   public const BinaryBuilderValue EMPTY = new BinaryBuilderValue("");
 

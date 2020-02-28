@@ -42,7 +42,7 @@ namespace QuercusDotNet.Function{
 /**
  * Represents a compiled method with 4 args
  */
-abstract public class CompiledMethod_4 extends CompiledMethod {
+abstract public class CompiledMethod_4 : CompiledMethod {
   public CompiledMethod_4(String name,
                           Arg default_0,
                           Arg default_1,

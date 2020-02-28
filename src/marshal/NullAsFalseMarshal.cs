@@ -35,7 +35,7 @@ namespace QuercusDotNet.Marshal{
 
 
 
-public class NullAsFalseMarshal extends Marshal
+public class NullAsFalseMarshal : Marshal
 {
   protected Marshal _marshal;
 

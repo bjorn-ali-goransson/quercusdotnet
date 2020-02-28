@@ -57,7 +57,7 @@ namespace QuercusDotNet.Env{
  * Represents a Quercus runtime class.
  */
 @SuppressWarnings("serial")
-public class QuercusClass extends NullValue {
+public class QuercusClass : NullValue {
   private const L10N L = new L10N(QuercusClass.class);
   private const Logger log
     = Logger.getLogger(QuercusClass.class.getName());

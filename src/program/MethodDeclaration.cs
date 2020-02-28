@@ -44,7 +44,7 @@ namespace QuercusDotNet.Program{
 /**
  * Declaration for an abstract function or interface.
  */
-public class MethodDeclaration extends Function
+public class MethodDeclaration : Function
 {
   private const Logger log = Logger.getLogger(
     MethodDeclaration.class.getName());

@@ -36,7 +36,7 @@ namespace QuercusDotNet.lib.dom {
 
 
 public class DOMText
-  extends DOMCharacterData<Text>
+  : DOMCharacterData<Text>
 {
   public static DOMText __construct(Env env, @Optional string value)
   {

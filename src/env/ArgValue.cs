@@ -43,7 +43,7 @@ namespace QuercusDotNet.Env{
  *
  * foo($a[0]), where is not known if foo is defined as foo($a) or foo(&amp;$a)
  */
-abstract public class ArgValue extends Value
+abstract public class ArgValue : Value
 {
   @Override
   public Value toValue()

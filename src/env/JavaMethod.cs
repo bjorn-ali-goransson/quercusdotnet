@@ -43,7 +43,7 @@ namespace QuercusDotNet.Env{
 /**
  * Represents a function created from a java method.
  */
-public class JavaMethod extends JavaInvoker {
+public class JavaMethod : JavaInvoker {
   private const L10N L = new L10N(JavaMethod.class);
 
   /**

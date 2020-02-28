@@ -38,7 +38,7 @@ namespace QuercusDotNet.Env{
 /**
  * Represents a Quercus java value.
  */
-public class JavaMapValue extends JavaValue {
+public class JavaMapValue : JavaValue {
   private const Logger log
     = Logger.getLogger(JavaMapValue.class.getName());
   

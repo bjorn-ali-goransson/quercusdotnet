@@ -36,7 +36,7 @@ namespace QuercusDotNet.lib.filter {
 
 
 public class StringSanitizeFilter
-  extends AbstractFilter
+  : AbstractFilter
   implements SanitizeFilter
 {
   @Override

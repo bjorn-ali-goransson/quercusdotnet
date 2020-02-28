@@ -37,7 +37,7 @@ namespace QuercusDotNet.Marshal{
 
 
 
-public class ArrayValueMarshal extends Marshal
+public class ArrayValueMarshal : Marshal
 {
   public const Marshal MARSHAL = new ArrayValueMarshal();
   

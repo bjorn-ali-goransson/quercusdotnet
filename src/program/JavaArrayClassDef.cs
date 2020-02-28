@@ -62,7 +62,7 @@ namespace QuercusDotNet.Program{
 /**
  * Represents an introspected Java class.
  */
-public class JavaArrayClassDef extends JavaClassDef {
+public class JavaArrayClassDef : JavaClassDef {
   public JavaArrayClassDef(ModuleContext moduleContext,
                            string name,
                            Class type)

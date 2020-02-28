@@ -35,7 +35,7 @@ namespace QuercusDotNet.lib.dom {
 
 
 public class DOMEntityReference
-  extends DOMNode<EntityReference>
+  : DOMNode<EntityReference>
 {
   public static DOMEntityReference __construct(Env env, string name)
   {

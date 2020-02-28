@@ -30,7 +30,7 @@ namespace QuercusDotNet.Env{
 
 
 public class UnsetUnicodeValue
-  extends UnicodeValueImpl
+  : UnicodeValueImpl
 {
   public const UnsetUnicodeValue UNSET = new UnsetUnicodeValue();
   

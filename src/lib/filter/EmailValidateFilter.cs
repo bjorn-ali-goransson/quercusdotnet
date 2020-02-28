@@ -39,7 +39,7 @@ namespace QuercusDotNet.lib.filter {
  * Coded to RFC822 specifications. XXX: RFC2822.
  */
 public class EmailValidateFilter
-  extends AbstractFilter
+  : AbstractFilter
   implements ValidateFilter
 {
   @Override

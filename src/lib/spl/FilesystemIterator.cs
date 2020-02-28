@@ -37,7 +37,7 @@ namespace QuercusDotNet.lib.spl {
 
 
 
-public class FilesystemIterator extends DirectoryIterator
+public class FilesystemIterator : DirectoryIterator
 {
   public const int CURRENT_AS_PATHNAME = 32;
   public const int CURRENT_AS_FILEINFO = 0;

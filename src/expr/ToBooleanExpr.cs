@@ -38,7 +38,7 @@ namespace QuercusDotNet.Expr{
 /**
  * Converts to a boolean
  */
-public class ToBooleanExpr extends AbstractUnaryExpr {
+public class ToBooleanExpr : AbstractUnaryExpr {
   public ToBooleanExpr(Location location, Expr expr)
   {
     super(location, expr);

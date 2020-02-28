@@ -37,7 +37,7 @@ namespace QuercusDotNet.Env{
 /**
  * Represents a marshalled Collection argument.
  */
-public class JavaCollectionAdapter extends JavaAdapter
+public class JavaCollectionAdapter : JavaAdapter
 {
   private Collection<Object> _collection;
 
@@ -187,7 +187,7 @@ public class JavaCollectionAdapter extends JavaAdapter
   }
 
   public class CollectionSet
-    extends AbstractSet<Map.Entry<Object,Object>>
+    : AbstractSet<Map.Entry<Object,Object>>
   {
     CollectionSet()
     {
@@ -265,7 +265,7 @@ public class JavaCollectionAdapter extends JavaAdapter
   }
 
   public class CollectionValueSet
-    extends AbstractSet<Map.Entry<Value,Value>>
+    : AbstractSet<Map.Entry<Value,Value>>
   {
     CollectionValueSet()
     {
@@ -313,7 +313,7 @@ public class JavaCollectionAdapter extends JavaAdapter
   }
 
   public class ValueCollection
-    extends AbstractCollection<Value>
+    : AbstractCollection<Value>
   {
     ValueCollection()
     {

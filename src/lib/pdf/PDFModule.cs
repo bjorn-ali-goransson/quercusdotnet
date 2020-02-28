@@ -46,7 +46,7 @@ namespace QuercusDotNet.lib.pdf {
 /**
  * PHP PDF routines.
  */
-public class PDFModule extends AbstractQuercusModule {
+public class PDFModule : AbstractQuercusModule {
   private const L10N L = new L10N(PDFModule.class);
 
   private const Logger log =

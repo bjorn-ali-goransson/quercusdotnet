@@ -46,7 +46,7 @@ namespace QuercusDotNet {
 
 
 public class Quercus
-  extends QuercusContext
+  : QuercusContext
 {
   private const Logger log
     = Logger.getLogger(Quercus.class.getName());

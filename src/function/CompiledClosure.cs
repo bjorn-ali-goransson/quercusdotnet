@@ -40,7 +40,7 @@ namespace QuercusDotNet.Function{
  * Represents a compiled closure.
  */
 @SuppressWarnings("serial")
-abstract public class CompiledClosure extends Closure {
+abstract public class CompiledClosure : Closure {
   public CompiledClosure(String name, Value qThis)
   {
     super(name, qThis);
@@ -85,7 +85,7 @@ abstract public class CompiledClosure extends Closure {
     return call(env, a1, a2, a3, a4, a5).copyReturn();
   }
 
-  public abstract static class CompiledClosure_0 extends CompiledClosure {
+  public abstract static class CompiledClosure_0 : CompiledClosure {
     public CompiledClosure_0(String name, Value qThis)
     {
       super(name, qThis);
@@ -99,7 +99,7 @@ abstract public class CompiledClosure extends Closure {
     abstract public Value call(Env env);
   }
 
-  public abstract static class CompiledClosure_1 extends CompiledClosure {
+  public abstract static class CompiledClosure_1 : CompiledClosure {
     private final Expr _default0;
 
     public CompiledClosure_1(String name, Value qThis, Expr default0)
@@ -130,7 +130,7 @@ abstract public class CompiledClosure extends Closure {
     abstract public Value call(Env env, Value a1);
   }
 
-  public abstract static class CompiledClosure_2 extends CompiledClosure {
+  public abstract static class CompiledClosure_2 : CompiledClosure {
     private final Expr _default0;
     private final Expr _default1;
 
@@ -175,7 +175,7 @@ abstract public class CompiledClosure extends Closure {
     abstract public Value call(Env env, Value a1, Value a2);
   }
 
-  public abstract static class CompiledClosure_3 extends CompiledClosure {
+  public abstract static class CompiledClosure_3 : CompiledClosure {
     private final Expr _default0;
     private final Expr _default1;
     private final Expr _default2;
@@ -244,7 +244,7 @@ abstract public class CompiledClosure extends Closure {
     abstract public Value call(Env env, Value a1, Value a2, Value a3);
   }
 
-  public abstract static class CompiledClosure_4 extends CompiledClosure {
+  public abstract static class CompiledClosure_4 : CompiledClosure {
     private final Expr _default0;
     private final Expr _default1;
     private final Expr _default2;
@@ -338,7 +338,7 @@ abstract public class CompiledClosure extends Closure {
     abstract public Value call(Env env, Value a1, Value a2, Value a3, Value a4);
   }
 
-  public abstract static class CompiledClosure_5 extends CompiledClosure {
+  public abstract static class CompiledClosure_5 : CompiledClosure {
     private final Expr _default0;
     private final Expr _default1;
     private final Expr _default2;
@@ -462,7 +462,7 @@ abstract public class CompiledClosure extends Closure {
                                Value a5);
   }
 
-  public abstract static class CompiledClosure_N extends CompiledClosure {
+  public abstract static class CompiledClosure_N : CompiledClosure {
     private final Expr []_defaultArgs;
     private final int _requiredArgs;
 

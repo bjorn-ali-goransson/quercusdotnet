@@ -36,7 +36,7 @@ namespace QuercusDotNet.lib.reflection {
 
 
 
-public class ReflectionException extends QuercusLanguageException
+public class ReflectionException : QuercusLanguageException
 {
   private Location _location;
   private string _message;

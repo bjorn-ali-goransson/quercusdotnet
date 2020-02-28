@@ -51,7 +51,7 @@ namespace QuercusDotNet.lib{
 /**
  * PHP exif
  */
-public class ExifModule extends AbstractQuercusModule {
+public class ExifModule : AbstractQuercusModule {
   private const L10N L = new L10N(ExifModule.class);
 
   /**

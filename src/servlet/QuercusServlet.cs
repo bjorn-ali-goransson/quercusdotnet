@@ -64,7 +64,7 @@ namespace QuercusDotNet.servlet{
  */
 @SuppressWarnings("serial")
 public class QuercusServlet
-  extends HttpServlet
+  : HttpServlet
 {
   private const L10N L = new L10N(QuercusServlet.class);
   private const Logger log

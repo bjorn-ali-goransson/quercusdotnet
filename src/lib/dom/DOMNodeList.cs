@@ -36,7 +36,7 @@ namespace QuercusDotNet.lib.dom {
 
 @Delegates(DOMNodeListDelegate.class)
 public class DOMNodeList
-  extends DOMWrapper<NodeList>
+  : DOMWrapper<NodeList>
 {
   DOMNodeList(DOMImplementation impl, NodeList nodeList)
   {

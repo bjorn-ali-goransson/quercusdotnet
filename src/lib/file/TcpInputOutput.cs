@@ -54,7 +54,7 @@ namespace QuercusDotNet.lib.file {
  * Represents read/write stream
  */
 public class TcpInputOutput
-  extends BufferedBinaryInputOutput
+  : BufferedBinaryInputOutput
   implements SocketInputOutput
 {
   private const Logger log

@@ -46,7 +46,7 @@ namespace QuercusDotNet.lib.db {
 /**
  * Quercus mysql routines.
  */
-public class MysqliModule extends AbstractQuercusModule {
+public class MysqliModule : AbstractQuercusModule {
   private const Logger log = Log.open(MysqliModule.class);
   private const L10N L = new L10N(MysqliModule.class);
 

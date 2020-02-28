@@ -44,7 +44,7 @@ namespace QuercusDotNet {
 /**
  * Facade for the PHP language.
  */
-public class GoogleQuercus extends QuercusContext
+public class GoogleQuercus : QuercusContext
 {
   /**
    * Constructor.

@@ -34,7 +34,7 @@ namespace QuercusDotNet.Marshal{
 
 
 
-public class JavaArrayMarshal extends Marshal
+public class JavaArrayMarshal : Marshal
 {
   private Class<?> _expectedClass;
 

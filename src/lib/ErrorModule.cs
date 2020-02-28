@@ -54,7 +54,7 @@ namespace QuercusDotNet.lib{
 /**
  * PHP error handling.
  */
-public class ErrorModule extends AbstractQuercusModule {
+public class ErrorModule : AbstractQuercusModule {
   private const L10N L = new L10N(ErrorModule.class);
   private const Logger log
     = Logger.getLogger(ErrorModule.class.getName());

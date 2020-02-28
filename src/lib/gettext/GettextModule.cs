@@ -51,7 +51,7 @@ namespace QuercusDotNet.lib.gettext {
  * Translations are LRU cached.
  */
 public class GettextModule
-  extends AbstractQuercusModule
+  : AbstractQuercusModule
 {
   private LruCache<Object,GettextResource> _cache
     = new LruCache<Object,GettextResource>(16);

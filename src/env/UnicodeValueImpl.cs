@@ -34,7 +34,7 @@ namespace QuercusDotNet.Env{
  * Represents a unicode string value.
  */
 public class UnicodeValueImpl
-  extends UnicodeBuilderValue
+  : UnicodeBuilderValue
 {
   protected const int IS_STRING = 0;
   protected const int IS_LONG = 1;

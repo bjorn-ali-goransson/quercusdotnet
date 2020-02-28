@@ -38,7 +38,7 @@ namespace QuercusDotNet.lib.json {
 
 
 
-public class JsonModule extends AbstractQuercusModule
+public class JsonModule : AbstractQuercusModule
 {
   public const int JSON_ERROR_NONE = 0;
   public const int JSON_ERROR_DEPTH = 1;

@@ -55,7 +55,7 @@ namespace QuercusDotNet.lib.mail {
 /**
  * PHP functions implemented from the mail module
  */
-public class MailModule extends AbstractQuercusModule {
+public class MailModule : AbstractQuercusModule {
   private const Logger log =
     Logger.getLogger(MailModule.class.getName());
 

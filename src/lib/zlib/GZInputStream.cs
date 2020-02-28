@@ -42,7 +42,7 @@ namespace QuercusDotNet.lib.zlib {
 /**
  * Similar to GZIPInputStream but with ability to read appended gzip.
  */
-public class GZInputStream extends InputStream
+public class GZInputStream : InputStream
 {
   private PushbackInputStream _in;
   private Inflater _inflater;

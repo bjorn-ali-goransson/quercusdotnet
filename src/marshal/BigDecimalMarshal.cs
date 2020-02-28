@@ -45,7 +45,7 @@ namespace QuercusDotNet.Marshal{
 /**
  * Code for marshalling arguments.
  */
-public class BigDecimalMarshal extends Marshal {
+public class BigDecimalMarshal : Marshal {
   public const Marshal MARSHAL = new BigDecimalMarshal();
 
   public Object marshal(Env env, Expr expr, Class argClass)

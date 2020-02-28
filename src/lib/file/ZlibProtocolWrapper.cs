@@ -37,7 +37,7 @@ namespace QuercusDotNet.lib.file {
 
 
 
-public class ZlibProtocolWrapper extends ProtocolWrapper {
+public class ZlibProtocolWrapper : ProtocolWrapper {
   private const Logger log
     = Logger.getLogger(ZlibProtocolWrapper.class.getName());
   private const L10N L = new L10N(ZlibProtocolWrapper.class);

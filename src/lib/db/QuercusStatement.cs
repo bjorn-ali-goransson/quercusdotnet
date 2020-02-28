@@ -43,6 +43,6 @@ namespace QuercusDotNet.lib.db {
 /**
  * Extra Statement metadata for a Quercus Mysql connection.
  */
-public interface QuercusStatement extends Statement {
+public interface QuercusStatement : Statement {
 }
 }

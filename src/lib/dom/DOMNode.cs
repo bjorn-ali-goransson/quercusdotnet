@@ -36,8 +36,8 @@ namespace QuercusDotNet.lib.dom {
 
 
 
-public class DOMNode<T extends Node>
-  extends DOMWrapper<T>
+public class DOMNode<T : Node>
+  : DOMWrapper<T>
 {
   protected DOMNode(DOMImplementation impl, T delegate)
   {

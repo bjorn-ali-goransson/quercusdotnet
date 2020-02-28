@@ -41,7 +41,7 @@ namespace QuercusDotNet.lib.mail {
 /**
  * Extended MimeMessage that allows overriding Message-ID header
  */
-public class QuercusMimeMessage extends MimeMessage {
+public class QuercusMimeMessage : MimeMessage {
   private const Logger log =
     Logger.getLogger(QuercusMimeMessage.class.getName());
 

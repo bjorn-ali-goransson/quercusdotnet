@@ -38,7 +38,7 @@ namespace QuercusDotNet.Expr{
 /**
  * Represents a PHP append ('.') expression.
  */
-public class BinaryAppendExpr extends Expr
+public class BinaryAppendExpr : Expr
 {
   private final Expr _value;
   private BinaryAppendExpr _next;

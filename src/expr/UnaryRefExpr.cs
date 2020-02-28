@@ -41,7 +41,7 @@ namespace QuercusDotNet.Expr{
 /**
  * Represents a PHP reference argument.
  */
-public class UnaryRefExpr extends AbstractUnaryExpr {
+public class UnaryRefExpr : AbstractUnaryExpr {
   public UnaryRefExpr(Location location, Expr expr)
   {
     super(location, expr);

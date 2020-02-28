@@ -38,7 +38,7 @@ namespace QuercusDotNet.Expr{
 /**
  * Converts to a double
  */
-public class ToDoubleExpr extends AbstractUnaryExpr {
+public class ToDoubleExpr : AbstractUnaryExpr {
   public ToDoubleExpr(Location location, Expr expr)
   {
     super(location, expr);

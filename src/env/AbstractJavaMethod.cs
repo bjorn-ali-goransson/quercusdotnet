@@ -37,7 +37,7 @@ namespace QuercusDotNet.Env{
 /**
  * Represents the introspected static function information.
  */
-abstract public class AbstractJavaMethod extends AbstractFunction
+abstract public class AbstractJavaMethod : AbstractFunction
 {
   private const L10N L = new L10N(AbstractJavaMethod.class);
 

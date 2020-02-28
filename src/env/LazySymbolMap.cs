@@ -48,7 +48,7 @@ namespace QuercusDotNet.Env{
 /**
  * Represents the Quercus environment.
  */
-public class LazySymbolMap extends AbstractMap<StringValue,EnvVar> {
+public class LazySymbolMap : AbstractMap<StringValue,EnvVar> {
   private final IntMap _intMap;
   private final Value []_values;
 

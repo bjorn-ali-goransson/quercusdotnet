@@ -82,7 +82,7 @@ namespace QuercusDotNet.lib.db {
  * ..."
  *
  */
-public class OracleModule extends AbstractQuercusModule {
+public class OracleModule : AbstractQuercusModule {
   private const Logger log = Log.open(OracleModule.class);
   private const L10N L = new L10N(OracleModule.class);
 

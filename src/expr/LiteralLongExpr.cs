@@ -38,7 +38,7 @@ namespace QuercusDotNet.Expr{
 /**
  * Represents a PHP long literal expression.
  */
-public class LiteralLongExpr extends Expr {
+public class LiteralLongExpr : Expr {
   protected final long _value;
   protected final LongValue _objValue;
 

@@ -35,7 +35,7 @@ namespace QuercusDotNet {
 /**
  * Java exception caught and rethrown by modules.
  */
-public class QuercusModuleException extends QuercusException {
+public class QuercusModuleException : QuercusException {
   public QuercusModuleException()
   {
   }

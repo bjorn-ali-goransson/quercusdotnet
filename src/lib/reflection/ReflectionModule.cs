@@ -33,7 +33,7 @@ namespace QuercusDotNet.lib.reflection {
 
 
 public class ReflectionModule
-  extends AbstractQuercusModule
+  : AbstractQuercusModule
 {
   public string []getLoadedExtensions()
   {

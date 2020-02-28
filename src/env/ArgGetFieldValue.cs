@@ -33,7 +33,7 @@ namespace QuercusDotNet.Env{
 /**
  * Represents an field-get argument which might be a call to a reference.
  */
-public class ArgGetFieldValue extends ArgValue {
+public class ArgGetFieldValue : ArgValue {
   private final Env _env;
   private final Value _obj;
   private final StringValue _name;

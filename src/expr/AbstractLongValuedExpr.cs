@@ -38,7 +38,7 @@ namespace QuercusDotNet.Expr{
 /**
  * Represents a PHP expression.
  */
-abstract public class AbstractLongValuedExpr extends Expr {
+abstract public class AbstractLongValuedExpr : Expr {
   public AbstractLongValuedExpr(Location location)
   {
     super(location);

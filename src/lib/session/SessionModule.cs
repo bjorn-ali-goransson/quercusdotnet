@@ -49,7 +49,7 @@ namespace QuercusDotNet.lib.session {
 /**
  * Quercus session handling
  */
-public class SessionModule extends AbstractQuercusModule
+public class SessionModule : AbstractQuercusModule
   implements ModuleStartupListener {
   private const L10N L = new L10N(SessionModule.class);
   private const Logger log

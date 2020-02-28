@@ -51,7 +51,7 @@ namespace QuercusDotNet.lib.db {
 /**
  * mysqli object oriented API facade
  */
-public class MysqliStatement extends JdbcPreparedStatementResource {
+public class MysqliStatement : JdbcPreparedStatementResource {
   private const Logger log = Logger
     .getLogger(MysqliStatement.class.getName());
   private const L10N L = new L10N(MysqliStatement.class);

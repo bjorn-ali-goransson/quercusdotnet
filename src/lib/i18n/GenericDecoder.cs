@@ -42,7 +42,7 @@ namespace QuercusDotNet.lib/i18n{
 
 
 public class GenericDecoder
-  extends Decoder
+  : Decoder
 {
   private Charset _charset;
   protected CharsetDecoder _decoder;

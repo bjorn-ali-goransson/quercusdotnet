@@ -46,7 +46,7 @@ namespace QuercusDotNet.Marshal{
 /**
  * Code for marshalling arguments.
  */
-public class BigIntegerMarshal extends Marshal {
+public class BigIntegerMarshal : Marshal {
   public const Marshal MARSHAL = new BigIntegerMarshal();
 
   public Object marshal(Env env, Expr expr, Class argClass)

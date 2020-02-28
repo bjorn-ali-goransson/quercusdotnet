@@ -38,7 +38,7 @@ namespace QuercusDotNet.Parser{
  * PHP parse exception
  */
 public class QuercusParseException
-  extends RuntimeException
+  : RuntimeException
   implements LineCompileException {
   public QuercusParseException()
   {

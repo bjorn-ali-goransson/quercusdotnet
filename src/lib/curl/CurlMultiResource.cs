@@ -43,7 +43,7 @@ namespace QuercusDotNet.lib.curl {
 
 
 @ResourceType("curl_multi")
-public class CurlMultiResource extends ResourceValue
+public class CurlMultiResource : ResourceValue
 {
   private ArrayList<CurlResource> _curlList
     = new ArrayList<CurlResource>();

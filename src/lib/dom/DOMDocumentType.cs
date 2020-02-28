@@ -33,7 +33,7 @@ namespace QuercusDotNet.lib.dom {
 
 
 public class DOMDocumentType
-  extends DOMNode<DocumentType>
+  : DOMNode<DocumentType>
 {
   DOMDocumentType(DOMImplementation impl, DocumentType delegate)
   {

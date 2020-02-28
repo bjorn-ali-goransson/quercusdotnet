@@ -39,7 +39,7 @@ namespace QuercusDotNet.lib.file {
  * Represents read/write stream
  */
 public interface SocketInputOutput
-  extends BinaryInput, BinaryOutput, EnvCleanup
+  : BinaryInput, BinaryOutput, EnvCleanup
 {
   public enum Domain { AF_INET, AF_INET6, AF_UNIX };
 

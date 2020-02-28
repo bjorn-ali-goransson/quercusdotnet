@@ -38,7 +38,7 @@ namespace QuercusDotNet.lib.filter {
 
 
 public class FloatValidateFilter
-  extends AbstractFilter
+  : AbstractFilter
   implements ValidateFilter
 {
   private const L10N L = new L10N(FloatValidateFilter.class);

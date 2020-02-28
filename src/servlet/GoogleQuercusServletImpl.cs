@@ -46,7 +46,7 @@ namespace QuercusDotNet.servlet{
 /**
  * Servlet to call PHP through javax.script.
  */
-public class GoogleQuercusServletImpl extends QuercusServletImpl
+public class GoogleQuercusServletImpl : QuercusServletImpl
 {
   private const L10N L = new L10N(GoogleQuercusServletImpl.class);
   private const Logger log

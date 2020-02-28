@@ -38,7 +38,7 @@ namespace QuercusDotNet.Env{
 /**
  * Stream for appending to binary builder.
  */
-public class BinaryBuilderStream extends StreamImpl
+public class BinaryBuilderStream : StreamImpl
 {
   private StringValue _out;
 

@@ -36,7 +36,7 @@ namespace QuercusDotNet.lib.file {
 /*
  * php://output
  */
-public class PhpBinaryOutput extends AbstractBinaryOutput {
+public class PhpBinaryOutput : AbstractBinaryOutput {
   private Env _env;
 
   public PhpBinaryOutput(Env env)

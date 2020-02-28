@@ -38,7 +38,7 @@ namespace QuercusDotNet.Expr{
 /**
  * Represents a PHP bitwise and expression.
  */
-public class BinaryBitAndExpr extends AbstractBinaryExpr {
+public class BinaryBitAndExpr : AbstractBinaryExpr {
   public BinaryBitAndExpr(Location location, Expr left, Expr right)
   {
     super(location, left, right);

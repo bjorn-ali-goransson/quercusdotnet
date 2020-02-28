@@ -50,7 +50,7 @@ namespace QuercusDotNet.Env{
  * Represents a PHP variable value.
  */
 @SuppressWarnings("serial")
-public class Var extends Value
+public class Var : Value
   implements Serializable
 {
   private Value _value;

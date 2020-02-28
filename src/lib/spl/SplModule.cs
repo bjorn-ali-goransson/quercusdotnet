@@ -46,7 +46,7 @@ namespace QuercusDotNet.lib.spl {
 
 
 
-public class SplModule extends AbstractQuercusModule
+public class SplModule : AbstractQuercusModule
 {
   private static string DEFAULT_EXTENSIONS = ".php,.inc";
 

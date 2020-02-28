@@ -33,7 +33,7 @@ namespace QuercusDotNet.lib.dom {
 
 
 public class DOMTypeInfo
-  extends DOMWrapper<TypeInfo>
+  : DOMWrapper<TypeInfo>
 {
 
   DOMTypeInfo(DOMImplementation impl, TypeInfo delegate)

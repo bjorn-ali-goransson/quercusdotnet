@@ -39,7 +39,7 @@ namespace QuercusDotNet.lib/i18n{
 
 
 public class GenericEncoder
-  extends Encoder
+  : Encoder
 {
   private Charset _charset;
   protected CharsetEncoder _encoder;

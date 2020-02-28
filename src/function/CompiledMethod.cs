@@ -39,7 +39,7 @@ namespace QuercusDotNet.Function{
  * Represents a compiled method with 0 args
  */
 @SuppressWarnings("serial")
-abstract public class CompiledMethod extends CompiledAbstractFunction {
+abstract public class CompiledMethod : CompiledAbstractFunction {
 
   public CompiledMethod(String name)
   {

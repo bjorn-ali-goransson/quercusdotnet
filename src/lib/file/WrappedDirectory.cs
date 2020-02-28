@@ -41,7 +41,7 @@ namespace QuercusDotNet.lib.file {
 /**
  * Represents a PHP directory listing
  */
-public class WrappedDirectory extends Directory {
+public class WrappedDirectory : Directory {
   private const ConstStringValue DIR_CLOSEDIR
     = new ConstStringValue("dir_closedir");
   private const ConstStringValue DIR_OPENDIR

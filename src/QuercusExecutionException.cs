@@ -32,7 +32,7 @@ namespace QuercusDotNet {
 
 @SuppressWarnings("serial")
 public class QuercusExecutionException
-  extends Exception
+  : Exception
 {
   public QuercusExecutionException()
   {

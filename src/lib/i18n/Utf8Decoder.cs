@@ -36,7 +36,7 @@ namespace QuercusDotNet.lib/i18n{
 
 
 public class Utf8Decoder
-  extends Decoder
+  : Decoder
 {
   private const int ERROR_CHARACTER = 0xFFFE;
   private const int EOF = -1;

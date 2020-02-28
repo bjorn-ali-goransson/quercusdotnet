@@ -38,7 +38,7 @@ namespace QuercusDotNet.Statement{
 /**
  * Represents an expression statement in a PHP program.
  */
-public class ExprStatement extends Statement {
+public class ExprStatement : Statement {
   private Expr _expr;
 
   /**

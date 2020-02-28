@@ -60,7 +60,7 @@ namespace QuercusDotNet.lib{
 /**
  * PHP functions implementing html code.
  */
-public class HtmlModule extends AbstractQuercusModule {
+public class HtmlModule : AbstractQuercusModule {
   private const Logger log
   = Logger.getLogger(HtmlModule.class.getName());
 

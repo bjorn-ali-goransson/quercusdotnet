@@ -41,7 +41,7 @@ namespace QuercusDotNet.lib.file {
 /**
  * Represents an input stream for a popen'ed process.
  */
-public class PopenInput extends ReadStreamInput
+public class PopenInput : ReadStreamInput
     implements EnvCleanup
 {
   private const Logger log

@@ -38,7 +38,7 @@ namespace QuercusDotNet.Marshal{
 /**
  * Code for marshalling arguments.
  */
-public class EnumMarshal extends Marshal {
+public class EnumMarshal : Marshal {
   private Class _enumClass;
 
   public EnumMarshal(Class enumClass)

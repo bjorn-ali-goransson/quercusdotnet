@@ -37,7 +37,7 @@ namespace QuercusDotNet.Marshal{
 
 
 
-public class URLMarshal extends Marshal
+public class URLMarshal : Marshal
 {
   public const Marshal MARSHAL = new URLMarshal();
   

@@ -32,8 +32,8 @@ namespace QuercusDotNet.lib.dom {
 
 
 
-public class DOMCharacterData<T extends CharacterData>
-  extends DOMNode<T>
+public class DOMCharacterData<T : CharacterData>
+  : DOMNode<T>
 {
   protected DOMCharacterData(DOMImplementation impl, T delegate)
   {

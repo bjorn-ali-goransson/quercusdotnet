@@ -31,7 +31,7 @@ namespace QuercusDotNet.lib.dom {
 
 
 public class DOMConfiguration
-  extends DOMWrapper<org.w3c.dom.DOMConfiguration>
+  : DOMWrapper<org.w3c.dom.DOMConfiguration>
 {
   DOMConfiguration(
       DOMImplementation impl, org.w3c.dom.DOMConfiguration delegate)

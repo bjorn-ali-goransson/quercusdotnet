@@ -56,7 +56,7 @@ namespace QuercusDotNet.servlet{
 
 
 
-public class GoogleStaticFileServlet extends GenericServlet {
+public class GoogleStaticFileServlet : GenericServlet {
   private const L10N L = new L10N(GoogleStaticFileServlet.class);
   private const Logger log
     = Logger.getLogger(GoogleStaticFileServlet.class.getName());

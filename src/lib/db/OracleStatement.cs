@@ -46,7 +46,7 @@ namespace QuercusDotNet.lib.db {
  * Oracle statement class. Since Oracle has no object oriented API,
  * this is essentially a JdbcStatementResource.
  */
-public class OracleStatement extends JdbcPreparedStatementResource {
+public class OracleStatement : JdbcPreparedStatementResource {
   private const Logger log
     = Logger.getLogger(OracleStatement.class.getName());
 

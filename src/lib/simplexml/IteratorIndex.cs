@@ -48,7 +48,7 @@ public abstract class IteratorIndex
 
   public abstract Value toValue(Env env, string encoding);
 
-  public static class IntIteratorIndex extends IteratorIndex {
+  public static class IntIteratorIndex : IteratorIndex {
     private int _index;
 
     public IntIteratorIndex(int index)
@@ -63,7 +63,7 @@ public abstract class IteratorIndex
     }
   }
 
-  public static class StringIteratorIndex extends IteratorIndex {
+  public static class StringIteratorIndex : IteratorIndex {
     private string _index;
 
     public StringIteratorIndex(String index)

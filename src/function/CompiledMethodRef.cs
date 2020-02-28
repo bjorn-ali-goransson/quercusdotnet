@@ -38,7 +38,7 @@ namespace QuercusDotNet.Function{
 /**
  * Represents a compiled function with 1 arg
  */
-abstract public class CompiledMethodRef extends CompiledAbstractFunction {
+abstract public class CompiledMethodRef : CompiledAbstractFunction {
 
   public CompiledMethodRef(String name,
                            Arg []args)

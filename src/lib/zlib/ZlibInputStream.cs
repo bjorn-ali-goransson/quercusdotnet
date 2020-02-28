@@ -44,7 +44,7 @@ namespace QuercusDotNet.lib.zlib {
  *
  *
  */
-public class ZlibInputStream extends ReadStreamInput
+public class ZlibInputStream : ReadStreamInput
 {
   private Env _env;
 

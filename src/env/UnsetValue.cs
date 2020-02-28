@@ -35,7 +35,7 @@ namespace QuercusDotNet.Env{
 /**
  * Represents a PHP null value.
  */
-public class UnsetValue extends NullValue
+public class UnsetValue : NullValue
   implements Serializable
 {
   public const UnsetValue UNSET = new UnsetValue();

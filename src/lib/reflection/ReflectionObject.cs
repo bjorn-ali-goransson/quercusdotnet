@@ -36,7 +36,7 @@ namespace QuercusDotNet.lib.reflection {
 
 
 
-public class ReflectionObject extends ReflectionClass
+public class ReflectionObject : ReflectionClass
 {
   final private void __clone()
   {

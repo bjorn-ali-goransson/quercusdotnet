@@ -42,7 +42,7 @@ namespace QuercusDotNet.lib.curl {
  * Represents a POST Http request.
  */
 public class HttpPostRequest
-  extends CurlHttpRequest
+  : CurlHttpRequest
 {
   private PostBody _body;
 
@@ -109,7 +109,7 @@ public class HttpPostRequest
   }
 
   /*
-  static class TestOutputStream extends OutputStream
+  static class TestOutputStream : OutputStream
   {
     OutputStream _out;
     FileOutputStream _ps;

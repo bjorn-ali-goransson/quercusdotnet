@@ -37,7 +37,7 @@ namespace QuercusDotNet.Expr{
 /**
  * Represents a PHP add expression.
  */
-public class BinaryAddExpr extends AbstractBinaryExpr {
+public class BinaryAddExpr : AbstractBinaryExpr {
   protected BinaryAddExpr(Location location, Expr left, Expr right)
   {
     super(location, left, right);

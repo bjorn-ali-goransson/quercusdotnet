@@ -49,7 +49,7 @@ namespace QuercusDotNet.lib.simplexml {
 
 
 
-public class SelectedView extends SimpleView
+public class SelectedView : SimpleView
 {
   private final SimpleView _parent;
   private final string _nodeName;

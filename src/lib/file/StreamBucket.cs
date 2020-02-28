@@ -35,7 +35,7 @@ namespace QuercusDotNet.lib.file {
 /**
  * Bucket for stream filters.
  */
-public class StreamBucket extends Value {
+public class StreamBucket : Value {
   public StreamBucket(Env env, BinaryValue data)
   {
     putField(env, "data", data);

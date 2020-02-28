@@ -64,7 +64,7 @@ namespace QuercusDotNet.Program{
 /**
  * Represents an introspected Java class.
  */
-public class JavaClassDef extends ClassDef implements InstanceInitializer {
+public class JavaClassDef : ClassDef implements InstanceInitializer {
   private const Logger log
     = Logger.getLogger(JavaClassDef.class.getName());
   private const L10N L = new L10N(JavaClassDef.class);
@@ -721,7 +721,7 @@ public class JavaClassDef extends ClassDef implements InstanceInitializer {
     return fun.callMethod(env, getQuercusClass(), qThis, a1, a2, a3, a4, a5);
   }
 
-  public Set<? extends Map.Entry<Value,Value>> entrySet(Object obj)
+  public Set<? : Map.Entry<Value,Value>> entrySet(Object obj)
   {
     try {
       if (_entrySet == null) {
@@ -1038,7 +1038,7 @@ public class JavaClassDef extends ClassDef implements InstanceInitializer {
 
   private <T> boolean addDelegate(Class<T> cl,
                                   ArrayList<T> delegates,
-                                  Class<? extends Object> delegateClass)
+                                  Class<? : Object> delegateClass)
   {
     if (!cl.isAssignableFrom(delegateClass))
       return false;
@@ -1761,7 +1761,7 @@ public class JavaClassDef extends ClassDef implements InstanceInitializer {
     }
   }
 
-  private static class LongClassDef extends JavaClassDef {
+  private static class LongClassDef : JavaClassDef {
     LongClassDef(ModuleContext module)
     {
       super(module, "Long", Long.class);
@@ -1773,7 +1773,7 @@ public class JavaClassDef extends ClassDef implements InstanceInitializer {
     }
   }
 
-  private static class DoubleClassDef extends JavaClassDef {
+  private static class DoubleClassDef : JavaClassDef {
     DoubleClassDef(ModuleContext module)
     {
       super(module, "Double", Double.class);
@@ -1785,7 +1785,7 @@ public class JavaClassDef extends ClassDef implements InstanceInitializer {
     }
   }
 
-  private static class BigIntegerClassDef extends JavaClassDef {
+  private static class BigIntegerClassDef : JavaClassDef {
     BigIntegerClassDef(ModuleContext module)
     {
       super(module, "BigInteger", BigInteger.class);
@@ -1797,7 +1797,7 @@ public class JavaClassDef extends ClassDef implements InstanceInitializer {
     }
   }
 
-  private static class BigDecimalClassDef extends JavaClassDef {
+  private static class BigDecimalClassDef : JavaClassDef {
     BigDecimalClassDef(ModuleContext module)
     {
       super(module, "BigDecimal", BigDecimal.class);
@@ -1809,7 +1809,7 @@ public class JavaClassDef extends ClassDef implements InstanceInitializer {
     }
   }
 
-  private static class StringClassDef extends JavaClassDef {
+  private static class StringClassDef : JavaClassDef {
     StringClassDef(ModuleContext module)
     {
       super(module, "String", String.class);
@@ -1821,7 +1821,7 @@ public class JavaClassDef extends ClassDef implements InstanceInitializer {
     }
   }
 
-  private static class BooleanClassDef extends JavaClassDef {
+  private static class BooleanClassDef : JavaClassDef {
     BooleanClassDef(ModuleContext module)
     {
       super(module, "Boolean", Boolean.class);
@@ -1836,7 +1836,7 @@ public class JavaClassDef extends ClassDef implements InstanceInitializer {
     }
   }
 
-  private static class CalendarClassDef extends JavaClassDef {
+  private static class CalendarClassDef : JavaClassDef {
     CalendarClassDef(ModuleContext module)
     {
       super(module, "Calendar", Calendar.class);
@@ -1848,7 +1848,7 @@ public class JavaClassDef extends ClassDef implements InstanceInitializer {
     }
   }
 
-  private static class DateClassDef extends JavaClassDef {
+  private static class DateClassDef : JavaClassDef {
     DateClassDef(ModuleContext module, Class<?> type)
     {
       super(module, type.getSimpleName(), type);
@@ -1860,7 +1860,7 @@ public class JavaClassDef extends ClassDef implements InstanceInitializer {
     }
   }
 
-  private static class URLClassDef extends JavaClassDef {
+  private static class URLClassDef : JavaClassDef {
     URLClassDef(ModuleContext module)
     {
       super(module, "URL", URL.class);

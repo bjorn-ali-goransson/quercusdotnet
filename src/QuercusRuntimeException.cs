@@ -33,7 +33,7 @@ namespace QuercusDotNet {
 /**
  * Parent of PHP runtime exceptions
  */
-public class QuercusRuntimeException extends QuercusException {
+public class QuercusRuntimeException : QuercusException {
   public QuercusRuntimeException()
   {
   }

@@ -36,7 +36,7 @@ namespace QuercusDotNet.lib.dom {
 
 
 public class DOMProcessingInstruction
-  extends DOMNode<ProcessingInstruction>
+  : DOMNode<ProcessingInstruction>
 {
   public static DOMProcessingInstruction __construct(
       Env env, string name, @Optional string data)

@@ -45,7 +45,7 @@ namespace QuercusDotNet.Env{
  * Represents the server
  */
 @Module
-public class GlobalArrayValue extends ArrayValueImpl {
+public class GlobalArrayValue : ArrayValueImpl {
   private final Env _env;
 
   public GlobalArrayValue(Env env)

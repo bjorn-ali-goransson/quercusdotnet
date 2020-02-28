@@ -38,7 +38,7 @@ namespace QuercusDotNet.lib.dom {
 
 
 public class QuercusDOMModule
-  extends AbstractQuercusModule
+  : AbstractQuercusModule
 {
   public const int XML_ELEMENT_NODE = 1;
   public const int XML_ATTRIBUTE_NODE = 2;

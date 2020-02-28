@@ -502,7 +502,7 @@ public class WrappedStream implements BinaryInput, BinaryOutput {
       return _wrapper.callMethod(_env, STREAM_FLUSH);
   }
 
-  private class WrappedInputStream extends InputStream {
+  private class WrappedInputStream : InputStream {
     public int read()
       
     {
@@ -510,7 +510,7 @@ public class WrappedStream implements BinaryInput, BinaryOutput {
     }
   }
 
-  private class WrappedOutputStream extends OutputStream {
+  private class WrappedOutputStream : OutputStream {
     public void write(int b)
       
     {

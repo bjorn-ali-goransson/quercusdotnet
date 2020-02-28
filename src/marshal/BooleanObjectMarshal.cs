@@ -36,7 +36,7 @@ namespace QuercusDotNet.Marshal{
 
 
 
-public class BooleanObjectMarshal extends Marshal
+public class BooleanObjectMarshal : Marshal
 {
   public const Marshal MARSHAL = new BooleanObjectMarshal();
 

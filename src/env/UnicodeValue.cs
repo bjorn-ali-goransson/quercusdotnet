@@ -44,7 +44,7 @@ namespace QuercusDotNet.Env{
 /**
  * Represents a 16-bit unicode string value.
  */
-abstract public class UnicodeValue extends StringValue {
+abstract public class UnicodeValue : StringValue {
   protected UnicodeValue()
   {
   }

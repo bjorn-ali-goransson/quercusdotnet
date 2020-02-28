@@ -35,7 +35,7 @@ namespace QuercusDotNet.lib.dom {
 
 
 
-public class DOMElement extends DOMNode<Element>
+public class DOMElement : DOMNode<Element>
 {
   public static DOMElement __construct(Env env,
                                        string name,

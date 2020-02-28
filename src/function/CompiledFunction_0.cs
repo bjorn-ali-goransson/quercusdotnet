@@ -41,7 +41,7 @@ namespace QuercusDotNet.Function{
 /**
  * Represents a compiled function with 0 args
  */
-abstract public class CompiledFunction_0 extends CompiledFunction {
+abstract public class CompiledFunction_0 : CompiledFunction {
   private const Logger log
     = Logger.getLogger(CompiledFunction_0.class.getName());
   private const L10N L = new L10N(CompiledFunction_0.class);

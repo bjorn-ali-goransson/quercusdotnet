@@ -39,7 +39,7 @@ namespace QuercusDotNet.Program{
  * Represents an undefined
  */
 @SuppressWarnings("serial")
-public class UndefinedFunction extends AbstractFunction {
+public class UndefinedFunction : AbstractFunction {
   private const L10N L = new L10N(UndefinedFunction.class);
 
   private final int _id;

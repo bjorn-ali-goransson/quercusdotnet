@@ -58,7 +58,7 @@ namespace QuercusDotNet.lib{
 /**
  * PHP options
  */
-public class OptionsModule extends AbstractQuercusModule {
+public class OptionsModule : AbstractQuercusModule {
   private const L10N L = new L10N(OptionsModule.class);
   private const Logger log
     = Logger.getLogger(OptionsModule.class.getName());

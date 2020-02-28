@@ -38,7 +38,7 @@ namespace QuercusDotNet.Expr{
  * Represents a PHP __FILE__ constant expression.
  * For portability of compiled code.
  */
-public class ConstFileExpr extends Expr {
+public class ConstFileExpr : Expr {
   protected final string _fileName;
 
   public ConstFileExpr(Location location, string fileName)

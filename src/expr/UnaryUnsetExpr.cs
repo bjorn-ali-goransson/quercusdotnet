@@ -38,7 +38,7 @@ namespace QuercusDotNet.Expr{
 /**
  * Represents unsetting a PHP variable
  */
-public class UnaryUnsetExpr extends Expr {
+public class UnaryUnsetExpr : Expr {
   private final AbstractVarExpr _var;
 
   public UnaryUnsetExpr(Location location, AbstractVarExpr var)

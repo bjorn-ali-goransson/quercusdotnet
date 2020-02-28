@@ -35,7 +35,7 @@ namespace QuercusDotNet.lib.db {
 
 
 public class PDOException
-  extends QuercusLanguageException
+  : QuercusLanguageException
 {
   private final string _code;
   private final string _message;

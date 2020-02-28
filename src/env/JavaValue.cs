@@ -51,7 +51,7 @@ namespace QuercusDotNet.Env{
 /**
  * Represents a Quercus java value.
  */
-public class JavaValue extends ObjectValue
+public class JavaValue : ObjectValue
   implements Serializable
 {
   private const Logger log
@@ -188,7 +188,7 @@ public class JavaValue extends ObjectValue
       return;
     }
 
-    Set<? extends Map.Entry<Value,Value>> entrySet = entrySet();
+    Set<? : Map.Entry<Value,Value>> entrySet = entrySet();
 
     if (entrySet == null) {
       out.print("resource(" + toString(env) + ")"); // XXX:
@@ -268,7 +268,7 @@ public class JavaValue extends ObjectValue
     return _classDef.issetField(env, _object, name);
   }
 
-  public Set<? extends Map.Entry<Value, Value>> entrySet()
+  public Set<? : Map.Entry<Value, Value>> entrySet()
   {
     return _classDef.entrySet(_object);
   }
@@ -502,7 +502,7 @@ public class JavaValue extends ObjectValue
   {
     string name = _classDef.getSimpleName();
 
-    Set<? extends Map.Entry<Value,Value>> entrySet = entrySet();
+    Set<? : Map.Entry<Value,Value>> entrySet = entrySet();
 
     if (entrySet != null) {
       sb.append("O:");

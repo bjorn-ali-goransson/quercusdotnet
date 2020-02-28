@@ -39,7 +39,7 @@ namespace QuercusDotNet.Env{
 /**
  * Represents a PHP null value, used for 
  */
-public class NullThisValue extends NullValue
+public class NullThisValue : NullValue
   implements Serializable
 {
   public const NullThisValue NULL = new NullThisValue();

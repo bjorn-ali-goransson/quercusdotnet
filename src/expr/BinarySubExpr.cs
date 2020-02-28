@@ -37,7 +37,7 @@ namespace QuercusDotNet.Expr{
 /**
  * A "$b - $a" subtract expression.
  */
-public class BinarySubExpr extends AbstractBinaryExpr {
+public class BinarySubExpr : AbstractBinaryExpr {
   protected BinarySubExpr(Location location, Expr left, Expr right)
   {
     super(location, left, right);

@@ -42,7 +42,7 @@ namespace QuercusDotNet.lib.file {
 /**
  * Represents a Quercus open file
  */
-public class FileValue extends StreamResource {
+public class FileValue : StreamResource {
   private Path _path;
 
   public FileValue(Path path)

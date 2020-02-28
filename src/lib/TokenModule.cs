@@ -48,7 +48,7 @@ namespace QuercusDotNet.lib{
 /**
  * Quercus tokenizer 
  */
-public class TokenModule extends AbstractQuercusModule {
+public class TokenModule : AbstractQuercusModule {
   private const L10N L = new L10N(TokenModule.class);
   private const Logger log
     = Logger.getLogger(TokenModule.class.getName());

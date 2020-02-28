@@ -37,7 +37,7 @@ namespace QuercusDotNet.lib/i18n{
 
 
 public class Big5Encoder
-  extends GenericEncoder
+  : GenericEncoder
 {
   public Big5Encoder(String charsetName)
   {

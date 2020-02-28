@@ -37,7 +37,7 @@ namespace QuercusDotNet.lib.zlib {
  *
  *
  */
-public class GZIPInputStream extends java.util.zip.GZIPInputStream
+public class GZIPInputStream : java.util.zip.GZIPInputStream
 {
   public GZIPInputStream(InputStream in)
   {

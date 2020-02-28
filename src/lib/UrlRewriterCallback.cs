@@ -51,7 +51,7 @@ namespace QuercusDotNet.lib{
  * variables.
  */
 @SuppressWarnings("serial")
-public class UrlRewriterCallback extends CallbackFunction {
+public class UrlRewriterCallback : CallbackFunction {
   private StringBuilder _rewriterQuery = new StringBuilder();
   private ArrayList<String[]> _rewriterVars = new ArrayList<String[]>();
 

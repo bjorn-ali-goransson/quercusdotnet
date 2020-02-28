@@ -42,7 +42,7 @@ namespace QuercusDotNet.Statement{
 /**
  * Represents a switch statement.
  */
-public class SwitchStatement extends Statement {
+public class SwitchStatement : Statement {
   protected final Expr _value;
 
   protected final Expr[][] _cases;

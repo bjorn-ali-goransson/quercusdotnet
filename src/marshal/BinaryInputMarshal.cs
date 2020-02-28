@@ -39,7 +39,7 @@ namespace QuercusDotNet.Marshal{
 
 
 
-public class BinaryInputMarshal extends Marshal
+public class BinaryInputMarshal : Marshal
 {
   public const Marshal MARSHAL = new BinaryInputMarshal();
   

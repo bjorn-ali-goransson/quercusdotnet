@@ -40,7 +40,7 @@ namespace QuercusDotNet.Statement{
 /**
  * Represents a while statement.
  */
-public class WhileStatement extends Statement {
+public class WhileStatement : Statement {
   protected final Expr _test;
   protected final Statement _block;
   protected final string _label;

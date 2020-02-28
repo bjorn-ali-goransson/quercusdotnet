@@ -36,7 +36,7 @@ namespace QuercusDotNet.lib.spl {
 
 
 public class RecursiveDirectoryIterator
-  extends FilesystemIterator
+  : FilesystemIterator
   implements RecursiveIterator
 {
   public RecursiveDirectoryIterator(Env env,

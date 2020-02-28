@@ -38,7 +38,7 @@ namespace QuercusDotNet.Expr{
 /**
  * Represents a PHP default expression.
  */
-public class ParamDefaultExpr extends Expr {
+public class ParamDefaultExpr : Expr {
   public const ParamDefaultExpr DEFAULT = new ParamDefaultExpr();
 
   public ParamDefaultExpr(Location location)

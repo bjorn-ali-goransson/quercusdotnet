@@ -46,7 +46,7 @@ namespace QuercusDotNet.Env{
 /**
  * Represents the $_SESSION
  */
-public class SessionArrayValue extends ArrayValueWrapper
+public class SessionArrayValue : ArrayValueWrapper
   implements CacheListener, Serializable
 {
   static protected final Logger log

@@ -47,7 +47,7 @@ namespace QuercusDotNet.lib.filter {
 
 
 
-public class FilterModule extends AbstractQuercusModule
+public class FilterModule : AbstractQuercusModule
 {
   private const L10N L = new L10N(FilterModule.class);
 

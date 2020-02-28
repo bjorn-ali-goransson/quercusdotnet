@@ -30,7 +30,7 @@ namespace QuercusDotNet.lib.filter {
 
 
 
-public interface SanitizeFilter extends Filter
+public interface SanitizeFilter : Filter
 {
 }
 }

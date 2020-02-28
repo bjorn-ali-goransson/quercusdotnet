@@ -46,7 +46,7 @@ namespace QuercusDotNet.lib.gettext {
 /**
  * Parses Gettext MO files.
  */
-class MOFileParser extends GettextParser
+class MOFileParser : GettextParser
 {
   private const Logger log
     = Logger.getLogger(MOFileParser.class.getName());

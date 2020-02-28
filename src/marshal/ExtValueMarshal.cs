@@ -38,7 +38,7 @@ namespace QuercusDotNet.Marshal{
 /**
  * Code for marshaling (PHP to Java) and unmarshaling (Java to PHP) arguments.
  */
-public class ExtValueMarshal extends Marshal
+public class ExtValueMarshal : Marshal
 {
   private Class<?> _expectedClass;
 

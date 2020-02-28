@@ -35,7 +35,7 @@ namespace QuercusDotNet.Marshal{
 
 
 
-public class ByteObjectMarshal extends Marshal
+public class ByteObjectMarshal : Marshal
 {
   public const Marshal MARSHAL = new ByteObjectMarshal();
 

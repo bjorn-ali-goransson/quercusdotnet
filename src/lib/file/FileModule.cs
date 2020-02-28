@@ -67,7 +67,7 @@ namespace QuercusDotNet.lib.file {
 /**
  * Information and actions for about files
  */
-public class FileModule extends AbstractQuercusModule {
+public class FileModule : AbstractQuercusModule {
   private const L10N L = new L10N(FileModule.class);
   private const Logger log
     = Logger.getLogger(FileModule.class.getName());

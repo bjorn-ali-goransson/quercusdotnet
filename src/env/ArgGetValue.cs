@@ -37,7 +37,7 @@ namespace QuercusDotNet.Env{
  *
  * foo($a[0]), where is not known if foo is defined as foo($a) or foo(&amp;$a)
  */
-public class ArgGetValue extends ArgValue
+public class ArgGetValue : ArgValue
   implements Serializable
 {
   private final Value _obj;

@@ -33,7 +33,7 @@ namespace QuercusDotNet.lib.spl {
 
 
 public interface RecursiveIterator
-  extends Iterator
+  : Iterator
 {
   public boolean hasChildren(Env env);
   public RecursiveIterator getChildren(Env env);

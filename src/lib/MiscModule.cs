@@ -63,7 +63,7 @@ namespace QuercusDotNet.lib{
 /**
  * PHP misc functions.
  */
-public class MiscModule extends AbstractQuercusModule {
+public class MiscModule : AbstractQuercusModule {
   private const L10N L = new L10N(MiscModule.class);
   private const Logger log
     = Logger.getLogger(MiscModule.class.getName());
@@ -1208,7 +1208,7 @@ public class MiscModule extends AbstractQuercusModule {
       
   }
 
-  static class SpacePackSegment extends PackSegment {
+  static class SpacePackSegment : PackSegment {
     private final StringValue _name;
     private final int _length;
     private final byte _pad;
@@ -1291,7 +1291,7 @@ public class MiscModule extends AbstractQuercusModule {
     }
   }
 
-  static class SpaceEndPackSegment extends PackSegment
+  static class SpaceEndPackSegment : PackSegment
   {
     private final StringValue _name;
     private final byte _pad;
@@ -1358,7 +1358,7 @@ public class MiscModule extends AbstractQuercusModule {
     }
   }
 
-  static class HexPackSegment extends PackSegment {
+  static class HexPackSegment : PackSegment {
     private final Value _name;
     private final int _length;
 
@@ -1467,7 +1467,7 @@ public class MiscModule extends AbstractQuercusModule {
     }
   }
 
-  static class RevHexPackSegment extends PackSegment {
+  static class RevHexPackSegment : PackSegment {
     private final StringValue _name;
     private final int _length;
 
@@ -1555,7 +1555,7 @@ public class MiscModule extends AbstractQuercusModule {
     }
   }
 
-  static class BigEndianPackSegment extends PackSegment {
+  static class BigEndianPackSegment : PackSegment {
     private final string _name;
     private final int _length;
     private final int _bytes;
@@ -1660,7 +1660,7 @@ public class MiscModule extends AbstractQuercusModule {
     }
   }
 
-  static class LittleEndianPackSegment extends PackSegment {
+  static class LittleEndianPackSegment : PackSegment {
     private final string _name;
     private final int _length;
     private final int _bytes;
@@ -1746,7 +1746,7 @@ public class MiscModule extends AbstractQuercusModule {
     }
   }
 
-  static class DoublePackSegment extends PackSegment {
+  static class DoublePackSegment : PackSegment {
     private final string _name;
     private final int _length;
 
@@ -1829,7 +1829,7 @@ public class MiscModule extends AbstractQuercusModule {
     }
   }
 
-  static class FloatPackSegment extends PackSegment {
+  static class FloatPackSegment : PackSegment {
     private final string _name;
     private final int _length;
 
@@ -1912,7 +1912,7 @@ public class MiscModule extends AbstractQuercusModule {
     }
   }
 
-  static class NullPackSegment extends PackSegment {
+  static class NullPackSegment : PackSegment {
     private final string _name;
     private final int _length;
 
@@ -1948,7 +1948,7 @@ public class MiscModule extends AbstractQuercusModule {
     }
   }
 
-  static class PositionPackSegment extends PackSegment {
+  static class PositionPackSegment : PackSegment {
     private final int _length;
 
     PositionPackSegment(int length)

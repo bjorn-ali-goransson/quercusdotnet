@@ -41,7 +41,7 @@ namespace QuercusDotNet.Expr{
 /**
  * Represents a PHP constant expression.
  */
-public class ConstExpr extends Expr {
+public class ConstExpr : Expr {
   protected final string _var;
 
   public ConstExpr(Location location, string var)

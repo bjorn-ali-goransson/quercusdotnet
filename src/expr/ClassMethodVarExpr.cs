@@ -44,7 +44,7 @@ namespace QuercusDotNet.Expr{
 /**
  * Represents a PHP static method expression.
  */
-public class ClassMethodVarExpr extends AbstractMethodExpr
+public class ClassMethodVarExpr : AbstractMethodExpr
 {
   private const L10N L = new L10N(ClassMethodVarExpr.class);
 

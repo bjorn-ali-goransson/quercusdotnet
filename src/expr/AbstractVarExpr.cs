@@ -40,7 +40,7 @@ namespace QuercusDotNet.Expr{
 /**
  * Represents an expression that is assignable
  */
-abstract public class AbstractVarExpr extends Expr {
+abstract public class AbstractVarExpr : Expr {
   public AbstractVarExpr(Location location)
   {
     super(location);

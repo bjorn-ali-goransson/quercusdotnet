@@ -38,7 +38,7 @@ namespace QuercusDotNet.Marshal{
 
 
 
-public class InputStreamMarshal extends Marshal
+public class InputStreamMarshal : Marshal
 {
   public const Marshal MARSHAL = new InputStreamMarshal();
 

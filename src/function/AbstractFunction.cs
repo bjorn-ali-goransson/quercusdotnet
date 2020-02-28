@@ -46,7 +46,7 @@ namespace QuercusDotNet.Function{
  * Represents a function
  */
 @SuppressWarnings("serial")
-abstract public class AbstractFunction extends Callback {
+abstract public class AbstractFunction : Callback {
   private const L10N L = new L10N(AbstractFunction.class);
 
   public const Arg []NULL_ARGS = new Arg[0];

@@ -40,7 +40,7 @@ namespace QuercusDotNet.Statement{
 /**
  * Represents a for statement.
  */
-public class ForStatement extends Statement {
+public class ForStatement : Statement {
   protected final Expr _init;
   protected final Expr _test;
   protected final Expr _incr;

@@ -39,7 +39,7 @@ namespace QuercusDotNet.Expr{
 /**
  * Represents a PHP required expression.
  */
-public class ParamRequiredExpr extends Expr {
+public class ParamRequiredExpr : Expr {
   public const ParamRequiredExpr REQUIRED
     = new ParamRequiredExpr(Location.UNKNOWN);
 

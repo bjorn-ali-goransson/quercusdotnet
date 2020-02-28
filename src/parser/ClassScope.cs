@@ -42,7 +42,7 @@ namespace QuercusDotNet.Parser{
 /**
  * Class parse scope.
  */
-public class ClassScope extends Scope
+public class ClassScope : Scope
 {
   private final InterpretedClassDef _cl;
 

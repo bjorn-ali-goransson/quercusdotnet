@@ -51,7 +51,7 @@ namespace QuercusDotNet.Script{
 /**
  * Script engine
  */
-public class QuercusCompiledScript extends CompiledScript {
+public class QuercusCompiledScript : CompiledScript {
   private const Logger log
     = Logger.getLogger(QuercusCompiledScript.class.getName());
 

@@ -61,7 +61,7 @@ namespace QuercusDotNet.lib.file {
 /**
  * Handling the PHP Stream API
  */
-public class StreamModule extends AbstractQuercusModule {
+public class StreamModule : AbstractQuercusModule {
   private const L10N L = new L10N(StreamModule.class);
   private const Logger log
     = Logger.getLogger(StreamModule.class.getName());

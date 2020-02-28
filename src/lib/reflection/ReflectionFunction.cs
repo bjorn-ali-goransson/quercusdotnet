@@ -38,7 +38,7 @@ namespace QuercusDotNet.lib.reflection {
 
 
 
-public class ReflectionFunction extends ReflectionFunctionAbstract
+public class ReflectionFunction : ReflectionFunctionAbstract
   implements Reflector
 {
   public const int IS_DEPRECATED = 1024 * 256; //262144;  //2^18

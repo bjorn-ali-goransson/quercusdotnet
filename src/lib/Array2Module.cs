@@ -41,7 +41,7 @@ namespace QuercusDotNet.lib{
 /**
  * For box.
  */
-public class Array2Module extends AbstractQuercusModule
+public class Array2Module : AbstractQuercusModule
 {
   private const L10N L = new L10N(ArrayModule.class);
 

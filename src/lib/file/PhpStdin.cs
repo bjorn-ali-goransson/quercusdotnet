@@ -36,7 +36,7 @@ namespace QuercusDotNet.lib.file {
 /*
  * STDIN, php://stdin
  */
-public class PhpStdin extends AbstractBinaryInput
+public class PhpStdin : AbstractBinaryInput
 {
   public PhpStdin(Env env)
   {

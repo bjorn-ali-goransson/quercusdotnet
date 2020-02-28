@@ -35,7 +35,7 @@ namespace QuercusDotNet.Expr{
 /**
  * Represents a PHP boolean negation
  */
-abstract public class AbstractUnaryExpr extends Expr {
+abstract public class AbstractUnaryExpr : Expr {
   protected final Expr _expr;
 
   protected AbstractUnaryExpr(Location location, Expr expr)

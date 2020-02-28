@@ -42,7 +42,7 @@ namespace QuercusDotNet.Env{
 /**
  * Represents a PHP variable value.
  */
-public class JavaAdapterVar extends Value
+public class JavaAdapterVar : Value
 {
   private JavaAdapter _adapter;
   private Value _key;

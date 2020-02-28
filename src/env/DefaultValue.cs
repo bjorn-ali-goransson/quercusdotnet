@@ -37,7 +37,7 @@ namespace QuercusDotNet.Env{
  * Represents a PHP default value.
  */
 @SuppressWarnings("serial")
-public class DefaultValue extends NullValue {
+public class DefaultValue : NullValue {
   public const DefaultValue DEFAULT
     = new DefaultValue();
 

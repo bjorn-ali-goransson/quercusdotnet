@@ -38,7 +38,7 @@ namespace QuercusDotNet.Statement{
 /**
  * Represents an echo statement in a PHP program.
  */
-public class EchoStatement extends Statement {
+public class EchoStatement : Statement {
   protected final Expr _expr;
 
   /**

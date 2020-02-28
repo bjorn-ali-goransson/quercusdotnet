@@ -40,7 +40,7 @@ namespace QuercusDotNet.Statement{
 /**
  * Represents a class definition
  */
-public class ClassDefStatement extends Statement {
+public class ClassDefStatement : Statement {
   private const L10N L = new L10N(ClassDefStatement.class);
   
   protected final InterpretedClassDef _cl;

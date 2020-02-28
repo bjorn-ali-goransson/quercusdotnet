@@ -41,7 +41,7 @@ namespace QuercusDotNet.Marshal{
 /**
  * Code for marshaling (PHP to Java) and unmarshaling (Java to PHP) arguments.
  */
-public class ClassMarshal extends Marshal {
+public class ClassMarshal : Marshal {
   private const Logger log
     = Logger.getLogger(ClassMarshal.class.getName());
 

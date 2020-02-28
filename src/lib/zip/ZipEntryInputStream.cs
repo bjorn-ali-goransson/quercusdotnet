@@ -43,7 +43,7 @@ namespace QuercusDotNet.lib.zip {
 /**
  * Input from a compressed stream.
  */
-public class ZipEntryInputStream extends ReadStreamInput
+public class ZipEntryInputStream : ReadStreamInput
 {
   private const L10N L = new L10N(ZipEntryInputStream.class);
 

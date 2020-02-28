@@ -38,7 +38,7 @@ namespace QuercusDotNet.Env{
 /**
  * Represents a PHP resource
  */
-public class ResourceValue extends Value
+public class ResourceValue : Value
   implements EnvCleanup
 {
   @Override

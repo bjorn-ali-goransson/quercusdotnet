@@ -43,7 +43,7 @@ namespace QuercusDotNet.Resources{
 /**
  * Represents read/write stream
  */
-public class StreamReadWrite extends StreamResource
+public class StreamReadWrite : StreamResource
     implements EnvCleanup
 {
   private Env _env;

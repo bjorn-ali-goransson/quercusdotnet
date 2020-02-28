@@ -38,7 +38,7 @@ namespace QuercusDotNet.Expr{
 /**
  * Represents a PHP null expression.
  */
-public class LiteralNullExpr extends Expr {
+public class LiteralNullExpr : Expr {
   public const LiteralNullExpr NULL
     = new LiteralNullExpr(Location.UNKNOWN);
 

@@ -49,7 +49,7 @@ namespace QuercusDotNet.lib.jms {
  * JMS functions
  */
 @ClassImplementation
-public class JMSModule extends AbstractQuercusModule
+public class JMSModule : AbstractQuercusModule
 {
   private const Logger log
     = Logger.getLogger(JMSModule.class.getName());

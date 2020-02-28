@@ -37,7 +37,7 @@ namespace QuercusDotNet.Env{
 /**
  * Parent of PHP exceptions
  */
-public class QuercusLanguageException extends QuercusException
+public class QuercusLanguageException : QuercusException
 {
   private const StringValue FILE = new ConstStringValue("file");
   private const StringValue LINE = new ConstStringValue("line");

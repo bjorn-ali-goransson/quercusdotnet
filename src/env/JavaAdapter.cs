@@ -50,7 +50,7 @@ namespace QuercusDotNet.Env{
 /**
  * Interface for marshalled Java data structures.
  */
-abstract public class JavaAdapter extends ArrayValue
+abstract public class JavaAdapter : ArrayValue
   implements Serializable
 {
   private const Logger log
@@ -908,7 +908,7 @@ abstract public class JavaAdapter extends ArrayValue
     return String.valueOf(_object);
   }
 
-  public class KeySet extends AbstractSet<Value> {
+  public class KeySet : AbstractSet<Value> {
     Env _env;
 
     KeySet(Env env)

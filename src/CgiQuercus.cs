@@ -42,7 +42,7 @@ namespace QuercusDotNet {
 
 
 public class CgiQuercus
-  extends Quercus
+  : Quercus
 {
   public override Env createEnv(QuercusPage page,
                        WriteStream out,

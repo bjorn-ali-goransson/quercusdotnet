@@ -48,7 +48,7 @@ namespace QuercusDotNet.lib{
 /**
  * Represents an input stream for a proc_open process.
  */
-public class ProcOpenInput extends ReadStreamInput
+public class ProcOpenInput : ReadStreamInput
     implements EnvCleanup
 {
   private const Logger log

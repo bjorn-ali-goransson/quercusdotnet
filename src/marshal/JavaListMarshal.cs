@@ -39,7 +39,7 @@ namespace QuercusDotNet.Marshal{
 /**
  * Code for marshalling arguments.
  */
-public class JavaListMarshal extends JavaMarshal {
+public class JavaListMarshal : JavaMarshal {
   private const L10N L = new L10N(JavaMarshal.class);
 
   public JavaListMarshal(JavaClassDef def,

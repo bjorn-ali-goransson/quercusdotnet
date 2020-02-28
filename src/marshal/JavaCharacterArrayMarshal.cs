@@ -34,7 +34,7 @@ namespace QuercusDotNet.Marshal{
 
 
 
-public class JavaCharacterArrayMarshal extends JavaArrayMarshal
+public class JavaCharacterArrayMarshal : JavaArrayMarshal
 {
   public const Marshal MARSHAL
     = new JavaCharacterArrayMarshal();

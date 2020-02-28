@@ -49,7 +49,7 @@ namespace QuercusDotNet.lib.db {
  * mysqli object oriented API facade
  */
 @ResourceType("mysql result")
-public class MysqliResult extends JdbcResultResource {
+public class MysqliResult : JdbcResultResource {
   private const Logger log
     = Logger.getLogger(MysqliResult.class.getName());
   private const L10N L

@@ -47,7 +47,7 @@ namespace QuercusDotNet.Expr{
 /**
  * Represents a "static:$foo(...)" method
  */
-public class ClassVirtualMethodVarExpr extends Expr {
+public class ClassVirtualMethodVarExpr : Expr {
   private const L10N L
     = new L10N(ClassVirtualMethodVarExpr.class);
 

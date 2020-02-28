@@ -293,7 +293,7 @@ public class ReflectionProperty
     }
   }
 
-  static class StaticProperty extends Property
+  static class StaticProperty : Property
   {
     private StringValue _name;
 

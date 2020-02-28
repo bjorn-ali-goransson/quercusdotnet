@@ -36,7 +36,7 @@ namespace QuercusDotNet.Marshal{
 
 
 public class DoubleValueMarshal
-  extends Marshal
+  : Marshal
 {
   public const Marshal MARSHAL = new DoubleValueMarshal();
 

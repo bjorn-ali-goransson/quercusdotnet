@@ -37,7 +37,7 @@ namespace QuercusDotNet.Env{
 /**
  * Represents the introspected static function information.
  */
-public class JavaOverloadMethod extends AbstractJavaMethod {
+public class JavaOverloadMethod : AbstractJavaMethod {
   private const L10N L = new L10N(JavaOverloadMethod.class);
 
   private AbstractJavaMethod [][]_methodTable

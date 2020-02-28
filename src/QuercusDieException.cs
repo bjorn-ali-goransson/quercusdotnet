@@ -33,7 +33,7 @@ namespace QuercusDotNet {
 /**
  * Exception thrown by die() or exit()
  */
-public class QuercusDieException extends QuercusExitException {
+public class QuercusDieException : QuercusExitException {
   public QuercusDieException()
   {
   }

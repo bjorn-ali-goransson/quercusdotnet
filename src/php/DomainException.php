@@ -1,6 +1,6 @@
 <?php
 
-class DomainException extends LogicException
+class DomainException : LogicException
 {
 }
 

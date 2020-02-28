@@ -36,7 +36,7 @@ namespace QuercusDotNet.Expr{
 /**
  * Converts to an string
  */
-public class ToBinaryExpr extends ToStringExpr {
+public class ToBinaryExpr : ToStringExpr {
   public ToBinaryExpr(Location location, Expr expr)
   {
     super(location, expr);

@@ -45,7 +45,7 @@ namespace QuercusDotNet.Page{
 /**
  * Represents an interpreted Quercus program.
  */
-public class InterpretedPage extends QuercusPage
+public class InterpretedPage : QuercusPage
 {
   private final QuercusProgram _program;
 

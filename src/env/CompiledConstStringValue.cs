@@ -37,7 +37,7 @@ namespace QuercusDotNet.Env{
  * For compiled code.
  */
 public class CompiledConstStringValue
-  extends ConstStringValue
+  : ConstStringValue
 {
   private final int _compiledHashCode;
 

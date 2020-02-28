@@ -48,7 +48,7 @@ namespace QuercusDotNet.lib{
 /**
  * APC object oriented API facade
  */
-public class ApcModule extends AbstractQuercusModule
+public class ApcModule : AbstractQuercusModule
 {
   private const Logger log
     = Logger.getLogger(ApcModule.class.getName());
@@ -350,7 +350,7 @@ public class ApcModule extends AbstractQuercusModule
     return _cache;
   }
 
-  static class Entry extends UnserializeCacheEntry {
+  static class Entry : UnserializeCacheEntry {
     private long _createTime;
     private long _accessTime;
 

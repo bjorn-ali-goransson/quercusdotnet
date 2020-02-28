@@ -38,7 +38,7 @@ namespace QuercusDotNet.Expr{
 /**
  * Represents a logical and expression.
  */
-public class BinaryAndExpr extends AbstractBinaryExpr {
+public class BinaryAndExpr : AbstractBinaryExpr {
   public BinaryAndExpr(Location location, Expr left, Expr right)
   {
     super(location, left, right);

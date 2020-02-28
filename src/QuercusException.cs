@@ -37,7 +37,7 @@ namespace QuercusDotNet {
  * Parent of PHP exceptions
  */
 @SuppressWarnings("serial")
-public class QuercusException extends RuntimeException
+public class QuercusException : RuntimeException
 {
   private ArrayList<String> _quercusStackTrace;
 

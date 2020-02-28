@@ -50,7 +50,7 @@ namespace QuercusDotNet.Env{
  */
 @SuppressWarnings("serial")
 abstract public class JavaInvoker
-  extends AbstractJavaMethod
+  : AbstractJavaMethod
 {
   private const L10N L = new L10N(JavaInvoker.class);
 

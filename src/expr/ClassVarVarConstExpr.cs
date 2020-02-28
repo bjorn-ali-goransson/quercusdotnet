@@ -42,7 +42,7 @@ namespace QuercusDotNet.Expr{
 /**
  * Represents a PHP $class::{$foo} constant call expression.
  */
-public class ClassVarVarConstExpr extends Expr
+public class ClassVarVarConstExpr : Expr
 {
   protected final Expr _className;
   protected final Expr _name;

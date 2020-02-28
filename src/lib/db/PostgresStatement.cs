@@ -49,7 +49,7 @@ namespace QuercusDotNet.lib.db {
  * Postgres statement class. Since Postgres has no object oriented API,
  * this is essentially a JdbcStatementResource.
  */
-public class PostgresStatement extends JdbcPreparedStatementResource {
+public class PostgresStatement : JdbcPreparedStatementResource {
   private const Logger log = Logger.getLogger(
       PostgresStatement.class.getName());
   private const L10N L = new L10N(PostgresStatement.class);

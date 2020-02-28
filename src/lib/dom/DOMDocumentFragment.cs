@@ -33,7 +33,7 @@ namespace QuercusDotNet.lib.dom {
 
 
 public class DOMDocumentFragment
-  extends DOMNode<DocumentFragment>
+  : DOMNode<DocumentFragment>
 {
   DOMDocumentFragment(DOMImplementation impl, DocumentFragment delegate)
   {

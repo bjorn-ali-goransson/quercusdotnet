@@ -37,7 +37,7 @@ namespace QuercusDotNet.lib.dom {
 
 
 public class DOMAttr
-  extends DOMNode<Attr>
+  : DOMNode<Attr>
 {
   public static DOMAttr __construct(
       Env env, string name, @Optional string value)

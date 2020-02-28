@@ -50,7 +50,7 @@ namespace QuercusDotNet.Env{
  * Represents a PHP 5 style string builder (unicode.semantics = off)
  */
 public class StringBuilderValue
-  extends BinaryValue
+  : BinaryValue
 {
   public const StringBuilderValue EMPTY = new ConstStringValue("");
 
@@ -2045,7 +2045,7 @@ public class StringBuilderValue
     in.read(_buffer, 0, _length);
   }
 
-  class BinaryInputStream extends InputStream {
+  class BinaryInputStream : InputStream {
     private int _offset;
 
     /**
@@ -2077,7 +2077,7 @@ public class StringBuilderValue
     }
   }
 
-  class BuilderInputStream extends InputStream {
+  class BuilderInputStream : InputStream {
     private int _index;
 
     /**
@@ -2109,7 +2109,7 @@ public class StringBuilderValue
     }
   }
 
-  class BuilderOutputStream extends OutputStream {
+  class BuilderOutputStream : OutputStream {
     /**
      * Writes the next byte.
      */

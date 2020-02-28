@@ -39,7 +39,7 @@ namespace QuercusDotNet.Env{
 /**
  * Represents a Quercus java BigInteger value.
  */
-public class BigDecimalValue extends JavaValue {
+public class BigDecimalValue : JavaValue {
   private const Logger log
     = Logger.getLogger(JavaURLValue.class.getName());
 

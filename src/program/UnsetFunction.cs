@@ -37,7 +37,7 @@ namespace QuercusDotNet.Program{
 /**
  * Represents an unset function
  */
-public class UnsetFunction extends AbstractFunction {
+public class UnsetFunction : AbstractFunction {
   private final long _crc;
   
   public UnsetFunction(long crc)

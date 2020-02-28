@@ -100,7 +100,7 @@ abstract public class Statement {
     rethrow(t, Throwable.class);
   }
 
-  final protected <E extends Throwable> void rethrow(Throwable t, Class<E> cl)
+  final protected <E : Throwable> void rethrow(Throwable t, Class<E> cl)
     
   {
     E typedT;

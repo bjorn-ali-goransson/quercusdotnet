@@ -41,7 +41,7 @@ namespace QuercusDotNet.Env{
  * Represents a marshalled Collection argument.
  */
 public class JavaListAdapter
-  extends JavaCollectionAdapter
+  : JavaCollectionAdapter
 {
   private const Logger log
     = Logger.getLogger(JavaListAdapter.class.getName());

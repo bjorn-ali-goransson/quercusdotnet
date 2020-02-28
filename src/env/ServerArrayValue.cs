@@ -45,7 +45,7 @@ namespace QuercusDotNet.Env{
  * Represents the server
  */
 @SuppressWarnings("serial")
-public class ServerArrayValue extends ArrayValueImpl
+public class ServerArrayValue : ArrayValueImpl
 {
   private const StringValue SERVER_ADDR_V
     = new ConstStringValue("SERVER_ADDR");

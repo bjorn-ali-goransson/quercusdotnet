@@ -120,7 +120,7 @@ public class QuercusTimer
     }
   }
 
-  class TimerThread extends Thread {
+  class TimerThread : Thread {
     TimerThread()
     {
       super("quercus-timer");

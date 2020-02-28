@@ -38,7 +38,7 @@ namespace QuercusDotNet.Expr{
 /**
  * Represents a PHP bitwise not expression.
  */
-public class UnaryBitNotExpr extends AbstractUnaryExpr {
+public class UnaryBitNotExpr : AbstractUnaryExpr {
   public UnaryBitNotExpr(Location location, Expr expr)
   {
     super(location, expr);

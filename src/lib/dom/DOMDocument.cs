@@ -64,7 +64,7 @@ namespace QuercusDotNet.lib.dom {
 
 
 public class DOMDocument
-  extends DOMNode<Document>
+  : DOMNode<Document>
 {
   private const L10N L = new L10N(DOMDocument.class);
   private const Logger log

@@ -51,7 +51,7 @@ namespace QuercusDotNet.lib.simplexml {
 
 
 
-public class SimpleHandler extends DefaultHandler2
+public class SimpleHandler : DefaultHandler2
 {
   private const Logger log
     = Logger.getLogger(SimpleHandler.class.getName());

@@ -34,7 +34,7 @@ namespace QuercusDotNet.Env{
 
 
 
-public class CliEnv extends Env {
+public class CliEnv : Env {
   private final String[] _argv;
 
   public CliEnv(QuercusContext quercus,

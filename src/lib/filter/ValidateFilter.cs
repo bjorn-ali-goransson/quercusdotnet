@@ -30,7 +30,7 @@ namespace QuercusDotNet.lib.filter {
 
 
 
-public interface ValidateFilter extends Filter
+public interface ValidateFilter : Filter
 {
 }
 }

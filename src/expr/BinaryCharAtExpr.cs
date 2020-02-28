@@ -39,7 +39,7 @@ namespace QuercusDotNet.Expr{
 /**
  * Represents the character at expression
  */
-public class BinaryCharAtExpr extends AbstractVarExpr {
+public class BinaryCharAtExpr : AbstractVarExpr {
   private const L10N L = new L10N(BinaryCharAtExpr.class);
 
   protected final Expr _objExpr;

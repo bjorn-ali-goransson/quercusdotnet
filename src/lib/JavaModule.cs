@@ -43,7 +43,7 @@ namespace QuercusDotNet.lib{
 /**
  * Java functions
  */
-public class JavaModule extends AbstractQuercusModule {
+public class JavaModule : AbstractQuercusModule {
   private const Logger log =
     Logger.getLogger(JavaModule.class.getName());
 

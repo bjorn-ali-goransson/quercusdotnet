@@ -34,7 +34,7 @@ namespace QuercusDotNet.lib.db {
 /**
  * Prior to PHP 5.1, PDO constants were global constants.
  */
-public class PDOModule extends AbstractQuercusModule
+public class PDOModule : AbstractQuercusModule
 {
   /**
    * Returns true for the pdo extension.

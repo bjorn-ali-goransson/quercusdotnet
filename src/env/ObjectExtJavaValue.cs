@@ -42,9 +42,9 @@ namespace QuercusDotNet.Env{
 
 
 /**
- * Represents a PHP object which extends a Java value.
+ * Represents a PHP object which : a Java value.
  */
-public class ObjectExtJavaValue extends ObjectExtValue
+public class ObjectExtJavaValue : ObjectExtValue
   implements Serializable
 {
   private Object _object;

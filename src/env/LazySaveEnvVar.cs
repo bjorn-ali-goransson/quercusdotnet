@@ -34,7 +34,7 @@ namespace QuercusDotNet.Env{
  * Encapsulates an environment entry for a variable.  The EnvVar is a
  * container for Vars.
  */
-public class LazySaveEnvVar extends EnvVar
+public class LazySaveEnvVar : EnvVar
 {
   private int _id;
   private Value _value;

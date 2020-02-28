@@ -50,7 +50,7 @@ namespace QuercusDotNet.lib{
 /**
  * PHP apache routines.
  */
-public class ApacheModule extends AbstractQuercusModule {
+public class ApacheModule : AbstractQuercusModule {
   private const L10N L = new L10N(ApacheModule.class);
 
   private const Logger log =

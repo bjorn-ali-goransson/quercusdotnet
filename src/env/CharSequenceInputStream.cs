@@ -35,7 +35,7 @@ namespace QuercusDotNet.Env{
 /**
  * Represents an ISO-8859-1 input stream.
  */
-public class CharSequenceInputStream extends InputStream {
+public class CharSequenceInputStream : InputStream {
   private final CharSequence _string;
   private final int _length;
 

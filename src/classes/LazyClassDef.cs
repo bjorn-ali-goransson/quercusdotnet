@@ -50,7 +50,7 @@ namespace QuercusDotNet.Classes{
 /**
  * Lazily load a compiled class
  */
-public class LazyClassDef extends CompiledClassDef
+public class LazyClassDef : CompiledClassDef
 {
   private final string _name;
   private final Class<?> _pageClass;

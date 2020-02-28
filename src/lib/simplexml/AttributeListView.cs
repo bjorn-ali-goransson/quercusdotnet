@@ -45,7 +45,7 @@ namespace QuercusDotNet.lib.simplexml {
 
 
 
-public class AttributeListView extends SimpleView
+public class AttributeListView : SimpleView
 {
   private final ArrayList<AttributeView> _attrList;
 

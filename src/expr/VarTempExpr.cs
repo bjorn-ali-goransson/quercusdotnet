@@ -35,7 +35,7 @@ namespace QuercusDotNet.Expr{
 /**
  * Represents a temp PHP variable expression.
  */
-public class VarTempExpr extends VarExpr {
+public class VarTempExpr : VarExpr {
   public VarTempExpr(Location location, VarInfo var)
   {
     super(location, var);

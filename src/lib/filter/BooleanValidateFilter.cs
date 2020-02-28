@@ -37,7 +37,7 @@ namespace QuercusDotNet.lib.filter {
 
 
 public class BooleanValidateFilter
-  extends AbstractFilter
+  : AbstractFilter
   implements ValidateFilter
 {
   @Override

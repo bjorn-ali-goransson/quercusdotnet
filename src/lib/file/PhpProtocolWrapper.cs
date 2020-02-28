@@ -37,7 +37,7 @@ namespace QuercusDotNet.lib.file {
 
 
 
-public class PhpProtocolWrapper extends ProtocolWrapper {
+public class PhpProtocolWrapper : ProtocolWrapper {
   private const L10N L = new L10N(PhpProtocolWrapper.class);
 
   public PhpProtocolWrapper()

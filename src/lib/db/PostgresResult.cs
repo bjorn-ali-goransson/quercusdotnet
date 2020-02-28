@@ -47,7 +47,7 @@ namespace QuercusDotNet.lib.db {
 /**
  * postgres result set class (postgres has NO object oriented API)
  */
-public class PostgresResult extends JdbcResultResource {
+public class PostgresResult : JdbcResultResource {
   private const Logger log
     = Logger.getLogger(PostgresResult.class.getName());
   private const L10N L = new L10N(PostgresResult.class);

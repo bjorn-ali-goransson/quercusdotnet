@@ -72,7 +72,7 @@ namespace QuercusDotNet.lib.simplexml {
  * SimpleXMLElement object oriented API facade.
  * Also acts as the DOM document.
  */
-public class SimpleXMLElement extends SimpleXMLNode
+public class SimpleXMLElement : SimpleXMLNode
 {
   private const Logger log
     = Logger.getLogger(SimpleXMLElement.class.getName());

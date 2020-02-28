@@ -42,7 +42,7 @@ namespace QuercusDotNet.Env{
 /**
  * Represents a PHP double value.
  */
-public class DoubleValue extends NumberValue
+public class DoubleValue : NumberValue
   implements Serializable
 {
   public const DoubleValue ZERO = new DoubleValue(0);

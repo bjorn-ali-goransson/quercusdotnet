@@ -40,7 +40,7 @@ namespace QuercusDotNet.lib.db {
  * returns true for is_resource()
  */
 @ResourceType("mysql link")
-public class MysqliResource extends Mysqli {
+public class MysqliResource : Mysqli {
 
   /**
     * This is the constructor for the mysqli class.

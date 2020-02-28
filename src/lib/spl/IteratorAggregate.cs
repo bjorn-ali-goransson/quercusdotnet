@@ -35,7 +35,7 @@ namespace QuercusDotNet.lib.spl {
 
 @Delegates(IteratorAggregateDelegate.class)
 public interface IteratorAggregate
-  extends Traversable
+  : Traversable
 {
   /**
    * Returns the iterator.

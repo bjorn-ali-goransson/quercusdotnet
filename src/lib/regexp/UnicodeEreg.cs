@@ -32,7 +32,7 @@ namespace QuercusDotNet.lib.regexp {
 
 
 
-public class UnicodeEreg extends Ereg
+public class UnicodeEreg : Ereg
 {
   public UnicodeEreg(StringValue rawRegexp)
     

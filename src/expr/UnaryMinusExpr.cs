@@ -37,7 +37,7 @@ namespace QuercusDotNet.Expr{
 /**
  * A "- $a" unary minus.
  */
-public class UnaryMinusExpr extends AbstractUnaryExpr {
+public class UnaryMinusExpr : AbstractUnaryExpr {
   public UnaryMinusExpr(Location location, Expr expr)
   {
     super(location, expr);

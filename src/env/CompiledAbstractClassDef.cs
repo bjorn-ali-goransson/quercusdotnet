@@ -33,7 +33,7 @@ namespace QuercusDotNet.Env{
 
 
 public class CompiledAbstractClassDef
-  extends CompiledClassDef
+  : CompiledClassDef
 {
   public CompiledAbstractClassDef(Location location,
                                   string name,

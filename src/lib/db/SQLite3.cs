@@ -38,7 +38,7 @@ namespace QuercusDotNet.lib.db {
 /**
  * Tested with sqlite-jdbc-3.7.2.jar.
  */
-public class SQLite3 extends JdbcConnectionResource
+public class SQLite3 : JdbcConnectionResource
 {
   public SQLite3(Env env, string jdbcUrl)
   {

@@ -45,7 +45,7 @@ namespace QuercusDotNet.lib.zlib {
  *
  * @see java.util.zip.GZIPOutputStream
  */
-public class ZlibOutputStream extends AbstractBinaryOutput {
+public class ZlibOutputStream : AbstractBinaryOutput {
   private OutputStream _os;
   private DeflaterOutputStream _out;
   private CRC32 _crc32;

@@ -45,7 +45,7 @@ namespace QuercusDotNet.Module{
  * Represents the introspected static function information.
  */
 @SuppressWarnings("serial")
-public class StaticFunction extends JavaInvoker {
+public class StaticFunction : JavaInvoker {
   protected final QuercusModule _quercusModule;
   private final int _argLength;
 

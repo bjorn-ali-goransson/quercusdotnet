@@ -42,7 +42,7 @@ namespace QuercusDotNet.Env{
  * Represents a PHP boolean value.
  */
 @SuppressWarnings("serial")
-public class BooleanValue extends Value
+public class BooleanValue : Value
   implements Serializable
 {
   public const BooleanValue TRUE = new BooleanValue(true);

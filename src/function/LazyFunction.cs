@@ -41,7 +41,7 @@ namespace QuercusDotNet.Function{
 /**
  * Lazily load a compiled function.
  */
-public class LazyFunction extends AbstractFunction
+public class LazyFunction : AbstractFunction
 {
   private const Logger log
     = Logger.getLogger(LazyFunction.class.getName());

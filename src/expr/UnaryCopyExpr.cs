@@ -37,7 +37,7 @@ namespace QuercusDotNet.Expr{
 /**
  * Represents a PHP variable assignment
  */
-public class UnaryCopyExpr extends AbstractUnaryExpr {
+public class UnaryCopyExpr : AbstractUnaryExpr {
   public UnaryCopyExpr(Location location, Expr expr)
   {
     super(location, expr);

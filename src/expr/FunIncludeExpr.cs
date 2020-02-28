@@ -40,7 +40,7 @@ namespace QuercusDotNet.Expr{
 /**
  * Represents a PHP include statement
  */
-public class FunIncludeExpr extends AbstractUnaryExpr {
+public class FunIncludeExpr : AbstractUnaryExpr {
   protected Path _dir;
   protected boolean _isRequire;
   

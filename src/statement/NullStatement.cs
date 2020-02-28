@@ -37,7 +37,7 @@ namespace QuercusDotNet.Statement{
 /**
  * Represents a compiled PHP program.
  */
-public class NullStatement extends Statement {
+public class NullStatement : Statement {
   public const NullStatement NULL = new NullStatement();
 
   protected NullStatement()

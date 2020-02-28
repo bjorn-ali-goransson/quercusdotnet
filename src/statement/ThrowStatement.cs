@@ -39,7 +39,7 @@ namespace QuercusDotNet.Statement{
 /**
  * Represents a throw expression statement in a Quercus program.
  */
-public class ThrowStatement extends Statement {
+public class ThrowStatement : Statement {
   protected Expr _expr;
   
   /**

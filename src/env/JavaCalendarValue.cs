@@ -38,7 +38,7 @@ namespace QuercusDotNet.Env{
 /**
  * Represents a Quercus java Calendar value.
  */
-public class JavaCalendarValue extends JavaValue {
+public class JavaCalendarValue : JavaValue {
   private const Logger log
     = Logger.getLogger(JavaCalendarValue.class.getName());
   

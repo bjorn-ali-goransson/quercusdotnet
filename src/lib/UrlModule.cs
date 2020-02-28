@@ -68,7 +68,7 @@ namespace QuercusDotNet.lib{
  * PHP URL
  */
 public class UrlModule
-  extends AbstractQuercusModule
+  : AbstractQuercusModule
 {
   private const L10N L = new L10N(UrlModule.class);
   private const Logger log
@@ -400,7 +400,7 @@ public class UrlModule
                                          StringValue numeric_prefix,
                                          StringValue separator)
   {
-    Set<? extends Map.Entry<Value,Value>> entrySet;
+    Set<? : Map.Entry<Value,Value>> entrySet;
 
     if (formdata.isArray()) {
       entrySet = ((ArrayValue) formdata).entrySet();

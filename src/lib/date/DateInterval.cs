@@ -216,7 +216,7 @@ public class DateInterval
     }
   }
 
-  static class ParseException extends QuercusException {
+  static class ParseException : QuercusException {
     public ParseException(String message)
     {
       super(message);

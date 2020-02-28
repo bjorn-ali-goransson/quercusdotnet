@@ -35,7 +35,7 @@ namespace QuercusDotNet.Marshal{
 
 
 
-public class CharacterObjectMarshal extends Marshal
+public class CharacterObjectMarshal : Marshal
 {
   public const Marshal MARSHAL = new CharacterObjectMarshal();
   

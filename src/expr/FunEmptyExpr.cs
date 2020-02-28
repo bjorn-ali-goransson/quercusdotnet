@@ -38,7 +38,7 @@ namespace QuercusDotNet.Expr{
 /**
  * Represents the empty() expression.
  */
-public class FunEmptyExpr extends Expr {
+public class FunEmptyExpr : Expr {
   protected Expr _value;
 
   public FunEmptyExpr(Location location, Expr value)

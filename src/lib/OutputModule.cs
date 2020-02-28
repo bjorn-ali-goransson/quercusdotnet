@@ -58,7 +58,7 @@ namespace QuercusDotNet.lib{
 /**
  * PHP output routines.
  */
-public class OutputModule extends AbstractQuercusModule
+public class OutputModule : AbstractQuercusModule
   implements ModuleStartupListener {
   private const L10N L = new L10N(OutputModule.class);
   private const Logger log = Logger.getLogger(

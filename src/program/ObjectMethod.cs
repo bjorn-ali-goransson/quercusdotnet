@@ -41,7 +41,7 @@ namespace QuercusDotNet.Program{
 /**
  * Represents sequence of statements.
  */
-public class ObjectMethod extends Function {
+public class ObjectMethod : Function {
   private const Logger log = Logger.getLogger(
     ObjectMethod.class.getName());
   private const L10N L = new L10N(ObjectMethod.class);

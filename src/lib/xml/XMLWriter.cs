@@ -787,7 +787,7 @@ public class XMLWriter {
     Value flush() { return NullValue.NULL; }
   }
 
-  static class MemoryXMLWriterStream extends XMLWriterStream {
+  static class MemoryXMLWriterStream : XMLWriterStream {
     private StringValue _v;
 
     MemoryXMLWriterStream(StringValue v)
@@ -822,7 +822,7 @@ public class XMLWriter {
     }
   }
 
-  static class PathXMLWriterStream extends XMLWriterStream {
+  static class PathXMLWriterStream : XMLWriterStream {
     private WriteStream _out;
 
     PathXMLWriterStream(WriteStream out)

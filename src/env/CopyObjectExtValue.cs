@@ -52,7 +52,7 @@ namespace QuercusDotNet.Env{
 /**
  * Represents a copy of an object value for serialization/apc
  */
-public class CopyObjectExtValue extends ObjectExtValue
+public class CopyObjectExtValue : ObjectExtValue
 {
   private CopyRoot _root;
 

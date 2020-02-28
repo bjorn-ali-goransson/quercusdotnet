@@ -40,7 +40,7 @@ namespace QuercusDotNet.Expr{
 /**
  * Represents a PHP error suppression
  */
-public class UnarySuppressErrorExpr extends AbstractUnaryExpr {
+public class UnarySuppressErrorExpr : AbstractUnaryExpr {
   public UnarySuppressErrorExpr(Location location, Expr expr)
   {
     super(location, expr);

@@ -36,7 +36,7 @@ namespace QuercusDotNet.lib.dom {
 
 
 public class DOMComment
-  extends DOMCharacterData<Comment>
+  : DOMCharacterData<Comment>
 {
   public static DOMComment __construct(Env env, @Optional string value)
   {

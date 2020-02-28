@@ -39,7 +39,7 @@ namespace QuercusDotNet.Env{
 /**
  * Represents the Quercus environment.
  */
-public class GoogleEnv extends Env {
+public class GoogleEnv : Env {
   private int _timeoutCount;
 
   public GoogleEnv(QuercusContext quercus,

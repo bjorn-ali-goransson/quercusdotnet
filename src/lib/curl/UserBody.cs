@@ -40,7 +40,7 @@ namespace QuercusDotNet.lib.curl {
 
 
 
-public class UserBody extends PostBody
+public class UserBody : PostBody
 {
   private final CurlResource _curl;
 

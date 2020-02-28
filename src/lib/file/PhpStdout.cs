@@ -34,7 +34,7 @@ namespace QuercusDotNet.lib.file {
 /*
  * STDOUT, php://stdout
  */
-public class PhpStdout extends AbstractBinaryOutput {
+public class PhpStdout : AbstractBinaryOutput {
 
   public PhpStdout()
   {

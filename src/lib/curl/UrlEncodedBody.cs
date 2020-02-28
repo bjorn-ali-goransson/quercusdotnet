@@ -39,7 +39,7 @@ namespace QuercusDotNet.lib.curl {
 
 
 
-public class UrlEncodedBody extends PostBody
+public class UrlEncodedBody : PostBody
 {
   private StringValue _body;
   private int _length;

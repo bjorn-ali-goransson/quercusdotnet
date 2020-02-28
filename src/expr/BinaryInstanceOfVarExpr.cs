@@ -39,7 +39,7 @@ namespace QuercusDotNet.Expr{
  * Represents a PHP instanceof expression in which the right side is a variable
  * holding the string class name.
  */
-public class BinaryInstanceOfVarExpr extends AbstractBinaryExpr {
+public class BinaryInstanceOfVarExpr : AbstractBinaryExpr {
 
   public BinaryInstanceOfVarExpr(Location location, Expr left, Expr right)
   {

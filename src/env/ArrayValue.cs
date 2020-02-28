@@ -45,7 +45,7 @@ namespace QuercusDotNet.Env{
 /**
  * Represents a PHP array value.
  */
-abstract public class ArrayValue extends Value {
+abstract public class ArrayValue : Value {
   private const Logger log
     = Logger.getLogger(ArrayValue.class.getName());
 
@@ -1973,7 +1973,7 @@ abstract public class ArrayValue extends Value {
     return array;
   }
 
-  public class EntrySet extends AbstractSet<Map.Entry<Value,Value>> {
+  public class EntrySet : AbstractSet<Map.Entry<Value,Value>> {
     EntrySet()
     {
     }
@@ -1989,7 +1989,7 @@ abstract public class ArrayValue extends Value {
     }
   }
 
-  public class KeySet extends AbstractSet<Value> {
+  public class KeySet : AbstractSet<Value> {
     KeySet()
     {
     }
@@ -2005,7 +2005,7 @@ abstract public class ArrayValue extends Value {
     }
   }
 
-  public class ValueCollection extends AbstractCollection<Value> {
+  public class ValueCollection : AbstractCollection<Value> {
     ValueCollection()
     {
     }
@@ -2177,7 +2177,7 @@ abstract public class ArrayValue extends Value {
     public abstract Value get(Map.Entry<Value, Value> entry);
   }
 
-  public static class GetKey extends AbstractGet
+  public static class GetKey : AbstractGet
   {
     public const GetKey GET = new GetKey();
 
@@ -2191,7 +2191,7 @@ abstract public class ArrayValue extends Value {
     }
   }
 
-  public static class GetValue extends AbstractGet {
+  public static class GetValue : AbstractGet {
     public const GetValue GET = new GetValue();
 
     private GetValue()

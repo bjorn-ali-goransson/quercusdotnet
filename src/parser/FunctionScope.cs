@@ -43,7 +43,7 @@ namespace QuercusDotNet.Parser{
 /**
  * Parse scope.
  */
-public class FunctionScope extends Scope {
+public class FunctionScope : Scope {
   private ExprFactory _exprFactory;
 
   private HashMap<StringValue,Function> _functionMap

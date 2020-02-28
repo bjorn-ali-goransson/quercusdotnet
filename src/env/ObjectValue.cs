@@ -48,7 +48,7 @@ namespace QuercusDotNet.Env{
 /**
  * Represents a Quercus object value.
  */
-abstract public class ObjectValue extends Callback {
+abstract public class ObjectValue : Callback {
   transient protected QuercusClass _quercusClass;
 
   protected string _className;
@@ -148,7 +148,7 @@ abstract public class ObjectValue extends Callback {
    * Returns a Set of entries.
    */
   // XXX: remove entrySet() and use getIterator() instead
-  abstract public Set<? extends Map.Entry<Value,Value>> entrySet();
+  abstract public Set<? : Map.Entry<Value,Value>> entrySet();
 
   /**
    * Returns the class name.
@@ -701,8 +701,8 @@ abstract public class ObjectValue extends Callback {
     if (result != 0)
       return result;
 
-    Set<? extends Map.Entry<Value,Value>> aSet = entrySet();
-    Set<? extends Map.Entry<Value,Value>> bSet = rValue.entrySet();
+    Set<? : Map.Entry<Value,Value>> aSet = entrySet();
+    Set<? : Map.Entry<Value,Value>> bSet = rValue.entrySet();
 
     if (aSet.equals(bSet))
       return 0;

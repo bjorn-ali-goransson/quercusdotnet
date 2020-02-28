@@ -31,7 +31,7 @@ namespace QuercusDotNet.lib.dom {
 
 
 public class DOMStringList
-  extends DOMWrapper<org.w3c.dom.DOMStringList>
+  : DOMWrapper<org.w3c.dom.DOMStringList>
 {
   DOMStringList(DOMImplementation impl, org.w3c.dom.DOMStringList delegate)
   {

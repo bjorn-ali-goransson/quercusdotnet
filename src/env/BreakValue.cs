@@ -39,7 +39,7 @@ namespace QuercusDotNet.Env{
 /**
  * Represents a PHP break value.
  */
-public class BreakValue extends Value {
+public class BreakValue : Value {
   public const BreakValue BREAK = new BreakValue();
 
   private int _target;

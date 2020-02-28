@@ -34,7 +34,7 @@ namespace QuercusDotNet.Env{
  * Encapsulates an environment entry for a variable.  The EnvVar is a
  * container for Vars.
  */
-public class EnvVarImpl extends EnvVar
+public class EnvVarImpl : EnvVar
 {
   private Var _var;
 

@@ -41,7 +41,7 @@ namespace QuercusDotNet.lib{
 /**
  * Quercus functions to get information about the Quercus environment.
  */
-public class QuercusModule extends AbstractQuercusModule
+public class QuercusModule : AbstractQuercusModule
 {
   /**
    * Returns the Quercus object.

@@ -68,7 +68,7 @@ namespace QuercusDotNet.lib{
  * PHP array routines.
  */
 public class ArrayModule
-  extends AbstractQuercusModule
+  : AbstractQuercusModule
 {
   private const L10N L = new L10N(ArrayModule.class);
 

@@ -36,7 +36,7 @@ namespace QuercusDotNet.Expr{
 /**
  * Converts to an string
  */
-public class ToUnicodeExpr extends ToStringExpr {
+public class ToUnicodeExpr : ToStringExpr {
   public ToUnicodeExpr(Location location, Expr expr)
   {
     super(location, expr);

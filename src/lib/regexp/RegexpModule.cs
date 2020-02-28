@@ -50,7 +50,7 @@ namespace QuercusDotNet.lib.regexp {
 
 
 public class RegexpModule
-  extends AbstractQuercusModule
+  : AbstractQuercusModule
 {
   private const Logger log =
     Logger.getLogger(RegexpModule.class.getName());
@@ -2220,7 +2220,7 @@ public class RegexpModule
   }
 
   static class TextReplacement
-    extends Replacement
+    : Replacement
   {
     private char []_text;
 
@@ -2257,7 +2257,7 @@ public class RegexpModule
   }
 
   static class GroupReplacement
-    extends Replacement
+    : Replacement
   {
     private int _group;
 
@@ -2283,7 +2283,7 @@ public class RegexpModule
   }
 
   static class GroupEscapeReplacement
-    extends Replacement
+    : Replacement
   {
     private int _group;
 

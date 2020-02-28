@@ -45,7 +45,7 @@ namespace QuercusDotNet.lib{
 /**
  * PHP math routines.
  */
-public class BcmathModule extends AbstractQuercusModule {
+public class BcmathModule : AbstractQuercusModule {
   private const L10N L = new L10N(BcmathModule.class);
 
   private const BigDecimal DECIMAL_TWO

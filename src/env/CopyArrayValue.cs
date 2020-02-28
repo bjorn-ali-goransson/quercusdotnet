@@ -39,7 +39,7 @@ namespace QuercusDotNet.Env{
 /**
  * Represents a PHP array value.
  */
-public class CopyArrayValue extends ArrayValue {
+public class CopyArrayValue : ArrayValue {
   private const Logger log
     = Logger.getLogger(CopyArrayValue.class.getName());
 

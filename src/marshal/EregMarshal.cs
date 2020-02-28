@@ -40,7 +40,7 @@ namespace QuercusDotNet.Marshal{
 /**
  * Code for marshaling (PHP to Java) and unmarshaling (Java to PHP) arguments.
  */
-public class EregMarshal extends StringMarshal {
+public class EregMarshal : StringMarshal {
   public const EregMarshal MARSHAL = new EregMarshal();
 
   public Object marshal(Env env, Expr expr, Class expectedClass)

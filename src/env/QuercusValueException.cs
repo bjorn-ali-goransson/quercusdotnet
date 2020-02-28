@@ -35,7 +35,7 @@ namespace QuercusDotNet.Env{
 /**
  * Parent of PHP exceptions
  */
-public class QuercusValueException extends QuercusException {
+public class QuercusValueException : QuercusException {
   public QuercusValueException()
   {
   }

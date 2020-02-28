@@ -35,7 +35,7 @@ namespace QuercusDotNet.Env{
 /**
  * Represents an 8-bit binary php-6 value.
  */
-abstract public class BinaryValue extends StringValue
+abstract public class BinaryValue : StringValue
 {
   /*
   @Override

@@ -35,7 +35,7 @@ namespace QuercusDotNet.Env{
  *
  * Any modification to the array will set the CopyRoot modified
  */
-public class ArrayCopyValueImpl extends ArrayValueImpl
+public class ArrayCopyValueImpl : ArrayValueImpl
 {
   private final CopyRoot _root;
 

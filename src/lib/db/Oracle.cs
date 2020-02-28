@@ -45,7 +45,7 @@ namespace QuercusDotNet.lib.db {
 /**
  * oracle connection class (oracle has NO object oriented API)
  */
-public class Oracle extends JdbcConnectionResource {
+public class Oracle : JdbcConnectionResource {
   private const Logger log = Logger.getLogger(Oracle.class.getName());
   private const L10N L = new L10N(Oracle.class);
 
