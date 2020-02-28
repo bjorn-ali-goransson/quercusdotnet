@@ -44,8 +44,7 @@ public class ToObjectExpr : AbstractUnaryExpr {
   }
 
   public ToObjectExpr(Expr expr)
-  {
-    super(expr);
+   : base(expr) {
   }
 
   /**

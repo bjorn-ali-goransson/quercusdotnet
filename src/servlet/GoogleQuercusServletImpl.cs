@@ -55,8 +55,7 @@ public class GoogleQuercusServletImpl : QuercusServletImpl
   protected final string _gsBucket;
 
   public GoogleQuercusServletImpl(String gsBucket)
-  {
-    super();
+   : base() {
 
     _gsBucket = gsBucket;
   }

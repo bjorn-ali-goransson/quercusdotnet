@@ -57,8 +57,7 @@ public class FunEachExpr : AbstractUnaryExpr {
   }
 
   public FunEachExpr(Expr expr)
-  {
-    super(expr);
+   : base(expr) {
     
     _isVar = expr.isVar();
   }

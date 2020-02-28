@@ -71,8 +71,7 @@ public class UdpInputOutput
   }
 
   public UdpInputOutput(Env env, DatagramSocket socket, Domain domain)
-  {
-    super(env);
+   : base(env) {
 
     _socket = socket;
     _domain = domain;

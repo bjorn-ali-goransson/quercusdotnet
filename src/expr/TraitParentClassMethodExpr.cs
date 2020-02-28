@@ -70,8 +70,7 @@ public class TraitParentClassMethodExpr : AbstractMethodExpr {
                                     string traitName,
                                     StringValue methodName,
                                     Expr []args)
-  {
-    super(location);
+   : base(location) {
 
     _traitName = traitName;
     _methodName = methodName;

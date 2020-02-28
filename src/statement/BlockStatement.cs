@@ -53,8 +53,7 @@ public class BlockStatement : Statement {
   }
 
   public BlockStatement(Location location, ArrayList<Statement> statementList)
-  {
-    super(location);
+   : base(location) {
 
     _statements = new Statement[statementList.size()];
     statementList.toArray(_statements);

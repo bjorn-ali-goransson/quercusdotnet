@@ -69,8 +69,7 @@ public class ObjectMethodVarExpr : Expr {
                              Expr objExpr,
                              Expr name,
                              Expr []args)
-  {
-    super(location);
+   : base(location) {
     _objExpr = objExpr;
 
     _name = name;

@@ -45,8 +45,7 @@ public class UnaryNotExpr : AbstractUnaryExpr {
   }
 
   public UnaryNotExpr(Expr expr)
-  {
-    super(expr);
+   : base(expr) {
   }
 
   /**

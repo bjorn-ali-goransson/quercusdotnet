@@ -55,8 +55,7 @@ public class CompiledConstStringValue
   }
 
   public CompiledConstStringValue(String s)
-  {
-    super(s);
+   : base(s) {
 
     setLongValue(super.toLongValue());
     setDoubleValue(super.toDoubleValue());
@@ -72,8 +71,7 @@ public class CompiledConstStringValue
                                   ValueType valueType,
                                   Value key,
                                   int hashCode)
-  {
-    super(ch);
+   : base(ch) {
 
     setString(String.valueOf(ch));
     setLongValue(longValue);
@@ -89,8 +87,7 @@ public class CompiledConstStringValue
                                   DoubleValue doubleValue,
                                   ValueType valueType,
                                   int hashCode)
-  {
-    super(ch);
+   : base(ch) {
 
     setString(String.valueOf(ch));
     setLongValue(longValue);
@@ -109,8 +106,7 @@ public class CompiledConstStringValue
                                   ValueType valueType,
                                   Value key,
                                   int hashCode)
-  {
-    super(s);
+   : base(s) {
 
     setString(s);
     setLongValue(longValue);
@@ -128,8 +124,7 @@ public class CompiledConstStringValue
                                   DoubleValue doubleValue,
                                   ValueType valueType,
                                   int hashCode)
-  {
-    super(s);
+   : base(s) {
 
     setString(s);
     setLongValue(longValue);

@@ -90,8 +90,7 @@ public class TcpInputOutput
   }
 
   public TcpInputOutput(Env env, Socket socket, Domain domain)
-  {
-    super(env);
+   : base(env) {
     env.addCleanup(this);
 
     _socket = socket;

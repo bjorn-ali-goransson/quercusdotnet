@@ -42,8 +42,7 @@ public class VarTempExpr : VarExpr {
   }
 
   public VarTempExpr(VarInfo var)
-  {
-    super(var);
+   : base(var) {
   }
 
   /**

@@ -61,8 +61,7 @@ public class ObjectNewVarExpr : Expr {
   }
 
   public ObjectNewVarExpr(Location location, Expr name, Expr []args)
-  {
-    super(location);
+   : base(location) {
     _name = name;
     _args = args;
   }

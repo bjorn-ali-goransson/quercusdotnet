@@ -1763,8 +1763,7 @@ public class JavaClassDef : ClassDef implements InstanceInitializer {
 
   private static class LongClassDef : JavaClassDef {
     LongClassDef(ModuleContext module)
-    {
-      super(module, "Long", Long.class);
+     : base(module, "Long", Long.class) {
     }
 
     public override Value wrap(Env env, Object obj)
@@ -1775,8 +1774,7 @@ public class JavaClassDef : ClassDef implements InstanceInitializer {
 
   private static class DoubleClassDef : JavaClassDef {
     DoubleClassDef(ModuleContext module)
-    {
-      super(module, "Double", Double.class);
+     : base(module, "Double", Double.class) {
     }
 
     public override Value wrap(Env env, Object obj)
@@ -1787,8 +1785,7 @@ public class JavaClassDef : ClassDef implements InstanceInitializer {
 
   private static class BigIntegerClassDef : JavaClassDef {
     BigIntegerClassDef(ModuleContext module)
-    {
-      super(module, "BigInteger", BigInteger.class);
+     : base(module, "BigInteger", BigInteger.class) {
     }
 
     public override Value wrap(Env env, Object obj)
@@ -1799,8 +1796,7 @@ public class JavaClassDef : ClassDef implements InstanceInitializer {
 
   private static class BigDecimalClassDef : JavaClassDef {
     BigDecimalClassDef(ModuleContext module)
-    {
-      super(module, "BigDecimal", BigDecimal.class);
+     : base(module, "BigDecimal", BigDecimal.class) {
     }
 
     public override Value wrap(Env env, Object obj)
@@ -1811,8 +1807,7 @@ public class JavaClassDef : ClassDef implements InstanceInitializer {
 
   private static class StringClassDef : JavaClassDef {
     StringClassDef(ModuleContext module)
-    {
-      super(module, "String", String.class);
+     : base(module, "String", String.class) {
     }
 
     public override Value wrap(Env env, Object obj)
@@ -1823,8 +1818,7 @@ public class JavaClassDef : ClassDef implements InstanceInitializer {
 
   private static class BooleanClassDef : JavaClassDef {
     BooleanClassDef(ModuleContext module)
-    {
-      super(module, "Boolean", Boolean.class);
+     : base(module, "Boolean", Boolean.class) {
     }
 
     public override Value wrap(Env env, Object obj)
@@ -1838,8 +1832,7 @@ public class JavaClassDef : ClassDef implements InstanceInitializer {
 
   private static class CalendarClassDef : JavaClassDef {
     CalendarClassDef(ModuleContext module)
-    {
-      super(module, "Calendar", Calendar.class);
+     : base(module, "Calendar", Calendar.class) {
     }
 
     public override Value wrap(Env env, Object obj)
@@ -1850,8 +1843,7 @@ public class JavaClassDef : ClassDef implements InstanceInitializer {
 
   private static class DateClassDef : JavaClassDef {
     DateClassDef(ModuleContext module, Class<?> type)
-    {
-      super(module, type.getSimpleName(), type);
+     : base(module, type.getSimpleName(), type) {
     }
 
     public override Value wrap(Env env, Object obj)
@@ -1862,8 +1854,7 @@ public class JavaClassDef : ClassDef implements InstanceInitializer {
 
   private static class URLClassDef : JavaClassDef {
     URLClassDef(ModuleContext module)
-    {
-      super(module, "URL", URL.class);
+     : base(module, "URL", URL.class) {
     }
 
     public override Value wrap(Env env, Object obj)

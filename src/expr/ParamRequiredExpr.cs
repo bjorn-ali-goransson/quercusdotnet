@@ -49,8 +49,7 @@ public class ParamRequiredExpr : Expr {
   }
 
   protected ParamRequiredExpr()
-  {
-    super();
+   : base() {
   }
 
   /**

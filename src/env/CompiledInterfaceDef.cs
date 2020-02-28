@@ -46,8 +46,7 @@ public class CompiledInterfaceDef
                               string name,
                               string parent,
                               String[] ifaceList)
-  {
-    super(location, name, parent, ifaceList);
+   : base(location, name, parent, ifaceList) {
   }
 
   @Override

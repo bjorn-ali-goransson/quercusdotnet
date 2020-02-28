@@ -52,8 +52,7 @@ public class GoogleEnv : Env {
   }
 
   public GoogleEnv(QuercusContext quercus)
-  {
-    super(quercus);
+   : base(quercus) {
   }
 
   /**

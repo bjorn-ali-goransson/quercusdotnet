@@ -45,8 +45,7 @@ public class FunIssetExpr : AbstractUnaryExpr {
   }
 
   public FunIssetExpr(Expr expr)
-  {
-    super(expr);
+   : base(expr) {
   }
 
   /**

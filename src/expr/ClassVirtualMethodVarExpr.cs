@@ -74,8 +74,7 @@ public class ClassVirtualMethodVarExpr : Expr {
   public ClassVirtualMethodVarExpr(Location location,
                                    Expr methodName,
                                    Expr []args)
-  {
-    super(location);
+   : base(location) {
 
     _methodName = methodName;
 

@@ -55,8 +55,7 @@ public class ObjectNewExpr : Expr {
   }
 
   public ObjectNewExpr(Location location, string name, Expr []args)
-  {
-    super(location);
+   : base(location) {
     _name = name.intern();
     _args = args;
   }

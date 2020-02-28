@@ -80,8 +80,7 @@ public class PostgresResult : JdbcResultResource {
    * @param conn the corresponding connection
    */
   public PostgresResult(Postgres conn, ResultSetMetaData metaData)
-  {
-    super(metaData);
+   : base(metaData) {
 
     _conn = conn;
   }

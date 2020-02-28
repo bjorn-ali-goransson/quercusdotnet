@@ -54,38 +54,31 @@ public class BinaryBuilderValue
   }
 
   public BinaryBuilderValue(BinaryBuilderValue v)
-  {
-    super(v);
+   : base(v) {
   }
 
   public BinaryBuilderValue(int capacity)
-  {
-    super(capacity);
+   : base(capacity) {
   }
 
   public BinaryBuilderValue(byte []buffer, int offset, int length)
-  {
-    super(buffer, offset, length);
+   : base(buffer, offset, length) {
   }
 
   public BinaryBuilderValue(byte []buffer)
-  {
-    super(buffer);
+   : base(buffer) {
   }
 
   public BinaryBuilderValue(String s)
-  {
-    super(s);
+   : base(s) {
   }
 
   public BinaryBuilderValue(char []buffer)
-  {
-    super(buffer);
+   : base(buffer) {
   }
 
   public BinaryBuilderValue(char []s, Value v1)
-  {
-    super(s, v1);
+   : base(s, v1) {
   }
 
   public BinaryBuilderValue(TempBuffer head)
@@ -97,8 +90,7 @@ public class BinaryBuilderValue
   }
 
   public BinaryBuilderValue(byte ch)
-  {
-    super(ch);
+   : base(ch) {
   }
 
   /**

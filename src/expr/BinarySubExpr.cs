@@ -44,8 +44,7 @@ public class BinarySubExpr : AbstractBinaryExpr {
   }
 
   protected BinarySubExpr(Expr left, Expr right)
-  {
-    super(left, right);
+   : base(left, right) {
   }
 
   /**

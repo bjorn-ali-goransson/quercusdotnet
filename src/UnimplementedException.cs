@@ -50,18 +50,15 @@ public class UnimplementedException
   }
 
   public UnimplementedException(String functionality)
-  {
-    super(createMessage(functionality));
+   : base(createMessage(functionality)) {
   }
 
   public UnimplementedException(String functionality, Throwable cause)
-  {
-    super(createMessage(functionality), cause);
+   : base(createMessage(functionality), cause) {
   }
 
   public UnimplementedException(Throwable cause)
-  {
-    super(createMessage(null), cause);
+   : base(createMessage(null), cause) {
   }
 
   private static string createMessage(String functionality)

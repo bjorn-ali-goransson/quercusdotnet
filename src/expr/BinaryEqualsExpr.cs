@@ -45,8 +45,7 @@ public class BinaryEqualsExpr : AbstractBinaryExpr {
   }
 
   public BinaryEqualsExpr(Expr left, Expr right)
-  {
-    super(left, right);
+   : base(left, right) {
   }
 
   public boolean isBoolean()

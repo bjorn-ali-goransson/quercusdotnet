@@ -53,8 +53,7 @@ public class ConstArrayValue
   }
 
   public ConstArrayValue(Value []keys, Value []values)
-  {
-    super(keys, values);
+   : base(keys, values) {
   }
   
   /**

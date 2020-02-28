@@ -75,8 +75,7 @@ public class ClassMethodVarExpr : AbstractMethodExpr
                             string className,
                             Expr nameExpr,
                             Expr []args)
-  {
-    super(location);
+   : base(location) {
 
     _className = className.intern();
     _nameExpr = nameExpr;

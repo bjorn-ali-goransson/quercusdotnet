@@ -37,18 +37,15 @@ namespace QuercusDotNet {
 public class QuercusErrorException : QuercusRuntimeException
 {
   public QuercusErrorException(String msg)
-  {
-    super(msg);
+   : base(msg) {
   }
 
   public QuercusErrorException(Throwable cause)
-  {
-    super(cause);
+   : base(cause) {
   }
 
   public QuercusErrorException(String msg, Throwable cause)
-  {
-    super(msg, cause);
+   : base(msg, cause) {
   }
 }
 

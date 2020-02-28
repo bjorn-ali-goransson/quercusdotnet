@@ -45,8 +45,7 @@ public class BinaryLeqExpr : AbstractBinaryExpr {
   }
 
   public BinaryLeqExpr(Expr left, Expr right)
-  {
-    super(left, right);
+   : base(left, right) {
   }
 
   /**

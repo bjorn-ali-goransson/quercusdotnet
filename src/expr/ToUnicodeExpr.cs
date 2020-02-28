@@ -43,8 +43,7 @@ public class ToUnicodeExpr : ToStringExpr {
   }
 
   public ToUnicodeExpr(Expr expr)
-  {
-    super(expr);
+   : base(expr) {
   }
 
   /**

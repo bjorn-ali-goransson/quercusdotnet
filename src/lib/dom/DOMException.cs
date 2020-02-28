@@ -50,8 +50,7 @@ public class DOMException
   }
 
   public DOMException(DOMImplementation impl, org.w3c.dom.DOMException delegate)
-  {
-    super(StringValue.create(delegate.getMessage()));
+   : base(StringValue.create(delegate.getMessage())) {
 
     _impl = impl;
     _delegate = delegate;

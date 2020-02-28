@@ -44,8 +44,7 @@ public class BinaryModExpr : AbstractBinaryExpr {
   }
 
   public BinaryModExpr(Expr left, Expr right)
-  {
-    super(left, right);
+   : base(left, right) {
   }
 
   /**

@@ -63,9 +63,8 @@ public class HttpsConnection
                          string proxyPassword,
                          string proxyType)
     
-  {
-    super(url, username, password,
-          proxyURL, proxyUsername, proxyPassword, proxyType);
+   : base(url, username, password,
+          proxyURL, proxyUsername, proxyPassword, proxyType) {
   }
   
   @Override

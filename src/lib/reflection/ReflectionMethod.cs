@@ -66,8 +66,7 @@ public class ReflectionMethod : ReflectionFunctionAbstract
   }
 
   protected ReflectionMethod(String clsName, AbstractFunction method)
-  {
-    super(method);
+   : base(method) {
 
     _clsName = clsName;
   }

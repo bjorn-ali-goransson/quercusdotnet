@@ -71,8 +71,7 @@ public class ObjectExtValue : ObjectValue
   }
 
   public ObjectExtValue(Env env, ObjectExtValue copy, CopyRoot root)
-  {
-    super(env, copy.getQuercusClass());
+   : base(env, copy.getQuercusClass()) {
 
     root.putCopy(copy, this);
 
@@ -92,8 +91,7 @@ public class ObjectExtValue : ObjectValue
   public ObjectExtValue(Env env,
                         IdentityHashMap<Value,Value> copyMap,
                         ObjectExtValue copy)
-  {
-    super(env, copy.getQuercusClass());
+   : base(env, copy.getQuercusClass()) {
 
     _methodMap = copy._methodMap;
 

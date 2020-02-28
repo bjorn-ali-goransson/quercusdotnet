@@ -48,8 +48,7 @@ abstract public class CompiledMethod : CompiledAbstractFunction {
 
   public CompiledMethod(String name,
                         Arg []args)
-  {
-    super(name, args);
+   : base(name, args) {
   }
 
   @Override

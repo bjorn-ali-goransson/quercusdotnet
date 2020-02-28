@@ -45,8 +45,7 @@ public class BinaryXorExpr : AbstractBinaryExpr {
   }
 
   public BinaryXorExpr(Expr left, Expr right)
-  {
-    super(left, right);
+   : base(left, right) {
   }
 
   /**

@@ -50,8 +50,7 @@ public class FunExitExpr : Expr {
   }
 
   public FunExitExpr(Location location)
-  {
-    super(location);
+   : base(location) {
     _value = null;
   }
 

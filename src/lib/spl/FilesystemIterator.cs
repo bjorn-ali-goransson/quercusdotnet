@@ -68,8 +68,7 @@ public class FilesystemIterator : DirectoryIterator
   }
 
   protected FilesystemIterator(Path parent, Path path, string fileName, int flags)
-  {
-    super(parent, path, fileName);
+   : base(parent, path, fileName) {
 
     _flags = flags;
   }

@@ -39,18 +39,15 @@ public class QuercusDieException : QuercusExitException {
   }
 
   public QuercusDieException(String msg)
-  {
-    super(msg);
+   : base(msg) {
   }
 
   public QuercusDieException(Throwable cause)
-  {
-    super(cause);
+   : base(cause) {
   }
 
   public QuercusDieException(String msg, Throwable cause)
-  {
-    super(msg, cause);
+   : base(msg, cause) {
   }
 }
 

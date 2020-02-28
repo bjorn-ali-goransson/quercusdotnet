@@ -44,8 +44,7 @@ public class UnaryCopyExpr : AbstractUnaryExpr {
   }
 
   public UnaryCopyExpr(Expr expr)
-  {
-    super(expr);
+   : base(expr) {
   }
 
   /**

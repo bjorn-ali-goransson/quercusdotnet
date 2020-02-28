@@ -444,8 +444,7 @@ public class IniDefinition {
     private L10N L = new L10N(Unsupported.class);
 
     public Null()
-    {
-     super("#null", IniDefinition.Type.STRING, NullValue.NULL, PHP_INI_ALL);
+     : base("#null", IniDefinition.Type.STRING, NullValue.NULL, PHP_INI_ALL) {
     }
 
     public override void set(HashMap<String, Value> map,
@@ -464,11 +463,10 @@ public class IniDefinition {
     : IniDefinition
   {
     public Runtime(String name)
-    {
-      super(name,
+     : base(name,
             IniDefinition.Type.STRING,
             NullValue.NULL,
-            IniDefinition.PHP_INI_ALL);
+            IniDefinition.PHP_INI_ALL) {
     }
 
     public override boolean isRuntimeDefinition()

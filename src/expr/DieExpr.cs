@@ -50,8 +50,7 @@ public class DieExpr : Expr {
   }
 
   public DieExpr(Location location)
-  {
-    super(location);
+   : base(location) {
     _value = null;
   }
 

@@ -74,8 +74,7 @@ public class JavaArrayClassDef : JavaClassDef {
                            string name,
                            Class type,
                            string extension)
-  {
-    super(moduleContext, name, type, extension);
+   : base(moduleContext, name, type, extension) {
   }
 
   @Override

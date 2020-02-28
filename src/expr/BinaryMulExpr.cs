@@ -44,8 +44,7 @@ public class BinaryMulExpr : AbstractBinaryExpr {
   }
 
   public BinaryMulExpr(Expr left, Expr right)
-  {
-    super(left, right);
+   : base(left, right) {
   }
 
   /**

@@ -65,8 +65,7 @@ public class DirectoryIterator
   }
 
   protected DirectoryIterator(Path parent, Path path, string fileName)
-  {
-    super(parent, path, fileName);
+   : base(parent, path, fileName) {
 
     try {
       _list = getPathList(path);

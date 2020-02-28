@@ -44,13 +44,11 @@ public class QuercusExitException : QuercusRuntimeException {
   }
 
   public QuercusExitException(Throwable cause)
-  {
-    super(cause);
+   : base(cause) {
   }
 
   public QuercusExitException(String msg, Throwable cause)
-  {
-    super(msg, cause);
+   : base(msg, cause) {
   }
 }
 

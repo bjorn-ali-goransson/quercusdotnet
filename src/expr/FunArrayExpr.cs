@@ -59,8 +59,7 @@ public class FunArrayExpr : Expr {
   }
 
   public FunArrayExpr(Location location, Expr []keys, Expr []values)
-  {
-    super(location);
+   : base(location) {
     _keys = keys;
     _values = values;
   }

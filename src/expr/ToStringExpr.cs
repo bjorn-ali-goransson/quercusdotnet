@@ -46,8 +46,7 @@ public class ToStringExpr : AbstractUnaryExpr {
   }
 
   public ToStringExpr(Expr expr)
-  {
-    super(expr);
+   : base(expr) {
   }
 
   public static Expr create(Expr expr)

@@ -45,8 +45,7 @@ public class BinaryDivExpr : AbstractBinaryExpr {
   }
 
   public BinaryDivExpr(Expr left, Expr right)
-  {
-    super(left, right);
+   : base(left, right) {
   }
 
   /**

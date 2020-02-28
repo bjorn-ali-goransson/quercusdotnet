@@ -119,8 +119,7 @@ public class IteratorDelegate implements TraversableDelegate
     : AbstractIteratorImpl<Value>
   {
     public KeyIterator(Env env, ObjectValue obj)
-    {
-      super(env, obj);
+     : base(env, obj) {
     }
 
     protected override Value getCurrent()
@@ -133,8 +132,7 @@ public class IteratorDelegate implements TraversableDelegate
     : AbstractIteratorImpl<Value>
   {
     public ValueIterator(Env env, ObjectValue obj)
-    {
-      super(env, obj);
+     : base(env, obj) {
     }
 
     protected override Value getCurrent()

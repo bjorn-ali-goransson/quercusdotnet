@@ -45,8 +45,7 @@ public class ToArrayExpr : AbstractUnaryExpr {
   }
 
   public ToArrayExpr(Expr expr)
-  {
-    super(expr);
+   : base(expr) {
   }
 
   /**

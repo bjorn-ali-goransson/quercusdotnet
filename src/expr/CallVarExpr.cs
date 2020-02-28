@@ -60,8 +60,7 @@ public class CallVarExpr : Expr {
   }
 
   public CallVarExpr(Location location, Expr name, Expr []args)
-  {
-    super(location);
+   : base(location) {
     _name = name;
 
     _args = args;

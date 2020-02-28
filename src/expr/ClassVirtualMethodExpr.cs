@@ -70,8 +70,7 @@ public class ClassVirtualMethodExpr : Expr {
   public ClassVirtualMethodExpr(Location location,
                                 StringValue name,
                                 Expr []args)
-  {
-    super(location);
+   : base(location) {
 
     _methodName =  name;
     _hash = name.hashCodeCaseInsensitive();

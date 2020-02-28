@@ -69,8 +69,7 @@ public class ClassConstructorExpr : Expr {
                               string className,
                               StringValue nameV,
                               Expr []args)
-  {
-    super(location);
+   : base(location) {
 
     _className = className.intern();
 

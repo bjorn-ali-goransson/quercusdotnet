@@ -47,8 +47,7 @@ public class FunDieExpr : Expr {
   }
 
   public FunDieExpr(Location location)
-  {
-    super(location);
+   : base(location) {
     _value = null;
   }
 

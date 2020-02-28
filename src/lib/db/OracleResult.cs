@@ -66,8 +66,7 @@ public class OracleResult : JdbcResultResource {
    * @param conn the corresponding connection
    */
   public OracleResult(ResultSetMetaData metaData, Oracle conn)
-  {
-    super(metaData);
+   : base(metaData) {
 
     _conn = conn;
   }

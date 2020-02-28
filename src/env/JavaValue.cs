@@ -73,8 +73,7 @@ public class JavaValue : ObjectValue
   }
 
   public JavaValue(Env env, Object object, JavaClassDef def, QuercusClass qClass)
-  {
-    super(env);
+   : base(env) {
 
     setQuercusClass(qClass);
 

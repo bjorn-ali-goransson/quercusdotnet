@@ -45,8 +45,7 @@ public class ToDoubleExpr : AbstractUnaryExpr {
   }
 
   public ToDoubleExpr(Expr expr)
-  {
-    super(expr);
+   : base(expr) {
   }
 
   /**

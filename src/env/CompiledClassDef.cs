@@ -73,16 +73,14 @@ public class CompiledClassDef : ClassDef {
                           string parent,
                           string []ifaceList,
                           string []traitList)
-  {
-    super(null, name, parent, ifaceList, traitList);
+   : base(null, name, parent, ifaceList, traitList) {
   }
 
   public CompiledClassDef(Location location,
                           string name,
                           string parent,
                           string []ifaceList)
-  {
-    super(location, name, parent, ifaceList, ClassDef.NULL_STRING_ARRAY);
+   : base(location, name, parent, ifaceList, ClassDef.NULL_STRING_ARRAY) {
   }
 
   public CompiledClassDef(Location location,
@@ -99,8 +97,7 @@ public class CompiledClassDef : ClassDef {
                           string parent,
                           string []ifaceList,
                           string []traitList)
-  {
-    super(location, name, parent, ifaceList, traitList);
+   : base(location, name, parent, ifaceList, traitList) {
   }
 
   public CompiledClassDef(Location location,
@@ -109,8 +106,7 @@ public class CompiledClassDef : ClassDef {
                           string []ifaceList,
                           string []traitList,
                           boolean isFinal)
-  {
-    super(location, name, parent, ifaceList, traitList);
+   : base(location, name, parent, ifaceList, traitList) {
 
     _isFinal = isFinal;
   }

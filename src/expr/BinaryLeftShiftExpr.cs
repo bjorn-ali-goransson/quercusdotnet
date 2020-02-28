@@ -44,8 +44,7 @@ public class BinaryLeftShiftExpr : AbstractBinaryExpr {
   }
 
   public BinaryLeftShiftExpr(Expr left, Expr right)
-  {
-    super(left, right);
+   : base(left, right) {
   }
 
   /**

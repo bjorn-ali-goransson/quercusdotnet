@@ -63,8 +63,7 @@ public class ClassConstructExpr : AbstractMethodExpr {
   public ClassConstructExpr(Location location,
                             string className,
                             Expr []args)
-  {
-    super(location);
+   : base(location) {
 
     _className = className.intern();
 

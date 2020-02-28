@@ -49,8 +49,7 @@ public class ReflectionException : QuercusLanguageException
   }
 
   public ReflectionException(Env env, string msg)
-  {
-    super(env);
+   : base(env) {
 
     _location = env.getLocation();
 

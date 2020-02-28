@@ -46,13 +46,11 @@ public class QuercusModuleException : QuercusException {
   }
 
   public QuercusModuleException(Throwable cause)
-  {
-    super(cause);
+   : base(cause) {
   }
 
   public QuercusModuleException(String msg, Throwable cause)
-  {
-    super(msg, cause);
+   : base(msg, cause) {
   }
 
   public static RuntimeException create(Throwable e)

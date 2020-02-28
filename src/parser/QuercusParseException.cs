@@ -55,8 +55,7 @@ public class QuercusParseException
   }
 
   public QuercusParseException(String msg, Throwable cause)
-  {
-    super(msg);
+   : base(msg) {
 
     initCause(cause);
   }

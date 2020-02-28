@@ -74,15 +74,13 @@ public class MysqliResource : Mysqli {
                  string driver,
                  string url,
                  boolean isNewLink)
-  {
-    super(env,
+   : base(env,
           host, user, password,
-          db, port, socket, flags, driver, url, isNewLink, false, null);
+          db, port, socket, flags, driver, url, isNewLink, false, null) {
   }
 
   protected MysqliResource(Env env)
-  {
-    super(env);
+   : base(env) {
   }
 }
 }

@@ -70,8 +70,7 @@ public class ClassMethodExpr : AbstractMethodExpr {
 
   public ClassMethodExpr(Location location, string className,
                          StringValue methodName, Expr []args)
-  {
-    super(location);
+   : base(location) {
 
     _className = className.intern();
 

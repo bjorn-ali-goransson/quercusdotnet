@@ -87,8 +87,7 @@ abstract public class CompiledClosure : Closure {
 
   public abstract static class CompiledClosure_0 : CompiledClosure {
     public CompiledClosure_0(String name, Value qThis)
-    {
-      super(name, qThis);
+     : base(name, qThis) {
     }
 
     public override Value call(Env env, Value []argValues)
@@ -103,8 +102,7 @@ abstract public class CompiledClosure : Closure {
     private final Expr _default0;
 
     public CompiledClosure_1(String name, Value qThis, Expr default0)
-    {
-      super(name, qThis);
+     : base(name, qThis) {
 
       _default0 = default0;
     }
@@ -136,8 +134,7 @@ abstract public class CompiledClosure : Closure {
 
     public CompiledClosure_2(String name, Value qThis,
                              Expr default0, Expr default1)
-    {
-      super(name, qThis);
+     : base(name, qThis) {
 
       _default0 = default0;
       _default1 = default1;
@@ -182,8 +179,7 @@ abstract public class CompiledClosure : Closure {
 
     public CompiledClosure_3(String name, Value qThis,
                              Expr default0, Expr default1, Expr default2)
-    {
-      super(name, qThis);
+     : base(name, qThis) {
 
       _default0 = default0;
       _default1 = default1;
@@ -253,8 +249,7 @@ abstract public class CompiledClosure : Closure {
     public CompiledClosure_4(String name, Value qThis,
                              Expr default0, Expr default1,
                              Expr default2, Expr default3)
-    {
-      super(name, qThis);
+     : base(name, qThis) {
 
       _default0 = default0;
       _default1 = default1;
@@ -349,8 +344,7 @@ abstract public class CompiledClosure : Closure {
                              Expr default0, Expr default1,
                              Expr default2, Expr default3,
                              Expr default4)
-    {
-      super(name, qThis);
+     : base(name, qThis) {
 
       _default0 = default0;
       _default1 = default1;
@@ -467,8 +461,7 @@ abstract public class CompiledClosure : Closure {
     private final int _requiredArgs;
 
     public CompiledClosure_N(String name, Value qThis, Expr []defaultArgs)
-    {
-      super(name, qThis);
+     : base(name, qThis) {
       _defaultArgs = defaultArgs;
 
       int requiredArgs = 0;

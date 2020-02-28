@@ -45,8 +45,7 @@ public class BinaryGtExpr : AbstractBinaryExpr {
   }
 
   public BinaryGtExpr(Expr left, Expr right)
-  {
-    super(left, right);
+   : base(left, right) {
   }
 
   /**

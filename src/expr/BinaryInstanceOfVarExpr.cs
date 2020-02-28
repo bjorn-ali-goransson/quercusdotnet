@@ -47,8 +47,7 @@ public class BinaryInstanceOfVarExpr : AbstractBinaryExpr {
   }
 
   public BinaryInstanceOfVarExpr(Expr left, Expr right)
-  {
-    super(left, right);
+   : base(left, right) {
   }
 
   /**

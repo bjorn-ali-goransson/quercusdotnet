@@ -45,8 +45,7 @@ public class ToBooleanExpr : AbstractUnaryExpr {
   }
 
   public ToBooleanExpr(Expr expr)
-  {
-    super(expr);
+   : base(expr) {
   }
 
   /**

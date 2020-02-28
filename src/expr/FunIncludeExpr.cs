@@ -62,8 +62,7 @@ public class FunIncludeExpr : AbstractUnaryExpr {
   }
   
   public FunIncludeExpr(Path sourceFile, Expr expr)
-  {
-    super(expr);
+   : base(expr) {
 
     _dir = sourceFile.getParent();
   }

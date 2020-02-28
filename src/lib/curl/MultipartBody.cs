@@ -246,10 +246,9 @@ public class MultipartBody : PostBody
     Path _path;
 
     PathEntry(Env env, string name, Path path)
-    {
-      super(env, name, getHeader(name,
+     : base(env, name, getHeader(name,
                                  getContentType(env, path.getTail()),
-                                 path.getTail()));
+                                 path.getTail())) {
       _path = path;
     }
 

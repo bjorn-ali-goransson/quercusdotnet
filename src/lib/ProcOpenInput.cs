@@ -72,8 +72,7 @@ public class ProcOpenInput : ReadStreamInput
   }
   
   public ProcOpenInput(Env env, InputStream in, FileOutput out)
-  {
-    super(env);
+   : base(env) {
 
     _env = env;
     _in = in;

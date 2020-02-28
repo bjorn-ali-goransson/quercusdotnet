@@ -47,8 +47,7 @@ public class ParamDefaultExpr : Expr {
   }
 
   public ParamDefaultExpr()
-  {
-    super();
+   : base() {
   }
 
   /**

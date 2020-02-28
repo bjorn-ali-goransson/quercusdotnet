@@ -63,8 +63,7 @@ public class WrappedDirectory : Directory {
   private Value _wrapper;
 
   public WrappedDirectory(Env env, QuercusClass qClass)
-  {
-    super();
+   : base() {
 
     _wrapper = qClass.callNew(env, Value.NULL_ARGS);
   }

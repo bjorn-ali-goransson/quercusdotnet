@@ -43,8 +43,7 @@ public class ToBinaryExpr : ToStringExpr {
   }
 
   public ToBinaryExpr(Expr expr)
-  {
-    super(expr);
+   : base(expr) {
   }
 
   /**

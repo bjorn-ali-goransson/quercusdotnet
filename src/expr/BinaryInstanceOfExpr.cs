@@ -49,8 +49,7 @@ public class BinaryInstanceOfExpr : AbstractUnaryExpr {
   }
 
   public BinaryInstanceOfExpr(Expr left, string right)
-  {
-    super(left);
+   : base(left) {
 
     _right = right;
   }

@@ -44,8 +44,7 @@ public class BinaryAddExpr : AbstractBinaryExpr {
   }
 
   protected BinaryAddExpr(Expr left, Expr right)
-  {
-    super(left, right);
+   : base(left, right) {
   }
 
   public Value eval(Env env)

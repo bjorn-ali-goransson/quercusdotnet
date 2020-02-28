@@ -47,8 +47,7 @@ public class RecursiveDirectoryIterator
   }
 
   protected RecursiveDirectoryIterator(Path parent, Path path, string fileName, int flags)
-  {
-    super(parent, path, fileName, flags);
+   : base(parent, path, fileName, flags) {
   }
 
   //

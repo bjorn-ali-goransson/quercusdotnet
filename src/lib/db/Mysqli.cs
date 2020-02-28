@@ -138,8 +138,7 @@ public class Mysqli : JdbcConnectionResource
   Mysqli(Env env, string host, string user, string pass, string db, int port,
          string socket, int flags, string driver, string url,
          boolean isNewLink, boolean isEmulatePrepares, string initQuery)
-  {
-    super(env);
+   : base(env) {
 
     if (host == null || host.length() == 0) {
       host = "localhost";
@@ -157,8 +156,7 @@ public class Mysqli : JdbcConnectionResource
   }
 
   protected Mysqli(Env env)
-  {
-    super(env);
+   : base(env) {
   }
 
   public boolean isLastSqlDescribe()

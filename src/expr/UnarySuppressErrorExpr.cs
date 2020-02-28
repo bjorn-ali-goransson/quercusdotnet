@@ -47,8 +47,7 @@ public class UnarySuppressErrorExpr : AbstractUnaryExpr {
   }
 
   public UnarySuppressErrorExpr(Expr expr)
-  {
-    super(expr);
+   : base(expr) {
   }
 
   /**

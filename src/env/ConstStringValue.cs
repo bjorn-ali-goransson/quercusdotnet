@@ -54,49 +54,41 @@ public class ConstStringValue
   private StringValue _lowerCase;
 
   public ConstStringValue()
-  {
-    super();
+   : base() {
   }
 
   public ConstStringValue(StringBuilderValue sb)
-  {
-    super(sb.getBuffer(), 0, sb.length());
+   : base(sb.getBuffer(), 0, sb.length()) {
   }
 
   public ConstStringValue(byte []buffer, int offset, int length)
-  {
-    super(buffer, offset, length);
+   : base(buffer, offset, length) {
   }
 
   public ConstStringValue(char []buffer, int offset, int length)
-  {
-    super(buffer, offset, length);
+   : base(buffer, offset, length) {
   }
 
   /**
    * Creates a new StringBuilderValue with the buffer without copying.
    */
   public ConstStringValue(char []buffer, int length)
-  {
-    super(buffer, length);
+   : base(buffer, length) {
   }
 
   public ConstStringValue(byte []buffer)
-  {
-    super(buffer);
+   : base(buffer) {
   }
 
   public ConstStringValue(char ch)
-  {
-    super(1, true);
+   : base(1, true) {
     setLength(1);
 
     byte[] buffer = getBuffer();
     buffer[0] = (byte) (ch & 0xff);
   }
 
-  public ConstStringValue(byte ch) {
-    super(1, true);
+  public ConstStringValue(byte ch)  : base(1, true) {
     setLength(1);
 
     byte[] buffer = getBuffer();
@@ -104,40 +96,33 @@ public class ConstStringValue
   }
 
   public ConstStringValue(String s)
-  {
-    super(s);
+   : base(s) {
 
     _string = s;
   }
 
   public ConstStringValue(char []s)
-  {
-    super(s);
+   : base(s) {
   }
 
   public ConstStringValue(char []s, Value v1)
-  {
-    super(s, v1);
+   : base(s, v1) {
   }
 
   public ConstStringValue(byte []s, Value v1)
-  {
-    super(s, v1);
+   : base(s, v1) {
   }
 
   public ConstStringValue(Value v1)
-  {
-    super(v1);
+   : base(v1) {
   }
 
   public ConstStringValue(Value v1, Value v2)
-  {
-    super(v1, v2);
+   : base(v1, v2) {
   }
 
   public ConstStringValue(Value v1, Value v2, Value v3)
-  {
-    super(v1, v2, v3);
+   : base(v1, v2, v3) {
   }
 
   public boolean isStatic()

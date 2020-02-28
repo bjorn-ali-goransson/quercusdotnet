@@ -55,8 +55,7 @@ public class ObjectNewStaticExpr : Expr {
   }
 
   public ObjectNewStaticExpr(Location location, Expr []args)
-  {
-    super(location);
+   : base(location) {
     _args = args;
   }
 

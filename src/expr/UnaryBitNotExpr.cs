@@ -45,8 +45,7 @@ public class UnaryBitNotExpr : AbstractUnaryExpr {
   }
 
   public UnaryBitNotExpr(Expr expr)
-  {
-    super(expr);
+   : base(expr) {
   }
 
   /**

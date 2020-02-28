@@ -44,8 +44,7 @@ public class FunCloneExpr : AbstractUnaryExpr {
   }
 
   public FunCloneExpr(Expr expr)
-  {
-    super(expr);
+   : base(expr) {
   }
 
   /**

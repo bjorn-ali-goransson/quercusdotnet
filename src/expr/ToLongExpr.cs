@@ -45,8 +45,7 @@ public class ToLongExpr : AbstractUnaryExpr {
   }
 
   public ToLongExpr(Expr expr)
-  {
-    super(expr);
+   : base(expr) {
   }
 
   /**

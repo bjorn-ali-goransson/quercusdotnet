@@ -55,8 +55,7 @@ public class Quercus
   private string []_argv;
 
   public Quercus()
-  {
-    super();
+   : base() {
   }
 
   //

@@ -44,8 +44,7 @@ public class BinaryCommaExpr : AbstractBinaryExpr {
   }
 
   public BinaryCommaExpr(Expr left, Expr right)
-  {
-    super(left, right);
+   : base(left, right) {
   }
 
   /**

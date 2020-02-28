@@ -48,8 +48,7 @@ public class UnaryRefExpr : AbstractUnaryExpr {
   }
 
   public UnaryRefExpr(Expr expr)
-  {
-    super(expr);
+   : base(expr) {
   }
 
   /**

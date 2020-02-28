@@ -44,8 +44,7 @@ public class GZIPInputStream : java.util.zip.GZIPInputStream
     super(in);
   }
   public GZIPInputStream(InputStream in, int size)
-  {
-    super(in, size);
+   : base(in, size) {
   }
 
   /**
