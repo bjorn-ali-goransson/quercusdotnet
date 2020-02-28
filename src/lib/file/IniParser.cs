@@ -1,3 +1,4 @@
+using System;
 namespace QuercusDotNet.lib.file {
 /*
  * Copyright (c) 1998-2010 Caucho Technology -- all rights reserved

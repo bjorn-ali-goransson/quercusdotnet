@@ -1,3 +1,4 @@
+using System;
 namespace QuercusDotNet.Program{
 /*
  * Copyright (c) 1998-2012 Caucho Technology -- all rights reserved

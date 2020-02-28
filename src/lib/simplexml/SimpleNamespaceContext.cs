@@ -1,3 +1,4 @@
+using System;
 namespace QuercusDotNet.lib.simplexml {
 /*
  * Copyright (c) 1998-2014 Caucho Technology -- all rights reserved

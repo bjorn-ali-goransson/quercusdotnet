@@ -1,6 +1,8 @@
+using System;
 namespace QuercusDotNet {
 ﻿using System;
 
+using System;
 namespace QuercusDotNet
 {
     class Program

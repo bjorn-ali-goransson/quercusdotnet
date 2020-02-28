@@ -1,3 +1,4 @@
+using System;
 namespace QuercusDotNet.lib.simplexml {
 
 

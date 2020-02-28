@@ -1,3 +1,4 @@
+using System;
 namespace QuercusDotNet.Annotation{
 /*
  * Copyright (c) 1998-2016 Caucho Technology -- all rights reserved
