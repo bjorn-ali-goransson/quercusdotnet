@@ -3522,7 +3522,7 @@ public class ArrayModule
   }
 
   private static class CompareNormal
-    implements Comparator<Map.Entry<Value, Value>>
+    : Comparator<Map.Entry<Value, Value>>
   {
     private AbstractGet _getter;
 
@@ -3618,7 +3618,7 @@ public class ArrayModule
   }
 
   private static class CompareCallBack
-    implements Comparator<Map.Entry<Value, Value>>
+    : Comparator<Map.Entry<Value, Value>>
   {
     private AbstractGet _getter;
 
@@ -3657,7 +3657,7 @@ public class ArrayModule
    *  column-arrays.
    */
   private static class MultiSortComparator
-    implements Comparator<LongValue>
+    : Comparator<LongValue>
   {
 
     private final Env _env;

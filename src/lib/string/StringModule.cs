@@ -4731,7 +4731,7 @@ public class StringModule : AbstractQuercusModule {
    * Comparator for sorting in descending fashion based on length.
    */
   static class StrtrComparator<T : Map.Entry<Value,Value>>
-    implements Comparator<T>
+    : Comparator<T>
   {
     public int compare(T a, T b)
     {

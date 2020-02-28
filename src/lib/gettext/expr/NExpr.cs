@@ -31,7 +31,7 @@ namespace QuercusDotNet.lib/gettext/expr{
 
 
 
-public class NExpr implements Expr
+public class NExpr : Expr
 {
   public readonly Expr N_EXPR = new NExpr();
 

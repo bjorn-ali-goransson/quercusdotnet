@@ -51,7 +51,7 @@ namespace QuercusDotNet.lib.db {
  * Represents a JDBC Connection value.
  */
 public abstract class JdbcConnectionResource
-  implements EnvCleanup
+  : EnvCleanup
 {
   private readonly L10N L = new L10N(JdbcConnectionResource.class);
   private const Logger log
@@ -617,7 +617,7 @@ public abstract class JdbcConnectionResource
   }
 
   /**
-   * Implements the EnvCleanup interface. This method
+   * : the EnvCleanup interface. This method
    * will deallocate resources associated with this
    * connection. This method can be invoked via a
    * call to close(), or it can be invoked when the

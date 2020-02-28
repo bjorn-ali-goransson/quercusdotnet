@@ -51,7 +51,7 @@ namespace QuercusDotNet.lib.file {
  * Represents a PHP open file
  */
 public class FileOutput : AbstractBinaryOutput
-    implements LockableStream, EnvCleanup
+    : LockableStream, EnvCleanup
 {
   private const Logger log
     = Logger.getLogger(FileOutput.class.getName());
@@ -168,7 +168,7 @@ public class FileOutput : AbstractBinaryOutput
   }
 
   /**
-   * Implements the EnvCleanup interface.
+   * : the EnvCleanup interface.
    */
   public void cleanup()
   {

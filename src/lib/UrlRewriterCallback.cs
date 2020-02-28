@@ -48,7 +48,7 @@ namespace QuercusDotNet.lib{
 
 
 /**
- * Implements the built-in URL rewriter for passing session ids and other
+ * : the built-in URL rewriter for passing session ids and other
  * variables.
  */
 @SuppressWarnings("serial")

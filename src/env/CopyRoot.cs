@@ -36,7 +36,7 @@ namespace QuercusDotNet.Env{
 /**
  * Root for saving copy information for the serialization cache.
  */
-public class CopyRoot implements EnvCleanup
+public class CopyRoot : EnvCleanup
 {
   private final UnserializeCacheEntry _entry;
   

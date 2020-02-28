@@ -40,7 +40,7 @@ namespace QuercusDotNet.Env{
  * Represents a PHP resource
  */
 public class ResourceValue : Value
-  implements EnvCleanup
+  : EnvCleanup
 {
   @Override
   public bool isResource()
@@ -49,7 +49,7 @@ public class ResourceValue : Value
   }
 
   /**
-   * Implements the EnvCleanup interface.
+   * : the EnvCleanup interface.
    */
 
   public void cleanup()

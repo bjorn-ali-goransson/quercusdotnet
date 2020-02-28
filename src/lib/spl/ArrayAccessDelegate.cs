@@ -38,7 +38,7 @@ namespace QuercusDotNet.lib.spl {
  * target objects that implement
  * the {@link com.caucho.quercus.lib.spl.ArrayAccess} interface.
  */
-public class ArrayAccessDelegate implements ArrayDelegate
+public class ArrayAccessDelegate : ArrayDelegate
 {
   private const StringValue OFFSET_GET
     = new ConstStringValue("offsetGet");

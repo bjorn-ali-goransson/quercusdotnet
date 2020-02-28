@@ -40,7 +40,7 @@ namespace QuercusDotNet.lib.filter {
 
 public class FloatValidateFilter
   : AbstractFilter
-  implements ValidateFilter
+  : ValidateFilter
 {
   private readonly L10N L = new L10N(FloatValidateFilter.class);
 

@@ -353,7 +353,7 @@ public class SimpleXMLElement : SimpleXMLNode
     return getClass().getSimpleName() + "[" + _view + "]";
   }
 
-  class ViewIterator implements Iterator<Map.Entry<Value,SimpleXMLElement>> {
+  class ViewIterator : Iterator<Map.Entry<Value,SimpleXMLElement>> {
     private final Iterator<Map.Entry<IteratorIndex,SimpleView>> _iter;
 
     ViewIterator(Iterator<Map.Entry<IteratorIndex,SimpleView>> iter)
@@ -384,7 +384,7 @@ public class SimpleXMLElement : SimpleXMLNode
     }
   }
 
-  class ElementIterator implements Iterator<ElementEntry> {
+  class ElementIterator : Iterator<ElementEntry> {
     private Node _node;
 
     ElementIterator(Node node)
@@ -430,7 +430,7 @@ public class SimpleXMLElement : SimpleXMLNode
     }
   }
 
-  class ElementEntry implements Map.Entry<Value,Value> {
+  class ElementEntry : Map.Entry<Value,Value> {
     private Node _node;
 
     public ElementEntry(Node node)

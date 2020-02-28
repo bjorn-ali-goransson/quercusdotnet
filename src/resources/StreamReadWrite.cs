@@ -45,7 +45,7 @@ namespace QuercusDotNet.Resources{
  * Represents read/write stream
  */
 public class StreamReadWrite : StreamResource
-    implements EnvCleanup
+    : EnvCleanup
 {
   private Env _env;
   private ReadStream _is;
@@ -245,7 +245,7 @@ public class StreamReadWrite : StreamResource
   }
 
   /**
-   * Implements the EnvCleanup interface.
+   * : the EnvCleanup interface.
    */
   public void cleanup()
   {

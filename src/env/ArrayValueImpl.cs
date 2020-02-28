@@ -44,7 +44,7 @@ namespace QuercusDotNet.Env{
  * Represents a PHP array value.
  */
 public class ArrayValueImpl : ArrayValue
-  implements Serializable
+  : Serializable
 {
   private const int DEFAULT_SIZE = 16;
 

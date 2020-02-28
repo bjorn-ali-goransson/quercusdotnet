@@ -45,7 +45,7 @@ namespace QuercusDotNet.lib.file {
  */
 abstract public class AbstractBinaryOutput
   : OutputStream
-  implements BinaryOutput
+  : BinaryOutput
 {
   private int lockedShared = 0;
   private bool lockedExclusive = false;

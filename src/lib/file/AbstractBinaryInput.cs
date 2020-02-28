@@ -45,7 +45,7 @@ namespace QuercusDotNet.lib.file {
  * Represents a Quercus file open for reading
  */
 public class AbstractBinaryInput
-  implements BinaryInput
+  : BinaryInput
 {
   private const Logger log
     = Logger.getLogger(AbstractBinaryInput.class.getName());

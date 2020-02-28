@@ -296,7 +296,7 @@ public class JavaMapAdapter
   }
 
   public class MapIterator
-    implements Iterator<Map.Entry<Value,Value>>
+    : Iterator<Map.Entry<Value,Value>>
   {
     private Iterator<Map.Entry<Object,Object>> _iterator;
 
@@ -345,7 +345,7 @@ public class JavaMapAdapter
   }
 
   public class ValueIterator
-    implements Iterator<Value>
+    : Iterator<Value>
   {
     private Iterator _iterator;
 
@@ -371,7 +371,7 @@ public class JavaMapAdapter
   }
   
   public class KeyIterator
-    implements Iterator<Value>
+    : Iterator<Value>
   {
     private Iterator _iterator;
 

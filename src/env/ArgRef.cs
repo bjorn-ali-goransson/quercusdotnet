@@ -45,7 +45,7 @@ namespace QuercusDotNet.Env{
  * Represents a reference to a PHP variable in a function call.
  */
 public class ArgRef : Value
-  implements Serializable
+  : Serializable
 {
   private Var _var;
 

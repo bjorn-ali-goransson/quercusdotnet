@@ -1400,7 +1400,7 @@ public class QuercusClass : NullValue {
   }
 
   /**
-   * Returns true if this class or its parents implements specified interface.
+   * Returns true if this class or its parents : specified interface.
    */
   public bool implementsInterface(Env env, string name)
   {
@@ -1441,7 +1441,7 @@ public class QuercusClass : NullValue {
   //
 
   /**
-   * Implements the __get method call.
+   * : the __get method call.
    * __get() @is utilized for reading data from inaccessible properties.
    */
   public Value getField(Env env, Value qThis, StringValue name)
@@ -1475,7 +1475,7 @@ public class QuercusClass : NullValue {
   }
 
   /**
-   * Implements the __isset method call.
+   * : the __isset method call.
    * __isset() @is triggered by calling isset() or empty()  on inaccessible properties.
   */
   public bool issetField(Env env, Value qThis, StringValue name)
@@ -1517,7 +1517,7 @@ public class QuercusClass : NullValue {
   }
 
   /**
-   * implements the __unset method call
+   * : the __unset method call
    *  __unset() @is invoked when unset() @is used on inaccessible properties.
    */
   public Value unsetField(Env env, Value qThis, StringValue name)
@@ -1546,7 +1546,7 @@ public class QuercusClass : NullValue {
   }
 
   /**
-   * Implements the __set method call.
+   * : the __set method call.
    */
   public Value setField(Env env, Value qThis, StringValue name, Value value)
   {

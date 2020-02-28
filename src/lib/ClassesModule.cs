@@ -324,7 +324,7 @@ public class ClassesModule : AbstractQuercusModule {
   }
 
   /**
-   * Returns true if the object implements the given class.
+   * Returns true if the object : the given class.
    */
   public static bool is_a(Env env, @ReadOnly Value value, string name)
   {
@@ -340,7 +340,7 @@ public class ClassesModule : AbstractQuercusModule {
   }
 
   /**
-   * Returns true if the object implements the given class.
+   * Returns true if the object : the given class.
    */
   public static bool is_subclass_of(Env env,
                                        @ReadOnly Value value,

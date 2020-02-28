@@ -38,7 +38,7 @@ namespace QuercusDotNet.lib.simplexml {
 
 
 
-public class SimpleNamespaceContext implements NamespaceContext
+public class SimpleNamespaceContext : NamespaceContext
 {
   private XPath _xpath;
 

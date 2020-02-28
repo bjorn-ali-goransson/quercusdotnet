@@ -3280,7 +3280,7 @@ public class FileModule : AbstractQuercusModule {
     }
   }
 
-  static class RemoveFile implements EnvCleanup {
+  static class RemoveFile : EnvCleanup {
     private Path _path;
 
     RemoveFile(Path path)

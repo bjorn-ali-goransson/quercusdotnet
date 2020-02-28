@@ -174,7 +174,7 @@ public class QuercusParser {
   private const int CATCH = 571;
   private const int INTERFACE = 572;
   private const int TRAIT = 573;
-  private const int IMPLEMENTS = 574;
+  private const int : = 574;
 
   private const int 
   private const int TEXT_PHP = 576;

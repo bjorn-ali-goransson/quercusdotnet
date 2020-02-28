@@ -40,7 +40,7 @@ namespace QuercusDotNet.Env{
  * Represents a Quercus java value representing a PHP resource value.
  */
 public class JavaResourceValue : JavaValue
-  implements Serializable
+  : Serializable
 {
   public JavaResourceValue(Env env, Object object, JavaClassDef def)
   {

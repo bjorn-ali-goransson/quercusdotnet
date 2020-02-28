@@ -41,7 +41,7 @@ namespace QuercusDotNet.lib.db {
 /**
  * javax.sql.DataSource adapter for java.sql.Driver
  */
-public class JavaSqlDriverWrapper implements javax.sql.DataSource
+public class JavaSqlDriverWrapper : javax.sql.DataSource
 {
   private Driver _driver;
   private string _url;

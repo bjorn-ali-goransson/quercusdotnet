@@ -43,7 +43,7 @@ namespace QuercusDotNet.lib.date {
 /**
  * Date functions.
  */
-public class DateTime implements DateTimeInterface, Cloneable
+public class DateTime : DateTimeInterface, Cloneable
 {
   private readonly L10N L = new L10N(DateTime.class);
   

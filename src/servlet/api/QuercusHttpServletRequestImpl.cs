@@ -41,7 +41,7 @@ namespace QuercusDotNet.servlet.api {
 
 
 
-public class QuercusHttpServletRequestImpl implements QuercusHttpServletRequest
+public class QuercusHttpServletRequestImpl : QuercusHttpServletRequest
 {
   private final HttpServletRequest _request;
 

@@ -43,7 +43,7 @@ namespace QuercusDotNet.lib.spl {
  * method on target objects that implement
  * the {@link com.caucho.quercus.lib.spl.Countable} interface.
  */
-public class CountableDelegate implements CountDelegate
+public class CountableDelegate : CountDelegate
 {
   private const StringValue COUNT_METHOD
     = new ConstStringValue("count");

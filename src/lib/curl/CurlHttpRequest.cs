@@ -60,7 +60,7 @@ namespace QuercusDotNet.lib.curl {
  * Represents a generic Http request.
  */
 public class CurlHttpRequest
-  implements EnvCleanup
+  : EnvCleanup
 {
   private const Logger log
     = Logger.getLogger(CurlHttpRequest.class.getName());

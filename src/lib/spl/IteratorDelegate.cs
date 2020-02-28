@@ -45,7 +45,7 @@ namespace QuercusDotNet.lib.spl {
  * target objects that implement
  * the {@link com.caucho.quercus.lib.spl.Iterator} interface.
  */
-public class IteratorDelegate implements TraversableDelegate
+public class IteratorDelegate : TraversableDelegate
 {
   private readonly L10N L = new L10N(IteratorDelegate.class);
   
@@ -89,7 +89,7 @@ public class IteratorDelegate implements TraversableDelegate
   }
 
   public static class EntryImpl
-    implements Map.Entry<Value, Value>
+    : Map.Entry<Value, Value>
   {
     private final Value _key;
     private final Value _value;

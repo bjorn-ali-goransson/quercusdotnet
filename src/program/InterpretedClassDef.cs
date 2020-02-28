@@ -51,7 +51,7 @@ namespace QuercusDotNet.Program{
  * Represents an interpreted PHP class definition.
  */
 public class InterpretedClassDef : ClassDef
-  implements InstanceInitializer
+  : InstanceInitializer
 {
   protected bool _isAbstract;
   protected bool _isInterface;

@@ -50,7 +50,7 @@ namespace QuercusDotNet.lib.spl {
 
 
 public class ArrayIterator
-  implements SeekableIterator,
+  : SeekableIterator,
              ArrayAccess,
              Countable
 {

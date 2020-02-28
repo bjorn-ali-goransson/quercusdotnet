@@ -40,7 +40,7 @@ namespace QuercusDotNet.Parser{
  */
 public class QuercusParseException
   : RuntimeException
-  implements LineCompileException {
+  : LineCompileException {
   public QuercusParseException()
   {
   }

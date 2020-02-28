@@ -51,7 +51,7 @@ namespace QuercusDotNet.lib.session {
  * Quercus session handling
  */
 public class SessionModule : AbstractQuercusModule
-  implements ModuleStartupListener {
+  : ModuleStartupListener {
   private readonly L10N L = new L10N(SessionModule.class);
   private const Logger log
     = Logger.getLogger(SessionModule.class.getName());

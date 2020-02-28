@@ -318,7 +318,7 @@ public class MethodMap<V>
     }
   }
 
- static class ValueIterator<V> implements Iterable<V>, Iterator<V>
+ static class ValueIterator<V> : Iterable<V>, Iterator<V>
   {
     Entry<V> _next;
 

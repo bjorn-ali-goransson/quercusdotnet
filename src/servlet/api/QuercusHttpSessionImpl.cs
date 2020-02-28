@@ -33,7 +33,7 @@ namespace QuercusDotNet.servlet.api {
 
 
 
-public class QuercusHttpSessionImpl implements QuercusHttpSession
+public class QuercusHttpSessionImpl : QuercusHttpSession
 {
   private final HttpSession _session;
 

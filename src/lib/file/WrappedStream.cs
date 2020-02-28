@@ -45,7 +45,7 @@ namespace QuercusDotNet.lib.file {
 /**
  * A stream that has its operations mediated by a Quercus object.
  */
-public class WrappedStream implements BinaryInput, BinaryOutput {
+public class WrappedStream : BinaryInput, BinaryOutput {
   private const ConstStringValue STREAM_CLOSE
     = new ConstStringValue("stream_close");
   private const ConstStringValue STREAM_EOF

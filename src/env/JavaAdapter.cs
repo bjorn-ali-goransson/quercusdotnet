@@ -52,7 +52,7 @@ namespace QuercusDotNet.Env{
  * Interface for marshalled Java data structures.
  */
 abstract public class JavaAdapter : ArrayValue
-  implements Serializable
+  : Serializable
 {
   private const Logger log
     = Logger.getLogger(JavaAdapter.class.getName());

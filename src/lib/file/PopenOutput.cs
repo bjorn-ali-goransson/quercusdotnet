@@ -45,7 +45,7 @@ namespace QuercusDotNet.lib.file {
  * Represents an output stream for a popen'ed process.
  */
 public class PopenOutput : AbstractBinaryOutput
-    implements EnvCleanup
+    : EnvCleanup
 {
   private const Logger log
     = Logger.getLogger(PopenOutput.class.getName());
@@ -165,7 +165,7 @@ public class PopenOutput : AbstractBinaryOutput
   }
 
   /**
-   * Implements the EnvCleanup interface.
+   * : the EnvCleanup interface.
    */
 
   public void cleanup()

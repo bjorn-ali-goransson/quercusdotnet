@@ -35,7 +35,7 @@ namespace QuercusDotNet.servlet.api {
 
 
 
-public class QuercusRequestDispatcherImpl implements QuercusRequestDispatcher
+public class QuercusRequestDispatcherImpl : QuercusRequestDispatcher
 {
   private final RequestDispatcher _dispatcher;
 

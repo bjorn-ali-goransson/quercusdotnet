@@ -2,7 +2,7 @@
 
 class AppendIterator
   : IteratorIterator
-  implements OuterIterator
+  : OuterIterator
 {
   var $iters = new ArrayIterator();
   var $index = 0;

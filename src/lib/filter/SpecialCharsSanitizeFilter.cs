@@ -38,7 +38,7 @@ namespace QuercusDotNet.lib.filter {
 
 public class SpecialCharsSanitizeFilter
   : AbstractFilter
-  implements SanitizeFilter
+  : SanitizeFilter
 {
   @Override
   protected Value filterImpl(Env env, Value value,

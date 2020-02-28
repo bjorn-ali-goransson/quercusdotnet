@@ -53,7 +53,7 @@ namespace QuercusDotNet.Env{
  */
 @SuppressWarnings("serial")
 public class ObjectExtValue : ObjectValue
-  implements Serializable
+  : Serializable
 {
   private MethodMap<AbstractFunction> _methodMap;
 
@@ -1375,7 +1375,7 @@ public class ObjectExtValue : ObjectValue
   }
 
   public static class KeyValueIterator
-    implements Iterator<Map.Entry<Value,Value>>
+    : Iterator<Map.Entry<Value,Value>>
   {
     private final Iterator<Entry> _iter;
 
@@ -1401,7 +1401,7 @@ public class ObjectExtValue : ObjectValue
   }
 
   public static class ValueIterator
-    implements Iterator<Value>
+    : Iterator<Value>
   {
     private final Iterator<Entry> _iter;
 
@@ -1427,7 +1427,7 @@ public class ObjectExtValue : ObjectValue
   }
 
   public static class KeyIterator
-    implements Iterator<Value>
+    : Iterator<Value>
   {
     private final Iterator<StringValue> _iter;
 
@@ -1453,7 +1453,7 @@ public class ObjectExtValue : ObjectValue
   }
 
   publicstatic class Entry
-    implements Map.Entry<Value,Value>,
+    : Map.Entry<Value,Value>,
                Comparable<Map.Entry<Value, Value>>
   {
     private final StringValue _key;

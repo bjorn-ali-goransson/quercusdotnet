@@ -206,7 +206,7 @@ public class JavaCollectionAdapter : JavaAdapter
   }
 
   public class CollectionIterator
-    implements Iterator<Map.Entry<Object,Object>>
+    : Iterator<Map.Entry<Object,Object>>
   {
     private int _index;
     private Iterator _iterator;
@@ -234,7 +234,7 @@ public class JavaCollectionAdapter : JavaAdapter
   }
 
   public static class CollectionEntry
-    implements Map.Entry<Object,Object>
+    : Map.Entry<Object,Object>
   {
     private final int _key;
     private Object _value;
@@ -284,7 +284,7 @@ public class JavaCollectionAdapter : JavaAdapter
   }
 
   public class CollectionValueIterator
-    implements Iterator<Map.Entry<Value,Value>>
+    : Iterator<Map.Entry<Value,Value>>
   {
     private int _index;
     private Iterator _iterator;
@@ -332,7 +332,7 @@ public class JavaCollectionAdapter : JavaAdapter
   }
 
   public class KeyIterator
-    implements Iterator<Value>
+    : Iterator<Value>
   {
     private int _index;
     private Iterator _iterator;
@@ -362,7 +362,7 @@ public class JavaCollectionAdapter : JavaAdapter
   }
 
   public class ValueIterator
-    implements Iterator<Value>
+    : Iterator<Value>
   {
     private Iterator _iterator;
 

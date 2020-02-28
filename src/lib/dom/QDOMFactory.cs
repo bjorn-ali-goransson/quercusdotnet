@@ -40,7 +40,7 @@ namespace QuercusDotNet.lib.dom {
 
 
 public class QDOMFactory
-  implements DOMFactory
+  : DOMFactory
 {
   public Attr createAttr(String name)
   {

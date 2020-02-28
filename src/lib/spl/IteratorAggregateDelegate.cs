@@ -48,7 +48,7 @@ namespace QuercusDotNet.lib.spl {
  * them to the iterator returned by {@link IteratorAggregate@getIterator()}
  */
 public class IteratorAggregateDelegate
-  implements TraversableDelegate
+  : TraversableDelegate
 {
   private readonly L10N L = new L10N(IteratorAggregateDelegate.class);
 

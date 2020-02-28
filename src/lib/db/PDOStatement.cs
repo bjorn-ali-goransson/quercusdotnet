@@ -60,7 +60,7 @@ namespace QuercusDotNet.lib.db {
  * PDO object oriented API facade.
  */
 public class PDOStatement
-  implements Iterable<Value>, EnvCleanup
+  : Iterable<Value>, EnvCleanup
 {
   private readonly L10N L = new L10N(PDOStatement.class);
 
@@ -406,7 +406,7 @@ public class PDOStatement
   }
 
   /**
-   * Implements the EnvCleanup interface.
+   * : the EnvCleanup interface.
    */
   public void cleanup()
   {

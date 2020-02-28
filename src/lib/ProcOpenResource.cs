@@ -43,7 +43,7 @@ namespace QuercusDotNet.lib{
  */
 @ResourceType("process")
 public class ProcOpenResource
-    implements EnvCleanup
+    : EnvCleanup
 {
   private const Logger log
   = Logger.getLogger(ProcOpenResource.class.getName());
@@ -152,7 +152,7 @@ public class ProcOpenResource
   }
 
   /**
-   * Implements the EnvCleanup interface.
+   * : the EnvCleanup interface.
    */
   public void cleanup()
   {

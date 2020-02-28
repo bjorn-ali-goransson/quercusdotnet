@@ -60,7 +60,7 @@ namespace QuercusDotNet.Env{
  * Represents a PHP expression value.
  */
 @SuppressWarnings("serial")
-abstract public class Value implements java.io.Serializable
+abstract public class Value : java.io.Serializable
 {
   protected readonly L10N L = new L10N(Value.class);
 

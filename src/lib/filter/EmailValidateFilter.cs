@@ -41,7 +41,7 @@ namespace QuercusDotNet.lib.filter {
  */
 public class EmailValidateFilter
   : AbstractFilter
-  implements ValidateFilter
+  : ValidateFilter
 {
   @Override
   public Value filter(Env env, Value value, Value flagV)

@@ -41,7 +41,7 @@ namespace QuercusDotNet.Program{
 /**
  * A delegate that performs Array operations for Quercus objects.
  */
-public class FunctionArrayDelegate implements ArrayDelegate {
+public class FunctionArrayDelegate : ArrayDelegate {
   private JavaInvoker _arrayGet;
   private JavaInvoker _arrayPut;
   private JavaInvoker _arrayCount;

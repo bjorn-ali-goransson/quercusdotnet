@@ -46,7 +46,7 @@ namespace QuercusDotNet.lib.date {
 /**
  * Date functions.
  */
-public class DateTimeZone implements Cloneable
+public class DateTimeZone : Cloneable
 {
   private const TimeZone GMT_TIME_ZONE = TimeZone.getTimeZone("GMT");
 

@@ -172,7 +172,7 @@ public class DOMXPath
   }
 
   public class DOMNamespaceContext
-    implements NamespaceContext
+    : NamespaceContext
   {
     private HashMap<String, LinkedHashSet<String>> _namespaceMap
       = new HashMap<String, LinkedHashSet<String>>();

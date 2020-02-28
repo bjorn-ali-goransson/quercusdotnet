@@ -1,6 +1,6 @@
 <?php
 
-class IteratorIterator implements OuterIterator {
+class IteratorIterator : OuterIterator {
   var $it;
   
   function __construct($it)

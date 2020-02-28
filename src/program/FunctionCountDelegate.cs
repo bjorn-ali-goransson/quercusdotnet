@@ -39,7 +39,7 @@ namespace QuercusDotNet.Program{
 /**
  * A delegate that performs Array operations for Quercus objects.
  */
-public class FunctionCountDelegate implements CountDelegate {
+public class FunctionCountDelegate : CountDelegate {
   private JavaInvoker _count;
 
   public FunctionCountDelegate()

@@ -60,7 +60,7 @@ namespace QuercusDotNet.lib.session {
  * customized to PHP instead of J2EE sessions.
  */
 public class QuercusSessionManager
-  implements AlarmListener
+  : AlarmListener
 {
   private readonly L10N L = new L10N(QuercusSessionManager.class);
   private const Logger log

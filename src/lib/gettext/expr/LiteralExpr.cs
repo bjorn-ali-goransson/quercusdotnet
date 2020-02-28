@@ -31,7 +31,7 @@ namespace QuercusDotNet.lib/gettext/expr{
 
 
 
-public class LiteralExpr implements Expr
+public class LiteralExpr : Expr
 {
   int _literal;
 

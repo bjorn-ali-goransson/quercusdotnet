@@ -37,7 +37,7 @@ namespace QuercusDotNet.Env{
 /**
  * Represents a PHP chained map
  */
-public class ChainedMap<K,V> implements VarMap<K,V> {
+public class ChainedMap<K,V> : VarMap<K,V> {
   private final VarMap<K,V> _next;
 
   private final Map<K,V> _map;

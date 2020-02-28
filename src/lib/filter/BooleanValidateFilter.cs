@@ -39,7 +39,7 @@ namespace QuercusDotNet.lib.filter {
 
 public class BooleanValidateFilter
   : AbstractFilter
-  implements ValidateFilter
+  : ValidateFilter
 {
   @Override
   protected Value filterImpl(Env env, Value value,

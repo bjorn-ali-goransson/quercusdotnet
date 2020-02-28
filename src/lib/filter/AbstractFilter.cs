@@ -36,7 +36,7 @@ namespace QuercusDotNet.lib.filter {
 
 
 
-public class AbstractFilter implements Filter
+public class AbstractFilter : Filter
 {
   public Value filter(Env env, Value value, Value flagsV)
   {

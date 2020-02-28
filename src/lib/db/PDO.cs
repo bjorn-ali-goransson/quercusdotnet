@@ -58,7 +58,7 @@ namespace QuercusDotNet.lib.db {
 /**
  * PDO object oriented API facade.
  */
-public class PDO implements EnvCleanup {
+public class PDO : EnvCleanup {
   private const Logger log = Logger.getLogger(PDO.class.getName());
   private readonly L10N L = new L10N(PDO.class);
 
@@ -273,7 +273,7 @@ public class PDO implements EnvCleanup {
   }
 
   /**
-   * Implements the EnvCleanup interface.
+   * : the EnvCleanup interface.
    */
   public void cleanup()
   {

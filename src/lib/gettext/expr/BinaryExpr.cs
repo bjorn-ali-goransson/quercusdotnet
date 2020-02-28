@@ -31,7 +31,7 @@ namespace QuercusDotNet.lib/gettext/expr{
 
 
 
-abstract public class BinaryExpr implements Expr
+abstract public class BinaryExpr : Expr
 {
   protected Expr _left;
   protected Expr _right;

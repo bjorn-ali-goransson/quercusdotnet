@@ -51,7 +51,7 @@ namespace QuercusDotNet.lib.spl {
 
 
 public class SplObjectStorage
-  implements ArrayAccess, Countable, Iterator, Serializable
+  : ArrayAccess, Countable, Iterator, Serializable
 {
   private static L10N L = new L10N(SplObjectStorage.class);
 

@@ -43,7 +43,7 @@ namespace QuercusDotNet.lib.file {
 /**
  * Represents a Quercus file open for reading
  */
-public class WriteStreamOutput : OutputStream implements BinaryOutput {
+public class WriteStreamOutput : OutputStream : BinaryOutput {
   private const Logger log
     = Logger.getLogger(WriteStreamOutput.class.getName());
 

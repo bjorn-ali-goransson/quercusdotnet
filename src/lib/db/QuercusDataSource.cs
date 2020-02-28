@@ -38,7 +38,7 @@ namespace QuercusDotNet.lib.db {
 
 
 
-public class QuercusDataSource implements DataSource {
+public class QuercusDataSource : DataSource {
   private final DataSource _ds;
   private final string _user;
   private final string _pass;

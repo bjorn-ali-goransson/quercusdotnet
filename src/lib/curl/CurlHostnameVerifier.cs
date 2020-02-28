@@ -38,7 +38,7 @@ namespace QuercusDotNet.lib.curl {
 
 
 public class CurlHostnameVerifier
-  implements HostnameVerifier
+  : HostnameVerifier
 {
   private bool _isVerifySSLPeer;
   private bool _isVerifySSLCommonName;

@@ -324,7 +324,7 @@ public class ProfileReport
     return getClass().getSimpleName() + "[]";
   }
 
-  static class SelfMicrosComparator implements Comparator<ProfileMethod> {
+  static class SelfMicrosComparator : Comparator<ProfileMethod> {
     public int compare(ProfileMethod a, ProfileMethod b)
     {
       long delta = b.getSelfMicros() - a.getSelfMicros();
@@ -338,7 +338,7 @@ public class ProfileReport
     }
   }
 
-  static class TotalMicrosComparator implements Comparator<ProfileMethod> {
+  static class TotalMicrosComparator : Comparator<ProfileMethod> {
     public int compare(ProfileMethod a, ProfileMethod b)
     {
       long delta = b.getTotalMicros() - a.getTotalMicros();
@@ -352,7 +352,7 @@ public class ProfileReport
     }
   }
 
-  static class ItemMicrosComparator implements Comparator<ProfileItem> {
+  static class ItemMicrosComparator : Comparator<ProfileItem> {
     public int compare(ProfileItem a, ProfileItem b)
     {
       long delta = b.getMicros() - a.getMicros();

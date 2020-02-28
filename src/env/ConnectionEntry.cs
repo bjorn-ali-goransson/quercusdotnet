@@ -37,7 +37,7 @@ namespace QuercusDotNet.Env{
 
 
 
-public class ConnectionEntry implements EnvCleanup
+public class ConnectionEntry : EnvCleanup
 {
   private const Logger log
     = Logger.getLogger(ConnectionEntry.class.getName());

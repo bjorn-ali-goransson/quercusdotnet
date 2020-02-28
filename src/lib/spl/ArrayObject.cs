@@ -43,7 +43,7 @@ namespace QuercusDotNet.lib.spl {
 
 
 public class ArrayObject
-  implements ArrayAccess,
+  : ArrayAccess,
              Countable,
              IteratorAggregate,
              Traversable
@@ -75,7 +75,7 @@ public class ArrayObject
     QuercusClass iteratorClass = _env.findClass(iteratorClassName);
 
     if (iteratorClass == null || ! iteratorClass.isA(env, "Iterator")) {
-      throw new IllegalArgumentException(L.l("A class that implements Iterator must be specified"));
+      throw new IllegalArgumentException(L.l("A class that : Iterator must be specified"));
     }
 
     _iteratorClass = iteratorClass;

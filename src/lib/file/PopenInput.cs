@@ -43,7 +43,7 @@ namespace QuercusDotNet.lib.file {
  * Represents an input stream for a popen'ed process.
  */
 public class PopenInput : ReadStreamInput
-    implements EnvCleanup
+    : EnvCleanup
 {
   private const Logger log
     = Logger.getLogger(FileInput.class.getName());
@@ -111,7 +111,7 @@ public class PopenInput : ReadStreamInput
   }
 
   /**
-   * Implements the EnvCleanup interface.
+   * : the EnvCleanup interface.
    */
 
   public void cleanup()

@@ -41,7 +41,7 @@ namespace QuercusDotNet.lib.dom {
 
 
 public class DOMNodeListDelegate
-  implements TraversableDelegate
+  : TraversableDelegate
 {
   public DOMNodeListDelegate()
   {
@@ -63,7 +63,7 @@ public class DOMNodeListDelegate
   }
   
   public class DOMNodeListKeyIterator
-    implements Iterator<Value>
+    : Iterator<Value>
   {
     private DOMNodeList _list;
     private int _index;
@@ -90,7 +90,7 @@ public class DOMNodeListDelegate
   }
   
   public class DOMNodeListValueIterator
-    implements Iterator<Value>
+    : Iterator<Value>
   {
     private Env _env;
     private DOMNodeList _list;
@@ -119,7 +119,7 @@ public class DOMNodeListDelegate
   }
   
   public class DOMNodeListIterator
-    implements Iterator<Map.Entry<Value, Value>>
+    : Iterator<Map.Entry<Value, Value>>
   {
     private Env _env;
     private DOMNodeList _list;
@@ -148,7 +148,7 @@ public class DOMNodeListDelegate
   }
   
   public class DOMNodeListEntry
-    implements Map.Entry<Value,Value>
+    : Map.Entry<Value,Value>
   {
     private int _key;
     private Value _value;

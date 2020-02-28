@@ -65,7 +65,7 @@ namespace QuercusDotNet.Program{
 /**
  * Represents an introspected Java class.
  */
-public class JavaClassDef : ClassDef implements InstanceInitializer {
+public class JavaClassDef : ClassDef : InstanceInitializer {
   private const Logger log
     = Logger.getLogger(JavaClassDef.class.getName());
   private readonly L10N L = new L10N(JavaClassDef.class);
@@ -1519,7 +1519,7 @@ public class JavaClassDef : ClassDef implements InstanceInitializer {
   }
 
   private class JavaTraversableDelegate
-    implements TraversableDelegate
+    : TraversableDelegate
   {
     private Method _iteratorMethod;
 
@@ -1576,7 +1576,7 @@ public class JavaClassDef : ClassDef implements InstanceInitializer {
   }
 
   private class JavaKeyIterator
-    implements Iterator<Value>
+    : Iterator<Value>
   {
     private Iterator<?> _iterator;
     private int _index;
@@ -1605,7 +1605,7 @@ public class JavaClassDef : ClassDef implements InstanceInitializer {
   }
 
   private class JavaValueIterator
-    implements Iterator<Value>
+    : Iterator<Value>
   {
     private Env _env;
     private Iterator<?> _iterator;
@@ -1652,7 +1652,7 @@ public class JavaClassDef : ClassDef implements InstanceInitializer {
   }
 
   private class JavaIterator
-    implements Iterator<Map.Entry<Value, Value>>
+    : Iterator<Map.Entry<Value, Value>>
   {
     private Env _env;
     private Iterator<?> _iterator;
@@ -1711,7 +1711,7 @@ public class JavaClassDef : ClassDef implements InstanceInitializer {
   }
 
   private class JavaEntry
-    implements Map.Entry<Value, Value>
+    : Map.Entry<Value, Value>
   {
     private Value _key;
     private Value _value;

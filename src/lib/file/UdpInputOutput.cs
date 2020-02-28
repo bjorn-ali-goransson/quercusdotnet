@@ -46,7 +46,7 @@ namespace QuercusDotNet.lib.file {
  */
 public class UdpInputOutput
   : AbstractBinaryInputOutput
-  implements SocketInputOutput
+  : SocketInputOutput
 {
   private const Logger log
     = Logger.getLogger(UdpInputOutput.class.getName());
@@ -161,7 +161,7 @@ public class UdpInputOutput
   }
 
   /**
-   * Implements the EnvCleanup interface.
+   * : the EnvCleanup interface.
    */
   public void cleanup()
   {

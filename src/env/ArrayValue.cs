@@ -1602,7 +1602,7 @@ abstract public class ArrayValue : Value {
   }
 
   public static class Entry
-    implements Map.Entry<Value,Value>, Serializable
+    : Map.Entry<Value,Value>, Serializable
   {
     private final Value _key;
 
@@ -2023,7 +2023,7 @@ abstract public class ArrayValue : Value {
   }
 
   public static class EntryIterator
-    implements Iterator<Map.Entry<Value,Value>> {
+    : Iterator<Map.Entry<Value,Value>> {
     private Entry _current;
 
     EntryIterator(Entry head)
@@ -2055,7 +2055,7 @@ abstract public class ArrayValue : Value {
   }
 
   public static class KeyIterator
-    implements Iterator<Value> {
+    : Iterator<Value> {
     private Entry _current;
 
     KeyIterator(Entry head)
@@ -2087,7 +2087,7 @@ abstract public class ArrayValue : Value {
   }
 
   public static class ValueIterator
-    implements Iterator<Value> {
+    : Iterator<Value> {
     private Entry _current;
 
     ValueIterator(Entry head)
@@ -2119,7 +2119,7 @@ abstract public class ArrayValue : Value {
   }
 
   public static class ValueComparator
-    implements Comparator<Map.Entry<Value,Value>>
+    : Comparator<Map.Entry<Value,Value>>
   {
     public readonly ValueComparator CMP = new ValueComparator();
 
@@ -2147,7 +2147,7 @@ abstract public class ArrayValue : Value {
   }
 
   public static class KeyComparator
-    implements Comparator<Map.Entry<Value,Value>>
+    : Comparator<Map.Entry<Value,Value>>
   {
     public readonly KeyComparator CMP = new KeyComparator();
 

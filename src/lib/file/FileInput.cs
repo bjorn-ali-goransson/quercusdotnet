@@ -44,7 +44,7 @@ namespace QuercusDotNet.lib.file {
  * Represents a Quercus file open for reading
  */
 public class FileInput : ReadStreamInput
-    implements LockableStream, EnvCleanup
+    : LockableStream, EnvCleanup
 {
   private Env _env;
   private Path _path;
@@ -144,7 +144,7 @@ public class FileInput : ReadStreamInput
   }
 
   /**
-   * Implements the EnvCleanup interface.
+   * : the EnvCleanup interface.
    */
   public override void cleanup()
   {

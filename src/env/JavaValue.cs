@@ -53,7 +53,7 @@ namespace QuercusDotNet.Env{
  * Represents a Quercus java value.
  */
 public class JavaValue : ObjectValue
-  implements Serializable
+  : Serializable
 {
   private const Logger log
     = Logger.getLogger(JavaValue.class.getName());
@@ -664,7 +664,7 @@ public class JavaValue : ObjectValue
     _object = in.readObject();
   }
 
-  private static class EntryItem implements Map.Entry<Value,Value> {
+  private static class EntryItem : Map.Entry<Value,Value> {
     private Value _key;
     private Value _value;
     private bool _isArray;

@@ -172,7 +172,7 @@ public class ProfileMethod
             + "]");
   }
 
-  static class ItemMicrosComparator implements Comparator<ProfileItem> {
+  static class ItemMicrosComparator : Comparator<ProfileItem> {
     public int compare(ProfileItem a, ProfileItem b)
     {
       long delta = b.getMicros() - a.getMicros();

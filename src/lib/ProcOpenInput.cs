@@ -50,7 +50,7 @@ namespace QuercusDotNet.lib{
  * Represents an input stream for a proc_open process.
  */
 public class ProcOpenInput : ReadStreamInput
-    implements EnvCleanup
+    : EnvCleanup
 {
   private const Logger log
     = Logger.getLogger(FileInput.class.getName());
@@ -126,7 +126,7 @@ public class ProcOpenInput : ReadStreamInput
   }
 
   /**
-   * Implements the EnvCleanup interface.
+   * : the EnvCleanup interface.
    */
 
   public void cleanup()

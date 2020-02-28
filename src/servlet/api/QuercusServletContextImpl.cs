@@ -33,7 +33,7 @@ namespace QuercusDotNet.servlet.api {
 
 
 
-public class QuercusServletContextImpl implements QuercusServletContext
+public class QuercusServletContextImpl : QuercusServletContext
 {
   private final ServletContext _ctx;
 

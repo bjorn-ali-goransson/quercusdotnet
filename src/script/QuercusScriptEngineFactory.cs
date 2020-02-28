@@ -43,7 +43,7 @@ namespace QuercusDotNet.Script{
 /**
  * Script engine factory
  */
-public class QuercusScriptEngineFactory implements ScriptEngineFactory
+public class QuercusScriptEngineFactory : ScriptEngineFactory
 {
   private Bindings _globalBindings = new SimpleBindings();
 

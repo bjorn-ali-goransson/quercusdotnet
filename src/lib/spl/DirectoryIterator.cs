@@ -45,7 +45,7 @@ namespace QuercusDotNet.lib.spl {
 
 public class DirectoryIterator
   : SplFileInfo
-  implements Iterator, Traversable, SeekableIterator
+  : Iterator, Traversable, SeekableIterator
 {
   private String[] _list;
   private int _index;

@@ -40,7 +40,7 @@ namespace QuercusDotNet.lib.spl {
 
 
 public class RecursiveIteratorIterator
-  implements OuterIterator, Traversable, Iterator
+  : OuterIterator, Traversable, Iterator
 {
   public const int LEAVES_ONLY = 0;
   public const int SELF_FIRST = 1;
@@ -129,7 +129,7 @@ public class RecursiveIteratorIterator
     return getClass().getSimpleName() + "[" + _iterStack + "]";
   }
 
-  static class RecursiveIteratorProxy implements RecursiveIterator {
+  static class RecursiveIteratorProxy : RecursiveIterator {
     private final Value _obj;
 
     private const StringValue HAS_CHILDREN

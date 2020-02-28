@@ -52,7 +52,7 @@ namespace QuercusDotNet.Env{
  */
 @SuppressWarnings("serial")
 public class Var : Value
-  implements Serializable
+  : Serializable
 {
   private Value _value;
 

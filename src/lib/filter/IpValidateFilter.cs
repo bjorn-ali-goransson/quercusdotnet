@@ -43,7 +43,7 @@ namespace QuercusDotNet.lib.filter {
 
 
 
-public class IpValidateFilter : AbstractFilter implements ValidateFilter
+public class IpValidateFilter : AbstractFilter : ValidateFilter
 {
   @Override
   protected Value filterImpl(Env env, Value value,

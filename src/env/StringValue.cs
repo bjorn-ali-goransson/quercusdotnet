@@ -59,7 +59,7 @@ namespace QuercusDotNet.Env{
  */
 abstract public class StringValue
   : Value
-  implements CharSequence, ByteAppendable
+  : CharSequence, ByteAppendable
 {
   public readonly StringValue EMPTY = new ConstStringValue("");
 

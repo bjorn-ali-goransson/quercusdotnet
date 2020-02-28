@@ -490,7 +490,7 @@ public class QuercusProgram {
     return getClass().getSimpleName() + "[" + _sourceFile + "]";
   }
 
-  class PageDependency implements Dependency {
+  class PageDependency : Dependency {
     public bool isModified()
     {
       if (_compiledPage != null)

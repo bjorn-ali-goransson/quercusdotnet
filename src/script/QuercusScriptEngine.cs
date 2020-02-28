@@ -66,7 +66,7 @@ namespace QuercusDotNet.Script{
  */
 public class QuercusScriptEngine
   : AbstractScriptEngine
-  implements Compilable
+  : Compilable
 {
   private readonly L10N L = new L10N(QuercusScriptEngine.class);
   private const Logger log

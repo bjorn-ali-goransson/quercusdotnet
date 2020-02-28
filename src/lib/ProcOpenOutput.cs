@@ -48,7 +48,7 @@ namespace QuercusDotNet.lib{
  * Represents an output stream for a proc_open process.
  */
 public class ProcOpenOutput : AbstractBinaryOutput
-    implements EnvCleanup
+    : EnvCleanup
 {
   private const Logger log
     = Logger.getLogger(PopenOutput.class.getName());
@@ -146,7 +146,7 @@ public class ProcOpenOutput : AbstractBinaryOutput
   }
 
   /**
-   * Implements the EnvCleanup interface.
+   * : the EnvCleanup interface.
    */
   public void cleanup()
   {

@@ -33,7 +33,7 @@ namespace QuercusDotNet.servlet.api {
 
 
 
-public class QuercusCookieImpl implements QuercusCookie
+public class QuercusCookieImpl : QuercusCookie
 {
   private final Cookie _cookie;
 

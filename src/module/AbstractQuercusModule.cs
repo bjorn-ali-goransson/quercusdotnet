@@ -42,7 +42,7 @@ namespace QuercusDotNet.Module{
 /**
  * Represents a quercus module.
  */
-public class AbstractQuercusModule implements QuercusModule {
+public class AbstractQuercusModule : QuercusModule {
   protected const int PHP_INI_USER = IniDefinition.PHP_INI_USER;
   protected const int PHP_INI_PERDIR = IniDefinition.PHP_INI_PERDIR;
   protected const int PHP_INI_SYSTEM = IniDefinition.PHP_INI_SYSTEM;

@@ -31,7 +31,7 @@ namespace QuercusDotNet.lib/gettext/expr{
 
 
 
-public class IfExpr implements Expr
+public class IfExpr : Expr
 {
   protected Expr _testExpr;
   protected Expr _trueExpr;
