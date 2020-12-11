@@ -41,8 +41,7 @@ public class BooleanValidateFilter
   : AbstractFilter
   : ValidateFilter
 {
-  @Override
-  protected Value filterImpl(Env env, Value value,
+  protected override Value filterImpl(Env env, Value value,
                              int flags, ArrayValue options)
   {
     // XXX: push this down to Value?

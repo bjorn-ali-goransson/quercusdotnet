@@ -63,8 +63,7 @@ public class DoubleObjectMarshal : Marshal
       return new DoubleValue(((Number) value).doubleValue());
   }
 
-  @Override
-  protected int getMarshalingCostImpl(Value argValue)
+  protected override int getMarshalingCostImpl(Value argValue)
   {
     return argValue.toDoubleMarshalCost() + 1;
 

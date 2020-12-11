@@ -91,8 +91,7 @@ public class FunctionScope : Scope {
   /**
    * Adds a function defined in a conditional block.
    */
-  @Override
-  protected void addConditionalFunction(StringValue name, Function function)
+  protected override void addConditionalFunction(StringValue name, Function function)
   {
     if (_conditionalFunctionMap == null)
       _conditionalFunctionMap = new HashMap<StringValue,Function>(4);

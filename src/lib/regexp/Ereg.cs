@@ -41,8 +41,7 @@ public class Ereg : Regexp
     super(rawRegexp);
   }
 
-  @Override
-  protected void init()
+  protected override void init()
   {
     _flags |= Regcomp.SINGLE_LINE;
   }

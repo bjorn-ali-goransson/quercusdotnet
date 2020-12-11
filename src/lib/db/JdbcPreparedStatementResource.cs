@@ -164,8 +164,7 @@ public class JdbcPreparedStatementResource
     return true;
   }
 
-  @Override
-  protected bool prepareForExecute(Env env)
+  protected override bool prepareForExecute(Env env)
     
   {
     if (_types == null || _preparedStmt == null) {

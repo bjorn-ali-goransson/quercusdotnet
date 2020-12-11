@@ -58,8 +58,7 @@ public class DataSourceConnection : JdbcConnectionResource
     connectInternal(env, null, user, pass, null, -1, null, 0, null, null, false, false);
   }
 
-  @Override
-  protected ConnectionEntry connectImpl(Env env,
+  protected override ConnectionEntry connectImpl(Env env,
                                         string host,
                                         string userName,
                                         string password,

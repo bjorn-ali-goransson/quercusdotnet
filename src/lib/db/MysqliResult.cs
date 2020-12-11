@@ -938,8 +938,7 @@ public class MysqliResult : JdbcResultResource {
     return _resultSetSize;
   }
 
-  @Override
-  protected Value getColumnString(Env env,
+  protected override Value getColumnString(Env env,
                                   ResultSet rs,
                                   ResultSetMetaData md,
                                   int column)

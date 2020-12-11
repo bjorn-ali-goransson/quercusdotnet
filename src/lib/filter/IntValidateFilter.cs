@@ -40,8 +40,7 @@ namespace QuercusDotNet.lib.filter {
 
 public class IntValidateFilter : AbstractFilter : ValidateFilter
 {
-  @Override
-  protected Value filterImpl(Env env, Value value, int flags, ArrayValue options)
+  protected override Value filterImpl(Env env, Value value, int flags, ArrayValue options)
   {
     long min = Long.MIN_VALUE;
     long max = Long.MAX_VALUE;

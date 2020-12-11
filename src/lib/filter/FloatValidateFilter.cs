@@ -44,8 +44,7 @@ public class FloatValidateFilter
 {
   private readonly L10N L = new L10N(FloatValidateFilter.class);
 
-  @Override
-  protected Value filterImpl(Env env, Value value,
+  protected override Value filterImpl(Env env, Value value,
                              int flags, ArrayValue options)
   {
     if (value == BooleanValue.TRUE) {

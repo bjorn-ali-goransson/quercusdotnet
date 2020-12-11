@@ -64,8 +64,7 @@ public class BigDecimalMarshal : Marshal {
     return env.wrapJava((BigDecimal) value);
   }
   
-  @Override
-  protected int getMarshalingCostImpl(Value argValue)
+  protected override int getMarshalingCostImpl(Value argValue)
   {
     if (argValue instanceof BigDecimalValue)
       return  Marshal.Marshal.ZERO;

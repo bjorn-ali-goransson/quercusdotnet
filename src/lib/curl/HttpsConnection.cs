@@ -68,8 +68,7 @@ public class HttpsConnection
           proxyURL, proxyUsername, proxyPassword, proxyType) {
   }
   
-  @Override
-  protected void init(CurlResource curl)
+  protected override void init(CurlResource curl)
     
   {
     Proxy proxy = getProxy();

@@ -63,8 +63,7 @@ public class DateMarshal : Marshal
     return env.wrapJava((Date)value);
   }
   
-  @Override
-  protected int getMarshalingCostImpl(Value argValue)
+  protected override int getMarshalingCostImpl(Value argValue)
   {
     if (argValue instanceof JavaDateValue)
       return  Marshal.Marshal.ZERO;

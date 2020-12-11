@@ -82,8 +82,7 @@ public class Postgres : JdbcConnectionResource
                     driver, url, false, false);
   }
 
-  @Override
-  protected string getDriverName()
+  protected override string getDriverName()
   {
     return "pgsql";
   }

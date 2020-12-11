@@ -61,8 +61,7 @@ public class UnicodeEregiMarshal : StringMarshal {
     throw new UnsupportedOperationException(getClass().getName());
   }
   
-  @Override
-  protected int getMarshalingCostImpl(Value argValue)
+  protected override int getMarshalingCostImpl(Value argValue)
   {
     if (argValue.isString()) {
       return  Marshal.Marshal.ZERO;

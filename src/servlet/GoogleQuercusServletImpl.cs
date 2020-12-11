@@ -64,8 +64,7 @@ public class GoogleQuercusServletImpl : QuercusServletImpl
   /**
    * Returns the Quercus instance.
    */
-  @Override
-  protected QuercusContext getQuercus()
+  protected override QuercusContext getQuercus()
   {
     if (_quercus == null) {
       _quercus = new GoogleQuercus();

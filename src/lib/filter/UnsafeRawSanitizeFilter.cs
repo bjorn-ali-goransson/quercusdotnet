@@ -40,8 +40,7 @@ public class UnsafeRawSanitizeFilter
   : AbstractFilter
   : SanitizeFilter
 {
-  @Override
-  protected Value filterImpl(Env env, Value value,
+  protected override Value filterImpl(Env env, Value value,
                              int flags, ArrayValue options)
   {
     StringValue str = value.ToStringValue(env);

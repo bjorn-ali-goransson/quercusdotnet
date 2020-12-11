@@ -65,8 +65,7 @@ public class Oracle : JdbcConnectionResource {
                     driver, url, false, false);
   }
 
-  @Override
-  protected string getDriverName()
+  protected override string getDriverName()
   {
     // XXX: check
     return "oci";

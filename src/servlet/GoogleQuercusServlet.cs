@@ -51,8 +51,7 @@ public class GoogleQuercusServlet : QuercusServlet
   {
   }
 
-  @Override
-  protected QuercusServletImpl getQuercusServlet(bool isResin)
+  protected override QuercusServletImpl getQuercusServlet(bool isResin)
   {
     QuercusServletImpl impl = null;
 

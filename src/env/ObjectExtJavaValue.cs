@@ -69,8 +69,7 @@ public class ObjectExtJavaValue : ObjectExtValue
   /**
    * Returns fields not explicitly specified by this value.
    */
-  @Override
-  protected Value getFieldExt(Env env, StringValue name)
+  protected override Value getFieldExt(Env env, StringValue name)
   {
     if (_object == null) {
       _object = createJavaObject(env);

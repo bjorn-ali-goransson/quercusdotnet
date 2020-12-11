@@ -68,8 +68,7 @@ public class ByteMarshal : Marshal
       return LongValue.create(((Number) value).longValue());
   }
 
-  @Override
-  protected int getMarshalingCostImpl(Value argValue)
+  protected override int getMarshalingCostImpl(Value argValue)
   {
     return argValue.toByteMarshalCost();
     /*

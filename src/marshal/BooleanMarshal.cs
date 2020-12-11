@@ -73,8 +73,7 @@ public class BooleanMarshal : Marshal {
         : BooleanValue.FALSE;
   }
 
-  @Override
-  protected int getMarshalingCostImpl(Value argValue)
+  protected override int getMarshalingCostImpl(Value argValue)
   {
     return argValue.toBooleanMarshalCost();
     /*

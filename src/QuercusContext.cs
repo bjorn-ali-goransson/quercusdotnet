@@ -2241,8 +2241,7 @@ public class QuercusContext
   /**
    * Calls close().
    */
-  @Override
-  protected void finalize()
+  protected override void finalize()
     
   {
     super.finalize();

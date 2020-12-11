@@ -63,8 +63,7 @@ public class CharacterObjectMarshal : Marshal
       return env.createString(value.ToString());
   }
   
-  @Override
-  protected int getMarshalingCostImpl(Value argValue)
+  protected override int getMarshalingCostImpl(Value argValue)
   {
     if (argValue.isUnicode() && argValue.length() == 1)
       return  Marshal.Marshal.ONE;

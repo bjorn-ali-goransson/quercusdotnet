@@ -66,8 +66,7 @@ public class PathMarshal : Marshal
     return def.wrap(env, value);
   }
   
-  @Override
-  protected int getMarshalingCostImpl(Value argValue)
+  protected override int getMarshalingCostImpl(Value argValue)
   {
     if (argValue instanceof JavaValue
         && Path.class.isAssignableFrom(argValue.toJavaObject().getClass()))

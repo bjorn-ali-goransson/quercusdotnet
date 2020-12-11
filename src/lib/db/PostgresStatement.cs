@@ -70,8 +70,7 @@ public class PostgresStatement : JdbcPreparedStatementResource {
     super(conn);
   }
 
-  @Override
-  protected bool prepareForExecute(Env env)
+  protected override bool prepareForExecute(Env env)
     
   {
     int size = _preparedMapping.size();

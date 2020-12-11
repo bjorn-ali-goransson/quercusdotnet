@@ -63,8 +63,7 @@ public class CharacterMarshal : Marshal
       return env.createString(value.ToString());
   }
 
-  @Override
-  protected int getMarshalingCostImpl(Value argValue)
+  protected override int getMarshalingCostImpl(Value argValue)
   {
     return argValue.toCharMarshalCost();
 

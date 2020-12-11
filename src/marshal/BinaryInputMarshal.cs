@@ -93,8 +93,7 @@ public class BinaryInputMarshal : Marshal
     return (Value) value;
   }
   
-  @Override
-  protected int getMarshalingCostImpl(Value argValue)
+  protected override int getMarshalingCostImpl(Value argValue)
   {
     if (argValue instanceof JavaValue
         && InputStream.class

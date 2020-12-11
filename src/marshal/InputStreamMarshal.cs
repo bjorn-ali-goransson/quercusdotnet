@@ -63,8 +63,7 @@ public class InputStreamMarshal : Marshal
     return env.wrapJava((InputStream) value);
   }
 
-  @Override
-  protected int getMarshalingCostImpl(Value argValue)
+  protected override int getMarshalingCostImpl(Value argValue)
   {
     if (argValue instanceof JavaValue
         && InputStream.class.isAssignableFrom(

@@ -41,8 +41,7 @@ public class Eregi : Ereg
     super(rawRegexp);
   }
 
-  @Override
-  protected void init()
+  protected override void init()
   {
     super.init();
 

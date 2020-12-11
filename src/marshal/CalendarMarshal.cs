@@ -58,8 +58,7 @@ public class CalendarMarshal : Marshal
     return env.wrapJava((Calendar)value);
   }
   
-  @Override
-  protected int getMarshalingCostImpl(Value argValue)
+  protected override int getMarshalingCostImpl(Value argValue)
   {
     if (argValue instanceof JavaCalendarValue)
       return  Marshal.Marshal.ZERO;

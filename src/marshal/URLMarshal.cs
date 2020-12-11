@@ -62,8 +62,7 @@ public class URLMarshal : Marshal
     return env.wrapJava((URL)value);
   }
   
-  @Override
-  protected int getMarshalingCostImpl(Value argValue)
+  protected override int getMarshalingCostImpl(Value argValue)
   {
     if (argValue instanceof JavaURLValue)
       return  Marshal.Marshal.ZERO;

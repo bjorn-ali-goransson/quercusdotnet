@@ -168,8 +168,7 @@ public class Mysqli : JdbcConnectionResource
   /**
    * Connects to the underlying database.
    */
-  @Override
-  protected ConnectionEntry connectImpl(Env env,
+  protected override ConnectionEntry connectImpl(Env env,
                                         string host,
                                         string user,
                                         string pass,

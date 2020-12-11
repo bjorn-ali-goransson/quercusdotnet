@@ -49,8 +49,7 @@ public class SQLite3 : JdbcConnectionResource
                     null, jdbcUrl, true, false);
   }
 
-  @Override
-  protected ConnectionEntry connectImpl(Env env,
+  protected override ConnectionEntry connectImpl(Env env,
                                         string host,
                                         string userName,
                                         string password,

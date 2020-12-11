@@ -72,8 +72,7 @@ public class OracleResult : JdbcResultResource {
     _conn = conn;
   }
 
-  @Override
-  protected Value getBlobValue(Env env,
+  protected override Value getBlobValue(Env env,
                                ResultSet rs,
                                ResultSetMetaData metaData,
                                int column)

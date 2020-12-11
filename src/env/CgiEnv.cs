@@ -52,8 +52,7 @@ public class CgiEnv
     super(quercus, page, @out, request, response);
   }
 
-  @Override
-  protected string getQueryString()
+  protected override string getQueryString()
   {
     Value serverEnv = getGlobalValue("_SERVER");
 

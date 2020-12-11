@@ -98,8 +98,7 @@ public class ClassMarshal : Marshal {
       return env.wrapJava(value);
   }
 
-  @Override
-  protected int getMarshalingCostImpl(Value argValue)
+  protected override int getMarshalingCostImpl(Value argValue)
   {
     Object javaValue = argValue.toJavaObject();
 

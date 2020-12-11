@@ -114,8 +114,7 @@ public class PostgresResult : JdbcResultResource {
    * the java.sql.Date representation does not.
    */
 
-  @Override
-  protected Value getColumnTime(Env env, ResultSet rs, int column)
+  protected override Value getColumnTime(Env env, ResultSet rs, int column)
     
   {
     Time time = rs.getTime(column);

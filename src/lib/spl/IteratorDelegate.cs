@@ -77,8 +77,7 @@ public class IteratorDelegate : TraversableDelegate
       super(env, obj);
     }
 
-    @Override
-    protected Map.Entry<Value, Value> getCurrent()
+    protected override Map.Entry<Value, Value> getCurrent()
     {
       // php/4ar2
       Value value = getCurrentValue();

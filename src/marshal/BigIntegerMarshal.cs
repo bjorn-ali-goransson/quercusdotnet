@@ -65,8 +65,7 @@ public class BigIntegerMarshal : Marshal {
     return env.wrapJava((BigInteger) value);
   }
   
-  @Override
-  protected int getMarshalingCostImpl(Value argValue)
+  protected override int getMarshalingCostImpl(Value argValue)
   {
     if (argValue instanceof BigIntegerValue)
       return  Marshal.Marshal.ZERO;
