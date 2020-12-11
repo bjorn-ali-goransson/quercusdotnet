@@ -83,7 +83,7 @@ public class XMLWriterModule : AbstractQuercusModule {
   /**
    * Opens the writer for a uri target
    */
-  public static XMLWriter xmlwriter_open_uri(Env env, Path path)
+  public static XMLWriter xmlwriter_open_uri(Env env, string path)
   {
     XMLWriter w = new XMLWriter();
 

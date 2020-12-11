@@ -47,10 +47,10 @@ public class FileInput : ReadStreamInput
     : LockableStream, EnvCleanup
 {
   private Env _env;
-  private Path _path;
+  private string _path;
   private ReadStream _is;
 
-  public FileInput(Env env, Path path)
+  public FileInput(Env env, string path)
     
   {
     super(env);
@@ -69,7 +69,7 @@ public class FileInput : ReadStreamInput
   /**
    * Returns the path.
    */
-  public Path getPath()
+  public string getPath()
   {
     return _path;
   }

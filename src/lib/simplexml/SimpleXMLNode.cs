@@ -252,7 +252,7 @@ public abstract class SimpleXMLNode
       return value;
     }
     else {
-      Path path = env.lookupPwd(filename);
+      string path = env.lookupPwd(filename);
 
       OutputStream os = null;
 

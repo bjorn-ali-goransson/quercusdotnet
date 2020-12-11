@@ -627,7 +627,7 @@ public class McryptModule : AbstractQuercusModule {
    */
   public static bool mcrypt_module_self_test(Env env,
                                                 string algorithm,
-                                                Path libDir)
+                                                string libDir)
   {
     try {
       Mcrypt mcrypt = new Mcrypt(env, algorithm, "cbc");
@@ -645,9 +645,9 @@ public class McryptModule : AbstractQuercusModule {
    */
   public static Value mcrypt_module_open(Env env,
                                          string algorithm,
-                                         Path algorithm_directory,
+                                         string algorithm_directory,
                                          string mode,
-                                         Path mode_directory)
+                                         string mode_directory)
   {
     try {
       return env.wrapJava(new Mcrypt(env, algorithm, mode));

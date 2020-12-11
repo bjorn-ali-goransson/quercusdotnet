@@ -44,7 +44,7 @@ namespace QuercusDotNet.lib.file {
  * Represents a Quercus open file
  */
 public class FileValue : StreamResource {
-  private Path _path;
+  private string _path;
 
   public FileValue(Path path)
   {
@@ -54,7 +54,7 @@ public class FileValue : StreamResource {
   /**
    * Returns the path.
    */
-  public Path getPath()
+  public string getPath()
   {
     return _path;
   }

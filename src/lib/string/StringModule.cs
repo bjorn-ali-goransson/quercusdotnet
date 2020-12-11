@@ -909,7 +909,7 @@ public class StringModule : AbstractQuercusModule {
    * @return a string of imploded values
    */
   public static Value md5_file(Env env,
-                               Path source,
+                               string source,
                                @Optional bool rawOutput)
   {
     TempBuffer tempBuffer = TempBuffer.allocate();
@@ -1852,7 +1852,7 @@ public class StringModule : AbstractQuercusModule {
    * @return a string of imploded values
    */
   public static Value sha1_file(Env env,
-                                Path source,
+                                string source,
                                 @Optional bool rawOutput)
   {
     TempBuffer tempBuffer = TempBuffer.allocate();

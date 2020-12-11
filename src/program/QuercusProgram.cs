@@ -64,7 +64,7 @@ public class QuercusProgram {
   private QuercusPage _compiledPage;
   private QuercusPage _profilePage;
 
-  private Path _sourceFile;
+  private string _sourceFile;
 
   private AtomicBoolean _isCompiling
     = new AtomicBoolean();
@@ -103,7 +103,7 @@ public class QuercusProgram {
    * @param statement the top-level statement
    */
   public QuercusProgram(QuercusContext quercus,
-                        Path sourceFile,
+                        string sourceFile,
                         HashMap<StringValue,Function> functionMap,
                         ArrayList<Function> functionList,
                         HashMap<String,InterpretedClassDef> classMap,
@@ -147,7 +147,7 @@ public class QuercusProgram {
    * @param statement the top-level statement
    */
   public QuercusProgram(QuercusContext quercus,
-                        Path sourceFile,
+                        string sourceFile,
                         QuercusPage page)
   {
     _quercus = quercus;
@@ -172,7 +172,7 @@ public class QuercusProgram {
   /**
    * Returns the source path.
    */
-  public Path getSourcePath()
+  public string getSourcePath()
   {
     return _sourceFile;
   }

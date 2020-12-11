@@ -47,7 +47,7 @@ public class RecursiveDirectoryIterator
     super(env, fileName, flags);
   }
 
-  protected RecursiveDirectoryIterator(Path parent, Path path, string fileName, int flags)
+  protected RecursiveDirectoryIterator(Path parent, string path, string fileName, int flags)
    : base(parent, path, fileName, flags) {
   }
 
@@ -83,7 +83,7 @@ public class RecursiveDirectoryIterator
   }
 
   /*
-  protected override SplFileInfo createCurrent(Env env, Path path)
+  protected override SplFileInfo createCurrent(Env env, string path)
   {
     if (path.isDirectory()) {
       return new RecursiveDirectoryIterator(path, getFlags());

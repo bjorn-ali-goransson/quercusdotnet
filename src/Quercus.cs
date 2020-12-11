@@ -169,7 +169,7 @@ public class Quercus
   public void execute()
     
   {
-    Path path = getPwd().lookup(_fileName);
+    string path = getPwd().lookup(_fileName);
 
     execute(path);
   }
@@ -177,7 +177,7 @@ public class Quercus
   public void execute(String code)
     
   {
-    Path path = new StringPath(code);
+    string path = new StringPath(code);
 
     execute(path);
   }

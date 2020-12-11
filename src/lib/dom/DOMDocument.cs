@@ -366,7 +366,7 @@ public class DOMDocument
   }
 
   // XXX: also can be called statically, returns a DOMDocument in that case
-  public bool load(Env env, Path path, @Optional Value options)
+  public bool load(Env env, string path, @Optional Value options)
   {
     if (options != null)
       env.stub(L.l("`{0}' @is ignored", "options"));
@@ -441,7 +441,7 @@ public class DOMDocument
   }
 
   // XXX: also can be called statically, returns a DOMDocument in that case
-  public bool loadHTMLFile(Env env, Path path)
+  public bool loadHTMLFile(Env env, string path)
   {
     ReadStream @is = null;
 
@@ -541,7 +541,7 @@ public class DOMDocument
   /**
    * @return the number of bytes written, or FALSE for an error
    */
-  public Value save(Env env, Path path, @Optional Value options)
+  public Value save(Env env, string path, @Optional Value options)
   {
     if (options != null)
       env.stub(L.l("`{0}' @is ignored", "options"));
@@ -549,7 +549,7 @@ public class DOMDocument
     return saveToFile(env, path, false);
   }
 
-  private Value saveToFile(Env env, Path path, bool isHTML)
+  private Value saveToFile(Env env, string path, bool isHTML)
   {
     WriteStream os = null;
 
@@ -643,7 +643,7 @@ public class DOMDocument
    * @return the number of bytes written, or FALSE for an error
    */
 
-  public Value saveHTMLFile(Env env, Path path)
+  public Value saveHTMLFile(Env env, string path)
   {
     return saveToFile(env, path, true);
   }

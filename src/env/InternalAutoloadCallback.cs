@@ -98,7 +98,7 @@ public class InternalAutoloadCallback
       }
     }
     else {
-      Path path = env.getPwd().lookup(urlStr);
+      string path = env.getPwd().lookup(urlStr);
 
       env.executePage(path);
     }

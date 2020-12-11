@@ -72,7 +72,7 @@ public class CgiQuercus
   public override void execute()
     
   {
-    Path path = getPwd().lookup(getFileName());
+    string path = getPwd().lookup(getFileName());
 
     QuercusPage page = parse(path);
 

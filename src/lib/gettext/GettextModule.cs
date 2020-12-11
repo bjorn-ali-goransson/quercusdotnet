@@ -345,7 +345,7 @@ public class GettextModule
   }
 
   private GettextResource getResource(Env env,
-                              Path path,
+                              string path,
                               Locale locale,
                               CharSequence category,
                               string domain)

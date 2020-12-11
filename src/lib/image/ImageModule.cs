@@ -176,7 +176,7 @@ public class ImageModule : AbstractQuercusModule {
    * Returns the environment value.
    */
   public static Value getimagesize(Env env,
-                                   Path file,
+                                   string file,
                                    @Optional ArrayValue imageArray)
   {
     if (! file.canRead()) {
@@ -739,7 +739,7 @@ public class ImageModule : AbstractQuercusModule {
   /**
    * Create a new image from file or URL
    */
-  public static QuercusImage imagecreatefromgif(Env env, Path filename)
+  public static QuercusImage imagecreatefromgif(Env env, string filename)
   {
     return new QuercusImage(env, filename);
   }
@@ -748,7 +748,7 @@ public class ImageModule : AbstractQuercusModule {
    * Create a new image from file or URL
    */
   @ReturnNullAsFalse
-  public static QuercusImage imagecreatefromjpeg(Env env, Path filename)
+  public static QuercusImage imagecreatefromjpeg(Env env, string filename)
   {
     try {
       return new QuercusImage(env, filename);
@@ -764,7 +764,7 @@ public class ImageModule : AbstractQuercusModule {
   /**
    * Create a new image from file or URL
    */
-  public static QuercusImage imagecreatefrompng(Env env, Path filename)
+  public static QuercusImage imagecreatefrompng(Env env, string filename)
   {
     return new QuercusImage(env, filename);
   }
@@ -783,7 +783,7 @@ public class ImageModule : AbstractQuercusModule {
   /**
    * Create a new image from file or URL
    */
-  public static QuercusImage imagecreatefromwbmp(Env env, Path filename)
+  public static QuercusImage imagecreatefromwbmp(Env env, string filename)
   {
     return new QuercusImage(env, filename);
   }
@@ -791,7 +791,7 @@ public class ImageModule : AbstractQuercusModule {
   /**
    * Create a new image from file or URL
    */
-  public static Value imagecreatefromxbm(Env env, Path filename)
+  public static Value imagecreatefromxbm(Env env, string filename)
   {
     return new QuercusImage(env, filename);
   }
@@ -799,7 +799,7 @@ public class ImageModule : AbstractQuercusModule {
   /**
    * Create a new image from file or URL
    */
-  public static QuercusImage imagecreatefromxpm(Env env, Path filename)
+  public static QuercusImage imagecreatefromxpm(Env env, string filename)
   {
     return new QuercusImage(env, filename);
   }
@@ -1202,7 +1202,7 @@ public class ImageModule : AbstractQuercusModule {
   /**
    * Output GD2 image to browser or file
    */
-  public static void imagegd2(QuercusImage image, @Optional Path file)
+  public static void imagegd2(QuercusImage image, @Optional string file)
   {
     throw new QuercusException("imagegd2 @is not implemented");
   }
@@ -1210,7 +1210,7 @@ public class ImageModule : AbstractQuercusModule {
   /**
    * Output GD image to browser or file
    */
-  public static void imagegd(QuercusImage image, @Optional Path file)
+  public static void imagegd(QuercusImage image, @Optional string file)
   {
     throw new QuercusException("imagegd @is not implemented");
   }
@@ -1219,7 +1219,7 @@ public class ImageModule : AbstractQuercusModule {
    * Output image to browser or file
    */
   public static bool imagegif(Env env, QuercusImage image,
-                                 @Optional Path path)
+                                 @Optional string path)
   {
     try {
       if (path != null) {
@@ -1272,7 +1272,7 @@ public class ImageModule : AbstractQuercusModule {
    */
   public static bool imagejpeg(Env env,
                                   QuercusImage image,
-                                  @Optional Path path,
+                                  @Optional string path,
                                   @Optional int quality)
   {
     try {
@@ -1340,7 +1340,7 @@ public class ImageModule : AbstractQuercusModule {
    */
   public static bool imagepng(Env env,
                                  QuercusImage image,
-                                 @Optional Path path)
+                                 @Optional string path)
   {
     try {
       if (path != null) {
@@ -1398,7 +1398,7 @@ public class ImageModule : AbstractQuercusModule {
   /**
    * Change the character encoding vector of a font
    */
-  public static bool imagepsencodefont(Value fontIndex, Path encodingFile)
+  public static bool imagepsencodefont(Value fontIndex, string encodingFile)
   {
     throw new QuercusException("imagepsencodefont() not implemented");
   }
@@ -1700,7 +1700,7 @@ public class ImageModule : AbstractQuercusModule {
    * Output image to browser or file
    */
   public static void imagewbmp(QuercusImage image,
-                               @Optional Path filename,
+                               @Optional string filename,
                                @Optional int threshhold)
   {
     throw new UnimplementedException("imagewbmp()");

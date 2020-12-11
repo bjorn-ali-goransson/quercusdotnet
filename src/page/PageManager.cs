@@ -57,7 +57,7 @@ public class PageManager
 
   private QuercusContext _quercus;
 
-  //private Path _pwd;
+  //private string _pwd;
   private bool _isLazyCompile;
   private bool _isCompile;
   private bool _isCompileFailover = CurrentTime.isActive();
@@ -88,7 +88,7 @@ public class PageManager
   /**
    * Gets the owning directory.
    */
-  public Path getPwd()
+  public string getPwd()
   {
     return _quercus.getPwd();
   }
@@ -328,7 +328,7 @@ public class PageManager
       _quercus.clearDefinitionCache();
   }
 
-  protected QuercusPage compilePage(QuercusProgram program, Path path)
+  protected QuercusPage compilePage(QuercusProgram program, string path)
   {
     if (log.isLoggable(Level.FINE))
       log.fine(L.l("Quercus[{0}] loading interpreted page", path));

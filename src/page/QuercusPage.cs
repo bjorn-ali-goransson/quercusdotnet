@@ -108,7 +108,7 @@ abstract public class QuercusPage
   /**
    * Returns the page's path.
    */
-  abstract public Path getSelfPath(Env env);
+  abstract public string getSelfPath(Env env);
 
   /**
    * Finds a function.
@@ -150,9 +150,9 @@ abstract public class QuercusPage
   {
     QuercusPage compile = getCompiledPage();
 
-    Path oldPwd = env.getPwd();
+    string oldPwd = env.getPwd();
 
-    Path pwd = getPwd(env);
+    string pwd = getPwd(env);
 
     env.setPwd(pwd);
     try {
@@ -195,7 +195,7 @@ abstract public class QuercusPage
   /**
    * Returns the pwd according to the source page.
    */
-  public Path getPwd(Env env)
+  public string getPwd(Env env)
   {
     return getSelfPath(env).getParent();
   }

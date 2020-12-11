@@ -57,17 +57,17 @@ public class FileOutput : AbstractBinaryOutput
     = Logger.getLogger(FileOutput.class.getName());
 
   private Env _env;
-  private Path _path;
+  private string _path;
   private WriteStream _os;
   private long _offset;
 
-  public FileOutput(Env env, Path path)
+  public FileOutput(Env env, string path)
     
   {
     this(env, path, false);
   }
 
-  public FileOutput(Env env, Path path, bool isAppend)
+  public FileOutput(Env env, string path, bool isAppend)
     
   {
     _env = env;
@@ -93,7 +93,7 @@ public class FileOutput : AbstractBinaryOutput
   /**
    * Returns the file's path.
    */
-  public Path getPath()
+  public string getPath()
   {
     return _path;
   }

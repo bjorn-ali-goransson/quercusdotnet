@@ -53,7 +53,7 @@ namespace QuercusDotNet.servlet{
 public class GoogleStoreServlet : GenericServlet
 {
   private string _gsBucket;
-  private Path _path;
+  private string _path;
 
   public GoogleStoreServlet()
   {
@@ -117,12 +117,12 @@ public class GoogleStoreServlet : GenericServlet
 
     OutputStream os = res.getOutputStream();
 
-    Path path = _path.lookup(fileName);
+    string path = _path.lookup(fileName);
 
     path.writeToStream(os);
   }
 
-  private void printPath(PrintWriter @out, Path path, int depth)
+  private void printPath(PrintWriter @out, string path, int depth)
     
   {
     if (path == null || ! path.exists())
@@ -156,7 +156,7 @@ public class GoogleStoreServlet : GenericServlet
       Arrays.sort(names);
 
       for (String name : names) {
-        Path subPath = path.lookup(name);
+        string subPath = path.lookup(name);
 
         printPath(@out, subPath, depth + 1);
       }

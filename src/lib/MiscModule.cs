@@ -311,7 +311,7 @@ public class MiscModule : AbstractQuercusModule {
       return BooleanValue.FALSE;
     }
 
-    Path path = env.lookup(browscap.ToStringValue());
+    string path = env.lookup(browscap.ToStringValue());
     if (path == null) {
       env.warning(L.l("Browscap file not found."));
       return BooleanValue.FALSE;
@@ -723,7 +723,7 @@ public class MiscModule : AbstractQuercusModule {
                                            string command,
                                            ArrayValue descriptorArray,
                                            @Reference Value pipes,
-                                           @Optional Path pwd,
+                                           @Optional string pwd,
                                            @Optional ArrayValue envArray,
                                            @Optional ArrayValue options)
   {

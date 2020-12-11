@@ -326,7 +326,7 @@ public class OracleOciLob {
    * Exports LOB's contents to a file
    */
   public bool export(Env env,
-                        Path file,
+                        string file,
                         @Optional("0") long start,
                         @Optional("-1") long length)
   {
@@ -419,7 +419,7 @@ public class OracleOciLob {
    * Imports file data to the LOB
    */
   @Name("import")
-  public bool q_import(Env env, Path file)
+  public bool q_import(Env env, string file)
   {
     try {
 
@@ -591,7 +591,7 @@ public class OracleOciLob {
    * Alias of import()
    */
   public bool saveFile(Env env,
-                          Path file)
+                          string file)
   {
     return q_import(env, file);
   }
@@ -837,7 +837,7 @@ public class OracleOciLob {
    * Alias of export()
    */
   public bool writeToFile(Env env,
-                             Path file,
+                             string file,
                              @Optional("0") long start,
                              @Optional("-1") long length)
   {

@@ -77,7 +77,7 @@ public class MultipartBody : PostBody
       if (value.length() > 0 && value[0] == '@') {
         StringValue fileName = value.substring(1);
 
-        Path path = env.lookup(fileName);
+        string path = env.lookup(fileName);
 
         if (path == null || ! path.canRead()) {
           env.warning(L.l("cannot read file '{0}'", fileName));
@@ -243,9 +243,9 @@ public class MultipartBody : PostBody
   }
 
   static class PathEntry : MultipartEntry {
-    Path _path;
+    string _path;
 
-    PathEntry(Env env, string name, Path path)
+    PathEntry(Env env, string name, string path)
      : base(env, name, getHeader(name,
                                  getContentType(env, path.getTail()),
                                  path.getTail())) {

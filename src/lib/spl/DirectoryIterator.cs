@@ -65,7 +65,7 @@ public class DirectoryIterator
     }
   }
 
-  protected DirectoryIterator(Path parent, Path path, string fileName)
+  protected DirectoryIterator(Path parent, string path, string fileName)
    : base(parent, path, fileName) {
 
     try {
@@ -104,7 +104,7 @@ public class DirectoryIterator
     if (_current == null && _index < _list.length) {
       string name = _list[_index];
 
-      Path child = _path.lookup(name);
+      string child = _path.lookup(name);
 
       _current = createCurrent(env, _path, child, name);
     }
@@ -113,8 +113,8 @@ public class DirectoryIterator
   }
 
   protected SplFileInfo createCurrent(Env env,
-                                      Path parent,
-                                      Path path,
+                                      string parent,
+                                      string path,
                                       string fileName)
   {
     return new SplFileInfo(parent, path, fileName);

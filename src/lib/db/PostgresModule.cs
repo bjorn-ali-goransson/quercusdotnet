@@ -2053,7 +2053,7 @@ public class PostgresModule : AbstractQuercusModule {
   public static bool pg_lo_export(Env env,
                                      @NotNull Postgres conn,
                                      int oid,
-                                     Path path)
+                                     string path)
   {
     try {
       if (conn == null)
@@ -2117,7 +2117,7 @@ public class PostgresModule : AbstractQuercusModule {
   public static bool pg_loexport(Env env,
                                      @NotNull Postgres conn,
                                      int oid,
-                                     Path path)
+                                     string path)
   {
     return pg_lo_export(env, conn, oid, path);
   }
@@ -2128,7 +2128,7 @@ public class PostgresModule : AbstractQuercusModule {
   @ReturnNullAsFalse
   public static LongValue pg_lo_import(Env env,
                                        @NotNull Postgres conn,
-                                       Path path)
+                                       string path)
   {
     try {
       if (conn == null)
@@ -2168,7 +2168,7 @@ public class PostgresModule : AbstractQuercusModule {
   @ReturnNullAsFalse
   public static LongValue pg_loimport(Env env,
                                       @NotNull Postgres conn,
-                                      Path path)
+                                      string path)
   {
     return pg_lo_import(env, conn, path);
   }
@@ -3229,7 +3229,7 @@ public class PostgresModule : AbstractQuercusModule {
    * Enable tracing a PostgreSQL connection
    */
   public static bool pg_trace(Env env,
-                                 Path path,
+                                 string path,
                                  @Optional string mode,
                                  @Optional Postgres conn)
   {

@@ -239,7 +239,7 @@ public class Post
         // create a temp file in the upload directory.
 
         if (filename.length() > 0) {
-          Path tmpPath = env.getUploadDirectory().createTempFile("php", ".tmp");
+          string tmpPath = env.getUploadDirectory().createTempFile("php", ".tmp");
 
           env.addRemovePath(tmpPath);
 

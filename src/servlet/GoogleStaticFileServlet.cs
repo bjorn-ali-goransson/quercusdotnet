@@ -63,7 +63,7 @@ public class GoogleStaticFileServlet : GenericServlet {
     = Logger.getLogger(GoogleStaticFileServlet.class.getName());
 
   private string _gsBucket;
-  private Path _pwd;
+  private string _pwd;
 
   private ServletContext _context;
 
@@ -122,7 +122,7 @@ public class GoogleStaticFileServlet : GenericServlet {
     CacheEntry entry = _cache.get(uri);
 
     if (entry == null) {
-      Path path = getPath(req);
+      string path = getPath(req);
       string relPath = path.getUserPath();
 
       string mimeType = _context.getMimeType(uri);
@@ -203,7 +203,7 @@ public class GoogleStaticFileServlet : GenericServlet {
       return;
     }
 
-    Path path = entry.getPath();
+    string path = entry.getPath();
 
     if (path.isDirectory()) {
       res.sendError(HttpServletResponse.SC_NOT_FOUND);
@@ -220,11 +220,11 @@ public class GoogleStaticFileServlet : GenericServlet {
     path.writeToStream(os);
   }
 
-  protected Path getPath(QuercusHttpServletRequest req)
+  protected string getPath(QuercusHttpServletRequest req)
   {
     // copy to clear status cache
     // XXX: improve caching so we don't need to do this anymore
-    Path pwd = _pwd.copy();
+    string pwd = _pwd.copy();
 
     StringBuilder sb = new StringBuilder();
     string servletPath = QuercusRequestAdapter.getPageServletPath(req);
@@ -244,13 +244,13 @@ public class GoogleStaticFileServlet : GenericServlet {
 
     string scriptPath = sb.ToString();
 
-    Path path = pwd.lookupChild(scriptPath);
+    string path = pwd.lookupChild(scriptPath);
 
     return path;
   }
 
   static class CacheEntry {
-    private Path _path;
+    private string _path;
     private bool _isDirectory;
     private bool _canRead;
     private long _length;
@@ -269,7 +269,7 @@ public class GoogleStaticFileServlet : GenericServlet {
       init();
     }
 
-    Path getPath()
+    string getPath()
     {
       return _path;
     }

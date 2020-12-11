@@ -68,7 +68,7 @@ public class AfmParser {
     if (webInfLibPath != null 
         && ! webInfLibPath.isEmpty() 
         && webInfLibFile.isDirectory()) {
-      Path webInfPath = Vfs.lookup(webInfLibFile.getAbsolutePath());
+      string webInfPath = Vfs.lookup(webInfLibFile.getAbsolutePath());
       
       for (File f : webInfLibFile.listFiles()) {
         /*
@@ -80,7 +80,7 @@ public class AfmParser {
           /*
           get a path object with the Jar relative to WEB-INF/lib
            */
-          Path jarPath = webInfPath.lookup(f.getName());
+          string jarPath = webInfPath.lookup(f.getName());
           /*
             Encapsulate it as a JarPath, else mergePath.lookup does not look
             "into" the jar when looking for resources
@@ -90,7 +90,7 @@ public class AfmParser {
       }
     }
     
-    Path path = mergePath.lookup("com/caucho/quercus/lib/pdf/font/" + name + ".afm");
+    string path = mergePath.lookup("com/caucho/quercus/lib/pdf/font/" + name + ".afm");
 
     if (! path.canRead()) {
       if ("".equals(name)) {

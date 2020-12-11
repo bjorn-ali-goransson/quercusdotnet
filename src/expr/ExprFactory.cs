@@ -1294,7 +1294,7 @@ public class ExprFactory {
    * Creates an include expr
    */
   public Expr createInclude(Location loc,
-                            Path source,
+                            string source,
                             Expr expr)
   {
     return new FunIncludeExpr(loc, source, expr, false);
@@ -1304,7 +1304,7 @@ public class ExprFactory {
    * Creates an include expr
    */
   public Expr createRequire(Location loc,
-                            Path source,
+                            string source,
                             Expr expr)
   {
     return new FunIncludeExpr(loc, source, expr, true);
@@ -1314,7 +1314,7 @@ public class ExprFactory {
    * Creates an include expr
    */
   public Expr createIncludeOnce(Location loc,
-                                Path source,
+                                string source,
                                 Expr expr)
   {
     return new FunIncludeOnceExpr(loc, source, expr, false);
@@ -1324,7 +1324,7 @@ public class ExprFactory {
    * Creates an include expr
    */
   public Expr createRequireOnce(Location loc,
-                                Path source,
+                                string source,
                                 Expr expr)
   {
     return new FunIncludeOnceExpr(loc, source, expr, true);

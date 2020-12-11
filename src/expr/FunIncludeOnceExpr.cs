@@ -42,10 +42,10 @@ namespace QuercusDotNet.Expr{
  * Represents a PHP include statement
  */
 public class FunIncludeOnceExpr : AbstractUnaryExpr {
-  protected Path _dir;
+  protected string _dir;
   protected bool _isRequire;
   
-  public FunIncludeOnceExpr(Location location, Path sourceFile, Expr expr)
+  public FunIncludeOnceExpr(Location location, string sourceFile, Expr expr)
   {
     super(location, expr);
 
@@ -55,7 +55,7 @@ public class FunIncludeOnceExpr : AbstractUnaryExpr {
   }
 
   public FunIncludeOnceExpr(Location location,
-                            Path sourceFile,
+                            string sourceFile,
                             Expr expr,
                             bool isRequire)
   {

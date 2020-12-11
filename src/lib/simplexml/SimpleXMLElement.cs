@@ -185,7 +185,7 @@ public class SimpleXMLElement : SimpleXMLNode
     Document document = null;
 
     if (dataIsUrl) {
-      Path path = env.lookup(data.ToStringValue());
+      string path = env.lookup(data.ToStringValue());
 
       // PHP 
       if (path == null) {
@@ -248,7 +248,7 @@ public class SimpleXMLElement : SimpleXMLNode
     reader.setProperty("http://xml.org/sax/properties/lexical-handler", handler);
 
     if (dataIsUrl) {
-      Path path = env.lookup(data);
+      string path = env.lookup(data);
 
       // PHP 
       if (path == null) {

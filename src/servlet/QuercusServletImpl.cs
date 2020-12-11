@@ -93,8 +93,8 @@ public class QuercusServletImpl : HttpServlet
 
     checkServletAPIVersion();
 
-    Path pwd = new FilePath(_servletContext.getRealPath("/"));
-    Path webInfDir = new FilePath(_servletContext.getRealPath("/WEB-INF"));
+    string pwd = new FilePath(_servletContext.getRealPath("/"));
+    string webInfDir = new FilePath(_servletContext.getRealPath("/WEB-INF"));
 
     getQuercus().setPwd(pwd);
     getQuercus().setWebInfDir(webInfDir);
@@ -150,7 +150,7 @@ public class QuercusServletImpl : HttpServlet
     QuercusHttpServletResponse res = new QuercusHttpServletResponseImpl(response);
 
     try {
-      Path path = getPath(req);
+      string path = getPath(req);
 
       QuercusPage page;
 
@@ -199,7 +199,7 @@ public class QuercusServletImpl : HttpServlet
         StringValue prepend
           = quercus.getIniValue("auto_prepend_file").ToStringValue(env);
         if (prepend.length() > 0) {
-          Path prependPath = env.lookup(prepend);
+          string prependPath = env.lookup(prepend);
 
           if (prependPath == null)
             env.error(L.l("auto_prepend_file '{0}' not found.", prepend));
@@ -214,7 +214,7 @@ public class QuercusServletImpl : HttpServlet
         StringValue append
           = quercus.getIniValue("auto_append_file").ToStringValue(env);
         if (append.length() > 0) {
-          Path appendPath = env.lookup(append);
+          string appendPath = env.lookup(append);
 
           if (appendPath == null)
             env.error(L.l("auto_append_file '{0}' not found.", append));
@@ -305,10 +305,10 @@ public class QuercusServletImpl : HttpServlet
     return ws;
   }
 
-  protected Path getPath(QuercusHttpServletRequest req)
+  protected string getPath(QuercusHttpServletRequest req)
   {
     // php/8173
-    Path pwd = getQuercus().getPwd().copy();
+    string pwd = getQuercus().getPwd().copy();
 
     string servletPath = QuercusRequestAdapter.getPageServletPath(req);
 
@@ -316,7 +316,7 @@ public class QuercusServletImpl : HttpServlet
       servletPath = servletPath.substring(1);
     }
 
-    Path path = pwd.lookupChild(servletPath);
+    string path = pwd.lookupChild(servletPath);
 
     // php/2010, php/2011, php/2012
     if (path.isFile()) {
@@ -341,12 +341,12 @@ public class QuercusServletImpl : HttpServlet
 
     /* jetty getRealPath() de-references symlinks, which causes problems with MergePath
     // php/8173
-    Path pwd = getQuercus().getPwd().copy();
+    string pwd = getQuercus().getPwd().copy();
 
     string scriptPath = QuercusRequestAdapter.getPageServletPath(req);
     string pathInfo = QuercusRequestAdapter.getPagePathInfo(req);
 
-    Path path = pwd.lookup(req.getRealPath(scriptPath));
+    string path = pwd.lookup(req.getRealPath(scriptPath));
 
     if (path.isFile())
       return path;

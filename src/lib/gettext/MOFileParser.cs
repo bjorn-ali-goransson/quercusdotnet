@@ -63,7 +63,7 @@ class MOFileParser : GettextParser
   private int _offsetOriginal;
   private int _offsetTranslation;
 
-  MOFileParser(Env env, Path path)
+  MOFileParser(Env env, string path)
     
   {
     _env = env;

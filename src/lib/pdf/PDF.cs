@@ -326,7 +326,7 @@ public class PDF
       Font face = _faceMap.get(name);
 
       if (face == null) {
-        Path p = _env.getQuercus().getWebInfDir().lookup("lib");
+        string p = _env.getQuercus().getWebInfDir().lookup("lib");
         face = new AfmParser().parse(String.valueOf(p), name);
 
         _faceMap.put(name, face);
@@ -904,7 +904,7 @@ public class PDF
   /**
    * open image
    */
-  public PDFImage open_image_file(String type, Path file,
+  public PDFImage open_image_file(String type, string file,
                                   @Optional string stringParam,
                                   @Optional int intParam)
     
@@ -922,7 +922,7 @@ public class PDF
    * open image
    */
   public PDFImage load_image(String type,
-                             Path file,
+                             string file,
                              @Optional string optlist)
     
   {

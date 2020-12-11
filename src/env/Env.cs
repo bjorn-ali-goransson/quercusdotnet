@@ -359,11 +359,11 @@ public class Env
 
   public enum OVERLOADING_TYPES {INVALID_FIRST, FIELDGET, FIELDSET, ISSET, UNSET, INVALID_LAST};
 
-  private Path _selfPath;
-  private Path _selfDirectory;
-  private Path _pwd;
-  private Path _uploadPath;
-  private Path _tmpPath;
+  private string _selfPath;
+  private string _selfDirectory;
+  private string _pwd;
+  private string _uploadPath;
+  private string _tmpPath;
   private ArrayList<Path> _removePaths;
 
   private bool _isStrict;
@@ -1543,7 +1543,7 @@ public class Env
   /**
    * Returns the current directory.
    */
-  public Path getPwd()
+  public string getPwd()
   {
     return _pwd;
   }
@@ -1559,7 +1559,7 @@ public class Env
   /**
    * Returns the current directory.
    */
-  public Path getWorkDir()
+  public string getWorkDir()
   {
     return _quercus.getWorkDir();
   }
@@ -1577,7 +1577,7 @@ public class Env
   /**
    * Returns the initial directory.
    */
-  public Path getSelfPath()
+  public string getSelfPath()
   {
     return _selfPath;
   }
@@ -1585,7 +1585,7 @@ public class Env
   /**
    * Returns the initial directory.
    */
-  public Path getSelfDirectory()
+  public string getSelfDirectory()
   {
     return _selfDirectory;
   }
@@ -1602,7 +1602,7 @@ public class Env
   /**
    * Returns the upload directory.
    */
-  public Path getUploadDirectory()
+  public string getUploadDirectory()
   {
     if (_uploadPath == null) {
       string realPath = getIniString("upload_tmp_dir");
@@ -1651,7 +1651,7 @@ public class Env
   /**
    * Returns the temp directory (used by tmpfile()).
    */
-  public Path getTempDirectory()
+  public string getTempDirectory()
   {
     string realPath;
 
@@ -1708,7 +1708,7 @@ public class Env
     long lastModified = 0;
 
     if (_page != null) {
-      Path pagePath = _page.getSelfPath(this);
+      string pagePath = _page.getSelfPath(this);
 
       if (pagePath != null)
         lastModified = pagePath.getLastModified();
@@ -4232,7 +4232,7 @@ public class Env
       = _quercus.getIniValue("auto_prepend_file").ToStringValue(this);
 
     if (prepend.length() > 0) {
-      Path prependPath = lookup(prepend);
+      string prependPath = lookup(prepend);
 
       if (prependPath == null)
         error(L.l("auto_prepend_file '{0}' not found.", prepend));
@@ -4248,7 +4248,7 @@ public class Env
       = _quercus.getIniValue("auto_append_file").ToStringValue(this);
 
     if (append.length() > 0) {
-      Path appendPath = lookup(append);
+      string appendPath = lookup(append);
 
       if (appendPath == null)
         error(L.l("auto_append_file '{0}' not found.", append));
@@ -5882,9 +5882,9 @@ public class Env
                        bool isRequire, bool isOnce)
   {
     try {
-      Path pwd = getPwd();
+      string pwd = getPwd();
 
-      Path path = lookupInclude(include, pwd, scriptPwd);
+      string path = lookupInclude(include, pwd, scriptPwd);
 
       if (path != null) {
       }
@@ -5969,7 +5969,7 @@ public class Env
   /**
    * Looks up based on the pwd.
    */
-  public Path lookupPwd(Value relPathV)
+  public string lookupPwd(Value relPathV)
   {
     if (! relPathV.isset())
       return null;
@@ -5979,7 +5979,7 @@ public class Env
     if (relPath.length() == 0)
       return null;
 
-    Path path = _lookupCache.get(relPath);
+    string path = _lookupCache.get(relPath);
 
     if (path == null) {
       path = getPwd().lookup(normalizePath(relPath));
@@ -5993,7 +5993,7 @@ public class Env
   /**
    * Looks up the path.
    */
-  public Path lookup(StringValue relPath)
+  public string lookup(StringValue relPath)
   {
     return lookupInclude(getSelfDirectory(), normalizePath(relPath));
   }
@@ -6001,16 +6001,16 @@ public class Env
   /**
    * Looks up the path.
    */
-  public Path lookupInclude(StringValue relPath)
+  public string lookupInclude(StringValue relPath)
   {
     return lookupInclude(relPath, getPwd(), getSelfDirectory());
   }
 
-  private Path lookupInclude(StringValue include, Path pwd, Path scriptPwd)
+  private string lookupInclude(StringValue include, string pwd, string scriptPwd)
   {
     string includePath = getDefaultIncludePath();
 
-    Path path = _quercus.getIncludeCache(include, includePath, pwd, scriptPwd);
+    string path = _quercus.getIncludeCache(include, includePath, pwd, scriptPwd);
 
     if (path == null) {
       path = lookupIncludeImpl(include, pwd, scriptPwd);
@@ -6049,15 +6049,15 @@ public class Env
     return includePath;
   }
 
-  private Path lookupIncludeImpl(StringValue includeValue,
-                                 Path pwd,
-                                 Path scriptPwd)
+  private string lookupIncludeImpl(StringValue includeValue,
+                                 string pwd,
+                                 string scriptPwd)
   {
     string include = normalizePath(includeValue);
 
     // php/0b0g
 
-    Path path = lookupInclude(pwd, include);
+    string path = lookupInclude(pwd, include);
 
     if (path == null) {
       // php/0b0l
@@ -6078,12 +6078,12 @@ public class Env
   /**
    * Looks up the path.
    */
-  private Path lookupInclude(Path pwd, string relPath)
+  private string lookupInclude(Path pwd, string relPath)
   {
     ArrayList<Path> pathList = getIncludePath(pwd);
 
     for (int i = 0; i < pathList.size(); i++) {
-      Path path = pathList.get(i).lookup(relPath);
+      string path = pathList.get(i).lookup(relPath);
 
       if (path.canRead() && ! path.isDirectory()) {
         return path;
@@ -7561,7 +7561,7 @@ public class Env
     _threadEnv.set(_oldThreadEnv);
 
     for (int i = 0; _removePaths != null && i < _removePaths.size(); i++) {
-      Path path = _removePaths.get(i);
+      string path = _removePaths.get(i);
 
       try {
         path.remove();

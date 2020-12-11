@@ -58,7 +58,7 @@ public class ExifModule : AbstractQuercusModule {
   /**
    *  Reads the EXIF headers from JPEG or TIFF
    */
-  public static Value exif_read_data(Env env, Path file,
+  public static Value exif_read_data(Env env, string file,
                                      @Optional string sections,
                                      @Optional bool arrays,
                                      @Optional bool thumbs)
@@ -69,7 +69,7 @@ public class ExifModule : AbstractQuercusModule {
   /**
    *  Alias of exif_read_data()
    */
-  public static Value read_exif_data(Env env, Path file,
+  public static Value read_exif_data(Env env, string file,
                                      @Optional string sections,
                                      @Optional bool arrays,
                                      @Optional bool thumbs)
@@ -85,7 +85,7 @@ public class ExifModule : AbstractQuercusModule {
    *  @param imagetype either TIFF or JPEG
    *  @return either the thumbnail or FALSE
    */
-  public static Value exif_thumbnail(Env env, Path file,
+  public static Value exif_thumbnail(Env env, string file,
                                      @Optional int width,
                                      @Optional int height,
                                      @Optional int imageType)
@@ -104,7 +104,7 @@ public class ExifModule : AbstractQuercusModule {
   /**
    *  Determine the type of an image
    */
-  public static Value exif_imagetype(Env env, Path file)
+  public static Value exif_imagetype(Env env, string file)
   {
     try {
       Iterator it = ImageIO.getImageReaders(file.openRead());

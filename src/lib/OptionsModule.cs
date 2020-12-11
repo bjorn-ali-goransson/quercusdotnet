@@ -596,7 +596,7 @@ public class OptionsModule : AbstractQuercusModule {
 
   public static Value php_ini_loaded_file(Env env)
   {
-    Path path = env.getQuercus().getIniFile();
+    string path = env.getQuercus().getIniFile();
 
     if (path != null) {
       return env.createString(path.ToString());
@@ -756,7 +756,7 @@ public class OptionsModule : AbstractQuercusModule {
     env.println("Server API => CGI");
     env.println("Virtual Directory Support => disabled");
 
-    env.println("Configuration File (php.ini) Path => "
+    env.println("Configuration File (php.ini) string => "
                 + env.getQuercus().getIniFile());
 
     env.println("PHP API => 20031224");
@@ -918,7 +918,7 @@ public class OptionsModule : AbstractQuercusModule {
    */
   public static string sys_get_temp_dir(Env env)
   {
-    Path tmp = env.getTempDirectory();
+    string tmp = env.getTempDirectory();
 
     return tmp.getNativePath() + Path.getFileSeparatorChar();
   }

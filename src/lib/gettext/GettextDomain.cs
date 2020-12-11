@@ -44,7 +44,7 @@ public class GettextDomain
 {
   private string _name; 
   private string _charset;
-  private Path _path;
+  private string _path;
   
   public GettextDomain(Env env, string name)
   {
@@ -74,14 +74,14 @@ public class GettextDomain
     _charset = charset;
   }
   
-  public Path getPath()
+  public string getPath()
   {
     return _path;
   }
   
   public bool setPath(Env env, StringValue directory)
   {
-    Path path = env.lookupPwd(directory);
+    string path = env.lookupPwd(directory);
     
     if (path != null)
       _path = path;

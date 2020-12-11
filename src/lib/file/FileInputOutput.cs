@@ -55,7 +55,7 @@ public class FileInputOutput : AbstractBinaryOutput
     = Logger.getLogger(FileInputOutput.class.getName());
 
   private Env _env;
-  private Path _path;
+  private string _path;
   private LineReader _lineReader;
 
   private RandomAccessStream _stream;
@@ -67,19 +67,19 @@ public class FileInputOutput : AbstractBinaryOutput
 
   private bool _temporary;
 
-  public FileInputOutput(Env env, Path path)
+  public FileInputOutput(Env env, string path)
     
   {
     this(env, path, false, false, false);
   }
 
-  public FileInputOutput(Env env, Path path, bool append, bool truncate)
+  public FileInputOutput(Env env, string path, bool append, bool truncate)
     
   {
     this(env, path, append, truncate, false);
   }
 
-  public FileInputOutput(Env env, Path path,
+  public FileInputOutput(Env env, string path,
                           bool append, bool truncate, bool temporary)
     
   {
@@ -139,7 +139,7 @@ public class FileInputOutput : AbstractBinaryOutput
   /**
    * Returns the path.
    */
-  public Path getPath()
+  public string getPath()
   {
     return _path;
   }

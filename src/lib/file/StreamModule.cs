@@ -412,7 +412,7 @@ public class StreamModule : AbstractQuercusModule {
   public static bool stream_is_local(Env env, Value stream)
   {
     if (stream.isString()) {
-      Path path = env.lookupPwd(stream);
+      string path = env.lookupPwd(stream);
 
       return (path instanceof FilePath) || (path instanceof MemoryPath);
     }
@@ -431,7 +431,7 @@ public class StreamModule : AbstractQuercusModule {
 
   public static Value stream_resolve_include_path(Env env, StringValue relPath)
   {
-    Path path = env.lookupInclude(relPath);
+    string path = env.lookupInclude(relPath);
 
     if (path != null && path.exists()) {
       return env.createString(path.getNativePath());

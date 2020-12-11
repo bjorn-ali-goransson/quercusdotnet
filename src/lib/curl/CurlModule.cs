@@ -879,7 +879,7 @@ public class CurlModule
         ReadStream in = null;
 
         try {
-          Path path = env.getPwd().lookup(value.ToString());
+          string path = env.getPwd().lookup(value.ToString());
 
           if (path.exists()) {
             in = path.openRead();

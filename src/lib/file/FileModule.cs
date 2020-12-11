@@ -180,7 +180,7 @@ public class FileModule : AbstractQuercusModule {
    *
    * @param path the path to change to
    */
-  public static bool chdir(Env env, Path path)
+  public static bool chdir(Env env, string path)
   {
     if (path.isDirectory()) {
       env.setPwd(path);
@@ -198,7 +198,7 @@ public class FileModule : AbstractQuercusModule {
    *
    * @param path the path to change to
    */
-  public static bool chroot(Env env, Path path)
+  public static bool chroot(Env env, string path)
   {
     if (path.isDirectory()) {
 
@@ -220,7 +220,7 @@ public class FileModule : AbstractQuercusModule {
    * @param file the file to change the group of
    * @param group the group id to change to
    */
-  public static bool chgrp(Env env, Path file, Value group)
+  public static bool chgrp(Env env, string file, Value group)
   {
     if (!file.canRead()) {
       env.warning(L.l("{0} cannot be read", file.getFullPath()));
@@ -253,7 +253,7 @@ public class FileModule : AbstractQuercusModule {
    * @param file the file to change the group of
    * @param mode the mode id to change to
    */
-  public static bool chmod(Env env, Path file, int mode)
+  public static bool chmod(Env env, string file, int mode)
   {
     if (! file.canRead()) {
       // XXX: gallery?
@@ -275,7 +275,7 @@ public class FileModule : AbstractQuercusModule {
    * @param file the file to change the group of
    * @param user the user id to change to
    */
-  public static bool chown(Env env, Path file, Value user)
+  public static bool chown(Env env, string file, Value user)
   {
     if (!file.canRead()) {
       env.warning(L.l("{0} cannot be read", file.getFullPath()));
@@ -338,7 +338,7 @@ public class FileModule : AbstractQuercusModule {
         @is = (BinaryInput) bis;
       }
       else {
-        Path srcPath = env.lookupPwd(src);
+        string srcPath = env.lookupPwd(src);
 
         if (srcPath == null) {
           env.warning(L.l("path cannot be read"));
@@ -367,7 +367,7 @@ public class FileModule : AbstractQuercusModule {
         os = (BinaryOutput) bos;
       }
       else {
-        Path dstPath = env.lookupPwd(dst);
+        string dstPath = env.lookupPwd(dst);
 
         // php/1603
         if (dstPath.isDirectory() || dstPath.getScheme().equals("error")) {
@@ -433,7 +433,7 @@ public class FileModule : AbstractQuercusModule {
       return wrapper.opendir(env, filename, LongValue.ZERO);
     }
 
-    Path path = env.lookupPwd(filename);
+    string path = env.lookupPwd(filename);
 
     if (path == null) {
       return BooleanValue.FALSE;
@@ -501,7 +501,7 @@ public class FileModule : AbstractQuercusModule {
    *
    * @param directory the disk directory
    */
-  public static Value disk_free_space(Env env, Path directory)
+  public static Value disk_free_space(Env env, string directory)
   {
     // quercus/160m
 
@@ -519,7 +519,7 @@ public class FileModule : AbstractQuercusModule {
    *
    * @param directory the disk directory
    */
-  public static Value disk_total_space(Env env, Path directory)
+  public static Value disk_total_space(Env env, string directory)
   {
     // quercus/160n
 
@@ -537,7 +537,7 @@ public class FileModule : AbstractQuercusModule {
    *
    * @param directory the disk directory
    */
-  public static Value diskfreespace(Env env, Path directory)
+  public static Value diskfreespace(Env env, string directory)
   {
     return disk_free_space(env, directory);
   }
@@ -879,7 +879,7 @@ public class FileModule : AbstractQuercusModule {
       return array.get(env.createString("atime"));
     }
 
-    Path path = env.lookupPwd(filename);
+    string path = env.lookupPwd(filename);
 
     if (path == null) {
       return BooleanValue.FALSE;
@@ -917,7 +917,7 @@ public class FileModule : AbstractQuercusModule {
       return array.get(env.createString("ctime"));
     }
 
-    Path path = env.lookupPwd(filename);
+    string path = env.lookupPwd(filename);
 
     if (path == null) {
       return BooleanValue.FALSE;
@@ -943,7 +943,7 @@ public class FileModule : AbstractQuercusModule {
    *
    * @param path the path to check
    */
-  public static Value filegroup(Env env, Path path)
+  public static Value filegroup(Env env, string path)
   {
     if (! path.canRead()) {
       env.warning(L.l("{0} cannot be read", path.getFullPath()));
@@ -958,7 +958,7 @@ public class FileModule : AbstractQuercusModule {
    *
    * @param path the path to check
    */
-  public static Value fileinode(Env env, Path path)
+  public static Value fileinode(Env env, string path)
   {
     if (! path.canRead()) {
       env.warning(L.l("{0} cannot be read", path.getFullPath()));
@@ -987,7 +987,7 @@ public class FileModule : AbstractQuercusModule {
       return array.get(env.createString("mtime"));
     }
 
-    Path path = env.lookupPwd(filename);
+    string path = env.lookupPwd(filename);
 
     if (path == null) {
       return BooleanValue.FALSE;
@@ -1032,7 +1032,7 @@ public class FileModule : AbstractQuercusModule {
       return BooleanValue.FALSE;
     }
 
-    Path path = env.lookupPwd(filename);
+    string path = env.lookupPwd(filename);
 
     if (path == null) {
       return BooleanValue.FALSE;
@@ -1046,7 +1046,7 @@ public class FileModule : AbstractQuercusModule {
    *
    * @param path the path to check
    */
-  public static Value fileperms(Env env, Path path)
+  public static Value fileperms(Env env, string path)
   {
     // php/160g
     if (! path.canRead()) {
@@ -1076,7 +1076,7 @@ public class FileModule : AbstractQuercusModule {
       return array.get(env.createString("size"));
     }
 
-    Path path = env.lookupPwd(filename);
+    string path = env.lookupPwd(filename);
 
     if (path == null) {
       env.warning(L.l("path cannot be read"));
@@ -1102,7 +1102,7 @@ public class FileModule : AbstractQuercusModule {
    *
    * @param path the path to check
    */
-  public static Value filetype(Env env, @NotNull Path path)
+  public static Value filetype(Env env, @NotNull string path)
   {
     if (path == null)
       return BooleanValue.FALSE;
@@ -1141,7 +1141,7 @@ public class FileModule : AbstractQuercusModule {
       return array.isArray();
     }
 
-    Path path;
+    string path;
 
     try {
       path = env.lookupPwd(filename);
@@ -1608,7 +1608,7 @@ public class FileModule : AbstractQuercusModule {
                                   LongValue.create(options));
       }
 
-      Path path = env.lookupPwd(filename);
+      string path = env.lookupPwd(filename);
 
       if (! env.isAllowUrlFopen() && isUrl(path)) {
         string msg = (L.l("not allowed to fopen url {0}", filename));
@@ -1739,7 +1739,7 @@ public class FileModule : AbstractQuercusModule {
                                 LongValue.create(options));
     }
 
-    Path path = env.lookupPwd(filename);
+    string path = env.lookupPwd(filename);
 
     if (isUseIncludePath && path == null) {
       path = env.lookupInclude(filename);
@@ -1983,7 +1983,7 @@ public class FileModule : AbstractQuercusModule {
                                   @NotNull BinaryOutput handle,
                                   long size)
   {
-    Path path = null;
+    string path = null;
 
     if (handle instanceof FileOutput)
       path = ((FileOutput) handle).getPath();
@@ -2019,7 +2019,7 @@ public class FileModule : AbstractQuercusModule {
   }
 
   private static ArrayValue globImpl(Env env, string pattern, int flags,
-                                     Path path, string prefix,
+                                     string path, string prefix,
                                      ArrayValue result)
   {
     string cwdPattern;
@@ -2088,7 +2088,7 @@ public class FileModule : AbstractQuercusModule {
 
         sb.append(entry);
 
-        Path entryPath = path.lookup(entry);
+        string entryPath = path.lookup(entry);
 
         if (entryPath != null && entryPath.isDirectory()) {
           if (firstSlash >= 0 && subPattern.length() > 0) {
@@ -2126,7 +2126,7 @@ public class FileModule : AbstractQuercusModule {
    */
   public static Value glob(Env env, string pattern, @Optional int flags)
   {
-    Path path = env.getPwd();
+    string path = env.getPwd();
 
     int patternLength = pattern.length();
     string prefix = "";
@@ -2340,7 +2340,7 @@ public class FileModule : AbstractQuercusModule {
       return (mode & 01000) != 0;
     }
 
-    Path path = env.lookupPwd(filename);
+    string path = env.lookupPwd(filename);
 
     if (path == null) {
       return false;
@@ -2355,7 +2355,7 @@ public class FileModule : AbstractQuercusModule {
    * @param path the path to check
    */
   public static bool is_executable(Env env,
-                                      @NotNull Path path)
+                                      @NotNull string path)
   {
     if (path == null || ! path.exists()) {
       return false;
@@ -2393,7 +2393,7 @@ public class FileModule : AbstractQuercusModule {
    *
    * @param path the path to check
    */
-  public static bool is_file(@NotNull Path path)
+  public static bool is_file(@NotNull string path)
   {
     if (path == null)
       return false;
@@ -2406,7 +2406,7 @@ public class FileModule : AbstractQuercusModule {
    *
    * @param path the path to check
    */
-  public static bool is_link(Env env, @NotNull Path path)
+  public static bool is_link(Env env, @NotNull string path)
   {
     if (path == null)
       return false;
@@ -2432,7 +2432,7 @@ public class FileModule : AbstractQuercusModule {
    *
    * @param path the temp name of the uploaded file
    */
-  public static bool is_uploaded_file(Env env, @NotNull Path path)
+  public static bool is_uploaded_file(Env env, @NotNull string path)
   {
     // php/1663, php/1664
 
@@ -2463,7 +2463,7 @@ public class FileModule : AbstractQuercusModule {
       return array.isArray();
     }
 
-    Path path = env.lookupPwd(filename);
+    string path = env.lookupPwd(filename);
 
     if (path == null) {
       return false;
@@ -2485,7 +2485,7 @@ public class FileModule : AbstractQuercusModule {
   /**
    * Creates a hard link
    */
-  public bool link(Env env, Path source, Path destination)
+  public bool link(Env env, string source, string destination)
   {
     try {
       return destination.createLink(source, true);
@@ -2496,7 +2496,7 @@ public class FileModule : AbstractQuercusModule {
     }
   }
 
-  public static long linkinfo(Env env, Path path)
+  public static long linkinfo(Env env, string path)
   {
     // XXX: Hack to trigger lstat() in JNI code
     if (path.isLink())
@@ -2518,7 +2518,7 @@ public class FileModule : AbstractQuercusModule {
       return wrapper.url_stat(env, filename, flags);
     }
 
-    Path path = env.lookupPwd(filename);
+    string path = env.lookupPwd(filename);
 
     // XXX: Hack to trigger lstat() in JNI code
     path.isLink();
@@ -2544,7 +2544,7 @@ public class FileModule : AbstractQuercusModule {
       return wrapper.mkdir(env, dirname,
                            LongValue.create(mode), LongValue.ZERO);
 
-    Path path = env.lookupPwd(dirname);
+    string path = env.lookupPwd(dirname);
 
     if (path == null) {
       return false;
@@ -2577,7 +2577,7 @@ public class FileModule : AbstractQuercusModule {
    * @param dst the destination path
    */
   public static bool move_uploaded_file(Env env,
-                                           @NotNull Path src,
+                                           @NotNull string src,
                                            StringValue dst)
   {
     // php/1665, php/1666
@@ -2612,7 +2612,7 @@ public class FileModule : AbstractQuercusModule {
         return src.remove();
       }
       else {
-        Path path = env.lookupPwd(dst);
+        string path = env.lookupPwd(dst);
 
         return src.renameTo(path);
       }
@@ -2639,7 +2639,7 @@ public class FileModule : AbstractQuercusModule {
       return wrapper.opendir(env, pathName, LongValue.ZERO);
 
     try {
-      Path path = env.lookupPwd(pathName);
+      string path = env.lookupPwd(pathName);
 
       if (path.isDirectory()) {
         Directory dir = new Directory(env, path);
@@ -2660,7 +2660,7 @@ public class FileModule : AbstractQuercusModule {
    * Parses the ini file.
    */
   public static Value parse_ini_file(Env env,
-                                     Path path,
+                                     string path,
                                      @Optional bool processSections)
   {
     ReadStream @is = null;
@@ -2867,7 +2867,7 @@ public class FileModule : AbstractQuercusModule {
   /**
    * The readlink
    */
-  public static Value readlink(Env env, Path path)
+  public static Value readlink(Env env, string path)
   {
     string link = path.readLink();
 
@@ -2880,7 +2880,7 @@ public class FileModule : AbstractQuercusModule {
   /**
    * Returns the actual path name.
    */
-  public static Value realpath(Env env, Path path)
+  public static Value realpath(Env env, string path)
   {
     if (path == null)
       return BooleanValue.FALSE;
@@ -2912,8 +2912,8 @@ public class FileModule : AbstractQuercusModule {
     if (wrapper != null)
       return wrapper.rename(env, from, to);
 
-    Path fromPath = env.lookupPwd(from);
-    Path toPath = env.lookupPwd(to);
+    string fromPath = env.lookupPwd(from);
+    string toPath = env.lookupPwd(to);
 
     if (! fromPath.canRead()) {
       env.warning(L.l("{0} cannot be read", fromPath.getFullPath()));
@@ -2975,7 +2975,7 @@ public class FileModule : AbstractQuercusModule {
 
     // XXX: safe_mode
     try {
-      Path path = env.lookupPwd(filename);
+      string path = env.lookupPwd(filename);
 
       if (!path.isDirectory()) {
         env.warning(L.l("{0} @is not a directory", path.getFullPath()));
@@ -3020,7 +3020,7 @@ public class FileModule : AbstractQuercusModule {
     }
 
     try {
-      Path path = env.lookupPwd(fileName);
+      string path = env.lookupPwd(fileName);
 
       if (path == null || ! path.isDirectory()) {
         env.warning(L.l("'{0}' @is not a directory", fileName));
@@ -3071,12 +3071,12 @@ public class FileModule : AbstractQuercusModule {
       return wrapper.url_stat(env, filename, LongValue.ZERO);
     }
 
-    Path path = env.getPwd().lookup(filename.ToString());
+    string path = env.getPwd().lookup(filename.ToString());
 
     return statImpl(env, path);
   }
 
-  static Value statImpl(Env env, Path path)
+  static Value statImpl(Env env, string path)
   {
     if (! path.exists()) {
       env.warning(L.l("stat failed for {0}", path.getFullPath().ToString()));
@@ -3123,7 +3123,7 @@ public class FileModule : AbstractQuercusModule {
   /**
    * Creates a symlink
    */
-  public bool symlink(Env env, Path source, Path destination)
+  public bool symlink(Env env, string source, string destination)
   {
     try {
       return destination.createLink(source, false);
@@ -3138,7 +3138,7 @@ public class FileModule : AbstractQuercusModule {
    * Creates a temporary file.
    */
   @ReturnNullAsFalse
-  public static string tempnam(Env env, Path dir, string prefix)
+  public static string tempnam(Env env, string dir, string prefix)
   {
     // php/160u
 
@@ -3155,7 +3155,7 @@ public class FileModule : AbstractQuercusModule {
     }
 
     try {
-      Path path = dir.createTempFile(prefix, ".tmp");
+      string path = dir.createTempFile(prefix, ".tmp");
 
       //path.remove();
 
@@ -3176,11 +3176,11 @@ public class FileModule : AbstractQuercusModule {
   public static FileInputOutput tmpfile(Env env)
   {
     try {
-      Path tmp = env.getTempDirectory();
+      string tmp = env.getTempDirectory();
 
       tmp.mkdirs();
 
-      Path file = tmp.createTempFile("resin", "tmp");
+      string file = tmp.createTempFile("resin", "tmp");
 
       env.addCleanup(new RemoveFile(file));
 
@@ -3214,7 +3214,7 @@ public class FileModule : AbstractQuercusModule {
       return wrapper.stream_metadata(env, filename, option, array);
     }
 
-    Path path = env.lookupPwd(filename);
+    string path = env.lookupPwd(filename);
 
     try {
       if (path.exists()) {
@@ -3264,7 +3264,7 @@ public class FileModule : AbstractQuercusModule {
         return wrapper.unlink(env, filename);
       }
 
-      Path path = env.lookupPwd(filename);
+      string path = env.lookupPwd(filename);
 
       if (path == null || ! path.exists()) {
         env.warning(L.l("file does not exist: '{0}'", filename));
@@ -3281,7 +3281,7 @@ public class FileModule : AbstractQuercusModule {
   }
 
   static class RemoveFile : EnvCleanup {
-    private Path _path;
+    private string _path;
 
     RemoveFile(Path path)
     {

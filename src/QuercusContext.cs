@@ -162,7 +162,7 @@ public class QuercusContext
 
   private IniDefinitions _iniDefinitions = new IniDefinitions();
 
-  private Path _iniFile;
+  private string _iniFile;
   private HashMap<String, Value> _iniMap;
 
   private HashMap<Value, Value> _serverEnvMap
@@ -225,9 +225,9 @@ public class QuercusContext
 
   private long _staticId;
 
-  private Path _pwd;
-  private Path _workDir;
-  private Path _webInfDir;
+  private string _pwd;
+  private string _workDir;
+  private string _webInfDir;
 
   private QuercusServletContext _servletContext;
 
@@ -287,10 +287,10 @@ public class QuercusContext
   /**
    * Returns the working directory.
    */
-  public Path getPwd()
+  public string getPwd()
   {
     if (_pwd == null) {
-      _pwd = Vfs.getPwd();
+      _pwd = Environment.CurrentDirectory;
     }
 
     return _pwd;
@@ -299,12 +299,12 @@ public class QuercusContext
   /**
    * Sets the working directory.
    */
-  public void setPwd(Path path)
+  public void setPwd(string path)
   {
     _pwd = path;
   }
 
-  public Path getWebInfDir()
+  public string getWebInfDir()
   {
     if (_webInfDir == null) {
       _webInfDir = getPwd().lookup("WEB-INF");
@@ -318,7 +318,7 @@ public class QuercusContext
     _webInfDir = path;
   }
 
-  public Path getWorkDir()
+  public string getWorkDir()
   {
     if (_workDir == null)
       _workDir = getWebInfDir().lookup("work");
@@ -979,7 +979,7 @@ public class QuercusContext
   /**
    * Returns the ini file.
    */
-  public Path getIniFile()
+  public string getIniFile()
   {
     return _iniFile;
   }
@@ -1126,14 +1126,14 @@ public class QuercusContext
   /**
    * Returns an include path.
    */
-  public Path getIncludeCache(StringValue include,
+  public string getIncludeCache(StringValue include,
                               string includePath,
-                              Path pwd,
-                              Path scriptPwd)
+                              string pwd,
+                              string scriptPwd)
   {
     IncludeKey key = new IncludeKey(include, includePath, pwd, scriptPwd);
 
-    Path path = _includeCache.get(key);
+    string path = _includeCache.get(key);
 
     return path;
   }
@@ -1143,9 +1143,9 @@ public class QuercusContext
    */
   public void putIncludeCache(StringValue include,
                               string includePath,
-                              Path pwd,
-                              Path scriptPwd,
-                              Path path)
+                              string pwd,
+                              string scriptPwd,
+                              string path)
   {
     IncludeKey key = new IncludeKey(include, includePath, pwd, scriptPwd);
 
@@ -2149,7 +2149,7 @@ public class QuercusContext
   {
     StringBuilder sb = new StringBuilder(".");
 
-    Path pwd = getPwd();
+    string pwd = getPwd();
 
     string []paths = new String[] {
       "/usr/share/php", "/usr/lib/php", "/usr/local/lib/php",
@@ -2252,13 +2252,13 @@ public class QuercusContext
   static class IncludeKey {
     private StringValue _include;
     private string _includePath;
-    private Path _pwd;
-    private Path _scriptPwd;
+    private string _pwd;
+    private string _scriptPwd;
 
     IncludeKey(StringValue include,
                string includePath,
-               Path pwd,
-               Path scriptPwd)
+               string pwd,
+               string scriptPwd)
     {
       _include = include;
       _includePath = includePath;

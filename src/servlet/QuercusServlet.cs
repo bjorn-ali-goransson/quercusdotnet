@@ -529,7 +529,7 @@ public class QuercusServlet
     }
 
     if (_iniPath != null) {
-      Path path = null;
+      string path = null;
 
       if (_iniPath.startsWith("/") || _iniPath.contains(":")) {
         // php/2026

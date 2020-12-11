@@ -98,7 +98,7 @@ public class QuercusImage : ResourceValue
     }
   }
 
-  public QuercusImage(Env env, Path filename)
+  public QuercusImage(Env env, string filename)
   {
     try {
       _bufferedImage = ImageIO.read(filename.openRead());
@@ -161,7 +161,7 @@ public class QuercusImage : ResourceValue
     if (font != null)
       return font;
 
-    Path path = env.lookupPwd(fontPath);
+    string path = env.lookupPwd(fontPath);
 
     if (path.canRead()) {
       ReadStream @is = path.openRead();

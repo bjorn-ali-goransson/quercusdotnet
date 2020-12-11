@@ -104,7 +104,7 @@ public class QuercusEngine
   {
     init();
 
-    Path path = _quercus.getPwd().lookup(filename);
+    string path = _quercus.getPwd().lookup(filename);
 
     return execute(path);
   }

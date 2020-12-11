@@ -54,7 +54,7 @@ public class PDFImage : PDFObject {
     = Logger.getLogger(PDFImage.class.getName());
   private readonly L10N L = new L10N(PDFImage.class);
 
-  private Path _path;
+  private string _path;
   private ReadStream _is;
 
   private BufferedImage _image;

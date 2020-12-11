@@ -62,7 +62,7 @@ public class HttpInputOutput : AbstractBinaryOutput
     = Logger.getLogger(HttpInputOutput.class.getName());
 
   private Env _env;
-  private Path _path;
+  private string _path;
   private StreamContextResource _context;
   
   private LineReader _lineReader;
@@ -77,13 +77,13 @@ public class HttpInputOutput : AbstractBinaryOutput
   
   private byte []_bodyStart;
   
-  public HttpInputOutput(Env env, Path path, StreamContextResource context)
+  public HttpInputOutput(Env env, string path, StreamContextResource context)
     
   {
     init(env, path, context);
   }
   
-  private void init(Env env, Path path, StreamContextResource context)
+  private void init(Env env, string path, StreamContextResource context)
     
   {
     _env = env;

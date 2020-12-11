@@ -149,7 +149,7 @@ public class HashModule : AbstractQuercusModule {
    */
   public Value hash_file(Env env,
                          string algorithm,
-                         Path path,
+                         string path,
                          @Optional bool isBinary)
   {
     try {
@@ -221,7 +221,7 @@ public class HashModule : AbstractQuercusModule {
    */
   public Value hash_hmac_file(Env env,
                               string algorithm,
-                              Path path,
+                              string path,
                               StringValue key,
                               @Optional bool isBinary)
   {
@@ -298,7 +298,7 @@ public class HashModule : AbstractQuercusModule {
    */
   public Value hash_update_file(Env env,
                                 HashContext context,
-                                Path path)
+                                string path)
   {
     if (context == null)
       return BooleanValue.FALSE;

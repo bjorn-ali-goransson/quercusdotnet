@@ -65,13 +65,13 @@ public class GoogleQuercus : QuercusContext
       string gsBucket = getIniString("google.cloud_storage_bucket");
 
       if (gsBucket != null) {
-        Path stdPwd = getPwd();
+        string stdPwd = getPwd();
 
         GoogleMergePath mergePwd = new GoogleMergePath(stdPwd, gsBucket, true);
         setPwd(mergePwd);
 
-        Path webInfDir = getWebInfDir();
-        Path gsWebInfDir = mergePwd.getGooglePath().lookup("WEB-INF");
+        string webInfDir = getWebInfDir();
+        string gsWebInfDir = mergePwd.getGooglePath().lookup("WEB-INF");
         MergePath mergeWebInf = new MergePath(gsWebInfDir, webInfDir);
 
         setWebInfDir(mergeWebInf);

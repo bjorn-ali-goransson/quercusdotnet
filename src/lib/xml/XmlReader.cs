@@ -540,7 +540,7 @@ public class XmlReader
    * @param uri uniform resource locator to open
    * @return true if success, false otherwise
    */
-  public BooleanValue open(Env env, Path path) {
+  public BooleanValue open(Env env, string path) {
     try {
       XMLInputFactory factory = XMLInputFactory.newInstance();
 

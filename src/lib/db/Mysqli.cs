@@ -825,7 +825,7 @@ public class Mysqli : JdbcConnectionResource
   public bool options(Env env, int option, Value value)
   {
     if (option == MysqliModule.MYSQLI_READ_DEFAULT_FILE) {
-      Path path = env.lookupPwd(value);
+      string path = env.lookupPwd(value);
 
       Value result = FileModule.parse_ini_file(env, path, true);
 

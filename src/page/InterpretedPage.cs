@@ -97,7 +97,7 @@ public class InterpretedPage : QuercusPage
   /**
    * Returns the pwd according to the source page.
    */
-  public override Path getPwd(Env env)
+  public override string getPwd(Env env)
   {
     return getSelfPath(env).getParent();
   }
@@ -105,7 +105,7 @@ public class InterpretedPage : QuercusPage
   /**
    * Returns the pwd according to the source page.
    */
-  public Path getSelfPath(Env env)
+  public string getSelfPath(Env env)
   {
     return _program.getSourcePath();
   }

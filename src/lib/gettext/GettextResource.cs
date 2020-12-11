@@ -51,9 +51,9 @@ namespace QuercusDotNet.lib.gettext {
 class GettextResource
 {
   private Env _env;
-  protected Path _pathPO;
-  private Path _pathMO;
-  private Path _currentPath;
+  protected string _pathPO;
+  private string _pathMO;
+  private string _currentPath;
 
   private BasicDependencyContainer _depend;
 
@@ -63,7 +63,7 @@ class GettextResource
   private string _charset;
 
   protected GettextResource(Env env,
-                              Path root,
+                              string root,
                               Locale locale,
                               CharSequence category,
                               CharSequence domain)
@@ -85,7 +85,7 @@ class GettextResource
     init();
   }
 
-  private Path lookupPath(Env env, Path root, string relPath)
+  private string lookupPath(Env env, string root, string relPath)
   {
     return root.lookup(relPath);
   }

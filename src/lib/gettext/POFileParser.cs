@@ -66,7 +66,7 @@ class POFileParser : GettextParser
   private int _peekChar;
   private StringValue _string;
 
-  POFileParser(Env env, Path path)
+  POFileParser(Env env, string path)
     
   {
     _env = env;

@@ -106,7 +106,7 @@ public class XMLWriter {
   /**
    * Opens the writer for a uri target
    */
-  public bool openURI(Env env, Path path)
+  public bool openURI(Env env, string path)
   {
     try {
       WriteStream @out = path.openWrite();

@@ -53,7 +53,7 @@ public class Directory
     handle = this;
   }
 
-  protected Directory(Env env, Path dir)
+  protected Directory(Env env, string dir)
     
   {
     handle = this;

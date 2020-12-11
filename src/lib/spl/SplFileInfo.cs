@@ -41,9 +41,9 @@ namespace QuercusDotNet.lib.spl {
 
 public class SplFileInfo
 {
-  private Path _parent;
+  private string _parent;
 
-  protected Path _path;
+  protected string _path;
   private string _openFileClassName;
   private string _infoFileClassName;
 
@@ -58,7 +58,7 @@ public class SplFileInfo
     _fileName = fileName.ToString();
   }
 
-  protected SplFileInfo(Path parent, Path path, string fileName)
+  protected SplFileInfo(Path parent, string path, string fileName)
   {
     _parent = parent;
 
@@ -76,12 +76,12 @@ public class SplFileInfo
   }
   */
 
-  protected Path getRawParent()
+  protected string getRawParent()
   {
     return _parent;
   }
 
-  protected Path getRawPath()
+  protected string getRawPath()
   {
     return _path;
   }
@@ -161,7 +161,7 @@ public class SplFileInfo
     return _parent.getNativePath();
 
     /*
-    Path parent = _path.getParent();
+    string parent = _path.getParent();
 
     return parent.getNativePath();
     */

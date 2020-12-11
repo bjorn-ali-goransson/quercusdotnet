@@ -862,7 +862,7 @@ public class CurlResource : ResourceValue
     WriteStream @out = null;
 
     try {
-      Path path = env.getPwd().lookup(_cookieFilename);
+      string path = env.getPwd().lookup(_cookieFilename);
 
       @out = path.openWrite();
 

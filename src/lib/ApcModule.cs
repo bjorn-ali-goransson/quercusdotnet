@@ -159,7 +159,7 @@ public class ApcModule : AbstractQuercusModule
   public bool apc_compile_file(Env env, StringValue name)
   {
     try {
-      Path path = env.lookup(name);
+      string path = env.lookup(name);
 
       if (path != null && path.canRead()) {
         env.getQuercus().parse(path);

@@ -190,7 +190,7 @@ public class QuercusParser {
 
   private QuercusContext _quercus;
 
-  private Path _sourceFile;
+  private string _sourceFile;
   private int _sourceOffset; // offset into the source file for the first line
 
   private ParserLocation _parserLocation = new ParserLocation();
@@ -271,7 +271,7 @@ public class QuercusParser {
   }
 
   public QuercusParser(QuercusContext quercus,
-                       Path sourceFile,
+                       string sourceFile,
                        ReadStream is)
   {
     this(quercus);
@@ -280,7 +280,7 @@ public class QuercusParser {
   }
 
   public QuercusParser(QuercusContext quercus,
-                       Path sourceFile,
+                       string sourceFile,
                        Reader reader)
   {
     this(quercus);
@@ -327,7 +327,7 @@ public class QuercusParser {
   }
 
   public static QuercusProgram parse(QuercusContext quercus,
-                                     Path path,
+                                     string path,
                                      string encoding)
     
   {
@@ -348,7 +348,7 @@ public class QuercusParser {
   }
 
   public static QuercusProgram parse(QuercusContext quercus,
-                                     Path path,
+                                     string path,
                                      string encoding,
                                      string fileName,
                                      int line)
@@ -388,7 +388,7 @@ public class QuercusParser {
   }
 
   public static QuercusProgram parse(QuercusContext quercus,
-                                     Path path,
+                                     string path,
                                      Reader reader)
     
   {
@@ -399,7 +399,7 @@ public class QuercusParser {
   }
 
   public static QuercusProgram parse(QuercusContext quercus,
-                                     Path path,
+                                     string path,
                                      ReadStream is)
     
   {
@@ -448,8 +448,8 @@ public class QuercusParser {
                                                string code)
     
   {
-    Path argPath = new StringPath(args);
-    Path codePath = new StringPath(code);
+    string argPath = new StringPath(args);
+    string codePath = new StringPath(code);
 
     QuercusParser parser = new QuercusParser(quercus);
 
@@ -473,7 +473,7 @@ public class QuercusParser {
   public static Expr parse(QuercusContext quercus, string str)
     
   {
-      Path path = new StringPath(str);
+      string path = new StringPath(str);
 
     return new QuercusParser(quercus, path, path.openRead()).parseExpr();
   }
@@ -481,7 +481,7 @@ public class QuercusParser {
   public static Expr parseDefault(String str)
   {
     try {
-      Path path = new StringPath(str);
+      string path = new StringPath(str);
 
       return new QuercusParser(null, path, path.openRead()).parseExpr();
     } catch (IOException e) {
@@ -492,7 +492,7 @@ public class QuercusParser {
   public static Expr parseDefault(ExprFactory factory, string str)
   {
     try {
-      Path path = new StringPath(str);
+      string path = new StringPath(str);
 
       QuercusParser parser = new QuercusParser(null, path, path.openRead());
 
@@ -598,7 +598,7 @@ public class QuercusParser {
                               _factory.createBlock(location, stmtList));
   }
 
-  public Function parseFunction(String name, Path argPath, Path codePath)
+  public Function parseFunction(String name, string argPath, string codePath)
     
   {
     ClassDef globalClass = null;
@@ -3997,7 +3997,7 @@ public class QuercusParser {
       return _factory.createFileNameExpr(_parserLocation.getFileName());
     }
     else if (name.equalsString("__DIR__")) {
-      Path parent = Vfs.lookup(_parserLocation.getFileName()).getParent();
+      string parent = Vfs.lookup(_parserLocation.getFileName()).getParent();
 
       return _factory.createDirExpr(parent.getNativePath());
     }

@@ -1210,7 +1210,7 @@ public class PDFModule : AbstractQuercusModule {
    */
   public static PDFImage pdf_load_image(@NotNull PDF pdf,
                                         string imageType,
-                                        Path path,
+                                        string path,
                                         @Optional string optlist)
   {
     try {
@@ -1270,7 +1270,7 @@ public class PDFModule : AbstractQuercusModule {
    */
   public static PDFImage pdf_open_image_file(@NotNull PDF pdf,
                                              string imagetype,
-                                             Path filename,
+                                             string filename,
                                              string stringparam,
                                              int intparam)
   {
