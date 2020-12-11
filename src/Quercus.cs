@@ -55,22 +55,6 @@ public class Quercus
   private string _fileName;
   private string []_argv;
 
-  public Quercus()
-   : base() {
-  }
-
-  //
-  // command-line main
-  //
-
-  public static void main(String []args)
-    
-  {
-    Quercus quercus = new Quercus();
-
-    startMain(args, quercus);
-  }
-
   public static void startMain(String []args, Quercus quercus)
     
   {
@@ -96,9 +80,9 @@ public class Quercus
 
   public void printUsage()
   {
-    System.out.println("usage: " + getClass().getName() + " [flags] <file> [php-args]");
-    System.out.println(" -f            : Explicitly set the script filename.");
-    System.out.println(" -d name=value : Sets a php ini value.");
+    Console.WriteLine("usage: " + getClass().getName() + " [flags] <file> [php-args]");
+    Console.WriteLine(" -f            : Explicitly set the script filename.");
+    Console.WriteLine(" -d name=value : Sets a php ini value.");
   }
 
   public override string getSapiName()
@@ -158,7 +142,7 @@ public class Quercus
         return false;
       }
       else if (args[i].startsWith("-")) {
-        System.out.println("unknown option: " + args[i]);
+        Console.WriteLine("unknown option: " + args[i]);
         return false;
       }
       else {

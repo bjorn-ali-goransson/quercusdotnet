@@ -191,7 +191,7 @@ public class PDFImage : PDFObject {
       colorMap = parseGIFColorMap(depth);
     }
     else {
-      System.out.println("GIF: can't cope with local");
+      Console.WriteLine("GIF: can't cope with local");
       return false;
     }
 
@@ -206,11 +206,11 @@ public class PDFImage : PDFObject {
     flags = _is.read() & 0xff;
 
     if ((flags & 0x80) != 0) {
-      System.out.println("GIF: can't cope with local");
+      Console.WriteLine("GIF: can't cope with local");
       return false;
     }
     if ((flags & 0x40) != 0) {
-      System.out.println("GIF: can't cope with interlaced");
+      Console.WriteLine("GIF: can't cope with interlaced");
       return false;
     }
 
@@ -239,7 +239,7 @@ public class PDFImage : PDFObject {
     
   {
     /*
-    System.out.println("CS: " + codeSize);
+    Console.WriteLine("CS: " + codeSize);
 
     int []strings = new int[4096];
 
@@ -254,8 +254,8 @@ public class PDFImage : PDFObject {
         int data = _is.read();
 
         if (i == 0) {
-          System.out.println("C: " + data);
-          System.out.println("C: " + (data & _codeMask));
+          Console.WriteLine("C: " + data);
+          Console.WriteLine("C: " + (data & _codeMask));
         }
       }
     }

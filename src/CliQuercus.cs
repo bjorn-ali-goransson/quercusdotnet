@@ -1,3 +1,6 @@
+using QuercusDotNet.Env;
+using QuercusDotNet.Page;
+using QuercusDotNet.servlet.api;
 using System;
 namespace QuercusDotNet {
 /*
@@ -42,7 +45,7 @@ namespace QuercusDotNet {
 
 public class CliQuercus : Quercus
 {
-  public override Env createEnv(QuercusPage page,
+  public override QuercusDotNet.Env.Env createEnv(QuercusPage page,
                        WriteStream @out,
                        QuercusHttpServletRequest request,
                        QuercusHttpServletResponse response)

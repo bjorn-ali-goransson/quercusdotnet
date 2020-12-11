@@ -319,7 +319,7 @@ public class FileModule : AbstractQuercusModule {
    */
   public static bool copy(Env env, StringValue src, StringValue dst)
   {
-    // System.out.println("XXX-COPY: " + src + " " + dst);
+    // Console.WriteLine("XXX-COPY: " + src + " " + dst);
     ProtocolWrapper srcWrapper = getProtocolWrapper(env, src);
 
     BinaryInput @is = null;

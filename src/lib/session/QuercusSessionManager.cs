@@ -411,7 +411,7 @@ public class QuercusSessionManager
 
     if (session != null) {
       if (session.inUse()) {
-        System.out.println("USE:" + isNew);
+        Console.WriteLine("USE:" + isNew);
         return (SessionArrayValue)session.copy(env);
       }
     }
@@ -421,7 +421,7 @@ public class QuercusSessionManager
 
     if (isNew) {
       isNew = ! load(env, session, now);
-      System.out.println("LOAD:" + isNew);
+      Console.WriteLine("LOAD:" + isNew);
     }
     else if (! getSaveOnlyOnShutdown() && ! session.load()) {
       // if the load failed, then the session died @out from underneath

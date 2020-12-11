@@ -760,7 +760,7 @@ abstract public class JavaInvoker
 
       /*
       if (javaArgs[k] != null)
-        System.out.println("ARG: " + javaArgs[k] + " " + _marshalArgs[i]);
+        Console.WriteLine("ARG: " + javaArgs[k] + " " + _marshalArgs[i]);
       */
 
       k++;
