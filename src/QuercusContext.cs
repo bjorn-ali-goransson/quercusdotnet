@@ -1,3 +1,6 @@
+using QuercusDotNet.lib.session;
+using QuercusDotNet.Module;
+using QuercusDotNet.Page;
 using System;
 namespace QuercusDotNet {
 /*
