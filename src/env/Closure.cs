@@ -36,7 +36,6 @@ namespace QuercusDotNet.Env{
 /**
  * Represents a closure function.
  */
-@SuppressWarnings("serial")
 abstract public class Closure : Callback
 {
   private string _name;

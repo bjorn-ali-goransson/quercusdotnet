@@ -43,11 +43,11 @@ public class QuercusDieException : QuercusExitException {
    : base(msg) {
   }
 
-  public QuercusDieException(Throwable cause)
+  public QuercusDieException(Exception cause)
    : base(cause) {
   }
 
-  public QuercusDieException(String msg, Throwable cause)
+  public QuercusDieException(String msg, Exception cause)
    : base(msg, cause) {
   }
 }

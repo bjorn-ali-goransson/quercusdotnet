@@ -49,7 +49,6 @@ namespace QuercusDotNet.Env{
 /**
  * Represents the introspected static function information.
  */
-@SuppressWarnings("serial")
 abstract public class JavaInvoker
   : AbstractJavaMethod
 {

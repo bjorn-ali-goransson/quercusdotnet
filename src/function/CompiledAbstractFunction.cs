@@ -34,7 +34,6 @@ namespace QuercusDotNet.Function{
 
 
 
-@SuppressWarnings("serial")
 public abstract class CompiledAbstractFunction : AbstractFunction
 {
   protected string _name;

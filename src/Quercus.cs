@@ -1,3 +1,4 @@
+using QuercusDotNet.Page;
 using System;
 namespace QuercusDotNet {
 /*
@@ -175,15 +176,6 @@ public class Quercus
   }
 
   public void execute(String code)
-    
-  {
-    string path = new StringPath(code);
-
-    execute(path);
-  }
-
-  public void execute(Path path)
-    
   {
     QuercusPage page = parse(path);
 
@@ -192,7 +184,7 @@ public class Quercus
     os.setNewlineString("\n");
     os.setEncoding("iso-8859-1");
 
-    Env env = createEnv(page, os, null, null);
+    QuercusDotNet.Env.Env env = createEnv(page, os, null, null);
     env.start();
 
     try {

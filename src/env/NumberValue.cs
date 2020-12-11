@@ -34,7 +34,6 @@ namespace QuercusDotNet.Env{
 /**
  * Represents a PHP number value (double or long).
  */
-@SuppressWarnings("serial")
 public abstract class NumberValue : Value {
   /**
    * Returns true for equality

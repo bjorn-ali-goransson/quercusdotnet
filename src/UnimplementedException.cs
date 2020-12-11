@@ -32,7 +32,6 @@ namespace QuercusDotNet {
 
 
 
-@SuppressWarnings("serial")
 public class UnimplementedException
   : UnsupportedOperationException
 {

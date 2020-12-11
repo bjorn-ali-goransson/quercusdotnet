@@ -71,7 +71,6 @@ namespace QuercusDotNet.servlet{
 /**
  * Servlet to call PHP through javax.script.
  */
-@SuppressWarnings("serial")
 public class QuercusServletImpl : HttpServlet
 {
   private readonly L10N L = new L10N(QuercusServletImpl.class);

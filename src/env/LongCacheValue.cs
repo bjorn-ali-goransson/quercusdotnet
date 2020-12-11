@@ -34,7 +34,6 @@ namespace QuercusDotNet.Env{
 /**
  * Represents a PHP long value.
  */
-@SuppressWarnings("serial")
 public class LongCacheValue : LongValue
 {
   private transient LongValue _prev;

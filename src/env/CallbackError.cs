@@ -36,7 +36,6 @@ namespace QuercusDotNet.Env{
 /**
  * Represents a call to an object's method
  */
-@SuppressWarnings("serial")
 public class CallbackError : Callback {
   private string _errorString;
 

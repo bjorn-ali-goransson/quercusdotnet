@@ -1,4 +1,6 @@
 using System;
+using System.Collections.Generic;
+
 namespace QuercusDotNet {
 /*
  * Copyright (c) 1998-2012 Caucho Technology -- all rights reserved
@@ -37,30 +39,29 @@ namespace QuercusDotNet {
 /**
  * Parent of PHP exceptions
  */
-@SuppressWarnings("serial")
-public class QuercusException : RuntimeException
-{
-  private ArrayList<String> _quercusStackTrace;
+public class QuercusException : Exception
+    {
+  private IEnumerable<String> _quercusStackTrace;
 
   public QuercusException()
   {
   }
 
   public QuercusException(String msg)
+   : base(msg)
   {
-    super(msg);
   }
 
-  public QuercusException(Throwable cause)
-   : base(cause) {
+  public QuercusException(Exception cause)
+   : base(null, cause) {
   }
 
-  public QuercusException(String msg, Throwable cause)
+  public QuercusException(String msg, Exception cause)
    : base(msg, cause) {
   }
 
-  public static QuercusException create(Throwable e,
-                                        ArrayList<String> stackTrace)
+  public static QuercusException create(Exception e,
+                                        IEnumerable<String> stackTrace)
   {
     QuercusException qExn;
 

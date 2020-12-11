@@ -51,7 +51,6 @@ namespace QuercusDotNet.lib{
  * : the built-in URL rewriter for passing session ids and other
  * variables.
  */
-@SuppressWarnings("serial")
 public class UrlRewriterCallback : CallbackFunction {
   private StringBuilder _rewriterQuery = new StringBuilder();
   private ArrayList<String[]> _rewriterVars = new ArrayList<String[]>();

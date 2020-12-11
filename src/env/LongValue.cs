@@ -41,7 +41,6 @@ namespace QuercusDotNet.Env{
 /**
  * Represents a PHP long value.
  */
-@SuppressWarnings("serial")
 public class LongValue : NumberValue
 {
   public const LongValue MINUS_ONE;

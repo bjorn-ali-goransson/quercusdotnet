@@ -37,7 +37,6 @@ namespace QuercusDotNet.Env{
 /**
  * Represents a closure
  */
-@SuppressWarnings("serial")
 public class InterpretedClosure : Closure
 {
   private AbstractFunction _fun;

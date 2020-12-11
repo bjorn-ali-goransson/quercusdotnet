@@ -42,7 +42,6 @@ namespace QuercusDotNet.Env{
 /**
  * Represents a call to an object's method
  */
-@SuppressWarnings("serial")
 public class CallbackClassMethod : Callback {
   private readonly L10N L = new L10N(CallbackClassMethod.class);
 

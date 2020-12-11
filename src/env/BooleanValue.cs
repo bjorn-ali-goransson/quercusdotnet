@@ -42,7 +42,6 @@ namespace QuercusDotNet.Env{
 /**
  * Represents a PHP bool value.
  */
-@SuppressWarnings("serial")
 public class BooleanValue : Value
   : Serializable
 {

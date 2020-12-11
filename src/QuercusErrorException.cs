@@ -34,7 +34,6 @@ namespace QuercusDotNet {
 /**
  * Exception thrown by Env.error().
  */
-@SuppressWarnings("serial")
 public class QuercusErrorException : QuercusRuntimeException
 {
   public QuercusErrorException(String msg)

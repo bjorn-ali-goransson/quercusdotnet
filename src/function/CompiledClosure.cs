@@ -40,7 +40,6 @@ namespace QuercusDotNet.Function{
 /**
  * Represents a compiled closure.
  */
-@SuppressWarnings("serial")
 abstract public class CompiledClosure : Closure {
   public CompiledClosure(String name, Value qThis)
   {

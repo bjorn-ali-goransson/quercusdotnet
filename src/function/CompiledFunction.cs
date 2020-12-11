@@ -39,7 +39,6 @@ namespace QuercusDotNet.Function{
 /**
  * Represents a compiled function
  */
-@SuppressWarnings("serial")
 abstract public class CompiledFunction : CompiledAbstractFunction {
 
   public CompiledFunction(String name,

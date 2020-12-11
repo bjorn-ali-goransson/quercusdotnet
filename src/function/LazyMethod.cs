@@ -40,7 +40,6 @@ namespace QuercusDotNet.Function{
 /**
  * Lazily load a compiled method.
  */
-@SuppressWarnings("serial")
 public class LazyMethod : AbstractFunction
 {
   private QuercusClass _quercusClass;

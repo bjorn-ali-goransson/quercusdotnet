@@ -33,7 +33,6 @@ namespace QuercusDotNet.Env{
 
 
 
-@SuppressWarnings("serial")
 abstract public class ValueType : Serializable {
   public bool isBoolean()
   {

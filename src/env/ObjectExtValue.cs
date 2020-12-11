@@ -51,7 +51,6 @@ namespace QuercusDotNet.Env{
 /**
  * Represents a PHP object value.
  */
-@SuppressWarnings("serial")
 public class ObjectExtValue : ObjectValue
   : Serializable
 {

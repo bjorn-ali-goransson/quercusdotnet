@@ -36,7 +36,6 @@ namespace QuercusDotNet.Env{
 /**
  * Represents a PHP variable value.
  */
-@SuppressWarnings("serial")
 public class SessionVar : Var
 {
   /**

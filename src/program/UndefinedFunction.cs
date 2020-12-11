@@ -39,7 +39,6 @@ namespace QuercusDotNet.Program{
 /**
  * Represents an undefined
  */
-@SuppressWarnings("serial")
 public class UndefinedFunction : AbstractFunction {
   private readonly L10N L = new L10N(UndefinedFunction.class);
 

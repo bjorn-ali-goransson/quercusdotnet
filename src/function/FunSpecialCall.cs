@@ -41,7 +41,6 @@ namespace QuercusDotNet.Function{
 /**
  * Represents a function
  */
-@SuppressWarnings("serial")
 public class FunSpecialCall : AbstractFunction {
   private AbstractFunction _call;
   private StringValue _name;

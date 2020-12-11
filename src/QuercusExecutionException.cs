@@ -31,7 +31,6 @@ namespace QuercusDotNet {
 
 
 
-@SuppressWarnings("serial")
 public class QuercusExecutionException
   : Exception
 {

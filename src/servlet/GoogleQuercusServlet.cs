@@ -39,7 +39,6 @@ namespace QuercusDotNet.servlet{
 /**
  * Servlet to call PHP through javax.script.
  */
-@SuppressWarnings("serial")
 public class GoogleQuercusServlet : QuercusServlet
 {
   private const Logger log

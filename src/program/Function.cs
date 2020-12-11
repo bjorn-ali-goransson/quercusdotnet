@@ -54,7 +54,6 @@ namespace QuercusDotNet.Program{
 /**
  * Represents sequence of statements.
  */
-@SuppressWarnings("serial")
 public class Function : AbstractFunction {
   protected FunctionInfo _info;
   protected bool _isReturnsReference;
