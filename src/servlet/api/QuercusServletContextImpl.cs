@@ -47,9 +47,7 @@ public class QuercusServletContextImpl : QuercusServletContext
     return _ctx.getMimeType(name);
   }
 
-  @Override
-  @SuppressWarnings("unchecked")
-  public <T> T toServletContext(Class<T> cls)
+  public override <T> T toServletContext(Class<T> cls)
   {
     return (T) _ctx;
   }

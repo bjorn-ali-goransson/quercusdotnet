@@ -87,9 +87,7 @@ public class QuercusCookieImpl : QuercusCookie
     _cookie.setHttpOnly(isHttpOnly);
   }
 
-  @Override
-  @SuppressWarnings("unchecked")
-  public <T> T toCookie(Class<T> cls)
+  public override <T> T toCookie(Class<T> cls)
   {
     if (cls != Cookie.class) {
       throw new IllegalArgumentException("class must be a " + Cookie.class);

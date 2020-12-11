@@ -92,9 +92,7 @@ public class QuercusHttpServletResponseImpl : QuercusHttpServletResponse
     return _response.getOutputStream();
   }
 
-  @Override
-  @SuppressWarnings("unchecked")
-  public <T> T toResponse(Class<T> cls)
+  public override <T> T toResponse(Class<T> cls)
   {
     return (T) _response;
   }

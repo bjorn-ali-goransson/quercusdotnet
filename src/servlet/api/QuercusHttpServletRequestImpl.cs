@@ -241,9 +241,7 @@ public class QuercusHttpServletRequestImpl : QuercusHttpServletRequest
     return new QuercusRequestDispatcherImpl(dispatcher);
   }
 
-  @Override
-  @SuppressWarnings("unchecked")
-  public <T> T toRequest(Class<T> cls)
+  public override <T> T toRequest(Class<T> cls)
   {
     return (T) _request;
   }
