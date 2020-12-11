@@ -40,15 +40,15 @@ public class QuercusRuntimeException : QuercusException {
   }
 
   public QuercusRuntimeException(String msg)
+    : base(msg)
   {
-    super(msg);
   }
 
-  public QuercusRuntimeException(Throwable cause)
+  public QuercusRuntimeException(Exception cause)
    : base(cause) {
   }
 
-  public QuercusRuntimeException(String msg, Throwable cause)
+  public QuercusRuntimeException(String msg, Exception cause)
    : base(msg, cause) {
   }
 }

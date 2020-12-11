@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Text;
 
 namespace QuercusDotNet {
 /*
@@ -65,11 +66,11 @@ public class QuercusException : Exception
   {
     QuercusException qExn;
 
-    if (e instanceof QuercusException)
+    if (e is QuercusException)
       qExn = (QuercusException) e;
     else {
-      if (e instanceof InvocationTargetException && e.getCause() != null)
-        e = e.getCause();
+      if (e.InnerException != null)
+        e = e.InnerException;
 
       qExn = new QuercusException(e);
     }
@@ -80,31 +81,34 @@ public class QuercusException : Exception
     return qExn;
   }
 
-  public override string getMessage()
-  {
-    string msg = super.getMessage();
+  public override string Message
+        {
+            get
+            {
+                if (_quercusStackTrace != null)
+                {
+                    StringBuilder sb = new StringBuilder();
+                    sb.Append(base.Message);
+                    sb.Append("\n");
 
-    if (_quercusStackTrace != null) {
-      StringBuilder sb = new StringBuilder();
-      sb.append(msg);
-      sb.append("\n");
+                    foreach (var s in _quercusStackTrace)
+                    {
+                        sb.Append("   " + s + "\n");
+                    }
 
-      for (int i = 0; i < _quercusStackTrace.size(); i++) {
-        sb.append("   " + _quercusStackTrace.get(i) + "\n");
-      }
+                    return sb.ToString();
+                }
+                else
+                    return base.Message;
+            }
+        }
 
-      return sb.ToString();
-    }
-    else
-      return msg;
-  }
-
-  public ArrayList<String> getQuercusStackTrace()
+  public IEnumerable<String> getQuercusStackTrace()
   {
     return _quercusStackTrace;
   }
 
-  public void setQuercusStackTrace(ArrayList<String> stackTrace)
+  public void setQuercusStackTrace(IEnumerable<String> stackTrace)
   {
     _quercusStackTrace = stackTrace;
   }
