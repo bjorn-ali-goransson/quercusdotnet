@@ -272,8 +272,7 @@ public class StringBuilderValue
   /**
    * Returns the type.
    */
-  @Override
-  public string getType()
+  public override string getType()
   {
     return "string";
   }

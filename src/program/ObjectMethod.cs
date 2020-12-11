@@ -61,8 +61,7 @@ public class ObjectMethod : Function {
     _quercusClass = quercusClass;
   }
 
-  @Override
-  public string getDeclaringClassName()
+  public override string getDeclaringClassName()
   {
     return _quercusClass.getName();
   }

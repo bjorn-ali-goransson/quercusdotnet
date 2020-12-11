@@ -48,8 +48,7 @@ public abstract class CompiledAbstractFunction : AbstractFunction
     _args = args;
   }
 
-  @Override
-  public string getName()
+  public override string getName()
   {
     return _name;
   }

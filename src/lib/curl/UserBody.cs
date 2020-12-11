@@ -60,8 +60,7 @@ public class UserBody : PostBody
     _length = length;
   }
 
-  @Override
-  public string getContentType()
+  public override string getContentType()
   {
     return "application/x-www-form-urlencoded";
   }

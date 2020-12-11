@@ -305,8 +305,7 @@ public class ReflectionProperty
       _name = nameV;
     }
 
-    @Override
-    public bool isStatic()
+    public override bool isStatic()
     {
       return true;
     }

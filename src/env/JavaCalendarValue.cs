@@ -54,8 +54,7 @@ public class JavaCalendarValue : JavaValue {
   /**
    * Converts to a long.
    */
-  @Override
-  public long toLong()
+  public override long toLong()
   {
     return _calendar.getTimeInMillis();
   }

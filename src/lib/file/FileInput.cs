@@ -77,8 +77,7 @@ public class FileInput : ReadStreamInput
   /**
    * Opens a copy.
    */
-  @Override
-  public BinaryInput openCopy()
+  public override BinaryInput openCopy()
     
   {
     return new FileInput(_env, _path);

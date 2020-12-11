@@ -78,8 +78,7 @@ public class JavaArrayClassDef : JavaClassDef {
    : base(moduleContext, name, type, extension) {
   }
 
-  @Override
-  public bool isArray()
+  public override bool isArray()
   {
     return true;
   }

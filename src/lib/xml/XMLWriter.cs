@@ -761,8 +761,7 @@ public class XMLWriter {
     return null;
   }
 
-  @Override
-  public string ToString()
+  public override string ToString()
   {
     return getClass().getSimpleName() + "[]";
   }

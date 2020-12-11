@@ -80,8 +80,7 @@ public class ClosureExpr : Expr {
   /**
    * Returns the location if known.
    */
-  @Override
-  public string getFunctionLocation()
+  public override string getFunctionLocation()
   {
     return " [" + getName() + "]";
   }

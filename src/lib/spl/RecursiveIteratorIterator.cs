@@ -67,8 +67,7 @@ public class RecursiveIteratorIterator
   // OuterIterator
   //
 
-  @Override
-  public RecursiveIterator getInnerIterator()
+  public override RecursiveIterator getInnerIterator()
   {
     int i = _iterStack.size() - 1;
 

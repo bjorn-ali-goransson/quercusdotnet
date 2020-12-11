@@ -67,8 +67,7 @@ abstract public class CompiledMethod_0 : CompiledMethod {
   }
   */
 
-  @Override
-  public Value callMethod(Env env,
+  public override Value callMethod(Env env,
                           QuercusClass qClass,
                           Value qThis,
                           Value []args)

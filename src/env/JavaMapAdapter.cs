@@ -70,8 +70,7 @@ public class JavaMapAdapter
   /**
    * Clears the array
    */
-  @Override
-  public void clear()
+  public override void clear()
   {
     _map.clear();
     

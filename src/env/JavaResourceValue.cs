@@ -50,8 +50,7 @@ public class JavaResourceValue : JavaValue
   /**
    * Returns true for an object.
    */
-  @Override
-  public bool isObject()
+  public override bool isObject()
   {
     return false;
   }

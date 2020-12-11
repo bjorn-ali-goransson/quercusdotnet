@@ -73,8 +73,7 @@ public class GoogleStaticFileServlet : GenericServlet {
   {
   }
 
-  @Override
-  public void init(ServletConfig config)
+  public override void init(ServletConfig config)
   {
     super.init(config);
 

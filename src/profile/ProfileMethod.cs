@@ -161,8 +161,7 @@ public class ProfileMethod
     _selfMicros -= item.getMicros();
   }
 
-  @Override
-  public string ToString()
+  public override string ToString()
   {
     return (getClass().getSimpleName()
             + "[" + _name

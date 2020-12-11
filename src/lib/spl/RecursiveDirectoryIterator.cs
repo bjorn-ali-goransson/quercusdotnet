@@ -55,8 +55,7 @@ public class RecursiveDirectoryIterator
   // RecursiveIterator
   //
 
-  @Override
-  public bool hasChildren(Env env)
+  public override bool hasChildren(Env env)
   {
     SplFileInfo current = getCurrent(env);
 

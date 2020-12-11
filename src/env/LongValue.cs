@@ -79,8 +79,7 @@ public class LongValue : NumberValue
   /**
    * Returns the type.
    */
-  @Override
-  public string getType()
+  public override string getType()
   {
     return "integer";
   }

@@ -57,8 +57,7 @@ public class DocumentView : SimpleView
     _element = new ElementView(node);
   }
 
-  @Override
-  public string getNodeName()
+  public override string getNodeName()
   {
     return _element.getNodeName();
   }

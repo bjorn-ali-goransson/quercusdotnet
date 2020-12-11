@@ -72,8 +72,7 @@ public class ClassScope : Scope
   /**
    * Adds a function.
    */
-  @Override
-  public void addFunction(StringValue name,
+  public override void addFunction(StringValue name,
                           Function function,
                           bool isTop)
   {

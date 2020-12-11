@@ -129,8 +129,7 @@ public class PDFFont : PDFObject {
     return "<< /F" + _id + " " + _id + " 0 R >>";
   }
 
-  @Override
-  public void writeObject(PDFWriter out)
+  public override void writeObject(PDFWriter out)
     
   {
     @out.println("<< /Type /Font");

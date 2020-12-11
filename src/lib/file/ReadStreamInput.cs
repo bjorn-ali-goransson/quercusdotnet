@@ -89,8 +89,7 @@ public class ReadStreamInput : InputStream : BinaryInput {
   /**
    * Returns the input stream.
    */
-  @Override
-  public InputStream getInputStream()
+  public override InputStream getInputStream()
   {
     return _is;
   }

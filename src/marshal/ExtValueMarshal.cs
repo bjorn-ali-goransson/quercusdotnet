@@ -48,8 +48,7 @@ public class ExtValueMarshal : Marshal
     _expectedClass = expectedClass;
   }
 
-  @Override
-  public bool isReadOnly()
+  public override bool isReadOnly()
   {
     return false;
   }

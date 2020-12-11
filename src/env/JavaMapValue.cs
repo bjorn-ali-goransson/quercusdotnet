@@ -52,8 +52,7 @@ public class JavaMapValue : JavaValue {
     _map = map;
   }
   
-  @Override
-  public Value get(Value name)
+  public override Value get(Value name)
   {
     return _env.wrapJava(_map.get(name.toJavaObject()));
   }

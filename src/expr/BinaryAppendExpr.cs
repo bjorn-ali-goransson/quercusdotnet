@@ -82,8 +82,7 @@ public class BinaryAppendExpr : Expr
     return true;
   }
 
-  @Override
-  public Value eval(Env env)
+  public override Value eval(Env env)
   {
     Value value = _value.eval(env);
 

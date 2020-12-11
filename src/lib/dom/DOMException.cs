@@ -60,8 +60,7 @@ public class DOMException
   /**
    * Converts the exception to a Value.
    */
-  @Override
-  public Value toValue(Env env)
+  public override Value toValue(Env env)
   {
     return env.createException("DOMException", getValue().ToString());
   }

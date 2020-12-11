@@ -72,8 +72,7 @@ public class WriteStreamOutput : OutputStream : BinaryOutput {
     return "stream";
   }
 
-  @Override
-  public void write(int ch)
+  public override void write(int ch)
   {
     _os.write(ch);
   }

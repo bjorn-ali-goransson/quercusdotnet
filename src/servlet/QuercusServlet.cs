@@ -396,8 +396,7 @@ public class QuercusServlet
   /**
    * Initializes the servlet.
    */
-  @Override
-  public void init(ServletConfig config)
+  public override void init(ServletConfig config)
     
   {
     super.init(config);

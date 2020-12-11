@@ -70,8 +70,7 @@ abstract public class CompiledMethodRef_N : CompiledMethodRef {
     _requiredArgs = requiredArgs;
   }
 
-  @Override
-  public Value callMethodRef(Env env, QuercusClass qClass, Value qThis,
+  public override Value callMethodRef(Env env, QuercusClass qClass, Value qThis,
                                    Value []argValues)
   {
     /*

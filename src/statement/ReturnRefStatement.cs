@@ -57,8 +57,7 @@ public class ReturnRefStatement : Statement {
   /**
    * Executes the statement, returning the expression value.
    */
-  @Override
-  public Value execute(Env env)
+  public override Value execute(Env env)
   {
     if (_expr != null) {
       // php/0750

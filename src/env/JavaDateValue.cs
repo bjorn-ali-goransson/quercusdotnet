@@ -51,8 +51,7 @@ public class JavaDateValue : JavaValue {
   /**
    * Converts to a long.
    */
-  @Override
-  public long toLong()
+  public override long toLong()
   {
     // return seconds per PHP convention
     return _date.getTime() / 1000;

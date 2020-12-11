@@ -57,8 +57,7 @@ public class FunctionCountDelegate : CountDelegate {
   /**
    * Returns the value for the specified key.
    */
-  @Override
-  public int count(Env env, ObjectValue qThis)
+  public override int count(Env env, ObjectValue qThis)
   {
     if (_count != null) {
       return _count.callMethod(env,

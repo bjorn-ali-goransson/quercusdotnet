@@ -63,8 +63,7 @@ public class JavaMarshal : Marshal {
     _isUnmarshalNullAsFalse = isUnmarshalNullAsFalse;
   }
 
-  @Override
-  public Object marshal(Env env, Expr expr, Class argClass)
+  public override Object marshal(Env env, Expr expr, Class argClass)
   {
     Value value = expr.eval(env);
 

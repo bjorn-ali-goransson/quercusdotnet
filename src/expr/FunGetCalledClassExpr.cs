@@ -55,8 +55,7 @@ public class FunGetCalledClassExpr : Expr {
    *
    * @return the expression value.
    */
-  @Override
-  public Value eval(Env env)
+  public override Value eval(Env env)
   {
     Value qThis = env.getThis();
 

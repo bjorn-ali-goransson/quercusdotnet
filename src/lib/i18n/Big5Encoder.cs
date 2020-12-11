@@ -45,8 +45,7 @@ public class Big5Encoder
     super(charsetName);
   }
 
-  @Override
-  public bool isEncodable(StringValue str, int start, int end)
+  public override bool isEncodable(StringValue str, int start, int end)
   {
     for (int i = start; i < end; i++) {
       char ch = str[i];

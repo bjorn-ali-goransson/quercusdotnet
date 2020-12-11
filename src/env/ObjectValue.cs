@@ -76,8 +76,7 @@ abstract public class ObjectValue : Callback {
     _className = cl.getName();
   }
 
-  @Override
-  public QuercusClass getQuercusClass()
+  public override QuercusClass getQuercusClass()
   {
     return _quercusClass;
   }

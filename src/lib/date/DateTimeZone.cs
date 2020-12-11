@@ -213,8 +213,7 @@ public class DateTimeZone : Cloneable
     return BooleanValue.FALSE;
   }
 
-  @Override
-  public Object clone() {
+  public override Object clone() {
     return this;
   }
 

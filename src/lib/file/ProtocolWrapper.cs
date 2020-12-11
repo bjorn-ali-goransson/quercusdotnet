@@ -160,8 +160,7 @@ public class ProtocolWrapper {
     return result.toBoolean();
   }
 
-  @Override
-  public string ToString()
+  public override string ToString()
   {
     return getClass().getSimpleName() + "[" + _qClass + "]";
   }

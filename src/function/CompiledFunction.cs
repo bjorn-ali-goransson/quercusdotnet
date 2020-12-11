@@ -48,8 +48,7 @@ abstract public class CompiledFunction : CompiledAbstractFunction {
     super(name, args);
   }
 
-  @Override
-  public Value callRef(Env env, Value []argValues)
+  public override Value callRef(Env env, Value []argValues)
   {
     return call(env, argValues).copyReturn();
   }

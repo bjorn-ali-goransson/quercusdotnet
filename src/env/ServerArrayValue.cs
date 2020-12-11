@@ -247,8 +247,7 @@ public class ServerArrayValue : ArrayValueImpl
   /**
    * Gets a new value.
    */
-  @Override
-  public Value getArg(Value key, bool isTop)
+  public override Value getArg(Value key, bool isTop)
   {
     if (! _isFilled)
       fillMap();

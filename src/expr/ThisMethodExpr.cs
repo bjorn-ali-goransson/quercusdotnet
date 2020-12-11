@@ -74,8 +74,7 @@ public class ThisMethodExpr : ObjectMethodExpr {
    *
    * @return the expression value.
    */
-  @Override
-  public Value eval(Env env)
+  public override Value eval(Env env)
   {
     if (! _isInit) {
       init();

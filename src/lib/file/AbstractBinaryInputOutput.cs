@@ -99,8 +99,7 @@ abstract public class AbstractBinaryInputOutput
   abstract public void unread()
     
 
-  @Override
-  public int getAvailable()
+  public override int getAvailable()
     
   {
     if (_is != null)

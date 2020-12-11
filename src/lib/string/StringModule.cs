@@ -5343,8 +5343,7 @@ public class StringModule : AbstractQuercusModule {
       text.getChars(0, _text.length, _text, 0);
     }
 
-    @Override
-    public bool apply(Env env, StringValue sb, Value []args)
+    public override bool apply(Env env, StringValue sb, Value []args)
     {
       sb.append(_text, 0, _text.length);
 

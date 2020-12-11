@@ -79,8 +79,7 @@ public class ArrayGetExpr : AbstractVarExpr {
    *
    * @return the expression value.
    */
-  @Override
-  public Value eval(Env env)
+  public override Value eval(Env env)
   {
     Value array = _expr.eval(env);
     Value index = _index.eval(env);

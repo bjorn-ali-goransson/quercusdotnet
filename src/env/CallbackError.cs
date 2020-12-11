@@ -45,8 +45,7 @@ public class CallbackError : Callback {
     _errorString = errorString;
   }
 
-  @Override
-  public Value call(Env env, Value []args)
+  public override Value call(Env env, Value []args)
   {
     return NullValue.NULL;
   }

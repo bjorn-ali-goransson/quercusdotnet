@@ -290,8 +290,7 @@ class RegexpNode {
     throw new UnsupportedOperationException(getClass().getName());
   }
 
-  @Override
-  public string ToString()
+  public override string ToString()
   {
     Map<RegexpNode,Integer> map = new IdentityHashMap<RegexpNode,Integer>();
 

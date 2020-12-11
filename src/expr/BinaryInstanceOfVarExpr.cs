@@ -70,8 +70,7 @@ public class BinaryInstanceOfVarExpr : AbstractBinaryExpr {
   /**
    * Evaluates the equality as a boolean.
    */
-  @Override
-  public bool evalBoolean(Env env)
+  public override bool evalBoolean(Env env)
   {
     Value lValue = _left.eval(env);
     Value rValue = _right.eval(env);

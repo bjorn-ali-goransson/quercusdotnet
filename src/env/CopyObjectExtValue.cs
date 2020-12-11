@@ -67,8 +67,7 @@ public class CopyObjectExtValue : ObjectExtValue
   /**
    * Returns the array ref.
    */
-  @Override
-  public Var getFieldVar(Env env, StringValue name)
+  public override Var getFieldVar(Env env, StringValue name)
   {
     _root.setModified();
 

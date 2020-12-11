@@ -69,8 +69,7 @@ abstract public class CompiledMethod_N : CompiledMethod {
     _requiredArgs = requiredArgs;
   }
 
-  @Override
-  public Value callMethod(Env env, QuercusClass qClass, Value qThis,
+  public override Value callMethod(Env env, QuercusClass qClass, Value qThis,
                                 Value []args)
   {
     /*

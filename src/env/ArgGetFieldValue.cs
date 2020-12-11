@@ -49,8 +49,7 @@ public class ArgGetFieldValue : ArgValue {
   /**
    * Creates an argument which may create the given field.
    */
-  @Override
-  public Value getArg(Value name, bool isTop)
+  public override Value getArg(Value name, bool isTop)
   {
     // php/3d1q
     return new ArgGetValue(this, name);

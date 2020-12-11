@@ -80,8 +80,7 @@ public class WrappedDirectory : Directory {
   /**
    * Returns the next value.
    */
-  @Override
-  public Value read(Env env)
+  public override Value read(Env env)
   {
     if (env.isUnicodeSemantics())
       return _wrapper.callMethod(env, DIR_READDIR_U);

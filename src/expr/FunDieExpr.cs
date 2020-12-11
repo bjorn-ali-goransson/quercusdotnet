@@ -69,8 +69,7 @@ public class FunDieExpr : Expr {
    *
    * @return the expression value.
    */
-  @Override
-  public Value eval(Env env)
+  public override Value eval(Env env)
   {
     if (_value != null) {
       string msg = _value.evalString(env);

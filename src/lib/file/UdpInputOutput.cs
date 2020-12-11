@@ -115,8 +115,7 @@ public class UdpInputOutput
     _error = error;
   }
 
-  @Override
-  public bool isConnected()
+  public override bool isConnected()
   {
     return _socket.isConnected();
   }

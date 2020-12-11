@@ -77,8 +77,7 @@ public class JavaLogger
     _log.finest(msg);
   }
 
-  @Override
-  public string ToString()
+  public override string ToString()
   {
     return getClass().getName() + "[" + _log + "]";
   }

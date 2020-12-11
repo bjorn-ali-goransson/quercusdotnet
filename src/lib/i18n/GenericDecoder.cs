@@ -57,8 +57,7 @@ public class GenericDecoder
     _decoder = _charset.newDecoder();
   }
 
-  @Override
-  public void reset()
+  public override void reset()
   {
     _decoder.reset();
 

@@ -54,8 +54,7 @@ public class ArgRef : Value
     _var = var;
   }
 
-  @Override
-  public bool hasCurrent()
+  public override bool hasCurrent()
   {
     return _var.hasCurrent();
   }

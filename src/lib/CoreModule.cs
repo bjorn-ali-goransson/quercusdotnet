@@ -61,8 +61,7 @@ public class CoreModule : AbstractQuercusModule
   }
 
   @Hide
-  @Override
-  public Map<StringValue,Value> getConstMap()
+  public override Map<StringValue,Value> getConstMap()
   {
     return CONST_MAP;
   }

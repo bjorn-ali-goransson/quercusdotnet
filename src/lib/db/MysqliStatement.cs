@@ -67,8 +67,7 @@ public class MysqliStatement : JdbcPreparedStatementResource {
     super(conn);
   }
 
-  @Override
-  public bool execute(Env env) {
+  public override bool execute(Env env) {
     return super.execute(env);
   }
 

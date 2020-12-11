@@ -55,8 +55,7 @@ abstract public class CompiledMethod_3 : CompiledMethod {
   /**
    * Evaluates the method with the given variable arguments.
    */
-  @Override
-  public Value callMethod(Env env, QuercusClass qClass, Value qThis,
+  public override Value callMethod(Env env, QuercusClass qClass, Value qThis,
                           Value []args)
   {
     switch (args.length) {

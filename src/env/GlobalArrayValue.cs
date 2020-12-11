@@ -62,8 +62,7 @@ public class GlobalArrayValue : ArrayValueImpl {
     return null;
   }
   
-  @Override
-  public bool toBoolean()
+  public override bool toBoolean()
   {
     return true;
   }

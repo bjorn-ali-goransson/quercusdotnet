@@ -962,8 +962,7 @@ public class CurlResource : ResourceValue
   }
 
 
-  @Override
-  public bool isResource()
+  public override bool isResource()
   {
     return true;
   }

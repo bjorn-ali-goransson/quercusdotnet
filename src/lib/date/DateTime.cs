@@ -155,8 +155,7 @@ public class DateTime : DateTimeInterface, Cloneable
     return this;
   }
 
-  @Override
-  public Object clone()
+  public override Object clone()
   {
     QDate qDate = (QDate) _qDate.clone();
     DateTimeZone dateTimeZone = (DateTimeZone) _dateTimeZone.clone();

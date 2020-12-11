@@ -92,8 +92,7 @@ public class DirectoryIterator
     return newList;
   }
 
-  @Override
-  public Value current(Env env)
+  public override Value current(Env env)
   {
     SplFileInfo current = getCurrent(env);
 

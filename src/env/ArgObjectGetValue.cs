@@ -49,8 +49,7 @@ public class ArgObjectGetValue : Value {
   /**
    * Returns the value for a get arg.
    */
-  @Override
-  public Value getArg(Value index, bool isTop)
+  public override Value getArg(Value index, bool isTop)
   {
     // quercus/3d2u
     return new ArgObjectGetValue(_env, this, index);

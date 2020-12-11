@@ -52,8 +52,7 @@ public class JavaOverloadMethod : AbstractJavaMethod {
     overload(fun);
   }
 
-  @Override
-  public int getMaxArgLength()
+  public override int getMaxArgLength()
   {
     throw new UnsupportedOperationException();
   }

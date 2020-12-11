@@ -58,8 +58,7 @@ public class PDFFileImage : PDFObject {
   /**
    * Returns the object id.
    */
-  @Override
-  public int getId()
+  public override int getId()
   {
     return _id;
   }

@@ -195,8 +195,7 @@ public class UnicodeBuilderValue
    * @param str should be a Unicode string
    * @param charset to decode string from
    */
-  @Override
-  public StringValue create(Env env, StringValue str, string charset)
+  public override StringValue create(Env env, StringValue str, string charset)
   {
     return str;
   }

@@ -54,8 +54,7 @@ public class GoogleQuercus : QuercusContext
   {
   }
 
-  @Override
-  public void init()
+  public override void init()
   {
     string mode
       = System.getProperty("com.google.appengine.tools.development.ApplicationPreparationMode");

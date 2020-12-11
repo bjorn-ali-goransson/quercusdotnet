@@ -53,8 +53,7 @@ public class CallableMarshal : Marshal
     return true;
   }
 
-  @Override
-  public Object marshal(Env env, Expr expr, Class expectedClass)
+  public override Object marshal(Env env, Expr expr, Class expectedClass)
   {
     return marshal(env, expr.eval(env), expectedClass);
   }

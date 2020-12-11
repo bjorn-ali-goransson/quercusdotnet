@@ -64,14 +64,12 @@ public class CgiQuercus
   /**
    * Returns the SAPI (Server API) name.
    */
-  @Override
-  public string getSapiName()
+  public override string getSapiName()
   {
     return "cgi";
   }
 
-  @Override
-  public void execute()
+  public override void execute()
     
   {
     Path path = getPwd().lookup(getFileName());

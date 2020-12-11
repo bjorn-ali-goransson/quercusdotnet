@@ -152,8 +152,7 @@ public class TcpInputOutput
     return _errno;
   }
 
-  @Override
-  public bool isConnected()
+  public override bool isConnected()
   {
     return _socket.isConnected();
   }

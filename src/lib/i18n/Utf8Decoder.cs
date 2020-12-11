@@ -52,8 +52,7 @@ public class Utf8Decoder
     return true;
   }
 
-  @Override
-  public bool isDecodable(Env env, StringValue str)
+  public override bool isDecodable(Env env, StringValue str)
   {
     if (str.isUnicode())
       return true;

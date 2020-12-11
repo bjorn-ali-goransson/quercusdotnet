@@ -101,8 +101,7 @@ public class VarExpr
   /**
    * Creates the assignment.
    */
-  @Override
-  public Expr createAssign(QuercusParser parser, Expr value)
+  public override Expr createAssign(QuercusParser parser, Expr value)
   {
     // _var.setAssigned();
 

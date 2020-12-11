@@ -50,8 +50,7 @@ public class QuercusHttpServletRequestImpl : QuercusHttpServletRequest
     _request = request;
   }
 
-  @Override
-  public string getMethod()
+  public override string getMethod()
   {
     return _request.getMethod();
   }

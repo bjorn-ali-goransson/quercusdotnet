@@ -52,8 +52,7 @@ public class JavaSqlDriverWrapper : javax.sql.DataSource
     _url = url;
   }
 
-  @Override
-  public Connection getConnection()
+  public override Connection getConnection()
     
   {
     Properties props = new Properties();

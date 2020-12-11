@@ -52,8 +52,7 @@ public class JavaCollectionAdapter : JavaAdapter
   /**
    * Clears the array
    */
-  @Override
-  public void clear()
+  public override void clear()
   {
     _collection.clear();
   }

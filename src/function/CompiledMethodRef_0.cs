@@ -51,8 +51,7 @@ abstract public class CompiledMethodRef_0 : CompiledMethodRef {
     super(name, AbstractFunction.NULL_ARGS);
   }
 
-  @Override
-  public Value callMethodRef(Env env, QuercusClass qClass, Value qThis,
+  public override Value callMethodRef(Env env, QuercusClass qClass, Value qThis,
                              Value []args)
   {
     return callMethodRef(env, qClass, qThis);

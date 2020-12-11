@@ -92,8 +92,7 @@ public class ReflectionFunction : ReflectionFunctionAbstract
     return getCallable().call(env, args.getValueArray(env));
   }
 
-  @Override
-  public string ToString()
+  public override string ToString()
   {
     return getClass().getSimpleName() + "[" + getName() + "]";
   }

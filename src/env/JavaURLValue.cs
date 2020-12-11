@@ -54,8 +54,7 @@ public class JavaURLValue : JavaValue {
   /**
    * Converts to a Java URL.
    */
-  @Override
-  public URL toJavaURL(Env env)
+  public override URL toJavaURL(Env env)
   {
     return _url;
   }

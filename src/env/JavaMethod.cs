@@ -82,8 +82,7 @@ public class JavaMethod : JavaInvoker {
     return name;
   }
 
-  @Override
-  public string getDeclaringClassName()
+  public override string getDeclaringClassName()
   {
     return _method.getDeclaringClass().getSimpleName();
   }

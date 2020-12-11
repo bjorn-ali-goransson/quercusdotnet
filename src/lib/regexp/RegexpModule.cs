@@ -102,8 +102,7 @@ public class RegexpModule
   private static LruCache<StringValue, ArrayList<Replacement>> _replacementCache
     = new LruCache<StringValue, ArrayList<Replacement>>(1024);
 
-  @Override
-  public string []getLoadedExtensions()
+  public override string []getLoadedExtensions()
   {
     return new String[] { "ereg", "pcre" };
   }

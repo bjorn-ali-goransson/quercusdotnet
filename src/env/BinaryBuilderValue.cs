@@ -120,8 +120,7 @@ public class BinaryBuilderValue
   /**
    * Returns the type.
    */
-  @Override
-  public string getType()
+  public override string getType()
   {
     return "string";
   }
@@ -390,8 +389,7 @@ public class BinaryBuilderValue
   /**
    * Append a Java buffer to the value.
    */
-  // @Override
-  public StringValue append(BinaryBuilderValue sb, int head, int tail)
+  // public override StringValue append(BinaryBuilderValue sb, int head, int tail)
   {
     int length = tail - head;
 

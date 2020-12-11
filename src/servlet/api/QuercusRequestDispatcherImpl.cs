@@ -44,8 +44,7 @@ public class QuercusRequestDispatcherImpl : QuercusRequestDispatcher
     _dispatcher = dispatcher;
   }
 
-  @Override
-  public void include(QuercusHttpServletRequest request,
+  public override void include(QuercusHttpServletRequest request,
                       QuercusHttpServletResponse response)
     
   {

@@ -321,8 +321,7 @@ abstract public class JavaInvoker
   /**
    * Returns the implementing class.
    */
-  @Override
-  public ClassDef getDeclaringClass()
+  public override ClassDef getDeclaringClass()
   {
     return _classDef;
   }

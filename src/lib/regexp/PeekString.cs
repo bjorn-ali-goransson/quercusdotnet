@@ -75,8 +75,7 @@ class PeekString : PeekStream {
     return ((StringValue) _string).createStringBuilder();
   }
 
-  @Override
-  public string getPattern()
+  public override string getPattern()
   {
     return "/" + _string + "/";
   }

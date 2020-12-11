@@ -44,8 +44,7 @@ public class SQLExceptionWrapper : SQLException {
     _cause = cause;
   }
 
-  @Override
-  public Throwable getCause()
+  public override Throwable getCause()
   {
     return _cause;
   }

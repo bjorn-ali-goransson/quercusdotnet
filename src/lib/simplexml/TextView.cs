@@ -54,8 +54,7 @@ public class TextView : SimpleView
     _node = node;
   }
 
-  @Override
-  public string getNodeName()
+  public override string getNodeName()
   {
     return "#text";
   }

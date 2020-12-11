@@ -39,8 +39,7 @@ public class EmailSanitizeFilter
   : AbstractFilter
   : SanitizeFilter
 {
-  @Override
-  public Value filter(Env env, Value value, Value flagsV)
+  public override Value filter(Env env, Value value, Value flagsV)
   {
     StringValue sb = env.createStringBuilder();
 

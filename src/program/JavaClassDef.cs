@@ -240,8 +240,7 @@ public class JavaClassDef : ClassDef : InstanceInitializer {
   /**
    * Returns the class name.
    */
-  @Override
-  public string getName()
+  public override string getName()
   {
     return _name;
   }

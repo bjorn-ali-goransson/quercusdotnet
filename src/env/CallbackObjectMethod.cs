@@ -65,8 +65,7 @@ public class CallbackObjectMethod : Callback {
    *
    * @param env the calling environment
    */
-  @Override
-  public Value call(Env env)
+  public override Value call(Env env)
   {
     return _obj.callMethod(env, _methodName, _hash);
   }

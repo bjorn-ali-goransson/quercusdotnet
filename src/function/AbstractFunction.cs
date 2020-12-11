@@ -90,8 +90,7 @@ abstract public class AbstractFunction : Callback {
   // Callback values
   //
 
-  @Override
-  public string getCallbackName()
+  public override string getCallbackName()
   {
     return getName();
   }

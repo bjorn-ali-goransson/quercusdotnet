@@ -144,8 +144,7 @@ public class InterpretedClassDef : ClassDef
   /**
    * True for an abstract class.
    */
-  @Override
-  public bool isAbstract()
+  public override bool isAbstract()
   {
     return _isAbstract;
   }

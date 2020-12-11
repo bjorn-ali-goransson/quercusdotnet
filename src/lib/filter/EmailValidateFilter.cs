@@ -43,8 +43,7 @@ public class EmailValidateFilter
   : AbstractFilter
   : ValidateFilter
 {
-  @Override
-  public Value filter(Env env, Value value, Value flagV)
+  public override Value filter(Env env, Value value, Value flagV)
   {
     StringValue str = value.ToStringValue(env);
 

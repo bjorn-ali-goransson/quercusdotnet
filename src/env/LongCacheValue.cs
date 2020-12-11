@@ -57,8 +57,7 @@ public class LongCacheValue : LongValue
   /**
    * Returns the next integer
    */
-  @Override
-  public Value addOne()
+  public override Value addOne()
   {
     return _next;
   }

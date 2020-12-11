@@ -59,8 +59,7 @@ public class GoogleEnv : Env {
   /**
    * Checks for the program timeout.
    */
-  @Override
-  public void checkTimeout()
+  public override void checkTimeout()
   {
     // since GoogleAppEngine doesn't allow Threads, the normal Alarm
     // optimization doesn't work.  Instead use a timeout count to limit

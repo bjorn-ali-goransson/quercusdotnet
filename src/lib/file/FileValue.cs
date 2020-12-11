@@ -71,8 +71,7 @@ public class FileValue : StreamResource {
   /**
    * Reads a line from a file, returning null.
    */
-  @Override
-  public StringValue readLine(Env env)
+  public override StringValue readLine(Env env)
     
   {
     StringValue sb = env.createStringBuilder();

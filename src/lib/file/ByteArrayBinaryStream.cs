@@ -58,8 +58,7 @@ public class ByteArrayBinaryStream : AbstractBinaryInputOutput
     init(@is, os);
   }
 
-  @Override
-  public long getPosition()
+  public override long getPosition()
   {
     return _pos;
   }

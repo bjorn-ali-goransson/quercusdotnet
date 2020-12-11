@@ -1058,8 +1058,7 @@ public class QuercusClass : NullValue {
     }
   }
 
-  @Override
-  public Value getStaticFieldValue(Env env, StringValue name)
+  public override Value getStaticFieldValue(Env env, StringValue name)
   {
     StringValue staticName = _staticFieldNameMap.get(name);
 

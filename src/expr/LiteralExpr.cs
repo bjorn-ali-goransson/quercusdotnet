@@ -56,8 +56,7 @@ public class LiteralExpr : Expr {
   /**
    * Returns true for a literal expression.
    */
-  @Override
-  public bool isLiteral()
+  public override bool isLiteral()
   {
     return true;
   }

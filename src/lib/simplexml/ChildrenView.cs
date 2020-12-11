@@ -66,8 +66,7 @@ public class ChildrenView : SimpleView
     _attrList = attrList;
   }
 
-  @Override
-  public string getNodeName()
+  public override string getNodeName()
   {
     if (_childList.size() > 0) {
       return _childList.get(0).getNodeName();

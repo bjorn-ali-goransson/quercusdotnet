@@ -42,8 +42,7 @@ namespace QuercusDotNet.Marshal{
 public class StringMarshal : Marshal {
   public readonly StringMarshal MARSHAL = new StringMarshal();
 
-  @Override
-  public bool isString()
+  public override bool isString()
   {
     return true;
   }

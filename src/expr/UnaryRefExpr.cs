@@ -63,8 +63,7 @@ public class UnaryRefExpr : AbstractUnaryExpr {
   /**
    * Creates an assignment using this value as the right hand side.
    */
-  @Override
-  public Expr createAssignFrom(QuercusParser parser,
+  public override Expr createAssignFrom(QuercusParser parser,
                                AbstractVarExpr leftHandSide)
   {
     ExprFactory factory = parser.getExprFactory();

@@ -67,8 +67,7 @@ public class InterpretedClosure : Closure
     }
   }
 
-  @Override
-  public string getDeclFileName(Env env)
+  public override string getDeclFileName(Env env)
   {
     return _fun.getDeclFileName(env);
   }

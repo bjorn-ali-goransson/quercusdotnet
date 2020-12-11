@@ -67,8 +67,7 @@ public class UnaryCopyExpr : AbstractUnaryExpr {
    *
    * @return the expression value.
    */
-  @Override
-  public Value evalArg(Env env, bool isTop)
+  public override Value evalArg(Env env, bool isTop)
   {
     return eval(env);
   }

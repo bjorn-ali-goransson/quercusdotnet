@@ -50,8 +50,7 @@ abstract public class UnicodeValue : StringValue {
   {
   }
   
-  @Override
-  public string toDebugString()
+  public override string toDebugString()
   {
     StringBuilder sb = new StringBuilder();
 

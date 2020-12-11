@@ -71,8 +71,7 @@ public class JavaConstructor : JavaInvoker {
     _argLength = cons.getParameterTypes().length;
   }
 
-  @Override
-  public string getDeclaringClassName()
+  public override string getDeclaringClassName()
   {
     return getName();
   }

@@ -60,8 +60,7 @@ public class ConstArrayValue
   /**
    * Copy for assignment.
    */
-  @Override
-  public Value copy()
+  public override Value copy()
   {
     //return new CopyArrayValue(this);
     

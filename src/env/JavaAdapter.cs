@@ -86,8 +86,7 @@ abstract public class JavaAdapter : ArrayValue
   /**
    * Converts to an object.
    */
-  @Override
-  public Object toObject()
+  public override Object toObject()
   {
     return null;
   }

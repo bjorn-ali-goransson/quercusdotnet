@@ -81,8 +81,7 @@ public class ProfileItem
     return _micros;
   }
 
-  @Override
-  public string ToString()
+  public override string ToString()
   {
     return (getClass().getSimpleName()
             + "[" + _name

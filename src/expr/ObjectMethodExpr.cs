@@ -75,8 +75,7 @@ public class ObjectMethodExpr : AbstractMethodExpr {
    *
    * @return the expression value.
    */
-  @Override
-  public Value eval(Env env)
+  public override Value eval(Env env)
   {
     Value obj = _objExpr.eval(env);
 

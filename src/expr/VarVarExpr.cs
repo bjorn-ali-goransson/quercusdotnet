@@ -89,8 +89,7 @@ public class VarVarExpr : AbstractVarExpr {
    *
    * @return the expression value.
    */
-  @Override
-  public Value evalAssignRef(Env env, Value value)
+  public override Value evalAssignRef(Env env, Value value)
   {
     StringValue varName = _var.evalStringValue(env);
 

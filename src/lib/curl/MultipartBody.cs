@@ -113,8 +113,7 @@ public class MultipartBody : PostBody
     return size;
   }
 
-  @Override
-  public string getContentType()
+  public override string getContentType()
   {
     return "multipart/form-data; boundary=\"" + _boundary + "\"";
   }

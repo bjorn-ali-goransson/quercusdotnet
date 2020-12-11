@@ -88,8 +88,7 @@ public class ArrayTailExpr : AbstractVarExpr {
    *
    * @return the expression value.
    */
-  @Override
-  public Value evalArg(Env env, bool isTop)
+  public override Value evalArg(Env env, bool isTop)
   {
     if (isTop) {
       Value obj = _expr.evalArray(env);

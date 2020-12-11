@@ -47,8 +47,7 @@ public class QuercusCookieImpl : QuercusCookie
     _cookie = new Cookie(name, sessionId);
   }
 
-  @Override
-  public string getName()
+  public override string getName()
   {
     return _cookie.getName();
   }

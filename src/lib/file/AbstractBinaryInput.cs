@@ -88,8 +88,7 @@ public class AbstractBinaryInput
     return _is;
   }
   
-  @Override
-  public int getAvailable()
+  public override int getAvailable()
     
   {
     return _is.getAvailable();

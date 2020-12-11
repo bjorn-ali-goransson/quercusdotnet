@@ -61,8 +61,7 @@ public class DOMElement : DOMNode<Element>
     super(impl, node);
   }
 
-  @Override
-  public CharSequence getNodeValue(Env env)
+  public override CharSequence getNodeValue(Env env)
     
   {
     // php/1zd1

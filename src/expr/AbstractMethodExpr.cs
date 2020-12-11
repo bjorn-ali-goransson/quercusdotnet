@@ -53,8 +53,7 @@ abstract public class AbstractMethodExpr : Expr {
    *
    * @return the expression value.
    */
-  @Override
-  public Value evalCopy(Env env)
+  public override Value evalCopy(Env env)
   {
     return eval(env).copy();
   }

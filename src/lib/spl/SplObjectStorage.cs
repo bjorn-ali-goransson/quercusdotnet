@@ -116,8 +116,7 @@ public class SplObjectStorage
     return _objMap.containsKey(hash);
   }
 
-  @Override
-  public int count(Env env)
+  public override int count(Env env)
   {
     return _objMap.size();
   }

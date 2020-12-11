@@ -252,8 +252,7 @@ public class ClassField
     return _comment;
   }
 
-  @Override
-  public string ToString()
+  public override string ToString()
   {
     string access = "";
 

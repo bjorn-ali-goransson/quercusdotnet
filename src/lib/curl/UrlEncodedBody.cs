@@ -63,8 +63,7 @@ public class UrlEncodedBody : PostBody
     _contentType = type;
   }
 
-  @Override
-  public long getContentLength()
+  public override long getContentLength()
   {
     return (long) _length;
   }

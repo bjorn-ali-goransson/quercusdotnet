@@ -49,8 +49,7 @@ public class ArrayValueWrapper : ArrayValue {
   /**
    * Returns the wrapped array.
    */
-  @Override
-  public ArrayValue getArray()
+  public override ArrayValue getArray()
   {
     return _array;
   }

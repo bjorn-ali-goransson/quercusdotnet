@@ -76,8 +76,7 @@ public class BooleanValue : Value
   /**
    * Returns the type.
    */
-  @Override
-  public string getType()
+  public override string getType()
   {
     return "boolean";
   }

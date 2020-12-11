@@ -1393,8 +1393,7 @@ public class DateModule : AbstractQuercusModule {
   }
 
 
-  @Override
-  public Map<StringValue, Value> getConstMap()
+  public override Map<StringValue, Value> getConstMap()
   {
       return _constMap;
   }

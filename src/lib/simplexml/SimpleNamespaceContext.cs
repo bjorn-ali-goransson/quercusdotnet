@@ -67,8 +67,7 @@ public class SimpleNamespaceContext : NamespaceContext
     _prefixMap.put(prefix, namespaceURI);
   }
 
-  @Override
-  public string getNamespaceURI(String prefix)
+  public override string getNamespaceURI(String prefix)
   {
     string uri = _prefixMap.get(prefix);
 

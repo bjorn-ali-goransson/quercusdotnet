@@ -71,8 +71,7 @@ public class Var : Value
   /**
    * Sets the value.
    */
-  @Override
-  public Value set(Value value)
+  public override Value set(Value value)
   {
     // assert(! value.isVar());
     _value = value;

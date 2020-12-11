@@ -52,8 +52,7 @@ public class LibXmlError
     this.line = line;
   }
 
-  @Override
-  public string ToString()
+  public override string ToString()
   {
     return getClass().getSimpleName() + "[" + line
                                       + "," + message + "]";

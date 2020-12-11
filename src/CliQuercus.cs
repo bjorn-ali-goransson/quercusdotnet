@@ -42,8 +42,7 @@ namespace QuercusDotNet {
 
 public class CliQuercus : Quercus
 {
-  @Override
-  public Env createEnv(QuercusPage page,
+  public override Env createEnv(QuercusPage page,
                        WriteStream @out,
                        QuercusHttpServletRequest request,
                        QuercusHttpServletResponse response)

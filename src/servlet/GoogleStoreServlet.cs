@@ -59,8 +59,7 @@ public class GoogleStoreServlet : GenericServlet
   {
   }
 
-  @Override
-  public void init()
+  public override void init()
   {
     _gsBucket = getInitParameter("gs_bucket");
 

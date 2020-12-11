@@ -55,8 +55,7 @@ public class ReferenceMarshal : Marshal
     return expr.evalRef(env);
   }
 
-  @Override
-  public Object marshal(Env env, Value value, Class argClass)
+  public override Object marshal(Env env, Value value, Class argClass)
   {
     return value.toLocalVarDeclAsRef();
   }

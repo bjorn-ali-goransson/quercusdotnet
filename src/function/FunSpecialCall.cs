@@ -55,8 +55,7 @@ public class FunSpecialCall : AbstractFunction {
   /**
    * Evaluates the function.
    */
-  @Override
-  public Value call(Env env, Value []args)
+  public override Value call(Env env, Value []args)
   {
     ArrayValueImpl arrayArgs = new ArrayValueImpl(args);
 

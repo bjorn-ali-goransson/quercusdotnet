@@ -79,8 +79,7 @@ public class QuercusException : RuntimeException
     return qExn;
   }
 
-  @Override
-  public string getMessage()
+  public override string getMessage()
   {
     string msg = super.getMessage();
 

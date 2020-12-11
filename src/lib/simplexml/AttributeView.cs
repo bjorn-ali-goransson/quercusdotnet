@@ -53,8 +53,7 @@ public class AttributeView : SimpleView
     _attr = attr;
   }
 
-  @Override
-  public string getNodeName()
+  public override string getNodeName()
   {
     return _attr.getNodeName();
   }

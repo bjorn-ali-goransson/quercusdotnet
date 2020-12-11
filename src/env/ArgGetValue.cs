@@ -60,8 +60,7 @@ public class ArgGetValue : ArgValue
    * Returns the arg object for a field reference, e.g.
    * foo($a[0][1])
    */
-  @Override
-  public Value getArg(Value index, bool isTop)
+  public override Value getArg(Value index, bool isTop)
   {
     return new ArgGetValue(this, index); // php/3d1p
   }

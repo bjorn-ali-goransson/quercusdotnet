@@ -90,8 +90,7 @@ public class JavaValue : ObjectValue
     return _classDef;
   }
 
-  @Override
-  public string getClassName()
+  public override string getClassName()
   {
     return _classDef.getName();
   }

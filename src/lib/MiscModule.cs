@@ -1226,8 +1226,7 @@ public class MiscModule : AbstractQuercusModule {
       _pad = pad;
     }
 
-    @Override
-    public int pack(Env env, StringValue bb, int i, Value []args)
+    public override int pack(Env env, StringValue bb, int i, Value []args)
       
     {
       Value arg;

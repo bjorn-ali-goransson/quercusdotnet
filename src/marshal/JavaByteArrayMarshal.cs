@@ -39,8 +39,7 @@ public class JavaByteArrayMarshal : JavaArrayMarshal
   public const Marshal MARSHAL
     = new JavaByteArrayMarshal();
 
-  @Override
-  public Value unmarshal(Env env, Object value)
+  public override Value unmarshal(Env env, Object value)
   {
     return env.createBinaryBuilder((byte[]) value);
   }

@@ -43,8 +43,7 @@ namespace QuercusDotNet.Marshal{
 public class RegexpArrayMarshal : StringMarshal {
   public readonly RegexpArrayMarshal MARSHAL = new RegexpArrayMarshal();
 
-  @Override
-  public Object marshal(Env env, Expr expr, Class expectedClass)
+  public override Object marshal(Env env, Expr expr, Class expectedClass)
   {
     return marshal(env, expr.eval(env), expectedClass);
   }

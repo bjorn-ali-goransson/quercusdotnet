@@ -117,8 +117,7 @@ public class JavaListAdapter
   /**
    * Pops the top value.
    */
-  @Override
-  public Value pop(Env env)
+  public override Value pop(Env env)
   {    
     if (getSize() == 0)
       return NullValue.NULL;

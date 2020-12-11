@@ -52,8 +52,7 @@ abstract public class CompiledMethod : CompiledAbstractFunction {
    : base(name, args) {
   }
 
-  @Override
-  public Value call(Env env, Value []args)
+  public override Value call(Env env, Value []args)
   {
     throw new IllegalStateException(getClass().getName());
   }

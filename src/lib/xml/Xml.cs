@@ -1106,8 +1106,7 @@ public class Xml {
       }
     }
 
-    @Override
-    public void unparsedEntityDecl(String name,
+    public override void unparsedEntityDecl(String name,
                                    string publicId,
                                    string systemId,
                                    string notationName)

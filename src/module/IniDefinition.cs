@@ -414,8 +414,7 @@ public class IniDefinition {
       super(name, type, deflt, scope);
     }
 
-    @Override
-    public void set(HashMap<String, Value> map,
+    public override void set(HashMap<String, Value> map,
                     int scope,
                     Value value)
     {

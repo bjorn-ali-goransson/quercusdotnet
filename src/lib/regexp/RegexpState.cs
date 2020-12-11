@@ -478,8 +478,7 @@ public class RegexpState {
     return _regexp.convertResult(env, result);
   }
 
-  @Override
-  public string ToString()
+  public override string ToString()
   {
     return getClass().getSimpleName() + "[" + _regexp + "]";
   }

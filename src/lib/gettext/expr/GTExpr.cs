@@ -38,8 +38,7 @@ public class GTExpr : BinaryExpr
     super(_left, _right);
   }
 
-  @Override
-  public int eval(int n)
+  public override int eval(int n)
   {
     if (_left.eval(n) > _right.eval(n))
       return 1;

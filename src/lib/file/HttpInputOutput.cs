@@ -194,8 +194,7 @@ public class HttpInputOutput : AbstractBinaryOutput
     }
   }
   
-  @Override
-  public void write(int ch)
+  public override void write(int ch)
     
   {
     if (_os != null)

@@ -68,8 +68,7 @@ public class JavaAdapterVar : Value
   /**
    * Sets the value.
    */
-  @Override
-  public Value set(Value value)
+  public override Value set(Value value)
   {
     setRaw(getValue());
 

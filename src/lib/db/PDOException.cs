@@ -77,8 +77,7 @@ public class PDOException
   /**
    * Converts the exception to a Value.
    */
-  @Override
-  public Value toValue(Env env)
+  public override Value toValue(Env env)
   {
     Value e = env.createException("PDOException", _code, _message);
 

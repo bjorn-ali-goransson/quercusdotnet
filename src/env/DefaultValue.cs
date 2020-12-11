@@ -57,8 +57,7 @@ public class DefaultValue : NullValue {
   /**
    * Returns true for a DefaultValue
    */
-  @Override
-  public bool isDefault()
+  public override bool isDefault()
   {
     return true;
   }

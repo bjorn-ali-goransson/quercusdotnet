@@ -101,8 +101,7 @@ public class Quercus
     System.out.println(" -d name=value : Sets a php ini value.");
   }
 
-  @Override
-  public string getSapiName()
+  public override string getSapiName()
   {
     return "cli";
   }

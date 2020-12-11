@@ -68,8 +68,7 @@ public class ClassVarNameConstExpr : Expr {
   /**
    * Creates a function call expression
    */
-  @Override
-  public Expr createCall(QuercusParser parser,
+  public override Expr createCall(QuercusParser parser,
                          Location location,
                          ArrayList<Expr> args)
     

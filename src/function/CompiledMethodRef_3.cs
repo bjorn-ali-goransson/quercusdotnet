@@ -58,8 +58,7 @@ abstract public class CompiledMethodRef_3 : CompiledMethodRef {
   /**
    * Evaluates the method with the given variable arguments.
    */
-  @Override
-  public Value callMethodRef(Env env, QuercusClass qClass, Value qThis,
+  public override Value callMethodRef(Env env, QuercusClass qClass, Value qThis,
                              Value []args)
   {
     switch (args.length) {

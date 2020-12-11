@@ -94,8 +94,7 @@ public class ArrayObject
       ArrayModule.asort(_env, (ArrayValue) _value, sortFlag);
   }
 
-  @Override
-  public int count(Env env)
+  public override int count(Env env)
   {
     return _value.getCount(env);
   }

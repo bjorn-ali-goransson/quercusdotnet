@@ -49,8 +49,7 @@ public class ArrayAccessDelegate : ArrayDelegate
   private const StringValue OFFSET_EXISTS
     = new ConstStringValue("offsetExists");
 
-  @Override
-  public Value get(Env env, ObjectValue qThis, Value index)
+  public override Value get(Env env, ObjectValue qThis, Value index)
   {
     return qThis.callMethod(env, OFFSET_GET, index);
   }

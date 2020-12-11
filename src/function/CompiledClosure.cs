@@ -49,8 +49,7 @@ abstract public class CompiledClosure : Closure {
 
   abstract public Value call(Env env, Value []args);
 
-  @Override
-  public Value callRef(Env env, Value []argValues)
+  public override Value callRef(Env env, Value []argValues)
   {
     return call(env, argValues).copyReturn();
   }

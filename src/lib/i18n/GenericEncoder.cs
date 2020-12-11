@@ -54,8 +54,7 @@ public class GenericEncoder
     _encoder = _charset.newEncoder();
   }
 
-  @Override
-  public bool isEncodable(StringValue str, int start, int end)
+  public override bool isEncodable(StringValue str, int start, int end)
   {
     for (int i = start; i < end; i++) {
       if (! _encoder.canEncode(str[i])) {

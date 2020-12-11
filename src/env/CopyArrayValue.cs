@@ -118,8 +118,7 @@ public class CopyArrayValue : ArrayValue {
   /**
    * Adds a new value.
    */
-  @Override
-  public Value put(Value key, Value value)
+  public override Value put(Value key, Value value)
   {
     return getCopyArray().put(key, value);
   }

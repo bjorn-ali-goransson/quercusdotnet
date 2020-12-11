@@ -61,8 +61,7 @@ public class FunGetClassExpr : Expr {
    *
    * @return the expression value.
    */
-  @Override
-  public Value eval(Env env)
+  public override Value eval(Env env)
   {
     return env.createString(_className);
   }

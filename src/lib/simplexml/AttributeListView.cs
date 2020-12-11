@@ -57,8 +57,7 @@ public class AttributeListView : SimpleView
     _attrList = attrList;
   }
 
-  @Override
-  public string getNodeName()
+  public override string getNodeName()
   {
     if (_attrList.size() > 0) {
       return _attrList.get(0).getNodeName();

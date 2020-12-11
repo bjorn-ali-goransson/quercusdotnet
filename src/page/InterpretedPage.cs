@@ -58,8 +58,7 @@ public class InterpretedPage : QuercusPage
   /**
    * Returns true if the page @is modified.
    */
-  @Override
-  public bool isModified()
+  public override bool isModified()
   {
     return _program.isModified();
   }

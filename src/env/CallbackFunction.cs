@@ -69,8 +69,7 @@ public class CallbackFunction : Callback {
     _fun = fun;
   }
 
-  @Override
-  public bool isValid(Env env)
+  public override bool isValid(Env env)
   {
     if (_fun != null) {
       return true;

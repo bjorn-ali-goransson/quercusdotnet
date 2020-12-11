@@ -99,8 +99,7 @@ public class ObjectNewExpr : Expr {
     }
   }
 
-  @Override
-  public string ToString()
+  public override string ToString()
   {
     return _name + "()";
   }

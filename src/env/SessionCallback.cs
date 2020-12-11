@@ -122,8 +122,7 @@ public class SessionCallback : Value {
     }
   }
 
-  @Override
-  public string ToString()
+  public override string ToString()
   {
     return getClass().getSimpleName() + "[" + _open + ","
                                             + _close  + ","

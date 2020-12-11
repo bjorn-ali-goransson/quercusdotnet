@@ -61,8 +61,7 @@ public class ThisExpr : AbstractVarExpr {
   /**
    * Creates a field ref
    */
-  @Override
-  public Expr createFieldGet(ExprFactory factory,
+  public override Expr createFieldGet(ExprFactory factory,
                              Location location,
                              StringValue name)
   {

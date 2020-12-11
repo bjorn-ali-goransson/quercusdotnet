@@ -85,8 +85,7 @@ public class QuercusServletImpl : HttpServlet
   /**
    * initialize the script manager.
    */
-  @Override
-  public void init(ServletConfig config)
+  public override void init(ServletConfig config)
     
   {
     _config = config;

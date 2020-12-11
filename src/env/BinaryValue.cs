@@ -39,8 +39,7 @@ namespace QuercusDotNet.Env{
 abstract public class BinaryValue : StringValue
 {
   /*
-  @Override
-  public bool isBinary()
+  public override bool isBinary()
   {
     return true;
   }

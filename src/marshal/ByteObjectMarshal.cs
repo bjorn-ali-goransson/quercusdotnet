@@ -50,8 +50,7 @@ public class ByteObjectMarshal : Marshal
     return true;
   }
 
-  @Override
-  public Object marshal(Env env, Value value, Class expectedClass)
+  public override Object marshal(Env env, Value value, Class expectedClass)
   {
     return value.toJavaByte();
   }

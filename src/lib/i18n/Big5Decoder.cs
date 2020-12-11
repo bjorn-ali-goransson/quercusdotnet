@@ -46,8 +46,7 @@ public class Big5Decoder
     super(charsetName);
   }
 
-  @Override
-  public bool isDecodable(Env env, StringValue str)
+  public override bool isDecodable(Env env, StringValue str)
   {
     if (str.isUnicode())
       return true;

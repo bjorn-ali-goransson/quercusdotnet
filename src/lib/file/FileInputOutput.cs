@@ -130,8 +130,7 @@ public class FileInputOutput : AbstractBinaryOutput
     }
   }
 
-  @Override
-  public int getAvailable()
+  public override int getAvailable()
     
   {
     return _stream.getInputStream().available();

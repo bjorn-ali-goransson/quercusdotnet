@@ -61,8 +61,7 @@ public class BinaryAssignExpr : Expr {
    * Creates a assignment
    * @param location
    */
-  @Override
-  public Expr createCopy(ExprFactory factory)
+  public override Expr createCopy(ExprFactory factory)
   {
     // quercus/3d9e
     return factory.createCopy(this);

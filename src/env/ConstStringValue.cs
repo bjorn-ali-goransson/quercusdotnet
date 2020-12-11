@@ -164,8 +164,7 @@ public class ConstStringValue
   /**
    * Converts to a long vaule
    */
-  @Override
-  public LongValue toLongValue()
+  public override LongValue toLongValue()
   {
     if (_longValue == null)
       _longValue = LongValue.create(super.toLong());

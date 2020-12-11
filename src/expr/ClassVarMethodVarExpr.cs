@@ -80,8 +80,7 @@ public class ClassVarMethodVarExpr : Expr
    * Returns the reference of the value.
    * @param location
    */
-  @Override
-  public Expr createRef(QuercusParser parser)
+  public override Expr createRef(QuercusParser parser)
   {
     return parser.getFactory().createRef(this);
   }

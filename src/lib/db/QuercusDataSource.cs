@@ -88,8 +88,7 @@ public class QuercusDataSource : DataSource {
     }
   }
 
-  @Override
-  public int getLoginTimeout()
+  public override int getLoginTimeout()
     
   {
     return _ds.getLoginTimeout();

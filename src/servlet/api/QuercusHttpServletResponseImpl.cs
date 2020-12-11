@@ -46,8 +46,7 @@ public class QuercusHttpServletResponseImpl : QuercusHttpServletResponse
     _response = response;
   }
 
-  @Override
-  public void setContentType(String type)
+  public override void setContentType(String type)
   {
     _response.setContentType(type);
   }

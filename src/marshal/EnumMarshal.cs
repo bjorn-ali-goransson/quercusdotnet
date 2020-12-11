@@ -78,8 +78,7 @@ public class EnumMarshal : Marshal {
       return env.wrapJava(value);
   }
 
-  @Override
-  public Class getExpectedClass()
+  public override Class getExpectedClass()
   {
     return _enumClass;
   }

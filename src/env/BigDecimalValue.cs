@@ -55,8 +55,7 @@ public class BigDecimalValue : JavaValue {
   /**
    * Converts to a long.
    */
-  @Override
-  public long toLong()
+  public override long toLong()
   {
     return _val.longValue();
   }

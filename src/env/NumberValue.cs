@@ -39,8 +39,7 @@ public abstract class NumberValue : Value {
   /**
    * Returns true for equality
    */
-  @Override
-  public int cmp(Value rValue)
+  public override int cmp(Value rValue)
   {
     if (rValue.isBoolean() || rValue.isNull()) {
       bool lBool = toBoolean();

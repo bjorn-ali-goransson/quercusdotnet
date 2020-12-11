@@ -56,8 +56,7 @@ public class JavaListMarshal : JavaMarshal {
     super(def, isNotNull, isUnmarshalNullAsFalse);
   }
 
-  @Override
-  public Object marshal(Env env, Value value, Class argClass)
+  public override Object marshal(Env env, Value value, Class argClass)
   {
     if (! value.isset()) {
       if (_isNotNull) {

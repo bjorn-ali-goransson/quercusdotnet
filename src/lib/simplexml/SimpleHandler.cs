@@ -82,8 +82,7 @@ public class SimpleHandler : DefaultHandler2
   // ContentHandler start
   //
 
-  @Override
-  public void startDocument()
+  public override void startDocument()
   {
     if (log.isLoggable(Level.FINE)) {
       log.log(Level.FINE, getClass().getSimpleName() + ".startDocument0");

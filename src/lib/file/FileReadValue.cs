@@ -130,8 +130,7 @@ public class FileReadValue : FileValue {
       return false;
   }
 
-  @Override
-  public void writeToStream(OutputStream os, int length)
+  public override void writeToStream(OutputStream os, int length)
     
   {
     if (_is != null) {

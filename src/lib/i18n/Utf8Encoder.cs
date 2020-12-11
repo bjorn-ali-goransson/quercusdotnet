@@ -41,8 +41,7 @@ public class Utf8Encoder
     super("utf-8");
   }
 
-  @Override
-  public bool isUtf8()
+  public override bool isUtf8()
   {
     return true;
   }

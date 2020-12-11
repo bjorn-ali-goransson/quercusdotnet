@@ -146,8 +146,7 @@ public class CompiledConstStringValue
   /**
    * Converts to a long.
    */
-  @Override
-  public long toLong()
+  public override long toLong()
   {
     return toLongValue().toLong();
   }

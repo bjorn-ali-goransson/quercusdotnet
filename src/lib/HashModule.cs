@@ -594,8 +594,7 @@ public class HashModule : AbstractQuercusModule {
       _adler = new Adler32();
     }
 
-    @Override
-    public void engineUpdate(byte b)
+    public override void engineUpdate(byte b)
     {
       _adler.update(b);
     }

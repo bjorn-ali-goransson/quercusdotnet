@@ -3173,8 +3173,7 @@ abstract public class Value : java.io.Serializable
     return hashCode();
   }
 
-  @Override
-  public int hashCode()
+  public override int hashCode()
   {
     return 1021;
   }

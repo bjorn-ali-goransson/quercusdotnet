@@ -48,8 +48,7 @@ public class CountableDelegate : CountDelegate
   private const StringValue COUNT_METHOD
     = new ConstStringValue("count");
   
-  @Override
-  public int count(Env env, ObjectValue qThis)
+  public override int count(Env env, ObjectValue qThis)
   {    
     Value count = qThis.callMethod(env, COUNT_METHOD);
 

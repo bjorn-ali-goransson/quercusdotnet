@@ -42,8 +42,7 @@ public class QuercusServletContextImpl : QuercusServletContext
     _ctx = ctx;
   }
 
-  @Override
-  public string getMimeType(String name)
+  public override string getMimeType(String name)
   {
     return _ctx.getMimeType(name);
   }

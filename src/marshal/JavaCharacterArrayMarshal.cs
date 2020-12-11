@@ -40,8 +40,7 @@ public class JavaCharacterArrayMarshal : JavaArrayMarshal
   public const Marshal MARSHAL
     = new JavaCharacterArrayMarshal();
 
-  @Override
-  public Value unmarshal(Env env, Object value)
+  public override Value unmarshal(Env env, Object value)
   {
     char []buffer = (char []) value;
 

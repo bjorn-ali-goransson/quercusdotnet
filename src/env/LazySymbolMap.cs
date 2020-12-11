@@ -101,8 +101,7 @@ public class LazySymbolMap : AbstractMap<StringValue,EnvVar> {
   /**
    * Returns the matching value, or null.
    */
-  @Override
-  public EnvVar put(StringValue key, EnvVar newVar)
+  public override EnvVar put(StringValue key, EnvVar newVar)
   {
     return _extMap.put(key, newVar);
   }

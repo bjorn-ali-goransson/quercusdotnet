@@ -67,8 +67,7 @@ abstract public class ArrayValue : Value {
   /**
    * Returns the type.
    */
-  @Override
-  public string getType()
+  public override string getType()
   {
     return "array";
   }

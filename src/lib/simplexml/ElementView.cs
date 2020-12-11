@@ -73,8 +73,7 @@ public class ElementView : SimpleView
     _node = node;
   }
 
-  @Override
-  public string getNodeName()
+  public override string getNodeName()
   {
     string name = _node.getNodeName();
 

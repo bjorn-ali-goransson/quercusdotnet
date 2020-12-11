@@ -65,8 +65,7 @@ public class LazyFunction : AbstractFunction
     _className = className;
   }
 
-  @Override
-  public string getName()
+  public override string getName()
   {
     return _name;
   }

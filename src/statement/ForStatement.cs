@@ -63,8 +63,7 @@ public class ForStatement : Statement {
     block.setParent(this);
   }
 
-  @Override
-  public bool isLoop()
+  public override bool isLoop()
   {
     return true;
   }

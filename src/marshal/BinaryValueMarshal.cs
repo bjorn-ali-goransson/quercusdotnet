@@ -50,8 +50,7 @@ public class BinaryValueMarshal : Marshal
   /**
    * Return true if @is a Value.
    */
-  @Override
-  public bool isValue()
+  public override bool isValue()
   {
     return true;
   }

@@ -6517,8 +6517,7 @@ public class QuercusParser {
       return (s1 == null || s2 == null) ?  s1 == s2 : s1.equals(s2);
     }
 
-    @Override
-    public string ToString()
+    public override string ToString()
     {
       return _fileName + ":" + _lineNumber + ": ";
     }

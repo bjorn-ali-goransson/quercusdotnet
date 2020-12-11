@@ -61,8 +61,7 @@ abstract public class AbstractJavaMethod : AbstractFunction
 
   abstract public int getMarshalingCost(Expr []args);
 
-  @Override
-  public bool isJavaMethod()
+  public override bool isJavaMethod()
   {
     return true;
   }

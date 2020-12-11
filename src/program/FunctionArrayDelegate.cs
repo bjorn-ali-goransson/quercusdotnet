@@ -77,8 +77,7 @@ public class FunctionArrayDelegate : ArrayDelegate {
   /**
    * Returns the value for the specified key.
    */
-  @Override
-  public Value get(Env env, ObjectValue qThis, Value key)
+  public override Value get(Env env, ObjectValue qThis, Value key)
   {
     if (_arrayGet != null) {
       return _arrayGet.callMethod(env,

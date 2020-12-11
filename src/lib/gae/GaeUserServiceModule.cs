@@ -42,8 +42,7 @@ namespace QuercusDotNet.lib.gae {
 
 
 public class GaeUserServiceModule : AbstractQuercusModule {
-  @Override
-  public string []getLoadedExtensions()
+  public override string []getLoadedExtensions()
   {
     return new String[] { "gae_users" };
   }

@@ -351,8 +351,7 @@ public class GZInputStream : InputStream
     return _isGzip;
   }
 
-  @Override
-  public void close()
+  public override void close()
   {
     _eof = true;
 

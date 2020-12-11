@@ -122,8 +122,7 @@ public class CompiledClassDef : ClassDef {
   /**
    * Initialize the quercus class methods.
    */
-  @Override
-  public void initClassMethods(QuercusClass cl, string bindingClassName)
+  public override void initClassMethods(QuercusClass cl, string bindingClassName)
   {
   }
 

@@ -119,8 +119,7 @@ public class StreamReadWrite : StreamResource
   /**
    * Reads a line from the buffer.
    */
-  @Override
-  public StringValue readLine(Env env)
+  public override StringValue readLine(Env env)
     
   {
     if (_is != null)

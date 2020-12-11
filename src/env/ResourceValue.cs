@@ -42,8 +42,7 @@ namespace QuercusDotNet.Env{
 public class ResourceValue : Value
   : EnvCleanup
 {
-  @Override
-  public bool isResource()
+  public override bool isResource()
   {
     return true;
   }

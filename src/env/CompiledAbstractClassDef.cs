@@ -45,8 +45,7 @@ public class CompiledAbstractClassDef
     super(location, name, parent, ifaceList, traitList);
   }
 
-  @Override
-  public bool isAbstract()
+  public override bool isAbstract()
   {
     return true;
   }

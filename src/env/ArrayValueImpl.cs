@@ -322,8 +322,7 @@ public class ArrayValueImpl : ArrayValue
   /**
    * Copy the value.
    */
-  @Override
-  public Value copy()
+  public override Value copy()
   {
     // php/1704
     reset();

@@ -40,8 +40,7 @@ public class JavaByteObjectArrayMarshal : JavaArrayMarshal
   public const Marshal MARSHAL
     = new JavaByteObjectArrayMarshal();
 
-  @Override
-  public Value unmarshal(Env env, Object value)
+  public override Value unmarshal(Env env, Object value)
   {
     Byte []byteValue = (Byte []) value;
 

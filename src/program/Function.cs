@@ -106,8 +106,7 @@ public class Function : AbstractFunction {
   /**
    * Returns the declaring class
    */
-  @Override
-  public ClassDef getDeclaringClass()
+  public override ClassDef getDeclaringClass()
   {
     return _info.getDeclaringClass();
   }

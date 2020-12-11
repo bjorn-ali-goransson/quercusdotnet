@@ -50,8 +50,7 @@ abstract public class CompiledMethodRef : CompiledAbstractFunction {
   /**
    * Evaluates the method as a static function
    */
-  @Override
-  public Value call(Env env, Value []argValues)
+  public override Value call(Env env, Value []argValues)
   {
     throw new IllegalStateException(getClass().getName());
   }

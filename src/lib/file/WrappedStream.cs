@@ -194,8 +194,7 @@ public class WrappedStream : BinaryInput, BinaryOutput {
     }
   }
 
-  @Override
-  public int getAvailable()
+  public override int getAvailable()
     
   {
     return 1;

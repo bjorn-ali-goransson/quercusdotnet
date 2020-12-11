@@ -90,8 +90,7 @@ abstract public class BufferedBinaryInputOutput
     }
   }
 
-  @Override
-  public int getAvailable()
+  public override int getAvailable()
     
   {
     if (_is != null)

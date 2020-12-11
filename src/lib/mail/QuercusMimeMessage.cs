@@ -60,8 +60,7 @@ public class QuercusMimeMessage : MimeMessage {
     _messageId = messageId;
   }
 
-  @Override
-  public string getMessageID()
+  public override string getMessageID()
     
   {
     if (_messageId == null)

@@ -112,8 +112,7 @@ public class ObjectExtValue : ObjectValue
     _fieldMap = new LinkedHashMap<StringValue,Entry>();
   }
 
-  @Override
-  public void setQuercusClass(QuercusClass cl)
+  public override void setQuercusClass(QuercusClass cl)
   {
     super.setQuercusClass(cl);
 

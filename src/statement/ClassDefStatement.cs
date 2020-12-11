@@ -53,8 +53,7 @@ public class ClassDefStatement : Statement {
     _cl = cl;
   }
 
-  @Override
-  public Value execute(Env env)
+  public override Value execute(Env env)
   {
     env.addClass(_cl.getName(), _cl);
 

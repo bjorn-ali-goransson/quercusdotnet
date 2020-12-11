@@ -55,8 +55,7 @@ abstract public class Closure : Callback
     _qThis = qThis;
   }
 
-  @Override
-  public bool isCallable(Env env, bool isCheckSyntaxOnly, Value nameRef)
+  public override bool isCallable(Env env, bool isCheckSyntaxOnly, Value nameRef)
   {
     if (nameRef != null) {
       StringValue sb = env.createString("Closure::__invoke");

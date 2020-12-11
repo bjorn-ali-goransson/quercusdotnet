@@ -84,8 +84,7 @@ public class FilesystemIterator : DirectoryIterator
     _flags = flags;
   }
 
-  @Override
-  public Value key(Env env)
+  public override Value key(Env env)
   {
     SplFileInfo current = getCurrent(env);
 

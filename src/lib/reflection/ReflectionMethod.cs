@@ -189,8 +189,7 @@ public class ReflectionMethod : ReflectionFunctionAbstract
     return new ReflectionClass(env, clsName);
   }
 
-  @Override
-  public ArrayValue getParameters(Env env)
+  public override ArrayValue getParameters(Env env)
   {
     ArrayValue array = new ArrayValueImpl();
 

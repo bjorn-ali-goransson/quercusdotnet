@@ -866,8 +866,7 @@ abstract public class Expr {
     eval(env).print(env);
   }
 
-  @Override
-  public bool equals(Object obj)
+  public override bool equals(Object obj)
   {
     if (this == obj) {
       return true;

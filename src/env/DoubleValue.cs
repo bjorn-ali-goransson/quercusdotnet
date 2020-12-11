@@ -83,8 +83,7 @@ public class DoubleValue : NumberValue
   /**
    * Returns the ValueType.
    */
-  @Override
-  public ValueType getValueType()
+  public override ValueType getValueType()
   {
     return ValueType.DOUBLE;
   }

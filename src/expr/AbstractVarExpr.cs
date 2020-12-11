@@ -55,8 +55,7 @@ abstract public class AbstractVarExpr : Expr {
   /**
    * Returns true if the expression @is a var/left-hand-side.
    */
-  @Override
-  public bool isVar()
+  public override bool isVar()
   {
     return true;
   }

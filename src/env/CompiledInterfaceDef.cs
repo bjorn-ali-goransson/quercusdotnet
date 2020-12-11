@@ -50,8 +50,7 @@ public class CompiledInterfaceDef
    : base(location, name, parent, ifaceList) {
   }
 
-  @Override
-  public bool isInterface()
+  public override bool isInterface()
   {
     return true;
   }

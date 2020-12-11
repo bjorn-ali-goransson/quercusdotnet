@@ -46,8 +46,7 @@ namespace QuercusDotNet.Env{
  */
 abstract public class ArgValue : Value
 {
-  @Override
-  public Value toValue()
+  public override Value toValue()
   {
     return toLocalValue();
   }

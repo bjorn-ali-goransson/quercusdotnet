@@ -63,8 +63,7 @@ public class EncoderStream : StreamImpl
     return new ReadStream(ss);
   }
 
-  @Override
-  public Path getPath()
+  public override Path getPath()
   {
     throw new UnsupportedOperationException();
   }

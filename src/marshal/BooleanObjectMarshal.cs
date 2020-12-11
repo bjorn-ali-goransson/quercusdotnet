@@ -51,8 +51,7 @@ public class BooleanObjectMarshal : Marshal
     return expr.evalBoolean(env) ? Boolean.TRUE : Boolean.FALSE;
   }
 
-  @Override
-  public Object marshal(Env env, Value value, Class expectedClass)
+  public override Object marshal(Env env, Value value, Class expectedClass)
   {
     if (value.isNull())
       return null;

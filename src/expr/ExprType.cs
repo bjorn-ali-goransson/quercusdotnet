@@ -14,8 +14,7 @@ namespace QuercusDotNet.Expr{
 public enum ExprType
 {
   INIT {
-    @Override
-    public ExprType withLong()
+    public override ExprType withLong()
     {
       return LONG;
     }

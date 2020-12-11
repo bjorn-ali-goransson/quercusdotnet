@@ -49,8 +49,7 @@ public class JavaArrayMarshal : Marshal
     _expectedClass = expectedClass;
   }
 
-  @Override
-  public Object marshal(Env env, Expr expr, Class expectedClass)
+  public override Object marshal(Env env, Expr expr, Class expectedClass)
   {
     return marshal(env, expr.eval(env), expectedClass);
   }

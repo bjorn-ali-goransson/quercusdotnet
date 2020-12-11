@@ -81,8 +81,7 @@ public class LazyClassDef : CompiledClassDef
   /**
    * forces a load of any lazy ClassDef
    */
-  @Override
-  public ClassDef loadClassDef()
+  public override ClassDef loadClassDef()
   {
     return getClassDef();
   }
@@ -110,8 +109,7 @@ public class LazyClassDef : CompiledClassDef
   /**
    * Returns the name.
    */
-  @Override
-  public string getName()
+  public override string getName()
   {
     return getClassDef().getName();
   }
@@ -119,8 +117,7 @@ public class LazyClassDef : CompiledClassDef
   /**
    * Returns the parent name.
    */
-  @Override
-  public string getParentName()
+  public override string getParentName()
   {
     return getClassDef().getParentName();
   }
@@ -128,14 +125,12 @@ public class LazyClassDef : CompiledClassDef
   /*
    * Returns the name of the extension that this class @is part of.
    */
-  @Override
-  public string getExtension()
+  public override string getExtension()
   {
     return getClassDef().getExtension();
   }
 
-  @Override
-  public void init()
+  public override void init()
   {
     getClassDef().init();
   }
@@ -143,8 +138,7 @@ public class LazyClassDef : CompiledClassDef
   /**
    * Returns the interfaces.
    */
-  @Override
-  public string []getInterfaces()
+  public override string []getInterfaces()
   {
     return getClassDef().getInterfaces();
   }
@@ -152,8 +146,7 @@ public class LazyClassDef : CompiledClassDef
   /**
    * Returns the interfaces.
    */
-  @Override
-  public string []getTraits()
+  public override string []getTraits()
   {
     return getClassDef().getTraits();
   }
@@ -161,8 +154,7 @@ public class LazyClassDef : CompiledClassDef
   /**
    * Return true for an abstract class.
    */
-  @Override
-  public bool isAbstract()
+  public override bool isAbstract()
   {
     return getClassDef().isAbstract();
   }
@@ -170,8 +162,7 @@ public class LazyClassDef : CompiledClassDef
   /**
    * Return true for an interface class.
    */
-  @Override
-  public bool isInterface()
+  public override bool isInterface()
   {
     return getClassDef().isInterface();
   }
@@ -179,8 +170,7 @@ public class LazyClassDef : CompiledClassDef
   /**
    * Returns true for a class.
    */
-  @Override
-  public bool isFinal()
+  public override bool isFinal()
   {
     return getClassDef().isFinal();
   }
@@ -188,8 +178,7 @@ public class LazyClassDef : CompiledClassDef
   /**
    * Returns the documentation for this class.
    */
-  @Override
-  public string getComment()
+  public override string getComment()
   {
     return getClassDef().getComment();
   }
@@ -197,8 +186,7 @@ public class LazyClassDef : CompiledClassDef
   /**
    * Returns the comment for the specified field.
    */
-  @Override
-  public string getFieldComment(StringValue name)
+  public override string getFieldComment(StringValue name)
   {
     return getClassDef().getFieldComment(name);
   }
@@ -206,8 +194,7 @@ public class LazyClassDef : CompiledClassDef
   /**
    * Returns the comment for the specified static field.
    */
-  @Override
-  public string getStaticFieldComment(StringValue name)
+  public override string getStaticFieldComment(StringValue name)
   {
     return getClassDef().getStaticFieldComment(name);
   }
@@ -215,8 +202,7 @@ public class LazyClassDef : CompiledClassDef
   /*
    * Returns true if the class has private/protected methods.
    */
-  @Override
-  public bool hasNonPublicMethods()
+  public override bool hasNonPublicMethods()
   {
     return getClassDef().hasNonPublicMethods();
   }
@@ -224,8 +210,7 @@ public class LazyClassDef : CompiledClassDef
   /**
    * Initialize the quercus class methods.
    */
-  @Override
-  public void initClassMethods(QuercusClass cl, string bindingClassName)
+  public override void initClassMethods(QuercusClass cl, string bindingClassName)
   {
     getClassDef().initClassMethods(cl, bindingClassName);
   }
@@ -233,8 +218,7 @@ public class LazyClassDef : CompiledClassDef
   /**
    * Initialize the quercus class fields.
    */
-  @Override
-  public void initClassFields(QuercusClass cl, string bindingClassName)
+  public override void initClassFields(QuercusClass cl, string bindingClassName)
   {
     getClassDef().initClassFields(cl, bindingClassName);
   }
@@ -242,8 +226,7 @@ public class LazyClassDef : CompiledClassDef
   /**
    * Creates a new object.
    */
-  @Override
-  public ObjectValue createObject(Env env, QuercusClass cls)
+  public override ObjectValue createObject(Env env, QuercusClass cls)
   {
     return getClassDef().createObject(env, cls);
   }
@@ -251,8 +234,7 @@ public class LazyClassDef : CompiledClassDef
   /**
    * Creates a new instance.
    */
-  @Override
-  public Value callNew(Env env, Value []args)
+  public override Value callNew(Env env, Value []args)
   {
     return getClassDef().callNew(env, args);
   }
@@ -260,8 +242,7 @@ public class LazyClassDef : CompiledClassDef
   /**
    * Initialize the quercus class.
    */
-  @Override
-  public void initInstance(Env env, Value value, bool isInitFieldValues)
+  public override void initInstance(Env env, Value value, bool isInitFieldValues)
   {
     getClassDef().initInstance(env, value, isInitFieldValues);
   }
@@ -269,8 +250,7 @@ public class LazyClassDef : CompiledClassDef
   /**
    * Returns value for instanceof.
    */
-  @Override
-  public bool isA(Env env, string name)
+  public override bool isA(Env env, string name)
   {
     return getClassDef().isA(env, name);
   }
@@ -278,8 +258,7 @@ public class LazyClassDef : CompiledClassDef
   /**
    * Returns the constructor
    */
-  @Override
-  public AbstractFunction findConstructor()
+  public override AbstractFunction findConstructor()
   {
     return getClassDef().findConstructor();
   }
@@ -287,8 +266,7 @@ public class LazyClassDef : CompiledClassDef
   /**
    * Finds the matching constant
    */
-  @Override
-  public Expr findConstant(String name)
+  public override Expr findConstant(String name)
   {
     return getClassDef().findConstant(name);
   }
@@ -309,26 +287,22 @@ public class LazyClassDef : CompiledClassDef
     return getClassDef().getFieldNames();
   }
 
-  @Override
-  public Set<Map.Entry<StringValue,ClassField>> fieldSet()
+  public override Set<Map.Entry<StringValue,ClassField>> fieldSet()
   {
     return getClassDef().fieldSet();
   }
 
-  @Override
-  public ClassField getField(StringValue name)
+  public override ClassField getField(StringValue name)
   {
     return getClassDef().getField(name);
   }
 
-  @Override
-  public Set<Map.Entry<StringValue, AbstractFunction>> functionSet()
+  public override Set<Map.Entry<StringValue, AbstractFunction>> functionSet()
   {
     return getClassDef().functionSet();
   }
 
-  @Override
-  public string ToString()
+  public override string ToString()
   {
     return getClass().getSimpleName()
            + "@"
